@@ -1,0 +1,1608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="//www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- head_title --> <meta name="robots" content="index, follow, noarchive" /> 
+<!-- GOOGLE DFP TOP scripts start -->
+<script src="https://files.newsnetz.ch//scripts/dimension_watcher.js"></script>
+<script>DimensionWatcher.watchIframeContent();</script>
+<!-- GOOGLE DFP TOP scripts end -->
+<meta name="description" content="Nachrichten, Analysen, Bilder und Video zu Politik, Wirtschaft, Sport, Kultur, Wissen, Technik, Auto und mehr." /> 
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="rss.html" />
+
+<title> News SonntagsZeitung - tagesanzeiger.ch</title>
+<script src="https://files.newsnetz.ch/scripts/updated/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/updated/ui/jquery.ui.core.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/updated/ui/jquery.ui.widget.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/updated/ui/jquery.ui.tabs.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/updated/jquery.pagination.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery.getUrlParam.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery-validate-1.5.2/jquery.validate.min.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery-validate-1.5.2/localization/messages_de.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/easyTooltip.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery.form.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery.flash.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery.cookie.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery.url.packed.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery.crypt.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/ajax.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/swfobject.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/misc6.js?id=16" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/ad_red.js" type="text/javascript"></script>
+
+<script src="https://files.newsnetz.ch/scripts/dimension_watcher.js"></script>
+<script>
+	DimensionWatcher.watchIframeContent();
+</script>
+
+<!-- Includes used for framework.js, nn2 slideshow and nn2 comments -->
+<script src="https://files.newsnetz.ch/cdn/html5shiv/3/dist/html5shiv.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/es5-shim/4/es5-shim.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/es5-shim/4/es5-sham.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/loader.js/3/loader.js"></script>
+<script src="https://files.newsnetz.ch/cdn/jquery/1/dist/jquery.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/jquery-simple-placeholder/jquery.simpleplaceholder.js"></script>
+<script src="https://files.newsnetz.ch/cdn/hammer.js/2/hammer.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/handlebars/3/handlebars.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/rsvp/3/rsvp.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/swiper/2/dist/idangerous.swiper.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/react/0.14/react-with-addons.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/react/0.14/react-dom.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/lodash/3/lodash.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/postscribe/1/dist/postscribe.min.js"></script>
+
+<script src="//www.google-analytics.com/analytics.js"></script>
+<script src="//platform.instagram.com/de_de/embeds.js"></script>
+
+<script type="text/javascript">
+    // Used for app.js and framework.js
+    window.cre_jq = jQuery.noConflict(true);
+</script>
+
+<!-- Used for new nn2 slideshow -->
+<script src="https://files.newsnetz.ch/cdn/nn2/framework/0.1/framework.js?v=254"></script>
+<!-- <script src="https://files.newsnetz.ch/scripts/exportedFromNN2/framework.js?v=254" type="text/javascript"></script> -->
+
+<script>
+    // Load statistics for slideshow and comments from NN2 framework
+    (function($) {
+        var config = require("framework/config").config;
+
+        config.configure({
+            env: "desktop",
+            apiUrl: "//www.tagesanzeiger.ch/api",
+            ads: {
+                enabled: true
+            }
+        });
+
+        if (window.location.host.indexOf("devlocal")) {
+            config.configure({
+                apiUrl: config.apiUrl.replace("devlocal", "ch")
+            });
+        }
+
+        $.getJSON(config.apiUrl + "/sites/default").then(function(payload) {
+            require("framework/statistics").statistics.init({
+                env: config.env,
+                gtm: {
+                    id: payload.site.gtm_id
+                }
+            }, {
+                "google_analytics": {
+                    "customVars": [{
+                        "name": "device_characteristics",
+                        "value": "desktop"
+                    }, {
+                        "name": "app_mode",
+                        "value": "browser"
+                    }, {
+                        "name": "version",
+                        "value": config.version
+                    }, {
+                        "name": "ad_blocker",
+                        "value": !window.adblockJsFile
+                    }]
+                }
+            });
+        });
+    })(cre_jq);
+</script>
+
+<script src="https://files.newsnetz.ch/scripts/liveticker.js?v=204" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/slideshow.js?v=245" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/sm.js" type="text/javascript"></script>
+
+<!-- tracking_identifier:  -->
+
+<meta name="c1_user_info" content=''>
+
+<script>
+    var config = require("framework/config").config,
+        paywallInterface = require("framework/paywallInterface").paywallInterface,
+        paywallEventHandler = require("framework/paywallEventHandler").paywallEventHandler;
+
+    paywallInterface.configure($.extend({}, config, {
+        "paywall_status": config.paywall.status.enabled,
+        "eventHandler": paywallEventHandler
+    }));
+
+    paywallInterface.init().then(function() {
+        var url = window.location.href.toString().split(window.location.host)[1],
+            channels = url.split("/"),
+            regexResult = url.match(/.*\/story\/([0-9]{8})/i);
+
+        var premium = 0;
+
+        var trackingInfo = {
+            "cms_id": (regexResult ? regexResult[1] : ""),
+            "main_channel": (window.location.pathname === "/" ? "home" : channels[1]),
+            "sub_channel": channels[2],
+            "doc_type": (premium ? "premium" : (regexResult ? "article" : "section"))
+        }
+
+        // Check if the current site is a blog
+        if(window.location.host.indexOf("blog") > -1) {
+            channels = channels.filter(function(e, i) {
+                return e !== "index.php" && e !== "category";
+            });
+
+            trackingInfo.sub_channel = "";
+            trackingInfo.doc_type = "section";
+
+            // Check if it is a blog article (if the third url section contains only numbers)
+            var regexResult = channels[2].match(/[0-9]+/i);
+            if(regexResult) {
+                trackingInfo.cms_id = url;
+                trackingInfo.doc_type = "article";
+            } else {
+                trackingInfo.sub_channel = channels[2];
+            }
+        }
+
+        paywallInterface.track(trackingInfo);
+
+        // Track page complete event with ad blocker
+        $(window).load(function() {
+            ray.run(function(isDetected) {
+                paywallInterface.track_pagecomplete($.extend({}, trackingInfo, {
+                    adblock: isDetected ? "full" : "no"
+                }));
+            });
+        });
+    });
+</script>
+
+    <img style="display:none" src="https://mcdn.newsnetz.ch/upload/1/2/127790.png" />
+    <img style="display:none" src="https://cdn.newsnetz.ch/upload/1/2/127790.png" />
+    <img style="display:none" src="https://files.newsnetz.ch/upload/1/2/127790.png" />
+    <img style="display:none" src="https://files2.newsnetz.ch/upload/1/2/127790.png" />
+    <script src="https://files.newsnetz.ch/scripts/ghostbuster.min.js" type="text/javascript"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        if (! window.googleTagManagerStarted) {
+            // According to fabian, this code can be included multiple times per page, so we make sure at this point
+            // that we initialize gtm only once
+            window.googleTagManagerStarted = true;
+            
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j ,f);
+            })(window,document,'script','dataLayer','GTM-MZ6VL78');
+        }
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+        // Add pageview tracking for GTM
+        var storyId = "",
+        premium = "",
+        article_title = "",
+        article_type = "",
+        publish_date = "0",
+        pageType = "category",
+        category = "sonntagszeitung",
+        subcategory = "default";
+
+        if (publish_date == "0") {publish_date = "";}
+
+        var uid = undefined;
+        try {
+            uid = JSON.parse(document.querySelector("meta[name='c1_user_info']").getAttribute("content")).user_id;
+        }
+        catch(err) {
+            uid = undefined;
+        }
+
+        window.dataLayer.push({
+            "event": "pageview",
+            "pagetype": pageType,
+            "category": (category) ? category : "default",
+            "subcategory": (subcategory) ? subcategory : "default",
+            "article_id": (storyId) ? storyId : undefined,
+            "article_type": (article_type) ? article_type : undefined,
+            "uid": uid,
+            "article_title": (article_title) ? article_title : undefined,
+            "publish_date": (publish_date) ? publish_date : undefined,
+            "premium": (premium) ? premium : undefined
+        });
+
+        // Add Ghostbuster adblocker detection
+        var ray = new Ghostbuster();
+        ray.run(function(isDetected) {
+            if(isDetected) {
+                window.dataLayer.push({
+                    "event": "Adblocker",
+                    "action": "detection"
+                });
+            }
+        });
+    </script>
+
+    <!-- GOOGLE DFP TOP scripts start -->
+    <script src="//tdn.da-services.ch/current/tagesanzeiger.js"></script>
+        <script>
+            var category = "sonntagszeitung";
+            var subcategory = "default";
+            if (category == "default" || category == undefined)
+            {
+                var nav1 = window.location.pathname.split("/")[1];
+                var nav2 = window.location.pathname.split("/")[2];
+                if (nav1) { category = nav1; }   
+                if (nav2) { subcategory = nav2; }   
+            }
+            var adPath = category + "/" + subcategory;
+            
+            TATM.init("de-tagesanzeiger.ch", adPath, {}, false, 1024);
+        </script>
+        <!--
+            TATM.init("de-tagi.ch,"front/default", 1, 2, 3);
+            1. Parameter (ex. var tatmParams = {storyid: 1234567};)
+            2. Stringfied dom-node (ex. "<p>Werbung</p>") | inactive/invisible = false
+            3. Website content-width (ex. 1024)
+        -->
+        
+    <!--
+        used to change the ad path
+        old: de-tagesanzeiger.ch/front/default/overlay
+        new: de-tagesanzeiger.ch/overlay/front/default
+    -->
+    <script>
+    var ads = require("framework/ads/ads").ads;
+    ads.configure(config);
+    ads.init();
+
+    TATM.adUnitFirst = true;
+    </script>
+
+
+    <script>
+    function TATMdisplayAds() {
+        if (!TATM.loadAdsActive) {
+            TATM.displayAds();
+        }  
+    }
+    </script>
+    <!-- GOOGLE DFP TOP scripts end -->
+    <div id="ad-overlay-503391436"></div>
+			<script>
+				TATM.core.initAdUnits([{
+					adUnitName: "overlay",
+					targetContainerId: "ad-overlay-503391436"
+				}]);
+			</script>
+		
+    <!-- Socio-Demographic Targeting script start-->
+    <script>
+        tamediaBID = null;
+
+        function initTamediaBID() {
+            if (!tamediaBID) {
+                try {
+                    tamediaBID = "publishing/"+JSON.parse(document.querySelector("meta[name='c1_user_info']").getAttribute("content")).user_id;
+                }
+                catch(err) {
+                    tamediaBID = null;
+                }
+            }  
+        };
+    </script>
+    <!-- Socio-Demographic Targeting script end-->
+
+    <script>
+    window.onload = function() {
+        initTamediaBID();
+    };
+    setTimeout(function(){
+        initTamediaBID();
+    }, 1000);
+
+    setTimeout(function(){
+        TATMdisplayAds();
+    }, 5000);
+    </script>
+    
+
+<script>
+    window.redesign2014 = 1;
+</script>
+
+
+
+<link rel="stylesheet" type="text/css" href="https://files.newsnetz.ch/cdn/swiper/2/dist/idangerous.swiper.css">
+<link rel="stylesheet" type="text/css" href="https://files.newsnetz.ch/cdn/nn2/framework/0.1/styles/sprites.css?v=222">
+<link rel="stylesheet" type="text/css" href="https://files.newsnetz.ch/cdn/nn2/desktop/0.1/styles/desktop.css?v=222">
+<!-- <link rel="stylesheet" type="text/css" href="https://files.newsnetz.ch/css/exportedFromNN2/styles/desktop.css?v=222"> -->
+
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/scoreboard.css?v=1504371727" type="text/css" />
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/liveticker.css?v=1504339320" type="text/css" />
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/slideshow.css?v=1504362709" type="text/css" />
+
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/baseStyles_v5.css?v=1504358294" type="text/css" />
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/TA_styles_v5.css?v=1504352944" type="text/css" />
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/TA_fontStyles.css?v=1504362860" type="text/css" />
+<!--[if IE]>
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/base_stylesIE_v4.css?v=1504341463" type="text/css" />
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/TA_stylesIE_v4.css?v=1504332349" type="text/css" />
+<![EndIf]-->
+
+<link rel="stylesheet" media="print" href="https://files.newsnetz.ch/css/print_red.css" type="text/css" />
+<script src="https://files.newsnetz.ch/scripts/updated/ui/jquery.ui.mouse.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/updated/ui/jquery.ui.slider.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/updated/jquery.validateDE.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery.carousel.min.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch//scripts/dimension_watcher.js"></script>
+<script>DimensionWatcher.watchIframeContent();</script>
+
+
+<!-- BEGIN Krux Control Tag for "tagesanzeiger.ch" -->
+<!-- Source: /controltag?confid=KVqVXOwf&site=tagesanzeiger.ch&edit=1 -->
+<!-- END Krux Controltag -->
+<script language='javascript'>$(document).ready(function(){$('body').append('<img src="https://tda.tagesanzeiger.ch/in/newsnet/in.gif" width="1" height="1" display="none">');});</script><script src="https://w.tda.io/scripts/newsnet/dakt.min.js" async defer></script>
+</head>
+<body> 
+  
+  <div id="mainWrapper" class="category">
+		<div id="mainLeftWrapper">
+						
+			
+			<style>
+				.ad-outside-right { position: fixed; top: 28px; left: calc(50% + 512px); }
+				@media screen and (max-width: 1626px) { .ad-outside-right { left: calc(100% - 300px); } }
+				@media screen and (max-width: 1323px) { .ad-outside-right { left: 1024px; } }	
+			</style>
+			<div class="ad-outside-right" id="ad-outside-right-212066019"></div>
+			<script>
+				TATM.core.initAdUnits([{
+					adUnitName: "outside-right",
+					targetContainerId: "ad-outside-right-212066019"
+				}]);
+			</script>
+		
+								
+			<div id="mainContainer">
+					
+				
+
+				<div style="position:absolute">
+					<script language="JavaScript" type="text/javascript"> <!--
+						var WEMF2="https://newsnetz-ssl.wemfbox.ch/cgi-bin/ivw/CP/tagi-ssl/";
+                        if (navigator.userAgent.match(/iPad/gi)) {
+                            WEMF2 = "https://newsnetz-ssl.wemfbox.ch/cgi-bin/ivw/CP/tagi-ssl/mobile/tablet/web/";
+                        }
+						document.write("<img src='"+WEMF2+"sonntagszeitung/ressort?r="+escape(document.referrer)+"&d="+(Math.random()*100000)+" ' width='1' height='1' alt='' />");
+						// -->
+					</script>
+					<noscript>
+						<img src="https://newsnetz-ssl.wemfbox.ch/cgi-bin/ivw/CP/tagi-ssl/sonntagszeitung/ressort" width="1" height="1" alt="" />
+					</noscript>
+				</div>
+			
+			<div style="position:absolute">
+				<script language="JavaScript" type="text/javascript"> <!--
+					var WEMF="//tagi-ssl.wemfbox.ch/cgi-bin/ivw/CP/";
+                    if (navigator.userAgent.match(/iPad/gi)) {
+                            WEMF="//tagi-ssl.wemfbox.ch/cgi-bin/ivw/CP/mobile/tablet/web/";
+                    }
+					document.write("<img src='"+WEMF+"sonntagszeitung/ressort?r="+escape(document.referrer)+"&d="+(Math.random()*100000)+"' width='1' height='1' alt='' />");
+					// -->
+				</script>
+				<noscript>
+					<img src="//tagi-ssl.wemfbox.ch/cgi-bin/ivw/CP/sonntagszeitung/ressort" width="1" height="1" alt="" />
+				</noscript>
+				<script language="Javascript">var szmvars="tagi-ssl//CP//sonntagszeitung/ressort";</script>
+				<script language="Javascript" src="//tagi-ssl.wemfbox.ch/2004/01/survey.js"></script>
+			</div>
+		
+				<!-- GOOGLE ANALYTICS -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "//www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	if (typeof(_gat) == 'object') {
+		var pageTracker = _gat._getTracker("UA-431029-1");
+		pageTracker._setDomainName("tagesanzeiger.ch");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+		var secondTracker = _gat._getTracker("UA-431029-7");
+		secondTracker._setDomainName("none");
+		secondTracker._setAllowLinker(true);
+		secondTracker._initData();
+		secondTracker._trackPageview();
+	}
+</script>
+
+
+
+				
+
+		<script>
+            var track_wemf = function(url, callback)
+            {
+                url = (url==null) ? '' : url;
+                
+				var WEMF="//tagi-ssl.wemfbox.ch/cgi-bin/ivw/CP/";
+				track_wemf_do(WEMF+'sonntagszeitung/'+url);
+
+			 
+				var WEMF2="https://newsnetz-ssl.wemfbox.ch/cgi-bin/ivw/CP/tagi-ssl/";
+				track_wemf_do(WEMF2+'sonntagszeitung/'+url);
+            
+            }
+
+            var track_wemf_do = function(url2, callback)
+            {
+                var img = new Image();
+                if(typeof callback === "function") {
+                    $(img).load(callback);
+                }
+                img.src = url2 + "?rnd=" + parseInt(new Date().getTime() * Math.random(), 10);
+            }
+		</script>
+	
+			
+				<div id="headerWrapper" style="width: 100%">
+					
+    <section id="header">
+        <div id="topNav">
+    <ul class="paywallUserNavigation">
+        <li></li>
+    </ul>
+    
+    <ul class="productNav">
+        <li>
+            <a href="http://tagesanzeiger.homegate.ch/homegate/index?layout=&amp;agency=&amp;utm_source=nn_TA&amp;utm_medium=liim&amp;utm_term=ies&amp;utm_campaign=partn_d" target="_blank">Immo</a>
+        </li>
+        <!--<li>·</li>
+        <li>
+            <a target="_blank" href="//jobs.tagesanzeiger.ch" title="Job">Job</a>
+        </li>-->
+        <li>·</li>
+        <li>
+            <a href="http://marktplatz.tagesanzeiger.ch" target="_blank">Marktplatz</a>
+        </li>
+        <li>·</li>
+        <li>
+            <a href="http://tagesanzeiger.sich-erinnern.ch" target="_blank">Trauer</a>
+        </li>
+        <li>·</li>
+		<li>
+			<a title="Das Magazin" target="_blank" href="//www.dasmagazin.ch">Das Magazin</a>
+        </li>
+        <li>
+            <form action="//www.tagesanzeiger.ch/service/suche/suche.html?date=alle&amp;order=date" method="get">
+                <span class="icon-search"></span>
+                <input type="hidden" name="date" id="date" value="alle">
+                <input type="hidden" name="order" id="order" value="date">
+                <input class="innerBoxShadow" onfocus="searchFocus(this)" onblur="searchBlur(this)" name="key" type="text" value="Suche" title="Suche" id="headerSearch">
+                <button title="Submit Search" class="btn"></button>
+            </form>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+
+<script>
+    var paywallInterface = require("framework/paywallInterface").paywallInterface,
+        paywallEventHandler = require("framework/paywallEventHandler").paywallEventHandler,
+        paywallUserNavigation = require("framework/paywallUserNavigation/paywallUserNavigation").PaywallUserNavigation;
+
+    paywallUserNavigation.insert(
+        $("#topNav .paywallUserNavigation li")[0], {
+            "interface": paywallInterface,
+            "eventHandler": paywallEventHandler
+        }
+    );
+</script>
+        <div id="masthead" >
+            <ul>
+                
+                
+        <li id="tagiLogo" class="categoryLogo">
+            <a href="http://www.tagesanzeiger.ch" title="Tages-Anzeiger Startseite">
+                <img src="//www.tagesanzeiger.ch/images/logos/categoryLogo.png" id="mainLogo" alt="Tages-Anzeiger" style="display:inline;" />
+                <script type="text/javascript">
+                    if (/iPad|iPod|iPhone/.test(navigator.userAgent) || window.devicePixelRatio > 1){
+                        document.getElementById('mainLogo').src = "//www.tagesanzeiger.ch/images/logos/categoryLogo@2x.png";
+                    }
+                </script>
+                <noscript>
+                    <img src="//www.tagesanzeiger.ch/images/logos/categoryLogo.png" id="mainLogo" alt="Tages-Anzeiger" />
+                </noscript>
+            </a>    
+        </li>
+    
+                
+                
+                
+                
+            </ul>
+            
+                <div id='headerWeather' style="visibility:hidden; overflow:hidden; height:0; width:0; display:inline-block" >
+                    <a href="http://www.tagesanzeiger.ch/wetter/zuerich" title="stark bewölkt"><img src="https://files.newsnetz.ch//wetter/icons/160px/night/k_04.png" /><br /><span>12°/15 °</span></a>
+                </div>
+                
+        </div>
+        <div class="clear"></div>
+        
+        <div id="mainNav"><ul>
+				<li>
+					<a href="http://www.tagesanzeiger.ch/" class="">Front</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/zuerich/" class="">Zürich</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/schweiz/" class="">Schweiz</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/ausland/" class="">International</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/wirtschaft/" class="">Wirtschaft</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/stock_market/uebersicht/" class="">Börse</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/sport/" class="">Sport</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/kultur/" class="">Kultur</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/reisen/" class="">Reisen</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/wissen/" class="">Wissen</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/auto/" class="">Auto</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/blogs/" class="">Blogs</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/panorama/" class="">Panorama</a>
+				</li>
+			
+    			<li class="dropdownNavi">
+				<a href="javascript:void(0)">
+					Mehr
+					<span class="icon-down"></span>
+				</a>
+				<ul>
+					<!--[if IE 8]><div id="ie8"><![endif]-->
+					<li class="epaper"><a href="http://epaper.tagesanzeiger.ch/" target="_blank">E-Paper</a></li>
+					<li class="sonntagszeitung"><a href="http://www.tagesanzeiger.ch/sonntagszeitung/">SonntagsZeitung</a></li>
+					<li class="digital"><a href="http://www.tagesanzeiger.ch/digital/">Digital</a></li>
+					<li class="leben"><a href="http://www.tagesanzeiger.ch/leben/">Leben</a></li>
+					<li class="forum"><a href="http://www.tagesanzeiger.ch/forum/">Forum</a></li>
+					<li class="longform"><a href="http://www.tagesanzeiger.ch/longform/">Web-Spezial</a></li>
+					<li class="dasMagazin"><a href="http://epaper.dasmagazin.ch" target="_blank">Das Magazin</a></li>
+					<li class="zhTipp"><a href="http://www.tagesanzeiger.ch/zueritipp">Züritipp</a></li>
+					<li class="marktplatz"><a href="http://marktplatz.tagesanzeiger.ch">Marktplatz</a></li>
+					<li class="krankenkassen"><a href="http://www.tagesanzeiger.ch/vergleichsdienst/krankenkassen/?utm_source=tagi&utm_medium=banner&utm_campaign=kk-herbst-2016-de&utm_content=desktopmobile-navigation">Krankenkassen</a></li>
+					<li class="autoversicherung"><a href="http://www.tagesanzeiger.ch/vergleichsdienst/fahrzeugversicherung/?utm_source=tagi&utm_medium=banner&utm_campaign=av-herbst-2016-de&utm_content=desktopmobile-navigation">Autoversicherung</a></li>
+					<li class="carteBlanche"><a href="http://www.tagesanzeiger.ch/carteblanche/">Carte Blanche</a></li>
+					<li class="weiterbildung"><a href="http:http://weiterbildung.tagesanzeiger.ch/">Weiterbildung</a></li>
+					<li class="eva"><a href="http://www.tagesanzeiger.ch/bildstrecke.html?id=24883">Eva</a></li>
+					<li class="agenda"><a href="http://agenda.zueritipp.ch">Agenda</a></li>
+					<!--[if IE 8]></div><![endif]-->
+				</ul>
+			</li>
+		</ul></div> 
+			<script type="text/javascript">
+				jQuery(function() {
+
+				    jQuery("li.dropdownNavi").each(function(i){
+				      jQuery(this).hover(function(){
+				      	jQuery(this).find("ul").slice(0,1).addClass("activeDD"); 
+				      	jQuery(this).find(".icon-down").removeClass().addClass("icon-up");
+				      	},function(){
+				      		jQuery(this).find("ul").slice(0,1).removeClass("activeDD");
+				      		jQuery(this).find(".icon-up").removeClass().addClass("icon-down");
+				      	});
+				    });
+
+				    // IE6 Fix: 
+				    if(jQuery.browser.msie && (jQuery.browser.version < 7)) {
+				      jQuery("li.dropdownNavi").each(function(i){
+				        jQuery(this).find("ul").hover(function(){jQuery(this).addClass("activeDD");},function(){jQuery(this).removeClass("activeDD");});
+				      });
+				    }
+
+			  });
+			</script>     
+		
+        
+        <div id="subnavigation">
+            <ul><!--[if IE 8]><div id="ie8"><![endif]--><li  class="moreCategory" ><a href="/sonntagszeitung/">SonntagsZeitung</a><span>//</span></li>
+					  <li><a href="https://epaper.sonntagszeitung.ch" >ePaper</a></li>
+					  <li><a href="http://www.tagesanzeiger.ch/sonntagszeitung/leserangebote/" >Leserangebote</a></li>
+					  <li><a href="http://www.tagesanzeiger.ch/sonntagszeitung/leserreisen/" >Leserreisen</a></li>
+					  <li><a href="http://www.tagesanzeiger.ch/sonntagszeitung/leserbriefe/" >Leserbriefe</a></li>
+					  <li><a href="http://www.tagesanzeiger.ch/sonntagszeitung/monatsquiz/" >Monatsquiz</a></li>
+					  <li><a href="https://abo.sonntagszeitung.ch/" >Abonnieren</a></li><li class="clear"></li><!--[if IE 8]></div><![endif]--></ul>
+        </div>
+    
+    </section>
+    
+					
+				</div>
+
+				
+			<style>
+				.ad-inside-full-top { margin-left: -7px; margin-top: 12px; }	
+			</style>
+			<div class="ad-inside-full-top" id="ad-inside-full-top-5342535"></div>
+			<script>
+				TATM.core.initAdUnits([{
+					adUnitName: "inside-full-top",
+					targetContainerId: "ad-inside-full-top-5342535"
+				}]);
+			</script>
+		
+				<script>
+					TATMdisplayAds(); 
+				</script>
+			
+
+				
+			<!-- start customized html header -->
+				
+			<!-- end customized html header -->
+			
+
+				<div id="mainColLeft" class="mainColLeftSection">
+					<!-- BEGIN Storylist /sonntagszeitung/ ressort_sonntagszeitung 1 --><!-- atype=200 666-->
+            <div id='topStoryA'>
+                <div class="featureStory standard layout_2">
+                    
+                    
+                    <h3>
+                        <a href="/sonntagszeitung/100-felswaende-sind-besonders-gefaehrlich/story/26424994" >
+                            100 Felswände sind besonders gefährlich
+                        </a>
+                    </h3>
+                    <a href="/sonntagszeitung/100-felswaende-sind-besonders-gefaehrlich/story/26424994" ><img alt="" src="https://files.newsnetz.ch/story/2/6/4/26424994/16/teaserbreitgross.jpg" class="imgfloat" /></a>
+                    <p>
+                    	
+                        
+                        <span class="leadGenre leadAdditions" style="color:#009FDA">SonntagsZeitung</span>
+                        
+                        Die Gefahr von weiteren Tragödien wie in Bondo ist gross – vor allem im Wallis, in Graubünden und im Berner Oberland.
+                        <a href="/sonntagszeitung/100-felswaende-sind-besonders-gefaehrlich/story/26424994">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Dominik Balmer, Sarah Fluck . </span>
+                        <time class="time">27.08.2017</time>
+                         
+                        <div site_id="2" story_id="26424994" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <div class="clear"></div>
+                    <ul>
+                        <li><a href="/sonntagszeitung/100-felswaende-sind-besonders-gefaehrlich/story/26424994" ><span class="icon icon-video"></span>Aufräumarbeiten in Bondo</a></li><li><a href="/panorama/vermischtes/Der-Berg-kommt-wann-er-will/story/20548659"><span class="icon icon-right"></span>Der Berg kommt, wann er will</a></li>
+                    </ul>
+                </div>
+            </div>
+        <div id="stories"><!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/sonntagszeitung/in-fesseln-aus-der-schweiz-geschafft/story/10174146" ><img alt="" src="https://files.newsnetz.ch/story/1/0/1/10174146/5/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sonntagszeitung/in-fesseln-aus-der-schweiz-geschafft/story/10174146" >
+                            In Fesseln aus der Schweiz geschafft
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#009FDA">SonntagsZeitung</span>
+                        
+                        Nur im Ausnahmefall sollen Auszuschaffende auf Sonderflügen gefesselt werden. Doch die Zwangsmassnahme hat System. In 82 Prozent der Fälle setzte die Polizei Handfesseln ein.
+                        <a href="/sonntagszeitung/in-fesseln-aus-der-schweiz-geschafft/story/10174146">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Roland Gamp. </span>
+                        <time class="time">26.08.2017</time>
+                        
+                        <div site_id="2" story_id="10174146" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/schweiz/standard/Zuger-Behoerde-verstoesst-gegen-Menschenrechte/story/28285194"><span class="icon icon-right"></span>Zuger Behörde verstösst gegen Menschenrechte</a></li><li><a href="/zuerich/region/Notfalls-werden-Medikamente-eingesetzt/story/16267213"><span class="icon icon-right"></span>Notfalls werden Medikamente eingesetzt</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        
+						<div class="channelWertend">
+							<!-- BEGIN Storylist 247812525 3 /sonntagszeitung/ ressort_3_247812525_2 --><!-- END Storylist /sonntagszeitung/ -->
+						</div>
+					<!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="https://sonntagszeitung.chSo-ernst-dass-es-Spass-macht/story/22348659" ><img alt="" src="https://files.newsnetz.ch/story/2/2/3/22348659/9/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="https://sonntagszeitung.chSo-ernst-dass-es-Spass-macht/story/22348659" >
+                            So ernst, dass es Spass macht
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#009FDA">SonntagsZeitung</span>
+                        
+                        Der Schauspieler Kaspar Weiss mimt den pflichtbewussten Sportartikel-Experten in den TV-Spots und trifft damit einen Nerv.
+                        <a href="https://sonntagszeitung.chSo-ernst-dass-es-Spass-macht/story/22348659">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Denise Jeitziner. </span>
+                        <time class="time">26.08.2017</time>
+                        
+                        <div site_id="2" story_id="22348659" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/kultur/Schauspielerei-will-gelernt-sein/story/18219809"><span class="icon icon-right"></span>Schauspielerei will gelernt sein</a></li><li><a href="/zuerich/region/Ich-mag-OBikes/story/10109836"><span class="icon icon-right"></span>Ich mag O-Bikes</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/sonntagszeitung/elvetinochef-verdaechtige-geldfluesse/story/13830711" ><img alt="" src="https://files.newsnetz.ch/story/1/3/8/13830711/6/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sonntagszeitung/elvetinochef-verdaechtige-geldfluesse/story/13830711" >
+                            Elvetino-Chef: Verdächtige Geldflüsse
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#009FDA">SonntagsZeitung</span>
+                        
+                        Die SBB werfen Wolfgang Winter auffällig hohe Honorarausgaben für Berater und happige Kreditkartenabrechnungen vor.
+                        <a href="/sonntagszeitung/elvetinochef-verdaechtige-geldfluesse/story/13830711">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Karin Kofler. </span>
+                        <time class="time">27.08.2017</time>
+                        
+                        <div site_id="2" story_id="13830711" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/wirtschaft/Breiteres-Angebot-als-bei-der-Minibar/story/23026199"><span class="icon icon-right"></span>«Breiteres Angebot als bei der Minibar»</a></li><li><a href="/wirtschaft/unternehmen-und-konjunktur/Klage-gegen-SBB-wegen-Abschaffung-der-Minibar/story/26378600"><span class="icon icon-right"></span>Klage gegen SBB wegen Abschaffung der Minibar</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/sonntagszeitung/kein-stich-gegen-den-krebs/story/29243150" ><img alt="" src="https://files.newsnetz.ch/story/2/9/2/29243150/3/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sonntagszeitung/kein-stich-gegen-den-krebs/story/29243150" >
+                            Kein Stich gegen den Krebs
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#009FDA">SonntagsZeitung</span>
+                        
+                        Wer sich bei einer Tumorerkrankung ­
+nur ­alternativ behandeln lässt, 
+stirbt eher als nach 
+einer konventionellen Therapie.
+                        <a href="/sonntagszeitung/kein-stich-gegen-den-krebs/story/29243150">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Nik Walter. </span>
+                        <time class="time">25.08.2017</time>
+                        
+                        <div site_id="2" story_id="29243150" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/wirtschaft/karriere/Vom-PC-aus-den-Krebs-bekaempfen/story/18720880"><span class="icon icon-right"></span>Vom PC aus den Krebs bekämpfen</a></li><li><a href="/zeitungen/Das-beste-Mittel-gegen-Krebs/story/31832320"><span class="icon icon-right"></span>Das beste Mittel gegen Krebs</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory valued">
+                
+                
+                <a href="/sonntagszeitung/alle-druecken-sich-vor-harten-massnahmen/story/29434754" ><img alt="" src="https://files.newsnetz.ch/story/2/9/4/29434754/11/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sonntagszeitung/alle-druecken-sich-vor-harten-massnahmen/story/29434754" >
+                            Alle drücken sich vor harten Massnahmen
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#000000">Kommentar</span>
+                        
+                        Immer mehr Katastrophen, doch die Verringerung des CO?-Austosses kommt kaum voran.
+                        <a href="/sonntagszeitung/alle-druecken-sich-vor-harten-massnahmen/story/29434754">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author">Ein Kommentar von <a href="/stichwort/autor/arthur-rutishauser/s.html">Arthur Rutishauser</a> </span>
+                        <time class="time">27.08.2017</time>
+                        
+                        <div site_id="2" story_id="29434754" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        
+			<style>
+				.ad-inside-half { margin-top: 12px; margin-bottom: 12px; }	
+			</style>
+			<div class="ad-inside-half" id="ad-inside-half-461139185"></div>
+			<script>
+				TATM.core.initAdUnits([{
+					adUnitName: "inside-half",
+					targetContainerId: "ad-inside-half-461139185"
+				}]);
+			</script>
+		<!-- atype=230 666-->
+            <div class="featureStory valued">
+                
+                
+                <a href="/sonntagszeitung/die-bessere-rentenreform/story/20252727" ><img alt="" src="https://files.newsnetz.ch/story/2/0/2/20252727/11/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sonntagszeitung/die-bessere-rentenreform/story/20252727" >
+                            Die bessere Rentenreform
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#000000">Kolumne</span>
+                        
+                        Ein Reformvorschlag, der den Alten wirksame Anreize gibt, freiwillig länger zu arbeiten.
+                        <a href="/sonntagszeitung/die-bessere-rentenreform/story/20252727">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Reiner Eichenberger. </span>
+                        <time class="time">26.08.2017</time>
+                        
+                        <div site_id="2" story_id="20252727" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/wirtschaft/geld/Rentenreform-2020-Wer-von-hoeherer-AHV-profitiert/story/28296049"><span class="icon icon-right"></span>Rentenreform 2020: Wer von höherer AHV profitiert</a></li><li><a href="/schweiz/standard/Rentenreform-Befuerworter-legen-zu/story/11917439"><span class="icon icon-right"></span>Rentenreform: Befürworter legen zu</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory valued">
+                
+                
+                <a href="/sonntagszeitung/das-ende-des-augusts/story/12761488" ><img alt="" src="https://files.newsnetz.ch/story/1/2/7/12761488/7/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sonntagszeitung/das-ende-des-augusts/story/12761488" >
+                            Das Ende des Augusts
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#000000">Kolumne</span>
+                        
+                        Der Sommer: Zeit des Lesens. Eine Kolumne von Milo Rau.
+                        <a href="/sonntagszeitung/das-ende-des-augusts/story/12761488">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Milo Rau. </span>
+                        <time class="time">26.08.2017</time>
+                        
+                        <div site_id="2" story_id="12761488" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory valued">
+                
+                
+                <a href="/sonntagszeitung/subsaharische-neonazis/story/28967881" ><img alt="" src="https://files.newsnetz.ch/story/2/8/9/28967881/13/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sonntagszeitung/subsaharische-neonazis/story/28967881" >
+                            Wenn Neonazis lieber weisser wären
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#000000">Kolumne</span>
+                        
+                        Auch amerikanische Rassisten stammen aus Afrika. Eine Kolumne von Andreas Kunz.
+                        <a href="/sonntagszeitung/subsaharische-neonazis/story/28967881">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Andreas Kunz. </span>
+                        <time class="time">21.08.2017</time>
+                        
+                        <div site_id="2" story_id="28967881" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/ausland/amerika/Muslime-willkommen-Rassisten-raus/story/26964490"><span class="icon icon-right"></span>«Muslime willkommen, Rassisten raus»</a></li><li><a href="/digital/Im-Kampf-gegen-Nazis-zeigt-sich-die-Macht-des-Silicon-Valley/story/15477719"><span class="icon icon-right"></span>Im Kampf gegen Nazis zeigt sich die Macht des Silicon Valley</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/sonntagszeitung/massentourismus-ueberfordert-schweizer-ferienorte/story/14331966" ><img alt="" src="https://files.newsnetz.ch/story/1/4/3/14331966/19/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sonntagszeitung/massentourismus-ueberfordert-schweizer-ferienorte/story/14331966" >
+                            Massentourismus überfordert Schweizer Ferienorte 
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#009FDA">SonntagsZeitung</span>
+                        
+                        In Luzern nerven sich Einheimische über verstopfte Strassen. In Zug überfallen Gruppen die Badi, um «Ur-Schweizer» zu sehen, in Interlaken kommt es zu gefährlichen Situationen auf Bahnübergängen.
+                        <a href="/sonntagszeitung/massentourismus-ueberfordert-schweizer-ferienorte/story/14331966">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Cornelia Krause und Sarah Fluck. </span>
+                        <time class="time">20.08.2017</time>
+                        
+                        <div site_id="2" story_id="14331966" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li> <a href="javascript:showSlideshow(270425, { fullscreenOnly: true, ads: true }); void(0);"><span class="icon icon-slide"></span>Massentourismus</a></li><li><a href="/ausland/standard/Geh-heim-Tourist/story/29169084"><span class="icon icon-right"></span>Geh heim, Tourist</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_107">
+                
+                
+                <a href="/sonntagszeitung/das-denkt-ihr-chef/story/20035250" ><img alt="" src="https://files.newsnetz.ch/story/2/0/0/20035250/8/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sonntagszeitung/das-denkt-ihr-chef/story/20035250" >
+                            Das denkt Ihr Chef
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#009FDA">SonntagsZeitung</span>
+                        
+                        Über wenig wird so gerne und häufig geschimpft wie über Vorgesetzte. Hier reden für einmal vier von ihnen – zwei Frauen und zwei Männer – darüber, wie sie ihre Mitarbeitenden sehen.
+                        <a href="/sonntagszeitung/das-denkt-ihr-chef/story/20035250">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Bettina Weber. </span>
+                        <time class="time">19.08.2017</time>
+                        
+                        <div site_id="2" story_id="20035250" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/sonntagszeitung/fussballwm-und-olympische-spiele-muessen-menschenrechte-einhalten/story/10926743" ><img alt="" src="https://files.newsnetz.ch/story/1/0/9/10926743/9/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sonntagszeitung/fussballwm-und-olympische-spiele-muessen-menschenrechte-einhalten/story/10926743" >
+                            Neue Bedingungen für Fussball-WM und Olympia-Gastgeber
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#009FDA">SonntagsZeitung</span>
+                        
+                        Fifa und Olympisches Komitee reagieren auf Kritik: Austragungsländer müssen nun Menschenrechte einhalten.
+                        <a href="/sonntagszeitung/fussballwm-und-olympische-spiele-muessen-menschenrechte-einhalten/story/10926743">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Peter Burkhardt. </span>
+                        <time class="time">20.08.2017</time>
+                        
+                        <div site_id="2" story_id="10926743" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/schweiz/standard/WM-in-Katar-Fifa-vor-Zuercher-Gericht-eingeklagt/story/23493904"><span class="icon icon-right"></span>WM in Katar: Fifa vor Zürcher Gericht eingeklagt</a></li><li><a href="/sport/fussball/Katar-wird-sich-fuer-die-FussballWM-wehren/story/20891131"><span class="icon icon-right"></span>«Katar wird sich für die Fussball-WM wehren»</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/sonntagszeitung/symbole-gegen-den-terror/story/18051676" ><img alt="" src="https://files.newsnetz.ch/story/1/8/0/18051676/12/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sonntagszeitung/symbole-gegen-den-terror/story/18051676" >
+                            Symbole gegen den Terror
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#009FDA">SonntagsZeitung</span>
+                        
+                        Der Bund will die Bevölkerung mit Piktogrammen über das korrekte Verhalten bei einem Anschlag informieren.
+                        <a href="/sonntagszeitung/symbole-gegen-den-terror/story/18051676">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Roland Gamp. </span>
+                        <time class="time">20.08.2017</time>
+                        
+                        <div site_id="2" story_id="18051676" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/ausland/europa/Wer-sagt-eigentlich-dass-es-keinen-Schutz-gegen-Terror-geben-kann-/story/21340164"><span class="icon icon-right"></span>Wer sagt eigentlich, dass es keinen Schutz gegen Terror geben kann? </a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="https://sonntagszeitung.chWie-die-Jungfrau-ihre-Unschuld-zurueckbekam/story/30514208" ><img alt="" src="https://files.newsnetz.ch/story/3/0/5/30514208/10/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="https://sonntagszeitung.chWie-die-Jungfrau-ihre-Unschuld-zurueckbekam/story/30514208" >
+                            Wie die Jungfrau ihre Unschuld zurückbekam
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#009FDA">SonntagsZeitung</span>
+                        
+                        Als Mahnmal für einen nachhaltigen Umgang mit den Naturschätzen standen auf ihrem Gipfel sechs 
+Holzskulpturen. Jetzt wurden sie wieder ins Tal geholt.
+                        <a href="https://sonntagszeitung.chWie-die-Jungfrau-ihre-Unschuld-zurueckbekam/story/30514208">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Nadja Pastega. </span>
+                        <time class="time">19.08.2017</time>
+                        
+                        <div site_id="2" story_id="30514208" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/news/standard/Auf-dem-Gletscher-werden-Menschen-still/story/24111783"><span class="icon icon-right"></span>«Auf dem Gletscher werden Menschen still»</a></li><li><a href="/wissen/natur/Die-Schneegrenze-ist-um-300-Meter-gestiegen/story/16842237"><span class="icon icon-right"></span>«Die Schneegrenze ist um 300 Meter gestiegen»</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="https://sonntagszeitung.chDie-Guten-Dienste-der-Schweiz-sollen-besser-werden/story/23448199" ><img alt="" src="https://files.newsnetz.ch/story/2/3/4/23448199/11/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="https://sonntagszeitung.chDie-Guten-Dienste-der-Schweiz-sollen-besser-werden/story/23448199" >
+                            Die Guten Dienste der Schweiz sollen besser werden
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#009FDA">SonntagsZeitung</span>
+                        
+                        Ein unabhängiger Prüfbericht kritisiert die enge Zusammenarbeit der Schweiz mit dem Internationalen Komitee vom Roten Kreuz.
+                        <a href="https://sonntagszeitung.chDie-Guten-Dienste-der-Schweiz-sollen-besser-werden/story/23448199">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Martin Stoll. </span>
+                        <time class="time">19.08.2017</time>
+                        
+                        <div site_id="2" story_id="23448199" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/ausland/standard/Das-gegenseitige-Vertrauen-fehlt/story/20505544"><span class="icon icon-right"></span>«Das gegenseitige Vertrauen fehlt»</a></li><li><a href="/schweiz/IKRKMitarbeiter-leben-so-gefaehrlich-wie-lange-nicht-mehr/story/29435356"><span class="icon icon-right"></span>IKRK-Mitarbeiter leben so gefährlich wie lange nicht mehr</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/sonntagszeitung/die-fifa-wird-an-ihren-versprechen-gemessen-werden/story/12223101" ><img alt="" src="https://files.newsnetz.ch/story/1/2/2/12223101/6/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sonntagszeitung/die-fifa-wird-an-ihren-versprechen-gemessen-werden/story/12223101" >
+                            Die Fifa wird an ihren Versprechen gemessen werden
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#000000">Kommentar</span>
+                        
+                        Die Fifa, die Uefa und das Internationalen Olympische Komitee verpflichten sich, die Menschenrechte bei Grossanlässen durchzusetzen.
+                        <a href="/sonntagszeitung/die-fifa-wird-an-ihren-versprechen-gemessen-werden/story/12223101">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Peter Burkhardt. </span>
+                        <time class="time">20.08.2017</time>
+                        
+                        <div site_id="2" story_id="12223101" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/sport/tennis/ein-lohn-der-hartnaeckigkeit/story/11254135" ><img alt="" src="https://files.newsnetz.ch/story/1/1/2/11254135/6/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sport/tennis/ein-lohn-der-hartnaeckigkeit/story/11254135" >
+                            Lohn der Hartnäckigkeit
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#009FDA">SonntagsZeitung</span>
+                        
+                        Ein spanischer Tennisexperte schreibt, was Rafael Nadals Rückkehr auf Rang 1 in seiner Heimat bedeutet.
+                        <a href="/sport/tennis/ein-lohn-der-hartnaeckigkeit/story/11254135">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author">Von Miguel Luengo </span>
+                        <time class="time">20.08.2017</time>
+                        
+                        <div site_id="2" story_id="11254135" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/sport/weitere/der-shootingstar-und-sein-schrecklicher-unfall/story/28314717" ><img alt="" src="https://files.newsnetz.ch/story/2/8/3/28314717/8/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sport/weitere/der-shootingstar-und-sein-schrecklicher-unfall/story/28314717" >
+                            Der Shootingstar und sein schrecklicher Unfall
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#009FDA">SonntagsZeitung</span>
+                        
+                        Schwinger Armon Orlik will zurück an die Spitze. Dabei steht ihm vor allem einer im Weg: Er selbst.
+                        <a href="/sport/weitere/der-shootingstar-und-sein-schrecklicher-unfall/story/28314717">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author">Von Calvin Stettler </span>
+                        <time class="time">20.08.2017</time>
+                        
+                        <div site_id="2" story_id="28314717" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/sport/standard/Die-jungen-Wilden/story/18404620"><span class="icon icon-right"></span>Die jungen Wilden</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/sonntagszeitung/frieden-geht-durch-den-magen/story/24534524" ><img alt="" src="https://files.newsnetz.ch/story/2/4/5/24534524/20/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/sonntagszeitung/frieden-geht-durch-den-magen/story/24534524" >
+                            Frieden geht durch den Magen
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Der Schweizer Koch David Höner ist ins Amazonasbecken Ecuadors ausgezogen, um die Indios auf den Tourismus vorzubereiten.
+                        <a href="/sonntagszeitung/frieden-geht-durch-den-magen/story/24534524">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Samuel Schläfli. </span>
+                        <time class="time">13.08.2017</time>
+                        
+                        <div site_id="2" story_id="24534524" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/wissen/natur/Forscher-entdecken-erneut-unbekanntes-IndioVolk-/story/21978021"><span class="icon icon-right"></span>Forscher entdecken erneut unbekanntes Indio-Volk </a></li><li><a href="/wissen/Video-zeigt-ersten-Kontakt-mit-Ureinwohnern/story/21307668"><span class="icon icon-right"></span>Video zeigt ersten Kontakt mit Ureinwohnern</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        </div><!-- END Storylist /sonntagszeitung/ -->
+					<!-- BEGIN PrimeSection /sonntagszeitung/ -->
+					<div class="bottomLinks">
+						<div class="slideshows">
+							<h4 class="contextBoxTitle"><a href="/bildstrecke.html">Bildstrecken</a></h4>
+							<!-- atype=215 666-->
+            <div class="story standard layout_92 relatedThemaMedia teaserEditorialContent">
+                
+                <a href="javascript:showSlideshow(271551, { fullscreenOnly: true, ads: true }); void(0);" ><img alt="" src="https://files.newsnetz.ch/story/1/7/9/17909594/1/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <p>
+                    <a href="javascript:showSlideshow(271551, { fullscreenOnly: true, ads: true }); void(0);">
+                        
+                        <span class="keyword">Der trockenste Ort der Erde blüht</span>
+                        Nach überraschenden Regenfällen sprießen in der chilenischen Atacama-Wüste massenhaft Blumen, ein äußerst seltenes Schauspiel. Die Bilder.
+                    </a>
+                </p>
+                <div class="clear"></div>
+            </div>
+        <!-- atype=215 666-->
+            <div class="story standard layout_92 relatedThemaMedia teaserEditorialContent">
+                
+                <a href="javascript:showSlideshow(271475, { fullscreenOnly: true, ads: true }); void(0);" ><img alt="" src="https://files.newsnetz.ch/story/2/8/8/28853029/3/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <p>
+                    <a href="javascript:showSlideshow(271475, { fullscreenOnly: true, ads: true }); void(0);">
+                        
+                        <span class="keyword">Dienstälteste Boeing 747 geht in Rente</span>
+                        Fast 48 Jahre lang flog diese Boeing 747-100 durch die Luft. Zuerst gehörte sie Pan Am, dann General Electric. Nun wird sie in den Ruhestand geschickt.
+
+
+                    </a>
+                </p>
+                <div class="clear"></div>
+            </div>
+        
+							
+						</div>
+						<div class="videos">
+						
+							<h4 class="contextBoxTitle"><a href="/video/">Video</a></h4>
+							<!-- atype=215 666-->
+            <div class="story standard layout_91 relatedThemaMedia teaserEditorialContent">
+                
+                <a href="/video/?video_id=302401" ><img alt="" src="https://files.newsnetz.ch/story/2/9/8/29880566/2/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <p>
+                    <a href="/video/?video_id=302401">
+                        <span class='icon-video'></span>
+                        <span class="keyword">Spassgefährt rettet Harvey-Opfer</span>
+                        Der 3,3 Meter hohe Truck bewältigt die überfluteten Strassen im texanischen Port Arthur mühelos.
+                    </a>
+                </p>
+                <div class="clear"></div>
+            </div>
+        <!-- atype=215 666-->
+            <div class="story standard layout_91 relatedThemaMedia teaserEditorialContent">
+                
+                <a href="/video/?video_id=301889" ><img alt="" src="https://files.newsnetz.ch/story/2/2/1/22163274/7/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <p>
+                    <a href="/video/?video_id=301889">
+                        <span class='icon-video'></span>
+                        <span class="keyword">Schneider-Ammann anscheinend amtsmüde</span>
+                        Oder hat er nur scheinbar genug? Martin Ebel klärt auf.
+                    </a>
+                </p>
+                <div class="clear"></div>
+            </div>
+        
+						
+						</div>
+						<p class="clear"></p>
+					</div>
+					<!-- END PrimeSection /sonntagszeitung/ -->
+					
+				</div>
+				
+				<!--  boxnews kommt neu aus sideline, iicounter auf 2 setzen -->
+				<div id="mainColRight">
+					<!-- Sidelinecachename mainColRight: sideline1_sonntagszeitung -->
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 91279 --><a href="http://epaper.sonntagszeitung.ch/" target='_blank' title=""><img src="https://files.newsnetz.ch/teaser/1/3/teaser91279_element131795.jpg?time=1504381073" alt="" /></a>  <p><a href="http://epaper.sonntagszeitung.ch/" target='_blank'><span class="iconLink"></span><span class="keyword">SonntagsZeitung</span> SBB vs. BLS: Kanton Bern spricht von «Erpressung» +++ Bundesrat beschönigt Notlage der Reedereien.</a></p>
+				<p class="clear"></p>
+			</div>
+
+			<style>
+				.ad-inside-quarter-pos1 { margin-bottom: 36px; }	
+				#mainColRight #colRightAd { margin: 0; }
+			</style>
+			<div class="ad-inside-quarter-pos1" id="ad-inside-quarter-pos1-960645607"></div>
+			<script>
+				TATM.core.initAdUnits([{
+					adUnitName: "inside-quarter-pos1",
+					targetContainerId: "ad-inside-quarter-pos1-960645607"
+				}]);
+			</script>
+		
+	<!--<a href="#"><img src="/images/demo/button-post2.png" alt="" /></a>-->
+
+
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 99862 --><p class="publiTitle">Abo</p><div class="publiBox"><h5 class="1"><a href="https://abo.sonntagszeitung.ch/?utm_source=Sonntags-Zeitung&utm_campaign=Promoboxen_SZ&utm_medium=Promoboxen&utm_content=Digitalabo1" title="SonntagsZeit. Im Digital-Abo. ">SonntagsZeit. Im Digital-Abo. <!-- SZDA1 --></a></h5><a href="https://abo.sonntagszeitung.ch/?utm_source=Sonntags-Zeitung&utm_campaign=Promoboxen_SZ&utm_medium=Promoboxen&utm_content=Digitalabo1"  title=""><img src="https://files.newsnetz.ch/teaser/1/4/teaser99862_element142418.jpg?time=1504381073" alt="" /></a> <p class="publireportageAdText">Die <b>SonntagsZeitung</b> digital ohne Einschränkung nutzen.
+Für <b>nur CHF 10.-</b> pro Monat. </br> <b> Jetzt abonnieren! </b></p><a href="https://abo.sonntagszeitung.ch/?utm_source=Sonntags-Zeitung&utm_campaign=Promoboxen_SZ&utm_medium=Promoboxen&utm_content=Digitalabo1"  title=""></a></div>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 74055 -->
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 59709 --><p class="publiTitle">Service</p><div class="publiBox"><h5 class="1"><a href="http://www.tagesanzeiger.ch/carteblanche/ " title="Ihre Spasskarte">Ihre Spasskarte</a></h5><a href="http://www.tagesanzeiger.ch/carteblanche/ "  title=""><img src="https://files.newsnetz.ch/teaser/8/8/teaser59709_element88305.jpg?time=1504381073" alt="" /></a> <p class="publireportageAdText">Mit Ihrer Carte Blanche von diversen Vergünstigungen profitieren.</p><a href="http://www.tagesanzeiger.ch/carteblanche/ "  title=""></a></div>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 73703 -->
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 38688 -->
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 59603 --><p class="publiTitle">Service</p><div class="publiBox"><h5 class="1"><a href="http://marktplatz.tagesanzeiger.ch/?utm_source=tagesanzeiger&utm_medium=teaser&utm_term=fueller&utm_content=eintrag_erstellen&utm_campaign=b2b" title="Für Selbstständige und KMU">Für Selbstständige und KMU</a></h5><a href="http://marktplatz.tagesanzeiger.ch/?utm_source=tagesanzeiger&utm_medium=teaser&utm_term=fueller&utm_content=eintrag_erstellen&utm_campaign=b2b"  title=""><img src="https://files.newsnetz.ch/teaser/8/8/teaser59603_element88129.jpg?time=1504381073" alt="" /></a> <p class="publireportageAdText">Tragen Sie Ihre Firma im neuen Marktplatz des Tages-Anzeigers ein. <img src="//ad.dc2.adtech.de/adserv/3.0/1084/5778973/0/16/ADTECH;loc=300;grp=[group]" border="0" width="1" height="1" style="display: none;"></p><a href="http://marktplatz.tagesanzeiger.ch/?utm_source=tagesanzeiger&utm_medium=teaser&utm_term=fueller&utm_content=eintrag_erstellen&utm_campaign=b2b"  title=""></a></div>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 74051 -->
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 92789 --><h5 class="1"><!--PPN Premium Banner Tagi--></h5><iframe id="rectangle_tagi" width="308px" height="268px" srolling="no" frameborder="0" style="overflow:hidden"></iframe>
+<script>
+      var ifrm = document.getElementById("rectangle_tagi");
+      ifrm = ifrm.contentWindow || ifrm.contentDocument.document || ifrm.contentDocument;
+      ifrm.document.open();
+      ifrm.document.write('<script src="https://s3-eu-west-1.amazonaws.com/media.das.tamedia.ch/anprebid/build/ppn_sb_rectangle3_DE_tagesanzeiger/index.js#tagid=10477107" async><\/script>');
+      ifrm.document.close();
+  </script>
+
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 70860 --><h5 class="1"><!-- Marktplatz Sonderangebot ROS --></h5><p class="adsTitle">TA Marktplatz</p><iframe width="300px" height="300px" frameborder="0" scrolling="no" src="//marktplatz.tagesanzeiger.ch/sl/teaser/cached/front/ads"></iframe>
+				<p class="clear"></p>
+			</div>
+				</div>
+			
+				<br class="clear"/>
+			  
+				
+				<div class="clear"></div>
+<hr>
+<div id="footer">
+	<ul id="bottomNav">
+		<li>
+			<a title="Front" href="//www.tagesanzeiger.ch/">Front</a>
+		</li>
+		<li>
+			<a title="Zürich" href="//www.tagesanzeiger.ch/zuerich/">Zürich</a>
+		</li>
+		<li>
+			<a title="Schweiz" href="//www.tagesanzeiger.ch/schweiz/">Schweiz</a>
+		</li>
+		<li>
+			<a title="International" href="//www.tagesanzeiger.ch/ausland/">International</a>
+		</li>
+		<li>
+			<a title="Wirtschaft" href="//www.tagesanzeiger.ch/wirtschaft/">Wirtschaft</a>
+		</li>
+		<li>
+			<a title="Börse" href="//www.tagesanzeiger.ch/boerse/">Börse</a>
+		</li>
+		<li>
+			<a title="Sport" href="//www.tagesanzeiger.ch/sport/">Sport</a>
+		</li>
+		<li>
+			<a title="Kultur" href="//www.tagesanzeiger.ch/kultur/">Kultur</a>
+		</li>
+		<li>
+			<a title="Reisen" href="//www.tagesanzeiger.ch/reisen/">Reisen</a>
+		</li>
+		<li>
+			<a title="Wissen" href="//www.tagesanzeiger.ch/wissen/">Wissen</a>
+		</li>
+		<li>
+			<a title="Auto" href="//www.tagesanzeiger.ch/auto/">Auto</a>
+		</li>
+		<li>
+			<a title="Blogs" href="//www.tagesanzeiger.ch/blogs/">Blogs</a>
+		</li>
+		<li>
+			<a title="Panorama" href="//www.tagesanzeiger.ch/panorama/">Panorama</a>
+		</li>
+		<li>
+			<a title="Züritipp" href="//www.tagesanzeiger.ch/zueritipp/" target="_blank">Züritipp</a>
+		</li>
+		<li>
+			<a title="Das Magazin" href="//epaper.dasmagazin.ch/" target="_blank">Das Magazin</a>
+		</li>
+		<li>			
+			<!-- change css to use class instead of id cause the searchbar is now in the footer and the header -->
+			<form action="//www.tagesanzeiger.ch/service/suche/suche.html?date=alle&amp;order=date" method="get">
+				<span class="icon-search"></span>
+				<input type="hidden" name="date" id="date" value="alle">
+				<input type="hidden" name="order" id="order" value="date">
+				<input class="innerBoxShadow" onfocus="searchFocus(this)" onblur="searchBlur(this)" name="key" type="text" value="Suche" title="Suche" id="headerSearch">
+				<button title="Submit Search" class="btn"></button>
+			</form>
+		</li>
+	</ul>
+	
+	<div class="clear"></div>
+
+</div>
+
+<div id="footerLinks">
+
+	<div class="partnerNav">
+		<ul>
+			<li>Multimedia</li>
+			<li><a title="Dossiers" href="//www.tagesanzeiger.ch/dossiers/">Dossiers</a></li>
+			<li><a title="Bildstrecken" href="//www.tagesanzeiger.ch/bildstrecke.html">Bildstrecken</a></li>
+			<li><a title="Videos" href="//www.tagesanzeiger.ch/video/">Videos</a></li>
+			<li><a title="ePaper TA" href="//epaper.tagesanzeiger.ch/" target="_blank">ePaper TA</a></li>
+			<li><a title="ePaper SoZ" target="_new" href="//epaper.sonntagszeitung.ch">ePaper SoZ</a></li>
+		</ul>
+	</div>
+
+	<div class="partnerNav">
+		<ul>
+			<li>Services</li>
+			<li><a title="Zeitungsarchiv" href="//www.tagesanzeiger.ch/service/archiv/">Zeitungsarchiv</a></li>
+			<li><a title="RSS" href="//www.tagesanzeiger.ch/dienste/RSS/story/21856776">RSS</a></li>
+			<li><a title="Carte Blanche Newsletter" href="//www.tagesanzeiger.ch/11046178">Newsletter</a></li> 
+			<li><a title="Newsletter" href="//www.tagesanzeiger.ch/service/unsere-dienste/Newsletter/story/18785374">Carte Blanche Newsletter</a></li>
+			<li><a title="Wetter" href="//www.tagesanzeiger.ch/wetter/">Wetter</a></li>
+			<li><a title="Kreuzworträtsel" href="//www.tagesanzeiger.ch/kreuzwortraetsel/">Kreuzworträtsel</a></li>
+			<li><a title="Dienste und Apps" href="//www.tagesanzeiger.ch/service/unsere-dienste/">Dienste und Apps</a></li>
+		</ul>
+	</div>
+	
+	<div class="partnerNav">
+		<ul>
+			<li>Redaktion</li>
+			<li><a title="Publizistische Leitlinien" href="//www.tagesanzeiger.ch/schweiz/standard/Publizistische-Leitlinien-des-TagesAnzeigers/story/31591536">Publizistische Leitlinien</a></li>
+			<li><a title="Impressum" href="//www.tagesanzeiger.ch/ueberuns/impressum/Impressum/story/28680087">Impressum</a></li>
+			<li><a target="_new" title="AGB & Datenschutz" href="https://abo.tagesanzeiger.ch/tamstorefront/terms/register">AGB & Datenschutz</a></li>
+			<li><a title="Leserbriefe" href="//www.tagesanzeiger.ch/service/unsere-dienste/Leserbrief-fuer-den-TagesAnzeiger/story/28343522">Leserbriefe</a></li>
+			<li><a title="Kontakt" href="//www.tagesanzeiger.ch/ueberuns/Kontakt/story/24620705">Kontakt</a></li>
+		</ul>
+	</div>
+
+	<div class="partnerNav">
+		<ul>
+			<li>Dienste</li>
+			<li><a title="Immobilien" href="//www.tagesanzeiger.ch/marktplatz/immobilien/">Immobilien</a></li>
+			<li><a title="Weiterbildung" href="//www.tagesanzeiger.ch/weiterbildung/">Weiterbildung</a></li>
+			<li><a title="Vergleichsdienste" href="//www.tagesanzeiger.ch/vergleichsdienst/">Vergleichsdienste</a></li>
+		</ul>
+	</div>
+	
+	<div class="partnerNav">
+		<ul>
+			<li>Abonnement</li>
+			<li><a title="Alle Abonnement" href="https://abo.tagesanzeiger.ch">Alle Aboangebote</a></li>
+			<li><a title="Ferienumleitung" href="https://abo.tagesanzeiger.ch/tamstorefront/my-account">Ferienumleitung</a></li>
+			<li><a title="Ferienunterbruch" href="https://abo.tagesanzeiger.ch/tamstorefront/my-account">Ferienunterbruch</a></li>
+			<li><a title="Carte Blanche" href="//www.tagesanzeiger.ch/carteblanche/">Carte Blanche</a></li>
+			<li><a title="FAQ" href="https://abo.tagesanzeiger.ch/#faq">Häufig gestellte Fragen</a></li>
+		</ul>
+	</div>
+
+	<div class="partnerNav">
+		<ul>
+			<li>Anzeigen</li>
+			<li><a title="Privatanzeigen" href="//www.adbox.ch/" target="_blank">Privatanzeigen</a></li>
+			<li><a title="Tages-Anzeiger" href="//media.tamedia.ch/de/marken/details/tages-anzeiger" target="_blank">Tages-Anzeiger</a></li>
+			<li><a title="tagesanzeiger.ch" href="//media.tamedia.ch/de/marken/details/tages-anzeiger" target="_blank">tagesanzeiger.ch</a></li>
+			<li><a title="Newsnet" href="//media.tamedia.ch/de/marken/details/newsnet" target="_blank">Newsnet</a></li>
+		</ul>
+	</div>
+
+	<div class="clear"></div>
+
+</div>				
+			
+			</div>
+
+		</div>
+
+  	 
+  	
+ </div>
+<!-- GOOGLE ANALYTICS -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "//www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	if (typeof(_gat) == 'object') {
+		var pageTracker = _gat._getTracker("UA-431029-1");
+		pageTracker._setDomainName("tagesanzeiger.ch");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+		var secondTracker = _gat._getTracker("UA-431029-7");
+		secondTracker._setDomainName("none");
+		secondTracker._setAllowLinker(true);
+		secondTracker._initData();
+		secondTracker._trackPageview();
+	}
+</script>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+var _analytics_scr = document.createElement('script');
+_analytics_scr.type = 'text/javascript'; _analytics_scr.async = true; _analytics_scr.src = '/_Incapsula_Resource?SWJIYLWA=2977d8d74f63d7f8fedbea018b7a1d05&ns=1&cb=45908067';
+var _analytics_elem = document.getElementsByTagName('script')[0]; _analytics_elem.parentNode.insertBefore(_analytics_scr, _analytics_elem);
+})();
+// ]]>
+</script></body>
+</html>

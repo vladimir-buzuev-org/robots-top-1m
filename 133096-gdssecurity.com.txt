@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>Gotham Digital Science</title>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="google-site-verification" content="JxPJSLte657MH7uG1GeeM04r7mZxJyJiLotM61y_DaU" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://feeds.feedburner.com/GdsSecurityBlog"/>
+<link rel="alternate" type="text/xml" title="RSS .92" href="https://feeds.feedburner.com/GdsSecurityBlog"/>
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="https://feeds.feedburner.com/GdsSecurityBlog"/>
+
+<script src="/scripts/scriptaculous/lib/prototype.js" type="text/javascript"></script>
+<script src="/scripts/scriptaculous/src/scriptaculous.js" type="text/javascript"></script>
+<script src="/scripts/gds.js" type="text/javascript"></script>
+<script src="/scripts/niftycube.js" type="text/javascript"></script>
+<script src="/scripts/browserdetect.js" type="text/javascript"></script>
+<script src="/scripts/plugindetect.js" type="text/javascript"></script>
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script src="/scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+
+<!--[if lt IE 7]>
+     <script type="text/javascript" src="/scripts/unitpngfix.js"></script>
+<![endif]-->
+
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+	jQuery.noConflict();
+	var platform = BrowserDetect.OS;
+	var browser = BrowserDetect.browser;
+	var version = BrowserDetect.version;
+
+	if(platform == 'Mac')
+	{
+	    document.write('<link href="/css/menus_mac.css" rel="stylesheet" type="text/css" />');
+	}
+	else if(platform =='Linux')
+	{
+	    document.write('<link href="/css/menus_linux.css" rel="stylesheet" type="text/css" />');
+	}
+	else
+	{
+		if (browser=='Safari')
+		{
+		    document.write('<link href="/css/menus_safari_pc.css" rel="stylesheet" type="text/css" />');
+		}
+		else
+		{
+			// IE, Firefox, Opera, etc
+		    document.write('<link href="/css/menus_pc.css" rel="stylesheet" type="text/css" />');
+		}
+	}
+</script>
+
+<script type="text/javascript">
+
+window.onload=function(){
+var disFlash = 0;
+var info = {};
+for (var i in Plugin.PLUGINS) {
+  info[i] = Plugin.getInfo(i);
+}
+for (var i in info) {
+	if(info[i].name == 'Flash')
+	{
+		if(!Plugin.isInstalled(info[i].name))
+		{
+			disFlash = 1;
+		}
+	}
+}
+
+initNav();
+
+Nifty("#main_nav","normal transparent top");
+Nifty("#homegrey_ftr","normal transparent bottom");
+
+new Effect.Opacity('hdr',
+	{ duration: .5,
+	  transition: Effect.Transitions.linear,
+	  from: 0.0, to: 1.0
+	 });
+new Effect.Opacity('nav',
+	{ duration: .75,
+	  transition: Effect.Transitions.linear,
+	  from: 0.0, to: 1.0
+	 });
+
+new Effect.Opacity('homepageimg',
+	{ duration: .5,
+	  transition: Effect.Transitions.linear,
+	  from: 0.0, to: 1.0,
+	  afterFinish:  function ()
+	  {
+	  	new Effect.Opacity('homegrey_ftr',
+		{ duration: .5,
+		  transition: Effect.Transitions.linear,
+		  from: 0.0, to: 1.0
+		 });
+	  }
+	 });
+
+if (platform == 'Windows' && disFlash == '0')
+{
+	var headID = document.getElementsByTagName("head")[0];         
+	var cssNode = document.createElement('link');
+	cssNode.type = 'text/css';
+	cssNode.rel = 'stylesheet';
+	cssNode.href = '/css/flash_home_menus_pc.css';
+	cssNode.media = 'screen';
+	headID.appendChild(cssNode); 
+} 
+else if (platform =='Windows' && browser == 'Explorer' && disFlash == '1')
+{
+ 	 var headID = document.getElementsByTagName("head")[0];
+        var cssNode = document.createElement('link');
+        cssNode.type = 'text/css';
+        cssNode.rel = 'stylesheet';
+        cssNode.href = '/css/noflash_home_menus_pc.css';
+        cssNode.media = 'screen';
+        headID.appendChild(cssNode);
+}
+else if (platform=='Mac')
+{
+	var headID = document.getElementsByTagName("head")[0];         
+	var cssNode = document.createElement('link');
+	cssNode.type = 'text/css';
+	cssNode.rel = 'stylesheet';
+	cssNode.href = '/css/flash_home_menus_mac.css';
+	cssNode.media = 'screen';
+	headID.appendChild(cssNode); 
+}
+else if (platform == 'Linux')
+{
+	disFlash = '1';
+}
+
+if (disFlash == '1')
+{
+    $('homeflash').innerHTML = '<img src="/images/nonflash_img.jpg" alt="" />';
+}
+else
+{
+     $('homeflash').innerHTML = '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="900" height="270" align="middle"><param name="allowScriptAccess" value="sameDomain" /><param name="movie" value="homeflash.swf" /><param name="quality" value="high" /><param name="wmode" value="opaque" /><embed src="homeflash.swf" quality="high" wmode="opaque" width="900" height="270" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /></object>';
+}
+}
+
+</script>
+
+</head>
+<body>
+
+<noscript>
+  <meta http-equiv="refresh" content="0; url=/s/index.php"/>
+</noscript>
+
+<div class="main_wrapper">
+	<div class="hdr_wrapper" id="hdr">
+
+      <div class="hdr_links" ><a href="g/a.php" style="border-bottom:none;">About</a>|<a href="g/ca.php" style="border-bottom:none;">Careers</a>|<a href="g/pr.php" style="border-bottom:none;">Press</a>|<a href="g/ne.php" style="border-bottom:none;">News</a>|<a href="g/cs.php" style="border-bottom:none;">Case Studies</a>|<a href="l/t.php" style="border-bottom:none;">Tools</a>|<a href="l/b/
+      " style="border-bottom:none;">Blog</a></div>
+      <div class="hdr_logo"><a href="index.php"><img src="/images/gds_logo_2.png" width="226" height="75" border="0" style="float:left;" alt=""/></a></div>
+    </div>
+	<span style="background-color:#b2d5d8;width:900px; text-align:center;display:block;" id="nav">
+		<div id="main_nav">
+			<div class="main_nav" id="mainNav">
+				<a href="st/index.php" id="SecurityTesting">Security Testing</a>
+				<a href="sdl/index.php" id="SecureDevelopment">Secure Development Lifecycle (SDL)</a>
+				<a href="c/index.php" id="ConsultingServices">Consulting Services</a>
+				<a href="l/index.php" id="Labs" style="border:none;">Research Labs</a>
+			</div>
+		</div>
+  </span>
+
+<div class="homeflash" id="homeflash">
+	<img src="/images/nonflash_img.jpg" alt="" />
+</div>
+
+<div class="submenus_wrapper" id="subnavs">
+		<div class="submenus" id="SecurityTesting_submenu">
+			<a href="st/bb.php">Black Box Application Testing</a>
+			<a href="st/sd.php">Source Code Review</a>
+			<a href="st/pt.php">Penetration Testing</a>
+			<a href="st/rt.php">Red Team Testing</a>
+			<a href="st/et.php">Embedded Security Testing</a>
+			<a href="st/vr.php">Vulnerability Remediation</a>
+			<a href="st/se.php">Social Engineering</a>
+			<a href="st/ch.php">CESG (CHECK) IT Health Checks</a>
+			<a href="st/cb.php">CBEST/CREST STAR Testing</a>			
+			<a href="st/ce.php">Cyber Essentials Certification</a>
+			<img src="/images/subnav_bottom.gif" style="float:left; height:8px;" alt=""/>
+			<div class="clear"><img src="/images/spacer.gif" alt=""/></div>
+		</div>
+		<div class="submenus" id="SecureDevelopment_submenu">
+			<a href="sdl/tm.php">Threat Modeling</a>
+			<a href="sdl/da.php">Security Design and Architecture</a>
+			<a href="sdl/sd.php">Secure Development Training</a>
+			<a href="sdl/tr.php">SDL Transformation</a>
+			<a href="sdl/in.php">SDL Tools Integration</a>
+			<a href="sdl/sa.php">Staff Augmentation</a>
+			<img src="/images/subnav_bottom.gif" style="float:left; height:8px;" alt=""/>
+			<div class="clear"><img src="/images/spacer.gif" alt=""/></div>
+		</div>
+		<div class="submenus" id="ConsultingServices_submenu">
+			<a href="c/1.php">Risk Management and Compliance</a>
+			<a href="c/2.php">Security Project Management</a>
+			<a href="c/3.php">Audit Assistance</a>
+			<a href="c/4.php">Custom Consulting Services</a>
+			<img src="/images/subnav_bottom.gif" style="float:left; height:8px;" alt=""/>
+			<div class="clear"><img src="/images/spacer.gif" alt=""/></div>
+		</div>
+		<div class="submenus" id="Labs_submenu">
+			<a href="l/b/" style="width:124px;">Blog</a>
+			<a href="l/t.php" style="width:124px;">Tools</a>
+			<img src="/images/subnavSm_bottom.gif" width="142" height="8" style="float:left; height:8px;" alt=""/>
+			<div class="clear"><img src="/images/spacer.gif" alt=""/></div>
+		</div>
+	</div>
+
+<a href="g/ne.php" style="text-decoration: none">
+	<div class="home_headline">
+		<span style="font-weight: bold">HEADLINES: </span>
+        <span style="font-weight: normal">Gotham Digital Science and Stroz Friedberg are excited to be founding members of the CREST USA chapter in New York</span>&nbsp;<span style="font-size: 18px">&raquo;</span></div>
+</a>
+	<div class="contentwrapper">
+		<div class="homepage_contentimages" id="homepageimg">
+                        <a href="g/a.php"><img src="/images/gdsglobe.jpg" alt="About" /></a>
+			<a href="s/index.php"><img src="/images/lock.jpg" alt="Services" /></a>
+			<a href="l/index.php"><img src="/images/labs.jpg" alt="Labs" width="300" style="border-style: none;" /></a>
+		</div>
+
+		<div class="greyftr" id="homegrey_ftr">
+
+<div class="home_contentcol">
+<a href="g/a.php" style="text-decoration: none">
+
+				<h1>About</h1>
+		<p><span style="line-height: 1.5em;">Gotham Digital Science (GDS) is an international security services company. GDS security specialists work with clients to assess risk and design, build, and maintain secure applications and networks. </span><span style="font-size: 12pt; font-weight: bold">&raquo;</span></p>
+</a>
+	</div>
+<div class="home_contentcol">
+<a href="s/index.php" style="text-decoration: none">
+                                <h1>Services</h1>
+                                <p><span style="line-height: 1.5em;">GDS Security Services focus on keeping applications and network infrastructure secure. Whether you're interested in Security Code Review, Secure Development Training, or IT Risk Consulting, GDS can help. </span><span style="font-size: 12pt; font-weight: bold">&raquo;</span></p>
+</a>
+</div>
+
+<div class="home_contentcol">
+<a href="l/index.php" style="text-decoration: none">
+				<h1>GDS Research Labs</h1>
+<p><span style="line-height: 1.5em;">GDS security engineers believe in sharing experiences and tools with the security and development communities. Check out the GDS Blog and the latest available tool downloads from the GDS Lab. </span><span style="font-size: 12pt; font-weight: bold">&raquo;</span></p>
+</a>			
+</div>
+
+ 
+
+	<div class="clear"><img src="/images/spacer.gif" alt="" /></div>
+</div></div>	<div class="footer_wrapper"><a href="index.php">Home</a> | <a href="g/co.php">Contact</a> | <a href="g/pv.php">Privacy Statement</a> |  &copy; <script type="text/javascript">var now = new Date; document.write(now.getFullYear())</script> Gotham Digital Science  All Rights Reserved.</div>
+</div>
+
+<script type="text/javascript">
+    function cookiesDirectiveScriptWrapper(){
+        cdScriptAppend('/scripts/google.js', 'body');
+    }
+</script>
+<script type="text/javascript" src="/scripts/1.2.js">
+</script>
+<script type="text/javascript">
+	if (google.loader.ClientLocation) {
+		country = google.loader.ClientLocation.address.country_code;
+		if (country=="AT"||country=="BE"||country=="BG"||country=="CY"||country=="CZ"||country=="DK"||country=="EE"||country=="FI"||country=="FR"|| country=="DE"||country=="GR"||country=="HU"||country=="IE"|| country=="IT"||country=="LV"||country=="LT"|| country=="LU"||country=="MT"||country=="NL"||country=="PL"|| country=="PT"||country=="RO"||country=="SK"||country=="SI"||country=="ES"||country=="SE"||country=="GB") {
+			cookiesDirective('bottom','/g/pv.php','Google Analytics');
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+# robots.txt fuer www.tui-ferienhaus.de
+#
+# Diese robots_fh.txt wird ueber die .htacess bei Anfrage auf
+# www.tui-ferienhaus.de/robots.txt aufgerufen und auch nur dann.
+#
+# Hinweis: Im SSL-Fall wird die robots_ssl.txt anstatt der
+# aktuellen Datei aufgerufen!
+
+# Gilt fuer alle User-Agents!
+
+User-agent: *
+
+# Diese beiden sollen aus SEO gründen für google gesperrt sein
+
+Disallow: /ferienhaus-mieten.html
+Disallow: /ferienwohnung-mieten.html
+
+# Sonstige Sperrungen...
+
+Disallow: /suche1.php?
+Disallow: /wartung.html*
+Disallow: /scripts/fh/setagency.php*
+
+# Typo3-Seiten die via ?id=xyz&type=xyz aufgerufen werden sperren.
+
+Disallow: /index.php?index=*&type=*$
+Disallow: /index.php?type=*&index=*$
+
+# Sitemap
+
+Sitemap: https://www.tui-ferienhaus.de/sitemap.xml

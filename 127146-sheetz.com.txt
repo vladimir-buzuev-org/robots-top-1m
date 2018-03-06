@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Sheetz</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=623188302">
+    <meta name="google-play-app" content="app-id=com.ust.sheetzretapp">
+    <meta name="apple-touch-icon" content="./assets/images/appicon.png">
+    <meta name="android-touch-icon" content="./assets/images/appicon.png">
+    <link rel="apple-touch-icon" href="./assets/images/appicon.png">
+    <link rel="android-touch-icon" href="./assets/images/appicon.png">
+    <base href="/">
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="./assets/mainsite.css?dt=1502296730">
+    <!-- endinject -->
+
+    <!-- Low-level event handler to trap & log errors that occur prior to AngularJS bootstrapping -->
+    <script>
+        var collectErrorsListener = function(event) {
+                var xmlhttp = new XMLHttpRequest(),
+                    message = 'Mainsite Error: ' + event.message + ' Script: ' + event.filename + ' Line: ' + event.lineno + ' Column: ' + event.colno + ' Error Object: ' + event.error.stack;
+
+                xmlhttp.open('POST', '../sas/log', true);
+                xmlhttp.setRequestHeader('Content-type', 'application/json');
+                xmlhttp.send(JSON.stringify({
+                    source: 'mainsite-ui',
+                    logLevel: 'ERROR',
+                    message: message,
+                    event: event
+                }));
+                return false;
+            },
+            loadListener = function() {
+                window.removeEventListener('error', collectErrorsListener);
+                window.removeEventListener('load', loadListener);
+            };
+        window.addEventListener('error', collectErrorsListener, false);
+        window.addEventListener('load', loadListener, false);
+    </script>
+
+    <!-- Google Analytics -->
+    <script>
+        window.ga = window.ga || function () {
+        (ga.q = ga.q || []).push(arguments)
+        };
+        ga.l = +new Date;
+    </script>
+    <script async src='//www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+</head>
+<body mobile-fast-click>
+    <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">
+    upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div id="main" ui-view></div>
+    <!-- Floodlight iFrame container -->
+    <div id="DCLK_FLDiv"></div>
+    <!-- End Floodlight iFrame container -->
+    <!-- inject:js -->
+    <script src="app/build.js?dt=1502296730"></script>
+    <!-- endinject -->
+</body>
+</html>

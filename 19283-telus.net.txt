@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+  <html lang="en" data-base="/en/bc" class="">
+  <head>
+    <title>myTELUS | home</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UgIPUFZWGwQCVVNXDgY="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="application-name" content="myTELUS.com" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="//static.telus.com/common/images/header/TELUS-logo-pin.png" />
+    <meta name="gomezPgId" content="Beta Home Page Production" />
+    <meta name="description" content="Make myTELUS your home on the web for quick access to your TELUS account, webmail, news, weather, handy tips, and great original community TV programs." />
+    <meta name="keywords" content="" />
+    <meta name="google-site-verification" content="-Dc5Vz5GV13XtKBS-cQduAld5ktjiD4xQCQnZmOW6Dc" />
+    <link rel="favicon" href="https://www.telus.com/favicon.ico" />
+    <link rel="favicon" sizes="32x32" href="//static.telus.com/common/images/favicon/TELUS-favicon-32.png" />
+    <link rel="favicon" sizes="128x128" href="//static.telus.com/common/images/favicon/TELUS-favicon-128.png" />
+    <link rel="apple-touch-icon" href="https://www.telus.com/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="//static.telus.com/common/images/favicon/TELUS-apple-touch-icon-72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="//static.telus.com/common/images/favicon/TELUS-apple-touch-icon-114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="//static.telus.com/common/images/favicon/TELUS-apple-touch-icon-144.png" />
+    <link rel="canonical" href="https://mytelus.telus.com/" />
+    <link rel="stylesheet" href="/css/global.css?v=1478295511" />
+
+        <script type="text/javascript">var version='b';var pageTitle='myTELUS | home';</script>
+  </head>
+  <body id="home">
+
+    <!-- Telus: ClickTale Top part - place near body open tag -->
+    <script type="text/javascript">var WRInitTime=(new Date()).getTime();</script>
+
+    <div class="container version-b">
+
+     <!--[if lte IE 8]>
+     <div class="outdated-browser-notification">
+        <div class="grid">
+           <div class="triangle-isosceles">
+             <p><cms:content id="browser-upgrade-message" /></p>
+             <a href="#" class="close has-icon" title="Close outdated browser notification" ><span class="frg-icon icon-x-circled" aria-hidden="true"></span></a>
+           </div>
+        </div>
+      </div>
+      <![endif]-->
+
+            	      <div class="weather-notification-bar">
+	        <div class="grid">
+	          <div class="triangle-isosceles">
+	            <p><span class="frg-icon icon-map-marker color-purple"></span>Not receiving the correct weather and other info for your region? Try enabling cookies in your browser. <a target="_blank" href="http://www.wikihow.com/Enable-Cookies-in-Your-Internet-Web-Browser">Learn more</a></p>
+	            <a href="#" class="close has-icon" title="Close region select notification"><span class="icon-fallback-text"><span class="frg-icon icon-x-circled" aria-hidden="true"></span><span class="text">Close</span></span></a>
+	          </div>
+	        </div>
+	      </div>
+            
+      <div class="region-detect-notification">
+        <div class="grid">
+          <div class="triangle-isosceles">
+            <p><span class="frg-icon icon-map-marker color-purple"></span>Your region is set to&nbsp;<span class="abcregion">BC</span>. If this is incorrect, please <a class="close-text" title="change your region." href="https://www.telus.com/notices/select-region.jsp">change your region.</a></p>
+            <a href="#" class="close has-icon" title="Close region select notification"><span class="icon-fallback-text"><span class="frg-icon icon-x-circled" aria-hidden="true"></span><span class="text">Close</span></span></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="site-settings">
+        <div class="grid">
+          <a href="#" class="close-button has-icon" title="Close settings menu"><span class="frg-icon icon-x-circled" aria-hidden="true"></span></a>
+          <div>
+                      <section class="region-select">
+              <div class="display-list">
+                <h4>
+                  <span class="frg-icon icon-map-marker pad-right" aria-hidden="true"></span>
+                  Region                </h4>
+                                <ul class="regions">
+                                      <li>
+                                              <a href="https://www.telus.com/actions/preferences/change-locale.do?region=ab&amp;rd=http://mytelus.telus.com/" title="View TELUS products and services available in Alberta">Alberta</a>
+                                          </li>
+                                      <li>
+                                              British Columbia                                          </li>
+                                      <li>
+                                              <a href="https://www.telus.com/actions/preferences/change-locale.do?region=mb&amp;rd=http://mytelus.telus.com/" title="View TELUS products and services available in Manitoba">Manitoba</a>
+                                          </li>
+                                      <li>
+                                              <a href="https://www.telus.com/actions/preferences/change-locale.do?region=nb&amp;rd=http://mytelus.telus.com/" title="View TELUS products and services available in New Brunswick">New Brunswick</a>
+                                          </li>
+                                      <li>
+                                              <a href="https://www.telus.com/actions/preferences/change-locale.do?region=nl&amp;rd=http://mytelus.telus.com/" title="View TELUS products and services available in Newfoundland">Newfoundland</a>
+                                          </li>
+                                      <li>
+                                              <a href="https://www.telus.com/actions/preferences/change-locale.do?region=nt&amp;rd=http://mytelus.telus.com/" title="View TELUS products and services available in Northwest Territories">Northwest Territories</a>
+                                          </li>
+                                      <li>
+                                              <a href="https://www.telus.com/actions/preferences/change-locale.do?region=ns&amp;rd=http://mytelus.telus.com/" title="View TELUS products and services available in Nova Scotia">Nova Scotia</a>
+                                          </li>
+                                      <li>
+                                              <a href="https://www.telus.com/actions/preferences/change-locale.do?region=nu&amp;rd=http://mytelus.telus.com/" title="View TELUS products and services available in Nunavut">Nunavut</a>
+                                          </li>
+                                      <li>
+                                              <a href="https://www.telus.com/actions/preferences/change-locale.do?region=on&amp;rd=http://mytelus.telus.com/" title="View TELUS products and services available in Ontario">Ontario</a>
+                                          </li>
+                                      <li>
+                                              <a href="https://www.telus.com/actions/preferences/change-locale.do?region=pe&amp;rd=http://mytelus.telus.com/" title="View TELUS products and services available in Prince Edward Island">Prince Edward Island</a>
+                                          </li>
+                                      <li>
+                                              <a href="https://www.telus.com/actions/preferences/change-locale.do?region=qc&amp;rd=http://mytelus.telus.com/" title="View TELUS products and services available in Quebec">Quebec</a>
+                                          </li>
+                                      <li>
+                                              <a href="https://www.telus.com/actions/preferences/change-locale.do?region=sk&amp;rd=http://mytelus.telus.com/" title="View TELUS products and services available in Saskatchewan">Saskatchewan</a>
+                                          </li>
+                                      <li>
+                                              <a href="https://www.telus.com/actions/preferences/change-locale.do?region=yt&amp;rd=http://mytelus.telus.com/" title="View TELUS products and services available in Yukon">Yukon</a>
+                                          </li>
+                                  </ul>
+              </div>
+              <div class="display-form-element">
+                <form id="region-select-form" action="https://www.telus.com/actions/preferences/change-locale.do" method="post">
+                  <input type="hidden" name="rd" value="http://mytelus.telus.com/" />
+                  <div class="select-container-and-label">
+                    <label for="region-select-dropdown">Region</label>
+                    <span class="select-container">
+                      <select id="region-select-dropdown" name="region">
+                        <option disabled >Select</option>
+                                                  <option value="ab">Alberta</option> 
+                                                  <option value="bc" selected="selected">British Columbia</option> 
+                                                  <option value="mb">Manitoba</option> 
+                                                  <option value="nb">New Brunswick</option> 
+                                                  <option value="nl">Newfoundland</option> 
+                                                  <option value="nt">Northwest Territories</option> 
+                                                  <option value="ns">Nova Scotia</option> 
+                                                  <option value="nu">Nunavut</option> 
+                                                  <option value="on">Ontario</option> 
+                                                  <option value="pe">Prince Edward Island</option> 
+                                                  <option value="qc">Quebec</option> 
+                                                  <option value="sk">Saskatchewan</option> 
+                                                  <option value="yt">Yukon</option> 
+                                              </select>
+                    </span>
+                  </div> <!-- .select-container-and-label -->
+                </form>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div><!-- end .site-settings -->
+      
+      <header class="site-header">
+        <div class="grid">
+
+          <!--
+            TELUS LOGO:
+          -->
+
+          <h1 class="telus-logo">
+            <a target="_blank" href="https://www.telus.com/" title="TELUS">
+              <img src="//static.telus.com/common/images/header/TELUS-logo.svg" alt="TELUS" />
+            </a>
+          </h1>
+
+          <!--
+            MAIN NAVIGATION:
+            (Also includes account-overview drop down)
+          -->
+
+                      <nav class="meganav meganav-west">
+                      <a target="_blank" href="#meganav-l1" class="meganav-toggle meganav-hamburger show-for-mobile">
+              <span class="visually-hidden">Show menu</span>
+              <span class="frg-icon icon-hamburger"></span>
+            </a>
+
+            <ul id="meganav-l1" class="meganav-l1">
+
+              <li class="meganav-homelink hide-for-tablet-up">
+                <a target="_blank" href="https://www.telus.com/" class="meganav-l1-link" title="Home">
+                  Home                </a>
+              </li>
+
+              <li class="meganav-shoplink">
+
+                <a target="_blank" href="#meganav-l2-shop" class="meganav-toggle meganav-l1-link" title="Shop">
+                  Shop                  <span class="frg-icon icon-plus hide-for-tablet-up toggle-icon"></span>
+                </a>
+
+                <div id="meganav-l2-shop" class="meganav-l2 meganav-shop">
+                  <ul class="meganav-l2-inner">
+
+                    <li class="meganav-shop-wireless meganav-l2-section">
+                      <a target="_blank" href="#meganav-l3-wireless" class="meganav-toggle hide-for-tablet-up">
+                        <span class="frg-icon icon-smartphone-inverted"></span>
+                          Mobility                        <span class="frg-icon icon-plus hide-for-tablet-up toggle-icon"></span>
+                      </a>
+
+                      <a target="_blank" href="https://www.telus.com/mobility" class="hide-for-mobile">
+                        <span class="frg-icon icon-smartphone-inverted"></span>
+                          Mobility                        <span class="frg-icon icon-plus hide-for-tablet-up toggle-icon"></span>
+                      </a>
+
+                      <div id="meganav-l3-wireless" class="meganav-l3">
+                        <ul class="meganav-l3-sub">
+                          <li class="hide-for-tablet-up"><a target="_blank" href="https://www.telus.com/mobility">Mobility Overview</a></li>
+                          <li><a target="_blank" href="https://www.telus.com/mobility/catalog">Phones</a></li>
+                          <li><a target="_blank" href="https://www.telus.com/mobility/accessories">Accessories</a></li>
+                          <li><a target="_blank" href="https://www.telus.com/mobility/sim-cards/">SIM Cards</a></li>
+                          <li><a target="_blank" href="https://www.telus.com/mobility/tablets">Tablets</a></li>
+                        </ul>
+                        <ul class="meganav-l3-sub">
+                          <li><a target="_blank" href="https://www.telus.com/mobility/plans">Plans</a></li>
+                          <li><a target="_blank" href="https://www.telus.com/mobility/prepaid/">Prepaid</a></li>
+                          <li><a target="_blank" href="https://www.telus.com/mobility/add-ons/index.jsp">Add-ons & Apps</a></li>
+                          <li><a target="_blank" href="https://www.telus.com/mobility/network">Network & coverage</a></li>
+                          <li><a target="_blank" href="https://www.telus.com/mobility/travel/?zone=us&country=USA" title="Travel">Travel</a></li>
+                          <li><a target="_blank" href="https://www.telus.com/mobility/why-telus/index.jsp">Why TELUS?</a></li>
+                        </ul>
+                      </div>
+                    </li>
+
+                                          <li class="meganav-shop-tv">
+                        <div class="meganav-l2-section meganav-shop-optiktv">
+                          <a target="_blank" href="#meganav-l3-optiktv" class="meganav-toggle hide-for-tablet-up">
+                            <span class="frg-icon icon-tv-inverted"></span>
+                            Optik TV
+                            <span class="frg-icon icon-plus hide-for-tablet-up toggle-icon"></span>
+                          </a>
+
+                          <a target="_blank" href="https://www.telus.com/tv" class="hide-for-mobile">
+                            <span class="frg-icon icon-tv-inverted"></span>
+                            Optik TV
+                            <span class="frg-icon icon-plus hide-for-tablet-up toggle-icon"></span>
+                          </a>
+
+                          <ul id="meganav-l3-optiktv" class="meganav-l3">
+                            <li class="hide-for-tablet-up"><a target="_blank" href="https://www.telus.com/tv/" title="TV Overview">TV Overview</a></li>
+                            <li><a target="_blank" href="https://www.telus.com/tv/plans/">Combos</a></li>
+                            <li><a target="_blank" href="https://www.telus.com/tv/channels/">Channels</a></li>
+                            <li><a target="_blank" href="https://www.telus.com/tv/hardware.jsp">Hardware</a></li>
+                            <li><a target="_blank" href="https://www.telus.com/tv/apps/">Apps</a></li>
+                            <li><a target="_blank" href="https://www.telus.com/tv/on-demand/">On Demand</a></li>
+                            <li><a target="_blank" href="https://www.telus.com/tv/highlights/">TV Highlights</a></li>
+                            <li><a target="_blank" href="https://www.telus.com/tv/pay-per-view/">Pay Per View</a></li>
+                          </ul>
+                        </div>
+
+                        <div class="meganav-l2-section meganav-shop-satellite">
+                          <a target="_blank" href="https://www.telus.com/tv/satellite">
+                            <span class="frg-icon icon-satellite-inverted"></span>
+                            Satellite TV
+                          </a>
+                        </div>
+                      </li>
+
+                      <li class="meganav-shop-westcoast">
+                        <div class="meganav-shop-internet meganav-l2-section">
+                          <a target="_blank" href="#meganav-l3-internet" class="meganav-toggle hide-for-tablet-up">
+                            <span class="frg-icon icon-mouse-inverted"></span>
+                            Internet
+                            <span class="frg-icon icon-plus hide-for-tablet-up toggle-icon"></span>
+                          </a>
+
+                          <a target="_blank" href="https://www.telus.com/internet" class="hide-for-mobile">
+                            <span class="frg-icon icon-mouse-inverted"></span>
+                            Internet
+                            <span class="frg-icon icon-plus hide-for-tablet-up toggle-icon"></span>
+                          </a>
+
+                          <ul id="meganav-l3-internet" class="meganav-l3">
+                            <li><a target="_blank" href="https://www.telus.com/internet">Plans</a></li>
+                            <li><a target="_blank" href="https://www.telus.com/internet/unlimited-data-usage/">Add-ons</a></li>
+                            <li><a target="_blank" href="https://www.telus.com/mobility/mobile-internet/">Mobile Internet</a></li>
+                          </ul>
+                        </div>
+
+                        <div class="meganav-shop-homephone meganav-l2-section">
+                          <a target="_blank" href="#meganav-l3-homephone" class="meganav-toggle hide-for-tablet-up">
+                            <span class="frg-icon icon-homephone-inverted"></span>
+                            Home Phone
+                            <span class="frg-icon icon-plus hide-for-tablet-up toggle-icon"></span>
+                          </a>
+
+                          <a target="_blank" href="https://www.telus.com/home-phone" class="hide-for-mobile">
+                            <span class="frg-icon icon-homephone-inverted"></span>
+                            Home Phone
+                            <span class="frg-icon icon-plus hide-for-tablet-up toggle-icon"></span>
+                          </a>
+
+                          <ul class="meganav-l3" id="meganav-l3-homephone">
+                            <li><a target="_blank" href="https://www.telus.com/home-phone">Plans and Features</a></li>
+                            <li><a target="_blank" href="https://www.telus.com/home-phone/long-distance-plans.jsp">Long Distance Plans</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                    
+                                          <li class="meganav-shop-deals meganav-l2-section">
+                        <a target="_blank" href="https://www.telus.com/deals/">
+                          <span class="frg-icon icon-pricetag-inverted color-gray"></span>
+                          Deals &amp; Bundles
+                        </a>
+
+                        <div class="meganav-copy hide-for-mobile">
+                          <p>Only TELUS lets you bundle TV, Internet, Home Phone and Mobility services to save you money.</p>
+                          <img src="//static.telus.com/common/images/nav/bundle-services.png" alt="Bundled TELUS services" class="featured-deal-img">
+                          <a target="_blank" href="https://www.telus.com/deals" class="clear-cta"><span class="icon-label">Learn more&nbsp;</span><span class="frg-icon icon-arrow-right-circled" aria-hidden="true"></span></a>
+                        </div>
+                      </li>
+                    
+                    <li class="hide-for-tablet-up">
+                     						<a target="_blank" href="https://www.telus.com/my-account?INTCMP=MTMegaNavsslogin" class="" title="My Account">
+						<span class="frg-icon icon-user-profile-inverted"></span>
+										  My Account					</a>
+                    </li>
+                  </ul>
+
+                  <div class="meganav-footer">
+                    <ul class="meganav-footer-top hide-for-tablet-up">
+                      <li><a target="_blank" href="https://www.telus.com/get-help">Support</a></li>
+                      <li><a target="_blank" href="http://about.telus.com/community/english">About us</a></li>
+                    					  	<li><a target="_blank" href="http://business.telus.com/en/business?INTCMP=LNK_frmBTA_TopNavigationAll_toBWS_BusinessNavigation">Business</a></li>
+					  	                    </ul>
+                    <div class="meganav-footer-bottom hide-for-mobile">
+                      <img src="//cdn.telus.digital/ui/components/hy-header/images/expect-more-bird.png" class="meganav-footer-bottom__img" alt="Expect More">
+                      <a target="_blank" href="//www.telus.com/mobility/why-telus/index.jsp" class="meganav-footer-bottom__cta">See why amazing service sets us apart <span class="frg-icon icon-arrow-right-circled"></span></a>
+                    </div>
+                    
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="meganav-accountlink hide-for-mobile">
+                					<a target="_blank" href="https://www.telus.com/my-account?INTCMP=MTMegaNavsslogin" class="meganav-l1-link hide-for-mobile" title="My Account">
+				                  My Account                </a>
+
+                <div id="meganav-l2-account" class="meganav-l2 meganav-account">
+                  <ul class="meganav-l2-inner">
+                    <li class="meganav-l2-section meganav-account-mobility">
+                      <a class="meganav-l2-link" href="https://www.telus.com/my-account/?INTCMP=MTMegaNavNewMyAccount">
+                        <span class="frg-icon icon-smartphone-inverted"></span>
+                        <span class="meganav-account-title">Mobility</span>
+                      </a>
+                      <p>Manage your Mobile phone, tablet, or Mobile Internet account.</p>
+                    </li>
+
+                                          <li class="meganav-l2-section meganav-account-hs">
+                        <a class="meganav-l2-link" href="http://telus.com/customermgt/yourAccounts.do">
+                          <span class="frg-icon icon-home-inverted"></span>
+                          <span class="meganav-account-title">Home Services</span>
+                        </a>
+                        <p>Manage your TV, Internet, or Home Phone services.</p>
+                      </li>
+                                      </ul>
+                  <div class="meganav-footer">
+                    <ul class="meganav-footer-top hide-for-tablet-up">
+                      <li><a target="_blank" href="https://www.telus.com/get-help">Support</a></li>
+                      <li><a target="_blank" href="http://about.telus.com/community/english">About us</a></li>
+                    					  	<li><a target="_blank" href="http://business.telus.com/en/business?INTCMP=LNK_frmBTA_TopNavigationAll_toBWS_BusinessNavigation">Business</a></li>
+					  	                    </ul>
+                    <ul class="meganav-footer-bottom">
+                      <li>
+                        <a target="_blank" href="https://www.telus.com/myaccount/redesign/?INTCMP=LNK_frmCTA_TopNavigationAll_MyAccount_toRedesgin">Check out our new Mobility My Account <span class="frg-icon icon-arrow-right-circled"></span></a>
+                        <img alt="" src="//static.telus.com/common/images/nature/green-flower.png">
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+              <li class="meganav-helplink hide-for-mobile">
+                <a target="_blank" href="https://www.telus.com/get-help" class="meganav-l1-link" title="Support">
+                  Support                </a>
+              </li>
+
+              <li class="meganav-businesslink hide-for-mobile">
+                					  	<a target="_blank" href="http://business.telus.com/en/business?INTCMP=LNK_frmBTA_TopNavigationAll_toBWS_BusinessNavigation" class="meganav-l1-link" title="Business">Business</a>
+					  	              </li>
+             
+
+            </ul>
+          </nav>
+
+          <div class="header-icons">
+
+            <a id="header-search" class="icon-holder search-toggle" href="#" title="What are you looking for?">
+              <span class="icon-fallback-text">
+                <span class="frg-icon icon-magnify-glass color-purple" aria-hidden="true"></span>
+                <span class="text">Search</span>
+              </span>
+            </a>
+
+            <span class="site-settings-toggle icon-holder">
+              <a target="_blank" href="https://www.telus.com/notices/select-region.jsp?rd=/index.jsp" title="Language: English, Region: British Columbia. Change language or region." aria-label="Language: English, Region: British Columbia. Change language or region."> 
+                <span class="icon-fallback-text">
+                  <span class="text">Region:</span>
+                </span>
+                <span class="region-language-text">
+                                      <abbr title="Language: English, Region: British Columbia. Change language or region." aria-label="Language: English, Region: British Columbia. Change language or region." lang="en">EN/<span class="abcregion">BC</span></abbr>
+                                  </span>
+              </a>            </span>
+          </div>
+
+        </div>
+      </header>
+      <div class="search-bar">
+        <div class="grid">
+          <form action="https://www.telus.com/search/execute.do" method="post">
+            <span class="frg-icon icon-magnify-glass color-gray" aria-hidden="true"></span>
+            <input type="hidden" name="activeFilter" value="-1" />
+            <input type="hidden" name="language" value="en" />
+            <input type="hidden" name="page" value="0" />
+            <input name="query" type="search" placeholder="What are you looking for?" />
+          </form>
+        </div>
+      </div>
+<div class="content">
+            <section class="mytelus-section mytelus-section-utility version-b">
+          <div class="grid">
+                        <div class="left-nav-search version-b">
+              <a href="/">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="/images/logo-mytelus-white.png, /images/logo-mytelus-white-retina.png 2x" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img srcset="/images/logo-mytelus-white.png" alt="myTELUS">
+                </picture>
+              </a>
+              <ul class="services west">
+                                  <li><a target="_blank" href="https://webmail.telus.net/"><span aria-hidden="true" class="account-icon frg-icon icon-envelope-inverted color-white"></span><span class="text">My Webmail</span></a></li>
+                                              </ul>
+              <div class="google-search">
+                <div>
+                  <a id="googleLogo"><img src="/images/logo-google.png" alt="Google" title="Google" /></a>
+                  <a id="googleSearchSubmit" href="#" class="decoration-none"><span class="account-icon frg-icon icon-magnify-glass color-white" aria-hidden="true"></span></a>
+                  <form id="googleSearchForm" action="/search" method="get"><label for="search-query" style="display: none;">Search query:</label><input id="search-query" class="en" type="search" name="q"  /></form>
+                </div>
+              </div>
+              <span class="date">                Thursday August 31, 2017              </span>
+            </div>
+          </div>
+        </section>
+            <section class="mytelus-section mytelus-section-welcome-new">
+          <div class="grid">
+
+            <div class="welcome-new white-background mytelus-drop-shadow group">
+              <h2>
+                <!-- span class="frg-icon icon-telus-t-boxed-inverted color-dark-gray" aria-hidden="true"></span -->
+                <span class="icon-label">Welcome to the new myTELUS</span>
+              </h2>
+              <div class="welcome-new-content">
+                <div class="welcome-new-main">
+                  <p>Based on your valuable feedback, we've improved</p>
+                  <a href="" class="frg-button color-green desktop welcome-new-launch-tour">Launch the tour</a>
+                </div>
+                <div class="welcome-new-checklist">
+                  <span class="frg-body-font-21px">You can now:</span>
+                  <div class="panel-list">
+                    <ul>
+                      <li>More easily access our most popular features and content</li>
+                      <li>View the site on tablets and mobile phones</li>
+                      <li>Learn how to get the most out of your TELUS services</li>
+                    </ul>
+                  </div>
+                  <a href="#" class="frg-button color-green tablet welcome-new-launch-tour">Launch the tour</a>
+                  <a href="#" class="frg-button color-green mobile  welcome-new-launch-tour button-wide">Launch the tour</a>
+                </div>
+              </div>
+              <a href="#" class="frg-button color-green desktop welcome-new-button">Check out what's new</a>
+              <a href="#" class="frg-button color-green mobile welcome-new-button button-wide">Check out what's new</a>
+              <a href="#" class="welcome-close"><span class="close-text">Close</span> <span class="frg-icon icon-x-circled color-dark-gray" aria-hidden="true"></span></a>
+           </div>
+
+         </div>
+       </section>
+              <section class="mytelus-section mytelus-section-carousel mytelus-section-news-weather ">
+            <div class="grid">
+                          <div class="mytelus-weather">
+
+              <div class="weather-header">
+                <span class="date date-upper">
+                  Thursday August 31, 2017                </span>
+                <div>
+                  <form autocomplete="off">
+                  <label for="weather-location-change-input">
+                    <input type="text" id="weather-location-change-input" value="" title="Location" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+                  </label>
+                  </form>
+                  <a target="_blank" href="http://www.theweathernetwork.com/?ref=mytelus_en_home">
+                    <picture>
+                      <!--[if IE 9]><video style="display: none;"><![endif]-->
+                        <source srcset="/images/logo_twn-b.jpg, /images/logo_twn-b-retina.jpg 2x" media="(min-width: 300px)">
+                      <!--[if IE 9]></video><![endif]-->
+                      <img srcset="/images/logo_twn-b.jpg" alt="The Weather Network" title="The Weather Network" />
+                    </picture>
+                  </a>
+                </div>
+              </div>
+
+              <div class="weather-current">
+                  <span class="temperature text color-dark-gray"><span class="current"></span><sup>&deg;</sup><sup>C</sup></span>
+                  <span class="icon"><i class="wi wi-day-cloudy-windy"></i></span>
+                  <span class="details"><span class="description"></span><br />Wind: <span class="wind"></span><br />Humidity: <span class="humidity"></span>%</span>
+              </div>
+
+              <div class="horoscope-links">
+                                  <a href="http://astrology.com/" target="_blank">Horoscope</a><a href="http://www.cinemaclock.com/" target="_blank">Movies</a><a href="http://www.lotterycanada.com/" target="_blank">Lottery</a><a href="https://www.google.ca/finance" target="_blank">Stocks</a>
+                              </div>
+
+              <div class="yellowpages">
+                <h3>Looking for a phone number? Search the phone book</h3>
+                <div class="left">
+                  <img src="/images/search-flower-b.jpg" alt="Looking for a phone number? Search the phone book" title="Looking for a phone number? Search the phone book" />
+                </div>
+                <div class="right">
+                  <a target="_blank" href="http://www.yellowpages.ca/?tdcam=telus" class="frg-button color-white desktop">Search now</a>
+                  <a target="_blank" href="http://www.yellowpages.ca/?tdcam=teluspwd">
+                    <picture>
+                      <!--[if IE 9]><video style="display: none;"><![endif]-->
+                      <source srcset="/images/logo_powered-by-yellowpages.png, /images/logo_powered-by-yellowpages-retina.png 2x" media="(min-width: 300px)">
+                      <!--[if IE 9]></video><![endif]-->
+                      <img id="yplogo" srcset="/images/logo_powered-by-yellowpages.png" alt="Powered by YellowPages.ca" title="Powered by YellowPages.ca" />
+                    </picture>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+                          <div class="news-cbc">
+              <h2 class="icon">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                    <source srcset="/images/icon-cbc.png, /images/icon-cbc-retina.png 2x" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img src="/images/icon-cbc.png" alt="Today's top headlines" title="Today’s top headlines" />
+                </picture>
+                <span>Today's top headlines</span>
+              </h2>
+              <ul class="news-dropit-menu">
+                <li>
+                  <a href="#"><span class="news-dropit-title">Top Stories</span> <span class="frg-icon icon-arrow-down color-white"></span></a>
+                  <ul>
+                                          <li><a href="#top_stories">Top Stories</a></li>
+                                          <li><a href="#world">World</a></li>
+                                          <li><a href="#canada">Canada</a></li>
+                                          <li><a href="#cbc_local_bc">British Columbia</a></li>
+                                          <li><a href="#technology">Technology</a></li>
+                                          <li><a href="#sports">Sports</a></li>
+                                          <li><a href="#arts">Arts & Entertainment</a></li>
+                                          <li><a href="#politics">Politics</a></li>
+                                          <li><a href="#business">Business</a></li>
+                                          <li><a href="#health">Health</a></li>
+                                          <li><a href="#offbeat">Offbeat</a></li>
+                                          <li><a href="#aboriginal">Aboriginal</a></li>
+                                      </ul>
+                </li>
+              </ul>
+
+              <p class="news-title frg-body-font-17px">Top Stories</p>
+                              <ul class="top_stories news-links">
+                                                        <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/nova-scotia/military-personnel-proud-boy-s-incident-jobs-1.4269952?cmp=rss" class="frg-body-font-14px">Military personnel in Proud Boys incident return to regular duty</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/ottawa/air-transat-inquiry-day-2-ottawa-airport-delays-1.4268836?cmp=rss" class="frg-body-font-14px">'All hell broke loose': Air Transat defends actions at stranded passenger inquiry</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/technology/15-signals-space-fast-radio-burst-1.4270332?cmp=rss" class="frg-body-font-14px">Astronomers detect 15 signals from mysterious object in distant galaxy</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/technology/fire-ant-rafts-harvey-1.4269856?cmp=rss" class="frg-body-font-14px">Everything you wanted to know about those horrifying fire ant rafts</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/manitoba/norway-house-births-1.4270527?cmp=rss" class="frg-body-font-14px">No criminal wrongdoing in switched-at-birth cases, Manitoba RCMP say</a></li>
+                                  </ul>
+                              <ul class="world news-links">
+                                                        <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/world/houston-harvey-chemical-plant-explosion-risk-1.4269687?cmp=rss" class="frg-body-font-14px">Smoke from flood-hit Texas chemical plant an 'irritant' but not toxic, sheriff says</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/world/us-russian-consulates-decision-1.4270226?cmp=rss" class="frg-body-font-14px">U.S. orders closing of Russian consulate in San Francisco</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/world/us-korea-warplanes-intimidation-1.4269683?cmp=rss" class="frg-body-font-14px">U.S. sends warplanes to South Korea in show of force towards North Korea</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/technology/organic-peroxides-arkema-harvey-1.4270391?cmp=rss" class="frg-body-font-14px">Just how dangerous are those chemicals burning in Texas?</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/world/hurricane-irma-1.4270070?cmp=rss" class="frg-body-font-14px">Hurricane Irma forms over eastern Atlantic</a></li>
+                                  </ul>
+                              <ul class="canada news-links">
+                                                        <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/manitoba/norway-house-births-1.4270527?cmp=rss" class="frg-body-font-14px">No criminal wrongdoing in switched-at-birth cases, Manitoba RCMP say</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/manitoba/manitoba-first-nation-forest-fire-evacuation-1.4269755?cmp=rss" class="frg-body-font-14px">'Exhausted' First Nation evacuees in Manitoba still waiting for flights out of forest fire zone</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/saskatoon/saskatoon-royal-university-hospital-nicu-babies-web-cameras-1.4264673?cmp=rss" class="frg-body-font-14px">Webcams at Saskatoon hospital let parents watch over NICU babies anytime, from anywhere</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/montreal/quebec-asylum-seekers-numbers-down-1.4270211?cmp=rss" class="frg-body-font-14px">Fewer asylum seekers crossing into Quebec illegally, CBSA says</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/nova-scotia/military-personnel-proud-boy-s-incident-jobs-1.4269952?cmp=rss" class="frg-body-font-14px">Military personnel in Proud Boys incident return to regular duty</a></li>
+                                  </ul>
+                              <ul class="cbc_local_bc news-links">
+                                                        <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/business/air-transat-lawsuit-1.4270488?cmp=rss" class="frg-body-font-14px">B.C. woman's proposed lawsuit alleges dream wedding ruined by Air Transat</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/british-columbia/air-canada-expands-europe-1.4270745?cmp=rss" class="frg-body-font-14px">Air Canada adding new non-stop flights from YVR to Paris and Zurich</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/british-columbia/surrey-taxis-ride-hailing-1.4270200?cmp=rss" class="frg-body-font-14px">Cabbies want support from B.C. NDP as Uber debate looms</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/british-columbia/nakusp-sex-assualt-1.4270404?cmp=rss" class="frg-body-font-14px">West Kootenay RCMP canvassing community for possible sexual assault victims</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/british-columbia/community-rallies-to-help-nanaimo-charity-after-devastating-break-in-1.4270333?cmp=rss" class="frg-body-font-14px">Community rallies to help Nanaimo charity after 'devastating' break in</a></li>
+                                  </ul>
+                              <ul class="technology news-links">
+                                                        <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/technology/15-signals-space-fast-radio-burst-1.4270332?cmp=rss" class="frg-body-font-14px">Astronomers detect 15 signals from mysterious object in distant galaxy</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/technology/fire-ant-rafts-harvey-1.4269856?cmp=rss" class="frg-body-font-14px">Everything you wanted to know about those horrifying fire ant rafts</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/technology/200-million-year-old-ichthyosaurus-pregnant-1.4269834?cmp=rss" class="frg-body-font-14px">Scientists discover 200-million-year-old embryo in ichthyosaur fossil</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/technology/organic-peroxides-arkema-harvey-1.4270391?cmp=rss" class="frg-body-font-14px">Just how dangerous are those chemicals burning in Texas?</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/british-columbia/bc-caribou-wolf-cull-1.4269660?cmp=rss" class="frg-body-font-14px">Forget wolf culls: researcher says more moose and deer hunting would help B.C. caribou</a></li>
+                                  </ul>
+                              <ul class="sports news-links">
+                                                        <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/sports/olympics/summer/trackandfield/aaron-brown-diamond-league-final-preview-1.4270191?cmp=rss" class="frg-body-font-14px">Hard-luck Aaron Brown eyes sub-20 seconds to end season</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/sports/football/cfl/what-has-happened-to-the-cfl-running-game-1.4270054?cmp=rss" class="frg-body-font-14px">Grounded: What's happened to the CFL's running game?</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/sports/olympics/summer/aquatics/4-time-olympic-medallist-oleksiak-returning-to-former-coach-1.4269993?cmp=rss" class="frg-body-font-14px">4-time Olympic medallist Oleksiak returning to former coach O'Toole</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/sports/baseball/mlb/blue-jays-september-callups-analysis-1.4268707?cmp=rss" class="frg-body-font-14px">Alford, Hernandez among Blue Jays' potential Sept. 1 call-ups</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/montreal/montreal-houston-hurricane-baseball-games-1.4269986?cmp=rss" class="frg-body-font-14px">MLB turned down Montreal's offer to host Houston Astros, Texas Rangers</a></li>
+                                  </ul>
+                              <ul class="arts news-links">
+                                                        <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/hamilton/skip-prokop-death-1.4269872?cmp=rss" class="frg-body-font-14px">Lighthouse founder Skip Prokop dies</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/calgary/bret-hitman-hart-wax-statue-petition-madame-tussauds-1.4270176?cmp=rss" class="frg-body-font-14px">Bret Hart superfan petitions for wax sculpture of the Hitman at Madame Tussauds museum</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/nova-scotia/halifax-s-oxford-theatre-to-close-sept-13-1.4269812?cmp=rss" class="frg-body-font-14px">Oxford Theatre, Halifax's cinematic icon, to close after 80 years</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/entertainment/celebs-harvey-relief-concerts-1.4269883?cmp=rss" class="frg-body-font-14px">Leonardo DiCaprio, Sandra Bullock donate to Harvey relief, benefit concerts planned</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/entertainment/mccormack-stratford-legacy-1.4269128?cmp=rss" class="frg-body-font-14px">Stratford Festival to honour Eric McCormack with Legacy Award</a></li>
+                                  </ul>
+                              <ul class="politics news-links">
+                                                        <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/business/gdp-june-statistics-canada-1.4269811?cmp=rss" class="frg-body-font-14px">Canada's GDP grew at 4.5% annual pace in 2nd quarter, fastest since 2011</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/politics/border-agency-sharing-info-with-america-1.4270710?cmp=rss" class="frg-body-font-14px">Ottawa sharing info with U.S. Homeland Security on all Americans entering Canada</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/politics/grenier-pollcast-wherry-1.4268345?cmp=rss" class="frg-body-font-14px">The Pollcast: New members, old problems in NDP leadership race</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/politics/gerry-ritz-leaving-politics-1.4270104?cmp=rss" class="frg-body-font-14px">Former Tory minister retiring, says he won't run to lead Saskatchewan Party</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/politics/maxime-bernier-innovation-shadow-cabinet-role-1.4269012?cmp=rss" class="frg-body-font-14px">Bernier vows to embrace Conservative critic role, be silent about supply management</a></li>
+                                  </ul>
+                              <ul class="business news-links">
+                                                        <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/business/air-transat-lawsuit-1.4270488?cmp=rss" class="frg-body-font-14px">B.C. woman's proposed lawsuit alleges dream wedding ruined by Air Transat</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/business/gasoline-prices-harvey-1.4270442?cmp=rss" class="frg-body-font-14px">'Eye-popping' rise projected for Ontario gasoline prices amid Harvey's impact</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/business/amazon-eclipse-lawsuit-1.4269956?cmp=rss" class="frg-body-font-14px">U.S. couple suing Amazon alleging fake eclipse glasses damaged their vision</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/business/gdp-june-statistics-canada-1.4269811?cmp=rss" class="frg-body-font-14px">Canada's economy is expanding at its fastest annualized rate in six years</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/business/wells-fargo-fake-accounts-1.4270148?cmp=rss" class="frg-body-font-14px">Wells Fargo now says 3.5 million accounts involved in scandal</a></li>
+                                  </ul>
+                              <ul class="health news-links">
+                                                        <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/saskatoon/saskatoon-royal-university-hospital-nicu-babies-web-cameras-1.4264673?cmp=rss" class="frg-body-font-14px">Hospital webcams let parents watch over neonatal ICU babies anytime, from anywhere</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/north/jane-philpott-indigenous-health-department-1.4270119?cmp=rss" class="frg-body-font-14px">Jane Philpott looks to bring Indigenous health delivery to new department</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/business/amazon-eclipse-lawsuit-1.4269956?cmp=rss" class="frg-body-font-14px">U.S. couple suing Amazon alleging fake eclipse glasses damaged their vision</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/toronto/opioid-deaths-ontario-1.4269169?cmp=rss" class="frg-body-font-14px">1 in 5 opioid-related deaths in Ontario involve alcohol, study suggests</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/health/mental-health-services-between-provinces-canada-1.4267168?cmp=rss" class="frg-body-font-14px">'We see a lot of people who are struggling': Youth mental health hard to access, multi-province study says  </a></li>
+                                  </ul>
+                              <ul class="offbeat news-links">
+                                                        <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/calgary/bret-hitman-hart-wax-statue-petition-madame-tussauds-1.4270176?cmp=rss" class="frg-body-font-14px">Bret Hart superfan petitions for wax sculpture of the Hitman at Madame Tussauds museum</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/entertainment/terry-pratchett-unpublished-novels-1.4268141?cmp=rss" class="frg-body-font-14px">Steamroller crushes Terry Pratchett's unpublished novels</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/sudbury/research-chipmunks-cosmopolitan-1.4267328?cmp=rss" class="frg-body-font-14px">Muffin bottoms and pizza crusts: how is big city garbage affecting Sudbury's chipmunk population?</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/prince-edward-island/plovers-birds-parks-canada-pei-pizza-pan-1.4265499?cmp=rss" class="frg-body-font-14px">Endangered P.E.I. plovers saved by pizza pan</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/edmonton/secret-accidental-beach-cloverdale-edmonton-city-1.4265651?cmp=rss" class="frg-body-font-14px">Edmonton 'accidental beach' lacks facilities for deluge of sudden sunbathers</a></li>
+                                  </ul>
+                              <ul class="aboriginal news-links">
+                                                        <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/indigenous/first-nations-students-face-continued-funding-shortfalls-1.4267540?cmp=rss" class="frg-body-font-14px">First Nations students face continued funding shortfalls, advocate says</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/nova-scotia/military-personnel-proud-boy-s-incident-jobs-1.4269952?cmp=rss" class="frg-body-font-14px">Military personnel in Proud Boys incident return to regular duty</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/sudbury/isadore-day-reacts-cabinet-shuffle-1.4269795?cmp=rss" class="frg-body-font-14px">First Nations 'should have been consulted' on Trudeau's cabinet shuffle, says Chief</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/canada/nova-scotia/indigenous-youth-home-after-tall-ships-adventure-1.4269306?cmp=rss" class="frg-body-font-14px">Indigenous youth return home to Nova Scotia after Tall Ships adventure</a></li>
+                                      <li><a target="_blank" rel="nofollow" href="http://www.cbc.ca/news/opinion/macdonald-name-1.4269060?cmp=rss" class="frg-body-font-14px">John A. Macdonald was Canada, in his day and age. His name should endure</a></li>
+                                  </ul>
+                            <div class="load">
+                <a id="cbc_more_headlines" target="_blank" href="http://www.cbc.ca/news/" rel="nofollow">
+                  <br />
+                  <span>See more headlines...</span>
+                </a>
+              </div>
+            </div>
+            </div>
+          </section>
+
+          <section class="mytelus-section mytelus-section-carousel mytelus-section-hero-tlc  no-background">
+            <div class="grid">
+                          <div class="mytelus-learning-centre  match-heights-hero-tlc">
+                              <h2>Did you know?</h2>
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                    <source srcset="/images/logo-ootg.jpg, /images/logo-ootg-retina.jpg 2x" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img id="ootg" srcset="/images/logo-ootg.jpg" alt="TELUS Learning Centre" />
+                </picture>
+                <p>You can watch your favorite shows on the fly on your devices.</p>
+                <a target="_blank" class="learnMore" href="http://www.telus.com/tv/apps/optik-on-the-go/?INTCMP=MTHomeTipsOOTG" class="mobile">Learn more <span aria-hidden="true" class="frg-icon icon-arrow-right-circled color-light-purple"></span></a>
+                <p />
+                <p class="highlight">You have questions? We have answers.</p>
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                    <source srcset="/images/logo-telus-tlc.png, /images/logo-telus-tlc-retina.png 2x" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img id="tlc" srcset="/images/logo-telus-tlc.png" alt="TELUS Learning Centre" />
+                </picture>
+                <a id="bookNowMobile" target="_blank" href="http://www.telus.com/get-help/learning-centre/support.do?INTCMP=MTHomeLearningCentre">Learn more <span aria-hidden="true" class="frg-icon icon-arrow-right-circled color-light-purple"></span></a>
+                <a id="bookNowDesktop" target="_blank" href="http://www.telus.com/get-help/learning-centre/support.do?INTCMP=MTHomeLearningCentre" class="frg-button color-green desktop">Learn more</a>
+                          </div>
+                          <div class="carousel  match-heights-hero-tlc" id="divCarousel_hero">
+              <ul>
+                <li class="carousel-text-left carousel-image-widescreen-right">
+                  <div>
+
+                                        <h2>Get the whole picture for $50</h2>
+                      <figure class="desktop-only"><img src="//static.telus.com/common/cms/images/deals/img-peacock.jpg" alt="" /></figure>
+                      <p id="subtext" style="clear: left;">Sign up for Optik TV® and Internet 25 for $50 per month for the first 6 months <a class="footnote-link"><sup class="footnote-link">1</sup></a>.</p>
+                      <figure class="mobile-only"><img src="//static.telus.com/common/cms/images/deals/img-peacock.jpg" alt="" /></figure> 
+                      <p id="mainCTA"><a target="_blank" href="https://www.telus.com/deals/6-month-bundle/?INTCMP=MTHomeBANOptik" class="frg-button color-green desktop">Learn more</a></p>
+                      <a target="_blank" id="mainCTAmobile" href="https://www.telus.com/deals/6-month-bundle/?INTCMP=MTHomeBANOptik">Learn more <span aria-hidden="true" class="frg-icon icon-arrow-right-circled color-light-purple"></span></a>
+                      <a target="_blank" id="allDeals" href="https://www.telus.com/deals?INTCMP=MTHomeBan" class="mobile">See all deals <span aria-hidden="true" class="frg-icon icon-arrow-right-circled color-light-purple"></span></a>
+
+                    
+                  </div>
+                </li>
+              </ul>
+              <div class="carousel-control"></div>
+            </div><!-- end carousel-wrapper -->
+            </div>
+          </section>
+            <section class="mytelus-section mytelus-section-whats-new">
+          <div class="grid">
+
+            <div class="whats-new no-background">
+              <h2>
+                <span class="frg-icon icon-telus-circle-inverted color-dark-gray" aria-hidden="true"></span>
+                <span class="icon-label">Get the most out of your TELUS services</span>
+              </h2>
+
+              <article class="featured-content">
+
+                <div class="slide-container">
+                  <div class="slidey">
+
+                    
+                      <div class="card">
+                        <a target="_blank" href="http://wise.telus.com/?INTCM=MyTelus" class="inner-card">
+                          <div class="small-view">
+                            <p>TELUS WISE</p>
+                            <h3>Online safety tips and more.</h3>
+                            <img src="/images/image/image-owl-telus-wise.jpg" alt="Telus Wise owl" title="Telus Wise owl" />
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <div class="card">
+                        <a target="_blank" href="http://www.telus.com/tv/highlights/?INTCMP=MTHomeTileTVHighlights" class="inner-card">
+                          <div class="small-view">
+                            <p>TV Highlights</p>
+                            <h3>See what's new and upcoming.</h3>
+                            <img src="/images/image/image-optik-highlights.jpg" alt="" title="" />
+                          </div>
+                        </a>
+                      </div>
+
+                      <div class="card">
+                        <a target="_blank" href="http://www.telus.com/tv/on-demand/?INCTMP=MTHomeTileOnDemandWatchWhereYouWant" class="inner-card">
+                          <div class="small-view">
+                            <p>On Demand</P>
+                            <h3>Watch when and where you want.</h3>
+                            <img src="/images/image/image-optik-ondemand.jpg" alt="" title="" />
+                          </div>
+                        </a>
+                      </div>
+
+                      <div class="card">
+                        <a target="_blank" href="http://www.telus.com/webapps/newsletter/opt-in.jsp?INTCMP=MTHomeTileNewsletter" class="inner-card">
+                          <div class="small-view">
+                            <p>Optik TV Newsletter</p>
+                            <h3>Sign up and stay in the loop.</h3>
+                            <img src="/images/image/image-optik-newsletter.jpg" alt="" title="" />
+                          </div>
+                        </a>
+                      </div>
+                      
+                    
+                    <div class="card">
+                      <a target="_blank" href="http://www.telus.com/mobility/services/hand-me-down/?INTCMP=MTHomeTileHandMeDown" class="inner-card">
+                        <div class="small-view">
+                                                      <p>Hand Me Down</p>
+                            <h3>Give or get a phone and save.</h3>
+                                                    <img src="/images/image/image-optik-handmedown.jpg" alt="" title="" />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="card">
+                      <a target="_blank" href="http://www.telus.com/mobility/services/referral-program/?INTCMP=MTHomeTileReferralProgram" class="inner-card">
+                        <div class="small-view">
+                                                      <p>TELUS Mobility Referral Program</p>
+                            <h3>Refer someone for a $25 bill credit.</h3>
+                                                    <img src="/images/image/image-optik-refer.jpg" alt="" title="" />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="card">
+                      <a target="_blank" href="http://www.telus.com/mobility/services/anytime-upgrades/?INTCMP=MTHomeTileAnytimeUpgrades" class="inner-card">
+                        <div class="small-view">
+                                                      <p>Anytime Upgrades</p>
+                            <h3>Get the right phone at the right time.</h3>
+                                                    <img src="/images/image/image-optik-upgrades.jpg" alt="" title="" />
+                        </div>
+                      </a>
+                    </div>
+                    
+                  </div> <!-- end .slidey -->
+                </div> <!-- end .slide-container -->
+
+              </article>
+            </div>
+
+          </div>
+        </section>
+            <section class="mytelus-section mytelus-section-optik-video">
+          <div class="grid">
+
+            <div class="optik-video white-background mytelus-drop-shadow">
+              <h2>
+                <span class="frg-icon icon-tv-inverted color-dark-gray" aria-hidden="true"></span>
+                <span class="icon-label">TELUS Optik™ Local</span>
+              </h2>
+              <p>TELUS Optik™ Local brings you exciting, original, community television programming created for you and by you.</p>
+
+              <!-- data-playlist-id(requried): playlist ID -->
+
+                              <div id="youtube-videos" data-playlist-id="PLuj3rWl-eKLEWeY40mbI-GPmRPsyL4caW" data-default-index="">
+              
+                <div class="player-wrap">
+                  <div id="player">
+                    <iframe style="display:none;" src="" frameBorder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+  
+  
+                <div class="link-transcript" style="visibility:hidden;">
+                  <a href="" class="has-icon">
+                    <span class="icon-label">Transcript</span>
+                    <span class="frg-icon icon-arrow-right-circled" aria-hidden="true"></span>
+                  </a>
+                </div>
+
+                <!-- data-duration(optional): playlist animation duration -->
+                <div class="playlist-wrap no-v-scrolling no-h-scrolling" data-duration="200">
+                  <a class="btn-nav up" href="#youtube-videos" title="Scroll up video playlist">
+                    <span class="frg-icon icon-arrow-up" aria-hidden="true"></span>
+                    <div class="shadow"></div>
+                  </a>
+                  <a class="btn-nav down" href="#youtube-videos" title="Scroll down video playlist">
+                    <span class="frg-icon icon-arrow-down" aria-hidden="true"></span>
+                    <div class="shadow"></div>
+                  </a>
+                  <a class="btn-nav left" href="#youtube-videos" title="Scroll video playlist to the left">
+                    <span class="frg-icon icon-arrow-left" aria-hidden="true"></span>
+                    <div class="shadow"></div>
+                  </a>
+                  <a class="btn-nav right" href="#youtube-videos" title="Scroll video playlist to the right">
+                    <span class="frg-icon icon-arrow-right" aria-hidden="true"></span>
+                    <div class="shadow"></div>
+                  </a>
+                  <div class="playlist-window">
+                    <div class="playlist vertical-scroll-list"></div>
+                    <div class="playlist horizontal-scroll-list"></div>
+                  </div>
+                </div>
+              </div> <!-- / #youtube-videos -->
+
+            </div>
+
+          </div>
+        </section>
+
+        <div id="template" style="display:none;">
+          <a href="#youtube-videos" class="thumbnail">
+            <span class="inner">
+              <img src=""/>
+              <span class="title"></span>
+            </span>
+          </a>
+        </div>
+    <section class="homepage-voc">
+	<div class="homepage-voc__inner">
+	  <h2 class="homepage-voc__heading">What do you think of our website?</h2>
+	  <a href="http://telusweb.fluidsurveys.com/s/mytelus/" class="frg-button color-white homepage-voc__cta">Share your feedback</a>  
+	</div>
+</section>
+</div>
+        <footer class="content beta-footer">
+          <div class="footer-group color-dark">
+            <div class="grid">
+              <nav class="social" role="navigation">
+  <ul>
+    <li class="first">
+              <a href="https://twitter.com/TELUS" target="_blank" class="external-link"><span class="hidden">Twitter</span><i class="frg-icon icon-twitter"><!----></i></a>
+          </li>
+    <li>
+      <a href="https://www.instagram.com/telus" target="_blank" class="external-link instagram"><span class="hidden">Instagram</span><i class="telus-icon-menu-instagram"><!----></i></a>
+    </li>
+    <li class="last">
+      <a href="http://blog.telus.com" target="_blank" class="external-link"><span class="hidden">Blog</span><i class="frg-icon icon-telus-circle-inverted"><!----></i></a>
+    </li>
+  </ul>
+</nav>
+                              
+<section id="legal-footnotes">
+                  <input type="checkbox" id="legal-toggle" checked="checked" />
+                  <label for="legal-toggle">
+                    <a class="frg-button color-white showthis">
+                      Show conditions <sup>1 - 1</sup>
+                    </a>
+                    <a class="frg-button color-white hidethis">
+                      Hide conditions <sup>1 - 1</sup>
+                    </a>
+                  </label>
+                  <ol class="legal-list">
+
+                    <li id="footnote-1">Offer subject to change without notice. Available to TELUS residential customers on a 2 year TELUS TV service agreement. 6 month promotional pricing is available to new customers signing up for TELUS TV on a 2 year service agreement, otherwise the promotional pricing applies for 3 months, for customers who have not subscribed to TELUS TV service in the past 90 days. Minimum system requirements apply. Not available with Lite. Final eligibility for service will be determined by a TELUS representative. Cancellation fee will be $15 per month multiplied by the number of months remaining in the service, plus applicable taxes. Free installation and equipment rental is not available with Lite. If you downgrade to Lite, regular rental fees will apply starting in the month of the downgrade, and cancellation fees will apply as above.Offer not available in all areas. TELUS reserves the right to substitute an equivalent or better product without notice. All rights reserved. <a href="http://www.telus.com/get-help/billing/understand-my-charges/our-service-terms-explained/article.do?topic=&subtopic;=">Learn more about our service agreements.</a></li>
+
+                  </ol>
+                </section>
+<!-- end .legal-footnotes -->
+                            <div id="telus-logo-copyright">
+                <img src="//static.telus.com/common/images/footer/TELUS-logo-white.svg" width="104" height="20" alt="TELUS logo" />
+                <p>&copy; 2016 TELUS Communications Company</p>
+              </div> <!-- End telus-logo-copyright -->
+            </div>
+          </div>
+        </footer>
+      </div><!-- container -->
+      <script type="text/javascript">if(typeof TELUS==='undefined'){var TELUS={}}if(typeof TELUS.constants==='undefined'){TELUS.constants={}}if(typeof TELUS.constants.CMS_Edit_MODE==='undefined'){TELUS.constants.CMS_Edit_MODE=false;}</script>
+      <script>document.createElement( "picture" );</script>
+      <script type="text/javascript">var require={urlArgs:"v=1480549269"};</script>
+      <script async type="text/javascript" data-main="/js/app-dist.js" src="/js/lib/require.js"></script>
+      <!-- Telus: ClickTale Bottom part - place near body close tag -->
+      <script type='text/javascript'>document.write(unescape("%3Cscript%20src='https://cdnssl.clicktale.net/www12/ptc/8877da4b-fb64-4d67-85ed-c061aaaf3539.js'%20type='text/javascript'%3E%3C/script%3E"));</script>
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"e18d5781f1","applicationID":"7212597","transactionName":"YVRXZkdUWhBVUExdV1gedFFBXFsNG2NZU11FHkNbUEI=","queueTime":0,"applicationTime":3,"atts":"TRNUEA9OSR4=","errorBeacon":"bam.nr-data.net","agent":""}</script><script>(function () { var v = 1504213708 * 3.1415926535898; v = Math.floor(v); document.cookie = "__zjc188="+v+"; expires=Thu, 31 Aug 2017 21:09:29 UTC; path=/"; })()</script></body>
+  </html>

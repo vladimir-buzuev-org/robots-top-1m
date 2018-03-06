@@ -1,0 +1,93 @@
+# robots.txt
+#
+# This file is to prevent the crawling and indexing of certain parts
+# of your site by web crawlers and spiders run by sites like Yahoo!
+# and Google. By telling these "robots" where not to go on your site,
+# you save bandwidth and server resources.
+#
+# This file will be ignored unless it is at the root of your host:
+# Used:    http://example.com/robots.txt
+# Ignored: http://example.com/site/robots.txt
+#
+# For more information about the robots.txt standard, see:
+# http://www.robotstxt.org/wc/robots.html
+#
+# For syntax checking, see:
+# http://www.sxw.org.uk/computing/robots/check.html
+
+# Website Sitemap
+Sitemap: http://www.mydomain.com/sitemap.xml
+
+#Baiduspider
+User-agent: Baiduspider
+Disallow: / 
+User-agent: Baiduspider/2.0 
+Disallow: / 
+User-agent: baidu 
+Disallow: / 
+User-agent: baiduspider+  
+Disallow: / 
+User-agent: baiduspider  
+Disallow: / 
+User-agent: BLEXBot 
+Disallow: /
+User-agent: Vagabondo
+Disallow: /
+
+# Crawlers Setup
+User-agent: *
+Crawl-delay: 10
+
+# Allowable Index
+Allow: /*?p=
+Allow: /index.php/blog/
+Allow: /catalog/seo_sitemap/category/
+Allow:/catalogsearch/result/
+
+# Directories
+Disallow: /404/
+Disallow: /app/
+Disallow: /cgi-bin/
+Disallow: /downloader/
+Disallow: /includes/
+Disallow: /js/
+Disallow: /lib/
+Disallow: /magento/
+Disallow: /media/
+Disallow: /pkginfo/
+Disallow: /report/
+Disallow: /skin/
+Disallow: /stats/
+Disallow: /var/
+Disallow: /glassi/
+Disallow: /app/webroot/glasseye/2011/
+Disallow: /glasseye/
+
+
+# Paths (no clean URLs)
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.php$
+Disallow: /*?p=*&
+Disallow: /*?SID=
+Disallow: /*.pdf$
+
+# Google Bot Override
+User-agent: googlebot
+Allow: /assets/
+
+User-agent: Googlebot-image
+Allow: /assets/
+
+User-agent: *
+Disallow: /assets/*.pdf 
+Disallow: /assets/*.doc 
+Disallow: /assets/*.docx 
+Disallow: /*.pdf 
+Disallow: /*.doc 
+Disallow: /*.docx 
+Disallow: /contact
+Disallow: /installers/contact_installer_sent
+Disallow: /contact-installer-thank-you
+Disallow: /contact_thank_you
+Disallow: /join_ggf_thank_you

@@ -1,0 +1,445 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"licenseKey":"a493be4cfc","queueTime":2,"beacon":"bam.nr-data.net","transactionName":"ZQNXYhdWVhFTVUdbDFxJc0MLVEwLXVgcUwJCBVYYDVhVB0JXVFdNRA9QQRYNcA1fUw==","errorBeacon":"bam.nr-data.net","applicationTime":80,"agent":"","applicationID":"5517857"}</script>
+  <title>American Association of Poison Control Centers</title>
+  <!-- <meta name="viewport" content="width=device-width"> -->
+  <meta name="description" content="Emergency. Information. Prevention. 1-800-222-1222 & PoisonHelp.org&nbsp;
+
+The American Association of Poison Control Centers supports the nation’s 55 poison centers in their efforts to prevent and treat poison exposures. Poison centers offer free,&nbsp;confidential, expert medical advice 24 hours a day, seven days a week through the Poison Help line at 1-800-222-1222 and online at www.PoisonHelp.org. This service provides a primary resource for poisoning information and helps reduce costly hospital visits through in-home treatment.  Text "POISON" TO 797979 to save the poison control contact information in your smartphone.
+
+
+The AAPCC's mission is to actively advance the health care role and public health mission of our members through information, advocacy, education and research.&nbsp;">
+  
+  <link rel="stylesheet" href="https://aapcc.s3.amazonaws.com/static/css/reset.css">
+  <link rel="stylesheet" href="https://aapcc.s3.amazonaws.com/static/css/typography.css" media="screen">
+  <link rel="stylesheet" href="https://aapcc.s3.amazonaws.com/static/css/screen.css" media="screen">
+  <link rel="stylesheet" href="https://aapcc.s3.amazonaws.com/static/css/print.css" media="print">  
+  <link rel="stylesheet" href="https://aapcc.s3.amazonaws.com/static/css/sparkbox-select.css" media="screen">
+  <link rel="shortcut icon" href="https://aapcc.s3.amazonaws.com/static/images/favicon.ico" type="image/x-icon"/>
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss/">
+  
+    <style>
+    
+    #intro header#top_message .section_bkg {
+      background: #313131 url('https://aapcc.s3.amazonaws.com/images/homepage/intro_6.png') 50% top no-repeat;
+      background-size: 100% 100%;
+      filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://aapcc.s3.amazonaws.com/images/homepage/intro_6.png',sizingMethod='scale');
+      -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://aapcc.s3.amazonaws.com/images/homepage/intro_6.png',sizingMethod='scale')";
+    }
+    
+    #intro #alerts .section_bkg {
+      background: #d9d5d7 url('https://aapcc.s3.amazonaws.com/images/homepage/alerts_2.jpg') center bottom no-repeat;
+    }
+    
+    #intro #data_sys .section_bkg {
+      background: #f0efef url('https://aapcc.s3.amazonaws.com/images/homepage/data_1.jpg') center 50% no-repeat;
+      background-size: auto 100%;
+    }
+     
+    </style>
+
+  
+  <script src="https://aapcc.s3.amazonaws.com/static/js/libs/jquery.js"></script>
+  <script src="https://aapcc.s3.amazonaws.com/static/js/libs/underscore.js"></script>
+  <script src="https://aapcc.s3.amazonaws.com/static/js/libs/modernizr.js"></script>
+  
+</head>
+<body>
+    <div id="intro">
+        
+<header id="top_message" class="scrollable">
+  <div class="section_bkg">
+    <div class="wrapper">
+      <h1><span>American Association of</span> <br/>Poison Control Centers</h1>
+      
+      <p>Emergency. Information. Prevention. 1-800-222-1222 & PoisonHelp.org&nbsp;</p>
+
+<p><span style="line-height: 1.5em;">The American Association of Poison Control Centers supports the nation’s 55 poison centers in their efforts to prevent and treat poison exposures. Poison centers offer free,&nbsp;confidential, expert medical advice 24 hours a day, seven days a week through the Poison Help line at 1-800-222-1222 and online at www.PoisonHelp.org. This service provides a primary resource for poisoning information and helps reduce costly hospital visits through in-home treatment.  Text "POISON" TO 797979 to save the poison control contact information in your smartphone.</span><br>
+</p>
+
+<p>The AAPCC's mission is to actively advance the health care role and public health mission of our members through information, advocacy, education and research.&nbsp;<br>
+</p>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55ad1ae00b04dbcb" async="async"></script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_sharing_toolbox"></div>
+
+
+      
+    </div>
+  </div>
+</header>
+
+        
+<nav id="main_nav"  class="top_sticky">
+    <div class="wrapper">
+        <ul class="cf">
+            <li>
+                <a href="/" id="red_tag">AAPCC</a>
+            </li>
+            <li >
+                <a id="alert" class="nav_link" href="/alerts/"><span></span>Alerts</a>
+            </li>
+            <li>
+                <a id="prevention" class="nav_link" href="/prevention/"><span></span>Prevention</a>
+            </li>
+            <li>
+                <a id="data_system" class="nav_link" href="/data-system/"><span></span>National Poison Data System</a>
+            </li>
+            <li>
+                <a id="work" class="nav_link" href="/working-aapcc/"><span></span>Our Work</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+        <div id="main" role="main">
+        
+<div id="topics">
+  <section id="alerts" class="bkg-gray_light scrollable">
+    <div class="section_bkg">
+      <div class="wrapper cf">
+        <h2>Alerts</h2>
+        <div class="content">
+          <h3>Keep Up-to-Date on the Latest Poison News</h3>
+          <p>The AAPCC works with America's 55 poison centers to track poisonings and their sources, including household products, food and beverages, chemicals in the workplace and home, environmental toxins, drugs and medicine, and animal and insect bites and stings. </p>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_sharing_toolbox"></div>
+          <ul class="cf">
+            
+              <li class="odd">
+                <a href="/alerts/e-cigarettes/">E-Cigarettes and Liquid Nicotine</a>
+                <p>Liquid nicotine exposures continue to concern poison specialists.</p>
+              </li>
+            
+              <li class="even">
+                <a href="/alerts/hand-sanitizer/">Hand Sanitizer</a>
+                <p>Ingesting any more than a taste of hand sanitizer can cause alcohol poisoning.  </p>
+              </li>
+            
+              <li class="odd">
+                <a href="/alerts/laundry-detergent-packets/">Laundry Detergent Packets</a>
+                <p>Highly concentrated “single-load liquid laundry packets” can cause serious harm to young children.</p>
+              </li>
+            
+              <li class="even">
+                <a href="/alerts/opioids/">Opioid (Narcotic) Pain Medications</a>
+                <p>Poison center data indicate that opioid and sedatives exposures are steadily increasing year over year.</p>
+              </li>
+            
+            </ul>
+            <a href="/alerts/" class="link_square link_square-orange">View all alerts</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section id="alerts_slider" class="bkg-red has-horiz_slider">
+        <div class="section_bkg">
+            <div class="wrapper cf">
+                <div class="horiz_slider">
+                    <button class="hs_right_btn hs_controls">right</button>
+                    <button class="hs_left_btn hs_controls">left</button>
+                    <div class="hs_slide_container">
+                        <ul>
+                            <li>
+                                <div class="slide_content">
+                                    <h4>NEW!  Check out PoisonHelp.org</h4>
+                                    <p>Now there are two ways to get help from the experts at poison control.  Check out AAPCC&#39;s new interactive online poison information tool, PoisonHelp.org.</p>
+                                    <div class="link_container centered">
+                                        <a href="http://www.poisonhelp.org/" class="link_square link_square-red">PoisonHelp.org</a>
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <li>
+                                <div class="slide_content">
+                                    <h4>Make your smartphone even smarter.</h4>
+                                    <p>Text &quot;poison&quot; to 797979 to add poison control as a contact in your smartphone.  </p>
+                                    <div class="link_container centered">
+                                        <a href="http://www.aapcc.org/about/poisoning-prevention-pledge/" class="link_square link_square-red">Take the pledge!</a>
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <li>
+                                <div class="slide_content">
+                                    <h4>National Poison Prevention Week is March 19-25!</h4>
+                                    <p>Be a part of the conversation by following #PreventPoison and #NPPW2017 on social media, and check out AAPCC&#39;s NPPW webpage and press releases!</p>
+                                    <div class="link_container centered">
+                                        <a href="http://www.aapcc.org/prevention/nppw/" class="link_square link_square-red">NPPW 2017</a>
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <li>
+                                <div class="slide_content">
+                                    <h4>Become a Sustaining Member of AAPCC!</h4>
+                                    <p>Your organization’s annual unrestricted gift helps ensure that AAPCC can continue to provide vital support to our country’s 55 poison center members.</p>
+                                    <div class="link_container centered">
+                                        <a href="http://www.aapcc.org/working-aapcc/becoming-member/sustaining-membership/" class="link_square link_square-red">Click here!</a>
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <li>
+                                <div class="slide_content">
+                                    <h4>Poison Control Today</h4>
+                                    <p>Subscribe to &quot;Poison Control Today: A Quarterly Bulletin of the American Association of Poison Control Centers,&quot; and stay up-to-date on the latest poison safety and prevention news! </p>
+                                    <div class="link_container centered">
+                                        <a href="http://aapcc.us12.list-manage.com/subscribe?u=a9b5b249ee4809fe1efa41042&amp;id=862dc2e4d1" class="link_square link_square-red">Sign Up! </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+  <section id="prevent" class="bkg-gray_light scrollable">
+    <div class="section_bkg">
+      <div class="wrapper cf">
+        <div class="horz_shadow">
+          <h2>Prevention</h2>
+          <p>In 2015, America’s 55 poison centers received over 2.8 million calls. Of those, about 2.2 million of which were about people coming
+into contact with dangerous or potentially dangerous substances. The rest were calls for information.</p>
+
+<p>These prevention tips can help you or your loved ones avoid poisonings. For more tips and information, call your local poison center at 1-800-222-1222.</p>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_sharing_toolbox"></div>
+
+          <div class="page_links">
+            <a href="/prevention/">View all&nbsp;&rsaquo;</a>
+          </div>
+        </div>
+        <div class="switcher cf">
+          <ul class="switcher-buttons cf">
+             <li><button>Daycare &amp; School Poison Safety</button></li>
+          
+             <li><button>Food &amp; Mushroom Poisoning</button></li>
+          
+             <li><button>In the Home</button></li>
+          
+             <li><button>National Poison Prevention Week</button></li>
+          
+             <li><button>Over-the-Counter Medicine Safety</button></li>
+          </ul>
+          <ul class="switcher-content cf">
+            <li class="cf">
+              
+              <div class="img-block"><img src="https://aapcc.s3.amazonaws.com/images/topics/banner_image_for_webpage.jpg" alt="" /></div>
+              
+              <div class="floated-text">
+                <h3>Daycare &amp; School Poison Safety</h3>
+                <p>While cleaning products play an important role in protecting public health, they also contain chemicals that may cause serious health problems if used in the wrong way or in the wrong amounts. </p>
+                <a href="/prevention/daycare-school-poison-safety/" class="sup_link">Read more&nbsp;&rsaquo;</a>
+              </div>
+            </li>
+          
+            <li class="cf">
+              
+              <div class="img-block"><img src="https://aapcc.s3.amazonaws.com/images/topics/Prevention_Page_Image.jpg" alt="" /></div>
+              
+              <div class="floated-text">
+                <h3>Food &amp; Mushroom Poisoning</h3>
+                <p>The CDC estimates that food poisoning affects 1 in 6 Americans every year.  Read on for information about how to protect against food-borne illness.</p>
+                <a href="/prevention/food-mushroom-poisoning/" class="sup_link">Read more&nbsp;&rsaquo;</a>
+              </div>
+            </li>
+          
+            <li class="cf">
+              
+              <div class="img-block"><img src="https://aapcc.s3.amazonaws.com/images/topics/Home_for_web.jpg" alt="" /></div>
+              
+              <div class="floated-text">
+                <h3>In the Home</h3>
+                <p>Follow these steps to make sure your home is poison-proof.</p>
+                <a href="/prevention/home/" class="sup_link">Read more&nbsp;&rsaquo;</a>
+              </div>
+            </li>
+          
+            <li class="cf">
+              
+              <div class="floated-text">
+                <h3>National Poison Prevention Week</h3>
+                <p>Congress established National Poison Prevention Week (NPPW) on Sept. 16, 1961 (P.L. 87-319) to highlight the dangers of poisonings and how to prevent them.  Sponsored by the National Poisoning Prevention Council, NPPW is the third week in March each year.</p>
+                <a href="/prevention/nppw/" class="sup_link">Read more&nbsp;&rsaquo;</a>
+              </div>
+            </li>
+          
+            <li class="cf">
+              
+              <div class="img-block"><img src="https://aapcc.s3.amazonaws.com/images/topics/OTC_Med_Safety_Topic_Page_Main_Graphic.jpg" alt="" /></div>
+              
+              <div class="floated-text">
+                <h3>Over-the-Counter Medicine Safety</h3>
+                <p>Over-the-Counter Medicine Safety is a 100% free, evidence-based set of resources designed to empower adults to facilitate critical medicine safety discussions with pre-adolescents and adolescents.</p>
+                <a href="/prevention/over-counter-medicine-safety/" class="sup_link">Read more&nbsp;&rsaquo;</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="data_sys" class="bkg-gray_light scrollable">
+    <div class="section_bkg">
+      <div class="wrapper cf">
+        <h2>National Poison Data System</h2>
+        <div class="content-blocked">
+          <p><a href="https://aapcc.s3.amazonaws.com/images/library/Data_graphic_1.jpg"></a></p>
+
+<p><img src="https://aapcc.s3.amazonaws.com/images/library/NPDS_Front_Page_Graphic_-_For_Web_3.jpg"><br>
+</p>
+
+<p>AAPCC owns and manages the National Poison Data System (NPDS), a database collating years of information and poisoning exposure calls placed to AAPCC member poison centers across the country. The categorization of these calls into: human or animal poison exposure calls (an actual or suspected exposure occurred where the caller seeks information regarding triage and treatment) and information calls (no exposure occurred; the caller just seeks information regarding a specific substance) allows for the granularity necessary to evaluate and analyze toxic exposure patterns. NPDS is the only near real-time comprehensive poisoning surveillance database in the United States.<span rel="pastemarkerend" id="pastemarkerend18258"></span><br>
+</p>
+
+<p>AAPCC publishes a comprehensive report of NPDS call data annually, approximately one year after the close of the data year in the journal Clinical Toxicology and is available for download free-of-charge by clicking “Current Annual Report” below.&nbsp;<span rel="pastemarkerend" id="pastemarkerend39963"></span><br>
+</p>
+
+<p><b>To learn more about NPDS click the “Request Data” link below.</b><span rel="pastemarkerend" id="pastemarkerend44760"></span><br>
+</p>
+
+          <a href="/data-system/" class="link_square link_square-orange">Request Data</a>
+          
+          <a href="https://aapcc.s3.amazonaws.com/pdfs/annual_reports/2015_Annual_Report_Snapshot_FINAL_1-17-17.pdf" class="link_square link_square-orange">Current Annual Report</a>
+          
+          <a href="/annual-reports/" class="sup_link">past reports</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="our_work" class="bkg-red scrollable">
+    <div class="section_bkg">
+
+      <div class="wrapper cf">
+        <div class="horz_shadow">
+          <h2>Our Work</h2>
+          <p><span style="background-color: transparent;"><b>The AAPCC's mission is to&nbsp;actively advance the health care role and public health mission of our members through information, advocacy, education and research.</b></span><span id="pastemarkerend52811" rel="pastemarkerend">&nbsp;</span></p>
+
+<p>The AAPCC is located at 515 King St., Suite 510, Alexandria, VA 22314.&nbsp;</p>
+
+<p>Phone: 703-894-1858</p>
+
+<p>Email:&nbsp;<span style="line-height: 1.5em;">info@aapcc.org</span></p>
+
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_sharing_toolbox"></div>
+          <div class="page_links">
+              <a href="/about/">About AAPCC&nbsp;&rsaquo;</a><a href="/working-aapcc/" class="to_right">Working with the AAPCC&nbsp;&rsaquo;</a>
+          </div>
+        </div>
+        
+        <div class="widget_contanier cf">
+          <div class="widget-box widget-box-red widget-odd">
+            <h4>Press Releases</h4>
+            <div class="contents cf">
+              <ul class="docs_list">
+                <li><a href="/press/80/">The American Association of Poison Control Centers (AAPCC) and the National Pesticide Information Center (NPIC) Provide Back to School Poisoning Safety Tips &nbsp;&rsaquo;</a></li>
+              
+                <li><a href="/press/79/">June 2017 Deadly Novel Synthetic Opioid Exposure Outbreak in Georgia – A Case Study in the Crucial Surveillance Role of Regional Poison Control Centers&nbsp;&rsaquo;</a></li>
+              </ul>
+              <a href="/press/" class="link_square link_square-orange">View more</a>
+            </div>
+          </div>
+
+          
+<div class="widget-box widget-box-red">
+    <h4>Find Your Local Poison Center</h4>
+    <div class="contents cf">
+        <p>Poison centers offer free, private, confidential medical advice 24 hours a day, 7 days a week. You can reach your local poison center by calling 1-800-222-1222.</p>
+        <form id="find_local_center" action="/centers/" method="get" accept-charset="utf-8">
+            <select name="states_served" id="local_center" onchange="" size="1" class="sparkbox-custom"><option value="AL">Alabama<option value="AK">Alaska<option value="AZ">Arizona<option value="AR">Arkansas<option value="CA">California<option value="CO">Colorado<option value="CT">Connecticut<option value="DE">Delaware<option value="DC">District of Columbia<option value="FL">Florida<option value="GA">Georgia<option value="HI">Hawaii<option value="ID">Idaho<option value="IL">Illinois<option value="IN">Indiana<option value="IA">Iowa<option value="KS">Kansas<option value="KY">Kentucky<option value="LA">Louisiana<option value="ME">Maine<option value="MD">Maryland<option value="MA">Massachusetts<option value="MI">Michigan<option value="MN">Minnesota<option value="MS">Mississippi<option value="MO">Missouri<option value="MT">Montana<option value="NE">Nebraska<option value="NV">Nevada<option value="NH">New Hampshire<option value="NJ">New Jersey<option value="NM">New Mexico<option value="NY">New York<option value="NC">North Carolina<option value="ND">North Dakota<option value="OH">Ohio<option value="OK">Oklahoma<option value="OR">Oregon<option value="PA">Pennsylvania<option value="RI">Rhode Island<option value="SC">South Carolina<option value="SD">South Dakota<option value="TN">Tennessee<option value="TX">Texas<option value="UT">Utah<option value="VT">Vermont<option value="VA">Virginia<option value="WA">Washington<option value="WV">West Virginia<option value="WI">Wisconsin<option value="WY">Wyoming<option value="AS">American Samoa<option value="GU">Guam<option value="MP">Northern Mariana Islands<option value="PR">Puerto Rico<option value="VI">Virgin Islands<option value="NB">New Brunswick<option value="QC">Quebec<option value="AB">Alberta<option value="ON">Ontario<option value="MB">Manitoba<option value="NS">Nova Scotia<option value="BC">British Columbia</select>
+            <input type="submit" id="local_center_submit" name="local_center_submit" value="Search" class="submit_square submit_square-orange"/>
+            <a href="/centers/" class="sup_link">View all Poison Control Centers</a>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="https://aapcc.s3.amazonaws.com/static/js/libs/jquery.sparkbox-select.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var droid = function() {
+      return navigator.userAgent.match(/Android/i) ? true : false;
+    }
+    if ( droid() === false ) {
+      $('.sparkbox-custom').sbCustomSelect();
+    } else { $('.sparkbox-custom').show() }
+  });
+</script>
+
+        </div>
+      
+      </div>
+    </div>
+  </section>
+    
+</div>
+
+        </div>
+        <footer>
+          <div class="wrapper cf">
+            <div id="footer-right">
+              <div id="footer-social">
+                <a href="https://twitter.com/AAPCC" class="social_icon icon_twitter">Twitter</a>
+                <a href="https://www.facebook.com/aapcc" class="social_icon icon_facebook">Facebook</a>
+                <a href="/rss/" class="social_icon icon_rss">RSS</a>
+                <a href="http://aapcc.wordpress.com" class="social_icon icon_wordpress">WordPress</a>
+              </div>
+              <form id="footer-search" action="/search/" method="get" accept-charset="utf-8">
+                <input type="text" name="q" value="" id="search-term" placeholder="Search aapcc.org"/>
+              </form>
+            </div>
+            <div id="footer-left">
+              <ul id="footer-nav" class="cf">
+                <li><a href="mailto:info@aapcc.org">Contact Us</a></li>
+                <li><a href="http://capwiz.com/aapcc/home/">Take Action</a></li>
+                <li><a href="/members/login/">Member Login</a></li>
+              </ul>
+              <img src="https://aapcc.s3.amazonaws.com/static/images/bkg/footer_name.png" alt="1-800-222-1222 Emergency. Information. Prevention.">
+            </div>
+          </div>
+        </footer>
+    </div><!--! end of #intro -->
+
+      <script src="https://aapcc.s3.amazonaws.com/static/js/main.js"></script>
+      
+<script src="https://aapcc.s3.amazonaws.com/static/js/event_tracking.js"></script>
+<script>
+    register_hp_click_tracking($("#alert.nav_link"), "NavBar", "Alert");
+    register_hp_click_tracking($("#prevention.nav_link"), "NavBar", "Prevention");
+    register_hp_click_tracking($("#data_system.nav_link"), "NavBar", "NPDC");
+    register_hp_click_tracking($("#work.nav_link"), "NavBar", "Work");
+    register_hp_click_tracking($("#red_tag"), "NavBar", "Work");
+    register_hp_click_tracking($(".horiz_slider button.hs_left_btn"), "Feature", "Left");
+    register_hp_click_tracking($(".horiz_slider button.hs_right_btn"), "Feature", "Right");
+    $(".switcher-buttons button").each(function() {
+        var button = $(this);
+        register_click_tracking("HomePage", 1, true, button, "PreventionNav", button.text());
+    });
+    
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66004306-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

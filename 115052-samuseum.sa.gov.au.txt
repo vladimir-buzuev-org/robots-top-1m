@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8">
+    <title>Error</title>
+    <meta name="description" content="Not Found">
+    <meta name="author" content="Lithe">
+    <!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Favicons
+	================================================== -->
+    <link rel="shortcut icon" href="/content/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/content/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/content/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/content/images/apple-touch-icon-114x114.png">
+    <script type="text/javascript" src="Content/js/jquery-1.7.2.min.js"></script>
+    <style type="text/css">
+        body {
+			background: #ffffff;
+			font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			color: #333333;
+			-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+			-webkit-text-size-adjust: 100%;
+ 		}
+		h1, h2, h3, h4, h5, h6 {
+			color: #4D7182;
+			font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;;
+			font-weight: normal; }
+		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+		h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
+		h2 { font-size: 35px; line-height: 40px; margin-bottom: 10px; }
+		h3 { font-size: 28px; line-height: 34px; margin-bottom: 8px; }
+		h4 { font-size: 21px; line-height: 30px; margin-bottom: 4px; }
+		h5 { font-size: 17px; line-height: 24px; }
+		h6 { font-size: 14px; line-height: 21px; }
+		p { margin: 0 0 20px 0; }
+		a, a:visited { color: #4D7182; text-decoration: underline; outline: 0; }
+		a:hover, a:focus { color: #000;text-decoration: none; }
+		p a, p a:visited { line-height: inherit; }
+			
+
+        h4 a
+        {
+            background: #4D7182;
+            color: #fff;
+            padding: 7px 10px;
+            margin: 10px 0;
+            text-decoration: underline;
+        }
+        h4 a:hover
+        {
+            background: #000;
+       		color: #fff;
+       		text-decoration:none
+        }
+        
+        
+        .container {
+           position: relative;
+			width: 960px;
+			margin: 0 auto;
+			padding: 0;
+            
+        }
+        
+        .googlesearch ul {
+			list-style-type: none;
+			margin:0;padding:0;
+		}
+		.logo {
+		margin:20px 0;
+width: 123px;
+height: 145px;
+background-repeat: no-repeat;
+}
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("form#form-search").submit(function () {
+                return false;
+            });
+        });
+
+        function keydosearch(event) {
+            if (event.keyCode == 13) dosearch();
+        }
+
+        function dosearch() {
+            var q = $("#q");
+            if (q && q.attr("value") != "") {
+                window.open("/search" + "?q=" + encodeURIComponent(q.val()), "_self");
+                q.val("");
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Primary Page Layout
+	================================================== -->
+    <div class="container">
+        <div class="logo">
+        </div>
+        <h1>
+            Not found</h1>
+        <div>
+            <h3>
+                Sorry, but the page you requested was not found</h3>
+            <p>
+                It might have been removed, had its name changed or be temporarily unavailable.</p>
+            <p>
+                <a href="/">Back to home page</a></p>
+        </div>
+        <div class="googlesearch">
+            <div id="goog-wm">
+                <div class="content">
+                    <h3 class="other-things">
+                        <b>Other things to try:</b>
+                    </h3>
+                    <ul>
+                        <li class="search-goog">
+                            <form class="form-search" id="form-search" action="#">
+                            <input type="text" id="q" name="q" class="input-medium" value="Search" onblur="if(this.value=='')this.value='Search'"
+                                onfocus="if(this.value=='Search')this.value=''" onkeypress="keydosearch(event);" />
+                            <button type="submit" class="gobtn" onclick="dosearch();">
+                                GO</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--<form class="form-search" id="form-search" action="#">
+            <input type="text" id="q" name="q" class="input-medium" value="Search" onblur="if(this.value=='')this.value='Search'"
+                onfocus="if(this.value=='Search')this.value=''" onkeypress="keydosearch(event);" />
+            <button type="submit" class="gobtn" onclick="dosearch();">
+                GO</button>
+            </form>-->
+        </div>
+    </div>
+    <!-- End Document
+================================================== -->
+</body>
+</html>

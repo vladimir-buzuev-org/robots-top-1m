@@ -1,0 +1,5580 @@
+
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+<html lang="en-US"
+    data-adsk-locale="en-US"
+    data-iso-country="US"
+    data-gss-code="en"
+    data-run-mode="[prod, crx3, nosamplecontent, publish, crx3tar, dc]">
+    <!-- AdskLocale: en_US -->
+    <!-- GSS Code: en -->
+    <!-- Adsk Country: US -->
+    <!-- ISO 639-1 Language: en -->
+    
+
+
+
+
+
+
+
+
+
+<head data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    
+    <title>Manufacturing Solutions &amp; Software | Autodesk</title>
+    
+      <link rel="canonical" href="https://www.autodesk.com/solutions/manufacturing"/>
+    
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="keywords" content="manufacturing solutions, manufacturing software, manufacturing production software" />
+    <meta name="personalization-tags" content="personalization-tags:product/inventor" />
+    <meta name="description" content="Autodesk has a variety of software solutions for manufacturing. View our products for CNC machining, fabrication, modeling, composites, additive, and metrology." />
+
+    <meta charset="utf-8"> 
+    <meta name="robots" content="" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Manufacturing Solutions &amp; Software | Autodesk" />
+    <meta property="og:description" content="Autodesk has a variety of software solutions for manufacturing. View our products for CNC machining, fabrication, modeling, composites, additive, and metrology." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Manufacturing Solutions &amp; Software | Autodesk" />
+    <meta name="twitter:description" content="Autodesk has a variety of software solutions for manufacturing. View our products for CNC machining, fabrication, modeling, composites, additive, and metrology." />
+    <meta name="twitter:site" content="@autodesk" />
+    <meta name="twitter:creator" content="@autodesk" />
+
+    
+    
+
+
+
+
+
+
+<link rel="stylesheet" href="https://static-dc.autodesk.net/etc/designs/v201708292052/templates-general/structure/clientlibs.min.css" type="text/css">
+
+
+
+
+    
+        
+            <link rel="stylesheet" href="https://static-dc.autodesk.net/etc/designs/v201708292052/templates-general/skins/troposphere/clientlibs.min.css" type="text/css">
+
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+<script type="text/javascript">
+    (function() {
+        'use strict';
+
+        var userCountry;
+        var xhr;
+
+        function createCookie(name, value, days) {
+            var date, expires;
+
+            if (days) {
+                date = new Date();
+                date.setTime(date.getTime()+(days*24*60*60*1000));
+                expires = '; expires=' + date.toUTCString();
+            } else {
+                expires = '';
+            }
+            document.cookie = name + '=' + value+expires + '; path=/';
+        }
+
+        function readCookie(name) {
+            var nameEQ = name + '=',
+                ca = document.cookie.split(';'),
+                i, c;
+
+            for (i=0; i < ca.length; i++) {
+                c = ca[i];
+                while (c.charAt(0)==' ') {
+                    c = c.substring(1,c.length);
+                }
+
+                if (c.indexOf(nameEQ) == 0) {
+                    return c.substring(nameEQ.length,c.length);
+                }
+            }
+            return undefined;
+        }
+
+        userCountry = readCookie('userCountry');
+
+        if (typeof userCountry === 'undefined') {
+            xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                var json;
+                var countryCode;
+
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    try {
+                        json = JSON.parse(xhr.responseText);
+                        countryCode = json['information_level'].toLowerCase() === 'detailed'
+                            ? json['country']
+                            : json['registry_country_code'];
+
+                        createCookie('userCountry', countryCode, 1);
+                    } catch (error) {
+                    }
+                }
+            };
+
+            xhr.open('GET', '//api.demandbase.com/api/v2/ip.json?key=079be9510fd6964f419dd8df1a1d2295');
+            xhr.send();
+        }
+    })();
+</script>
+
+    
+    
+<script type="text/javascript">
+    window.hasNoAccessToLocalStorage = false;
+
+    if (typeof localStorage === 'object') {
+        try {
+            // test that the localStorage doesn't raise errors
+            localStorage.setItem('localStorage', 1);
+            localStorage.removeItem('localStorage');
+        } catch (e) {
+            // We are on private mode on Safari
+            // Access to localStorage is forbidden
+
+            var CookieStorage = function (type) {
+                function createCookie(name, value, days) {
+                    var date, expires;
+
+                    if (days) {
+                        date = new Date();
+                        date.setTime(date.getTime()+(days*24*60*60*1000));
+                        expires = '; expires=' + date.toGMTString();
+                    } else {
+                        expires = '';
+                    }
+                    document.cookie = name + '=' + value+expires + '; path=/';
+                }
+
+                function readCookie(name) {
+                    var nameEQ = name + '=',
+                            ca = document.cookie.split(';'),
+                            i, c;
+
+                    for (i=0; i < ca.length; i++) {
+                        c = ca[i];
+                        while (c.charAt(0)==' ') {
+                            c = c.substring(1,c.length);
+                        }
+
+                        if (c.indexOf(nameEQ) == 0) {
+                            return c.substring(nameEQ.length,c.length);
+                        }
+                    }
+                    return null;
+                }
+
+                function setData(data) {
+                    // Convert data into JSON and encode to accommodate for special characters.
+                    data = encodeURIComponent(JSON.stringify(data));
+                    // Create cookie.
+                    if (type == 'session') {
+                        createCookie(getSessionName(), data, 365);
+                    } else {
+                        createCookie('localStorage', data, 365);
+                    }
+                }
+
+                function clearData() {
+                    if (type == 'session') {
+                        createCookie(getSessionName(), '', 365);
+                    } else {
+                        createCookie('localStorage', '', 365);
+                    }
+                }
+
+                function getData() {
+                    // Get cookie data.
+                    var data = type == 'session' ? readCookie(getSessionName()) : readCookie('localStorage');
+                    return data ? JSON.parse(decodeURIComponent(data)) : {};
+                }
+
+                function getSessionName() {
+                    // If there is no name for this window, set one.
+                    // To ensure it's unique use the current timestamp.
+                    if(!window.name) {
+                        window.name = new Date().getTime();
+                    }
+                    return 'sessionStorage' + window.name;
+                }
+
+                // Initialise if there's already data.
+                var data = getData();
+
+                return {
+                    length: 0,
+                    clear: function () {
+                        data = {};
+                        this.length = 0;
+                        clearData();
+                    },
+                    getItem: function (key) {
+                        return data[key] === undefined ? null : data[key];
+                    },
+                    key: function (i) {
+                        var ctr = 0;
+                        for (var k in data) {
+                            if (ctr == i) return k;
+                            else ctr++;
+                        }
+                        return null;
+                    },
+                    removeItem: function (key) {
+                        delete data[key];
+                        this.length--;
+                        setData(data);
+                    },
+                    setItem: function (key, value) {
+                        data[key] = value+''; // forces the value to a string
+                        this.length++;
+                        setData(data);
+                    }
+                };
+            };
+
+            // Replace window.localStorage and window.sessionStorage with
+            // our custom implementation.
+            var cookieLocalStorage = new CookieStorage('local');
+            var cookieSessionStorage = new CookieStorage('session');
+            window.localStorage = cookieLocalStorage;
+            window.sessionStorage = cookieSessionStorage;
+            // For Safari private browsing need to also set the proto value.
+            window.localStorage.__proto__ = cookieLocalStorage;
+            window.sessionStorage.__proto__ = cookieSessionStorage;
+            window.hasNoAccessToLocalStorage = true;
+
+            console.warn('Access to LocalStorage is forbidden, using Cookie storage instead');
+        }
+    }
+</script>
+
+     
+    
+
+    
+    
+        
+            <script type="text/javascript" src="//nexus.ensighten.com/adsk/dcom_prod/Bootstrap.js"></script>
+        
+    
+
+    
+    <!--[if lt IE 9]>
+    <script>
+        document.createElement('header');
+        document.createElement('footer');
+    </script>
+    <![endif]-->
+
+	<link rel='stylesheet' href='https://static-dc.autodesk.net/etc/designs/v201708292052/templates-general/structure/fonts/frutiger/clientlibs/frutiger.css'/>
+	<link rel='stylesheet' href='https://static-dc.autodesk.net/etc/designs/v201708292052/templates-general/structure/fonts/frutiger/clientlibs/troposphere-frutiger.css'/>
+
+    
+    
+        
+            <script>
+              var MTIProjectId='223a0199-ecdd-4384-bc4b-ffb73752f9d4';
+               (function() {
+                      var mtiTracking = document.createElement('script');
+                      mtiTracking.type='text/javascript';
+                      mtiTracking.async='true';
+                      mtiTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.com/t/trackingCode.js';
+                      (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild( mtiTracking );
+                 })();
+            </script>
+        
+    
+
+    <script type="text/javascript">
+      // load
+      var siteKey = "/content/autodesk";
+    </script>
+
+    
+    <script>
+        var require = {
+            paths: {},
+            shim: {}
+        };
+
+        (window.adsk = function( adsk ){
+            var requireStack = [];
+            var defineStack = [];
+            var add = function(dependencyList, callback, errback){
+                requireStack.push(function(){
+                    require(dependencyList, callback, errback);
+                });
+            };
+            var execute = function(){
+                while(defineStack.length > 0){
+                    defineStack.shift().call();
+                }
+                while(requireStack.length > 0){
+                    requireStack.shift().call();
+                }
+                
+                delete adsk.defer;
+            };
+            
+            adsk.defer = add;
+            
+            adsk.defer.execute = execute;
+            
+            window.define = function(id, dependencyList, callback){
+                defineStack.push( function(){
+                    define(id, dependencyList, callback);
+                });
+            };
+
+            
+            //window.define.amd = {};
+
+            return adsk;
+
+        }(window.adsk || {}));
+    </script>
+
+    
+    
+
+    <script type="text/javascript" src="https://static-dc.autodesk.net/etc/designs/v201708292052/templates-general/structure/polyfills.min.js"></script>
+
+
+    
+    
+        <script type="text/javascript" src="https://damassets.autodesk.net/content/dam/autodesk/personalization/javascript/demandbase-min.js"></script>
+    
+        
+    
+    
+
+
+</head>
+
+    
+
+
+<body class="pc-08 ">
+    <div class="clientcontext parbase">
+
+
+
+
+
+    
+
+<script type="text/javascript" src="https://static-dc.autodesk.net/etc/clientlibs/granite/jquery.min.js"></script>
+<script type="text/javascript" src="https://static-dc.autodesk.net/etc/clientlibs/granite/utils.min.js"></script>
+<script type="text/javascript" src="https://static-dc.autodesk.net/etc/clientlibs/granite/jquery/granite.min.js"></script>
+<script type="text/javascript" src="https://static-dc.autodesk.net/etc/clientlibs/foundation/jquery.min.js"></script>
+<script type="text/javascript" src="https://static-dc.autodesk.net/etc/clientlibs/foundation/shared.min.js"></script>
+<script type="text/javascript" src="https://static-dc.autodesk.net/etc/clientlibs/granite/lodash/modern.min.js"></script>
+<script type="text/javascript" src="https://static-dc.autodesk.net/etc/clientlibs/foundation/personalization/kernel.min.js"></script>
+
+<script type="text/javascript">
+    $CQ(function() {
+
+        CQ_Analytics.SegmentMgr.SEGMENTATION_ROOT = "/etc/segmentation";
+        // In case multiple AEM instances share the same server and DNS the path can include an identifier after /etc
+        CQ_Analytics.SegmentMgr.loadSegments("/etc/segmentation");
+        CQ_Analytics.ClientContextUtils.init("/etc/clientcontext/default", "/content/autodesk/global/en/solutions/manufacturing");
+
+        
+    });
+
+    // Set the required paths in JS with Mapping resolution
+    var adsk = adsk || {};
+    adsk.pathCenter = (function(nspace) {
+        'use strict';
+        nspace.tagpath = "/services/adsk/c/asset-tag-service";
+        nspace.assetpath = "/services/adsk/c/asset-service";
+        nspace.referencecontentpath = "/services/adsk/c/referencedcomponent/rootpath";
+        nspace.patternpath = "/services/adsk/c/patternservice";
+        nspace.mainoxygenpath = "/services/adsk/c/oxygen/tool";
+        nspace.videoupload = "/services/videoUpload";
+        return nspace;
+    }(adsk.pathCenter || {}));
+</script></div>
+
+
+    <div class="page-container">
+        
+
+
+
+
+<div style="display: none">
+    <svg width="0" height="0" style="position:absolute"><symbol viewBox="0 0 100 100" id="icon-svg-alert" xmlns="http://www.w3.org/2000/svg">    <path d="M50 12.5l-45 75h90l-45-75zm4 28.1l-1.1 21.3H46l-1.2-21.3H54zm-.4 34.6h-8.1v-8h8.1v8z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-alert-exclamation" xmlns="http://www.w3.org/2000/svg">    <path d="M60 12.5l-2.5 46.1H42.7L40 12.5h20zm-.8 75H41.7V70.3h17.5v17.2z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-arrow-button" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M70.5 50L38.7 18.2l-9.2 9.2L52.1 50 29.5 72.6l9.2 9.2z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-arrow-cta" xmlns="http://www.w3.org/2000/svg">    <path d="M30 29h14V15H30v14zm14 14h14V29H44v14zm14 0v14h14V43H58zM44 57v14h14V57H44zm0 28V71H30v14h14z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-arrow-down" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M50 73.2L10 34.7l8.2-7.9L50 57.3l31.8-30.5 8.2 7.9z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-arrow-dropdown" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M50 85.8L5 28.2h90z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-arrow-dropdown-up" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M50 24l45 57.6H5z"/></symbol><symbol viewBox="0 0 8.06 14.71" id="icon-svg-arrow-right" xmlns="http://www.w3.org/2000/svg"><defs><style>.ahcls-1{fill:none;stroke:#666;stroke-miterlimit:10}</style></defs><title>Asset 12</title><g id="ahLayer_2" data-name="Layer 2">    <path class="ahcls-1" d="M.35.35l7 7-7 7" id="ahDESIGN"/></g></symbol><symbol viewBox="0 0 100 100" id="icon-svg-arrow-up" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M50 26.8L10 65.3l8.2 7.9L50 42.7l31.8 30.5 8.2-7.9z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-blog" xmlns="http://www.w3.org/2000/svg">    <path d="M50 10c-22.1 0-40 17.9-40 40s17.9 40 40 40 40-17.9 40-40-17.9-40-40-40zM26 34h48v30.4H43.6L34 75.6V64.4h-8V34z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-button-download" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd">    <path d="M17.5 68.8h65v13h-65zM50.7 59.2l31.8-31.8-9.2-9.2-22.6 22.6-22.6-22.6-9.2 9.2z"/></g></symbol><symbol viewBox="0 0 100 100" id="icon-svg-button-dropdown" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M50.7 70.5l31.8-31.8-9.2-9.2-22.6 22.6-22.6-22.6-9.2 9.2z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-cart" xmlns="http://www.w3.org/2000/svg"><circle cx="28.4" cy="73.7" r="6.2"/>    <path d="M75 22.1l-8 36.3H20L17.3 48 11 49.6l4 15.3h57.2l8-36.3H91v-6.5z"/><circle cx="64.9" cy="73.7" r="6.2"/>    <path d="M63.8 54.2l6-31.1H17.1l6.2 31.1h40.5zm-5.4-6.5H28.6L27 39.9h32.9l-1.5 7.8zm3.5-18.2l-1.3 6.7H26.3L25 29.5h36.9z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-cart-bubble" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M25.7 22.2l-3.2 2.7v18.3L9 47.7v2.8l13.5 4.8V71l3.2 3.2h60.2l3.1-3.3V25.1l-3.1-2.9z"/></symbol><symbol viewBox="0 0 25 21" id="icon-svg-chat-icon" xmlns="http://www.w3.org/2000/svg"><defs><style>.aocls-1{fill:#777}.aocls-2{fill:#87bc40}.aocls-3{fill:#fff}</style></defs><title>Asset 10</title><g id="aoLayer_2" data-name="Layer 2"><g id="aoDESIGN">    <path class="aocls-1" d="M20.5 10a6.5 6.5 0 0 1 1.5.18V0H0v16h4v5l5-5h5a6.5 6.5 0 0 1 6.5-6z"/><circle class="aocls-2" cx="20.5" cy="16.5" r="4.5"/>    <path class="aocls-3" d="M4 7h13v1H4zM4 10h6.47v1H4zM4 4h13v1H4z"/></g></g></symbol><symbol id="icon-svg-chat-offline-icon" viewBox="0 0 20 17" xmlns="http://www.w3.org/2000/svg"><style>.apst0{fill:#ccc}</style><title>Asset 15</title><g id="apLayer_2"><g id="apPSD">    <path class="apst0" d="M15 7c.3 0 .7 0 1 .1V0H0v12h3v4l4-4h3c0-2.8 2.2-5 5-5zM2 3h12v1H2V3zm7 5H2V7h7v1zM2 6V5h12v1H2z"/><circle class="apst0" cx="16" cy="13" r="4"/></g></g></symbol><symbol viewBox="0 0 20 17" id="icon-svg-chat-white-icon" xmlns="http://www.w3.org/2000/svg"><defs><style>.aqcls-1{fill:#fff}.aqcls-2{fill:#91c63e}</style></defs><title>Asset 15</title><g id="aqLayer_2" data-name="Layer 2"><g id="aqPSD">    <path class="aqcls-1" d="M15 7a5 5 0 0 1 1 .1V0H0v12h3v4l4-4h3a5 5 0 0 1 5-5zM2 3h12v1H2zm7 5H2V7h7zM2 6V5h12v1z"/><circle class="aqcls-2" cx="16" cy="13" r="4"/></g></g></symbol><symbol viewBox="0 0 100 100" id="icon-svg-check" xmlns="http://www.w3.org/2000/svg">    <path d="M17.8 53.1L8 62l27.2 26.3L93 31.1l-9.4-9.3-49 48.9z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-circle" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-circle-o" xmlns="http://www.w3.org/2000/svg">    <path d="M50 8c23.2 0 42 18.8 42 42S73.2 92 50 92 8 73.2 8 50 26.8 8 50 8m0-8C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-circle-o-thin" xmlns="http://www.w3.org/2000/svg">    <path d="M50 4c25.4 0 46 20.6 46 46S75.4 96 50 96 4 75.4 4 50 24.6 4 50 4m0-4C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-class-materials" xmlns="http://www.w3.org/2000/svg">    <path d="M35.4 10.2v60.9h48.7V31.9H63V10.2H35.4zm31 .8v17.2h17.4L66.4 11zm-34.5 8.7h-6.1v61H75v-5.5H31.9V19.7zm-9.6 8.5h-5.7v62h49.2v-5.7H22.6l-.3-56.3z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-close" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M75.7 19.2L50 44.9 24.3 19.2l-5.1 5.1L44.9 50 19.2 75.7l5.1 5.1L50 55.1l25.7 25.7 5.1-5.1L55.1 50l25.7-25.7z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-close-circle" xmlns="http://www.w3.org/2000/svg">    <path d="M10 50c0 22.1 17.9 40 40 40s40-17.9 40-40-17.9-40-40-40-40 17.9-40 40zm19.3-15.2l5.5-5.5L50 44.5l15.2-15.2 5.5 5.5L55.5 50l15.2 15.2-5.5 5.5L50 55.5 34.8 70.7l-5.5-5.5L44.5 50 29.3 34.8z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-close-thick" xmlns="http://www.w3.org/2000/svg">    <path d="M19.2 27.4l8.2-8.2L50 41.8l22.6-22.6 8.2 8.2L58.2 50l22.6 22.6-8.2 8.2L50 58.2 27.4 80.8l-8.2-8.2L41.8 50 19.2 27.4z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-cloud" xmlns="http://www.w3.org/2000/svg">    <path d="M74.8 45c-.6 0-1.2 0-1.8.1-2.4-13.4-12.6-22.5-25.6-22.5-15.5 0-28.2 12.4-28.6 27.8-5.8 1.6-9.9 7-9.9 13.2 0 7.5 6.1 13.7 13.7 13.7H74.8c.5 0 .9 0 1.5-.1 8.2-.7 14.7-7.7 14.7-16C91 52.3 83.8 45 74.8 45zm1.1 27.3H24.5c-.3-.1-.6-.1-.9-.1-.3 0-.6.1-.9.1-4.8 0-8.7-3.9-8.7-8.7 0-2.5 1.1-4.8 2.8-6.4 1.3-.9 2.7-1.7 4.6-2.2 3.7-1 7.3-1.4 10.7.5 1.2-1.7-2.3-6.1-8.1-5.5.6-11.3 9.1-20.6 20.2-22.2.4-.1.9-.1 1.3-.2H49.2c.4 0 .8.1 1.1.1 3.8.5 7.2 1.9 10 4.2 5 4.4 9 11.6 8.4 23.3 2.3.5 4.4-1.8 4.6-5.2.5-.1 1-.1 1.5-.1C81 50 86 55 86 61.2c0 5.7-4.4 10.6-10.1 11.1z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-cloud-filled" xmlns="http://www.w3.org/2000/svg">    <path d="M19.7 74.7c-2.8 0-9.7-3.8-9.7-11C10 55.5 18.1 53 24.1 53c0 0-.1-14.4 15.9-13.9 0 0 5.7-13.8 20.5-13.8 16.7 0 24.5 16.3 19.7 28 0 0 10.5 2.3 9.8 11.2-.7 8.8-9 10.2-9 10.2H19.7z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-comments" xmlns="http://www.w3.org/2000/svg">    <path d="M12 18.8v50.7h11.7V88l17-18.5H88V18.8H12zm47.3 36.1H22V49h37.3v5.9zm17.3-16.5H22v-5.9h54.7v5.9z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-cta-go-arrow" xmlns="http://www.w3.org/2000/svg">    <path d="M87.5 51.6L55.4 83.7l-8.8-8.3 16.6-18.1H12.5V43.4h50.8L46.4 26.3l8.7-9.9L87.5 49v2.6z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-cta-go-arrow-circle" xmlns="http://www.w3.org/2000/svg">    <path d="M50 10C27.4 10 9 28.4 9 51s18.4 41 41 41 41-18.4 41-41-18.4-41-41-41zm22.7 42l-19 19.1-5.2-4.9 9.9-10.7H28.1v-8.3h30.2L48.3 37l5.2-5.9 19.3 19.4V52z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-description" xmlns="http://www.w3.org/2000/svg">    <path d="M14 16h74v12.8H14V16zm0 26.2h74V55H14V42.2zm0 26.3h52.2v12.8H14V68.5z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-download" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd">    <path d="M19.5 78.8h61V91h-61zM71.9 34L56.7 49.1V11H44.5v38.1L29.4 34l-8.6 8.6 29.8 29.9 29.9-29.9z"/></g></symbol><symbol viewBox="0 0 100 100" id="icon-svg-education-students" xmlns="http://www.w3.org/2000/svg">    <path d="M32.8 60.2l.1.1c-.1-1.4-.1-2.9-.2-4.5l.1 4.4zm.2 0s6.5 7.5 19.1 7.5c11.3 0 21-7.8 21-7.8L73 53v-3l-18.8 6.4-4.1.1S38 52.9 32.8 51v4.8c0 1.5.2 4.4.2 4.4zm40-13.9v-.6l18.3-9v-3.6L54.7 22.3h-5.5L10.9 34.9v1.8l10.3 5.1 26.3-6.5c-.1-.1-.1-.3-.1-.4 0-1 1.6-1.8 3.6-1.8s3.6.8 3.6 1.8-1.6 1.8-3.6 1.8l-25.2 7.4 6.9 3.4L49.6 53l3.7.3 19.7-7zM21.6 43.3l-.5 36.9 2.5 2.4 3.4-2.9-1.1-35z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-email" xmlns="http://www.w3.org/2000/svg">    <path d="M50 10c-22.1 0-40 17.9-40 40s17.9 40 40 40 40-17.9 40-40-17.9-40-40-40zM28 39.9L39.7 50 28 60.2V39.9zm0 25.2l14.6-12.6 7.4 6.4 7.4-6.4L72 65.1H28zm44-4.9L60.3 50 72 39.9v20.3zm0-25.3L50 54 28 34.9h44z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-email-outline" xmlns="http://www.w3.org/2000/svg"><title>autodesk_icon_font_04_06_16_kl</title>    <path class="bicls-1" d="M10.26 24.37v55h80v-55zm71.6 5L51.21 56.49 20.56 29.37zm3.4 45h-70v-43l35.93 31.78L85.26 33z"/></symbol><symbol viewBox="0 0 16 16" id="icon-svg-external" xmlns="http://www.w3.org/2000/svg"><defs><style>.bjcls-1{fill:#666}</style></defs><title>Asset 11</title><g id="bjLayer_2" data-name="Layer 2"><g id="bjDESIGN">    <path class="bjcls-1" d="M15 9v2H5V1h2V0H4v12h12V9h-1zM15 6h1V0h-6v1h5v5z"/>    <path class="bjcls-1" d="M1 2H0v14h14v-1H1V2z"/>    <path class="bjcls-1" transform="rotate(-45 12.497 3.494)" d="M8.96 3h7.07v1H8.96z"/></g></g></symbol><symbol viewBox="0 0 100 100" id="icon-svg-facebook" xmlns="http://www.w3.org/2000/svg">    <path d="M50 10.2c-22.1 0-40 17.9-40 40C10 70.4 24.9 87 44.3 89.8V61.5H34.2V49.8h10.1v-8.6c0-10 6.1-15.5 15.1-15.5 4.3 0 8 .3 9 .5v10.5h-6.2c-4.9 0-5.8 2.3-5.8 5.7v7.5H68l-1.5 11.7H56.4v28.2C75.4 86.6 90 70.1 90 50.2c0-22.1-17.9-40-40-40z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-file-upload-drag" xmlns="http://www.w3.org/2000/svg">    <path d="M55.8 60.5H83l-9-9.1 4.6-5.3L96 63.5v1.4L78.8 82.1l-4.7-4.4L83 68H55.8zM47.7 18.5v20h20z"/>    <path d="M52 71.9V56.8h16.3V42.5H43.8V17.7H12v70.2h56.3v-16z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-filter" xmlns="http://www.w3.org/2000/svg">    <path d="M80.5 23.2c-13.2-5-33.1-3.8-33.1-3.8s-20.5-.1-33.4 6.4c-6.7 3.3-3 8.8-3 8.8l32.3 28.3v18.5s1.8 2.9 6.4 2.9 6.7-2.2 6.7-2.2v-19l32.8-28.6c.2 0 4.5-6.4-8.7-11.3zM50.3 38.7C31.9 38.7 17 35.3 17 31s14.9-7.7 33.3-7.7 33.3 3.4 33.3 7.7-15 7.7-33.3 7.7z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-fullscreen" xmlns="http://www.w3.org/2000/svg">    <path d="M10 14v24h6.4V20.4H34V14H10zm56 0v6.4h17.6V38H90V14H66zM10 79.6V86h24v-6.4H16.4V62H10v17.6zm56 0V86h24V62h-6.4v17.6H66zM26 33.2V68.4h48V33.2H26zm6.4 6.4h35.2V62H32.4V39.6z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-globe-international" xmlns="http://www.w3.org/2000/svg">    <path d="M50.3 11.4c-21.5 0-39.1 17.5-39.1 39.1s17.5 39.1 39.1 39.1S89.4 72 89.4 50.5 71.9 11.4 50.3 11.4zm30.6 52.1c-1.5.2-2.2-3-2.2-3s-.8-.5-2.1.6-3.1.6-3.7.3c0 0-2.4-.8-3.1-2.6-.7-1.8-1.4-13.1-.9-15.3 0 0 3.2-2 4.1-3 .8-1 .2-1.9 1.1-1.8.9.1 0 1 1.5 1.7 1.5.6 4.3-.4 5.4 1.9 1.1 2.3 2.6 4.7 2.2 9-.4 4.3-.3 7-1.3 8.2-.9 1.1.4 3.7-1 4zM51.7 25.4s2 1.5 1.3 2.4c0 0-1.4.5-2.4.5 0 0-.2 2.4-1 2.5-.8.1-3.1.4-3.7-.7-.6-1-.7-5.8-.7-5.8s-1.5-.4-2.3-.7c-.8-.3-8.3-1-9.3-1 0 0 8.6-5.3 15-4.6 0 0 2.7 1.7 2.5 4.6-.1 0 .7 2.2.6 2.8zm-21.4-1.1c12-.8 13 .4 13 .4.3 1.1-.4 5.9-.8 5.8-.4-.1-.7-1.4-2.4-2-1.7-.5-5.1.5-6.9 1.5-1.8.9.8 2.8 3 2.5 2.2-.3 1.8-1.6 3.2-1.3 1.5.3 4.4 2.8 5.5 4.8 1.1 2 1.1 2.4 0 2.3-1.1-.1-4.1-2.3-4.1-2.3v2.2s-.4.8-2.6 1.4c-2.2.5-5.6 6.3-7 7.9-1.4 1.7-2 5.2-2.5 5.2s-.2-1.1-2.4-2.9c-2.2-1.8-6.7.2-7.1 1.8-.4 1.6 4 2.9 4.8 3.8.8.8-1.8.1-1.9 1.4-.1 1.3 2.3 1.1 4.2 1.7 1.9.5-.3 1-1.8 1.5-1.5.4.5 2.5 1.5 4.3.9 1.8-.4 2.5-2.7 1-2.3-1.5-6.1-9.8-6.1-9.8-1.4-20.4 13.1-31.2 13.1-31.2zm-2.9 44.1c.2-.6 1-3.4 1-4.9 0-1.5.7-1.7 1.6-1.2.8.5 6.8 2.9 11.5 4.2 4.7 1.3 6.3 3.2 7.1 5.8.8 2.6 2.6 2.3 4.3 2.3 1.7 0 4.9 1.7 4.9 1.7 0 1.3 0 0-1.4.9s-1.6 3-1.6 3c-.8 3.3-4.1 2.9-6.8 3.1-2.7.2-10.3-2.7-13.8-4.2-3.4-1.5-6.1-4.8-6.1-4.8s-1.1-1-1.8-2.9c-.4-1.8.9-2.4 1.1-3zM72 39.5c.1 1.4-1 1.6-2.1 1.8-1 .2-2.4-1.6-4.2-2.8-1.8-1.3-.4-3.9 0-6.3.3-2.4-1.4-1.4-2.2-2.2-.8-.8-2.7-1.1-3.2-1.4-.5-.2-.3-2.3-.5-2.7-.2-.4-.6-1.6-.6-1.6-.2-2.2-1.3-4.9-1.3-4.9C63.8 18 76 29.6 77.1 31.5c1.1 1.9-.6 3.9-1.4 5.3-.7 1.5-.9.9-2.8.9s-1 .4-.9 1.8zm-7.5-5.1c-.2.5-1-.1-1.4-.9-.3-.8-1.7 0-2.5-.5s0-2.3 0-2.3c1.1-.5 2.4.9 3.9 1.1 1.5.2.2 2.1 0 2.6z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-googleplus" xmlns="http://www.w3.org/2000/svg">    <path d="M49.9 9.8c-22.1 0-40 17.9-40 40s17.9 40 40 40 40-17.9 40-40-17.9-40-40-40zm-8 57.2h-.5c-9.2 0-16.7-8.1-16.7-16.8C24.7 39.5 33.2 33 41 33h1c4.2 0 8.1 2 10.9 4v.2l-4.9 5c-1.5-1.4-3.8-2.5-6.4-2.5-3.2 0-5.2 1.4-6.7 2.7-2.7 2.4-3.1 6.1-3.1 8 0 4.1 4.1 9.4 9.9 9.4 3.9 0 8.3-1.7 8.9-6.7H42v-7h15.3c.2 1 .3 2.2.4 4.4 0 9.1-6.6 16.5-15.8 16.5zM78 51h-6v6h-4v-6h-6v-4h6v-6h4v6h6v4z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-hide" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M10 46.4h80v7.2H10z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-hide-thick" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M10 43.1h80v13.8H10z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-home" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M19.2 59.5v23.8h19v-19h23.6v19h19V59.5H95L50 16.7 5 59.5z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-image-carousel-arrow-left" xmlns="http://www.w3.org/2000/svg">    <path d="M62.3 4.9l7.4 6.3L41.4 51l28.3 39.7-7.4 6.3L32 53.8v-5.7z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-image-carousel-arrow-right" xmlns="http://www.w3.org/2000/svg">    <path d="M37.7 4.9l-7.4 6.3L58.6 51 30.3 90.7l7.4 6.3L68 53.8v-5.7z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-info" xmlns="http://www.w3.org/2000/svg">    <path d="M35 85v3h30v-3h-9V40H35v3h9v42h-9zm6-64.5c0 4.1 3.4 7.5 7.5 7.5s7.5-3.4 7.5-7.5-3.4-7.5-7.5-7.5-7.5 3.4-7.5 7.5z" fill-rule="evenodd"/></symbol><symbol id="icon-svg-instagram" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><style>.bwcls-1{fill:#231f20}</style></defs><title>autodesk_icon_font_04_06_16_kl</title><circle class="bwcls-1" cx="49.83" cy="49.67" r="7.3"/>    <path class="bwcls-1" d="M66.9 36.76a7.25 7.25 0 0 0-4.15-4.15 12.11 12.11 0 0 0-4.07-.75c-2.31-.11-3-.13-8.85-.13s-6.54 0-8.85.13a12.11 12.11 0 0 0-4.07.75 7.25 7.25 0 0 0-4.15 4.15 12.12 12.12 0 0 0-.76 4.06c-.11 2.31-.13 3-.13 8.85s0 6.54.13 8.85a12.12 12.12 0 0 0 .75 4.07 7.25 7.25 0 0 0 4.15 4.15 12.11 12.11 0 0 0 4.07.75c2.31.11 3 .13 8.85.13s6.54 0 8.85-.13a12.11 12.11 0 0 0 4.07-.75 7.25 7.25 0 0 0 4.15-4.15 12.11 12.11 0 0 0 .75-4.07c.11-2.31.13-3 .13-8.85s0-6.54-.13-8.85a12.11 12.11 0 0 0-.74-4.06zM49.83 60.91a11.24 11.24 0 1 1 11.25-11.24 11.24 11.24 0 0 1-11.25 11.24zm11.69-20.3A2.63 2.63 0 1 1 64.15 38a2.63 2.63 0 0 1-2.63 2.61z"/>    <path class="bwcls-1" d="M50 9.67a40 40 0 1 0 40 40 40 40 0 0 0-40-40zm21.59 49a16.07 16.07 0 0 1-1 5.31 11.19 11.19 0 0 1-6.4 6.4 16.07 16.07 0 0 1-5.31 1c-2.34.11-3.08.13-9 .13s-6.69 0-9-.13a16.07 16.07 0 0 1-5.31-1 11.19 11.19 0 0 1-6.4-6.4 16.07 16.07 0 0 1-1-5.31c-.11-2.33-.13-3.08-.13-9s0-6.69.13-9a16.07 16.07 0 0 1 1-5.31 11.19 11.19 0 0 1 6.4-6.4 16.07 16.07 0 0 1 5.31-1c2.34-.11 3.08-.13 9-.13s6.69 0 9 .13a16.07 16.07 0 0 1 5.31 1 11.19 11.19 0 0 1 6.4 6.4 16.07 16.07 0 0 1 1 5.31c.11 2.33.13 3.08.13 9s-.02 6.69-.13 9.02z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-jump-link" xmlns="http://www.w3.org/2000/svg">    <path d="M42 36.7h8v-8h-8v8zm8 8h8v-8h-8v8zm8 0v8h8v-8h-8zm-8 8v8h8v-8h-8zm0 16v-8h-8v8h8zM10 50c0 22.1 17.9 40 40 40s40-17.9 40-40-17.9-40-40-40-40 17.9-40 40zm6.3 0c0-18.6 15.1-33.7 33.7-33.7S83.7 31.4 83.7 50 68.6 83.7 50 83.7 16.3 68.6 16.3 50z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-key-learning" xmlns="http://www.w3.org/2000/svg">    <path d="M31.5 76.2l13 1.5-.5-13.4 12.5 1.4 2.2-9.2.4.2c2.4.9 6 1.7 8.8 1.7 12.6 0 22.8-10.3 22.8-23.1S80.5 12.1 67.9 12.1 45.1 22.5 45.1 35.2c0 2.5.3 4.7 1 7 .5 1.9 1 2.9 1 2.9L12.5 79.5C9 83.2 18 88.8 18 88.8h14.6l-1.1-12.6zm43.4-41.9c-3.7 0-6.8-3-6.8-6.8s3-6.8 6.8-6.8c3.7 0 6.8 3 6.8 6.8s-3.1 6.8-6.8 6.8z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-linkedin" xmlns="http://www.w3.org/2000/svg">    <path d="M54.1 44zM50 10c-22.1 0-40 17.9-40 40s17.9 40 40 40 40-17.9 40-40-17.9-40-40-40zM39.9 67.6h-9.1V40h9.1v27.6zm-4.6-31.3c-3.1 0-5.1-2.1-5.1-4.8 0-2.7 2-4.8 5.2-4.8 3.1 0 5.1 2.1 5.1 4.8 0 2.7-2 4.8-5.2 4.8zm37.6 31.3h-9.1V52.8c0-3.7-1.3-6.2-4.6-6.2-2.5 0-4 1.7-4.7 3.3-.2.6-.3 1.4-.3 2.2v15.4H45s.1-24.9 0-27.5h9.1v3.9c1.2-1.9 3.4-4.5 8.2-4.5 6 0 10.5 3.9 10.5 12.4v15.8z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-lock" xmlns="http://www.w3.org/2000/svg">    <path d="M16.7 50v40H43.3V70h13.3v20H83.2V50H35.7V35c0-8.3 6.4-15 14.3-15s14.3 6.7 14.3 15v10h9.5V35c0-13.8-10.7-25-23.8-25S26.2 21.2 26.2 35v15h-9.5z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-login" xmlns="http://www.w3.org/2000/svg">    <path d="M50 37.3c7.2 0 12.9 5.7 12.9 12.7S57.2 62.7 50 62.7 37.1 57 37.1 50 42.8 37.3 50 37.3zm-5.2-26.1c3.6-.5 6.9-.5 10.5 0l2.2 9.6c3.1.8 5.7 1.8 8.4 3.4l8.5-5.2c2.9 2.2 5.2 4.4 7.4 7.3l-5.3 8.3c1.6 2.7 2.7 5.2 3.5 8.2l9.7 2.2c.5 3.6.5 6.7 0 10.3L80 57.5c-.8 3-1.8 5.6-3.5 8.2l5.3 8.3c-2.2 2.8-4.5 5.1-7.4 7.3l-8.5-5.2c-2.7 1.6-5.3 2.7-8.4 3.4l-2.2 9.6c-3.6.5-6.9.5-10.5 0l-2.2-9.6c-3.1-.8-5.7-1.8-8.4-3.4l-8.5 5.2c-2.9-2.2-5.2-4.4-7.4-7.3l5.3-8.3c-1.6-2.7-2.7-5.2-3.5-8.2l-9.7-2.2c-.5-3.6-.5-6.7 0-10.3l9.7-2.2c.8-3 1.8-5.6 3.5-8.2l-5.3-8.3c2.2-2.8 4.5-5.1 7.4-7.3l8.5 5.2c2.7-1.6 5.3-2.7 8.4-3.4l2.2-9.6z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-mac" xmlns="http://www.w3.org/2000/svg"><g>    <path d="M70.1 50.3c-.1-9.3 7.6-13.8 8-14.1C73.7 29.9 67 29 64.6 29c-5.7-.6-11.2 3.4-14.1 3.4-3 0-7.4-3.3-12.2-3.2-6.2.1-12 3.7-15.1 9.2-6.5 11.3-1.7 28 4.6 37.2 3.1 4.5 6.8 9.5 11.6 9.3 4.7-.2 6.5-3 12.1-3s7.3 3 12.2 2.9c5-.1 8.2-4.5 11.2-9 3.6-5.1 5.1-10.2 5.1-10.5-.1-.1-9.8-3.8-9.9-15zM60.9 22.9c2.5-3.2 4.3-7.5 3.8-11.8-3.7.2-8.2 2.5-10.9 5.6-2.3 2.7-4.4 7.2-3.9 11.4 4.1.3 8.3-2 11-5.2z"/></g></symbol><symbol viewBox="0 0 100 100" id="icon-svg-menu" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd">    <path d="M16 20h68v13H16zM16 44h68v13H16zM16 67h68v13H16z"/></g></symbol><symbol viewBox="0 0 100 100" id="icon-svg-pdf-file" xmlns="http://www.w3.org/2000/svg">    <path d="M89.3 32.2H68.5V10.1l20.8 22.1zM63.7 38V10.5H30.3v30.8h32.6v30.6H30.3v18.7h59.8V38H63.7zm0 2.5h-56v32.2h56V40.5zM9.4 42.1h52.7V71H9.4V42.1zm6.5 23.4v-6.8h2.5c3.9 0 7.4-1.7 7.4-6 0-4.2-3.5-5.7-7.4-5.7h-6.6v18.5h4.1zm0-15.9h1.7c2.6 0 4.2.8 4.2 2.9 0 2.8-2.2 3.2-4.5 3.2h-1.4v-6.1zm18.9 15.9c6.1 0 10.3-3.2 10.3-9.6 0-6.1-3.8-9.1-9.9-9.1h-6.6v18.5l6.2.2zm-2-15.8h1.8c3.9 0 6.1 2.2 6.1 6.1 0 4.3-2.2 6.7-6.6 6.7h-1.3V49.7zm19.5 15.8v-7.8h7.4v-2.8h-7.4v-5.2h7.8v-2.8H48.3v18.5h4z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-pencil" xmlns="http://www.w3.org/2000/svg">    <path d="M20.1 56.6L10.1 90l33.2-10.1 32.6-32.6L52.7 24 20.1 56.6zm37.2-37.3l23.3 23.2 9.3-9.3L66.6 10l-9.3 9.3z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-phone" xmlns="http://www.w3.org/2000/svg">    <path d="M37.6 34.8s1.8.9 5.5 0 5.5-5.5 5.5-5.5 1.4-10 0-13.8-8.7-5.5-8.7-5.5-14.2.1-18.8 12.6c-8.3 22.5 12.4 62.7 34.4 66.8 4.3.8 15.6 1.8 23-5 0 0 2.4-5.3 2.3-7.8-.1-2.5-4.9-7.6-7.8-10.1-2.9-2.5-7.3-.9-7.3-.9l-8.3 4.6s-3.7 3.2-6.9-.9c-3.2-4.2-19.8-26.7-12.9-34.5z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-pinterest" xmlns="http://www.w3.org/2000/svg">    <path d="M50 10c-22.1 0-40 17.9-40 40 0 16.4 9.8 30.4 23.9 36.6-.2-1.8-.3-4 0-5.8.6-3.8 4.3-19.8 5.8-24.8 0 0-3.1-7.7 0-12.4 0 0 2.6-5.3 7.8-4.4 5.2.8 4 8 3.7 8.8L48 59.1s-1.2 3.6 1.9 6.5c0 0 8.1 5.6 14-5.7 5.5-10.4 3.1-24.3-4.4-27.5 0 0-9.9-5.4-20.7 1.4 0 0-10.3 7.2-7.7 19.7.6 2.9 3.1 4.9 3.1 4.9s-.8 3.1-.9 4.3c0 0-.7 2.3-2.6 1.2 0 0-10.2-4.6-7.4-20.1 0 0 2.8-15.9 21.6-19.6S74.1 32.7 76.1 41c2.3 9.7-.3 28.3-15.7 32.4-3.6 1-5.4 1-7.5.6-5-1.1-7.7-4.9-7.7-4.9s-3.2 13.5-4 14.4c0 0-1.7 3.2-2.7 4.9C42.2 89.4 46 90 50 90c22.1 0 40-17.9 40-40S72.1 10 50 10z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-play" xmlns="http://www.w3.org/2000/svg">    <path d="M42.3 35.8v28.4L66.8 50 42.3 35.8zM10 50c0 22.1 17.9 40 40 40s40-17.9 40-40-17.9-40-40-40-40 17.9-40 40zm6.3 0c0-18.6 15.1-33.7 33.7-33.7S83.7 31.4 83.7 50 68.6 83.7 50 83.7 16.3 68.6 16.3 50z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-plus-thick" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M39.1 90V60.9H10V39.1h29.1V10h21.8v29.1H90v21.8H60.9V90z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-ppt-file" xmlns="http://www.w3.org/2000/svg"><g>    <path d="M90 30.7H69.2V8.6L90 30.7zm-25.6 5.8V9H31v30.8h32.6v30.6H31v18.7h59.8V36.5H64.4zm0 2.5h-56v32.2h56V39zM10 40.7h52.7v28.9H10V40.7z"/>    <path d="M17.6 64v-6.7H20c3.8 0 7.2-1.6 7.2-5.8 0-4.1-3.4-5.6-7.2-5.6h-6.4V64h4zm0-15.5h1.6c2.6 0 4.1.8 4.1 2.9 0 2.7-2.2 3.1-4.4 3.1h-1.4v-6zM34.1 64v-6.7h2.4c3.8 0 7.2-1.6 7.2-5.8 0-4.1-3.4-5.6-7.2-5.6h-6.4V64h4zm-.2-15.5h1.8c2.6 0 4.1.8 4.1 2.9 0 2.7-2.2 3.1-4.4 3.1H34v-6h-.1zM54.5 64V49h5.7v-3.3H44.8V49h5.7v15h4z"/></g></symbol><symbol viewBox="0 0 100 100" id="icon-svg-return" xmlns="http://www.w3.org/2000/svg">    <path d="M63.2 45.3H29.5l15-15.2-7.7-8.8L8 50.3v2.3L36.4 81l7.8-7.4-14.7-16h32.6c5.6 0 10.2 2.6 13.2 7.4 3 4.7 2.8 11.6 2.8 11.6h12.8s.1-9.4-4.5-17.9C82.8 52 77 45.3 63.2 45.3z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-search" xmlns="http://www.w3.org/2000/svg">    <path d="M24.7 43.9c0 6.5 2 12.6 5.4 17.6l-17 17.9c-1 1-.6 3 .8 4.4l2.7 2.5c1.5 1.4 3.5 1.6 4.5.6l16.7-17.5c5.2 3.7 11.5 5.9 18.4 5.9 17.3 0 31.4-14.1 31.4-31.4S73.4 12.5 56.1 12.5 24.7 26.6 24.7 43.9zm10.5 0c0-11.6 9.4-20.9 20.9-20.9S77 32.3 77 43.9s-9.4 20.9-20.9 20.9-20.9-9.3-20.9-20.9z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-share" xmlns="http://www.w3.org/2000/svg">    <path d="M72.4 67c-2.8 0-5.3 1.1-7.3 2.8L38.3 53.4c.3-1.1.5-2.2.5-3.3 0-1.2-.2-2.3-.5-3.3l27.4-16c1.9 1.4 4.2 2.3 6.6 2.3 6.2 0 11.2-5.2 11.2-11.5s-5-11.5-11.2-11.5-11.2 5.2-11.2 11.5c0 1.5.3 2.9.8 4.2l-27 15.6c-2-1.7-4.5-2.8-7.3-2.8-6.2 0-11.2 5.1-11.2 11.5s5 11.5 11.2 11.5c2.9 0 5.6-1.2 7.6-3l26.7 16.1c-.4 1.2-.7 2.5-.7 3.9 0 6.3 5 11.5 11.2 11.5s11.2-5.2 11.2-11.5c0-6.4-5-11.6-11.2-11.6z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-show" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M90 46.4H53.6V10h-7.2v36.4H10v7.2h36.4V90h7.2V53.6H90z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-show-thick" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M39.1 90V56.9H6V43.1h33.1V10h13.8v33.1H86v13.8H52.9V90z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-sign-in" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd">    <path d="M86.4 19.5h1.4v61H53.5v-9h25.3v-43H53.5v-9z"/>    <path d="M32.2 31.5l13.2 13.2H12.2v10.6h33.2L32.2 68.5l7.5 7.5 26-26-26-26z"/></g></symbol><symbol viewBox="0 0 100 100" id="icon-svg-sign-out" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd">    <path d="M13.6 80.5h-1.5v-61h36.3v9H21.1v43h27.3v9z"/>    <path d="M54.4 31.5l13.2 13.2H34.4v10.6h33.2L54.4 68.5l7.5 7.5 26-26-26-26z"/></g></symbol><symbol viewBox="0 0 24 22" id="icon-svg-signed-in" xmlns="http://www.w3.org/2000/svg">    <path d="M21.3 19.2c-2.3-.2-5.8-.9-6.1-3 0 0-.4-1.5.4-2.1 0 0 2.3-2.6 2.6-3.5.3-.8.6-5.5-.4-7.2-1-1.6-1.8-3.2-5.6-3.4H11.9C8.1.2 7.3 1.8 6.3 3.4c-1.1 1.7-.7 6.4-.4 7.2.2.8 2.6 3.5 2.6 3.5.7.6.4 2.1.4 2.1-.3 2.1-3.7 2.9-6.1 3C1.2 19.3.5 22 .5 22h23.2c-.1 0-.8-2.7-2.4-2.8zM8.2 8l1.3-1.2 1.7 1.8 4.1-4.1 1.2 1.2-5.2 5.3-3.1-3z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-square" xmlns="http://www.w3.org/2000/svg">    <path fill-rule="evenodd" d="M0 0h100v100H0z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-square-o" xmlns="http://www.w3.org/2000/svg">    <path d="M92 8v84H8V8h84m8-8H0v100h100V0z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-square-o-thin" xmlns="http://www.w3.org/2000/svg">    <path d="M96 4v92H4V4h92m4-4H0v100h100V0z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-square-rounded" xmlns="http://www.w3.org/2000/svg">    <path d="M0 85c0 8.3 6.7 15 15 15h70c8.3 0 15-6.7 15-15V15c0-8.3-6.7-15-15-15H15C6.7 0 0 6.7 0 15v70z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-square-rounded-o" xmlns="http://www.w3.org/2000/svg">    <path d="M85 8c3.9 0 7 3.1 7 7v70c0 3.9-3.1 7-7 7H15c-3.9 0-7-3.1-7-7V15c0-3.9 3.1-7 7-7h70m0-8H15C6.7 0 0 6.7 0 15v70c0 8.3 6.7 15 15 15h70c8.3 0 15-6.7 15-15V15c0-8.3-6.7-15-15-15z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-square-rounded-o-thin" xmlns="http://www.w3.org/2000/svg">    <path d="M85 4c6.1 0 11 4.9 11 11v70c0 6.1-4.9 11-11 11H15C8.9 96 4 91.1 4 85V15C4 8.9 8.9 4 15 4h70m0-4H15C6.7 0 0 6.7 0 15v70c0 8.3 6.7 15 15 15h70c8.3 0 15-6.7 15-15V15c0-8.3-6.7-15-15-15z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-start-over" xmlns="http://www.w3.org/2000/svg"><title>autodesk_icon_font_1_18_17_start_over-01</title>    <path d="M91 47l-5.82-5.93-7.65 7.68C76.4 30.83 61.51 15.7 43.3 15.7a34.3 34.3 0 1 0 17.12 64l-5.42-9a24.07 24.07 0 1 1 12.22-21.32l-8.38-8.3L52 46.77 71.65 66z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-target-audience" xmlns="http://www.w3.org/2000/svg">    <path d="M67.9 79H6s1.9-7 6.1-7.3c6.3-.4 15.5-2.4 16.2-8.2 0 0 .9-3.9-1-5.6 0 0-6.3-7-6.9-9.2-.6-2.2-1.6-14.9 1.1-19.3 2.7-4.3 4.9-8.6 15.1-9.1h.6c10.2.5 12.4 4.7 15.1 9.1 2.7 4.4 1.7 17.1 1.1 19.3-.6 2.2-6.9 9.2-6.9 9.2-1.8 1.7-1 5.6-1 5.6.7 5.8 9.9 7.7 16.2 8.2 4.3.3 6.2 7.3 6.2 7.3zm21-11.4c-4.6-.5-11.5-1.8-12-6 0 0-.6-2.9.7-4.2 0 0 4.6-5.2 5.1-6.8.5-1.6 1.2-11-.8-14.3-2-3.2-3.6-6.3-11.2-6.7h-.4c-7.6.4-9.2 3.5-11.2 6.7-2 3.3-1.3 12.6-.8 14.3.5 1.6 5.1 6.8 5.1 6.8 1.4 1.3.7 4.2.7 4.2-1.3 4.2-6.1 5.2-9 5.7-.2 0 5.1 1.5 7 1.5 2 0 3.1.2 4.4 1.2 4.3 3.3 6.1 9 6.1 9h22.7c.1 0-1.9-10.9-6.4-11.4z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-three-circle-triangle" xmlns="http://www.w3.org/2000/svg">    <path d="M79.5 62c-.6 0-1.3.1-1.9.2L57.9 33.6c1.5-1.9 2.4-4.4 2.4-7.1 0-6.4-5.2-11.5-11.5-11.5-6.4 0-11.5 5.2-11.5 11.5 0 2.8 1 5.4 2.7 7.4L22.2 62.1c-.5-.1-1.1-.1-1.7-.1C14.2 62 9 67.1 9 73.5 9 79.8 14.2 85 20.5 85c5.3 0 9.8-3.6 11.1-8.5h36.8c1.3 4.9 5.8 8.5 11.1 8.5C85.8 85 91 79.8 91 73.5 91 67.1 85.8 62 79.5 62zM44.9 37.3c1.2.4 2.5.7 3.9.7 1.5 0 3-.3 4.4-.9l19 27.5c-1.8 1.5-3.1 3.6-3.8 5.9H31.6c-.6-2.4-2-4.5-3.9-6l17.2-27.2z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-tip" xmlns="http://www.w3.org/2000/svg">    <path d="M31.3 82.2v-5.4H26V66H15.3V33.9H58v-5.4H10v43h10.6v16.1H26v-5.4h5.3zm5.4-5.3v-5.4h-5.3v5.4h5.3zm0-10.8v5.4H74V44.6h-5.3v21.5h-32zm21.3-43h5.3v-5.4H58v5.4zm5.3 5.4h5.3v-5.4h-5.3v5.4zM74 23.1v5.4h5.3v-5.4H74zm5.3-5.3v5.4h5.3v-5.4h-5.3zM68.7 28.5v5.4H74v-5.4h-5.3zm-5.4 5.4v5.4h5.3v-5.4h-5.3zm0 10.7v-5.4H58v5.4h5.3zM74 39.3h5.3v-5.4H74v5.4zm10.7 0h-5.3v5.4h5.3v-5.4zm-16-26.9v5.4H74v-5.4h-5.3zm16 16.1v5.4H90v-5.4h-5.3z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-transcript-outline" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd">    <path d="M27.6 15v61.6h52.2V15H27.6zm5.6 56V20.6h41V71h-41z"/>    <path d="M71.4 79.4V85H19.2V23.4h5.6v56zM41.6 31.8h24.2v2.8H41.6zM41.6 40.2h24.2V43H41.6z"/>    <path d="M41.6 48.6h24.2v2.8H41.6zM41.6 57h16.8v2.8H41.6z"/></g></symbol><symbol viewBox="0 0 100 100" id="icon-svg-transcript-solid" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd">    <path d="M71.4 79.4V85H19.2V23.4h5.6v56z"/>    <path d="M27.6 15v61.6h52.2V15H27.6zm32.8 44.8H40.6V57h19.8v2.8zm7.4-8.4H40.6v-2.8h27.2v2.8zm0-8.4H40.6v-2.8h27.2V43zm0-8.4H40.6v-2.8h27.2v2.8z"/></g></symbol><symbol viewBox="0 0 100 100" id="icon-svg-triangle" xmlns="http://www.w3.org/2000/svg">    <path d="M50 8.3L0 91.7h100L50 8.3z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-triangle-o" xmlns="http://www.w3.org/2000/svg">    <path d="M50 23.9l35.9 59.8H14.1L50 23.9m0-15.6L0 91.7h100L50 8.3z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-triangle-o-thin" xmlns="http://www.w3.org/2000/svg">    <path d="M50 16.1l42.9 71.6H7.1L50 16.1m0-7.8L0 91.7h100L50 8.3z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-tumblr" xmlns="http://www.w3.org/2000/svg">    <path d="M50 10c-22.1 0-40 17.9-40 40s17.9 40 40 40 40-17.9 40-40-17.9-40-40-40zm3 61.8c-9.5.2-13.2-6.8-13.2-11.7V45.8h-4.4v-5.7c6.6-2.4 8.2-8.4 8.6-11.8 0-.2.2-.3.3-.3h6.4v11.2h8.8v6.6h-8.8v13.6c0 1.9.7 4.4 4.2 4.3 1.2 0 2.7-.4 3.5-.8l2.1 6.2c-.7 1.3-4.2 2.6-7.5 2.7z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-twitter" xmlns="http://www.w3.org/2000/svg">    <path d="M50 10c-22.1 0-40 17.9-40 40s17.9 40 40 40 40-17.9 40-40-17.9-40-40-40zm21.7 31.2v1.3c0 13.3-10.1 28.6-28.6 28.6-5.7 0-11-1.7-15.4-4.5.8.1 1.6.1 2.4.1 4.7 0 9.1-1.6 12.5-4.3-4.4-.1-8.1-3-9.4-7 .6.1 1.2.2 1.9.2.9 0 1.8-.1 2.7-.4-4.6-.9-8.1-5-8.1-9.9v-.1c1.4.8 2.9 1.2 4.6 1.3-2.7-1.8-4.5-4.9-4.5-8.4 0-1.8.5-3.6 1.4-5.1 5 6.1 12.4 10.1 20.7 10.5-.2-.7-.3-1.5-.3-2.3 0-5.6 4.5-10.1 10.1-10.1 2.9 0 5.5 1.2 7.3 3.2 2.3-.5 4.4-1.3 6.4-2.4-.8 2.3-2.3 4.3-4.4 5.6 2-.2 4-.8 5.8-1.6-1.5 2.1-3.2 3.9-5.1 5.3z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-user-profile" xmlns="http://www.w3.org/2000/svg">    <path d="M84 79.4c-8.2-.6-20.3-3.1-21.2-10.7 0 0-1.1-5.1 1.3-7.4 0 0 8.2-9.2 9-12.1.8-2.9 2.1-19.5-1.5-25.3-3.5-5.7-6.4-11.2-19.8-11.9h-.6c-13.5.8-16.4 6.3-19.9 12-3.5 5.8-2.3 22.4-1.5 25.3.8 2.9 9 12.1 9 12.1 2.4 2.3 1.3 7.4 1.3 7.4-1 7.6-13 10.1-21.2 10.7-5.6.4-8 9.6-8 9.6H92c0-.1-2.5-9.3-8-9.7z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-view" xmlns="http://www.w3.org/2000/svg">    <path d="M5 51.3s19.4 23 45 23 45-23 45-23-19.4-25.6-45-25.6S5 51.3 5 51.3zm9-.3s9.7-13 23.9-18.5C32.5 36.4 29 42.8 29 50c0 7.5 3.8 14.1 9.6 17.9C24 63.1 14 51 14 51zm48.1-18.4C76.3 38 86 51 86 51S76 63.1 61.4 67.9C67.2 64.1 71 57.5 71 50c0-7.2-3.5-13.6-8.9-17.4zM35 50c0-8.4 6.7-15.2 15-15.2S65 41.6 65 50s-6.7 15.2-15 15.2S35 58.4 35 50z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-windows" xmlns="http://www.w3.org/2000/svg">    <path d="M17.6 26.7l26.5-3.6v25.5l-26.5.2V26.7zm26.5 24.9v25.6l-26.5-3.6V51.5l26.5.1zm3.2-29l35.1-5.1v30.8l-35.1.3v-26zm35.1 29.2v30.7l-35.1-5V51.7l35.1.1z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-xing" xmlns="http://www.w3.org/2000/svg">    <path d="M50 10c-22.1 0-40 17.9-40 40s17.9 40 40 40 40-17.9 40-40-17.9-40-40-40zM38.2 59.3h-6.6c-.4 0-.7-.2-.9-.4-.2-.3-.2-.6 0-1l7-12.3-4.4-7.7c-.2-.4-.2-.8 0-1 .2-.3.5-.5.9-.5h6.6c1 0 1.5.7 1.8 1.3l4.5 7.9c-.3.4-7.1 12.5-7.1 12.5-.3.6-.8 1.2-1.8 1.2zm31-30.4L54.7 54.6l9.2 16.8c.2.4.2.6 0 .9-.2.3-.5.1-.9.1h-6.5c-1 0-1.5-.4-1.9-1 0 0-9.3-16.7-9.3-16.8.5-.8 14.5-25.9 14.5-25.9.4-.6 1-1.3 1.7-1.3h6.8c.4 0 .7.2.9.5.2.2.2.7 0 1z"/></symbol><symbol viewBox="0 0 100 100" id="icon-svg-youtube" xmlns="http://www.w3.org/2000/svg">    <path d="M60.4 49.1l-14.9-9.3s-2.4-1.5-2.9 1.7v17.6s-.4 3.3 2.7 2.4L60.4 52s1.7-1.4 0-2.9zM50 10c-22.1 0-40 17.9-40 40s17.9 40 40 40 40-17.9 40-40-17.9-40-40-40zm25.2 51.9c-.9 6.6-6.7 6.6-6.7 6.6-1.6.1-18.7.6-18.7.6-5.2.2-18.9-.8-18.9-.8-5.6-.6-6.1-6.3-6.1-6.3-.7-2.2-.7-11.8-.7-11.8-.1-7 1-12.7 1-12.7 1.6-5.1 6.4-4.8 6.4-4.8 17.5-1.3 36.9 0 36.9 0 5.7.4 6.8 5.6 6.8 5.6 1.7 10.5 0 23.6 0 23.6z"/></symbol><symbol viewBox="0 0 1000 1000" id="icon-svg-zip-file" xmlns="http://www.w3.org/2000/svg"><g>    <path d="M921.6 312.32H708.608V84.992L921.6 312.32zm-262.144 58.368V90.112H317.44v315.392h333.824v313.344H317.44v191.488h612.352V370.688H659.456zm0 25.6H86.016V727.04h573.44V396.288zM102.4 413.696h539.648v295.936H102.4V413.696z"/>    <path d="M324.608 660.48v-30.72h-96.256l93.184-122.88v-33.792H185.344v30.72h92.16l-94.208 122.88v31.744h142.336v2.048zm68.608 0V474.112h-41.984v185.344h41.984v1.024zm79.872 0v-68.608h24.576c38.912 0 73.728-16.384 73.728-59.392 0-41.984-34.816-57.344-73.728-57.344h-65.536V660.48h40.96zm0-158.72h16.384c26.624 0 41.984 8.192 41.984 29.696 0 27.648-22.528 31.744-45.056 31.744h-14.336v-61.44z"/></g></symbol></svg>
+</div>
+
+
+
+
+
+ 
+
+    <div id="pbl-alert-overlay">
+        <div class="wrapper">
+            <p><i class="icon icon-globe-international"></i><span>Worldwide Sites</span></p>
+            <p>You have been detected as being from <span class="pbl-country"></span>. Where applicable, you can see country-specific product information, offers, and pricing.</p>
+            <p><a class="close-pbl-overlay" href="https://www.autodesk.com/site-selector?country=US&locale=en_US">Change country/language</a>
+            <span style="margin-left:25px"><a href="#" class="close close-pbl-overlay">X</a></span></p>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    (function(adsk) {
+        adsk.defer(['jquery'], function($) {
+            $('#adsk-global-control').attr('href', 'https://www.autodesk.com/site-selector?country=US&locale=en_US');
+        });
+    }(window.adsk));
+</script>
+
+<header class="header">
+    <div class="utility-content iparsys parsys"><div class="responsive-navigation-element-display section">
+
+
+
+
+    
+
+
+
+
+    
+        
+        
+            <div class="decorative_box_32b9 decorative-box">
+
+
+
+
+    
+
+
+<div class="utility-full-width global-utility-bar" data-wat-link-section 
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row">
+    
+        
+        
+        
+        <div class="grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="utility-bar section">
+
+
+
+
+    
+
+
+<script type="text/javascript">
+
+(function(adsk){
+    if(!adsk.defer){
+        return;
+    }
+    
+    adsk.defer(['jquery'],function($){
+        $('#adsk-global-control').attr('href', 'https://www.autodesk.com/site-selector?country=US&locale=en_US');
+    });
+}(window.adsk));
+</script>
+
+<div class="clearfix">
+
+    <div class="ub-identification-container">
+        
+        <div class="identification innerParsys">
+
+<div class="innerParsys parsys">
+<div class="code section">
+
+
+
+
+
+    
+
+
+<!-- DOTCOM SITE IDENTITY CODE SNIPPET -->
+
+<div class="left wd-pv-8 wd-pl-20 wd-font-34"> 
+
+<a href="/" target="_self" class="wd-light" data-wat-link="true" data-wat-loc="utilitynav" data-wat-val="adsk-logo" data-wat-tracking="1">
+
+<img alt="Autodesk 2D and 3D Design and Engineering Software" src="https://static-dc.autodesk.net/etc/designs/v201412151200/autodesk/adsk-design/images/autodesk_header_logo_140x23.png"></a> 
+
+</div>
+</div>
+
+</div>
+</div>
+
+        
+    </div>
+
+    <div class="ub-shortcuts-container">
+        
+        <div class="shortcuts innerParsys">
+
+<div class="innerParsys parsys">
+<div class="responsive-list section">
+
+
+
+
+    
+
+
+
+ 
+	
+  	
+  		<ul class=" wd-navigation-bar">
+  	
+ 
+  
+        
+        
+        
+        <li>
+			<div class="responsive-list-item-0 responsive-list-item">
+
+
+
+
+    
+    
+        <div class="list-item-content parsys">
+<div class="cart parbase section"><script type="text/javascript">
+    (function (adsk) {
+        adsk.defer(['adsk.cartController', 'adsk.cartConfig'],
+                function (CartController, CartConfig) {
+                    'use strict';
+
+                    var cartControllerInstance = new CartController(CartConfig());
+                    cartControllerInstance.updateCartInfo();
+                });
+    }(window.adsk));
+</script>
+
+<a id="cartLink" class="e-utility-cart" href="#" data-wat-loc="utilitynav" data-wat-val="cart widget">
+    <i class="e-utility-cart-icon icon-cart"></i><!--
+    --><i class="e-utility-cart-icon icon-cart-bubble">
+        <span id="cartSummaryItemCount" class="e-utility-cart-count"></span>
+    </i>
+</a>
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+       </li>    
+    
+        
+        
+        
+        <li>
+			<div class="responsive-list-item-1 responsive-list-item">
+
+
+
+
+    
+    
+        <div class="list-item-content parsys">
+<div class="navigation-bar-search search-form section"><!--
+    Copyright © 2017 Autodesk, Inc.
+    All rights reserved.
+
+    Displays a navigation search form, including at least a textual query
+-->
+
+
+
+<!--
+    Inline search input
+    Visible on medium + large screens in the utility bar itself.
+    Hidden on small screens. (2nd search box used for mobile, appears beneath the util bar.)
+-->
+<div class="navigation-bar-search-inline">
+    <form id="cq-site-search" onsubmit="return false" _lpchecked="1">
+        <input type="hidden" id="site-search-url" value="/search?sn=en_US">
+        <input type="text" data-wat-link="true" data-wat-loc="utilitynav" data-wat-val="search" id="site-search-qt" name="q" placeholder="Search">
+        <svg class="icon">
+            <use xlink:href="#icon-svg-search"></use>
+        </svg>
+    </form>
+</div>
+
+<!--
+    Search Input Toggle
+    This link controls the visibility of the search box on mobile
+-->
+<a href="#" class="navigation-bar-search-small-trigger visibility-hidden" data-visibility-target=".navigation-bar-search-small-target">
+    <svg class="icon-search">
+        <use xlink:href="#icon-svg-search"></use>
+    </svg>
+</a>
+
+
+<!--
+    Search bar for mobile view
+-->
+<div class="navigation-bar-search-small-target wd-pa-16 visibility-target-hidden" style="display: none;">
+    <form id="cq-site-search-mobile" onsubmit="return false" _lpchecked="1" class="wd-position-relative wd-font-14">
+        <input type="text" id="cq-site-search-qt-mobile" name="q" placeholder="Search">
+            <svg class="icon">
+                <use xlink:href="#icon-svg-search"></use>
+            </svg>
+    </form>
+</div></div>
+
+</div>
+
+    
+
+
+</div>
+
+       </li>    
+    
+        
+        
+        
+        <li>
+			<div class="responsive-list-item-2 responsive-list-item">
+
+
+
+
+    
+    
+        <div class="list-item-content parsys">
+<div class="navigation-bar-sign-in section"><div class="navigation-bar-sign-in-container">
+
+
+    <!--
+        Sign in toggle
+        Toggles visibility of the sign-in dropdown.
+    -->
+    <a class="
+            navigation-bar-sign-in-link
+            navigation-bar-sign-in-trigger
+            signin-topnav
+            visibility-hidden
+            wd-uppercase
+        " data-wat-link="true" data-wat-loc="utilitynav" data-wat-val="sign-in" data-visibility-target=".navigation-bar-sign-in-popup">
+        <svg>
+            <use xlink:href="#icon-svg-sign-in"></use>
+        </svg>
+        <span>Sign In</span>
+    </a>
+
+    <!--
+        Sign in modal
+        Contains links for sign in
+    -->
+    <ul class="navigation-bar-sign-in-popup visibility-target-hidden" style="display: none;">
+
+        <li class="navigation-bar-sign-in-popup-item wd-display-flex adsk-myaccount-link" style="display: none">
+            <div class="wd-display-flex">
+                <svg class="wd-mr-4">
+                    <title>icon-svg-cta-go-arrow-circle</title>
+                    <use xlink:href="#icon-svg-cta-go-arrow-circle"></use>
+                </svg>
+            </div>
+            <div class="wd-display-flex">
+                <a class="navigation-bar-sign-in-popup-item-link wd-font-19 wd-bold" href="#" data-wat-link="true" data-wat-val="my account" data-wat-loc="utilitynav">My Account</a>
+            </div>
+        </li>
+
+        <li class="navigation-bar-sign-in-popup-item wd-display-flex">
+            <div class="wd-display-flex">
+                <svg class="wd-mr-4">
+                    <title>icon-svg-cta-go-arrow-circle</title>
+                    <use xlink:href="#icon-svg-cta-go-arrow-circle"></use>
+                </svg>
+            </div>
+            <div class="wd-display-flex wd-flex-direction-column">
+                <a class="navigation-bar-sign-in-popup-item-link wd-font-19 wd-bold" href="https://www.autodesk.com/account" data-wat-link="true" data-wat-val="signin:autodesk 360" data-wat-loc="utilitynav" target="_self">Autodesk Account</a>
+                <p class="wd-mv-0">
+                    (includes all Subscriptions)
+                </p>
+            </div>
+        </li>
+
+        <li class="navigation-bar-sign-in-popup-item wd-display-flex">
+            <div class="wd-display-flex">
+                <svg class="wd-mr-4">
+                    <title>icon-svg-cta-go-arrow-circle</title>
+                    <use xlink:href="#icon-svg-cta-go-arrow-circle"></use>
+                </svg>
+            </div>
+            <div class="wd-display-flex wd-flex-direction-column">
+                <a class="navigation-bar-sign-in-popup-item-link wd-font-19 wd-bold" href="http://login.autodesk360.com/login" data-wat-link="true" data-wat-val="signin:a360" data-wat-loc="utilitynav" target="_self">A360</a>
+            </div>
+        </li>
+
+        <li class="navigation-bar-sign-in-popup-item wd-display-flex topnav-oxygen-sign-in">
+            <div class="wd-display-flex">
+                <svg class="wd-mr-4">
+                    <title>icon-svg-cta-go-arrow-circle</title>
+                    <use xlink:href="#icon-svg-cta-go-arrow-circle"></use>
+                </svg>
+            </div>
+            <div class="wd-display-flex wd-flex-direction-column">
+                <a data-root="/education" target="_self" data-href="/content/autodesk/global/en/education/free-software" href="/services/adsk/c/oxygen/tooledu2.do/connect-edu.resp?lang=en-US&returnUrl=/education/free-software" class="navigation-bar-sign-in-popup-item-link wd-font-19 wd-bold sign-in-link" data-wat-link="”true”" data-wat-loc="utilitynav" data-wat-val="signin:education community">Education Community</a>
+            </div>
+        </li>
+
+        <li class="navigation-bar-sign-in-popup-item wd-display-flex topnav-oxygen-sign-out" style="display:none;">
+            <div class="wd-display-flex">
+                <svg class="wd-mr-4">
+                    <title>icon-svg-cta-go-arrow-circle</title>
+                    <use xlink:href="#icon-svg-cta-go-arrow-circle"></use>
+                </svg>
+            </div>
+            <div class="wd-display-flex wd-flex-direction-column">
+                <a data-root="/education" target="_self" data-href="/education/free-software" href="/education/free-software" class="navigation-bar-sign-in-popup-item-link wd-font-19 wd-bold sign-in-link" data-wat-link="”true”" data-wat-loc="utilitynav" data-wat-val="signin:education community">Education Community</a>
+            </div>
+        </li>
+
+
+        <li class="navigation-bar-sign-in-popup-item">
+            <a href="/sign-in-help" class="navigation-bar-sign-in-popup-item-link wd-font-14" data-wat-loc="utilitynav" data-wat-link="true" data-wat-val="signin:FAQ" target="_self">
+                Need help? Visit our sign-in FAQs
+            </a>
+        </li>
+    </ul>
+
+    <!--
+        Sign out toggle
+        Toggle is visible once a user is signed in
+    -->
+    <div class="navigation-sign-out-container wd-display-inline-block">
+        <a id="adsk-signout-control" class="
+                navigation-bar-sign-in-link
+                topnav-oxygen-sign-out
+                wd-uppercase" href="#0" data-wat-link="true" data-wat-loc="utilitynav" data-wat-val="signout:education community" style="display: none;">
+            <svg>
+                <use xlink:href="#icon-svg-sign-out"></use>
+            </svg>
+            <span>Sign out</span>
+        </a>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    $(function() {
+        var links=document.querySelectorAll('a[href^="/services/adsk/c/oxygen/tooledu2.do/connect-edu.resp"]');
+        for (i = 0; i < links.length; i++) {
+            var queryString=links[i].search;
+            if (queryString.indexOf('returnUrl=') > 0) {
+                queryObject = parseQuery(queryString);
+                if (queryObject.returnUrl !== undefined) {
+                    var currentPath = document.location.pathname;
+                    if (currentPath.substring(0,queryObject.returnUrl.length) == queryObject.returnUrl) {
+                        var newHref = links[i].href.replace('returnUrl=' + queryObject.returnUrl,'');
+                        links[i].href = newHref;
+                    }
+                }
+            }
+        }
+    });
+    function parseQuery(queryStr) {
+        var query = {};
+        var a = queryStr.substr(1).split('&');
+        for (var i = 0; i < a.length; i++) {
+            var b = a[i].split('=');
+            query[decodeURIComponent(b[0])] = decodeURIComponent(b[1] || '');
+        }
+        return query;
+    }
+</script>
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+       </li>    
+    
+        
+        
+        
+        <li>
+			<div class="responsive-list-item-3 responsive-list-item">
+
+
+
+
+    
+    
+        <div class="list-item-content parsys">
+<div class="geo-navigation parbase section">
+
+
+
+    
+
+
+<div class="">
+    <a href="/site-selector" class="geo-navigation-site-selector wd-uppercase">
+        <svg class="wd-vertical-align-middle icon-svg-globe-international">
+            <use xlink:href="#icon-svg-globe-international"></use>
+        </svg>
+        <span>United States</span>
+    </a>
+    <div
+        class="geo-navigation-popup-container wd-font-14 hide"
+        data-wat-link="true"
+        data-wat-loc="geo-selector"
+        data-wat-content-name="geo-selector"
+        data-wat-content-type="pop-up">
+        <a href="#" class="geo-navigation-popup-container-close" data-wat-link="true" data-wat-loc="geo-selector" data-wat-val="close">
+            <svg class="icon-svg-close-thick"><use xlink:href="#icon-svg-close-thick"></use></svg>
+        </a>
+        <div class="geo-navigation-popup-content wd-pl-10 wd-pr-20 wd-mt-2 wd-mb-10">
+            <p class="geo-navigation-popup-local-message wd-pb-20 wd-ma-0 wd-pt-8 hide">
+                We have redirected you to an equivalent page on your local site where you can see local pricing and promotions and purchase online.
+            </p>
+            <p class="wd-display-flex wd-pt-8 wd-pb-12 wd-ma-0 wd-bbw-1 wd-mb-2 wd-bc-smoke">
+                <svg class="icon-svg-popup-arrow wd-mr-2"><use xlink:href="#icon-svg-cta-go-arrow-circle"></use></svg>
+                <a href="/solutions/" class="geo-navigation-popup-redirect wd-no-underline wd-bold wd-mt-2" data-wat-link="true" data-wat-loc="geo-selector" data-wat-val="visit local site"></a>
+            </p>
+            <p class="wd-display-flex wd-ma-0 wd-pt-12">
+                <svg class="icon-svg-popup-arrow wd-mr-2"><use xlink:href="#icon-svg-cta-go-arrow-circle"></use></svg>
+                <a href="#" class="geo-navigation-popup-stay-on-site wd-no-underline wd-bold wd-mt-2" data-wat-link="true" data-wat-loc="geo-selector" data-wat-val="stay on site">Stay on our U.S. site</a>
+            </p>
+        </div>
+    </div>
+
+<div class="geo-navigation-loading-spinner loading-spinner">
+    <div class="loading-spinner-cube-1 loading-spinner-cube"></div>
+    <div class="loading-spinner-cube-2 loading-spinner-cube"></div>
+    <div class="loading-spinner-cube-4 loading-spinner-cube"></div>
+    <div class="loading-spinner-cube-3 loading-spinner-cube"></div>
+</div>
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+       </li>    
+    
+        
+        
+        
+        <li>
+			<div class="responsive-list-item-4 responsive-list-item">
+
+
+
+
+    
+    
+        <div class="list-item-content parsys">
+<div class="code section">
+
+
+
+
+
+    
+
+
+<!-- UTILITY SHORTCUTS CODE SNIPPET -->
+<!-- Includes Utility Bar shortcuts for global nav, Sign in / Sign out, & Search -->
+
+<ul class="right wd-inline-list wd-ma-0 wd-pa-0 wp-utility-shortcuts">
+<!--
+     --><li class="global-menu-toggle-li"><!--
+                Global menu toggle
+                Toggles visibility of the global navigation
+            --><a href="#" class="toggle-global-menu" data-wat-link="true" data-wat-loc="utilitynav" data-wat-val="globalnav:open"><i class="icon icon-menu"></i><span>Menu</span></a></li></ul>
+<script type="text/javascript">
+$(function() {
+var links=document.querySelectorAll('a[href^="/services/adsk/c/oxygen/tooledu2.do/connect-edu.resp"]');
+for (i = 0; i < links.length; i++) {
+    var queryString=links[i].search;
+    if (queryString.indexOf('returnUrl=') > 0) {
+        queryObject = parseQuery(queryString);
+        if (queryObject.returnUrl !== undefined) {
+            var currentPath = document.location.pathname;
+            if (currentPath.substring(0,queryObject.returnUrl.length) == queryObject.returnUrl) {
+                var newHref = links[i].href.replace('returnUrl=' + queryObject.returnUrl,'');
+                links[i].href = newHref;
+            }
+        }
+    }
+}
+});
+function parseQuery(queryStr) {
+    var query = {};
+    var a = queryStr.substr(1).split('&');
+    for (var i = 0; i < a.length; i++) {
+        var b = a[i].split('=');
+        query[decodeURIComponent(b[0])] = decodeURIComponent(b[1] || '');
+    }
+    return query;
+}
+</script></div>
+
+</div>
+
+    
+
+
+</div>
+
+       </li>    
+    
+ 	
+		
+    	
+  			</ul>
+  		
+ 	  
+
+
+</div>
+
+</div>
+</div>
+
+        
+    </div>
+
+    <div class="ub-utility-links-container">
+        
+        <div class="utility-links innerParsys">
+
+<div class="innerParsys parsys">
+
+</div>
+</div>
+
+        
+    </div>
+
+</div>
+
+<script>
+    (function(adsk){
+        // TODO: Remove this later when 'static nav' is no longer needed.
+        if(!adsk.defer){
+            return;
+        }
+        
+        adsk.defer(['jquery', 'utility-bar', 'observer', 'modalOverlay'], function($, utilityBar, observer, modalOverlay){
+
+            //create modal overlay
+            var utilityBarOverlay = new modalOverlay({
+                selectors:{
+                    content:      '.nav-panel-utility',
+                    closeTriggers: ['.nav-close-utility']
+                },
+                onOpen: function(){
+                    $('.page-container').addClass('page-container-open');
+                },
+                onClose: function(){
+                    $('.page-container').removeClass('page-container-open');
+                }
+            });
+
+            var utilityBarInstance = new utilityBar({
+                onPrimaryNavigationClicked: function(){
+                    observer.invoke('primaryNavOverlay.toggle');
+                },
+                onUtilityLinksClicked: function(){
+                    utilityBarOverlay.toggle();
+                },
+            });
+            
+
+            //register method with observer to enable third-party triggered interactions
+            observer.register('utilityBarOverlay.toggle', utilityBarOverlay, 'toggle');
+            observer.register('utilityBarOverlay.close', utilityBarOverlay, 'close');
+            
+
+            
+        });
+    }(window.adsk));
+
+
+
+</script></div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<style>li a.wp-cta-go-arrow:before{content:'\e63a' !important;
+font-family: 'Autodesk-Icon-Font';content: "\e63e";color: #89b546;position: absolute;top: 2px;left: -19px;font-size: 14px;line-height: 1;font-weight:600}
+
+
+.free-trials-li, .all-products-li, .buy-li, .divider-li{
+	display: none !important;
+}
+
+
+
+</style></div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row">
+    
+        
+        
+        
+        <div class="grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="code section">
+
+
+
+
+
+    
+
+
+<div id="adsk-search" class="search-bar wd-pa-16 visibility-target-hidden">
+    <div class="search-container wd-font-14">
+        <form id="cq-site-search-mobile" onsubmit="return false" _lpchecked="1">      
+                
+<input type="text" id="cq-site-search-qt-mobile" name="qt" placeholder="Search"><i class="icon icon-search"></i>
+ 
+</form>   
+    </div>
+</div></div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<div id="oxy-lightbox" style="display: none;">
+    <div class="js-overlay" onclick="javascript:adsk.oxygen.closeLightbox();"><!-- do not collapse --></div>
+    <div class="horizon">
+        <div class="mod js-modal modal-2">
+            <div class="outer pam">
+                <a href="javascript:adsk.oxygen.closeLightbox();" class="container js-closeModal">
+                    <span class="icon adsk-lightbox-close fr"><!-- do not collapse --></span>
+                </a>
+                <div class="inner">
+                    <!-- place for title -->
+                    <div class="bd">
+                        <!-- place for body -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Global menu container-->
+
+<div class="global-menu" data-wat-link-section="globalnav"> 
+  
+  <!--
+The global menu header
+-->
+  <ul class="global-menu-header">
+    <li> <a class="close-global-menu" data-wat-loc="globalnav" data-wat-link="true" data-wat-val="globalnav:close" href="#">
+      <div class='icon-stacked'> <i class="icon icon-circle-o"></i> <i class="icon icon-close"></i> </div>
+      </a> </li>
+  </ul>
+  
+  <!-- The global navigation content -->
+  <nav class="global-navigation">
+    <ul>
+      <li> <a href="#" class="visibility-toggle-1 visibility-hidden" data-visibility-target=".submenu-1" data-wat-loc="products:open" data-wat-val="products">Products</a>
+        <ul class="submenu-1" data-wat-loc="products">
+          <li><a href="/products" data-wat-val="all products and suites" class="wp-cta-go-arrow" target="_self">All products</a></li>
+          <li> <a href="#" class="visibility-toggle-2 visibility-visible" data-visibility-target=".submenu-collections">Collections</a>
+          <ul class="submenu-collections">
+            <li><a href="/collections/architecture-engineering-construction/overview" data-wat-val="collections:Architecture, Engineering and Construction" target="_self">Architecture, Engineering &amp; Construction</a></li>
+            <li><a href="/collections/product-design/overview" data-wat-val="collections:Product Design" target="_self">Product Design</a></li>
+            <li><a href="/collections/media-entertainment/overview" data-wat-val="collections:Media and Entertainment" target="_self">Media &amp; Entertainment</a></li>
+          </ul>
+          </li>
+          <li><a href="/products/autocad/overview" data-wat-val="autocad" target="_self">AutoCAD</a></li>
+          <li><a href="/products/autocad-lt/overview" data-wat-val="autocad lt" target="_self">AutoCAD LT</a></li>
+          <li><a href="/products/autocad-360/overview" data-wat-val="autocad mobile" target="_self">AutoCAD Mobile</a></li>
+          <li><a href="/products/3ds-max/overview" data-wat-val="3ds max" target="_self">3ds Max</a></li>
+          <li><a href="https://bim360.autodesk.com/" data-wat-val="bim360" target="_self">BIM 360</a></li>
+          <li><a href="/products/autocad-civil-3d/overview" data-wat-val="civil 3d" target="_self">Civil 3D</a></li>
+          <li><a href="/products/flame-family/overview" data-wat-val="flame" target="_self">Flame</a></li>
+          <li><a href="/products/fusion-360/overview" data-wat-val="fusion 360" target="_self">Fusion 360</a></li>
+          <li><a href="http://www.autodeskfusionlifecycle.com/" data-wat-val="fusion lifecycle" target="_self">Fusion Lifecycle</a></li>
+          <li><a href="/products/infraworks-360/overview" data-wat-val="infraworks" target="_self">InfraWorks</a></li>
+          <li><a href="/products/inventor/overview" data-wat-val="inventor" target="_self">Inventor</a></li>
+          <li><a href="/products/maya/overview" data-wat-val="maya" target="_self">Maya</a></li>
+          <li><a href="/products/powermill/overview" data-wat-val="powermill" target="_self">PowerMill</a></li>
+          <li><a href="/products/revit-family/overview" data-wat-val="revit" target="_self">Revit</a></li>
+          <li><a href="/products/shotgun/overview" data-wat-val="shotgun" target="_self">Shotgun</a></li>
+        
+ 
+          
+
+
+          <li> <a class="global-nav-category">File viewers</a> </li>
+          <li><a href="https://www.autodesk.com/viewers/all-viewers" data-wat-val="All viewers" target="_self" class="wp-cta-go-arrow">All viewers</a></li>
+          <li><a href="https://www.autodesk.com/products/dwg" data-wat-val="DWG" target="_self">DWG</a></li>
+          <li><a href="/viewers/dwf" data-wat-val="DWF" target="_self">DWF</a></li>
+
+ <li><a href="https://360.autodesk.com/viewer" data-wat-val="Online viewer" target="_self">Online viewer</a></li>
+
+
+          <li> <a class="global-nav-category">Solutions</a> </li>
+          <li> <a href="#" class="visibility-toggle-2 visibility-hidden" data-visibility-target=".submenu-1b">Industry solutions</a>
+            <ul class="submenu-1b">
+              <li><a href="/solutions/bim/overview" data-wat-val="industry solutions:Building Information Modeling (BIM)" target="_self">Building Information Modeling (BIM)</a></li>
+              <li><a href="/industry/media-entertainment/vfx-film-tv" data-wat-val="industry solutions:Film and TV" target="_self">Film &amp; TV</a></li>
+              <li><a href="/industry/media-entertainment/game-design-and-development" data-wat-val="industry solutions:Game design" target="_self">Game design</a></li>
+              <li><a href="/solutions/manufacturing" data-wat-val="industry solutions:Manufacturing" target="_self">Manufacturing</a></li>
+              <li><a href="/solutions/product-design/overview" data-wat-val="industry solutions:Product design" target="_self">Product design</a></li>
+              <li><a href="/solutions/simulation/overview" data-wat-val="industry solutions:simulation" target="_self">Simulation</a></li>
+              <li><a href="/solutions" data-wat-val="industry solutions:All solutions" target="_self">All solutions</a></li>             
+            </ul>
+          </li>
+          <li><a href="https://www.autodesk.com/360-cloud" data-wat-val="Cloud and collaboration" target="_self">Cloud &amp; collaboration</a></li>
+          <li> <a href="#" class="visibility-toggle-2 visibility-hidden" data-visibility-target=".submenu-1c">Makers &amp; indie designers</a>
+            <ul class="submenu-1c">
+              <li><a href="https://www.autodesk.com/solutions/3d-printing" data-wat-val="Makers and indie designers:3D printing" target="_self">3D printing</a></li>
+              <li><a href="/indie-game-maker/home" data-wat-val="Makers and indie designers:Indie game maker" target="_self">Indie game maker</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li> <a href="#" class="visibility-toggle-1 visibility-hidden" data-visibility-target=".submenu-2" data-wat-loc="support and learning:open" data-wat-val="Support and learning">Support &amp; learning</a>
+        <ul class="submenu-2" data-wat-loc="support and learning">
+          <li> <a class="global-nav-category">Support</a> </li>
+          <li><a href="https://knowledge.autodesk.com/support" data-wat-val="By product" target="_self">By product</a></li>
+          <li><a href="https://knowledge.autodesk.com/support/system-requirements" data-wat-val="System requirements" target="_self">System requirements</a></li>
+          <li><a href="https://knowledge.autodesk.com/downloads" data-wat-val="Updates hotfixes service packs" target="_self">Updates, hotfixes &amp; service packs</a></li>
+          <li> <a class="global-nav-category" data-wat-val="Customer service">Customer service</a></li>
+          <li><a href="https://knowledge.autodesk.com/customer-service" class="wp-cta-go-arrow" data-wat-val="All customer service" target="_self">All customer service</a></li>
+          <li><a href="https://knowledge.autodesk.com/installation-and-licensing" data-wat-val="Installation activation licensing" target="_self">Installation, activation, licensing</a></li>
+          <li><a href="https://knowledge.autodesk.com/topics/account-management" data-wat-val="Account management" target="_self">Account management</a></li>
+          <li> <a class="global-nav-category">Events &amp; Training</a> </li>
+          <li><a href="http://au.autodesk.com/au-online/overview" data-wat-val="Classes on demand" target="_self">Classes on demand</a></li>
+          <li><a href="/events" data-wat-val="Events" target="_self">Events</a></li>
+          <li><a href="/training-and-certification/overview" data-wat-val="Training and certification">Training &amp; certification</a></li>
+          <li> <a class="global-nav-category">Community resources</a></li>
+          <li><a href="/community" class="wp-cta-go-arrow" data-wat-val="All communities" target="_self">All communities</a></li>
+          <li><a href="/blogs" data-wat-val="Blogs" target="_self">Blogs</a></li>
+          <li><a href="https://www.autodesk.com/adnopen" data-wat-val="Developer network" target="_self">Developer network</a></li>
+          <li><a href="https://forums.autodesk.com/t5/custom/page/page-id/Discussions-Page" data-wat-val="Forums" target="_self">Forums</a></li>
+          <li><a href="/education/home" data-wat-val="Students and educators" target="_self">Students &amp; educators</a></li>
+
+          <li> <a class="global-nav-category">Services</a></li>
+          <li><a href="/services-support/consulting/overview" data-wat-val="Consulting" target="_self">Consulting</a></li>
+          <li><a href="http://partnerproducts.autodesk.com/catalog/default.asp" data-wat-val="Partner apps" target="_self">Partner apps</a></li>
+        </ul>
+      </li>
+      <li> <a href="#" class="visibility-toggle-1 visibility-hidden" data-visibility-target=".submenu-3" data-wat-loc="downloads:open" data-wat-val="Downloads">Downloads</a>
+        <ul class="submenu-3" data-wat-loc="downloads">
+          <li> <a href="/free-trials" data-wat-val="Free product trials" target="_self">Free product trials</a></li>
+          <li> <a href="/education/free-software/all" data-wat-val="Free student software" target="_self">Free student software</a></li>
+          <li> <a href="https://www.autodesk.com/viewers/all-viewers" data-wat-val="File viewers" target="_self">File viewers</a></li>
+          <li> <a href="https://knowledge.autodesk.com/downloads" data-wat-val="Updates and service packs" target="_self">Updates &amp; service packs</a></li>
+        </ul>
+      </li>
+      <li> <a href="#" class="visibility-toggle-1 visibility-hidden" data-visibility-target=".submenu-4" data-wat-loc="buy:open" data-wat-val="Buy">Buy</a>
+        <ul class="submenu-4" data-wat-loc="buy">
+          <li> <a class="global-nav-category">Buy or Subscribe</a> </li>
+          <li> <a href="https://www.autodesk.com/store" data-wat-val="Autodesk store" target="_self">Autodesk store</a></li>
+          <li> <a href="https://www.autodesk.com/resellers/locate-a-reseller?cntr=US" data-wat-val="Find a reseller" target="_self">Find a reseller</a></li>
+          <li> <a href="/promotions" data-wat-val="Special offers" target="_self">Special offers</a></li>
+          <li> <a class="global-nav-category">Options</a> </li>
+          <li><a href="/subscription" data-wat-val="Subscriber benefits" target="_self">Subscriber benefits</a></li>
+          <li><a href="/maintenance-plan" data-wat-val="Maintenance plan benefits" target="_self">Maintenance plan benefits</a></li>
+          <li><a href="/education/prepare-and-excel/authorized-academic-partner/find-a-partner" data-wat-val="Educational institutions" target="_self">Educational institutions</a></li>
+<li><a href="/financing" data-wat-val="Financing" target="_self">Financing</a></li>
+        </ul>
+      </li>
+      <li> <a href="#" class="visibility-toggle-1 visibility-hidden" data-visibility-target=".submenu-5" data-wat-loc="about autodesk:open" data-wat-val="About Autodesk">About Autodesk</a>
+        <ul class="submenu-5" data-wat-loc="about autodesk">
+          <li> <a href="/careers" data-wat-val="Careers" target="_self">Careers</a></li>
+          <li> <a href="/company" data-wat-val="Company: About us" target="_self">Company</a></li>
+              <li><a href="http://news.autodesk.com/" data-wat-val="Newsroom" target="_self">Newsroom</a></li>
+          </li>
+          <li> <a href="http://investors.autodesk.com/phoenix.zhtml?c=117861&p=irol-irhome" data-wat-val="Investor relations" target="_self">Investor relations</a></li>
+          <li> <a href="/trust/overview" data-wat-val="Trust center" target="_self">Trust center</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <ul class="global-menu-footer wd-list-style-type-none wd-pa-0 wd-uppercase" data-wat-loc="globalft">
+    <li><a href="https://www.autodesk.com/free-trials" data-wat-val="free trials" target="_self"><i class="icon icon-download"></i>&nbsp;Free trials</a></li>
+    <li><a href="https://www.autodesk.com/education/home" data-wat-val="Students and educators" target="_self"><i class="icon icon-education-students"></i>&nbsp;Students and educators</a></li>
+    <li><a href="/site-selector" data-wat-val="Worldwide sites" target="_self"><i class="icon icon-globe-international"></i>&nbsp;Worldwide sites</a></li>
+  </ul>
+  <ul class="global-menu-footer-social">
+    <li><a href="https://www.facebook.com/autodesk" data-wat-link="true" data-wat-val="facebook" data-wat-loc="globalnav" target="_self"><i class="icon icon-facebook"></i></a></li>
+    <li><a href="https://twitter.com/autodesk" data-wat-link="true" data-wat-val="twitter" data-wat-loc="globalnav" target="_self"><i class="icon icon-twitter"></i></a></li>
+    <li><a href="https://www.linkedin.com/company/autodesk" data-wat-link="true" data-wat-val="linkedin" data-wat-loc="globalnav" target="_self"><i class="icon icon-linkedin"></i></a></li>
+    <li><a href="https://www.youtube.com/user/Autodesk" data-wat-link="true" data-wat-val="youtube" data-wat-loc="globalnav" target="_self"><i class="icon icon-youtube"></i></a></li>
+  </ul>
+</div>
+<!--
+This is the global menu overlay
+--> 
+<a class="close-global-menu" data-wat-loc="utilitynav" data-wat-val="globalnav:close" data-wat-link="true"></a> 
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<style>
+.toggle-global-menu {
+	color: white !important;
+	background-color: #0696d7 !important;
+}
+#cartSummaryItemCount{
+	font-family: 'Artifakt Legend';
+}
+
+.wd-navigation-bar{margin:0;padding:0;list-style:none;}
+
+.wd-navigation-bar>li{display:inline-block;}
+
+.cq-wcm-edit .wd-navigation-bar>li{display:block;min-width:200px}
+</style>
+
+<style>
+.global-utility-bar .wd-navigation-bar {
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+.global-utility-bar .wd-navigation-bar > li {
+  border-right: 0;
+  border-left: 1px solid #dadada;
+  display: inline-block;
+  vertical-align: top;
+}
+.global-utility-bar .wd-navigation-bar .e-utility-cart {
+  color: #888888;
+  padding: 0 12px;
+}
+.global-utility-bar .wd-navigation-bar .e-utility-cart-icon {
+  color: #888888;
+  font-size: 28px;
+}
+.global-utility-bar .wd-navigation-bar .e-utility-cart-bubble {
+  color: #888888;
+  font-size: 28px;
+}
+.global-utility-bar .wd-navigation-bar .global-menu-toggle-li .toggle-global-menu {
+  color: #888888;
+  padding: 0 12px;
+}
+.global-utility-bar .wd-navigation-bar .global-menu-toggle-li .toggle-global-menu:hover {
+  color: #0696d7;
+}
+@media only screen and (min-width: 64.063em) {
+  .global-utility-bar .wd-navigation-bar .global-menu-toggle-li .toggle-global-menu {
+    padding: 0 2.5em 0 0.5em;
+  }
+}
+.global-utility-bar .wd-navigation-bar .global-menu-toggle-li .toggle-global-menu svg {
+  font-size: 28px;
+}
+
+/* Navigation shared values */
+.global-utility-bar .wd-navigation-bar .navigation-bar-search input::-webkit-input-placeholder {
+  text-transform: uppercase;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search input:-moz-placeholder {
+  text-transform: uppercase;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search input::-moz-placeholder {
+  text-transform: uppercase;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search input:-ms-input-placeholder {
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 64.063em) {
+  .global-utility-bar .wd-navigation-bar .navigation-bar-search {
+    padding: 0 12px;
+  }
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search svg {
+  width: 14px;
+  height: 34px;
+  fill: currentColor;
+  vertical-align: middle;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search svg.icon-search {
+  width: 28px;
+  height: 28px;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search svg.icon {
+  color: #999;
+  position: absolute;
+  right: 8px;
+  top: 1px;
+  line-height: 30px;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search input {
+  width: 100%;
+  padding: .25em;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search-inline {
+  position: relative;
+  display: none;
+  line-height: 32px;
+}
+@media only screen and (min-width: 64.063em) {
+  .global-utility-bar .wd-navigation-bar .navigation-bar-search-inline {
+    display: inline-block;
+  }
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search-small-trigger {
+  color: #888888;
+  padding: 0 12px;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search-small-trigger:hover {
+  color: #0696d7;
+}
+@media only screen and (min-width: 64.063em) {
+  .global-utility-bar .wd-navigation-bar .navigation-bar-search-small-trigger {
+    display: none;
+  }
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search-small-trigger.visibility-visible {
+  background: #eee;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search-small-target {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 1;
+  background-color: #eee;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search-small-target input {
+  padding: .5em;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search-small-target svg {
+  margin-top: 2px;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-search-small-target-container {
+  position: relative;
+}
+
+/*
+ * Corporate colors
+ *
+ */
+/*
+ * Theme Color Codes
+ *
+ */
+/*
+ * Theme Hover Color Codes
+ *
+ */
+/* Navigation shared values */
+@media only screen and (min-width: 64.063em) {
+  .global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-container {
+    position: relative;
+  }
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-container .navigation-sign-out-container {
+  border-left: 1px solid #dadada;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-link {
+  display: inline-block;
+  color: #888888;
+  padding: 0 12px;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-link:hover {
+  background-color: #eee;
+  color: #0696d7;
+}
+@media only screen and (min-width: 64.063em) {
+  .global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-link:before {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background: #eee;
+    z-index: 2;
+  }
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-link.visibility-visible {
+  background: #eee;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-link span {
+  display: none;
+}
+@media only screen and (min-width: 64.063em) {
+  .global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-link span {
+    display: block;
+  }
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-link > svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+  vertical-align: middle;
+}
+@media only screen and (min-width: 64.063em) {
+  .global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-link > svg {
+    display: none;
+  }
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-popup {
+  background: #eee;
+  border-bottom: 1px solid #dadada;
+  left: 0;
+  list-style: none;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+}
+@media only screen and (min-width: 64.063em) {
+  .global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-popup {
+    border: 1px solid #dadada;
+    left: auto;
+    min-width: 320px;
+    right: -1px;
+  }
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-popup svg {
+  color: #bbb;
+  display: inline-block;
+  fill: currentColor;
+  height: 20px;
+  width: 20px;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-popup-item {
+  border: none;
+  margin-bottom: 8px;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-popup-item:last-child {
+  border-top: 1px solid #dadada;
+  margin-bottom: 0;
+  margin-top: 12px;
+  padding-top: 12px;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-popup-item-link {
+  text-transform: none;
+  outline: none;
+  padding: 0;
+  color: #888;
+}
+.global-utility-bar .wd-navigation-bar .navigation-bar-sign-in-popup-item-link:hover {
+  color: #0696d7;
+}
+</style></div>
+
+</div>
+
+    
+</div>
+</div>
+
+        
+    
+
+    
+</div>
+<div class="iparys_inherited"><div class="utility-content iparsys parsys"></div>
+</div><div class="decorative-box section">
+
+
+
+
+    
+
+
+<div class="wp-manufacturing-local-nav"  
+    >
+    <div class="box-content parsys">
+<div class="local-navigation navigation section">
+
+
+
+
+
+    
+
+<script>
+var Toogle = {};
+
+Toogle.manageFields = function manageFields(field) {
+
+    //Get the panel of the tab our drop down menu on
+    var panel = field.findParentByType('panel');
+
+    // Our text fields are stored in widgets of type textfield
+    // and we get their reference 
+    var fieldSets = panel.findByType('textfield');
+    var fLength = fieldSets.length;
+
+    // Get value of selected option in out select box
+    var fieldValue = field.getValue();
+    for (var i = 0; i < fLength ; i++) {
+        var fieldSet = fieldSets[i];
+
+        // Values of options in our drop down menu correspond to
+        // respective logic below. We use the textfield ID's to hide
+        // otherwise - hide.
+        if (fieldValue === "authoredTitle"){
+       	  if ("authoredTitle" === fieldSet.getItemId()){
+          	fieldSet.show();
+          }
+        	
+        }else if (fieldValue === "pageTitle"){
+       	 if ("authoredTitle" === fieldSet.getItemId()){
+          	fieldSet.hide();    
+          }
+        	
+        }else{
+        	 if ("authoredTitle" === fieldSet.getItemId()){
+             	fieldSet.hide();   
+             }
+        }
+    }
+    var fieldSets = panel.findByType('selection');
+    for (var i = 0; i < fLength ; i++) {
+        var fieldSet = fieldSets[i];
+
+        // Values of options in our drop down menu correspond to
+        // respective logic below. We use the selction ID's to hide
+        // otherwise - hide.
+        if (fieldValue === "authoredTitle"){
+			if ("titlePosition" === fieldSet.getItemId()){
+     		fieldSet.show();
+          	}
+        	
+        }else if (fieldValue === "pageTitle"){
+       	 	if ("titlePosition" === fieldSet.getItemId()){
+     		fieldSet.show();
+          	}
+        	
+        }else{
+        	 if ("titlePosition" === fieldSet.getItemId()){
+        		fieldSet.hide();
+             }
+        }
+    }
+    
+}
+</script>
+
+
+    
+    
+
+	
+    <div class="clearfix local-navigation-outer  " data-wat-link-section="contextnav">
+    	<div class="local-navigation-container">
+    	    <div class="local-navigation-name">
+    	    	<div class="row">
+                	
+                    	
+                    		
+                    		
+                    			<p class="wd-uppercase wd-ma-0 wd-font-19">MANUFACTURING</p>
+                    		
+                    	
+                    
+                   	
+                   	
+     					<a href="#" data-visibility-target=".local-navigation-links" class="nav-toggle nav-toggle-primary visibility-hidden  nav-toggle-authoredTitle"><i class="icon-arrow-dropdown"></i></a>
+                   	
+    			</div>
+    		</div>
+    	    
+    	    <div class="local-navigation-links">
+    		    
+    		    <div class="row">
+    		        <nav>
+    		            <ul class="local-navigation-list"><!--
+    		                
+    		                    
+
+
+
+
+
+    
+
+
+--><li class="nav-item"  >
+    
+        
+        
+            
+            <a href="#" class="nav-link">
+                <div class="nav-link-text">PRODUCTS</div>
+                    <div class="nav-link-toggle">
+                    <i class="nav-link-toggle-off icon-arrow-dropdown"></i>
+                    <i class="nav-link-toggle-on icon-arrow-dropdown"></i>
+                </div>
+            </a>
+            <ul class="nav-list">
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="/products/powermill/overview" class="nav-link nav-link-submenu">POWERMILL</a></li>
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="/products/featurecam/overview" class="nav-link nav-link-submenu">FEATURECAM</a></li>
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="/products/fusion-360/overview" class="nav-link nav-link-submenu">FUSION 360</a></li>
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="/products/hsm/overview" class="nav-link nav-link-submenu">AUTODESK HSM</a></li>
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="https://www.netfabb.com" class="nav-link nav-link-submenu" target="_blank">NETFABB</a></li>
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="/products/powershape/overview" class="nav-link nav-link-submenu">POWERSHAPE</a></li>
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="/products/powerinspect/overview" class="nav-link nav-link-submenu">POWERINSPECT</a></li>
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="/products/trunest/overview" class="nav-link nav-link-submenu">TRUNEST</a></li>
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="/products/moldflow/overview" class="nav-link nav-link-submenu">MOLDFLOW</a></li>
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="http://autodeskfusionconnect.com" class="nav-link nav-link-submenu" target="_blank">FUSION CONNECT</a></li>
+                
+            </ul>
+        
+    
+</li><!--
+    		                
+    		                    
+
+
+
+
+
+    
+
+
+--><li class="nav-item"  >
+    
+        
+        
+            
+            <a href="#" class="nav-link">
+                <div class="nav-link-text">RESOURCES</div>
+                    <div class="nav-link-toggle">
+                    <i class="nav-link-toggle-off icon-arrow-dropdown"></i>
+                    <i class="nav-link-toggle-on icon-arrow-dropdown"></i>
+                </div>
+            </a>
+            <ul class="nav-list">
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="https://manufacturing.autodesk.com/events" class="nav-link nav-link-submenu">EVENTS</a></li>
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="https://manufacturing.autodesk.com/local-support-offices" class="nav-link nav-link-submenu">LOCAL SUPPORT</a></li>
+                
+            </ul>
+        
+    
+</li><!--
+    		                
+    		                    
+
+
+
+
+
+    
+
+
+--><li class="nav-item"  >
+    
+        
+        
+            
+            <a href="#" class="nav-link">
+                <div class="nav-link-text">SOLUTIONS</div>
+                    <div class="nav-link-toggle">
+                    <i class="nav-link-toggle-off icon-arrow-dropdown"></i>
+                    <i class="nav-link-toggle-on icon-arrow-dropdown"></i>
+                </div>
+            </a>
+            <ul class="nav-list">
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="https://manufacturing.autodesk.com/advanced-consulting" class="nav-link nav-link-submenu">ADVANCED CONSULTING</a></li>
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="https://manufacturing.autodesk.com/solutions/electrode" class="nav-link nav-link-submenu">ELECTRODE</a></li>
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="https://manufacturing.autodesk.com/solutions/robotics" class="nav-link nav-link-submenu">ROBOTICS</a></li>
+                
+                    
+
+
+
+
+
+    
+
+
+<li><a href="https://www.autodesk.com/collections/product-design/overview" class="nav-link nav-link-submenu" target="_blank">FACTORY DESIGN UTILITIES</a></li>
+                
+            </ul>
+        
+    
+</li><!--
+    		                
+    		                    
+
+
+
+
+
+    
+
+
+--><li class="nav-item"  >
+    
+        
+            
+                <a href="/solutions/manufacturing/contact-us" class="nav-link">
+                CONTACT US</a>
+        
+        
+    
+</li><!--
+    		                
+    		            --></ul>
+    		        </nav>
+    		    </div>
+    		</div>
+    	</div>
+    </div>
+    <script>
+
+        (function(adsk){
+
+            adsk.defer(['jquery', 'local-navigation'], function($, localNavigation){
+
+                //initialize local nav
+                var localNavigationInstance = new localNavigation({
+                    onOpenItem: function(item){
+                        item.parent().addClass('nav-item-open');
+                    },
+                    onCloseItem: function(item){
+                        item.parent().removeClass('nav-item-open');
+                    }
+                });
+
+            });
+
+        }(window.adsk));
+
+    </script>
+
+
+
+    
+
+    
+    
+
+
+
+
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<script>
+
+(function(adsk){
+    adsk.defer(['jquery', 'AEMPublishMode', 'enquire', 'breakpoints'], function($, AEMPublishMode,  enquire, bps) {
+
+        if(AEMPublishMode){
+
+			var header = $(".header");
+			var globalNav = $(".global-utility-bar");
+			var vpsize="small";
+
+			function checkNavScroll(){
+
+				// We fix the nav by hiding the global nav(just showing local nav)
+			    if ($(window).scrollTop() >= globalNav.outerHeight()) {
+			        globalNav.css("margin-top", -globalNav.outerHeight()+"px");
+			    }else{
+			    	// Unfix the nav by removing the margin top from the global nav
+			        globalNav.css("margin-top", -$(window).scrollTop()+"px");
+			    }
+			}
+			$(window).scroll(checkNavScroll);
+			$(window).resize(checkNavScroll);
+			$(window).load(function(){$(window).resize();});
+
+			checkNavScroll();
+
+            // Register breakpoint callbacks to track viewport size.
+            enquire.register(
+                bps.medium,
+                {
+                    match: function(){
+                        vpsize = 'medium';
+                        checkNavScroll();
+                    },
+                    unmatch: function(){
+                        vpsize = 'small';
+                        checkNavScroll();
+                    }
+                }
+            );
+		}
+    });
+}(window.adsk));
+
+/**
+* jquery.matchHeight-min.js master
+* https://brm.io/jquery-match-height/
+* License: MIT
+*/
+(function(c){var n=-1,f=-1,g=function(a){return parseFloat(a)||0},r=function(a){var b=null,d=[];c(a).each(function(){var a=c(this),k=a.offset().top-g(a.css("margin-top")),l=0<d.length?d[d.length-1]:null;null===l?d.push(a):1>=Math.floor(Math.abs(b-k))?d[d.length-1]=l.add(a):d.push(a);b=k});return d},p=function(a){var b={byRow:!0,property:"height",target:null,remove:!1};if("object"===typeof a)return c.extend(b,a);"boolean"===typeof a?b.byRow=a:"remove"===a&&(b.remove=!0);return b},b=c.fn.matchHeight=
+function(a){a=p(a);if(a.remove){var e=this;this.css(a.property,"");c.each(b._groups,function(a,b){b.elements=b.elements.not(e)});return this}if(1>=this.length&&!a.target)return this;b._groups.push({elements:this,options:a});b._apply(this,a);return this};b._groups=[];b._throttle=80;b._maintainScroll=!1;b._beforeUpdate=null;b._afterUpdate=null;b._apply=function(a,e){var d=p(e),h=c(a),k=[h],l=c(window).scrollTop(),f=c("html").outerHeight(!0),m=h.parents().filter(":hidden");m.each(function(){var a=c(this);
+a.data("style-cache",a.attr("style"))});m.css("display","block");d.byRow&&!d.target&&(h.each(function(){var a=c(this),b="inline-block"===a.css("display")?"inline-block":"block";a.data("style-cache",a.attr("style"));a.css({display:b,"padding-top":"0","padding-bottom":"0","margin-top":"0","margin-bottom":"0","border-top-width":"0","border-bottom-width":"0",height:"100px"})}),k=r(h),h.each(function(){var a=c(this);a.attr("style",a.data("style-cache")||"")}));c.each(k,function(a,b){var e=c(b),f=0;if(d.target)f=
+d.target.outerHeight(!1);else{if(d.byRow&&1>=e.length){e.css(d.property,"");return}e.each(function(){var a=c(this),b={display:"inline-block"===a.css("display")?"inline-block":"block"};b[d.property]="";a.css(b);a.outerHeight(!1)>f&&(f=a.outerHeight(!1));a.css("display","")})}e.each(function(){var a=c(this),b=0;d.target&&a.is(d.target)||("border-box"!==a.css("box-sizing")&&(b+=g(a.css("border-top-width"))+g(a.css("border-bottom-width")),b+=g(a.css("padding-top"))+g(a.css("padding-bottom"))),a.css(d.property,
+f-b))})});m.each(function(){var a=c(this);a.attr("style",a.data("style-cache")||null)});b._maintainScroll&&c(window).scrollTop(l/f*c("html").outerHeight(!0));return this};b._applyDataApi=function(){var a={};c("[data-match-height], [data-mh]").each(function(){var b=c(this),d=b.attr("data-mh")||b.attr("data-match-height");a[d]=d in a?a[d].add(b):b});c.each(a,function(){this.matchHeight(!0)})};var q=function(a){b._beforeUpdate&&b._beforeUpdate(a,b._groups);c.each(b._groups,function(){b._apply(this.elements,
+this.options)});b._afterUpdate&&b._afterUpdate(a,b._groups)};b._update=function(a,e){if(e&&"resize"===e.type){var d=c(window).width();if(d===n)return;n=d}a?-1===f&&(f=setTimeout(function(){q(e);f=-1},b._throttle)):q(e)};c(b._applyDataApi);c(window).bind("load",function(a){b._update(!1,a)});c(window).bind("resize orientationchange",function(a){b._update(!0,a)})})(jQuery);
+
+</script></div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<style>
+/*CUSTOM TOP NAVIGATION*/
+/* ----------------------------------------------------------------------------------------------*/
+.header{
+
+	background-color: transparent;
+}
+
+body:not(.cq-wcm-edit) .wp-manufacturing-local-nav {
+	/* To get this from being calculated in the body-content padding */
+    position: absolute;
+    width: 100%;
+	border-bottom:1px solid #746f7e;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.wp-manufacturing-local-nav .local-navigation,
+.wp-manufacturing-local-nav .local-navigation .nav-item .nav-list,
+.wp-manufacturing-local-nav .local-navigation .nav-item-open .nav-link{
+	background-color: transparent;
+}
+.wp-manufacturing-local-nav .local-navigation .nav-item-open .nav-list{
+	background-color: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #746f7e;
+    border-right: 1px solid #746f7e;
+    border-left: 1px solid #746f7e;
+	margin-top: 2px;    
+}
+
+
+/* Manufacturing TITLE */
+.wp-manufacturing-local-nav .local-navigation-name{
+	border-bottom: none;
+	position:relative;
+	color:#fff;
+}
+
+/* menu items */
+.wp-manufacturing-local-nav .local-navigation .nav-list {
+	border-left: none;
+	border-right: none;
+	border-top: none;
+}
+
+/* menu links */
+.wp-manufacturing-local-nav .local-navigation .nav-link {
+	border-left: none;
+	border-bottom: none;
+	color: #fff;
+	font-size: 14px;
+    line-height: 18px;
+    padding-top: 16px;
+    padding-bottom: 14px;
+}
+.wp-manufacturing-local-nav .local-navigation .nav-link:hover {
+	background:none;
+}
+
+/* menu links ACTIVE */
+.wp-manufacturing-local-nav .local-navigation .nav-item > .nav-link-selected,
+.wp-manufacturing-local-nav .local-navigation .nav-item > .nav-link:hover {
+	background:none;
+	color:#fff;
+	font-style: normal;
+	height: 46px; /* 16px pad, 16px font-size, 16px pad */
+}
+
+/* sub menu links ACTIVE-HOVER */
+.wp-manufacturing-local-nav .local-navigation .nav-item .nav-list .nav-link-selected,
+.wp-manufacturing-local-nav .local-navigation .nav-item .nav-list .nav-link:hover {
+	color:#ee8822;
+}
+
+/* the color beneath the button - cant be absolute position
+because the width would follow the li not listening to padding */
+.wp-manufacturing-local-nav .local-navigation .nav-item > .nav-link-selected:after,
+.wp-manufacturing-local-nav .local-navigation .nav-item > .nav-link:hover:after {
+	content:"";
+	height:7px;
+	width:100%;
+	display: block;
+	background-color:  #ee8822;
+	margin: 8px 0 -8px;
+}
+
+.wp-manufacturing-local-nav .local-navigation .nav-item-open > .nav-link-selected:after,
+.wp-manufacturing-local-nav .local-navigation .nav-item-open > .nav-link:hover:after{
+	display:none;
+}
+
+
+
+.wp-manufacturing-local-nav .local-navigation .nav-item:last-child .nav-link {
+    border-right: none;
+}
+
+.local-navigation-container{
+	position:relative;
+}
+
+
+/* ----------------------------------------------------------------------------------------------*/
+/* 	TABLET */
+/* ----------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 40.063em) {
+/*
+	MENU
+*/
+/* ----------------------------------------------------------------------------------------------*/
+	.wp-manufacturing-local-nav .local-navigation-name p{
+		padding-right:36px;
+	}
+  .wp-manufacturing-local-nav .local-navigation .nav-link{
+    padding: calc(1em - 5px);
+  }
+
+	.wp-manufacturing-local-nav .local-navigation-name:after{
+		content:"";
+		border-left: 1px solid #e4e4e5;
+		-webkit-transform: rotate(27deg);
+		-moz-transform: rotate(27deg);
+		-o-transform: rotate(27deg);
+		-ms-transform: rotate(27deg);
+		transform: rotate(27deg);
+		display:block;
+		position:absolute;
+		width:1px;
+		height: 20px;
+	    right: 10px;
+	    top: 14px;
+	}
+
+
+/* ----------------------------------------------------------------------------------------------*/
+/* 	DESKTOP */
+/* ----------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 64.063em) {
+.wp-manufacturing-local-nav .local-navigation .nav-link{
+  padding: 1em;
+}
+}
+</style></div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<script type="text/javascript">
+(function(adsk){
+adsk.defer(['jquery', 'AEMPublishMode'], function($, AEMPublishMode) {
+if(AEMPublishMode){
+   $('.local-navigation .local-navigation-name p').click(function(){
+	window.location.href = 'https://www.autodesk.com/solutions/manufacturing';
+   });
+}
+});
+}(window.adsk));
+</script>
+
+<style>
+.local-navigation .local-navigation-name p{
+	cursor: pointer;
+}
+</style></div>
+
+</div>
+
+    
+</div>
+</div>
+
+</div>
+
+    <div class="local-nav-content iparsys parsys"><div class="iparys_inherited"><div class="local-nav-content iparsys parsys"></div>
+</div>
+</div>
+
+</header>
+        
+
+
+
+
+
+
+
+
+
+<div class="row" id="grid-overlay">
+    <svg>
+        <line x1="0"      y1="0" x2="0"      y2="100%"></line>
+        <line x1="8.33%"  y1="0" x2="8.33%"  y2="100%"></line>
+        <line x1="16.67%" y1="0" x2="16.67%" y2="100%"></line>
+        <line x1="25.00%" y1="0" x2="25.00%" y2="100%"></line>
+        <line x1="33.33%" y1="0" x2="33.33%" y2="100%"></line>
+        <line x1="41.67%" y1="0" x2="41.67%" y2="100%"></line>
+        <line x1="50.00%" y1="0" x2="50.00%" y2="100%"></line>
+        <line x1="58.33%" y1="0" x2="58.33%" y2="100%"></line>
+        <line x1="66.67%" y1="0" x2="66.67%" y2="100%"></line>
+        <line x1="75.00%" y1="0" x2="75.00%" y2="100%"></line>
+        <line x1="83.33%" y1="0" x2="83.33%" y2="100%"></line>
+        <line x1="91.67%" y1="0" x2="91.67%" y2="100%"></line>
+        <line x1="100%"   y1="0" x2="100%"   y2="100%"></line>
+    </svg>
+
+    <p class="note">Keyboard <strong>ALT + g</strong> to toggle grid overlay</p>
+</div>
+
+
+
+<div class="body-content">
+   <!--[if lte IE 9]>
+    <h2>Your browser is not supported. For the best experience, update your browser version or try Chrome or Firefox.</h2>
+   <![endif]-->
+    
+
+    
+        
+<script type="text/javascript">
+    (function (adsk) {
+        adsk.defer(['jquery', 'oxygen', 'domReady!'], function ($, oxygen) {
+            oxygen.init(false);
+        });
+    }(window.adsk));
+</script>
+
+    
+
+    
+      
+        <div class="banner iparsys parsys"><div class="code section">
+
+
+
+
+
+    
+
+
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+</div>
+<div class="decorative-box section">
+
+
+
+
+    
+
+
+<div class="wp-video-banner"  
+    >
+    <div class="box-content parsys">
+<div class="video parbase section">
+
+
+
+    
+
+
+
+    
+    <div class="video-container">
+        <div class="video-overlay">
+                
+        <video id="video-a67c8c1ef5b9" class="video-element" title="" autoplay loop
+             poster="/content/dam/autodesk/www/solutions/manufacturing/images/manufacturing-software-gateway-banner-poster-1920x900.jpg" 
+            >
+        
+            
+                <source src="https://videos.autodesk.com/zencoder/content/dam/autodesk/www/solutions/manufacturing/videos/autodesk-in-manufacturing-gateway-video.mp4" type="video/mp4">
+            
+            
+                <source src="https://videos.autodesk.com/zencoder/content/dam/autodesk/www/solutions/manufacturing/videos/autodesk-in-manufacturing-gateway-video.webm" type="video/webm">
+            
+            
+                <object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0"
+                        classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+                        id="swfobject_a67c8c1ef5b9"
+                        name="swfobject_a67c8c1ef5b9" 
+                        class="js-flashasset"
+                        width="1920"
+                        height="1000">
+                    <param name="MOVIE" value="/etc/designs/components-general/images/FlashAssetShell.swf"/>
+                    <param name="FlashVars"
+                           value="template=/etc/designs/components-general/images/VideoPlayer_var.swf&source=https://videos.autodesk.com/zencoder/content/dam/autodesk/www/solutions/manufacturing/videos/autodesk-in-manufacturing-gateway-video.flv"/>
+                    <param name="menu" value="false"/>
+                    <param name="allowscriptaccess" value="always"/>
+                    <param name="wmode" value="transparent"/>
+                    <param name="SeamlessTabbing" value="true"/>
+                    <param name="allowFullScreen" value="true"/>
+                    <embed pluginspage="http://www.adobe.com/go/getflashplayer" 
+                           type="application/x-shockwave-flash"
+                           id="embedobject_a67c8c1ef5b9" 
+                           name="embedobject_a67c8c1ef5b9"
+                           src="/etc/designs/components-general/images/FlashAssetShell.swf"
+                           flashvars="template=/etc/designs/components-general/images/VideoPlayer_var.swf&source=https://videos.autodesk.com/zencoder/content/dam/autodesk/www/solutions/manufacturing/videos/autodesk-in-manufacturing-gateway-video.flv"
+                           allowscriptaccess="always" 
+                           allowfullscreen="true"
+                           width="1920"
+                           height="1000"
+                           wmode="transparent"><!-- --></embed>
+                </object>
+            
+        </video>
+        
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            var vid = document.getElementById("video-a67c8c1ef5b9");
+            if(vid) {
+                vid.addEventListener('play', function() {
+                    adsk.tagCloud.updateAssetPersonalizationTags("");
+                });
+            }
+        });
+    </script>
+    
+    
+</div>
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row wd-ph-20 wp-banner-card">
+    
+        
+        
+        
+        <div class="medium-10 large-6 end grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+        <div class="wd-pr-24">
+            <div class="column-content parsys">
+<div class="heading section">
+
+
+
+
+    
+
+
+<h1 class="wd-font-40 pc-brand wd-uppercase">
+    
+        Manufacturing software to make great products
+    
+</h1>
+</div>
+
+</div>
+
+        </div>
+    
+    
+
+
+</div>
+
+        </div>
+    
+        
+        
+        
+        <div class="large-8 wd-pr-24 end grid-columns">
+            <div class="responsive-column-1 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-color-gray-80 wd-font-19 wd-mt-4 wd-pr-24">Autodesk manufacturing software helps you machine, print, inspect, and fabricate better quality parts, faster.</p>
+
+    
+
+    
+        
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<div class="wp-video-overlay wp-neutral"></div></div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<style>
+
+body:not(.cq-wcm-edit) .wp-video-banner {
+	position: relative;
+	overflow: hidden;
+	background: url('/content/dam/autodesk/www/solutions/manufacturing/images/manufacturing-software-gateway-banner-poster-1920x900.jpg') left no-repeat;
+	background-size: cover;
+}
+.wp-banner-card {
+	padding-top: 120px;
+}
+body:not(.cq-wcm-edit) .wp-video-banner .video-container {
+	display: none;
+}
+.wp-vam {
+	display: inline-block;
+	vertical-align: middle;
+}
+.wp-vert-row.row .grid-columns {
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* TABLET */
+@media only screen and (min-width: 40.063em) {
+.wp-banner-card {
+	padding-top: 217px;
+}
+}
+
+@media only screen and (max-width: 1178px) {
+body:not(.cq-wcm-edit) .wp-video-banner {	
+	height: 530px;
+}	
+}
+
+
+@media only screen and (min-width: 1180px) {
+body:not(.cq-wcm-edit) .wp-video-banner {	
+	height: 602px;
+}	
+}
+
+/* DESKTOP */
+
+/* --- VIDEO BANNER SECTION --- */
+@media only screen and (min-width: 64.063em) {
+body:not(.cq-wcm-edit) .wp-video-banner .video-container {
+	width: 100%;
+	position: absolute;
+	display: block;
+}
+body:not(.cq-wcm-edit) .wp-video-overlay {
+position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+body:not(.cq-wcm-edit) .wp-video-overlay.wp-neutral {
+background: url('/content/dam/autodesk/www/patterns/visual-overviews/overlay-video-neutral.png') repeat;
+}
+
+.wp-video-banner .responsive-grid {
+position: relative;
+z-index: 7;
+}
+
+/* --- BONUS BAR SECTION --- */	
+.wp-bonus-bar {
+	margin-top: 0px;
+}
+}
+</style></div>
+
+</div>
+
+    
+</div>
+</div>
+<div class="iparys_inherited"><div class="banner iparsys parsys"></div>
+</div>
+</div>
+
+      
+    
+
+    <div class="body-content parsys"><div class="decorative-box section">
+
+
+
+
+    
+
+
+<div class="wp-promo-bar wd-bg-dim-grey"  
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row">
+    
+        
+        
+        
+        <div class="grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+        <div class="wd-ph-10">
+            <div class="column-content parsys">
+<div class="code section">
+
+
+
+
+
+    
+
+
+</div>
+<div class="adsk-ootb-teaser parbase section">
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+        
+            
+            
+
+                
+
+            
+        
+    
+</div>
+
+</div>
+
+        </div>
+    
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<style>
+
+.wp-promo-bar .btn-brand {
+	background-color: transparent !important; 
+}
+.wp-promo-bar a {
+	color: #fff !important;
+	border-bottom: none !important;
+	font-size: 19px !important;
+}
+.btn-brand {
+	display: block;
+	width: 100%;
+	overflow: auto;
+	border: none !important;
+	/*background-color: rgb(221, 33, 33); */
+        
+	color: #fff !important;
+	padding: 5px 10px;
+}
+.btn-brand > span {
+	width: 100%;
+	display: block;
+	border-top: 1px solid #fff;
+	padding-top: 5px;
+	margin-top: 2px;
+}
+.btn-brand > span:after {
+	font-family: 'Autodesk-Icon-Font';
+	content: "\e615";
+	vertical-align: middle;
+	float: right;
+	margin-left: 0;
+}
+
+/* ----------------+++ MEDIA QUERIES +++---------------- */
+    /* [--- TABLET VIEW---] */
+@media only screen and (min-width: 40.063em) {
+.btn-brand > span {
+	width: auto;
+	float: right;
+	border-left: 1px solid #fff;
+	border-top: none;
+	padding-left: 10px;
+	padding-top: 0;
+	margin-top: 0;
+}
+.btn-brand > span:after {
+	float: none;
+	margin-left: 5px;
+}
+.btn-brand > span:after {
+	font-family: 'Autodesk-Icon-Font';
+	content: "\e615";
+	vertical-align: middle;
+	float: right;
+	margin-left: 0;
+}
+}
+
+/* [--- DESKTOP VIEW---] */
+    
+@media only screen and (min-width: 64.063em) {
+}
+</style></div>
+
+</div>
+
+    
+</div>
+</div>
+<div class="decorative-box section">
+
+
+
+
+    
+
+
+<div class="wp-bonus-bar hide"  
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row wd-ph-20 wd-pt-48 wd-pb-20">
+    
+        
+        
+        
+        <div class="small-12 medium-6 large-4 grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row">
+    
+        
+        
+        
+        <div class="small-2 medium-2 large-2 grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="code section">
+
+
+
+
+
+    
+
+
+<div class="wp-table">
+<div class="wp-table-cell wp-table-img"><svg version="1.1" id="Layer_1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 52.1 40" style="enable-background:new 0 0 52.1 40;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#666666;}
+</style>
+<g>
+	<polygon class="st0" points="25.9,33.3 30.5,33.3 30.5,32.3 25.9,27.6"/>
+	<polygon class="st0" points="30.5,28.1 25.9,23.5 25.9,26.4 30.5,31"/>
+	<polygon class="st0" points="41.1,25.1 41.1,35.7 23.4,35.7 23.4,25.1 0.3,25.1 0.3,40.1 52.1,40.1 52.1,25.1"/>
+	<polygon class="st0" points="21,2.6 21,5.4 19.9,5.4 19.9,13.6 24,13.6 24,14.9 23.1,14.9 23.1,20.8 25.9,20.8 25.9,22.3 
+		30.5,26.9 30.5,20.8 33.3,20.8 33.3,14.9 32.4,14.9 32.4,13.6 36.5,13.6 36.5,5.4 35.4,5.4 35.4,2.6 36.5,2.6 36.5,0.1 19.9,0.1 
+		19.9,2.6"/>
+</g>
+</svg>
+</div>
+</div></div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+        
+        
+        
+        <div class="small-9 medium-9 large-9 wd-pl-12 end grid-columns">
+            <div class="responsive-column-1 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <div class="wp-table-cell wp-text"><p class="wd-mt-0"><span class="wd-bold wd-font-19 wd-uppercase">Modular manufacturing solutions</span><br>
+<span class="wd-font-16">Manufacturing software for CAM, additive, and composites.</span></p>
+</div>
+
+    
+
+    
+        
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+        
+        
+        
+        <div class="small-12 medium-6 large-4 grid-columns">
+            <div class="responsive-column-1 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row">
+    
+        
+        
+        
+        <div class="small-2 medium-2 large-2 grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="code section">
+
+
+
+
+
+    
+
+
+<div class="wp-table">
+<div class="wp-table-cell wp-table-img"><svg version="1.1" id="Layer_1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 38.1 40" style="enable-background:new 0 0 38.1 40;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#666666;}
+</style>
+<path class="st0" d="M14.1,25.7c-0.3-0.1-0.7,0-0.9-0.2c-0.2-0.2-0.4-0.6-0.5-0.9c-0.3-1.4-0.1-1.4-1.5-1.5c-0.5-0.1-1-0.2-1.4-0.3
+	c-0.4-0.1-0.7,0-0.9,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.3,0.4-0.7,0.5-1.1,0.4c-1.1-0.4-2-1-2.8-1.8C4,22.2,4,21.8,4.2,21.4
+	c0.2-0.3,0.4-0.7,0.6-1c0.2-0.3,0.2-0.6,0-0.9c-0.4-0.6-0.8-1.2-1.2-1.8c-0.2-0.3-0.4-0.4-0.8-0.4c-0.4,0.1-0.8,0.2-1.1,0.2
+	c-0.4,0.1-0.8-0.1-1-0.5C0.2,16,0,14.9,0,13.7c0-0.5,0.3-0.8,0.8-1c0.4-0.1,0.7-0.1,1.1-0.2c0.4-0.1,0.6-0.3,0.6-0.7
+	c0.1-0.7,0.3-1.4,0.4-2.1c0.1-0.4,0-0.7-0.3-0.9C2.3,8.7,2,8.5,1.7,8.3C1.3,8,1.2,7.6,1.3,7.2c0.4-1.1,1-2,1.9-2.8
+	C3.5,4,3.9,4,4.4,4.3C4.7,4.5,5,4.7,5.3,4.9c0.3,0.2,0.6,0.2,0.9,0C6.8,4.4,7.4,4,8,3.7c0.3-0.2,0.5-0.5,0.4-0.9
+	C8.3,2.4,8.2,2.1,8.2,1.7c-0.1-0.5,0.1-0.8,0.5-1C9.7,0.2,10.9,0,12.1,0c0.4,0,0.7,0.3,0.8,0.7C13,1.1,13,1.5,13.1,1.9
+	c0.1,0.4,0.3,0.6,0.7,0.6c0.7,0.1,1.3,0.2,2,0.4c0.5,0.1,0.7,0.1,1-0.4c0.2-0.3,0.4-0.6,0.6-0.9c0.3-0.4,0.6-0.5,1.1-0.3
+	c1.1,0.4,2,1,2.8,1.8c0.4,0.4,0.4,0.8,0.1,1.2C21.2,4.7,21,5,20.8,5.3c-0.2,0.3-0.2,0.6,0,0.9C21.2,6.8,21.6,7.4,22,8
+	c0.2,0.3,0.5,0.5,0.8,0.4c0.3-0.1,0.7-0.1,1-0.2c0.6-0.1,0.9,0.1,1.1,0.6c0.4,1,0.7,2,0.6,3.1c0,0.6-0.3,0.9-0.8,1
+	c-0.4,0.1-0.7,0.1-1.1,0.2c-0.4,0.1-0.5,0.3-0.6,0.7c-0.1,0.7-0.2,1.4-0.4,2.1c-0.1,0.4,0,0.8,0.4,1c0.3,0.2,0.6,0.4,0.8,0.6
+	c0.4,0.3,0.5,0.6,0.4,1.1c-0.4,1.1-1,2-1.8,2.8c-0.4,0.3-0.8,0.4-1.2,0.1c-0.3-0.2-0.6-0.4-0.9-0.6c-0.3-0.2-0.6-0.2-0.9,0
+	c-0.6,0.4-1.2,0.8-1.8,1.2c-0.3,0.2-0.5,0.5-0.4,0.9c0.1,0.3,0.1,0.7,0.2,1c0.1,0.6,0,0.9-0.6,1.2C16,25.4,15.1,25.6,14.1,25.7
+	 M12.9,7.3c-3.1,0-5.6,2.5-5.6,5.5c0,3.1,2.5,5.6,5.5,5.6c3.1,0,5.6-2.5,5.6-5.6C18.4,9.8,15.9,7.3,12.9,7.3"/>
+<path class="st0" d="M28,40c-0.5-0.1-1.1-0.1-1.7-0.2c-0.5-0.1-0.7-0.4-0.7-0.9c0-0.2,0-0.3,0-0.5c0-0.5-0.2-0.8-0.7-1
+	c-0.7-0.4-1.5-0.8-2.1-1.3c-0.4-0.3-0.7-0.3-1.2-0.1c-1.1,0.6-1.2,0.6-1.9-0.4c-0.5-0.8-0.9-1.6-1.3-2.4c-0.3-0.7-0.2-1,0.5-1.3
+	c0.1-0.1,0.3-0.2,0.4-0.3c0.3-0.2,0.4-0.5,0.4-0.9c0-0.8,0-1.7,0-2.5c0-0.5,0-0.8-0.5-1.1c-1.1-0.6-1-0.9-0.6-1.8
+	c0.4-0.9,1-1.7,1.5-2.5c0.3-0.5,0.7-0.5,1.2-0.2c0.2,0.1,0.3,0.2,0.5,0.3c0.3,0.2,0.6,0.1,1-0.1c0.8-0.5,1.6-0.9,2.4-1.4
+	c0.3-0.2,0.5-0.4,0.5-0.8c0-0.1,0-0.2,0-0.3c0-0.9,0.2-1.1,1.1-1.2c1-0.1,2.1-0.1,3.1,0.1c0.6,0.1,0.8,0.4,0.8,1c0,0.2,0,0.4,0,0.6
+	c0,0.4,0.2,0.6,0.6,0.8c0.8,0.4,1.5,0.9,2.3,1.3c0.4,0.2,0.7,0.3,1.1,0.1c1.1-0.7,1.3-0.5,2,0.5c0.5,0.8,0.9,1.6,1.3,2.4
+	c0.3,0.6,0.1,0.9-0.4,1.2c-0.2,0.1-0.3,0.2-0.5,0.3c-0.3,0.2-0.4,0.5-0.4,0.9c0,0.9,0,1.7,0,2.6c0,0.5,0.1,0.8,0.5,1
+	c1.1,0.7,1.2,0.8,0.6,2c-0.4,0.8-0.9,1.6-1.4,2.3c-0.4,0.5-0.7,0.6-1.3,0.2c-0.1-0.1-0.3-0.2-0.4-0.3c-0.3-0.2-0.7-0.2-1,0
+	c-0.8,0.5-1.5,0.9-2.3,1.3c-0.4,0.2-0.6,0.5-0.6,0.9c0.1,1.2-0.2,1.4-1.4,1.5C28.9,39.9,28.5,40,28,40 M28.2,24.7
+	c-2.7,0-4.8,2.1-4.8,4.7c0,2.7,2.1,4.9,4.8,4.9c2.6,0,4.8-2.1,4.8-4.8C33,26.9,30.9,24.7,28.2,24.7"/>
+</svg>
+</div>
+</div></div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+        
+        
+        
+        <div class="small-9 medium-9 large-9 wd-pl-12 end grid-columns">
+            <div class="responsive-column-1 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <div class="wp-table-cell wp-text"><p class="wd-mt-0"><span class="wd-bold wd-font-19 wd-uppercase">Manufacturing expertise</span><br>
+<span class="wd-font-16">Automate, optimize, and integrate your manufacturing processes.</span></p>
+</div>
+
+    
+
+    
+        
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+        
+        
+        
+        <div class="small-12 medium-6 large-4 end grid-columns">
+            <div class="responsive-column-2 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row">
+    
+        
+        
+        
+        <div class="small-2 medium-2 large-2 grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="code section">
+
+
+
+
+
+    
+
+
+<div class="wp-table">
+<div class="wp-table-cell wp-table-img cloud-fix"><svg version="1.1" id="Layer_1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#666666;}
+</style>
+<path class="st0" d="M3.6,22.9c0-6.5,7.7-6.5,7.7-6.5s0.7-2.2,2.8-3.8l0-0.2c0,0-0.8-3.5-6.2-2.8c-5.4,0.8-4.4,6.2-4.4,6.2
+	s-3.6,0.3-3.5,4.2c0,2.5,1,3.4,2.6,3.4l1.1-0.1C3.6,23.2,3.6,23,3.6,22.9z"/>
+<path class="st0" d="M9.4,29.4c-4.6,0-4.7-4.1-4.7-5.5c0-6.5,7.7-6.5,7.7-6.5s0.8-2.7,3.5-4.2c2.5-1.4,5.4-1.1,5.4-1.1
+	s1.7-4.8,8.6-3.1c6,1.5,4.5,8.6,4.5,8.6S40,18,40,24.2c0,4.6-4,5.2-6,5.2C32.6,29.4,9.4,29.4,9.4,29.4z"/>
+</svg>
+</div>
+</div></div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+        
+        
+        
+        <div class="small-9 medium-9 large-9 wd-pl-12 end grid-columns">
+            <div class="responsive-column-1 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <div class="wp-table-cell wp-text"><p class="wd-mt-0"><span class="wd-bold wd-font-19 wd-uppercase">Cloud-connected manufacturing</span><br>
+<span class="wd-font-16">Collaborate and manufacture anytime, anywhere.</span></p>
+</div>
+
+    
+
+    
+        
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+
+</div>
+
+    
+</div>
+</div>
+<div class="decorative-box section">
+
+
+
+
+    
+
+
+<div class="wp-panel-delcam"  
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row wd-ph-20">
+    
+        
+        
+        
+        <div class="medium-7 large-6 grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="image parbase section">
+
+
+
+    
+
+
+    
+    
+        
+            
+            
+                <img src="https://damassets.autodesk.net/content/dam/autodesk/www/solutions/manufacturing/images/manufacturing-delcam-logo.png" alt="" title="" class="cq-dd-image"/>
+            
+        
+    
+    
+
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+        
+        
+        
+        <div class="medium-5 large-5 end grid-columns">
+            <div class="responsive-column-1 responsive-column">
+
+
+
+
+    
+        <div class="wp-text">
+            <div class="column-content parsys">
+<div class="heading section">
+
+
+
+
+    
+
+
+<h2 class="wd-font-34 pc-brand wd-light">
+    
+        Delcam on board
+    
+</h2>
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-font-19 wd-mb-0">When a leader in one field joins with a leader in another, great things happen. Whether making parts for cars, wind turbines, or airplanes, Autodesk manufacturing software, powered by Delcam, enables you to make anything. </p>
+
+    
+
+    
+        
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<div class="media-obj wd-mt-12">
+    <div class="media-obj-img wp-icon"><i class="icon-cta-go-arrow-circle wd-font-24 wd-color-gray-20"></i></div>
+    <div class="media-obj-content"><p class="wd-font-16 wd-mb-0 wd-mt-4 wd-pl-12"><a class="noDecor" href="http://www.delcamonboard.com/" data-wat-link="true" data-wat-loc="content" data-wat-val="delcam on board" target="_blank">Find out more</a></p></div>
+</div></div>
+
+</div>
+
+        </div>
+    
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<style> 
+.wp-panel-delcam{
+    background: #fff; 
+    background: -webkit-linear-gradient(#d5d5d5, #ededed, #fff);
+    background: -o-linear-gradient(#d5d5d5, #ededed, #fff);
+    background: -moz-linear-gradient(#d5d5d5, #ededed, #fff);
+    background: linear-gradient(#d5d5d5, #ededed, #fff);
+	display: block;
+	position: relative;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+}
+
+.wp-panel-delcam{
+    min-height: 380px;
+    padding: 75px 0px 0px 0px;
+}
+
+.wp-panel-delcam .wp-text{
+    padding-bottom: 75px
+}
+</style></div>
+
+</div>
+
+    
+</div>
+</div>
+<div class="decorative-box section">
+
+
+
+
+    
+
+
+<div class="wp-panel1"  
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row wd-ph-20">
+    
+        
+        
+        
+        <div class="medium-5 large-4 wd-mr-16 grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="heading section">
+
+
+
+
+    
+
+
+<h2 class="wd-font-34 pc-brand wd-light">
+    
+        CAM software for superior CNC machining
+    
+</h2>
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-font-19 wd-mb-0">Autodesk CAM solutions help you manufacture large molds, automate machining, integrate design with manufacturing, and much more.</p>
+
+    
+
+    
+        
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<div class="media-obj wd-mt-12">
+    <div class="media-obj-img wp-icon"><i class="icon-cta-go-arrow-circle wd-font-24 wd-color-gray-20"></i></div>
+    <div class="media-obj-content"><p class="wd-font-16 wd-mb-0 wd-mt-4 wd-pl-12"><a class="noDecor" href="/solutions/manufacturing/cam" data-wat-link="true" data-wat-loc="content" data-wat-val="choose your cam solution">Choose your CAM solution</a></p></div>
+</div></div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+<div class="decorative-box section">
+
+
+
+
+    
+
+
+<div class="panel-credits"  
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row wd-ph-20">
+    
+        
+        
+        
+        <div class="grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="code section">
+
+
+
+
+
+    
+
+
+<p class="wd-font-12">Image courtesy of APEC CNC</p>
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+
+</div>
+
+    
+</div>
+</div>
+
+</div>
+
+    
+</div>
+</div>
+<div class="decorative-box section">
+
+
+
+
+    
+
+
+<div class="wp-panel2"  
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row wd-ph-20">
+    
+        
+        
+        
+        <div class="medium-5 large-4 medium-push-6 large-push-7 grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+        <div class="wp-text">
+            <div class="column-content parsys">
+<div class="heading section">
+
+
+
+
+    
+
+
+<h2 class="wd-font-34 wd-light pc-brand">
+    
+        Accelerate additive design and manufacturing
+    
+</h2>
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-font-19 wd-mb-0">Netfabb streamlines your additive manufacturing workflow for the design and build of production-quality 3D printed parts.</p>
+
+    
+
+    
+        
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<div class="media-obj wd-mt-12">
+    <div class="media-obj-img wp-icon"><i class="icon-cta-go-arrow-circle wd-font-24 wd-color-gray-20"></i></div>
+    <div class="media-obj-content"><p class="wd-font-16 wd-mb-0 wd-mt-4 wd-pl-12"><a class="noDecor" href="https://www.netfabb.com/" data-wat-link="true" data-wat-loc="content" data-wat-val="explore netfabb">Explore Netfabb</a></p></div>
+</div></div>
+
+</div>
+
+        </div>
+    
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+
+</div>
+
+    
+</div>
+</div>
+<div class="decorative-box section">
+
+
+
+
+    
+
+
+<div class="wp-panel3"  
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row wd-ph-20">
+    
+        
+        
+        
+        <div class="medium-5 large-4 wd-mr-16 grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="heading section">
+
+
+
+
+    
+
+
+<h2 class="wd-font-34 wd-light pc-brand">
+    
+        Prepare complex models for manufacture
+    
+</h2>
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-font-19 wd-mb-0 wd-color-white">PowerShape is a modeling for manufacture toolkit to help you prepare molds, dies, and complex parts for manufacture.</p>
+
+    
+
+    
+        
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<div class="media-obj wd-mt-12">
+    <div class="media-obj-img wp-icon"><i class="icon-cta-go-arrow-circle wd-font-24 wd-color-white"></i></div>
+    <div class="media-obj-content"><p class="wd-font-16 wd-mb-0 wd-mt-4 wd-pl-12"><a class="noDecor wd-color-white" href="/products/powershape/overview" data-wat-link="true" data-wat-loc="content" data-wat-val="learn more about powershape">Learn more about PowerShape</a></p></div>
+</div></div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+<div class="decorative-box section">
+
+
+
+
+    
+
+
+<div class="panel-credits"  
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row wd-ph-20">
+    
+        
+        
+        
+        <div class="grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="code section">
+
+
+
+
+
+    
+
+
+<p class="wd-font-12">Image courtesy of Galaxy Kalip</p>
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+
+</div>
+
+    
+</div>
+</div>
+
+</div>
+
+    
+</div>
+</div>
+<div class="decorative-box section">
+
+
+
+
+    
+
+
+<div class="wp-panel4"  
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row wd-ph-20">
+    
+        
+        
+        
+        <div class="medium-5 large-5 medium-push-6 large-push-7 grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="heading section">
+
+
+
+
+    
+
+
+<h2 class="wd-font-34 wd-light pc-brand">
+    
+        Inspection for every environment
+    
+</h2>
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-font-19 wd-mb-0 wd-color-white">Inspect complex free-form shapes on the shop floor, in the inspection room, or in the machine shop with PowerInspect.</p>
+
+    
+
+    
+        
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<div class="media-obj wd-mt-12">
+    <div class="media-obj-img wp-icon"><i class="icon-cta-go-arrow-circle wd-font-24 wd-color-white"></i></div>
+    <div class="media-obj-content"><p class="wd-font-16 wd-mb-0 wd-mt-4 wd-pl-12"><a class="noDecor wd-color-white" href="/products/powerinspect/overview" data-wat-link="true" data-wat-loc="content" data-wat-val="learn more about powerinspect">Learn more about PowerInspect</a></p></div>
+</div></div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+
+</div>
+
+    
+</div>
+</div>
+<div class="decorative-box section">
+
+
+
+
+    
+
+
+<div class="wp-panel5"  
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row wd-ph-20">
+    
+        
+        
+        
+        <div class="medium-5 large-5 wd-mr-16 grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="heading section">
+
+
+
+
+    
+
+
+<h2 class="wd-font-34 wd-light pc-brand">
+    
+        Optimize composite manufacturing
+    
+</h2>
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-font-19 wd-mb-0 wd-color-white">TruNest helps you transition part designs to manufacturing with optimized nesting and ply cutting for hand layup of composites.</p>
+
+    
+
+    
+        
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<div class="media-obj wd-mt-12">
+    <div class="media-obj-img wp-icon"><i class="icon-cta-go-arrow-circle wd-font-24 wd-color-white"></i></div>
+    <div class="media-obj-content"><p class="wd-font-16 wd-mb-0 wd-mt-4 wd-pl-12"><a class="noDecor wd-color-white" href="/products/trunest/overview" data-wat-link="true" data-wat-loc="content" data-wat-val="learn more about trunest">Learn more about TruNest</a></p></div>
+</div></div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+
+</div>
+
+    
+</div>
+</div>
+<div class="decorative-box section">
+
+
+
+
+    
+
+
+<div class="wp-panel6"  
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row wd-ph-20">
+    
+        
+        
+        
+        <div class="medium-5 large-4 medium-push-6 large-push-7 grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="heading section">
+
+
+
+
+    
+
+
+<h2 class="wd-font-34 wd-light pc-brand">
+    
+        Perform precision fabrication
+    
+</h2>
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-font-19 wd-mb-0 wd-color-white">Nest and fabricate thick plates and perform precision sheet metal fabrication on punch, laser, waterjet, and plasma machines.</p>
+
+    
+
+    
+        
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<div class="media-obj wd-mt-12">
+    <div class="media-obj-img wp-icon"><i class="icon-cta-go-arrow-circle wd-font-24 wd-color-white"></i></div>
+    <div class="media-obj-content"><p class="wd-font-16 wd-mb-0 wd-mt-4 wd-pl-12"><a class="noDecor wd-color-white" href="/products/trunest/overview" data-wat-link="true" data-wat-loc="content" data-wat-val="learn more about trulaser">Learn more about TruNest</a></p></div>
+</div></div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+
+</div>
+
+    
+</div>
+</div>
+<div class="decorative-box section">
+
+
+
+
+    
+
+
+<div class="wp-panel7"  
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row wd-ph-20 wd-pv-64">
+    
+        
+        
+        
+        <div class="grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="responsive-list section">
+
+
+
+
+    
+
+
+
+ 
+	
+  	
+  		<ul class=" wd-pa-24-lg  small-block-grid-1 medium-block-grid-3 large-block-grid-3">
+  	
+ 
+  
+        
+        
+        
+        <li>
+			<div class="responsive-list-item-0 responsive-list-item">
+
+
+
+
+    
+        <div class="wd-pr-32 wd-mb-48">
+            <div class="list-item-content parsys">
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-mt-0 wd-pa-0 wd-font-19 wd-uppercase wd-light pc-brand">Visualize your factory<br>
+layout</p>
+
+    
+
+    
+        
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-font-16 wd-mb-0 wd-color-white">Conceptualize, plan, and validate your manufacturing facilities.</p>
+
+    
+
+    
+        
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<a class="wd-button wd-mt-12 wd-button-responsive wd-uppercase wd-font-16 pc-brand" href="/products/factory-design-utilities/overview" target="_blank" data-wat-link="true" data-wat-loc="content" data-wat-val="explore factory design utilities"><span>Explore Factory Design Utilities</span><span><i class="icon-arrow-button"></i></span></a></div>
+
+</div>
+
+        </div>
+    
+    
+
+
+</div>
+
+       </li>    
+    
+        
+        
+        
+        <li>
+			<div class="responsive-list-item-1 responsive-list-item">
+
+
+
+
+    
+        <div class="wd-pr-32 wd-mb-48">
+            <div class="list-item-content parsys">
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-mt-0 wd-pa-0 wd-font-19 wd-uppercase wd-light pc-brand">Optimize your manufacturing<br>
+processes</p>
+
+    
+
+    
+        
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-font-16 wd-mb-0 wd-color-white">Automate, optimize, and integrate your manufacturing processes.</p>
+
+    
+
+    
+        
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<a class="wd-button wd-mt-12 wd-button-responsive wd-uppercase wd-font-16 pc-brand" href="https://manufacturing.autodesk.com/advanced-consulting" target="_blank" data-wat-link="true" data-wat-loc="content" data-wat-val="explore advanced consulting"><span>Explore Advanced Consulting</span><span><i class="icon-arrow-button"></i></span></a></div>
+
+</div>
+
+        </div>
+    
+    
+
+
+</div>
+
+       </li>    
+    
+        
+        
+        
+        <li>
+			<div class="responsive-list-item-2 responsive-list-item">
+
+
+
+
+    
+        <div class="wd-pr-32 wd-mb-48">
+            <div class="list-item-content parsys">
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-mt-0 wd-pa-0 wd-font-19 wd-uppercase wd-light pc-brand">Automate your electrode<br>
+manufacturing</p>
+
+    
+
+    
+        
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-font-16 wd-mb-0 wd-color-white">Design, manufacture, and inspect electrodes in a single solution.</p>
+
+    
+
+    
+        
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<a class="wd-button wd-mt-12 wd-button-responsive wd-uppercase wd-font-16 pc-brand" href="https://manufacturing.autodesk.com/solutions/electrode" target="_blank" data-wat-link="true" data-wat-loc="content" data-wat-val="explore electrode manufacturing"><span>Explore electrode manufacturing</span><span><i class="icon-arrow-button"></i></span></a></div>
+
+</div>
+
+        </div>
+    
+    
+
+
+</div>
+
+       </li>    
+    
+        
+        
+        
+        <li>
+			<div class="responsive-list-item-3 responsive-list-item">
+
+
+
+
+    
+        <div class="wd-pr-32 wd-mb-48">
+            <div class="list-item-content parsys">
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-mt-0 wd-pa-0 wd-font-19 wd-uppercase wd-light pc-brand">Program your industrial<br>
+robots</p>
+
+    
+
+    
+        
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-font-16 wd-mb-0 wd-color-white">Program, simulate, and analyze<br>
+robot operations.</p>
+
+    
+
+    
+        
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<a class="wd-button wd-mt-12 wd-button-responsive wd-uppercase wd-font-16 pc-brand" href="https://manufacturing.autodesk.com/solutions/robotics" target="_blank" data-wat-link="true" data-wat-loc="content" data-wat-val="explore robot manufacturing"><span>Explore robot manufacturing</span><span><i class="icon-arrow-button"></i></span></a></div>
+
+</div>
+
+        </div>
+    
+    
+
+
+</div>
+
+       </li>    
+    
+        
+        
+        
+        <li>
+			<div class="responsive-list-item-4 responsive-list-item">
+
+
+
+
+    
+        <div class="wd-pr-32 wd-mb-48">
+            <div class="list-item-content parsys">
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-mt-0 wd-pa-0 wd-font-19 wd-uppercase wd-light pc-brand">Simulate your injection<br>
+molding</p>
+
+    
+
+    
+        
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-font-16 wd-mb-0 wd-color-white">Optimize plastic designs, molds,<br>
+and manufacturing processes.</p>
+
+    
+
+    
+        
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<a class="wd-button wd-mt-12 wd-button-responsive wd-uppercase wd-font-16 pc-brand" href="/products/moldflow/overview" data-wat-link="true" data-wat-loc="content" data-wat-val="explore moldflow" target="_self"><span>Explore Moldflow</span><span><i class="icon-arrow-button"></i></span></a></div>
+
+</div>
+
+        </div>
+    
+    
+
+
+</div>
+
+       </li>    
+    
+        
+        
+        
+        <li>
+			<div class="responsive-list-item-5 responsive-list-item">
+
+
+
+
+    
+        <div class="wd-pr-32 wd-mb-48">
+            <div class="list-item-content parsys">
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-mt-0 wd-pa-0 wd-font-19 wd-uppercase wd-light pc-brand">Connect your manufacturing<br>
+processes</p>
+
+    
+
+    
+        
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p class="wd-font-16 wd-mb-0 wd-color-white">Manage your processes with an<br>
+IoT platform.</p>
+
+    
+
+    
+        
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<a class="wd-button wd-mt-12 wd-button-responsive wd-uppercase wd-font-16 pc-brand" href="http://www.autodeskfusionconnect.com/" target="_blank" data-wat-link="true" data-wat-loc="content" data-wat-val="explore fusion connect"><span>Explore Fusion Connect</span><span><i class="icon-arrow-button"></i></span></a></div>
+
+</div>
+
+        </div>
+    
+    
+
+
+</div>
+
+       </li>    
+    
+ 	
+		
+    	
+  			</ul>
+  		
+ 	  
+
+
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<style> /* SMALL BP / DEFAULT */
+
+h1.wd-font-40 {
+ font-size: 3rem;
+}
+.noDecor {
+	border-bottom: none !important;
+}
+
+.wp-bonus-bar {
+	position: relative;
+	background-color: #EEE;
+}
+
+.wp-bonus-bar .wp-table .wp-table-img {
+    width: 45px;
+}
+
+.wp-bonus-bar .wp-table .cloud-fix {
+    margin-top: -12px;
+}
+.wp-panel1, .wp-panel3{ 
+position:relative; 
+}
+body:not(.cq-wcm-edit) .panel-credits{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+.wp-panel1 .panel-credits{
+    color: #666;
+}
+.wp-panel3 .panel-credits{
+    color: #fff;
+}
+
+.wp-panel1 {
+	background-image: url('/content/dam/autodesk/www/solutions/manufacturing/images/cam-machining-software-panel-1920x400.jpg');
+    background-position: top right;
+    background-position-x: 40%;
+	content: '';
+	background-repeat: no-repeat;
+	background-color: #fff;
+	display: block;
+	position: relative;
+	width: 100%;
+	top: 0px;
+	right: 0px;
+background-size: cover;
+}
+
+body:not(.cq-wcm-edit) .wp-panel1 {
+    min-height: 400px;
+    padding: 80px 0px 87px 0px;
+}
+
+.wp-panel2 {
+	background-image: url('/content/dam/autodesk/www/solutions/manufacturing/images/additive-manufacturing-netfabb-panel-1920x400.jpg');
+	background-position: top center;
+	content: '';
+	background-repeat: no-repeat;
+	background-color: #fff;
+	display: block;
+	position: relative;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+background-size: cover;
+}
+
+body:not(.cq-wcm-edit) .wp-panel2 {
+    min-height: 400px;
+    padding: 80px 0px 87px 0px;
+}
+
+.wp-panel3 {
+	background-image: url('/content/dam/autodesk/www/solutions/manufacturing/images/modeling-for-manufacture-panel-1920x400.jpg');
+	background-position: top center;
+	content: '';
+	background-repeat: no-repeat;
+	background-color: #6d6a73;
+	display: block;
+	position: relative;
+	width: 100%;
+	top: 0px;
+	right: 0px;
+background-size: cover;
+}
+
+body:not(.cq-wcm-edit) .wp-panel3 {
+    min-height: 400px;
+    padding: 80px 0px 87px 0px;
+}
+.wp-panel3 a, .wp-panel3 a:visited, .wp-panel3 a:hover, .wp-panel3 a:active {
+	color: #fff;
+	border-bottom: none;
+}
+
+.wp-panel4 {
+	background-image: url('/content/dam/autodesk/www/solutions/manufacturing/images/inspection-software-panel-1920x400.jpg');
+	background-position: top center;
+	content: '';
+	background-repeat: no-repeat;
+	background-color: #000;
+	display: block;
+	position: relative;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+background-size: cover;
+}
+
+body:not(.cq-wcm-edit) .wp-panel4 {
+    min-height: 400px;
+    padding: 80px 0px 87px 0px;
+}
+
+.wp-panel4 a, .wp-panel4 a:visited, .wp-panel4 a:hover, .wp-panel4 a:active {
+	color: #fff;
+	border-bottom: none;
+}
+
+.wp-panel5 {
+	background-image: url('/content/dam/autodesk/www/solutions/manufacturing/images/composite-nesting-for-manufacture-panel-1920x400.jpg');
+	background-position: top center;
+	content: '';
+	background-repeat: no-repeat;
+	background-color: #000;
+	display: block;
+	position: relative;
+	width: 100%;
+	top: 0px;
+	right: 0px;
+background-size: cover;
+}
+
+body:not(.cq-wcm-edit) .wp-panel5 {
+    min-height: 400px;
+    padding: 80px 0px 87px 0px;
+}
+
+.wp-panel5 a, .wp-panel5 a:visited, .wp-panel5 a:hover, .wp-panel5 a:active {
+	color: #fff;
+	border-bottom: none;
+}
+
+.wp-panel6 {
+	background-image: url('/content/dam/autodesk/www/solutions/manufacturing/images/nesting-fabrication-process-panel-1920x400.jpg');
+	background-position: top center;
+	content: '';
+	background-repeat: no-repeat;
+	background-color: #000;
+	display: block;
+	position: relative;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+background-size: cover;
+}
+
+body:not(.cq-wcm-edit) .wp-panel6 {
+    min-height: 400px;
+    padding: 102px 0px 87px 0px;
+}
+
+.wp-panel6 a, .wp-panel6 a:visited, .wp-panel6 a:hover, .wp-panel6 a:active {
+	color: #fff;
+	border-bottom: none;
+}
+
+.wp-panel7 {
+	background-color: #333;
+	width: 100%;
+	position: relative;
+}
+
+/* LARGE BP - inherits SM/MD styles, and overwrites with the below */
+@media only screen and (min-width: 64.063em) {
+h1.wd-font-40 {
+ font-size: 4rem;
+}
+.wp-bonus-bar .wp-table .wp-table-img {
+    width: 51px;
+}
+
+}
+@media only screen and (min-width: 40.063em) {
+
+body:not(.cq-wcm-edit) .wp-panel1 {
+    min-height: 400px;
+    padding: 100px 0px 87px 0px;
+}
+body:not(.cq-wcm-edit) .wp-panel2 {
+    min-height: 400px;
+    padding: 98px 0px 87px 0px;
+}
+body:not(.cq-wcm-edit) .wp-panel3 {
+    min-height: 400px;
+    padding: 98px 0px 87px 0px;
+}
+body:not(.cq-wcm-edit) .wp-panel4 {
+    min-height: 400px;
+    padding: 124px 0px 87px 0px;
+}
+body:not(.cq-wcm-edit) .wp-panel5 {
+    min-height: 400px;
+    padding: 126px 0px 87px 0px;
+}
+body:not(.cq-wcm-edit) .wp-panel6 {
+    min-height: 400px;
+    padding: 124px 0px 87px 0px;
+}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+	.wp-panel1 {
+    background-position: top right;
+    background-position-x: 40%;
+}
+}	
+</style></div>
+
+</div>
+
+    
+</div>
+</div>
+
+</div>
+
+
+    
+        <div class="feedback qualtrics-feedback">
+
+
+
+<div data-wat-loc="qualtrics" data-wat-val="open" id="qualtrics-trigger" class="wd-feedback">FEEDBACK</div>
+
+<div>
+    <!--BEGIN QUALTRICS SITE INTERCEPT-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g+ "&t=" + (new Date()).getTime();document.body&&document.body.appendChild(a)}};
+this.start=function(){var a=this;window.addEventListener?window.addEventListener("load",function(){a.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){a.go()})}};
+try{(new g(100,"r","QSI_S_SI_7QX75zDbUj6f7Cd","//zn00ygpbo2pyyhahp-autodeskfeedback.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_SIID=SI_7QX75zDbUj6f7Cd&Q_LOC="+encodeURIComponent(window.location.href))).start()}catch(i){}})();
+</script><div id='SI_7QX75zDbUj6f7Cd'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END SITE INTERCEPT-->
+</div>
+</div>
+
+    
+</div><!--.body-content-->
+
+        
+
+
+
+
+
+    <div class="footer-content iparsys parsys"><div class="responsive-navigation-element-display section">
+
+
+
+
+    
+
+
+
+
+    
+        
+        
+            <div class="decorative_box_c871 decorative-box">
+
+
+
+
+    
+
+
+<div class="fat-footer wd-pv-20" data-wat-link-section='megafooter' 
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row">
+    
+        
+        
+        
+        <div class="small-12 medium-12 large-2 grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="heading section">
+
+
+
+
+    
+
+
+<h5 class="wd-font-16 wd-bold wd-uppercase">
+    
+        FOLLOW AUTODESK
+    
+</h5>
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+
+
+
+<ul>
+<li><i class="icon icon-facebook"></i><span style="vertical-align:middle;"><a href="https://www.facebook.com/autodesk" target="_blank">Facebook</a></span></li>
+<li><i class="icon icon-instagram"></i><span style="vertical-align:middle;"><a href="https://www.instagram.com/autodesk" target="_blank">Instagram</a></span></li>
+<li><i class="icon icon-twitter"></i><span style="vertical-align:middle;"><a href="https://twitter.com/autodesk" target="_blank">Twitter</a></span></li>
+<li><i class="icon icon-linkedin"></i><span style="vertical-align:middle;"><a href="https://www.linkedin.com/company/autodesk" target="_blank">LinkedIn</a></span></li>
+
+<!--
+
+<li><i class="icon icon-email"></i><span style="vertical-align:middle;"><a href="http://usa.autodesk.com/adsk/servlet/index?siteID=123112&id=1073074">Contact us</a></span></li>
+
+-->
+
+<li class="wd-mt-8 wd-bbw-1-sm wd-pb-20-sm wd-bc-smoke"><span style="vertical-align:middle;"><a href="/social-media">All social media</a></span></li>
+
+
+<li class="wd-bbw-1 wd-pt-10 wd-pb-10 wd-mb-20 wd-bc-smoke ww-sites-sm"><span style="vertical-align:middle;"><i class="icon icon-globe-international"></i><a href="/site-selector">Worldwide sites</a></span></li>
+
+<li class="wd-btw-1 wd-mt-24 wd-mb-12 wd-pt-24 wd-bc-smoke ww-sites-lg"><span style="vertical-align:middle;"><i class="icon icon-globe-international"></i><a href="/site-selector">Worldwide sites</a></span></li>
+
+</ul></div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+        
+        
+        
+        <div class="small-12 medium-3 large-2 grid-columns">
+            <div class="responsive-column-1 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="heading section">
+
+
+
+
+    
+
+
+<h5 class="wd-font-16 wd-bold wd-uppercase">
+    <a href="/products">
+    
+        Products
+    </a>
+</h5>
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <ul class="hide-for-small">
+<li><a href="/free-trials">Free product trials</a></li>
+<li><a href="/solutions/3d-cad-software">3D CAD software</a></li>
+<li><a href="/collections/architecture-engineering-construction/overview">Civil engineering</a></li>
+<li><a href="/products/autocad-lt/overview">Drafting</a></li>
+<li><a href="/solutions/manufacturing">Manufacturing</a></li>
+<li><a href="/solutions/product-design/overview">Product design</a></li>
+<li><a href="/solutions">Find by industry</a></li>
+</ul>
+
+    
+
+    
+        
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+        
+        
+        
+        <div class="small-12 medium-3 large-2 grid-columns">
+            <div class="responsive-column-2 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="heading section">
+
+
+
+
+    
+
+
+<h5 class="wd-font-16 wd-bold wd-uppercase">
+    <a href="https://www.autodesk.com/store">
+    
+        Buying
+    </a>
+</h5>
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <ul class="hide-for-small">
+<li><a href="https://www.autodesk.com/store/all-products">Buy online</a></li>
+<li><a href="https://www.autodesk.com/store/all-promotions">Special offers</a></li>
+<li><a href="https://www.autodesk.com/store-footer-help-account?mktvar004=ilt_wwm_amer_us_nc__Footer_SupportAssistance_ManageAct">Manage your account</a></li>
+<li><a href="https://help.autodesk.com/view/STORE/ENU/">Help with buying</a></li>
+<li><a href="https://www.autodesk.com/store-footer-help-download?mktvar004=ilt_wwm_amer_us_nc__Footer_ShoppingWithUs_DLSoftware#download-info">Download your software</a></li>
+<li><a href="https://www.autodesk.com/store-footer-help-return?mktvar004=ilt_wwm_amer_us_nc__Footer_ShoppingWithUs_OrderReturn#returns-and-cancellations">Returns &amp; refunds</a></li>
+<li><a href="https://www.autodesk.com/store-footer-help-renewal?mktvar004=ilt_wwm_amer_us_nc__Footer_ShoppingWithUs_SubscriptionBilling#subscription">Subscription renewal</a></li>
+</ul>
+
+    
+
+    
+        
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+        
+        
+        
+        <div class="small-12 medium-3 large-2 grid-columns">
+            <div class="responsive-column-3 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="heading section">
+
+
+
+
+    
+
+
+<h5 class="wd-font-16 wd-bold wd-uppercase">
+    <a href="https://knowledge.autodesk.com/support">
+    
+        Support &amp; Learning
+    </a>
+</h5>
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <ul class="hide-for-small">
+<li><a href="https://knowledge.autodesk.com/support">Product support</a></li>
+<li><a href="https://knowledge.autodesk.com/customer-service/download-install">Software installation, registration &amp; licensing</a></li>
+<li><a href="https://knowledge.autodesk.com/downloads">Updates &amp; service packs</a></li>
+<li><a href="https://knowledge.autodesk.com/support/system-requirements">System requirements</a></li>
+<li><a href="https://www.autodesk.com/education/home?mktvar004=ilt_wwm_amer_us_nc__Footer_SubscNSoftware_EDU">Students &amp; educators</a></li>
+<li><a href="http://au.autodesk.com/au-online/overview">Classes on demand</a></li>
+<li><a href="/events">Workshops and seminars</a></li>
+<li><a href="/training-and-certification/overview">Training &amp; certification</a></li>
+<li><a href="http://au.autodesk.com/?mktvar004=ilt_wwm_amer_us_nc__Footer_ADSK_AU">Autodesk University</a></li>
+</ul>
+
+    
+
+    
+        
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+        
+        
+        
+        <div class="small-12 medium-3 large-4 end grid-columns">
+            <div class="responsive-column-4 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="heading section">
+
+
+
+
+    
+
+
+<h5 class="wd-font-16 wd-bold wd-uppercase">
+    <a href="/company">
+    
+        Autodesk
+    </a>
+</h5>
+</div>
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <div class="hide-for-small"><p class="wd-pt-0 wd-mt-0"><i>Autodesk is a leader in 3D design, engineering and entertainment software.</i></p>
+<div class="row"><div class="grid-columns small-12 large-6"><ul>
+<li><a href="/company" data-wat-val="about us">About us</a></li>
+<li><a href="/careers">Careers</a></li>
+<li><a href="https://www.autodesk.com/company/contact-us">Contact us</a></li>
+<li><a href="http://investors.autodesk.com/phoenix.zhtml?c=117861&amp;p=irol-irhome">Investor relations</a></li>
+<li><a href="/trust/overview">Trust center</a></li>
+<li><a href="http://news.autodesk.com/">Newsroom</a></li>
+<li><a href="/company/suppliers">Suppliers</a></li>
+<li><a href="https://www.autodesk.com/store/affiliate_program_poc?mktvar004=ilt_wwm_amer_us_nc__Footer_ADSK_AffiliateProg">Affiliate program</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+    
+
+    
+        
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+<div class="code section">
+
+
+
+
+
+    
+
+
+<style>
+.fat-footer{
+color: #666 !important;
+}
+
+.ww-sites-sm{display:block !important; margin-bottom: 20px !important;}
+.ww-sites-md{display:none !important;}
+.ww-sites-lg{display:none !important;}
+.emerging-footer-teaser{display:none !important;}
+
+@media only screen and (min-width: 40.063em){
+.ww-sites-sm{border-top: 1px solid #dadada; margin-top: 10px !important;}
+.emerging-footer-teaser{display:inline-block !important;}
+}
+
+@media only screen and (min-width: 64.063em){
+.ww-sites-sm{display:none !important;}
+.ww-sites-md{display:none !important;}
+.ww-sites-lg{display:block !important;}
+}
+</style></div>
+
+</div>
+
+    
+</div>
+</div>
+
+        
+    
+
+    
+</div>
+<div class="iparys_inherited"><div class="footer-content iparsys parsys"></div>
+</div>
+</div>
+
+
+
+    <div class="legalfooter-content iparsys parsys"><div class="responsive-navigation-element-display section">
+
+
+
+
+    
+
+
+
+
+    
+        
+        
+            <div class="decorative_box_8dd2 decorative-box">
+
+
+
+
+    
+
+
+<div class="legal-footer wd-pv-20"  
+    >
+    <div class="box-content parsys">
+<div class="responsive-grid section">
+
+
+
+
+    
+
+
+<div class="row">
+    
+        
+        
+        
+        <div class="grid-columns">
+            <div class="responsive-column-0 responsive-column">
+
+
+
+
+    
+    
+        <div class="column-content parsys">
+<div class="text section">
+
+
+
+
+
+    
+
+
+
+
+
+    
+    
+        <p><a href="https://www.autodesk.com/company/legal-notices-trademarks/privacy-statement">Privacy/Cookies</a> | <a href="https://www.autodesk.com/company/legal-notices-trademarks/privacy-statement/autodesk-privacy-statement-2015-english#mixpanel">About our Ads</a> | <a href="https://www.autodesk.com/company/legal-notices-trademarks">Legal Notices &amp; Trademarks</a> | <a href="https://www.autodesk.com/reportpiracy">Report Noncompliance</a> | <a href="https://www.autodesk.com/sitemap">Site map</a> | © 2017 Autodesk Inc. All rights reserved</p>
+
+    
+
+    
+        
+</div>
+
+</div>
+
+    
+
+
+</div>
+
+        </div>
+    
+</div>
+
+</div>
+
+</div>
+
+    
+</div>
+</div>
+
+        
+    
+
+    
+</div>
+<div class="iparys_inherited"><div class="legalfooter-content iparsys parsys"></div>
+</div>
+</div>
+
+
+
+    </div>
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://static-dc.autodesk.net/etc/designs/v201708292052/external-libraries/clientlibs.min.js"></script>
+<script type="text/javascript" src="https://static-dc.autodesk.net/etc/designs/v201708292052/templates-general/structure/clientlibs.min.js"></script>
+<script type="text/javascript" src="https://static-dc.autodesk.net/etc/designs/v201708292052/autodesk-oxygen/oxygen-general/clientlibs.min.js"></script>
+
+
+
+
+    
+        
+            <script type="text/javascript" src="https://static-dc.autodesk.net/etc/designs/v201708292052/templates-general/skins/troposphere/clientlibs.min.js"></script>
+
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    require.config({
+        config: {
+            'adsk.data.pdsErrandBoy' : {
+                host: 'https://web-engineering-svc.autodesk.com'
+            },
+            'adsk.data.pdsMaestro' : {
+                
+                pdsErrorMessage: '',
+                buyContainerTotalPriceText: '',
+                buyContainerTotalPriceTooltip: '',
+                language : 'en'
+            },
+            'adsk.userLocation': {
+                countryCode: 'US'
+            },
+            'adsk.geoNavigation':{
+                geoNavigationMapping: '{"US":{"countryName":"United States","domain":"https://www.autodesk.com","redirectLocalSiteText":"Visit our United States site","enablePopupAndRedirect":true},"AR":{"countryName":"Latinoamérica","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"AT":{"countryName":"Österreich","domain":"https://www.autodesk.de","redirectLocalSiteText":"Besuchen Sie die für Österreich, Deutschland, Schweiz relevante Site","enablePopupAndRedirect":true},"AU":{"countryName":"Australia","domain":"https://www.autodesk.com.au","redirectLocalSiteText":"Visit our Australia site","enablePopupAndRedirect":true},"BE":{"countryName":"België - NL","domain":"https://www.autodesk.be/nl","redirectLocalSiteText":"Bezoek onze België site","enablePopupAndRedirect":true},"fr_BE":{"countryName":"Belgique - FR","domain":"https://www.autodesk.be/fr","redirectLocalSiteText":"Visitez notre site Belgique.","enablePopupAndRedirect":true},"BG":{"countryName":"Bulgaria","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"BO":{"countryName":"Bolivia","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"BR":{"countryName":"Brasil","domain":"https://www.autodesk.com.br","redirectLocalSiteText":"Visite nosso site Brasil","enablePopupAndRedirect":true},"CA":{"countryName":"Canada - EN","domain":"https://www.autodesk.ca/en","redirectLocalSiteText":"Visit our Canada site","enablePopupAndRedirect":true},"fr_CA":{"countryName":"Canada - FR","domain":"https://www.autodesk.ca/fr","redirectLocalSiteText":"Visitez notre site du Canada","enablePopupAndRedirect":true},"CH":{"countryName":"Switzerland / Schweiz","domain":"https://www.autodesk.de","redirectLocalSiteText":"Besuchen Sie die für Österreich, Deutschland, Schweiz relevante Site","enablePopupAndRedirect":true},"fr_CH":{"countryName":"Suisse","domain":"https://www.autodesk.fr","redirectLocalSiteText":"Visitez notre site en France","enablePopupAndRedirect":true},"it_CH":{"countryName":"Switzerland / Schweiz - Italian","domain":"https://www.autodesk.it","redirectLocalSiteText":"Visita il nostro sito in Italia","enablePopupAndRedirect":true},"CK":{"countryName":"Cook Islands","domain":"https://www.autodesk.com.au","redirectLocalSiteText":"Visit our Australia site","enablePopupAndRedirect":true},"CL":{"countryName":"Chile","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"CN":{"countryName":"中国","domain":"https://www.autodesk.com.cn","redirectLocalSiteText":"访问我们的 中国 站点","enablePopupAndRedirect":true},"CO":{"countryName":"Colombia","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"CR":{"countryName":"Costa Rica","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"CU":{"countryName":"Cuba","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"CY":{"countryName":"Cyprus","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"CZ":{"countryName":"Česká republika","domain":"https://www.autodesk.cz","redirectLocalSiteText":"Navštívit naše stránky v Česká republika","enablePopupAndRedirect":true},"DE":{"countryName":"DACH","domain":"https://www.autodesk.de","redirectLocalSiteText":"Besuchen Sie die für Österreich, Deutschland, Schweiz relevante Site","enablePopupAndRedirect":true},"DK":{"countryName":"Danmark","domain":"https://www.autodesk.dk","redirectLocalSiteText":"Besøg vores Danmark websted","enablePopupAndRedirect":true},"DO":{"countryName":"Dominican Republic","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"EC":{"countryName":"Ecuador","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"EE":{"countryName":"Estonia","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"ES":{"countryName":"España","domain":"https://www.autodesk.es","redirectLocalSiteText":"Visite nuestro sitio de España","enablePopupAndRedirect":true},"FI":{"countryName":"Suomi","domain":"https://www.autodesk.fi","redirectLocalSiteText":"Siirry alueen Suomi sivustollemme","enablePopupAndRedirect":true},"FR":{"countryName":"France","domain":"https://www.autodesk.fr","redirectLocalSiteText":"Visitez notre site en France","enablePopupAndRedirect":true},"GB":{"countryName":"United Kingdom (£)","domain":"https://www.autodesk.co.uk","redirectLocalSiteText":"Visit our United Kingdom site","enablePopupAndRedirect":true},"GR":{"countryName":"Greece","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"GT":{"countryName":"Guatemala","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"HK":{"countryName":"Hong Kong - EN","domain":"https://www.autodesk.com.hk","redirectLocalSiteText":"Visit our Hong Kong site","enablePopupAndRedirect":true},"HN":{"countryName":"Honduras","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"HR":{"countryName":"Croatia","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"HT":{"countryName":"Haiti","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"HU":{"countryName":"Magyarország","domain":"https://www.autodesk.hu","redirectLocalSiteText":"Látogasson el helyi weboldalunkra: Magyarország","enablePopupAndRedirect":true},"IE":{"countryName":"Ireland","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"IN":{"countryName":"India - EN","domain":"https://www.autodesk.in","redirectLocalSiteText":"Visit our India site","enablePopupAndRedirect":true},"IS":{"countryName":"Iceland","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"IT":{"countryName":"Italia","domain":"https://www.autodesk.it","redirectLocalSiteText":"Visita il nostro sito in Italia","enablePopupAndRedirect":true},"JP":{"countryName":"日本","domain":"https://www.autodesk.co.jp","redirectLocalSiteText":"日本のサイトをご覧ください。","enablePopupAndRedirect":true},"KR":{"countryName":"한국","domain":"https://www.autodesk.co.kr","redirectLocalSiteText":"한국 사이트를 방문해 주십시오.","enablePopupAndRedirect":true},"LI":{"countryName":"Liechtenstein","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"LT":{"countryName":"Lithuania","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"LU":{"countryName":"Luxembourg","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"LV":{"countryName":"Latvia","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"MH":{"countryName":"Marshall Islands","domain":"https://www.autodesk.com.au","redirectLocalSiteText":"Visit our Australia site","enablePopupAndRedirect":true},"MT":{"countryName":"Malta","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"MX":{"countryName":"México","domain":"https://www.autodesk.mx","redirectLocalSiteText":"Visite nuestro sitio de México","enablePopupAndRedirect":true},"NI":{"countryName":"Nicaragua","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"NL":{"countryName":"Nederland","domain":"https://www.autodesk.nl","redirectLocalSiteText":"Bezoek onze Nederland site","enablePopupAndRedirect":true},"NO":{"countryName":"Norge","domain":"https://www.autodesk.no","redirectLocalSiteText":"Gå til det Norge nettstedet vårt","enablePopupAndRedirect":true},"NZ":{"countryName":"New Zealand","domain":"https://www.autodesk.co.nz","redirectLocalSiteText":"Visit our New Zealand site","enablePopupAndRedirect":true},"PA":{"countryName":"Panama","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"PE":{"countryName":"Perú","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"PG":{"countryName":"Papua New Guinea","domain":"https://www.autodesk.com.au","redirectLocalSiteText":"Visit our Australia site","enablePopupAndRedirect":true},"PL":{"countryName":"Polska","domain":"https://www.autodesk.pl","redirectLocalSiteText":"Odwiedź naszą Polska witrynę","enablePopupAndRedirect":true},"PT":{"countryName":"Portugal","domain":"https://www.autodesk.pt","redirectLocalSiteText":"Visitar o nosso site Portugal","enablePopupAndRedirect":true},"PY":{"countryName":"Paraguay","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"RO":{"countryName":"Romania","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"RU":{"countryName":"Россия","domain":"https://www.autodesk.ru","redirectLocalSiteText":"Посетите наш сайт Россия","enablePopupAndRedirect":true},"SE":{"countryName":"Sverige","domain":"https://www.autodesk.se","redirectLocalSiteText":"Besök vår webbplats i Sverige","enablePopupAndRedirect":true},"SG":{"countryName":"Singapore","domain":"https://store.autodesk.com.sg","redirectLocalSiteText":"Visit our Singapore site","enablePopupAndRedirect":true},"SI":{"countryName":"Slovenia","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"SK":{"countryName":"Slovakia","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true},"SV":{"countryName":"El Salvador","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"TO":{"countryName":"Tonga","domain":"https://www.autodesk.com.au","redirectLocalSiteText":"Visit our Australia site","enablePopupAndRedirect":true},"TR":{"countryName":"Türkiye","domain":"https://www.autodesk.com.tr","redirectLocalSiteText":"Türkiye sitemizi ziyaret edin","enablePopupAndRedirect":true},"TV":{"countryName":"Tuvalu","domain":"https://www.autodesk.com.au","redirectLocalSiteText":"Visit our Australia site","enablePopupAndRedirect":true},"TW":{"countryName":"台灣","domain":"https://www.autodesk.com.tw","redirectLocalSiteText":"造訪我們的 台灣 網站","enablePopupAndRedirect":true},"UY":{"countryName":"Uruguay","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"VE":{"countryName":"Venezuela","domain":"https://latinoamerica.autodesk.com","redirectLocalSiteText":"Visite nuestro sitio de Latinoamérica","enablePopupAndRedirect":true},"WS":{"countryName":"Samoa","domain":"https://www.autodesk.com.au","redirectLocalSiteText":"Visit our Australia site","enablePopupAndRedirect":true},"ZA":{"countryName":"South Africa","domain":"https://www.autodesk.co.za","redirectLocalSiteText":"Visit our South Africa site","enablePopupAndRedirect":true},"en_NL":{"countryName":"Europe","domain":"https://www.autodesk.eu","redirectLocalSiteText":"Visit our Europe site","enablePopupAndRedirect":true}}',
+                enableLocalPageRedirect: false,
+                enableRedirectedLocalPagePopup: false,
+                dictionary: {
+                    
+                    'geo-navigation-return-to-global-site': "Return to the U.S. site",
+                    'geo-navigation-choose-different-local-site': "Choose a different local site"
+                    
+                }
+            }
+        }
+    });
+</script>
+
+
+<script>
+    define('adsk.pdsConfiguration', function(){
+       return {"digitalRiver":{"countryMapping":{"BR":{"storeKey":"adskbr","domain":"https://store.autodesk.com","locale":"pt_BR"},"RU":{"storeKey":"adsk","domain":"https://store.autodesk.com","locale":"ru_RU"},"AU":{"storeKey":"adsk","domain":"https://store.autodesk.com.au","locale":"en_AU"},"SG":{"storeKey":"adsk","domain":"https://store.autodesk.com.sg","locale":"en_SG"},"IN":{"storeKey":"adsk","domain":"https://store.autodesk.com","locale":"en_IN"},"JP":{"storeKey":"adskjp","domain":"https://store.autodesk.co.jp","locale":"ja_JP"},"KR":{"storeKey":"adskkr","domain":"https://store.autodesk.co.kr","locale":"ko_KR"},"MX":{"storeKey":"adsk","domain":"https://store.autodesk.com","locale":"es_MX"},"NZ":{"storeKey":"adsk","domain":"https://store.autodesk.com.au","locale":"en_AU"},"TR":{"storeKey":"adsk","domain":"https://store.autodesk.com","locale":"tr_TR"}},"templates":{"cartLinkUrl":"/store?Action=DisplayPage&Locale={{locale}}&SiteID={{storeKey}}&id=QuickBuyCartPage","cartCountUrl":"/store/{{storeKey}}/{{locale}}/DisplayDRCartSummary/Version.2/output.json/jsonp.define"},"domain":"https://store.autodesk.com"},"countryProviderMapping":{"DE":"pelican","NO":"pelican","BE":"pelican","FI":"pelican","RU":"digitalRiver","PT":"pelican","BG":"pelican","JP":"digitalRiver","DK":"pelican","LT":"pelican","LU":"pelican","HR":"pelican","LV":"pelican","FR":"pelican","NZ":"digitalRiver","HU":"pelican","BR":"digitalRiver","SE":"pelican","SG":"digitalRiver","SI":"pelican","SK":"pelican","GB":"pelican","IE":"pelican","CA":"pelican","US":"pelican","EE":"pelican","CH":"pelican","IN":"digitalRiver","MT":"pelican","KR":"digitalRiver","IS":"pelican","GR":"pelican","IT":"pelican","MX":"digitalRiver","ES":"pelican","AT":"pelican","AU":"digitalRiver","CY":"pelican","CZ":"pelican","PL":"pelican","LI":"pelican","RO":"pelican","NL":"pelican","TR":"digitalRiver"},"pelican":{"endPointMapping":{"qa":"https://cart.bicstg.autodesk.com","prod":"https://cart.autodesk.com","dev":"https://cart.bicdev.autodesk.com","stg":"https://cart.bicstg.autodesk.com"},"countryMapping":{"DE":{"storeKey":"STORE-DE"},"NO":{"storeKey":"STORE-EU"},"BE":{"storeKey":"STORE-EU"},"FI":{"storeKey":"STORE-EU"},"PT":{"storeKey":"STORE-EU"},"BG":{"storeKey":"STORE-EU"},"DK":{"storeKey":"STORE-EU"},"LT":{"storeKey":"STORE-EU"},"LU":{"storeKey":"STORE-EU"},"HR":{"storeKey":"STORE-EU"},"LV":{"storeKey":"STORE-EU"},"FR":{"storeKey":"STORE-FR"},"HU":{"storeKey":"STORE-EU"},"SE":{"storeKey":"STORE-EU"},"SI":{"storeKey":"STORE-EU"},"SK":{"storeKey":"STORE-EU"},"GB":{"storeKey":"STORE-UK"},"IE":{"storeKey":"STORE-EU"},"CA":{"storeKey":"STORE-CA"},"US":{"storeKey":"STORE-NAMER"},"EE":{"storeKey":"STORE-EU"},"CH":{"storeKey":"STORE-DE"},"MT":{"storeKey":"STORE-EU"},"IS":{"storeKey":"STORE-EU"},"GR":{"storeKey":"STORE-EU"},"IT":{"storeKey":"STORE-IT"},"ES":{"storeKey":"STORE-ES"},"AT":{"storeKey":"STORE-DE"},"CY":{"storeKey":"STORE-EU"},"CZ":{"storeKey":"STORE-EU"},"PL":{"storeKey":"STORE-EU"},"LI":{"storeKey":"STORE-EU"},"RO":{"storeKey":"STORE-EU"},"NL":{"storeKey":"STORE-EU"}},"templates":{"cartLinkUrl":"/r?storeKey={{storeKey}}&language={{language}}&country={{country}}&visitorId={{visitorId}}","cartCountUrl":"/services/v1/cart/{{visitorId}}|{{storeKey}}/count"}}}
+    });
+</script>
+
+
+
+
+<script>
+    (function(adsk){
+        adsk.defer.execute();
+    }(window.adsk));
+</script>
+    
+    
+
+
+<script type="text/javascript">
+    var digitalData = {"pageInstanceID":"prod","page":{"pageName":"adsk:en:solutions:manufacturing","destinationURL":"https://www.autodesk.com/content/autodesk/global/en/solutions/manufacturing.html"},"products":[],"version":{"versionNumber":"1.0"},"user":{"loginStatus":"","authSystem":"","oxygenGuid":""}};
+    if (digitalData && digitalData.hasOwnProperty('page') && digitalData.page.destinationURL) {
+        digitalData.page.destinationURL = document.URL;
+    }
+</script>
+</body>
+
+</html>

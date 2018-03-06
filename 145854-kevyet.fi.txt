@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Kevyet admin">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Kevyet Admin</title>
+        <link rel="stylesheet" href="http://admin.kevyet.fi/admin_assets/css/vendors.min.css">
+        <link rel="stylesheet" href="http://admin.kevyet.fi/admin_assets/css/admin.min.css">
+    </head>
+    <body class="login-body" ng-app="kevyetAdmin">
+    
+        
+ <div class="container login-screen" ng-controller="LoginCtrl">
+
+  <div class="login-logo text-center">
+    <img src="/base_assets/img/kevyet-logo-white-wide.png" alt="Kevyet.fi" width="350">
+  </div>
+
+  <div class="login-box">
+    <form action="http://admin.kevyet.fi/login" method="post">
+  <div class="form-group">
+    <label class="sr-only" for="sposti">Sähköposti</label>
+    <input type="email" class="form-control" id="sposti" name="email" placeholder="Sähköposti" value="">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="pwd">Salasana</label>
+    <input type="password" name="password" class="form-control" value="" id="pwd" placeholder="Salasana">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Kirjaudu</button>
+  		<input type="hidden" name="_token" value="vqt88LHMev6KBDs9BlV8MlcJbuXPTOe7zOMIsbFB">
+</form>
+  </div>
+
+  <div class="register ng-cloak" uib-collapse="isRegisterCollapsed">
+    <div class="register-form">
+  <h3>Rekisteröidy</h3>
+  <form ng-submit="sendRegister()" ng-show="notdone">
+  <p>Lähetämme salasanasi sähköpostilla.</p>
+  <div class="form-group">
+    <label for="email">Sähköposti</label>
+    <input type="text" name="email" ng-model="email" class="form-control">
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit">Lähetä</button>
+  </div>
+  </form>
+  <div class="alert alert-warning" ng-bind="response" ng-if="response"></div>
+</div>
+  </div>
+  <div class="register ng-cloak" uib-collapse="isForgotCollapsed">
+    <div class="register-form">
+	<h3>Salasanan palautus</h3>
+	<form ng-submit="sendForgotPassword()" method="post">
+	  <div class="form-group">
+	    <label class="sr-only" for="frgt-sposti">Sähköposti</label>
+	    <input type="email" class="form-control" id="frgt-sposti" ng-model="email" name="email" placeholder="Sähköposti" value="">
+	  </div>
+	  <button type="submit" class="btn btn-primary" ng-disabled="loading">Palauta salasana</button>
+		<input type="hidden" name="_token" value="vqt88LHMev6KBDs9BlV8MlcJbuXPTOe7zOMIsbFB">
+	</form>
+	<br>
+  <div class="alert alert-info" ng-bind="responseReset" ng-if="responseReset"></div>
+</div>  </div>
+
+  <ul class="list-inline text-center">
+    <li><a href="" ng-click="isRegisterCollapsed = !isRegisterCollapsed">Rekisteröidy</a></li>
+    <li><a href="" ng-click="isForgotCollapsed = !isForgotCollapsed">Palauta salasana</a></li>
+  </ul>
+</div>
+
+
+      <script src="http://admin.kevyet.fi/admin_assets/js/vendors.min.js"></script>
+      <script src="http://admin.kevyet.fi/admin_assets/js/kevyet.min.js"></script>
+
+  </body>
+</html>

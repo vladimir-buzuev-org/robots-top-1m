@@ -1,0 +1,735 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+ 
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" /> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title> 
+ 
+        <meta name="publisher" content="" /> 
+        <meta name="description" content="" /> 
+        <meta name="keywords" content="" /> 
+        <meta name="robots" content="all" /> 
+        <meta name="viewport" content="width=630px">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    
+        <link href="style.css" rel="stylesheet" type="text/css" />
+ 
+ 
+    </head> 
+    <body>
+        <div id="side-menu">
+    <div class="content-wrapper">
+        <div class="buttons">
+            <a href="#" class="get-started button">GET STARTED</a>
+            <a href="#" id="close-menu"></a>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="nav">
+        <div><a href="index.php">HOME</a></div>
+        <div><a href="social.php">CUSTOMERS</a></div>
+        <div><a href="all-themes.php">THEMES</a></div>
+        <div><a href="index.php">OVERVIEW</a></div>
+        <div><a href="prices.php">PRICING</a></div>
+        <div><a href="help.php">CUSTOMER SERVICE</a></div>
+    </div>
+    <div class="content-wrapper" style="padding-top: 20px;">
+        <div class="links">
+            <div><a href="affiliate.php" class="link">Become an Affiliate</a></div>
+            <!--<div><a href="press.php" class="link">Press</a></div>-->
+            <div><a href="terms.php" class="link">Terms and Conditions</a></div>
+            <div><a href="compliance.php" class="link">Compliance</a></div>
+            <div><a href="dmca.php" class="link">DMCA Notice</a></div>
+            <div><a href="refund.php" class="link">Refund</a></div>
+            <div><a href="privacy.php" class="link">Privacy</a></div>
+            <div><a href="contact.php" class="link">Contact</a></div>
+            <div><a href="dsa.php" class="link">DSA</a></div>
+            <div><a href="#" class="link login">Login</a></div>
+        </div>
+        <div class="social">
+            <a target="_blank" href="https://twitter.com/kalatublog" class="btn-twitter"><div class="social-icon icon-twitter"></div></a>
+            <a target="_blank" href="https://www.facebook.com/pages/Kalatu/379267118894700" class="btn-facebook"><div class="social-icon icon-facebook"></div></a>
+            <!--a href="#" class="btn-instagram"><div class="social-icon icon-instagram"></div></a>
+            <a href="#" class="btn-googleplus"><div class="social-icon icon-googleplus"></div></a>
+            <a href="#" class="btn-youtube"><div class="social-icon icon-youtube"></div></a-->
+        </div>
+    </div>
+    <div class="logo-background">
+        <img src="images/menu/logo-background.png" />
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function(){
+        $('.menu').click(function(){
+            $('body').toggleClass('menu-active');
+        });
+
+        $('#close-menu').click(function(){
+           $('body').removeClass('menu-active'); 
+        })
+    }); 
+
+</script>
+
+        <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script type="text/javascript" src="js/gen_validatorv4.js"></script>
+
+<div id="login-popup-content" style="display:none;">
+    <div class="login-popup">
+        <div class="content">
+            <div class="header">
+                <img src="images/login_logo.png" />
+            </div>
+            <form id="login-form" method="post" action="https://www.empowernetwork.com/login.php">
+                <input type="hidden" name="redirect" value="L01lbWJlcnMvYmxvZy1sb2dpbi5waHA/YWN0aW9uPWxvZ2lu" />
+                
+                <input type="text" name="login" id="reg-username" class="text" tabindex="1" placeholder="Username/Email Address" required/>
+                
+                <div class="password-container">
+                    <input type="password" placeholder="Password" id="reg-password" name="pass" class="password" tabindex="2" required/>
+                    <!--<div class="forgot"><a href="#">Forgot?</a></div>
+                    <input type="password" name="password" placeholder="Password" class="password" required />-->
+                </div>
+                <!--<div class="loggedin-container">
+                    <input id="loggedin" type="checkbox" name="loggedin" class="loggedin" />
+                    <label for="loggedin"><span></span>Stay Logged In</label>
+                </div>-->
+                <input type="submit" class="login" value="LOGIN" name="Submit"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="signup-popup-content" style="display:none;">
+    <div class="signup-popup">
+        <div class="content">
+            <div class="header">
+                <img src="images/login_logo.png" />
+            </div>
+            <p class="top-text">Create an account. Enter your email and password Which you’ll use when logging into your Blog on Kalatu.</p>
+            <form id="signup-form" autocomplete="off">
+                <div class="name">
+                    <input type="text" name="firstname" class="firstname" placeholder="First Name" required autofocus />
+                    <input type="text" name="lastname" class="lastname" placeholder="Last Name" required />
+                    <div class="clearfix"></div>
+                </div>
+                <input type="email" name="email" placeholder="Email Address" class="email" required />
+                <div>
+                    <input type="password" name="password" placeholder="Password" class="password" required />
+                </div>
+                <p class="bottom-text">By clicking below to sign up, you are agreeing to the Blog <a href="terms.php" target="_blank">Terms of Service.</a></p>
+                <div class="signup">
+                    <a href="javascript:closePopup();" class="cancel">CANCEL</a>
+                    <input type="submit" class="create" value="FINISH & CREATE BLOG" />
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="greeting-popup-content" style="display:none;">
+    <div class="greeting-popup">
+        <div class="greeting-header">
+            <img src="images/greeting_logo.png" />
+        </div>
+        <div class="greeting-content">
+            <h1>Welcome to your new<br>Kalatu BLOG</h1>
+        </div>
+        <div class="greeting-footer">
+            <p>You are using Kalatu blog creating platform.<br>We prepared few simple questions to get you started.</p>
+        </div>
+        <div class="greeting-buttons">
+            <div class="btn-dismiss">DISMISS</div>
+            <div class="btn-next">NEXT</div>
+        </div>
+    </div>
+</div>
+
+<div id="video-popup-content" style="display:none;">
+    <div class="video-popup">
+        <div class="content">
+            <div class="header">
+                <div class="vpop">Everything You Need to <span class="bold">Create Profitable Blog</span></div>
+                <a href="#"> <div class="button get-started">GET STARTED</div></a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="video">
+                <iframe class="responsiveVideo" id="viddler-ba59d8a2" src="http://media.empowernetwork.com/embed/ba59d8a2?f=1&player=arpeggio&secret=55224065&hideablecontrolbar=1&make_responsive=0&noControls=true" width="640" height="360" frameborder="0" mozallowfullscreen="true" webkitallowfullscreen="true" scrolling="no" autoplay></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ticket-popup-content" style="display:none;">
+    <div class="ticket-popup">
+        <div class="content">
+            <div class="header">
+                <img src="images/login_logo.png" />
+                <p>To contact support please fill in the form below, or open a <a target="_blank" href="http://support.empowernetwork.com/knowledge_base/categories/blog-1">ticket from the knowledgebase.</a></p>
+            </div>
+            <form id="ticket-form" name="ticketform" method="post" action="">
+                
+                <input type="text" name="name" class="text" placeholder="Your Name" tabindex="1" required autofocus/>
+                <input type="email" name="email" class="email" placeholder="Your Email" required/>
+                <input type="text" name="username" class="text" placeholder="Your Username" optional/>
+                <textarea type="text" name="message" class="textarea" placeholder="Enter Your Message Here" required></textarea>
+
+                <input type="submit" class="send" value="Contact Support"/>
+            </form>
+
+            <script language="JavaScript">
+                var frmvalidator  = new Validator("ticketform");
+                frmvalidator.addValidation("name","req","Please provide your name"); 
+                frmvalidator.addValidation("email","req","Please provide your email"); 
+                frmvalidator.addValidation("email","email","Please enter a valid email address"); 
+            </script>
+
+        </div>
+    </div>
+</div>
+
+<div id="thanks-popup-content" style="display:none;">
+    <div class="thanks-popup">
+        <div class="content">
+            <div class="header">
+                <img src="images/login_logo.png" />
+                <p>Your message has been sent to support. Please allow 24-48 hours for a response. For faster help, you can reach support by phone at 1-888-262-1934.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="failure-popup-content" style="display:none;">
+    <div class="failure-popup">
+        <div class="content">
+            <div class="header">
+                <img src="images/login_logo.png" />
+                <p>Unfortunatelly, we were unable to send Your message. We appologize for the inconvevience. For faster help, you can reach support by phone at 1-888-262-1934 or open a <a target="_blank" href="http://support.empowernetwork.com/knowledge_base/categories/blog-1">ticket from the knowledgebase.</p>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <div class="header section min-width">
+            <div class="container">
+                <h1><a href="index.php" class="logo">Kalatu</a></h1>
+                <ul class="left nav">
+                    <li class="menu"><a href="#">MENU</a></li>
+                </ul>
+                <ul class="right nav">
+                    <li class="login"><a href="#">LOGIN</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="header-slides section min-width">
+            <div class="slides">
+                <div class="slide overview" id="overview">
+                    <div class="container">
+                        <h3>Build Your Own Profitable</h3>
+                        <h2>BLOG</h2>
+
+                        <p class="actions">
+                            <a href="#" class="btn btn-action btn-icon-play get-started"><span>GET STARTED</span></a>
+                            <a href="#video-popup-content"  class="btn btn-trans btn-icon-video"><span>WATCH VIDEO</span></a>
+                        </p>
+
+                        <!-- <p class="trial">FREE LIFETIME ACCOUNT SUPPORTED BY WORLD CLASS CUSTOMER SERVICE</p> -->
+                    </div>
+                </div>
+
+                <div class="slide network" id="network">
+                    <div class="container">
+                        <h3>Build Your Own Profitable</h3>
+                        <h2>ORGANIZATION</h2>
+
+                        <p class="actions">
+                            <a href="#" class="btn btn-action btn-icon-play get-started"><span>GET STARTED</span></a>
+                            <a href="#video-popup-content" class="btn btn-trans btn-icon-video"><span>WATCH VIDEO</span></a>
+                        </p>
+
+                        <!-- <p class="trial">FREE LIFETIME ACCOUNT SUPPORTED BY WORLD CLASS CUSTOMER SERVICE</p> -->
+                    </div>
+                </div>
+
+                <div class="slide affiliate" id="affiliate">
+                    <div class="container">
+                        <h3>Build Your Own Profitable</h3>
+                        <h2>LIST</h2>
+
+                        <p class="actions">
+                            <a href="#" class="btn btn-action btn-icon-play get-started"><span>GET STARTED</span></a>
+                            <a href="#video-popup-content" class="btn btn-trans btn-icon-video"><span>WATCH VIDEO</span></a>
+                        </p>
+
+                        <!-- <p class="trial">FREE LIFETIME ACCOUNT SUPPORTED BY WORLD CLASS CUSTOMER SERVICE</p> -->
+                    </div>
+                </div>
+
+                <div class="slide business" id="business">
+                    <div class="container">
+                        <h3>Build Your Own Profitable</h3>
+                        <h2>SMALL BUSINESS</h2>
+
+                        <p class="actions">
+                            <a href="#" class="btn btn-action btn-icon-play get-started"><span>GET STARTED</span></a>
+                            <a href="#video-popup-content" class="btn btn-trans btn-icon-video"><span>WATCH VIDEO</span></a>
+                        </p>
+
+                        <!-- <p class="trial">FREE LIFETIME ACCOUNT SUPPORTED BY WORLD CLASS CUSTOMER SERVICE</p> -->
+                    </div>
+                </div>
+
+
+                <div class="slide agents" id="agents">
+                    <div class="container">
+                        <h3>Build Your Own Profitable</h3>
+                        <h2>CLIENT PORTFOLIO</h2>
+
+                        <p class="actions">
+                            <a href="#" class="btn btn-action btn-icon-play get-started"><span>GET STARTED</span></a>
+                            <a href="#video-popup-content" class="btn btn-trans btn-icon-video"><span>WATCH VIDEO</span></a>
+                        </p>
+
+                        <!-- <p class="trial">FREE LIFETIME ACCOUNT SUPPORTED BY WORLD CLASS CUSTOMER SERVICE</p> -->
+                    </div>
+                </div>
+
+
+                <div class="slide branding" id="branding">
+                    <div class="container">
+                        <h3>Build Your Own Profitable</h3>
+                        <h2>PERSONAL BRAND</h2>
+
+                        <p class="actions">
+                            <a href="#" class="btn btn-action btn-icon-play get-started"><span>GET STARTED</span></a>
+                            <a href="#video-popup-content" class="btn btn-trans btn-icon-video btn-dark"><span>WATCH VIDEO</span></a>
+                        </p>
+
+                        <!-- <p class="trial">FREE LIFETIME ACCOUNT SUPPORTED BY WORLD CLASS CUSTOMER SERVICE</p> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrows min-width">
+                <div class="container">
+                    <span class="arrow left"></span>
+                    <span class="arrow right"></span>
+                </div>
+            </div>
+
+            <div class="feature-marker min-width">
+                <div class="wrapper">
+                    <div class="marker">
+                        <div class="left"></div>
+                        <div class="right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features-nav section min-width">
+            <div class="container">
+            <a href="index.php" class="logo"></a>
+            <div class="wrapper feature-triger">
+                <span class="item icon-overview first active"><span class="icon"></span><span class="text">PLATFORM<br>OVERVIEW</span></span>
+                <span class="item icon-network"><span class="icon"></span><span class="text">NETWORK<br>MARKETING</span></span>
+                <span class="item icon-affiliate"><span class="icon"></span><span class="text">AFFILIATE<br>MARKETING</span></span>
+                <span class="item icon-business"><span class="icon"></span><span class="text">SMALL<br>BUSINESS</span></span>
+                <span class="item icon-agents"><span class="icon"></span><span class="text">REAL ESTATE<br>AGENTS</span></span>
+                <span class="item icon-branding last"><span class="icon"></span><span class="text">PERSONAL<br>BRANDING</span></span>
+                <div class="clearfix"></div>
+            </div>
+            <a href="#" class="btn btn-action btn-icon-play get-started"><span>GET STARTED</span></a>
+            </div>
+        </div>
+
+        <div class="features overview section min-width">
+            <div class="container">
+                <div class="feature">
+                    <div class="img"> 
+                        <img src="images/FreedomToRoam_Flat_Devices.png" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3><span>Everything</span> At Your Fingertips</h3>
+                        <p>Everything you need to simply and easily build a profitable, professional blog is all included with your Kalatu membership. Best of all, everything is mobile-ready right from the start.</p>
+
+                        <p class="view"><a href="all-themes.php" class="btn btn-regular">VIEW THEMES</a></p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+
+                 <div class="feature">
+                    <div class="img"> 
+                        <img src="images/FlexBright_Flat_Devices.png" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>Downlines Don't Grow On Trees, <span>They Grow Online</span></h3>
+                        <p>Kalatu was built with the professional network marketer in mind. Our platform has been specifically designed to help you grow the biggest organization you’re capable of growing. We’ve helped network marketers and direct sellers, from companies across the board, build 7-figure organizations time and time again.</p>
+
+                        <p class="view"><a href="all-themes.php" class="btn btn-regular">VIEW THEMES</a></p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+
+                <div class="feature">
+                    <div class="img"> 
+                        <img src="images/RedType_Flat_Devices.png" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>The Ultimate <span>List-Builder</span></h3>
+                        <p>Kalatu was built with the affiliate marketer in mind. All our themes and our powerful list building plugins has been intelligently designed to help you build your subscriber list. Your list is your lifeblood. Kalatu has all the tools you need to convert your list (lovingly) into buyers.</p>
+
+                        <p class="view"><a href="all-themes.php" class="btn btn-regular">VIEW THEMES</a></p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+
+                <div class="feature">
+                    <div class="img"> 
+                        <img src="images/Simplex_Flat_Devices.png" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>Brick and Mortar Money</h3>
+                        <p>It's never been easier to grow your small business’ bottomline. Kalatu helps you get your local business on the proverbial map, through the power of blogging. If you’re not leveraging blogging to get ranked and noticed in your local market, you’ll get lost in the crowd.</p>
+
+                        <p class="view"><a href="all-themes.php" class="btn btn-regular">VIEW THEMES</a></p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+
+                <div class="feature">
+                    <div class="img"> 
+                        <img src="images/WrittenWord_Flat_Devices.png" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>Instant Agent Credibility</h3>
+                        <p>Establish your home on the Web with a branded, professional Kalatu blog.  As an agent, your Kalatu blog gives you instant credibility, while delivering valuable information and collecting leads twenty-four hours a day and seven days a week.</p>
+                        <p class="view"><a href="all-themes.php" class="btn btn-regular">VIEW THEMES</a></p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="feature">
+                    <div class="img"> 
+                        <img src="images/OnDisplay_Flat_Devices.png" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>The Ultimate <span>Brand-Builder</span></h3>
+                        <p>It’s never been easier to build your personal brand online. Kalatu makes it a point and click endeavor. It gives you the tools to amplify and share your content, so you can engage with your audience via social networks.<br><br>The secret? Don’t wait to be perfect. Just get started today.</p>
+
+                        <p class="view"><a href="all-themes.php" class="btn btn-regular">VIEW THEMES</a></p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="proofs crowd section min-width">
+            <div class="container">
+                    <div class="proof">
+                        <h3>Running With the <span>Right Crowd</span></h3>
+                        <p>Kalatu’s engine powers hundreds of thousands of blogs across dozens of industries for people just like you.</p>
+                    </div>
+                    <div class="proof">
+                        <h3>Trusted by the World's <span>Top Network Marketers</span></h3>
+                        <p>Whether you sell supplements, beverages, skin-care, or information products, Kalatu is the chosen weapon of world’s top producers.</p>
+                    </div>
+                    <div class="proof">
+                        <h3>The Top Tool Used by the World's <span>Top Affiliate Marketers</span></h3>
+                        <p>It doesn't matter what your particular niche is… online marketing, success coaching, or blogging. Whatever the case, Kalatu is the tool trusted by affiliate marketers web-wide.</p>
+                    </div>
+                    <div class="proof">
+                        <h3>Don't Let Your Business Get Lost in the Crowd</h3>
+                        <p>From restaurants, to coffee shops, to plumbers - Kalatu is trusted by savvy small business owners around the world, to get their businesses in front of the greatest number of potential customers.</p>
+                    </div>
+                    <div class="proof">
+                        <h3>Trusted by the World's <span>Top Real Estate Agents</span></h3>
+                        <p>Whether you help sell vacant land, residential, or commercial real estate, Kalatu is chosen by the world’s most successful agents.</p>
+                    </div>
+                    <div class="proof">
+                        <h3><span>Brand Build</span> with </span>the Best</h3>
+                        <p>Kalatu is home to the world's most interesting and creative brand-builders.</p>
+                    </div>
+            </div>
+        </div>
+        
+        <div class="crowd section min-width">
+                <div class="items">
+                    <a class="item" href="select-theme.php?theme=Truth&link=http://kalatublog.com/test-theme-1/">
+                        <div class="img theme"><img src="images/Truth_browser.png" alt=""></div>
+                        <h4>Truth</h4>
+                    </a>
+                    <a class="item" href="select-theme.php?theme=RedType&link=http://buildingabrandonline.com/ensupport/">
+                        <div class="img theme"><img src="images/RedType_browser.png" alt=""></div>
+                        <h4>RedType</h4>
+                    </a>
+                    <a class="item" href="select-theme.php?theme=Flex Bright&link=http://kalatublog.com/test-theme-2/">
+                        <div class="img theme"><img src="images/FlexBright_browser.png" alt=""></div>
+                        <h4>Flex Bright</h4>
+                    </a>
+                    <a class="item" href="select-theme.php?theme=Freedom To Roam&link=http://kalatublog.com/test-theme-3/">
+                        <div class="img theme"><img src="images/FreedomToRoam_browser.png" alt=""></div>
+                        <h4>Freedom To Roam</h4>
+                    </a>
+                    <a class="item" href="select-theme.php?theme=Simplex&link=http://kalatublog.com/test-theme-4/">
+                        <div class="img theme"><img src="images/Simplex_browser.png" alt=""></div>
+                        <h4>Simplex</h4>
+                    </a>
+                    <a class="item" href="select-theme.php?theme=Written Word&link=http://kalatublog.com/test-theme-5/">
+                        <div class="img theme"><img src="images/WrittenWord_browser.png" alt=""></div>
+                        <h4>Written Word</h4>
+                    </a>
+                    <a class="item" href="select-theme.php?theme=Green Machine&link=http://kalatublog.com/test-theme-6/">
+                        <div class="img theme"><img src="images/GreenMachine_browser.png" alt=""></div>
+                        <h4>Green Machine</h4>
+                    </a>
+                    <a class="item" href="select-theme.php?theme=On Display&link=http://kalatublog.com/test-theme-7/">
+                        <div class="img theme"><img src="images/OnDisplay_browser.png" alt=""></div>
+                        <h4>On Display</h4>
+                    </a>
+
+                    <div class="clearfix"></div>
+                </div>
+        </div>
+
+
+        <div class="benefits cols cols-one-row section min-width ">
+            <div class="container">
+                <div class="benefit">
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-simple.png');"></p>
+                        <h4>SIMPLE. POWERFUL. DYNAMIC.</h4>
+                        <p>Building your blog with Kalatu is a <span class="bold">simple, flexible and intuitive</span> process. Just add and arrange your content and plugins with the click of a mouse.</p>
+                    </div>
+
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-domains.png');"></p>
+                        <h4>CUSTOM DOMAINS</h4>
+                        <p>Kalatu makes adding your <span class="bold">custom domain</span> simple. Follow the step by step tutorial to map your own domain to a Kalatu blog.</p>
+                    </div>
+
+
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-convert.png');"></p>
+                        <h4>CONVERT LIKE CRAZY</h4>
+                        <p>Kalatu is specifically designed to not only quickly and easily create beautifully designed blogs and custom content, it’s <span class="bold">built to sell for you</span>.</p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="benefit">
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-think.png');"></p>
+                        <h4>THINK & GROW YOUR NETWORK</h4>
+                        <p>Everything about Kalatu is geared toward <span class="bold">quickly and effortlessly growing your downline</span>. Why? Because that’s where the network marketing business’ bread is really buttered. After all, your network is your net worth.</p>
+                    </div>
+
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-network-social.png');"></p>
+                        <h4>NETWORK SOCIAL</h4>
+                        <p>From Twitter and Facebook to Flickr and Instagram, our seamless social integrations let you <span class="bold">connect with your audience everywhere...</span> like RIGHT NOW!</p>
+                    </div>
+
+
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-pocket.png');"></p>
+                        <h4>IN THE POCKET</h4>
+                        <p>Download the free Kalatu Blog app for iPad and iPhone so you can <span class="bold">easily blog from anywhere</span> - no fuss, no muss, no tech-geeks required!<br>* In Development and Coming Soon.</p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="benefit">
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-guest.png');"></p>
+                        <h4>GUEST POSTS WELCOME!</h4>
+                        <p><span class="bold">Invite contributors to your blog</span>. Set individual permissions — from full admin to a trusted commenter — so you're always in control.</p>
+                    </div>
+
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-network-social.png');"></p>
+                        <h4>SOCIALLY CONNECTED</h4>
+                        <p>Your blog is the center of your online identity. Our <span class="bold">powerful tools</span> sync with and import from Twitter, LinkedIn, Facebook, and more.</p>
+                    </div>
+
+
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-automate.png');"></p>
+                        <h4>AUTOMATE YOUR POSTS</h4>
+                        <p>Anyone can use our 21 Day Blogging Challenge plugin to <span class="bold">quickly and consistently create traffic generating, list-building blog posts</span> that get ranked well and found in the search engines!</p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="benefit">
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-automate.png');"></p>
+                        <h4>SIMPLIFIED CONTENT CREATION</h4>
+                        <p>Create and share posts in just a minutes a day using our exclusive content templates in the 21 Day Blogging Challenge plugin.</p>
+                    </div>
+
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-secure.png');"></p>
+                        <h4>RELIABLE, SECURE HOSTING</h4>
+                        <p>Every Kalatu Blog is securely hosted on a scalable cloud infrastructure with unlimited bandwidth. Your blog is safe with us.</p>
+                    </div>
+
+
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-tools.png');"></p>
+                        <h4>POWERFUL MARKETING TOOLS</h4>
+                        <p>SEO is built in to ensure search engines find you. Use real-time analytics to gain customer insight and our social integrations to connect with your customers on Facebook, LinkedIn, Twitter, and more.</p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="benefit">
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-guy.png');"></p>
+                        <h4>DON’T BE “THAT GUY”</h4>
+                        <p><span class="bold">90% of real estate buyers searched online during their buying process</span>. Don’t compete for the 10% who are searching for real estate offline.</p>
+                    </div>
+
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-social.png');"></p>
+                        <h4>SOCIALLY INTEGRATED</h4>
+                        <p>Online social networks are a must-have tool for every agent. Kalatu’s plug & play social plugins can help you <span class="bold">grow your buyer and seller networks</span> quickly and inexpensively.</p>
+                    </div>
+
+
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-convert.png');"></p>
+                        <h4>CONVERT LIKE CRAZY</h4>
+                        <p>Kalatu is specifically designed to not only quickly and easily create beautifully designed blogs and custom content, it’s <span class="bold">built to sell for you</span>.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="benefit">
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-grow-following.png');"></p>
+                        <h4>GROW YOUR FOLLOWING</h4>
+                        <p>From Twitter and Facebook to LinkedIn and Pinterest, our seamless social integrations let you <span class="bold">connect with your audience everywhere</span>.</p>
+                    </div>
+
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-domains.png');"></p>
+                        <h4>CUSTOM DOMAINS</h4>
+                        <p>Kalatu makes adding your custom domain simple. Follow the step by step tutorial to map your own domain to a Kalatu blog.</p>
+                    </div>
+
+
+                    <div class="col">
+                        <p class="icon" style="background-image: url('images/icon-personal.png');"></p>
+                        <h4>GET PERSONAL</h4>
+                        <p>Technology’s great, but if there’s one thing that it’s created a huge demand for, it’s a <span class="bold">personal connection</span>. Kalatu leverages technology to make a personal connection that will build your brand.</p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="support section min-width">
+            <div class="container">
+                <h3><span>World Class</span> Customer Service</h3>
+                <p>Everyone on our Customer Service team knows the Kalatu platform like the back of their hand.<br>
+We have a REAL, <span class="bold">in-house team of people</span> who actually care and are here to help you!</p>
+            </div>
+        </div>
+
+        <div class="cols section min-width">
+            <div class="container">
+            
+                <div class="col">
+                    <p class="icon"><img src="images/icon-themes.png" alt=""></p>
+                    <h4>CUTTING EDGE THEMES</h4>
+                    <p>Kalatu blogs are <span class="bold">created with modern browsers and mobile devices in mind</span>. They employ the latest HTML, CSS and Javascript techniques.</p>
+                </div>
+            
+                <div class="col">
+                    <p class="icon"><img src="images/icon-plugins.png" alt=""></p>
+                    <h4>TOP-OF-THE-LINE THEME EDITOR</h4>
+                    <p>Make any design your own using the theme editor. Personalize fonts, colors, and layouts to <span class="bold">create the custom look you want</span>.</p>
+                </div>
+            
+                <div class="col">
+                    <p class="icon"><img src="images/icon-mapping.png" alt=""></p>
+                    <h4>DOMAIN MAPPING</h4>
+                    <p>Kalatu makes adding your custom domain simple. Follow the step by step tutorial to <span class="bold">map your own domain</span> to a Kalatu blog.</p>
+                </div>
+            
+                <div class="col">
+                    <p class="icon"><img src="images/icon-social.png" alt=""></p>
+                    <h4>SOCIALLY INTEGRATED</h4>
+                    <p>Connect. Publish. Share. Make your blog the center of your online identity on the web with our <span class="bold">powerful social integrations</span>.</p>
+                </div>
+            
+                <div class="col">
+                    <p class="icon"><img src="images/icon-seo.png" alt=""></p>
+                    <h4>SEO FRIENDLY</h4>
+                    <p>Kalatu blogs are <span class="bold">loved by search engines</span>. They include clean links, proper tagging, XML sitemaps, and valid XHTML code.</p>
+                </div>
+            
+                <div class="col">
+                    <p class="icon"><img src="images/icon-hosted.png" alt=""></p>
+                    <h4>RELIABLE, SECURE HOSTING</h4>
+                    <p>With our <span class="bold">reliable, secure and scalable cloud infrastructure,</span> you can relax with Kalatu. Plus there’s never ever, anything to install or patch!</p>
+                </div>
+                       
+                <div class="clearfix"></div>
+            </div> 
+        </div>
+
+        <div class="footer section min-width">
+            <div class="container">
+                <div class="left powered">
+                    <p class="text">POWERED BY</p>
+                    <p><img src="images/footer-kalatu.png" alt=""></p>
+                    <p class="copyright">Kalatu® is a Registered Trademark of Empower Network, LLC. </br>© 2010-2015 Empower Network, LLC. </br>All Rights Reserved.</p>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="right"><a href="#" class="btn btn-regular btn-icon-play get-started"><span>GET STARTED</span></a></div>
+                <!-- <div class="middle"><b>FREE LIFETIME</b> ACCOUNT SUPPORTED BY WORLD CLASS CUSTOMER SERVICE</div> -->
+                <div class="clearfix"></div>
+            </div>
+        </div>
+       
+                       <script src="js/slideMe.js"></script>
+        <script src="js/functions.js"></script>
+    
+	    	
+    </body>
+</html>

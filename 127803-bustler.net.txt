@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://xm-dev.com/bustler4.0/404.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bustler is all about architecture and architecture-related competitions.">
+    <meta name="keywords" content="architecture, competition, competitions, competitive, architects, architect, charrette, deadlines">
+    <meta name="author" content="Bustler">
+    <meta name="copyright" content="Bustler">
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="shortcut icon" href="http://xm-dev.com/bustler4.0/favicon.png">
+
+    <title>Bustler: Architecture Competitions, Events &amp; News</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://bustler.net/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://bustler.net/assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="http://bustler.net/assets/css/font-awesome.css" rel="stylesheet">
+    <link href="http://bustler.net/assets/css/bustler.css?v=1" rel="stylesheet">
+    <!--<link href="./Bustler_ Architecture Competitions, Events & News_files/css" rel="stylesheet">-->
+
+
+    <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style></head>
+
+  <body class="error-page" data-feedly-mini="yes">
+
+
+    <!-- Begin page content -->
+    <div class="container error-container clearfix">
+
+      <div class="row">
+
+        <a href="http://bustler.net/"><img src="http://bustler.net/assets/img/logo-big.png" class="img-responsive error-logo" alt="Bustler 404 Error"></a>
+
+        <h1>Whoopsie, something went wrong...</h1>
+
+        <p>Go to: </p>
+        <ul>
+          <li><a href="http://bustler.net/news" class="btn btn-news">News</a></li>
+          <li><a href="http://bustler.net/competitions" class="btn btn-competitions">Competitions</a></li>
+          <li><a href="http://bustler.net/events" class="btn btn-events">Events</a></li>
+          <li><a class="btn btn-submit submit-404">Submit</a></li>
+        </ul>
+
+
+        <p>Or start a search:</p>
+
+		<form onkeypress="stopEnterSubmitting(event);" class="form-inline search_404" role="form" method="POST"  action="">
+
+          <div class="form-group">
+            <label for="searchField" class="sr-only">Search Bustler</label>
+            <input type="text" name="searchtext" class="form-control input-lg search-field" id="searchField" placeholder="Search Bustler">
+          </div>
+          <div class="form-group">
+            <p>Search in</p>
+          </div>
+          <div class="form-group" >
+            <button type="submit" onclick="this.form.action = 'http://bustler.net/news/search/';" class="btn btn-search-news">News</button>
+          </div>
+          <div class="form-group">
+            <button type="submit" onclick="this.form.action = 'http://bustler.net/competitions/search/';" class="btn btn-search-competitions">Competitions</button>
+          </div>
+          <div class="form-group">
+            <button type="submit" onclick="this.form.action = 'http://bustler.net/events/search/';" class="btn btn-search-events">Events</button>
+          </div>
+		  <div class="search-alert" id="searchAlert">
+			<div class="alert" style="color:#ff0000;" role="alert" id="alert_msg"></div>
+		  </div>
+
+
+        </form>
+
+      </div><!-- /row -->
+
+
+    </div> <!-- /container -->
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="http://bustler.net/assets/js/jquery-1.11.1.min.js"></script>
+    <script src="http://bustler.net/assets/js/core/bootstrap.min.js"></script>
+    <script src="http://bustler.net/assets/js/jquery.cookie.js"></script>
+	<script>
+			  /* search enter key validation */
+			  function stopEnterSubmitting(e) {
+				if (e.keyCode == 13) {
+				  $('#alert_msg').html('<span class="glyphicon glyphicon-exclamation-sign" ></span> Click a button to initiate your search');
+				  e.preventDefault();
+				  return false;
+				}
+			  }
+
+			  $(document).ready(function() {
+				/* search form call */
+
+				$(document).on('click', '.submit-404', function() {
+				  $.cookie("redirect", 1);
+				  window.location.href = "http://bustler.net/home";
+				});
+
+				$('.search_404').on('submit', function() {
+				  var searchValue = $('#searchField').val();
+				  if (searchValue == '') {
+					$('#alert_msg').html('<span class="glyphicon glyphicon-exclamation-sign" ></span> Search field is required');
+//            $('#alertModel').modal('show');
+
+					return false;
+				  }
+				});
+
+
+				/* end search form*/
+			  });
+	</script>
+
+
+  </body></html>
+

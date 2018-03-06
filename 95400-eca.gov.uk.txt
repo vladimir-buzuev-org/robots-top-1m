@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="refresh" content="10;url=https://etl.beis.gov.uk/etl/site/etl.html" />
+  <title>ETL Has Moved</title>
+    <style type="text/css">
+      .center-box {
+        padding: 1em;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body onload="startTimer()">
+    <div class="center-box">
+      <img src="../images/BEIS_LOGO_TIGHT.png">
+      <h1>ETL Has Moved</h1>
+      <p>Please update your bookmarks. You will be automatically redirected in <span id="redirect-countdown">10</span> seconds</p>
+      <p>Please login at <a href="https://etl.beis.gov.uk/etl/site/etl.html">https://etl.beis.gov.uk/etl/site/etl.html</a></p>
+    </div>
+    <script type="text/javascript">
+      var redirectTimer;
+      var timeRemaining = 10;
+
+      function countDown(){
+        if (timeRemaining == 0) {
+          return;
+        }
+        timeRemaining--;
+        redirectTimer.textContent = timeRemaining;
+      }
+
+      function startTimer(){
+        redirectTimer = document.getElementById('redirect-countdown');
+        window.setInterval(countDown, 1000);
+      }
+    </script>
+  </body>
+</html>

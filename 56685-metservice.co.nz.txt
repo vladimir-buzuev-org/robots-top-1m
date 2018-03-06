@@ -1,0 +1,1571 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html xmlns:fb="http://ogp.me/ns/fb#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html xmlns:fb="http://ogp.me/ns/fb#" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html xmlns:fb="http://ogp.me/ns/fb#" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+<script type="text/javascript"> //Rubicon DNS pre-fetching
+var prefetchArray = [
+'//ads.rubiconproject.com/',
+'//optimized-by.rubiconproject.com/',
+'//optimized-by-adv.rubiconproject.com/',
+'//fastlane.rubiconproject.com/',
+'//fastlane-adv.rubiconproject.com/'
+];
+var prefetchDNS = function (aPFArr) {
+for (i=0;i<aPFArr.length; i++) {
+var dpf = window.document.createElement('link');
+dpf.rel = 'dns-prefetch';
+dpf.href = aPFArr[i];
+var node = window.document.getElementsByTagName('script')[0];
+node.parentNode.appendChild(dpf);
+}
+};
+prefetchDNS(prefetchArray);
+//Rubicon header bidding
+var gptadslots = [];
+var rubicontag = rubicontag || {}; rubicontag.cmd = rubicontag.cmd || [];
+var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+var adSlotIndex = -1;
+var rubiconLoadOnly = false;
+</script>
+<script type="text/javascript" src="https://ads.rubiconproject.com/header/13178.js" async></script>
+<meta charset="utf-8" />
+
+<title>New Zealand's official weather forecasts &amp; warnings - Meteorological Service of New Zealand (MetService)</title>
+<meta name="description" content="Latest New Zealand Weather Forecasts, including Tides, Snow Reports, Radar Maps and NZ Weather Maps. MetService.com." />
+<meta name="copyright" content="Meteorological Service of New Zealand Ltd." />
+<meta name="robots" content="NOODP"/>
+
+<meta name="viewport" content="width=device-width" />
+<meta name="apple-mobile-web-app-title" content="MetService">
+<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-ipad-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-iphone-retina-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-ipad-retina-precomposed.png" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+<link rel="stylesheet" type="text/css" media="screen, projection" href="/_/css/styles-3.0.510.css" />
+<link rel="stylesheet" type="text/css" media="screen, projection" href="/_/css/main-3.0.510.css" />
+<link rel="stylesheet" type="text/css" media="screen, projection" href="/special/takeover.css" />
+<link rel="stylesheet" type="text/css" media="print" href="/_/css/print-new-3.0.510.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/_/js/fancybox/jquery.fancybox.css?v=2.1.5" />
+<meta property="og:image" content="http://metservice.com/_/css/img/400Logo.jpg" />
+<script type="text/javascript">
+// This is working around a load-time problem - the rest of this is in the footer
+//var _gaq = _gaq || [];
+var _gaq = [];
+_gaq.push(['_setAccount', 'UA-1951998-1']);
+</script>
+
+<script src="/_/js/header-3.0.510.js"></script>
+
+<script type="text/javascript">
+var serverTime = undefined;
+var dateTimeObj = undefined;
+$.ajax({
+url: '/publicData/serverTime',
+dataType: 'json',
+async : false,
+data: {},
+timeout: 1000,
+success: function(data, textStatus) {
+serverTime = data.dateTime;
+dateTimeObj = data;
+},
+error:function(a){
+log("ERROR - Unable to load serverTime");
+serverTime = new Date();
+}
+});
+</script>
+<script src="/dynamic/adslot.js"></script>
+<!-- This is a special include that can be adjusted at runtime without a release -->
+<script src="/special/admin-settings.js"></script>
+<!-- This is an include to manage ad scheduling that can be adjusted without a full release -->
+<script src="/special/ad-scheduler.js"></script>
+<!-- ================================= start of mobile redirection code ================================= -->
+<script type="text/javascript">
+var REDIRECT_TO_MOBILE_COOKIE = "redirect_to_mobile";
+var MOBILE_URL = 'http://m.metservice.com';
+function getCookie(cookieName)
+{
+var i, x, y, ARRcookies = document.cookie.split(";");
+for (i = 0; i < ARRcookies.length; i++) {
+try {
+x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+x = x.replace(/^\s+|\s+$/g, "");
+if (x == cookieName) {
+return unescape(y);
+}
+} catch (err) {
+log("There was a problem reading the cookies:- " + err.message);
+}
+}
+}
+function setCookie(cookieName, value, numDaysBeforeExpire) {
+try {
+var exdate = new Date();
+exdate.setDate(exdate.getDate() + numDaysBeforeExpire);
+var expiryDateStr = exdate.toGMTString();
+document.cookie = cookieName + '=' + value + '; expires=' + expiryDateStr + '; path=/';
+} catch (err) {
+log("There was a problem setting cookies:- " + err.message);
+}
+}
+function cookiesAreEnabled() {
+var testValue = new Date().toGMTString().replace(/[ ,]/g, '-'); // Guarantees a new value each time, requires dash
+var TEST_COOKIE_NAME = 'testCookies';
+setCookie(TEST_COOKIE_NAME, testValue, 1);
+var retrievedCookie = getCookie(TEST_COOKIE_NAME);
+var enabled = (retrievedCookie == testValue);
+return enabled;
+}
+if (cookiesAreEnabled() && navigator.userAgent.indexOf('iPad') == -1 && navigator.userAgent.indexOf('nexus 10') == -1) {
+var isMobile = isMobileBrowser;
+if (isMobile) {
+var mobileUrl = '';
+if (/\/rural\/rural/.test(window.location.href) || /\/rural\/monthly/.test(window.location.href)) {
+// Don't redirect these pages - they don't exist on the mobile website
+}
+else if (/\/national\/home/.test(window.location.href)) {
+mobileUrl = MOBILE_URL;
+}
+else if (/\/warnings\//.test(window.location.href)) {
+mobileUrl = window.location.href;
+mobileUrl = mobileUrl.replace(/http:\/\/[^/]+/, MOBILE_URL);
+mobileUrl = mobileUrl.replace('/national/warnings/', '/warnings/');
+mobileUrl = mobileUrl.replace('/warnings/severe-weather-warnings', '/warnings/swx');
+mobileUrl = mobileUrl.replace('/warnings/severe-weather', '/warnings/swx');
+mobileUrl = mobileUrl.replace('/warnings/severe-thunderstorm', '/warnings/thunderstorm');
+mobileUrl = mobileUrl.replace('/warnings/road-snowfall-warnings', '/warnings/roadsnow');
+mobileUrl = mobileUrl.replace('/warnings/snow-otago-warnings', '/warnings/snotago');
+mobileUrl = mobileUrl.replace('/warnings/special-weather-advisory', '/warnings/swa');
+mobileUrl = mobileUrl.replace('/warnings/marine-warnings', '/warnings/marine');
+}
+else if (/\/towns-cities\//.test(window.location.href)) {
+mobileUrl = window.location.href;
+mobileUrl = mobileUrl.replace(/http:\/\/[^/]+/, MOBILE_URL);
+mobileUrl = mobileUrl.replace(/(.*\/towns-cities\/[^\/]+).*/, "$1"); // strip anything after town (removes subregions)
+mobileUrl = mobileUrl.replace('/towns-cities/', '/towns/');
+}
+else if (/\/rural\//.test(window.location.href)) {
+mobileUrl = window.location.href;
+mobileUrl = mobileUrl.replace(/http:\/\/[^/]+/, MOBILE_URL);
+mobileUrl = mobileUrl.replace(/(.*\/rural\/[^\/#]+).*/, "$1"); // strip anything after rural region (i.e. town within rural region)
+}
+else if (/\/marine-surf\/coastal\//.test(window.location.href)) {
+mobileUrl = window.location.href;
+mobileUrl = mobileUrl.replace(/http:\/\/[^/]+/, MOBILE_URL);
+mobileUrl = mobileUrl.replace('/marine-surf/', '/marine/');
+}
+else if (/\/marine-surf\/recreational-marine\//.test(window.location.href)) {
+mobileUrl = window.location.href;
+mobileUrl = mobileUrl.replace(/http:\/\/[^/]+/, MOBILE_URL);
+mobileUrl = mobileUrl.replace('/marine-surf/recreational-marine/', '/marine/rec/');
+}
+else if (/\/marine-surf\/tides\//.test(window.location.href)) {
+mobileUrl = window.location.href;
+mobileUrl = mobileUrl.replace(/http:\/\/[^/]+/, MOBILE_URL);
+mobileUrl = mobileUrl.replace('/marine-surf/', '/marine/');
+mobileUrl = mobileUrl.replace('/index', '');
+}
+else if (/\/mountain\//.test(window.location.href)) {
+mobileUrl = window.location.href;
+mobileUrl = mobileUrl.replace(/http:\/\/[^/]+/, MOBILE_URL);
+mobileUrl = mobileUrl.replace('-mountain-forecast', '-nz-mountain-forecast'); // brief & extended are different
+}
+else if (/\/skifields\//.test(window.location.href)) {
+mobileUrl = window.location.href;
+mobileUrl = mobileUrl.replace(/http:\/\/[^/]+/, MOBILE_URL);
+mobileUrl = mobileUrl.replace('/skifields/', '/mountain/ski/');
+}
+else if (/\/maps-radar\/rain-forecast\/rain-forecast-3-day/.test(window.location.href)) {
+mobileUrl = MOBILE_URL + '/maps/rain-forecast';
+}
+if (mobileUrl != '') {
+var mobileRedirectCookieValue = getCookie(REDIRECT_TO_MOBILE_COOKIE);
+if (window.location.href.indexOf('mobile=off') > -1) {
+setCookie(REDIRECT_TO_MOBILE_COOKIE, 'false', 10000);
+} else if (mobileRedirectCookieValue == 'true') {
+// Redirect!
+document.location = mobileUrl;
+} else if (mobileRedirectCookieValue == 'false') {
+// do nothing
+} else {
+var preferToViewMobilePage = confirm("Would you prefer to view a mobile-friendly version of this page?");
+// Save a cookie to show that they've been prompted and ensure they don't get asked again for 10000 days (almost forever)
+setCookie(REDIRECT_TO_MOBILE_COOKIE, preferToViewMobilePage, 10000);
+if (preferToViewMobilePage)
+document.location = mobileUrl;
+}
+}
+}
+}
+</script>
+<!-- =================================== end of mobile redirection code =================================== -->
+
+<!--jQuery Notification-->
+
+<script type="text/javascript">
+var ruralTargetingPageCode = 'national';
+
+</script>
+<script type='text/javascript'>
+var gptran = false;
+var gptrun = function() {
+if (gptran) {
+return;
+}
+gptran = true;
+var gads = document.createElement('script'); gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' === document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+};
+function loadAdverts() {
+
+var targetNationalSection=_adNationalSection();var targetNationalLocation=_adNationalLocation();setGoogleTargeting("Section","National");setGoogleTargeting("nat-scn","national-"+targetNationalSection);setGoogleTargeting("nat-loc","national-"+targetNationalLocation);setAdSlotDefinitionSection("home");if(rubiconLoadOnly){rubicontag.cmd.push(function(){rubicontag.setFPI("Section",["National"]);rubicontag.setFPI("nat-scn",["national-"+targetNationalSection]);rubicontag.setFPI("nat-loc",["national-"+targetNationalLocation])})}defineGoogleAdSlot("national_big_banner_760x120");defineGoogleAdSlot("national_half_page_banner_300x600");defineGoogleAdSlot("national_video_module_underMrec_312x250");defineGoogleAdSlot("current_extremes_logo_sponsorship_60x23");defineGoogleAdSlot("takeover_background_1270x1500");
+
+}
+function loadRubiconAdverts() {
+rubicontag.cmd.push(function () {
+rubiconLoadOnly = true;
+loadAdverts();
+//run the Rubicon ads first
+rubicontag.setFPI('domain', "metservice.com");
+rubicontag.run(gptrun);
+});
+}
+function loadGoogleAdverts() {
+googletag.cmd.push(function () {
+rubiconLoadOnly = false;
+loadAdverts();
+for (var i=0; i<gptadslots.length; i++) {
+rubicontag && rubicontag.setTargetingForGPTSlot && rubicontag.setTargetingForGPTSlot(gptadslots[i]);
+};
+//PubLift ad rules testing tag
+var adomik_pagetarget = Math.ceil(Math.random()*100);
+googletag.pubads().setTargeting('publift_mv_testing', adomik_pagetarget>10?'optimized':((adomik_pagetarget%10)==0?'benchmark':'exploration'+(adomik_pagetarget%10)));
+log('rules targeting:' + adomik_pagetarget);
+//now run google ads
+googletag.pubads().enableAsyncRendering();
+googletag.pubads().enableSingleRequest();
+googletag.pubads().collapseEmptyDivs();
+googletag.enableServices();
+});
+}
+
+loadRubiconAdverts();
+loadGoogleAdverts();
+
+setTimeout(gptrun, (adminSettings.fastlaneGoogleAdDelay ? adminSettings.fastlaneGoogleAdDelay : 500));
+</script>
+<!-- Google dfp ENDS -->
+<!--[if lt IE 8]>
+<link href="/_/css/ie7-3.0.510.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!-- Specify social profiles to Google -->
+<script type="application/ld+json">
+{
+"@context" : "http://schema.org",
+"@type" : "Organization",
+"name" : "MetService",
+"url" : "http://www.metservice.com",
+"logo": "http://metservice.com/_/images/logo-horizontal.png",
+"sameAs" : [
+"http://www.facebook.com/metservice/",
+"http://www.twitter.com/metservice",
+"http://www.linkedin.com/company/metservice",
+"http://instagram.com/metservicenz"
+]
+}
+</script>
+<!-- End social profiles -->
+
+</head>
+<body>
+<!-- facebook startup code -->
+<div id="fb-root"></div>
+<!-- takeover wallpaperbackground_1270x1500 -->
+<div id="wallpaper-outer" style="margin: 0 auto; width: 1270px;">
+<div id="wallpaper">
+<script type='text/javascript'>
+insertGoogleAdvert('takeover_background_1270x1500', 'style="width:1270px; height:1500px; overflow:hidden;"');
+</script>
+</div>
+</div>
+<!-- end takeover wallpaperbackground_1270x1500 -->
+
+
+<!-- Get the server month into an SSI variable in their strange way... -->
+<!-- To test this for another month, change it to... set var="servermonth" value="November" (Note that the month must be title case too) -->
+ 
+<noscript>
+<p>This page uses Javascript. Your browser either doesn't support Javascript or you have it turned off.</p>
+<p>To see this page as it is meant to appear please enable Javascript or use a Javascript enabled browser.</p>
+</noscript>
+<!--[if lt IE 7]>
+<p id="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.<a href="#" id="chromeframeclose">X</a></p>
+<![endif]-->
+<header id="header">
+<div class="container">
+<div id="logo"><a href="/"><img src="/_/images/metservice-logo.png" alt="MetService" width="152" height="29" /></a></div>
+<div id="utility" class="utility">
+<ul>
+<li><a href="http://about.metservice.com/">About</a></li>
+<li><a href="http://about.metservice.com/our-company/careers-and-job-opportunities">Careers</a></li>
+<li><a href="http://about.metservice.com/contact">Contact</a></li>
+<li><a href="http://blog.metservice.com">Blog</a></li>
+<li><a href="http://about.metservice.com/news">News</a></li>
+</ul>
+<input type="search" class="aa-search-input" placeholder="Search" autocomplete="off"/><span class="aa-search-icon"></span>
+</div>
+</div>
+</header>
+<div class="liquid">
+<div class="print-hide">
+<div id="header-promos" class="container">
+<div style="padding-bottom: 0px; background-color:white; margin-left:auto; margin-right:auto;">
+<script type='text/javascript'>
+insertTsunamiWarningBanner('style="width:990px;"');
+</script>
+</div>
+<!-- TOWNS/CITIES -->
+
+<script type='text/javascript'>
+insertGoogleAdvert('national_big_banner_760x120', 'class="big-banner"');
+</script>
+
+</div>
+<!-- This is a workaround to stop the SnapitHD player from showing over the drop-down main menu in IE9/8/7/6 -->
+<nav id="primary" onmouseover="if (document.getElementById('snapit_player') && $.browser.msie) document.getElementById('snapit_player').style.display = 'none'; ">
+<div class="container">
+<ul>
+<li class="home"><a href="/">National</a></li>
+<li class="noclick">
+<a class="level1" href="#" aria-haspopup="true">Towns &amp; Cities</a>
+<div id="towns-dropdown" class="dropnav">
+<div class="map">
+<div id="tc-whangarei"><a href="/towns-cities/whangarei">Whangarei<span></span></a></div>
+<div id="tc-auckland"><a href="/towns-cities/auckland/auckland-central">Auckland<span></span></a></div>
+<div id="tc-hamilton"><a href="/towns-cities/hamilton">Hamilton<span></span></a></div>
+<div id="tc-tauranga"><a href="/towns-cities/tauranga">Tauranga<span></span></a></div>
+<div id="tc-napier"><a href="/towns-cities/napier">Napier<span></span></a></div>
+<div id="tc-new-plymouth"><a href="/towns-cities/new-plymouth">New Plymouth<span></span></a></div>
+<div id="tc-palmerston-north"><a href="/towns-cities/palmerston-north">Palmerston North<span></span></a></div>
+<div id="tc-wellington"><a href="/towns-cities/wellington/wellington-city">Wellington<span></span></a></div>
+<div id="tc-nelson"><a href="/towns-cities/nelson">Nelson<span></span></a></div>
+<div id="tc-blenheim"><a href="/towns-cities/blenheim">Blenheim<span></span></a></div>
+<div id="tc-greymouth"><a href="/towns-cities/greymouth">Greymouth<span></span></a></div>
+<div id="tc-christchurch"><a href="/towns-cities/christchurch/christchurch-city">Christchurch<span></span></a></div>
+<div id="tc-dunedin"><a href="/towns-cities/dunedin">Dunedin<span></span></a></div>
+<div id="tc-queenstown"><a href="/towns-cities/queenstown">Queenstown<span></span></a></div>
+<div id="tc-invercargill"><a href="/towns-cities/invercargill">Invercargill<span></span></a></div>
+<div id="tc-chatham-islands"><a href="/towns-cities/chatham-islands">Chatham Islands</a></div>
+<div id="tc-stewart-island"><a href="/towns-cities/stewart-island">Stewart Island</a></div>
+</div>
+<ul class="menu">
+<li class="tab default">
+<a class="menu-tab" href="#" aria-haspopup="true">All towns &amp; cities</a>
+<div class="links">
+<ul class="threecol">
+<li class="header">North Island</li>
+<li><a href="/towns-cities/auckland/auckland-central">Auckland</a></li>
+<li><a href="/towns-cities/masterton">Masterton</a></li>
+<li><a href="/towns-cities/tauranga">Tauranga</a></li>
+<li><a href="/towns-cities/dannevirke">Dannevirke</a></li>
+<li><a href="/towns-cities/napier">Napier</a></li>
+<li><a href="/towns-cities/te-kuiti">Te Kuiti</a></li>
+<li><a href="/towns-cities/dargaville">Dargaville</a></li>
+<li><a href="/towns-cities/new-plymouth">New Plymouth</a></li>
+<li><a href="/towns-cities/thames">Thames</a></li>
+<li><a href="/towns-cities/gisborne">Gisborne</a></li>
+<li><a href="/towns-cities/paihia">Paihia</a></li>
+<li><a href="/towns-cities/tokoroa">Tokoroa</a></li>
+<li><a href="/towns-cities/hamilton">Hamilton</a></li>
+<li><a href="/towns-cities/palmerston-north">Palmerston N.</a></li>
+<li><a href="/towns-cities/wellington/wellington-city">Wellington</a></li>
+<li><a href="/towns-cities/hastings">Hastings</a></li>
+<li><a href="/towns-cities/paraparaumu">Paraparaumu</a></li>
+<li><a href="/towns-cities/whakatane">Whakatane</a></li>
+<li><a href="/towns-cities/kaitaia">Kaitaia</a></li>
+<li><a href="/towns-cities/rotorua">Rotorua</a></li>
+<li><a href="/towns-cities/whanganui">Whanganui</a></li>
+<li><a href="/towns-cities/kerikeri">Kerikeri</a></li>
+<li><a href="/towns-cities/taumarunui">Taumarunui</a></li>
+<li><a href="/towns-cities/whangarei">Whangarei</a></li>
+<li><a href="/towns-cities/levin">Levin</a></li>
+<li><a href="/towns-cities/taupo">Taupo</a></li>
+<li><a href="/towns-cities/whitianga">Whitianga</a></li>
+</ul>
+<ul class="twocol">
+<li class="header">South Island</li>
+<li><a href="/towns-cities/alexandra">Alexandra</a></li>
+<li><a href="/towns-cities/milford-sound">Milford Sound</a></li>
+<li><a href="/towns-cities/ashburton">Ashburton</a></li>
+<li><a href="/towns-cities/motueka">Motueka</a></li>
+<li><a href="/towns-cities/blenheim">Blenheim</a></li>
+<li><a href="/towns-cities/mount-cook">Mount Cook</a></li>
+<li><a href="/towns-cities/christchurch/christchurch-city">Christchurch</a></li>
+<li><a href="/towns-cities/nelson">Nelson</a></li>
+<li><a href="/towns-cities/dunedin">Dunedin</a></li>
+<li><a href="/towns-cities/oamaru">Oamaru</a></li>
+<li><a href="/towns-cities/gore">Gore</a></li>
+<li><a href="/towns-cities/queenstown">Queenstown</a></li>
+<li><a href="/towns-cities/greymouth">Greymouth</a></li>
+<li><a href="/towns-cities/reefton">Reefton</a></li>
+<li><a href="/towns-cities/hokitika">Hokitika</a></li>
+<li><a href="/towns-cities/timaru">Timaru</a></li>
+<li><a href="/towns-cities/invercargill">Invercargill</a></li>
+<li><a href="/towns-cities/wanaka">Wanaka</a></li>
+<li><a href="/towns-cities/kaikoura">Kaikoura</a></li>
+<li><a href="/towns-cities/westport">Westport</a></li>
+</ul>
+</div>
+</li>
+<li class="tab">
+<a class="menu-tab" href="#" aria-haspopup="true">Main cities &amp; sub-regions</a>
+<div class="links">
+<ul class="onecol">
+<li class="header">Auckland</li>
+<li><a href="/towns-cities/auckland/auckland-central">Auckland Central</a></li>
+<li><a href="/towns-cities/auckland/north-shore">North Shore</a></li>
+<li><a href="/towns-cities/auckland/waitakere">Waitakere</a></li>
+<li><a href="/towns-cities/auckland/hunua">Hunua</a></li>
+<li><a href="/towns-cities/auckland/manukau">Manukau</a></li>
+</ul>
+<ul class="onecol">
+<li class="header">Wellington</li>
+<li><a href="/towns-cities/wellington/wellington-city">Wellington City</a></li>
+<!-- <li><a href="/towns-cities/wellington/western-hills">Western Hills</a></li>-->
+<li><a href="/towns-cities/wellington/lyall-bay">Lyall Bay</a></li>
+<li><a href="/towns-cities/wellington/lower-hutt">Lower Hutt</a></li>
+<li><a href="/towns-cities/wellington/upper-hutt">Upper Hutt</a></li>
+<li><a href="/towns-cities/wellington/wainuiomata">Wainuiomata</a></li>
+<li><a href="/towns-cities/wellington/porirua">Porirua</a></li>
+<li><a href="/towns-cities/wellington/kapiti">Kapiti</a></li>
+</ul>
+<ul class="onecol">
+<li class="header">Christchurch</li>
+<li><a href="/towns-cities/christchurch/christchurch-city">Christchurch</a></li>
+<li><a href="/towns-cities/christchurch/eastern-suburbs">Eastern Suburbs</a></li>
+<li><a href="/towns-cities/christchurch/port-hills">Port Hills</a></li>
+<li><a href="/towns-cities/christchurch/banks-peninsula">Banks Peninsula</a></li>
+</ul>
+</div>
+</li>
+</ul>
+<ul class="nav-second">
+<li><a href="/national/short-forecast">New Zealand short forecast</a></li>
+<li><a href="/national/extended-brief-forecast">Extended brief forecast for all New Zealand</a></li>
+<li><a href="/national/situation-statement">Situation statement</a></li>
+</ul>
+</div>
+</li>
+<li class="noclick">
+<a class="level1" href="#" aria-haspopup="true">Rural</a>
+<div id="rural-dropdown" class="dropnav clearfix">
+<div id="rural-map" class="map">
+<div id="rm-northland">
+<a href="/rural/northland">Northland<span></span></a>
+</div>
+<div id="rm-auckland">
+<a href="/rural/auckland">Auckland<span></span></a>
+</div>
+<div id="rm-waikato">
+<a href="/rural/waikato">Waikato<span></span></a>
+</div>
+<div id="rm-coromandel">
+<a href="/rural/coromandel">Coromandel<span></span></a>
+</div>
+<div id="rm-bay-of-plenty">
+<a href="/rural/bay-of-plenty">Bay of Plenty<span></span></a>
+</div>
+<div id="rm-hawkes-bay">
+<a href="/rural/hawkes-bay">Hawke's Bay<span></span></a>
+</div>
+<div id="rm-taranaki">
+<a href="/rural/taranaki">Taranaki<span></span></a>
+</div>
+<div id="rm-manawatu">
+<a href="/rural/manawatu">Manawatu<span></span></a>
+</div>
+<div id="rm-wairarapa">
+<a href="/rural/wairarapa">Wairarapa<span></span></a>
+</div>
+<div id="rm-marlborough">
+<a href="/rural/marlborough">Marlborough<span></span></a>
+</div>
+<div id="rm-nelson">
+<a href="/rural/nelson">Nelson<span></span></a>
+</div>
+<div id="rm-westland">
+<a href="/rural/westland">Westland<span></span></a>
+</div>
+<div id="rm-christchurch">
+<a href="/rural/christchurch">Christchurch<span></span></a>
+</div>
+<div id="rm-canterbury-plains">
+<a href="/rural/canterbury-plains">Canterbury Plains<span></span></a>
+</div>
+
+<!-- <div id="rm-canterbury-high-country">-->
+<!-- <a href="/rural/canterbury-high-country">Canterbury High Country<span></span></a>-->
+<!-- </div>-->
+<div id="rm-southern-lakes">
+<a href="/rural/southern-lakes">Southern<br>Lakes<span></span></a>
+</div>
+
+<div id="rm-central-otago">
+<a href="/rural/central-otago">Central Otago<span></span></a>
+</div>
+<div id="rm-clutha">
+<a href="/rural/clutha">Clutha<span></span></a>
+</div>
+<div id="rm-southland">
+<a href="/rural/southland">Southland<span></span></a>
+</div>
+</div>
+<div class="links clearfix">
+<ul class="twocol">
+<li class="header">North Island weather</li>
+<li><a href="/rural/northland">Northland</a></li>
+<li><a href="/rural/taumarunui">Taumarunui</a></li>
+<li><a href="/rural/auckland">Auckland</a></li>
+<li><a href="/rural/taihape">Taihape</a></li>
+<li><a href="/rural/coromandel">Coromandel</a></li>
+<li><a href="/rural/whanganui">Whanganui</a></li>
+<li><a href="/rural/waikato">Waikato</a></li>
+<li><a href="/rural/manawatu">Manawatu</a></li>
+<li><a href="/rural/waitomo">Waitomo</a></li>
+<li><a href="/rural/kapiti-horowhenua">Kapiti-Horowhenua</a></li>
+<li><a href="/rural/rotorua">Rotorua</a></li>
+<li><a href="/rural/wairarapa">Wairarapa</a></li>
+<li><a href="/rural/bay-of-plenty">Bay of Plenty</a></li>
+<li><a href="/rural/wellington">Wellington</a></li>
+<li><a href="/rural/taupo">Taupo</a></li>
+<li>&nbsp;</li>
+<li><a href="/rural/gisborne">Gisborne</a></li>
+<li>&nbsp;</li>
+<li><a href="/rural/hawkes-bay">Hawke's Bay</a></li>
+<li>&nbsp;</li>
+<li><a href="/rural/taranaki">Taranaki</a></li>
+</ul>
+<ul class="onecol">
+<li class="header">South Island weather</li>
+<li><a href="/rural/marlborough">Marlborough</a></li>
+<li><a href="/rural/nelson">Nelson</a></li>
+<li><a href="/rural/buller">Buller</a></li>
+<li><a href="/rural/westland">Westland</a></li>
+<li><a href="/rural/canterbury-plains">Canterbury Plains</a></li>
+
+<li><a href="/rural/canterbury-high-country">Canterbury High Country</a></li>
+
+<li><a href="/rural/christchurch">Christchurch</a></li>
+<li><a href="/rural/north-otago">North Otago</a></li>
+<li><a href="/rural/central-otago">Central Otago</a></li>
+
+<li><a href="/rural/southern-lakes">Southern Lakes</a></li>
+
+<li><a href="/rural/dunedin">Dunedin</a></li>
+<li><a href="/rural/clutha">Clutha</a></li>
+<li><a href="/rural/southland">Southland</a></li>
+</ul>
+</div>
+<ul class="nav-second">
+<li><a href="/rural/rural-news">Rural news</a></li>
+<li><a href="/rural/monthly-outlook">Rural monthly outlook</a></li>
+<li><a href="http://about.metservice.com/our-company/ways-to-get-the-weather/weather-email-lists/">Rural outlook email</a></li>
+</ul>
+</div>
+
+</li>
+<li class="noclick">
+<a class="level1" href="#" aria-haspopup="true">Marine &amp; Surf</a>
+<div id="marine-dropdown" class="dropnav">
+<div id="coastal-map" class="map">
+<div class="overlay">
+<div id="cm-brett"><a href="/marine-surf/coastal/brett">Brett</a></div>
+<div id="cm-kaipara"><a href="/marine-surf/coastal/kaipara">Kaipara</a></div>
+<div id="cm-colville"><a href="/marine-surf/coastal/colville">Colville</a></div>
+<div id="cm-plenty"><a href="/marine-surf/coastal/plenty">Plenty</a></div>
+<div id="cm-raglan"><a href="/marine-surf/coastal/raglan">Raglan</a></div>
+<div id="cm-portland"><a href="/marine-surf/coastal/portland">Portland</a></div>
+<div id="cm-stephens"><a href="/marine-surf/coastal/stephens">Stephens</a></div>
+<div id="cm-castlepoint"><a href="/marine-surf/coastal/castlepoint">Castlepoint</a></div>
+<div id="cm-cook"><a href="/marine-surf/coastal/cook">Cook</a></div>
+<div id="cm-abel"><a href="/marine-surf/coastal/abel">Abel</a></div>
+<div id="cm-conway"><a href="/marine-surf/coastal/conway">Conway</a></div>
+<div id="cm-grey"><a href="/marine-surf/coastal/grey">Grey</a></div>
+<div id="cm-rangitata"><a href="/marine-surf/coastal/rangitata">Rangitata</a></div>
+<div id="cm-milford"><a href="/marine-surf/coastal/milford">Milford</a></div>
+<div id="cm-chalmers"><a href="/marine-surf/coastal/chalmers">Chalmers</a></div>
+<div id="cm-foveaux"><a href="/marine-surf/coastal/foveaux">Foveaux</a></div>
+<div id="cm-puysegur"><a href="/marine-surf/coastal/puysegur">Puysegur</a></div>
+<div id="cm-chatham-islands"><a href="/marine-surf/coastal/chatham-islands">Chatham Islands</a></div>
+</div>
+</div>
+<ul class="menu">
+<li class="tab default">
+<a class="menu-tab" href="#" aria-haspopup="true">Coastal</a>
+<div class="links">
+<ul class="twocol">
+<li><a href="/marine-surf/coastal/plenty">Plenty</a></li>
+<li><a href="/marine-surf/coastal/abel">Abel</a></li>
+<li><a href="/marine-surf/coastal/colville">Colville</a></li>
+<li><a href="/marine-surf/coastal/grey">Grey</a></li>
+<li><a href="/marine-surf/coastal/brett">Brett</a></li>
+<li><a href="/marine-surf/coastal/milford">Milford</a></li>
+<li><a href="/marine-surf/coastal/kaipara">Kaipara</a></li>
+<li><a href="/marine-surf/coastal/puysegur">Puysegur</a></li>
+<li><a href="/marine-surf/coastal/raglan">Raglan</a></li>
+<li><a href="/marine-surf/coastal/foveaux">Foveaux</a></li>
+<li><a href="/marine-surf/coastal/stephens">Stephens</a></li>
+<li><a href="/marine-surf/coastal/chalmers">Chalmers</a></li>
+<li><a href="/marine-surf/coastal/cook">Cook</a></li>
+<li><a href="/marine-surf/coastal/rangitata">Rangitata</a></li>
+<li><a href="/marine-surf/coastal/castlepoint">Castlepoint</a></li>
+<li><a href="/marine-surf/coastal/conway">Conway</a></li>
+<li><a href="/marine-surf/coastal/portland">Portland</a></li>
+<li><a href="/marine-surf/coastal/chatham-islands">Chatham Islands</a></li>
+</ul>
+</div>
+</li>
+<li class="tab">
+<a class="menu-tab" href="#" aria-haspopup="true">Recreational</a>
+<div class="links">
+<ul class="recreational threecol">
+<li><a href="/marine-surf/recreational-marine/bay-of-islands">Bay of Islands</a>
+<li><a href="/marine-surf/recreational-marine/auckland">Auckland</a>
+<li><a href="/marine-surf/recreational-marine/coromandel">Coromandel</a>
+<li><a href="/marine-surf/recreational-marine/bay-of-plenty">Bay of Plenty</a>
+<li><a href="/marine-surf/recreational-marine/lake-rotorua">Lake Rotorua</a>
+<li><a href="/marine-surf/recreational-marine/lake-taupo">Lake Taupo</a>
+<li><a href="/marine-surf/recreational-marine/hawke-bay">Hawke Bay</a>
+<li><a href="/marine-surf/recreational-marine/kapiti">Kapiti</a>
+<li><a href="/marine-surf/recreational-marine/mana">Mana</a>
+<li><a href="/marine-surf/recreational-marine/wellington">Wellington</a>
+<li><a href="/marine-surf/recreational-marine/christchurch">Christchurch</a>
+</ul>
+</div>
+</li>
+<li class="tab">
+<a class="menu-tab" href="#" aria-haspopup="true">Surf &amp; Beach</a>
+<div id="surf-dropdown" class="links">
+<form action="#" method="post" class="surf-finder">
+<input type="text" placeholder="Find a Surf or Beach spot" value="" class="strname" />
+<input type="submit" value="Go" class="submit" />
+</form>
+<ul class="fourcol">
+<li class="header">North Island</li>
+<li><a href="/marine-surf/surf/region-northland">Northland</a></li>
+<li><a href="/marine-surf/surf/region-gisborne-east-cape-mahia">Gisborne &amp; Mahia</a></li>
+<li><a href="/marine-surf/surf/region-piha-muriwai">Piha &amp; Muriwai</a></li>
+<li><a href="/marine-surf/surf/region-napier-wairarapa">Napier &amp; Wairarapa</a></li>
+<li><a href="/marine-surf/surf/region-auckland-east-coast">Auckland East Coast</a></li>
+<li><a href="/marine-surf/surf/region-wellington">Wellington</a></li>
+<li><a href="/marine-surf/surf/region-coromandel-peninsula">Coromandel Peninsula</a></li>
+<li><a href="/marine-surf/surf/region-bay-of-plenty">Bay of Plenty</a></li>
+<li><a href="/marine-surf/surf/region-raglan">Raglan</a></li>
+<li><a href="/marine-surf/surf/region-taranaki">Taranaki</a></li>
+</ul>
+<ul class="onecol">
+<li class="header">South Island</li>
+<li><a href="/marine-surf/surf/region-christchurch-kaikoura">Christchurch &amp; Kaikoura</a></li>
+<li><a href="/marine-surf/surf/region-west-coast-north">West Coast North</a></li>
+<li><a href="/marine-surf/surf/region-dunedin">Dunedin</a></li>
+</ul>
+</div>
+</li>
+<li class="tab">
+<a class="menu-tab" href="#" aria-haspopup="true">Boating</a>
+<div id="boating-dropdown" class="links">
+<form action="#" method="post" class="surf-finder">
+<input type="text" placeholder="Find a Boating location" value="" class="strname" />
+<input type="submit" value="Go" class="submit" />
+</form>
+<ul class="threecol">
+<li class="header">North Island</li>
+<li><a href="/marine-surf/boating/region-northland">Northland</a></li>
+<li><a href="/marine-surf/boating/region-napier-wairarapa">Napier &amp; Wairarapa</a></li>
+<li><a href="/marine-surf/boating/region-piha-muriwai">Piha &amp; Muriwai</a></li>
+<li><a href="/marine-surf/boating/region-wellington">Wellington</a></li>
+<li><a href="/marine-surf/boating/region-auckland-east-coast">Auckland East Coast</a></li>
+<li><a href="/marine-surf/boating/region-coromandel-peninsula">Coromandel Peninsula</a></li>
+<li><a href="/marine-surf/boating/region-bay-of-plenty">Bay of Plenty</a></li>
+<li><a href="/marine-surf/boating/region-raglan">Raglan</a></li>
+<li><a href="/marine-surf/boating/region-taranaki">Taranaki</a></li>
+<li><a href="/marine-surf/boating/region-gisborne-east-cape-mahia">Gisborne &amp; Mahia</a></li>
+</ul>
+<ul class="twocol">
+<li class="header">South Island</li>
+<li><a href="/marine-surf/boating/region-nelson">Nelson</a></li>
+<li><a href="/marine-surf/boating/region-christchurch-kaikoura">Christchurch &amp; Kaikoura</a></li>
+<li><a href="/marine-surf/boating/region-west-coast-north">West Coast North</a></li>
+<li><a href="/marine-surf/boating/region-dunedin">Dunedin</a></li>
+<li><a href="/marine-surf/boating/region-southland">Southland</a></li>
+</ul>
+</div>
+</li>
+<li class="tab">
+<a class="menu-tab" href="#" aria-haspopup="true">Tides</a>
+<div id="tides-dropdown" class="links">
+<form action="#" method="post" class="surf-finder">
+<input type="text" placeholder="Find a Tide location" value="" class="strname" />
+<input type="submit" value="Go" class="submit" />
+</form>
+<ul class="threecol">
+<li class="header">North Island</li>
+<li><a href="/marine-surf/tides/region-northland">Northland</a></li>
+<li><a href="/marine-surf/tides/region-napier-wairarapa">Napier &amp; Wairarapa</a></li>
+<li><a href="/marine-surf/tides/region-piha-muriwai">Piha &amp; Muriwai</a></li>
+<li><a href="/marine-surf/tides/region-wellington">Wellington</a></li>
+<li><a href="/marine-surf/tides/region-auckland-east-coast">Auckland East Coast</a></li>
+<li><a href="/marine-surf/tides/region-coromandel-peninsula">Coromandel Peninsula</a></li>
+<li><a href="/marine-surf/tides/region-bay-of-plenty">Bay of Plenty</a></li>
+<li><a href="/marine-surf/tides/region-raglan">Raglan</a></li>
+<li><a href="/marine-surf/tides/region-taranaki">Taranaki</a></li>
+<li><a href="/marine-surf/tides/region-gisborne-east-cape-mahia">Gisborne &amp; Mahia</a></li>
+</ul>
+<ul class="twocol">
+<li class="header">South Island</li>
+<li><a href="/marine-surf/tides/region-nelson">Nelson</a></li>
+<li><a href="/marine-surf/tides/region-christchurch-kaikoura">Christchurch &amp; Kaikoura</a></li>
+<li><a href="/marine-surf/tides/region-west-coast-north">West Coast North</a></li>
+<li><a href="/marine-surf/tides/region-dunedin">Dunedin</a></li>
+<li><a href="/marine-surf/tides/region-southland">Southland</a></li>
+</ul>
+</div>
+</li>
+</ul>
+<ul class="nav-second">
+<li><a href="/marine-surf/radio/zklf-radiofax-schedule">Radio</a></li>
+<li><a href="/maps-radar/marine-forecast-maps/significant-wave-height">Marine forecast maps</a></li>
+<li><a href="/marine-surf/high-seas/pacific">High Seas</a></li>
+</ul>
+</div>
+
+</li>
+<li class="noclick isMountainsAndParks">
+<a class="level1" href="#" aria-haspopup="true">Mountains &amp; Parks</a>
+<div id="mountains-dropdown" class="dropnav">
+<div id="ski-map" class="map">
+<a href="/skifields/whakapapa" id="sm-whakapapa">Whakapapa</a>
+<a href="/skifields/hanmer-springs" id="sm-hanmer-springs">Hanmer Springs</a>
+<a href="/skifields/broken-river" id="sm-broken-river">Broken River</a>
+<a href="/skifields/mt-hutt" id="sm-mt-hutt">Mt Hutt</a>
+<a href="/skifields/turoa" id="sm-turoa">Turoa</a>
+<a href="/skifields/mt-lyford" id="sm-mt-lyford">Mt Lyford</a>
+<a href="/skifields/mt-olympus" id="sm-mt-olympus">Mt Olympus</a>
+<a href="/skifields/snow-farm" id="sm-snow-farm">Snow Farm</a>
+<a href="/skifields/manganui" id="sm-manganui">Manganui</a>
+<a href="/skifields/temple-basin" id="sm-temple-basin">Temple Basin</a>
+<a href="/skifields/craigieburn" id="sm-craigieburn">Craigieburn</a>
+<a href="/skifields/ohau" id="sm-ohau">Ohau</a>
+<a href="/skifields/coronet-peak" id="sm-coronet-peak">Coronet Peak</a>
+<a href="/skifields/tukino" id="sm-tukino">Tukino</a>
+<a href="/skifields/porters" id="sm-porters">Porters</a>
+<a href="/skifields/fox-peak" id="sm-fox-peak">Fox Peak</a>
+<a href="/skifields/treble-cone" id="sm-treble-cone">Treble Cone</a>
+<a href="/skifields/the-remarkables" id="sm-the-remarkables">The Remarkables</a>
+<a href="/skifields/rainbow" id="sm-rainbow">Rainbow</a>
+<a href="/skifields/mt-cheeseman" id="sm-mt-cheeseman">Mt Cheeseman</a>
+<a href="/skifields/mt-dobson" id="sm-mt-dobson">Mt Dobson</a>
+<a href="/skifields/roundhill" id="sm-roundhill">Roundhill</a>
+<a href="/skifields/cardrona" id="sm-cardrona">Cardrona</a>
+<div id="ski-overlay"></div>
+</div>
+<ul class="menu">
+<li class="tab default">
+<a class="menu-tab" href="#" aria-haspopup="true">National Parks</a>
+<div class="links">
+<ul class="threecol wide">
+<li><a href="/mountain/te-urewera">Te Urewera</a></li>
+<li><a href="/mountain/kahurangi-national-park">Kahurangi National Park</a></li>
+<li><a href="/mountain/aoraki-mount-cook-national-park">Aoraki/Mt Cook National Park</a></li>
+<li><a href="/mountain/egmont-national-park">Egmont National Park</a></li>
+<li><a href="/mountain/nelson-lakes-national-park">Nelson Lakes National Park</a></li>
+<li><a href="/mountain/mt-aspiring-national-park">Mt Aspiring National Park</a></li>
+<li><a href="/mountain/tongariro-national-park">Tongariro National Park</a></li>
+<li><a href="/mountain/arthurs-pass-national-park">Arthur&#8217;s Pass National Park</a></li>
+<li><a href="/mountain/southern-lakes">Southern Lakes</a></li>
+<li><a href="/mountain/tararua-forest-park">Tararua Forest Park</a></li>
+<li><a href="/mountain/canterbury-high-country">Canterbury High Country</a></li>
+<li><a href="/mountain/fiordland-national-park">Fiordland National Park</a></li>
+</ul>
+</div>
+</li>
+<li class="tab">
+<a class="menu-tab" href="/skifields/index" aria-haspopup="true">Ski Fields</a>
+<div class="links">
+<ul class="threecol narrow">
+<li><a href="/skifields/whakapapa">Whakapapa</a></li>
+<li><a href="/skifields/porters">Porters</a></li>
+<li><a href="/skifields/roundhill">Roundhill</a></li>
+<li><a href="/skifields/turoa">Turoa</a></li>
+<li><a href="/skifields/mt-cheeseman">Mt Cheeseman</a></li>
+<li><a href="/skifields/ohau">Ohau</a></li>
+<li><a href="/skifields/tukino">Tukino</a></li>
+<li><a href="/skifields/broken-river">Broken River</a></li>
+<li><a href="/skifields/treble-cone">Treble Cone</a></li>
+<li><a href="/skifields/manganui">Manganui</a></li>
+<li><a href="/skifields/mt-olympus">Mt Olympus</a></li>
+<li><a href="/skifields/cardrona">Cardrona</a></li>
+<li><a href="/skifields/rainbow">Rainbow</a></li>
+<li><a href="/skifields/craigieburn">Craigieburn</a></li>
+<li><a href="/skifields/snow-farm">Snow Farm</a></li>
+<li><a href="/skifields/mt-lyford">Mt Lyford</a></li>
+<li><a href="/skifields/fox-peak">Fox Peak</a></li>
+<li><a href="/skifields/coronet-peak">Coronet Peak</a></li>
+<li><a href="/skifields/hanmer-springs">Hanmer Springs</a></li>
+<li><a href="/skifields/mt-dobson">Mt Dobson</a></li>
+<li><a href="/skifields/the-remarkables">The Remarkables</a></li>
+<li><a href="/skifields/temple-basin">Temple Basin</a></li>
+<li><a href="/skifields/mt-hutt">Mt Hutt</a></li>
+</ul>
+</div>
+</li>
+</ul>
+<ul class="nav-second">
+<li><a href="/mountain/brief-mountain-forecast">Brief mountain forecast</a></li>
+<li><a href="/mountain/extended-mountain-forecast">Extended mountain forecast</a></li>
+</ul>
+</div>
+</li>
+<li class="noclick">
+<a class="level1" href="#" aria-haspopup="true">Maps &amp; Radars</a>
+<div id="maps-radar-dropdown" class="dropnav">
+<div class="tiles clearfix">
+<ul>
+<li id="cumulative-rainfall-menu-tile" class="cumulative-rain section-cumulative-rain">
+<a href="/maps-radar/local-observations/cumulative-rainfall-24-hours" id="nav_tile7" style="overflow: hidden;">
+<span class="title">Cumulative rainfall</span>
+</a>
+</li>
+<li class="rain-radar section-rain-radar">
+<a href="/maps-radar/rain-radar/all-new-zealand" id="nav_tile1" style="overflow: hidden;">
+<span class="title">Rain radar</span>
+</a>
+</li>
+<li class="rain-3 section-rain-forecast">
+<a href="/maps-radar/rain-forecast/rain-forecast-3-day" id="nav_tile2" style="overflow: hidden;">
+<span class="title">3 day rain forecast</span>
+</a>
+</li>
+<li class="rain-7 section-rain-forecast">
+<a href="/maps-radar/rain-forecast/rain-forecast-5-day" id="nav_tile3" style="overflow: hidden;">
+<span class="title">5 day rain forecast</span>
+</a>
+</li>
+<li class="your-weather section-your-weather">
+<a href="/maps-radar/local-observations/your-weather" id="nav_tile0" style="overflow: hidden;">
+<span class="title">Your weather</span><span class="link"></span>
+</a>
+</li>
+<li class="isobar section-maps">
+<a href="/maps-radar/maps/tasman-sea-nz" id="nav_tile4" style="overflow: hidden;">
+<span class="title">Surface pressure</span>
+</a>
+</li>
+<li class="satellite section-satellite">
+<a href="/maps-radar/satellite/tasman-sea-nz-infrared" id="nav_tile5" style="overflow: hidden;">
+<span class="title">Satellite imagery</span>
+</a>
+</li>
+<li class="marine section-wxtiles">
+<a href="/maps-radar/marine-forecast-maps/sea-surface-temperature" id="nav_tile6">
+<span class="title">Marine forecast</span><span class="link"></span>
+</a>
+</li>
+</ul>
+</div>
+<ul class="nav-second">
+<li><a href="/maps-radar/coded-data/surface-data">Coded data</a></li>
+<li><a href="/maps-radar/local-observations/local-3-hourly-observations">NZ observations</a></li>
+<li><a href="/maps-radar/wis-search/search">WIS search</a></li>
+</ul>
+</div>
+</li>
+<li>
+<a class="level1" href="/tv/" aria-haspopup="true">Video</a>
+<div id="tv-dropdown" class="dropnav">
+<div class="tiles clearfix">
+<ul>
+<li class="national">
+<a href="/tv/index#national">
+<span class="title">National forecast</span><span class="link"></span>
+</a>
+</li>
+<li class="auckland">
+<a href="/tv/index#auckland">
+<span class="title">Auckland</span><span class="link"></span>
+</a>
+</li>
+<li class="wellington">
+<a href="/tv/index#wellington">
+<span class="title">Wellington</span><span class="link"></span>
+</a>
+</li>
+<li class="christchurch">
+<a href="/tv/index#christchurch">
+<span class="title">Christchurch</span><span class="link"></span>
+</a>
+</li>
+<li class="rural">
+<a href="/tv/index#rural">
+<span class="title">Rural</span><span class="link"></span>
+</a>
+</li>
+</ul>
+</div>
+<ul class="nav-second">
+<li><a href="/tv/index#pacific">Pacific</a></li>
+<li><a href="/tv/index#australia">Australia</a></li>
+<li><a class="all" href="/tv/index">Display all</a></li>
+</ul>
+</div>
+</li>
+<li>
+ <li id="australia-nav">
+<a class="level1" href="javascript:void(0);">Australia</a>
+<div id="australia-dropdown" class="dropnav">
+<div class="australia-nav__menu">
+<div>
+<h3>NSW / ACT</h3>
+<ul>
+<li><a href="http://australia.metservice.com/towns-cities/nsw/albury">Albury</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/nsw/ballina">Ballina</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/nsw/byron-bay">Byron Bay</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/act/canberra"><strong>Canberra</strong></a></li>
+<li><a href="http://australia.metservice.com/towns-cities/nsw/coffs-harbour">Coffs Harbour</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/nsw/newcastle">Newcastle</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/nsw/port-macquarie">Pt. Macquarie</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/nsw/sydney"><strong>Sydney</strong></a></li>
+<li><a href="http://australia.metservice.com/towns-cities/nsw/tamworth">Tamworth</a></li>
+</ul>
+<h3>N. Territory</h3>
+<ul>
+<li><a href="http://australia.metservice.com/towns-cities/nt/alice-springs">Alice Springs</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/nt/ayers-rock">Ayers Rock</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/nt/darwin"><strong>Darwin</strong></a></li>
+</ul>
+</div>
+<div>
+<h3>Queensland</h3>
+<ul>
+<li><a href="http://australia.metservice.com/towns-cities/qld/brisbane"><strong>Brisbane</strong></a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/bundaberg">Bundaberg</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/cairns">Cairns</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/cloncurry">Cloncurry</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/emerald">Emerald</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/gladstone">Gladstone</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/gold-coast-seaway">Gold Coast</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/hamilton-island">Hamilton Isl.</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/hervey-bay">Hervey Bay</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/mackay">Mackay</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/moranbah">Moranbah</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/mount-isa">Mt. Isa</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/proserpine">Proserpine</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/rockhampton">Rockhampton</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/sunshine-coast-mc">Sunshine Coast</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/qld/townsville">Townsville</a></li>
+</ul>
+</div>
+<div>
+<h3>S. Australia</h3>
+<ul>
+<li><a href="http://australia.metservice.com/towns-cities/sa/adelaide"><strong>Adelaide</strong></a></li>
+</ul>
+<h3>Tasmania</h3>
+<ul>
+<li><a href="http://australia.metservice.com/towns-cities/tas/hobart"><strong>Hobart</strong></a></li>
+<li><a href="http://australia.metservice.com/towns-cities/tas/launceston">Launceston</a></li>
+</ul>
+<h3>Victoria</h3>
+<ul>
+<li><a href="http://australia.metservice.com/towns-cities/vic/melbourne"><strong>Melbourne</strong></a></li>
+<li><a href="http://australia.metservice.com/towns-cities/vic/mildura">Mildura</a></li>
+</ul>
+</div>
+<div>
+<h3>W. Australia</h3>
+<ul>
+<li><a href="http://australia.metservice.com/towns-cities/wa/albany">Albany</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/broome">Broome</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/busselton">Busselton</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/christmas-island">Christmas Isl.</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/cocos-island">Cocos Isl.</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/derby">Derby</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/esperance">Esperance</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/geraldton">Geraldton</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/kalgoorlie">Kalgoorlie</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/karratha">Karratha</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/kununurra">Kununurra</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/newman">Newman</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/paraburdoo">Paraburdoo</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/perth"><strong>Perth</strong></a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/port-hedland">Pt. Hedland</a></li>
+<li><a href="http://australia.metservice.com/towns-cities/wa/ravensthorpe">Ravensthorpe</a></li>
+</ul>
+</div>
+</div>
+<div class="australia-nav__sponsors">
+</div>
+<div class="map-australia">
+<a href="http://australia.metservice.com/towns-cities/sa/adelaide" id="map-australia__adelaide" title="Adelaide" class="map-australia__location clearfix">
+<div class="map-australia__info">
+<span></span><div class="map-australia__title">Adelaide</div>
+</div>
+</a>
+<a href="http://australia.metservice.com/towns-cities/qld/brisbane" id="map-australia__brisbane" title="Brisbane" class="map-australia__location clearfix">
+<div class="map-australia__info">
+<span></span><div class="map-australia__title">Brisbane</div>
+</div>
+</a>
+<a href="http://australia.metservice.com/towns-cities/act/canberra" id="map-australia__canberra" title="Canberra" class="map-australia__location clearfix">
+<div class="map-australia__info">
+<span></span><div class="map-australia__title">Canberra</div>
+</div>
+</a>
+<a href="http://australia.metservice.com/towns-cities/nt/darwin" id="map-australia__darwin" title="Darwin" class="map-australia__location clearfix">
+<div class="map-australia__info">
+<span></span><div class="map-australia__title">Darwin</div>
+</div>
+</a>
+<a href="http://australia.metservice.com/towns-cities/tas/hobart" id="map-australia__hobart" title="Hobart" class="map-australia__location clearfix">
+<div class="map-australia__info">
+<span></span><div class="map-australia__title">Hobart</div>
+</div>
+</a>
+<a href="http://australia.metservice.com/towns-cities/vic/melbourne" id="map-australia__melbourne" title="Melbourne" class="map-australia__location clearfix">
+<div class="map-australia__info">
+<span></span><div class="map-australia__title">Melbourne</div>
+</div>
+</a>
+<a href="http://australia.metservice.com/towns-cities/wa/perth" id="map-australia__perth" title="Perth" class="map-australia__location clearfix">
+<div class="map-australia__info">
+<span></span><div class="map-australia__title">Perth</div>
+</div>
+</a>
+<a href="http://australia.metservice.com/towns-cities/nsw/sydney" id="map-australia__sydney" title="Sydney" class="map-australia__location clearfix">
+<div class="map-australia__info">
+<span></span><div class="map-australia__title">Sydney</div>
+</div>
+</a>
+<a href="http://australia.metservice.com/towns-cities/qld/townsville" id="map-australia__townsville" title="Townsville" class="map-australia__location clearfix">
+<div class="map-australia__info">
+<span></span><div class="map-australia__title">Townsville</div>
+</div>
+</a>
+<a href="http://australia.metservice.com/towns-cities/nt/alice-springs" id="map-australia__alice-springs" title="Alice Springs" class="map-australia__location clearfix">
+<div class="map-australia__info">
+<span></span><div class="map-australia__title">Alice Springs</div>
+</div>
+</a>
+<a href="http://australia.metservice.com/towns-cities/nt/ayers-rock" id="map-australia__ayers-rock" title="Ayers Rock" class="map-australia__location clearfix">
+<div class="map-australia__info">
+<span></span><div class="map-australia__title">Ayers Rock</div>
+</div>
+</a>
+<a href="http://australia.metservice.com/towns-cities/wa/broome" id="map-australia__broome" title="Broome" class="map-australia__location clearfix">
+<div class="map-australia__info">
+<span></span><div class="map-australia__title">Broome</div>
+</div>
+</a>
+</div>
+</div>
+
+</li>
+</ul>
+<div class="abLogo"></div>
+</div>
+</nav>
+
+<div id="swx-warnings">
+
+<div id="swx-warnings-latest-info-wrapper">
+<div id="swx-warnings-latest-info" style="display:none">
+</div>
+</div>
+<div class="container warnings-with-update">
+<a id="swx-all" href="/warnings/home" class="right">View all severe weather information</a>
+<div id="swx-text" class="reset left"></div>
+</div>
+
+</div>
+
+</div>
+</div><!-- .liquid -->
+
+<section id="weather-news-section" class="summary">
+<div id="weather-news-ticker">
+<div id="weather-news-title">Weather News</div>
+</div>
+</section>
+<section class="summary home-map" style="height: 420px; overflow: hidden;">
+<div class="container">
+<div id="left" class="grid_8">
+<h1 style="position: absolute; top: -2000px;">New Zealand Weather Forecasts by city and region – MetService.com</h1>
+<div id="national-map" class="map">
+<div id="hm-whangarei" class="icon"><a href="/towns-cities/whangarei">Whangarei<span></span></a></div>
+<div id="hm-auckland" class="icon"><a href="/towns-cities/auckland/auckland-central">Auckland<span></span></a></div>
+<div id="hm-hamilton" class="icon"><a href="/towns-cities/hamilton">Hamilton<span></span></a></div>
+<div id="hm-tauranga" class="icon"><a href="/towns-cities/tauranga">Tauranga<span></span></a></div>
+<div id="hm-napier" class="icon"><a href="/towns-cities/napier">Napier<span></span></a></div>
+<div id="hm-new-plymouth" class="icon"><a href="/towns-cities/new-plymouth">New Plymouth<span></span></a></div>
+<div id="hm-palmerston-north" class="icon"><a href="/towns-cities/palmerston-north">Palmerston North<span></span></a></div>
+<div id="hm-wellington" class="icon"><a href="/towns-cities/wellington/wellington-city">Wellington<span></span></a></div>
+<div id="hm-nelson" class="icon"><a href="/towns-cities/nelson">Nelson<span></span></a></div>
+<div id="hm-greymouth" class="icon"><a href="/towns-cities/greymouth">Greymouth<span></span></a></div>
+<div id="hm-blenheim" class="icon"><a href="/towns-cities/blenheim">Blenheim<span></span></a></div>
+<div id="hm-christchurch" class="icon"><a href="/towns-cities/christchurch/christchurch-city">Christchurch<span></span></a></div>
+<div id="hm-dunedin" class="icon"><a href="/towns-cities/dunedin">Dunedin<span></span></a></div>
+<div id="hm-queenstown" class="icon"><a href="/towns-cities/queenstown">Queenstown<span></span></a></div>
+<div id="hm-invercargill" class="icon"><a href="/towns-cities/invercargill">Invercargill<span></span></a></div>
+<div id="hm-masterton"><a href="/towns-cities/masterton">Masterton</a></div>
+<div id="hm-te-kuiti"><a href="/towns-cities/te-kuiti">Te Kuiti</a></div>
+<div id="hm-dannevirke"><a href="/towns-cities/dannevirke">Dannevirke</a></div>
+<div id="hm-thames"><a href="/towns-cities/thames">Thames</a></div>
+<div id="hm-dargaville"><a href="/towns-cities/dargaville">Dargaville</a></div>
+<div id="hm-tokoroa"><a href="/towns-cities/tokoroa">Tokoroa</a></div>
+<div id="hm-gisborne"><a href="/towns-cities/gisborne">Gisborne</a></div>
+<div id="hm-hastings"><a href="/towns-cities/hastings">Hastings</a></div>
+<div id="hm-wanganui"><a href="/towns-cities/whanganui">Whanganui</a></div>
+<div id="hm-paraparaumu"><a href="/towns-cities/paraparaumu">Paraparaumu</a></div>
+<div id="hm-rotorua"><a href="/towns-cities/rotorua">Rotorua</a></div>
+<div id="hm-whakatane"><a href="/towns-cities/whakatane">Whakatane</a></div>
+<div id="hm-kaitaia"><a href="/towns-cities/kaitaia">Kaitaia</a></div>
+<div id="hm-taumarunui"><a href="/towns-cities/taumarunui">Taumarunui</a></div>
+<div id="hm-kerikeri"><a href="/towns-cities/kerikeri">Kerikeri</a></div>
+<div id="hm-paihia"><a href="/towns-cities/paihia">Paihia</a></div>
+<div id="hm-taupo"><a href="/towns-cities/taupo">Taupo</a></div>
+<div id="hm-whitianga"><a href="/towns-cities/whitianga">Whitianga</a></div>
+<div id="hm-levin"><a href="/towns-cities/levin">Levin</a></div>
+<div id="hm-alexandra"><a href="/towns-cities/alexandra">Alexandra</a></div>
+<div id="hm-kaikoura"><a href="/towns-cities/kaikoura">Kaikoura</a></div>
+<div id="hm-ashburton"><a href="/towns-cities/ashburton">Ashburton</a></div>
+<div id="hm-motueka"><a href="/towns-cities/motueka">Motueka</a></div>
+<div id="hm-oamaru"><a href="/towns-cities/oamaru">Oamaru</a></div>
+<div id="hm-gore"><a href="/towns-cities/gore">Gore</a></div>
+<div id="hm-reefton"><a href="/towns-cities/reefton">Reefton</a></div>
+<div id="hm-timaru"><a href="/towns-cities/timaru">Timaru</a></div>
+<div id="hm-hokitika"><a href="/towns-cities/hokitika">Hokitika</a></div>
+<div id="hm-wanaka"><a href="/towns-cities/wanaka">Wanaka</a></div>
+<div id="hm-westport"><a href="/towns-cities/westport">Westport</a></div>
+<div id="hm-milford-sound"><a href="/towns-cities/milford-sound">Milford Sound</a></div>
+<div id="hm-mt-cook"><a href="/towns-cities/mount-cook">Mount Cook</a></div>
+<div id="hm-chatham-islands"><a href="/towns-cities/chatham-islands">Chatham Islands</a></div>
+<div id="hm-stewart-island"><a href="/towns-cities/stewart-island">Stewart Island</a></div>
+<!-- insert divs here a national map campaign look at the old displaySharkOver and restoreSharkSlot calls -->
+
+
+<!--<div id="airnz1-1" class="miscAd"><a href="https://ad.doubleclick.net/ddm/clk/316589462;144878833;z" target="_blank"><img src="/special/air-new-zealand-jan-2017/standard-air-nz-spot.png"></a></div>-->
+<!--<div id="airnz1-2" class="miscAd"><a href="https://ad.doubleclick.net/ddm/clk/316587985;144878833;h" target="_blank"><img src="/special/air-new-zealand-jan-2017/air-nz-logo.svg"></a></div>-->
+<!---->
+<!--<div id="airnz2-1" class="miscAd"><a href="https://ad.doubleclick.net/ddm/clk/316783316;145097200;b" target="_blank"><img src="/special/air-new-zealand-jan-2017/sale-air-nz-spot.png"></a></div>-->
+<!--<div id="airnz2-2" class="miscAd"><a href="https://ad.doubleclick.net/ddm/clk/316783317;145097200;c" target="_blank"><img src="/special/air-new-zealand-jan-2017/air-nz-logo.svg"></a></div>-->
+
+
+</div>
+
+<div id="extremes">
+<h2>Current extremes</h2>
+<div id="current-hottest">
+<label>High</label>
+<span class="value"></span>
+<span class="location"></span>
+<span class="icon fine"></span>
+</div>
+<div id="current-coldest">
+<label>Low</label>
+<span class="value"></span>
+<span class="location"></span>
+<span class="icon cloudy"></span>
+</div>
+<div id="current-wettest">
+<label>Wettest</label>
+<span class="value"></span>
+<span class="location"></span>
+<span class="icon rain"></span>
+</div>
+<div id="current-windiest">
+<label>Windiest</label>
+<span class="value"></span>
+<span class="location"></span>
+<span class="icon wind"></span>
+</div>
+<script type='text/javascript'>
+insertGoogleAdvert('current_extremes_logo_sponsorship_60x23', 'class="logo"');
+</script>
+</div>
+</div><!-- left -->
+<div class="grid_4 clearfix">
+<div class="grid_4 widgets clearfix" id="feature_slots">
+<div class="widget w1" id="display_slot1">
+<h3><a href="/maps-radar/rain-radar/all-new-zealand"></a></h3>
+<div class="widget-img-wrapper"></div>
+</div>
+<div class="widget w2" id="display_slot2">
+<h3><a href="/maps-radar/rain-forecast/rain-forecast-3-day"></a></h3>
+<div class="widget-img-wrapper"></div>
+</div>
+</div>
+<div class="advertisement">
+<div class="disclaimer">Advertisement</div>
+<div class="hp hp3"><div class="promo">
+<script type='text/javascript'>
+insertGoogleAdvert('national_half_page_banner_300x600', 'style="width:300px; height:auto;"');
+</script>
+</div>
+</div>
+</div>
+</div>
+<!-- right -->
+</div><!-- .container -->
+</section><!-- .summary -->
+<section id="social" class="section">
+<div id="social-media-heading"><h2>Social media gallery</h2></div>
+<nav class="social-link reset">
+<ul>
+<li class="social"><a href="/social/new-zealand-weather" onClick="trackShuttlerockSocialMediaLink()">View & upload to gallery</a></li>
+</ul>
+</nav>
+<iframe id="content-stream-iframe" src="/_/files/social/content-stream.html"></iframe>
+</section>
+<section id="news" class="section">
+<div class="container">
+<aside class="right grid_4">
+<div id="metservice-tv" class="home-widget">
+<h3><a href="/tv/index">MetService TV</a></h3>
+<div style="display: block; position: relative; max-width: 100%;">
+<div style="padding-top: 56.25%;">
+<video id="videoPlayer" data-playlist-id="5108445178001"
+data-account="1453524588001"
+data-player="B1kZNDiMl"
+data-embed="default"
+data-application-id
+class="video-js"
+controls
+style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></video>
+<script src="http://players.brightcove.net/1453524588001/B1kZNDiMl_default/index.min.js"></script>
+</div>
+</div>
+<div style="text-align: right; padding: 5px; padding-right: 10px; font-family: 'Open Sans',sans-serif; font-size: 13px;">
+<a style="color: #000" href="/tv/index">More video updates</a>
+</div>
+</div>
+<div id="potw" class="home-widget">
+<h3><a href="http://gallery.metservice.com" class="external">Photo of the week</a></h3>
+<div id='photooftheweek' class="photo-week">
+<script src="/_/js/pickofweek-3.0.510.js"></script>
+</div>
+</div>
+</aside><!-- right -->
+<aside class="right grid_4 reset">
+<div id="latest-posts" class="grid_4 loading">
+<h3><a title="Like us on Facebook" href="http://www.facebook.com/MetService">Latest posts <span>Like us on Facebook</span></a></h3>
+</div>
+<div id="latest-tweets" class="grid_4 loading">
+<h3><a title="Join us on Twitter" href="http://bit.ly/fR0LyX">Latest tweets <span>Join us on Twitter</span></a></h3>
+</div>
+</aside>
+<aside class="right grid_4 reset">
+<div id="blog-news" class="grid_4 loading">
+<h3 id="h3blog-news"><a href="http://about.metservice.com/about/media-news-release/homepagerss/">MetService news</a></h3>
+</div>
+<div id="blog-business" class="grid_4 loading">
+<h3><a href="http://about.metservice.com">More about MetService</a></h3>
+</div>
+<div id="blog" class="grid_4 loading">
+<h3><a href="http://blog.metservice.com">MetService blog</a></h3>
+</div>
+</aside>
+</div>
+</section>
+<div class="print-hide">
+<footer id="footer" class="reset">
+<div class="liquid">
+<div class="container">
+<div id="utility-bottom" class="utility clearfix">
+<ul>
+<li><a href="http://about.metservice.com/about/about-this-site/privacy-policy">Privacy Policy</a></li>
+<li><a href="http://about.metservice.com/about/about-this-site/legal-disclaimer">Legal Disclaimer</a></li>
+<li><a href="http://about.metservice.com/about/about-this-site/site-map">Sitemap</a></li>
+<li><a href="http://about.metservice.com/about">About MetService</a></li>
+<li><a href="http://careers.metservice.com/">Careers</a></li>
+<li><a href="http://about.metservice.com/contact">Contact</a></li>
+</ul>
+
+<ul id="socialFooter">
+<li>
+<a title="Follow MetService on Facebook" onclick="recordOutboundLinkToExternalUrl('https://www.facebook.com/MetService', 'Social Buttons Footer', 'Facebook');"><img src="/_/css/img/facebook-logo-29.png"/></a>
+<a title="Follow MetService on LinkedIn" onclick="recordOutboundLinkToExternalUrl('https://www.linkedin.com/company/metservice', 'Social Buttons Footer', 'LinkedIn');"><img src="/_/css/img/linkedin-logo-29.png"/></a>
+<a class="twitter" title="Follow MetService on Twitter" onclick="recordOutboundLinkToExternalUrl('https://www.twitter.com/MetService', 'Social Buttons Footer', 'Twitter');"><img src="/_/css/img/twitter-logo-29.png"/></a>
+<a title="Follow MetService on Instagram" onclick="recordOutboundLinkToExternalUrl('https://instagram.com/metservicenz/', 'Social Buttons Footer', 'Instagram');"><img class="instagramIcon" src="/_/css/img/instagram-icon-29v2.png"/></a>
+</li>
+<li style="clear:both">
+</li>
+</ul>
+<style type="text/css">
+#socialFooter {width: 175px;}
+#socialFooter img {padding-top:2px; margin-right:6px; cursor:pointer;}
+#socialFooter img.instagramIcon {padding-top:1px; margin-left:-2px; cursor:pointer;}
+</style>
+<input type="text" class="aa-search-input" placeholder="Search" autocomplete="off"/><span class="aa-search-icon"></span>
+</div>
+<div class="grid_2 first">
+<ul>
+<li class="warnings"><a href="/warnings/home">Weather warnings</a></li>
+<li><a href="http://about.metservice.com/news">News releases</a></li>
+<li><a href="http://about.metservice.com/our-company/about-this-site/open-access-data/">Open access data</a></li>
+<li><a href="http://about.metservice.com/our-company/ways-to-get-the-weather/weather-email-lists">Emails</a></li>
+<li><a href="http://about.metservice.com/our-company/advertise-with-us/internet-advertising">Advertise on metservice.com</a></li>
+<!--<li>-->
+<!--<ul><li><a href="http://about.metservice.com/weather-for-business/aviation/">Aviation</a></li>-->
+<!--<li><a href="http://about.metservice.com/weather-for-business/energy/">Energy</a></li>-->
+<!--<li><a href="http://about.metservice.com/weather-for-business/agriculture/">Agriculture</a></li>-->
+<!--<li><a href="http://about.metservice.com/weather-for-business/industry/">Industry</a></li>-->
+<!--<li><a href="http://about.metservice.com/weather-for-business/media/">Media</a></li>-->
+<!--<<li><a href="##### Link Goes here ####">Custom solutions</a></li>--> </ul> </li>
+<li><a href="http://about.metservice.com/our-company/ways-to-get-the-weather/weather-on-your-/">Weather on your mobile</a></li>
+<li><a href="http://about.metservice.com/weather-for-business/">Weather solutions for business</a></li>
+<li><a href="http://worldweather.wmo.int">International weather</a></li>
+<!--<li><a href="http://about.metservice.com/learning">Learning centre</a></li>-->
+</ul>
+</div><!-- end col -->
+<div class="grid_2">
+<h3>Towns &amp; cities</h3>
+<ul>
+<li><a href="/towns-cities/whangarei">Whangarei</a></li>
+<li><a href="/towns-cities/auckland/auckland-central">Auckland</a></li>
+<li><a href="/towns-cities/hamilton">Hamilton</a></li>
+<li><a href="/towns-cities/tauranga">Tauranga</a></li>
+<li><a href="/towns-cities/napier">Napier</a></li>
+<li><a href="/towns-cities/new-plymouth">New Plymouth</a></li>
+<li><a href="/towns-cities/palmerston-north">Palmerston North</a></li>
+<li><a href="/towns-cities/wellington/wellington-city">Wellington</a></li>
+<li><a href="/towns-cities/nelson">Nelson</a></li>
+<li><a href="/towns-cities/blenheim">Blenheim</a></li>
+<li><a href="/towns-cities/greymouth">Greymouth</a></li>
+<li><a href="/towns-cities/christchurch/christchurch-city">Christchurch</a></li>
+<li><a href="/towns-cities/dunedin">Dunedin</a></li>
+<li><a href="/towns-cities/queenstown">Queenstown</a></li>
+<li><a href="/towns-cities/invercargill">Invercargill</a></li>
+</ul>
+</div><!-- end col -->
+<div class="grid_2">
+<h3>Rural</h3>
+<ul>
+<li><a href="/rural/northland">Northland</a></li>
+<li><a href="/rural/auckland">Auckland</a></li>
+<li><a href="/rural/waikato">Waikato</a></li>
+<li><a href="/rural/coromandel">Coromandel</a></li>
+<li><a href="/rural/bay-of-plenty">Bay of Plenty</a></li>
+<li><a href="/rural/hawkes-bay">Hawke's Bay</a></li>
+<li><a href="/rural/taranaki">Taranaki</a></li>
+<li><a href="/rural/manawatu">Manawatu</a></li>
+<li><a href="/rural/wairarapa">Wairarapa</a></li>
+<li><a href="/rural/marlborough">Marlborough</a></li>
+<li><a href="/rural/nelson">Nelson</a></li>
+<li><a href="/rural/christchurch">Christchurch</a></li>
+<li><a href="/rural/canterbury-plains">Canterbury Plains</a></li>
+<li><a href="/rural/central-otago">Central Otago</a></li>
+<li><a href="/rural/southland">Southland</a></li>
+</ul>
+</div><!-- end col -->
+<div class="grid_2">
+<h3>Marine</h3>
+<ul>
+<li><a href="/marine-surf/recreational-marine/bay-of-islands">Bay of Islands</a></li>
+<li><a href="/marine-surf/recreational-marine/auckland">Auckland</a></li>
+<li><a href="/marine-surf/recreational-marine/bay-of-plenty">Bay of Plenty</a></li>
+<li><a href="/marine-surf/recreational-marine/wellington">Wellington</a></li>
+<li><a href="/marine-surf/coastal/cook">Cook Strait</a></li>
+<li><a href="/marine-surf/recreational-marine/christchurch">Christchurch</a></li>
+<li><a href="/marine-surf/tides/index">Tides</a></li>
+<li><a href="/marine-surf/radio/zklf-radiofax-schedule">Radio schedules</a></li>
+<li><a href="/maps-radar/marine-forecast-maps/significant-wave-height">Marine forecast maps</a></li>
+<li><a href="/marine-surf/high-seas/pacific">High seas</a></li>
+</ul>
+</div><!-- end col -->
+<div class="grid_2">
+<h3>Mountains &amp; National Parks</h3>
+<ul>
+<li><a href="/mountain/te-urewera">Te Urewera</a></li>
+<li><a href="/mountain/egmont-national-park">Egmont National Park</a></li>
+<li><a href="/mountain/tongariro-national-park">Tongariro National Park</a></li>
+<li><a href="/mountain/nelson-lakes-national-park">Nelson Lakes National Park</a></li>
+<li><a href="/mountain/arthurs-pass-national-park">Arthur&#8217;s Pass National Park</a></li>
+<li><a href="/mountain/canterbury-high-country">Canterbury High Country</a></li>
+<li><a href="/mountain/aoraki-mount-cook-national-park">Aoraki/Mt Cook National Park</a></li>
+<li><a href="/mountain/mt-aspiring-national-park">Mt Aspiring National Park</a></li>
+<li><a href="/mountain/southern-lakes">Southern Lakes</a></li>
+<li><a href="/mountain/fiordland-national-park">Fiordland National Park</a></li>
+</ul>
+</div><!-- end col -->
+<div class="grid_2">
+<h3>Maps &amp; radar</h3>
+<ul>
+<li>
+<a href="/maps-radar/rain-radar/all-new-zealand">Rain radar</a>
+</li>
+<li>
+<a href="/maps-radar/rain-forecast/rain-forecast-3-day">3 day rain forecast</a>
+</li>
+<li>
+<a href="/maps-radar/rain-forecast/rain-forecast-5-day">5 day rain forecast</a>
+</li>
+<li>
+<a href="/maps-radar/maps/tasman-sea-nz">Surface pressure</a>
+</li>
+<li>
+<a href="/maps-radar/satellite/tasman-sea-nz-infrared">Satellite imagery</a>
+</li>
+<li class="marine">
+<a href="/maps-radar/marine-forecast-maps/sea-surface-temperature">Marine forecast</a>
+</li>
+<li><a href="/maps-radar/coded-data/surface-data">Coded data</a></li>
+<li><a href="/maps-radar/local-observations/local-3-hourly-observations">NZ observations</a></li>
+<li><a href="/maps-radar/wis-search/search">WIS search</a></li>
+</ul>
+<h4>Traffic Webcams</h4>
+<ul>
+<li><a href="/national/traffic-cams/auckland">Auckland</a></li>
+<li><a href="/national/traffic-cams/hamilton">Hamilton</a></li>
+<li><a href="/national/traffic-cams/wellington">Wellington</a></li>
+<li><a href="/national/traffic-cams/christchurch">Christchurch</a></li>
+<li><a href="/national/traffic-cams/dunedin">Dunedin</a></li>
+</ul>
+</div><!-- end col -->
+</div>
+</div>
+<div class="container disclaimer">
+<p>This information is provided for your own personal non-commercial use in accordance with the MetService website
+<a href="http://about.metservice.com/about/about-this-site/legal-disclaimer">terms and conditions</a>.</p>
+<p>Copyright Meteorological Service of New Zealand Ltd 2008-<script type="text/javascript"> document.write(nzdate.getFullYear() + '');</script>. Page created at <script type="text/javascript"> document.write(nzdate);</script> &nbsp;&nbsp; 3.0.510</p>
+<a href="/" title="Return to the homepage. "><img src="/_/css/img/logo.png" alt="metservice.com" class="footer-logo" /></a>
+</div>
+</footer>
+</div>
+<script>
+$('body').addClass('home');
+Navigation_Slots();
+
+var pageName = "National";
+var pageCode = 'national';
+try {
+loadAdScheduler();
+national_LoadPage();
+} catch (err) {
+log("There was a problem loading the national (home) page:- " + err.message);
+}
+try {
+homePage_emergencyFunction();
+} catch(e) {
+log("homePage_emergencyFunction() failed:- " + e.message);
+}
+
+
+try {
+enableNavMenu(); // Enabled the menu here so it doesn't need to wait for other stuff to load.
+} catch (err) {
+log("There was a problem loading the menu:- " + err.message);
+}
+// load map icons
+try {
+load_MenuIcons(); // Loads icons on national page big map plus menu map
+} catch (err) {
+log("There was a problem loading the menu icons:- " + err.message);
+}
+try {
+load_BeachSearch();
+} catch (err) {
+log("There was a problem loading the beach search:- " + err.message);
+}
+</script>
+<!-- Facebook Pixel Code -->
+<script>
+if(typeof fbq === 'undefined') {
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','//connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1708242472727912');
+}
+fbq('track', "PageView");
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1708242472727912&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+_qevents.push({
+qacct:"p-4UAhXYKWcQMMh"
+});
+</script>
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-4UAhXYKWcQMMh.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast Tag -->
+<!-- START Nielsen Online SiteCensus V6.0 -->
+<!-- COPYRIGHT 2010 Nielsen Online -->
+<script type="text/javascript" src="/assets/js/nielsen/v60-6.0.27.js">
+</script>
+<script type="text/javascript">
+var pvar = { cid: "nz-metservice", content: "0", server: "secure-nz" };
+var lo_list = {
+"http://metservice.com/national/": 1, "http://metservice.com/national/index": 1
+};
+var feat = { link_overlay: (lo_list[document.location.href] || 0) };
+var trac = nol_t(pvar, feat);
+try {
+trac.record().post();
+} catch (err) {
+log("There was a problem with trac.record().post():- " + err.message);
+}
+</script>
+<noscript>
+<div>
+<img src="//secure-nz.imrworldwide.com/cgi-bin/m?ci=nz-metservice&amp;cg=0&amp;cc=1&amp;ts=noscript"
+width="1" height="1" alt="" />
+</div>
+</noscript>
+<!-- END Nielsen Online SiteCensus V6.0 -->
+<!-- google analytics -->
+<script type="text/javascript">
+// These two lines are moved to the header as we need this accessible ASAP for ads etc
+//var _gaq = _gaq || [];
+//_gaq.push(['_setAccount', 'UA-1951998-1']);
+_gaq.push(['_trackPageview', location.pathname + location.hash + location.search]);
+(function()
+{ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = 'https://stats.g.doubleclick.net/dc.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); }
+)();
+</script>
+<!-- end google analytics -->
+
+<script src="/_/js/footer-3.0.510.js"></script>
+
+
+
+</body>
+</html>
+<!-- This is for Trev's testing for fiddly ads that need to mess with the main map-->
+<!--<iframe id="test-iframe" height="10" width="100" style="border:none; background-color: red" src="/national/test-iframe"/>-->

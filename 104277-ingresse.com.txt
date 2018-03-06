@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html data-ng-app="ingresse-site">
+<head>
+    <script>window.prerenderReady = false;</script>
+
+    <base href="/" />
+    <meta name="fragment" content="!" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- A -->
+    <title>Ingresse</title>
+
+    <meta name="description" content="Descubra os melhores eventos da sua cidade e garanta seu ingresso! Clique aqui para vender ou comprar ingressos!" />
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon"     href="/assets/images/apple-touch-icon.png" />
+    <link rel="android-touch-icon"   href="/assets/images/apple-touch-icon.png" />
+    <link rel="mask-icon"            href="/assets/images/apple-mask-icon.svg" color="#FCA311" />
+
+    <!-- Mobile Smartbanner -->
+    <link rel="icon" sizes="192x192" href="/assets/images/icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <meta name="theme-color"       content="#f8f8f8">
+    <meta name="apple-itunes-app"  content="app-id=815359760, app-argument=ingresse://event/{{ Common.getId() }}" ng-if="Common.getId()">
+    <meta name="apple-itunes-app"  content="app-id=815359760" ng-if="!Common.getId()">
+    <meta name="google-play-app"   content="app-id=com.ingresse.ticketbooth">
+
+    <link rel="alternate"          href="android-app://com.ingresse.ticketbooth/ingresse/event/{{ Common.getLink() }}">
+
+    <!-- Open Graph Data -->
+    <meta property="og:title"               content="{{ Common.getTitle() }}" />
+    <meta property="og:site_name"           content="ingresse.com"/>
+    <meta property="og:description"         content="{{ Common.getDescription(220) }}" />
+    <meta property="og:image"               content="{{ Common.getImage() }}" />
+    <meta property="og:image:secure_url"    content="{{ Common.getImage() }}" />
+    <meta property="og:image:type"          content="image/jpeg" />
+    <meta property="og:image:width"         content="220" />
+    <meta property="og:image:height"        content="293" />
+
+    <!--Mobile Protocol -->
+    <meta property="al:ios:url"              content="ingresse://event/{{ Common.getId() }}" />
+    <meta property="al:ios:app_store_id"     content="815359760" />
+    <meta property="al:ios:app_name"         content="Ingresse" />
+    <meta property="al:android:url"          content="ingresse://event/{{ Common.getLink() }}" />
+    <meta property="al:android:app_name"     content="Ingresse" />
+    <meta property="al:android:package"      content="com.ingresse.ticketbooth" />
+    <meta property="al:web:should_fallback"  content="true" />
+    <meta property="al:web:url"              content="https://www.ingresse.com/{{ Common.getLink() }}" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:app:country"         content="BR" />
+    <meta name="twitter:app:name:iphone"     content="Ingresse" />
+    <meta name="twitter:app:id:iphone"       content="815359760" />
+    <meta name="twitter:app:url:iphone"      content="ingresse://event/{{ Common.getId() }}" />
+    <meta name="twitter:app:name:ipad"       content="Ingresse" />
+    <meta name="twitter:app:id:ipad"         content="815359760" />
+    <meta name="twitter:app:url:ipad"        content="ingresse://event/{{ Common.getId() }}" />
+    <meta name="twitter:app:name:googleplay" content="Ingresse" />
+    <meta name="twitter:app:id:googleplay"   content="com.ingresse.ticketbooth" />
+    <meta name="twitter:app:url:googleplay"  content="ingresse://event/{{ Common.getLink() }}" />
+
+    <link rel="stylesheet" href="/assets/vendor.css"/>
+
+    <link rel="stylesheet" href="https://cdn.ingresse.com/websdk/v7/styles/websdk.css" />
+    <link rel="stylesheet" href="https://dk57nqppwurwj.cloudfront.net/ingresse-widget.css" />
+
+    <link rel="stylesheet" href="/assets/fonts.css"/>
+
+    <link rel="stylesheet" href="/assets/site.css" />
+
+    <script src="https://dk57nqppwurwj.cloudfront.net/ingresse-widget.js"></script>
+    <script src="https://cdn.siftscience.com/s.js"></script>
+    <script src="//connect.facebook.com/pt_BR/sdk.js"></script>
+</head>
+
+<body class="aph antialiased">
+    <loader></loader>
+
+    <superbanner></superbanner>
+
+    <main class="flex flex--column flex--stretch">
+
+        <navbar class="flex__item flex__item--navbar"
+                data-ng-hide="authPage"
+                data-ng-class="{
+                    'hidden-xs' : wallet,
+                }">
+        </navbar>
+
+        <div class="flex__item flex__item--start"
+             data-ng-view="">
+        </div>
+
+        <site-footer class="flex__item flex__item--footer"
+                     data-ng-hide="authPage">
+        </site-footer>
+
+    </main>
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create',
+            'UA-26110667-1',
+            'auto',
+            'ingresse',
+            {
+                allowLinker       : true,
+                legacyCookieDomain: '.ingresse.com'
+            }
+        );
+    </script>
+    <!-- End Google Analytics -->
+
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-NHTVKH"
+            height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NHTVKH');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script src="scripts/vendor.js"></script>
+
+    <!-- Ingresse Web SDK -->
+    <script src="https://cdn.ingresse.com/websdk/v7/scripts/websdk.js"></script>
+
+    <script src="scripts/scripts.js"></script>
+
+    <!--Smart Banner-->
+    <script type="text/javascript">
+        new SmartBanner({
+            daysHidden      : 15,   // days to hide banner after close button is clicked (defaults to 15)
+            daysReminder    : 90, // days to hide banner after "VIEW" button is clicked (defaults to 90)
+            appStoreLanguage: 'br', // language code for the App Store (defaults to us)
+            title           : 'Ingresse',
+            author          : 'Ingresse',
+            button          : 'Baixar',
+            store           : {
+                ios    : 'na App Store',
+                android: 'no Google Play'
+            },
+            price           : {
+                ios    : 'Grátis',
+                android: 'Grátis'
+            }
+        });
+    </script>
+
+    <script src="//ingresse-br.agentbot.net/agent.bot?token=e48fb06e1d3d7e0f87e9c1818255cb3e.9a3ce849c770cf9102289ca3595d9afc&position=center,left&tab=true" async></script>
+
+    <script type="application/ld+json">
+        {
+            "@context"       : "http://schema.org",
+            "@type"          : "WebSite",
+            "url"            : "https://www.ingresse.com/",
+            "potentialAction": {
+                "@type"      : "SearchAction",
+                "target"     : "https://www.ingresse.com/search/name/{search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+</body>
+</html>

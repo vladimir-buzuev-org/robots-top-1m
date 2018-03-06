@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+            {'gtm.start': new Date().getTime(),event:'gtm.js'}
+    );var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P8GVWQS');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="title" content="Secure FTP Client - Globalscape&#039;s CuteFTP Software | Globalscape" />
+<link rel="canonical" href="https://www.globalscape.com/cuteftp" />
+<meta name="description" content="The world’s favorite secure FTP client is better than ever. From mobility to top-notch security, CuteFTP from Globalscape does it all!" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="shortcut icon" href="/sites/default/files/pictures/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="/cuteftp" />
+
+    <title>Secure FTP Client - Globalscape&#039;s CuteFTP Software | Globalscape</title>
+    <link rel="dns-prefetch" href="//" />
+<link rel="stylesheet" href="/sites/default/files/pictures/css/css_QWORjhk4pyiPa7eK2BHoB8b97iLCiW5CMfvoyQbgVLE_Nyv-bdmTum4ujek15dSxFPl4wb2qBtLezdr0WP7w1YA.css?ovfwte" media="all" />
+<link rel="stylesheet" href="/sites/default/files/pictures/css/css_P_ls1sCJ2l7MCTiysEnJAMGUE7kN5QjQXmURvlffZAo_Nyv-bdmTum4ujek15dSxFPl4wb2qBtLezdr0WP7w1YA.css?ovfwte" media="all" />
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" media="all" />
+<link rel="stylesheet" href="/sites/default/files/pictures/css/css_IGYuwdDtvosovFXhWSQZ_U4BRRw5vW8gF2E2AvwAmic_Nyv-bdmTum4ujek15dSxFPl4wb2qBtLezdr0WP7w1YA.css?ovfwte" media="all" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/pictures/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA_Nyv-bdmTum4ujek15dSxFPl4wb2qBtLezdr0WP7w1YA.js"></script>
+<![endif]-->
+
+   <script src="https://cdn.optimizely.com/js/3001460298.js"></script>
+  </head>
+  <body class="path-node page-node-type-flexible-content page-node-196">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8GVWQS"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    
+<div class="header-utility-nav">
+	<div class="inside-wrap">
+		<div class="inside-wide">
+			  <div class="region header_utility_nav">
+    <nav >
+            
+  <h2 class="visually-hidden">Utility nav</h2>
+  
+
+        
+
+              <ul class="menu">
+              <li>
+                  <a href="/blog"   >Blog</a>
+                       </li>
+          <li>
+                  <a href="/contact-us"  class="contact"   >Contact</a>
+                       </li>
+          <li>
+                  <span  class="language" >Language</span>
+                      </li>
+          <li>
+                  <span  class="search" >Search</span>
+                      </li>
+        </ul>
+  
+
+
+  </nav>
+
+<div class="block blocksearch-form-block" role="search">
+  
+    
+      <form class="search-block-form" data-drupal-selector="search-block-form-2" menu_region="header_utility_nav" action="/search/node" method="get" id="search-block-form--2" accept-charset="UTF-8">
+  <div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">
+      <label for="edit-keys--2" class="visually-hidden">Search</label>
+        <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search" id="edit-keys--2" name="keys" value="" size="15" maxlength="128" class="form-search" />
+
+        </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit--2" value="Search" class="button js-form-submit form-submit" />
+</div>
+
+</form>
+
+  </div>
+
+<div class="block blockviews-blocklanugages-menu-lanugages-menu">
+  
+    
+      <div class="views-element-container" menu_region="header_utility_nav"><div class="js-view-dom-id-89ad409b681f6b6436053b59f96144102e2fe6c5c8d7bd79e097f5db8ca5024c">
+  
+  
+  
+
+  
+  
+  
+
+  <div class="view-content">
+                <div class="menu-item views-row odd">
+        <a href="http://www.globalscape.com.br/" class="external">
+      <img src="/sites/default/files/pictures/styles/flag_16x11/public/2017-02/flag-brazil.png?itok=SjfOzz-m" width="16" height="11" alt="" />
+
+
+
+    Brazil
+</a>    
+      </div>
+                <div class="menu-item views-row even">
+        <a href="http://www.globalscape.mx/" class="external">
+      <img src="/sites/default/files/pictures/styles/flag_16x11/public/2017-02/flag-mexico.png?itok=V8RAHVKt" width="16" height="11" alt="" />
+
+
+
+    Mexico
+</a>    
+      </div>
+                <div class="menu-item views-row odd">
+        <a href="http://www.globalscape.de/" class="external">
+      <img src="/sites/default/files/pictures/styles/flag_16x11/public/2017-02/flag-germany.png?itok=spcnEwW_" width="16" height="11" alt="" />
+
+
+
+    Germany
+</a>    
+      </div>
+                <div class="menu-item views-row even">
+        <a href="http://www.globalscape.es/" class="external">
+      <img src="/sites/default/files/pictures/styles/flag_16x11/public/2017-02/flag-spain.png?itok=FIn8zbDK" width="16" height="11" alt="" />
+
+
+
+    Spain
+</a>    
+      </div>
+                <div class="menu-item views-row odd">
+        <a href="http://www.globalscape.fr/" class="external">
+      <img src="/sites/default/files/pictures/styles/flag_16x11/public/2017-02/flag-france.png?itok=BN26pSEb" width="16" height="11" alt="" />
+
+
+
+    France
+</a>    
+      </div>
+                <div class="menu-item views-row even">
+        <a href="http://www.globalscape.co.uk/" class="external">
+      <img src="/sites/default/files/pictures/styles/flag_16x11/public/2017-02/flag-uk.png?itok=dur2APHi" width="16" height="11" alt="" />
+
+
+
+    United Kingdom
+</a>    
+      </div>
+                <div class="menu-item views-row odd">
+        <a href="http://www.globalscape.it/" class="external">
+      <img src="/sites/default/files/pictures/styles/flag_16x11/public/2017-02/flag-italy.png?itok=20Hgsu0C" width="16" height="11" alt="" />
+
+
+
+    Italy
+</a>    
+      </div>
+    </div>
+  
+  
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+		</div>
+	</div>
+</div> <!-- end header utility nav -->
+<header class="main-header">
+	<div class="inside-wrap">
+		  <div class="region header">
+    
+<div class="header-logo block blockblock-content476092a6-e9a0-431e-ad14-fb496c2e24b3">
+  
+    
+      
+                        <div class="body"><p><a class="logo" href="/" title="Home"><svg enable-background="new 0 0 500 100" height="100px" id="Layer_1" version="1.1" viewbox="0 0 500 100" width="500px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g><g><path d="M19.891,76.825c8.071,0,14.846-3.604,14.846-13.117v-3.459c0-1.44,0.144-3.026,0.144-3.026h-0.144&#10;&#9;&#9;&#9;c-2.739,4.612-7.063,7.351-13.837,7.351C7.928,64.573,0,54.195,0,40.647c0-13.405,7.495-23.351,20.467-23.351&#10;&#9;&#9;&#9;c11.243,0,14.702,6.919,14.702,6.919h0.144c0,0-0.144-0.577-0.144-1.441v-4.325h8.648v44.827&#10;&#9;&#9;&#9;c0,15.423-11.675,21.332-23.494,21.332c-5.622,0-11.387-1.586-15.999-3.892l3.027-7.063C7.063,73.654,12.972,76.825,19.891,76.825&#10;&#9;&#9;&#9;z M34.881,40.791c0-12.252-5.909-15.711-13.26-15.711c-8.072,0-12.684,5.909-12.684,15.423c0,9.657,5.188,16.287,13.549,16.287&#10;&#9;&#9;&#9;C28.972,56.935,34.881,53.042,34.881,40.791z" fill="#656565"></path><path d="M53.042,0h8.937v50.881c0,5.62,2.162,6.63,5.044,6.63c0.865,0,1.586-0.145,1.586-0.145v7.928&#10;&#9;&#9;&#9;c0,0-1.442,0.144-3.027,0.144c-5.045,0-12.54-1.441-12.54-13.116V0z" fill="#656565"></path><path d="M97.581,17.44c13.981,0,25.225,10.234,25.225,24.36c0,14.27-11.243,24.503-25.225,24.503&#10;&#9;&#9;&#9;c-13.981,0-25.224-10.378-25.224-24.503C72.356,27.674,83.6,17.44,97.581,17.44z M97.581,58.52c8.937,0,16-7.063,16-16.864&#10;&#9;&#9;&#9;c0-9.657-7.207-16.575-16-16.575s-15.999,6.918-15.999,16.575C81.437,51.602,88.788,58.52,97.581,58.52z" fill="#656565"></path><path d="M129.146,0h8.937v21.333c0,2.306-0.144,4.036-0.144,4.036h0.144c0,0,4.036-7.928,14.99-7.928&#10;&#9;&#9;&#9;c12.541,0,20.468,9.946,20.468,24.504c0,14.846-8.938,24.503-21.188,24.503c-10.378,0-14.702-8.072-14.702-8.072h-0.144&#10;&#9;&#9;&#9;c0,0,0.144,1.441,0.144,3.46v3.459h-8.504V0z M151.055,58.664c7.352,0,13.548-6.055,13.548-16.72&#10;&#9;&#9;&#9;c0-10.09-5.476-16.72-13.259-16.72c-7.063,0-13.549,4.901-13.549,16.864C137.939,50.304,142.263,58.664,151.055,58.664z" fill="#656565"></path><path d="M206.692,36.034h2.018v-0.865c0-7.639-4.324-10.233-10.233-10.233c-7.207,0-12.973,4.468-12.973,4.468&#10;&#9;&#9;&#9;l-3.748-6.486c0,0,6.775-5.478,17.441-5.478c11.819,0,18.449,6.487,18.449,18.306v29.548h-8.359v-4.468&#10;&#9;&#9;&#9;c0-2.162,0.144-3.748,0.144-3.748h-0.144c0,0-3.748,9.225-14.991,9.225c-8.072,0-15.855-4.9-15.855-14.27&#10;&#9;&#9;&#9;C178.441,36.755,198.765,36.034,206.692,36.034z M196.314,59.097c7.639,0,12.396-7.929,12.396-14.846v-1.441h-2.162&#10;&#9;&#9;&#9;c-6.775,0-18.882,0.432-18.882,8.936C187.522,55.493,190.549,59.097,196.314,59.097z" fill="#656565"></path><path d="M228.168,0h8.938v50.881c0,5.62,2.161,6.63,5.044,6.63c0.864,0,1.585-0.145,1.585-0.145v7.928&#10;&#9;&#9;&#9;c0,0-1.441,0.144-3.026,0.144c-5.045,0-12.541-1.441-12.541-13.116V0z" fill="#656565"></path><path d="M253.536,51.168c0,0,5.19,5.189,12.829,5.189c3.315,0,6.198-1.441,6.198-4.18&#10;&#9;&#9;&#9;c0-7.063-22.918-6.054-22.918-21.188c0-8.792,7.783-13.837,18.017-13.837c10.666,0,15.855,5.334,15.855,5.334l-4.325,8.647&#10;&#9;&#9;&#9;c0,0-4.323-4.036-11.53-4.036c-3.027,0-6.053,1.297-6.053,4.18c0,6.631,22.917,5.766,22.917,20.9&#10;&#9;&#9;&#9;c0,7.783-6.774,14.125-18.017,14.125c-11.675,0-18.306-6.918-18.306-6.918L253.536,51.168z" fill="#0976BC"></path><path d="M314.219,17.008c12.252,0,18.161,7.063,18.161,7.063l-5.188,8.072c0,0-4.901-5.045-12.253-5.045&#10;&#9;&#9;&#9;c-8.647,0-14.27,6.486-14.27,14.558c0,7.927,5.767,14.702,14.702,14.702c7.929,0,13.837-6.054,13.837-6.054l4.47,8.36&#10;&#9;&#9;&#9;c0,0-6.774,7.639-19.459,7.639c-15.566,0-25.513-10.954-25.513-24.647C288.706,28.25,298.652,17.008,314.219,17.008z" fill="#0976BC"></path><path d="M365.242,35.602h1.587v-0.577c0-6.197-3.892-8.359-9.081-8.359c-6.775,0-12.972,4.468-12.972,4.468&#10;&#9;&#9;&#9;l-4.47-8.359c0,0,7.351-5.766,18.449-5.766c12.396,0,19.604,6.774,19.604,18.738v29.403h-10.81v-3.892&#10;&#9;&#9;&#9;c0-1.873,0.144-3.314,0.144-3.314h-0.144c0.144,0-3.604,8.359-14.271,8.359c-8.359,0-15.998-5.333-15.998-14.701&#10;&#9;&#9;&#9;C337.281,36.755,357.604,35.602,365.242,35.602z M356.307,57.223c6.198,0,10.666-6.631,10.666-12.396v-1.153h-2.019&#10;&#9;&#9;&#9;c-6.053,0-15.71,0.865-15.71,7.351C349.1,54.195,351.405,57.223,356.307,57.223z" fill="#0976BC"></path><path d="M386.575,18.161h10.666v3.459c0,1.729-0.145,3.171-0.145,3.171h0.145c0,0,4.036-7.784,15.134-7.784&#10;&#9;&#9;&#9;c12.686,0,20.9,10.09,20.9,24.647c0,14.99-9.08,24.647-21.477,24.647c-9.368,0-13.549-6.486-13.549-6.486l0,0&#10;&#9;&#9;&#9;c0,0,0.144,1.729,0.144,4.036V83.6h-11.675V18.161H386.575z M409.782,56.501c6.484,0,11.818-5.188,11.818-14.557&#10;&#9;&#9;&#9;c0-8.936-4.756-14.846-11.675-14.846c-6.054,0-11.82,4.468-11.82,14.846C397.962,49.295,401.997,56.501,409.782,56.501z" fill="#0976BC"></path><path d="M461.383,17.008c13.549,0,20.9,9.946,20.9,22.342c0,1.441-0.289,4.469-0.289,4.469H449.42&#10;&#9;&#9;&#9;c0.72,8.215,7.063,12.395,14.125,12.395c7.64,0,13.548-5.188,13.548-5.188l4.47,8.36c0,0-7.207,6.774-18.884,6.774&#10;&#9;&#9;&#9;c-15.565,0-25.367-11.243-25.367-24.648C437.455,27.242,447.257,17.008,461.383,17.008z M470.462,35.89&#10;&#9;&#9;&#9;c-0.144-6.341-4.18-9.801-9.367-9.801c-6.055,0-10.09,3.748-11.243,9.801H470.462z" fill="#0976BC"></path></g><g><path d="M499.724,11.531c0,4.468-3.459,7.927-8.073,7.927c-4.468,0-8.071-3.459-8.071-7.927&#10;&#9;&#9;&#9;c0-4.324,3.604-7.784,8.071-7.784C496.12,3.748,499.724,7.207,499.724,11.531z M485.598,11.531c0,3.459,2.594,6.198,6.053,6.198&#10;&#9;&#9;&#9;c3.46,0,5.91-2.738,5.91-6.198s-2.595-6.342-6.054-6.342C488.191,5.333,485.598,8.072,485.598,11.531z M490.354,15.567h-1.874&#10;&#9;&#9;&#9;V7.784c0.722-0.145,1.73-0.289,3.027-0.289c1.442,0,2.162,0.289,2.738,0.577c0.433,0.288,0.721,1.009,0.721,1.729&#10;&#9;&#9;&#9;c0,0.865-0.721,1.586-1.585,1.874v0.145c0.721,0.288,1.153,0.864,1.441,1.873c0.288,1.153,0.432,1.73,0.576,2.019h-2.018&#10;&#9;&#9;&#9;c-0.288-0.288-0.432-1.009-0.576-1.875c-0.144-0.864-0.576-1.296-1.586-1.296h-0.865V15.567z M490.498,11.243h0.864&#10;&#9;&#9;&#9;c1.011,0,1.875-0.288,1.875-1.153c0-0.721-0.576-1.153-1.73-1.153c-0.433,0-0.864,0-1.009,0.144V11.243L490.498,11.243z" fill="#727272"></path></g><g><path d="M61.402,90.662l-0.433-1.586h-0.144c-0.288,0.577-0.865,1.01-1.441,1.298s-1.441,0.432-2.162,0.432&#10;&#9;&#9;&#9;c-1.441,0-2.45-0.432-3.171-1.152s-1.009-1.874-1.009-3.315v-7.783h3.315v7.063c0,0.865,0.144,1.585,0.433,2.019&#10;&#9;&#9;&#9;c0.288,0.432,0.865,0.72,1.441,0.72c0.865,0,1.586-0.288,2.019-0.864c0.432-0.577,0.576-1.585,0.576-3.026v-5.622h3.315v11.963&#10;&#9;&#9;&#9;h-2.739V90.662z" fill="#727272"></path><path d="M78.699,90.662h-3.315V83.6c0-0.865-0.144-1.586-0.432-2.019c-0.288-0.432-0.865-0.72-1.441-0.72&#10;&#9;&#9;&#9;c-0.865,0-1.585,0.288-2.018,0.864c-0.432,0.577-0.577,1.585-0.577,3.027v5.621H67.6V78.41h2.45l0.433,1.586h0.144&#10;&#9;&#9;&#9;c0.433-0.576,0.865-1.009,1.441-1.297c0.577-0.289,1.441-0.434,2.162-0.434c1.441,0,2.45,0.434,3.171,1.154&#10;&#9;&#9;&#9;c0.721,0.72,1.153,1.873,1.153,3.314v7.928H78.699z" fill="#727272"></path><path d="M85.473,90.662h-3.315v-16.72h3.315V90.662z" fill="#727272"></path><path d="M94.554,90.95c-1.874,0-3.459-0.576-4.612-1.585c-1.153-1.01-1.585-2.595-1.585-4.612&#10;&#9;&#9;&#9;c0-2.019,0.432-3.604,1.441-4.613c1.01-1.152,2.451-1.585,4.18-1.585c1.73,0,3.027,0.433,4.036,1.441&#10;&#9;&#9;&#9;c1.009,1.009,1.441,2.307,1.441,4.036v1.44h-7.783c0,0.865,0.288,1.729,0.864,2.163c0.577,0.576,1.297,0.72,2.162,0.72&#10;&#9;&#9;&#9;c0.721,0,1.441-0.144,2.018-0.288c0.577-0.144,1.297-0.432,2.018-0.721v2.595c-0.576,0.288-1.153,0.433-1.874,0.576&#10;&#9;&#9;&#9;C96.428,90.806,95.563,90.95,94.554,90.95z M94.121,80.717c-0.721,0-1.297,0.288-1.585,0.721c-0.432,0.432-0.576,1.009-0.72,1.873&#10;&#9;&#9;&#9;h4.612c0-0.864-0.289-1.441-0.577-1.873C95.419,81.005,94.842,80.717,94.121,80.717z" fill="#727272"></path><path d="M109.977,90.662l-0.577-1.586h-0.144c-0.577,0.722-1.153,1.153-1.73,1.441s-1.297,0.433-2.306,0.433&#10;&#9;&#9;&#9;c-1.153,0-2.019-0.288-2.739-1.009c-0.72-0.721-1.009-1.586-1.009-2.883s0.433-2.162,1.297-2.883&#10;&#9;&#9;&#9;c0.865-0.576,2.306-1.009,4.036-1.009h2.019v-0.576c0-1.153-0.577-1.874-1.875-1.874c-1.009,0-2.162,0.288-3.459,0.864&#10;&#9;&#9;&#9;l-0.721-2.161c1.441-0.721,2.883-1.154,4.612-1.154c1.586,0,2.883,0.289,3.748,1.01s1.297,1.729,1.297,3.171v8.071h-2.45V90.662z&#10;&#9;&#9;&#9; M109.112,85.041h-1.297c-1.009,0-1.73,0.144-2.162,0.576c-0.432,0.289-0.721,0.865-0.721,1.441c0,0.865,0.577,1.441,1.585,1.441&#10;&#9;&#9;&#9;c0.721,0,1.297-0.288,1.874-0.721c0.433-0.433,0.721-1.009,0.721-1.729V85.041z" fill="#727272"></path><path d="M124.246,87.059c0,1.297-0.432,2.162-1.296,2.883c-0.865,0.576-2.163,1.009-3.892,1.009&#10;&#9;&#9;&#9;c-0.865,0-1.586,0-2.307-0.145c-0.721-0.144-1.153-0.288-1.73-0.576v-2.738c0.577,0.288,1.297,0.576,2.018,0.721&#10;&#9;&#9;&#9;c0.72,0.144,1.441,0.288,2.019,0.288c1.152,0,1.729-0.288,1.729-1.009c0-0.289-0.144-0.433-0.288-0.577&#10;&#9;&#9;&#9;c-0.144-0.144-0.432-0.288-0.864-0.576s-0.864-0.432-1.585-0.721c-0.865-0.433-1.586-0.721-2.018-1.009&#10;&#9;&#9;&#9;c-0.433-0.288-0.721-0.721-1.009-1.153c-0.144-0.433-0.288-1.009-0.288-1.586c0-1.008,0.433-1.873,1.297-2.449&#10;&#9;&#9;&#9;c0.865-0.577,2.018-0.865,3.459-0.865c1.441,0,2.883,0.288,4.18,1.009l-1.008,2.306c-0.577-0.288-1.154-0.432-1.73-0.576&#10;&#9;&#9;&#9;c-0.577-0.144-1.009-0.288-1.585-0.288c-1.009,0-1.441,0.288-1.441,0.721c0,0.288,0.144,0.577,0.432,0.721&#10;&#9;&#9;&#9;c0.288,0.145,1.009,0.576,2.018,1.009c1.009,0.433,1.586,0.721,2.019,1.01c0.432,0.288,0.72,0.72,1.008,1.152&#10;&#9;&#9;&#9;C124.246,86.05,124.246,86.482,124.246,87.059z" fill="#727272"></path><path d="M138.083,90.662h-3.315V83.6c0-1.73-0.577-2.595-1.874-2.595c-0.865,0-1.585,0.288-2.018,0.864&#10;&#9;&#9;&#9;c-0.433,0.577-0.577,1.586-0.577,3.027v5.621h-3.315V73.942h3.315v3.459c0,0.288,0,0.864-0.144,1.874v0.864h0.144&#10;&#9;&#9;&#9;c0.721-1.152,1.873-1.729,3.459-1.729c1.441,0,2.45,0.433,3.171,1.153c0.72,0.722,1.152,1.874,1.152,3.315V90.662z" fill="#727272"></path><path d="M141.542,75.528c0-1.01,0.576-1.586,1.729-1.586c1.154,0,1.73,0.576,1.73,1.586&#10;&#9;&#9;&#9;c0,0.576-0.144,0.864-0.432,1.153c-0.288,0.288-0.721,0.432-1.298,0.432C142.119,77.113,141.542,76.682,141.542,75.528z&#10;&#9;&#9;&#9; M145.002,90.662h-3.315V78.699h3.315V90.662z" fill="#727272"></path><path d="M159.704,90.662h-3.315V83.6c0-0.865-0.144-1.586-0.432-2.019c-0.288-0.432-0.864-0.72-1.441-0.72&#10;&#9;&#9;&#9;c-0.865,0-1.585,0.288-2.018,0.864c-0.433,0.577-0.577,1.585-0.577,3.027v5.621h-3.315V78.41h2.45l0.433,1.586h0.144&#10;&#9;&#9;&#9;c0.432-0.576,0.865-1.009,1.441-1.297c0.576-0.289,1.441-0.434,2.163-0.434c1.441,0,2.45,0.434,3.17,1.154&#10;&#9;&#9;&#9;c0.721,0.72,1.153,1.873,1.153,3.314v7.928H159.704z" fill="#727272"></path><path d="M173.829,78.699v1.729l-1.874,0.433c0.288,0.576,0.576,1.152,0.576,1.873c0,1.298-0.432,2.307-1.297,3.027&#10;&#9;&#9;&#9;c-0.864,0.721-2.162,1.152-3.748,1.152h-0.576h-0.432c-0.288,0.288-0.577,0.577-0.577,0.865c0,0.433,0.577,0.721,1.873,0.721&#10;&#9;&#9;&#9;h2.019c1.297,0,2.306,0.288,3.027,0.865c0.72,0.576,1.008,1.44,1.008,2.45c0,1.441-0.576,2.45-1.729,3.315&#10;&#9;&#9;&#9;c-1.153,0.864-2.882,1.152-5.045,1.152c-1.73,0-3.027-0.288-3.892-0.864s-1.297-1.441-1.297-2.45c0-0.722,0.289-1.298,0.721-1.874&#10;&#9;&#9;&#9;c0.432-0.433,1.152-0.865,2.017-1.009c-0.288-0.145-0.576-0.433-0.864-0.721c-0.288-0.289-0.432-0.721-0.432-1.01&#10;&#9;&#9;&#9;c0-0.432,0.144-0.864,0.432-1.153c0.288-0.288,0.72-0.576,1.153-0.864c-0.577-0.288-1.153-0.721-1.441-1.297&#10;&#9;&#9;&#9;c-0.432-0.576-0.576-1.298-0.576-2.162c0-1.298,0.432-2.306,1.296-3.027c0.865-0.721,2.019-1.009,3.604-1.009&#10;&#9;&#9;&#9;c0.288,0,0.721,0,1.153,0.145c0.433,0,0.721,0.144,0.865,0.144h4.036V78.699z M164.459,92.392c0,0.433,0.289,0.865,0.721,1.01&#10;&#9;&#9;&#9;c0.433,0.288,1.01,0.432,1.874,0.432c1.152,0,2.163-0.144,2.739-0.432c0.721-0.289,1.009-0.722,1.009-1.298&#10;&#9;&#9;&#9;c0-0.433-0.144-0.721-0.577-0.864c-0.432-0.145-1.008-0.289-1.874-0.289h-1.729c-0.577,0-1.153,0.145-1.442,0.433&#10;&#9;&#9;&#9;C164.749,91.527,164.459,91.959,164.459,92.392z M165.758,82.591c0,0.72,0.144,1.152,0.433,1.585&#10;&#9;&#9;&#9;c0.288,0.433,0.72,0.577,1.296,0.577s1.009-0.145,1.297-0.577s0.433-0.865,0.433-1.585c0-1.441-0.577-2.162-1.73-2.162&#10;&#9;&#9;&#9;C166.334,80.429,165.758,81.149,165.758,82.591z" fill="#727272"></path><path d="M186.945,88.212c0.577,0,1.298-0.145,2.018-0.433v2.45c-0.864,0.433-1.874,0.576-3.027,0.576&#10;&#9;&#9;&#9;c-1.296,0-2.306-0.288-2.882-1.008c-0.577-0.722-0.865-1.73-0.865-3.027v-5.766h-1.584v-1.441l1.873-1.153l1.009-2.594h2.162&#10;&#9;&#9;&#9;v2.594h3.315v2.739h-3.315v5.765c0,0.433,0.144,0.865,0.432,1.01C186.224,88.212,186.513,88.212,186.945,88.212z" fill="#727272"></path><path d="M202.801,90.662h-3.315V83.6c0-1.73-0.576-2.595-1.874-2.595c-0.865,0-1.586,0.288-2.018,0.864&#10;&#9;&#9;&#9;c-0.432,0.577-0.576,1.586-0.576,3.027v5.621h-3.315V73.942h3.315v3.459c0,0.288,0,0.864-0.144,1.874l-0.144,1.01h0.144&#10;&#9;&#9;&#9;c0.72-1.154,1.873-1.73,3.459-1.73c1.44,0,2.45,0.433,3.17,1.153c0.721,0.721,1.153,1.873,1.153,3.314v7.64H202.801z" fill="#727272"></path><path d="M211.737,90.95c-1.874,0-3.459-0.576-4.613-1.585c-1.152-1.01-1.585-2.595-1.585-4.612&#10;&#9;&#9;&#9;c0-2.019,0.433-3.604,1.441-4.613c1.009-1.152,2.451-1.585,4.18-1.585c1.73,0,3.027,0.433,4.037,1.441&#10;&#9;&#9;&#9;c1.008,1.009,1.44,2.307,1.44,4.036v1.44h-7.783c0,0.865,0.288,1.729,0.864,2.163c0.577,0.576,1.297,0.72,2.162,0.72&#10;&#9;&#9;&#9;c0.721,0,1.441-0.144,2.018-0.288c0.576-0.144,1.298-0.432,2.019-0.721v2.595c-0.576,0.288-1.154,0.433-1.875,0.576&#10;&#9;&#9;&#9;C213.466,90.806,212.747,90.95,211.737,90.95z M211.304,80.717c-0.72,0-1.296,0.288-1.585,0.721&#10;&#9;&#9;&#9;c-0.432,0.432-0.576,1.009-0.72,1.873h4.611c0-0.864-0.288-1.441-0.576-1.873C212.603,81.005,212.025,80.717,211.304,80.717z" fill="#727272"></path><path d="M232.06,90.95c-1.441,0-2.449-0.576-3.315-1.585h-0.144c0.144,1.009,0.144,1.585,0.144,1.729v4.9h-3.315&#10;&#9;&#9;&#9;V78.699h2.739l0.432,1.586h0.144c0.72-1.154,1.875-1.73,3.459-1.73c1.442,0,2.595,0.576,3.315,1.585&#10;&#9;&#9;&#9;c0.864,1.153,1.152,2.595,1.152,4.613c0,1.297-0.144,2.449-0.576,3.314c-0.432,1.009-0.865,1.73-1.585,2.162&#10;&#9;&#9;&#9;C233.791,90.662,233.068,90.95,232.06,90.95z M231.051,81.005c-0.864,0-1.44,0.288-1.73,0.721&#10;&#9;&#9;&#9;c-0.288,0.433-0.576,1.297-0.576,2.45v0.289c0,1.297,0.144,2.161,0.576,2.737c0.434,0.577,1.01,0.865,1.875,0.865&#10;&#9;&#9;&#9;c1.441,0,2.163-1.153,2.163-3.603c0-1.154-0.144-2.019-0.578-2.596C232.492,81.293,231.916,81.005,231.051,81.005z" fill="#727272"></path><path d="M250.509,84.608c0,2.018-0.576,3.459-1.585,4.612c-1.008,1.153-2.451,1.585-4.324,1.585&#10;&#9;&#9;&#9;c-1.154,0-2.163-0.288-3.027-0.72c-0.865-0.433-1.586-1.298-2.019-2.162c-0.432-1.01-0.72-2.018-0.72-3.315&#10;&#9;&#9;&#9;c0-2.018,0.576-3.459,1.586-4.612c1.009-1.153,2.449-1.586,4.324-1.586c1.153,0,2.161,0.289,3.027,0.721&#10;&#9;&#9;&#9;c0.864,0.433,1.585,1.154,2.017,2.162C250.365,82.303,250.509,83.311,250.509,84.608z M242.294,84.608&#10;&#9;&#9;&#9;c0,1.153,0.144,2.162,0.576,2.738c0.432,0.577,1.009,0.865,1.875,0.865c0.865,0,1.441-0.288,1.873-0.865&#10;&#9;&#9;&#9;c0.432-0.576,0.576-1.44,0.576-2.738c0-1.153-0.144-2.018-0.576-2.739c-0.432-0.576-1.008-0.864-1.873-0.864&#10;&#9;&#9;&#9;c-0.866,0-1.442,0.288-1.875,0.864C242.438,82.591,242.294,83.455,242.294,84.608z" fill="#727272"></path><path d="M263.338,90.662l-0.864-4.18l-1.298-5.333h-0.145l-2.161,9.513h-3.459l-3.46-11.963h3.315l1.441,5.333&#10;&#9;&#9;&#9;c0.288,1.009,0.432,2.306,0.72,3.892l0,0c0-0.577,0.145-1.441,0.433-2.595l0.146-0.864l1.44-5.766h3.604l1.441,5.766&#10;&#9;&#9;&#9;c0,0.144,0.144,0.432,0.144,0.72s0.145,0.577,0.145,1.01c0,0.288,0.144,0.72,0.144,1.008c0,0.289,0.146,0.577,0.146,0.865l0,0&#10;&#9;&#9;&#9;c0-0.576,0.145-1.153,0.288-2.161c0.145-0.865,0.288-1.441,0.288-1.874l1.441-5.333h3.171l-3.459,11.963H263.338L263.338,90.662z" fill="#727272"></path><path d="M278.04,90.95c-1.873,0-3.459-0.576-4.612-1.585c-1.154-1.01-1.586-2.595-1.586-4.612&#10;&#9;&#9;&#9;c0-2.019,0.432-3.604,1.442-4.613c1.009-1.152,2.449-1.585,4.18-1.585c1.729,0,3.027,0.433,4.035,1.441&#10;&#9;&#9;&#9;c1.009,1.009,1.441,2.307,1.441,4.036v1.44h-7.783c0,0.865,0.288,1.729,0.866,2.163c0.576,0.576,1.296,0.72,2.161,0.72&#10;&#9;&#9;&#9;c0.72,0,1.442-0.144,2.019-0.288c0.576-0.144,1.296-0.432,2.017-0.721v2.595c-0.576,0.288-1.152,0.433-1.873,0.576&#10;&#9;&#9;&#9;C279.771,90.806,278.904,90.95,278.04,90.95z M277.464,80.717c-0.721,0-1.297,0.288-1.587,0.721&#10;&#9;&#9;&#9;c-0.432,0.432-0.576,1.009-0.72,1.873h4.613c0-0.864-0.29-1.441-0.578-1.873C278.761,81.005,278.185,80.717,277.464,80.717z" fill="#727272"></path><path d="M292.454,78.41c0.432,0,0.864,0,1.152,0.145l-0.288,3.026c-0.288,0-0.576-0.144-1.009-0.144&#10;&#9;&#9;&#9;c-1.009,0-1.873,0.288-2.451,0.865c-0.576,0.576-0.864,1.297-0.864,2.306v6.054h-3.315V78.699h2.451l0.433,2.018h0.144&#10;&#9;&#9;&#9;c0.433-0.721,0.864-1.153,1.44-1.586C291.013,78.555,291.733,78.41,292.454,78.41z" fill="#727272"></path><path d="M312.777,84.608c0,2.018-0.576,3.459-1.586,4.612c-1.009,1.153-2.449,1.585-4.324,1.585&#10;&#9;&#9;&#9;c-1.152,0-2.162-0.288-3.027-0.72c-0.864-0.433-1.584-1.298-2.017-2.162c-0.433-1.01-0.722-2.018-0.722-3.315&#10;&#9;&#9;&#9;c0-2.018,0.578-3.459,1.586-4.612c1.009-1.153,2.451-1.586,4.324-1.586c1.152,0,2.162,0.289,3.027,0.721&#10;&#9;&#9;&#9;c0.864,0.433,1.584,1.154,2.019,2.162C312.634,82.303,312.777,83.311,312.777,84.608z M304.417,84.608&#10;&#9;&#9;&#9;c0,1.153,0.144,2.162,0.577,2.738c0.433,0.577,1.009,0.865,1.873,0.865s1.441-0.288,1.875-0.865&#10;&#9;&#9;&#9;c0.432-0.576,0.576-1.44,0.576-2.738c0-1.153-0.145-2.018-0.576-2.739c-0.434-0.576-1.011-0.864-1.875-0.864&#10;&#9;&#9;&#9;s-1.44,0.288-1.873,0.864C304.705,82.591,304.417,83.455,304.417,84.608z" fill="#727272"></path><path d="M322.29,81.149h-2.882v9.513h-3.315v-9.513h-1.874v-1.586l1.874-0.864v-0.865&#10;&#9;&#9;&#9;c0-1.441,0.288-2.306,1.009-3.027c0.721-0.576,1.729-1.009,3.171-1.009c1.152,0,2.161,0.145,3.027,0.576l-0.866,2.451&#10;&#9;&#9;&#9;c-0.721-0.144-1.297-0.289-1.873-0.289c-0.432,0-0.864,0.146-1.008,0.434c-0.145,0.288-0.289,0.576-0.289,1.008v0.722h2.882v2.45&#10;&#9;&#9;&#9;H322.29z" fill="#727272"></path><path d="M334.11,90.95c-1.442,0-2.595-0.576-3.315-1.585c-0.866-1.153-1.154-2.595-1.154-4.612&#10;&#9;&#9;&#9;c0-2.019,0.434-3.46,1.298-4.613c0.865-1.152,2.018-1.585,3.46-1.585c1.585,0,2.737,0.576,3.459,1.73h0.145&#10;&#9;&#9;&#9;c-0.145-0.865-0.288-1.73-0.288-2.451v-3.892h3.314v16.72h-2.45l-0.576-1.586h-0.145C336.848,90.229,335.695,90.95,334.11,90.95z&#10;&#9;&#9;&#9; M335.263,88.212c0.864,0,1.44-0.288,1.873-0.721c0.434-0.433,0.578-1.297,0.578-2.45v-0.288c0-1.298-0.145-2.162-0.578-2.739&#10;&#9;&#9;&#9;c-0.433-0.576-1.009-0.864-1.873-0.864c-0.721,0-1.297,0.288-1.73,0.864c-0.433,0.577-0.576,1.586-0.576,2.739&#10;&#9;&#9;&#9;s0.144,2.018,0.576,2.594C333.966,87.924,334.542,88.212,335.263,88.212z" fill="#727272"></path><path d="M352.127,90.662l-0.578-1.586h-0.144c-0.576,0.722-1.152,1.153-1.729,1.441&#10;&#9;&#9;&#9;c-0.577,0.288-1.297,0.433-2.308,0.433c-1.152,0-2.017-0.288-2.737-1.009c-0.722-0.721-1.01-1.586-1.01-2.883&#10;&#9;&#9;&#9;s0.433-2.162,1.298-2.883c0.865-0.576,2.306-1.009,4.036-1.009h2.017v-0.576c0-1.153-0.576-1.874-1.873-1.874&#10;&#9;&#9;&#9;c-1.008,0-2.162,0.288-3.459,0.864l-1.152-2.161c1.44-0.721,2.881-1.154,4.611-1.154c1.585,0,2.884,0.289,3.748,1.01&#10;&#9;&#9;&#9;s1.297,1.729,1.297,3.171v8.071h-2.018V90.662z M351.117,85.041h-1.297c-1.009,0-1.729,0.144-2.163,0.576&#10;&#9;&#9;&#9;c-0.432,0.289-0.72,0.865-0.72,1.441c0,0.865,0.576,1.441,1.586,1.441c0.721,0,1.297-0.288,1.873-0.721&#10;&#9;&#9;&#9;c0.433-0.433,0.721-1.009,0.721-1.729V85.041L351.117,85.041z" fill="#727272"></path><path d="M363.082,88.212c0.576,0,1.296-0.145,2.017-0.433v2.45c-0.864,0.433-1.873,0.576-3.027,0.576&#10;&#9;&#9;&#9;c-1.297,0-2.305-0.288-2.881-1.008c-0.578-0.722-0.866-1.73-0.866-3.027v-5.766h-1.585v-1.441l1.873-1.153l1.01-2.594h2.161v2.594&#10;&#9;&#9;&#9;h3.315v2.739h-3.315v5.765c0,0.433,0.145,0.865,0.433,1.01C362.504,88.067,362.649,88.212,363.082,88.212z" fill="#727272"></path><path d="M375.477,90.662l-0.576-1.586h-0.145c-0.576,0.722-1.152,1.153-1.73,1.441&#10;&#9;&#9;&#9;c-0.576,0.288-1.296,0.433-2.305,0.433c-1.154,0-2.019-0.288-2.739-1.009c-0.72-0.721-1.009-1.586-1.009-2.883&#10;&#9;&#9;&#9;s0.433-2.162,1.297-2.883c0.864-0.576,2.307-1.009,4.036-1.009h2.019v-0.576c0-1.153-0.576-1.874-1.875-1.874&#10;&#9;&#9;&#9;c-1.008,0-2.161,0.288-3.459,0.864l-1.152-2.161c1.44-0.721,2.883-1.154,4.611-1.154c1.587,0,2.883,0.289,3.748,1.01&#10;&#9;&#9;&#9;c0.866,0.721,1.298,1.729,1.298,3.171v8.071h-2.019V90.662z M374.468,85.041h-1.298c-1.009,0-1.729,0.144-2.161,0.576&#10;&#9;&#9;&#9;c-0.433,0.289-0.721,0.865-0.721,1.441c0,0.865,0.576,1.441,1.585,1.441c0.721,0,1.297-0.288,1.875-0.721&#10;&#9;&#9;&#9;c0.432-0.433,0.72-1.009,0.72-1.729V85.041z" fill="#727272"></path></g></g></svg></a></p>
+</div>
+            
+  </div>
+
+<div class="block blocksystem-branding-block">
+  
+    
+    </div>
+<button class="menu-btn"><span>toggle menu</span></button>
+<nav  class="main-menu">
+                        
+    <h2 class="visually-hidden">Main navigation</h2>
+    
+                
+
+              <ul>
+                	          	  <li class="is-parent columns-3">
+	                  <a href="/products"  >Products</a>
+                                         <ul>
+                	          	  <li class="is-parent columns-2">
+	                  <span>MANAGED FILE TRANSFER PLATFORM</span>
+                                        <ul>
+                	          	  <li class="is-parent ">
+	                  <span>Globalscape EFT</span>
+                                        <ul>
+                	          	  <li class="is-parent ">
+	                  <a href="/managed-file-transfer"  >EFT Platform</a>
+                                         <ul>
+                		  <li>
+	                  <a href="/managed-file-transfer/deployment-options"  >Deployment Options</a>
+                       </li>
+            		  <li>
+	                  <a href="/managed-file-transfer/collaboration"  >Collaboration</a>
+                       </li>
+            		  <li>
+	                  <a href="/managed-file-transfer/automation-efficiency"  >Automation &amp; Efficiency</a>
+                       </li>
+            		  <li>
+	                  <a href="/managed-file-transfer/protocols"  >Protocols</a>
+                       </li>
+            		  <li>
+	                  <a href="/managed-file-transfer/security"  >Security</a>
+                       </li>
+            		  <li>
+	                  <a href="/managed-file-transfer/compliance"  >Compliance</a>
+                       </li>
+            		  <li>
+	                  <a href="/managed-file-transfer/analytics"  >Analytics</a>
+                       </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+              </li>
+            	          	  <li class="is-parent ">
+	                  <span>Compare</span>
+                                        <ul>
+                		  <li>
+	                  <a href="/managed-file-transfer/comparison"  >Comparison Chart</a>
+                       </li>
+            		  <li>
+	                  <a href="/eft-pricing"  >Pricing</a>
+                       </li>
+            		  <li>
+	                  <a href="/eft-enterprise"  >EFT Enterprise</a>
+                       </li>
+            		  <li>
+	                  <a href="/eft-smb"  >EFT SMB</a>
+                       </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+              </li>
+            	          	  <li class="is-parent ">
+	                  <span>INTEGRATION PLATFORM AS A SERVICE</span>
+                                        <ul>
+                	          	  <li class="is-parent ">
+	                  <span>Kenetix</span>
+                                        <ul>
+                	          	  <li class="is-parent ">
+	                  <a href="/kenetix-ipaas"  >Kenetix Platform</a>
+                                         <ul>
+                		  <li>
+	                  <a href="/kenetix-ipaas/compare-packages"  >Compare Packages</a>
+                       </li>
+            		  <li>
+	                  <a href="/kenetix-ipaas/how-it-works"  >How It Works</a>
+                       </li>
+            		  <li>
+	                  <a href="/kenetix-ipaas/integrations"  >Integrations</a>
+                       </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+              </li>
+            	          	  <li class="is-parent columns-4">
+	                  <a href="/solutions"  >Solutions</a>
+                                         <ul>
+                	          	  <li class="is-parent columns-3">
+	                  <span>EFT PLATFORM</span>
+                                        <ul>
+                	          	  <li class="is-parent ">
+	                  <span>Business Type</span>
+                                        <ul>
+                		  <li>
+	                  <a href="/business/enterprise"  >Large Business</a>
+                       </li>
+            		  <li>
+	                  <a href="/business/mid-size-business"  >SMB</a>
+                       </li>
+        </ul>
+  
+              </li>
+            	          	  <li class="is-parent ">
+	                  <span>Industries</span>
+                                        <ul>
+                		  <li>
+	                  <a href="/entertainment-media"  >Entertainment/media</a>
+                       </li>
+            		  <li>
+	                  <a href="/financial-services"  >Financial Services</a>
+                       </li>
+            		  <li>
+	                  <a href="/government"  >Government</a>
+                       </li>
+            		  <li>
+	                  <a href="/healthcare"  >Healthcare</a>
+                       </li>
+            		  <li>
+	                  <a href="/retail"  >Retail</a>
+                       </li>
+        </ul>
+  
+              </li>
+            	          	  <li class="is-parent ">
+	                  <span>Solutions</span>
+                                        <ul>
+                		  <li>
+	                  <a href="/solutions/automate-data-transfers"  >Automate data exchange across systems or applications</a>
+                       </li>
+            		  <li>
+	                  <a href="/solutions/monitor-file-transfers"  >Gain visibility into file movement</a>
+                       </li>
+            		  <li>
+	                  <a href="/solutions/cloud-services"  >Move infrastructure to the cloud</a>
+                       </li>
+            		  <li>
+	                  <a href="/solutions/replace-legacy-systems"  >Replace legacy file transfer  systems</a>
+                       </li>
+            		  <li>
+	                  <a href="/solutions/secure-file-sharing"  >Securely share files with internal and external users</a>
+                       </li>
+            		  <li>
+	                  <a href="/solutions/file-transfer-compliance"  >Transfer data within compliance</a>
+                       </li>
+            		  <li>
+	                  <a href="/solutions/transfer-large-files"  >Transfer large files quickly</a>
+                       </li>
+            		  <li>
+	                  <a href="/solutions/all"  >More Solutions</a>
+                       </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+              </li>
+            	          	  <li class="is-parent ">
+	                  <span>KENETIX PLATFORM</span>
+                                        <ul>
+                	          	  <li class="is-parent ">
+	                  <span>Solutions</span>
+                                        <ul>
+                		  <li>
+	                  <a href="/solutions/integrations/jira"  >Integrate with JIRA</a>
+                       </li>
+            		  <li>
+	                  <a href="/netsuite-integration"  >Integrate with Netsuite</a>
+                       </li>
+            		  <li>
+	                  <a href="/solutions/integrations/salesforce"  >Integrate with Salesforce</a>
+                       </li>
+            		  <li>
+	                  <a href="/solutions/integrations/servicenow"  >Integrate with ServiceNow</a>
+                       </li>
+            		  <li>
+	                  <a href="/slack-integration"  >Integrate with Slack</a>
+                       </li>
+            		  <li>
+	                  <a href="/solutions/integrations/smartsheet"  >Integrate with Smartsheet</a>
+                       </li>
+            		  <li>
+	                  <a href="/solutions/integrations/workfront"  >Integrate with Workfront</a>
+                       </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+              </li>
+            		  <li>
+	                  <a href="/resources"  >Resources</a>
+                       </li>
+            	          	  <li class="is-parent columns-2">
+	                  <a href="/services-support"  >Services &amp; Support</a>
+                                         <ul>
+                	          	  <li class="is-parent ">
+	                  <span>Support</span>
+                                        <ul>
+                		  <li>
+	                  <a href="/support"  >Support Home</a>
+                       </li>
+            		  <li>
+	                  <a href="/support/contact-us"  >Contact Support</a>
+                       </li>
+            		  <li>
+	                  <a href="/replacement-software"  >Replacement Software</a>
+                       </li>
+            		  <li class="external">
+	                  <a href="https://kb.globalscape.com/"  >Knowledge Base</a>
+                       </li>
+            		  <li class="external">
+	                  <a href="http://help.globalscape.com/help/"  >Online Help Files</a>
+                       </li>
+        </ul>
+  
+              </li>
+            	          	  <li class="is-parent ">
+	                  <span>Professional Services</span>
+                                        <ul>
+                		  <li>
+	                  <a href="/pro-services"  >Services Home</a>
+                       </li>
+            		  <li>
+	                  <a href="/contact-pro-services"  >Contact Pro-Services</a>
+                       </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+              </li>
+            	          	  <li class="is-parent ">
+	                  <a href="/company"  >About Globalscape</a>
+                                         <ul>
+                	          	  <li class="is-parent ">
+	                  <span>About</span>
+                                        <ul>
+                		  <li>
+	                  <a href="/company/leadership"  >Leadership</a>
+                       </li>
+            		  <li>
+	                  <a href="/partners"  >Partner Program</a>
+                       </li>
+            		  <li>
+	                  <a href="/investor-relations"  >Investor Relations</a>
+                       </li>
+            		  <li>
+	                  <a href="/company/awards"  >Awards</a>
+                       </li>
+            		  <li>
+	                  <a href="/company/certifications"  >Certifications</a>
+                       </li>
+            		  <li>
+	                  <a href="/news"  >News</a>
+                       </li>
+            		  <li>
+	                  <a href="/events"  >Events</a>
+                       </li>
+            		  <li>
+	                  <a href="/careers"  >Careers</a>
+                       </li>
+            		  <li>
+	                  <a href="/contact-us"  >Contact Us</a>
+                       </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+              </li>
+            		  <li class="try-eft">
+	                  <a href="/try-globalscape-software"  >FREE TRIAL</a>
+                       </li>
+        </ul>
+  
+
+
+    </nav>
+
+  </div>
+
+	</div>
+</header> <!-- end header --><nav class="pushy pushy-left" data-focus="#first-link">
+    <div class="pushy-content">
+          <div class="region mobile_main_nav">
+    <nav  class="main-menu">
+                        
+    <h2 class="visually-hidden">Main navigation</h2>
+    
+                
+
+                <!-- mobile navigation menu -->
+                    <ul>
+                                                    <li class="columns-3 pushy-submenu">
+            
+                                                <a href="/products"  >Products</a><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                    <li class="columns-2 pushy-submenu">
+            
+                                                <span>MANAGED FILE TRANSFER PLATFORM</span><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                    <li class="pushy-submenu">
+            
+                                                <span>Globalscape EFT</span><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                    <li class="pushy-submenu">
+            
+                                                <a href="/managed-file-transfer"  >EFT Platform</a><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                        <li class="pushy-link">
+            
+                                                <a href="/managed-file-transfer/deployment-options"  >Deployment Options</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/managed-file-transfer/collaboration"  >Collaboration</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/managed-file-transfer/automation-efficiency"  >Automation &amp; Efficiency</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/managed-file-transfer/protocols"  >Protocols</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/managed-file-transfer/security"  >Security</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/managed-file-transfer/compliance"  >Compliance</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/managed-file-transfer/analytics"  >Analytics</a>
+                            
+
+
+                        </li>
+                </ul>
+    
+                        </li>
+                </ul>
+    
+                        </li>
+                                            <li class="pushy-submenu">
+            
+                                                <span>Compare</span><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                        <li class="pushy-link">
+            
+                                                <a href="/managed-file-transfer/comparison"  >Comparison Chart</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/eft-pricing"  >Pricing</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/eft-enterprise"  >EFT Enterprise</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/eft-smb"  >EFT SMB</a>
+                            
+
+
+                        </li>
+                </ul>
+    
+                        </li>
+                </ul>
+    
+                        </li>
+                                            <li class="pushy-submenu">
+            
+                                                <span>INTEGRATION PLATFORM AS A SERVICE</span><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                    <li class="pushy-submenu">
+            
+                                                <span>Kenetix</span><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                    <li class="pushy-submenu">
+            
+                                                <a href="/kenetix-ipaas"  >Kenetix Platform</a><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                        <li class="pushy-link">
+            
+                                                <a href="/kenetix-ipaas/compare-packages"  >Compare Packages</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/kenetix-ipaas/how-it-works"  >How It Works</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/kenetix-ipaas/integrations"  >Integrations</a>
+                            
+
+
+                        </li>
+                </ul>
+    
+                        </li>
+                </ul>
+    
+                        </li>
+                </ul>
+    
+                        </li>
+                </ul>
+    
+                        </li>
+                                            <li class="columns-4 pushy-submenu">
+            
+                                                <a href="/solutions"  >Solutions</a><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                    <li class="columns-3 pushy-submenu">
+            
+                                                <span>EFT PLATFORM</span><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                    <li class="pushy-submenu">
+            
+                                                <span>Business Type</span><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                        <li class="pushy-link">
+            
+                                                <a href="/business/enterprise"  >Large Business</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/business/mid-size-business"  >SMB</a>
+                            
+
+
+                        </li>
+                </ul>
+    
+                        </li>
+                                            <li class="pushy-submenu">
+            
+                                                <span>Industries</span><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                        <li class="pushy-link">
+            
+                                                <a href="/entertainment-media"  >Entertainment/media</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/financial-services"  >Financial Services</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/government"  >Government</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/healthcare"  >Healthcare</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/retail"  >Retail</a>
+                            
+
+
+                        </li>
+                </ul>
+    
+                        </li>
+                                            <li class="pushy-submenu">
+            
+                                                <span>Solutions</span><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                        <li class="pushy-link">
+            
+                                                <a href="/solutions/automate-data-transfers"  >Automate data exchange across systems or applications</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/solutions/monitor-file-transfers"  >Gain visibility into file movement</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/solutions/cloud-services"  >Move infrastructure to the cloud</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/solutions/replace-legacy-systems"  >Replace legacy file transfer  systems</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/solutions/secure-file-sharing"  >Securely share files with internal and external users</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/solutions/file-transfer-compliance"  >Transfer data within compliance</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/solutions/transfer-large-files"  >Transfer large files quickly</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/solutions/all"  >More Solutions</a>
+                            
+
+
+                        </li>
+                </ul>
+    
+                        </li>
+                </ul>
+    
+                        </li>
+                                            <li class="pushy-submenu">
+            
+                                                <span>KENETIX PLATFORM</span><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                    <li class="pushy-submenu">
+            
+                                                <span>Solutions</span><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                        <li class="pushy-link">
+            
+                                                <a href="/solutions/integrations/jira"  >Integrate with JIRA</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/netsuite-integration"  >Integrate with Netsuite</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/solutions/integrations/salesforce"  >Integrate with Salesforce</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/solutions/integrations/servicenow"  >Integrate with ServiceNow</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/slack-integration"  >Integrate with Slack</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/solutions/integrations/smartsheet"  >Integrate with Smartsheet</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/solutions/integrations/workfront"  >Integrate with Workfront</a>
+                            
+
+
+                        </li>
+                </ul>
+    
+                        </li>
+                </ul>
+    
+                        </li>
+                </ul>
+    
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/resources"  >Resources</a>
+                            
+
+
+                        </li>
+                                            <li class="columns-2 pushy-submenu">
+            
+                                                <a href="/services-support"  >Services &amp; Support</a><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                    <li class="pushy-submenu">
+            
+                                                <span>Support</span><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                        <li class="pushy-link">
+            
+                                                <a href="/support"  >Support Home</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/support/contact-us"  >Contact Support</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/replacement-software"  >Replacement Software</a>
+                            
+
+
+                        </li>
+                                                <li class="external pushy-link">
+            
+                                                <a href="https://kb.globalscape.com/"  >Knowledge Base</a>
+                            
+
+
+                        </li>
+                                                <li class="external pushy-link">
+            
+                                                <a href="http://help.globalscape.com/help/"  >Online Help Files</a>
+                            
+
+
+                        </li>
+                </ul>
+    
+                        </li>
+                                            <li class="pushy-submenu">
+            
+                                                <span>Professional Services</span><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                        <li class="pushy-link">
+            
+                                                <a href="/pro-services"  >Services Home</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/contact-pro-services"  >Contact Pro-Services</a>
+                            
+
+
+                        </li>
+                </ul>
+    
+                        </li>
+                </ul>
+    
+                        </li>
+                                            <li class="pushy-submenu">
+            
+                                                <a href="/company"  >About Globalscape</a><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                    <li class="pushy-submenu">
+            
+                                                <span>About</span><button></button>
+                            
+
+
+                                            <!-- mobile navigation menu -->
+                    <ul>
+                                                        <li class="pushy-link">
+            
+                                                <a href="/company/leadership"  >Leadership</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/partners"  >Partner Program</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/investor-relations"  >Investor Relations</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/company/awards"  >Awards</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/company/certifications"  >Certifications</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/news"  >News</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/events"  >Events</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/careers"  >Careers</a>
+                            
+
+
+                        </li>
+                                                <li class="pushy-link">
+            
+                                                <a href="/contact-us"  >Contact Us</a>
+                            
+
+
+                        </li>
+                </ul>
+    
+                        </li>
+                </ul>
+    
+                        </li>
+                                                <li class="try-eft pushy-link">
+            
+                                                <a href="/try-globalscape-software"  >FREE TRIAL</a>
+                            
+
+
+                        </li>
+                </ul>
+    
+
+
+    </nav>
+
+  </div>
+
+    </div>
+</nav>
+
+<!-- Site Overlay -->
+<div class="site-overlay"></div>
+
+<div id="container">
+  <main class="main-content">
+      
+      
+       <div class="content col-md-12">
+        <div class="region content">
+    
+
+<div class="block blocksystem-main-block">
+    
+        
+            
+<article data-history-node-id="196">
+    
+        
+    <div>
+                    
+            <div class="0" >
+                            <div style="background-image:url(https://www.globalscape.com/sites/default/files/pictures/2017-04/Products_Hero_0.png);color: #ffffff" class="paragraph paragraph--type--paragraph-hero flex-component flex-component-paragraph-hero paragraph--view-mode--default">
+	<div class="flex-component-container">
+        <div class="flex-component-column">
+            <div class="flex-column-wrapper" style="min-height: 0px">
+                                                    <h1 class="hero-title">CuteFTP®</h1>
+                                
+                        <div class="field_description"><p>Simple, Powerful, Secure File Transfers for All<br />
+ </p>
+</div>
+            
+                            </div>
+        </div>
+	</div>
+</div>
+                            <div class="paragraph paragraph--type--paragraph-zig-zag flex-component flex-component-paragraph-zig-zag paragraph--view-mode--default">
+	<div class="flex-component-container">
+	    
+                            <div class="flex-component-section">
+    	<div class="flex-component-inside">
+	    	<div class="flex-component-column">
+		        		          
+                        <div class="field_image">  <img src="/sites/default/files/pictures/styles/square/public/2017-03/cuteftp_zigzag_01.jpg?itok=gOPk_nWq" width="400" height="400" alt="Automation" />
+
+
+</div>
+            
+		        		        		    </div>
+		    <div class="flex-component-column">
+		    	<div class="zig-zag-content">
+											                        <div class="field_title"><h2>Automation</h2></div>
+            
+                        <div class="field_description"><p>Easily create and schedule labor- and time-saving script transfers with minimal overhead using the Transfer Engine from within CuteFTP or with any COM-enabled scripting or programming language. Create scripts to regularly backup or synchronize your sites, and monitor local folders for changes; or just drag and drop files for fast and easy movement—up to 100 concurrent transfers.</p>
+</div>
+            
+                        <div class="cta-link field_cta"><a href="#download-table">Download Free Trial</a></div>
+            
+								    </div>
+		    </div>
+		</div>
+    </div>
+
+                        <div class="flex-component-section">
+    	<div class="flex-component-inside">
+	    	<div class="flex-component-column">
+		        		          
+                        <div class="field_image">  <img src="/sites/default/files/pictures/styles/square/public/2017-03/cuteftp_zigzag_02.jpg?itok=j1jRRGN4" width="400" height="400" alt="Easy-to-Use" />
+
+
+</div>
+            
+		        		        		    </div>
+		    <div class="flex-component-column">
+		    	<div class="zig-zag-content">
+											                        <div class="field_title"><h2>Easy-to-Use</h2></div>
+            
+                        <div class="field_description"><p>Connect to new FTP sites in a snap with step-by-step wizard. A user-friendly interface allows you to easily update and maintain sophisticated websites. You can create, open, and edit HTML documents on your computer or a remote server within CuteFTP with an integrated, color-coded HTML editor.</p>
+</div>
+            
+                        <div class="cta-link field_cta"><a href="#download-table">Buy Now</a></div>
+            
+								    </div>
+		    </div>
+		</div>
+    </div>
+
+                        <div class="flex-component-section">
+    	<div class="flex-component-inside">
+	    	<div class="flex-component-column">
+		        		          
+                        <div class="field_image">  <img src="/sites/default/files/pictures/styles/square/public/2017-03/cuteftp_zigzag_04.jpg?itok=X2pTr1pI" width="400" height="400" alt="Security" />
+
+
+</div>
+            
+		        		        		    </div>
+		    <div class="flex-component-column">
+		    	<div class="zig-zag-content">
+											                        <div class="field_title"><h2>Security</h2></div>
+            
+                        <div class="field_description"><p>Safeguard transfers of mission-critical files with security features and comprehensive protocol options, including FTP, FTPS (SSL), HTTP, HTTPS (SSL), SFTP (SSH2), OpenPGP encryption, One Time Password authentication protocol, and a password manager help you work securely with multiple remote sites at once. CuteFTP also supports the UTF-8 character set throughout the product for non-English characters.</p>
+</div>
+            
+								    </div>
+		    </div>
+		</div>
+    </div>
+
+            
+	</div>
+</div>
+                            <div class="paragraph paragraph--type--paragraph-wide-cta flex-component flex-component-paragraph-wide-cta paragraph--view-mode--default with-cta-link hombre">
+	<div class="flex-component-container">
+		<div class="flex-component-column">
+			<div class="cta-wrap">
+				
+								
+                        <div class="cta-link field_cta"><a href="#download-table">Download Free Trial</a></div>
+            
+			</div>
+            
+        </div>  
+	</div>
+</div>
+                            <div class="paragraph paragraph--type--paragraph-html flex-component flex-component-paragraph-html paragraph--view-mode--default">
+	<div class="flex-component-container">
+		<div class="flex-component-column">
+			
+                        <div class="field_paragraph_title">Try or Buy CuteFTP® (Windows/Mac)</div>
+            
+                        <div class="field_description"><p id="download-table" style="padding:"></p></div>
+            
+		</div>
+	</div>
+</div>
+
+                            <div class="paragraph paragraph--type--paragraph-html flex-component flex-component-paragraph-html paragraph--view-mode--default">
+	<div class="flex-component-container">
+		<div class="flex-component-column">
+			
+                        <div class="field_description"><table border="1" cellpadding="1" cellspacing="1"><tbody><tr><td>CuteFTP 9 (Windows)</td>
+			<td>US$59.99</td>
+			<td><a href="https://cart.globalscape.com/gscart/cartProxy.aspx?productid=509" onclick="ga('send', 'event', 'Cute Buy/Try', 'Click', 'Cute Buy Win', 1.00);">Add to Cart</a> *</td>
+			<td><a href="https://cart.globalscape.com/gscart/cartProxy.aspx?productid=512" onclick="ga('send', 'event', 'Cute Buy/Try', 'Click', 'Cute Upgrade Win', 1.00);">Upgrade for $29.99</a></td>
+			<td><a href="http://go.globalscape.com/download/cuteftp-windows" onclick="ga('send', 'event', 'Cute Buy/Try', 'Click', 'Cute Download-Win', 1.00);">Download Trial</a></td>
+		</tr><tr><td>CuteFTP 9 (Windows)<br />
+			Includes 1 year Maintenance and Support</td>
+			<td>US$89.99</td>
+			<td><a href="https://cart.globalscape.com/gscart/cartProxy.aspx?productid=510" onclick="ga('send', 'event', 'Cute Buy/Try', 'Click', 'Cute Buy Win-MS', 1.00);">Add to Cart</a> *</td>
+			<td><a href="https://cart.globalscape.com/gscart/cartProxy.aspx?productid=513" onclick="ga('send', 'event', 'Cute Buy/Try', 'Click', 'Cute Upgrade Win-MS', 1.00);">Upgrade for $59.99</a></td>
+			<td><a href="http://go.globalscape.com/download/cuteftp-windows" onclick="ga('send', 'event', 'Cute Buy/Try', 'Click', 'Cute Download-Win-MS', 1.00);">Download Trial</a></td>
+		</tr><tr><td>CuteFTP Mac Pro 3 (Mac OS X)</td>
+			<td>US$39.99</td>
+			<td><a href="https://cart.globalscape.com/gscart/cartProxy.aspx?productid=474" onclick="ga('send', 'event', 'Cute Buy/Try', 'Click', 'Cute Buy Mac', 1.00);">Add to Cart</a> *</td>
+			<td><a href="https://cart.globalscape.com/gscart/cartProxy.aspx?productid=475" onclick="ga('send', 'event', 'Cute Buy/Try', 'Click', 'Cute Upgrade Mac', 1.00);">Upgrade for $19.99</a></td>
+			<td><a href="http://go.globalscape.com/download/cuteftp-macosx" onclick="ga('send', 'event', 'Cute Buy/Try', 'Click', 'Cute Download-Mac', 1.00);">Download Trial</a></td>
+		</tr></tbody></table><p>An existing registration serial number for CuteFTP is required in order to upgrade. You can locate lost serial numbers using the <a href="/lost-serial-number-lookup">Serial Number Locator</a> provided you know the e-mail address you used when registering the product in question. Contact our <a href="/support/contact-us">Customer Service Team</a> if you have other questions.</p>
+</div>
+            
+		</div>
+	</div>
+</div>
+
+                            <div class="paragraph paragraph--type--paragraph-wide-cta flex-component flex-component-paragraph-wide-cta paragraph--view-mode--default with-cta-link hombre">
+	<div class="flex-component-container">
+		<div class="flex-component-column">
+			<div class="cta-wrap">
+				
+								
+                        <div class="cta-link field_cta"><a href="#download-table">Buy Now</a></div>
+            
+			</div>
+            
+        </div>  
+	</div>
+</div>
+                            
+<div class="paragraph paragraph--type--paragraph-tab-ui flex-component flex-component-paragraph-tab-ui paragraph--view-mode--default" style="background-color: #f5f5f5">
+	<div class="flex-component-container">
+		<div class="flex-component-column">
+		    
+
+<nav class="tabs-container">
+                  <a href="#tab-1" data-tabs-group="tab-group" class="tabs">CuteFTP for Windows</a>
+                   <a href="#tab-2" data-tabs-group="tab-group" class="tabs">MAC OS X</a>
+     
+</nav>
+
+            <div class="field_tab tabs-content-wrapper">
+                                            <div class="tab-content" id="tab-1"><div class="field-collection-item field-collection-item--name-field-tab field-collection-item--view-mode-default">
+  <div class="content">
+    
+                        <div class="field_introduction"><p>What's New in CuteFTP Version 9</p>
+</div>
+            
+                        <div class="field_description"><p><b>Consolidation of CuteFTP Lite, Home and Pro</b> - CuteFTP has been consolidated into one, powerful FTP client. The new CuteFTP v9 has all the power and security you’ve come to expect in Pro plus the new critical enhancements.</p>
+
+<p><b>Addition of TappIn, a Secure Mobile File Sharing Application</b> - With TappIn, you can securely access and share files on your computer to any other device: iPad, iPhone, Android, laptop, desktop, Mac, or Kindle Fire. This addition of a non-cloud file sharing solution gives you the flexibility to share files with others who may not have access to an FTP client. A sample TappIn connection will be included by default.</p>
+
+<p><b>Support for UNICODE Character Set</b> - CuteFTP v9 supports the UTF-8 character set throughout the product.</p>
+
+<p><b>Migration of Sites and Options</b> - Sites and Global Options settings in previous installation will be automatically migrated during upgrade.</p>
+
+<p><b>WebDAV Support</b> - CuteFTP v9 includes support for the WebDAV protocol in order to provide additional possible endpoints for CuteFTP.</p>
+
+<p>Of course, CuteFTP v9 has all of the other key features that you love:</p>
+
+<ul><li>Comprehensive protocol options, including FTP/S (SSL), HTTP/S (SSL), SFTP(SSH2)</li>
+	<li>OpenPGP encryption, One Time Password authentication protocol, and Password Manager</li>
+	<li>Schedule fast, fully-automated transfers</li>
+	<li>Safely backup or synchronize your sites</li>
+	<li>Easily monitor local folders for changes</li>
+	<li>Create labor and time saving scripts and macros</li>
+	<li>Create podcast RSS feeds and manage audio files</li>
+	<li>Connect to new sites in a snap with step-by-step wizards</li>
+	<li>Painlessly edit remote documents with a built-in editor</li>
+	<li>Drag and drop files for fast and easy movement – up to 100 concurrent transfers</li>
+	<li>View thumbnails of remote images</li>
+	<li>Securely work with multiple remote sites at one time</li>
+</ul><hr /><p><strong>Online Resources</strong></p>
+
+<ul><li>  <a href="/cuteftpr-windows-support">Support Page</a></li>
+	<li>  <a href="http://help.globalscape.com/help/cuteftp9/" target="_blank">Online Help File</a></li>
+	<li>  <a href="http://help.globalscape.com/help/guides/CuteFTP_v9_User_Guide.pdf" target="_blank">User Guide</a></li>
+	<li>  <a href="http://kb.globalscape.com/">Searchable Knowledge Base</a></li>
+	<li>  <a href="/cuteftp-download-and-registration-instructions">Installation and Activation Instructions</a></li>
+	<li>  <a href="/beginners-guide-cuteftp">Beginner's Guide to CuteFTP</a></li>
+	<li>  <a href="https://kb.globalscape.com/KnowledgebaseArticle10137.aspx">Username or Password Problems</a></li>
+	<li>  <a href="https://kb.globalscape.com/KnowledgebaseArticle10142.aspx">FTP Error Codes Reference</a></li>
+	<li>  <a href="https://kb.globalscape.com/KnowledgebaseArticle10133.aspx ">Firewall Settings and Resources</a></li>
+	<li>  <a href="http://help.globalscape.com/help/tutorials/cuteftpgs.htm">Getting Started With CuteFTP</a></li>
+</ul><hr /><p><a href="#download-table">Buy Now »</a></p>
+
+<p><a href="#download-table">Download Free Trial »</a></p>
+</div>
+            
+  </div>
+</div>
+</div>
+                                            <div class="tab-content" id="tab-2"><div class="field-collection-item field-collection-item--name-field-tab field-collection-item--view-mode-default">
+  <div class="content">
+    
+                        <div class="field_introduction"><p>CuteFTP for Mac OS X</p>
+</div>
+            
+                        <div class="field_description"><p>CuteFTP Mac Professional is the most advanced Mac FTP client available. It's Mac OS X Universal ready, has a multi-threaded thin "Metal" (Cocoa) interface, powerful automation features, and strong security for protecting your FTP sessions.</p>
+
+<p><b>Key Features &amp; Benefits</b></p>
+
+<ul><li>Get screaming performance on both Power PC and Intel-based Macintosh computers</li>
+	<li>Login and transfer files using Secure Shell 2 (SFTP) or Secure Socket Layer (SSL) protocols</li>
+	<li>Transfer multiple files concurrently and navigate sites while files are being transferred</li>
+	<li>Accelerate transfers by splitting a single download file into multiple parts and recombining the parts upon receipt</li>
+	<li>Select files and folders spanning multiple remote sites and queue them for future transfer</li>
+	<li>Synchronize by updating remote folders with the local folder's contents or vice versa</li>
+	<li>Quickly access your favorite folders with bookmarks and recall favorite folders</li>
+	<li>Edit and save to remote using an ODB Editor Suite protocol compliant editor</li>
+	<li>Discover FTP servers that use Rendezvous on your network</li>
+	<li>Runs on Mac OS X 10.4 (Tiger) and above</li>
+	<li>Requires an Internet connection and a Power PC or Intel-based Mac computer</li>
+</ul><hr /><p><strong>Online Resources</strong></p>
+
+<ul><li>  <a href="/cuteftp-mac-pro-support">Support Page</a></li>
+	<li>  <a href="http://help.globalscape.com/help/cuteftpmacpro3/" target="_blank">Online Help File</a></li>
+	<li>  <a href="http://help.globalscape.com/help/guides/CuteFTP_Mac_Professional.pdf" target="_blank">User Guide</a></li>
+	<li>  <a href="http://kb.globalscape.com/">Searchable Knowledge Base</a></li>
+</ul><hr /><p><a href="#download-table">Buy Now »</a></p>
+
+<p><a href="#download-table">Download Free Trial »</a></p>
+</div>
+            
+  </div>
+</div>
+</div>
+                    </div>
+    
+		</div>
+	</div>
+</div>
+                    </div>
+    
+            </div>
+</article>
+
+    </div>
+
+  </div>
+
+    </div>
+    
+    
+  </main>
+
+        <div class="region footer_cta">
+    
+<div class="block blockblock-contentf3cf54f5-5c55-4bd2-9694-74c45c5c95e2">
+  
+    
+      
+                        <div class="field_cta"><div style="background-color:#1075BA;opacity:1" class="paragraph paragraph--type--paragraph-wide-cta flex-component flex-component-paragraph-wide-cta paragraph--view-mode--default with-cta-link">
+	<div class="flex-component-container">
+		<div class="flex-component-column">
+			<div class="cta-wrap">
+				
+									<div class="field_title" style="color:#ffffff">Need to Manage, Secure, and Track File Transfers?</div>
+								
+                        <div class="cta-link field_cta"><a href="/try-globalscape-software/eft">Try EFT</a></div>
+            
+			</div>
+            
+        </div>  
+	</div>
+</div></div>
+            
+  </div>
+
+  </div>
+
+  
+  <footer class="main-footer">
+	<div class="inside-wrap">
+                  <div class="region footer_left">
+    
+<div class="block blockblock-content4498a99d-c7b5-432d-b19a-aa73e88419d7">
+  
+    
+      
+                        <div class="body"><p><a class="logo" href="/" rel="home" title="Home"><svg enable-background="new 0 0 500 100" height="100px" id="Layer_1" version="1.1" viewbox="0 0 500 100" width="500px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g><g><path d="M19.876,78.766c8.065,0,14.834-3.601,14.834-13.104v-3.458c0-1.441,0.144-3.025,0.144-3.025H34.71&#10;&#9;&#9;&#9;c-2.737,4.61-7.057,7.346-13.826,7.346C7.921,66.523,0,56.153,0,42.615c0-13.394,7.49-23.332,20.451-23.332&#10;&#9;&#9;&#9;c11.234,0,14.691,6.914,14.691,6.914h0.144c0,0-0.144-0.577-0.144-1.44v-4.321h8.642v44.792c0,15.412-11.667,21.316-23.477,21.316&#10;&#9;&#9;&#9;c-5.616,0-11.377-1.583-15.986-3.891l3.024-7.057C7.057,75.597,12.962,78.766,19.876,78.766z M34.854,42.76&#10;&#9;&#9;&#9;c0-12.243-5.905-15.699-13.25-15.699c-8.065,0-12.674,5.905-12.674,15.411c0,9.651,5.185,16.276,13.538,16.276&#10;&#9;&#9;&#9;C28.949,58.891,34.854,55.003,34.854,42.76z" fill="#CCCCCC"></path><path d="M53.002,2h8.93v50.843c0,5.616,2.16,6.623,5.041,6.623c0.864,0,1.584-0.144,1.584-0.144v7.922&#10;&#9;&#9;&#9;c0,0-1.44,0.143-3.024,0.143c-5.042,0-12.531-1.439-12.531-13.104V2z" fill="#CCCCCC"></path><path d="M97.507,19.427c13.97,0,25.204,10.226,25.204,24.34c0,14.259-11.234,24.486-25.204,24.486&#10;&#9;&#9;&#9;c-13.971,0-25.206-10.371-25.206-24.486C72.301,29.654,83.536,19.427,97.507,19.427z M97.507,60.476&#10;&#9;&#9;&#9;c8.929,0,15.987-7.058,15.987-16.852c0-9.65-7.202-16.563-15.987-16.563c-8.787,0-15.988,6.914-15.988,16.563&#10;&#9;&#9;&#9;C81.375,53.562,88.72,60.476,97.507,60.476z" fill="#CCCCCC"></path><path d="M129.048,2h8.93v21.316c0,2.304-0.145,4.033-0.145,4.033h0.145c0,0,4.033-7.922,14.979-7.922&#10;&#9;&#9;&#9;c12.531,0,20.452,9.938,20.452,24.485c0,14.834-8.93,24.484-21.172,24.484c-10.37,0-14.691-8.064-14.691-8.064h-0.145&#10;&#9;&#9;&#9;c0,0,0.145,1.439,0.145,3.456v3.456h-8.498V2z M150.94,60.62c7.345,0,13.539-6.052,13.539-16.708&#10;&#9;&#9;&#9;c0-10.083-5.473-16.708-13.25-16.708c-7.058,0-13.538,4.897-13.538,16.852C137.833,52.266,142.155,60.62,150.94,60.62z" fill="#CCCCCC"></path><path d="M206.536,38.006h2.015v-0.864c0-7.633-4.32-10.226-10.226-10.226c-7.201,0-12.962,4.464-12.962,4.464&#10;&#9;&#9;&#9;l-3.746-6.479c0,0,6.77-5.474,17.428-5.474c11.81,0,18.436,6.481,18.436,18.292v29.525h-8.354V62.78&#10;&#9;&#9;&#9;c0-2.16,0.145-3.744,0.145-3.744h-0.145c0,0-3.745,9.217-14.979,9.217c-8.065,0-15.843-4.897-15.843-14.26&#10;&#9;&#9;&#9;C178.305,38.727,198.613,38.006,206.536,38.006z M196.165,61.051c7.633,0,12.386-7.921,12.386-14.835v-1.439h-2.161&#10;&#9;&#9;&#9;c-6.769,0-18.867,0.432-18.867,8.931C187.379,57.451,190.404,61.051,196.165,61.051z" fill="#CCCCCC"></path><path d="M227.996,2h8.929v50.843c0,5.616,2.16,6.623,5.042,6.623c0.863,0,1.583-0.144,1.583-0.144v7.922&#10;&#9;&#9;&#9;c0,0-1.439,0.143-3.024,0.143c-5.041,0-12.529-1.439-12.529-13.104V2z" fill="#CCCCCC"></path><path d="M253.344,53.13c0,0,5.185,5.186,12.818,5.186c3.314,0,6.191-1.441,6.191-4.177&#10;&#9;&#9;&#9;c0-7.059-22.898-6.05-22.898-21.173c0-8.786,7.779-13.826,18.002-13.826c10.661,0,15.843,5.329,15.843,5.329l-4.32,8.641&#10;&#9;&#9;&#9;c0,0-4.319-4.032-11.522-4.032c-3.023,0-6.05,1.296-6.05,4.177c0,6.625,22.901,5.761,22.901,20.885&#10;&#9;&#9;&#9;c0,7.775-6.771,14.114-18.004,14.114c-11.665,0-18.291-6.914-18.291-6.914L253.344,53.13z" fill="#0976BC"></path><path d="M313.979,18.995c12.243,0,18.149,7.058,18.149,7.058l-5.186,8.064c0,0-4.899-5.041-12.243-5.041&#10;&#9;&#9;&#9;c-8.644,0-14.26,6.481-14.26,14.547c0,7.921,5.762,14.691,14.691,14.691c7.921,0,13.828-6.05,13.828-6.05l4.463,8.354&#10;&#9;&#9;&#9;c0,0-6.769,7.633-19.443,7.633c-15.556,0-25.493-10.947-25.493-24.629C288.486,30.229,298.424,18.995,313.979,18.995z" fill="#0976BC"></path><path d="M364.966,37.576h1.584v-0.578c0-6.193-3.89-8.353-9.073-8.353c-6.771,0-12.964,4.464-12.964,4.464&#10;&#9;&#9;&#9;l-4.463-8.353c0,0,7.344-5.761,18.434-5.761c12.387,0,19.587,6.77,19.587,18.724v29.382h-10.802v-3.89&#10;&#9;&#9;&#9;c0-1.872,0.146-3.311,0.146-3.311h-0.146c0.146,0-3.601,8.353-14.257,8.353c-8.355,0-15.988-5.329-15.988-14.691&#10;&#9;&#9;&#9;C337.023,38.727,357.333,37.576,364.966,37.576z M356.035,59.178c6.193,0,10.658-6.623,10.658-12.385v-1.152h-2.017&#10;&#9;&#9;&#9;c-6.048,0-15.698,0.864-15.698,7.346C348.833,56.153,351.138,59.178,356.035,59.178z" fill="#0976BC"></path><path d="M386.28,20.147h10.66v3.458c0,1.728-0.146,3.167-0.146,3.167h0.146c0,0,4.031-7.777,15.121-7.777&#10;&#9;&#9;&#9;c12.675,0,20.885,10.082,20.885,24.629c0,14.978-9.073,24.629-21.46,24.629c-9.362,0-13.539-6.481-13.539-6.481l0,0&#10;&#9;&#9;&#9;c0,0,0.146,1.728,0.146,4.033v19.729h-11.667V20.147H386.28z M409.47,58.459c6.48,0,11.812-5.187,11.812-14.546&#10;&#9;&#9;&#9;c0-8.931-4.754-14.835-11.668-14.835c-6.048,0-11.811,4.465-11.811,14.835C397.659,51.258,401.69,58.459,409.47,58.459z" fill="#0976BC"></path><path d="M461.031,18.995c13.539,0,20.885,9.938,20.885,22.323c0,1.441-0.289,4.467-0.289,4.467h-32.55&#10;&#9;&#9;&#9;c0.721,8.208,7.058,12.386,14.114,12.386c7.635,0,13.539-5.186,13.539-5.186l4.465,8.353c0,0-7.202,6.769-18.868,6.769&#10;&#9;&#9;&#9;c-15.556,0-25.35-11.233-25.35-24.627C437.123,29.221,446.917,18.995,461.031,18.995z M470.105,37.863&#10;&#9;&#9;&#9;c-0.146-6.337-4.177-9.794-9.36-9.794c-6.052,0-10.085,3.745-11.236,9.794H470.105z" fill="#0976BC"></path></g><g><path d="M499.343,13.523c0,4.464-3.458,7.92-8.066,7.92c-4.465,0-8.064-3.456-8.064-7.92&#10;&#9;&#9;&#9;c0-4.322,3.6-7.778,8.064-7.778S499.343,9.201,499.343,13.523z M485.229,13.523c0,3.456,2.592,6.192,6.048,6.192&#10;&#9;&#9;&#9;s5.906-2.736,5.906-6.192c0-3.458-2.594-6.338-6.048-6.338C487.82,7.329,485.229,10.065,485.229,13.523z M489.98,17.555h-1.873&#10;&#9;&#9;&#9;V9.778c0.721-0.145,1.729-0.288,3.027-0.288c1.438,0,2.158,0.288,2.735,0.576c0.433,0.288,0.719,1.008,0.719,1.728&#10;&#9;&#9;&#9;c0,0.864-0.719,1.584-1.583,1.873v0.144c0.721,0.288,1.151,0.864,1.439,1.872c0.287,1.152,0.433,1.729,0.577,2.016h-2.017&#10;&#9;&#9;&#9;c-0.288-0.287-0.434-1.007-0.575-1.872c-0.145-0.864-0.575-1.297-1.586-1.297h-0.864V17.555z M490.126,13.233h0.863&#10;&#9;&#9;&#9;c1.008,0,1.872-0.288,1.872-1.151c0-0.72-0.575-1.152-1.727-1.152c-0.434,0-0.865,0-1.009,0.144V13.233L490.126,13.233z" fill="#A5A5A5"></path></g><g><path d="M61.356,92.592l-0.433-1.583h-0.145c-0.288,0.577-0.864,1.008-1.44,1.296&#10;&#9;&#9;&#9;c-0.576,0.287-1.44,0.432-2.161,0.432c-1.439,0-2.448-0.432-3.168-1.15c-0.72-0.721-1.008-1.873-1.008-3.314v-7.775h3.312v7.057&#10;&#9;&#9;&#9;c0,0.864,0.144,1.585,0.432,2.017c0.289,0.431,0.865,0.719,1.441,0.719c0.864,0,1.584-0.288,2.016-0.864&#10;&#9;&#9;&#9;c0.433-0.575,0.576-1.584,0.576-3.023v-5.616h3.313v11.952h-2.736V92.592z" fill="#A5A5A5"></path><path d="M78.639,92.592h-3.313v-7.058c0-0.862-0.144-1.582-0.432-2.013c-0.288-0.434-0.864-0.723-1.44-0.723&#10;&#9;&#9;&#9;c-0.865,0-1.584,0.289-2.017,0.866c-0.432,0.575-0.576,1.583-0.576,3.021v5.618h-3.313V80.351h2.448l0.433,1.585h0.144&#10;&#9;&#9;&#9;c0.432-0.576,0.864-1.008,1.44-1.296c0.575-0.289,1.44-0.433,2.161-0.433c1.44,0,2.448,0.433,3.168,1.152&#10;&#9;&#9;&#9;c0.719,0.721,1.152,1.87,1.152,3.313v7.92H78.639z" fill="#A5A5A5"></path><path d="M85.409,92.592h-3.313V75.886h3.313V92.592z" fill="#A5A5A5"></path><path d="M94.482,92.882c-1.873,0-3.458-0.577-4.609-1.584c-1.153-1.01-1.585-2.593-1.585-4.611&#10;&#9;&#9;&#9;c0-2.015,0.432-3.599,1.44-4.606c1.009-1.152,2.449-1.584,4.177-1.584c1.729,0,3.024,0.432,4.033,1.439&#10;&#9;&#9;&#9;c1.009,1.007,1.44,2.305,1.44,4.031v1.44h-7.777c0,0.864,0.288,1.73,0.864,2.162c0.577,0.575,1.296,0.719,2.161,0.719&#10;&#9;&#9;&#9;c0.72,0,1.44-0.144,2.017-0.288c0.577-0.144,1.296-0.431,2.017-0.719v2.594c-0.576,0.286-1.152,0.43-1.873,0.575&#10;&#9;&#9;&#9;C96.354,92.736,95.49,92.882,94.482,92.882z M94.049,82.653c-0.72,0-1.296,0.289-1.584,0.723&#10;&#9;&#9;&#9;c-0.432,0.433-0.576,1.008-0.719,1.872h4.608c0-0.864-0.288-1.439-0.576-1.872C95.346,82.942,94.77,82.653,94.049,82.653z" fill="#A5A5A5"></path><path d="M109.893,92.592l-0.577-1.583h-0.144c-0.577,0.721-1.152,1.152-1.729,1.441&#10;&#9;&#9;&#9;c-0.576,0.286-1.296,0.432-2.304,0.432c-1.153,0-2.017-0.29-2.737-1.007c-0.72-0.721-1.008-1.587-1.008-2.883&#10;&#9;&#9;&#9;c0-1.294,0.432-2.16,1.296-2.881c0.865-0.577,2.305-1.007,4.032-1.007h2.017v-0.575c0-1.153-0.576-1.876-1.872-1.876&#10;&#9;&#9;&#9;c-1.009,0-2.161,0.289-3.457,0.868l-0.72-2.162c1.44-0.72,2.881-1.152,4.608-1.152c1.584,0,2.881,0.289,3.745,1.01&#10;&#9;&#9;&#9;c0.864,0.719,1.296,1.726,1.296,3.167v8.066h-2.448V92.592z M109.029,86.978h-1.296c-1.009,0-1.729,0.144-2.16,0.575&#10;&#9;&#9;&#9;c-0.432,0.287-0.721,0.864-0.721,1.439c0,0.864,0.577,1.439,1.585,1.439c0.721,0,1.296-0.287,1.873-0.719&#10;&#9;&#9;&#9;c0.432-0.432,0.72-1.008,0.72-1.728V86.978z" fill="#A5A5A5"></path><path d="M124.151,88.992c0,1.296-0.432,2.162-1.296,2.883c-0.865,0.575-2.16,1.007-3.888,1.007&#10;&#9;&#9;&#9;c-0.865,0-1.584,0-2.306-0.146c-0.719-0.145-1.152-0.286-1.728-0.575v-2.737c0.576,0.289,1.297,0.576,2.018,0.721&#10;&#9;&#9;&#9;c0.719,0.144,1.44,0.287,2.016,0.287c1.152,0,1.728-0.287,1.728-1.008c0-0.286-0.144-0.432-0.288-0.575s-0.432-0.288-0.864-0.577&#10;&#9;&#9;&#9;c-0.433-0.286-0.865-0.432-1.585-0.719c-0.864-0.432-1.584-0.721-2.016-1.009c-0.433-0.289-0.721-0.721-1.009-1.151&#10;&#9;&#9;&#9;c-0.144-0.432-0.287-1.009-0.287-1.584c0-1.01,0.432-1.873,1.296-2.449c0.864-0.575,2.016-0.863,3.456-0.863&#10;&#9;&#9;&#9;c1.44,0,2.882,0.288,4.177,1.007l-1.007,2.306c-0.577-0.287-1.152-0.433-1.729-0.579c-0.576-0.142-1.008-0.287-1.584-0.287&#10;&#9;&#9;&#9;c-1.009,0-1.44,0.287-1.44,0.723c0,0.287,0.144,0.575,0.432,0.719c0.289,0.146,1.009,0.577,2.017,1.009&#10;&#9;&#9;&#9;c1.008,0.431,1.584,0.719,2.017,1.008c0.431,0.286,0.719,0.721,1.008,1.152C124.151,87.985,124.151,88.417,124.151,88.992z" fill="#A5A5A5"></path><path d="M137.978,92.592h-3.313v-7.058c0-1.726-0.577-2.592-1.873-2.592c-0.864,0-1.584,0.287-2.016,0.866&#10;&#9;&#9;&#9;c-0.432,0.575-0.577,1.584-0.577,3.023v5.618h-3.313V75.886h3.313v3.457c0,0.287,0,0.864-0.144,1.874v0.863h0.144&#10;&#9;&#9;&#9;c0.72-1.152,1.872-1.729,3.457-1.729c1.44,0,2.449,0.434,3.169,1.152c0.72,0.721,1.152,1.873,1.152,3.313V92.592z" fill="#A5A5A5"></path><path d="M141.435,77.472c0-1.009,0.576-1.586,1.729-1.586s1.728,0.577,1.728,1.586&#10;&#9;&#9;&#9;c0,0.573-0.144,0.862-0.433,1.151c-0.288,0.288-0.719,0.432-1.295,0.432C142.011,79.055,141.435,78.623,141.435,77.472z&#10;&#9;&#9;&#9; M144.891,92.592h-3.313V80.64h3.313V92.592z" fill="#A5A5A5"></path><path d="M159.582,92.592h-3.312v-7.058c0-0.862-0.145-1.582-0.432-2.013c-0.288-0.434-0.864-0.723-1.44-0.723&#10;&#9;&#9;&#9;c-0.865,0-1.585,0.289-2.017,0.866c-0.432,0.575-0.576,1.583-0.576,3.021v5.618h-3.313V80.351h2.448l0.432,1.585h0.144&#10;&#9;&#9;&#9;c0.432-0.576,0.864-1.008,1.44-1.296c0.576-0.289,1.441-0.433,2.16-0.433c1.441,0,2.45,0.433,3.169,1.152&#10;&#9;&#9;&#9;c0.721,0.721,1.153,1.87,1.153,3.313v7.92H159.582z" fill="#A5A5A5"></path><path d="M173.697,80.64v1.728l-1.872,0.432c0.288,0.577,0.576,1.153,0.576,1.873c0,1.295-0.433,2.306-1.297,3.026&#10;&#9;&#9;&#9;c-0.864,0.719-2.161,1.15-3.745,1.15h-0.576h-0.433c-0.288,0.289-0.576,0.575-0.576,0.864c0,0.432,0.576,0.719,1.872,0.719h2.017&#10;&#9;&#9;&#9;c1.296,0,2.304,0.29,3.024,0.866c0.72,0.577,1.008,1.438,1.008,2.446c0,1.443-0.576,2.45-1.729,3.314&#10;&#9;&#9;&#9;c-1.152,0.866-2.88,1.152-5.041,1.152c-1.729,0-3.024-0.286-3.888-0.865c-0.865-0.576-1.297-1.439-1.297-2.449&#10;&#9;&#9;&#9;c0-0.719,0.288-1.296,0.721-1.871c0.432-0.434,1.151-0.864,2.016-1.009c-0.288-0.142-0.576-0.431-0.865-0.719&#10;&#9;&#9;&#9;c-0.288-0.289-0.432-0.719-0.432-1.01c0-0.432,0.145-0.864,0.432-1.15c0.289-0.289,0.721-0.577,1.152-0.866&#10;&#9;&#9;&#9;c-0.576-0.286-1.152-0.719-1.44-1.294c-0.432-0.577-0.576-1.298-0.576-2.162c0-1.294,0.431-2.303,1.296-3.023&#10;&#9;&#9;&#9;c0.864-0.721,2.017-1.008,3.601-1.008c0.288,0,0.72,0,1.152,0.144c0.432,0,0.72,0.144,0.864,0.144h4.033V80.64z M164.335,94.323&#10;&#9;&#9;&#9;c0,0.432,0.288,0.864,0.72,1.006c0.433,0.29,1.008,0.434,1.872,0.434c1.152,0,2.161-0.144,2.737-0.434&#10;&#9;&#9;&#9;c0.72-0.287,1.008-0.719,1.008-1.296c0-0.433-0.144-0.721-0.576-0.864c-0.432-0.144-1.007-0.287-1.872-0.287h-1.728&#10;&#9;&#9;&#9;c-0.577,0-1.153,0.144-1.441,0.431C164.623,93.457,164.335,93.888,164.335,94.323z M165.631,84.529&#10;&#9;&#9;&#9;c0,0.719,0.145,1.15,0.433,1.582c0.288,0.433,0.72,0.575,1.296,0.575c0.576,0,1.008-0.143,1.296-0.575&#10;&#9;&#9;&#9;c0.287-0.432,0.433-0.863,0.433-1.582c0-1.441-0.577-2.162-1.729-2.162C166.207,82.367,165.631,83.088,165.631,84.529z" fill="#A5A5A5"></path><path d="M186.803,90.145c0.576,0,1.296-0.145,2.016-0.432v2.448c-0.864,0.431-1.872,0.575-3.024,0.575&#10;&#9;&#9;&#9;c-1.296,0-2.305-0.286-2.88-1.007c-0.577-0.721-0.864-1.729-0.864-3.024v-5.763h-1.584v-1.439l1.872-1.152l1.008-2.592h2.161&#10;&#9;&#9;&#9;v2.592h3.312v2.737h-3.312v5.761c0,0.433,0.144,0.864,0.432,1.008C186.083,90.145,186.372,90.145,186.803,90.145z" fill="#A5A5A5"></path><path d="M202.646,92.592h-3.313v-7.058c0-1.726-0.575-2.592-1.872-2.592c-0.864,0-1.584,0.287-2.017,0.866&#10;&#9;&#9;&#9;c-0.432,0.575-0.576,1.584-0.576,3.023v5.618h-3.313V75.886h3.313v3.457c0,0.287,0,0.864-0.144,1.874l-0.144,1.007h0.144&#10;&#9;&#9;&#9;c0.72-1.152,1.873-1.728,3.457-1.728c1.44,0,2.449,0.432,3.169,1.15c0.72,0.721,1.152,1.875,1.152,3.314v7.631H202.646z" fill="#A5A5A5"></path><path d="M211.576,92.882c-1.873,0-3.457-0.577-4.609-1.584c-1.152-1.01-1.584-2.593-1.584-4.611&#10;&#9;&#9;&#9;c0-2.015,0.432-3.599,1.44-4.606c1.009-1.152,2.449-1.584,4.176-1.584c1.729,0,3.025,0.432,4.033,1.439&#10;&#9;&#9;&#9;c1.009,1.007,1.441,2.305,1.441,4.031v1.44h-7.778c0,0.864,0.289,1.73,0.865,2.162c0.575,0.575,1.295,0.719,2.159,0.719&#10;&#9;&#9;&#9;c0.721,0,1.441-0.144,2.017-0.288c0.575-0.144,1.296-0.431,2.016-0.719v2.594c-0.576,0.286-1.152,0.43-1.873,0.575&#10;&#9;&#9;&#9;C213.305,92.736,212.585,92.882,211.576,92.882z M211.143,82.653c-0.72,0-1.295,0.289-1.583,0.723&#10;&#9;&#9;&#9;c-0.433,0.433-0.576,1.008-0.72,1.872h4.608c0-0.864-0.288-1.439-0.576-1.872C212.44,82.942,211.864,82.653,211.143,82.653z" fill="#A5A5A5"></path><path d="M231.884,92.882c-1.44,0-2.448-0.577-3.313-1.584h-0.144c0.144,1.007,0.144,1.584,0.144,1.728v4.899&#10;&#9;&#9;&#9;h-3.313V80.64h2.737l0.431,1.584h0.144c0.72-1.152,1.873-1.728,3.457-1.728c1.44,0,2.593,0.575,3.313,1.584&#10;&#9;&#9;&#9;c0.864,1.149,1.152,2.592,1.152,4.606c0,1.299-0.144,2.451-0.575,3.313c-0.432,1.009-0.864,1.729-1.584,2.161&#10;&#9;&#9;&#9;C233.612,92.592,232.891,92.882,231.884,92.882z M230.875,82.942c-0.864,0-1.44,0.287-1.729,0.723&#10;&#9;&#9;&#9;c-0.289,0.432-0.576,1.296-0.576,2.446V86.4c0,1.298,0.144,2.16,0.576,2.737C229.58,89.713,230.155,90,231.02,90&#10;&#9;&#9;&#9;c1.439,0,2.16-1.151,2.16-3.6c0-1.152-0.145-2.017-0.577-2.592C232.315,83.229,231.74,82.942,230.875,82.942z" fill="#A5A5A5"></path><path d="M250.318,86.544c0,2.017-0.576,3.456-1.584,4.61c-1.008,1.15-2.448,1.582-4.321,1.582&#10;&#9;&#9;&#9;c-1.153,0-2.16-0.286-3.023-0.72c-0.865-0.431-1.586-1.295-2.018-2.16c-0.432-1.008-0.719-2.017-0.719-3.313&#10;&#9;&#9;&#9;c0-2.015,0.576-3.456,1.584-4.608c1.009-1.151,2.448-1.585,4.321-1.585c1.152,0,2.161,0.289,3.024,0.721&#10;&#9;&#9;&#9;c0.864,0.432,1.584,1.152,2.016,2.158C250.174,84.24,250.318,85.248,250.318,86.544z M242.109,86.544&#10;&#9;&#9;&#9;c0,1.154,0.144,2.161,0.576,2.737c0.432,0.575,1.008,0.863,1.873,0.863c0.864,0,1.44-0.288,1.872-0.863&#10;&#9;&#9;&#9;c0.433-0.576,0.577-1.441,0.577-2.737c0-1.151-0.144-2.015-0.577-2.735c-0.432-0.579-1.008-0.866-1.872-0.866&#10;&#9;&#9;&#9;c-0.865,0-1.44,0.287-1.873,0.866C242.253,84.529,242.109,85.393,242.109,86.544z" fill="#A5A5A5"></path><path d="M263.139,92.592l-0.864-4.175l-1.298-5.329h-0.144l-2.159,9.504h-3.458L251.76,80.64h3.313l1.439,5.327&#10;&#9;&#9;&#9;c0.29,1.011,0.432,2.305,0.723,3.89l0,0c0-0.575,0.143-1.439,0.43-2.59l0.146-0.866l1.439-5.761h3.601l1.441,5.761&#10;&#9;&#9;&#9;c0,0.144,0.144,0.432,0.144,0.721c0,0.286,0.142,0.577,0.142,1.007c0,0.289,0.145,0.721,0.145,1.01&#10;&#9;&#9;&#9;c0,0.286,0.146,0.575,0.146,0.862l0,0c0-0.576,0.146-1.151,0.289-2.16c0.144-0.862,0.286-1.439,0.286-1.873l1.441-5.327h3.168&#10;&#9;&#9;&#9;l-3.456,11.952H263.139z" fill="#A5A5A5"></path><path d="M277.828,92.882c-1.871,0-3.456-0.577-4.608-1.584c-1.152-1.01-1.583-2.593-1.583-4.611&#10;&#9;&#9;&#9;c0-2.015,0.431-3.599,1.439-4.606c1.01-1.152,2.448-1.584,4.177-1.584c1.728,0,3.023,0.432,4.033,1.439&#10;&#9;&#9;&#9;c1.007,1.007,1.438,2.305,1.438,4.031v1.44h-7.776c0,0.864,0.289,1.73,0.866,2.162c0.575,0.575,1.294,0.719,2.16,0.719&#10;&#9;&#9;&#9;c0.721,0,1.439-0.144,2.017-0.288c0.575-0.144,1.296-0.431,2.017-0.719v2.594c-0.577,0.286-1.155,0.43-1.874,0.575&#10;&#9;&#9;&#9;C279.556,92.736,278.694,92.882,277.828,92.882z M277.253,82.653c-0.719,0-1.296,0.289-1.587,0.723&#10;&#9;&#9;&#9;c-0.43,0.433-0.575,1.008-0.719,1.872h4.608c0-0.864-0.286-1.439-0.575-1.872C278.549,82.942,277.974,82.653,277.253,82.653z" fill="#A5A5A5"></path><path d="M292.232,80.351c0.431,0,0.862,0,1.151,0.146l-0.289,3.025c-0.286,0-0.575-0.146-1.007-0.146&#10;&#9;&#9;&#9;c-1.01,0-1.872,0.289-2.447,0.864c-0.577,0.575-0.865,1.294-0.865,2.304v6.048h-3.313V80.64h2.446l0.434,2.014h0.144&#10;&#9;&#9;&#9;c0.432-0.718,0.864-1.15,1.439-1.582C290.792,80.496,291.512,80.351,292.232,80.351z" fill="#A5A5A5"></path><path d="M312.538,86.544c0,2.017-0.575,3.456-1.583,4.61c-1.009,1.15-2.448,1.582-4.321,1.582&#10;&#9;&#9;&#9;c-1.152,0-2.16-0.286-3.024-0.72c-0.863-0.431-1.586-1.295-2.017-2.16c-0.432-1.008-0.72-2.017-0.72-3.313&#10;&#9;&#9;&#9;c0-2.015,0.575-3.456,1.584-4.608c1.008-1.151,2.448-1.585,4.322-1.585c1.15,0,2.159,0.289,3.021,0.721&#10;&#9;&#9;&#9;c0.866,0.432,1.585,1.152,2.019,2.158C312.395,84.24,312.538,85.248,312.538,86.544z M304.186,86.544&#10;&#9;&#9;&#9;c0,1.154,0.143,2.161,0.575,2.737c0.434,0.575,1.011,0.863,1.873,0.863c0.864,0,1.439-0.288,1.873-0.863&#10;&#9;&#9;&#9;c0.432-0.576,0.577-1.441,0.577-2.737c0-1.151-0.146-2.015-0.577-2.735c-0.434-0.579-1.009-0.866-1.873-0.866&#10;&#9;&#9;&#9;c-0.862,0-1.439,0.287-1.873,0.866C304.474,84.529,304.186,85.393,304.186,86.544z" fill="#A5A5A5"></path><path d="M322.044,83.088h-2.879v9.504h-3.314v-9.504h-1.871v-1.585l1.871-0.863v-0.862&#10;&#9;&#9;&#9;c0-1.443,0.291-2.306,1.01-3.028c0.721-0.575,1.728-1.007,3.169-1.007c1.152,0,2.16,0.144,3.023,0.577l-0.863,2.446&#10;&#9;&#9;&#9;c-0.721-0.143-1.296-0.288-1.874-0.288c-0.43,0-0.861,0.146-1.007,0.434c-0.144,0.287-0.287,0.575-0.287,1.008v0.721h2.881v2.448&#10;&#9;&#9;&#9;H322.044z" fill="#A5A5A5"></path><path d="M333.854,92.882c-1.441,0-2.594-0.577-3.313-1.584c-0.864-1.153-1.152-2.593-1.152-4.611&#10;&#9;&#9;&#9;c0-2.015,0.434-3.457,1.296-4.606c0.866-1.152,2.017-1.584,3.458-1.584c1.584,0,2.737,0.575,3.456,1.728h0.145&#10;&#9;&#9;&#9;c-0.145-0.864-0.288-1.728-0.288-2.446v-3.892h3.313v16.706h-2.45l-0.574-1.583H337.6&#10;&#9;&#9;&#9;C336.592,92.161,335.441,92.882,333.854,92.882z M335.008,90.145c0.863,0,1.438-0.288,1.873-0.721&#10;&#9;&#9;&#9;c0.432-0.432,0.575-1.296,0.575-2.446v-0.291c0-1.294-0.144-2.157-0.575-2.734c-0.435-0.576-1.01-0.864-1.873-0.864&#10;&#9;&#9;&#9;c-0.719,0-1.297,0.288-1.729,0.864c-0.432,0.577-0.577,1.582-0.577,2.734c0,1.153,0.146,2.019,0.577,2.595&#10;&#9;&#9;&#9;C333.711,89.856,334.289,90.145,335.008,90.145z" fill="#A5A5A5"></path><path d="M351.858,92.592l-0.577-1.583h-0.144c-0.577,0.721-1.152,1.152-1.728,1.441&#10;&#9;&#9;&#9;c-0.577,0.286-1.296,0.432-2.304,0.432c-1.152,0-2.017-0.29-2.737-1.007c-0.72-0.721-1.009-1.587-1.009-2.883&#10;&#9;&#9;&#9;c0-1.294,0.434-2.16,1.296-2.881c0.864-0.577,2.306-1.007,4.033-1.007h2.017v-0.575c0-1.153-0.575-1.876-1.873-1.876&#10;&#9;&#9;&#9;c-1.006,0-2.16,0.289-3.456,0.868l-1.15-2.162c1.439-0.72,2.88-1.152,4.606-1.152c1.586,0,2.883,0.289,3.746,1.01&#10;&#9;&#9;&#9;c0.864,0.719,1.296,1.726,1.296,3.167v8.066h-2.017V92.592z M350.852,86.978h-1.296c-1.01,0-1.729,0.144-2.162,0.575&#10;&#9;&#9;&#9;c-0.432,0.287-0.721,0.864-0.721,1.439c0,0.864,0.575,1.439,1.585,1.439c0.721,0,1.298-0.287,1.873-0.719&#10;&#9;&#9;&#9;c0.43-0.432,0.721-1.008,0.721-1.728V86.978L350.852,86.978z" fill="#A5A5A5"></path><path d="M362.804,90.145c0.577,0,1.298-0.145,2.017-0.432v2.448c-0.862,0.431-1.871,0.575-3.024,0.575&#10;&#9;&#9;&#9;c-1.296,0-2.305-0.286-2.88-1.007c-0.577-0.721-0.864-1.729-0.864-3.024v-5.763h-1.585v-1.439l1.872-1.152l1.009-2.592h2.16v2.592&#10;&#9;&#9;&#9;h3.313v2.737h-3.313v5.761c0,0.433,0.146,0.864,0.434,1.008C362.229,90,362.374,90.145,362.804,90.145z" fill="#A5A5A5"></path><path d="M375.191,92.592l-0.575-1.583h-0.146c-0.576,0.721-1.151,1.152-1.727,1.441&#10;&#9;&#9;&#9;c-0.577,0.286-1.296,0.432-2.303,0.432c-1.155,0-2.017-0.29-2.737-1.007c-0.723-0.721-1.01-1.587-1.01-2.883&#10;&#9;&#9;&#9;c0-1.294,0.432-2.16,1.296-2.881c0.864-0.577,2.306-1.007,4.033-1.007h2.017v-0.575c0-1.153-0.575-1.876-1.873-1.876&#10;&#9;&#9;&#9;c-1.01,0-2.16,0.289-3.458,0.868l-1.15-2.162c1.441-0.72,2.883-1.152,4.608-1.152c1.585,0,2.881,0.289,3.744,1.01&#10;&#9;&#9;&#9;c0.866,0.719,1.296,1.726,1.296,3.167v8.066h-2.015V92.592z M374.183,86.978h-1.296c-1.008,0-1.729,0.144-2.16,0.575&#10;&#9;&#9;&#9;c-0.432,0.287-0.721,0.864-0.721,1.439c0,0.864,0.575,1.439,1.585,1.439c0.721,0,1.296-0.287,1.873-0.719&#10;&#9;&#9;&#9;c0.43-0.432,0.719-1.008,0.719-1.728V86.978z" fill="#A5A5A5"></path></g></g></svg></a></p>
+</div>
+            
+  </div>
+
+<div class="block blockblock-content3b7cc7b0-a93a-4eaf-b707-ea46a7464b4e">
+  
+    
+      
+                        <div class="body"><h3>Contact Us</h3>
+
+<p>Sales<br />
+1-800-290-5054<br />
+1-210-308-8267</p>
+
+<p>Support<br />
+1-210-366-3993</p>
+
+<p><a href="http://www.google.com/finance?q=NYSEAMEX:GSB">NYSE American: GSB</a></p>
+</div>
+            
+  </div>
+<nav >
+            
+  <h2 class="visually-hidden">Social media</h2>
+  
+
+        
+
+              <ul class="menu">
+              <li>
+                  <a href="https://www.facebook.com/globalscape"  class="facebook"    target="_blank" >Facebook</a>
+                       </li>
+          <li>
+                  <a href="https://twitter.com/globalscape"  class="twitter"    target="_blank" >Twitter</a>
+                       </li>
+          <li>
+                  <a href="http://www.linkedin.com/company/globalscape-inc"  class="linkedin"    target="_blank" >Linkedin</a>
+                       </li>
+          <li>
+                  <a href="http://feeds.feedburner.com/globalscape"  class="rss"   >RSS</a>
+                       </li>
+          <li>
+                  <a href="https://plus.google.com/+Globalscape"  class="google-plus"    target="_blank" >Google+</a>
+                       </li>
+          <li>
+                  <a href="https://www.youtube.com/user/GlobalSCAPESoftware"  class="youtube"    target="_blank" >Youtube</a>
+                       </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+		  <div class="region footer_right">
+    <nav >
+            
+  <h2 class="visually-hidden">Software</h2>
+  
+
+        
+
+              <ul class="menu">
+              <li>
+                  <a href="/products"   rel="nofollow"  >Products</a>
+                       </li>
+          <li>
+                  <a href="/managed-file-transfer"   rel="nofollow"  >EFT</a>
+                       </li>
+          <li>
+                  <a href="/kenetix-ipaas"   >Kenetix</a>
+                       </li>
+          <li>
+                  <a href="/mail-express"   >Mail Express</a>
+                       </li>
+          <li>
+                  <a href="/cuteftp"   >CuteFTP®</a>
+                       </li>
+        </ul>
+  
+
+
+  </nav>
+<nav >
+            
+  <h2 class="visually-hidden">Support</h2>
+  
+
+        
+
+              <ul class="menu">
+              <li>
+                  <a href="/services-support"   >Services &amp; Support</a>
+                       </li>
+          <li>
+                  <a href="/support"   rel="nofollow"  >Support</a>
+                       </li>
+          <li>
+                  <a href="/support/contact-us"   rel="nofollow"  >Contact Support</a>
+                       </li>
+          <li>
+                  <a href="http://help.globalscape.com/help/"   rel="nofollow"  >Online Help Files</a>
+                       </li>
+          <li>
+                  <a href="https://kb.globalscape.com/"   rel="nofollow"  >Knowledge Base</a>
+                       </li>
+          <li>
+                  <a href="/replacement-software"   rel="nofollow"  >Replacement Software</a>
+                       </li>
+          <li>
+                  <a href="/pro-services"   >Services</a>
+                       </li>
+          <li>
+                  <a href="/contact-pro-services"   >Contact Pro-Services</a>
+                       </li>
+        </ul>
+  
+
+
+  </nav>
+<nav >
+            
+  <h2 class="visually-hidden">About</h2>
+  
+
+        
+
+              <ul class="menu">
+              <li>
+                  <a href="/company"   rel="nofollow"  >About</a>
+                       </li>
+          <li>
+                  <a href="/company/leadership"   rel="nofollow"  >Leadership</a>
+                       </li>
+          <li>
+                  <a href="/partners"   rel="nofollow"  >Partner Program</a>
+                       </li>
+          <li>
+                  <a href="/company/awards"   rel="nofollow"  >Awards</a>
+                       </li>
+          <li>
+                  <a href="/company/certifications"   rel="nofollow"  >Certifications</a>
+                       </li>
+          <li>
+                  <a href="/news"   rel="nofollow"  >News</a>
+                       </li>
+          <li>
+                  <a href="/events"   rel="nofollow"  >Events</a>
+                       </li>
+          <li>
+                  <a href="/careers"   rel="nofollow"  >Careers</a>
+                       </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+	</div>
+
+	<div class="salesforce-chat">
+	<!-- Button -->
+	<div id="liveagent_button_online_57315000000PJpa" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('57315000000PJpa')">
+		<svg x="0px" y="0px" viewBox="0 0 28 18" data-reactid=".0.2.0"><path fill="#ffffff" d="M28,3.2C28,1.5,26.5,0,24.8,0H3.2C1.5,0,0,1.5,0,3.2v11.5C0,16.5,1.5,18,3.2,18h21.5c1.8,0,3.2-1.5,3.2-3.2 V3.2z M24.7,14.8c-0.2,0.1-0.4,0.2-0.6,0.2c-0.2,0-0.4-0.1-0.6-0.3l-5-5.3l-3.6,3c-0.3,0.2-0.6,0.3-0.9,0.3s-0.7-0.1-0.9-0.4l-3.6-3 l-5,5.3c-0.2,0.2-0.4,0.3-0.6,0.3c-0.2,0-0.4-0.1-0.6-0.2c-0.3-0.3-0.4-0.8,0-1.2l4.9-5.3L3.3,4.5C3,4.2,2.9,3.6,3.2,3.3 C3.5,2.9,4,2.9,4.4,3.2l9.6,7.9l9.6-7.9c0.4-0.3,0.9-0.2,1.2,0.1c0.3,0.4,0.2,0.9-0.1,1.2l-4.8,3.9l4.9,5.3 C25.1,14,25,14.5,24.7,14.8z" data-reactid=".0.2.0.0"></path></svg>
+		<p>Chat is online.</p>
+	</div>
+	<div id="liveagent_button_offline_57315000000PJpa" style="display: none; border: 0px none; ">
+		<svg x="0px" y="0px" viewBox="0 0 28 18" data-reactid=".0.2.0"><path fill="#ffffff" d="M28,3.2C28,1.5,26.5,0,24.8,0H3.2C1.5,0,0,1.5,0,3.2v11.5C0,16.5,1.5,18,3.2,18h21.5c1.8,0,3.2-1.5,3.2-3.2 V3.2z M24.7,14.8c-0.2,0.1-0.4,0.2-0.6,0.2c-0.2,0-0.4-0.1-0.6-0.3l-5-5.3l-3.6,3c-0.3,0.2-0.6,0.3-0.9,0.3s-0.7-0.1-0.9-0.4l-3.6-3 l-5,5.3c-0.2,0.2-0.4,0.3-0.6,0.3c-0.2,0-0.4-0.1-0.6-0.2c-0.3-0.3-0.4-0.8,0-1.2l4.9-5.3L3.3,4.5C3,4.2,2.9,3.6,3.2,3.3 C3.5,2.9,4,2.9,4.4,3.2l9.6,7.9l9.6-7.9c0.4-0.3,0.9-0.2,1.2,0.1c0.3,0.4,0.2,0.9-0.1,1.2l-4.8,3.9l4.9,5.3 C25.1,14,25,14.5,24.7,14.8z" data-reactid=".0.2.0.0"></path></svg>
+		<p>Chat is offline at the moment.</p>
+	</div>
+	</div>
+	<script type="text/javascript">
+		if (!window._laq)
+		{ window._laq = []; }
+		window._laq.push(function()
+				{liveagent.showWhenOnline('57315000000PJpa', document.getElementById('liveagent_button_online_57315000000PJpa')); liveagent.showWhenOffline('57315000000PJpa', document.getElementById('liveagent_button_offline_57315000000PJpa')); }
+		);</script>
+	<!-- Deployment -->
+	<script type='text/javascript' src='https://c.la3-c2-was.salesforceliveagent.com/content/g/js/40.0/deployment.js'></script>
+	<script type='text/javascript'>
+		liveagent.init('https://d.la3-c2-was.salesforceliveagent.com/chat', '57215000000PIlx', '00D15000000EikS');
+	</script>
+</footer> <!-- end footer -->
+<div class="copyright">
+	<div class="copyright-wrap">
+		<div class="copyright-column">
+			  <div class="region footer_bottom">
+    
+<div class="block blockblock-content40309edc-5dda-4a1f-8a0c-9ea9f770dc71">
+  
+    
+      
+                        <div class="body"><p>Copyright ©1996-2017 GlobalSCAPE, Inc. All rights reserved. <a href="/node/461">Privacy Policy</a></p>
+</div>
+            
+  </div>
+
+  </div>
+
+		</div>
+	</div>
+</div>
+</div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/196","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"beginning\/bootstrap-cdn,beginning\/globalstyle,core\/html5shiv,eu_cookie_compliance\/eu_cookie_compliance,globalscape\/fonts,globalscape\/formstone-tabs,globalscape\/global-styling,globalscape_helper\/globalscape_helper,system\/base,views\/views.module","theme":"globalscape","theme_token":null},"ajaxTrustedUrl":{"\/search\/node":true},"eu_cookie_compliance":{"popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":true,"popup_html_info":"\n\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience.  To accept,  please click \u0022yes\u0022 in the banner.\u003C\/h2\u003E\n\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button\u0022\u003EYes, I agree to the use of cookies on this site\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button\u0022\u003ENo, I\u0026#039;d like to review the Privacy and Cookies Policy\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","popup_html_agreed":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"https:\/\/www.globalscape.com\/company\/privacy-policy","popup_link_new_window":true,"popup_position":false,"popup_language":"en","popup_bg_hex":"0779BF","popup_text_hex":"ffffff","domain":""},"smartIp":"{\u0022location\u0022:{\u0022source\u0022:\u0022smart_ip\u0022,\u0022ipAddress\u0022:\u002298.242.181.199\u0022,\u0022ipVersion\u0022:4,\u0022timestamp\u0022:1504040248,\u0022originalData\u0022:{\u0022continent\u0022:{\u0022code\u0022:\u0022NA\u0022,\u0022geoname_id\u0022:6255149,\u0022names\u0022:{\u0022de\u0022:\u0022Nordamerika\u0022,\u0022en\u0022:\u0022North America\u0022,\u0022es\u0022:\u0022Norteam\\u00e9rica\u0022,\u0022fr\u0022:\u0022Am\\u00e9rique du Nord\u0022,\u0022ja\u0022:\u0022\\u5317\\u30a2\\u30e1\\u30ea\\u30ab\u0022,\u0022pt-BR\u0022:\u0022Am\\u00e9rica do Norte\u0022,\u0022ru\u0022:\u0022\\u0421\\u0435\\u0432\\u0435\\u0440\\u043d\\u0430\\u044f \\u0410\\u043c\\u0435\\u0440\\u0438\\u043a\\u0430\u0022,\u0022zh-CN\u0022:\u0022\\u5317\\u7f8e\\u6d32\u0022}},\u0022country\u0022:{\u0022geoname_id\u0022:6252001,\u0022iso_code\u0022:\u0022US\u0022,\u0022names\u0022:{\u0022de\u0022:\u0022USA\u0022,\u0022en\u0022:\u0022United States\u0022,\u0022es\u0022:\u0022Estados Unidos\u0022,\u0022fr\u0022:\u0022\\u00c9tats-Unis\u0022,\u0022ja\u0022:\u0022\\u30a2\\u30e1\\u30ea\\u30ab\\u5408\\u8846\\u56fd\u0022,\u0022pt-BR\u0022:\u0022Estados Unidos\u0022,\u0022ru\u0022:\u0022\\u0421\\u0428\\u0410\u0022,\u0022zh-CN\u0022:\u0022\\u7f8e\\u56fd\u0022}},\u0022registered_country\u0022:{\u0022geoname_id\u0022:6252001,\u0022iso_code\u0022:\u0022US\u0022,\u0022names\u0022:{\u0022de\u0022:\u0022USA\u0022,\u0022en\u0022:\u0022United States\u0022,\u0022es\u0022:\u0022Estados Unidos\u0022,\u0022fr\u0022:\u0022\\u00c9tats-Unis\u0022,\u0022ja\u0022:\u0022\\u30a2\\u30e1\\u30ea\\u30ab\\u5408\\u8846\\u56fd\u0022,\u0022pt-BR\u0022:\u0022Estados Unidos\u0022,\u0022ru\u0022:\u0022\\u0421\\u0428\\u0410\u0022,\u0022zh-CN\u0022:\u0022\\u7f8e\\u56fd\u0022}}},\u0022country\u0022:\u0022United States\u0022,\u0022countryCode\u0022:\u0022US\u0022,\u0022region\u0022:\u0022\u0022,\u0022regionCode\u0022:\u0022\u0022,\u0022city\u0022:\u0022\u0022,\u0022zip\u0022:\u0022\u0022,\u0022latitude\u0022:\u0022\u0022,\u0022longitude\u0022:\u0022\u0022,\u0022timeZone\u0022:\u0022\u0022}}","smartIpSrc":{"smartIp":"smart_ip","geocodedSmartIp":"geocoded_smart_ip","w3c":"w3c"},"user":{"uid":0,"permissionsHash":"9b3644afd0e98b02c0d1a627d1119ddb81e0bf81e9d1591cb5ff9d38edd76d2c"}}</script>
+<script src="/sites/default/files/pictures/js/js_euT1llz8fRkNEJ_8-HLPcxRgkLM4aNGhwJC7OARETnA_Nyv-bdmTum4ujek15dSxFPl4wb2qBtLezdr0WP7w1YA.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4697f6e645","applicationID":"51797530","transactionName":"MVYBZUQDDUcEBRBZXggcIlJCCwxaShYFV1Q5UAJSXgc=","queueTime":0,"applicationTime":40,"atts":"HRECEwwZHkk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="http://www.retpc.jp/wp-content/themes/kindaika/common/css/import.css" />
+<title>公益財団法人不動産流通推進センター（旧　不動産流通近代化センター）</title>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#carousel').each(function(){
+		var slideTime = 600;
+		var delayTime = 3200;
+
+		var carouselWidth = $(this).width();
+		var carouselHeight = $(this).height();
+		$(this).append('<div id="carousel_prev"></div><div id="carousel_next"></div>');
+		$(this).children('ul').wrapAll('<div id="carousel_wrap"><div id="carousel_move"></div></div>');
+
+		$('#carousel_wrap').css({
+			width: (carouselWidth),
+			height: (carouselHeight),
+			position: 'relative',
+			overflow: 'hidden'
+		});
+
+		var listHeight = parseInt($('#carousel_move').children('ul').children('li').css('height'));
+		var listCount = $('#carousel_move').children('ul').children('li').length;
+
+		var ulHeight = (listHeight)*(listCount);
+		
+		$('#carousel_move').css({
+			top: -(ulHeight),
+			left: '0',
+			width: (carouselWidth),
+			height: ((ulHeight)*3),
+			position: 'absolute'
+		});
+
+		$('#carousel_wrap ul').css({
+			height: (ulHeight)
+		});
+		$('#carousel_wrap ul').each(function(){
+			$(this).clone().prependTo('#carousel_move');
+			$(this).clone().appendTo('#carousel_move');
+		});
+
+		carouselPosition();
+
+		$('#carousel_prev').click(function(){
+			clearInterval(setTimer);
+			$('#carousel_move:not(:animated)').animate({top: '+=' + (listHeight)},slideTime,function(){
+				carouselPosition();
+			});
+			timer();
+		});
+
+		$('#carousel_next').click(function(){
+			clearInterval(setTimer);
+			$('#carousel_move:not(:animated)').animate({top: '-=' + (listHeight)},slideTime,function(){
+				carouselPosition();
+			});
+			timer();
+		});
+
+		function carouselPosition(){
+			var ulTop = parseInt($('#carousel_move').css('top'));
+			var maskHeight = (carouselHeight) - ((listHeight)*(listCount));
+			if(ulTop == ((-(ulHeight))*2) || ulTop == ((-(ulHeight))*2)+1) {
+				$('#carousel_move').css({top:-(ulHeight)});
+			} else if(ulTop == 0) {
+				$('#carousel_move').css({top:-(ulHeight)});
+			};
+		};
+
+		timer();
+
+		function timer() {
+			setTimer = setInterval(function(){
+				$('#carousel_next').click();
+			},delayTime);
+		};
+		$('#carousel').hover(function(){
+			clearInterval(setTimer);
+		},function(){
+			timer();
+		});
+	});
+});
+</script>
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.retpc.jp/feed" />
+<link rel="alternate" type="text/xml" title="RSS .92" href="http://www.retpc.jp/feed/rss" />
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://www.retpc.jp/feed/atom" />
+<!--[if IE 6]>
+<script src="http://www.retpc.jp/wp-content/themes/kindaika/common/js/DD_belatedPNG.js"></script>
+<script>
+DD_belatedPNG.fix('img');
+</script>
+<![endif]-->
+
+<!--[if lt IE 7]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+<![endif]-->
+
+<script type=text/javascript>
+<!--
+function chengeSize(size) {
+document.body.style.fontSize = size;
+}
+// -->
+</script>
+<!--トップページのみに表示-->
+<!-- リマーケティング タグの Google コード -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 845643004;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+var google_conversion_format="3";
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/845643004/?guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1942095179391690'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1942095179391690&ev=PageView&noscript=1"
+/></noscript>
+
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+<!-- Yahoo Code for your Target List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var yahoo_ss_retargeting_id = 1000397337;
+var yahoo_sstag_custom_params = window.yahoo_sstag_params;
+var yahoo_ss_retargeting = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//s.yimg.jp/images/listing/tool/cv/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//b97.yahoo.co.jp/pagead/conversion/1000397337/?guid=ON&script=0&disvt=false"/>
+</div>
+</noscript>
+
+<!-- Yahoo Code for your Target List -->
+<script type="text/javascript" language="javascript">
+/* <![CDATA[ */
+var yahoo_retargeting_id = 'S7MN8WX4YK';
+var yahoo_retargeting_label = '';
+var yahoo_retargeting_page_type = '';
+var yahoo_retargeting_items = [{item_id: '', category_id: '', price: '', quantity: ''}];
+/* ]]> */
+</script>
+<script type="text/javascript" language="javascript" src="//b92.yahoo.co.jp/js/s_retargeting.js"></script>
+
+<link rel="alternate" type="application/rss+xml" title="公益財団法人不動産流通推進センター（旧　不動産流通近代化センター） &raquo; トップページ のコメントのフィード" href="http://www.retpc.jp/%e3%83%88%e3%83%83%e3%83%97%e3%83%9a%e3%83%bc%e3%82%b8-2/feed" />
+<link rel='stylesheet' id='bwg_frontend-css'  href='http://www.retpc.jp/wp-content/plugins/photo-gallery/css/bwg_frontend.css?ver=1.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='bwg_font-awesome-css'  href='http://www.retpc.jp/wp-content/plugins/photo-gallery/css/font-awesome-4.0.1/font-awesome.css?ver=4.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='bwg_mCustomScrollbar-css'  href='http://www.retpc.jp/wp-content/plugins/photo-gallery/css/jquery.mCustomScrollbar.css?ver=1.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='mediaelementjs-styles-css'  href='http://www.retpc.jp/wp-content/plugins/media-element-html5-video-and-audio-player/mediaelement/mediaelementplayer.css?ver=3.8.2' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.retpc.jp/wp-includes/js/jquery/jquery.js?ver=1.10.2'></script>
+<script type='text/javascript' src='http://www.retpc.jp/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://www.retpc.jp/wp-content/plugins/anything-popup/anything-popup.js?ver=3.8.2'></script>
+<script type='text/javascript' src='http://www.retpc.jp/wp-content/plugins/photo-gallery/js/bwg_frontend.js?ver=1.2.7'></script>
+<script type='text/javascript' src='http://www.retpc.jp/wp-content/plugins/photo-gallery/js/jquery.mobile.js?ver=1.2.7'></script>
+<script type='text/javascript' src='http://www.retpc.jp/wp-content/plugins/photo-gallery/js/jquery.mCustomScrollbar.concat.min.js?ver=1.2.7'></script>
+<script type='text/javascript' src='http://www.retpc.jp/wp-content/plugins/photo-gallery/js/jquery.fullscreen-0.4.1.js?ver=0.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var bwg_objectL10n = {"bwg_field_required":"\u30d5\u30a3\u30fc\u30eb\u30c9\u306f\u5fc5\u9808\u3067\u3059\u3002","bwg_mail_validation":"\u3053\u308c\u306f\u6709\u52b9\u306a\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002","bwg_search_result":"\u691c\u7d22\u306b\u4e00\u81f4\u3059\u308b\u753b\u50cf\u304c\u3042\u308a\u307e\u305b\u3093\u3002"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.retpc.jp/wp-content/plugins/photo-gallery/js/bwg_gallery_box.js?ver=1.2.7'></script>
+<script type='text/javascript' src='http://www.retpc.jp/wp-content/plugins/media-element-html5-video-and-audio-player/mediaelement/mediaelement-and-player.min.js?ver=2.1.3'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.retpc.jp/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.retpc.jp/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='関連URL' href='http://www.retpc.jp/url' />
+<link rel='next' title='サイトマップ' href='http://www.retpc.jp/sitemap' />
+<meta name="generator" content="WordPress 3.8.2" />
+<link rel='canonical' href='http://www.retpc.jp/' />
+<link rel='shortlink' href='http://www.retpc.jp/?p=2217' />
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+<!--facebook-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--/facebook-->
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T9D47J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T9D47J');</script>
+<!-- End Google Tag Manager -->
+  <div id="container">
+
+    <div id="header">
+
+      <div class="right">
+
+<!--facebook-->
+
+<div class="fbIcon">
+<a href="https://www.facebook.com/score.retpc/" target="_blank"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/icon_fb.png" /></a>
+</div>
+
+<iframe class="fbShare" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fscore.retpc%2F&width=119&layout=button&action=like&size=small&show_faces=true&share=true&height=65&appId" width="119" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+<!--/facebook-->
+
+        <p id="size"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/size.jpg" alt="文字サイズ" /><a href="javascript:chengeSize('100%');"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/size_s.jpg" alt="小" /></a><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/size_bar.jpg" alt="" /><a href="javascript:chengeSize('120%');"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/size_m.jpg" alt="中" /></a><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/size_bar.jpg" alt="" /><a href="javascript:chengeSize('140%');"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/size_l.jpg" alt="大" /></a></p>
+
+        <p id="sitemap"><a href="http://www.retpc.jp/sitemap"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/sitemap.jpg" alt="サイトマップ" /></a></p>
+       <form action="http://www.retpc.jp">
+        <input type="text" id="searchbox" name="s" size="19" value="" onFocus="" maxlength="50" onKeyDown="s" />
+
+        <p id="search"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/img_search.jpg" alt="" /><button type="submit"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/btn_search.jpg" alt="検索" /></button></p>
+        </form>
+      </div>
+
+      <h1><a href="http://www.retpc.jp">不動産流通推進センター</a></h1>
+
+      <p id="catchCp" class="right">2015年4月より法人名称が不動産流通近代化センターから不動産流通推進センターに変わりました。</p>
+
+
+    </div>
+
+  <div id="navi">
+      <p id="home"><a href="http://www.retpc.jp"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/navi_home.jpg" alt="HOME" width="53" height="43" /></a></p>
+
+      <div id="dropdown">
+        <ul id="theme">
+          <li><a id="navi1" href="http://www.retpc.jp/koshu">講習・研修</a>
+            <ul id="koshu">
+<li class="page_item page-item-14 page_item_has_children"><a href="http://www.retpc.jp/koshu/jitsumu">登録実務講習</a></li>
+<li class="page_item page-item-16 page_item_has_children"><a href="http://www.retpc.jp/koshu/touroku">登録講習（休止）</a></li>
+<li class="page_item page-item-11994 page_item_has_children"><a href="http://www.retpc.jp/koshu/koshushonin">不動産基礎研修</a></li>
+<li class="page_item page-item-8355"><a href="http://www.retpc.jp/koshu/follow">フォローアップ研修・フォローアップカレッジ</a></li>
+<li class="page_item"><a href="http://www.retpc.jp/meister/">宅建マイスター認定試験</a></li>
+<li class="page_item page-item-15215"><a href="http://www.retpc.jp/meister/training/">宅建マイスター養成講座</a></li>
+<li class="page_item page-item-24 page_item_has_children"><a href="http://www.retpc.jp/koshu/special">スペシャリティ講座</a></li>
+<li class="page_item page-item-8579 page_item_has_children"><a href="http://www.retpc.jp/koshu/skillup">専門士コース</a></li>
+<li class="page_item page-item-15967"><a href="http://www.retpc.jp/koshu/score">不動産流通実務検定</a></li>
+<li class="page_item page-item-16367"><a href="http://www.retpc.jp/koshu/tokubetsu">不動産コンサルティング特別講座</a></li>
+<li class="page_item page-item-16367"><a href="http://www.retpc.jp/koshu/consul_jitsumu">不動産コンサルティング実務講座</a></li>
+            </ul>
+          </li>
+          <li><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/bar_navi.jpg" /></li>
+          <li><a id="navi2" href="http://www.retpc.jp/consul">不動産コンサルティング技能試験・登録事業</a>
+            <ul id="consulting">
+              <li class="page_item page-item-26 page_item_has_children"><a href="http://www.retpc.jp/consul/consul-touroku">不動産コンサルティング技能登録制度</a></li>
+<li class="page_item page-item-1291 page_item_has_children"><a href="http://www.retpc.jp/consul/ginoushiken-3">不動産コンサルティング技能試験</a></li>
+<li class="page_item page-item-6200 page_item_has_children"><a href="http://www.retpc.jp/consul/annai">試験に合格された方の技能登録申請について　</a></li>
+<li class="page_item page-item-16325"><a href="http://www.retpc.jp/consul/koushin">更新申請手続きについて</a></li>
+<li class="page_item page-item-4670"><a href="http://www.retpc.jp/consul/kenshu">不動産コンサルティング入門研修</a></li>
+<li class="page_item page-item-2801"><a href="http://www.retpc.jp/consul/search">不動産マスター 検索サービス</a></li>
+<li class="page_item page-item-12149"><a href="http://www.retpc.jp/consul/overseas_research">不動産コンサルティングに関わる海外調査</a></li>
+            </ul>
+          </li>
+          <li><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/bar_navi.jpg" /></li>
+          <li><a id="navi3" href="http://www.retpc.jp/chosa">調査・研究</a>
+            <ul id="chosa">
+              <li class="page_item page-item-34 page_item_has_children"><a href="http://www.retpc.jp/chosa/reins">レインズ</a></li>
+<li class="page_item page-item-36"><a href="http://www.retpc.jp/chosa/gaikyo">不動産流通動向月次概況</a></li>
+<li class="page_item page-item-42"><a href="http://www.retpc.jp/chosa/tokei">不動産業統計集</a></li>
+<li class="page_item page-item-755 page_item_has_children"><a href="http://www.retpc.jp/chosa/satei-2">価格査定マニュアル</a></li>
+<li class="page_item page-item-39"><a href="http://www.retpc.jp/chosa/labo">不動産流通センター研究所の活動状況</a></li>
+            </ul>
+          </li>
+          <li><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/bar_navi.jpg" /></li>
+          <li><a id="navi4" href="http://www.retpc.jp/hon">出版</a>
+            <ul id="hon">
+              <li class="page_item page-item-7862 page_item_has_children"><a href="http://www.retpc.jp/hon/kankobutsu">刊行物・関連図書</a></li>
+<li class="page_item page-item-2694"><a href="http://www.retpc.jp/hon/%e4%be%a1%e6%a0%bc%e6%9f%bb%e5%ae%9a%e3%83%9e%e3%83%8b%e3%83%a5%e3%82%a2%e3%83%ab">価格査定マニュアル</a></li>
+<li class="page_item page-item-548 page_item_has_children"><a href="http://www.retpc.jp/hon/forum">月刊「不動産フォーラム21」</a></li>
+            </ul>
+          </li>
+          <li><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/bar_navi.jpg" /></li>
+          <li><a id="navi5" href="http://www.retpc.jp/shien">不動産業界支援</a>
+            <ul id="shien">
+              <li class="page_item page-item-1021"><a href="http://www.retpc.jp/shien/soudan">不動産相談</a></li>
+<li class="page_item page-item-58 page_item_has_children"><a href="http://www.retpc.jp/shien/saimu">債務保証</a></li>
+<li class="page_item page-item-333"><a href="http://www.retpc.jp/shien/kyoikushien">業界団体教育支援</a></li>
+<li class="page_item page-item-318"><a href="http://www.retpc.jp/shien/maneron">犯罪収益移転防止法等連絡協議会</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+        
+        
+        
+        <ul id="purpose">
+          <li id="engage"><a id="navi6" href="#">不動産業に携わる方・携わろうとする方</a>
+            <ul>
+ <li class="page_item page-item-48 page_item_has_children"><a href="http://www.retpc.jp/engage/basic">基本的な勉強をしたい</a>
+<ul class='children'>
+	<li class="page_item page-item-1800"><a href="http://www.retpc.jp/koshu/jitsumu/">登録実務講習</a></li>
+	<li class="page_item page-item-1802"><a href="http://www.retpc.jp/koshu/touroku/">登録講習</a></li>
+	<li class="page_item page-item-1807"><a href="http://www.retpc.jp/koshu/koshushonin">不動産基礎研修</a></li>
+	<!--<li class="page_item page-item-1809"><a href="http://www.retpc.jp/koshu/follow">フォローアップ研修</a></li>-->
+</ul>              
+</li>
+
+<li class="page_item page-item-50 page_item_has_children"><a href="http://www.retpc.jp/engage/high">より高度な勉強をしたい</a>
+<ul class='children'>
+	<li class="page_item page-item-1809"><a href="http://www.retpc.jp/koshu/follow">フォローアップ研修・フォローアップカレッジ</a></li>
+   <li class="page_item page-item-15967"><a href="http://www.retpc.jp/score-kentei/">不動産流通実務検定</a></li>
+   <li class="page_item page-item-1809"><a href="http://www.retpc.jp/meister/">宅建マイスター認定試験</a></li>
+	<li class="page_item page-item-1812"><a href="http://www.retpc.jp/engage/high/%e4%b8%8d%e5%8b%95%e7%94%a3%e3%82%b3%e3%83%b3%e3%82%b5%e3%83%ab%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e6%8a%80%e8%83%bd%e8%a9%a6%e9%a8%93">不動産コンサルティング技能登録制度</a></li>
+	<li class="page_item page-item-1816"><a href="http://www.retpc.jp/engage/high/%e3%82%b9%e3%83%9a%e3%82%b7%e3%83%a3%e3%83%aa%e3%83%86%e3%82%a3%e8%ac%9b%e5%ba%a7">スペシャリティ講座</a></li>
+</ul>
+</li>
+<li class="page_item page-item-1820 page_item_has_children"><a href="http://www.retpc.jp/engage/data">業務に役立つ資料が欲しい</a>
+<ul class='children'>
+	<li class="page_item page-item-1822"><a href="http://www.retpc.jp/engage/data/%e3%83%ac%e3%82%a4%e3%83%b3%e3%82%ba">レインズ</a></li>
+	<li class="page_item page-item-1160"><a href="http://www.retpc.jp/engage/data/%e4%b8%8d%e5%8b%95%e7%94%a3%e6%b5%81%e9%80%9a%e5%8b%95%e5%90%91%e6%9c%88%e6%ac%a1%e6%a6%82%e6%b3%81-2">不動産流通動向月次概況</a></li>
+	<li class="page_item page-item-1826"><a href="http://www.retpc.jp/engage/data/%e4%b8%8d%e5%8b%95%e7%94%a3%e6%a5%ad%e7%b5%b1%e8%a8%88%e9%9b%86">不動産業統計集</a></li>
+	<li class="page_item page-item-1828"><a href="http://www.retpc.jp/engage/data/%e4%b8%8d%e5%8b%95%e7%94%a3%e7%9b%b8%e8%ab%87%e3%82%b3%e3%83%bc%e3%83%8a%e3%83%bc">不動産相談</a></li>
+	<li class="page_item page-item-1831"><a href="http://www.retpc.jp/engage/data/%e5%88%8a%e8%a1%8c%e7%89%a9%e3%83%bb%e9%96%a2%e9%80%a3%e5%9b%b3%e6%9b%b8-2">刊行物・関連図書</a></li>
+	<li class="page_item page-item-1833"><a href="http://www.retpc.jp/engage/data/%e4%be%a1%e6%a0%bc%e6%9f%bb%e5%ae%9a%e3%83%9e%e3%83%8b%e3%83%a5%e3%82%a2%e3%83%ab">価格査定マニュアル</a></li>
+</ul>
+</li>
+<li class="page_item page-item-15560 page_item_has_children"><a href="http://www.retpc.jp/engage/%e8%aa%8d%e5%ae%9a%e8%b3%87%e6%a0%bc%e4%b8%80%e8%a6%a7">認定資格一覧</a>
+<ul class='children'>
+	<li class="page_item page-item-15567"><a href="http://www.retpc.jp/engage/%e8%aa%8d%e5%ae%9a%e8%b3%87%e6%a0%bc%e4%b8%80%e8%a6%a7/%e5%ae%85%e5%bb%ba%e3%83%9e%e3%82%a4%e3%82%b9%e3%82%bf%e3%83%bc-2">宅建マイスター</a></li>
+	<li class="page_item page-item-15569"><a href="http://www.retpc.jp/engage/%e8%aa%8d%e5%ae%9a%e8%b3%87%e6%a0%bc%e4%b8%80%e8%a6%a7/%e5%85%ac%e8%aa%8d-%e4%b8%8d%e5%8b%95%e7%94%a3%e3%82%b3%e3%83%b3%e3%82%b5%e3%83%ab%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%83%9e%e3%82%b9%e3%82%bf%e3%83%bc">公認 不動産コンサルティングマスター</a></li>
+	<li class="page_item page-item-15571"><a href="http://www.retpc.jp/engage/%e8%aa%8d%e5%ae%9a%e8%b3%87%e6%a0%bc%e4%b8%80%e8%a6%a7/%e5%85%ac%e8%aa%8d-%e4%b8%8d%e5%8b%95%e7%94%a3%e3%82%b3%e3%83%b3%e3%82%b5%e3%83%ab%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%83%9e%e3%82%b9%e3%82%bf%e3%83%bc-%e7%9b%b8%e7%b6%9a%e5%af%be%e7%ad%96%e5%b0%82">相続対策専門士</a></li>
+	<li class="page_item page-item-15573"><a href="http://www.retpc.jp/engage/%e8%aa%8d%e5%ae%9a%e8%b3%87%e6%a0%bc%e4%b8%80%e8%a6%a7/%e5%85%ac%e8%aa%8d-%e4%b8%8d%e5%8b%95%e7%94%a3%e3%82%b3%e3%83%b3%e3%82%b5%e3%83%ab%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%83%9e%e3%82%b9%e3%82%bf%e3%83%bc-%e4%b8%8d%e5%8b%95%e7%94%a3%e6%9c%89%e5%8a%b9">不動産有効活用専門士</a></li>
+</ul>
+</li>
+
+
+
+            </ul>
+          </li>
+          <li><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/bar_navi.jpg" /></li>
+          <li id="gyokai"><a id="navi7" href="#">業界・団体の方</a>
+            <ul>
+              <li class="page_item page-item-56 page_item_has_children"><a href="http://www.retpc.jp/group/help">支援策を知りたい</a>
+<ul class='children'>
+	<li class="page_item page-item-1836"><a href="http://www.retpc.jp/group/help/%e5%82%b5%e5%8b%99%e4%bf%9d%e8%a8%bc">債務保証</a></li>
+	<li class="page_item page-item-1840"><a href="http://www.retpc.jp/group/help/%e6%a5%ad%e7%95%8c%e5%9b%a3%e4%bd%93%e6%95%99%e8%82%b2%e6%94%af%e6%8f%b4-2">教育支援</a></li>
+</ul>
+</li>
+            </ul>
+          </li>
+          <li><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/bar_navi.jpg" /></li>
+          <li id="general"><a id="navi8" href="#">一般の方</a>
+            <ul>
+              <li class="page_item page-item-1843 page_item_has_children"><a href="http://www.retpc.jp/general/general_basic">不動産や不動産取引の基本を知りたい</a>
+<ul class='children'>
+	<li class="page_item page-item-1847"><a href="http://www.retpc.jp/general/general_basic/%e3%83%ac%e3%82%a4%e3%83%b3%e3%82%ba">レインズ</a></li>
+	<li class="page_item page-item-2798"><a href="http://www.retpc.jp/general/general_basic/%e4%b8%8d%e5%8b%95%e7%94%a3%e6%b5%81%e9%80%9a%e5%8b%95%e5%90%91%e6%9c%88%e6%ac%a1%e6%a6%82%e6%b3%81-2">不動産流通動向月次概況</a></li>
+	<li class="page_item page-item-1849"><a href="http://www.retpc.jp/general/general_basic/%e4%b8%8d%e5%8b%95%e7%94%a3%e6%a5%ad%e7%b5%b1%e8%a8%88%e9%9b%86">不動産業統計集</a></li>
+	<li class="page_item page-item-1853"><a href="http://www.retpc.jp/general/general_basic/japan">不動産取引の知識（不動産ジャパン）</a></li>
+</ul>
+</li>
+<li class="page_item page-item-1845 page_item_has_children"><a href="http://www.retpc.jp/general/advice">不動産に関する相談をしたい</a>
+<ul class='children'>
+	<li class="page_item page-item-3640"><a href="http://www.retpc.jp/general/advice/soudan">不動産相談コーナー</a></li>
+	<li class="page_item page-item-1856"><a href="http://www.retpc.jp/general/advice/%e5%85%ac%e8%aa%8d%e4%b8%8d%e5%8b%95%e7%94%a3%e3%82%b3%e3%83%b3%e3%82%b5%e3%83%ab%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%83%9e%e3%82%b9%e3%82%bf%e3%83%bc%e6%a4%9c%e7%b4%a2%e3%82%b5%e3%83%bc%e3%83%93">不動産マスター 検索サービス</a></li>
+</ul>
+</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="topimageArea">
+<h2 id="topimage">不動産流通実務検定</h2>
+<p id="mainBtn_01"><a href="http://www.retpc.jp/consul-exam/" target="_blank"><img src="wp-content/themes/kindaika/common/images/btn_key_consul.png" alt="不動産コンサルティング技能試験" /></a></p>
+<p id="mainBtn_s1"><a href="http://www.consul-e.net/" target="_blank"><img src="wp-content/themes/kindaika/common/images/btn_key_net.jpg" alt="受験対策のための入門研修インターネット通信講座はこちら" /></a></p>
+<p id="mainBtn_02"><a href="http://www.retpc.jp/score-kentei/" target="_blank"><img src="wp-content/themes/kindaika/common/images/btn_key_score.png" alt="不動産流通実務検定“スコア”" /></a></p>
+</div>
+
+<!--<div id="topimageArea">
+<h2 id="topimage">不動産流通実務検定</h2>
+<p id="mainBtn_01"><a href="http://www.retpc.jp/koshu/jitsumu/" target="_blank"><img src="wp-content/themes/kindaika/common/images/btn_key_practice.png" alt="" /></a></p>
+<p id="mainBtn_02"><a href="https://www.retpc.jp/fup/" target="_blank"><img src="wp-content/themes/kindaika/common/images/btn_key_fup.png" alt="" /></a></p>
+</div>-->
+
+
+<div id="top_contents">
+    <div id="test">
+<div id="btn_area">
+<div id="carousel">
+<ul>
+<li><a class="btn" href="http://www.retpc.jp/koshu/special#20170915" target="_blank"><p class="btnMain_t">スペシャリティ講座<span class="training">講習</span><br /><span class="subT" style="font-size:90%;">9/15[<span style="color:red;">大阪</span>]<span class="subT" style="font-size:95%;">どこに向かう？賃貸住宅市場&#8230;</span></span></p></a></li>
+<li><a class="btn" href="http://www.retpc.jp/koshu/special#20171005" target="_blank"><p class="btnMain_t">スペシャリティ講座<span class="training">講習</span><br /><span class="subT" style="font-size:90%;">10/5 都市農地（生産緑地）を含む&#8230;</span></p></a></li>
+<li><a class="btn" href="https://www.retpc.jp/fup/pages/fuplineup/#20170913" target="_blank"><p class="btnMain_t">フォローアップ研修 強化講座<span class="training">講習</span><br /><span class="subT" style="font-size:90%;">9/13[<span style="color:red;">大阪</span>]高齢化時代の取引トラブル&#8230;</span></p></a></li>
+<li><a class="btn" href="https://www.retpc.jp/fup/pages/fuplineup/#20170921" target="_blank"><p class="btnMain_t">フォローアップ研修 強化講座<span class="training">講習</span><br /><span class="subT" style="font-size:90%;">9/21 家族信託と既存制度の比較活用</span></p></a></li>
+<li><a class="btn" href="https://www.retpc.jp/fup/pages/fuplineup/#20171011" target="_blank"><p class="btnMain_t">フォローアップ研修 強化講座<span class="training">講習</span><br /><span class="subT" style="font-size:90%;">10/11[<span style="color:red;">東京</span>]高齢化時代の取引トラブル&#8230;</span></p></a></li>
+<li><a class="btn" href="https://www.retpc.jp/fup/pages/fuplineup/#20171024" target="_blank"><p class="btnMain_t">フォローアップ研修 実践講座<span class="training">講習</span><br /><span class="subT" style="font-size:90%;">10/24 瑕疵全般の整理と心理的瑕疵&#8230;</span></p></a></li>
+<li><a class="btn" href="http://www.suisin-kiso.jp/"><p class="btnMain_t">不動産基礎研修<span class="transmission">通信</span><br /><span class="subT">インターネット通信講座</span></p></a></li>
+</ul>
+</div>
+</div>
+<!--ここから-->
+<div id="btn_left">
+<ul class="leftB">
+<li><a href="http://www.retpc.jp/consulting_news#20170822"><img src="wp-content/themes/kindaika/common/images/btn_l_top.gif" alt="" width="" height="" /></a></li>
+<li><a href="http://www.retpc.jp/meister/" target="_blank"><img src="wp-content/themes/kindaika/common/images/btn_l_under.gif" alt="宅建マイスター認定試験" /></a></li>
+</ul>
+<ul class="rightB">
+<li><a href="http://www.retpc.jp/koshu/follow/"><img src="wp-content/themes/kindaika/common/images/btn_r_top.jpg" alt="フォローアップカレッジ" width="" height="" /></a></li>
+<li><a href="https://www.retpc.jp/fup/" target="_blank"><img src="wp-content/themes/kindaika/common/images/btn_r_under.jpg" alt="フォローアッププログラム" width="" height="" /></a></li>
+</ul>
+</div>
+<div id="info_left" style="margin-top:1em;">
+<div id="topics">
+<h3 id="sttl_topics">トピックス</h3>
+<ul class="clearfix">
+<li><a href="http://www.retpc.jp/consul-exam/"><img src="wp-content/themes/kindaika/common/images/bnr_topics_course.jpg" alt="不動産コンサルティング技能試験" /></a></li>
+<li><a href="http://www.consul-e.net/" target="_blank"><img src="wp-content/themes/kindaika/common/images/bnr_topics_internet.jpg" width="353" height="74" alt="不動産コンサルティング入門研修" /></a></li>
+<li><a href="https://www.retpc-consul.jp/myp/CmnLogin.do"><img src="wp-content/themes/kindaika/common/images/btn_con_master.jpg" width="353" height="74" alt="公認不動産コンサルティングマスターマイページ" /></a></li>
+</ul>
+</div>
+<!--ここまで-->
+<div id="newbook">
+<h3 id="sttl_book">刊行物案内</h3>
+<div style="margin-left: 1em; text-indent: -1em;">
+<p>・<a href="https://www.retpc.jp/book/publication.php?publication_no=96">『“スコア”受検に役立つ 不動産流通実務必読テキスト』</a> <img src="/wp-content/themes/kindaika/common/images/btn_NEW.gif" alt="NEW" width="31" height="13" /></p>
+<p>・<a href="https://www.retpc.jp/book/publication.php?publication_no=95">『平成29年版 宅建マイスター ガイダンス2017/2018』</a> <img src="/wp-content/themes/kindaika/common/images/btn_NEW.gif" alt="NEW" width="31" height="13" /></p>
+<p>・<a href="https://www.retpc.jp/book/publication.php?publication_no=84">『平成29年度版 <span style="font-size: 80%;">背景・趣旨がよくわかる</span> 改正点付き 不動産税制の手引』</a> <img src="/wp-content/themes/kindaika/common/images/btn_NEW.gif" alt="NEW" width="31" height="13" /></p>
+<p>・<a href="https://www.retpc.jp/book/publication.php?publication_no=69">『<span style="font-size: 80%;">不動産売買の</span> 新・媒介業務チェックリスト＜実践編＞改訂版』</a></p>
+<p>・<a href="http://www.retpc.jp/hon/forum">月刊『不動産フォーラム21』2017年9月号</a> <img src="/wp-content/themes/kindaika/common/images/btn_NEW.gif" alt="NEW" width="31" height="13" /></p>
+</div>
+</div>
+</div>
+<div id="new">
+<h3 id="sttl_new">新着情報</h3>
+<div style="overflow: auto; width: 450px; height: 240px;">
+<table style="width: 430px;" border="0" cellspacing="0" cellpadding="0" width="0">
+<tbody>
+<tr>
+<td valign="top">2017.9.4</td>
+<td width="10"> </td>
+<td><a href="http://www.retpc.jp/koshu/special#20171005">スペシャリティ講座『都市農地（生産緑地）を含む不動産のコンサルティング活用方法』の受付を始めました。</a> <img src="/wp-content/themes/kindaika/common/images/btn_NEW.gif" alt="NEW" width="31" height="13" /><br />
+</tr>
+<tr>
+<td valign="top">2017.8.28</td>
+<td width="10"> </td>
+<td><a href="http://www.retpc.jp/wp-content/uploads/2017/08/pdf/NR20170828.pdf" target="_blank">ニュースリリース「第5回「不動産流通実務検定&#8221;スコア&#8221;」8月28日より申込受付開始！」（PDFファイル<img src="/wp-content/themes/kindaika/common/images/Adobe_PDF_file_icon_16x16.png" alt="PDF" width="16" height="16" />）を掲載しました。</a> <img src="/wp-content/themes/kindaika/common/images/btn_NEW.gif" alt="NEW" width="31" height="13" />
+</td>
+</tr>
+<tr>
+<td valign="top">2017.8.25</td>
+<td width="10"> </td>
+<td><a href="http://www.retpc.jp/wp-content/uploads/2017/08/pdf/NR20170825.pdf" target="_blank">ニュースリリース「8/24（木） 宅建マイスター認定試験 実施速報」（PDFファイル<img src="/wp-content/themes/kindaika/common/images/Adobe_PDF_file_icon_16x16.png" alt="PDF" width="16" height="16" />）を掲載しました。</a> <img src="/wp-content/themes/kindaika/common/images/btn_NEW.gif" alt="NEW" width="31" height="13" />
+</td>
+</tr>
+<tr>
+<td valign="top">2017.8.24</td>
+<td width="10"> </td>
+<td><a href="http://www.retpc.jp/wp-content/uploads/2017/08/pdf/NR20170824.pdf" target="_blank">ニュースリリース「不動産取引に関する相談～推進センターの教育事業に活用～」（PDFファイル<img src="/wp-content/themes/kindaika/common/images/Adobe_PDF_file_icon_16x16.png" alt="PDF" width="16" height="16" />）を掲載しました。</a> <img src="/wp-content/themes/kindaika/common/images/btn_NEW.gif" alt="NEW" width="31" height="13" />
+</td>
+</tr>
+<tr>
+<td valign="top">2017.8.22</td>
+<td width="10"> </td>
+<td><a href="http://www.retpc.jp/consulting_news#20170822">不動産コンサルティング制度発足25周年記念イベント動画公開と住宅新報掲載のお知らせ</a> <img src="/wp-content/themes/kindaika/common/images/btn_NEW.gif" alt="NEW" width="31" height="13" /><br />
+</tr>
+<tr>
+<td valign="top">2017.8.1</td>
+<td width="10"> </td>
+<td><a href="https://www.retpc.jp/fup/pages/fuplineup/#20171024" target="_blank">フォローアップ研修 実践講座 『瑕疵全般の整理と心理的瑕疵の説明義務』の受付を始めました。</a><br />
+</tr>
+<tr>
+<td valign="top">2017.8.1</td>
+<td width="10"> </td>
+<td><a href="https://www.retpc.jp/fup/pages/fuplineup/#20171011" target="_blank">（東京）フォローアップ研修 強化講座 『事例に学ぶトラブル回避』の受付を始めました。</a>
+</td>
+</tr>
+<tr>
+<td valign="top">2017.7.21</td>
+<td width="10"> </td>
+<td><a href="http://www.retpc.jp/koshu/special#20170915">スペシャリティ講座［大阪］『どこに向かう？賃貸住宅市場の未来を探る！西日本編』の受付を始めました。</a><br />
+</tr>
+<tr>
+<td valign="top">2017.7.12</td>
+<td width="10"> </td>
+<td><a href="https://www.retpc.jp/fup/pages/fuplineup/#20170913" target="_blank">（大阪）フォローアップ研修 強化講座 『事例に学ぶトラブル回避』の受付を始めました。</a>
+</td>
+</tr>
+<tr>
+<td valign="top">2017.7.12</td>
+<td width="10"> </td>
+<td><a href="https://www.retpc.jp/fup/pages/fuplineup/#20170921" target="_blank">フォローアップ研修 強化講座 『家族信託と既存制度の比較活用』の受付を始めました。</a>
+</td>
+</tr>
+<tr>
+<td valign="top">2017.7.7</td>
+<td width="10"> </td>
+<td><a href="http://www.retpc.jp/koshu/special#20170906">スペシャリティ講座『借家法の変遷／サ高住の制度と終身借家権』の受付を始めました。</a><br />
+</tr>
+<tr>
+<td valign="top">2017.7.7</td>
+<td width="10"> </td>
+<td><a href="http://www.retpc.jp/koshu/special#20170825">スペシャリティ講座『民泊新法成立！知っておくべきビジネスモデルと留意点』～旅館業法から民泊新法の全て～の受付を始めました。</a><br />
+</tr>
+<tr>
+<td valign="top">2017.7.5</td>
+<td width="10"> </td>
+<td><a href="http://www.retpc.jp/consulting_news#consul_25th_anniversary">不動産コンサルティング制度発足25周年記念トークイベント「ストック活用コンサルティングが明日を創る」(2017/7/20)開催のお知らせを掲載しました。</a>
+</td>
+</tr>
+<tr>
+<td valign="top">2017.7.5</td>
+<td width="10"> </td>
+<td><a href="http://www.retpc.jp/wp-content/uploads/2017/07/pdf/NR20170705_kyoutei-teiketsushiki.pdf" target="_blank">明海大学と公益財団法人不動産流通推進センターとの研究交流に関する協定締結式（2017/7/19）実施のご案内（PDFファイル）を掲載しました。</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="nintei" style="margin-top:1em;">認定者一覧</h3>
+<table class="ninteiList" border="0" cellspacing="0" cellpadding="0" width="0">
+<tbody>
+<tr>
+<td><a href="https://www.retpc-consul.jp/sch/" target="_blank" shape="rect"><img title="search" src="wp-content/themes/kindaika/common/images/bn_nintei_kensaku.png" alt="不動産マスター検索サービス" /></a></td>
+<td><a href="http://www.retpc.jp/qualification/souzoku/senmonshi" ><img title="senmonshi" src="wp-content/themes/kindaika/common/images/bn_nintei_souzoku.png" alt="相続対策専門士" /></a></td>
+</tr>
+<tr>
+<td><a href="http://www.retpc.jp/takkenmeister"><img src="wp-content/themes/kindaika/common/images/bn_nintei_yousei.png" alt="宅建マイスター修了者" /></a></td>
+<td><a href="http://www.retpc.jp/qualification/katsuyou/senmonshi"><img src="wp-content/themes/kindaika/common/images/bn_nintei_yukou.png" alt="不動産有効活用専門士一覧" /></a></td>
+</tr>
+</tbody>
+</table>
+<div style="margin:0 auto 15px; width: 374px;" style="margin-top:1em;">
+<a href="http://www.retpc.jp/tomorrow_message"><img src="wp-content/themes/kindaika/common/images/bn_tomorrow.jpg"></a>
+</div>
+</div>
+</div>
+           <div id="banner">
+    <p><a href="/chosa/labo"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/banner_katsudo.jpg" alt="不動産流通センター研究所の活動状況" width="246" height="63" /></a></p>
+    <p><a href="http://www.retpc.jp/chosa/tokei" target="_blank"><img title="tokei" src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/banner_toukeisyu.jpg" alt="不動産業統計集" /></a></p>
+    <p><a href="/chosa/satei-2"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/banner_satei.jpg" alt="価格査定マニュアル" width="246" height="63" /></a></p>
+    <p><a href="http://www.fudousan.or.jp/" target="_blank"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/banner_japan.jpg" alt="不動産ジャパン" width="246" height="49" /></a></p>
+    <p><a href="http://www.fu-consul.jp/" target="_blank"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/banner_consulting.jpg" alt="不動産コンサルティング中央協議会" width="246" height="49" /></a></p>
+    <p><a href="/shien/maneron"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/banner_hanzai.jpg" alt="犯罪収益移転防止法等連絡協議会" width="246" height="49" /></a></p>
+  </div>
+
+  <div id="footer" class="clearfix">
+    <div class="footUpper">
+ <ul>
+    <li class="border-bottom"><a href="http://www.retpc.jp/chosa">調査・研究</a></li>
+    <li class="page_item page-item-34"><a href="http://www.retpc.jp/chosa/reins">レインズ</a></li>
+<li class="page_item page-item-36"><a href="http://www.retpc.jp/chosa/gaikyo">不動産流通動向月次概況</a></li>
+<li class="page_item page-item-42"><a href="http://www.retpc.jp/chosa/tokei">不動産業統計集</a></li>
+<li class="page_item page-item-755"><a href="http://www.retpc.jp/chosa/satei-2">価格査定マニュアル</a></li>
+<li class="page_item page-item-39"><a href="http://www.retpc.jp/chosa/labo">不動産流通センター研究所の活動状況</a></li>
+  </ul>
+  <ul>
+    <li class="border-bottom"><a href="http://www.retpc.jp/koshu">講習・研修</a></li>
+<li class="page_item page-item-14 page_item_has_children"><a href="http://www.retpc.jp/koshu/jitsumu">登録実務講習</a></li>
+<li class="page_item page-item-16 page_item_has_children"><a href="http://www.retpc.jp/koshu/touroku">登録講習</a></li>
+<li class="page_item page-item-11994 page_item_has_children"><a href="http://www.retpc.jp/koshu/koshushonin">不動産基礎研修</a></li>
+<li class="page_item page-item-8355"><a href="http://www.retpc.jp/koshu/follow">フォローアップ研修・フォローアップカレッジ</a></li>
+<li class="page_item page-item-15215"><a href="http://www.retpc.jp/koshu/meister">宅建マイスター養成講座</a></li>
+<li class="page_item page-item-24 page_item_has_children"><a href="http://www.retpc.jp/koshu/special">スペシャリティ講座</a></li>
+<li class="page_item page-item-8579 page_item_has_children"><a href="http://www.retpc.jp/koshu/skillup">専門士コース</a></li>
+<li class="page_item page-item-15967"><a href="http://www.retpc.jp/koshu/score">不動産流通実務検定</a></li>
+<li class="page_item page-item-16367"><a href="http://www.retpc.jp/koshu/tokubetsu">不動産コンサルティング特別講座</a></li>
+<li class="page_item page-item-16367"><a href="http://www.retpc.jp/koshu/consul_jitsumu">不動産コンサルティング実務講座</a></li>
+  </ul>
+  <ul>
+    <li class="border-bottom"><a href="http://www.retpc.jp/consul">不動産コンサルティング技能試験・登録事業</a></li>
+    <li class="page_item page-item-26 page_item_has_children"><a href="http://www.retpc.jp/consul/consul-touroku">不動産コンサルティング技能登録制度</a></li>
+<li class="page_item page-item-1291 page_item_has_children"><a href="http://www.retpc.jp/consul/ginoushiken-3">不動産コンサルティング技能試験</a></li>
+<li class="page_item page-item-6200 page_item_has_children"><a href="http://www.retpc.jp/consul/annai">試験に合格された方の技能登録申請について　</a></li>
+<li class="page_item page-item-16325"><a href="http://www.retpc.jp/consul/koushin">更新申請手続きについて</a></li>
+<li class="page_item page-item-4670"><a href="http://www.retpc.jp/consul/kenshu">不動産コンサルティング入門研修</a></li>
+<li class="page_item page-item-2801"><a href="http://www.retpc.jp/consul/search">不動産マスター 検索サービス</a></li>
+<li class="page_item page-item-12149"><a href="http://www.retpc.jp/consul/overseas_research">不動産コンサルティングに関わる海外調査</a></li>
+  </ul>
+  <ul>
+    <li class="border-bottom"><a href="http://www.retpc.jp/hon">出版</a></li>
+    <li class="page_item page-item-7862"><a href="http://www.retpc.jp/hon/kankobutsu">刊行物・関連図書</a></li>
+<li class="page_item page-item-2694"><a href="http://www.retpc.jp/hon/%e4%be%a1%e6%a0%bc%e6%9f%bb%e5%ae%9a%e3%83%9e%e3%83%8b%e3%83%a5%e3%82%a2%e3%83%ab">価格査定マニュアル</a></li>
+<li class="page_item page-item-548"><a href="http://www.retpc.jp/hon/forum">月刊「不動産フォーラム21」</a></li>
+  </ul>
+  <ul>
+    <li class="border-bottom"><a href="http://www.retpc.jp/shien">不動産相談ほか</a></li>
+    <li class="page_item page-item-1021"><a href="http://www.retpc.jp/shien/soudan">不動産相談</a></li>
+<li class="page_item page-item-58"><a href="http://www.retpc.jp/shien/saimu">債務保証</a></li>
+<li class="page_item page-item-333"><a href="http://www.retpc.jp/shien/kyoikushien">教育支援</a></li>
+<li class="page_item page-item-318"><a href="http://www.retpc.jp/shien/maneron">犯罪収益移転防止法等連絡協議会</a></li>
+<li style="margin-top:20px;" class="border-bottom"><a href="http://www.retpc.jp/archives">アーカイブス</a></li>
+  </ul>
+
+    <p><a href="http://get.adobe.com/jp/reader/" target="_blank"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/get_pdf.jpg" alt="Adobe Reader" width="158" height="39" /></a></p>
+</div>
+<!-- End_footUpper -->
+
+<div class="footDowner">
+
+    <div class="footLogo"><a href="/"><img src="http://www.retpc.jp/wp-content/themes/kindaika/common/images/logo_footer.jpg" alt="公益財団法人不動産流通推進センター" /></a></div>
+      <address>&copy;The Real Estate Transaction Promotion Center</address>
+<ul>
+<li><a href="/center">センターの概要</a></li>
+<li>|</li>
+<li><a href="/url">関連URL</a></li>
+<li>|</li>
+<li><a href="/privacy">プライバシーポリシー</a></li>
+</ul>
+    
+</div>
+<!-- End_footDowner -->
+  </div>
+  <!-- contents -->
+</div>
+  <div id="bg_bottom"></div>
+  
+  
+<script type="text/javascript">
+<!--
+var blade_co_account_id='4415';
+var blade_group_id='';
+
+(function() {
+var host = (location.protocol == 'https:') ? 'https://d-track.send.microad.jp' : 'http://d-cache.microad.jp';
+var path = '/js/bl_track.js';
+
+var bs = document.createElement('script');
+bs.type = 'text/javascript'; bs.async = true;
+bs.charset = 'utf-8'; bs.src = host + path;
+
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(bs, s);
+})();
+-->
+</script>
+
+
+</body>
+</html>

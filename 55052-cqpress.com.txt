@@ -1,0 +1,1544 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" version="XHTML+RDFa 1.0" dir="ltr">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="https://us.sagepub.com/sites/all/themes/sage_corp/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="http://us.sagepub.com/en-us/nam/collegepoliticalscience" />
+<link rel="shortlink" href="https://us.sagepub.com/en-us/nam/node/1433853" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>CQ Press Political Science | SAGE Publications Inc</title>
+  <link type="text/css" rel="stylesheet" href="https://us.sagepub.com/sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://us.sagepub.com/sites/default/files/css/css_lK0W5BDYtJFGxF5HEF0pNhn7-1WpqqWJuVJ4X-aDYV8.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://us.sagepub.com/sites/default/files/css/css_zAaXMNqg9MsT5czUxwach_ur_9AkeEufwTv_iTP-igg.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://us.sagepub.com/sites/default/files/css/css_OfkmMqOjKPd4NltLIAuItsdGeX6wFdfTthUir0S0UDA.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://us.sagepub.com/sites/default/files/css/css_EUomQbYzs9VilPtqozU483CB9QJMyKonf3LjCA7svMc.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://us.sagepub.com/sites/default/files/css/css_9rwKwXo8Lf4l0WBJdSmR2s21b9IJxW0Am4Tll0eyHjc.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://us.sagepub.com/sites/default/files/css/css_b4RAwnB-m5amULWnk1MZ7i-VdyODD4zLx8YYl9Zkm04.css" media="print" />
+<link type="text/css" rel="stylesheet" href="https://us.sagepub.com/sites/default/files/css/css_PxsPpITToy8ZnO0bJDA1TEC6bbFpGTfSWr2ZP8LuFYo.css" media="all" />
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-1433853 node-type-landing-page domain-us-sagepub-com region-content i18n-en-us" >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <!-- region: page_top -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5R9QN8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  <div class="site-container">
+  <header class="site-header">
+          <div class="container l-position-relative brand-parent--14">
+        <div class="abs-top-right--sm margin-right--small--sm text-small text-center upper-header">
+            <form class="form" action="https://us.sagepub.com/en-us/nam/login?f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206" method="post" id="sage-user-login" accept-charset="UTF-8"><div><div id="login-form-block" class="login-form-container-block hide hide--sm hide--xs">
+  <h2 class="heading-medium ">Login</h2>
+
+  <div>
+    <p><span style="color:#ff0000"><strong>Reset Your PASSWORD</strong></span></p><p>We have updated our systems. If you have not reset your password since Dec 19, please reset your password now to access your SAGE online account.</p>
+  </div>
+
+  <div class="form-item clearfix form-type-textfield form-item-username">
+<div class="form-item-no-label"><div class="validation-container"></div> <input data-regexp-validation="\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}\b" data-regexp-message="Enter a valid email address." data-required-validation="1" data-required-message="Email address is required." data-success-message="" placeholder="Email" type="text" id="edit-username" name="username" value="" size="60" maxlength="60" class="form-text required" />
+</div></div>
+  <div class="form-item clearfix form-type-password form-item-password">
+<div class="form-item-no-label"><div class="validation-container"></div> <input data-regexp-validation="" data-regexp-message="" data-required-validation="1" data-required-message="Password is required." data-success-message="" placeholder="Password" type="password" id="edit-password" name="password" size="60" maxlength="128" class="form-text required" />
+</div></div>
+
+  <div class="form-actions">
+    <input class="button button-default form-submit" type="submit" id="edit-submit--14" name="op" value="Log in" />  </div>
+
+  <div>
+    <a href="/en-us/nam/forgot-password?destination=node/1433853">Forgot password?</a>  </div>
+
+  <div class="clearfix">
+    <div class="button-height">
+      Don’t have an account?    </div>
+    <a href="/en-us/nam/register" class="button button-invert">Create account</a>  </div>
+
+  <input type="hidden" name="sage-form" value="sageuserloginform" />
+<input type="hidden" name="form_build_id" value="form-bGH1mapK_cfVMGIJNQ6TSqzVi87ijJliHWQEfFHEezk" />
+<input type="hidden" name="form_id" value="sage_user_login" />
+</div></div></form>
+<ul class="list--bar-separated color-smooth-grey margin-bottom--small">
+    <li class="first leaf"><a href="/en-us/nam/sales-representatives" title="">Find My Rep</a></li>
+<li class="leaf element-invisible"><a href="/en-us/nam/login" title="Sage: User Login" user-status="0" login-box-trigger="1">Login</a></li>
+<li class="leaf element-invisible"><a href="/en-us/nam/my-account" title="My account" user-status="1">My account</a></li>
+<li class="leaf element-invisible"><a href="/en-us/nam/logout" title="Sage: User Logout" user-status="1">Logout</a></li>
+<li class="last leaf"><a href="/en-us/nam/contact-us" title="">Contact</a></li>
+</ul>
+        </div>
+      </div>
+        <div class="navbar-container">
+      <nav class="navbar nav-mm" role="navigation">
+      <div class="container">
+        <div class="row">
+                    <div class="navbar-header col-md-3 margin-bottom--small--xs">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#PrimaryLinksCollapse">
+              <span class="sr-only">Toggle navigation</span>
+            </button>
+                                      <a href="/en-us/nam" title="Home" rel="home" class="site-logo">
+                <img src="https://us.sagepub.com/sites/all/themes/sage_corp/logo.svg" alt="Home"/>
+              </a>
+                      </div>
+
+                    <div class="col-sm-12 col-md-9 l-position-static">
+            <div class="row">
+                          <div class="col-xs-12 col-sm-7 col-md-6 padding-left--none padding-right--none collapse navbar-collapse" id="PrimaryLinksCollapse">
+                  
+<ul class="depth-1 nav navbar-nav primary-links brand-parent--3" aria-labelledby="menu-item-0" role="menu"><li class="first expanded primary-link-item dropdown nav-mm-fw"><a title="" class="primary-link dropdown-toggle inherit-brand-color--hover dropdown-caret" id="menu-item-31227" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Disciplines</a>
+<ul class="depth-2 dropdown-menu row" aria-labelledby="menu-item-31227" role="menu"><li class="first expanded mega-menu-section"><a href="/en-us/nam/social-sciences-humanities" class="menu-section-title inherit-brand-color menu-section-title">Social Sciences &amp; Humanities</a><ul class="mega-menu mega-menu--inline"><li class="first leaf"><a href="/en-us/nam/aging-gerontology">Aging &amp; Gerontology</a></li>
+<li class="leaf"><a href="/en-us/nam/anthropology-archaeology">Anthropology &amp; Archaeology</a></li>
+<li class="leaf"><a href="/en-us/nam/area-ethnic-studies">Area &amp; Ethnic Studies</a></li>
+<li class="leaf"><a href="/en-us/nam/arts-humanities">Arts &amp; Humanities</a></li>
+<li class="collapsed"><a href="/en-us/nam/business-management%20">Business &amp; Management</a></li>
+<li class="leaf"><a href="/en-us/nam/communication-media-studies">Communication &amp; Media Studies</a></li>
+<li class="collapsed"><a href="/en-us/nam/counseling-psychotherapy">Counseling &amp; Psychotherapy</a></li>
+<li class="collapsed"><a href="/en-us/nam/criminology-criminal-justice">Criminology &amp; Criminal Justice</a></li>
+<li class="leaf"><a href="/en-us/nam/cultural-studies">Cultural Studies</a></li>
+<li class="leaf"><a href="/en-us/nam/economic-development-studies">Economic &amp; Development Studies</a></li>
+<li class="leaf"><a href="/en-us/nam/education%20">Education</a></li>
+<li class="leaf"><a href="/en-us/nam/family-studies">Family Studies</a></li>
+<li class="leaf"><a href="/en-us/nam/gender-sexuality-studies">Gender &amp; Sexuality Studies</a></li>
+<li class="leaf"><a href="/en-us/nam/geography-earth-environmental-science">Geography, Earth &amp; Environmental Science</a></li>
+</ul><ul class="mega-menu mega-menu--inline"><li class="leaf"><a href="/en-us/nam/history">History</a></li>
+<li class="leaf"><a href="/en-us/nam/interpersonaldomestic-violence">Interpersonal/Domestic Violence</a></li>
+<li class="leaf"><a href="/en-us/nam/law%20">Law</a></li>
+<li class="leaf"><a href="/en-us/nam/political-science-international-relations">Political Science &amp; International Relations</a></li>
+<li class="collapsed"><a href="/en-us/nam/page/psychology">Psychology</a></li>
+<li class="leaf"><a href="/en-us/nam/public-affairs">Public Affairs</a></li>
+<li class="collapsed"><a href="/en-us/nam/research-methods-statistics-evaluation-0">Research Methods, Statistics &amp; Evaluation</a></li>
+<li class="leaf"><a href="/en-us/nam/social-work-human-services">Social Work &amp; Human Services</a></li>
+<li class="collapsed"><a href="/en-us/nam/sociology%20">Sociology</a></li>
+<li class="leaf"><a href="/en-us/nam/page/study-skills">Study Skills</a></li>
+<li class="collapsed"><a href="/en-us/nam/religion">Religion</a></li>
+<li class="last leaf"><a href="/en-us/nam/vocational-professional-studies">Vocational &amp; Professional Studies</a></li>
+</ul></li>
+<li class="expanded mega-menu-section"><a href="/en-us/nam/health-life-biomedical-sciences" class="menu-section-title inherit-brand-color menu-section-title">Health, Life &amp; Biomedical Sciences</a><ul class="depth-3 mega-menu" aria-labelledby="menu-item-43534" role="menu"><li class="first leaf"><a href="/en-us/nam/allied-health-other-health-specialties">Allied Health &amp; Other Health Specialties</a></li>
+<li class="leaf"><a href="/en-us/nam/biology">Biology</a></li>
+<li class="collapsed"><a href="/en-us/nam/page/clinical-medicine" title="">Clinical Medicine</a></li>
+<li class="collapsed"><a href="/en-us/nam/health-services">Health Services</a></li>
+<li class="leaf"><a href="/en-us/nam/life-biomedical-sciences">Life &amp; Biomedical Sciences</a></li>
+<li class="leaf"><a href="/en-us/nam/page/nursing">Nursing</a></li>
+<li class="leaf"><a href="/en-us/nam/plant-agricultural-sciences">Plant &amp; Agricultural Sciences</a></li>
+<li class="leaf"><a href="/en-us/nam/public-health">Public Health</a></li>
+<li class="last leaf"><a href="/en-us/nam/veterinary-medicine">Veterinary Medicine</a></li>
+</ul></li>
+<li class="last expanded mega-menu-section"><a href="/en-us/nam/physical-sciences-engineering" class="menu-section-title inherit-brand-color menu-section-title">Engineering and Physical Sciences</a><ul class="depth-3 mega-menu" aria-labelledby="menu-item-43537" role="menu"><li class="first leaf"><a href="/en-us/nam/computing">Computing</a></li>
+<li class="leaf"><a href="/en-us/nam/engineering-materials-science">Engineering &amp; Materials Science</a></li>
+<li class="last leaf"><a href="/en-us/nam/mathematics-physics-chemistry">Mathematics, Physics &amp; Chemistry</a></li>
+</ul></li>
+</ul></li>
+<li class="expanded primary-link-item dropdown"><a title="" class="primary-link dropdown-toggle inherit-brand-color--hover dropdown-caret" id="menu-item-31229" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+<ul class="depth-2 dropdown-menu row" aria-labelledby="menu-item-31229" role="menu"><li class="first leaf"><a href="/en-us/nam/CollegePublishing" title="">Books</a></li>
+<li class="collapsed"><a href="/en-us/nam/reference-books">Reference Books</a></li>
+<li class="collapsed"><a href="/en-us/nam/journals">Journals</a></li>
+<li class="collapsed"><a href="/en-us/nam/digital-products">Digital Library Products</a></li>
+<li class="collapsed"><a href="/en-us/nam/digital-solutions-for-your-course">Digital Solutions for your Course</a></li>
+<li class="last leaf"><a href="/en-us/nam/professional">Private Sector</a></li>
+</ul></li>
+<li class="expanded active-trail primary-link-item dropdown"><a title="" class="active-trail primary-link dropdown-toggle inherit-brand-color--hover dropdown-caret" id="menu-item-31226" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+<ul class="depth-2 dropdown-menu row" aria-labelledby="menu-item-31226" role="menu"><li class="first expanded active-trail"><a href="/en-us/nam/CollegePublishing" title="" class="active-trail">SAGE College Publishing</a></li>
+<li class="collapsed"><a href="/en-us/nam/CollegePublishing" title="">Instructors</a></li>
+<li class="collapsed"><a href="/en-us/nam/resources-journal-authors-and-editors">Journal Authors/Editors/Reviewers</a></li>
+<li class="collapsed"><a href="/en-us/nam/advertising-and-promotion">Advertising &amp; Promotion</a></li>
+<li class="collapsed"><a href="/en-us/nam/book-author-editors">Book Authors/Editors</a></li>
+<li class="leaf"><a href="/en-us/nam/page/subscription-agents">Subscription Agents</a></li>
+<li class="collapsed"><a href="/en-us/nam/librarian-resource-center%20">Librarians</a></li>
+<li class="collapsed"><a href="/en-us/nam/page/booksellers">Booksellers</a></li>
+<li class="collapsed"><a href="/en-us/nam/researchers">Researchers</a></li>
+<li class="collapsed"><a href="/en-us/nam/page/sage-worlds-largest-independent-scholarly-publisher">Societies &amp; Associations</a></li>
+<li class="collapsed"><a href="/en-us/nam/annals">The ANNALS</a></li>
+<li class="leaf"><a href="/en-us/nam/podcasts">Podcasts and Vodcasts</a></li>
+<li class="collapsed"><a href="/en-us/nam/rights-and-permissions">Rights and Permissions</a></li>
+<li class="leaf"><a href="/en-us/nam/CollegePublishing" title="">Students</a></li>
+<li class="leaf"><a href="https://study.sagepub.com/techsupport" title="">Textbook Technical Support</a></li>
+<li class="leaf"><a href="/en-us/nam/SPSS">IBM® SPSS®</a></li>
+<li class="collapsed"><a href="/en-us/nam/custom">SAGE Custom Publishing</a></li>
+<li class="collapsed"><a href="/en-us/nam/SAGETALKS">SAGE Talks</a></li>
+<li class="leaf"><a href="/en-us/nam/socialmediatips">Tips for Authors</a></li>
+<li class="last leaf"><a href="/en-us/nam/open-access-0">Open Access</a></li>
+</ul></li>
+<li class="last expanded primary-link-item dropdown"><a title="" class="primary-link dropdown-toggle inherit-brand-color--hover dropdown-caret" id="menu-item-31228" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+<ul class="depth-2 dropdown-menu row" aria-labelledby="menu-item-31228" role="menu"><li class="first collapsed"><a href="/en-us/nam/press-releases/2017" title="">Press Room</a></li>
+<li class="leaf"><a href="/en-us/nam/accessibility">Accessibility</a></li>
+<li class="leaf"><a href="/en-us/nam/sage-careers">Careers</a></li>
+<li class="collapsed"><a href="/en-us/nam/company-information">Company Information</a></li>
+<li class="collapsed"><a href="/en-us/nam/contact-us">Contact Us</a></li>
+<li class="collapsed"><a href="/en-us/nam/imprints">Imprints</a></li>
+<li class="leaf"><a href="/en-us/nam/Management">Management</a></li>
+<li class="leaf"><a href="/en-us/nam/publish-with-sage">Publish with SAGE</a></li>
+<li class="last leaf"><a href="/en-us/nam/social-media">Social Media</a></li>
+</ul></li>
+</ul>
+
+              </div>
+                                                    <div class="col-xs-12 col-sm-5 col-md-6 l-element-right--sm brand-parent--14">
+                <div class="col-xs-10 col-sm-9 col-lg-10 padding-left--none">
+                  <!-- region: search_header -->
+
+
+<div  class="block block-search-api-page ">
+      
+  <div ><form class="search-form--inline" action="/en-us/nam/CollegePoliticalScience" method="post" id="search-api-page-search-form-sage-search-product" accept-charset="UTF-8"><div><div class="form-item clearfix form-type-textfield form-item-keys-33 form-item-minimal"><input placeholder="Search: keyword, title, author, ISBN" type="text" id="edit-keys-33" name="keys_33" value="" size="15" maxlength="128" class="form-text" />
+</div><input type="hidden" name="id" value="33" />
+<input type="hidden" name="form_build_id" value="form-MKr3qgYgq3Vhv_d3ZP4PKmt7Ia0iAFpoqR9niQpsLts" />
+<input type="hidden" name="form_id" value="search_api_page_search_form_sage_search_product" />
+<input type="hidden" name="filter" value="" />
+<input type="hidden" name="action" value="" />
+<div  class="search-form--inline--submit"><input type="submit" id="edit-submit--15" name="op" value="Search" class="form-submit" /></div></div></form></div>
+</div>
+                </div>
+                                <div class="col-xs-2 col-sm-3 col-lg-2 l-element-right padding-left--none padding-right--none">
+                  
+<div id="block-sage-commerce-sage-commerce-cart" class="block inherit-brand-bg padding-vertical--small text-center block block-sage-commerce">
+<div id="cart-link-wrapper" class="l-cart-link-wrapper"><span class="l-cart-link-container""><a class="cart color-white anchor-camouflaged" id="cart"></a></span></div></div>
+                </div>
+                              </div>
+                        </div>
+          </div>
+                  </div>
+      </div>
+    </nav>
+    </div>
+  </header>
+  <div class="page">
+    
+<h2 class="element-invisible hide--xs">You are here</h2>
+<div class="hide--xs breadcrumb block block-sage-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+      <a href="/en-us/nam" title="">Resources</a> > <a href="/en-us/nam/CollegePublishing" title="" class="active-trail">SAGE College Publishing</a>      </div>
+    </div>
+  </div>
+</div>    <div class="container">
+      <div class="row ">
+        <div class="col-sm-12">
+          <div  id="status-messages" data-messages="0" class="margin-bottom--sm element-invisible">
+  <div  role="alert" data-messages="0" class="alert-dismissible alert status">
+
+  <div class="message-header">
+    <button type='button' class='close' data-hide='alert' aria-label='Close'>
+      <span aria-hidden='true'>&times;</span>
+    </button>
+  </div>
+
+    <div class="message-container">
+        </div>
+</div>
+<div  role="alert" data-messages="0" class="alert-dismissible alert error">
+
+  <div class="message-header">
+    <button type='button' class='close' data-hide='alert' aria-label='Close'>
+      <span aria-hidden='true'>&times;</span>
+    </button>
+  </div>
+
+    <div class="message-container">
+        </div>
+</div>
+<div  role="alert" data-messages="0" class="alert-dismissible alert warning">
+
+  <div class="message-header">
+    <button type='button' class='close' data-hide='alert' aria-label='Close'>
+      <span aria-hidden='true'>&times;</span>
+    </button>
+  </div>
+
+    <div class="message-container">
+        </div>
+</div>
+</div>                                                                              </div>
+      </div>
+    </div>
+    <a id="main-content"></a>
+    
+      
+              <!-- region: content -->
+
+
+<div class="container">
+  <div class="row">
+    <div >
+
+              <div class="font-family--opensans">
+          <div class="brand-parent--13">
+<div class="header-block inherit-brand-bg  ">
+<div class="col-sm-8 col-sm-push-2 header-intro color-black">
+<div class="panel-pane pane-node-title"  >
+  
+      
+  
+  <div class="pane-content">
+    <h1 class="heading-large color-black text-center font-weight--light margin-bottom--none">CQ Press  Political Science</h1>
+  </div>
+
+  
+  </div>
+
+<div class="panel-pane pane-entity-field pane-node-field-tagline"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="field field-name-field-tagline field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">Connection. Quality. Purpose</div></div></div>  </div>
+
+  
+  </div>
+
+</div>
+</div>
+</div>        </div>
+      
+              <div>
+<div class="header-block inherit-brand-bg header-block-spacing--48 ">
+<div class="col-sm-12 hide--xs">
+<div class="panel-pane pane-fieldable-panels-pane pane-uuid-9fdb919d-41c3-4716-ae36-91a1d2d69b7d pane-bundle-text"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="fieldable-panels-pane">
+    <div class="field field-name-field-basic-text-text field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><h2 class="heading-large font-weight--light text-center">What's New</h2></div></div></div></div>
+  </div>
+
+  
+  </div>
+
+<div class="panel-pane pane-entity-field pane-node-field-product-numbers-reference"  >
+  
+      
+  
+  <div class="pane-content">
+    
+<div class="flexbox-container flex--center-align--sm flex-wrap--wrap row-spacing--xl">
+  
+<article class="featured-product col-spacing--xl margin-bottom--large--xs font-family--opensans">
+  <div class="margin-bottom--medium">
+      <a href="/en-us/nam/american-government/book239589"><img view-mode="featured_product" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/75255_9781452267982.jpg" src="" width="150" height="194" alt="American Government" /></a>  </div>
+    <h3 class="heading-small font-weight--light">
+      <a href="/en-us/nam/american-government/book239589" class="anchor-camouflaged color-dark-grey ">
+        American Government        <br>
+      </a>
+    </h3>
+</article>
+
+
+<article class="featured-product col-spacing--xl margin-bottom--large--xs font-family--opensans">
+  <div class="margin-bottom--medium">
+      <a href="/en-us/nam/keeping-the-republic/book244906"><img view-mode="featured_product" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/75595_9781506362182.jpg" src="" width="150" height="194" alt="Keeping the Republic" /></a>  </div>
+    <h3 class="heading-small font-weight--light">
+      <a href="/en-us/nam/keeping-the-republic/book244906" class="anchor-camouflaged color-dark-grey ">
+        Keeping the Republic        <br>
+      </a>
+    </h3>
+</article>
+
+
+<article class="featured-product col-spacing--xl margin-bottom--large--xs font-family--opensans">
+  <div class="margin-bottom--medium">
+      <a href="/en-us/nam/the-logic-of-american-politics/book249529"><img view-mode="featured_product" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/77558_9781506358666.jpg" src="" width="150" height="183" alt="The Logic of American Politics" /></a>  </div>
+    <h3 class="heading-small font-weight--light">
+      <a href="/en-us/nam/the-logic-of-american-politics/book249529" class="anchor-camouflaged color-dark-grey ">
+        The Logic of American Politics        <br>
+      </a>
+    </h3>
+</article>
+
+
+<article class="featured-product col-spacing--xl margin-bottom--large--xs font-family--opensans">
+  <div class="margin-bottom--medium">
+      <a href="/en-us/nam/introducing-comparative-politics/book249482%20"><img view-mode="featured_product" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/77861_9781506375465.jpg" src="" width="150" height="188" alt="Introducing Comparative Politics" /></a>  </div>
+    <h3 class="heading-small font-weight--light">
+      <a href="/en-us/nam/introducing-comparative-politics/book249482%20" class="anchor-camouflaged color-dark-grey ">
+        Introducing Comparative Politics        <br>
+      </a>
+    </h3>
+</article>
+</div>
+  </div>
+
+  
+  </div>
+
+</div>
+</div>
+</div>      
+
+      <div class="margin-bottom--medium clearfix">
+                  <div class="col-sm-12">
+            <div class="panel-pane pane-block pane-sage-apachesolr-sage-search-header-block"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="bg-light-grey">
+  <div class="flexbox-container flex--middle-align padding-vertical--medium">
+    <div class="col-sm-5">
+      <form class="form form-minimal clearfix" action="/en-us/nam/CollegePoliticalScience" method="post" id="sage-apachesolr-sort-form" accept-charset="UTF-8"><div><div class="l-element-left margin-right--medium">
+  <div class="form-item clearfix form-type-select form-item-per-page form-item-minimal"><div class="margin-bottom--extra-small margin-right--extra-small l-inline-block"> <label for="edit-per-page">Show: </label>
+</div><select data-auto-submit="1" id="edit-per-page" name="per_page" class="form-select"><option value="12">12</option><option value="24" selected="selected">24</option><option value="48">48</option><option value="96">96</option></select>
+</div></div>
+<div class="l-element-left">
+  <div class="form-item clearfix form-type-select form-item-sort-options form-item-minimal"><div class="margin-bottom--extra-small margin-right--extra-small l-inline-block"> <label for="edit-sort-options">Sort by: </label>
+</div><select class="form-select-fixed form-select" data-auto-submit="1" id="edit-sort-options" name="sort_options"><option value="price_low_high">Price - lowest first</option><option value="price_high_low">Price - highest first</option><option value="title_a_z">Title - A to Z</option><option value="title_z_a">Title - Z to A</option><option value="author_a_z">Author - A to Z</option><option value="author_z_a">Author - Z to A</option><option value="recency_high_low" selected="selected">Publication Date - Newest to Oldest</option><option value="recency_low_high">Publication Date - Oldest to Newest</option></select>
+</div></div>
+<input type="hidden" name="sage-form" value="sageapachesolrsortproductform" />
+<input type="hidden" name="form_build_id" value="form-4C6yMe3q1oLQGM321Mu4Wmw_OGQa9nmdbZVhZKt7MgM" />
+<input type="hidden" name="form_id" value="sage_apachesolr_sort_form" />
+<div class="form-actions form-wrapper" id="edit-actions"><input action="submit" class="element-invisible button button-default form-submit" type="submit" id="edit-submit--13" name="op" value="Search" /></div></div></form>    </div>
+    <div class="col-sm-2 text-center text-medium">
+      486 Results Found    </div>
+    <div class="col-sm-5">
+      <div class="l-element-right--sm">
+        <h2 class="element-invisible">Pages</h2><div class="item-list"><ul class="simple-pager reset-list"><li class="first"><span class="simple-pager-item simple-pager-current">1</span></li>
+<li><a class="simple-pager-item" title="Go to page 2" href="/en-us/nam/collegepoliticalscience?page=1&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">2</a></li>
+<li><a class="simple-pager-item" title="Go to page 3" href="/en-us/nam/collegepoliticalscience?page=2&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">3</a></li>
+<li><a class="simple-pager-item" title="Go to page 4" href="/en-us/nam/collegepoliticalscience?page=3&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">4</a></li>
+<li><a class="simple-pager-item" title="Go to page 5" href="/en-us/nam/collegepoliticalscience?page=4&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">5</a></li>
+<li><a class="simple-pager-item" title="Go to page 6" href="/en-us/nam/collegepoliticalscience?page=5&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">6</a></li>
+<li><a class="simple-pager-item" title="Go to page 7" href="/en-us/nam/collegepoliticalscience?page=6&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">7</a></li>
+<li><a class="simple-pager-item" title="Go to page 8" href="/en-us/nam/collegepoliticalscience?page=7&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">8</a></li>
+<li><a class="simple-pager-item" title="Go to page 9" href="/en-us/nam/collegepoliticalscience?page=8&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">9</a></li>
+<li class="pager-ellipsis">…</li>
+<li class="pager-next last"><a class="simple-pager-next simple-pager-item" href="/en-us/nam/collegepoliticalscience?page=1&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206"></a></li>
+</ul></div>      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  
+  </div>
+          </div>
+              </div>
+
+      <div class="col-sm-8 col-sm-push-4 col-md-9 col-md-push-3 sage-discipline">
+        <div class="panel-pane pane-block pane-sage-apachesolr-search-results"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="search-api-page-results">
+
+      
+      
+    
+
+    <div class="row row-spacing--l">
+
+
+<article class="col-sm-3 col-spacing--l margin-bottom--large brand-parent--13">
+  <div class="cover-wrapper padding-bottom text-center">
+          <a href="/en-us/nam/uneven-roads/book251946"><img view-mode="search_result" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/82419_9781506371764.jpg" src="" width="150" height="183" alt="Uneven Roads" /></a>      </div>
+
+      <div class="text-uppercase border-bottom border--thin inherit-brand-border text-small clearfix margin-bottom">
+      <div class="inherit-brand-fill l-element-left margin-right--small margin-bottom--small">
+        <svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>academic-icon</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g stroke="none" stroke-width="1">
+    <g transform="translate(-419.000000, -275.000000)">
+      <g id="academic-book" transform="translate(419.000000, 272.000000)">
+        <g id="academic-icon" transform="translate(0.000000, 3.000000)">
+          <path d="M1.56239631,0 L2.50691244,0 L2.50691244,18 L1.56239631,18 C0.854341014,18 0,17.3917469 0,16.6865143 L0,1.28843265 C0,0.582979592 0.854341014,0 1.56239631,0 Z" id="Shape"></path>
+          <path d="M15.0844608,0 L3.76036866,0 L3.76036866,18 L15.0844608,18 C15.7927373,18 16,16.9582041 16,16.2531184 L16,0.855036735 C16,0.149583673 15.7927373,0 15.0844608,0 Z M14.0829493,9.69795918 L6.41474654,9.69795918 L6.41474654,8.30204082 L14.0829493,8.30204082 L14.0829493,9.69795918 Z M14.0829493,7.05306122 L6.41474654,7.05306122 L6.41474654,5.80408163 L14.0829493,5.80408163 L14.0829493,7.05306122 Z M14.0829493,4.55510204 L6.41474654,4.55510204 L6.41474654,3.15918367 L14.0829493,3.15918367 L14.0829493,4.55510204 Z" id="Shape"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>      </div>
+      Textbook    </div>
+  
+
+  <div class="paragraph-spacing strong text-small line-height--s">
+    <a href="/en-us/nam/uneven-roads/book251946" class="color-smooth-grey  anchor-camouflaged">Uneven Roads</a>  </div>
+  <div class="text-small">
+    <div class="color-warm-grey paragraph-spacing">
+      An Introduction to U.S. Racial and Ethnic Politics, Second Edition    </div>
+          <div class="strong">
+        <a href="/en-us/nam/author/todd-shaw" class="anchor-camouflaged">Todd Shaw</a>, <a href="/en-us/nam/author/louis-desipio" class="anchor-camouflaged">Louis DeSipio</a>, <a href="/en-us/nam/author/dianne-pinderhughes" class="anchor-camouflaged">Dianne Pinderhughes</a>, <a href="/en-us/nam/author/toni-michelle-c-travis" class="anchor-camouflaged">Toni-Michelle C. Travis</a>      </div>
+    
+    <div class="product-date-publication-dates margin-bottom">
+      <div>Published: February 2018</div>    </div>
+
+  </div>
+
+  <div class="text-tiny purchase-options-block margin-bottom--small">
+    Paperback<div><form class="commerce-add-to-cart commerce-cart-add-to-cart-form-161903 form-minimal clearfix" action="/en-us/nam/CollegePoliticalScience" method="post" id="commerce-cart-add-to-cart-form-161903" accept-charset="UTF-8"><div>
+<div class="clearfix">
+  <div class="l-element-left--sm">
+    <div class="paragraph-spacing-half text-medium text-right" product="161903">
+      <div><div class="field field-name-commerce-price field-type-commerce-price field-label-hidden"><div class="field-items"><div class="field-item even" data-currency="GBP" style="display:none;"><span class='sale-price '>£43.99</span></div><div class="field-item odd" data-currency="USD" style="display:none;"><span class='sale-price '>$64.00</span></div></div></div></div>
+    </div>
+  </div>
+  <div class="l-element-right--sm">
+              <div class="product add"><input type="hidden" name="product_id" value="161903" />
+<input type="hidden" name="form_build_id" value="form-gPeB-bJsA4iVo4nVJVHdGiVMed5WUUI4VmRHos5oKxc" />
+<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_161903" />
+<div id="edit-line-item-fields--2" class="form-wrapper"></div><input type="hidden" name="quantity" value="1" />
+<input class="button-small button-invert form-submit" type="submit" id="edit-submit-161903" name="op" value="Buy now" /></div>
+      </div>
+  <div class="clear text-minute text-left paragraph-spacing-half">
+      </div>
+</div>
+</div></form></div><div data-lowest-price-product="161903"></div>  </div>
+
+  <div class="text-small">
+
+          <div>
+        <a href="/en-us/nam/uneven-roads/book251946" class="brand-color-1">Review copy available</a>      </div>
+          </div>
+
+</article>
+
+
+
+<article class="col-sm-3 col-spacing--l margin-bottom--large brand-parent--13">
+  <div class="cover-wrapper padding-bottom text-center">
+          <a href="/en-us/nam/politics-in-europe/book249484"><img view-mode="search_result" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/85445_9781506399096.jpg" src="" width="150" height="183" alt="Politics in Europe" /></a>      </div>
+
+      <div class="text-uppercase border-bottom border--thin inherit-brand-border text-small clearfix margin-bottom">
+      <div class="inherit-brand-fill l-element-left margin-right--small margin-bottom--small">
+        <svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>academic-icon</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g stroke="none" stroke-width="1">
+    <g transform="translate(-419.000000, -275.000000)">
+      <g id="academic-book" transform="translate(419.000000, 272.000000)">
+        <g id="academic-icon" transform="translate(0.000000, 3.000000)">
+          <path d="M1.56239631,0 L2.50691244,0 L2.50691244,18 L1.56239631,18 C0.854341014,18 0,17.3917469 0,16.6865143 L0,1.28843265 C0,0.582979592 0.854341014,0 1.56239631,0 Z" id="Shape"></path>
+          <path d="M15.0844608,0 L3.76036866,0 L3.76036866,18 L15.0844608,18 C15.7927373,18 16,16.9582041 16,16.2531184 L16,0.855036735 C16,0.149583673 15.7927373,0 15.0844608,0 Z M14.0829493,9.69795918 L6.41474654,9.69795918 L6.41474654,8.30204082 L14.0829493,8.30204082 L14.0829493,9.69795918 Z M14.0829493,7.05306122 L6.41474654,7.05306122 L6.41474654,5.80408163 L14.0829493,5.80408163 L14.0829493,7.05306122 Z M14.0829493,4.55510204 L6.41474654,4.55510204 L6.41474654,3.15918367 L14.0829493,3.15918367 L14.0829493,4.55510204 Z" id="Shape"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>      </div>
+      Textbook    </div>
+  
+
+  <div class="paragraph-spacing strong text-small line-height--s">
+    <a href="/en-us/nam/politics-in-europe/book249484" class="color-smooth-grey  anchor-camouflaged">Politics in Europe</a>  </div>
+  <div class="text-small">
+    <div class="color-warm-grey paragraph-spacing">
+      Seventh Edition    </div>
+          <div class="strong">
+        <a href="/en-us/nam/author/m-donald-hancock" class="anchor-camouflaged">M. Donald Hancock</a>, <a href="/en-us/nam/author/christopher-j-carman" class="anchor-camouflaged">Christopher J. Carman</a>, <a href="/en-us/nam/author/marjorie-castle" class="anchor-camouflaged">Marjorie Castle</a>, <a href="/en-us/nam/author/david-p-conradt" class="anchor-camouflaged">David P. Conradt</a>, <a href="/en-us/nam/author/raffaella-y-nanetti" class="anchor-camouflaged">Raffaella Y. Nanetti</a>, <a href="/en-us/nam/author/robert-leonardi" class="anchor-camouflaged">Robert Leonardi</a>, <a href="/en-us/nam/author/william-n-safran" class="anchor-camouflaged">William Safran</a>, <a href="/en-us/nam/author/stephen-leonard-white" class="anchor-camouflaged">Stephen White</a>, <a href="/en-us/nam/author/mary-n-hampton" class="anchor-camouflaged">Mary Nelle Hampton</a>, <a href="/en-us/nam/author/michelle-hale-williams" class="anchor-camouflaged">Michelle Hale Williams</a>      </div>
+    
+    <div class="product-date-publication-dates margin-bottom">
+      <div>Published: February 2018</div>    </div>
+
+  </div>
+
+  <div class="text-tiny purchase-options-block margin-bottom--small">
+    Paperback<div><form class="commerce-add-to-cart commerce-cart-add-to-cart-form-188121 form-minimal clearfix" action="/en-us/nam/CollegePoliticalScience" method="post" id="commerce-cart-add-to-cart-form-188121" accept-charset="UTF-8"><div>
+<div class="clearfix">
+  <div class="l-element-left--sm">
+    <div class="paragraph-spacing-half text-medium text-right" product="188121">
+      <div><div class="field field-name-commerce-price field-type-commerce-price field-label-hidden"><div class="field-items"><div class="field-item even" data-currency="USD" style="display:none;"><span class='sale-price '>$120.00</span></div></div></div></div>
+    </div>
+  </div>
+  <div class="l-element-right--sm">
+              <div class="product add"><input type="hidden" name="product_id" value="188121" />
+<input type="hidden" name="form_build_id" value="form-AADbqG8a6g7Utw10kX2IAw65XcKPWu3xReE31Z6cei8" />
+<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_188121" />
+<div id="edit-line-item-fields--4" class="form-wrapper"></div><input type="hidden" name="quantity" value="1" />
+<input class="button-small button-invert form-submit" type="submit" id="edit-submit-188121" name="op" value="Buy now" /></div>
+      </div>
+  <div class="clear text-minute text-left paragraph-spacing-half">
+      </div>
+</div>
+</div></form></div><div data-lowest-price-product="188121"></div>  </div>
+
+  <div class="text-small">
+
+          <div>
+        <a href="/en-us/nam/politics-in-europe/book249484" class="brand-color-1">Review copy available</a>      </div>
+          </div>
+
+</article>
+
+
+
+<article class="col-sm-3 col-spacing--l margin-bottom--large brand-parent--13">
+  <div class="cover-wrapper padding-bottom text-center">
+          <a href="/en-us/nam/news-grazers/book237055"><img view-mode="search_result" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/85930_9781933116884.jpg" src="" width="150" height="225" alt="News Grazers" /></a>      </div>
+
+      <div class="text-uppercase border-bottom border--thin inherit-brand-border text-small clearfix margin-bottom">
+      <div class="inherit-brand-fill l-element-left margin-right--small margin-bottom--small">
+        <svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>academic-icon</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g stroke="none" stroke-width="1">
+    <g transform="translate(-419.000000, -275.000000)">
+      <g id="academic-book" transform="translate(419.000000, 272.000000)">
+        <g id="academic-icon" transform="translate(0.000000, 3.000000)">
+          <path d="M1.56239631,0 L2.50691244,0 L2.50691244,18 L1.56239631,18 C0.854341014,18 0,17.3917469 0,16.6865143 L0,1.28843265 C0,0.582979592 0.854341014,0 1.56239631,0 Z" id="Shape"></path>
+          <path d="M15.0844608,0 L3.76036866,0 L3.76036866,18 L15.0844608,18 C15.7927373,18 16,16.9582041 16,16.2531184 L16,0.855036735 C16,0.149583673 15.7927373,0 15.0844608,0 Z M14.0829493,9.69795918 L6.41474654,9.69795918 L6.41474654,8.30204082 L14.0829493,8.30204082 L14.0829493,9.69795918 Z M14.0829493,7.05306122 L6.41474654,7.05306122 L6.41474654,5.80408163 L14.0829493,5.80408163 L14.0829493,7.05306122 Z M14.0829493,4.55510204 L6.41474654,4.55510204 L6.41474654,3.15918367 L14.0829493,3.15918367 L14.0829493,4.55510204 Z" id="Shape"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>      </div>
+      Textbook    </div>
+  
+
+  <div class="paragraph-spacing strong text-small line-height--s">
+    <a href="/en-us/nam/news-grazers/book237055" class="color-smooth-grey  anchor-camouflaged">News Grazers</a>  </div>
+  <div class="text-small">
+    <div class="color-warm-grey paragraph-spacing">
+      Media, Politics, and Trust in an Information  Age    </div>
+          <div class="strong">
+        <a href="/en-us/nam/author/richard-forgette" class="anchor-camouflaged">Richard Forgette</a>      </div>
+    
+    <div class="product-date-publication-dates margin-bottom">
+      <div>Published: February 2018</div>    </div>
+
+  </div>
+
+  <div class="text-tiny purchase-options-block margin-bottom--small">
+    Paperback<div><form class="commerce-add-to-cart commerce-cart-add-to-cart-form-24792 form-minimal clearfix" action="/en-us/nam/CollegePoliticalScience" method="post" id="commerce-cart-add-to-cart-form-24792" accept-charset="UTF-8"><div>
+<div class="clearfix">
+  <div class="l-element-left--sm">
+    <div class="paragraph-spacing-half text-medium text-right" product="24792">
+      <div><div class="field field-name-commerce-price field-type-commerce-price field-label-hidden"><div class="field-items"><div class="field-item even" data-currency="GBP" style="display:none;"><span class='sale-price '>£21.99</span></div><div class="field-item odd" data-currency="IND" style="display:none;"><span class='sale-price '>$30.00</span></div><div class="field-item even" data-currency="USD" style="display:none;"><span class='sale-price '>$30.00</span></div></div></div></div>
+    </div>
+  </div>
+  <div class="l-element-right--sm">
+              <div class="product add"><input type="hidden" name="product_id" value="24792" />
+<input type="hidden" name="form_build_id" value="form-5BXiIB3Du9Yi90cseP_VglUiUvwvmKU17QCJbf9_XMY" />
+<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_24792" />
+<div id="edit-line-item-fields--6" class="form-wrapper"></div><input type="hidden" name="quantity" value="1" />
+<input class="button-small button-invert form-submit" type="submit" id="edit-submit-24792" name="op" value="Buy now" /></div>
+      </div>
+  <div class="clear text-minute text-left paragraph-spacing-half">
+      </div>
+</div>
+</div></form></div><div data-lowest-price-product="24792"></div>  </div>
+
+  <div class="text-small">
+
+          <div>
+        <a href="/en-us/nam/news-grazers/book237055" class="brand-color-1">Review copy available</a>      </div>
+          </div>
+
+</article>
+
+
+
+<article class="col-sm-3 col-spacing--l margin-bottom--large brand-parent--13">
+  <div class="cover-wrapper padding-bottom text-center">
+          <a href="/en-us/nam/crossing-borders/book249487"><img view-mode="search_result" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/81357_9781506346922.jpg" src="" width="150" height="188" alt="Crossing Borders" /></a>      </div>
+
+      <div class="text-uppercase border-bottom border--thin inherit-brand-border text-small clearfix margin-bottom">
+      <div class="inherit-brand-fill l-element-left margin-right--small margin-bottom--small">
+        <svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>academic-icon</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g stroke="none" stroke-width="1">
+    <g transform="translate(-419.000000, -275.000000)">
+      <g id="academic-book" transform="translate(419.000000, 272.000000)">
+        <g id="academic-icon" transform="translate(0.000000, 3.000000)">
+          <path d="M1.56239631,0 L2.50691244,0 L2.50691244,18 L1.56239631,18 C0.854341014,18 0,17.3917469 0,16.6865143 L0,1.28843265 C0,0.582979592 0.854341014,0 1.56239631,0 Z" id="Shape"></path>
+          <path d="M15.0844608,0 L3.76036866,0 L3.76036866,18 L15.0844608,18 C15.7927373,18 16,16.9582041 16,16.2531184 L16,0.855036735 C16,0.149583673 15.7927373,0 15.0844608,0 Z M14.0829493,9.69795918 L6.41474654,9.69795918 L6.41474654,8.30204082 L14.0829493,8.30204082 L14.0829493,9.69795918 Z M14.0829493,7.05306122 L6.41474654,7.05306122 L6.41474654,5.80408163 L14.0829493,5.80408163 L14.0829493,7.05306122 Z M14.0829493,4.55510204 L6.41474654,4.55510204 L6.41474654,3.15918367 L14.0829493,3.15918367 L14.0829493,4.55510204 Z" id="Shape"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>      </div>
+      Textbook    </div>
+  
+
+  <div class="paragraph-spacing strong text-small line-height--s">
+    <a href="/en-us/nam/crossing-borders/book249487" class="color-smooth-grey  anchor-camouflaged">Crossing Borders</a>  </div>
+  <div class="text-small">
+    <div class="color-warm-grey paragraph-spacing">
+      International Studies for the 21st Century, Third Edition    </div>
+          <div class="strong">
+        <a href="/en-us/nam/author/harry-i-chernotsky" class="anchor-camouflaged">Harry I. Chernotsky</a>, <a href="/en-us/nam/author/heidi-h-hobbs" class="anchor-camouflaged">Heidi H. Hobbs</a>      </div>
+    
+    <div class="product-date-publication-dates margin-bottom">
+      <div>Published: January 2018</div>    </div>
+
+  </div>
+
+  <div class="text-tiny purchase-options-block margin-bottom--small">
+    Paperback<div><form class="commerce-add-to-cart commerce-cart-add-to-cart-form-139360 form-minimal clearfix" action="/en-us/nam/CollegePoliticalScience" method="post" id="commerce-cart-add-to-cart-form-139360" accept-charset="UTF-8"><div>
+<div class="clearfix">
+  <div class="l-element-left--sm">
+    <div class="paragraph-spacing-half text-medium text-right" product="139360">
+      <div><div class="field field-name-commerce-price field-type-commerce-price field-label-hidden"><div class="field-items"><div class="field-item even" data-currency="GBP" style="display:none;"><span class='sale-price '>£56.00</span></div><div class="field-item odd" data-currency="IND" style="display:none;"><span class='sale-price '>$76.00</span></div><div class="field-item even" data-currency="USD" style="display:none;"><span class='sale-price '>$87.00</span></div></div></div></div>
+    </div>
+  </div>
+  <div class="l-element-right--sm">
+              <div class="product add"><input type="hidden" name="product_id" value="139360" />
+<input type="hidden" name="form_build_id" value="form-wayLdj2bopgdc1pptFW6hYh_5SCRd3rAOBHH5LUTVkc" />
+<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_139360" />
+<div id="edit-line-item-fields--8" class="form-wrapper"></div><input type="hidden" name="quantity" value="1" />
+<input class="button-small button-invert form-submit" type="submit" id="edit-submit-139360" name="op" value="Buy now" /></div>
+      </div>
+  <div class="clear text-minute text-left paragraph-spacing-half">
+      </div>
+</div>
+</div></form></div><div data-lowest-price-product="139360"></div>  </div>
+
+  <div class="text-small">
+
+          <div>
+        <a href="/en-us/nam/crossing-borders/book249487" class="brand-color-1">Review copy available</a>      </div>
+              <div><a href="https://edge.sagepub.com/chernotsky3e" target="_blank">Instructor Site</a></div>
+          <div><a href="https://edge.sagepub.com/chernotsky3e" target="_blank">Student Study Site</a></div>
+      </div>
+
+</article>
+</div>
+<div class="row row-spacing--l">
+
+
+<article class="col-sm-3 col-spacing--l margin-bottom--large brand-parent--13">
+  <div class="cover-wrapper padding-bottom text-center">
+          <a href="/en-us/nam/environmental-policy/book255673"><img view-mode="search_result" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/86205_9781506383460.jpg" src="" width="150" height="225" alt="Environmental Policy" /></a>      </div>
+
+      <div class="text-uppercase border-bottom border--thin inherit-brand-border text-small clearfix margin-bottom">
+      <div class="inherit-brand-fill l-element-left margin-right--small margin-bottom--small">
+        <svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>academic-icon</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g stroke="none" stroke-width="1">
+    <g transform="translate(-419.000000, -275.000000)">
+      <g id="academic-book" transform="translate(419.000000, 272.000000)">
+        <g id="academic-icon" transform="translate(0.000000, 3.000000)">
+          <path d="M1.56239631,0 L2.50691244,0 L2.50691244,18 L1.56239631,18 C0.854341014,18 0,17.3917469 0,16.6865143 L0,1.28843265 C0,0.582979592 0.854341014,0 1.56239631,0 Z" id="Shape"></path>
+          <path d="M15.0844608,0 L3.76036866,0 L3.76036866,18 L15.0844608,18 C15.7927373,18 16,16.9582041 16,16.2531184 L16,0.855036735 C16,0.149583673 15.7927373,0 15.0844608,0 Z M14.0829493,9.69795918 L6.41474654,9.69795918 L6.41474654,8.30204082 L14.0829493,8.30204082 L14.0829493,9.69795918 Z M14.0829493,7.05306122 L6.41474654,7.05306122 L6.41474654,5.80408163 L14.0829493,5.80408163 L14.0829493,7.05306122 Z M14.0829493,4.55510204 L6.41474654,4.55510204 L6.41474654,3.15918367 L14.0829493,3.15918367 L14.0829493,4.55510204 Z" id="Shape"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>      </div>
+      Textbook    </div>
+  
+
+  <div class="paragraph-spacing strong text-small line-height--s">
+    <a href="/en-us/nam/environmental-policy/book255673" class="color-smooth-grey  anchor-camouflaged">Environmental Policy</a>  </div>
+  <div class="text-small">
+    <div class="color-warm-grey paragraph-spacing">
+      New Directions for the Twenty-First Century, Tenth Edition    </div>
+          <div class="strong">
+        <a href="/en-us/nam/author/norman-j-vig" class="anchor-camouflaged">Norman J. Vig</a>, <a href="/en-us/nam/author/michael-e-kraft" class="anchor-camouflaged">Michael E. Kraft</a>      </div>
+    
+    <div class="product-date-publication-dates margin-bottom">
+      <div>Published: January 2018</div>    </div>
+
+  </div>
+
+  <div class="text-tiny purchase-options-block margin-bottom--small">
+    Paperback<div><form class="commerce-add-to-cart commerce-cart-add-to-cart-form-178294 form-minimal clearfix" action="/en-us/nam/CollegePoliticalScience" method="post" id="commerce-cart-add-to-cart-form-178294" accept-charset="UTF-8"><div>
+<div class="clearfix">
+  <div class="l-element-left--sm">
+    <div class="paragraph-spacing-half text-medium text-right" product="178294">
+      <div><div class="field field-name-commerce-price field-type-commerce-price field-label-hidden"><div class="field-items"><div class="field-item even" data-currency="USD" style="display:none;"><span class='sale-price '>$73.00</span></div></div></div></div>
+    </div>
+  </div>
+  <div class="l-element-right--sm">
+              <div class="product add"><input type="hidden" name="product_id" value="178294" />
+<input type="hidden" name="form_build_id" value="form-iMNBtLw53eiuQj7q2ugC-S6Py7OPZqLm9D7q-JLVi40" />
+<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_178294" />
+<div id="edit-line-item-fields--10" class="form-wrapper"></div><input type="hidden" name="quantity" value="1" />
+<input class="button-small button-invert form-submit" type="submit" id="edit-submit-178294" name="op" value="Buy now" /></div>
+      </div>
+  <div class="clear text-minute text-left paragraph-spacing-half">
+      </div>
+</div>
+</div></form></div><div data-lowest-price-product="178294"></div>  </div>
+
+  <div class="text-small">
+
+          <div>
+        <a href="/en-us/nam/environmental-policy/book255673" class="brand-color-1">Review copy available</a>      </div>
+          </div>
+
+</article>
+
+
+
+<article class="col-sm-3 col-spacing--l margin-bottom--large brand-parent--13">
+  <div class="cover-wrapper padding-bottom text-center">
+          <a href="/en-us/nam/introducing-comparative-politics/book257857"><img view-mode="search_result" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/85607_9781506385693.jpg" src="" width="150" height="188" alt="Introducing Comparative Politics" /></a>      </div>
+
+      <div class="text-uppercase border-bottom border--thin inherit-brand-border text-small clearfix margin-bottom">
+      <div class="inherit-brand-fill l-element-left margin-right--small margin-bottom--small">
+        <svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>academic-icon</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g stroke="none" stroke-width="1">
+    <g transform="translate(-419.000000, -275.000000)">
+      <g id="academic-book" transform="translate(419.000000, 272.000000)">
+        <g id="academic-icon" transform="translate(0.000000, 3.000000)">
+          <path d="M1.56239631,0 L2.50691244,0 L2.50691244,18 L1.56239631,18 C0.854341014,18 0,17.3917469 0,16.6865143 L0,1.28843265 C0,0.582979592 0.854341014,0 1.56239631,0 Z" id="Shape"></path>
+          <path d="M15.0844608,0 L3.76036866,0 L3.76036866,18 L15.0844608,18 C15.7927373,18 16,16.9582041 16,16.2531184 L16,0.855036735 C16,0.149583673 15.7927373,0 15.0844608,0 Z M14.0829493,9.69795918 L6.41474654,9.69795918 L6.41474654,8.30204082 L14.0829493,8.30204082 L14.0829493,9.69795918 Z M14.0829493,7.05306122 L6.41474654,7.05306122 L6.41474654,5.80408163 L14.0829493,5.80408163 L14.0829493,7.05306122 Z M14.0829493,4.55510204 L6.41474654,4.55510204 L6.41474654,3.15918367 L14.0829493,3.15918367 L14.0829493,4.55510204 Z" id="Shape"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>      </div>
+      Textbook    </div>
+  
+
+  <div class="paragraph-spacing strong text-small line-height--s">
+    <a href="/en-us/nam/introducing-comparative-politics/book257857" class="color-smooth-grey  anchor-camouflaged">Introducing Comparative Politics</a>  </div>
+  <div class="text-small">
+    <div class="color-warm-grey paragraph-spacing">
+      The Essentials, First Edition    </div>
+          <div class="strong">
+        <a href="/en-us/nam/author/stephen-w-orvis" class="anchor-camouflaged">Stephen W. Orvis</a>, <a href="/en-us/nam/author/carol-ann-drogus" class="anchor-camouflaged">Carol Ann Drogus</a>      </div>
+    
+    <div class="product-date-publication-dates margin-bottom">
+      <div>Published: January 2018</div>    </div>
+
+  </div>
+
+  <div class="text-tiny purchase-options-block margin-bottom--small">
+    Paperback<div><form class="commerce-add-to-cart commerce-cart-add-to-cart-form-180193 form-minimal clearfix" action="/en-us/nam/CollegePoliticalScience" method="post" id="commerce-cart-add-to-cart-form-180193" accept-charset="UTF-8"><div>
+<div class="clearfix">
+  <div class="l-element-left--sm">
+    <div class="paragraph-spacing-half text-medium text-right" product="180193">
+      <div><div class="field field-name-commerce-price field-type-commerce-price field-label-hidden"><div class="field-items"><div class="field-item even" data-currency="USD" style="display:none;"><span class='sale-price '>$70.00</span></div></div></div></div>
+    </div>
+  </div>
+  <div class="l-element-right--sm">
+              <div class="product add"><input type="hidden" name="product_id" value="180193" />
+<input type="hidden" name="form_build_id" value="form-0kcZBSqQxrjmwhUcIkygrpCxax9h24wF57Zd66YD7jQ" />
+<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_180193" />
+<div id="edit-line-item-fields--12" class="form-wrapper"></div><input type="hidden" name="quantity" value="1" />
+<input class="button-small button-invert form-submit" type="submit" id="edit-submit-180193" name="op" value="Buy now" /></div>
+      </div>
+  <div class="clear text-minute text-left paragraph-spacing-half">
+      </div>
+</div>
+</div></form></div><div data-lowest-price-product="180193"></div>  </div>
+
+  <div class="text-small">
+
+          <div>
+        <a href="/en-us/nam/introducing-comparative-politics/book257857" class="brand-color-1">Review copy available</a>      </div>
+          </div>
+
+</article>
+
+
+
+<article class="col-sm-3 col-spacing--l margin-bottom--large brand-parent--13">
+  <div class="cover-wrapper padding-bottom text-center">
+          <a href="/en-us/nam/doing-qualitative-research/book251108"><img view-mode="search_result" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/78677_9781473966994.jpg" src="" width="150" height="187" alt="Doing Qualitative Research" /></a>      </div>
+
+      <div class="text-uppercase border-bottom border--thin inherit-brand-border text-small clearfix margin-bottom">
+      <div class="inherit-brand-fill l-element-left margin-right--small margin-bottom--small">
+        <svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>academic-icon</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g stroke="none" stroke-width="1">
+    <g transform="translate(-419.000000, -275.000000)">
+      <g id="academic-book" transform="translate(419.000000, 272.000000)">
+        <g id="academic-icon" transform="translate(0.000000, 3.000000)">
+          <path d="M1.56239631,0 L2.50691244,0 L2.50691244,18 L1.56239631,18 C0.854341014,18 0,17.3917469 0,16.6865143 L0,1.28843265 C0,0.582979592 0.854341014,0 1.56239631,0 Z" id="Shape"></path>
+          <path d="M15.0844608,0 L3.76036866,0 L3.76036866,18 L15.0844608,18 C15.7927373,18 16,16.9582041 16,16.2531184 L16,0.855036735 C16,0.149583673 15.7927373,0 15.0844608,0 Z M14.0829493,9.69795918 L6.41474654,9.69795918 L6.41474654,8.30204082 L14.0829493,8.30204082 L14.0829493,9.69795918 Z M14.0829493,7.05306122 L6.41474654,7.05306122 L6.41474654,5.80408163 L14.0829493,5.80408163 L14.0829493,7.05306122 Z M14.0829493,4.55510204 L6.41474654,4.55510204 L6.41474654,3.15918367 L14.0829493,3.15918367 L14.0829493,4.55510204 Z" id="Shape"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>      </div>
+      Textbook    </div>
+  
+
+  <div class="paragraph-spacing strong text-small line-height--s">
+    <a href="/en-us/nam/doing-qualitative-research/book251108" class="color-smooth-grey  anchor-camouflaged">Doing Qualitative Research</a>  </div>
+  <div class="text-small">
+    <div class="color-warm-grey paragraph-spacing">
+      Fifth Edition    </div>
+          <div class="strong">
+        <a href="/en-us/nam/author/david-silverman" class="anchor-camouflaged">David Silverman</a>      </div>
+    
+    <div class="product-date-publication-dates margin-bottom">
+      <div>Published: December 2017</div>    </div>
+
+  </div>
+
+  <div class="text-tiny purchase-options-block margin-bottom--small">
+    <div class="form-item clearfix form-type-select form-item-minimal"> <select class="margin-bottom form-select-wide form-select" id="sage-commerce-purchase-options-select"><option value="124880">Paperback</option><option value="124886">Hardcover</option></select>
+</div><div><form class="commerce-add-to-cart commerce-cart-add-to-cart-form-124880 form-minimal clearfix" action="/en-us/nam/CollegePoliticalScience" method="post" id="commerce-cart-add-to-cart-form-124880" accept-charset="UTF-8"><div>
+<div class="clearfix">
+  <div class="l-element-left--sm">
+    <div class="paragraph-spacing-half text-medium text-right" product="124880">
+      <div><div class="field field-name-commerce-price field-type-commerce-price field-label-hidden"><div class="field-items"><div class="field-item even" data-currency="GBP" style="display:none;"><span class='sale-price '>£32.99</span></div><div class="field-item odd" data-currency="USD" style="display:none;"><span class='sale-price '>$44.00</span></div></div></div></div>
+    </div>
+  </div>
+  <div class="l-element-right--sm">
+              <div class="product add"><input type="hidden" name="product_id" value="124880" />
+<input type="hidden" name="form_build_id" value="form-sHoU7jIj4tU4TBkRQN_Po0GKwvSKrZW3KWmUPVgVScc" />
+<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_124880" />
+<div id="edit-line-item-fields--14" class="form-wrapper"></div><input type="hidden" name="quantity" value="1" />
+<input class="button-small button-invert form-submit" type="submit" id="edit-submit-124880" name="op" value="Buy now" /></div>
+      </div>
+  <div class="clear text-minute text-left paragraph-spacing-half">
+      </div>
+</div>
+</div></form><form class="commerce-add-to-cart commerce-cart-add-to-cart-form-124886 form-minimal clearfix" action="/en-us/nam/CollegePoliticalScience" method="post" id="commerce-cart-add-to-cart-form-124886" accept-charset="UTF-8"><div>
+<div class="clearfix">
+  <div class="l-element-left--sm">
+    <div class="paragraph-spacing-half text-medium text-right" product="124886">
+      <div><div class="field field-name-commerce-price field-type-commerce-price field-label-hidden"><div class="field-items"><div class="field-item even" data-currency="GBP" style="display:none;"><span class='sale-price '>£90.00</span></div><div class="field-item odd" data-currency="USD" style="display:none;"><span class='sale-price '>$119.00</span></div></div></div></div>
+    </div>
+  </div>
+  <div class="l-element-right--sm">
+              <div class="product add"><input type="hidden" name="product_id" value="124886" />
+<input type="hidden" name="form_build_id" value="form-Ojs7pJc__MVjRSn6ArBeMOGbCtyVsYitbufSQEZqfF0" />
+<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_124886" />
+<div id="edit-line-item-fields--15" class="form-wrapper"></div><input type="hidden" name="quantity" value="1" />
+<input class="button-small button-invert form-submit" type="submit" id="edit-submit-124886" name="op" value="Buy now" /></div>
+      </div>
+  <div class="clear text-minute text-left paragraph-spacing-half">
+      </div>
+</div>
+</div></form></div><div data-lowest-price-product="124886"></div>  </div>
+
+  <div class="text-small">
+
+          <div>
+        <a href="/en-us/nam/doing-qualitative-research/book251108" class="brand-color-1">Review copy available</a>      </div>
+          </div>
+
+</article>
+
+
+
+<article class="col-sm-3 col-spacing--l margin-bottom--large brand-parent--13">
+  <div class="cover-wrapper padding-bottom text-center">
+        <a href="/en-us/nam/understanding-statistical-analysis-and-modeling/book246184"><img class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/styles/sage_thumbnail_width_150px/public/no-image-available.png" src="" alt="Understanding Statistical Analysis and Modeling" title="Understanding Statistical Analysis and Modeling" /></a>      </div>
+
+      <div class="text-uppercase border-bottom border--thin inherit-brand-border text-small clearfix margin-bottom">
+      <div class="inherit-brand-fill l-element-left margin-right--small margin-bottom--small">
+        <svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>academic-icon</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g stroke="none" stroke-width="1">
+    <g transform="translate(-419.000000, -275.000000)">
+      <g id="academic-book" transform="translate(419.000000, 272.000000)">
+        <g id="academic-icon" transform="translate(0.000000, 3.000000)">
+          <path d="M1.56239631,0 L2.50691244,0 L2.50691244,18 L1.56239631,18 C0.854341014,18 0,17.3917469 0,16.6865143 L0,1.28843265 C0,0.582979592 0.854341014,0 1.56239631,0 Z" id="Shape"></path>
+          <path d="M15.0844608,0 L3.76036866,0 L3.76036866,18 L15.0844608,18 C15.7927373,18 16,16.9582041 16,16.2531184 L16,0.855036735 C16,0.149583673 15.7927373,0 15.0844608,0 Z M14.0829493,9.69795918 L6.41474654,9.69795918 L6.41474654,8.30204082 L14.0829493,8.30204082 L14.0829493,9.69795918 Z M14.0829493,7.05306122 L6.41474654,7.05306122 L6.41474654,5.80408163 L14.0829493,5.80408163 L14.0829493,7.05306122 Z M14.0829493,4.55510204 L6.41474654,4.55510204 L6.41474654,3.15918367 L14.0829493,3.15918367 L14.0829493,4.55510204 Z" id="Shape"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>      </div>
+      Textbook    </div>
+  
+
+  <div class="paragraph-spacing strong text-small line-height--s">
+    <a href="/en-us/nam/understanding-statistical-analysis-and-modeling/book246184" class="color-smooth-grey  anchor-camouflaged">Understanding Statistical Analysis and Modeling</a>  </div>
+  <div class="text-small">
+    <div class="color-warm-grey paragraph-spacing">
+          </div>
+          <div class="strong">
+        <a href="/en-us/nam/author/robert-h-bruhl" class="anchor-camouflaged">Robert Bruhl</a>      </div>
+    
+    <div class="product-date-publication-dates margin-bottom">
+      <div>Published: December 2017</div>    </div>
+
+  </div>
+
+  <div class="text-tiny purchase-options-block margin-bottom--small">
+    Paperback<div><form class="commerce-add-to-cart commerce-cart-add-to-cart-form-105388 form-minimal clearfix" action="/en-us/nam/CollegePoliticalScience" method="post" id="commerce-cart-add-to-cart-form-105388" accept-charset="UTF-8"><div>
+<div class="clearfix">
+  <div class="l-element-left--sm">
+    <div class="paragraph-spacing-half text-medium text-right" product="105388">
+      <div><div class="field field-name-commerce-price field-type-commerce-price field-label-hidden"><div class="field-items"><div class="field-item even" data-currency="GBP" style="display:none;"><span class='sale-price '>£61.00</span></div><div class="field-item odd" data-currency="IND" style="display:none;"><span class='sale-price '>$82.00</span></div><div class="field-item even" data-currency="USD" style="display:none;"><span class='sale-price '>$82.00</span></div></div></div></div>
+    </div>
+  </div>
+  <div class="l-element-right--sm">
+              <div class="product add"><input type="hidden" name="product_id" value="105388" />
+<input type="hidden" name="form_build_id" value="form-ET3ECCgvxret_TSk8FJ9tDHuzOqTUYqENRnzU4XTJUY" />
+<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_105388" />
+<div id="edit-line-item-fields--17" class="form-wrapper"></div><input type="hidden" name="quantity" value="1" />
+<input class="button-small button-invert form-submit" type="submit" id="edit-submit-105388" name="op" value="Buy now" /></div>
+      </div>
+  <div class="clear text-minute text-left paragraph-spacing-half">
+      </div>
+</div>
+</div></form></div><div data-lowest-price-product="105388"></div>  </div>
+
+  <div class="text-small">
+
+          <div>
+        <a href="/en-us/nam/understanding-statistical-analysis-and-modeling/book246184" class="brand-color-1">Review copy available</a>      </div>
+          </div>
+
+</article>
+</div>
+<div class="row row-spacing--l">
+
+
+<article class="col-sm-3 col-spacing--l margin-bottom--large brand-parent--13">
+  <div class="cover-wrapper padding-bottom text-center">
+          <a href="/en-us/nam/environmental-communication-and-the-public-sphere/book252670"><img view-mode="search_result" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/83350_9781506363592.jpg" src="" width="150" height="214" alt="Environmental Communication and the Public Sphere" /></a>      </div>
+
+      <div class="text-uppercase border-bottom border--thin inherit-brand-border text-small clearfix margin-bottom">
+      <div class="inherit-brand-fill l-element-left margin-right--small margin-bottom--small">
+        <svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>academic-icon</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g stroke="none" stroke-width="1">
+    <g transform="translate(-419.000000, -275.000000)">
+      <g id="academic-book" transform="translate(419.000000, 272.000000)">
+        <g id="academic-icon" transform="translate(0.000000, 3.000000)">
+          <path d="M1.56239631,0 L2.50691244,0 L2.50691244,18 L1.56239631,18 C0.854341014,18 0,17.3917469 0,16.6865143 L0,1.28843265 C0,0.582979592 0.854341014,0 1.56239631,0 Z" id="Shape"></path>
+          <path d="M15.0844608,0 L3.76036866,0 L3.76036866,18 L15.0844608,18 C15.7927373,18 16,16.9582041 16,16.2531184 L16,0.855036735 C16,0.149583673 15.7927373,0 15.0844608,0 Z M14.0829493,9.69795918 L6.41474654,9.69795918 L6.41474654,8.30204082 L14.0829493,8.30204082 L14.0829493,9.69795918 Z M14.0829493,7.05306122 L6.41474654,7.05306122 L6.41474654,5.80408163 L14.0829493,5.80408163 L14.0829493,7.05306122 Z M14.0829493,4.55510204 L6.41474654,4.55510204 L6.41474654,3.15918367 L14.0829493,3.15918367 L14.0829493,4.55510204 Z" id="Shape"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>      </div>
+      Textbook    </div>
+  
+
+  <div class="paragraph-spacing strong text-small line-height--s">
+    <a href="/en-us/nam/environmental-communication-and-the-public-sphere/book252670" class="color-smooth-grey  anchor-camouflaged">Environmental Communication and the Public Sphere</a>  </div>
+  <div class="text-small">
+    <div class="color-warm-grey paragraph-spacing">
+      Fifth Edition    </div>
+          <div class="strong">
+        <a href="/en-us/nam/author/phaedra-c-pezzullo" class="anchor-camouflaged">Phaedra C. Pezzullo</a>, <a href="/en-us/nam/author/j-robert-cox%20" class="anchor-camouflaged">Robert Cox</a>      </div>
+    
+    <div class="product-date-publication-dates margin-bottom">
+      <div>Published: November 2017</div>    </div>
+
+  </div>
+
+  <div class="text-tiny purchase-options-block margin-bottom--small">
+    Paperback<div><form class="commerce-add-to-cart commerce-cart-add-to-cart-form-157583 form-minimal clearfix" action="/en-us/nam/CollegePoliticalScience" method="post" id="commerce-cart-add-to-cart-form-157583" accept-charset="UTF-8"><div>
+<div class="clearfix">
+  <div class="l-element-left--sm">
+    <div class="paragraph-spacing-half text-medium text-right" product="157583">
+      <div><div class="field field-name-commerce-price field-type-commerce-price field-label-hidden"><div class="field-items"><div class="field-item even" data-currency="GBP" style="display:none;"><span class='sale-price '>£70.00</span></div><div class="field-item odd" data-currency="USD" style="display:none;"><span class='sale-price '>$88.00</span></div></div></div></div>
+    </div>
+  </div>
+  <div class="l-element-right--sm">
+              <div class="product add"><input type="hidden" name="product_id" value="157583" />
+<input type="hidden" name="form_build_id" value="form-T9kRd0fFoN7606F59lDfRLcZUELrnfJinIs3RvuITAA" />
+<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_157583" />
+<div id="edit-line-item-fields--19" class="form-wrapper"></div><input type="hidden" name="quantity" value="1" />
+<input class="button-small button-invert form-submit" type="submit" id="edit-submit-157583" name="op" value="Buy now" /></div>
+      </div>
+  <div class="clear text-minute text-left paragraph-spacing-half">
+      </div>
+</div>
+</div></form></div><div data-lowest-price-product="157583"></div>  </div>
+
+  <div class="text-small">
+
+          <div>
+        <a href="/en-us/nam/environmental-communication-and-the-public-sphere/book252670" class="brand-color-1">Review copy available</a>      </div>
+          </div>
+
+</article>
+
+
+
+<article class="col-sm-3 col-spacing--l margin-bottom--large brand-parent--13">
+  <div class="cover-wrapper padding-bottom text-center">
+          <a href="/en-us/nam/a-novel-approach-to-politics/book255385"><img view-mode="search_result" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/83391_9781506368658.jpg" src="" width="150" height="183" alt="A Novel Approach to Politics" /></a>      </div>
+
+      <div class="text-uppercase border-bottom border--thin inherit-brand-border text-small clearfix margin-bottom">
+      <div class="inherit-brand-fill l-element-left margin-right--small margin-bottom--small">
+        <svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>academic-icon</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g stroke="none" stroke-width="1">
+    <g transform="translate(-419.000000, -275.000000)">
+      <g id="academic-book" transform="translate(419.000000, 272.000000)">
+        <g id="academic-icon" transform="translate(0.000000, 3.000000)">
+          <path d="M1.56239631,0 L2.50691244,0 L2.50691244,18 L1.56239631,18 C0.854341014,18 0,17.3917469 0,16.6865143 L0,1.28843265 C0,0.582979592 0.854341014,0 1.56239631,0 Z" id="Shape"></path>
+          <path d="M15.0844608,0 L3.76036866,0 L3.76036866,18 L15.0844608,18 C15.7927373,18 16,16.9582041 16,16.2531184 L16,0.855036735 C16,0.149583673 15.7927373,0 15.0844608,0 Z M14.0829493,9.69795918 L6.41474654,9.69795918 L6.41474654,8.30204082 L14.0829493,8.30204082 L14.0829493,9.69795918 Z M14.0829493,7.05306122 L6.41474654,7.05306122 L6.41474654,5.80408163 L14.0829493,5.80408163 L14.0829493,7.05306122 Z M14.0829493,4.55510204 L6.41474654,4.55510204 L6.41474654,3.15918367 L14.0829493,3.15918367 L14.0829493,4.55510204 Z" id="Shape"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>      </div>
+      Textbook    </div>
+  
+
+  <div class="paragraph-spacing strong text-small line-height--s">
+    <a href="/en-us/nam/a-novel-approach-to-politics/book255385" class="color-smooth-grey  anchor-camouflaged">A Novel Approach to Politics</a>  </div>
+  <div class="text-small">
+    <div class="color-warm-grey paragraph-spacing">
+      Introducing Political Science through Books, Movies, and Popular Culture, Fifth Edition    </div>
+          <div class="strong">
+        <a href="/en-us/nam/author/douglas-a-van-belle" class="anchor-camouflaged">Douglas A. Van Belle</a>      </div>
+    
+    <div class="product-date-publication-dates margin-bottom">
+      <div>Published: November 2017</div>    </div>
+
+  </div>
+
+  <div class="text-tiny purchase-options-block margin-bottom--small">
+    Paperback<div><form class="commerce-add-to-cart commerce-cart-add-to-cart-form-160181 form-minimal clearfix" action="/en-us/nam/CollegePoliticalScience" method="post" id="commerce-cart-add-to-cart-form-160181" accept-charset="UTF-8"><div>
+<div class="clearfix">
+  <div class="l-element-left--sm">
+    <div class="paragraph-spacing-half text-medium text-right" product="160181">
+      <div><div class="field field-name-commerce-price field-type-commerce-price field-label-hidden"><div class="field-items"><div class="field-item even" data-currency="GBP" style="display:none;"><span class='sale-price '>£67.00</span></div><div class="field-item odd" data-currency="USD" style="display:none;"><span class='sale-price '>$96.00</span></div></div></div></div>
+    </div>
+  </div>
+  <div class="l-element-right--sm">
+              <div class="product add"><input type="hidden" name="product_id" value="160181" />
+<input type="hidden" name="form_build_id" value="form-PoeCiGnhPj4Bw27ySe4Oe5l49Sr0UrEoimZGisakFbA" />
+<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_160181" />
+<div id="edit-line-item-fields--21" class="form-wrapper"></div><input type="hidden" name="quantity" value="1" />
+<input class="button-small button-invert form-submit" type="submit" id="edit-submit-160181" name="op" value="Buy now" /></div>
+      </div>
+  <div class="clear text-minute text-left paragraph-spacing-half">
+      </div>
+</div>
+</div></form></div><div data-lowest-price-product="160181"></div>  </div>
+
+  <div class="text-small">
+
+          <div>
+        <a href="/en-us/nam/a-novel-approach-to-politics/book255385" class="brand-color-1">Review copy available</a>      </div>
+              <div><a href="https://edge.sagepub.com/vanbelle5e" target="_blank">Instructors Teaching Site</a></div>
+          <div><a href="https://edge.sagepub.com/vanbelle5e" target="_blank">Student Study Site</a></div>
+      </div>
+
+</article>
+
+
+
+<article class="col-sm-3 col-spacing--l margin-bottom--large brand-parent--13">
+  <div class="cover-wrapper padding-bottom text-center">
+          <a href="/en-us/nam/constitutional-law-for-a-changing-america/book249536"><img view-mode="search_result" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/83440_9781506348735.jpg" src="" width="150" height="189" alt="Constitutional Law for a Changing America" /></a>      </div>
+
+      <div class="text-uppercase border-bottom border--thin inherit-brand-border text-small clearfix margin-bottom">
+      <div class="inherit-brand-fill l-element-left margin-right--small margin-bottom--small">
+        <svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>academic-icon</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g stroke="none" stroke-width="1">
+    <g transform="translate(-419.000000, -275.000000)">
+      <g id="academic-book" transform="translate(419.000000, 272.000000)">
+        <g id="academic-icon" transform="translate(0.000000, 3.000000)">
+          <path d="M1.56239631,0 L2.50691244,0 L2.50691244,18 L1.56239631,18 C0.854341014,18 0,17.3917469 0,16.6865143 L0,1.28843265 C0,0.582979592 0.854341014,0 1.56239631,0 Z" id="Shape"></path>
+          <path d="M15.0844608,0 L3.76036866,0 L3.76036866,18 L15.0844608,18 C15.7927373,18 16,16.9582041 16,16.2531184 L16,0.855036735 C16,0.149583673 15.7927373,0 15.0844608,0 Z M14.0829493,9.69795918 L6.41474654,9.69795918 L6.41474654,8.30204082 L14.0829493,8.30204082 L14.0829493,9.69795918 Z M14.0829493,7.05306122 L6.41474654,7.05306122 L6.41474654,5.80408163 L14.0829493,5.80408163 L14.0829493,7.05306122 Z M14.0829493,4.55510204 L6.41474654,4.55510204 L6.41474654,3.15918367 L14.0829493,3.15918367 L14.0829493,4.55510204 Z" id="Shape"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>      </div>
+      Textbook    </div>
+  
+
+  <div class="paragraph-spacing strong text-small line-height--s">
+    <a href="/en-us/nam/constitutional-law-for-a-changing-america/book249536" class="color-smooth-grey  anchor-camouflaged">Constitutional Law for a Changing America</a>  </div>
+  <div class="text-small">
+    <div class="color-warm-grey paragraph-spacing">
+      A Short Course, Seventh Edition    </div>
+          <div class="strong">
+        <a href="/en-us/nam/author/lee-epstein" class="anchor-camouflaged">Lee Epstein</a>, <a href="/en-us/nam/author/thomas-g-walker" class="anchor-camouflaged">Thomas G. Walker</a>      </div>
+    
+    <div class="product-date-publication-dates margin-bottom">
+      <div>Published: October 2017</div>    </div>
+
+  </div>
+
+  <div class="text-tiny purchase-options-block margin-bottom--small">
+    Paperback<div><form class="commerce-add-to-cart commerce-cart-add-to-cart-form-140122 form-minimal clearfix" action="/en-us/nam/CollegePoliticalScience" method="post" id="commerce-cart-add-to-cart-form-140122" accept-charset="UTF-8"><div>
+<div class="clearfix">
+  <div class="l-element-left--sm">
+    <div class="paragraph-spacing-half text-medium text-right" product="140122">
+      <div><div class="field field-name-commerce-price field-type-commerce-price field-label-hidden"><div class="field-items"><div class="field-item even" data-currency="GBP" style="display:none;"><span class='sale-price '>£93.00</span></div><div class="field-item odd" data-currency="IND" style="display:none;"><span class='sale-price '>$125.00</span></div><div class="field-item even" data-currency="USD" style="display:none;"><span class='sale-price '>$133.00</span></div></div></div></div>
+    </div>
+  </div>
+  <div class="l-element-right--sm">
+              <div class="product add"><input type="hidden" name="product_id" value="140122" />
+<input type="hidden" name="form_build_id" value="form-6roAgkEMnflf2egI4iMOwtijRRqSrRYQdtYrd1-W6Ys" />
+<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_140122" />
+<div id="edit-line-item-fields--23" class="form-wrapper"></div><input type="hidden" name="quantity" value="1" />
+<input class="button-small button-invert form-submit" type="submit" id="edit-submit-140122" name="op" value="Buy now" /></div>
+      </div>
+  <div class="clear text-minute text-left paragraph-spacing-half">
+      </div>
+</div>
+</div></form></div><div data-lowest-price-product="140122"></div>  </div>
+
+  <div class="text-small">
+
+          <div>
+        <a href="/en-us/nam/constitutional-law-for-a-changing-america/book249536" class="brand-color-1">Review copy available</a>      </div>
+              <div><a href="http://edge.sagepub.com/conlaw" target="_blank">Instructor Site</a></div>
+          <div><a href="http://edge.sagepub.com/conlaw" target="_blank">Student Study Site</a></div>
+      </div>
+
+</article>
+
+
+
+<article class="col-sm-3 col-spacing--l margin-bottom--large brand-parent--13">
+  <div class="cover-wrapper padding-bottom text-center">
+          <a href="/en-us/nam/an-introduction-to-text-mining/book249451"><img view-mode="search_result" class="sage-thumbnail-width-150px lazy" data-original="/sites/default/files/upm-binaries/styles/sage_thumbnail_width_150px/feed/85381_9781506337005.jpg" src="" width="150" height="186" alt="An Introduction to Text Mining" /></a>      </div>
+
+      <div class="text-uppercase border-bottom border--thin inherit-brand-border text-small clearfix margin-bottom">
+      <div class="inherit-brand-fill l-element-left margin-right--small margin-bottom--small">
+        <svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>academic-icon</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g stroke="none" stroke-width="1">
+    <g transform="translate(-419.000000, -275.000000)">
+      <g id="academic-book" transform="translate(419.000000, 272.000000)">
+        <g id="academic-icon" transform="translate(0.000000, 3.000000)">
+          <path d="M1.56239631,0 L2.50691244,0 L2.50691244,18 L1.56239631,18 C0.854341014,18 0,17.3917469 0,16.6865143 L0,1.28843265 C0,0.582979592 0.854341014,0 1.56239631,0 Z" id="Shape"></path>
+          <path d="M15.0844608,0 L3.76036866,0 L3.76036866,18 L15.0844608,18 C15.7927373,18 16,16.9582041 16,16.2531184 L16,0.855036735 C16,0.149583673 15.7927373,0 15.0844608,0 Z M14.0829493,9.69795918 L6.41474654,9.69795918 L6.41474654,8.30204082 L14.0829493,8.30204082 L14.0829493,9.69795918 Z M14.0829493,7.05306122 L6.41474654,7.05306122 L6.41474654,5.80408163 L14.0829493,5.80408163 L14.0829493,7.05306122 Z M14.0829493,4.55510204 L6.41474654,4.55510204 L6.41474654,3.15918367 L14.0829493,3.15918367 L14.0829493,4.55510204 Z" id="Shape"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>      </div>
+      Textbook    </div>
+  
+
+  <div class="paragraph-spacing strong text-small line-height--s">
+    <a href="/en-us/nam/an-introduction-to-text-mining/book249451" class="color-smooth-grey  anchor-camouflaged">An Introduction to Text Mining</a>  </div>
+  <div class="text-small">
+    <div class="color-warm-grey paragraph-spacing">
+      Research Design, Data Collection, and Analysis    </div>
+          <div class="strong">
+        <a href="/en-us/nam/author/gabriel-gabe-ignatow" class="anchor-camouflaged">Gabe Ignatow</a>, <a href="/en-us/nam/author/rada-f-mihalcea" class="anchor-camouflaged">Rada Mihalcea</a>      </div>
+    
+    <div class="product-date-publication-dates margin-bottom">
+      <div>Published: October 2017</div>    </div>
+
+  </div>
+
+  <div class="text-tiny purchase-options-block margin-bottom--small">
+    Paperback<div><form class="commerce-add-to-cart commerce-cart-add-to-cart-form-119426 form-minimal clearfix" action="/en-us/nam/CollegePoliticalScience" method="post" id="commerce-cart-add-to-cart-form-119426" accept-charset="UTF-8"><div>
+<div class="clearfix">
+  <div class="l-element-left--sm">
+    <div class="paragraph-spacing-half text-medium text-right" product="119426">
+      <div><div class="field field-name-commerce-price field-type-commerce-price field-label-hidden"><div class="field-items"><div class="field-item even" data-currency="GBP" style="display:none;"><span class='sale-price '>£43.99</span></div><div class="field-item odd" data-currency="IND" style="display:none;"><span class='sale-price '>$60.00</span></div><div class="field-item even" data-currency="USD" style="display:none;"><span class='sale-price '>$60.00</span></div></div></div></div>
+    </div>
+  </div>
+  <div class="l-element-right--sm">
+              <div class="product add"><input type="hidden" name="product_id" value="119426" />
+<input type="hidden" name="form_build_id" value="form-qpCMRBp9bLkbTYjP-OMggR2ucYZ8avwxABa2TeAZ2P0" />
+<input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_119426" />
+<div id="edit-line-item-fields--25" class="form-wrapper"></div><input type="hidden" name="quantity" value="1" />
+<input class="button-small button-invert form-submit" type="submit" id="edit-submit-119426" name="op" value="Buy now" /></div>
+      </div>
+  <div class="clear text-minute text-left paragraph-spacing-half">
+      </div>
+</div>
+</div></form></div><div data-lowest-price-product="119426"></div>  </div>
+
+  <div class="text-small">
+
+          <div>
+        <a href="/en-us/nam/an-introduction-to-text-mining/book249451" class="brand-color-1">Review copy available</a>      </div>
+              <div><a href="https://study.sagepub.com/introtextmining" target="_blank">Instructor Teaching Site</a></div>
+      </div>
+
+</article>
+</div>    <hr class="margin-vertical" />
+    <div class="l-element-right--md margin-bottom">
+      <h2 class="element-invisible">Pages</h2><div class="item-list"><ul class="simple-pager reset-list"><li class="first"><span class="simple-pager-item simple-pager-current">1</span></li>
+<li><a class="simple-pager-item" title="Go to page 2" href="/en-us/nam/collegepoliticalscience?page=1&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">2</a></li>
+<li><a class="simple-pager-item" title="Go to page 3" href="/en-us/nam/collegepoliticalscience?page=2&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">3</a></li>
+<li><a class="simple-pager-item" title="Go to page 4" href="/en-us/nam/collegepoliticalscience?page=3&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">4</a></li>
+<li><a class="simple-pager-item" title="Go to page 5" href="/en-us/nam/collegepoliticalscience?page=4&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">5</a></li>
+<li><a class="simple-pager-item" title="Go to page 6" href="/en-us/nam/collegepoliticalscience?page=5&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">6</a></li>
+<li><a class="simple-pager-item" title="Go to page 7" href="/en-us/nam/collegepoliticalscience?page=6&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">7</a></li>
+<li><a class="simple-pager-item" title="Go to page 8" href="/en-us/nam/collegepoliticalscience?page=7&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">8</a></li>
+<li><a class="simple-pager-item" title="Go to page 9" href="/en-us/nam/collegepoliticalscience?page=8&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206">9</a></li>
+<li class="pager-ellipsis">…</li>
+<li class="pager-next last"><a class="simple-pager-next simple-pager-item" href="/en-us/nam/collegepoliticalscience?page=1&amp;f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206"></a></li>
+</ul></div>    </div>
+
+  
+</div>
+  </div>
+
+  
+  </div>
+      </div>
+
+              <div class="col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9">
+          <div class="brand-parent--3">
+<div class="panel-pane pane-sage-facet"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="bucket--highlighted"><div class="contextual-links-region bucket bucket-branded bucket--constrained-width">
+        <h2  class="bucket-title inherit-brand-fill bucket-title--accordion" data-toggle="collapse" data-target="#block-facetapi-20a0mt2dtj04xwsprfajhyqa8cenrwf7">Courses
+              <div class="bucket-accordion--toggle bucket-accordion--toggle--closed">
+          <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>plus</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g stroke="none" stroke-width="1" fill-rule="evenodd">
+    <g>
+      <rect id="|" x="7.2" y="0" width="1.6" height="16"></rect>
+      <rect id="–" x="0" y="7.2" width="16" height="1.6"></rect>
+    </g>
+  </g>
+</svg>        </div>
+        <div class="bucket-accordion--toggle bucket-accordion--toggle--opened">
+          <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>minus</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g stroke="none" stroke-width="1"fill-rule="evenodd">
+    <g>
+      <rect id="–" x="0" y="7" width="16" height="1.6"></rect>
+    </g>
+  </g>
+</svg>        </div>
+          </h2>
+    
+      <div  class="text-small line-height--s collapse in" id="block-facetapi-20a0mt2dtj04xwsprfajhyqa8cenrwf7">
+    <div class="bucket-body">
+    <div class="item-list"><ul class="facetapi-sage-facetapi-courses-links facetapi-facet-field-courses link-list--plain" id="facetapi-facet-search-apisage-product-index-block-field-courses"><li class="collapsed first"><a href="/en-us/nam/product/?f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206&amp;f%5B2%5D=field_courses%3A338787" class="facetapi-zero-results facetapi-inactive" id="facetapi-link--22" data-count="">American Government<span class="element-invisible"> Apply American Government filter </span></a></li>
+<li class="collapsed"><a href="/en-us/nam/product/?f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206&amp;f%5B2%5D=field_courses%3A338789" class="facetapi-zero-results facetapi-inactive" id="facetapi-link--23" data-count="">Comparative Politics<span class="element-invisible"> Apply Comparative Politics filter </span></a></li>
+<li class="collapsed"><a href="/en-us/nam/product/?f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206&amp;f%5B2%5D=field_courses%3A337844" class="facetapi-zero-results facetapi-inactive" id="facetapi-link--24" data-count="">International Relations<span class="element-invisible"> Apply International Relations filter </span></a></li>
+<li class="collapsed"><a href="/en-us/nam/product/?f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206&amp;f%5B2%5D=field_courses%3A338788" class="facetapi-zero-results facetapi-inactive" id="facetapi-link--25" data-count="">International Studies<span class="element-invisible"> Apply International Studies filter </span></a></li>
+<li class="collapsed"><a href="/en-us/nam/product/?f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206&amp;f%5B2%5D=field_courses%3A338790" class="facetapi-zero-results facetapi-inactive" id="facetapi-link--26" data-count="">Introduction to Political Science<span class="element-invisible"> Apply Introduction to Political Science filter </span></a></li>
+<li class="collapsed"><a href="/en-us/nam/product/?f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206&amp;f%5B2%5D=field_courses%3A337852" class="facetapi-zero-results facetapi-inactive" id="facetapi-link--27" data-count="">Political Behavior<span class="element-invisible"> Apply Political Behavior filter </span></a></li>
+<li class="collapsed"><a href="/en-us/nam/product/?f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206&amp;f%5B2%5D=field_courses%3A337853" class="facetapi-zero-results facetapi-inactive" id="facetapi-link--28" data-count="">Political Research Methods<span class="element-invisible"> Apply Political Research Methods filter </span></a></li>
+<li class="collapsed"><a href="/en-us/nam/product/?f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206&amp;f%5B2%5D=field_courses%3A338791" class="facetapi-zero-results facetapi-inactive" id="facetapi-link--29" data-count="">Political Theory<span class="element-invisible"> Apply Political Theory filter </span></a></li>
+<li class="collapsed"><a href="/en-us/nam/product/?f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206&amp;f%5B2%5D=field_courses%3A337856" class="facetapi-zero-results facetapi-inactive" id="facetapi-link--30" data-count="">Public Administration<span class="element-invisible"> Apply Public Administration filter </span></a></li>
+<li class="collapsed"><a href="/en-us/nam/product/?f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206&amp;f%5B2%5D=field_courses%3A338793" class="facetapi-zero-results facetapi-inactive" id="facetapi-link--31" data-count="">Public Policy<span class="element-invisible"> Apply Public Policy filter </span></a></li>
+<li class="collapsed last"><a href="/en-us/nam/product/?f%5B0%5D=field_courses%3A337806&amp;f%5B1%5D=field_classification%253Afield_classification_group%3A341206&amp;f%5B2%5D=field_courses%3A338792" class="facetapi-zero-results facetapi-inactive" id="facetapi-link--32" data-count="">Research Methods &amp; Statistics<span class="element-invisible"> Apply Research Methods &amp; Statistics filter </span></a></li>
+</ul></div>  </div>
+    </div>
+  </div>
+</div>  </div>
+
+  
+  </div>
+
+<div class="panel-pane pane-fieldable-panels-pane pane-uuid-c3712c06-a92b-494d-b705-c5fabc8e8ed5 pane-bundle-text"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="fieldable-panels-pane">
+    <div class="field field-name-field-basic-text-text field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><a href="https://us.sagepub.com/en-us/nam/sales-representatives" class="bucket-link bucket--constrained-width">Find My Rep</a> <a href="https://us.sagepub.com/en-us/nam/digital-solutions-for-your-course" class="bucket-link bucket--constrained-width">Digital Resources</a> <a href="https://study.sagepub.com/techsupport" class="bucket-link bucket--constrained-width">Technical Support</a> <a href="https://us.sagepub.com/en-us/nam/custom" class="bucket-link bucket--constrained-width">Custom Publishing</a> <a href="https://us.sagepub.com/en-us/nam/the-benefits-of-publishing-with-sage" class="bucket-link bucket--constrained-width">Publish with Us</a> <a href="https://us.sagepub.com/en-us/nam/CollegePublishing" class="bucket-link bucket--constrained-width">SAGE College Home</a> <a href="https://us.sagepub.com/en-us/nam/sage-canada" class="bucket-link bucket--constrained-width">SAGE Canada</a> <a href="https://us.sagepub.com/en-us/nam/stay-connected" class="bucket-link bucket--constrained-width">Connect with Us</a></p>
+</div></div></div></div>
+  </div>
+
+  
+  </div>
+
+<div class="bucket bucket--constrained-width margin-bottom--large"><div class="bucket-title">Follow us on twitter</div><div class="bucket-body bucket-body--thin"><a class="twitter-timeline"
+   href="https://twitter.com/SAGECQPolitics"
+   data-tweet-limit="2" >
+  Tweets by SAGECQPolitics</a>
+<script async src="//platform.twitter.com/widgets.js"
+        charset="utf-8"></script>
+</div></div>
+</div>        </div>
+      
+    </div>
+  </div>
+</div>
+
+                
+      
+    
+
+  </div>
+</div>
+<footer class="site-footer text-small color-warm-grey line-height--double">
+      <hr class="margin-top--extra-large hr--dark">
+    <div class="bg-light-grey padding-vertical--large">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-10">
+      
+<div class="row">
+<ul class="depth-1 reset-list" aria-labelledby="menu-item-0" role="menu"><li class="first expanded col-sm-4 margin-bottom--medium--xs"><a href="/en-us/nam" title="" class="l-block margin-bottom--small anchor-camouflaged brand-color-2">Browse</a><ul class="depth-2 reset-list" aria-labelledby="menu-item-41355" role="menu"><li class="first leaf"><a href="/en-us/nam/collegepublishing" title="" class="anchor-camouflaged">Books</a></li>
+<li class="leaf"><a href="/en-us/nam/journals" title="" class="anchor-camouflaged">Journals</a></li>
+<li class="leaf"><a href="/en-us/nam/digital-products" title="" class="anchor-camouflaged">Digital Library Products</a></li>
+<li class="leaf"><a href="/en-us/nam/digital-solutions-for-your-course" title="" class="anchor-camouflaged">Digital Solutions for your Course </a></li>
+<li class="last leaf"><a href="/en-us/nam/catalogs" title="Catalogs" class="anchor-camouflaged">Catalogs</a></li>
+</ul></li>
+<li class="expanded col-sm-4 margin-bottom--medium--xs"><a href="/en-us/nam" title="" class="l-block margin-bottom--small anchor-camouflaged brand-color-2">Resources For</a><ul class="depth-2 reset-list" aria-labelledby="menu-item-41350" role="menu"><li class="first leaf"><a href="/en-us/nam/collegepublishing" title="" class="anchor-camouflaged">Instructors</a></li>
+<li class="leaf"><a href="/en-us/nam/sage-the-worlds-largest-independent-scholarly-publisher" title="" class="anchor-camouflaged">Societies</a></li>
+<li class="leaf"><a href="/en-us/nam/book-author-editors" title="" class="anchor-camouflaged">Book Authors/Editors</a></li>
+<li class="leaf"><a href="/en-us/nam/resources-journal-authors-and-editors" title="" class="anchor-camouflaged">Journal Authors/Editors/Reviewers</a></li>
+<li class="leaf"><a href="/en-us/nam/collegepublishing" title="" class="anchor-camouflaged">Students</a></li>
+<li class="leaf"><a href="/en-us/nam/researchers" title="" class="anchor-camouflaged">Researchers</a></li>
+<li class="last leaf"><a href="/en-us/nam/librarian-resource-center" title="" class="anchor-camouflaged">Librarians</a></li>
+</ul></li>
+<li class="last expanded col-sm-4 margin-bottom--medium--xs"><a href="/en-us/nam" title="" class="l-block margin-bottom--small anchor-camouflaged brand-color-2">About</a><ul class="depth-2 reset-list" aria-labelledby="menu-item-41352" role="menu"><li class="first leaf"><a href="/en-us/nam/company-information" title="" class="anchor-camouflaged">About SAGE</a></li>
+<li class="leaf"><a href="/en-us/nam/contact-us" title="" class="anchor-camouflaged">Contact</a></li>
+<li class="leaf"><a href="/en-us/nam/press-releases/2017" title="" class="anchor-camouflaged">News</a></li>
+<li class="leaf"><a href="/en-us/nam/login" title="" class="anchor-camouflaged">My Account</a></li>
+<li class="leaf"><a href="/en-us/nam/sage-careers" title="" class="anchor-camouflaged">Careers</a></li>
+<li class="leaf"><a href="/en-us/nam/accessibility-0" title="" class="anchor-camouflaged">Accessibility</a></li>
+<li class="last leaf"><a href="/en-us/nam/modern-slavery-statement" title="" class="anchor-camouflaged">Modern Slavery Statement</a></li>
+</ul></li>
+</ul></div>
+
+
+<div id="session-expires" class="element-invisible">
+  <p>Hello, would you like to continue browsing the SAGE website?</p>
+  <div class="buttons text-center">
+    <a href="/en-us/nam/%23" class="button button-small button-emphasize" data-session="yes">Yes please!</a><a href="/en-us/nam/%23" class="button button-small button-invert-emphasize" data-session="no">No thanks!</a>  </div>
+</div>  </div>
+          <div class="col-sm-2">
+      
+  <h2 class="brand-color-2 l-block margin-bottom--small anchor-camouflaged">Social</h2>
+<a class="social-icon social-icon--blog" href="http://connection.sagepub.com/home/">Blog</a><a class="social-icon social-icon--facebook" href="https://www.facebook.com/SAGEPublications">Facebook</a><a class="social-icon social-icon--twitter" href="https://twitter.com/SAGE_News">Twitter</a><a class="social-icon social-icon--linkedin" href="https://www.linkedin.com/company/sage-publications">LinkedIn</a><a class="social-icon social-icon--s" href="http://www.socialsciencespace.com/">Social Science Space</a><hr class="hr--dark margin-vertical">
+
+<p>
+  You are in: <strong>North America</strong><br>
+  <a href="/en-us/nam" id="change-location-link">Change location</a></p>
+  </div>
+        </div>
+      </div>
+    </div>
+  
+      <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="text-minute margin-vertical clearfix color-warm-grey">
+            <!-- region: footer_lower -->
+
+
+<div  class="block block-sage-common l-element-right ">
+      
+  <div >&copy; 2017 SAGE Publications</div>
+</div>
+
+
+<div  class="block block-menu l-element-left ">
+      
+  <div ><ul class="list--bar-separated--small"><li class="first leaf"><a href="/en-us/nam/privacy-policy" title="">Privacy Policy</a></li>
+<li class="last leaf"><a href="/en-us/nam/accessibility" title="">Accessibility</a></li>
+</ul></div>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<div class="site-bottom">
+  <!-- region: bottom -->
+
+
+<div  class="block block-sage-common ">
+      
+  <div ><div class="modal" id="modal-external" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+              </div>
+      <div class="modal-body">
+        <iframe class="modal-external-iframe"></iframe>      </div>
+          </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div  class="block block-sage-common ">
+      
+  <div ><div class="modal" id="modal-generic-ajax" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+              </div>
+      <div class="modal-body">
+              </div>
+          </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+  <script type="text/javascript" src="https://us.sagepub.com/sites/default/files/js/js_iRpWrEHSmVV6EIvg7FCumKg9xIjuVrXILKYq8GfHL94.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/profiles/panopoly/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://us.sagepub.com/sites/default/files/js/js_V1ZuwJK9uzfm6fFffOcHHubfxnimoxnbgG58pvTQdpY.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery.ui || document.write("<script src='/profiles/panopoly/modules/contrib/jquery_update/replace/ui/ui/minified/jquery-ui.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://us.sagepub.com/sites/default/files/js/js_T520px87WhZh2MavcDZPPiBr7HHNHoyvUUPGA7M2UXg.js"></script>
+<script type="text/javascript" src="https://us.sagepub.com/sites/default/files/js/js_HSAhR9LbcVGXa_ucSCsBpe1TOTLuWN4hwxhv_lplhBQ.js"></script>
+<script type="text/javascript" src="https://us.sagepub.com/sites/default/files/js/js_T8ywn4EBKNqzTG3Ufv9Vnh5GaDNDmY_3YW1EgCwBLb4.js"></script>
+<script type="text/javascript" src="https://sadmin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script type="text/javascript" src="https://us.sagepub.com/sites/default/files/js/js_tyia-mG7hUTQrKWBHWTQXBmdRRbbjTqFtDX7XGjVDwQ.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+    (function($) {
+      Drupal.behaviors.jReject = {
+        attach: function (context, settings) {
+          $.reject({
+          display: ["msie", "firefox", "safari", "opera", "chrome", "gcf"],
+            reject: {  
+                msie5: true, msie6: true, msie7: true, msie8: true, firefox2: true, firefox3: true, firefox4: true, firefox5: true, firefox6: true, firefox7: true, firefox8: true, firefox9: true, chrome1: true, chrome2: true, chrome3: true, chrome4: true, chrome5: true, chrome6: true, chrome7: true, chrome8: true, chrome9: true, chrome10: true, chrome11: true, chrome12: true, chrome13: true, chrome14: true, chrome15: true, safari1: true, safari2: true, safari3: true, safari4: true, opera1: true, opera2: true, opera3: true, opera4: true, opera5: true, opera6: true, opera7: true, opera8: true, opera9: true
+            },
+            imagePath: '/sites/all/libraries/jreject/images/',
+            enable: true, header: "Did you know that your Internet Browser is out of date?", paragraph1: "Your browser is out of date, and may not be compatible with our website. A list of the most popular web browsers can be found below.", paragraph2: "Just click on the icons to get to the download page:", closeMessage: "By closing this window you acknowledge that your experience on this website may be degraded.", closeLink: "Close This Window", closeURL: "#", close: true, closeESC: true, closeCookie: true, overlayBgColor: "#000", overlayOpacity: 0.8, fadeInTime: "fast", fadeOutTime: "fast"
+          }); 
+          return false;  
+        }
+      }
+    })(jQuery);
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://us.sagepub.com/sites/default/files/js/js_3vcBzr40V6tgvyxZshLf8dOYCeyB7sOViHAaEtTq_lo.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+Sage.User.SessionExpires.avoidIframe();
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://us.sagepub.com/sites/default/files/js/js_yzMRb-sRSW4OOyszxX5nm9NfZdkbpaOA4CLG3tPnPSw.js"></script>
+<script type="text/javascript" src="https://us.sagepub.com/sites/default/files/js/js_c6TGZYdtn5qSmCIvzE7WA4JwbIbnjgh_wKdR6u4aLNQ.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"en-us\/nam\/","ajaxPageState":{"theme":"sage_corp","theme_token":"-khxCCDh4ZbV3AEpdnE1xloqgKW0lSoyveuBaqUlR8k","jquery_version":"1.10","js":{"\/\/s7.addthis.com\/js\/300\/addthis_widget.js#pubid=sagepub":1,"0":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets.js":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets-spotlight.js":1,"public:\/\/google_tag\/language\/google_tag.en-us.script.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.10.2\/jquery.min.js":1,"1":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jqueryui\/1.10.2\/jquery-ui.min.js":1,"2":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.jquery.cookie.js":1,"profiles\/panopoly\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"sites\/all\/libraries\/chosen\/chosen.jquery.min.js":1,"misc\/ajax.js":1,"profiles\/panopoly\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_images\/panopoly-images.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/typeahead.bundle.min.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.dom.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.domain.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.bootstrap.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.character_counter.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.cookie_policy.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.event.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.expand_by_line.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.form_message.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.modal_ajax.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.modal_external.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.path.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.referrer.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.typeahead.js":1,"sites\/all\/modules\/custom\/sage_user\/js\/sage_user.addresses.js":1,"sites\/all\/modules\/custom\/sage_user\/js\/sage_user.areas_of_interest.js":1,"sites\/all\/modules\/custom\/sage_user\/js\/sage_user.contact_preferences_form.js":1,"sites\/all\/modules\/custom\/sage_user\/js\/sage_user.courses.js":1,"sites\/all\/modules\/custom\/sage_user\/js\/sage_user.info.js":1,"sites\/all\/modules\/custom\/sage_user\/js\/sage_user.institutions.js":1,"sites\/all\/modules\/custom\/sage_user\/js\/sage_user.location.js":1,"sites\/all\/modules\/custom\/sage_user\/js\/sage_user.personal_details_form.js":1,"sites\/all\/modules\/custom\/sage_user\/js\/sage_user.registration_form.js":1,"sites\/all\/modules\/custom\/sage_user\/js\/sage_user.schools.js":1,"sites\/all\/modules\/custom\/sage_user\/js\/sage_user.session_expires.js":1,"sites\/all\/modules\/custom\/sage_user\/js\/sage_user.status.js":1,"sites\/all\/modules\/custom\/sage_user\/js\/sage_user.theme.js":1,"sites\/all\/modules\/custom\/sage_user\/js\/sage_user.login_block.js":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_admin\/panopoly-admin.js":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_magic\/panopoly-magic.js":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_theme\/js\/panopoly-accordion.js":1,"sites\/all\/modules\/custom\/sage_apachesolr\/js\/sage_apachesolr.facet_links.js":1,"sites\/all\/modules\/custom\/sage_apachesolr\/js\/sage_apachesolr.search_form.js":1,"sites\/all\/modules\/custom\/sage_apachesolr\/js\/sage_apachesolr.tabbing.js":1,"sites\/all\/modules\/custom\/sage_commerce\/js\/sage_commerce.currency.js":1,"sites\/all\/modules\/custom\/sage_commerce\/js\/sage_commerce.cart.js":1,"sites\/all\/modules\/custom\/sage_commerce_discount\/js\/sage_commerce_discount.promo_code.js":1,"sites\/all\/modules\/custom\/sage_content\/js\/sage_content.anchor.js":1,"sites\/all\/modules\/custom\/sage_content\/js\/sage_content.expand.js":1,"sites\/all\/modules\/custom\/sage_content\/js\/sage_content.report_review.js":1,"sites\/all\/modules\/custom\/sage_content\/js\/sage_content.collapse.js":1,"sites\/all\/modules\/custom\/sage_common\/js\/sage_common.form_validation.js":1,"misc\/progress.js":1,"sites\/all\/libraries\/jquery.cookieCuttr\/jquery.cookiecuttr.js":1,"https:\/\/sadmin.brightcove.com\/js\/BrightcoveExperiences.js":1,"sites\/all\/libraries\/jreject\/js\/jquery.reject.js":1,"3":1,"profiles\/panopoly\/libraries\/jquery.imagesloaded\/jquery.imagesloaded.min.js":1,"sites\/all\/modules\/contrib\/facetapi\/facetapi.js":1,"sites\/all\/modules\/custom\/sage_commerce\/js\/sage_commerce.purchase_options.js":1,"sites\/all\/modules\/custom\/sage_apachesolr\/js\/sage_apachesolr.search.js":1,"sites\/all\/modules\/custom\/sage_apachesolr\/js\/sage_apachesolr.search_sorts.js":1,"4":1,"sites\/all\/themes\/sage_corp\/js\/sage_corp.form_validation.js":1,"sites\/all\/modules\/contrib\/chosen\/chosen.js":1,"sites\/all\/themes\/sage_corp\/libs\/lazyload\/jquery.lazyload.js":1,"sites\/all\/themes\/sage_corp\/libs\/bootstrap\/assets\/javascripts\/bootstrap.js":1,"sites\/all\/themes\/sage_corp\/libs\/modernizr\/jquery.modernizr-custom.js":1,"sites\/all\/themes\/sage_corp\/libs\/placeholder\/jquery.placeholder.min.js":1,"sites\/all\/themes\/sage_corp\/js\/sage_corp.js":1,"sites\/all\/themes\/sage_corp\/js\/sage_corp.anchor.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"sites\/all\/libraries\/chosen\/chosen.css":1,"sites\/all\/modules\/contrib\/chosen\/css\/chosen-drupal.css":1,"profiles\/panopoly\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/panopoly\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/contrib\/domain\/domain_nav\/domain_nav.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_admin\/panopoly-admin.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_admin\/panopoly-admin-navbar.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_core\/css\/panopoly-dropbutton.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_magic\/css\/panopoly-magic.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_magic\/css\/panopoly-modal.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_theme\/css\/panopoly-featured.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_theme\/css\/panopoly-accordian.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_theme\/css\/panopoly-layouts.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets-spotlight.css":1,"profiles\/panopoly\/modules\/contrib\/radix_layouts\/radix_layouts.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"profiles\/panopoly\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/libraries\/jquery.cookieCuttr\/cookiecuttr.css":1,"profiles\/panopoly\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/libraries\/jreject\/css\/jquery.reject.css":1,"profiles\/panopoly\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/search_api_page\/search_api_page.css":1,"profiles\/panopoly\/modules\/contrib\/field_group\/field_group.field_ui.css":1,"sites\/all\/themes\/base\/system.menus.css":1,"sites\/all\/themes\/base\/system.theme.css":1,"sites\/all\/themes\/base\/system.messages.css":1,"sites\/all\/themes\/base\/date.css":1,"sites\/all\/themes\/base\/commerce_line_item.theme.css":1,"sites\/all\/themes\/base\/field_collection.theme.css":1,"sites\/all\/themes\/base\/horizontal-tabs.css":1,"sites\/all\/themes\/sage_corp\/libs\/typeahead\/typeaheadjs.css":1,"sites\/all\/themes\/sage_corp\/dist\/styles.css":1,"sites\/all\/themes\/sage_corp\/dist\/print.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_images\/panopoly-images.css":1}},"Sage":{"Location":{"region":"nam","regionCookie":"STYXKEY-region","countryCookie":"STYXKEY-country","regionPath":"nam","changeLocationUrl":"\/en-us\/nam\/change-location\/%25","canonicalUrl":"node\/1433853","Alternatives":{"nam":"https:\/\/us.sagepub.com\/en-us\/nam\/collegepoliticalscience","sam":"https:\/\/us.sagepub.com\/en-us\/sam\/collegepoliticalscience","cab":"https:\/\/us.sagepub.com\/en-us\/cab\/collegepoliticalscience","cam":"https:\/\/us.sagepub.com\/en-us\/cam\/collegepoliticalscience","afr":"https:\/\/uk.sagepub.com\/en-gb\/afr\/node\/1433853","eur":"https:\/\/uk.sagepub.com\/en-gb\/eur\/node\/1433853","mst":"https:\/\/uk.sagepub.com\/en-gb\/mst\/node\/1433853","oce":"https:\/\/au.sagepub.com\/en-gb\/oce\/node\/1433853","asi":"https:\/\/uk.sagepub.com\/en-gb\/asi\/node\/1433853","sas":"https:\/\/in.sagepub.com\/en-in\/sas\/node\/1433853"}},"Domain":{"domainID":"1","websiteID":"US"},"User":{"addInstitutionUrl":"\/en-us\/nam\/my-account\/institutions\/add?destination=node\/1433853","editInstitutionUrl":"\/en-us\/nam\/my-account\/institutions\/edit\/%25?destination=node\/1433853","deleteConfirmInstitutionUrl":"\/en-us\/nam\/my-account\/institutions\/delete-confirm\/%25?destination=node\/1433853","getInstitutionNameUrl":"\/en-us\/nam\/institutions\/name\/%25","getDepartmentNameUrl":"\/en-us\/nam\/departments\/name\/%25\/%25","addCourseUrl":"\/en-us\/nam\/my-account\/courses\/add?destination=node\/1433853","editCourseUrl":"\/en-us\/nam\/my-account\/courses\/edit\/%25?destination=node\/1433853","deleteConfirmCourseUrl":"\/en-us\/nam\/my-account\/courses\/delete-confirm\/%25?destination=node\/1433853","getCourseSubjectUrl":"\/en-us\/nam\/courses\/subject\/%25","addAddressUrl":"\/en-us\/nam\/my-account\/addresses\/add?destination=node\/1433853","editAddressUrl":"\/en-us\/nam\/my-account\/addresses\/edit\/%25?destination=node\/1433853","deleteConfirmAddressUrl":"\/en-us\/nam\/my-account\/addresses\/delete-confirm\/%25?destination=node\/1433853","limitAOI":8},"Status":{"loggedUrl":"https:\/\/us.sagepub.com\/en-us\/nam\/collegepoliticalscience","statusUrl":"\/en-us\/nam\/status"},"Session":{"expiration":"SESSexp","renewUrl":"https:\/\/us.sagepub.com\/en-us\/nam\/session-renew","logoutUrl":"https:\/\/us.sagepub.com\/en-us\/nam\/logout?destination=node\/1433853","autoLogoutUrl":"https:\/\/us.sagepub.com\/en-us\/nam\/logout?destination=https%3A\/\/us.sagepub.com\/en-us\/nam\/collegepoliticalscience%3Fi%3Dautologgedout","loginUrl":"https:\/\/us.sagepub.com\/en-us\/nam\/login?destination=node\/1433853"},"Form":{"Messages":{"invalid":"Unable to login the user. Please check your credentials.","reset":"Please check your inbox for a reset password email. Check your \u003Ca href=\u0022https:\/\/en.wikipedia.org\/wiki\/Email_spam\u0022\u003Espam\u003C\/a\u003E if you have not received an email.\r\n","reset_from_token":"Your password has been successfully changed. Please login with your new password.","wserror":"We are currently experiencing problems with the service, please try it again later.","autologgedout":"You have been automatically logged out as your session has been expired.","Address is not valid":"We are unable to proceed with your order, please check your address details and try again.","address_not_found":"\u003Cp\u003E\u003Cspan\u003EAddress not found. Please \u003Ca href=\u0022\/node\/99956\u0022\u003Econtact customer services\u003C\/a\u003E.\u003C\/span\u003E\u003C\/p\u003E","api_order_error":"\u003Cp\u003E\u003Cspan\u003EThere has been a problem creating your order.\u003C\/span\u003E\u003Cspan\u003E\u0026nbsp;Please \u003Ca href=\u0022\/node\/99956\u0022\u003Econtact customer services\u003C\/a\u003E.\u003C\/span\u003E\u003C\/p\u003E","courseInstance_not_found":"\u003Cp\u003E\u003Cspan\u003EThere has been a problem submitting your feedback.\u003C\/span\u003E\u003Cspan\u003E\u0026nbsp;Please \u003Ca href=\u0022\/node\/99956\u0022\u003Econtact customer services\u003C\/a\u003E.\u003C\/span\u003E\u003C\/p\u003E","course_not_found":"\u003Cp\u003E\u003Cspan\u003ECourse not found. Please \u003Ca href=\u0022\/node\/99956\u0022\u003Econtact customer services\u003C\/a\u003E.\u003C\/span\u003E\u003C\/p\u003E","department_not_found":"\u003Cp\u003E\u003Cspan\u003EDepartment not found. Please \u003Ca href=\u0022\/node\/99956\u0022\u003Econtact customer services\u003C\/a\u003E.\u003C\/span\u003E\u003C\/p\u003E","duplicate_course_found":"You already appear to have this course in your profile. Please create a new course or select the existing one. If you\u2019re experiencing\r\ndifficulty, please \u003Ca href=\u201c\/contact-us\u201d target=\u201c_nlsnk\u0022\u003Econtact us\u003C\/a\u003E.","email_already_exist":"\u003Cp\u003E\u003Cspan\u003EThere is already an account registered with this email. Please click \u003Ca href=\u0022\/forgot-password\u0022\u003Ehere\u003C\/a\u003E to reset your password or create an account using another email address\u003C\/span\u003E\u003C\/p\u003E","ICFRCommerceItem_not_found":"\u003Cp\u003E\u003Cspan\u003EThere has been a problem submitting your feedback.\u003C\/span\u003E\u003Cspan\u003E\u0026nbsp;Please\u0026nbsp;\u003Ca href=\u0022\/node\/99956\u0022\u003Econtact customer services\u003C\/a\u003E.\u003C\/span\u003E\u003C\/p\u003E","icfr_not_found":"\u003Cp\u003E\u003Cspan\u003EThere has been a problem submitting your feedback.\u003C\/span\u003E\u003Cspan\u003E\u0026nbsp;Please \u003Ca href=\u0022\/node\/99956\u0022\u003Econtact customer services\u003C\/a\u003E.\u003C\/span\u003E\u003C\/p\u003E","icfr_order_error":"\u003Cp\u003EThere has been a problem creating your order. Please contact us:\u003C\/p\u003E\u003Cul\u003E\u003Cli\u003E\u003Ca href=\u0022node\/102004\/\u0022\u003EUS territory contact details\u003C\/a\u003E\u003C\/li\u003E\u003Cli\u003E\u003Ca href=\u0022node\/157171\/\u0022\u003ERest of world contact details\u003C\/a\u003E\u003C\/li\u003E\u003C\/ul\u003E","invalid_credentials":"\u003Cp\u003E\u003Cspan\u003EYour password is incorrect. Please try again or \u003Ca href=\u0022forgot-password?destination=error\u0022\u003Ereset your password.\u003C\/a\u003E\u003C\/span\u003E\u003C\/p\u003E","invalid_input":"\u003Cp\u003E\u003Cspan style=\u0022background-color: transparent;\u0022 class=\u0022s1\u0022\u003EThere appears to be an issue with your account information. Please ensure all mandatory profile fields are complete. If the problem persists, please \u003C\/span\u003E\u003Ca href=\u0022\/contact-us\u0022 target=\u0022_blank\u0022\u003E\u003Cspan class=\u0022s2\u0022\u003Econtact us\u003C\/span\u003E\u003C\/a\u003E\u003Cspan style=\u0022background-color: transparent;\u0022 class=\u0022s1\u0022\u003E.\u003C\/span\u003E\u003C\/p\u003E","invalid_reference":"\u003Cp\u003E\u003Cspan\u003EThere has been a problem creating your account. Please\u0026nbsp;\u003Ca href=\u0022\/contact-us\u0022\u003Econtact customer services\u003C\/a\u003E\u0026nbsp;or try again later.\u003C\/span\u003E\u003C\/p\u003E","missing_required_field":"\u003Cp\u003EPlease enter !field.\u003C\/p\u003E","missing_require_field":"\u003Cp\u003E\u003Cspan\u003EPlease enter !field.\u003C\/span\u003E\u003C\/p\u003E","profile_not_found":"\u003Cp\u003E\u003Cspan\u003EYour profile has not been found. Use the create account button below to create a profile.\u003C\/span\u003E\u003C\/p\u003E","username_already_in_use":"\u003Cp\u003E\u003Cspan\u003EThere is already an account registered with this email. Please click \u003Ca href=\u0022\/forgot-password\u0022\u003Ehere\u003C\/a\u003E to reset your password or create an account using another email address\u003C\/span\u003E\u003C\/p\u003E"}},"ApacheSolr":{"contentRedirectUrl":"node\/%","sortOptionPriceLowToHigh":"price_low_high","sortOptionPriceHighToLow":"price_high_low","solrAppUrl":"\/sites\/all\/modules\/custom\/sage_apachesolr\/solr-connector\/index.php","enableTypeAheadSuggestions":false,"typeaheadOptions":[{"value":" !search in Textbooks","action":"product","filter":"im_field_classification\\:field_classification_group:341206"},{"value":" !search in Books","action":"product","filter":"im_field_classification\\:field_classification_group:(341209 OR 341227 OR 341233 OR 341223 OR 341206)"},{"value":" !search in Journals","action":"product","filter":"im_field_classification\\:field_classification_group:341222"},{"value":" !search in Site content","action":"content","filter":true}]},"Commerce":{"Currency":{"currencyCookie":"STYXKEY-currency","defaultCurrencies":["USD"],"reloadOnCurrencyChange":0},"Cart":{"cartUrl":"\/en-us\/nam\/cart-info"}},"Discount":{"promoCookieName":"STYXKEY-promo-code","priorityCookieName":"STYXKEY-priority-code","promoQueryParam":"promocode","priorityQueryParam":"priorityCode"},"Content":{"reportReviewUrl":"\/en-us\/nam\/node\/%25node\/report?destination=node\/1433853","reportReviewMaxLength":200,"previewISBN":["9781506371764","9781506399096","9781506399119","9781933116884","9781506346922","9781544310008","9781506383460","9781506383484","9781506385693","9781506385716","9781473966994","9781473966987","9781526416872","9781506317410","9781506317380","9781506363592","9781506363615","9781506368658","9781506368672","9781506348735","9781506398709","9781506337005","9781506336985"]},"Ajax":{"loadingImage":"\/sites\/all\/themes\/sage_corp\/images\/loading-ajax.gif"}},"CToolsModal":{"modalSize":{"type":"scale","width":".9","height":".9","addWidth":0,"addHeight":0,"contentRight":25,"contentBottom":75},"modalOptions":{"opacity":".55","background-color":"#FFF"},"animationSpeed":"fast","modalTheme":"CToolsModalDialog","throbberTheme":"CToolsModalThrobber"},"panopoly_magic":{"pane_add_preview_mode":"disabled"},"ajax":{"edit-submit-161903":{"callback":"sage_commerce_add_to_cart_form_submit","wrapper":"block-commerce-cart-cart","effect":"fade","progress":{"type":"throbber","message":""},"event":"mousedown","keypress":true,"prevent":"click","url":"\/en-us\/nam\/add-to-cart","submit":{"_triggering_element_name":"op","_triggering_element_value":"Buy now"}},"edit-submit-188121":{"callback":"sage_commerce_add_to_cart_form_submit","wrapper":"block-commerce-cart-cart","effect":"fade","progress":{"type":"throbber","message":""},"event":"mousedown","keypress":true,"prevent":"click","url":"\/en-us\/nam\/add-to-cart","submit":{"_triggering_element_name":"op","_triggering_element_value":"Buy now"}},"edit-submit-24792":{"callback":"sage_commerce_add_to_cart_form_submit","wrapper":"block-commerce-cart-cart","effect":"fade","progress":{"type":"throbber","message":""},"event":"mousedown","keypress":true,"prevent":"click","url":"\/en-us\/nam\/add-to-cart","submit":{"_triggering_element_name":"op","_triggering_element_value":"Buy now"}},"edit-submit-139360":{"callback":"sage_commerce_add_to_cart_form_submit","wrapper":"block-commerce-cart-cart","effect":"fade","progress":{"type":"throbber","message":""},"event":"mousedown","keypress":true,"prevent":"click","url":"\/en-us\/nam\/add-to-cart","submit":{"_triggering_element_name":"op","_triggering_element_value":"Buy now"}},"edit-submit-178294":{"callback":"sage_commerce_add_to_cart_form_submit","wrapper":"block-commerce-cart-cart","effect":"fade","progress":{"type":"throbber","message":""},"event":"mousedown","keypress":true,"prevent":"click","url":"\/en-us\/nam\/add-to-cart","submit":{"_triggering_element_name":"op","_triggering_element_value":"Buy now"}},"edit-submit-180193":{"callback":"sage_commerce_add_to_cart_form_submit","wrapper":"block-commerce-cart-cart","effect":"fade","progress":{"type":"throbber","message":""},"event":"mousedown","keypress":true,"prevent":"click","url":"\/en-us\/nam\/add-to-cart","submit":{"_triggering_element_name":"op","_triggering_element_value":"Buy now"}},"edit-submit-124880":{"callback":"sage_commerce_add_to_cart_form_submit","wrapper":"block-commerce-cart-cart","effect":"fade","progress":{"type":"throbber","message":""},"event":"mousedown","keypress":true,"prevent":"click","url":"\/en-us\/nam\/add-to-cart","submit":{"_triggering_element_name":"op","_triggering_element_value":"Buy now"}},"edit-submit-124886":{"callback":"sage_commerce_add_to_cart_form_submit","wrapper":"block-commerce-cart-cart","effect":"fade","progress":{"type":"throbber","message":""},"event":"mousedown","keypress":true,"prevent":"click","url":"\/en-us\/nam\/add-to-cart","submit":{"_triggering_element_name":"op","_triggering_element_value":"Buy now"}},"edit-submit-105388":{"callback":"sage_commerce_add_to_cart_form_submit","wrapper":"block-commerce-cart-cart","effect":"fade","progress":{"type":"throbber","message":""},"event":"mousedown","keypress":true,"prevent":"click","url":"\/en-us\/nam\/add-to-cart","submit":{"_triggering_element_name":"op","_triggering_element_value":"Buy now"}},"edit-submit-157583":{"callback":"sage_commerce_add_to_cart_form_submit","wrapper":"block-commerce-cart-cart","effect":"fade","progress":{"type":"throbber","message":""},"event":"mousedown","keypress":true,"prevent":"click","url":"\/en-us\/nam\/add-to-cart","submit":{"_triggering_element_name":"op","_triggering_element_value":"Buy now"}},"edit-submit-160181":{"callback":"sage_commerce_add_to_cart_form_submit","wrapper":"block-commerce-cart-cart","effect":"fade","progress":{"type":"throbber","message":""},"event":"mousedown","keypress":true,"prevent":"click","url":"\/en-us\/nam\/add-to-cart","submit":{"_triggering_element_name":"op","_triggering_element_value":"Buy now"}},"edit-submit-140122":{"callback":"sage_commerce_add_to_cart_form_submit","wrapper":"block-commerce-cart-cart","effect":"fade","progress":{"type":"throbber","message":""},"event":"mousedown","keypress":true,"prevent":"click","url":"\/en-us\/nam\/add-to-cart","submit":{"_triggering_element_name":"op","_triggering_element_value":"Buy now"}},"edit-submit-119426":{"callback":"sage_commerce_add_to_cart_form_submit","wrapper":"block-commerce-cart-cart","effect":"fade","progress":{"type":"throbber","message":""},"event":"mousedown","keypress":true,"prevent":"click","url":"\/en-us\/nam\/add-to-cart","submit":{"_triggering_element_name":"op","_triggering_element_value":"Buy now"}}},"urlIsAjaxTrusted":{"\/en-us\/nam\/add-to-cart":true,"\/en-us\/nam\/CollegePoliticalScience":true,"https:\/\/us.sagepub.com\/en-us\/nam\/login?f%5B0%5D=field_courses%3A337806\u0026f%5B1%5D=field_classification%253Afield_classification_group%3A341206":true},"chosen":{"selector":"select#edit-menu-parent","minimum_single":20,"minimum_multiple":20,"minimum_width":300,"options":{"allow_single_deselect":false,"disable_search":false,"disable_search_threshold":0,"search_contains":true,"placeholder_text_multiple":"Choose some options","placeholder_text_single":"Choose an option","no_results_text":"No results match","inherit_select_classes":true}},"facetapi":{"facets":[{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-printed-language","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_printed_language","queryType":null,"widget":"sage_facetapi_content_type_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"20","id":"facetapi-facet-search-apisage-product-index-block-field-imprint","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_imprint","queryType":null,"widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-disciplines","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_disciplines","queryType":null,"widget":"sage_facetapi_taxonomy_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-publisher","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_publisher","queryType":null,"widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-courses","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_courses","queryType":null,"widget":"sage_facetapi_courses_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-audiencefield-audience-group","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_audience:field_audience_group","queryType":null,"widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-grade-levelname","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_grade_level:name","queryType":null,"widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-publisherfield-publisher-group","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_publisher:field_publisher_group","queryType":null,"widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-classificationfield-classification-group","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_classification:field_classification_group","queryType":null,"widget":"sage_facetapi_domain_access_taxonomy_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-companion-source","searcher":"search_api@sage_product_index","realmName":"block","facetName":"companion_source","queryType":null,"widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"20","id":"facetapi-facet-search-apisage-product-index-block-field-custom-recommended","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_custom_recommended","queryType":null,"widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-custom-journal-first-letter-title","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_custom_journal_first_letter_title","queryType":null,"widget":"sage_facetapi_glossary","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"20","id":"facetapi-facet-search-apisage-product-index-block-type","searcher":"search_api@sage_product_index","realmName":"block","facetName":"type","queryType":null,"widget":"sage_facetapi_content_type_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-custom-product-available-as-corwin-au","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_custom_product_available_as_corwin_au","queryType":null,"widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-custom-publish-date-corwin","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_custom_publish_date_corwin","queryType":"date","widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-custom-publish-date-corwin-au","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_custom_publish_date_corwin_au","queryType":"date","widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-custom-publish-date-ind","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_custom_publish_date_ind","queryType":"date","widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-custom-product-available-as-ind","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_custom_product_available_as_ind","queryType":null,"widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-custom-product-available-as-corwin","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_custom_product_available_as_corwin","queryType":null,"widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-custom-product-available-as-us","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_custom_product_available_as_us","queryType":null,"widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-custom-publish-date-us","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_custom_publish_date_us","queryType":"date","widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-custom-publish-date-uk","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_custom_publish_date_uk","queryType":"date","widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"},{"limit":"0","id":"facetapi-facet-search-apisage-product-index-block-field-custom-product-available-as-uk","searcher":"search_api@sage_product_index","realmName":"block","facetName":"field_custom_product_available_as_uk","queryType":null,"widget":"sage_facetapi_default_links","showMoreText":"Show more","showFewerText":"Show fewer"}]}});
+//--><!]]>
+</script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=sagepub"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var addthis_config = {"data_track_clickback":true};
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://us.sagepub.com/sites/default/files/js/js_29qYXJz8NLGg8Aomg-RZPjJcj9yEdEst1BMZ9gZbs-4.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"452931de41","applicationID":"7713527","transactionName":"MVMHNhYCWkJZWxALVwgZJAEQCltfF0gFBV05WwQMBQRRQ2dWCwZdOUAMBxM8RFBfXQ==","queueTime":0,"applicationTime":2795,"atts":"HRQEQF4YSUw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

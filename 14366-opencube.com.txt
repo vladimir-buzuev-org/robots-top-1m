@@ -1,0 +1,434 @@
+<!DOCTYPE html><html><head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="description" content="OpenCube Responsive QuickMenu: responsive drop down and drill down menu solutions for desktop and mobile devices">
+	<meta name="keywords" content="drop down menu, drill down menu, navigation menu, nav, site menu">
+
+	<!-- Mobile Viewport (required for older Android devices) -->
+	<meta name="viewport" content="width=980">
+	
+	<!-- Site CSS -->
+	<link rel='stylesheet' type='text/css' href='/css2/default.css'/>
+		
+	<!-- Responsive QuickMenu Script / Core CSS -->
+	<script type="text/javascript" src="/script2/qm.js"></script>
+	<link rel='stylesheet' type='text/css' href='/css2/qm_core.css' >
+	<link rel='stylesheet' type='text/css' href='/css2/qm_topbar.css'/>	
+	
+	<!-- NodeFire Animator Script -->
+	<script type="text/javascript" src="/script2/nf.js"></script>
+	
+	<!-- Site Wide - Core Library - Extends qm.js / .OC -->
+	<script type="text/javascript" src="/script2/doc_core.js"></script>
+	
+	<!-- QuickMenu Response Types -->
+	<script type="text/javascript">
+		//custom response types, add as many as you need. {menuStyle:'fill' or 'drop', matchMedia can be any standard mediaQuery string as used in CSS}
+		OC.navManager.responses.types = {
+			small_device:{menuStyle:'fill', matchMedia:"(max-device-width:767px) or (-webkit-min-device-pixel-ratio:1.3) or (-o-min-device-pixel-ratio:13/10) or (min-resolution:120dpi)"},
+			large_device:{menuStyle:'drop', matchMedia:"all"}
+		}
+		OC.unlock = "prfpdwcg";
+	</script>
+
+	<title>OpenCube - Responsive Menus</title>
+	
+	<!-- QuickMenu Styles - Sample Menu -->
+	<link rel='stylesheet' type='text/css' href='css2/qm_index_sample.css' >
+		
+	<!-- Doc Specific Scripts -->
+	<script type="text/javascript" src="/script2/doc_index.js"></script>
+	<script type="text/javascript" src="/script2/device_chrome.js"></script>
+	
+	<!-- QuickMenu Device Preview Sizes -->
+	<script type="text/javascript">OC.doc_index.deviceData = {mobile:{w:240, h:320},desktop:{w:600, h:340}}</script>
+	
+	<!-- Doc Specific CSS -->
+	<link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		.info_title1 {margin:0px 0px 10px 0px;color:#666;font-size:18px;font-weight:bold;font-family:'Exo 2',sans-serif;}
+		.info_title2 {margin:0px 0px 20px 0px;color:#777;font-size:16px;font-family:'Exo 2',sans-serif;}
+		.info_title3 {font-size:12px;}
+		.info_title3_bot_space {margin-bottom:10px;}
+		
+		.device_bar_item {position:relative;float:left;width:50px;height:50px;margin-left:30px;cursor:pointer;}
+		.device_bar_item.isDevice {opacity:.7;}
+		.device_bar_item.isDevice.nfActive {opacity:1;}
+		.device_bar_item_text {position:absolute;width:70px;height:20px;bottom:-25px;left:-10px;font-size:14px;text-align:center;}
+	
+		.top_gradient_title {border-color:#666;background-color:#dadada;border-width:0px 0px 1px 0px;
+			/*IE9 SVG*/ background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Im5mLWdyYWQtZ2VuIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjEwMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM3QjdCN0IiIHN0b3Atb3BhY2l0eT0iMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI0Q2RDZENiIgc3RvcC1vcGFjaXR5PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI25mLWdyYWQtZ2VuKSIgLz48L3N2Zz4=);
+			/*Mozilla Firefox*/ background-image:-moz-linear-gradient(180deg,rgba(123,123,123,1) 0%,rgba(214,214,214,1) 100%);
+			/*Safari - Chrome*/ background-image:-webkit-linear-gradient(180deg,rgba(123,123,123,1) 0%,rgba(214,214,214,1) 100%);
+			/*IE 10+*/ background-image:-ms-linear-gradient(180deg,rgba(123,123,123,1) 0%,rgba(214,214,214,1) 100%);
+			/*Opera*/ background-image:-o-linear-gradient(180deg,rgba(123,123,123,1) 0%,rgba(214,214,214,1) 100%);
+			/*IE6-8 (horz. or vert. only)*/ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7b7b7b', endColorstr='#d6d6d6',GradientType=1);
+		}
+		
+		.section_list {list-style-type:none;padding:0px;margin:0px 10px 0px 10px;}
+		.section_list li {margin-bottom:5px;background:transparent url(/images2/check_green_med.png) no-repeat 0px 3px;padding-left:20px;}
+		.contentSection.corner_banner_new {background-image:url(/images2/banner_new.png);background-repeat:no-repeat;background-position:0px 0px;}
+	</style>
+	
+	<!-- NodeFire Stage Save Data (drop down to drill down animation) -->
+	<script type="text/javascript">/*<![CDATA[*/NodeFire_16626862={nfUid:'NodeFire_16626862', data:{data:{elmId:"stage1",cn:{},elmOrder:{_16643117:{id:"chrome",pUid:"_16626862",c:1,cn:{}},_13965294:{id:"sceneWindow1",pUid:"_16643117",c:13,sw:1,opt:{sw:{dt:"imagesload",loop:"infinite",st:100}},cn:{}},_13965318:{id:"scene1",pUid:"_13965294",c:9,swi:1},_12552565:{id:"main_menu",pUid:"_13965318",c:1},_12744382:{id:"sub_menu",pUid:"_13965318",c:1},_18637362:{id:"support_hl",pUid:"_13965318",c:1},_13717137:{id:"mouse",pUid:"_13965318",c:1},_13965327:{id:"scene2",pUid:"_13965294",c:9,swi:1,opt:{scene:{}}},_10185235:{id:"fill_button",pUid:"_16626862",c:1,cn:{nf_vCenter:1,nf_hCenter:1}},_19593329:{id:"fill_shell",pUid:"_16626862",c:1},_10197040:{id:"items_window",pUid:"_19593329",c:1},_10237762:{id:"items",pUid:"_10197040",c:1},_17516782:{id:"back_button",pUid:"_19593329",c:1},_11404973:{id:"hand_container",pUid:"_16626862",c:1},_16209805:{id:"tap_circle",pUid:"_11404973",c:2},_11370184:{id:"tap_hand",pUid:"_11404973",c:1}}},ready:{_16626862:{d:{o:{}},_16626862:{backgroundColor:{def:{v:"rgba(255,255,255,1.00)"}},backgroundColor_Red:{def:{v:255}},backgroundColor_Green:{def:{v:255}},backgroundColor_Blue:{def:{v:255}},backgroundColor_Alpha:{def:{v:1}},width:{def:{v:320}},height:{def:{v:216}},position:{def:{v:"relative"}},fontVariant:{def:{v:"small-caps"}},color:{def:{v:"rgba(187,187,187,1)"}},color_Red:{def:{v:187}},color_Green:{def:{v:187}},color_Blue:{def:{v:187}},color_Alpha:{def:{v:1}}},_16643117:{width:{def:{v:320}},height:{def:{v:216}},backgroundImage:{def:{v:"http://www.opencube.com/stages/index_tablet/tablet.png"}},backgroundColor:{def:{v:"transparent"}}},_12552565:{width:{def:{v:259}},height:{def:{v:32}},top:{def:{v:20}},left:{def:{v:11}},backgroundColor:{def:{v:"transparent"}},backgroundImage:{def:{v:"http://www.opencube.com/stages/index_tablet/main.png"}}},_12744382:{width:{def:{v:76}},height:{def:{v:88}},top:{def:{v:52}},left:{def:{v:79}},backgroundImage:{def:{v:"http://www.opencube.com/stages/index_tablet/sub.png"}},opacity:{def:{v:0}}},_13717137:{width:{def:{v:12}},height:{def:{v:19}},top:{def:{v:123}},left:{def:{v:32}},backgroundImage:{def:{v:"http://www.opencube.com/stages/index_tablet/mouse.png"}},backgroundColor:{def:{v:"transparent"}},display:{def:{v:"none"}}},_13965294:{width:{def:{v:282}},height:{def:{v:176}},top:{def:{v:20}},left:{def:{v:19}}},_13965318:{top:{def:{v:0}},left:{def:{v:0}},width:{def:{v:100,p:{unit:'%'}}},height:{def:{v:100,p:{unit:'%'}}},backgroundColor:{def:{v:"rgba(218,218,218,1.00)"}},backgroundColor_Red:{def:{v:218}},backgroundColor_Green:{def:{v:218}},backgroundColor_Blue:{def:{v:218}},backgroundColor_Alpha:{def:{v:1}}},_18637362:{width:{def:{v:137}},height:{def:{v:32}},top:{def:{v:11.364,p:{unit:'%'}}},left:{def:{v:3.915,p:{unit:'%'}}},backgroundColor:{def:{v:"transparent"}},backgroundImage:{def:{v:"http://www.opencube.com/stages/index_tablet/support_hl.png"}},visibility:{def:{v:"hidden"}}},_19593329:{width:{def:{v:104}},height:{def:{v:180}},top:{def:{v:18}},left:{def:{v:108}},backgroundImage:{def:{v:"http://www.opencube.com/stages/index_tablet/fill_shell.png"}},display:{def:{v:"none"}}},_10185235:{width:{def:{v:101}},height:{def:{v:25}},top:{def:{v:25}},left:{def:{v:110}},backgroundColor:{def:{v:"transparent"}},display:{def:{v:"none"}},color:{def:{v:"rgba(61,61,61,1.00)"}},color_Red:{def:{v:61}},color_Green:{def:{v:61}},color_Blue:{def:{v:61}},color_Alpha:{def:{v:1}},backgroundImage:{def:{v:"http://www.opencube.com/stages/index_tablet/mobile_btn.png"}}},_11370184:{width:{def:{v:50}},height:{def:{v:63}},top:{def:{v:0}},left:{def:{v:0}},backgroundColor:{def:{v:"transparent"}},backgroundImage:{def:{v:"http://www.opencube.com/stages/index_tablet/tap.png"}},display:{def:{v:"none"}}},_16209805:{width:{def:{v:30}},height:{def:{v:30}},top:{def:{v:-7}},left:{def:{v:-9}},borderRadius:{def:{v:50,p:{unit:'%'}}},backgroundColor:{def:{v:"rgba(147,162,197,1.00)"}},backgroundColor_Red:{def:{v:147}},backgroundColor_Green:{def:{v:162}},backgroundColor_Blue:{def:{v:197}},backgroundColor_Alpha:{def:{v:1}},display:{def:{v:"none"}},borderWidth:{def:{v:1}},borderColor:{def:{v:"rgba(40,71,255,1.00)"}},borderColor_Red:{def:{v:40}},borderColor_Green:{def:{v:71}},borderColor_Blue:{def:{v:255}},borderColor_Alpha:{def:{v:1}}},_10197040:{width:{def:{v:98}},height:{def:{v:151}},top:{def:{v:26}},left:{def:{v:3}},overflow:{def:{v:"hidden"}}},_10237762:{width:{def:{v:200,p:{unit:'%'}}},height:{def:{v:100,p:{unit:'%'}}},top:{def:{v:0}},left:{def:{v:0}},backgroundImage:{def:{v:"http://www.opencube.com/stages/index_tablet/fill_items.png"}},backgroundSize:{def:{v:"auto"}}},_13965327:{top:{def:{v:0}},left:{def:{v:0}},width:{def:{v:100,p:{unit:'%'}}},height:{def:{v:100,p:{unit:'%'}}},backgroundColor:{def:{v:"rgba(218,218,218,1.00)"}},backgroundColor_Red:{def:{v:218}},backgroundColor_Green:{def:{v:218}},backgroundColor_Blue:{def:{v:218}},backgroundColor_Alpha:{def:{v:1}}},_11404973:{width:{def:{v:17.1875,p:{unit:'%'}}},height:{def:{v:29.629629629629626,p:{unit:'%'}}},top:{def:{v:27.77777777777778,p:{unit:'%'}}},left:{def:{v:35,p:{unit:'%'}}},backgroundColor:{def:{v:"transparent"}}},_17516782:{width:{def:{v:13}},height:{def:{v:16}},top:{def:{v:3.333,p:{unit:'%'}}},left:{def:{v:5.769,p:{unit:'%'}}},backgroundImage:{def:{v:"http://www.opencube.com/stages/index_tablet/fill_back_btn.png"}},display:{def:{v:"none"}}}}},mouseover:{},imagesload:{},load:{},active:{_13965318:{d:{o:{}},_13717137:{d:{opt:{spawn:{},target:{}}},top:{_120:{v:123,p:{e:{d:'out',t:'quadratic'}}},_0:{v:123},_165:{v:40}},left:{_120:{v:32,p:{e:{d:'out',t:'quadratic'}}},_0:{v:32},_165:{v:90}},opacity:{_0:{v:0},_145:{v:1},_120:{v:0}},display:{_0:{v:"none"},_120:{v:"block"}}},_12744382:{opacity:{_180:{v:0},_195:{v:1},_300:{v:1},_0:{v:0}}},_18637362:{visibility:{_0:{v:"hidden"},_161:{v:"visible"}}},_16643117:{transform_scaleX:{_300:{v:1,p:{e:{d:'inout',t:'quadratic'}}},_330:{v:0.68}},transform_scaleY:{_300:{v:1,p:{e:{d:'inout',t:'quadratic'}}},_330:{v:0.68}},transform_rotate:{_300:{v:0,p:{e:{d:'inout',t:'quadratic'}}},_330:{v:90}}},_13965318:{opacity:{_300:{v:1,p:{e:{d:'out',t:'quadratic'}}},_0:{v:1},_315:{v:0}}},_12552565:{opacity:{_0:{v:0,p:{e:{d:'in',t:'quadratic'}}},_30:{v:1}}}},_13965327:{d:{o:{}},_10185235:{display:{_15:{v:"block"},_123:{v:"none"},_210:{v:"none"}},opacity:{_30:{v:1},_15:{v:0}}},_11370184:{display:{_45:{v:"block"},_199:{v:"none"}},opacity:{_45:{v:0},_60:{v:1},_184:{v:1,p:{e:{d:'in',t:'quadratic'}}},_199:{v:0}}},_16209805:{transform_scaleX:{_68:{v:0,p:{e:{d:'in',t:'quadratic'}}},_90:{v:0},_79:{v:1.5,p:{e:{d:'out',t:'quadratic'}}},_165:{v:0,p:{e:{d:'in',t:'quadratic'}}},_177:{v:1.5,p:{e:{d:'out',t:'quadratic'}}},_188:{v:0}},transform_scaleY:{_68:{v:0,p:{e:{d:'in',t:'quadratic'}}},_90:{v:0},_79:{v:1.5,p:{e:{d:'out',t:'quadratic'}}},_165:{v:0,p:{e:{d:'in',t:'quadratic'}}},_177:{v:1.5,p:{e:{d:'out',t:'quadratic'}}},_188:{v:0}},display:{_68:{v:"block"}}},_19593329:{display:{_105:{v:"block"},_420:{v:"none"}},opacity:{_123:{v:1},_105:{v:0,p:{e:{d:'in',t:'quadratic'}}},_390:{v:1,p:{e:{d:'out',t:'quadratic'}}},_420:{v:0}}},_10237762:{left:{_210:{v:0,p:{unit:'%',e:{d:'out',t:'quadratic'}}},_233:{v:-100,p:{unit:'%'}},_0:{v:0,p:{unit:'%'}}}},_11404973:{top:{_45:{v:27.77777777777778,p:{unit:'%',e:{d:'out',t:'quadratic'}}},_68:{v:15.278,p:{unit:'%'}},_128:{v:15.278,p:{unit:'%',e:{d:'out',t:'quadratic'}}},_150:{v:32.87,p:{unit:'%'}}},left:{_45:{v:35,p:{unit:'%',e:{d:'out',t:'quadratic'}}},_68:{v:42.813,p:{unit:'%'}},_128:{v:42.813,p:{unit:'%',e:{d:'out',t:'quadratic'}}},_150:{v:59.063,p:{unit:'%'}}}},_16643117:{transform_scaleX:{_420:{v:0.68,p:{e:{d:'inout',t:'quadratic'}}},_450:{v:1}},transform_scaleY:{_420:{v:0.68,p:{e:{d:'inout',t:'quadratic'}}},_450:{v:1}},transform_rotate:{_420:{v:90,p:{e:{d:'inout',t:'quadratic'}}},_450:{v:0}}},_17516782:{display:{_210:{v:"block"},_0:{v:"none"}}},_13965327:{backgroundColor:{_0:{v:"rgba(218,218,218,1.00)",p:{e:{d:'in',t:'quadratic'}}},_105:{v:"rgba(218,218,218,1.00)",p:{e:{d:'in',t:'quadratic'}}},_123:{v:"rgba(136,133,133,1.00)",p:{e:{d:'in',t:'quadratic'}}},_390:{v:"rgba(136,133,133,1.00)",p:{e:{d:'in',t:'quadratic'}}},_420:{v:"rgba(218,218,218,1.00)"}},backgroundColor_Red:{_0:{v:218,p:{e:{d:'in',t:'quadratic'}}},_105:{v:218,p:{e:{d:'in',t:'quadratic'}}},_123:{v:136,p:{e:{d:'in',t:'quadratic'}}},_390:{v:136,p:{e:{d:'in',t:'quadratic'}}},_420:{v:218}},backgroundColor_Green:{_0:{v:218,p:{e:{d:'in',t:'quadratic'}}},_105:{v:218,p:{e:{d:'in',t:'quadratic'}}},_123:{v:133,p:{e:{d:'in',t:'quadratic'}}},_390:{v:133,p:{e:{d:'in',t:'quadratic'}}},_420:{v:218}},backgroundColor_Blue:{_0:{v:218,p:{e:{d:'in',t:'quadratic'}}},_105:{v:218,p:{e:{d:'in',t:'quadratic'}}},_123:{v:133,p:{e:{d:'in',t:'quadratic'}}},_390:{v:133,p:{e:{d:'in',t:'quadratic'}}},_420:{v:218}},backgroundColor_Alpha:{_0:{v:1,p:{e:{d:'in',t:'quadratic'}}},_105:{v:1,p:{e:{d:'in',t:'quadratic'}}},_123:{v:1,p:{e:{d:'in',t:'quadratic'}}},_390:{v:1,p:{e:{d:'in',t:'quadratic'}}},_420:{v:1}}}}},activeAux1:{}}};/*]]>*/</script>
+	<!--NodeFire Stage Save Data (ul / li and css code animation)-->
+	<script type="text/javascript">/*<![CDATA[*/NodeFire_19612393={nfUid:'NodeFire_19612393', data:{data:{elmId:"stage1",cn:{},elmOrder:{_19917101:{id:"sceneWindow1",pUid:"_19612393",c:13,sw:1,opt:{sw:{loop:"infinite"}},cn:{}},_19917119:{id:"scene1",pUid:"_19917101",c:9,swi:1,cn:{}},_19975578:{id:"text",pUid:"_19917119",c:1,con:"<span style=\"color:#00f;\">&lt;ul&gt;</span><br>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:#00f;\">&lt;li&gt;</span>Main Item 1<br>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:#00f;\">&lt;ul&gt;</span><br>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:#00f;\">&lt;li&gt;</span>Sub Item 1<span style=\"color:#00f;\">&lt;/li&gt;</span><br>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:#00f;\">&lt;li&gt;</span>Sub Item 2<span style=\"color:#00f;\">&lt;/li&gt;</span><br>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;..."},_11994674:{id:"title",pUid:"_19917119",c:1,cn:{nf_vCenter:1,nf_hCenter:1},con:"Standard <span style=\"color:#00f;\">UL / LI</span> Menu Structure"},_19917129:{id:"scene2",pUid:"_19917101",c:9,swi:1,cn:{}},_15762237:{id:"title",pUid:"_19917129",c:1,cn:{nf_vCenter:1,nf_hCenter:1},con:"Simple to Follow CSS Rules"},_15803951:{id:"text",pUid:"_19917129",c:1,con:"<span style=\"color:#080;\">/* All Menu Types */</span><br>&#10;.<span style=\"color:#f00;\">qm</span> {<span style=\"color:#8080c0;\">background-color</span>:grey;}<br><br>&#10;&#10;<span style=\"color:#080;\">/* Mobile Menu */</span><br>&#10;.<span style=\"color:#f00;\">qm_fill</span> {<span style=\"color:#8080c0;\">background-color</span>:black;}"}}},ready:{_19612393:{d:{o:{}},_19612393:{width:{def:{v:412}},backgroundColor:{def:{v:"transparent"}},height:{def:{v:165}},position:{def:{v:"relative"}}},_19917101:{width:{def:{v:100,p:{unit:'%'}}},height:{def:{v:100,p:{unit:'%'}}},top:{def:{v:0}},left:{def:{v:0}},color:{def:{v:"rgba(51,51,51,1)"}},color_Red:{def:{v:51}},color_Green:{def:{v:51}},color_Blue:{def:{v:51}},color_Alpha:{def:{v:1}},fontSize:{def:{v:16}},fontFamily:{def:{v:"\"Courier New\", Courier, monospace"}},backgroundColor:{def:{v:"transparent"}}},_19917119:{top:{def:{v:0}},left:{def:{v:0}},width:{def:{v:100,p:{unit:'%'}}},height:{def:{v:100,p:{unit:'%'}}},overflow:{def:{v:"hidden"}}},_19917129:{top:{def:{v:0}},left:{def:{v:0}},width:{def:{v:100,p:{unit:'%'}}},height:{def:{v:100,p:{unit:'%'}}},overflow:{def:{v:"hidden"}}},_19975578:{width:{def:{v:360}},height:{def:{v:70.9090909090909,p:{unit:'%'}}},left:{def:{v:6.311,p:{unit:'%'}}},backgroundColor:{def:{v:"transparent"}},bottom:{def:{v:-120}}},_11994674:{width:{def:{v:68.20388349514563,p:{unit:'%'}}},height:{def:{v:34}},top:{def:{v:0,p:{unit:'%'}}},left:{def:{v:16.019,p:{unit:'%'}}},fontFamily:{def:{v:"Arial, Helvetica, sans-serif"}},fontSize:{def:{v:16}},fontWeight:{def:{v:"bold"}},textDecoration:{def:{v:"none"}},borderRadius:{def:{v:10}},color:{def:{v:"rgba(85,85,85,1)"}},color_Red:{def:{v:85}},color_Green:{def:{v:85}},color_Blue:{def:{v:85}},color_Alpha:{def:{v:1}}},_15762237:{width:{def:{v:68.20388349514563,p:{unit:'%'}}},height:{def:{v:34}},top:{def:{v:104.848,p:{unit:'%'}}},left:{def:{v:66}},fontFamily:{def:{v:"Arial, Helvetica, sans-serif"}},fontSize:{def:{v:16}},fontWeight:{def:{v:"bold"}},textDecoration:{def:{v:"none"}},borderRadius:{def:{v:10}},color:{def:{v:"rgba(85,85,85,1)"}},color_Red:{def:{v:85}},color_Green:{def:{v:85}},color_Blue:{def:{v:85}},color_Alpha:{def:{v:1}}},_15803951:{width:{def:{v:346}},height:{def:{v:68.48484848484848,p:{unit:'%'}}},left:{def:{v:8.01,p:{unit:'%'}}},backgroundColor:{def:{v:"transparent"}},bottom:{def:{v:-120}},top:{def:{v:-118}},fontSize:{def:{v:16}}}}},active:{_19917119:{d:{o:{}},_11994674:{opacity:{_0:{v:0,p:{e:{d:'in',t:'quadratic'}}},_90:{v:1}}},_19975578:{bottom:{_0:{v:-120},_30:{v:-120,p:{e:{d:'out',t:'cubic'}}},_105:{v:0}},opacity:{_0:{v:0},_30:{v:0,p:{e:{d:'in',t:'quadratic'}}},_105:{v:1}}},_19917119:{opacity:{_0:{v:1},_780:{v:0},_690:{v:1,p:{e:{d:'out',t:'cubic'}}},_720:{v:0}}}},_19917129:{d:{o:{}},_15762237:{opacity:{_0:{v:0,p:{e:{d:'in',t:'quadratic'}}},_90:{v:1}},top:{_0:{v:104.848,p:{unit:'%',e:{d:'out',t:'quadratic'}}},_90:{v:0,p:{unit:'%'}}}},_15803951:{top:{_0:{v:-118,p:{e:{d:'out',t:'quadratic'}}},_90:{v:52}},opacity:{_0:{v:0,p:{e:{d:'in',t:'quadratic'}}},_90:{v:1}}},_19917129:{opacity:{_0:{v:1},_780:{v:0},_720:{v:1,p:{e:{d:'out',t:'cubic'}}},_750:{v:0}}}}}}};/*]]>*/</script>
+	
+</head>
+
+<body>
+		
+	<!-- top bar1 -->
+	<div class="topBar1">
+		<!-- content -->
+		<div class="topContent1 centerBlockHorizontal boxSizing">
+		</div>
+	</div>
+	
+	<!-- top bar2 -->
+	<div class="topBar2">
+		<!-- content w/ logo -->
+		<div class="topContent2 centerBlockHorizontal boxSizing">
+			<!-- logo -->
+			<a href="/" style="display:block;position:absolute;bottom:32px;left:0px;width:239px;height:41px;background-image:url(/images2/logo.png)"></a>
+			<!-- right buttons -->
+			<div class="boxSizing topNav">
+				
+				<!-- Responsive QuickMenu HTML -->
+				<nav id="qm_top_bar" class="qm qm_pure qm_drop" data-qm="{fillOptions:{visibleRows:7, fitFont:true}}">
+				
+					<!-- Fill Style Menu - Open Button (used with phone and tablet devices by default) -->
+					<div class="qm_button qm_button_open" data-qm="{action:'fill_open'}">MOBILE SITE MENU</div>
+				
+					<!-- Fill Style Menu - Top Bar (used with phone and tablet devices by default) - {height:% of row height or fixed px} -->
+					<div class="qm_topbar" data-qm="{height:'100%'}">
+						<div class="qm_icon"><div></div></div>
+						<div class="qm_button qm_button_back" data-qm="{action:'fill_back'}"><div></div></div>
+						<div class="qm_title" data-qm="{fitFont:true}">My Menu</div>
+						<div class="qm_button qm_button_close" data-qm="{action:'fill_close'}"><div></div></div>
+					</div>
+						
+					<!-- Menu Structure -->
+					<ul class="qm_main" data-qm="{interaction:{type:'web', show:'hover', hide:'hover'}, delay:{show:250, hide:250}, respondTo:'large_device'}">
+						<li><a href="/pricing.asp">PRICING</a></li>
+						<li><a href="/support.asp">SUPPORT</a></li>
+						<li><div>DOCS</div>
+							<ul class="qm_sub">
+							<li><a href="/help/rqm_getting_started/site.asp">Responsive QuickMenu</a></li>
+							</ul>	
+						</li>
+						<li><a href="/download.asp">DOWNLOAD</a></li>
+						<li><div>PRODUCTS</div>
+							<ul class="qm_sub">
+							<li><a href="/">Responsive QuickMenu</a></li>
+							<li><a href="/quickmenu.asp">Visual QuickMenu</a></li>
+							<li><a target="_nodefire" href="http://www.nodefire.com">NodeFire Animator</a></li>
+							</ul>
+						</li>
+						<li class="qm_home_button"><a href="/"><img src="/images2/home.png" width="28" height="23"/></a>
+					</ul>
+					
+					<!-- Menu Structure -->
+					<ul class="qm_main" data-qm="{interaction:{type:'web', show:'hover', hide:'hover'}, delay:{show:250, hide:250}, respondTo:'small_device portrait_view'}">
+						<li><div>PRODUCTS</div>
+							<ul class="qm_sub">
+							<li><a href="/">Responsive QuickMenu</a></li>
+							<li><a href="/">Visual QuickMenu</a></li>
+							<li><a target="_nodefire" href="http://www.nodefire.com">NodeFire Animator</a></li>
+							</ul>
+						</li>
+						<li><a href="/download.asp">DOWNLOAD</a></li>
+						<li><div>DOCS</div>
+							<ul class="qm_sub">
+							<li><a href="/help/rqm_getting_started/site.asp">Responsive QuickMenu</a></li>
+							</ul>	
+						</li>
+						<li><a href="/support.asp">SUPPORT</a></li>
+						<li><a href="/pricing.asp">PRICING</a></li>
+					</ul>
+					
+				</nav>	
+			
+			</div>
+		</div>
+	</div>
+	<!--main content container-->
+	<div class="contentBG">
+		<div class="content centerBlockHorizontal boxSizing">
+			
+			<!-- section 1 -->
+			<div class="contentSection top_gradient_title" style="position:relative;padding:20px;">
+				<span style="font-family:'Audiowide';font-size:22px;font-weight:bold;color:#444;">Responsive QuickMenu...</span>
+				<div style="position:absolute;height:36px;right:20px;top:0px;bottom:0px;margin:auto;">
+					<a class="boxSizing button_lightGrey" href="/download.asp" style="display:block;position:relative;float:left;width:180px;height:100%;font-size:14px;font-weight:normal;">
+						<div style="position:absolute;width:100%;height:18px;top:0px;bottom:0px;margin:auto auto;text-align:center;">Download Now!</div>
+					</a>
+				</div>
+			</div>
+				
+			<!-- section 2 -->
+			<div class="contentSection corner_banner_new" style="padding:40px 0px 15px 0px;background-color:#eee;border-width:0px;">
+					<!-- device preview container -->
+					<div style="position:relative;height:340px;margin:auto;margin:10px 0px 60px 0px;">
+						<!-- device chrome viewport -->
+						<div id="device_container" style="position:absolute;left:0px;right:0px;top:0px;bottom:0px;margin:auto;background:#fff url(/images2/sample_stamp.png) no-repeat center center;background-size:contain;">
+							<!-- menu container -->
+							<div class="ocBorderBox" style="position:absolute;overflow:hidden;width:100%;height:100%;top:0px;left:0px;padding:20px;">
+								<!-- Responsive QuickMenu HTML -->
+								<nav id="device_preview_menu" class="qm qm_pure qm_drop qmFillParent" data-qm="{fillOptions:{visibleRows:7, fitFont:true}}">
+								
+									<!-- Fill Style Menu - Open Button (used with phone and tablet devices by default) -->
+									<div class="qm_button qm_button_open" data-qm="{action:'fill_open'}">Mobile Site Menu</div>
+								
+									<!-- Fill Style Menu - Top Bar (used with phone and tablet devices by default) - {height:% of row height or fixed px} -->
+									<div class="qm_topbar" data-qm="{height:'100%'}">
+										<div class="qm_icon"><div></div></div>
+										<div class="qm_button qm_button_back" data-qm="{action:'fill_back'}"><div></div></div>
+										<div class="qm_title" data-qm="{fitFont:true}">My Menu</div>
+										<div class="qm_button qm_button_close" data-qm="{action:'fill_close'}"><div></div></div>
+									</div>
+										
+									<!-- Menu Structure -->
+									<ul id="" class="qm_main" data-qm="{interaction:{type:'web', show:'hover', hide:'hover'}, delay:{show:250, hide:250}, respondTo:'all'}">
+										<li><div>Home</div></li>
+										<li><div>Products</div>
+											<ul class="qm_sub">
+											<li><div>Digital Content</div>
+												<ul class="qm_sub">
+												<li><a href="">Movies</a></li>
+												<li><a href="">Music</a></li>
+												<li><a href="">Games</a></li>
+												<li><a href="">Books</a></li>
+												</ul>
+											</li>
+											<li><a href="">Product 2</a></li>
+											<li><a href="">Product 3</a></li>
+											<li><a href="">Product 4</a></li>
+											<li><a href="">Product 5</a></li>
+											</ul>
+										</li>
+										<li><div>Downloads</div>
+											<ul class="qm_sub">
+											<li><a href="">Download 1</a></li>
+											<li><a href="">Download 2</a></li>
+											<li><a href="">Download 3</a></li>
+											<li><a href="">Download 4</a></li>
+											</ul>
+										</li>
+										<li><div>Support</div>
+											<ul class="qm_sub">
+											<li><a href="">Support 1</a></li>
+											<li><a href="">Support 2</a></li>
+											<li><a href="">Support 3</a></li>
+											</ul>
+										</li>
+										<li class="qm_last_main"><div>About Us</div></li>
+										<li class="qm_fill_only"><div>Extra Item 1</div></li>
+										<li class="qm_fill_only"><div>Extra Item 2</div></li>
+									</ul>
+								</nav>	
+							</div>	
+						</div>
+					</div>
+					
+					<!-- switch device arrow -->
+					<div style="position:relative;width:190px;height:0px;left:0px;right:0px;margin:auto;">
+						<div style="position:absolute;width:118px;height:84px;left:180px;top:-5px;background:transparent url(/images2/try_device_arrow.png) no-repeat center center;"></div>
+					</div>
+					
+					<!-- device button options (switch from desktop to mobile) -->
+					<div id="doc_deviceButtons" style="position:relative;width:190px;height:75px;left:0px;right:0px;margin:auto;margin-bottom:20px;">
+						<!-- buttons -->
+						<div class="device_bar_item isDevice" style="float:left;background-image:url(/images2/device_desktop.png);"><div class="device_bar_item_text">Desktop</div></div>
+						<div class="device_bar_item isDevice" style="float:left;background-image:url(/images2/device_mobile.png);"><div class="device_bar_item_text">Mobile</div></div>
+					</div>
+			</div>
+			
+			<!-- section 3 -->
+			<div class="contentSection" style="padding:40px 30px 40px 30px;border-color:#ccc;">
+				<!--section container-->
+				<div class="nfBorderBox" style="position:relative;border:solid 1px transparent;border-width:0px 0px 0px 540px;">
+					<!--left-->
+					<div style="position:absolute;left:-540px;width:500px;height:100%;">
+						<!--title and content-->
+						<div style="font-size:22px;font-family:'Audiowide';color:#666;margin:0px 0px 30px 0px;">One Menu... Any Device!</div>
+						<p>QuickMenu is a <b>responsive menu</b> that fits any device!</p>
+						<p>Design and maintain one menu that automatically transforms from a desktop drop down to a full screen mobile drill down.</p>
+						<!--try it now-->
+						<div style="position:absolute;bottom:0px;width:100%;height:45px;">
+							<!--in app purchase button-->
+							<a class="nfBorderBox button_red" href="/download.asp" style="display:block;position:relative;float:left;width:160px;height:45px;font-size:16px;">
+								<div style="position:absolute;width:100%;height:18px;top:0px;bottom:0px;margin:auto auto;text-align:center;">Free Download!</div>
+							</a>
+							
+							<!--try it free-->
+							<div class="nfBorderBox" target="_webapp" href="/download.asp" style="position:relative;float:left;width:120px;height:45px;font-size:12px;">
+								<div style="position:absolute;width:100%;height:18px;top:0px;bottom:0px;margin:auto auto;text-align:center;">Try it Now!</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- right -->
+					<div class="nfBorderBox" style="position:relative;">
+						<div id="stage1" class="nfStage" data-nfw="{type:'stage', nfUid:'NodeFire_16626862', autoRun:true}"></div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- section 4 -->
+			<div class="contentSection" style="padding:15px 0px 15px 0px;">
+				<!-- outer container -->
+				<div class="nfBorderBox" style="position:relative;border:solid 15px transparent;">
+					<!-- right -->
+					<div class="nfBorderBox" style="position:absolute;left:50%;width:50%;height:100%;border:solid 1px transparent;border-width:15px 15px 15px 30px;">
+						<div class="info_title1">Easy to Customize!</div>
+						<div class="info_title2">Define your menu items and customize the look using standard HTML and CSS.</div>
+						<div class="info_title3 info_title3_bot_space">Menu items are defined using a standard UL/LI structure, add any HTML to your items.  The styles are customizable form a single stylesheet with easy to follow comments and sections.</div>
+					</div>
+					
+					<!-- vertical divider -->
+					<div style="position:absolute;left:50%;width:1px;height:100%;background-color:#ddd;"></div>
+					
+					<!-- left -->
+					<div class="nfBorderBox" style="position:relative;width:50%;border:solid 1px transparent;border-width:15px 30px 15px 15px;">
+						<div style="height:150px;">
+							<div id="stage1" class="nfStage" data-nfw="{type:'stage', nfUid:'NodeFire_19612393', autoRun:true}"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- section 5 -->
+			<div class="contentSection" style="padding:15px 0px 15px 0px;">
+				<!-- outer container -->
+				<div class="nfBorderBox" style="position:relative;border:solid 15px transparent;">
+					<!-- right -->
+					<div class="nfBorderBox" style="position:absolute;left:40%;width:60%;height:100%;border:solid 1px transparent;border-width:15px 15px 15px 30px;background:transparent url(/images2/browser_support.png) no-repeat center center;">
+					</div>
+					
+					<!-- vertical divider -->
+					<div style="position:absolute;left:40%;width:1px;height:100%;background-color:#ddd;"></div>
+					
+					<!-- left -->
+					<div class="nfBorderBox" style="position:relative;width:40%;height:160px;border:solid 1px transparent;border-width:15px 30px 15px 15px;">
+						<div class="info_title1">Supports All Browsers and Devices!</div>
+						<div class="info_title2">All old browsers back to IE7 (circa 2006) are also supported.</div>
+						<div class="info_title3 info_title3_bot_space">QuickMenu delivers your site navigation as intended to 99.9% of the internet's browser market share!</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- section 6 -->
+			<div class="contentSection" style="padding:15px 0px 15px 0px;">
+				<!-- Title -->
+				<div class="info_title1" style="margin:10px 0px 5px 30px;">QuickMenu Features...</div>
+				<!-- outer container -->
+				<div class="nfBorderBox" style="position:relative;border:solid 15px transparent;">
+					<!-- right -->
+					<div class="nfBorderBox" style="position:absolute;left:50%;width:50%;height:100%;border:solid 1px transparent;border-width:10px 15px 5px 30px;">
+						<ul class="section_list">
+							<li>Add any custom HTML to your menu items. </li>
+							<li>Main menu items can be horizontal or vertical.</li>
+							<li>Mobile fill style menu is vertically scrollable.</li>
+							<li>Font sizes auto fit the available menu space in fill mode.</li>
+							<li>The mobile launch button, header, and visible rows are fully customizable.</li>
+							<li>Define custom responses based on screen size, orientation, and more.</li>
+							<li>Drop down menus can be click or hover actived.</li>
+							<li>Specify custom hide and show delay timers.</li>
+						</ul>
+					</div>
+					<!-- left -->
+					<div class="nfBorderBox" style="position:relative;width:50%;border:solid 1px transparent;border-width:10px 30px 5px 15px;">
+						<ul class="section_list">
+							<li>Tiny 7K (gzip) code size.</li>
+							<li>Supports all browsers from IE7(circa 2006) and up!</li>
+							<li>100% self contained script with no 3rd party API requirements.</li>
+							<li>Runs as a pure CSS menu if JavaScript is disabled.</li>
+							<li>One UL / LI list structure defines menu items for all devices.</li>
+							<li>Optionally create unique menus or items for drop down and mobile styles.</li>
+							<li>Customize the look using standard CSS in a easy to follow stylesheet.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+		<!-- bottom bar1 -->
+	<div class="botBar1">
+		<div class="botContent1 centerBlockHorizontal boxSizing" style="padding:20px 0px 20px 30px;">
+			
+			<!-- section 1-->
+			<div class="botContent1_section">
+				<div class="botContent1_section_content" onclick="window.open('http://www.nodefire.com','_nodefire');" style="width:360px;padding-left:70px;cursor:pointer;background-image:url(/images2/nf_icon.png);background-repeat:no-repeat;background-position:0px 12px;">
+					<div class="hover_target botContent1_section_content_title">NodeFire Animator</div>
+					Create interactive CSS animation effects and widgets (banners, slideshows, drop down menus, text effects, 3D animations, layouts, and more).
+				</div>
+			</div>
+			
+			<!-- section 2-->
+			<div class="botContent1_section">
+				<div class="botContent1_divider boxSizing"></div>
+				<div class="botContent1_section_content" onclick="window.open('/','_self');" style="width:230px;cursor:pointer;">
+					<div class="hover_target botContent1_section_content_title">New Responsive QuickMenu!</div>
+					<div class="botContent1_section_content_arrow">8/29/2015 - One menu, any device! Auto switches from drop down to drill down. <a href="/">(more...)</a></div>
+				</div>
+			</div>
+			
+			<!-- section 3-->
+			<div class="botContent1_section">
+				<div class="botContent1_divider boxSizing"></div>
+				<div class="botContent1_section_content">
+					<div class="botContent1_section_content_title">Visual Products</div>
+					<div class="botContent1_section_content_arrow"><a href="/quickmenu.asp">Visual QuickMenu</a></div>
+					<div style="height:5px;line-height:1px;font-size:1px;"></div>
+					<div class="botContent1_section_content_arrow"><a target="_opencube" href="http://www.nodefire.com">NodeFire Animator<br/>(www.nodefire.com)</a></div>
+				</div>
+			</div>
+			
+			<!-- section 4-->
+			<div class="botContent1_section">
+				<div class="botContent1_divider boxSizing"></div>
+				<div class="botContent1_section_content" style="padding-right:0px;">
+					<div class="botContent1_section_content_title">Follow us:</div>
+					<div style="height:5px;line-height:1px;font-size:1px;"></div>
+					<a title="Follow Us On FaceBook" href="https://www.facebook.com/responsivemenus" target="_facebook"><img src="/images2/social_facebook.png" width="30" height="30"/></a>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<!-- bottom bar2 -->
+	<div class="botBar2">
+		<div class="botContent2 centerBlockHorizontal boxSizing">
+			<div style="position:absolute;margin-top:4px;">Copyright (c) 2015 - OpenCube Inc., All Right Reserved.</div>
+		</div>
+	</div>
+
+	
+</body></html>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

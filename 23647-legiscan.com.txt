@@ -1,0 +1,122 @@
+# $Id: robots.txt,v 1.9.2.1 2008/12/10 20:12:19 goba Exp $
+#
+# robots.txt
+#
+# This file is to prevent the crawling and indexing of certain parts
+# of your site by web crawlers and spiders run by sites like Yahoo!
+# and Google. By telling these "robots" where not to go on your site,
+# you save bandwidth and server resources.
+#
+# This file will be ignored unless it is at the root of your host:
+# Used:    http://example.com/robots.txt
+# Ignored: http://example.com/site/robots.txt
+#
+# For more information about the robots.txt standard, see:
+# http://www.robotstxt.org/wc/robots.html
+#
+# For syntax checking, see:
+# http://www.sxw.org.uk/computing/robots/check.html
+
+User-agent: Baiduspider
+Disallow: /
+User-agent: Yandex
+Disallow: /
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: *
+Crawl-delay: 2
+
+# Directories
+Disallow: /includes/
+Disallow: /misc/
+Disallow: /modules/
+Disallow: /profiles/
+Disallow: /scripts/
+Disallow: /sites/
+Disallow: /themes/
+# Files
+Disallow: /CHANGELOG.txt
+Disallow: /cron.php
+Disallow: /INSTALL.mysql.txt
+Disallow: /INSTALL.pgsql.txt
+Disallow: /install.php
+Disallow: /INSTALL.txt
+Disallow: /LICENSE.txt
+Disallow: /MAINTAINERS.txt
+Disallow: /update.php
+Disallow: /UPGRADE.txt
+Disallow: /xmlrpc.php
+# Paths (clean URLs)
+Disallow: /admin/
+Disallow: /aggregator/
+Disallow: /comment/reply/
+Disallow: /filter/tips/
+Disallow: /contact/
+Disallow: /logout/
+Disallow: /node/add/
+Disallow: /search/
+Disallow: /user/register
+Disallow: /user/register/
+Disallow: /user/password/
+Disallow: /user/login
+Disallow: /user/login/
+# Paths (no clean URLs)
+Disallow: /?q=admin/
+Disallow: /?q=aggregator/
+Disallow: /?q=comment/reply/
+Disallow: /?q=filter/tips/
+Disallow: /?q=contact/
+Disallow: /?q=logout/
+Disallow: /?q=node/add/
+Disallow: /?q=search/
+Disallow: /?q=user/password/
+Disallow: /?q=user/register/
+Disallow: /?q=user/login/
+Disallow: /?q=user/login
+
+# no access for table sorting paths or any paths that have parameters.
+Disallow: /*?sort*
+Disallow: /*&sort*
+
+# remove the old failed drupalization
+Disallow: /topics/*
+Disallow: /taxonomy/*
+Disallow: /bills/*
+Disallow: /index.php?q=topics/*
+Disallow: /index.php?q=taxonomy/*
+Disallow: /index.php?q=bills/*
+Disallow: /?q=topics/*
+Disallow: /?q=taxonomy/*
+Disallow: /?q=bills/*
+
+Disallow: /topics
+Disallow: /taxonomy
+Disallow: /bills
+
+Disallow: /vpac
+Disallow: /legislation
+
+# Google got some strange ideas
+Disallow: /node/all/*
+
+Disallow: /maps
+Disallow: /reports
+
+Disallow: /gaits/*/sync
+Disallow: /gaits/monitor/*
+Disallow: /gaits/search
+Disallow: /gaits/alerts
+Disallow: /gaits/mybills
+Disallow: /gaits/news
+Disallow: /gaits/saved
+Disallow: /gaits/content
+Disallow: /gaits/reporting
+Disallow: /gaits/widget
+Disallow: /gaits/group
+Disallow: /gaits/politicorps
+Disallow: /gaits/legiscan/states
+Disallow: /gaits/legiscan/patterns/*
+Disallow: /reports/*
+Disallow: /politicorps/debate/*/response/*
+Disallow: /politicorps/debate/*/reply/*

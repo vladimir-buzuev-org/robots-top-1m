@@ -1,0 +1,209 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="google-site-verification" content="QlOt3XTPQVKIYWlfY0uWFvT6vzG5CsGKSdJpgZPUGU8" />
+ <title>شبکه اجتماعی فیسنما</title>
+ <link rel="stylesheet" href="/themes/social/style/main.css?10.2">
+ <script src="/themes/social/js/jquery.min.js?1.0" type="text/javascript"></script>
+ <script src="/themes/social/js/inside.js?2.931" type="text/javascript"></script>
+ <script src="/themes/social/js/postform.js?1.9" type="text/javascript"></script>
+ <script src="/themes/social/js/tinybox.js?2.2" type="text/javascript"></script>
+ <script src="/themes/social/js/autocomplete.js?1.0" type="text/javascript"></script>
+ <script src="/themes/social/js/jwplayer.js?1.2" type="text/javascript"></script>
+ <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+ <meta name="description" content="شبکه اجتماعی فیسنما بزرگترین شبکه اجتماعی فارسی زبان">
+ <meta property="og:description" content="شبکه اجتماعی فیسنما بزرگترین شبکه اجتماعی فارسی زبان">
+ <meta property="og:title" content="شبکه اجتماعی فیسنما">
+ 
+ 
+ <link rel="stylesheet" href="/themes/social/style/style-mbd.css?1.0">
+ <script type="text/javascript">
+ _atrk_opts = { atrk_acct:"0Qjvp1IW1d10fn", domain:"facenama.com",dynamic: true};
+ (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+ </script>
+ <script type="text/javascript" src="https://facenama.com/themes/social/js/mbd/socket.io.2.0.3.js"></script>
+ <script type="text/javascript" >
+ var socket = io('https://facenama.com:6868',{query: 'mbdsid=a9165d53f6ed7bb3bddb65bbae0a2235&mbdu=0&mbdk=410768767907c51a406ad6e2f174300b'});
+ function playNotifySound(type) { var address = 'https://facenama.com/themes/social/audio/'; switch (type) {
+ case 'new_message':
+ address += 'new_message';
+ break;
+ }
+ var html = '<audio onended="$(this).remove();" autoplay="autoplay" style="display:none;" controls="controls" >' +
+ '<source src="' + address + '.ogg" type="audio/ogg"><source src="' + address + '.mp3" type="audio/mp3" >' +
+ '</audio>';
+ $('body').append(html);
+ } $(function(){ socket.on('new_message', function(data){ playNotifySound('new_message'); if(data.num_unreads > 0 ){ num_unreads = 1 + parseInt($('#header_chat_num_unreads').attr('data-num-unreads')); $('#header_chat_num_unreads').text(num_unreads);
+ $('#header_chat_num_unreads').attr('data-num-unreads', num_unreads);
+ $('#header_chat_num_unreads').show();
+ } });
+ })
+ </script> </head>
+<body>
+<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=0Qjvp1IW1d10fn" style="display:none" height="1" width="1" alt="" /></noscript>
+ <div class="menu">
+ <nav class="navbar navbar-default" role="navigation">
+ <div class="container" > <div id="nav_header" class="navbar-header"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+ <span class="sr-only">باز کردن منو</span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ </button> <a class="navbar-brand logo" href="/"><img src="/themes/social/imgs/logo-mbd.png"></a> 
+ </div> <div id="nav_content" class="collapse navbar-collapse navbar-ex1-collapse">
+ <form id="header_search_frm" method="post" action="/section/page:search" class="navbar-form navbar-right hidden-sm" > <input name="sbm" type="hidden" value="search">
+ <input type="hidden" name="state" value="" > <div class="form-group"> <input name="name" class="form-control input-sm" placeholder="جستجو..." style="background-color: #ffffff; min-width:170px; color: #555 !important;" > <input type="submit" style="position: absolute; left: -9999px"/>
+ </div>
+ </form>
+ <ul class="nav navbar-nav">
+ <li class="hidden-xs hidden-md hidden-lg"><a href="/section/page:search" >جستجو</a></li>
+ <li class="dropdown">
+ <a href="/users" class="dropdown-toggle" data-toggle="hover">کاربران<b class="caret"></b></a>
+ <ul class="dropdown-menu">
+ <li><a href="/users/tab:onlines">کاربران آنلاین</a></li>
+ <li><a href="/users/tab:birthday">متولدین امروز</a></li>
+ <li><a href="/users">همه‌ی کاربران</a></li>
+ </ul>
+ </li>
+ <li class="dropdown">
+ <a href="/groups" class="dropdown-toggle" data-toggle="hover">گروه‌ها<b class="caret"></b></a>
+ <ul class="dropdown-menu">
+ <li><a href="/groups/tab:all/cat:/">همه‌ی گروه‌ها</a></li>
+ <li><a href="/search/tab:groups">جستجوی گروه‌ها</a></li>
+ </ul>
+ </li>
+ <li class="dropdown">
+ <a href="javascript:;" class="dropdown-toggle" data-toggle="hover">بخش های سایت<b class="caret"></b></a>
+ <ul class="dropdown-menu">
+ <li><a href="/section/ask">پرسش و پاسخ</a></li>
+ <li><a href="/shoping">فروشگاه افزونه های سایت</a></li>
+ <li><a href="/section/polls">آرشیو نظرسنجی های سایت</a></li>
+ <!--<li><a href="/section/note">مسابقه ویژه فیس نما</a></li>-->
+ <li><a href="/section/official">رسانه های تایید شده</a></li>
+ </ul>
+ </li>
+ <li class="dropdown">
+ <a href="javascript:;" class="dropdown-toggle" data-toggle="hover">کسب درآمد<b class="caret"></b></a>
+ <ul class="dropdown-menu">
+ <li><a href="/section/ads/tab:webmaster">کسب درآمد از پاپ آپ / پست ثابت</a></li>
+ <li><a href="/ads">تبلیغات کلیکی</a></li>
+ </ul>
+ </li>
+ </ul> <ul class="nav navbar-nav float-left">
+ <li class="dropdown">
+ <a class="navbar-icons" onmouseup="View_Ajax_Page2('ajax','39',0,0,'login_div');return false;" data-toggle="dropdown">ورود</a>
+ <ul class="dropdown-menu" id="login_div_parent" style="margin-left: -100%;left:100%;right:auto;">
+ <li class="notification-block" id="login_div"></li>
+ </ul>
+ </li>
+ <li><a href="/signup">عضویت</a></li>
+ </ul> </div>
+ </div>
+ </nav>
+ </div>
+ <div class="container content-container">
+ <!-- <div class="row" >-->
+<!-- <div class="col-sm-12" >-->
+<!-- <img src="/themes/social/imgs/mbd_new/mobile-app-download-box.png" >-->
+<!-- </div>-->
+<!-- </div>-->
+ <div class="row" style="margin-bottom:10px;" id="header-1">
+ <div class="col-sm-12 text-center">
+ <a href="//facenama.com/click/id:436" target="_blank" title="modemedia"><img src="/images/ads/1494160037557679.gif" border="0" alt="افزایش لایک و فالوور اینستاگرام رایگان"></a> </div>
+ </div> <div class="row"> 
+<div class="col-sm-12" style="margin-top:0px;">
+ <div class="row" style="height: 400px; background-image: url('/themes/social/imgs/mbd_new/home-intro-2.jpg'); border-radius: 6px; background-position: center; background-repeat: no-repeat; background-size: cover;">
+ <div class="col-sm-5 col-md-4 col-lg-3"> 
+ <div class="panel panel-default" style="margin-top:40px;background-color:rgba(255,255,255,0.9)">
+ <div class="panel-heading">
+ <h4 style="font-family: IranSans;text-align: right; margin-top: 0;margin-bottom: 10px;"><strong>ایجاد حساب کاربری</strong></h4>
+ </div>
+ <div class="panel-body padding-2">
+ <form class="form-horizontal" method="post" name="tsearch" id="tsearch" action="/signup" >
+ <div class="form-group">
+ <div class="col-sm-12">
+ <input type="text" name="email" value="" autocomplete="off" class="form-control" placeholder="ایمیل">
+ </div>
+ </div>
+ <div class="form-group">
+ <div class="col-sm-12">
+ <input type="text" name="fullname" value="" autocomplete="off" class="form-control" placeholder="نام و نام خانوادگی">
+ </div>
+ </div>
+ <div class="form-group">
+ <div class="col-sm-12">
+ <input id="username" name="username" value="" autocomplete="off" class="form-control" placeholder="نام کاربری">
+ </div>
+ </div> <div class="form-group" style="margin-bottom:5px;" >
+ <div class="col-sm-12 col-md-6" style="margin-bottom:5px;" >
+ <input type="password" id="pw" name="password" value="" class="form-control" placeholder="رمزعبور">
+ </div>
+ <div class="col-sm-12 col-md-6" style="margin-bottom:5px;" >
+ <input type="password" id="pw2" name="password2" value="" class="form-control" placeholder="تکرار رمزعبور">
+ </div>
+ </div> <div class="form-group" style="margin-bottom: 5px;">
+ <div class="col-sm-12">
+ <label>
+ <input type="checkbox" name="accept_terms" value="1" > قبول قوانین و مقررات
+ </label>
+ </div>
+ </div> <div class="form-group">
+ <div class="col-sm-12">
+ <button type="submit" class="btn btn-block btn-success" id="signin_submit" value="ادامه" >ثبت نام</button>
+ </div>
+ </div>
+ </form>
+ 
+ </div>
+ </div> 
+ </div>
+ <div class="col-sm-5 col-md-8 col-lg-9"> </div>
+ </div>
+</div>
+<div class="row" >
+ <div class="col-sm-5" > 
+<!-- <section class="col-sm-12 col-sm-8 content">--> <div class="row text-right" >
+ <div class="col-sm-12" ><a href="https://facenama.com/click/id:278" target="_blank"><img src="/images/ads/1503154752576328.gif" border="0" width="468" height="60" class="img-responsive pull-right" ></a></div>
+ </div> 
+ <div class="row text-right" >
+ <div class="col-sm-12" ><a href="https://facenama.com/click/id:441" target="_blank"><img src="/images/ads/1496825309762199.gif" border="0" width="468" height="60" class="img-responsive pull-right" ></a></div>
+ </div> <div class="row text-right" >
+ <div class="col-sm-12" ><a href="/click/id:440" target="_blank"><img src="/images/ads/1494325506780744.gif" border="0" width="468" height="60" class="img-responsive pull-right" ></a></div>
+ </div> 
+ 
+<!-- </section>-->
+ </div>
+ <div class="col-sm-7 " > 
+ <div class="row" style="margin-bottom:10px;" id="home-left-120">
+ <div class="col-sm-12 text-center"> <a href="/click/id:145" target="_blank" class=" clearfix" style="float:right; ">
+ <img src="https://up.facenama.com/file/155101/1460582150438823_gif.gif" border="0" class="img-responsive" style="margin-bottom:5px;">
+ </a>
+ <a href="/click/id:345" target="_blank" class=" clearfix" style="float:right;margin-right:10px;">
+ <img src="https://facenama.com/images/ads/1499866458110970.gif" border="0" class="img-responsive" style="margin-bottom:5px;">
+ </a>
+ <a href="/click/id:435" target="_blank" class=" clearfix" style="float:right;margin-right:10px;">
+ <img src="https://facenama.com/images/ads/1494160531873115.gif" border="0" class="img-responsive" style="margin-bottom:5px;">
+ </a> <div style="margin-right:400px;" class=" hidden-xs hidden-sm "> <div style="display: block;border-radius: 4px;background-color: #eff1f4;border:#caced4 1px solid;padding: 5px 0px;margin-bottom: 10px;">
+ <a href="https://facenama.com/app" title="دانلود نسخه موبایل شبکه اجتماعی فیسنما">
+ <img style="margin:0 auto;" class="img-responsive" src="/themes/social/imgs/mbd_new/mobile-app-download-box.png">
+ </a>
+ </div> <div style="background-color: #fff;color: #555;border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 3px; -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); padding: 5px; "> <h4 style="font-family: IranSans; font-size: 13px; text-align: right; margin-top: 0;margin-bottom: 15px;"><strong>رسانه های تایید شده</strong></h4> <a href="https://facenama.com/Mahanacir" class="slimuser dspib" title="Mahanacir"><span class="slimuser-info hover official"><i></i><span>Mahanacir<br><br>40 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1417420956527453.png" alt="Mahanacir" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1417420956527453.png" alt="Mahanacir" width="30" height="30"></a><a href="https://facenama.com/sellmail-ir" class="slimuser dspib" title="sellmail-ir"><span class="slimuser-info hover official"><i></i><span>فروشگاه اینترنتی محصولات مجازی<br>يزد - يزد<br>7 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1434825033698620.png" alt="sellmail-ir" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1434825033698620.png" alt="sellmail-ir" width="30" height="30"></a><a href="https://facenama.com/setare_com" class="slimuser dspib" title="setare_com"><span class="slimuser-info hover official"><i></i><span>مجله ستاره<br><br>480 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1436862816313424.png" alt="setare_com" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1436862816313424.png" alt="setare_com" width="30" height="30"></a><a href="https://facenama.com/smusic" class="slimuser dspib" title="smusic"><span class="slimuser-info hover official"><i></i><span>smusic.ir<br>تهران<br>817 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1417027750553487.png" alt="smusic" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1417027750553487.png" alt="smusic" width="30" height="30"></a><a href="https://facenama.com/mahdi136419" class="slimuser dspib" title="mahdi136419"><span class="slimuser-info hover official"><i></i><span>نوشهر آنلاین<br>مازندران - نوشهر<br>435 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1429962905780742.png" alt="mahdi136419" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1429962905780742.png" alt="mahdi136419" width="30" height="30"></a><a href="https://facenama.com/shayano" class="slimuser dspib" title="shayano"><span class="slimuser-info hover official"><i></i><span>فروشگاه اینترنتی شایانو<br>تهران - تهران<br>58 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1437493256528632.png" alt="shayano" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1437493256528632.png" alt="shayano" width="30" height="30"></a><a href="https://facenama.com/aliayal" class="slimuser dspib" title="aliayal"><span class="slimuser-info hover official"><i></i><span>یا صاحب الزمان<br>اصفهان - آران و بيدگل<br>1232 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1495648251892052.png" alt="aliayal" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1495648251892052.png" alt="aliayal" width="30" height="30"></a><a href="https://facenama.com/torrent-ir" class="slimuser dspib" title="torrent-ir"><span class="slimuser-info hover official"><i></i><span>Torrent.ir<br>تهران - تهران<br>31 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1436943073767994.png" alt="torrent-ir" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1436943073767994.png" alt="torrent-ir" width="30" height="30"></a><a href="https://facenama.com/mehrseda-ir" class="slimuser dspib" title="mehrseda-ir"><span class="slimuser-info hover official"><i></i><span>مهرصدا<br>گلستان - آزاد شهر<br>90 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1433802414264170.png" alt="mehrseda-ir" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1433802414264170.png" alt="mehrseda-ir" width="30" height="30"></a><a href="https://facenama.com/Shahin_hanafi" class="slimuser dspib" title="Shahin_hanafi"><span class="slimuser-info hover official"><i></i><span>شاهین حنفی<br>آذربايجان شرقي - تبريز<br>9 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1447679090499759.png" alt="Shahin_hanafi" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1447679090499759.png" alt="Shahin_hanafi" width="30" height="30"></a><a href="https://facenama.com/nedayesafar" class="slimuser dspib" title="nedayesafar"><span class="slimuser-info hover official"><i></i><span>آژانس هواپیمائی ندای سفر<br>تهران - تهران<br>508 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1438449514904592.png" alt="nedayesafar" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1438449514904592.png" alt="nedayesafar" width="30" height="30"></a><a href="https://facenama.com/varnyka" class="slimuser dspib" title="varnyka"><span class="slimuser-info hover official"><i></i><span>وارنیکا ( هواداری یادتون نره)<br>تهران - تهران<br>389 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1443549125709852.png" alt="varnyka" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1443549125709852.png" alt="varnyka" width="30" height="30"></a><a href="https://facenama.com/asrenaft" class="slimuser dspib" title="asrenaft"><span class="slimuser-info hover official"><i></i><span>وحید حاجی پور<br>تهران - تهران<br>91 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1455102322478525.png" alt="asrenaft" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1455102322478525.png" alt="asrenaft" width="30" height="30"></a><a href="https://facenama.com/Mohammad_yazdani" class="slimuser dspib" title="Mohammad_yazdani"><span class="slimuser-info hover official"><i></i><span>Mohammad Yazdani<br><br>1 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1445515762698807.png" alt="Mohammad_yazdani" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1445515762698807.png" alt="Mohammad_yazdani" width="30" height="30"></a><a href="https://facenama.com/clip-nama" class="slimuser dspib" title="clip-nama"><span class="slimuser-info hover official"><i></i><span>clipnama<br><br>54 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1422360606276592.png" alt="clip-nama" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1422360606276592.png" alt="clip-nama" width="30" height="30"></a><a href="https://facenama.com/persiabook" class="slimuser dspib" title="persiabook"><span class="slimuser-info hover official"><i></i><span>پرشیا بوک<br><br>382 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1445309452670425.png" alt="persiabook" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1445309452670425.png" alt="persiabook" width="30" height="30"></a><a href="https://facenama.com/hypersun" class="slimuser dspib" title="hypersun"><span class="slimuser-info hover official"><i></i><span>hypersun.net<br><br>5 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1422869727893835.png" alt="hypersun" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1422869727893835.png" alt="hypersun" width="30" height="30"></a><a href="https://facenama.com/arpatelecom" class="slimuser dspib" title="arpatelecom"><span class="slimuser-info hover official"><i></i><span>گروه آرپا تلکام -شرکت آرپاارتباطات پارسینا<br>تهران - تهران<br>5 پست</span><img src="https://facenama.com/i/avatars/thumbs1/1449430820930589.png" alt="arpatelecom" width="50" height="50"></span><img src="https://facenama.com/i/avatars/thumbs3/1449430820930589.png" alt="arpatelecom" width="30" height="30"></a> </div> 
+ </div> 
+ </div>
+ </div> </div> </div>
+ </div>
+ <div class="row foter">
+ <footer class="col-sm-12 footer">
+ <section class="text-center">
+ کلیه محتوای این سایت توسط کاربران درج شده است و فیس نما دات کام هیچ مسئولیتی نسبت به آن ها ندارد. <a href="https://facenama.com/view/post:313758774">دانلود اپلیکیشن فیس نما</a> 
+</section>
+<div class="float-left"><script type="text/javascript">;!(function(w,d) {'use strict';d.write('<div id="amarfa-stats-2" style="display: inline-block"></div>');d.write('<'+'sc'+'ript type="text/javasc'+'ri'+'pt" src="//amarfa.ir/stats/2.js" async><'+'/'+'scri'+'pt>');})(this,document);</script></div>
+ </footer>
+ </div>
+ </div>
+ <script type="text/javascript">window_onload();</script>
+ 
+</body>
+</html>

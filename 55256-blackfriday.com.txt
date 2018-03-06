@@ -1,0 +1,42 @@
+# Prevent all bots from crawling this content
+user-agent: *
+disallow: /go/*
+disallow: /*/go
+disallow: /deals/        # disallow individual product pages but not main deals pages
+disallow: /deals/*/amazon
+disallow: /deals?*       # disallow both categories and site search results
+disallow: /signin/reset/*   # don't crawl reset links (thus expiring them)
+disallow: /users/
+disallow: /favorite_products
+disallow: /favorite_stores
+disallow: /wishlist
+disallow: /signup
+disallow: /signin
+disallow: /subscribe
+
+# Exclude this content from Google search results
+noindex: /deals/
+noindex: /deals?*
+
+# Disallow Yandex bot
+user-agent: Yandex
+disallow: /
+
+# Allow Majestic SEO bot to crawl entire site
+user-agent: MJ12bot
+disallow:
+
+# Allow Google AdWords bot to crawl entire site
+user-agent: AdsBot-Google
+disallow:
+
+# Allow Google bots to crawl entire site
+user-agent: Mediapartners-Google
+disallow:
+
+# Allow Moz bots to crawl entire site
+user-agent: rogerbot
+disallow:
+
+# Location of sitemap file
+sitemap: https://blackfriday.com/sitemap.xml

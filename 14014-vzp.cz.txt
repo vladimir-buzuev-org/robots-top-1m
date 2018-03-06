@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VZP ČR</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            background-color: #f3f3f3;
+        }
+
+        .error-page {
+            display: none;
+            margin-bottom: 3rem;
+        }
+
+        .error-page--error {
+            display: block;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .error-page--error .content--error {
+            display: inline;
+        }
+
+        header {
+            height: 60px;
+            background-color: #fff;
+            border-top: 8px solid #cb2b0d;
+            border-bottom: 1px solid #dcdcdc;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .container--main {
+            padding-top: 20px;
+            padding-bottom: 2rem;
+        }
+
+        .logo--big {
+            display: none;
+            width: 250px;
+            height: 52px;
+            margin: 15px 0 0 0;
+        }
+
+        .logo--small {
+            width: 80px;
+            height: 34px;
+            margin: 8px 0 0 0;
+        }
+
+        .error-iconography {
+            width: 100%;
+            margin: 0 auto 1rem auto;
+        }
+
+        .error-iconography__container {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        .error-iconography__image {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .error-iconography--desktop {
+            display: none;
+            max-width: 850px;
+        }
+
+            .error-iconography--desktop .error-iconography__container {
+                padding-bottom: 39.85%;
+            }
+
+        .error-iconography--mobile {
+            max-width: 175px;
+        }
+
+            .error-iconography--mobile .error-iconography__container {
+                padding-bottom: 178.5%;
+            }
+
+        h1 {
+            width: 100%;
+            margin: 0 0 .5rem;
+            padding: 0;
+            font-size: 26px;
+            font-weight: normal;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        a {
+            color: #2B79A8;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        .code {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .comment {
+            border-top: 1px solid #dcdcdc;
+            margin: 0 0 1.5rem;
+            padding: 1.5rem 0 0;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 2rem;
+        }
+
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            height: 45px;
+            padding: 0 .5rem;
+            font-size: 1rem;
+            line-height: 45px;
+            border: 1px solid #b4b4b4;
+            border-radius: 3px;
+        }
+
+        .search {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+        }
+
+            .search button {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 45px;
+                height: 45px;
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221792%22%20height%3D%221792%22%3E%3Cpath%20fill%3D%22rgb(102,102,102)%22%20stroke%3D%22transparent%22%20stroke-width%3D%220%22%20d%3D%22M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z%22%20%2F%3E%3C%2Fsvg%3E");
+                background-size: 16px;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-color: transparent;
+                border: none;
+            }
+
+                .search button:hover {
+                    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221792%22%20height%3D%221792%22%3E%3Cpath%20fill%3D%22rgb(0,0,0)%22%20stroke%3D%22transparent%22%20stroke-width%3D%220%22%20d%3D%22M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z%22%20%2F%3E%3C%2Fsvg%3E");
+                    cursor: pointer;
+                }
+
+        .link--repeat::before {
+            position: relative;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            top: 2px;
+            content: " ";
+            margin-right: .2rem;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221792%22%20height%3D%221792%22%3E%3Cpath%20fill%3D%22rgb(43,121,168)%22%20stroke%3D%22transparent%22%20stroke-width%3D%220%22%20d%3D%22M1664 256v448q0 26-19 45t-45 19h-448q-42 0-59-40-17-39 14-69l138-138q-148-137-349-137-104 0-198.5 40.5t-163.5 109.5-109.5 163.5-40.5 198.5 40.5 198.5 109.5 163.5 163.5 109.5 198.5 40.5q119 0 225-52t179-147q7-10 23-12 14 0 25 9l137 138q9 8 9.5 20.5t-7.5 22.5q-109 132-264 204.5t-327 72.5q-156 0-298-61t-245-164-164-245-61-298 61-298 164-245 245-164 298-61q147 0 284.5 55.5t244.5 156.5l130-129q29-31 70-14 39 17 39 59z%22%20%2F%3E%3C%2Fsvg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .link--lock::before {
+            position: relative;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            top: 2px;
+            content: " ";
+            margin-right: .2rem;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221792%22%20height%3D%221792%22%3E%3Cpath%20fill%3D%22rgb(43,121,168)%22%20stroke%3D%22transparent%22%20stroke-width%3D%220%22%20d%3D%22M640 768h512v-192q0-106-75-181t-181-75-181 75-75 181v192zm832 96v576q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-576q0-40 28-68t68-28h32v-192q0-184 132-316t316-132 316 132 132 316v192h32q40 0 68 28t28 68z%22%20%2F%3E%3C%2Fsvg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        @media only screen and (min-width: 768px) {
+            header {
+                height: 90px;
+            }
+
+            .container--main {
+                text-align: center;
+            }
+
+            .container--center {
+                text-align: center;
+            }
+
+            .logo--big {
+                display: block;
+            }
+
+            .logo--small {
+                display: none;
+            }
+
+            .error-iconography--desktop {
+                display: block;
+            }
+
+            .error-iconography--mobile {
+                display: none;
+            }
+
+            h1 {
+                font-size: 36px;
+                margin-bottom: 1rem;
+            }
+
+            nav {
+                justify-content: center;
+                flex-direction: row;
+                margin-bottom: 3rem;
+                text-align: center;
+            }
+
+            .nav-list {
+                margin: 0 2.5rem;
+            }
+
+            .link--indent {
+                display: inline-block;
+                margin-bottom: 1.55rem;
+            }
+
+            .search {
+                max-width: 480px;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (min-width: 992px) {
+            .container {
+                max-width: 1200px;
+            }
+
+            .container--main {
+                padding-top: 40px;
+                padding-bottom: 3rem;
+            }
+
+            .error-iconography {
+                margin-bottom: 2rem;
+            }
+
+            .comment {
+                padding-right: 6rem;
+                padding-left: 6rem;
+                margin-bottom: 2rem;
+            }
+
+            .search {
+                margin: 0 auto;
+            }
+        }
+    </style>
+
+    <!--[if IE 9]>
+        <style>
+            @media only screen and (min-width: 992px) {
+                .nav-list {
+                    text-align: center;
+                }
+            }
+        </style>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="error-page" class="error-page error-page--error">
+        <header>
+            <div class="container">
+                <div class="logo logo--small">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76.3 31.8"><title>VZP Logo</title><path d="M56,7.5H52.6l-1.8,5.2a16.6,16.6,0,0,0-.7,2.5h0a17,17,0,0,0-.6-2.4L47.8,7.5H44.2l4.3,12.7h2.9Zm9.3,10h-5l.6-.7,4.4-7.2V7.5H57l-.2,2.7h4.6l-.7,1.1L56.4,18v2.2h8.7Zm11-6c0-2.9-1.9-4-5.1-4H67V20.2h3.3V15.7h1c4.2,0,5-2.4,5-4.2m-3.6,0c0,1.4-.5,1.7-1.5,1.7h-1v-3h1.1c.8,0,1.3.2,1.3,1.3" transform="translate(0 0)" style="fill:#ef3120" /><path d="M39.5,22.8,27.3,2.8a5.4,5.4,0,0,0-5-2.8A5.6,5.6,0,0,0,17,3.1L0,31.8H4.7S19.7,6.5,20.7,5a1.8,1.8,0,0,1,2.4-.7l.6.5L36.1,25.1a1.8,1.8,0,0,1,0,1.7,1.6,1.6,0,0,1-1.5.9H24.8l2.4,4.1H35a6.3,6.3,0,0,0,4.7-2.5c2.1-2.7.2-6-.2-6.5M22.3,5.6,6.9,31.8h4.8L22.3,13.7l4.8,7.9-2.4,4.1h9.6ZM19.1,21.5l-2.9,5.1L19,31.8h5.9l-2.8-5.1L25,21.5Z" transform="translate(0 0)" style="fill:#ef3120" /></svg>
+                </div>
+                <div class="logo logo--big">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 52"><title>VZP Logo</title><path d="M200.6,43.2l-.6,1.3-.6-1.5-1-2.3h-6.1l-2.3,5,2.7,5.8h3.6l-3.3-5.8,2.5-4.4,3.1,5.8v4.4h2.9V47l3.5-6.1h-3.3Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M149.2,40.9h-3.5V51.4h2.7V47.6h.8c3.5,0,4.2-1.9,4.2-3.5S151.9,40.9,149.2,40.9Zm0,4.6h-.8V43h1c.6,0,1.2.2,1.2,1S150,45.5,149.2,45.5Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M84.9,49.3a1.7,1.7,0,0,1-1.3-.6,5.3,5.3,0,0,1-.6-3.1c0-1.3.2-1.7.8-2.3s.8-.4,1.2-.4a2.2,2.2,0,0,1,1.5.6l1.2-1.9a5.5,5.5,0,0,0-2.7-.8,4.3,4.3,0,0,0-4.2,2.5,5.9,5.9,0,0,0-.8,3.3,6.1,6.1,0,0,0,1.2,3.8A4.2,4.2,0,0,0,84.5,52a4,4,0,0,0,3.3-1.2l-1.2-1.9A5.6,5.6,0,0,1,84.9,49.3Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><polygon points="84.4 38.2 82.3 37.2 81.5 38.6 84.4 40.5 87.3 38.6 86.5 37.2 84.4 38.2" style="fill:#ee3124" /><polygon points="140.1 47 142.7 47 142.7 44.9 140.1 44.9 140.1 43 143.3 43 143.5 40.9 137.4 40.9 137.4 51.4 143.7 51.4 143.7 49.1 140.1 49.1 140.1 47" style="fill:#ee3124" /><polygon points="120.9 37.4 117.6 39.3 118.4 40.7 122 39.1 120.9 37.4" style="fill:#ee3124" /><path d="M133.6,46.8a2.6,2.6,0,0,0,2.3-2.9c0-1.7-1-3.1-4.2-3.1h-3.6V51.4h2.7V47.2c.6,0,.8.2,1.3,1.2l1.2,2.9h3.1a27.2,27.2,0,0,1-1.5-3.5C134.4,47.4,134,46.8,133.6,46.8Zm-2.1-1.5h-.8V43.2h.8c.8,0,1.3.2,1.3,1S132.5,45.3,131.5,45.3Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><polygon points="119.1 47 121.8 47 121.8 44.9 119.1 44.9 119.1 43 122.4 43 122.6 40.9 116.3 40.9 116.3 51.4 122.8 51.4 122.8 49.1 119.1 49.1 119.1 47" style="fill:#ee3124" /><path d="M102,44.7l-1.2-.2c-.8-.2-1-.6-1-1s.4-.8,1.2-.8a3.3,3.3,0,0,1,2.3.8l1.3-1.9a7.6,7.6,0,0,0-3.8-1c-2.3,0-4,1.3-4,3.5s1,2.7,2.7,3.1l1.3.4c.8.2,1.2.4,1.2,1s-.4,1-1.5,1a7.2,7.2,0,0,1-3.1-.8l-1,2.1a8.1,8.1,0,0,0,3.8,1c2.7,0,4.6-1.3,4.6-3.8S103.1,45.1,102,44.7Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><rect x="181.9" y="40.9" width="2.9" height="10.55" style="fill:#ee3124" /><path d="M170.9,45.7a2.2,2.2,0,0,0,1.5-2.3,2.6,2.6,0,0,0-2.9-2.7h-4.8V51.2h4.2c2.5,0,3.6-1.3,3.6-3.3S171.8,46,170.9,45.7ZM167.6,43h1a.9.9,0,0,1,1,.8c0,.6-.2,1-1,1h-1.2V43Zm1.2,6.1h-1V47h1c.8,0,1,.4,1,1S169.3,49.1,168.8,49.1Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><rect x="106.3" y="40.9" width="2.7" height="10.55" style="fill:#ee3124" /><polygon points="91.3 47 94 47 94 44.9 91.3 44.9 91.3 43 94.6 43 94.8 40.9 88.6 40.9 88.6 51.4 95 51.4 95 49.1 91.3 49.1 91.3 47" style="fill:#ee3124" /><rect x="186.9" y="40.9" width="2.7" height="10.55" style="fill:#ee3124" /><polygon points="114.7 40.9 111.3 40.9 109 45.7 111.7 51.4 115.3 51.4 112 45.7 114.7 40.9" style="fill:#ee3124" /><path d="M160.1,47.8c0,1-.2,1.5-1.3,1.5s-1.3-.6-1.3-1.5V40.9h-2.7v7.3a3.3,3.3,0,0,0,.6,2.3c.6,1,1.7,1.3,3.5,1.3s3.3-.8,3.6-1.7a3.8,3.8,0,0,0,.2-1.7V41.1h-2.7v6.7Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><polygon points="177.1 40.9 174.2 40.9 174.2 51.4 180.2 51.4 180.5 49.1 177.1 49.1 177.1 40.9" style="fill:#ee3124" /><path d="M247.2,22.3h-2.9l-3.5,10.6h2.9l.6-2.1h2.5l.6,2.1h2.9Zm-2.3,6.5.4-1.7a8.7,8.7,0,0,1,.4-1.5,3.3,3.3,0,0,0,.2,1.3l.4,1.9h-1.3Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M79.7,31.1V33H87l.2-2.3H83c.2,0,.4-.4.6-.6l3.6-5.9V22.3H80.3l-.2,2.3h3.6a4.2,4.2,0,0,0-.6,1Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M197.5,30.9a7.2,7.2,0,0,1-3.1-.8l-1,2.1a8.1,8.1,0,0,0,3.8,1c2.7,0,4.6-1.3,4.6-3.8s-1.7-2.7-2.9-2.9l-1.2-.2c-.8-.2-1-.6-1-1s.4-.8,1.2-.8a3.3,3.3,0,0,1,2.3.8l1.3-1.9a7.6,7.6,0,0,0-3.8-1c-2.3,0-4,1.3-4,3.5s1,2.7,2.7,3.1l1.3.4c.8.2,1.2.4,1.2,1A1.9,1.9,0,0,1,197.5,30.9Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><polygon points="200.3 19.8 199.5 18.4 197.4 19.6 195.3 18.4 194.6 19.8 197.4 21.9 200.3 19.8" style="fill:#ee3124" /><polygon points="209.5 20.1 208.7 18.6 206.8 19.8 204.7 18.6 203.8 20.1 206.6 21.9 209.5 20.1" style="fill:#ee3124" /><rect x="188.6" y="22.3" width="2.9" height="10.55" style="fill:#ee3124" /><path d="M101.4,28.8c.6,0,.8.2,1.3,1.2l1.2,2.9H107a27.2,27.2,0,0,1-1.5-3.5,2.2,2.2,0,0,0-1.2-1.2,2.6,2.6,0,0,0,2.3-2.9c0-1.7-1-3.1-4.2-3.1H98.7V32.8h2.7v-4Zm0-4.2h.8c.8,0,1.3.2,1.3,1s-.4,1.2-1.3,1.2h-.8Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M226.5,26.7a15.6,15.6,0,0,0-.6,2.1h0a11.9,11.9,0,0,0-.6-1.9L224,22.5h-3.1L224.6,33h2.5l3.8-10.6H228Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M237.3,25.5v2.3a7.1,7.1,0,0,0-1-2.1l-1.9-3.6h-2.7V32.6h2.7V29.5a8.7,8.7,0,0,0-.2-2.7,9.8,9.8,0,0,0,.8,1.9l1.9,3.6h2.9V21.9h-2.7v3.6Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><rect x="155.2" y="22.3" width="2.9" height="10.55" style="fill:#ee3124" /><polygon points="157.7 19 154.5 20.7 155.2 22.1 158.9 20.7 157.7 19" style="fill:#ee3124" /><path d="M147.8,29.9a8.7,8.7,0,0,0-.2-2.7,9.8,9.8,0,0,0,.8,1.9l1.9,3.6h2.9V22.3h-2.7v5.6a7.1,7.1,0,0,0-1-2.1l-1.9-3.6H145V32.6h2.7V29.9Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><polygon points="135.8 24.6 138.3 24.6 138.3 33 141.2 33 141.2 24.6 143.5 24.6 143.9 22.3 135.8 22.3 135.8 24.6" style="fill:#ee3124" /><path d="M166.6,29.2h.8c3.5,0,4.2-1.9,4.2-3.5s-1.5-3.3-4.2-3.3H164V33h2.7Zm0-4.6h1c.6,0,1.2.2,1.2,1s-.4,1.3-1.3,1.3h-.8Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M177.6,22.1c-2.9,0-4.8,1.9-4.8,5.8s1.7,5.2,4.8,5.2,4.8-2.9,4.8-5.9S181,22.1,177.6,22.1Zm-.2,8.8c-1.2,0-1.7-.6-1.7-3.5s.6-3.3,1.7-3.3,1.7.6,1.7,3.3S178.5,30.9,177.4,30.9Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M183.9,31.1c0,1.9,0,2.5-1.3,3.5l1.3,1.3a3.9,3.9,0,0,0,2.9-3.6v-10h-2.9Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><polygon points="202.8 24.6 205.3 24.6 205.3 33 208 33 208 24.6 210.5 24.6 210.9 22.3 202.8 22.3 202.8 24.6" style="fill:#ee3124" /><path d="M95.1,23a4,4,0,0,0-2.5-.6H88.7V33h3.8a3,3,0,0,0,2.9-1.3,6.1,6.1,0,0,0,1.2-4.2C96.8,25.3,96.4,23.8,95.1,23Zm-2.5,7.7h-1V24.6h.8c.8,0,1.5.4,1.5,2.9S93.4,30.7,92.6,30.7Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M135.6,27.2c0-2.3-1-5.2-4.6-5.2s-4.8,1.9-4.8,5.8S127.9,33,131,33,135.6,30.3,135.6,27.2Zm-6.5.4c0-2.1.6-3.3,1.7-3.3s1.7.6,1.7,3.3-.6,3.5-1.7,3.5S129,30.3,129,27.6Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M110.6,22.3l-3.5,10.6H110l.6-2.1h2.5l.6,2.1h2.9l-3.3-10.6Zm.6,6.5.4-1.7a8.7,8.7,0,0,1,.4-1.5,3.3,3.3,0,0,0,.2,1.3l.4,1.9h-1.3Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M121.4,26.7a15.6,15.6,0,0,0-.6,2.1h0a11.9,11.9,0,0,0-.6-1.9l-1.3-4.4h-3.1L119.4,33h2.5l3.8-10.6h-2.9Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M216.1,22.1c-2.9,0-4.8,1.9-4.8,5.8s1.7,5.2,4.8,5.2,4.8-2.9,4.8-5.9S219.8,22.1,216.1,22.1Zm0,8.8c-1.2,0-1.7-.6-1.7-3.5s.6-3.3,1.7-3.3,1.7.6,1.7,3.3S217.3,30.9,216.1,30.9Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M139.8,14.6a4,4,0,0,0,3.3-1.2l-1.2-1.9a2.5,2.5,0,0,1-1.9.8,1.7,1.7,0,0,1-1.3-.6,5.3,5.3,0,0,1-.6-3.1c0-1.3.2-1.7.8-2.3s.8-.4,1.2-.4a2.2,2.2,0,0,1,1.5.6l1.2-1.9a5,5,0,0,0-2.7-.8,4.3,4.3,0,0,0-4.2,2.5,5.9,5.9,0,0,0-.8,3.3,6.1,6.1,0,0,0,1.2,3.8A6.3,6.3,0,0,0,139.8,14.6Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M84.5,8.1a15.6,15.6,0,0,0-.6,2.1h0a11.9,11.9,0,0,0-.6-1.9L82,3.8H79l3.6,10.6h2.5L88.9,3.8H86.1Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><polygon points="96.1 1.3 95.4 0 93.2 1 91.1 0 90.4 1.3 93.4 3.5 96.1 1.3" style="fill:#ee3124" /><polygon points="160 2.1 159.1 0.4 155.8 2.3 156.6 3.6 160 2.1" style="fill:#ee3124" /><path d="M156.9,3.8l-3.5,10.6h2.9l.6-2.1h2.5l.6,2.1h2.9L159.5,3.8Zm.6,6.5.4-1.7c.2-.6.2-1.2.4-1.5a3.3,3.3,0,0,0,.2,1.3l.4,1.9h-1.3Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M111.6,14.6c3.8,0,4.8-2.9,4.8-5.9s-1-5.2-4.6-5.2S107,5.4,107,9.2,108.5,14.6,111.6,14.6Zm0-8.8c1.2,0,1.7.6,1.7,3.3s-.6,3.5-1.7,3.5-1.7-.6-1.7-3.5S110.4,5.8,111.6,5.8Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><polygon points="105.7 12.1 102.1 12.1 102.1 10 104.8 10 104.8 7.9 102.1 7.9 102.1 5.9 105.3 5.9 105.5 3.8 99.4 3.8 99.4 14.4 105.7 14.4 105.7 12.1" style="fill:#ee3124" /><path d="M93.4,12.3a7.2,7.2,0,0,1-3.1-.8l-1,2.1a8.1,8.1,0,0,0,3.8,1c2.7,0,4.6-1.3,4.6-3.8S96,8.1,94.9,7.9l-1.2-.2c-.8-.2-1-.6-1-1s.4-.8,1.2-.8a3.3,3.3,0,0,1,2.3.8l1.3-1.9a7.6,7.6,0,0,0-3.8-1c-2.3,0-4,1.3-4,3.5s1,2.7,2.7,3.1l1.3.4c.8.2,1.2.4,1.2,1S94.3,12.3,93.4,12.3Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><polygon points="133.9 12.1 130.3 12.1 130.3 10 133 10 133 7.9 130.3 7.9 130.3 5.9 133.5 5.9 133.7 3.8 127.4 3.8 127.4 14.4 133.9 14.4 133.9 12.1" style="fill:#ee3124" /><path d="M146.9,11.5a8.7,8.7,0,0,0-.2-2.7,9.8,9.8,0,0,0,.8,1.9l1.9,3.6h2.9V3.8h-2.5V9.4a7.1,7.1,0,0,0-1-2.1l-1.9-3.6h-2.5V14.2h2.7V11.5Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><path d="M126,11.1a2.3,2.3,0,0,0-1.9-2.3,2.2,2.2,0,0,0,1.5-2.3,2.6,2.6,0,0,0-2.9-2.7h-4.8V14.4h4.2C124.8,14.4,126,13,126,11.1ZM120.8,6h1a.9.9,0,0,1,1,.8c0,.6-.2,1-1,1h-1.2V6Zm0,6.1V10h1c.8,0,1,.4,1,1a1.1,1.1,0,0,1-1,1.2Z" transform="translate(-0.3 0)" style="fill:#ee3124" /><polygon points="38.4 35.9 29.4 35.9 24.9 43.6 29.2 51.6 38.2 51.6 34 43.7 38.4 35.9" style="fill:#ee3124" /><polygon points="41.6 35.9 38 42 52.8 42 34.2 11.3 10.6 51.6 18 51.6 34.2 23.8 41.6 35.9" style="fill:#ee3124" /><path d="M42.1,6.9c-.6-.6-2.1-4.4-7.7-4.4a8.6,8.6,0,0,0-8.1,4.8C25.6,8.3.3,51.4.3,51.4H7.6L32,10.2c1.5-2.3,3.8-1.5,4.6-.4S54.2,38.6,55.7,40.9a2.6,2.6,0,0,1,0,2.7,2.4,2.4,0,0,1-2.3,1.3H38.3l3.6,6.3H54a10.2,10.2,0,0,0,7.3-3.8c3.3-4.2.2-9.2-.2-10S42.7,7.7,42.1,6.9Z" transform="translate(-0.3 0)" style="fill:#ee3124" /></svg>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="container container--main container--center">
+                <div class="error-iconography error-iconography--desktop">
+                    <div class="error-iconography__container">
+                        <svg class="error-iconography__image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 737.9 294.1"><title>Ilustrace chyby</title><circle cx="368.5" cy="234.8" r="6.4" style="fill:none" /><circle cx="368.5" cy="234.8" r="4.9" style="fill:none;stroke:#2b79a8;stroke-width:3px" /><rect x="343.9" y="252.1" width="49.1" height="40.04" style="fill:none" /><rect x="345.4" y="253.6" width="46.1" height="37.04" style="fill:none;stroke:#2b79a8;stroke-width:3px" /><path d="M456,217H328.8L455,5.7V4H560.5V217Z" style="fill:#e3eff2" /><path d="M678.2,221.3v67.2h-40Z" style="fill:#e3eff2" /><line x1="2.5" y1="291.6" x2="735.4" y2="291.6" style="fill:none;stroke:#2b79a8;stroke-linecap:round;stroke-width:5px" /><path d="M622.5,218h55a5,5,0,0,1,5,5v70.1h-65V223A5,5,0,0,1,622.5,218Z" style="fill:none" /><rect x="620" y="220.5" width="60" height="70.07" rx="2.5" ry="2.5" style="fill:none;stroke:#2b79a8;stroke-width:5px" /><path d="M679,235h3.3a20,20,0,0,1,20,20h0v.2a20,20,0,0,1-20,20H679Z" style="fill:none" /><path d="M682,236.5h.3A18.5,18.5,0,0,1,700.8,255h0v.2a18.5,18.5,0,0,1-18.5,18.5H682a1.5,1.5,0,0,1-1.5-1.5V238A1.5,1.5,0,0,1,682,236.5Z" style="fill:none;stroke:#2b79a8;stroke-width:3px" /><path d="M679,243.5h3.8a11.8,11.8,0,0,1,11.8,11.8h0a11.8,11.8,0,0,1-11.8,11.8H679Z" style="fill:none" /><path d="M681.3,245h1.5a10.3,10.3,0,0,1,10.3,10.3h0a10.3,10.3,0,0,1-10.3,10.3h-1.5a.8.8,0,0,1-.8-.8h0v-19a.8.8,0,0,1,.8-.8Z" style="fill:none;stroke:#2b79a8;stroke-width:3px" /><path d="M639.5,174.5c12.7,14.3,0,21.6,0,35" style="fill:none;stroke:#2b79a8;stroke-linecap:round;stroke-width:3px" /><path d="M650.8,174.5c12.7,14.3,0,21.6,0,35" style="fill:none;stroke:#2b79a8;stroke-linecap:round;stroke-width:3px" /><path d="M662.1,174.5c12.7,14.3,0,21.6,0,35" style="fill:none;stroke:#2b79a8;stroke-linecap:round;stroke-width:3px" /><rect x="168.5" width="394.9" height="254.78" rx="10" ry="10" style="fill:none" /><rect x="171" y="2.5" width="389.9" height="249.78" rx="7.5" ry="7.5" style="fill:none;stroke:#2b79a8;stroke-width:5px" /><path d="M192,116.4h32.4l21.1-70,30.5,133L307,71.6l22.7,89.3,14.6-44.5H539.5" style="fill:none;stroke:#71d7eb;stroke-linecap:round;stroke-width:5px" /><line x1="170.6" y1="217.9" x2="560.9" y2="217.9" style="fill:none;stroke:#2b79a8;stroke-width:3px" /></svg>
+                    </div>
+                </div>
+                <div class="error-iconography error-iconography--mobile">
+                    <div class="error-iconography__container">
+                        <svg class="error-iconography__image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 357"><title>Ilustrace chyby</title><ellipse cx="99.7" cy="330.9" rx="13.8" ry="14.2" style="fill:none" /><ellipse cx="99.7" cy="330.9" rx="12.3" ry="12.7" style="fill:none;stroke:#2b79a8;stroke-width:3px" /><path d="M196.6,30.4V306.8H3.4Z" style="fill:#e3eff2" /><rect width="200" height="357.05" rx="30" ry="30" style="fill:none" /><rect x="2.5" y="2.5" width="195" height="352.05" rx="27.5" ry="27.5" style="fill:none;stroke:#2b79a8;stroke-width:5px" /><path d="M14.8,170.4H29.4l13.4-44.5,19.6,83,19.5-67.1,14.4,54.6,9.3-26.1H186" style="fill:none;stroke:#71d7eb;stroke-linecap:round;stroke-width:5px" /><line x1="1" y1="306.9" x2="198.7" y2="306.9" style="fill:none;stroke:#2b79a8;stroke-width:3px" /><line x1="1" y1="30.5" x2="198.7" y2="30.5" style="fill:none;stroke:#2b79a8;stroke-width:3px" /><line x1="115" y1="17.4" x2="84.6" y2="17.4" style="fill:none;stroke:#2b79a8;stroke-linecap:round;stroke-width:3px" /></svg>
+                    </div>
+                </div>
+                <h1>
+                    <span class="content content--error">Na stránce nastala chyba</span>
+                </h1>
+                <p class="code">
+                    <span class="content--error">Kód chyby: <strong id="code-info">500</strong></span>
+                </p>
+                <p class="comment">
+                    <span class="content content--error">Omlouváme se za vaše potíže. Právě pracujeme na odstranění problému nebo probíha údržba systému.<br />Zkuste <a class="link link--repeat" href="#" onclick="location.reload()">obnovit stránku</a>, nebo pokračujte na některém z odkazů:</span>
+                </p>
+                <nav>
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="https://www.vzp.cz/">Úvodní stránka VZP ČR</a></li>
+                        <li class="nav-item"><a href="https://www.vzp.cz/pojistenci">Pojištěnci</a></li>
+                        <li class="nav-item"><a href="https://www.vzp.cz/platci">Plátci</a></li>
+                        <li class="nav-item"><a href="https://www.vzp.cz/poskytovatele">Poskytovatelé</a></li>
+                    </ul>
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="https://moje.vzp.cz/" class="link link--lock">Moje VZP</a></li>
+                        <li class="nav-item"><a href="https://point.vzp.cz/" class="link link--lock link--indent">VZP Point</a></li>
+                        <li class="nav-item"><a href="https://www.vzp.cz/kontakty">Kontaktujte nás</a></li>
+                    </ul>
+                </nav>
+
+                <div class="search">
+                    <form action="https://www.vzp.cz/vyhledavani" method="get">
+                        <label class="sr-only">Vyhledávaní</label>
+                        <input name="queryText" class="search__field" type="text" placeholder="Vyhledat na webu VZP ČR">
+                        <button type="submit" class="search__button"><span class="sr-only">Hledat</span></button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container container--center">© <span id="year"></span> <a href="https://www.vzp.cz/">VZP ČR</a>, Všechna práva vyhrazena</div>
+        </footer>
+    </div>
+</body>
+</html>

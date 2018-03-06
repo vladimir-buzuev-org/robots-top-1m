@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Future source" />
+      <meta name="keywords" content="future, source" />
+      <link rel="stylesheet" type="text/css" href="../SlidePushMenus/css/component.css" />
+      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="../css/index.css" />
+      <link rel="stylesheet" type="text/css" href="../SlidePushMenus/css/default.css" />
+      <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+      <script src="../SlidePushMenus/js/classie.min.js"></script>
+      <script src="../SlidePushMenus/js/modernizr.custom.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet" type="text/css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <script src="../js/index.js"></script>
+<!-- TemplateBeginEditable name="doctitle" -->
+      <title>Futuresource Consulting</title>
+	   <meta http-equiv="refresh" content="5;URL='http://www.futuresource-consulting.com/'" />    
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+
+<script type="text/javascript">
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function YY_checkform() { //v4.66
+//copyright (c)1998,2002 Yaromat.com
+  var args = YY_checkform.arguments; var myDot=true; var myV=''; var myErr='';var addErr=false;var myReq;
+  for (var i=1; i<args.length;i=i+4){
+    if (args[i+1].charAt(0)=='#'){myReq=true; args[i+1]=args[i+1].substring(1);}else{myReq=false}
+    var myObj = MM_findObj(args[i].replace(/\[\d+\]/ig,""));
+    myV=myObj.value;
+    if (myObj.type=='text'||myObj.type=='password'||myObj.type=='hidden'){
+      if (myReq&&myObj.value.length==0){addErr=true}
+      if ((myV.length>0)&&(args[i+2]==1)){ //fromto
+        var myMa=args[i+1].split('_');if(isNaN(myV)||myV<myMa[0]/1||myV > myMa[1]/1){addErr=true}
+      } else if ((myV.length>0)&&(args[i+2]==2)){
+          var rx=new RegExp("^[\\w\.=-]+@[\\w\\.-]+\\.[a-z]{2,4}$");if(!rx.test(myV))addErr=true;
+      } else if ((myV.length>0)&&(args[i+2]==3)){ // date
+        var myMa=args[i+1].split("#"); var myAt=myV.match(myMa[0]);
+        if(myAt){
+          var myD=(myAt[myMa[1]])?myAt[myMa[1]]:1; var myM=myAt[myMa[2]]-1; var myY=myAt[myMa[3]];
+          var myDate=new Date(myY,myM,myD);
+          if(myDate.getFullYear()!=myY||myDate.getDate()!=myD||myDate.getMonth()!=myM){addErr=true};
+        }else{addErr=true}
+      } else if ((myV.length>0)&&(args[i+2]==4)){ // time
+        var myMa=args[i+1].split("#"); var myAt=myV.match(myMa[0]);if(!myAt){addErr=true}
+      } else if (myV.length>0&&args[i+2]==5){ // check this 2
+            var myObj1 = MM_findObj(args[i+1].replace(/\[\d+\]/ig,""));
+            if(myObj1.length)myObj1=myObj1[args[i+1].replace(/(.*\[)|(\].*)/ig,"")];
+            if(!myObj1.checked){addErr=true}
+      } else if (myV.length>0&&args[i+2]==6){ // the same
+            var myObj1 = MM_findObj(args[i+1]);
+            if(myV!=myObj1.value){addErr=true}
+      }
+    } else
+    if (!myObj.type&&myObj.length>0&&myObj[0].type=='radio'){
+          var myTest = args[i].match(/(.*)\[(\d+)\].*/i);
+          var myObj1=(myObj.length>1)?myObj[myTest[2]]:myObj;
+      if (args[i+2]==1&&myObj1&&myObj1.checked&&MM_findObj(args[i+1]).value.length/1==0){addErr=true}
+      if (args[i+2]==2){
+        var myDot=false;
+        for(var j=0;j<myObj.length;j++){myDot=myDot||myObj[j].checked}
+        if(!myDot){myErr+='* ' +args[i+3]+'\n'}
+      }
+    } else if (myObj.type=='checkbox'){
+      if(args[i+2]==1&&myObj.checked==false){addErr=true}
+      if(args[i+2]==2&&myObj.checked&&MM_findObj(args[i+1]).value.length/1==0){addErr=true}
+    } else if (myObj.type=='select-one'||myObj.type=='select-multiple'){
+      if(args[i+2]==1&&myObj.selectedIndex/1==0){addErr=true}
+    }else if (myObj.type=='textarea'){
+      if(myV.length<args[i+1]){addErr=true}
+    }
+    if (addErr){myErr+='* '+args[i+3]+'\n'; addErr=false}
+  }
+  if (myErr!=''){alert('The required information is incomplete or contains errors:\t\t\t\t\t\n\n'+myErr)}
+  document.MM_returnValue = (myErr=='');
+}
+    
+    
+    
+    function validateForm() {
+
+               var showErr = 0;
+               var Err = "The required information is incomplete or contains errors:\n\n";
+
+               var fname = document.forms["NewsletterFooter"]["fname"].value;
+               if (fname == null || fname == "") {
+
+                   showErr = 1;
+                   Err += ('* Full Name Field must be filled out!!!\n');
+                   
+               }
+
+               var company = document.forms["NewsletterFooter"]["company"].value;
+               if (company == null || company == "") {
+                   showErr = 1;
+                   Err += ('* Company Name Field must be filled out!!!\n');
+               }
+
+               var emailnsltr = document.forms["NewsletterFooter"]["emailnsltr"].value;
+               if (emailnsltr == null || emailnsltr == "") {
+                   showErr = 1;
+                   Err += ('* Email Field must be filled out!!!\n');
+               }
+
+
+
+               if (!ValidateEmail($("#emailnsltr").val())) {
+                   showErr = 1;
+                   Err += ('* Your Email is invalid!!!\n');
+               }
+
+               //if (!ValidatePhoneNumber($("#event-telephone").val())) {
+               //    showErr = 1;
+               //    Err += ('* Your Telephone is invalid!!!\n');
+               //}
+               
+
+
+               if (showErr == 1) {
+                   alert(Err);
+                   return false;
+               }
+
+           }
+
+  function ValidateEmail(emailnsltr) {
+               var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+               return expr.test(emailnsltr);
+           }
+    
+	function openInNewTab() {
+
+  var url='/reports/search/k/' + document.getElementById('txtsearch').value;
+  var win = window.open(url, '_blank');
+  win.focus();
+
+}
+
+	function openInNewTabside() {
+
+  var url='/reports/search/k/' + document.getElementById('txtsearchside').value;
+  var win = window.open(url, '_blank');
+  win.focus();
+
+}
+	
+    </script>
+    
+    
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.min.js"></script>
+<script>$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) { event.preventDefault(); $(this).ekkoLightbox(); }); </script>
+
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "50e9a560-29d0-423e-878a-1b9c9caa353d", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+
+
+
+
+  </head>
+   <body>
+   
+   <div id="logo">
+            <!-- <a href="#"><img src="./images/logo.jpg"/></a> -->
+            <a href="/index.html"><h2 class="logo">Market research, data, reports, marketing insights and analytics, forecasts and intelligence covering a range of technology industries.Also consumers surveys, custom consulting and events.</h2></a>
+         </div>
+   
+   <div class="explore-content-img">
+                              <img src="../images/404-page-design.jpg" usemap="#Map">
+                              <map name="Map">
+                                <area shape="rect" coords="272,553,520,574" href="/index.html" alt="Home Page">
+                              </map>
+                           </div>
+   
+   </body>
+</html>

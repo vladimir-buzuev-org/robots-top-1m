@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Crea sito web</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>	
+		<link media="screen" href="/common/js/highslide/highslide.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/general-admin.css" media="all" />
+		<style type="text/css">
+			.highslide-header{display:none;}
+			body {background:transparent url("../images/sitoadmin_bk.jpg") repeat-x 0 44px;}
+		</style>
+		<script type="text/javascript" src="/common/js/highslide/highslide-full.packed.js"></script>
+		<script type="text/javascript">
+			function center(object) {
+				if (parseInt(navigator.appVersion)>3) {
+					  winW = window.innerWidth;
+					  winH = window.innerHeight;
+					if (navigator.appName.indexOf("Microsoft")!=-1) {
+						winW = document.documentElement.clientWidth;
+						winH = document.documentElement.clientHeight;
+					}
+				}
+				var left = parseInt(object.offsetWidth / 2);
+				var top = parseInt(object.offsetHeight / 2);
+				var height_var = winH - object.offsetHight;
+				if((height_var/2) < 46)
+					object.style.paddingTop = "17px";
+				object.style.marginLeft = "-" + left + "px";
+				object.style.marginTop = "-" + top + "px";
+			}
+		</script>
+	</head>
+		<body class="home" onload="center(document.getElementById('container_sitoadmin'));">
+		<div id="top_strip">
+					</div>
+		<div id="container_sitoadmin">
+			<div id="ext_box1_login">
+				<div id="ext_box2_login">
+								<!--<div class="sitoadmin_iframe">-->
+						<iframe allowTransparency="true" scrolling="no" frameborder="0" style="width: 338px; height: 190px; height:197px\9; height:190px\0/;" src="login-iframe.ctr?v=aXQ="><p>Il tuo browser non supporta gli iframes.</p></iframe>
+				<!--</div>-->
+				</div>
+			</div>
+		</div>
+</body>        
+<script type="text/javascript">
+
+	var isMSIE = /*@cc_on!@*/false;
+
+	hs.outlineType = null;
+	hs.registerOverlay({
+		overlayId: 'closebutton',
+		position: 'top center',
+		fade: 2, 
+		useOnHtml: true
+	});
+	hs.align = 'center';
+	hs.transitions = ['fade'];
+	hs.showCredits = false;
+	hs.enableKeyListener = false;
+	hs.graphicsDir = '/common/js/highslide/graphics/';
+	hs.preserveContent = false;
+	hs.dimmingOpacity = 0.85;
+	hs.dimmingDuration = 0;
+	hs.onDimmerClick = function() {
+		return false;
+	}	
+	hs.objectType = 'iframe';
+	hs.wrapperClassName = 'no-footer';
+	hs.objectLoadTime = 'after';
+	hs.marginTop = 5;
+	
+	function resizeModal() {
+		hs.getExpander().reflow();
+		var i = 0;
+		var found = false;
+		while (found == false) {
+			if ($('highslide-wrapper-'+i) != null) {
+				hsHeight = $('highslide-wrapper-'+i).style.height;
+				hsWidth = $('highslide-wrapper-'+i).style.width;
+				found = true;
+			} else
+				i++;
+		}
+		arCloseButton = $$('div.closebutton');
+		arCloseButton[0].style.top = (hsHeight);
+		asCloseButtonDiv = $('hsId'+i);
+		asCloseButtonDiv.style.zIndex=2;
+		
+		if (isMSIE) 
+			arCloseButton[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/common/js/highslide/graphics/cancel_it.png', sizingMethod='scale')";
+		else
+			arCloseButton[0].style.backgroundImage = 'url(/common/js/highslide/graphics/cancel_it.png)';
+	}
+</script>
+</html>

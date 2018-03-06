@@ -1,0 +1,266 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>The Reactive Manifesto</title>
+        <link rel="stylesheet" href="/stylesheets/main.css" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <script src="/lib/jquery/jquery.js" type="text/javascript"></script>
+        <script src="/lib/knockout/knockout.js" type="text/javascript"></script>
+        <script src="/javascripts/main.js" type="text/javascript"></script>
+    </head>
+    <body>
+        
+    <div id="sign">
+        <span class="close">×</span>
+        <div data-bind="with: loggedInUser">
+            <a class="logout" href="#" data-bind="click: $root.logOut">Logout</a>
+            <p>
+                Hello <span data-bind="text: name"></span>.
+            </p>
+            <hr/>
+            <div class="inner" data-bind="ifnot: $data.signed">
+                <button data-bind="click: $root.sign" class="vote">
+                    Add your signature (<span data-bind="text: $root.total"></span>)
+                </button>
+            </div>
+            <div class="inner" data-bind="if: $data.signed">
+                <p>
+                    Thank you! And spread the word!
+                </p>
+                <button data-bind="click: $root.unsign" class="vote unvote">
+                    Remove your signature
+                </button>
+            </div>
+        </div>
+        <div data-bind="ifnot: loggedInUser">
+            <p>
+                Hi there,<br/> You need to be logged to sign the manifesto
+            </p>
+            <hr/>
+            <div class="inner">
+
+                <button data-bind="click: logInTwitter" class="btn btn-twitter">
+                    Sign In with Twitter
+                </button>
+
+                <button data-bind="click: logInGitHub" class="btn btn-github">
+                    Sign In with GitHub
+                </button>
+
+                <button data-bind="click: logInGoogle" class="btn btn-google">
+                    Sign In with Google
+                </button>
+
+                <button data-bind="click: logInLinkedIn" class="btn btn-linkedin">
+                    Sign In with LinkedIn
+                </button>
+            </div>
+        </div>
+    </div>
+    <main>
+        <header>
+            <h1>The <span>Reactive</span> Manifesto</h1>
+            <aside>
+                <p>
+                    Published on September 16 2014. (v2.0)
+                </p>
+
+            </aside>
+        </header>
+
+
+        <article>
+            <section id="the-reactive-manifesto">
+    <p>Organisations working in disparate domains are independently discovering patterns for building software that look the same. These systems are more robust, more resilient, more flexible and better positioned to meet modern demands.</p>
+    <p>These changes are happening because application requirements have changed dramatically in recent years. Only a few years ago a large application had tens of servers, seconds of response time, hours of offline maintenance and gigabytes of data. Today applications are deployed on everything from mobile devices to cloud-based clusters running thousands of multi-core processors. Users expect millisecond response times and 100% uptime. Data is measured in Petabytes. Today's demands are simply not met by yesterday’s software architectures.</p>
+    <p>We believe that a coherent approach to systems architecture is needed, and we believe that all necessary aspects are already recognised individually: we want systems that are Responsive, Resilient, Elastic and Message Driven. We call these Reactive Systems.</p>
+    <p>Systems built as Reactive Systems are more flexible, loosely-coupled and <a href="/glossary#Scalability">scalable</a>. This makes them easier to develop and amenable to change. They are significantly more tolerant of failure and when <a href="/glossary#Failure">failure</a> does occur they meet it with elegance rather than disaster. Reactive Systems are highly responsive, giving <a href="/glossary#User">users</a> effective interactive feedback.</p>
+    <h3>Reactive Systems are:</h3>
+
+</section>
+
+<section id="responsive" class="trait">
+
+    <p><strong>Responsive: </strong>The <a href="/glossary#System">system</a> responds in a timely manner if at all possible. Responsiveness is the cornerstone of usability and utility, but more than that, responsiveness means that problems may be detected quickly and dealt with effectively. Responsive systems focus on providing rapid and consistent response times, establishing reliable upper bounds so they deliver a consistent quality of service. This consistent behaviour in turn simplifies error handling, builds end user confidence, and encourages further interaction.</p>
+
+</section>
+
+<section id="resilient" class="trait">
+
+    <p><strong>Resilient: </strong>The system stays responsive in the face of <a href="/glossary#Failure">failure</a>. This applies not only to highly-available, mission critical systems — any system that is not resilient will be unresponsive after a failure. Resilience is achieved by <a href="/glossary#Replication">replication</a>, containment, <a href="/glossary#Isolation">isolation</a> and <a href="/glossary#Delegation">delegation</a>. Failures are contained within each <a href="/glossary#Component">component</a>, isolating components from each other and thereby ensuring that parts of the system can fail and recover without compromising the system as a whole. Recovery of each component is delegated to another (external) component and high-availability is ensured by replication where necessary. The client of a component is not burdened with handling its failures.</p>
+
+</section>
+
+<section id="elastic" class="trait">
+
+    <p><strong>Elastic: </strong>The system stays responsive under varying workload. Reactive Systems can react to changes in the input rate by increasing or decreasing the <a href="/glossary#Resource">resources</a> allocated to service these inputs. This implies designs that have no contention points or central bottlenecks, resulting in the ability to shard or replicate components and distribute inputs among them. Reactive Systems support predictive, as well as Reactive, scaling algorithms by providing relevant live performance measures. They achieve <a href="/glossary#Elasticity">elasticity</a> in a cost-effective way on commodity hardware and software platforms.</p>
+
+</section>
+
+<section id="message-driven" class="trait">
+
+    <p><strong>Message Driven: </strong>Reactive Systems rely on <a href="/glossary#Asynchronous">asynchronous</a> <a href="/glossary#Message-Driven">message-passing</a> to establish a boundary between components that ensures loose coupling, isolation and <a href="/glossary#Location-Transparency">location transparency</a>. This boundary also provides the means to delegate <a href="/glossary#Failure">failures</a> as messages. Employing explicit message-passing enables load management, elasticity, and flow control by shaping and monitoring the message queues in the system and applying <a href="/glossary#Back-Pressure">back-pressure</a> when necessary. Location transparent messaging as a means of communication makes it possible for the management of failure to work with the same constructs and semantics across a cluster or within a single host. <a href="/glossary#Non-Blocking">Non-blocking</a> communication allows recipients to only consume <a href="/glossary#Resource">resources</a> while active, leading to less system overhead.</p>
+    
+<img src="/images/reactive-traits.svg">
+
+</section>
+
+<section id="conclusion">
+
+    <p>Large systems are composed of smaller ones and therefore depend on the Reactive properties of their constituents. This means that Reactive Systems apply design principles so these properties apply at all levels of scale, making them composable. The largest systems in the world rely upon architectures based on these properties and serve the needs of billions of people daily. It is time to apply these design principles consciously from the start instead of rediscovering them each time.</p>
+
+</section>
+
+
+
+
+            <div class="sign" id="sign-button">
+                <button data-bind="click: signTheManifesto, clickBubble: false">Sign the manifesto</button>
+            </div>
+
+
+        </article>
+        <p class="signatures">
+            <span data-bind="ifnot: total">Loading...</span>
+            <span data-bind="if: total">
+                <span data-bind="template: { name: 'total-template', data: total }"></span>
+            </span>
+        </p>
+        <div data-bind="if: signatories" class="signatures">
+            <span data-bind="template: { name: 'signatories-template', data: signatories }"></span>
+        </div>
+
+        <article class="social">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+                    <iframe src="//www.facebook.com/plugins/like.php?locale=en_US&href=http%3A%2F%2Freactivemanifesto.org&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=17899947359" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+                    <div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://reactivemanifesto.org"></div>
+                    <script type="IN/Share" data-url="http://reactivemanifesto.org" data-counter="right"></script>
+                <p>
+                    <a class="" href="/glossary">Glossary</a>
+                </p>
+
+                <p>
+                    <a class="pdf" href="/pdf/the-reactive-manifesto-2.0.pdf">Download as PDF</a>
+                </p>
+                <p>
+                <a class="pdf" href="https://github.com/reactivemanifesto/reactivemanifesto/blob/master/README.md">Suggest improvements</a>
+                </p><br />
+                <p><strong>Authors</strong> (in alphabetic order, with roughly equal contributions):<br /> Jonas Bonér, Dave Farley, Roland Kuhn, and Martin Thompson. With the help and refinement of many members in the community.</p>
+        </article>
+
+        
+<footer>
+    <a href="/">The Reactive Manifesto</a> (English) <br/>
+    <a href="/es" >El Manifiesto de Sistemas Reactivos</a> (Spanish) <br/>
+    <a href="/ja" >リアクティブ宣言</a> (Japanese) <br/>
+    <a href="/de" >Das Reaktive Manifest</a> (German) <br/>
+    <a href="/fr" >Le Manifeste Réactif</a> (French) <br/>
+    <a href="/it" >Il Manifesto dei Sistemi Reattivi</a> (Italian) <br/>
+    <a href="/pt" >O Manifesto pela Reactividade</a> (Portuguese) <br/>
+    <a href="/pt-BR" >O Manifesto Reativo</a> (Portuguese Brazilian) <br/>
+    <a href="/tr" >Reaktif Manifesto</a> (Turkish) <br/>
+    <a href="/id" >Manifesto Reaktif</a> (Indonesian) <br/>
+    <a href="/zh-CN" >响应式宣言</a> (Simplified Chinese) <br/>
+    <a href="/ko" >리액티브 선언문</a> (Korean) <br/>
+    <a href="/fa" >بیانیه واكنشگر</a> (Farsi) <br/>
+    <br>
+    <p>Show your support <a href='/ribbons'>with a ribbon</a>.</p>
+    <p class="copyright">&copy; 2014, the above authors, this declaration may be freely copied in any form, but only in its entirety through this notice.</p>
+</footer>
+<a class="ribbon" href="/ribbons" style="right: 0; top:0; position: absolute;"><img src="/images/ribbons/we-are-reactive-blue-right.png"></a>
+
+
+    </main>
+    <script type="text/html" id="total-template">
+        <span data-bind='text: $data'></span> people already signed
+        (<a href="/list">Full list</a>)
+    </script>
+
+    <script type="text/html" id="signatories-template">
+        <ul class="full" data-bind="foreach: $data">
+            <li>
+                <span data-bind="if: $data.avatarUrl">
+                    <img class="avatar" data-bind="attr: { src: $data.avatarUrl }" width="25" height="25"/>
+                </span>
+                <cite class="user" data-bind="text: name"></cite>
+            </li>
+        </ul>
+    </script>
+
+    <script type="text/javascript">
+    ;(function() {
+
+        // Element
+        var headerMinimized = $("#headerMinimized"),
+            header = $("header");
+
+        // Duplicate the header to play with
+        headerMinimized.html(header.html());
+
+        // Toggle table of content display
+        headerMinimized.click(function() {
+            $("body").toggleClass("opened");
+        });
+
+        $("main").click(function() {
+            $("body").removeClass("opened");
+            $("body").removeClass("signing");
+        });
+
+        $(".close").click(function() {
+            $("body").removeClass("opened");
+            $("body").removeClass("signing");
+        });
+
+        // Show table of content on scroll
+        window.onscroll = function() {
+            if (window.pageYOffset > 800) {
+                $("body").addClass("display");
+            } else {
+                $("body").removeClass("display");
+            }
+            // Always hide menu when scrolling
+            $("body").removeClass("opened");
+        };
+    }());
+
+
+    // SHARE BUTTONS
+    // Twitter
+    ;(function(d,s,id){
+        var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}
+    }(document, 'script', 'twitter-wjs'));
+
+    // Google
+    ;(function() {
+        window.___gcfg = {
+            lang: 'en'
+        };
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    }());
+    </script>
+    <script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
+
+        <script src="/lib/retinajs/retina.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-42352555-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>
+

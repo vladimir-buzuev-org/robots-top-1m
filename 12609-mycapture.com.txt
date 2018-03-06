@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<style type="text/css">
+    #UPE-ContentRightColumn1 {
+        border-bottom: 1px solid #D3D3D3;
+        border-radius: 2px 2px 2px 2px;
+        border-right: 1px solid #D3D3D3;
+        border-top: 1px solid #D3D3D3;
+        box-shadow: 0 5px 7px 4px rgba(0, 0, 0, 0.25);
+        position: relative;
+    }
+	 #mydiv
+        {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 25em;
+        height: 20em;
+        margin-top: 20em; /*set to a negative number 1/2 of your height*/
+        margin-left: -12em; /*set to a negative number 1/2 of your width*/
+        border: 5px solid #ccc;
+        background-color: #E5E5E5;
+        }
+</style>
+<script language="javascript" src="/scripts/jquery/jquery.min.js"></script>
+ <script language="Javascript">
+$(document).ready(function() {
+ 
+    // cache references to the input elements into variables
+    var passwordField = $('input[name=password]');
+    var userNameField = $('input[name=username]');
+    // get the default value for the email address field
+    var userNameFieldDefault = userNameField.val();
+ 
+    // add a password placeholder field to the html
+    passwordField.after('<input id="passwordPlaceholder" type="text" value="Password" style="width:220px !important;color: #CCCCCC; font-family: Arial, Helvetica, sans-serif; font-size: large; font-weight: bold;"  autocomplete="off" onfocus="changebg("password")" />');
+    var passwordPlaceholder = $('#passwordPlaceholder');
+ 
+    // show the placeholder with the prompt text and hide the actual password field
+    passwordPlaceholder.show();
+    passwordField.hide();
+
+    // when focus is placed on the placeholder hide the placeholder and show the actual password field
+    passwordPlaceholder.focus(function() {
+        passwordPlaceholder.hide();
+        passwordField.show();
+        passwordField.focus();
+    });
+    // and vice versa: hide the actual password field if no password has yet been entered
+    passwordField.blur(function() {
+        if(passwordField.val() == '') {
+            passwordPlaceholder.show();
+            passwordField.hide();
+        }
+    });
+ 
+    // when focus goes to and moves away from the email field, reset it to blank or restore the default depending if a value is entered
+    userNameField.focus(function() {
+        if(userNameField.val() == userNameFieldDefault) {
+            userNameField.val('');
+        }
+    });
+    userNameField.blur(function() {
+        if(userNameField.val() == '') {
+            userNameField.val(userNameFieldDefault);
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+    String.prototype.trim = function () 
+    {  
+        return this.replace(/^\s*/, "").replace(/\s*$/, "");
+    }
+    function validateLogin()
+    {   
+        var username=document.getElementById("username").value;
+        var password=document.getElementById("password").value;
+        username=username.trim();
+        password=password.trim();
+        if (password=="" || username==""){
+            document.getElementById("errorMessage").style.display="block";
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+        
+    }
+	 function onfocusbg(element)
+    {
+			element.style.color = "Black";
+	}
+    function onfocusbg(element) {
+        element.style.color = "Black";
+    }
+    function onchangebg(element) {
+        
+        var x = document.getElementById("username").value;
+        if (x.length == 0) {
+            
+            element.style.color = "#CCCCCC";
+        }
+        else {
+            
+            element.style.color = "Black";
+        }
+
+    }
+    function onfocusbg1(element) {
+        element.style.color = "Black";
+    }
+    function onchangebg1(element) {
+
+        var x = document.getElementById("password").value;
+        if (x.length == 0) {
+            element.style.color = "#CCCCCC";
+        }
+        else {
+            element.style.color = "Black";
+        }
+
+    }
+</script>
+
+<head>
+    <title>myCapture Affiliate Admin</title>
+    <link rel="stylesheet" type="text/css" href="/includes/UpickemFrontEngine.css?v=21" />
+    <link rel="stylesheet" type="text/css" href="/includes/UpickemFrontEngineDeals.css?v=21" />
+    <link rel="stylesheet" type="text/css" href="/includes/UpickemFrontEngineAdmin.css?v=21" />
+    <link rel="stylesheet" type="text/css" href="/includes/SkinLight.css?v=21" />
+    <link rel="stylesheet" type="text/css" href="/includes/backend-redesign.css?v=21" />
+    <link rel="stylesheet" type="text/css" href="/includes/NavMenu.css"/>
+    <meta name="robots" content="none">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="Expires" CONTENT="-1" />
+</head>
+<body class="UPE-Body UPE-SubmissionEngine">
+<center>
+<div id="UPE-PageContent">
+<table border="0" cellpadding="0" cellspacing="0" >
+<tbody>
+<tr>
+<td class="UPE-ApplicationTableCellBottom" style="border: 0px none #fff;">
+<table cellpadding="0" cellspacing="0" border="0" >
+<tbody>    
+<tr>
+<td>
+<table cellspacing="0" border="0" >
+<tbody>
+<tr>
+<td class="UPE-ApplicationTableCellBoth UPE-CurveAll5px">
+<table cellpadding="0" cellspacing="0" border="0" >
+<tbody>
+<tr>
+<td class="UPE-Space3" colspan="3">&nbsp;</td>
+</tr>
+<tr>
+<td id="UPE-ContentRightColumn1" bgcolor="white">
+<!-- include main content -->
+
+<div class="mydiv">
+    <table width="100%">
+        <tr>
+            <td>
+<table border="0" cellspacing="0" cellpadding="3" bgcolor="white" align="center">
+    <tr style=" width:40%">
+        <td >
+        </td>
+    </tr>
+	<tr>
+        <td align="center">
+            <img src="images/mc-overview.png" border="0" style="margin-top:40; text-align:center;"/>
+        </td>
+    </tr>
+    <tr>
+		<td align="center">
+
+<!-- Content Area Begins -->			
+
+<table border="0" class="body" cellspacing="0" cellpadding="5">
+<tr><td><p align="center" id="errorMessage" style="display:none">Sorry.  Wrong username or password.</p><td></tr>
+<form name="frmLogin" action="login.asp" method="post">
+<tr>
+<td><input  style="width:220px !important; font-size: large; font-family: Arial, Helvetica, sans-serif; color: #CCCCCC; font-weight: bold;" 
+        name="username" id="username" value="Username" onfocus="onfocusbg(this)" onblur="onchangebg(this)"  onkeypress="onfocusbg(this)"></td>
+</tr>
+<tr>
+<td><input type="password" style="width:220px !important; font-family: Arial, Helvetica, sans-serif; font-size: large;font-weight: bold; color: #CCCCCC;"  
+        value=""  id="password" name="password" autocomplete="off" onfocus="onfocusbg1(this)" onselect="onchangebg1(this)" onblur="onchangebg1(this)"></td>
+</tr>
+<tr>
+<td><input type="submit" id="login" 
+        style="width:100%; font-weight: bold; font-size: large;" 
+        class="UPE-StandoutButtonText" value="login" onclick="return validateLogin();"></td>
+</tr>
+<input type="hidden" name="theprocess" value="1">
+</form>
+</table>
+<br/>
+<table>
+<tr>
+<td colspan="2" align="center">
+    <a href="http://photographers.mycapture.com/index.asp" 
+        style="font-weight: bold">Login as a Photographer</a></td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+    <a href="http://chains.mycapture.com/chainlogin.asp" 
+        style="font-weight: bold">Login as a Chain</a></td>
+</tr>
+
+<tr><td></td></tr>
+</table>
+
+<!-- Content Area Ends -->	
+
+		</td>
+	</tr>
+</table>
+</td></tr></table></div>
+
+
+</td>
+</tr>
+</tbody>
+</table>
+<div id="UPE-Copyright" class="UPE-CopyrightText">
+    <span>&copy;&nbsp;<span>myCapture, Inc.</span>. All rights reserved.  <a href="/termsofuseagreement.asp"><span style="font-size: smaller;">Terms of Use</span></a></span>
+</div>
+
+<!-- GOOGLE ANALYTICS -->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+    var pageTracker = _gat._getTracker("UA-5482986-7");
+    pageTracker._trackPageview();
+    pageTracker._setVar("");
+}
+catch(err) {}
+</script>  
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+</body>
+</html>

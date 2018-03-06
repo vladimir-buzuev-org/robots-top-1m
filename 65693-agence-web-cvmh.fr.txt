@@ -1,0 +1,24 @@
+# Pour tous les robots :
+User-agent: *
+# On interdit le crawl des URLs avec paramètres
+Disallow: /*?
+# on interdit le crawl de la page de connexion (contenu inutile)
+Disallow: /wp-login.php
+
+# On bloque les URLs de ping et de trackback
+Disallow: */trackback
+# On bloque tous les flux RSS sauf le principal (enlever /* pour bloquer tous les flux)
+Disallow: /*/feed
+# On bloque toutes les URLs de commentaire (flux RSS de commentaires inclus)
+Disallow: /*/comments
+
+# On élimine ce répertoire sensible présent sur certains serveurs
+Disallow: /cgi-bin
+# On interdit le crawl de tous les fichiers qui n'ont pas lieu de l'être
+Disallow: /*.php$
+Disallow: /*.inc$
+Disallow: /*.gz$
+Disallow: /*.cgi$
+# On s'assure que Google peut quand même lire tous les fichiers CSS et JS, notamment pour la compatibilité mobile
+Allow: /*css?*
+Allow: /*js?*

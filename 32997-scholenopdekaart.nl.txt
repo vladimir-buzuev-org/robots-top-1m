@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Vind en vergelijk scholen bij jou in de buurt</title>
+    <meta name="title" content="Vind en vergelijk scholen bij jou in de buurt">
+    <meta name="description" content="Zoek je een school bij jou in de buurt? Vind hier informatie om een geschikte school te kiezen.">
+
+
+    <link rel="image_src" type="image/jpeg" href="https://www.scholenopdekaart.nl/images/share_scholenopdekaart.jpg" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCCx-5mui4BB2m_Dcc1y7TpoJPJ0eYiaYo&language=nl"></script>
+    <script src="/static/js/vendor/modernizr-2.6.2.js"></script>
+    <script src="/static/js/vendor/jquery-2.2.2.min.js"></script>
+    <script src="/static/js/vendor/underscore.js"></script>
+    
+
+    <script src="/static/js/app/preload/iframe.refactor.js"></script>
+    <script type="text/javascript"> var searchItem = null</script>
+    
+    
+    <!--[if lte IE 8]>
+        <script src="~/static/js/vendor/json2.js"></script>
+    <![endif]-->
+    <link href="/static/css/vendor/bundle?v=OWibIy_TIoCdbbfF3LkQqY0g92SHNkRJAfKdzKJQkxo1" rel="stylesheet"/>
+
+    <link href="/static/css/app/bundle?v=" rel="stylesheet"/>
+
+    <link href="/static/css/app/less/bundle?v=Yqcx_TiPw3XRlNkVgCG5zZz5uroEyfOdpgd0U05EYuA1" rel="stylesheet"/>
+
+
+</head>
+<body class="home index po">
+        <div class="alert-site alert-site-cookie" style="display: none">
+    <div class="row">
+        <div class="col-xs-12 col-sm-9">
+            Om deze site goed te laten werken gebruiken we cookies. Bekijk <a class="contentlink" href="/privacyverklaring-en-cookiegebruik">privacyverklaring en cookiegebruik</a>.
+        </div>
+        <div class="col-xs-5 col-sm-3">
+            <a href="#" class="btn btn-default btn-cookie-toestaan message-site-close">Ik begrijp het</a>
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+
+        <script src="/static/js/vendor/jquery.cookie.js"></script>
+
+<div id="preview" style="display: none;" class="alert-site alert-site-preview" >
+    <div class="row">
+        <div class="col-xs-9">
+            Preview van <span id="PreviewSchoolNaam"></span>.
+        </div>
+        <div class="col-xs-3">
+            <a href="/PreviewSluiten" class="btn pull-right ">Preview sluiten</a>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    if ($.cookie("preview")) {
+        $('#preview').show();
+        $('#PreviewSchoolNaam').html($.cookie("preview"));
+    }
+
+</script>
+
+
+
+
+        <div id="wrapper">
+            
+<header>
+    <h1>
+        <a href="/" >Scholenopdekaart</a>
+    </h1>
+</header>
+
+            
+    <div id="header-bottom">
+        <h1>
+            Vind en vergelijk scholen bij jou in de buurt
+        </h1>
+        <section class="box">
+        <div class="row" style="padding-bottom: 0; padding-top:0">
+            <div class="col-xs-12">
+                <h2 class="keuze_type_school">
+                    <span>
+                        Ik zoek een
+                    </span>
+                    <span>
+                        <input id="basisschool_select" type="radio" name="type_onderwijs" value="0" data-bind="checked: sector" />
+                        <label for="basisschool_select"><i class="fa fa-circle-o"></i><i class="fa fa-dot-circle-o"></i> basisschool</label>
+                    </span>
+                    <span>
+                        <input id="middelbare_school_select" type="radio" name="type_onderwijs" value="1" data-bind="checked: sector" />
+                        <label for="middelbare_school_select"><i class="fa fa-circle-o"></i><i class="fa fa-dot-circle-o"></i> middelbare school</label>
+                    </span>
+                </h2>
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-9 zoekveldCell">
+            <div id="searchboxWrapper">
+                <input id="searchbox" placeholder="" data-bind="event:{ keyup: intellisense }, attr: { placeholder: placeholderText }" type="text" class="form-control" />
+            </div>
+            <a class="btn btn-zoeken" data-bind="click: zoeken"><i class="fa fa-search zoeken"></i> <span class="hidden-xxs">Zoek</span></a>
+            
+
+
+    <ul id="intellisense" class="dropdown-menu" role="menu" aria-labelledby="dLabel" data-bind="visible:schoolSearchItems().length>0 || plaatsSearchItems().length>0" style="display: none">
+        <li data-bind="visible:plaatsSearchItems().length>0" class="title" style="display: none;">Scholen in</li>
+        <!-- ko foreach: plaatsSearchItems -->
+        <li>
+            <a href="#" class="item item-woonplaats" data-bind="css: {active: $.inArray($data,$parent.plaatsSearchItems()) === 0 || Naam.toLowerCase() === $('#searchbox').val().toLowerCase() }, click:$root.selectItem">
+                <span class="item-naam" data-bind="text: Naam"></span>
+            </a>
+        </li>
+        <!-- /ko -->
+        <li data-bind="visible:schoolSearchItems().length>0" class="title">Scholen</li>
+        <!-- ko foreach: schoolSearchItems -->
+        <li>
+            <a href="#" class="item item-school" data-bind="css:{active: $parent.plaatsSearchItems().length === 0 && $.inArray($data,$parent.schoolSearchItems()) === 0 },click:$root.selectItem">
+                <span class="item-naam" data-bind="text: Naam"></span> (<span data-bind="text: Subnaam"></span>)
+            </a>
+        </li>
+        <!-- /ko -->
+    </ul>
+
+        </div>
+        <div class="col-xs-12 col-sm-3 locatieCell">
+            <a class="btn" data-bind="if:Modernizr.geolocation,click:getLocation">
+                <i class="fa fa-map-marker"></i>
+                <span class="hidden-sm hidden-md">Gebruik mijn locatie</span>
+                <span class="hidden-xs hidden-lg">Mijn locatie</span>
+                
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+    </div>
+
+            <div class="container container-content">
+                
+
+
+                
+<div class="row">
+    <section class="intro col-12-xs">
+        <h2>
+            Wat biedt Scholen op de kaart?
+        </h2>
+        Op deze site vind je veelzijdige informatie over <a href="/basisscholen">basisscholen</a> en <a href="/middelbare-scholen">middelbare scholen</a> en kan je scholen vergelijken. Of je nou op het punt staat om een goede en geschikte school te kiezen, of als professional benieuwd bent hoe het staat met de kwaliteit van de scholen in je omgeving, voor iedereen biedt deze site interessante informatie over onderwijs en resultaten.
+        <h2>Het meest complete beeld van scholen in jouw buurt</h2>
+        <p>
+            Op Scholen op de kaart presenteren scholen zichzelf. Dit doen ze door toelichtingen te schrijven bij betrouwbare gegevens afkomstig van erkende partijen als DUO en de Inspectie van het Onderwijs, én door zelf unieke informatie toe te voegen. Bijvoorbeeld over wat de school uniek maakt en wat leerlingen en ouders van de school vinden.
+        </p>
+        <p>
+            Scholen op de kaart wordt ontwikkeld door de <a href="http://www.poraad.nl" target="_blank" rel="nofollow">PO-Raad</a> en <a href="http://www.voraad.nl" target="_blank" rel="nofollow">VO-raad</a> in samenwerking met <a href="http://www.kennisnet.nl" target="_blank" rel="nofollow">Kennisnet</a>.
+        </p>
+    </section>
+</div>
+
+
+                <div class="btn btn-xs btn-default js-scroll-to-top btn-scroll-to-top hidden-md hidden-lg" style="display: none; position: fixed; bottom: 0;">
+                    <i class="fa fa-angle-up"></i> Naar boven
+                </div>
+            </div>
+            <footer id="footer">
+    <div class="container container-footer">
+        <div class="row" id="vo-sector-teaser" style="display: none">
+    <div class="col-xs-12 ">
+        Meer weten over de VO sector als geheel? <a href="/middelbare-scholen">Bekijk informatie over alle <strong>middelbare scholen</strong> in Nederland.</a>
+    </div>
+</div>
+
+        <div class="row" id="highcharts-credits" style="display: none">
+    <div class="col-xs-12 ">
+        De grafieken op deze website zijn gemaakt met <a href="http://www.highcharts.com" target="_blank">Highcharts</a>.
+    </div>
+</div>
+
+        <div class="row">
+            <ul class="col-xs-12 col-sm-4 po-item">
+    <li class="footerheader">Zoek een school in...</li>
+    <li><a href="/Basisscholen/Amsterdam">Amsterdam</a></li>
+    <li><a href="/Basisscholen/Rotterdam">Rotterdam</a></li>
+    <li><a href="/Basisscholen/Den-haag">Den Haag</a></li>
+    <li><a href="/Basisscholen/Utrecht">Utrecht</a></li>
+    <li><a href="/Basisscholen/Almere">Almere</a></li>
+    <li><a href="/Basisscholen/Eindhoven">Eindhoven</a></li>
+    <li><a href="/Basisscholen/Tilburg">Tilburg</a></li>
+    <li><a href="/Basisscholen/Amersfoort">Amersfoort</a></li>
+    <li><a href="/Basisscholen/Enschede">Enschede</a></li>
+    <li><a href="/Basisscholen/Haarlem">Haarlem</a></li>
+</ul>
+<ul class="col-xs-12 col-sm-4 vo-item">
+    <li class="footerheader">Zoek een school in...</li>
+    <li><a href="/Middelbare-Scholen/Amsterdam">Amsterdam</a></li>
+    <li><a href="/Middelbare-Scholen/Rotterdam">Rotterdam</a></li>
+    <li><a href="/Middelbare-Scholen/Den-haag">Den Haag</a></li>
+    <li><a href="/Middelbare-Scholen/Eindhoven">Eindhoven</a></li>
+    <li><a href="/Middelbare-Scholen/Utrecht">Utrecht</a></li>
+    <li><a href="/Middelbare-Scholen/Amersfoort">Amersfoort</a></li>
+    <li><a href="/Middelbare-Scholen/Nijmegen">Nijmegen</a></li>
+    <li><a href="/Middelbare-Scholen/Almere">Almere</a></li>
+    <li><a href="/Middelbare-Scholen/Groningen">Groningen</a></li>
+    <li><a href="/Middelbare-Scholen/Zwolle">Zwolle</a></li>
+</ul>
+<ul class="col-xs-12 col-sm-4 nosector-item">
+</ul>
+            <div class="col-xs-12  col-sm-4">
+                <ul>
+                    <li class="footerheader">Over het programma</li>
+                    <li>
+                        <a href="/website-in-ontwikkeling" rel="nofollow">Website in ontwikkeling</a>
+                    </li>
+                </ul>
+                <ul class="vo-item">
+                    <li class="footerheader">Opdrachtgever</li>
+                    <li class="vo-item"><a href="http://www.vo-raad.nl/" target="_blank" rel="nofollow">VO-raad</a></li>
+                </ul>
+                <ul class="po-item">
+                    <li class="footerheader">Opdrachtgever</li>
+                    <li class="po-item"><a href="http://www.poraad.nl/" target="_blank" rel="nofollow">PO-Raad</a></li>
+                </ul>
+                <ul>
+                    <li class="footerheader">Uitvoerder</li>
+                    <li><a href="http://www.kennisnet.nl/" target="_blank">Kennisnet</a></li>
+                </ul>
+            </div>
+            <ul class="col-xs-12 col-sm-4">
+                <li class="footerheader">Contact en Disclaimer</li>
+                <li><a href="/Contact">Contact</a></li>
+                <li><a href="/Disclaimer" rel="nofollow">Disclaimer en gebruikersvoorwaarden</a></li>
+                <li><a href="/Privacyverklaring-en-cookiegebruik" rel="nofollow">Privacyverklaring en cookiegebruik</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+        </div>
+
+        
+        <script src="/static/js/vendor/bundle?v=URi6cD0_R45z-dPv-_UAL8JWnx-foEnxohOu6G_JR1c1"></script>
+
+        <script src="/static/js/app/bundle?v=kxucYaix2P8OV3orR_1WMp54texCGzz9OYJyzRSXGls1"></script>
+
+        <script src="/static/js/app/utility/bundle?v=xUgTcZ3ALQZ7HsYxU5FKKaQZhiG0H-vdPf5Z38rwFjY1"></script>
+
+        <script src="/static/js/app/kaart/bundle?v=BcxQYryqLbn4SYv2HUGiDKHcUSna-XvaEvEVupYAoQg1"></script>
+
+        <script src="/static/js/app/zoeken/bundle?v=8kYaUXXAqXYUnzZR4DN0e80ookn-VMrgMUormyjRbdI1"></script>
+
+        <script src="/static/js/app/highcharts/bundle?v=C5rEVDl5DTUNzIV3NjorBf0VaEZ764rz_1zhUfMnFHc1"></script>
+
+        <script src="/static/js/app/vergelijk/bundle?v=YhPqGRS8ziNDH-yj7d7WB9qEcZQc4ftIK4QfjBFjemE1"></script>
+
+        
+    <script src="/Static/js/app/start/start.js"></script>
+    <script>
+        $("#vo-sector-teaser").show();
+    </script>
+
+
+
+        
+
+
+
+
+        
+
+
+
+
+    
+</body>
+</html>

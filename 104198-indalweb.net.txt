@@ -1,0 +1,810 @@
+
+<!DOCTYPE HTML>
+<html lang="es">
+<head id="Cabecera_Pagina"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+	Indalweb - Diseño de páginas web, aplicaciones móviles, LOPD
+</title><meta id="descripcion_pagina" name="description" content="Diseño de paginas web en almeria, el ejido y murcia, aplicaciones móviles, campañas de publicidad, protección de datos, registro de dominios, tiendas virtuales." /><meta id="palabras_clave_pagina" name="keywords" content="paginas web, diseño web, diseño web almeria, diseño web el ejido, diseño web murcia, registro de dominios, alojamiento web, hospedaje web, desarrollo web, aplicaciones on-line, tiendas virtuales, tiendas on-line, comercio electronico, proteccion de datos, almeria, el ejido, roquetas, vicar, adra, murcia" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="format-detection" content="telephone=no" />
+
+    <!-- Web Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Desabilitar tap highlight -->
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <!-- Insertar en el homescreen en Chrome en Android -->
+    <meta name="mobile-web-app-capable" content="yes" /><meta name="application-name" content="Indalweb" /><link rel="icon" sizes="192x192" href="/imagenes/chrome-icono-web-192x192.png" />
+
+    <!-- Insertar en el homescreen en iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-mobile-web-app-status-bar-style" content="black" /><meta name="apple-mobile-web-app-title" content="Indalweb" /><link rel="apple-touch-icon" href="/imagenes/apple-icono-web.png" />
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/imagenes/ms-icono-144x144.png" /><meta name="msapplication-TileColor" content="#0057A6" />
+
+
+    <!-- estilos para la barra de navegación en dispositivos móviles -->
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#0057A6" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#0057A6" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0057A6" /><link rel="shortcut icon" href="/favicon.png" />
+
+    <!-- css necesario de primeras -->
+    <link rel="stylesheet" type="text/css" href="/App_Themes/min/bootstrap.min.css" /><link rel="stylesheet" type="text/css" href="/App_Themes/min/estilo.min.css?estilo=0" media="screen" />
+
+    <!-- codigo experimental js -->
+    <script type="text/javascript">
+        var dfLoadStatus = 0;
+        var dfLoadFiles = [
+              ["/js/min/jquery-1.12.3.min.js"],
+              ["/js/min/materialize.min.js",
+                  "/js/min/bootstrap.min.js",
+                  "/js/min/swiper.jquery.min.js",
+                  "/js/min/slidebars.min.js",
+                  "/js/min/tabs.min.js",
+                  "/js/min/jquery.cookie.min.js",
+                  "/js/min/jquery.cookiecuttr.min.js",
+                  "/js/min/funciones.min.js"]
+             ];
+        function downloadJSAtOnload() {
+            if (!dfLoadFiles.length) return;
+
+            var dfGroup = dfLoadFiles.shift();
+            dfLoadStatus = 0;
+
+            for(var i = 0; i<dfGroup.length; i++) {
+                dfLoadStatus++;
+                var element = document.createElement('script');
+                element.src = dfGroup[i];
+                element.onload = element.onreadystatechange = function() {
+                if ( ! this.readyState ||
+                       this.readyState == 'complete') {
+                    dfLoadStatus--;
+                    if (dfLoadStatus==0) downloadJSAtOnload();
+                }
+            };
+            document.body.appendChild(element);
+          }
+        }
+        if (window.addEventListener)
+            window.addEventListener("load", downloadJSAtOnload, false);
+        else if (window.attachEvent)
+            window.attachEvent("onload", downloadJSAtOnload);
+        else window.onload = downloadJSAtOnload;
+    </script>
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="100" onscroll="scroll()">
+
+<!-- PAGINA PRINCIPAL -->
+
+    <div id="sb-site">
+        <!--MENU MOVIL QUE SE QUEDA SIEMPRE ARRIBA-->
+        <div class="menu_movil visible-xs">
+            <nav id="menu_movil" class="navbar navbar-fixed-top sb-slide visible-xs">
+                <div class="container visible-xs">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <!-- boton menu en movil -->
+                            <div class="col-xs-12 no_padding">
+                                <div id="b_slider" class="boton_desplegar_menu no_padding text-left">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 no_padding text-center">
+                            <a href="/es/" title="IndalWeb Internet Diseño de páginas Web"><img src="/imagenes/logo-movil.jpg" alt="IndalWeb Internet Diseño de páginas Web"/></a>
+                        </div>
+                        <div class="col-xs-4 contactar_movil">
+                            <span class="cont_email_movil"></span>
+                            <span class="cont_phone_movil"></span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <header class="hidden-xs">
+            <!-- MENU ESCRITORIO TABLET -->
+            <div class="menu_escritorio hidden-xs" data-spy="affix" data-offset-top="20">
+                <div class="container-fluid menu_superior">
+                    <div class="container">
+                        <nav class="row">
+                            <div class="col-xs-offset-4 col-xs-4 menu_superior_centro hidden-sm">
+                                <h1><a href="/es/" title="Indalweb - Diseño de páginas web, aplicaciones móviles, LOPD"><img src="/imagenes/logo-superior.png" alt="Indalweb - Diseño de páginas web, aplicaciones móviles, LOPD" /></a></h1>
+                            </div>
+                            <span class="clearfix"></span>
+                            <div class="col-sm-2 logo_indalweb visible-sm">
+                                <a href="/es/" title="Indalweb - Diseño de páginas web, aplicaciones móviles, LOPD"><img src="/imagenes/logo-indalweb.jpg" alt="Indalweb - Diseño de páginas web, aplicaciones móviles, LOPD"/></a>
+                            </div>
+                            <div class="col-sm-7 col-md-6 menu_superior_izquierda">
+                                <a class="mn-elegirnos" href="/es/por-que-elegirnos.aspx" title="Por qué elegirnos"><i class="fa fa-question"></i> Por qué elegirnos</a>
+                                <a class="mn-noticias" href="/es/noticias.aspx" title="Noticias"><i class="fa fa-commenting"></i> Noticias</a>
+                                <a class="mn-contacto" href="/es/contacto.aspx" title="Contacto"><i class="fa fa-envelope"></i> Contacto</a>
+                                <a class="mn-localizacion" href="/es/localizacion.aspx" title="Localización"><i class="fa fa-map-marker"></i> Localización</a>
+                            </div>
+                            <div class="col-xs-6 menu_superior_derecha hidden-sm">
+                                <span class="cont_email"></span>
+                                <span class="cont_phone"></span>
+                            </div>
+                            <div class="col-xs-3 menu_superior_derecha visible-sm">
+                                <span class="cont_email_movil"></span>
+                                <span class="cont_phone_movil"></span>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="container-fluid menu_inferior">
+                    <div class="container">
+                        <nav class="row">
+                            <!-- BARRA MENU INFERIOR ESCRITORIO -->
+                            <div class="col-sm-6 col-md-5 hidden-sm menu_inferior_izquierda">
+                                <a class="mn-web borde_derecha" href="/es/diseno-de-paginas-web.aspx" title="PÁGINAS WEB">PÁGINAS WEB</a>
+                                <a class="mn-apps" href="/es/aplicaciones-moviles-apps.aspx" title="APLICACIONES MÓVILES">APLICACIONES MÓVILES</a>
+                            </div>
+                            <div class="col-sm-6 col-sm-offset-0 col-md-5 col-md-offset-2 hidden-sm menu_inferior_derecha">
+                                <a class="mn-publicidad borde_derecha" href="/es/publicidad-en-internet-y-gestion-de-redes-sociales.aspx" title="PUBLICIDAD EN INTERNET">PUBLICIDAD EN INTERNET</a>
+                                <a class="mn-proteccion" href="/es/ley-de-proteccion-de-datos.aspx" title="PROTECCIÓN DE DATOS">PROTECCIÓN DE DATOS</a>
+                            </div>
+                            <!-- BARRA MENU INFERIOR TABLET -->
+                            <div class="col-sm-12 visible-sm menu_inferior_tablet">
+                                <a class="mn-web borde_derecha" href="/es/diseno-de-paginas-web.aspx" title="PÁGINAS WEB">PÁGINAS WEB</a>
+                                <a class="mn-apps borde_derecha" href="/es/aplicaciones-moviles-apps.aspx" title="APLICACIONES MÓVILES">APLICACIONES MÓVILES</a>
+                                <a class="mn-publicidad borde_derecha" href="/es/publicidad-en-internet-y-gestion-de-redes-sociales.aspx" title="PUBLICIDAD EN INTERNET">PUBLICIDAD EN INTERNET</a>
+                                <a class="mn-proteccion" href="/es/ley-de-proteccion-de-datos.aspx" title="PROTECCIÓN DE DATOS">PROTECCIÓN DE DATOS</a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 padding_10 padding_bottom_0">
+
+                <div id="filtro">
+                    <video id="video-portada" width="1280" poster="/video/video-portada.jpg" loop="" autoplay="">
+                        <source type="video/mp4" src="/video/video-portada.mp4"/>
+                        <source type="video/webm" src="/video/video-portada.webm"/>
+                        <source type="video/ogv" src="/video/video-portada.ogv"/>
+                        <source type="image/jpg" src="/video/video-portada.jpg"/>
+                    </video>
+                </div>
+
+                <div class="container contenido_index">
+                    <div class="row">
+
+                        <div class="col-xs-12 contenido_cabecera_index">
+                            <div class="servicios_index">
+                                <span>Horario de verano, del 19 de junio al 15 de septiembre de 8:00 - 15:00</span>
+
+                                <!--<span>Horario de lunes a viernes de 8:00 - 14:00 y de 16:00 - 18:00</span>-->
+
+                                <br class="hidden-xs hidden-sm" />
+                                <br class="hidden-xs" />
+                                <br />
+                                <a title="Soporte en Windows 1" href="/TeamViewerQS-es-idc6q55frz.exe" class="btn btn_servicios b_ser_win" rel="nofollow">Servicio Técnico 1 <i class="fa fa-windows"></i></a>
+                                <a title="Soporte en Windows" href="/anydesk.exe" class="btn btn_servicios b_ser_win"  rel="nofollow">Servicio Técnico 2 <i class="fa fa-windows"></i></a>
+                                <a title="Soporte en MAC" href="/soporte-indalweb.zip" class="btn btn_servicios" id="b_ser_mac" style="display: none;"  rel="nofollow">Servicio Técnico MAC <i class="fa fa-apple"></i></a>
+                                <a title="Área de clientes" target="_blank" href="https://extranet.indalweb.net/" class="btn btn_servicios" rel="nofollow">Área Clientes <i class="fa fa-user"></i></a>
+
+                            </div>
+
+
+                            <!-- Swiper -->
+                            <div class="swiper-container swiper-noticias-cabecera hidden-xs visible-sm visible-md visible-lg">
+                                <div class="swiper-wrapper">
+
+                                    <!-- SWIPER CABECERA -->
+
+                                    <!-- horario de verano -->
+                                    <article class="swiper-slide">
+                                        <div class="col-xs-6 imagen_redonda hidden-xs">
+                                            <img src="/imagenes/inicio/verano.jpg" alt="Horario de verano" title="Horario de verano"/>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 contenido_cabecera no_padding">
+                                            <h2>Desde ahora, trabajamos según nuestro <strong>Horario de verano</strong></h2>
+                                            <a href="https://www.indalweb.net/noticia-141/horario-de-verano-2017.aspx" title="Horario de verano">Del 19 de junio al 15 de septiembre:<br />de <strong>8:00</strong> a <strong>15:00</strong></a>
+                                        </div>
+                                    </article>
+                                    
+                                    <article class="swiper-slide">
+                                        <div class="col-xs-6 imagen_redonda hidden-xs">
+                                            <img src="/imagenes/inicio/paginasweb.jpg" alt="Un diseño de página web adaptativo, preparado para ordenadores, tablets y móviles" title="Un diseño de página web adaptativo, preparado para ordenadores, tablets y móviles"/>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 contenido_cabecera no_padding">
+                                            <h2>Un diseño de <strong>página web</strong> adaptativo, preparado para ordenadores, tablets y móviles</h2>
+                                            <a href="/es/diseno-de-paginas-web.aspx" title="Conoce nuestras páginas web">[+] Conoce nuestras páginas web</a>
+                                        </div>
+                                    </article>
+                                    <article class="swiper-slide">
+                                        <div class="col-xs-6 imagen_redonda hidden-xs">
+                                            <img src="/imagenes/inicio/apps.jpg" alt="Aplicaciones móviles (Apps) para Android, IPhone y Windows Phone" title="Aplicaciones móviles (Apps) para Android, IPhone y Windows Phone"/>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 contenido_cabecera no_padding">
+                                            <h2><strong>Aplicaciones móviles (Apps)</strong> para Android, IPhone y Windows Phone</h2>
+                                            <a href="/es/aplicaciones-moviles-apps.aspx" title="Prueba nuestras Apps">[+] Prueba nuestras Apps</a>
+                                        </div>
+                                    </article>
+                                    <article class="swiper-slide">
+                                        <div class="col-xs-6 imagen_redonda hidden-xs">
+                                            <img src="/imagenes/inicio/soporte.jpg" alt="Nuestro soporte técnico nos diferencia del resto." title="Nuestro soporte técnico nos diferencia del resto."/>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 contenido_cabecera no_padding">
+                                            <h2>Nuestro <strong>soporte técnico</strong> nos diferencia del resto.</h2>
+                                        </div>
+                                    </article>
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 visible-xs hidden-sm hidden-md hidden-lg col-sm-6 contenido_cabecera no_padding">
+                                <h2>Diseño de <strong>página web</strong> adaptativas, <strong>Aplicaciones móviles (Apps)</strong> multiplataforma y un <strong>soporte técnico</strong> nos diferencia del resto.</h2>
+                                <a href="/es/diseno-de-paginas-web.aspx" title="Conoce nuestras páginas web">[+] Conoce nuestras páginas web</a>
+                            </div>
+
+                            <article class="col-xs-12 no_padding tarjetas_de_servicios">
+
+                                <div class="col-xs-6 col-sm-3 col-md-3 padding_5 tarjeta">
+                                    <a class="tarjeta webs" title="Páginas Web" href="/es/diseno-de-paginas-web.aspx">
+                                        <div class="tarjeta_servicios">
+                                            <div class="icono">
+                                                <img src="/imagenes/tarjetas/webs.svg" alt="Páginas web adaptativas y optimizadas"/>
+                                            </div>
+                                            <h3>Diseño de Páginas Web</h3>
+                                            <p class="hidden-xs">Páginas web adaptativas y optimizadas</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 col-md-3 padding_5 tarjeta">
+                                    <a class="tarjeta apps" title="Aplicaciones Móviles" href="/es/aplicaciones-moviles-apps.aspx">
+                                        <div class="tarjeta_servicios">
+                                            <div class="icono">
+                                                <img src="/imagenes/tarjetas/apps.svg" alt="Aplicaciones móviles Android, IOS y Windows Phone"/>
+                                            </div>
+                                            <h3>Aplicaciones Móviles (apps)</h3>
+                                            <p class="hidden-xs">Aplicaciones móviles Android, IOS y Windows Phone</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 col-md-3 padding_5 tarjeta">
+                                    <a class="tarjeta webm" title="Publicidad y redes sociales" href="/es/publicidad-en-internet-y-gestion-de-redes-sociales.aspx">
+                                        <div class="tarjeta_servicios">
+                                            <div class="icono">
+                                                <img src="/imagenes/tarjetas/webm.svg" alt="Campañas de publicidad on-line y redes sociales"/>
+                                            </div>
+                                            <h3>Publicidad en Internet y gestión de Redes Sociales</h3>
+                                            <p class="hidden-xs">Campañas de publicidad on-line y redes sociales</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 col-md-3 padding_5 tarjeta">
+                                    <a class="tarjeta lopd" title="Protección de datos" href="/es/ley-de-proteccion-de-datos.aspx">
+                                        <div class="tarjeta_servicios">
+                                            <div class="icono">
+                                                <img src="/imagenes/tarjetas/lopd.svg" alt="Información y puesta en marcha de la LOPD en su empresa"/>
+                                            </div>
+                                            <h3>Ley de Protección de Datos</h3>
+                                            <p class="hidden-xs">Información y puesta en marcha de la LOPD en su empresa</p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </article>
+
+                            <div class="col-xs-12 col-md-5">
+                                <div id="webmail">
+                        <!-- ACCESO USUARIOS -->
+                                    <h3>ACCESO CORREO</h3>
+                                    <h4>Acceso para nuestros clientes al correo electrónico</h4>
+                                    <form method="post" action="/es/index.aspx" id="ctl00">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE1MjAwNTI3MTEPZBYCZg9kFgQCAQ9kFgQCAg8WAh4HY29udGVudAWkAURpc2XDsW8gZGUgcGFnaW5hcyB3ZWIgZW4gYWxtZXJpYSwgZWwgZWppZG8geSBtdXJjaWEsIGFwbGljYWNpb25lcyBtw7N2aWxlcywgY2FtcGHDsWFzIGRlIHB1YmxpY2lkYWQsIHByb3RlY2Npw7NuIGRlIGRhdG9zLCByZWdpc3RybyBkZSBkb21pbmlvcywgdGllbmRhcyB2aXJ0dWFsZXMuZAIDDxYCHwAFtAJwYWdpbmFzIHdlYiwgZGlzZcOxbyB3ZWIsIGRpc2XDsW8gd2ViIGFsbWVyaWEsIGRpc2XDsW8gd2ViIGVsIGVqaWRvLCBkaXNlw7FvIHdlYiBtdXJjaWEsIHJlZ2lzdHJvIGRlIGRvbWluaW9zLCBhbG9qYW1pZW50byB3ZWIsIGhvc3BlZGFqZSB3ZWIsIGRlc2Fycm9sbG8gd2ViLCBhcGxpY2FjaW9uZXMgb24tbGluZSwgdGllbmRhcyB2aXJ0dWFsZXMsIHRpZW5kYXMgb24tbGluZSwgY29tZXJjaW8gZWxlY3Ryb25pY28sIHByb3RlY2Npb24gZGUgZGF0b3MsIGFsbWVyaWEsIGVsIGVqaWRvLCByb3F1ZXRhcywgdmljYXIsIGFkcmEsIG11cmNpYWQCAw9kFgQCAw8WAh4LXyFJdGVtQ291bnQCAxYGZg9kFgJmDxUIAzE0NChlc3R1dmltb3MtZW4tZWwtdi10b3JuZW8tZGUtZ29sZi1vYy5hc3B4I0VzdHV2aW1vcyBlbiBlbCBWIFRvcm5lbyBkZSBHb2xmIE9DE2ZvdG9ub3RpY2lhLTE0NC5qcGcKMjAxNy0wOC0wMRQwMSBkZSBhZ29zdG8gZGUgMjAxNyNFc3R1dmltb3MgZW4gZWwgViBUb3JuZW8gZGUgR29sZiBPQ3pUdXZpbW9zIGVsIHBsYWNlciBkZSBhc2lzdGlyIGEgbGEgZW50cmVnYSBkZSBwcmVtaW9zIGRlbCBWIFRvcm5lbyBkZSBHb2xmIE9DLCBxdWUgdHV2byBsdWdhciBlbiBlbCBIb3RlbCBHb2xmIEFsbWVyaW1hci4NCmQCAQ9kFgJmDxUIAzE0MyZlc3R1dmltb3MtZW4taG90bWFydC1zdGFydC1tYWRyaWQuYXNweCFFc3R1dmltb3MgZW4gSE9UTUFSVCBTVEFSVCBNQURSSUQTZm90b25vdGljaWEtMTQzLmpwZwoyMDE3LTA3LTE0EzE0IGRlIGp1bGlvIGRlIDIwMTchRXN0dXZpbW9zIGVuIEhPVE1BUlQgU1RBUlQgTUFEUklEzQFFbCBwYXNhZG8gbWVzIGRlIGp1bmlvIHR1dm8gbHVnYXIgdW4gZXZlbnRvIMO6bmljbyBlbiBFc3Bhw7FhLCBxdWUgY29uc2lndWnDsyByZXVuaXIgYSBncmFuIHBhcnRlIGRlIGxvcyBleHBlcnRvcyBkZWwgbWFya2V0aW5nIGRpZ2l0YWwgeSBkZSBjb250ZW5pZG9zIGRlIG51ZXN0cm8gcGHDrXMgeSBzdWRhbcOpcmljYTogSE9UTUFSVCBTVEFSVCBNQURSSUQuZAICD2QWAmYPFQgDMTQyRGxhLWZlZGVyYWNpw7NuLWV4dHJlbWVhLWRlLWJhbG9uY2VzdG8tc2UtdW5lLWEtbnVlc3Ryby1wcm95ZWN0by5hc3B4QUxhIEZlZGVyYWNpw7NuIEV4dHJlbWXDsWEgZGUgQmFsb25jZXN0byBzZSB1bmUgYSBudWVzdHJvIHByb3llY3RvE2ZvdG9ub3RpY2lhLTE0Mi5qcGcKMjAxNy0wNi0xORMxOSBkZSBqdW5pbyBkZSAyMDE3QUxhIEZlZGVyYWNpw7NuIEV4dHJlbWXDsWEgZGUgQmFsb25jZXN0byBzZSB1bmUgYSBudWVzdHJvIHByb3llY3RvswFHZXNkZXBvcnRpdmEsIG51ZXN0cmEgaGVycmFtaWVudGEgZGUgZ2VzdGnDs24gZGVwb3J0aXZhIHBhcmEgZmVkZXJhY2lvbmVzIGRlIGJhbG9uY2VzdG8sIHNlcsOhIHVzYWRhIHBvciBsYSBGZWRlcmFjacOzbiBFeHRyZW1lw7FhIGRlIEJhbG9uY2VzdG8gYSBwYXJ0aXIgZGUgbGEgcHLDs3hpbWEgdGVtcG9yYWRhLmQCBQ8WAh8BAgsWFmYPZBYCZg8VBRNmb3RvdHJhYmFqby0xNTYuanBnDEdyZWVuIFN1bW11bhtodHRwczovL3d3dy5ncmVlbnN1bW11bi5jb20baHR0cHM6Ly93d3cuZ3JlZW5zdW1tdW4uY29tG2h0dHBzOi8vd3d3LmdyZWVuc3VtbXVuLmNvbWQCAQ9kFgJmDxUFE2ZvdG90cmFiYWpvLTE1NS5qcGcgQ29uZ2VsYWRvcyBFc3BhJm50aWxkZTtvbGVzIFMuQS4WaHR0cHM6Ly93d3cuY29uZ2VzYS5lcxZodHRwczovL3d3dy5jb25nZXNhLmVzFmh0dHBzOi8vd3d3LmNvbmdlc2EuZXNkAgIPZBYCZg8VBRNmb3RvdHJhYmFqby0xNTQuanBnHUFuZGFsdWMmaWFjdXRlO2EgQ2FyZ28gUy5BLlUuHmh0dHBzOi8vd3d3LmFuZGFsdWNpYWNhcmdvLmNvbR5odHRwczovL3d3dy5hbmRhbHVjaWFjYXJnby5jb20eaHR0cHM6Ly93d3cuYW5kYWx1Y2lhY2FyZ28uY29tZAIDD2QWAmYPFQUTZm90b3RyYWJham8tMTUzLmpwZx5GaW5hbmNpYWwgQ29uc3VsdGluZyAyMDIwIFMuTC4iaHR0cHM6Ly93d3cuZmluYW5jaWFsY29uc3VsdGluZy5lcyJodHRwczovL3d3dy5maW5hbmNpYWxjb25zdWx0aW5nLmVzImh0dHBzOi8vd3d3LmZpbmFuY2lhbGNvbnN1bHRpbmcuZXNkAgQPZBYCZg8VBRNmb3RvdHJhYmFqby0xNTIuanBnFFRvZG9tb3RvciBFamlkbyBTLkwuGGh0dHA6Ly93d3cudG9kb21vdG9yLm9yZxhodHRwOi8vd3d3LnRvZG9tb3Rvci5vcmcYaHR0cDovL3d3dy50b2RvbW90b3Iub3JnZAIFD2QWAmYPFQUTZm90b3RyYWJham8tMTUxLmpwZxlUcmFuc3BvcnRlcyBDZXJlenVlbGEgU0xVJGh0dHA6Ly93d3cudHJhbnNwb3J0ZXNjZXJlenVlbGEuY29tLyRodHRwOi8vd3d3LnRyYW5zcG9ydGVzY2VyZXp1ZWxhLmNvbS8kaHR0cDovL3d3dy50cmFuc3BvcnRlc2NlcmV6dWVsYS5jb20vZAIGD2QWAmYPFQUTZm90b3RyYWJham8tMTUwLmpwZx5IZXJtYW5kYWQgZGVsIENyaXN0byBkZSBsYSBMdXobaHR0cDovL3d3dy5jcmlzdG9kZWxhbHV6LmVzG2h0dHA6Ly93d3cuY3Jpc3RvZGVsYWx1ei5lcxtodHRwOi8vd3d3LmNyaXN0b2RlbGFsdXouZXNkAgcPZBYCZg8VBRNmb3RvdHJhYmFqby0xNDkuanBnF1R1ayZhYWN1dGU7biBDaG9jb2xhdGVzHmh0dHA6Ly93d3cudHVrYW5jaG9jb2xhdGVzLmNvbR5odHRwOi8vd3d3LnR1a2FuY2hvY29sYXRlcy5jb20eaHR0cDovL3d3dy50dWthbmNob2NvbGF0ZXMuY29tZAIID2QWAmYPFQUTZm90b3RyYWJham8tMTQ4LmpwZyRFbCBPYnNlcnZhdG9yaW8gQmFqbyBQbCZhYWN1dGU7c3RpY28qaHR0cDovL3d3dy5lbG9ic2VydmF0b3Jpb2RlYmFqb3BsYXN0aWNvLmVzKmh0dHA6Ly93d3cuZWxvYnNlcnZhdG9yaW9kZWJham9wbGFzdGljby5lcypodHRwOi8vd3d3LmVsb2JzZXJ2YXRvcmlvZGViYWpvcGxhc3RpY28uZXNkAgkPZBYCZg8VBRNmb3RvdHJhYmFqby0xNDcuanBnHlRyYW5zcG9ydGVzIHkgRGVzZ3VhY2VzIEZhdXN0bxdodHRwOi8vd3d3LnRkZmF1c3RvLmNvbRdodHRwOi8vd3d3LnRkZmF1c3RvLmNvbRdodHRwOi8vd3d3LnRkZmF1c3RvLmNvbWQCCg9kFgJmDxUFE2ZvdG90cmFiYWpvLTEzNy5qcGcKQXpnZW5kYS5lcxVodHRwOi8vd3d3LmF6Z2VuZGEuZXMVaHR0cDovL3d3dy5hemdlbmRhLmVzFWh0dHA6Ly93d3cuYXpnZW5kYS5lc2RkprNUicvDlN9gC5iNvYeAfoDUfDXIpMZTu6DskWagpHM=" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="E7D47D92" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAATrHvk+2YVF2uONdj0tS7F/gTjNhrrQ7IJoyqdhOOkhLssvyDIOBRWQNCC24Rr5zEhBPgYc4iCCW7RYHe8+Y8a/mIxnECJdo1lI/ILFHmlia8NWPozCmK+Meld4NPvgZZQ=" />
+                                        <div class="datos_acceso">
+                                            <strong class="error"></strong>
+                                            <label>Usuario:</label>
+                                            <input name="ctl00$contenedor_informacion$TBUsuario" type="text" maxlength="100" id="contenedor_informacion_TBUsuario" class="caja_portada" required="required" style="border:0;" />
+                                            <br /><br />
+                                            <label>Clave:</label>
+                                            <input name="ctl00$contenedor_informacion$TBClave" type="password" maxlength="100" id="contenedor_informacion_TBClave" class="caja_portada" required="required" style="border:0;" />
+                                            <br />
+                                            <input type="submit" name="ctl00$contenedor_informacion$ctl01" value="Enviar" class="botonenviar_correo" style="color:#fff;" />
+                                            <br /><br />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-7">
+                                <div id="redes_sociales">
+                                    <h4>Conoce más de nosotros en las redes sociales</h4>
+                                    <a title="Canal de Indalweb en YouTube" href="https://www.youtube.com/user/indalwebinternet" target="_blank">
+                                        <span class="fa-stack fa-lg" style="color:#E32524; font-size:25px;">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                    <a title="Perfil de Indalweb en Facebook" href="https://es-es.facebook.com/indalweb" target="_blank">
+                                        <span class="fa-stack fa-lg" style="color:#3A5795; font-size:25px;">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                    <a title="Cuenta de Indalweb en Twitter" href="https://twitter.com/indalweb" target="_blank">
+                                        <span class="fa-stack fa-lg" style="color:#1DA1F2; font-size:25px;">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                    <a title="Indalweb en LinkedIn" href="http://www.linkedin.com/company/indalweb-internet-s-l-" target="_blank">
+                                        <span class="fa-stack fa-lg" style="color:#067EB3; font-size:25px;">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                    <a title="Perfil de Indalweb en G+" href="https://plus.google.com/+IndalwebNet" target="_blank">
+                                        <span class="fa-stack fa-lg" style="color:#DB4437; font-size:25px;">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <!-- Swiper -->
+                                <div class="swiper-container swiper-ultimas-noticias">
+                                    <div class="titulo_ultimas_noticias">
+                        <!-- RSS -->
+                                        <a href="http://www.indalweb.net/rss.xml" title="Noticias RSS IndalWeb" target="_blank"><div class="icono_rss"><i class="fa fa-rss"></i></div></a>
+                                        <h2>ÚLTIMAS NOTICIAS</h2>
+                                    </div>
+                                    <div class="swiper-wrapper">
+
+                        <!-- ULTIMAS NOTICIAS -->
+                                        
+                                                <article class="swiper-slide">
+                                                    <a href="/noticia-144/estuvimos-en-el-v-torneo-de-golf-oc.aspx" title="Estuvimos en el V Torneo de Golf OC">
+                                                        <div class="col-sm-4 col-md-6 imagen_ultimas_noticias hidden-xs" style="background-image: url('/imagenes/noticias/zoomfotonoticia-144.jpg');">
+
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-8 col-md-6 contenido_ultimas_noticias">
+                                                            <time datetime="2017-08-01">01 de agosto de 2017</time>
+                                                            <h3>Estuvimos en el V Torneo de Golf OC</h3>
+                                                            <p>Tuvimos el placer de asistir a la entrega de premios del V Torneo de Golf OC, que tuvo lugar en el Hotel Golf Almerimar.
+</p>
+                                                        </div>
+                                                    </a>
+                                                </article>
+						                    
+                                                <article class="swiper-slide">
+                                                    <a href="/noticia-143/estuvimos-en-hotmart-start-madrid.aspx" title="Estuvimos en HOTMART START MADRID">
+                                                        <div class="col-sm-4 col-md-6 imagen_ultimas_noticias hidden-xs" style="background-image: url('/imagenes/noticias/zoomfotonoticia-143.jpg');">
+
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-8 col-md-6 contenido_ultimas_noticias">
+                                                            <time datetime="2017-07-14">14 de julio de 2017</time>
+                                                            <h3>Estuvimos en HOTMART START MADRID</h3>
+                                                            <p>El pasado mes de junio tuvo lugar un evento único en España, que consiguió reunir a gran parte de los expertos del marketing digital y de contenidos de nuestro país y sudamérica: HOTMART START MADRID.</p>
+                                                        </div>
+                                                    </a>
+                                                </article>
+						                    
+                                                <article class="swiper-slide">
+                                                    <a href="/noticia-142/la-federación-extremea-de-baloncesto-se-une-a-nuestro-proyecto.aspx" title="La Federación Extremeña de Baloncesto se une a nuestro proyecto">
+                                                        <div class="col-sm-4 col-md-6 imagen_ultimas_noticias hidden-xs" style="background-image: url('/imagenes/noticias/zoomfotonoticia-142.jpg');">
+
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-8 col-md-6 contenido_ultimas_noticias">
+                                                            <time datetime="2017-06-19">19 de junio de 2017</time>
+                                                            <h3>La Federación Extremeña de Baloncesto se une a nuestro proyecto</h3>
+                                                            <p>Gesdeportiva, nuestra herramienta de gestión deportiva para federaciones de baloncesto, será usada por la Federación Extremeña de Baloncesto a partir de la próxima temporada.</p>
+                                                        </div>
+                                                    </a>
+                                                </article>
+						                    
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- FRANJA AZUL -->
+                <div class="row franja_azul">
+                    <div class="col-xs-12">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-8 hidden-xs">
+
+                                    <!-- Swiper -->
+                                    <div class="swiper-container swiper-ultimos-trabajos">
+                                        <h2>ÚLTIMOS TRABAJOS</h2>
+                                        <div class="swiper-wrapper">
+
+                            <!-- ULTIMOS TRABAJOS -->
+                                            
+
+                                                    <article class="swiper-slide">
+                                                        <div class="col-xs-4 col-sm-6 circulo" style="background-image: url('/imagenes/trabajos/zoomfototrabajo-156.jpg');"></div>
+                                                        <div class="informacion">
+                                                            <h3>Green Summun</h3>
+                                                            <div class="linea"></div>
+                                                            <a href="https://www.greensummun.com" target="_blank" title="https://www.greensummun.com">https://www.greensummun.com</a>
+                                                        </div>
+                                                    </article>
+
+                                                
+
+                                                    <article class="swiper-slide">
+                                                        <div class="col-xs-4 col-sm-6 circulo" style="background-image: url('/imagenes/trabajos/zoomfototrabajo-155.jpg');"></div>
+                                                        <div class="informacion">
+                                                            <h3>Congelados Espa&ntilde;oles S.A.</h3>
+                                                            <div class="linea"></div>
+                                                            <a href="https://www.congesa.es" target="_blank" title="https://www.congesa.es">https://www.congesa.es</a>
+                                                        </div>
+                                                    </article>
+
+                                                
+
+                                                    <article class="swiper-slide">
+                                                        <div class="col-xs-4 col-sm-6 circulo" style="background-image: url('/imagenes/trabajos/zoomfototrabajo-154.jpg');"></div>
+                                                        <div class="informacion">
+                                                            <h3>Andaluc&iacute;a Cargo S.A.U.</h3>
+                                                            <div class="linea"></div>
+                                                            <a href="https://www.andaluciacargo.com" target="_blank" title="https://www.andaluciacargo.com">https://www.andaluciacargo.com</a>
+                                                        </div>
+                                                    </article>
+
+                                                
+
+                                                    <article class="swiper-slide">
+                                                        <div class="col-xs-4 col-sm-6 circulo" style="background-image: url('/imagenes/trabajos/zoomfototrabajo-153.jpg');"></div>
+                                                        <div class="informacion">
+                                                            <h3>Financial Consulting 2020 S.L.</h3>
+                                                            <div class="linea"></div>
+                                                            <a href="https://www.financialconsulting.es" target="_blank" title="https://www.financialconsulting.es">https://www.financialconsulting.es</a>
+                                                        </div>
+                                                    </article>
+
+                                                
+
+                                                    <article class="swiper-slide">
+                                                        <div class="col-xs-4 col-sm-6 circulo" style="background-image: url('/imagenes/trabajos/zoomfototrabajo-152.jpg');"></div>
+                                                        <div class="informacion">
+                                                            <h3>Todomotor Ejido S.L.</h3>
+                                                            <div class="linea"></div>
+                                                            <a href="http://www.todomotor.org" target="_blank" title="http://www.todomotor.org">http://www.todomotor.org</a>
+                                                        </div>
+                                                    </article>
+
+                                                
+
+                                                    <article class="swiper-slide">
+                                                        <div class="col-xs-4 col-sm-6 circulo" style="background-image: url('/imagenes/trabajos/zoomfototrabajo-151.jpg');"></div>
+                                                        <div class="informacion">
+                                                            <h3>Transportes Cerezuela SLU</h3>
+                                                            <div class="linea"></div>
+                                                            <a href="http://www.transportescerezuela.com/" target="_blank" title="http://www.transportescerezuela.com/">http://www.transportescerezuela.com/</a>
+                                                        </div>
+                                                    </article>
+
+                                                
+
+                                                    <article class="swiper-slide">
+                                                        <div class="col-xs-4 col-sm-6 circulo" style="background-image: url('/imagenes/trabajos/zoomfototrabajo-150.jpg');"></div>
+                                                        <div class="informacion">
+                                                            <h3>Hermandad del Cristo de la Luz</h3>
+                                                            <div class="linea"></div>
+                                                            <a href="http://www.cristodelaluz.es" target="_blank" title="http://www.cristodelaluz.es">http://www.cristodelaluz.es</a>
+                                                        </div>
+                                                    </article>
+
+                                                
+
+                                                    <article class="swiper-slide">
+                                                        <div class="col-xs-4 col-sm-6 circulo" style="background-image: url('/imagenes/trabajos/zoomfototrabajo-149.jpg');"></div>
+                                                        <div class="informacion">
+                                                            <h3>Tuk&aacute;n Chocolates</h3>
+                                                            <div class="linea"></div>
+                                                            <a href="http://www.tukanchocolates.com" target="_blank" title="http://www.tukanchocolates.com">http://www.tukanchocolates.com</a>
+                                                        </div>
+                                                    </article>
+
+                                                
+
+                                                    <article class="swiper-slide">
+                                                        <div class="col-xs-4 col-sm-6 circulo" style="background-image: url('/imagenes/trabajos/zoomfototrabajo-148.jpg');"></div>
+                                                        <div class="informacion">
+                                                            <h3>El Observatorio Bajo Pl&aacute;stico</h3>
+                                                            <div class="linea"></div>
+                                                            <a href="http://www.elobservatoriodebajoplastico.es" target="_blank" title="http://www.elobservatoriodebajoplastico.es">http://www.elobservatoriodebajoplastico.es</a>
+                                                        </div>
+                                                    </article>
+
+                                                
+
+                                                    <article class="swiper-slide">
+                                                        <div class="col-xs-4 col-sm-6 circulo" style="background-image: url('/imagenes/trabajos/zoomfototrabajo-147.jpg');"></div>
+                                                        <div class="informacion">
+                                                            <h3>Transportes y Desguaces Fausto</h3>
+                                                            <div class="linea"></div>
+                                                            <a href="http://www.tdfausto.com" target="_blank" title="http://www.tdfausto.com">http://www.tdfausto.com</a>
+                                                        </div>
+                                                    </article>
+
+                                                
+
+                                                    <article class="swiper-slide">
+                                                        <div class="col-xs-4 col-sm-6 circulo" style="background-image: url('/imagenes/trabajos/zoomfototrabajo-137.jpg');"></div>
+                                                        <div class="informacion">
+                                                            <h3>Azgenda.es</h3>
+                                                            <div class="linea"></div>
+                                                            <a href="http://www.azgenda.es" target="_blank" title="http://www.azgenda.es">http://www.azgenda.es</a>
+                                                        </div>
+                                                    </article>
+
+                                                
+
+                                        </div>
+                                        <!-- Add Arrows -->
+                                        <div class="swiper-button-next siguiente"><i class="fa fa-angle-right"></i></div>
+                                        <div class="swiper-button-prev anterior"><i class="fa fa-angle-left"></i></div>
+                                    </div>
+
+                                </div>
+                                <article class="col-xs-12 col-md-4 ayuda_soporte">
+                                    <h2>AYUDA Y SOPORTE</h2>
+                                    <div class="col-xs-6">
+                                        <a title="Configuración correo electrónico" href="/ayuda-168-0/configuracion-correo-electronico.aspx">
+                                            <img alt="Configuración correo electrónico" src="/imagenes/conf-correo.png">
+                                            <div class="texto">Configuración correo electrónico</div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <a title="Personalizar correo electrónico" href="/ayuda-166-0/personalizar-correo-electronico.aspx">
+                                            <img alt="Personalizar correo electrónico" src="/imagenes/pers-correo.png">
+                                            <div class="texto">Personalizar correo electrónico</div>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="degradado"></div>
+
+        </section>
+
+        <footer>
+            <div class="fondo_opaco"></div>
+            <div class="container contenido_footer">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-5 text-left enlaces_footer">
+                        <div class="linea_vertical"></div>
+                        <nav class="menu_vertical">
+                            <ul>
+                                <li><a accesskey="4" class="mn-web" href="/es/diseno-de-paginas-web.aspx" title="Diseño de páginas web">Diseño de páginas web</a></li>
+                                <li><a accesskey="5" class="mn-apps" href="/es/aplicaciones-moviles-apps.aspx" title="Aplicaciones Móviles (Apps)">Aplicaciones Móviles (Apps)</a></li>
+                                <li><a accesskey="6" class="mn-publicidad" href="/es/publicidad-en-internet-y-gestion-de-redes-sociales.aspx" title="Publicidad en Internet y Gestión de Redes Sociales">Publicidad en Internet y Gestión de Redes Sociales</a></li>
+                                <li><a accesskey="7" class="mn-proteccion" href="/es/ley-de-proteccion-de-datos.aspx" title="Ley de Protección de Datos">Ley de Protección de Datos</a></li>
+                                <li><a accesskey="w" class="mn-webAM" href="/es/diseno-de-paginas-web-almeria-murcia.aspx" title="Diseño de páginas web Almería y Murcia">Diseño de páginas web Almería y Murcia</a></li>
+                                <li><a accesskey="e" class="mn-appsAM" href="/es/aplicaciones-moviles-apps-almeria-murcia.aspx" title="Aplicaciones Móviles (Apps) Almería y Murcia">Aplicaciones Móviles (Apps) Almería y Murcia</a></li>
+                                <li><a accesskey="r" class="mn-publicidadAM" href="/es/publicidad-en-internet-y-gestion-de-redes-sociales-almeria-murcia.aspx" title="Publicidad en Internet y Gestión de Redes Sociales Almería y Murcia">Publicidad en Internet y Gestión de Redes Sociales Almería y Murcia</a></li>
+                                <li><a accesskey="t" class="mn-proteccionAM" href="/es/ley-de-proteccion-de-datos-almeria-murcia.aspx" title="Ley de Protección de Datos Almería y Murcia">Ley de Protección de Datos Almería y Murcia</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-2 donde_estamos_footer">
+                        <div class="linea_vertical"></div>
+                        <nav class="menu_vertical">
+                            <ul>
+                                <li><strong>Dónde estamos</strong></li>
+                                <li>&nbsp;</li>
+                                <li>Bulevar 301</li>
+                                <li class="verde">Edif. CentroEjido 4 - 2ºB</li>
+                                <li>04700 - El Ejido (Almería)</li>
+                                <li>&nbsp;</li>
+                                <li class="verde">Telf.: <span class="cont_phone"></span></li>
+                                <li>Del. Murcia: <span class="cont_phone_murcia"></span></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-2 horario_footer">
+                        <div class="linea_vertical"></div>
+                        <nav class="menu_vertical">
+                            <ul>
+                                <!--<li><strong>Horario:</strong></li>
+                                <li>&nbsp;</li>
+                                <li>Mañanas de 8:00 a 14:00</li>
+                                <li>&nbsp;</li>
+                                <li>Tardes de 16:00 a 18:00</li>-->
+
+
+                                <li><strong>Horario de verano:</strong></li>
+                                <li>&nbsp;</li>
+                                <li>Del 19 de junio al 15 de septiembre</li>
+                                <li>&nbsp;</li>
+                                <li>Mañanas de 8:00 a 15:00</li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-xs-12 col-md-3 soporte_footer">
+                        <nav class="menu_vertical">
+                            <ul>
+                                <li><strong>Información y contacto</strong></li>
+                                <li><span class="cont_email"></span></li>
+                                <li><strong>Departamento técnico</strong></li>
+                                <li><span class="cont_email_tecnico"></span></li>
+                                <li><strong>Departamento de administración</strong></li>
+                                <li><span class="cont_email_administracion"></span></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid franja_blanca_footer">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <nav class="menu_horizontal">
+                            <ul>
+                                <li><a accesskey="1" class="mn-inicio" href="/es/" title="Inicio">Inicio</a></li>
+                                <li><a accesskey="2" class="mn-elegirnos" href="/es/por-que-elegirnos.aspx" title="Empresa">Por qué elegirnos</a></li>
+                                <li><a accesskey="3" class="mn-noticias" href="/es/noticias.aspx" title="Noticias">Noticias</a></li>
+                                <li><a accesskey="8" class="mn-contacto" href="/es/contacto.aspx" title="Contacto">Contacto</a></li>
+                                <li><a accesskey="9" class="mn-localizacion" href="/es/localizacion.aspx" title="Localización">Localización</a></li>
+                                <li><a accesskey="0" class="mn-datos-identificativos" href="/es/datos-identificativos.aspx" title="Datos Identificativos">Datos Identificativos</a></li>
+                                <li><a accesskey="a" class="mn-aviso-legal" href="/es/aviso-legal.aspx" title="Aviso Legal">Aviso Legal</a></li>
+                                <li><a accesskey="p" class="mn-politica-cookies" href="/es/politica-cookies.aspx" title="Política de Cookies">Política de Cookies</a></li>
+                                <li><a accesskey="o" class="mn-politica-accesibilidad" href="/es/politica-accesibilidad.aspx" title="Política de accesibilidad">Política de accesibilidad</a></li>
+                            </ul>
+
+                        </nav>
+
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="row top_15 enlaces_sociales_pie">
+                            <div class="col-xs-12 text-center">
+                                <a title="Canal de Indalweb en YouTube" href="https://www.youtube.com/user/indalwebinternet" target="_blank">
+                                    <span class="fa-stack fa-lg" style="color:#E32524; font-size:20px;">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                                <a title="Perfil de Indalweb en Facebook" href="https://es-es.facebook.com/indalweb" target="_blank">
+                                    <span class="fa-stack fa-lg" style="color:#3A5795; font-size:20px;">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                                <a title="Cuenta de Indalweb en Twitter" href="https://twitter.com/indalweb" target="_blank">
+                                    <span class="fa-stack fa-lg" style="color:#1DA1F2; font-size:20px;">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                                <a title="Indalweb en LinkedIn" href="http://www.linkedin.com/company/indalweb-internet-s-l-" target="_blank">
+                                    <span class="fa-stack fa-lg" style="color:#067EB3; font-size:20px;">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                                <a title="Perfil de Indalweb en G+" href="https://plus.google.com/+IndalwebNet" target="_blank">
+                                    <span class="fa-stack fa-lg" style="color:#DB4437; font-size:20px;">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+
+
+
+
+            </div>
+        </footer>
+    </div>
+
+    <!-- MENU LATERAL IZQUIERDA -->
+    <div class="sb-slidebar sb-left sb-momentum-scrolling sb-style-overlay">
+        <article>
+            <div id="capa_menu_lateral">
+                <nav>
+                    <ul>
+                        <li class="separador_menu"></li>
+                        <li id="menu_sm_inicio" class="boton_menu_off mn-inicio">
+                            <a href="/es/" title="INICIO"><i class="fa fa-home" aria-hidden="true"></i> INICIO</a>
+                        </li>
+                        <li id="menu_sm_empresa" class="boton_menu_off mn-elegirnos">
+                            <a href="/es/por-que-elegirnos.aspx" title="POR QUÉ ELEGIRNOS"><i class="fa fa-question" aria-hidden="true"></i> POR QUÉ ELEGIRNOS</a>
+                        </li>
+                        <li id="menu_sm_noticias" class="boton_menu_off mn-noticias">
+                            <a href="/es/noticias.aspx" title="NOTICIAS"><i class="fa fa-commenting" aria-hidden="true"></i> NOTICIAS</a>
+                        </li>
+                        <li id="menu_sm_disenio_paginas_web" class="boton_menu_off mn-web">
+                            <a href="/es/diseno-de-paginas-web.aspx" title="DISEÑO DE PÁGINAS WEB"><i class="fa fa-code" aria-hidden="true"></i> DISEÑO DE PÁGINAS WEB</a>
+                        </li>
+                        <li id="menu_sm_app" class="boton_menu_off mn-apps">
+                            <a href="/es/aplicaciones-moviles-apps.aspx" title="APLICACIONES MÓVILES (APPS)"><i class="fa fa-mobile" aria-hidden="true"></i> APLICACIONES MÓVILES (APPS)</a>
+                        </li>
+                        <li id="menu_sm_publicidad" class="boton_menu_off mn-publicidad">
+                            <a href="/es/publicidad-en-internet-y-gestion-de-redes-sociales.aspx" title="PUBLICIDAD EN INTERNET"><i class="fa fa-tags" aria-hidden="true"></i> PUBLICIDAD EN INTERNET</a>
+                        </li>
+                        <li id="menu_sm_proteccion_datos" class="boton_menu_off mn-proteccion">
+                            <a href="/es/ley-de-proteccion-de-datos.aspx" title="PROTECCIÓN DE DATOS"><i class="fa fa-lock" aria-hidden="true"></i> PROTECCIÓN DE DATOS</a>
+                        </li>
+                        <li id="menu_sm_area_clientes" class="boton_menu_off">
+                            <a target="_blank" href="https://extranet.indalweb.net/autenticar.aspx?ReturnUrl=%2f" title="ÁREA DE CLIENTES" rel="nofollow"><i class="fa fa-laptop" aria-hidden="true"></i> ÁREA DE CLIENTES</a>
+                        </li>
+                        <li id="menu_sm_contacto" class="boton_menu_off mn-contacto">
+                            <a href="/es/contacto.aspx" title="CONTACTO"><i class="fa fa-phone" aria-hidden="true"></i> CONTACTO</a>
+                        </li>
+                        <li id="menu_sm_localizacion" class="boton_menu_off mn-localizacion">
+                            <a href="/es/localizacion.aspx" title="LOCALIZACIÓN"><i class="fa fa-map-marker" aria-hidden="true"></i> LOCALIZACIÓN</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </article>
+    </div>
+
+    <!-- css no necesario de primer momento -->
+    <link rel="stylesheet" type="text/css" href="/App_Themes/min/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/App_Themes/min/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="/App_Themes/min/magnific-popup.min.css">
+    <link rel="stylesheet" type="text/css" href="/App_Themes/min/cookiecuttr.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/App_Themes/min/slidebars.min.css">
+
+    
+    <script type="text/javascript">
+        dfLoadFiles.push(["/js/min/01-index.min.js"]);
+    </script>
+
+    <script type="text/javascript">
+        dfLoadFiles.push(["/js/min/00-maestra.min.js"]);
+    </script>
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//estadisticas.indalweb.net/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 1]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//estadisticas.indalweb.net/piwik.php?idsite=1" style="border:0;" alt="Piwik" /></p></noscript>
+    <!-- End Piwik Code -->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-23821002-19', 'auto');
+      ga('send', 'pageview');
+    </script>
+</body>
+</html>

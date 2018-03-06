@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="robots" content="all"/>
+<meta name="description" content="BizReport is recognized internationally as a leading source for Internet business and e-commerce news."/>
+<meta name="keywords" content/>
+<meta name="verify-v1" content="tFeh36kxrbuYU8WCBkiaQYzDBsWFZfnNLUY6Xck+jOg="/>
+<link rel="stylesheet" href="/style/home.css" title="BizReport.com" type="text/css"/>
+<link rel="alternate" type="application/rss+xml" title="BizReport News" href="http://www.bizreport.com/bizreportcom_rss20.xml"/>
+<title>BizReport - News & Insight for Online Marketers</title>
+<script type="text/javascript" src="http://www.bizreport.com/js/mt-site.js"></script>
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PZPSCS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PZPSCS');</script>
+
+<script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1004966/BizReport_300x250', [300, 250], 'div-gpt-ad-1501458751326-0').addService(googletag.pubads());
+    googletag.defineSlot('/1004966/BizReport_300x600', [300, 600], 'div-gpt-ad-1501458751326-1').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+</head>
+<body>
+<div class="header">
+<div class="navigation">
+<div class="left">
+<a href="/">BizReport.com</a> | <a href="http://research.bizreport.com/">IT Research Library</a> | <a href="http://bizreport.tradepub.com/">Free Magazines</a> | <a href="/jobs/">Jobs</a>
+</div>
+<div class="right">
+<a href="/about/">about us</a> | <a href="/mediakit/">ad info</a>
+</div>
+</div>
+<div class="banner">
+<a href="/"><img alt="BizReport" title="BizReport" src="/images/misc/logo_biz_report.gif" width="246" height="47" border="0"/></a><img alt="News & Insight for Online Marketers" title="News & Insight for Online Marketers" src="/images/misc/logo_description.gif" width="224" height="36" border="0"/>
+</div>
+<div class="widget-sign-in widget">
+<div id="signin-widget-content" class="widget-content"></div>
+</div>
+</div>
+<div class="content">
+<div id="left">
+<div class="newsletter">
+<p>
+<strong>Subscribe to BizReport</strong>
+<br/>
+Receive our email newsletter with breaking news, in-depth reports & interviews:</p>
+<br>
+<form action="http://bizreportcom.list-manage.com/subscribe/post" method="POST" onsubmit="return setRRFormFields(this);">
+<input type="hidden" name="u" value="32dbe8c9891d46a2c90138659">
+<input type="hidden" name="id" value="c5c454bd48">
+<input type="text" name="MERGE0" size="15" value style="width: 100%;max-width: 160px;">
+<input type="submit" value="Subscribe">
+</form>
+</div>
+<div class="rssfeed">
+<p><a href="/bizreportcom_rss20.xml" target="_blank"><img alt="RSS feed" title="RSS feed" src="/images/misc/xml.gif" width="36" height="14" border="0"/></a> Get our RSS feed</p>
+</div>
+<div class="search">
+<p><strong>Search BizReport</strong></p>
+<form method="get" action="/fastsearch" name="query">
+<input type="hidden" name="order" value="date"/>
+<input name="blogs" type="hidden" value="1,5,6,7"/>
+<div class="field">
+<input class="edge" type="text" name="query" id="query" value onclick="this.select()"/>
+</div>
+<div class="button">
+<input type="image" name="subscribe" src="/images/misc/button_search.gif"/>
+</div>
+</form>
+</div>
+<div class="topicsheading">
+<p><strong>News by Topic</strong></p>
+</div>
+<div class="topics">
+<p><strong>Marketing</strong></p>
+<ul>
+<li><a href="/advertising/">Advertising</a></li>
+<li><a href="/search_marketing/">Search Marketing</a></li>
+<li><a href="/email_marketing/">Email Marketing</a></li>
+<li><a href="/loyalty_marketing/">Loyalty Marketing</a></li>
+<li><a href="/mobile_marketing/">Mobile Marketing</a></li>
+<li><a href="/social_marketing/">Social Marketing</a></li>
+<li><a href="/viral_marketing/">Viral Marketing</a></li>
+<li><a href="/trends_ideas/">Trends &amp; Ideas</a></li>
+<li><a href="/internet_marketing_101/">Internet Marketing 101</a></li>
+</ul>
+<p><strong>Beyond Marketing</strong></p>
+<ul>
+<li><a href="/blogs_content/">Blogs &amp; Content</a></li>
+<li><a href="/domain_names/">Domain Names</a></li>
+<li><a href="/ecommerce/">E-commerce</a></li>
+<li><a href="/internet/">Internet</a></li>
+<li><a href="/law_regulation/">Law &amp; Regulation</a></li>
+<li><a href="/research/">Research</a></li>
+</ul>
+</div>
+<div class="wplink">
+<p><a href="http://research.bizreport.com"><strong>White Papers</strong></a></p>
+</div>
+<div class="maglink">
+<p><a href="/magazines/"><strong>Magazines</strong></a></p>
+</div>
+<div class="maglink">
+<p><a href="/jobs/"><strong>Jobs</strong></a></p>
+</div>
+<div class="slot_160x600">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-4917629296868795" data-ad-slot="9790228452"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div id="bodysection">
+<div class="ad_top">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-4917629296868795" data-ad-slot="9929829256"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br><br>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4917629296868795" data-ad-slot="4709386452" data-ad-format="link"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<br>
+<div class="news">
+<div class="article_content">
+<p class="date">
+Thursday, August 31, 2017</p>
+<p class="category"><a href="/advertising/">Advertising</a></p>
+<h1><a href="http://www.bizreport.com/2017/08/how-to-unify-customer-data-for-stronger-engagement.html">How to unify customer data for stronger engagement</a></h1>
+<p class="excerpt">There is more customer data readily available for merchants, publishers, and other advertisers than at any time in the past. Still, many brands struggle to understand their customers. This, according to one expert, is because customer data isn't unified.
+<a href="http://www.bizreport.com/2017/08/how-to-unify-customer-data-for-stronger-engagement.html">>></a></p>
+<p class="category"><a href="/ecommerce/">Ecommerce</a></p>
+<h1><a href="http://www.bizreport.com/2017/08/how-widen-helps-spectrum-streamline.html">How Widen helps Spectrum streamline</a></h1>
+<p class="excerpt">Asset management and workflow hub Widen has changed the way Spectrum Brands approaches projects, helping to streamline efforts. This process has saved the company time, but more importantly money. Here's how.
+<a href="http://www.bizreport.com/2017/08/how-widen-helps-spectrum-streamline.html">>></a></p>
+<p class="category"><a href="/advertising/">Advertising</a></p>
+<h1><a href="http://www.bizreport.com/2017/08/survey-men-boomers-most-likely-to-run-smbs.html">Survey: Men, boomers most likely to run SMBs</a></h1>
+<p class="excerpt">This will likely come as no surprise, but according to new Manta data the majority of small business owners are men, and are most likely to be from the Boomer generation. But, female Millennials are beginning to close the gap.
+<a href="http://www.bizreport.com/2017/08/survey-men-boomers-most-likely-to-run-smbs.html">>></a></p>
+<p class="category"><a href="/social_marketing/">Social Marketing</a></p>
+<h1><a href="http://www.bizreport.com/2017/08/teens-leaving-facebook-heres-how-brands-can-reach-them.html">Teens leaving Facebook? Here's how brands can reach them.</a></h1>
+<p class="excerpt">According to data from eMarketer, teens are leaving Facebook in droves for social media sites like SnapChat and Instagram. This is a problem for business who have focused solely on Facebook, and are now left without an audience for their goods. One expert shares tips on how brands can continue reaching teens.
+<a href="http://www.bizreport.com/2017/08/teens-leaving-facebook-heres-how-brands-can-reach-them.html">>></a></p>
+<script type="text/javascript" src="http://www.dinclinx.com/?s=1800&e=0&t=1218&f=javascript"></script>
+<p class="category"><a href="/search_marketing/">Search Marketing</a></p>
+<h1><a href="http://www.bizreport.com/2017/08/study-finds-mobile-search-increasingly-important.html">Study finds mobile search increasingly important</a></h1>
+<p class="excerpt">Having company and product information available in mobile formats is key to business success. That's a key finding from recent BrightEdge data; their research shows that more than half (57%) of Google search traffic is now coming from mobile users.
+<a href="http://www.bizreport.com/2017/08/study-finds-mobile-search-increasingly-important.html">>></a></p>
+<p class="category"><a href="/advertising/">Advertising</a></p>
+<h1><a href="http://www.bizreport.com/2017/08/5-tips-for-working-with-a-celebrity-spokesperson.html">5 Tips for Working with a Celebrity Spokesperson</a></h1>
+<p class="excerpt">Working with a celebrity is a dream for many small businesses, but rather than accepting just anyone, businesses need to understand what a celebrity can - and cannot - do for them. Here are 5 tips to help businesses work with a celebrity spokesperson.
+<a href="http://www.bizreport.com/2017/08/5-tips-for-working-with-a-celebrity-spokesperson.html">>></a></p>
+<p class="category"><a href="/advertising/">Advertising</a></p>
+<h1><a href="http://www.bizreport.com/2017/08/is-personalization-bad-for-business.html">Is personalization bad for business?</a></h1>
+<p class="excerpt">More advertising and experience tools crop up daily for digital marketers, but there has been some push-back from consumers in the area of personalization. One expert explains why brands may need to change their personalization options.
+<a href="http://www.bizreport.com/2017/08/is-personalization-bad-for-business.html">>></a></p>
+<p class="category"><a href="/ecommerce/">Ecommerce</a></p>
+<h1><a href="http://www.bizreport.com/2017/08/study-finds-performance-key-to-loyalty.html">Study finds performance key to loyalty</a></h1>
+<p class="excerpt">When it comes to today's consumers, a good online or mobile experience is key to loyalty. That, according to new data from Apica, which shows that more than half of shoppers are less loyal to brands after encountering bad digital performance.
+<a href="http://www.bizreport.com/2017/08/study-finds-performance-key-to-loyalty.html">>></a></p>
+<p class="category"><a href="/mobile_marketing/">Mobile Marketing</a></p>
+<h1><a href="http://www.bizreport.com/2017/08/report-app-install-fraud-costing-300m.html">Report: App Install Fraud costing $300m</a></h1>
+<p class="excerpt">Mobile marketers are getting hit hard by app install fraud. DataVisor has studied the area and found that this area is costing mobile brands about $300 million per year.
+<a href="http://www.bizreport.com/2017/08/report-app-install-fraud-costing-300m.html">>></a></p>
+<p class="category"><a href="/ecommerce/">Ecommerce</a></p>
+<h1><a href="http://www.bizreport.com/2017/08/brands-how-to-make-the-most-of-your-sales-ops-team.html">Brands: How to make the most of your sales ops team</a></h1>
+<p class="excerpt">The role of sales operations professionals is one of the most varied positions in most digital businesses today, and because of the scope, many businesses may not be getting the most from their teams.
+<a href="http://www.bizreport.com/2017/08/brands-how-to-make-the-most-of-your-sales-ops-team.html">>></a></p>
+<p class="more"><a href="/archives.html">More stories</a> >></p>
+</div>
+<div class="line"></div>
+</div>
+<div class="references">
+<div class="morenews">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4917629296868795" data-ad-slot="5360028850"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="featured">
+<p class="label">Featured White Papers</p>
+<ul>
+<li><a href="http://bizreport.tradepub.com/free/w_axax38/prgm.cgi" target="_blank" rel="nofollow">How to Dominate the Baby Boomer Market Using Facebook</a><br/>
+<span>Setting up a Facebook Ad campaign can be overwhelming and time-consuming. But in our digital world, it's vital to the...</span></li>
+</ul>
+</div>
+<div class="ad_vertical">
+
+<div id="div-gpt-ad-1501458751326-1" style="height:600px; width:300px;">
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1501458751326-1'); });
+</script>
+</div>
+<br>
+</div>
+<div class="events_positioning">
+<div class="events">
+<div class="events_header">
+<h2>BizReport Research Library</h2>
+</div>
+<div class="events_items">
+<p>
+Download the latest marketing research &amp; <a href="http://research.bizreport.com">free white papers</a>
+</p>
+</div>
+<div class="events_columns">
+<br/>
+<div class="events_column">
+<ul>
+<li><a href="http://research.bizreport.com/marketing/ad_networks/">Ad Networks</a></li>
+<li><a href="http://research.bizreport.com/marketing/email_marketing/">Email Marketing</a></li>
+<li><a href="http://research.bizreport.com/marketing/search_marketing/">Search Marketing</a></li>
+<li><a href="http://research.bizreport.com/marketing/website_analytics/">Website Analytics</a></li>
+</ul>
+</div>
+<div class="events_column">
+<ul>
+<li><a href="http://research.bizreport.com/marketing/ad_serving/">Ad Serving</a></li>
+<li><a href="http://research.bizreport.com/marketing/search_engines/">Search Engines</a></li>
+<li><a href="http://research.bizreport.com/marketing/emerging_marketing/viral_marketing/">Viral Marketing</a></li>
+<li><a href="http://research.bizreport.com/marketing/website_development/">Website Development</a></li>
+</ul>
+</div>
+</div>
+<div class="events_submission">
+<p><a href="http://research.bizreport.com/popular-research">Most Popular White Papers</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<div class="footnote">
+<a href="/">BizReport.com</a> | <a href="http://research.bizreport.com">Research Library</a> | <a href="http://bizreport.tradepub.com">Free Magazines</a>
+</div>
+<div class="credit">
+<div>
+&copy; 1999-<script type="text/javascript">
+  document.write(new Date().getFullYear());
+</script> BizReport. All Rights Reserved | <a href="/about/privacy/">Privacy Policy</a> | <a href="/about/disclaimer/">Disclaimer</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"3ba27173f8","applicationID":"245608","transactionName":"YVRVZRcHWRFYBhdfCVgeYkMMSV4MXQAbGA5CXFs=","queueTime":0,"applicationTime":0,"atts":"TRNWE18dSh8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

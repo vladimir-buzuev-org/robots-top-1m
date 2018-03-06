@@ -1,0 +1,66 @@
+# Google Image Crawler Setup
+User-agent: Googlebot-Image
+Disallow: /
+
+# Crawlers Setup
+User-agent: *
+
+# Blocking ahrefs blot - added on November 2016 when wesbite had performance issues
+# removed AhrefsBot disallow on march 27th for google sitemap to crawl the website for the sitemap ellison submitted
+# User-agent: AhrefsBot
+# Disallow: /
+
+# added to hold sitemap.xml to send  to google
+Allow: /sitemap/
+
+# Directories
+Disallow: /404/
+Disallow: /app/
+Disallow: /cgi-bin/
+Disallow: /downloader/
+Disallow: /errors/
+Disallow: /includes/
+Disallow: /js/
+Disallow: /lib/
+Disallow: /magento/
+Disallow: /media/
+Disallow: /pkginfo/
+Disallow: /report/
+Disallow: /scripts/
+Disallow: /shell/
+Disallow: /skin/
+Disallow: /stats/
+Disallow: /var/
+
+# Paths
+Disallow: /index.php/
+# removing /catalog path disallow for google sitemap to crawl catalog pages.  Currently not crawled due to robots.txt block
+# From May 12th 2.00pm to May 13th 4.00pm we have lot of hits on catalog page due to crawling - this aided to reach Redis to reach peak # of 16GB memory and casued app resposne time to 20s to 25 seconds.  Due to this reason again disallowing /catalog to avoid crawing.  # This is the first time we had crawl for 1 day - earlier it used to finish to 2 to 4 hours.
+Disallow: /catalog
+Disallow: /checkout/
+Disallow: /control/
+Disallow: /contacts/
+Disallow: /customer/
+Disallow: /customize/
+Disallow: /newsletter/
+Disallow: /poll/
+Disallow: /review/
+Disallow: /sendfriend/
+Disallow: /tag/
+Disallow: /wishlist/
+Disallow: /catalog/product/gallery/
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.php$
+Disallow: /*?p=*&
+Disallow: /*?SID=
+
+# Files
+Disallow: /cron.php
+Disallow: /cron.sh
+Disallow: /error_log
+Disallow: /install.php
+Disallow: /LICENSE.html
+Disallow: /LICENSE.txt
+Disallow: /LICENSE_AFL.txt
+Disallow: /STATUS.txt

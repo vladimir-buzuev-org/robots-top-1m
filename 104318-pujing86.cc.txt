@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- 调试 -->
+  <title>加载</title>
+
+  <link rel="stylesheet" href="/pc/src/reset.css">
+  <link rel="stylesheet" href="/pc/src/index.min.css">
+  <script src="/pc/src/jquery-1.9.1.js"></script>
+<body>
+<div class="main">
+  <div class="logo"></div>
+  <h2>正在前往，请稍候 ...</h2>
+  <div class="pre">
+    <p><i style="width: 0%;"></i></p>
+    <span>0%</span>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="info">
+    欢迎来自荷兰的用户<br>
+    请记住您的地区域名：<br>
+    http://www.pujing0086.com  </div>
+  <a href="https://pujing027.cc/robots.txt" class="btn b1"></a>
+  <a href="https://chat7.livechatvalue.com/chat/chatClient/chatbox.jsp?companyID=832217&configID=57555&jid=5473507903&s=1" class="btn b2">点击咨询24小时在线客服</a>
+</div>
+
+<script>
+  $(function(){
+    var pre = 0;
+    var timer = setInterval(function(){
+      pre++;
+      $('.pre i').css('width',pre+'%');
+      $('.pre span').html(pre+'%');
+      if(pre>=100){
+        clearTimeout(timer);
+         location.href="https://pujing027.cc/robots.txt";
+      }
+    },50);
+  })
+</script>
+</body>
+</html>

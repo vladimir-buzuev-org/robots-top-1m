@@ -1,0 +1,72 @@
+# see: http://inchoo.net/ecommerce/ultimate-magento-robots-txt-file-examples/
+
+# Google Image Crawler Setup
+User-agent: Googlebot-Image
+Disallow:
+
+# Crawlers Setup
+User-agent: *
+Crawl-Delay: 20
+
+#Sitemap Location 
+# updated 2016-06-13 - erisler@myntpartners.com:
+#  - use admin/catalog/Google Sitemap (Extended) menu to generate a new one (set to nightly cron job)
+#  - .htaccess file 
+#Sitemap: http://www.truthinaging.com/sitemap.xml
+Sitemap: https://www.truthinaging.com/sitemaps/tia_sitemap.xml
+
+
+
+# Directories
+Disallow: /404/
+Disallow: /app/
+Disallow: /cgi-bin/
+Disallow: /downloader/
+Disallow: /errors/
+Disallow: /includes/
+# Disallow: /js/
+# Disallow: /lib/
+Disallow: /magento/
+# Disallow: /media/
+Disallow: /pkginfo/
+Disallow: /report/
+Disallow: /scripts/
+Disallow: /shell/
+#Disallow: /skin/
+Disallow: /var/
+
+
+# Root Files
+Disallow: /cron.php
+Disallow: /cron.sh
+Disallow: /error_log
+Disallow: /install.php
+Disallow: /LICENSE.html
+Disallow: /LICENSE.txt
+Disallow: /LICENSE_AFL.txt
+Disallow: /STATUS.txt
+
+# URLS		
+Disallow: /catalog/product_compare/
+Disallow: /catalogsearch/
+Disallow: /control/
+Disallow: /contacts/
+Disallow: /customer/
+Disallow: /newsletter/
+Disallow: /poll/
+Disallow: /sendfriend/
+Disallow: /wishlist/
+
+# Paths (no clean URLs)
+# Disallow: /*.js$
+# Disallow: /*.css$
+# Disallow: /*.php$
+# this will disallow any url with ?p=x and other params but will allows just ?p=x
+# p param is before other params
+Disallow: /*?p=*& 
+# p param is after other params
+Disallow: /*&p=*
+Disallow: /*?SID=
+
+# TIA specific
+Disallow: /rewards/product_view_distribution/updatePoints/

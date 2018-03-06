@@ -1,0 +1,3144 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+    
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<style type="text/css" media="screen">
+    
+    body {
+        margin: 0;
+        transition: opacity ease-in 0s;
+    }
+
+    .wf-loading h1,
+    .wf-loading h2,
+    .wf-loading h3,
+    .wf-loading h4,
+    .wf-loading h5,
+    .wf-loading h6,
+    .wf-loading label,
+    .wf-loading span,
+    .wf-loading a,
+    .wf-loading th,
+    .wf-loading td,
+    .wf-loading p {
+        opacity: 0;
+    }
+
+    .image img {
+        max-width: 100%;
+    }
+</style>
+
+<script type="text/javascript">
+  // Setup Polymer options
+  window.Polymer = {
+    dom: 'shadow',
+    lazyRegister: true,
+    useNativeCSSProperties: true,
+    noUrlSettings: false
+  };
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.22/webcomponents-lite.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js" async></script>
+<link rel="shortcut icon" type="image/png" href="/games/need-for-speed/assets/images/favicon.ico">
+<script src="//w.soundcloud.com/player/api.js"></script>
+
+
+
+
+  <link rel="import" href="//pl.ea.com/release/1.30.1/elements/ea-elements.html" />
+
+
+
+  <style is="custom-style">
+    :root {
+      
+        --ea-theme-primary-font-family: roboto;
+      
+        --ea-theme-typographic-headings-font-family: din-condensed-web;
+      
+        --ea-theme-secondary-font-family: din-condensed-web;
+      
+        --ea-theme-color: #ff0033;
+      
+        --ea-theme-d1-font-style: italic;
+      
+        --ea-theme-d2-font-style: italic;
+      
+        --ea-theme-d3-font-style: italic;
+      
+        --ea-theme-d4-font-style: italic;
+      
+        --ea-theme-d1-letter-spacing: 2px;
+      
+        --ea-theme-d1-letter-spacing-tablet-portrait: var(--ea-theme-d1-letter-spacing);
+      
+        --ea-theme-d1-letter-spacing-tablet-landscape: var(--ea-theme-d1-letter-spacing);
+      
+        --ea-theme-d1-letter-spacing-desktop: var(--ea-theme-d1-letter-spacing);
+      
+        --ea-theme-d1-font-weight: 400;
+      
+        --ea-theme-d1-line-height-mobile: 48px;
+      
+        --ea-theme-d1-line-height-tablet-portrait: var(--ea-theme-d1-line-height-mobile);
+      
+        --ea-theme-d1-line-height-tablet-landscape: var(--ea-theme-d1-line-height-mobile);
+      
+        --ea-theme-d1-line-height-desktop: 72px;
+      
+        --ea-theme-d1-font-size-mobile: 40px;
+      
+        --ea-theme-d1-font-size-tablet-portrait: var(--ea-theme-d1-font-size);
+      
+        --ea-theme-d1-font-size-tablet-landscape: var(--ea-theme-d1-font-size);
+      
+        --ea-theme-d1-font-size-desktop: 64px;
+      
+        --ea-theme-d2-font-size-mobile: 32px;
+      
+        --ea-theme-d2-font-size-tablet-portrait: var(--ea-theme-d2-font-size-mobile);
+      
+        --ea-theme-d2-font-size-tablet-landscape: var(--ea-theme-d2-font-size-mobile);
+      
+        --ea-theme-d2-font-size-desktop: 56px;
+      
+        --ea-theme-d2-letter-spacing: 2px;
+      
+        --ea-theme-d2-letter-spacing-tablet-portrait: var(--ea-theme-d2-letter-spacing);
+      
+        --ea-theme-d2-letter-spacing-tablet-landscape: var(--ea-theme-d2-letter-spacing);
+      
+        --ea-theme-d2-letter-spacing-desktop: var(--ea-theme-d2-letter-spacing);
+      
+        --ea-theme-d2-line-height-mobile: 40px;
+      
+        --ea-theme-d2-line-height-tablet-portrait: var(--ea-theme-d2-line-height-mobile);
+      
+        --ea-theme-d2-line-height-tablet-landscape: var(--ea-theme-d2-line-height-mobile);
+      
+        --ea-theme-d2-line-height-desktop: 64px;
+      
+        --ea-theme-d2-font-weight: 400;
+      
+        --ea-theme-d3-letter-spacing: 2px;
+      
+        --ea-theme-d3-font-weight: 400;
+      
+        --ea-theme-d3-font-size-mobile: 28px;
+      
+        --ea-theme-d3-font-size-tablet-landscape: var(--ea-theme-d3-font-size-mobile);
+      
+        --ea-theme-d3-font-size-desktop: 36px;
+      
+        --ea-theme-d3-line-height-mobile: 36px;
+      
+        --ea-theme-d3-line-height-tablet-landscape: var(--ea-theme-d3-line-height-mobile);
+      
+        --ea-theme-d3-line-height-desktop: 44px;
+      
+        --ea-theme-d3-letter-spacing-tablet-landscape: var(--ea-theme-d3-letter-spacing);
+      
+        --ea-theme-d3-letter-spacing-desktop: var(--ea-theme-d3-letter-spacing);
+      
+        --ea-theme-d4-letter-spacing: 2px;
+      
+        --ea-theme-d4-letter-spacing-tablet-landscape: var(--ea-theme-d4-letter-spacing);
+      
+        --ea-theme-d4-letter-spacing-desktop: var(--ea-theme-d4-letter-spacing);
+      
+        --ea-theme-d4-font-weight: 400;
+      
+        --ea-theme-d4-font-size-mobile: 24px;
+      
+        --ea-theme-d4-font-size-tablet-landscape: var(--ea-theme-d4-font-size-mobile);
+      
+        --ea-theme-d4-font-size-desktop: 32px;
+      
+        --ea-theme-d4-line-height-mobile: 32px;
+      
+        --ea-theme-d4-line-height-tablet-landscape: var(--ea-theme-d4-line-height-mobile);
+      
+        --ea-theme-d4-line-height-desktop: 40px;
+      
+        --ea-theme-h1-font-weight: 700;
+      
+        --ea-theme-h1-letter-spacing: 0.5px;
+      
+        --ea-theme-h1-letter-spacing-tablet-landscape: var(--ea-theme-h1-letter-spacing);
+      
+        --ea-theme-h1-letter-spacing-desktop: var(--ea-theme-h1-letter-spacing);
+      
+        --ea-theme-h1-font-size-mobile: 28px;
+      
+        --ea-theme-h1-font-size-tablet-landscape: var(--ea-theme-h1-font-size-mobile);
+      
+        --ea-theme-h1-font-size-desktop: var(--ea-theme-h1-font-size-mobile);
+      
+        --ea-theme-h1-line-height-mobile: 36px;
+      
+        --ea-theme-h1-line-height-tablet-landscape: var(--ea-theme-h1-line-height-mobile);
+      
+        --ea-theme-h1-line-height-desktop: var(--ea-theme-h1-line-height-mobile);
+      
+        --ea-theme-h2-font-weight: 700;
+      
+        --ea-theme-h2-letter-spacing: 0.5px;
+      
+        --ea-theme-h2-letter-spacing-tablet-landscape: var(--ea-theme-h2-letter-spacing);
+      
+        --ea-theme-h2-letter-spacing-desktop: var(--ea-theme-h2-letter-spacing);
+      
+        --ea-theme-h2-font-size-mobile: 24px;
+      
+        --ea-theme-h2-font-size-tablet-landscape: var(--ea-theme-h2-font-size-mobile);
+      
+        --ea-theme-h2-font-size-desktop: var(--ea-theme-h2-font-size-mobile);
+      
+        --ea-theme-h2-line-height-mobile: 32px;
+      
+        --ea-theme-h2-line-height-tablet-landscape: var(--ea-theme-h2-line-height-mobile);
+      
+        --ea-theme-h2-line-height-desktop: var(--ea-theme-h2-line-height-mobile);
+      
+        --ea-theme-h3-font-weight: 700;
+      
+        --ea-theme-h3-letter-spacing: 0.5px;
+      
+        --ea-theme-h3-letter-spacing-tablet-landscape: var(--ea-theme-h3-letter-spacing);
+      
+        --ea-theme-h3-letter-spacing-desktop: var(--ea-theme-h3-letter-spacing);
+      
+        --ea-theme-h3-font-size-mobile: 24px;
+      
+        --ea-theme-h3-font-size-tablet-landscape: var(--ea-theme-h3-font-size-mobile);
+      
+        --ea-theme-h3-font-size-desktop: var(--ea-theme-h3-font-size-mobile);
+      
+        --ea-theme-h3-line-height-mobile: 32px;
+      
+        --ea-theme-h3-line-height-tablet-landscape: var(--ea-theme-h3-line-height-mobile);
+      
+        --ea-theme-h3-line-height-desktop: var(--ea-theme-h3-line-height-mobile);
+      
+        --ea-theme-h4-font-weight: 700;
+      
+        --ea-theme-h4-letter-spacing: 0.5px;
+      
+        --ea-theme-h4-letter-spacing-tablet-landscape: var(--ea-theme-h4-letter-spacing);
+      
+        --ea-theme-h4-letter-spacing-desktop: var(--ea-theme-h4-letter-spacing);
+      
+        --ea-theme-h4-font-size-mobile: 24px;
+      
+        --ea-theme-h4-font-size-tablet-landscape: var(--ea-theme-h4-font-size-mobile);
+      
+        --ea-theme-h4-font-size-desktop: var(--ea-theme-h4-font-size-mobile);
+      
+        --ea-theme-h4-line-height-mobile: 32px;
+      
+        --ea-theme-h4-line-height-tablet-landscape: var(--ea-theme-h4-line-height-mobile);
+      
+        --ea-theme-h4-line-height-desktop: var(--ea-theme-h4-line-height-mobile);
+      
+        --ea-theme-h5-font-weight: 700;
+      
+        --ea-theme-h5-letter-spacing: 0.5px;
+      
+        --ea-theme-h5-letter-spacing-tablet-landscape: var(--ea-theme-h5-letter-spacing);
+      
+        --ea-theme-h5-letter-spacing-desktop: var(--ea-theme-h5-letter-spacing);
+      
+        --ea-theme-h5-font-size-mobile: 20px;
+      
+        --ea-theme-h5-font-size-tablet-landscape: var(--ea-theme-h5-font-size-mobile);
+      
+        --ea-theme-h5-font-size-desktop: var(--ea-theme-h5-font-size-mobile);
+      
+        --ea-theme-h5-line-height-mobile: 28px;
+      
+        --ea-theme-h5-line-height-tablet-landscape: var(--ea-theme-h5-line-height-mobile);
+      
+        --ea-theme-h5-line-height-desktop: var(--ea-theme-h5-line-height-mobile);
+      
+        --ea-theme-h6-font-weight: 700;
+      
+        --ea-theme-h6-letter-spacing: 0.5px;
+      
+        --ea-theme-h6-letter-spacing-desktop: var(--ea-theme-h6-letter-spacing);
+      
+        --ea-theme-h6-font-size-mobile: 16px;
+      
+        --ea-theme-h6-font-size-desktop: var(--ea-theme-h6-font-size-mobile);
+      
+        --ea-theme-h6-line-height-mobile: 24px;
+      
+        --ea-theme-h6-line-height-desktop: var(--ea-theme-h6-line-height-mobile);
+      
+        --ea-theme-l1-font-weight: 400;
+      
+        --ea-theme-l1-letter-spacing: 1px;
+      
+        --ea-theme-l1-font-size-mobile: 20px;
+      
+        --ea-theme-l1-font-size-desktop: var(--ea-theme-l1-font-size-mobile);
+      
+        --ea-theme-l1-line-height-mobile: 28px;
+      
+        --ea-theme-l1-line-height-desktop: var(--ea-theme-l1-line-height-mobile);
+      
+        --ea-theme-l2-font-weight: 400;
+      
+        --ea-theme-l2-font-size-mobile: 20px;
+      
+        --ea-theme-l2-font-size-desktop: var(--ea-theme-l2-font-size-mobile);
+      
+        --ea-theme-l2-line-height-mobile: 24px;
+      
+        --ea-theme-l2-line-height-desktop: var(--ea-theme-l2-line-height-mobile);
+      
+        --ea-theme-b1-font-size-mobile: 20px;
+      
+        --ea-theme-b1-font-size-desktop: 24px;
+      
+        --ea-theme-b1-line-height-mobile: 28px;
+      
+        --ea-theme-b1-line-height-desktop: 32px;
+      
+        --ea-theme-b1-letter-spacing-mobile: 0.5px;
+      
+        --ea-theme-body-font-size-mobile: 16px;
+      
+        --ea-theme-body-font-size-tablet-landscape: var(--ea-theme-body-font-size-mobile);
+      
+        --ea-theme-body-font-size-desktop: 20px;
+      
+        --ea-theme-body-letter-spacing-mobile: 0.5px;
+      
+        --ea-theme-body-letter-spacing-tablet-landscape: var(--ea-theme-body-letter-spacing-mobile);
+      
+        --ea-theme-body-letter-spacing-desktop: var(--ea-theme-body-letter-spacing-mobile);
+      
+        --ea-theme-body-line-height-mobile: 24px;
+      
+        --ea-theme-body-line-height-tablet-landscape: var(--ea-theme-body-line-height-mobile);
+      
+        --ea-theme-body-line-height-desktop: 28px;
+      
+        --ea-theme-b3-font-size-mobile: 12px;
+      
+        --ea-theme-b3-font-size-desktop: 16px;
+      
+        --ea-theme-b3-letter-spacing-mobile: 0.5px;
+      
+        --ea-theme-b3-letter-spacing-tablet-portrait: var(--ea-theme-b3-letter-spacing-mobile);
+      
+        --ea-theme-b3-letter-spacing-desktop: var(--ea-theme-b3-letter-spacing-mobile);
+      
+        --ea-theme-b3-line-height-mobile: 16px;
+      
+        --ea-theme-b3-line-height-desktop: 24px;
+      
+        --ea-theme-b2-font-size-mobile: var(--ea-theme-body-font-size-mobile);
+      
+        --ea-theme-b2-font-size-tablet-portrait: var(--ea-theme-body-font-size-mobile);
+      
+        --ea-theme-b2-font-size-tablet-landscape: var(--ea-theme-body-font-size-mobile);
+      
+        --ea-theme-b2-font-size-desktop: var(--ea-theme-body-font-size-desktop);
+      
+        --ea-theme-b2-letter-spacing-mobile: 0.5px;
+      
+        --ea-theme-b2-letter-spacing-tablet-portrait: var(--ea-theme-b2-letter-spacing-mobile);
+      
+        --ea-theme-b2-letter-spacing-tablet-landscape: var(--ea-theme-b2-letter-spacing-mobile);
+      
+        --ea-theme-b2-letter-spacing-desktop: var(--ea-theme-b2-letter-spacing-mobile);
+      
+        --ea-theme-b2-line-height-mobile: var(--ea-theme-body-line-height-mobile);
+      
+        --ea-theme-b2-line-height-tablet-portrait: var(--ea-theme-body-line-height-mobile);
+      
+        --ea-theme-b2-line-height-tablet-landscape: var(--ea-theme-body-line-height-mobile);
+      
+        --ea-theme-b2-line-height-desktop: var(--ea-theme-body-line-height-desktop);
+      
+    }
+  </style>
+
+
+<script>
+  var onNetworkNavContentFetched = function(e) {
+    var parent = e.target.shadowRoot || e.target;
+    var links = parent.querySelectorAll('section[link-target="profile"] ea-stream a[is="ea-cta"], ea-player-details a[href="/logout"]');
+
+    
+      var basePath = '/games/need-for-speed';
+    
+
+    for(var i = 0; i < links.length; i++) {
+      links[i].href = basePath + links[i].getAttribute('href');
+    }
+  };
+
+  document.addEventListener('ea-network-nav-content-fetched', onNetworkNavContentFetched);
+</script>
+
+    <title>Need for Speed Payback - Car Racing Action Game - Official EA Site</title>
+    
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Need for Speed Payback - Car Racing Action Game - Official EA Site">
+<meta property="og:description" content="Official site of Need for Speed Payback, an action driving fantasy that&#x27;s the newest game in the popular car racing video game franchise, Need for Speed.">
+<meta property="og:url" content="https://www.ea.com/games/need-for-speed/need-for-speed-payback">
+<meta property="og:site_name" content="">
+
+<meta property="og:image" content="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz-16x9.jpg.adapt.crop191x100.1200w.jpg">
+
+
+
+<meta name="description" content="Official site of Need for Speed Payback, an action driving fantasy that&#x27;s the newest game in the popular car racing video game franchise, Need for Speed.">
+<meta name="author" content="Electronic Arts">
+<meta property="article:modified_time" content="2017-08-21T22:24:14Z">
+<meta property="article:published_time" content="">
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ea">
+<meta name="twitter:title" content="Need for Speed Payback - Car Racing Action Game - Official EA Site">
+<meta name="twitter:description" content="Official site of Need for Speed Payback, an action driving fantasy that&#x27;s the newest game in the popular car racing video game franchise, Need for Speed.">
+
+    <meta name="twitter:image" content="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz-16x9.jpg.adapt.crop16x9.320w.jpg">
+
+<meta name="twitter:creator" content="@ea">
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+     
+
+"image": {
+    "@type": "ImageObject",
+    "url": "https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz-16x9.jpg.adapt.crop191x100.1200w.jpg"
+},
+ 
+    "author": {
+      "@type": "Organization",
+      "name": "Electronic Arts",
+      "sameAs": "https://en.wikipedia.org/wiki/Electronic_Arts"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Electronic Arts",
+        "sameAs": "https://en.wikipedia.org/wiki/Electronic_Arts",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://prod-media-eacom.pulse.ea.com/content/dam/ea/c-patternlibrary/logo/EA_logo.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "inLanguage": "en",
+    "description": "Official site of Need for Speed Payback, an action driving fantasy that&#x27;s the newest game in the popular car racing video game franchise, Need for Speed.",
+    "datePublished": "",
+    "dateModified": "2017-08-21T22:24:14Z",
+    "headline": "Need for Speed Payback - Car Racing Action Game - Official EA Site",
+    "url": "https://www.ea.com/games/need-for-speed/need-for-speed-payback"
+}
+</script>
+
+
+   <link rel="import" href="https://www.ea.com/games/need-for-speed/assets/dist/elements/nfs-elements.html" />
+
+
+    </head>
+    <body unresolved>
+        
+    
+
+
+    <ea-network-nav
+    userData="/games/need-for-speed/user-data"
+    content="//network-nav.ea.com/en-us/network-nav"
+        
+    ></ea-network-nav>
+
+
+
+
+
+
+
+
+    
+        
+            
+                
+
+<nav is="ea-local-nav"
+    
+        home-text = "Need For Speed"
+        home-tooltip = "Need For Speed"
+        home-link = "/games/need-for-speed/need-for-speed-payback"
+    
+    
+        logo-image="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfs-abbreviated-logo-sm.svg"
+    
+    
+        logo-tooltip="Need For Speed logo"
+    
+    
+        theme = "light"
+    
+    
+        shelf-type = "band"
+    
+    
+        open-drawer-text = "Menu"
+    
+    
+        open-drawer-tooltip = "Open Menu"
+    
+    
+        close-drawer-text = "Close"
+    
+    
+        close-drawer-tooltip = "Close Menu"
+    
+    
+    
+        hide-featured-product
+    
+    
+>
+    
+        <a title="Need For Speed" href="/games/need-for-speed/need-for-speed-payback">
+            Need For Speed
+            
+                <img
+                    src="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfs-abbreviated-logo-sm.svg"
+                    
+                        alt="Need For Speed logo"
+                    
+                />
+            
+        </a>
+    
+
+    
+        <a
+            is="ea-link"
+            class="eapl-local-nav__shelf-link"
+            href="/games/need-for-speed/need-for-speed-payback/car-customization-101"
+            title="Customization 101"
+        >Customization 101</a>
+    
+        <a
+            is="ea-link"
+            class="eapl-local-nav__shelf-link"
+            href="/games/need-for-speed/need-for-speed-payback/build-of-the-week"
+            title="Build of the Week"
+        >Build of the Week</a>
+    
+        <a
+            is="ea-link"
+            class="eapl-local-nav__shelf-link"
+            href="/games/need-for-speed/need-for-speed-payback/news"
+            title="News"
+        >News</a>
+    
+        <a
+            is="ea-link"
+            class="eapl-local-nav__shelf-link"
+            href="/games/need-for-speed/need-for-speed-payback/buy"
+            title="Pre-Order Now"
+        >Pre-Order</a>
+    
+    
+
+    
+        
+            
+
+
+    <a
+        is="ea-link"
+        class="eapl-local-nav__drawer-link"
+        href="/games/need-for-speed/need-for-speed-payback/news"
+        title="News"
+    >News</a>
+
+
+        
+            
+
+
+    <a
+        is="ea-link"
+        class="eapl-local-nav__drawer-link"
+        href="/games/need-for-speed/need-for-speed-payback/high-stakes"
+        title="High Stakes Gameplay"
+    >High Stakes Gameplay</a>
+
+
+        
+            
+
+
+    <a
+        is="ea-link"
+        class="eapl-local-nav__drawer-link"
+        href="/games/need-for-speed/need-for-speed-payback/bmw"
+        title="BMW"
+    >BMW</a>
+
+
+        
+            
+
+
+    <a
+        is="ea-link"
+        class="eapl-local-nav__drawer-link"
+        href="/games/need-for-speed/need-for-speed-payback/car-customization-101"
+        title="Customization 101"
+    >Customization 101</a>
+
+
+        
+            
+
+
+    <a
+        is="ea-link"
+        class="eapl-local-nav__drawer-link"
+        href="/games/need-for-speed/need-for-speed-payback/build-of-the-week"
+        title="Build of the Week"
+    >Build of the Week</a>
+
+
+        
+            
+
+
+    <a
+        is="ea-link"
+        class="eapl-local-nav__drawer-link"
+        href="https://forums.needforspeed.com/"
+        title="Forums"
+    >Forums</a>
+
+
+        
+            
+
+
+    <a
+        is="ea-link"
+        class="eapl-local-nav__drawer-link"
+        href="/games/need-for-speed/need-for-speed-payback/buy"
+        title="Pre-Order Now"
+    >Pre-Order</a>
+
+
+        
+            
+
+
+    <a
+        is="ea-link"
+        class="eapl-local-nav__drawer-link"
+        href="/games/need-for-speed"
+        title="All Games"
+    >All Games</a>
+
+
+        
+    
+    
+
+<ea-container
+    
+        filter-key="All"
+    
+>
+    <ea-tile
+        
+            byline-text="Out now"
+        
+        
+        
+        
+            eyebrow-text="Out now"
+        
+        
+            eyebrow-secondary-text="on PlayStation4, Xbox One, and PC"
+        
+        
+            title-text="Out now on PlayStation4, Xbox One, and PC"
+        
+        
+    >
+        
+            <h3>Out now on PlayStation4, Xbox One, and PC</h3>
+        
+        
+            <div>Out now</div>
+            
+                <div>on PlayStation4, Xbox One, and PC</div>
+            
+        
+        
+            <div>Out now</div>
+        
+        
+        
+        <ea-tile-copy>
+        
+            <p>Out now on PlayStation4, Xbox One, and PC</p>
+
+        
+        </ea-tile-copy>
+        
+        
+            
+
+
+
+<a
+    is="nfs-cta"
+    cta
+    
+        type="standard"
+    
+    
+        href="https://www.needforspeed.com/buy"
+    
+    
+        title="Buy Now"
+    
+    
+        icon="none"
+    
+    
+    
+        fill-color="brand"
+    
+    
+        text-color="dark"
+    
+    
+        stroke-color="dark"
+    
+    
+    
+    
+    
+        intent="buy"
+    
+    
+    
+
+    
+        emphasis="primary"
+    
+>
+    
+        Buy Now
+    
+</a>
+        
+    </ea-tile>
+</ea-container>
+
+    
+</nav>
+
+            
+        
+    
+
+
+
+
+
+
+
+
+<ea-page-background layout="fixed">
+    
+
+
+
+
+    <ea-image
+        tooltip=""
+        smallest="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-video-poster.png.adapt.crop16x9.320w.png"
+        small="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-video-poster.png.adapt.crop16x9.767w.png"
+        medium="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-video-poster.png.adapt.crop16x9.1023w.png"
+        large="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-video-poster.png.adapt.crop16x9.1455w.png"
+        largest="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-video-poster.png.adapt.crop16x9.1920w.png"
+    >
+        <img
+            src="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-video-poster.png.adapt.crop16x9.320w.png"
+            alt=""
+            srcset="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-video-poster.png.adapt.crop16x9.320w.png 320w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-video-poster.png.adapt.crop16x9.767w.png 768w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-video-poster.png.adapt.crop16x9.1023w.png 1024w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-video-poster.png.adapt.crop16x9.1455w.png 1320w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-video-poster.png.adapt.crop16x9.1920w.png 1456w" />
+    </ea-image>
+
+
+
+</ea-page-background>
+
+<nfs-drag-nav
+    
+        theme="light"
+    
+>
+    
+
+
+<nfs-drag-nav-target
+    
+        id="trailer"
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="large"
+    
+    
+        label="Trailer"
+    
+    
+    
+>
+
+    <div class="nfs-drag-nav-target__content">
+        
+
+
+
+<ea-hero
+    
+        layout="large"
+    
+
+    
+        text-position="center"
+    
+
+    
+        text-align="center"
+    
+
+    
+        text-color="dark"
+    
+
+    
+
+    
+        background-color="none"
+    
+
+    
+
+    
+        title-text="NEED FOR SPEED PAYBACK COMING NOV 10"
+    
+
+    
+
+    
+        image-smallest="https://media.contentapi.ea.com/content/dam/needforspeed-18/images/2017/06/nfs-payback-hero-xlarge-img-2x.png.adapt.crop3x5.320w.png"
+        image-small="https://media.contentapi.ea.com/content/dam/needforspeed-18/images/2017/06/nfs-payback-hero-xlarge-img-2x.png.adapt.crop3x5.767w.png"
+        image-medium="https://media.contentapi.ea.com/content/dam/needforspeed-18/images/2017/06/nfs-payback-hero-xlarge-img-2x.png.adapt.crop3x2.1023w.png"
+        image-large="https://media.contentapi.ea.com/content/dam/needforspeed-18/images/2017/06/nfs-payback-hero-xlarge-img-2x.png.adapt.crop3x2.1455w.png"
+        image-largest="https://media.contentapi.ea.com/content/dam/needforspeed-18/images/2017/06/nfs-payback-hero-xlarge-img-2x.png.adapt.crop16x9.1920w.png"
+        image-tooltip=""
+    
+    
+        logo-image="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfs-payback-logo-sm.svg"
+    
+    
+        logo-tooltip="Need For Speed Payback"
+    
+    
+        spacing-bottom="none"
+    
+    
+        scrim-color="none"
+    
+    
+        scrim-opacity="medium"
+    
+>
+    
+        <h1>NEED FOR SPEED PAYBACK COMING NOV 10</h1>
+    
+    
+    
+    
+        <img
+            src="https://media.contentapi.ea.com/content/dam/needforspeed-18/images/2017/06/nfs-payback-hero-xlarge-img-2x.png.adapt.crop3x5.320w.png"
+            alt=""
+            srcset="https://media.contentapi.ea.com/content/dam/needforspeed-18/images/2017/06/nfs-payback-hero-xlarge-img-2x.png.adapt.crop3x5.320w.png 320w, https://media.contentapi.ea.com/content/dam/needforspeed-18/images/2017/06/nfs-payback-hero-xlarge-img-2x.png.adapt.crop3x5.767w.png 768w, https://media.contentapi.ea.com/content/dam/needforspeed-18/images/2017/06/nfs-payback-hero-xlarge-img-2x.png.adapt.crop3x2.1023w.png 1024w, https://media.contentapi.ea.com/content/dam/needforspeed-18/images/2017/06/nfs-payback-hero-xlarge-img-2x.png.adapt.crop3x2.1455w.png 1320w, https://media.contentapi.ea.com/content/dam/needforspeed-18/images/2017/06/nfs-payback-hero-xlarge-img-2x.png.adapt.crop16x9.1920w.png 1456w"
+        />
+    
+    
+        <img
+            src="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfs-payback-logo-sm.svg"
+            
+                alt="Need For Speed Payback"
+            
+        />
+    
+    
+    
+    
+    
+
+
+
+<a
+    is="nfs-cta"
+    cta
+    
+        type="standard"
+    
+    
+    
+    
+        icon="play"
+    
+    
+    
+        fill-color="brand"
+    
+    
+        text-color="light"
+    
+    
+        stroke-color="brand"
+    
+    
+    
+    
+    
+        intent="media"
+    
+    
+        modal-id="trailerVideo"
+    
+    
+
+    
+        emphasis="primary"
+    
+>
+    
+        Watch Trailer
+    
+</a>
+
+
+
+<a
+    is="nfs-cta"
+    cta
+    
+        type="standard"
+    
+    
+        href="/games/need-for-speed/need-for-speed-payback/buy"
+    
+    
+    
+        icon="none"
+    
+    
+    
+        fill-color="none"
+    
+    
+        text-color="dark"
+    
+    
+        stroke-color="dark"
+    
+    
+    
+    
+    
+        intent="navigation"
+    
+    
+    
+
+    
+        emphasis="primary"
+    
+>
+    
+        Pre-order
+    
+</a>
+    
+</ea-hero>
+
+
+<ea-more-indicator
+    alignment="center"
+    theme="light"
+>
+</ea-more-indicator>
+
+    </div>
+</nfs-drag-nav-target>
+<nfs-drag-nav-target
+    
+        id="overview"
+    
+    
+        spacing-top="large"
+    
+    
+        spacing-bottom="none"
+    
+    
+        label="Overview"
+    
+    
+    
+>
+
+    <div class="nfs-drag-nav-target__content">
+        
+
+
+
+<ea-section
+    
+        type="railed"
+    
+    
+        layout="100"
+    
+    
+        background-color="none"
+    
+    
+        background-overflow="visible"
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="none"
+    
+    
+    
+    
+>
+    
+    
+
+<ea-section-column
+    
+    
+    
+        text-align="left"
+    
+>
+    
+
+<ea-subheading
+    
+        type="ordered"
+    
+    
+        layout="large"
+    
+    
+        text-align="center"
+    
+    
+        text-color="light"
+    
+    
+    
+        title-text="WIN AGAINST ALL ODDS"
+    
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="none"
+    
+>
+    
+    
+        <h3>WIN AGAINST ALL ODDS</h3>
+    
+    
+</ea-subheading>
+
+
+<ea-grid
+    
+
+
+    type="ordered"
+
+
+    tile-media-shape="rectangle"
+
+
+
+
+    layout="2up"
+
+
+    tile-type="vertical"
+
+
+    tile-text-align="left"
+
+
+    tile-text-color="dark"
+
+
+    tile-color="light"
+
+
+
+
+    hide-eyebrow
+
+
+
+
+    hide-cta
+
+
+
+    hide-byline
+
+
+    spacing-top="medium"
+
+
+    spacing-bottom="medium"
+
+
+
+    
+        tile-scrim-color="none"
+    
+    
+        tile-scrim-opacity="medium"
+    
+    tile-align="left"
+>
+    <ea-containers>
+        
+
+<ea-container
+    
+        filter-key="All"
+    
+>
+    <ea-tile
+        
+        
+        
+            media="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-high-stakes-competition.jpg.adapt.crop16x9.jpg"
+        
+        
+        
+        
+            title-text="High-Stakes Competition"
+        
+        
+    >
+        
+            <h3>High-Stakes Competition</h3>
+        
+        
+        
+        
+            <img src="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-high-stakes-competition.jpg.adapt.crop16x9.jpg" />
+        
+        
+        <ea-tile-copy>
+        
+            <p>Get on a roll and win big with risk-versus-reward gameplay. The return of cop chases means the stakes have never been higher.</p>
+
+        
+        </ea-tile-copy>
+        
+        
+            
+
+
+
+<a
+    is="nfs-cta"
+    cta
+    
+        type="standard"
+    
+    
+        href="/games/need-for-speed/need-for-speed-payback/high-stakes"
+    
+    
+    
+        icon="none"
+    
+    
+    
+        fill-color="none"
+    
+    
+        text-color="dark"
+    
+    
+        stroke-color="dark"
+    
+    
+    
+    
+    
+        intent="usp"
+    
+    
+    
+
+    
+        emphasis="primary"
+    
+>
+    
+         
+    
+</a>
+        
+    </ea-tile>
+</ea-container>
+
+
+<ea-container
+    
+        filter-key="All"
+    
+>
+    <ea-tile
+        
+        
+        
+            media="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-action-driving-fantasy.jpg.adapt.crop16x9.jpg"
+        
+        
+        
+        
+            title-text="Live Out an Action-Driving Fantasy"
+        
+        
+    >
+        
+            <h3>Live Out an Action-Driving Fantasy</h3>
+        
+        
+        
+        
+            <img src="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-action-driving-fantasy.jpg.adapt.crop16x9.jpg" />
+        
+        
+        <ea-tile-copy>
+        
+            <p>Play through an explosive adventure as three distinct characters united by one common goal: revenge.</p>
+
+        
+        </ea-tile-copy>
+        
+        
+            
+        
+    </ea-tile>
+</ea-container>
+
+    </ea-containers>
+    
+
+
+
+</ea-grid>
+
+</ea-section-column>
+
+</ea-section>
+
+
+<ea-subheading
+    
+        type="ordered"
+    
+    
+        layout="large"
+    
+    
+        text-align="center"
+    
+    
+        text-color="light"
+    
+    
+    
+        title-text="SCRAP TO STOCK TO SUPERCAR"
+    
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="none"
+    
+>
+    
+    
+        <h3>SCRAP TO STOCK TO SUPERCAR</h3>
+    
+    
+</ea-subheading>
+
+
+<ea-section
+    
+        type="railed"
+    
+    
+        layout="100"
+    
+    
+        background-color="none"
+    
+    
+        background-overflow="visible"
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="none"
+    
+    
+    
+    
+>
+    
+    
+
+<ea-section-column
+    
+        indent-left=""
+    
+    
+        indent-right=""
+    
+    
+        text-align="left"
+    
+>
+    
+
+<figure
+    is="ea-media"
+    
+    
+    
+        text-color="dark"
+    
+    
+        hide-title=""
+    
+    
+    
+        hide-caption=""
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="none"
+    
+>
+    
+
+
+
+
+    <ea-image
+        tooltip=""
+        smallest="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-scrap-stock-supercar.jpg.adapt.320w.jpg"
+        small="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-scrap-stock-supercar.jpg.adapt.768w.jpg"
+        medium="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-scrap-stock-supercar.jpg.adapt.1024w.jpg"
+        large="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-scrap-stock-supercar.jpg.adapt.1456w.jpg"
+        largest="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-scrap-stock-supercar.jpg.adapt.1920w.jpg"
+    >
+        <img
+            src="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-scrap-stock-supercar.jpg.adapt.320w.jpg"
+            alt=""
+            srcset="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-scrap-stock-supercar.jpg.adapt.320w.jpg 320w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-scrap-stock-supercar.jpg.adapt.768w.jpg 768w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-scrap-stock-supercar.jpg.adapt.1024w.jpg 1024w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-scrap-stock-supercar.jpg.adapt.1456w.jpg 1320w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-scrap-stock-supercar.jpg.adapt.1920w.jpg 1456w" />
+    </ea-image>
+
+
+
+    <figcaption>
+        
+
+        
+    </figcaption>
+</figure>
+
+</ea-section-column>
+
+</ea-section>
+
+
+<ea-section
+    
+        type="railed"
+    
+    
+        layout="100"
+    
+    
+        background-color="none"
+    
+    
+        background-overflow="visible"
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="none"
+    
+    
+    
+    
+>
+    
+    
+
+<ea-section-column
+    
+        indent-left="1"
+    
+    
+        indent-right="3"
+    
+    
+        text-align="left"
+    
+>
+    
+
+<ea-text
+    
+        text-color="light"
+    
+>
+    <p>Endlessly fine-tune your performance through each of the five distinct car classes (Race, Drift, Off-Road, Drag, and Runner) to turn the tables on the competition in any race, mission or challenge. Find abandoned vehicles scattered throughout the world to create your perfect car from the ground up. Collect, win or buy the hottest after-market parts and build out your perfect garage.</p>
+
+    
+</ea-text>
+
+</ea-section-column>
+
+</ea-section>
+
+
+    </div>
+</nfs-drag-nav-target>
+<nfs-drag-nav-target
+    
+        id="garage"
+    
+    
+        spacing-top="large"
+    
+    
+        spacing-bottom="large"
+    
+    
+        label="The Garage"
+    
+    
+    
+>
+
+    <div class="nfs-drag-nav-target__content">
+        
+
+
+
+
+
+<nfs-tout
+    
+        slash="true"
+    
+    
+        layout="small"
+    
+    
+        text-position="right"
+    
+    
+        text-align="right"
+    
+    
+        text-color="dark"
+    
+    
+        background-color="light"
+    
+    
+        title-text="THE GARAGE"
+    
+    
+        subtitle-text="Build unique rides with deeper performance and visual customization than ever before."
+    
+    
+    
+    
+        spacing-top="large"
+    
+    
+        spacing-bottom="large"
+    
+    
+        scrim-color="none"
+    
+    
+        scrim-opacity="medium"
+    
+    
+        image-smallest="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-the-garage.jpg.adapt.crop1x1.320w.jpg"
+        image-small="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-the-garage.jpg.adapt.crop1x1.767w.jpg"
+        image-medium="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-the-garage.jpg.adapt.crop2x1.1023w.jpg"
+        image-large="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-the-garage.jpg.adapt.crop2x1.1455w.jpg"
+        image-largest="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-the-garage.jpg.adapt.crop5x2.1920w.jpg"
+        image-tooltip=""
+    
+>
+    
+        <img
+            src="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-the-garage.jpg.adapt.crop1x1.320w.jpg"
+            alt=""
+            srcset="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-the-garage.jpg.adapt.crop1x1.320w.jpg 320w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-the-garage.jpg.adapt.crop1x1.767w.jpg 768w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-the-garage.jpg.adapt.crop2x1.1023w.jpg 1024w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-the-garage.jpg.adapt.crop2x1.1455w.jpg 1320w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfs-payback-the-garage.jpg.adapt.crop5x2.1920w.jpg 1456w"
+        />
+    
+    
+    
+    
+        <h3>THE GARAGE</h3>
+    
+    
+        <h4>Build unique rides with deeper performance and visual customization than ever before.</h4>
+    
+    
+    
+
+
+
+<a
+    is="nfs-cta"
+    cta
+    
+        type="standard"
+    
+    
+        href="/games/need-for-speed/need-for-speed-payback/car-customization-101"
+    
+    
+    
+        icon="none"
+    
+    
+    
+        fill-color="none"
+    
+    
+        text-color="dark"
+    
+    
+        stroke-color="dark"
+    
+    
+    
+    
+    
+        intent="navigation"
+    
+    
+    
+
+    
+        emphasis="primary"
+    
+>
+    
+        Learn More
+    
+</a>
+</nfs-tout>
+
+
+    </div>
+</nfs-drag-nav-target>
+<nfs-drag-nav-target
+    
+        id="newsletter"
+    
+    
+        spacing-top="medium"
+    
+    
+        spacing-bottom="medium"
+    
+    
+        label="Newsletter"
+    
+    
+    
+>
+
+    <div class="nfs-drag-nav-target__content">
+        
+
+
+
+<ea-section
+    
+        type="railed"
+    
+    
+        layout="100"
+    
+    
+        background-color="none"
+    
+    
+        background-overflow="visible"
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="none"
+    
+    
+    
+    
+>
+    
+    
+
+<ea-section-column
+    
+        indent-left=""
+    
+    
+        indent-right=""
+    
+    
+        text-align="left"
+    
+>
+    
+
+<ea-subheading
+    
+        type="ordered"
+    
+    
+        layout="large"
+    
+    
+        text-align="center"
+    
+    
+        text-color="light"
+    
+    
+    
+        title-text="STAY UP TO DATE"
+    
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="none"
+    
+>
+    
+    
+        <h3>STAY UP TO DATE</h3>
+    
+    
+</ea-subheading>
+
+
+<figure
+    is="ea-media"
+    
+    
+    
+        text-color="dark"
+    
+    
+        hide-title=""
+    
+    
+    
+        hide-caption=""
+    
+    
+        spacing-top="medium"
+    
+    
+        spacing-bottom="medium"
+    
+>
+    
+
+
+
+
+    <ea-image
+        tooltip=""
+        smallest="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfsp-license-plate.jpg.adapt.320w.jpg"
+        small="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfsp-license-plate.jpg.adapt.768w.jpg"
+        medium="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfsp-license-plate.jpg.adapt.1024w.jpg"
+        large="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfsp-license-plate.jpg.adapt.1456w.jpg"
+        largest="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfsp-license-plate.jpg.adapt.1920w.jpg"
+    >
+        <img
+            src="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfsp-license-plate.jpg.adapt.320w.jpg"
+            alt=""
+            srcset="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfsp-license-plate.jpg.adapt.320w.jpg 320w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfsp-license-plate.jpg.adapt.768w.jpg 768w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfsp-license-plate.jpg.adapt.1024w.jpg 1024w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfsp-license-plate.jpg.adapt.1456w.jpg 1320w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfsp-license-plate.jpg.adapt.1920w.jpg 1456w" />
+    </ea-image>
+
+
+
+    <figcaption>
+        
+
+        
+    </figcaption>
+</figure>
+
+</ea-section-column>
+
+</ea-section>
+
+
+<ea-newsletter-opt-in
+    api-newsletter-status="/games/need-for-speed/newsletter/api/status"
+    api-newsletter-signup="/games/need-for-speed/newsletter/api/signup"
+    
+        token="-fK0pKXmoab8dP2KCplWHGLel37YILzCyn3Ide20Hdw4ZjJZvpBhT3nnsRbIKtbdgCkuCqn7UIGJn7ESKBpKUyOV9q8HsUoGXJdNbhw66fJzQRS0uA-MVEPgt_kAYeJp51Nira7HHnRfEKL9nrxI-nL6hZ4ztCLFVjBtpWuCUfbUClWh7SouWZXyqkya2b5Ssxn6se8f-xQAtNJZB_hqXo1fdMW0xR_lOvrWd5iZ_ZvsTMr8SPwzCFErkZNv3WZBYS3qTvQhLI1wdSWlFW3BFQDK-9DlyqiBHJf3A9avPjmycBFbVw"
+    
+    
+    
+    
+        proposition-title-text="Sign up now and get the custom NFS Payback License Plate"
+    
+    
+        email-label-text="Email"
+    
+    
+        email-error-text="Invalid email address"
+    
+    
+        birthdate-label-Text="Birthdate"
+    
+    
+        birthdate-error-Text="Invalid birthdate"
+    
+    
+        birthdate-month-placeholder-text="MM"
+    
+    
+        birthdate-day-placeholder-text="DD"
+    
+    
+        birthdate-year-placeholder-text="YYYY"
+    
+    
+    
+        country-label-text="Country"
+    
+    
+        countries="[{&#34;value&#34;:&#34;US&#34;,&#34;text&#34;:&#34;United States&#34;},{&#34;value&#34;:&#34;AR&#34;,&#34;text&#34;:&#34;Argentina&#34;},{&#34;value&#34;:&#34;AU&#34;,&#34;text&#34;:&#34;Australia&#34;},{&#34;value&#34;:&#34;AT&#34;,&#34;text&#34;:&#34;Austria&#34;},{&#34;value&#34;:&#34;BE&#34;,&#34;text&#34;:&#34;Belgium&#34;},{&#34;value&#34;:&#34;BR&#34;,&#34;text&#34;:&#34;Brazil&#34;},{&#34;value&#34;:&#34;CA&#34;,&#34;text&#34;:&#34;Canada&#34;},{&#34;value&#34;:&#34;CL&#34;,&#34;text&#34;:&#34;Chile&#34;},{&#34;value&#34;:&#34;CN&#34;,&#34;text&#34;:&#34;China&#34;},{&#34;value&#34;:&#34;CO&#34;,&#34;text&#34;:&#34;Colombia&#34;},{&#34;value&#34;:&#34;CZ&#34;,&#34;text&#34;:&#34;Czech Republic&#34;},{&#34;value&#34;:&#34;DK&#34;,&#34;text&#34;:&#34;Denmark&#34;},{&#34;value&#34;:&#34;FI&#34;,&#34;text&#34;:&#34;Finland&#34;},{&#34;value&#34;:&#34;FR&#34;,&#34;text&#34;:&#34;France&#34;},{&#34;value&#34;:&#34;DE&#34;,&#34;text&#34;:&#34;Germany&#34;},{&#34;value&#34;:&#34;GR&#34;,&#34;text&#34;:&#34;Greece&#34;},{&#34;value&#34;:&#34;HK&#34;,&#34;text&#34;:&#34;Hong Kong&#34;},{&#34;value&#34;:&#34;HU&#34;,&#34;text&#34;:&#34;Hungary&#34;},{&#34;value&#34;:&#34;IN&#34;,&#34;text&#34;:&#34;India&#34;},{&#34;value&#34;:&#34;IE&#34;,&#34;text&#34;:&#34;Ireland&#34;},{&#34;value&#34;:&#34;IL&#34;,&#34;text&#34;:&#34;Israel&#34;},{&#34;value&#34;:&#34;IT&#34;,&#34;text&#34;:&#34;Italy&#34;},{&#34;value&#34;:&#34;JP&#34;,&#34;text&#34;:&#34;Japan&#34;},{&#34;value&#34;:&#34;KR&#34;,&#34;text&#34;:&#34;Korea&#34;},{&#34;value&#34;:&#34;MX&#34;,&#34;text&#34;:&#34;Mexico&#34;},{&#34;value&#34;:&#34;NL&#34;,&#34;text&#34;:&#34;Netherlands&#34;},{&#34;value&#34;:&#34;NZ&#34;,&#34;text&#34;:&#34;New Zealand&#34;},{&#34;value&#34;:&#34;NO&#34;,&#34;text&#34;:&#34;Norway&#34;},{&#34;value&#34;:&#34;PL&#34;,&#34;text&#34;:&#34;Poland&#34;},{&#34;value&#34;:&#34;PT&#34;,&#34;text&#34;:&#34;Portugal&#34;},{&#34;value&#34;:&#34;RU&#34;,&#34;text&#34;:&#34;Russia&#34;},{&#34;value&#34;:&#34;SA&#34;,&#34;text&#34;:&#34;Saudi Arabia&#34;},{&#34;value&#34;:&#34;SG&#34;,&#34;text&#34;:&#34;Singapore&#34;},{&#34;value&#34;:&#34;SK&#34;,&#34;text&#34;:&#34;Slovakia&#34;},{&#34;value&#34;:&#34;ZA&#34;,&#34;text&#34;:&#34;South Africa&#34;},{&#34;value&#34;:&#34;ES&#34;,&#34;text&#34;:&#34;Spain&#34;},{&#34;value&#34;:&#34;SE&#34;,&#34;text&#34;:&#34;Sweden&#34;},{&#34;value&#34;:&#34;CH&#34;,&#34;text&#34;:&#34;Switzerland&#34;},{&#34;value&#34;:&#34;TW&#34;,&#34;text&#34;:&#34;Taiwan&#34;},{&#34;value&#34;:&#34;TH&#34;,&#34;text&#34;:&#34;Thailand&#34;},{&#34;value&#34;:&#34;TR&#34;,&#34;text&#34;:&#34;Turkey&#34;},{&#34;value&#34;:&#34;UA&#34;,&#34;text&#34;:&#34;Ukraine&#34;},{&#34;value&#34;:&#34;AE&#34;,&#34;text&#34;:&#34;United Arab Emirates&#34;},{&#34;value&#34;:&#34;GB&#34;,&#34;text&#34;:&#34;United Kingdom&#34;}]"
+    
+    
+        edit-profile-text="edit"
+    
+    
+        edit-profile-link="https://myaccount.ea.com/cp-ui/aboutme/index?locale=en_US"
+    
+    
+        connected-platforms-title-text="Your Connected Platforms"
+    
+    
+        connected-platforms-more-text="See Connected Platforms"
+    
+    
+        connected-platforms-more-link="https://myaccount.ea.com/cp-ui/aboutme/index?locale=en_US"
+    
+    
+        connected-platforms-help-text="How do I add accounts?"
+    
+    
+        connected-platforms-help-link="https://help.ea.com/en-us/help/account/linking-your-origin-account-with-your-psn-id-and-gamertag/"
+    
+    
+        submit-text="Sign Up"
+    
+    
+        sign-in-cta-text="Sign In and Join"
+    
+    
+        sign-in-cta-link="/games/need-for-speed/login?postAuthUri=/games/need-for-speed/need-for-speed-payback"
+    
+    
+        sign-up-cta-text="Sign Up"
+    
+    
+        success-title-text="You&#x27;ve successfully signed up."
+    
+    
+    
+    
+        already-title-text="You&#x27;ve already signed up"
+    
+    
+    
+    
+        ineligible-title-text="Ineligible"
+    
+    
+    
+    
+        error-title-text="Error"
+    
+    
+        error-cta-text="Head Home"
+    
+    
+        error-cta-link="/games/need-for-speed/need-for-speed-payback"
+    
+    
+        type="contextual"
+    
+    
+        theme="light"
+    
+    
+        input-background-color="none"
+    
+    
+        background-color="none"
+    
+    
+        submit-text-color="light"
+    
+    
+        spacing-bottom="medium"
+    
+    
+        spacing-top="none"
+    
+    
+        preferences
+    
+    
+        entitlements
+    
+>
+    
+        <newsletter-opt-in-proposition-copy-text>
+           <p>Sign up today to receive the latest EA NEED FOR SPEED™&nbsp;news, updates, behind-the-scenes content, exclusive offers, and more (including other EA news, products, events, and promotions) by email.</p>
+
+        </newsletter-opt-in-proposition-copy-text>
+    
+    
+        <newsletter-opt-in-sign-in-copy-text>
+           <p>Sign up for the EA NEED FOR SPEED™&nbsp;newsletter.</p>
+
+        </newsletter-opt-in-sign-in-copy-text>
+    
+    
+        <newsletter-opt-in-sign-up-copy-text>
+           <p>Sign up for the EA NEED FOR SPEED™&nbsp;newsletter.</p>
+
+        </newsletter-opt-in-sign-up-copy-text>
+    
+    
+    
+        <newsletter-opt-in-opt-in-label-text>
+           Yes! Send me EA news, products, events and promotions by email consistent with <a href="https://tos.ea.com/legalapp/WEBPRIVACY/US/en/PC/">EA’s Privacy &amp; Cookie Policy</a>. I can unsubscribe at any time by changing my <a href="https://myaccount.ea.com/cp-ui/aboutme/index?locale=en_US">email preferences</a>, emailing privacy_policy@ea.com, or writing to Electronic Arts Inc., ATTN: Email Opt-Out, 209 Redwood Shores Pkwy, Redwood City, CA, 94065, USA.
+
+        </newsletter-opt-in-opt-in-label-text>
+    
+    
+        <newsletter-opt-in-success-copy-text>
+            <p>You've successfully signed up to receive emails about EA NEED FOR SPEED™&nbsp;and other EA news, products, events and promotions. Unsubscribe at any time by changing your <a href="https://myaccount.ea.com/cp-ui/aboutme/index?locale=en_US">email preferences</a>.</p>
+
+        </newsletter-opt-in-success-copy-text>
+    
+    
+        <newsletter-opt-in-already-copy-text>
+            <p>You’ve already signed up for EA NEED FOR SPEED™&nbsp;newsletters with the above email. Please check your spam folder for the above email. If you still have troubles receiving the emails, please <a href="https://help.ea.com/contact-us/">contact EA</a>.</p>
+
+        </newsletter-opt-in-already-copy-text>
+    
+    
+        <newsletter-opt-in-ineligible-copy-text>
+            <p>Sorry, you are ineligible to sign up for this newsletter.</p>
+
+        </newsletter-opt-in-ineligible-copy-text>
+    
+    
+        <newsletter-opt-in-error-copy-text>
+            <p>Sorry, something has gone wrong. Please try again later.</p>
+
+        </newsletter-opt-in-error-copy-text>
+    
+</ea-newsletter-opt-in>
+
+
+    </div>
+</nfs-drag-nav-target>
+<nfs-drag-nav-target
+    
+        id="preorder"
+    
+    
+        spacing-top="large"
+    
+    
+        spacing-bottom="large"
+    
+    
+        label="Pre-Order"
+    
+    
+    
+>
+
+    <div class="nfs-drag-nav-target__content">
+        
+
+
+
+<ea-buy-game
+    
+        theme="light"
+    
+    
+        spacing-bottom="none"
+    
+>
+    
+
+
+    <ea-buy-game-product
+        edition-text="Deluxe Edition"
+        
+            title-text="Pre-Order Need for Speed Payback Deluxe Edition*"
+        
+        
+    >
+        <h2>Deluxe Edition</h2>
+        
+
+<ea-text
+    
+        text-color="light"
+    
+>
+    <p>The Need for Speed™ Payback Deluxe Edition gives you an edge over the competition with up to 3 days of early access to the full game. Stand out from the crowd with exclusive customization items and receive in-game discounts, Rep bonuses, and five shipments to get your adventure started.<br>
+<br>
+Also includes the upcoming Story Mission Pack and the Need for Speed™ Payback Platinum Car Pack&nbsp;including exclusive Platinum Blue Underglow.</p>
+
+    
+        <ea-text-long
+            
+                read-more-text="Read More"
+            
+            
+                read-less-text="Read Less"
+            
+        ><p><u>Deluxe Edition Content:</u><br>
+</p>
+<ul>
+<li>Up to 3 days of early access</li>
+<li>Story Mission Pack</li>
+<li>Exclusive Deluxe Edition NOS Color (Can be applied to 5 cars)</li>
+<li>Exclusive Deluxe Edition License Plate</li>
+<li>Exclusive Deluxe Edition Leaderboard Icon</li>
+<li>5 Shipments</li>
+<li>5% Rep Bonus</li>
+<li>10% Discount on in-game purchases</li>
+<li>Platinum Car Pack, including:<ul>
+<li>Chevrolet Camaro SS 1967</li>
+<li>Dodge Charger R/T 1969</li>
+<li>Ford F-150 Raptor 2016</li>
+<li>Nissan 350Z 2008</li>
+<li>Volkswagen Golf GTI Clubsport 2016</li>
+<li>Exclusive Platinum Blue Underglow &amp; Tire Smoke Vanity Items†</li>
+</ul>
+</li>
+</ul>
+</ea-text-long>
+    
+</ea-text>
+
+        
+
+<ea-details-table
+    
+        theme="light"
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="small"
+    
+>
+    
+        <ea-details-table-row
+            label="Studio"
+            text="Ghost Games"
+        >
+            <div>
+                <div>Studio</div>
+                <div>Ghost Games</div>
+            </div>
+        </ea-details-table-row>
+    
+        <ea-details-table-row
+            label="Genre"
+            text="Action/Driving"
+        >
+            <div>
+                <div>Genre</div>
+                <div>Action/Driving</div>
+            </div>
+        </ea-details-table-row>
+    
+        <ea-details-table-row
+            label="Platform"
+            text="PC, PC Download, PS4, Xbox One"
+        >
+            <div>
+                <div>Platform</div>
+                <div>PC, PC Download, PS4, Xbox One</div>
+            </div>
+        </ea-details-table-row>
+    
+        <ea-details-table-row
+            label="Release Date"
+            text="11/7/2017"
+        >
+            <div>
+                <div>Release Date</div>
+                <div>11/7/2017</div>
+            </div>
+        </ea-details-table-row>
+    
+</ea-details-table>
+
+        
+
+
+
+
+    <ea-buy-game-product-retailer
+        
+            title-text="Need for Speed Payback Deluxe Edition"
+        
+        
+            platform-text="PS4"
+        
+        
+            price-text="Visit the PlayStation Store"
+        
+        
+            release-date-prefix-text="Release Date:"
+        
+        
+            release-date-text="November 7"
+        
+        
+            pack-art-url="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfspbde-ps4-generic.jpg"
+        
+    >
+    <div>
+        
+            <h6>Need for Speed Payback Deluxe Edition</h6>
+        
+        
+            <div>PS4</div>
+        
+        
+            <img
+                src="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfspbde-ps4-generic.jpg"
+            
+                alt="Need for Speed Payback Deluxe Edition PS4"
+            
+            />
+        
+    </div>
+    
+
+
+
+<a
+    is="nfs-cta"
+    cta
+    
+        type="standard"
+    
+    
+        href="http://smarturl.it/NFSPB-PO-PS4-DELUXE"
+    
+    
+    
+    
+    
+        fill-color="brand"
+    
+    
+        text-color="light"
+    
+    
+    
+    
+    
+    
+        intent="retailer"
+    
+    
+    
+        full-width
+    
+
+    
+>
+    
+        PS4
+    
+</a>
+    </ea-buy-game-product-retailer>
+
+
+
+
+
+
+    <ea-buy-game-product-retailer
+        
+            title-text="Need for Speed Payback Deluxe Edition"
+        
+        
+            platform-text="Xbox One"
+        
+        
+            price-text="Visit the Microsoft® Store"
+        
+        
+        
+        
+            pack-art-url="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfsde-xone--generic.jpg"
+        
+    >
+    <div>
+        
+            <h6>Need for Speed Payback Deluxe Edition</h6>
+        
+        
+            <div>Xbox One</div>
+        
+        
+            <img
+                src="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfsde-xone--generic.jpg"
+            
+                alt="Need for Speed Payback Deluxe Edition Xbox One"
+            
+            />
+        
+    </div>
+    
+
+
+
+<a
+    is="nfs-cta"
+    cta
+    
+        type="standard"
+    
+    
+        href="http://store.xbox.com/xbox-one/games/Need-for-Speed-Payback-Deluxe-Edition/40fe509f-9b15-4291-9a7c-36a8881997ec"
+    
+    
+    
+    
+    
+        fill-color="brand"
+    
+    
+        text-color="light"
+    
+    
+        stroke-color="none"
+    
+    
+    
+    
+    
+        intent="retailer"
+    
+    
+    
+        full-width
+    
+
+    
+>
+    
+        Xbox One
+    
+</a>
+    </ea-buy-game-product-retailer>
+
+
+
+
+    <ea-buy-game-product-origin-retailer
+        user-data-endpoint=""
+        
+            platform-text="PC"
+        
+        
+            title-text="Need for Speed Payback Deluxe Edition"
+        
+        
+            origin-master-title="nfs-payback"
+        
+        
+            origin-platform="pc-download"
+        
+        
+            origin-type="base-game"
+        
+        
+            origin-edition="deluxe-edition"
+        
+        
+        
+        
+            pack-art-url="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfsde-pc-us-ca.jpg"
+        
+        origin-host=""
+    >
+        
+
+
+
+<a
+    is="nfs-cta"
+    cta
+    
+        type="standard"
+    
+    
+        href="http://www.origin.com/store/need-for-speed/need-for-speed-payback/deluxe-edition"
+    
+    
+    
+    
+    
+        fill-color="brand"
+    
+    
+        text-color="light"
+    
+    
+    
+    
+    
+    
+        intent="retailer"
+    
+    
+    
+        full-width
+    
+
+    
+>
+    
+        Origin
+    
+</a>
+    </ea-buy-game-product-origin-retailer>
+
+
+    </ea-buy-game-product>
+
+
+
+
+    <ea-buy-game-product
+        edition-text="Standard Edition"
+        
+            title-text="Pre-Order Need for Speed Payback*"
+        
+        
+    >
+        <h2>Standard Edition</h2>
+        
+
+<ea-text
+    
+        text-color="light"
+    
+>
+    <p>Pre-order Need for Speed™ Payback now to receive the Platinum Car Pack. Drive straight into the action on the roads of Fortune Valley with instant access to five uniquely customized and tuned iconic cars, each with exclusive† Platinum Blue Tire Smoke and Underglow.<br>
+<br>
+<b><u>Platinum Car Pack Includes:</u></b><br>
+</p>
+<ul>
+<li>Exclusive Platinum Blue Underglow &amp; Tire Smoke Vanity Items†</li>
+<li>Nissan 350Z 2008</li>
+<li>Chevrolet Camaro SS 1967</li>
+<li>Dodge Charger R/T 1969</li>
+<li>Ford F-150 Raptor 2016</li>
+<li>Volkswagen Golf GTI Clubsport 2016</li>
+</ul>
+
+    
+</ea-text>
+
+        
+
+<ea-details-table
+    
+        theme="light"
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="small"
+    
+>
+    
+        <ea-details-table-row
+            label="Studio"
+            text="Ghost Games"
+        >
+            <div>
+                <div>Studio</div>
+                <div>Ghost Games</div>
+            </div>
+        </ea-details-table-row>
+    
+        <ea-details-table-row
+            label="Genre"
+            text="Action/Driving"
+        >
+            <div>
+                <div>Genre</div>
+                <div>Action/Driving</div>
+            </div>
+        </ea-details-table-row>
+    
+        <ea-details-table-row
+            label="Platform"
+            text="PC, PC Download, PS4, Xbox One"
+        >
+            <div>
+                <div>Platform</div>
+                <div>PC, PC Download, PS4, Xbox One</div>
+            </div>
+        </ea-details-table-row>
+    
+        <ea-details-table-row
+            label="Release Date"
+            text="11/10/2017"
+        >
+            <div>
+                <div>Release Date</div>
+                <div>11/10/2017</div>
+            </div>
+        </ea-details-table-row>
+    
+</ea-details-table>
+
+        
+
+
+
+
+    <ea-buy-game-product-retailer
+        
+            title-text="Need for Speed Payback Standard Edition"
+        
+        
+            platform-text="PS4"
+        
+        
+            price-text="Visit the PlayStation Store"
+        
+        
+            release-date-prefix-text="Release Date:"
+        
+        
+            release-date-text="November 10"
+        
+        
+            pack-art-url="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfspbps42dpftfront-us-ca.png"
+        
+    >
+    <div>
+        
+            <h6>Need for Speed Payback Standard Edition</h6>
+        
+        
+            <div>PS4</div>
+        
+        
+            <img
+                src="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfspbps42dpftfront-us-ca.png"
+            
+                alt="Need for Speed Payback Standard Edition PS4"
+            
+            />
+        
+    </div>
+    
+
+
+
+<a
+    is="nfs-cta"
+    cta
+    
+        type="standard"
+    
+    
+        href="http://smarturl.it/NFSPB-PO-PS4-STD"
+    
+    
+    
+    
+    
+        fill-color="brand"
+    
+    
+        text-color="light"
+    
+    
+    
+    
+    
+    
+        intent="retailer"
+    
+    
+    
+        full-width
+    
+
+    
+>
+    
+        PS4
+    
+</a>
+    </ea-buy-game-product-retailer>
+
+
+
+
+
+
+    <ea-buy-game-product-retailer
+        
+            title-text="Need for Speed Payback Standard Edition"
+        
+        
+            platform-text="Xbox One"
+        
+        
+            price-text="Visit the Microsoft® Store"
+        
+        
+        
+        
+            pack-art-url="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfspbxone2dpftfront-us-ca.png"
+        
+    >
+    <div>
+        
+            <h6>Need for Speed Payback Standard Edition</h6>
+        
+        
+            <div>Xbox One</div>
+        
+        
+            <img
+                src="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfspbxone2dpftfront-us-ca.png"
+            
+                alt="Need for Speed Payback Standard Edition Xbox One"
+            
+            />
+        
+    </div>
+    
+
+
+
+<a
+    is="nfs-cta"
+    cta
+    
+        type="standard"
+    
+    
+        href="http://store.xbox.com/xbox-one/games/Need-for-Speed-Payback-Standard-Edition/2febdaf2-30ac-47c0-8495-a19a32b45e85"
+    
+    
+    
+    
+    
+        fill-color="brand"
+    
+    
+        text-color="light"
+    
+    
+    
+    
+    
+    
+        intent="retailer"
+    
+    
+    
+        full-width
+    
+
+    
+>
+    
+        Xbox One
+    
+</a>
+    </ea-buy-game-product-retailer>
+
+
+
+
+    <ea-buy-game-product-origin-retailer
+        user-data-endpoint=""
+        
+            platform-text="PC"
+        
+        
+            title-text="Need for Speed Payback Standard Edition"
+        
+        
+            origin-master-title="nfs-payback"
+        
+        
+            origin-platform="pc-download"
+        
+        
+            origin-type="base-game"
+        
+        
+            origin-edition="standard-edition"
+        
+        
+        
+        
+            pack-art-url="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/05/nfspbpc2dpftfront-us-ca.png"
+        
+        origin-host=""
+    >
+        
+
+
+
+<a
+    is="nfs-cta"
+    cta
+    
+        type="standard"
+    
+    
+        href="http://www.origin.com/store/need-for-speed/need-for-speed-payback/standard-edition"
+    
+    
+    
+    
+    
+        fill-color="brand"
+    
+    
+        text-color="light"
+    
+    
+    
+    
+    
+    
+        intent="retailer"
+    
+    
+    
+        full-width
+    
+
+    
+>
+    
+        Origin
+    
+</a>
+    </ea-buy-game-product-origin-retailer>
+
+
+    </ea-buy-game-product>
+
+
+</ea-buy-game>
+
+
+<ea-section
+    
+        type="railed"
+    
+    
+        layout="100"
+    
+    
+        background-color="none"
+    
+    
+        background-overflow="visible"
+    
+    
+        spacing-top="none"
+    
+    
+        spacing-bottom="none"
+    
+    
+    
+    
+>
+    
+    
+
+<ea-section-column
+    
+        indent-left="1"
+    
+    
+        indent-right="3"
+    
+    
+        text-align="left"
+    
+>
+    
+
+<ea-text
+    
+        text-color="light"
+    
+>
+    <p><small><small><small>† PLATINUM BLUE TIRE SMOKE EXCLUSIVE TO PLATINUM CAR PACK VEHICLES. PLATINUM BLUE UNDERGLOW EXCLUSIVE TO STANDARD AND DELUXE EDITION PRE-ORDERS AND DELUXE EDITION UPGRADES.</small></small></small></p>
+<p><small><small><small>* THIS OFFER IS BEING ISSUED TO YOU FOR PROMOTIONAL PURPOSES ONLY AND DOES NOT HAVE A CASH VALUE. GOOD ONLY FOR NEW PURCHASES OF NEED FOR SPEED PAYBACK (&quot;PRODUCT&quot;). OFFER EXPIRES UPON PRODUCT RELEASE. SINGLE-USE CODE EXPIRES ONE YEAR AFTER RELEASE OF PRODUCT. VALID ONLY AT PARTICIPATING RETAILERS WHEREVER PRODUCT IS SOLD. CHECK WITH RETAILER FOR CODE DISTRIBUTION DETAILS. OFFER MAY NOT BE SUBSTITUTED, EXCHANGED, SOLD OR REDEEMED FOR CASH OR OTHER GOODS OR SERVICES. MAY NOT BE COMBINED WITH ANY OTHER PROMOTIONAL OR DISCOUNT OFFER, UNLESS EXPRESSLY AUTHORIZED BY EA; MAY NOT BE COMBINED WITH ANY PREPAID CARD REDEEMABLE FOR THE APPLICABLE CONTENT. VOID WHERE PROHIBITED, TAXED OR RESTRICTED BY LAW. INTERNET CONNECTION, EA ACCOUNT AND ACCEPTANCE OF EA USER AGREEMENT (TERMS.EA.COM) AND PRIVACY AND COOKIE POLICY (PRIVACY.EA.COM) AND REGISTRATION WITH SINGLE-USE PRODUCT CODE MAY BE REQUIRED TO PLAY. SEE FINAL PRODUCT DETAILS AND CONTENT PROTECTION TECHNOLOGY AT <a href="http://WWW.EA.COM/LEGAL">WWW.EA.COM/LEGAL</a>, IF AND WHEN AVAILABLE. YOU MUST BE 13+ TO ACCESS ONLINE FEATURES. MANDATORY CONTENT UPDATES MAY BE DOWNLOADED AUTOMATICALLY, REQUIRE ADDITIONAL STORAGE, INCUR BANDWIDTH USAGE FEES, AND REQUIRE AN ADDITIONAL PURCHASE TO ACCESS. EA MAY RETIRE ONLINE FEATURES AFTER 30 DAYS NOTICE AT <a href="http://WWW.EA.COM/1/SERVICE-UPDATES" adhocenable="false">WWW.EA.COM/1/SERVICE-UPDATES</a>.</small></small></small></p>
+
+    
+</ea-text>
+
+</ea-section-column>
+
+</ea-section>
+
+
+    </div>
+</nfs-drag-nav-target>
+
+</nfs-drag-nav>
+
+<ea-modal
+    modal
+    
+        id="trailerVideo"
+    
+    
+        theme="dark"
+    
+    
+        type="railed"
+    
+>
+    
+
+<ea-youtube
+    video-id="kc-OcOduEx0"
+    
+    
+        playlist=""
+    
+    autoplay="0"
+    controls="1"
+    rel="0"
+    annotations="3"
+    hide-info="0"
+    
+        cover-image-smallest="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz30.jpg.adapt.crop16x9.320w.jpg"
+        cover-image-small="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz30.jpg.adapt.crop16x9.767w.jpg"
+        cover-image-medium="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz30.jpg.adapt.crop16x9.1023w.jpg"
+        cover-image-large="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz30.jpg.adapt.crop16x9.1455w.jpg"
+        cover-image-largest="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz30.jpg.adapt.crop16x9.1920w.jpg"
+        cover-image-tooltip=""
+        button-color="dark"
+    
+>
+    
+        <img
+            src="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz30.jpg.adapt.crop16x9.320w.jpg"
+            alt=""
+            srcset="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz30.jpg.adapt.crop16x9.320w.jpg 320w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz30.jpg.adapt.crop16x9.767w.jpg 768w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz30.jpg.adapt.crop16x9.1023w.jpg 1024w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz30.jpg.adapt.crop16x9.1455w.jpg 1320w, https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz30.jpg.adapt.crop16x9.1920w.jpg 1456w"
+        />
+    
+
+    <div itemscope itemtype="http://schema.org/VideoObject">
+        <link itemprop="url" href="https://www.youtube.com/watch?v=kc-OcOduEx0">
+        
+            <link itemprop="thumbnailUrl" href="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz30.jpg.adapt.crop16x9.1920w.jpg">
+        
+        <iframe src="https://www.youtube.com/embed/kc-OcOduEx0"></iframe>
+    </div>
+</ea-youtube>
+
+</ea-modal>
+
+
+
+
+
+
+
+
+
+    
+        
+            
+                
+
+<footer
+    is="ea-local-footer"
+    theme="dark"
+>
+    <ea-local-links
+        title-text="Need for Speed"
+        text-color="dark"
+    >
+    
+        <a
+            is="ea-link"
+            href="/games/need-for-speed/need-for-speed-payback/"
+            title="Home"
+        >Home</a>
+    
+        <a
+            is="ea-link"
+            href="/games/need-for-speed/need-for-speed-payback/car-customization-101"
+            title="Customization 101"
+        >Customization 101</a>
+    
+        <a
+            is="ea-link"
+            href="/games/need-for-speed/need-for-speed-payback/build-of-the-week"
+            title="Build of the Week"
+        >BOTW</a>
+    
+        <a
+            is="ea-link"
+            href="/games/need-for-speed/need-for-speed-payback/news"
+            title="News"
+        >News</a>
+    
+        <a
+            is="ea-link"
+            href="/games/need-for-speed/need-for-speed-payback/buy"
+            title="Pre-Order"
+        >Pre-Order</a>
+    
+        <a
+            is="ea-link"
+            href="http://forums.needforspeed.com/"
+            title="Forums"
+        >Forums</a>
+    
+    </ea-local-links>
+
+    <ea-social-links
+        text-color="dark"
+        title-text="Get More Need For Speed"
+        social-icon-color="brand"
+    >
+    
+        <a
+            is="ea-social-link"
+            href="https://www.facebook.com/needforspeed"
+            social-network="facebook"
+            title="Facebook"
+            
+                target="_blank"
+            
+        ></a>
+    
+        <a
+            is="ea-social-link"
+            href="https://twitter.com/needforspeed"
+            social-network="twitter"
+            title="Twitter"
+            
+                target="_blank"
+            
+        ></a>
+    
+        <a
+            is="ea-social-link"
+            href="https://www.youtube.com/needforspeed"
+            social-network="youtube"
+            title="YouTube"
+            
+                target="_blank"
+            
+        ></a>
+    
+        <a
+            is="ea-social-link"
+            href="https://www.instagram.com/needforspeed/"
+            social-network="instagram"
+            title="Instagram"
+            
+                target="_blank"
+            
+        ></a>
+    
+    </ea-social-links>
+
+    
+        <ea-studio-links>
+            
+
+<a
+    is="ea-studio-link"
+    href="http://ghostgames.com/"
+    title="Ghost Games"
+    
+        image-smallest="https://media.contentapi.ea.com/content/dam/need-for-speed/common/logo-ghost-dark.svg"
+        image-small="https://media.contentapi.ea.com/content/dam/need-for-speed/common/logo-ghost-dark.svg"
+        image-medium="https://media.contentapi.ea.com/content/dam/need-for-speed/common/logo-ghost-dark.svg"
+        image-large="https://media.contentapi.ea.com/content/dam/need-for-speed/common/logo-ghost-dark.svg"
+        image-largest="https://media.contentapi.ea.com/content/dam/need-for-speed/common/logo-ghost-dark.svg"
+        image-alt=""
+    
+>
+    
+        <img
+            src="https://media.contentapi.ea.com/content/dam/need-for-speed/common/logo-ghost-dark.svg"
+            alt=""
+            srcset="https://media.contentapi.ea.com/content/dam/need-for-speed/common/logo-ghost-dark.svg 320w, https://media.contentapi.ea.com/content/dam/need-for-speed/common/logo-ghost-dark.svg 768w, https://media.contentapi.ea.com/content/dam/need-for-speed/common/logo-ghost-dark.svg 1024w, https://media.contentapi.ea.com/content/dam/need-for-speed/common/logo-ghost-dark.svg 1320w, https://media.contentapi.ea.com/content/dam/need-for-speed/common/logo-ghost-dark.svg 1456w"
+        />
+    
+</a>
+
+        </ea-studio-links>
+    
+
+    
+        <ea-rating-links>
+            
+
+<a
+    is="ea-rating-link"
+    href="http://www.esrb.org/ratings/Synopsis.aspx?Certificate=34188&amp;Title=Need+For+Speed"
+    title="ESRB Rating"
+    
+        image-smallest="https://media.contentapi.ea.com/content/dam/legacy/ea/battlefield-hardline/images/ESRB_RP.jpg"
+        image-small="https://media.contentapi.ea.com/content/dam/legacy/ea/battlefield-hardline/images/ESRB_RP.jpg"
+        image-medium="https://media.contentapi.ea.com/content/dam/legacy/ea/battlefield-hardline/images/ESRB_RP.jpg"
+        image-large="https://media.contentapi.ea.com/content/dam/legacy/ea/battlefield-hardline/images/ESRB_RP.jpg"
+        image-largest="https://media.contentapi.ea.com/content/dam/legacy/ea/battlefield-hardline/images/ESRB_RP.jpg"
+        image-alt=""
+    
+>
+    
+        <img
+            src="https://media.contentapi.ea.com/content/dam/legacy/ea/battlefield-hardline/images/ESRB_RP.jpg"
+            alt=""
+            srcset="https://media.contentapi.ea.com/content/dam/legacy/ea/battlefield-hardline/images/ESRB_RP.jpg 320w, https://media.contentapi.ea.com/content/dam/legacy/ea/battlefield-hardline/images/ESRB_RP.jpg 768w, https://media.contentapi.ea.com/content/dam/legacy/ea/battlefield-hardline/images/ESRB_RP.jpg 1024w, https://media.contentapi.ea.com/content/dam/legacy/ea/battlefield-hardline/images/ESRB_RP.jpg 1320w, https://media.contentapi.ea.com/content/dam/legacy/ea/battlefield-hardline/images/ESRB_RP.jpg 1456w"
+        />
+    
+</a>
+
+        </ea-rating-links>
+    
+    
+        <ea-legal-disclaimer-text>
+            <p>© 2017 Electronic Arts Inc.</p>
+
+        </ea-legal-disclaimer-text>
+    
+</footer>
+
+            
+        
+    
+
+
+
+
+
+    
+        
+            
+                
+
+<footer
+    is="ea-network-footer"
+    theme="dark"
+    
+
+    
+        logo-image="https://media.contentapi.ea.com/content/dam/need-for-speed/common/ea-logo-dark.svg"
+        logo-tooltip=""
+    
+
+    
+        logo-link-url="https://www.ea.com/"
+        logo-link-text="Broswe Games"
+        logo-link-tooltip="Browse Games"
+    
+>
+    
+        <img
+            src="https://media.contentapi.ea.com/content/dam/need-for-speed/common/ea-logo-dark.svg"
+            alt=""
+        />
+    
+    
+        <ea-network-links
+            text-color="dark"
+        >
+        
+            <a
+                is="ea-link"
+                href="https://www.ea.com/news"
+                title="Latest News"
+            >Latest News</a>
+        
+            <a
+                is="ea-link"
+                href="https://help.ea.com/en/"
+                title="Help Center"
+            >Help Center</a>
+        
+            <a
+                is="ea-link"
+                href="https://www.ea.com/forums"
+                title="EA Forums"
+            >EA Forums</a>
+        
+            <a
+                is="ea-link"
+                href="http://www2.ea.com/about"
+                title="About Us"
+            >About Us</a>
+        
+            <a
+                is="ea-link"
+                href="http://careers.ea.com/"
+                title="Careers"
+            >Careers</a>
+        
+        </ea-network-links>
+    
+
+    
+
+<ea-locale-selector
+    theme="dark"
+    value="en-us"
+    
+    >
+    
+        <ea-locale-selector-option value="en-us">United States</ea-locale-selector-option>
+    
+        <ea-locale-selector-option value="en-gb">United Kingdom</ea-locale-selector-option>
+    
+        <ea-locale-selector-option value="en-au">Australia</ea-locale-selector-option>
+    
+        <ea-locale-selector-option value="es-es">España</ea-locale-selector-option>
+    
+        <ea-locale-selector-option value="de-de">Deutschland</ea-locale-selector-option>
+    
+        <ea-locale-selector-option value="fr-fr">France</ea-locale-selector-option>
+    
+        <ea-locale-selector-option value="it-it">Italia</ea-locale-selector-option>
+    
+        <ea-locale-selector-option value="pl-pl">Polska</ea-locale-selector-option>
+    
+        <ea-locale-selector-option value="ru-ru">Россия</ea-locale-selector-option>
+    
+        <ea-locale-selector-option value="ja-jp">日本</ea-locale-selector-option>
+    
+        <ea-locale-selector-option value="pt-br">Brasil</ea-locale-selector-option>
+    
+        <ea-locale-selector-option value="zh-tw">台灣</ea-locale-selector-option>
+    
+        <ea-locale-selector-option value="zh-cn">简体中国</ea-locale-selector-option>
+    
+</ea-locale-selector>
+
+
+    <ea-network-legal
+        copyright-text="© 2017 Electronic Arts Inc."
+        text-color="dark"
+    >
+    
+        <a
+            is="ea-link"
+            href="http://www2.ea.com/legal"
+            title="Legal"
+        >Legal</a>
+    
+        <a
+            is="ea-link"
+            href="http://www2.ea.com/1/service-updates"
+            title="Online Service Updates"
+        >Online Service Updates</a>
+    
+        <a
+            is="ea-link"
+            href="http://tos.ea.com/legalapp/WEBTERMS/US/en/PC/"
+            title="User Agreement"
+        >User Agreement</a>
+    
+        <a
+            is="ea-link"
+            href="http://tos.ea.com/legalapp/WEBPRIVACY/US/en/PC/"
+            title="Privacy &amp; Cookie Policy (Your Privacy Rights)"
+        >Privacy &amp; Cookie Policy (Your Privacy Rights)</a>
+    
+    </ea-network-legal>
+
+    
+
+<ea-truste
+    
+        message-prefix-text="Cookies help us deliver our services and provide personalized experiences. By using this website, you agree to our use of cookies. You can change your"
+    
+    
+        message-link-text=" Cookie Preferences"
+    
+    
+        message-suffix-text=" at any time."
+    
+    
+        message=""
+    
+    
+        preferences-text=""
+    
+    
+        domain="ea.com"
+    
+    
+        logo-image="https://media.contentapi.ea.com/content/dam/need-for-speed/common/seal-truste.svg"
+        logo-tooltip=""
+    
+    
+        link-url="http://privacy.truste.com/privacy-seal/validation?rid=7d587a12-773f-4bf9-a209-d18047ee5f05"
+        link-text="TRUSTe seal"
+        link-tooltip="TRUSTe seal"
+    
+>
+    
+        <img
+            src="https://media.contentapi.ea.com/content/dam/need-for-speed/common/seal-truste.svg"
+            alt=""
+        />
+    
+</ea-truste>
+
+</footer>
+
+            
+        
+    
+
+
+<ea-player player-endpoint="/games/need-for-speed/user-data"></ea-player>
+
+
+
+
+
+    <script src="https://use.typekit.net/cdu0hzg.js"></script>
+
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script src="//tags.tiqcdn.com/utag/ea/nfsrelease/prod/utag.js" async></script>
+
+
+    </body>
+</html>

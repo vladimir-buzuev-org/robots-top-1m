@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US">
+
+
+<head>
+    <title>UberGallery - The simple PHP photo gallery</title>
+    <link rel="shortcut icon" href="images/icons/favicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="css/rebase-min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/UberGallery.css" />
+    <link rel="stylesheet" type="text/css" href="demo/resources/colorbox/5/colorbox.css" />
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="demo/resources/colorbox/jquery.colorbox.js"></script>
+    <script type="text/javascript" src="js/ubergallery.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("a[rel='colorbox']").colorbox({maxWidth: "90%", maxHeight: "90%", opacity: ".5"});
+    });
+    </script>
+
+    <script>
+
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-19466324-2', '.ubergallery.net');
+        ga('send', 'pageview');
+
+    </script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta itemprop="name" content="UberGallery - The simple PHP photo gallery">
+    <meta itemprop="description" content="UberGallery is an easy to use, simple to manage, web photo gallery written in PHP and distributed under the MIT License. UberGallery does not require a database and supports JPEG, GIF and PNG file types. Simply upload your images and UberGallery will automatically generate thumbnails and output standards compliant XHTML markup on the fly.">
+    <meta itemprop="image" content="http://www.ubergallery.net/images/photo.png">
+</head>
+
+<body id="top">
+
+    <div id="pageHeader">
+        <div class="widthConstraint">
+            <div id="siteTitle">
+                <h1>UberGallery</h1>
+                <p>The simple PHP photo gallery</p>
+            </div>
+
+            <a href="#download" id="downloadLink" class="floatRight">
+                <div id="downloadLinkInner">
+                    <span class="title">Download UberGallery</span>
+                    <span class="version">Current Version: 2.4.8</span>
+                </div>
+            </a>
+
+            <div id="titleImage"></div>
+        </div>
+    </div>
+
+    <div id="pageContent">
+        <div class="widthConstraint">
+
+            <ul id="pageNavigation" class="clearfix">
+                <li class="first"><a href="#intro">Introduction</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li>
+                    <a href="#simpleInstall"><span class="dropDownLink">Installation</span></a>
+                    <ul>
+                        <li><a href="#simpleInstall">Simple Installation</a></li>
+                        <li><a href="#customInstall">Custom Installation</a></li>
+                        <li><a href="#gitInstall">Install with Git</a></li>
+                    </ul>
+                </li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#faq">F.A.Q.</a></li>
+                <li><a href="#more-info">More Info</a></li>
+                <li><a href="https://github.com/UberGallery/UberGallery/releases"><span class="externalLink">Releases</span></a></li>
+
+                <li class="followLinks">
+                    <div class="followLinksInner">
+                        Follow:
+                        <a title="Google Plus" href="https://plus.google.com/115640585160898226187/">
+                            <img src="images/icons/google_plus_16.png" width="16" height="16" />
+                        </a>
+                        <a title="Twitter" href="https://twitter.com/#!/UberGallery">
+                            <img src="images/icons/twitter_16.png" width="16" height="16" />
+                        </a>
+                        <a title="Github" href="https://github.com/UberGallery">
+                            <img src="images/icons/github_16.png" width="16" height="16" />
+                        </a>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="contentBox">
+                <!-- UberGallery Header -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-1239753369879086"
+                     data-ad-slot="4453443207"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+                <div id="donateMessage">
+                    Help keep UberGallery free for all, <a href="https://cash.me/$ChrisKankiewicz">donate today</a>.
+                </div>
+
+            </div>
+
+            <div class="contentBox" id="intro">
+                <h2>Introduction</h2>
+                <div class="line"></div>
+
+                <p>UberGallery is an easy to use, simple to manage, web photo gallery written in PHP
+                and distributed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
+                UberGallery <strong>does not</strong> require a database and supports JPEG, GIF and
+                PNG file types. Simply upload your images and UberGallery will automatically
+                generate thumbnails and output standards compliant XHTML markup on the fly.</p>
+
+                <h3>Features</h3>
+
+                <ul id="featuresList" class="clearfix">
+                    <li>Simple first time installation</li>
+                    <li>Database-less configuration</li>
+                    <li>Include galleries within pre-existing sites</li>
+                    <li>Create multiple galleries with a single installation</li>
+                    <li>Easily customize your gallery styles via CSS</li>
+                    <li>Install and update the gallery easily wth Git (optional)</li>
+                </ul>
+
+            </div>
+
+
+            <div class="contentBox" id="demo">
+                <h2>Demo</h2>
+                <div class="line"></div>
+
+                
+                <!-- Start UberGallery v2.4.8 - Copyright (c) 2017 Chris Kankiewicz (http://www.ChrisKankiewicz.com) -->
+                <div id="galleryWrapper">
+                    
+                    <div id="galleryListWrapper">
+                        <ul id="galleryList" class="clearfix">
+                                                            <li><a href="demo/gallery-images/4488826_6f061c99ec_b_d.jpg" title="4488826 6f061c99ec b d" rel="colorbox"><img src="demo/resources/cache/100x100-75-093e3c6f0777ee995547a65d8478fcd2387fd1e2fbbb117913b47f0de71c6b06.jpg" alt="4488826 6f061c99ec b d"/></a></li>
+                                                            <li><a href="demo/gallery-images/7023222_87b23bb0cd_d.jpg" title="7023222 87b23bb0cd d" rel="colorbox"><img src="demo/resources/cache/100x100-75-75ae69fcae4e79db8aa882cd5f46a0018b8f71fe1d0853f9c34600d1b403cd4a.jpg" alt="7023222 87b23bb0cd d"/></a></li>
+                                                            <li><a href="demo/gallery-images/20952852_82e90a3b68_o_d.jpg" title="20952852 82e90a3b68 o d" rel="colorbox"><img src="demo/resources/cache/100x100-75-5b435062dbd5f7d243b984650ffcb49d46359cf3212e56efd166284d2c3e0215.jpg" alt="20952852 82e90a3b68 o d"/></a></li>
+                                                            <li><a href="demo/gallery-images/94767733_b9863ff689_b_d.jpg" title="94767733 b9863ff689 b d" rel="colorbox"><img src="demo/resources/cache/100x100-75-17a4fbf033f51307a8ab7461a9714307cb9089a70adc4cb59c585d256aa3299f.jpg" alt="94767733 b9863ff689 b d"/></a></li>
+                                                            <li><a href="demo/gallery-images/117630263_e99fd48e32_b_d.jpg" title="117630263 e99fd48e32 b d" rel="colorbox"><img src="demo/resources/cache/100x100-75-e4d4c55159461e6172e4f77f6df82090ca6ec612da8ec05b61c2a3f79cc8827f.jpg" alt="117630263 e99fd48e32 b d"/></a></li>
+                                                            <li><a href="demo/gallery-images/144692464_f0053e1093_z_d.jpg" title="144692464 f0053e1093 z d" rel="colorbox"><img src="demo/resources/cache/100x100-75-97fa2091e5c19ec56e885d5855122794ef47ad1bab3231d5ef70fa1c6dca8673.jpg" alt="144692464 f0053e1093 z d"/></a></li>
+                                                            <li><a href="demo/gallery-images/153787007_197af15ce4_b_d.jpg" title="153787007 197af15ce4 b d" rel="colorbox"><img src="demo/resources/cache/100x100-75-8abac9253c4393891fb1f0e099675c1e40ec153b3d09f293db30f9161198f26a.jpg" alt="153787007 197af15ce4 b d"/></a></li>
+                                                            <li><a href="demo/gallery-images/186655895_28fc2d82ce_b_d.jpg" title="186655895 28fc2d82ce b d" rel="colorbox"><img src="demo/resources/cache/100x100-75-5070751165ffec0fc9574e573b98caacfb1dac98a61b0e17947804cb932cb877.jpg" alt="186655895 28fc2d82ce b d"/></a></li>
+                                                            <li><a href="demo/gallery-images/187485628_3cb9d94f9b_o_d.jpg" title="187485628 3cb9d94f9b o d" rel="colorbox"><img src="demo/resources/cache/100x100-75-7175685013dd97f7d7ef5d8b6505bdd0f81528e18f950a4915b207ecad0ca06a.jpg" alt="187485628 3cb9d94f9b o d"/></a></li>
+                                                            <li><a href="demo/gallery-images/214879279_c937ada1d5_b_d.jpg" title="214879279 c937ada1d5 b d" rel="colorbox"><img src="demo/resources/cache/100x100-75-7de67c1b30eab49b6fe7d66a0ce9d30dfa1cfcaed1e4b3a3f326fccec19aa572.jpg" alt="214879279 c937ada1d5 b d"/></a></li>
+                                                            <li><a href="demo/gallery-images/327559662_5dae865e69_z_d.jpg" title="327559662 5dae865e69 z d" rel="colorbox"><img src="demo/resources/cache/100x100-75-f04f307c7ea170e815dc2e8c0b95f876a5d6c2a7375d58b5622a9bc247953ba6.jpg" alt="327559662 5dae865e69 z d"/></a></li>
+                                                            <li><a href="demo/gallery-images/328202856_5330fd134a_z_d.jpg" title="328202856 5330fd134a z d" rel="colorbox"><img src="demo/resources/cache/100x100-75-9244ed51c179260aa579873de7ee3f4f234ae713c309f7e62365c6112b0b22b0.jpg" alt="328202856 5330fd134a z d"/></a></li>
+                                                            <li><a href="demo/gallery-images/339763584_d3511b63a3_b_d.jpg" title="339763584 d3511b63a3 b d" rel="colorbox"><img src="demo/resources/cache/100x100-75-12167667d29f7e1a81b9efdb8069f3e25f530c0db54a33a44eea50daf65d51da.jpg" alt="339763584 d3511b63a3 b d"/></a></li>
+                                                            <li><a href="demo/gallery-images/354864230_a8fe1fe864_o_d.jpg" title="354864230 a8fe1fe864 o d" rel="colorbox"><img src="demo/resources/cache/100x100-75-82e255ea294620a497f1a4b89d01b0c2aa091c938bbd47242717ba453fcd0bb6.jpg" alt="354864230 a8fe1fe864 o d"/></a></li>
+                                                            <li><a href="demo/gallery-images/354864240_96e9b003cf_o_d.jpg" title="354864240 96e9b003cf o d" rel="colorbox"><img src="demo/resources/cache/100x100-75-8b4fed46170077132b265a1a1a663a004ae3179ebe49dae1c761200897493548.jpg" alt="354864240 96e9b003cf o d"/></a></li>
+                                                            <li><a href="demo/gallery-images/382329525_bc85bc1309_z_d.jpg" title="382329525 bc85bc1309 z d" rel="colorbox"><img src="demo/resources/cache/100x100-75-758393c8c256e99f64f9d155bac7820b49d863d4a7078df62e2070ecf2ddc512.jpg" alt="382329525 bc85bc1309 z d"/></a></li>
+                                                            <li><a href="demo/gallery-images/385653748_774c009624_b_d.jpg" title="385653748 774c009624 b d" rel="colorbox"><img src="demo/resources/cache/100x100-75-1feef7f6569fea4857f3dda2f5551bfa94b8f41177b1dd7762de0151526042fc.jpg" alt="385653748 774c009624 b d"/></a></li>
+                                                            <li><a href="demo/gallery-images/457209657_64ecc69ace_z_d.jpg" title="457209657 64ecc69ace z d" rel="colorbox"><img src="demo/resources/cache/100x100-75-5698f3a1e6fc804b411464ff6018b47d3c033be6305d2d6829ea85f4a33f327d.jpg" alt="457209657 64ecc69ace z d"/></a></li>
+                                                            <li><a href="demo/gallery-images/539719106_a8ef607268_b_d.jpg" title="539719106 a8ef607268 b d" rel="colorbox"><img src="demo/resources/cache/100x100-75-642d0528daa7ee8b2c4535b8b74b55c52f01787f0848159b25cb72a8a1ba8832.jpg" alt="539719106 a8ef607268 b d"/></a></li>
+                                                            <li><a href="demo/gallery-images/560380352_5353d7b089_z_d.jpg" title="560380352 5353d7b089 z d" rel="colorbox"><img src="demo/resources/cache/100x100-75-7aa0f8e7bbc09db266b8f8341ee3fb89bb18195c2189bb99fdad30c0a349f49b.jpg" alt="560380352 5353d7b089 z d"/></a></li>
+                                                            <li><a href="demo/gallery-images/634556562_034ce1ae60_o_d.jpg" title="634556562 034ce1ae60 o d" rel="colorbox"><img src="demo/resources/cache/100x100-75-94341731fec7f7bf26f2617ab65f57a10f1f49fac24144e2ea9e7c89fc60d7a9.jpg" alt="634556562 034ce1ae60 o d"/></a></li>
+                                                            <li><a href="demo/gallery-images/838111057_1fe8b4aa79_o_d.jpg" title="838111057 1fe8b4aa79 o d" rel="colorbox"><img src="demo/resources/cache/100x100-75-bf9afcc491d17dc27629a61902869db0fd50f1cdeb57e63b1d1917da94a9390a.jpg" alt="838111057 1fe8b4aa79 o d"/></a></li>
+                                                            <li><a href="demo/gallery-images/1015023385_58ce654405_z_d.jpg" title="1015023385 58ce654405 z d" rel="colorbox"><img src="demo/resources/cache/100x100-75-5b478bb8166bf1e7f5443525e9475a520ff8282c23bb531abb2118d2872c99ee.jpg" alt="1015023385 58ce654405 z d"/></a></li>
+                                                            <li><a href="demo/gallery-images/1060076785_48ce88e86d_b_d.jpg" title="1060076785 48ce88e86d b d" rel="colorbox"><img src="demo/resources/cache/100x100-75-cee65e3f4c6234c4338ff859c4a06d684f07df5c44b8d8fc2c7b951e3e8ea280.jpg" alt="1060076785 48ce88e86d b d"/></a></li>
+                                                    </ul>
+                    </div>
+                </div>
+                <!-- End UberGallery - Distributed under the MIT license -->
+
+                <div class="line"></div>
+
+                <div id="demoLinks" >
+                    <p class="alignCenter"><a href="/demo">View the Stand-alone Demo</a> | <a href="/multi-gallery/">View the Multi-directory Demo</a></p>
+                </div>
+
+            </div>
+
+
+            <div class="contentBox" id="download">
+                <h2>
+                    Download
+                    <small id="currentVersion">Current Version: 2.4.8</small>
+                </h2>
+                <div class="line"></div>
+
+                <div id="downloadButtons">
+                    <a href="http://files.ubergallery.net/releases/UberGallery-v2.4.8.zip" target="_blank" onclick="_gaq.push(['_trackEvent', 'File', 'Download', this.href]);">Download as zip</a>
+                    <a href="http://files.ubergallery.net/releases/UberGallery-v2.4.8.tar.gz" target="_blank" onclick="_gaq.push(['_trackEvent', 'File', 'Download', this.href]);">Download as tar.gz</a>
+                </div>
+
+                <div class="line"></div>
+
+                <p class="requirements">UberGallery requires PHP 5.2+ and the PHP-GD image library
+                to work properly.<br/>For more information on PHP and the PHP-GD image library,
+                please visit <a href="http://php.net">http://php.net</a>.</p>
+
+            
+            </div>
+
+
+            <div class="contentBox">
+                <!-- UberGallery Download -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-1239753369879086"
+                     data-ad-slot="3895040008"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+
+            <div class="contentBox" id="simpleInstall">
+                <h2>Simple Installation</h2>
+                <div class="line"></div>
+
+                <p>Copy <code>resources/sample.galleryConfig.ini</code> to <code>resources/galleryConfig.ini</code> and modify the settings
+                to your liking.</p>
+
+                <p>Upload <code>index.php</code>, <code>resources/</code> and <code>gallery-images/</code> to your web server.</p>
+
+                <p>Upload images to the <code>gallery-images/</code> directory.</p>
+
+                <p>Make the <code>resources/cache/</code> directory writable by the web server:</p>
+
+                <pre>chmod 777 /path/to/resources/cache</pre>
+
+                <p>Open your web browser and load the page where you installed UberGallery.</p>
+            </div>
+
+
+            <div class="contentBox" id="customInstall">
+                <h2>Custom Installation</h2>
+                <div class="line"></div>
+
+                <p>Copy <code>resources/sample.galleryConfig.ini</code> to <code>resources/galleryConfig.ini</code> and modify the settings to
+                your liking.</p>
+
+                <p>Upload the <code>resources/</code> folder to your web server.</p>
+
+                <p>Insert the following code into the PHP page where you would like the gallery to be displayed
+                (be sure to change the include and image folder path to match your configuration):</p>
+
+                <pre>&lt;?php include_once('path/to/resources/UberGallery.php'); $gallery = UberGallery::init()-&gt;createGallery('path/to/images-folder'); ?&gt;</pre>
+
+                <p>Include the UberGallery and desired Colorbox style sheet in your page header:</p>
+                <pre>&lt;link rel="stylesheet" type="text/css" href="path/to/resources/UberGallery.css" /&gt;<br/>&lt;link rel="stylesheet" type="text/css" href="path/to/resources/colorbox/1/colorbox.css" /&gt;</pre>
+
+                <p>Include the jQuery and Colorbox javascript files in your page header:</p>
+                <pre>&lt;script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"&gt;&lt;/script&gt;<br/>&lt;script type="text/javascript" src="path/to/resources/colorbox/jquery.colorbox.js"&gt;&lt;/script&gt;</pre>
+
+                <p>Include the Colorbox jQuery call in your header (below the jQuery and Colorbox javascript includes):</p>
+                <pre>&lt;script type="text/javascript"&gt;<br/>$(document).ready(function(){<br/>    $("a[rel='colorbox']").colorbox({maxWidth: "90%", maxHeight: "90%", opacity: ".5"});<br/>});<br/>&lt;/script&gt;</pre>
+
+                <p>Upload images to your images directory.</p>
+
+                <p>Make the <code>resources/cache/</code> directory writable by the web server.</p>
+
+                <pre>chmod 777 /path/to/resources/cache</pre>
+
+                <p>Open your web browser and load the page where you installed UberGallery.</p>
+            </div>
+
+
+            <div class="contentBox" id="gitInstall">
+                <h2>Install with Git</h2>
+                <div class="line"></div>
+
+                <p>ssh into the your server and clone the UberGallery repository:</p>
+
+                <pre>git clone --recursive git://github.com/UberGallery/UberGallery.git /path/to/ubergallery</pre>
+
+                <p>Copy <code>resources/sample.galleryConfig.ini</code> to <code>resources/galleryConfig.ini</code> and modify the settings</p>
+
+                <pre>cp resources/sample.galleryConfig.ini resources/galleryConfig.ini<br/>nano resources/galleryConfig.ini</pre>
+
+                <p>Upload images to the <code>gallery-images/</code> folder within your gallery directory.</p>
+
+                <p>Make the <code>resources/cache/</code> directory writable by the web server.</p>
+
+                <pre>chmod 777 /path/to/resources/cache</pre>
+
+                <p>Open your web browser and load the page where you installed UberGallery.</p>
+
+                <p>When using this method to install UberGallery, you can update your installation
+                by running the following commands:</p>
+
+                <pre>cd /path/to/ubergallery<br/>git pull origin master</pre>
+
+                <div class="line"></div>
+
+                <p><strong>NOTE:</strong> If you are installing UberGallery via git into an existing
+                git repository, you will need to add it as a submodule.
+
+                <pre>git submodule add git://github.com/UberGallery/UberGallery.git path/to/ubergallery<br/>git submodule update --init --recursive path/to/ubergallery</pre>
+            </div>
+
+
+            <div class="contentBox" id="troubleshooting">
+                <h2>Troubleshooting</h2>
+                <div class="line"></div>
+
+                <h4 class="sectionTitle">Pages / Images Loading Slow or Not at All</h4>
+
+                <p>If pages are loading slow or not loading at all, ensure your images are not too
+                large.  We recommend 1024px - 1280px for the longest side.  Large images can slow
+                down page and/or image load times or considerably.</p>
+
+                <p>If you have too many large images to resize one at a time here are a few batch image resizing tools:</p>
+
+                <ul>
+                    <li>Windows: <a href="http://imageresizer.codeplex.com/">Image Resizer Power Toy</a></li>
+                    <li>OSX: <a href="http://www.ironstarmedia.co.uk/resources/osx-image-resizer/">OSX Image Resizer</a></li>
+                    <li>Linux: <a href="http://www.imagemagick.org">ImageMagick</a></li>
+                </ul>
+
+                <div class="line"></div>
+
+                <h4 class="sectionTitle">Other Issues</h4>
+
+                <p>Here are a few additional troubleshooting tips:</p>
+
+                <ul>
+                    <li>
+                        <p>Verify that you have PHP 5.2 or later installed.  You can verify your PHP version by running:</p>
+                        <pre>php --version</pre>
+                    </li>
+
+                    <li><p>Make sure you have the latest version of UberGallery installed.</p></li>
+
+                    <li>
+                        <p>Replace your <code>galleryConfig.ini</code> with <code>sample.galleryConfig.ini</code> to ensure proper configuration:</p>
+                        <pre>rm resources/galleryConfig.ini<br/>cp resource/sample.galleryConfig.ini resources/galleryConfig.ini</pre>
+                    </li>
+
+                    <li>
+                        <p>Clear your cache and make sure the directory is writable by the web server:</p>
+                        <pre>rm -f resources/cache/*<br/>chmod 777 resources/cache</pre>
+                    </li>
+
+                    <li>
+                        <p>Enable debugging by setting the <code>enable_debugging</code> option in <code>resources/galleryConfig.ini</code> to <code>true</code>,
+                        try loading your gallery in a web browser then inspect the debug.log file in your cache directory for any errors.</p>
+                    </li>
+                </ul>
+
+                <div class="line"></div>
+
+                <p>If you continue to have issues, <a href="mailto:UberGallery@GoogleGroups.com">send us an email</a> explaining your issue.</p>
+            </div>
+
+
+            <div class="contentBox" id="faq">
+                <h2>Frequently Asked Questions (F.A.Q.)</h2>
+                <div class="line"></div>
+
+                <dl id="faqList">
+                    <dt>Does UberGallery support multi-directory listing?</dt>
+                        <dd>Not directly. I'd love to add support for this eventually, but at the moment is not possible. However, generating multiple galleries from a single UberGallery installation is rather painless. You can <a href="http://demo.ubergallery.net/multi-gallery/">check out a working example</a> or <a href="https://github.com/UberGallery/multi-gallery-example">see the code behind the examle</a> on Github.</dd>
+
+                    <dt>Can I use UberGallery on a site I'm developing for a client / company?</dt>
+                        <dd>Yes, UberGallery is open source and released under the <a href="COPYING-MIT.txt">MIT</a> license. The rights granted by these licenses should be sufficient to suit any situation. Also, while not required, it's encouraged that you leave the "Powered by, UberGallery" link below the gallery list.</dd>
+
+                    <dt>How can I get news and updates pertaining to UberGallery?</dt>
+                        <dd>You can follow us on Twitter: <a href="https://twitter.com/#!/UberGallery">@UberGallery</a></dd>
+                        <dd>We also have a blog at <a href="http://news.ubergallery.net">http://news.ubergallery.net</a></dd>
+                        <dd>You can subscribe to the blog feed at <a href="http://news.ubergallery.net/feed">http://news.ubergallery.net/feed</a></dd>
+
+                    <dt>Can you add X as a feature?</dt>
+                        <dd>At the moment I'm the sole developer of UberGallery and my time is severly limited thus limiting my ability to add new features.  However, UberGallery is open source and hosted on <a href="https://github.com/UberGallery/UberGallery">Github</a>.  This means you are allowed to fork the code and make changes to suit your needs. You're also encourage to submit a pull request of the changes you make so I may review your changes and, upon approval, merge them into the UberGallery code base.</dd>
+                </dl>
+            </div>
+
+            <div class="contentBox" id="more-info">
+                <h2>More Info</h2>
+                <div class="line"></div>
+
+                <dl>
+                    <dt>Have a question? Need help getting your gallery working?</dt>
+                        <dd>Post your questions to our <a href="https://groups.google.com/forum/?fromgroups=#!forum/ubergallery">Google Group</a>
+                        online or email our public mailing list at <a href="mailto:UberGallery@GoogleGroups.com">UberGallery@GoogleGroups.com</a>.</dd>
+                        <dd>We do our best to answer all questions promptly, but sometimes life gets in the way. Please be patient.</dd>
+
+                    <dt>Want the latest info on UberGallery?</dt>
+                        <dd>UberGallery updates and news can be found on our <a href="http://news.ubergallery.net/">blog</a>
+                        or by following <a href="https://twitter.com/ubergallery">@UberGallery</a> on Twitter.</dd>
+
+                    <dt>Find a widespread bug?</dt>
+                        <dd>Report it by opening an issue on our <a href="http://github.com/UberGallery/ubergallery/issues">GitHub issue tracker</a>.</dd>
+                </dl>
+
+            </div>
+
+            <div class="contentBox">
+                <!-- UberGallery Footer -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-1239753369879086"
+                     data-ad-slot="8464840409"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <table id="footerTable" cellpadding="0" cellspacing="0">
+    <tr>
+        
+        <td>
+            <!-- Place this tag where you want the +1 button to render. -->
+            <div class="g-plusone" data-size="medium"></div>
+            
+            <!-- Place this tag after the last +1 button tag. -->
+            <script type="text/javascript">
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+        </td>
+        
+        <td>
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+            <div class="fb-like" data-href="http://www.ubergallery.net" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+        </td>
+        
+        <td>
+            <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.ubergallery.net&media=http%3A%2F%2Fwww.ubergallery.net%2Fimages%2Fphoto.png&description=UberGallery%20is%20an%20easy%20to%20use%2C%20simple%20to%20manage%2C%20web%20photo%20gallery%20written%20in%20PHP%20and%20distributed%20under%20the%20MIT%20License.%20UberGallery%20does%20not%20require%20a%20database%20and%20supports%20JPEG%2C%20GIF%20and%20PNG%20file%20types." class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>
+            <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+        </td>
+        
+        <td>
+            <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </td>
+        
+    </tr>
+</table>
+            <div id="footerText">
+                <div id="footerTextInner">
+                    <p>UberGallery is distributed under the terms of the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.</p>
+                    <p>Copyright &copy; 2017 <a href="http://www.chriskankiewicz.com">Chris Kankiewicz</a></p>
+                </div>
+            </div>
+
+            <a href="#" title="Top of Page" id="topButton" style="display: none;"></a>
+
+        </div>
+    </div>
+
+    <a href="https://github.com/UberGallery/UberGallery" id="forkMeBanner"><img src="images/fork_me_banner.png" alt="Fork me on GitHub" /></a>
+
+</body>
+</html>

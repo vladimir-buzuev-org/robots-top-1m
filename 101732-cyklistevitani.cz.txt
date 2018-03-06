@@ -1,0 +1,1065 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="head"><title>
+	Cyklist&#233; v&#237;t&#225;ni - Certifikace služeb pro cyklisty
+</title><meta name="description" content="Certifikace Cyklisté vítáni zlepšuje kvalitu turistických služeb pro cyklisty. Služby, které splní specifické podmínky, najdete označené zelonobílým usměvavým kolem." /> 
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+<meta http-equiv="pragma" content="no-cache" /> 
+<meta http-equiv="content-style-type" content="text/css" /> 
+<meta http-equiv="content-script-type" content="text/javascript" /> 
+<meta name="keywords" content="cykloturistika,cyklistika,dovolená,dovolena,kolo,bike,bajk,mtb,horal,horák,bicykl,bmx,trekking,cyklostránky,cyklostránka,cyklotrasy,cestování,cestovani,travel,vacation,ubytování,ubytovani,accommodation,unterkunft,chaty,chalupy,pobyty,zajezdy,zájezdy,turistika,turisticka,kempy,hospody,restaurace" /> 
+<link href="/CMSPages/GetResource.ashx?stylesheetname=NAP.CommonStyles" type="text/css" rel="stylesheet"/> 
+<link href="/CMSPages/GetResource.ashx?stylesheetname=CyklisteVitani" type="text/css" rel="stylesheet"/>
+<link type="text/css" rel="stylesheet" href="/CMSPages/GetCSS.aspx?stylesheetname=NAP.System" />
+<link rel="shortcut icon" href="/App_Themes/CyklisteVitani/favicon.ico" />
+<script type="text/javascript" src="//use.typekit.net/wvs3cnp.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script src="/CMSScripts/jquery/jquery-core.js" type="text/javascript"></script>
+<script src="/CMSScripts/jquery/jquery-tools.js" type="text/javascript"></script>
+<script src="/App_Themes/NAP.CommonStyles/javascript/jquery.lightbox-0.5.js"></script>
+<script src="/App_Themes/NAP.CommonStyles/javascript/jquery.expander.min.js"></script>
+<script src="/CMSScripts/jquery/scrollable.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31384306-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script> 
+<script type="text/javascript">
+    function MM_showRegion(hoverImgUrl) {
+        // change region on mouse over
+        var baseObj = $j('#mapRegions');
+        //baseObj.css('cursor', 'pointer');
+	baseObj.prop('src', hoverImgUrl);
+    }
+    function MM_hideRegion() {
+        // switch to initial region on mouse out
+        var baseObj = $j('#mapRegions');
+        //baseObj.css('cursor', 'default');
+	baseObj.prop('src', mapImgUrl);
+    }
+    function ChangeRegion(srcElem, selector) {
+        // select region in drop down list
+        var selectedLocation = $j(srcElem).attr('id').replace('Area', '');
+        $j(selector + ' select.select').val(selectedLocation).trigger('change');
+    }
+</script><script type="text/javascript">
+    //<![CDATA[
+    var mapImgUrl = ""; // img source of initial filter map
+    function pageLoad(sender, args)
+    {
+        // adds an effect called "myEffect" to the tooltip
+        $j.tools.tooltip.addEffect("myEffect",
+                // show function
+                function(done) {
+                        // 'this' variable is a reference to the tooltip API
+                        var conf = this.getConf(), tip = this.getTip(), tooltipTrigger = this.getTrigger();
+                        var tipPosition;
+                        tipPosition = tooltipTrigger.position().left - (tip.width() + parseInt(tip.css("padding-left"), 10)) / 2;
+                        // peform your effect. for example:
+                        tip.css({left: tipPosition + 'px'});
+                        tip.fadeIn();
+                        // after you have finished you must do
+                        done.call();
+                },
+                // hide function
+                function(done) {
+                        this.getTip().fadeOut();
+                        done.call();
+                }
+        );
+        $j("table.EventCalendar td div.dayEvent").tooltip({
+                effect: 'myEffect'
+        });
+        // add custom style for SELECT elements
+        $j('select.select').each(function () {
+            var title = $j(this).attr('title');
+            if ($j('option:selected', this).val() != '') title = $j('option:selected', this).text();
+            $j(this)
+            .css({ 'z-index': 10, 'opacity': 0, '-khtml-appearance': 'none' })
+            .after('<span class="select">' + title + '</span>')
+            .change(function () {
+                val = $j('option:selected', this).text();
+                $j(this).next().text(val);
+            })
+        });
+        // FILTER MAP
+        if($j('#mapRegions').length > 0)
+        {
+            // load initial map img source into this variable
+            mapImgUrl = $j('#mapRegions').prop('src');
+        }
+        if($j('div.infobox').length > 0 && $j('div.big-map-plugin').length > 0)
+        {
+            // move infobox into big map
+            $j("div.infobox").appendTo($j("div.big-map-plugin"));
+            $j("div.infobox").show();
+        }
+        // map area hover
+        $j('area').hover(function() {
+            $j(this).addClass('hover'); 
+        }, function() { 
+            $j(this).removeClass('hover') 
+        });
+    }
+    function addLoadEvent(func) {
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function') {
+            window.onload = func;
+        } else {
+            window.onload = function () {
+                oldonload();
+                func();
+            }
+        }
+    }
+    //]]>
+</script>
+</head>
+<body class="LTR CSCZ ContentBody" >
+    <form method="post" action="/uvod.aspx" id="form">
+<div class="aspNetHidden">
+<input type="hidden" name="manScript_HiddenField" id="manScript_HiddenField" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJODc3OTc4NjAwD2QWAgIBDxYCHgZhY3Rpb24FCi91dm9kLmFzcHgWAgIFD2QWAmYPDxYEHghDc3NDbGFzcwUPUGFnZVBsYWNlaG9sZGVyHgRfIVNCAgJkFgJmD2QWDAIBD2QWBAIBDw8WAh4HVmlzaWJsZWhkZAICD2QWAgIDDw8WAh4EVGV4dAUCT0tkZAIDD2QWAgIBD2QWAgICD2QWAmYPDxYEHwEFD1BhZ2VQbGFjZWhvbGRlch8CAgJkFgJmD2QWBAIDD2QWAmYPZBYCZg9kFgRmD2QWAmYPZBYCAgEPFgIeC18hSXRlbUNvdW50AgEWAgIBD2QWAgIBDw8WBh8EBQ/EjGVjaHkgYSBNb3JhdmEfAQUGYWN0aXZlHwICAmRkAgEPZBYEAgEPZBYCZg9kFgICAQ9kFgwCAQ8PFgQeB1Rvb2xUaXBlHwQFEFR5cCB6YcWZw616ZW7DrTpkZAIDDxAPFgYeB0NoZWNrZWRnHwQFBFbFoWUfBmVkZGRkAgUPEA8WBh8HaB8EBQtVYnl0b3bDoW7DrR8GZWRkZGQCBw8QDxYGHwdoHwQFDFN0cmF2b3bDoW7DrR8GZWRkZGQCCQ8QDxYGHwdoHwQFBUtlbXB5HwZlZGRkZAILDxAPFgYfB2gfBAURVHVyaXN0aWNrw6kgY8OtbGUfBmVkZGRkAgMPZBYCZg9kFgICAQ9kFhACAQ8PFgQfBmUfBAUIVnliZXJ0ZTpkZAIDDxAPFggeDURhdGFUZXh0RmllbGQFDExvY2F0aW9uTmFtZR4ORGF0YVZhbHVlRmllbGQFCkxvY2F0aW9uSUQeC18hRGF0YUJvdW5kZx8GZWQQFRYGU3RlemthG0N5a2xvbWFnaXN0csOhbGEgUGxvdcSNbmljZRJDeWtsb3N0ZXprYSBCZcSNdmERQ3lrbG9zdGV6a2EgT2jFmWUQRHLDocW+bsOtIHN0ZXpreSRFdXJvVmVsbyAxMyAvIFN0ZXprYSDFvmVsZXpuw6kgb3BvbnkKRXVyb1ZlbG8gNApFdXJvVmVsbyA3CkV1cm9WZWxvIDkZR3JlZW53YXkgQmVyb3Vua2EtU3TFmWVsYQ9HcmVlbndheSBKaXplcmEeR3JlZW53YXkgS3Jha292LU1vcmF2YS1Ww61kZcWIGEdyZWVud2F5IFByYWhhIC0gVsOtZGXFiBpLcnXFoW5vaG9yc2vDoSBtYWdpc3Ryw6FsYQ5MYWJza8OhIHN0ZXprYRhMaWNodGVuxaF0ZWpuc2vDqSBzdGV6a3kTTWx5bsOhxZlza8OhIHN0ZXprYQ9Nb3JhdnNrw6EgdHJhc2EbTW9yYXZza8OpIHZpbmHFmXNrw6kgc3Rlemt5D090YXZza8OhIHN0ZXprYRdQcmFoYS1QbHplxYgtUmVnZW5zYnVyZxBWbHRhdnNrw6Egc3RlemthFRYHIyNBTEwjIwQ2NDQ3BDY0NTcENjQ1MQI1MQQ2NDQ4BDY0NTIENjQ1MwQ2NDU0BDY0NDYENjQ0NAQ2NDQ1BDY0NDMENjQ2MAQ2NDQyBDY0NTkENjQ1NQQ2NDU4AjMzBDY0NTAENjQ1NgQ2NDQ5FCsDFmdnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2cWAWZkAgUPDxYEHwZlHwQFBG5lYm9kZAIHDxAPFggfCAUMTG9jYXRpb25OYW1lHwkFCkxvY2F0aW9uSUQfCmcfBmVkEBU2ElR1cmlzdGlja8OhIG9ibGFzdAdCZXNreWR5BEJyZHkNQnJubyBhIG9rb2zDrQpCcm91bW92c2tvDsSMZXNrw6EgS2FuYWRhIMSMZXNrw6kgU3TFmWVkb2hvxZnDrSBhIMW9YXRlY2tvE8SMZXNrw6kgxaB2w71jYXJza28MxIxlc2tvbGlwc2tvDMSMZXNrw70ga3JhcwvEjGVza8O9IGxlcwzEjGVza8O9IHLDoWoFSGFuw6EISHJhZGVja28JSmVzZW7DrWt5DkppemVyc2vDqSBob3J5Dkppxb5uw60gxIxlY2h5Dkppxb5uw60gTW9yYXZhEUthcnZpbsOhIGEgb2tvbMOtDEtva2/FmcOtbnNrbw5LxZlpdm9rbMOhdHNrbxlLcmtvbm/FoWUgYSBQb2Rrcmtvbm/FocOtDUtydcWhbsOpIGhvcnkUS3V0bsOhIGhvcmEgYSBva29sw60FTGlwbm8LTWlrdWxvdnNrw6EOTW9yYXZza8O9IGtyYXMRTm92b2hyYWRza8OpIGhvcnkNT3JsaWNrw6kgaG9yeSNQw6FsYXZhIGEgTGVkbmlja28tVmFsdGlja8O9IGFyZcOhbApQYXJkdWJpY2tvD1BsemXFiCBhIG9rb2zDrQdQb2R5asOtB1BvbGFiw60SUG9vZMWZw60gYSBPcGF2c2tvClBvc8OhemF2w60OUHJhaGEgYSBva29sw60JU2xvdsOhY2tvE1N0cmFrb25pY2UgYSBva29sw60WU3TFmWVkbsOtIMSMZWNoeSAtIGppaCpTdMWZZWRuw60gxIxlY2h5IC0gc2V2ZXJvdsO9Y2hvZCAtIFBvbGFiw60QU3TFmWVkbsOtIE1vcmF2YRNTdMWZZWRuw60gUG92bHRhdsOtB8WgdW1hdmEJU3ZpdGF2c2tvIFTFmWVib8WIc2tvIGEgxIxlc2tvYnVkxJtqb3ZpY2tvCVZhbGHFoXNrbxBWZWxrb3Bhdmxvdmlja8OhCVZ5c2/EjWluYRZaw6FwYWRvxI1lc2vDqSBsw6F6bsSbEcW9xI/DoXJza8OpIHZyY2h5DsW9ZWxlem7DqSBob3J5Clpub2plbXNrw6ETWm5vamVtc2tvIGEgUG9keWrDrRU2ByMjQUxMIyMENjA1MwQ2MDU0BDYwNTUENjA1NgQ2MDU3BDYwNTgENjA1OQQ2MDcxBDYwNjAENjA2MQQ2MDYyBDYwNjMFMTI2MjEENjA2NAQ2MDY1BTEyNjI2BTEyOTY2BDYxMTUENjA2NgQ2MDY5BDYwNjcENjA2OAQ2MTE2BDYwNzACMzYENjA3MgQ2MDczBDYwNzQENjA3NQUxMjYyMAQ2MDc2BDYwNzcENjA3OAQ2MDc5BDYwODAENjA4MQIxNgQ2MTE3BTEyNjI1BTEyNjE5BTEzMTI4BDYwODMENjA4NQQ2MDg0BDYwODYENjA4NwIxNwQ2MDg4BDYwODkENjA5MAQ2MDkxAjM1BTEyNjI3FCsDNmdnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZxYBZmQCCQ8PFgQfBmUfBAUEbmVib2RkAgsPEA8WCB8IBQxMb2NhdGlvbk5hbWUfCQUKTG9jYXRpb25JRB8KZx8GZWQQFQ8ES3JhahRIbGF2bsOtIG3Em3N0byBQcmFoYRBKaWhvxI1lc2vDvSBrcmFqEkppaG9tb3JhdnNrw70ga3JhahFLYXJsb3ZhcnNrw70ga3JhahdLcsOhbG92w6locmFkZWNrw70ga3Jhag9MaWJlcmVja8O9IGtyYWoVTW9yYXZza29zbGV6c2vDvSBrcmFqD09sb21vdWNrw70ga3JhahBQYXJkdWJpY2vDvSBrcmFqD1BsemXFiHNrw70ga3JhahNTdMWZZWRvxI1lc2vDvSBrcmFqDsOac3RlY2vDvSBrcmFqCVZ5c2/EjWluYQ5abMOtbnNrw70ga3JhahUPByMjQUxMIyMBMgE0AjEyATYBOQE4AjE0AjEzAjEwATUBMwE3AjExAjE1FCsDD2dnZ2dnZ2dnZ2dnZ2dnZxYBZmQCDQ8PFgQfBmUfBAUEbmVib2RkAhEPDxYCHwQFBkhsZWRlamRkAgUPZBYCZg9kFgJmDxYWHgxaZXJvUm93c1RleHQFDU5vIGRhdGEgZm91bmQeDlNob3dFZGl0QnV0dG9uaB4MRW5hYmxlUGFnaW5naB4WUmVzb2x2ZUR5bmFtaWNDb250cm9sc2ceEFNob3dEZWxldGVCdXR0b25oHh1BbHRlcm5hdGluZ1RyYW5zZm9ybWF0aW9uTmFtZWUeEURhdGFCaW5kQnlEZWZhdWx0Zx8FAgceHlNlbGVjdGVkSXRlbVRyYW5zZm9ybWF0aW9uTmFtZWUeElRyYW5zZm9ybWF0aW9uTmFtZQUeTkFQLk9iamVjdC5jdl9wcmV2aWV3X2hvbWVwYWdlHhZIaWRlQ29udHJvbEZvclplcm9Sb3dzZxYOZg9kFgJmD2QWAmYPFQWjATxkaXYgY2xhc3M9InJlbGF0ZWQtaW1nIGZsb2F0LWxlZnQiPjxpbWcgYWx0PSIiIHNyYz0iaHR0cDovL3d3dy5jeWtsaXN0ZXZpdGFuaS5jei9nZXRtZWRpYS8wYzc1NDMzMC1mZGEwLTQzMmYtYmIzNi01YWVhZDgxN2ViN2UvNDA0YS5hc3B4P21heHNpZGVzaXplPTE0MCIgLz48L2Rpdj4YL09iamVrdHkvQ2FtcC1Cb3JueS5hc3B4C0NhbXAgQm9ybsO9kgFEdm91IGEgxI10ecWZIGzFr8W+a292w6kgYnVuZ2Fsb3Z5IHNlIHNvY2lhbC4gemHFmcOtemVuw61tIGtvdXNlayBvZCBwaXPEjWl0w6kgcGzDocW+ZS4gMTAwIG3DrXN0IHYgcmVzdGF1cmFjaSw2MCBtw61zdCBuYSB0ZXJhc2UsMTAgc3TDoW5rxa8gcy4uLhgvT2JqZWt0eS9DYW1wLUJvcm55LmFzcHhkAgEPZBYCZg9kFgJmDxUFowE8ZGl2IGNsYXNzPSJyZWxhdGVkLWltZyBmbG9hdC1sZWZ0Ij48aW1nIGFsdD0iIiBzcmM9Imh0dHA6Ly93d3cuY3lrbGlzdGV2aXRhbmkuY3ovZ2V0bWVkaWEvOTlkYjZkOWEtZTA3ZC00NmNmLWFkMjEtNjcwY2QzZjRhOTRhLzkwN2EuYXNweD9tYXhzaWRlc2l6ZT0xNDAiIC8+PC9kaXY+GS9PYmpla3R5L0R2dXItSGxhdmFjLmFzcHgORHbFr3IgSGxhdsOhxI2OAUhpc3Rvcmlja8O9IGxlbm7DrSBkdsWvciB6IHIuMTUwMCzFoXBpxI1rb3bDqSB1Ynl0b3bDoW5pIHZlIDQgYXBhcnRtw6FuZWNoIHNlIHp2bC4gdmNob2RlbS5rb3Vww6FuaSB2IHDFmWVocmFkxJsgV2l0a2EgdiBQTFIgYXNpIDUwMCBtLlDFr2ouLi4ZL09iamVrdHkvRHZ1ci1IbGF2YWMuYXNweGQCAg9kFgJmD2QWAmYPFQWkATxkaXYgY2xhc3M9InJlbGF0ZWQtaW1nIGZsb2F0LWxlZnQiPjxpbWcgYWx0PSIiIHNyYz0iaHR0cDovL3d3dy5jeWtsaXN0ZXZpdGFuaS5jei9nZXRtZWRpYS9hNzBhYjM3YS1kY2JlLTRiZmMtOWNhYy02NmVkZDA5ZDU0YjcvMTg1M2EuYXNweD9tYXhzaWRlc2l6ZT0xNDAiIC8+PC9kaXY+Hi9PYmpla3R5L1BlbnNpb24tTGF6ZW5za2EuYXNweBNQZW5zaW9uIEzDoXplxYhza8OhigFQZW5zaW9uIHNlIG5hY2jDoXrDrSB2IGtsaWRuw6kgdmlsb3bDqSDEjXR2cnRpIFN0YXLDqSBCb2xlc2xhdmksIG5lZGFsZWtvIGxlc29wYXJrdSBhIHRlbmlzb3bDvWNoIGt1cnTFrywgcG91emUgMTAgbWludXQgb2QgUHJhaHkgYSBtZXQuLi4eL09iamVrdHkvUGVuc2lvbi1MYXplbnNrYS5hc3B4ZAIDD2QWAmYPZBYCZg8VBaUBPGRpdiBjbGFzcz0icmVsYXRlZC1pbWcgZmxvYXQtbGVmdCI+PGltZyBhbHQ9IiIgc3JjPSJodHRwOi8vd3d3LmN5a2xpc3Rldml0YW5pLmN6L2dldG1lZGlhLzgwZjg4NWY1LTU0NWQtNDBhOS05YWNiLWIzMDQ1Y2VlNzMwZi8xMDI0MmEuYXNweD9tYXhzaWRlc2l6ZT0xNDAiIC8+PC9kaXY+Hy9PYmpla3R5L0hvdGVsLUdSQU5ELVRhYm9yLmFzcHgSSG90ZWwgR1JBTkQgVMOhYm9ykAHigItLdmFsaXRuw60gaG90ZWxvdsOpIHVieXRvdsOhbsOtIHYgY2VudHJ1IFTDoWJvcmEsIHZsYXN0bsOtIHBhcmtvdmnFoXTEmy4gSyBkaXNwb3ppY2kgNyBwb2hvZGxuw71jaCBwb2tvasWvIGEgMiBhcGFydG3DoW55LCB2xaFlIHNlIHNwcmNob3UuLi4fL09iamVrdHkvSG90ZWwtR1JBTkQtVGFib3IuYXNweGQCBA9kFgJmD2QWAmYPFQWlATxkaXYgY2xhc3M9InJlbGF0ZWQtaW1nIGZsb2F0LWxlZnQiPjxpbWcgYWx0PSIiIHNyYz0iaHR0cDovL3d3dy5jeWtsaXN0ZXZpdGFuaS5jei9nZXRtZWRpYS8wOTMyNzAxMy1iNzMxLTQzOTAtYWQ0NC01Zjg0NTM2ZTg3ZTAvMTA1NDNhLmFzcHg/bWF4c2lkZXNpemU9MTQwIiAvPjwvZGl2PhwvT2JqZWt0eS9Ib3RlbC1VLUNpc2FyZS5hc3B4EkhvdGVsICJVIEPDrXNhxZllIlxOb3bEmyBvdGV2xZllbsO9IHJvZGlubsO9IGhvdGVsIHYgY2VudHJ1IE3Em2xuw61rYSBWw6FtIG5hYsOtesOtIHVieXRvdsOhbsOtIHYgMTAgcG9rb2rDrWNoLhwvT2JqZWt0eS9Ib3RlbC1VLUNpc2FyZS5hc3B4ZAIFD2QWAmYPZBYCZg8VBaUBPGRpdiBjbGFzcz0icmVsYXRlZC1pbWcgZmxvYXQtbGVmdCI+PGltZyBhbHQ9IiIgc3JjPSJodHRwOi8vd3d3LmN5a2xpc3Rldml0YW5pLmN6L2dldG1lZGlhLzAxYjkwOWQ4LTdmMjMtNDJmZi04NmU2LTM2MmI0ODYxZjllMC8xMDczOGEuYXNweD9tYXhzaWRlc2l6ZT0xNDAiIC8+PC9kaXY+HS9PYmpla3R5L1BlbnNpb24tUHN0cnV6aS5hc3B4E1BlbnNpb24gUHN0cnXFvsOtCQmPAVBFTlpJT04gUFNUUlXFvcONIChhcGFydG3DoW5vdsOpaG8gc3R5bHUpIG3DoSBwxZnDrWplbW5vdSBhdG1vc2bDqXJ1LCBrdGVyb3UgZG9rcmVzbHVqZSBsZXNuw60gcG90xa/EjWVrIGEgc3R1ZMOhbmthLCBrdGVyw6EgbGVtdWplIHBvemVtZWsgLi4uHS9PYmpla3R5L1BlbnNpb24tUHN0cnV6aS5hc3B4ZAIGD2QWAmYPZBYCZg8VBaUBPGRpdiBjbGFzcz0icmVsYXRlZC1pbWcgZmxvYXQtbGVmdCI+PGltZyBhbHQ9IiIgc3JjPSJodHRwOi8vd3d3LmN5a2xpc3Rldml0YW5pLmN6L2dldG1lZGlhLzQ2M2U4MjBkLTNiMDYtNDY1Yy1hNjdmLTk0NmU3NzY5OGMzMS8xMzk1OWEuYXNweD9tYXhzaWRlc2l6ZT0xNDAiIC8+PC9kaXY+Hi9PYmpla3R5L0hvdGVsLUxpZG92eS1kdW0uYXNweBJIb3RlbCBMaWRvdsO9IGTFr22SAUhvdGVsIExpZG92w70gZMWvbSBqZSBtb2Rlcm7DrSBzcG9ydG92bsOtIGhvdGVsIG5hYsOtemVqw61jw60gc3bDvW0ga2xpZW50xa9tIGJvaGF0w6kgc3BvcnRvdm7DrSB2ecW+aXTDrSBqYWsgdmUgdmxhc3Ruw61tIGFyZcOhbHUsIHRhayB2IMSNbGVuLi4uHi9PYmpla3R5L0hvdGVsLUxpZG92eS1kdW0uYXNweGQCBQ9kFgICAQ9kFgICAg8WFB8LBQ1ObyBkYXRhIGZvdW5kHg5EYXRhU291cmNlTmFtZWUfDWgeEE5lc3RlZENvbnRyb2xzSURlHw9oHxBlHwxoHwUCAh8TBRtuYXAudGlwLmN2X3ByZXZpZXdfaG9tZXBhZ2UfFGcWBGYPZBYCZg9kFgJmDxUDFVbEm2TEm2xpIGpzdGUsIMW+ZS4uLgDKAUhsZWTDoXRlIHphasOtbWF2b3UgZG92b2xlbm91PyA8YSBocmVmPSJodHRwOi8vdmluYXJza2Uuc3Rlemt5LmN6IiB0YXJnZXQ9Il9ibGFuayI+VmluYcWZc2vDqSBzdGV6a3k8L2E+IFbDoXMgcMWZaXZlZG91IGsgbGlkZW0sIGt0ZcWZaSBqc291IHByb3NsdWxpIHBvaG9zdGlubm9zdMOtLCBkb2Jyw71tIHbDrW5lbSBhIG90ZXbFmWVuw71tIHNyZGNlbS5kAgEPZBYCZg9kFgJmDxUDGVrDoWJhdmEgY2VzdG91IGRvIHByw6FjZT8Ae1rDusSNYXN0bsSbdGUgc2UgaSBzIHZhxaFpbWkga29sZWd5IHNvdXTEm8W+ZSA8YSBocmVmPSJodHRwOi8vd3d3LmRvcHJhY2VuYWtvbGUubmV0IiB0YXJnZXQ9Il9ibGFuayI+RG8gcHLDoWNlIG5hIGtvbGU8L2E+IWQCCQ9kFgQCAQ9kFgJmD2QWAmYPFhYfCwUNTm8gZGF0YSBmb3VuZB8MaB8NaB8OZx8PaB8QZR8RZx8FAgIfEmUfEwUdY21zLm5ld3MuY3ZfaG9tZXBhZ2VfbmV3c19vbmUfFGcWBGYPZBYCZg9kFgJmDxUFCTI5LjguMjAxN5sBPGltZyBzcmM9Imh0dHA6Ly93d3cuY3lrbGlzdGV2aXRhbmkuY3ovZ2V0YXR0YWNobWVudC9hZTFhNTIyYy0yNjhmLTQ2NzAtYmQ2NS1lYjU5NGMyNmFmNzkvU3RvbmVtYW4tQmlrZS1hbmViLUtydXNub2hvcnNrYS12eXp2YS5hc3B4P21heFNpZGVTaXplPTY1Ij48L2ltZz41L0FrdHVhbGl0eS9TdG9uZW1hbi1CaWtlLWFuZWItS3J1c25vaG9yc2thLXZ5enZhLmFzcHglU3RvbmVtYW4gQmlrZSBhbmViIEtydcWhbm9ob3Jza8OhIC4uLk5UbyBqZSAxNjIga20gbmEga29sZSwgcMWZaSBuYXN0b3Vww6Fuw60gNDQwMCB2w73FoWtvdsO9Y2ggbWV0csWvLCBwxZllcyA5IHYuLi5kAgEPZBYCZg9kFgJmDxUFCDMuOC4yMDE3mwE8aW1nIHNyYz0iaHR0cDovL3d3dy5icm5vdmlkZW4uY3ovZ2V0YXR0YWNobWVudC84YzBjYTY1My04NTBkLTRlNjktODM2Mi00YjY1NjYzNDBmNWQvQ3lrbG9zdGV6a2EtQnJuby1WaWRlbi1qZWRuYWxhLXMtUmFrb3Vza2VtLmFzcHg/bWF4U2lkZVNpemU9NjUiPjwvaW1nPlFodHRwOi8vd3d3LmJybm92aWRlbi5jei9Ba3R1YWxpdHkvQ3lrbG9zdGV6a2EtQnJuby1WaWRlbi1qZWRuYWxhLXMtUmFrb3Vza2VtLmFzcHggQnJuby1Ww61kZcWIIGplZG5hbGEgcyBSYWtvdXNrZW1LPGI+WsOhc3R1cGNpIEN5a2xvc3Rlemt5IEJybm8gVsOtZGXFiCBqZWRuYWxpIHYgxb1pZGxvY2hvdmljw61jaCBzIHJha291Li4uZAICD2QWAmYPDxYCHwNoZGQCCw9kFgQCAg8PFgIfA2hkZAIDDw8WAh8DaGRkAg8PZBYCZg9kFgICAg8WFB8LBQ1ObyBkYXRhIGZvdW5kHxVlHw1oHxZlHw9oHxBlHwxoHwUCBh8TBRNjbXMubWVudWl0ZW0uZm9vdGVyHxRnFgxmD2QWAmYPZBYCZg8VAiI8YSBocmVmPSIvVXZvZC5hc3B4Ij4mIzIxODt2b2Q8L2E+HDxzcGFuIGNsYXNzPSJzcGFjZXIiPjwvc3Bhbj5kAgEPZBYCZg9kFgJmDxUCKTxhIGhyZWY9Ii9rZGUtaGxlZGF0LmFzcHgiPktkZSBobGVkYXQ8L2E+HDxzcGFuIGNsYXNzPSJzcGFjZXIiPjwvc3Bhbj5kAgIPZBYCZg9kFgJmDxUCRzxhIGhyZWY9Ii9Eb2JpamVuaS1lbGVrdHJva29sLTIuYXNweCI+RG9iJiMyMzc7amVuJiMyMzc7IGVsZWt0cm9rb2w8L2E+HDxzcGFuIGNsYXNzPSJzcGFjZXIiPjwvc3Bhbj5kAgMPZBYCZg9kFgJmDxUCQjxhIGhyZWY9Ii9Qb2RtaW5reS1jZXJ0aWZpa2FjZS5hc3B4Ij5Qb2RtJiMyMzc7bmt5IGNlcnRpZmlrYWNlPC9hPhw8c3BhbiBjbGFzcz0ic3BhY2VyIj48L3NwYW4+ZAIED2QWAmYPZBYCZg8VAiY8YSBocmVmPSIvUGFydG5lcmkuYXNweCI+UGFydG5lxZlpPC9hPhw8c3BhbiBjbGFzcz0ic3BhY2VyIj48L3NwYW4+ZAIFD2QWAmYPZBYCZg8VAiQ8YSBocmVmPSIvby1uYXMuYXNweCI+TyBuJiMyMjU7czwvYT4AZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBQVJcCRsdCR6b25lQ29udGVudCRwYWdlcGxhY2Vob2xkZXIkcCRsdCR6b25lRmlsdGVyJENWX0hvbWVQYWdlRmlsdGVyJGNoa0FsbAVTcCRsdCR6b25lQ29udGVudCRwYWdlcGxhY2Vob2xkZXIkcCRsdCR6b25lRmlsdGVyJENWX0hvbWVQYWdlRmlsdGVyJGNoa0FjY29tbW9kYXRpb24FUHAkbHQkem9uZUNvbnRlbnQkcGFnZXBsYWNlaG9sZGVyJHAkbHQkem9uZUZpbHRlciRDVl9Ib21lUGFnZUZpbHRlciRjaGtHYXN0cm9ub215BU9wJGx0JHpvbmVDb250ZW50JHBhZ2VwbGFjZWhvbGRlciRwJGx0JHpvbmVGaWx0ZXIkQ1ZfSG9tZVBhZ2VGaWx0ZXIkY2hrQ2FtcHNpdGVzBVlwJGx0JHpvbmVDb250ZW50JHBhZ2VwbGFjZWhvbGRlciRwJGx0JHpvbmVGaWx0ZXIkQ1ZfSG9tZVBhZ2VGaWx0ZXIkY2hrVG91cmlzdERlc3RpbmF0aW9uczxjdaMGkcl0oAh94OWbWTA+jn5pBEawrpd7LXsImdnh" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form'];
+if (!theForm) {
+    theForm = document.form;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=MvoYmz3GGfTNWDeWhppugxl6i8AZgnqRgxowGCIolEyH9iFv2JQ2NDee0m67sStLSu35RI2u4o1pGdKmM4Ycjqs19vebQCjIE47LFGKRnSY1&amp;t=636283830560000000" type="text/javascript"></script>
+
+<input type="hidden" name="lng" id="lng" value="cs-CZ" />
+<script type="text/javascript">
+	//<![CDATA[
+
+function PM_Postback(param) { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080); } if(window.CMSContentManager) { CMSContentManager.allowSubmit = true; }; __doPostBack('m$am',param); }
+function PM_Callback(param, callback, ctx) { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080); }if (window.CMSContentManager) { CMSContentManager.storeContentChangedStatus(); };WebForm_DoCallback('m$am',param,callback,ctx,null,true); }
+//]]>
+</script>
+<script src="/ScriptResource.axd?d=IeZVUr8Gt2LdQ5ReTnXZFriym7JdeDNhkTOS91TWQKzhkkR_cTCniECX82f2TB_6oipqh7sD2ghx6dHKfdUO6LTyeI0JIbxN32CeC4e9VN7EmpMEHH4ibWoKotr8yvD30&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=_B45s5Nhl62iunVJDo3zB-SIj4YamflWx0z-iWbXaeu4qELdm5YIbk027SAzBDIHcUFTCcJe0VVTC7OJaNDcIFJKgXON9FYe4216B70O5L2wltVTzTFjQEPrO23CCvFfYxXmod2jtAjiymXCxMHCGA2&amp;t=7c776dc1" type="text/javascript"></script>
+<script type="text/javascript">
+	//<![CDATA[
+
+var CMS = CMS || {};
+CMS.Application = {
+  "isRTL": "false",
+  "applicationUrl": "/",
+  "imagesUrl": "/CMSPages/GetResource.ashx?image=%5bImages.zip%5d%2f",
+  "isDialog": false
+};
+
+//]]>
+</script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A5343185" />
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" />
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" />
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('manScript', 'form', ['tp$lt$zonePaneLeftM$EventCalendar$sys_pnlUpdate','','tp$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$upPanel1','','tp$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$UpdatePanel1','','tp$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$UpdatePanel2','','tctxM',''], ['p$lt$zonePaneLeftM$EventCalendar',''], [], 90, '');
+//]]>
+</script>
+
+    <div id="ctxM">
+
+</div>
+    
+<a name="top"></a>
+<div id="container-top">
+<div id="container">
+<div id="container-foot">
+<div id="all">
+    <div id="top-ico">
+    	<div id="main">
+            <div class="float-left">
+                <a href="http://www.greenways.cz" class="green"></a>
+                <a href="http://www.cyklistevitani.cz" class="cykliste"></a>
+                <a href="http://vinarske.stezky.cz" class="stezky"></a>
+                <a href="http://www.labska-stezka.cz" class="labska"></a>
+                <a href="http://www.prahaviden.cz" class="praha"></a>
+                <a href="http://www.brnoviden.cz" class="bovi"></a>
+                <div class="clear"></div>
+            </div>            
+            <div class="float-right">
+                <a href="http://www.nadacepartnerstvi.cz" class="nap"></a>
+            </div>
+            <div class="clear"></div>
+    	</div>
+    </div>
+    
+    <div id="header">
+    	<div id="logo" class="float-left">
+	    	<a href="http://www.cyklistevitani.cz" class="hp"><img src="/App_Themes/CyklisteVitani/images/logo.png" width="167" height="135"/></a>
+        </div>
+    	<div id="header-right" class="float-right">
+            <div id="lang"><!-- LANGUAGE FORM -->
+<div class="langForm float-right">
+<ul class="lang">
+    <li><a class="cs cs-CZ" title="Čeština" href="/Uvod.aspx?lang=cs-CZ">&nbsp;</a></li>
+    <li><a class="en cs-CZ" title="English" href="/Uvod.aspx?lang=en-US">&nbsp;</a></li>
+    <li><a class="de cs-CZ" title="Deutsch" href="/Uvod.aspx?lang=de-DE">&nbsp;</a></li>
+</ul>
+</div>
+<div class="clear">&nbsp;</div>
+</div>
+<div class="clear">&nbsp;</div>
+
+<div class="searchForm">
+	<div class="searchBox">	
+		 	<input name="p$lt$zoneHeader$CVSearchFilter$txtSearchKeyWords" type="text" id="p_lt_zoneHeader_CVSearchFilter_txtSearchKeyWords" class="inputbox search" />
+			<input type="submit" name="p$lt$zoneHeader$CVSearchFilter$btnFilter" value="OK" id="p_lt_zoneHeader_CVSearchFilter_btnFilter" class="button search btn btn-primary" />
+	</div>	
+</div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+        <div id="menu">
+	<ul id="menuElem" class="CMSListMenuUL">
+		<li class="CMSListMenuHighlightedLI">
+			<a class="CMSListMenuLinkHighlighted" href="/Uvod.aspx">&#218;vod</a>
+		</li>
+		<li class="CMSListMenuLI">
+			<a class="CMSListMenuLink" href="/kde-hledat.aspx">Kde hledat</a>
+			<ul class="CMSListMenuUL">
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/kde-hledat/Vyvesni-stity.aspx">V&#253;věsn&#237; št&#237;ty</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/kde-hledat/cykloturisticke-mapy.aspx">Cykloturistick&#233; mapy</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/kde-hledat/GPS-navigace.aspx">GPS navigace</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/kde-hledat/internetove-portaly.aspx">Internetov&#233; port&#225;ly</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/kde-hledat/Katalog-Cykliste-vitani.aspx">Katalog Cyklist&#233; v&#237;t&#225;ni</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/kde-hledat/Casopisy.aspx">Časopisy</a>
+				</li>
+
+			</ul>
+		</li>
+		<li class="CMSListMenuLI">
+			<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/eon-e-pujcovny.aspx">Dob&#237;jen&#237; elektrokol</a>
+			<ul class="CMSListMenuUL">
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/eon-e-pujcovny.aspx">E.ON e-půjčovny</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/Cechy-a-Morava.aspx">Čechy a Morava</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/Cyklomagistrala-Ploucnice.aspx">Cyklomagistr&#225;la Ploučnice</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/Cyklostezka-Ohre.aspx">Cyklostezka Ohře</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/EuroVelo-4.aspx">EuroVelo 4</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/EuroVelo-7.aspx">EuroVelo 7</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/EuroVelo-9.aspx">EuroVelo 9</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/EuroVelo-13.aspx">EuroVelo 13</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/Greenway-Praha-Viden.aspx">Greenway Praha - V&#237;deň</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/Greenway-Krakov-Morava-Viden.aspx">Krakov-Morava-V&#237;deň</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/Krusnohorska-magistrala.aspx">Krušnohorsk&#225; magistr&#225;la</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/Labska-stezka.aspx">Labsk&#225; stezka</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/Lichtenstejnske-stezky.aspx">Lichtenštejnsk&#233; stezky</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/Moravska-trasa.aspx">Moravsk&#225; trasa</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Dobijeni-elektrokol-2/Moravske-vinarske-stezky.aspx">Moravsk&#233; vinařsk&#233; stezky</a>
+				</li>
+
+			</ul>
+		</li>
+		<li class="CMSListMenuLI">
+			<a class="CMSListMenuLink" href="/Podminky-certifikace.aspx">Podm&#237;nky certifikace</a>
+			<ul class="CMSListMenuUL">
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Podminky-certifikace/Ubytovaci-zarizeni.aspx">Ubytovac&#237; zař&#237;zen&#237;</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Podminky-certifikace/Stravovaci-zarizeni.aspx">Stravovac&#237; zař&#237;zen&#237;</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Podminky-certifikace/Kemp.aspx">Kemp</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Podminky-certifikace/Turisticky-cil.aspx">Turistick&#253; c&#237;l</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/Podminky-certifikace/certifikace-ke-stazeni.aspx">Ke stažen&#237;</a>
+				</li>
+
+			</ul>
+		</li>
+		<li class="CMSListMenuLI">
+			<a class="CMSListMenuLink" href="/Partneri.aspx">Partneři</a>
+		</li>
+		<li class="CMSListMenuLI">
+			<a class="CMSListMenuLink" href="/o-nas/Kontakt-(1).aspx">O n&#225;s</a>
+			<ul class="CMSListMenuUL">
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/o-nas/Kontakt-(1).aspx">Kontakt </a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/o-nas/Ilustracni-foto.aspx">Ilustračn&#237; foto</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/o-nas/Znacka-ke-stazeni.aspx">Značka ke stažen&#237;</a>
+				</li>
+				<li class="CMSListMenuLI">
+					<a class="CMSListMenuLink" href="/o-nas/Prihlaska.aspx">Z&#225;jem o certifikaci</a>
+				</li>
+
+			</ul>
+		</li>
+
+	</ul>
+
+
+    		<a href="http://eshop.nadacepartnerstvi.cz" class="eshop float-right">E-shop</a>
+	</div>
+    <div class="clear"></div>
+    <div class="menu-content-pushup"></div>
+<script>
+	/*$j(document).ready(function () {*/
+		$j('ul#menuElem > li.CMSListMenuHighlightedLI > a').after('<span></span><div class=\'clear\'></div>');
+	/*});*/
+</script><div class="master-content-container">
+
+
+<!-- Container -->
+    <div id="news">
+    	<div class="news-top"></div>
+        <div class="news-main">
+<h1>Cyklisté vítáni</h1>
+Certifikace kvality služeb ubytovacích a stravovacích zařízení, kempů a turistických cílů, poskytujících perfektní zázemí pro vás i vaše kola.
+
+<div class="link"><a href="/navigace-v-terenu.aspx">Jak najít certifikované zařízení v terénu</a> <a href="/Podminky-certifikace.aspx">Podmínky certifikace</a> <a href="/Zajem-o-certifikaci">Zájem o certifikaci</a><br />
+&nbsp;</div>
+
+<div class="clear">&nbsp;</div>
+
+
+
+
+        </div>
+    	<div class="news-bottom"></div>
+    </div>
+
+<div id="content" class="home-page-content">
+    <div id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_upPanel1">
+	
+            <!-- TABS OF STATES -->
+            
+                    <ul class="tabs">
+                
+                    <li>
+                        <a id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_rptStates_ctl01_lbState" class="active" href="javascript:__doPostBack(&#39;p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$rptStates$ctl01$lbState&#39;,&#39;&#39;)">Čechy a Morava</a></li>
+                
+                    </ul>
+                
+            <div class="clear">
+            </div>
+        
+</div>
+    <!-- FILTER FORM -->
+    <div class="map-top">
+    </div>
+    <div id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_pnlFilterObjects" class="map">
+	
+        <div class="map-body">
+            <div id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_UpdatePanel1">
+		
+                    <div id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_pnlFilterObjectType" class="map-head">
+			
+                        <span id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_lblTitle" class="label">Typ zařízení:</span>
+                        <div class="map-ico">
+                            <ul>
+                                <li class="all">
+                                    <span class="checkbox"><input id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_chkAll" type="checkbox" name="p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$chkAll" checked="checked" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$chkAll\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_chkAll">Vše</label></span>
+                                </li>
+                                <li class="home">
+                                    <span class="checkbox"><input id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_chkAccommodation" type="checkbox" name="p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$chkAccommodation" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$chkAccommodation\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_chkAccommodation">Ubytování</label></span>
+                                </li>
+                                <li class="food">
+                                    <span class="checkbox"><input id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_chkGastronomy" type="checkbox" name="p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$chkGastronomy" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$chkGastronomy\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_chkGastronomy">Stravování</label></span>
+                                </li>
+                                <li class="kemp">
+                                    <span class="checkbox"><input id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_chkCampsites" type="checkbox" name="p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$chkCampsites" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$chkCampsites\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_chkCampsites">Kempy</label></span>
+                                </li>
+                                <li class="turist">
+                                    <span class="checkbox"><input id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_chkTouristDestinations" type="checkbox" name="p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$chkTouristDestinations" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$chkTouristDestinations\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_chkTouristDestinations">Turistické cíle</label></span>
+                                </li>
+                            </ul>
+                            <div class="clear">
+                            </div>
+                        </div>
+                    
+		</div>
+                
+	</div>
+            <div id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_UpdatePanel2">
+		
+                    <div id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_pnlFilterByLocation" class="map-selectable float-left">
+			
+                        <span id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_lblSelect" class="label float-left">Vyberte:</span>
+                        <ul class="float-left">
+                            <li class="ico-selectablea">
+                                <div class="styled-select">
+                                    <select name="p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$drpSelectTrail" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$drpSelectTrail\&#39;,\&#39;\&#39;)&#39;, 0)" id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_drpSelectTrail" class="select form-control">
+				<option selected="selected" value="##ALL##">Stezka</option>
+				<option value="6447">Cyklomagistr&#225;la Ploučnice</option>
+				<option value="6457">Cyklostezka Bečva</option>
+				<option value="6451">Cyklostezka Ohře</option>
+				<option value="51">Dr&#225;žn&#237; stezky</option>
+				<option value="6448">EuroVelo 13 / Stezka železn&#233; opony</option>
+				<option value="6452">EuroVelo 4</option>
+				<option value="6453">EuroVelo 7</option>
+				<option value="6454">EuroVelo 9</option>
+				<option value="6446">Greenway Berounka-Střela</option>
+				<option value="6444">Greenway Jizera</option>
+				<option value="6445">Greenway Krakov-Morava-V&#237;deň</option>
+				<option value="6443">Greenway Praha - V&#237;deň</option>
+				<option value="6460">Krušnohorsk&#225; magistr&#225;la</option>
+				<option value="6442">Labsk&#225; stezka</option>
+				<option value="6459">Lichtenštejnsk&#233; stezky</option>
+				<option value="6455">Mlyn&#225;řsk&#225; stezka</option>
+				<option value="6458">Moravsk&#225; trasa</option>
+				<option value="33">Moravsk&#233; vinařsk&#233; stezky</option>
+				<option value="6450">Otavsk&#225; stezka</option>
+				<option value="6456">Praha-Plzeň-Regensburg</option>
+				<option value="6449">Vltavsk&#225; stezka</option>
+
+			</select>
+                                </div>
+                            </li>
+                            <li>
+                                <span id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_LocalizedLabel1">nebo</span>
+                            </li>
+                            <li class="ico-selectableb">
+                                <div class="styled-select">
+                                    <select name="p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$drpSelectTouristRegion" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$drpSelectTouristRegion\&#39;,\&#39;\&#39;)&#39;, 0)" id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_drpSelectTouristRegion" class="select form-control">
+				<option selected="selected" value="##ALL##">Turistick&#225; oblast</option>
+				<option value="6053">Beskydy</option>
+				<option value="6054">Brdy</option>
+				<option value="6055">Brno a okol&#237;</option>
+				<option value="6056">Broumovsko</option>
+				<option value="6057">Česk&#225; Kanada</option>
+				<option value="6058">Česk&#233; Středohoř&#237; a Žatecko</option>
+				<option value="6059">Česk&#233; Šv&#253;carsko</option>
+				<option value="6071">Českolipsko</option>
+				<option value="6060">Česk&#253; kras</option>
+				<option value="6061">Česk&#253; les</option>
+				<option value="6062">Česk&#253; r&#225;j</option>
+				<option value="6063">Han&#225;</option>
+				<option value="12621">Hradecko</option>
+				<option value="6064">Jesen&#237;ky</option>
+				<option value="6065">Jizersk&#233; hory</option>
+				<option value="12626">Jižn&#237; Čechy</option>
+				<option value="12966">Jižn&#237; Morava</option>
+				<option value="6115">Karvin&#225; a okol&#237;</option>
+				<option value="6066">Kokoř&#237;nsko</option>
+				<option value="6069">Křivokl&#225;tsko</option>
+				<option value="6067">Krkonoše a Podkrkonoš&#237;</option>
+				<option value="6068">Krušn&#233; hory</option>
+				<option value="6116">Kutn&#225; hora a okol&#237;</option>
+				<option value="6070">Lipno</option>
+				<option value="36">Mikulovsk&#225;</option>
+				<option value="6072">Moravsk&#253; kras</option>
+				<option value="6073">Novohradsk&#233; hory</option>
+				<option value="6074">Orlick&#233; hory</option>
+				<option value="6075">P&#225;lava a Lednicko-Valtick&#253; are&#225;l</option>
+				<option value="12620">Pardubicko</option>
+				<option value="6076">Plzeň a okol&#237;</option>
+				<option value="6077">Podyj&#237;</option>
+				<option value="6078">Polab&#237;</option>
+				<option value="6079">Poodř&#237; a Opavsko</option>
+				<option value="6080">Pos&#225;zav&#237;</option>
+				<option value="6081">Praha a okol&#237;</option>
+				<option value="16">Slov&#225;cko</option>
+				<option value="6117">Strakonice a okol&#237;</option>
+				<option value="12625">Středn&#237; Čechy - jih</option>
+				<option value="12619">Středn&#237; Čechy - severov&#253;chod - Polab&#237;</option>
+				<option value="13128">Středn&#237; Morava</option>
+				<option value="6083">Středn&#237; Povltav&#237;</option>
+				<option value="6085">Šumava</option>
+				<option value="6084">Svitavsko</option>
+				<option value="6086">Třeboňsko a Českobudějovicko</option>
+				<option value="6087">Valašsko</option>
+				<option value="17">Velkopavlovick&#225;</option>
+				<option value="6088">Vysočina</option>
+				<option value="6089">Z&#225;padočesk&#233; l&#225;zně</option>
+				<option value="6090">Žď&#225;rsk&#233; vrchy</option>
+				<option value="6091">Železn&#233; hory</option>
+				<option value="35">Znojemsk&#225;</option>
+				<option value="12627">Znojemsko a Podyj&#237;</option>
+
+			</select>
+                                </div>
+                            </li>
+                            <li>
+                                <span id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_LocalizedLabel2">nebo</span>
+                            </li>
+                            <li class="ico-selectablec">
+                                <div class="styled-select">
+                                    <select name="p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$drpSelectShire" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$drpSelectShire\&#39;,\&#39;\&#39;)&#39;, 0)" id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_drpSelectShire" class="select form-control">
+				<option selected="selected" value="##ALL##">Kraj</option>
+				<option value="2">Hlavn&#237; město Praha</option>
+				<option value="4">Jihočesk&#253; kraj</option>
+				<option value="12">Jihomoravsk&#253; kraj</option>
+				<option value="6">Karlovarsk&#253; kraj</option>
+				<option value="9">Kr&#225;lov&#233;hradeck&#253; kraj</option>
+				<option value="8">Libereck&#253; kraj</option>
+				<option value="14">Moravskoslezsk&#253; kraj</option>
+				<option value="13">Olomouck&#253; kraj</option>
+				<option value="10">Pardubick&#253; kraj</option>
+				<option value="5">Plzeňsk&#253; kraj</option>
+				<option value="3">Středočesk&#253; kraj</option>
+				<option value="7">&#218;steck&#253; kraj</option>
+				<option value="11">Vysočina</option>
+				<option value="15">Zl&#237;nsk&#253; kraj</option>
+
+			</select>
+                                </div>
+                            </li>
+                            <li>
+                                <span id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_LocalizedLabel3">nebo</span>
+                            </li>
+                            <li>
+                                <div class="styled-textbox">
+                                    <input name="p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$txtSearchKeyWords" type="text" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$txtSearchKeyWords\&#39;,\&#39;\&#39;)&#39;, 0)" onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;" id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_txtSearchKeyWords" class="inputbox" />
+                                </div>
+                            </li>
+                            <li>
+                                <div align="right">
+                                    <input type="submit" name="p$lt$zoneContent$pageplaceholder$p$lt$zoneFilter$CV_HomePageFilter$btnFilter" value="Hledej" id="p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_btnFilter" class="button btn btn-primary" />
+                                </div>
+                            </li>
+                        </ul>
+                    
+		</div>
+                    <div class="map-img float-right">
+                        <script type="text/javascript">
+                        var mapRegionDef = [
+                            /*Definition: [<locationid>, <hover image url>, <left offset px>, <top offset px>]*/
+                            [6, '/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/karlovarsky-hover.png', 37, 94]
+                            , [7, '/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/ustecky-hover.png', 107, 22]
+                            , [8, '/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/liberecky-hover.png', 218, 27]
+                            , [9, '/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/kralovehradecky-hover.png', 279, 56]
+                            , [10, '/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/pardubicky-hover.png', 301, 126]
+                            , [13, '/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/olomoucky-hover.png', 409, 95]
+                            , [14, '/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/moravskoslezsky-hover.png', 445, 109]
+                            , [15, '/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/Zlinsky-hover.png', 444, 205]
+                            , [12, '/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/Jihomoravsky-hover.png', 316, 198]
+                            , [11, '/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/Vysocina-hover.png', 262, 172]
+                            , [4, '/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/Jihocesky-hover.png', 150, 201]
+                            , [5, '/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/Plzensky-hover.png', 60, 140]
+                            , [2, '/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/Praha-hover.png', 210, 131]
+                            , [3, '/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/Stredocesky-hover.png', 143, 77]
+                        ];
+                        
+                    </script><img alt="" id="mapRegions" src="/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/map.png" style="border-style: none" usemap="#map" /><map id="map" name="map"><area alt="Karlovarský" coords="5,86,14,100,18,108,19,99,21,90,29,84,37,80,45,78,53,74,62,74,68,80,79,81,81,87,89,85,92,96,94,105,95,112,95,120,91,131,78,124,70,133,69,136,54,134,47,141,38,138,29,135,34,125,20,125,7,113,10,106,1,94" id="Area6" onclick="ChangeRegion(this, '.ico-selectablec')" onmouseout="MM_hideRegion()" onmouseover="MM_showRegion('/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/karlovarsky-hover.png');" shape="poly" title="Karlovarský" /> <area alt="Ústecký" coords="71,79,76,73,79,67,87,67,94,58,97,60,101,56,107,51,109,56,116,53,119,41,127,40,145,38,148,32,152,29,155,31,186,19,180,10,175,7,180,0,199,7,199,18,205,14,200,29,196,33,190,30,183,49,192,68,185,79,184,88,154,91,143,101,130,103,111,116,97,117,91,86,83,85,80,81" id="Area7" onclick="ChangeRegion(this, '.ico-selectablec')" onmouseout="MM_hideRegion()" onmouseover="MM_showRegion('/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/ustecky-hover.png');" shape="poly" title="Ústecký" /> <area alt="Liberecký" coords="197,32,203,27,215,31,223,24,232,24,236,12,231,9,236,6,242,10,246,6,248,10,254,10,255,20,260,27,262,35,269,32,277,40,277,58,282,67,277,67,271,62,268,66,271,71,264,73,263,69,254,68,252,71,228,54,221,64,213,61,214,66,202,72,200,67,192,68,182,48,190,30" id="Area8" onclick="ChangeRegion(this, '.ico-selectablec')" onmouseout="MM_hideRegion()" onmouseover="MM_showRegion('/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/liberecky-hover.png');" shape="poly" title="Liberecký" /> <area alt="Královéhradecký" coords="276,36,290,40,299,38,302,49,311,46,314,52,310,55,316,57,323,49,329,54,334,49,341,51,348,59,342,68,328,74,334,86,341,84,346,92,359,111,352,108,352,113,340,123,330,124,316,116,311,110,300,114,297,109,290,115,278,113,269,119,269,116,263,113,265,107,262,96,249,94,244,87,245,80,244,65,251,70,255,68,262,69,264,73,271,70,267,64,271,63,276,67,283,65,277,58" id="Area9" onclick="ChangeRegion(this, '.ico-selectablec')" onmouseout="MM_hideRegion()" onmouseover="MM_showRegion('/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/kralovehradecky-hover.png');" shape="poly" title="Královéhradecký" /> <area alt="Pardubický" coords="354,110,368,120,383,106,379,124,373,130,377,145,373,150,384,167,379,179,361,175,360,180,347,183,316,164,311,172,273,148,277,137,263,126,268,118,278,113,290,114,297,108,301,115,311,110,329,124,341,121,352,113" id="Area10" onclick="ChangeRegion(this, '.ico-selectablec')" onmouseout="MM_hideRegion()" onmouseover="MM_showRegion('/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/pardubicky-hover.png');" shape="poly" title="Pardubický" /> <area alt="Olomoucký" coords="384,105,391,101,394,103,397,102,395,91,390,90,387,82,384,79,385,75,407,81,414,89,420,88,422,95,426,94,428,100,424,99,422,105,415,110,415,121,408,130,411,135,408,144,414,150,426,148,427,153,434,148,444,160,453,162,453,168,470,183,462,190,461,196,452,193,447,196,450,200,441,202,438,207,427,200,425,204,426,209,422,215,410,217,402,210,402,203,400,205,391,190,388,193,390,201,386,206,382,202,379,188,377,178,386,166,374,150,377,145,374,130,379,125" id="Area13" onclick="ChangeRegion(this, '.ico-selectablec')" onmouseout="MM_hideRegion()" onmouseover="MM_showRegion('/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/olomoucky-hover.png');" shape="poly" title="Olomoucký" /> <area alt="Moravskoslezský" coords="425,100,429,103,434,94,444,94,453,88,457,100,450,104,443,104,446,113,452,114,468,131,481,125,480,120,484,121,487,129,493,128,502,137,508,134,524,138,526,143,524,146,529,161,543,165,548,180,540,187,527,185,522,187,526,193,515,200,505,189,494,188,494,185,480,187,471,181,454,167,453,161,444,160,433,148,427,153,426,149,412,149,408,144,411,136,407,130,416,122,414,110" id="Area14" onclick="ChangeRegion(this, '.ico-selectablec')" onmouseout="MM_hideRegion()" onmouseover="MM_showRegion('/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/moravskoslezsky-hover.png');" shape="poly" title="Moravskoslezský" /> <area alt="Zlínský" coords="512,202,506,197,501,190,493,190,490,189,478,189,475,187,469,189,465,189,461,198,455,196,450,199,453,202,445,201,437,207,429,200,425,204,426,207,423,214,409,217,412,228,416,230,409,241,418,241,418,247,428,252,436,258,444,257,453,269,463,260,470,259,474,248,489,243,495,213,509,210" id="Area15" onclick="ChangeRegion(this, '.ico-selectablec')" onmouseout="MM_hideRegion()" onmouseover="MM_showRegion('/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/zlinsky-hover.png');" shape="poly" title="Zlínský" /> <area alt="Jihomoravský" coords="451,269,442,257,435,258,418,247,418,243,409,241,415,229,409,216,401,209,401,205,391,190,387,193,390,200,386,206,382,203,376,179,361,176,361,181,347,183,346,188,346,198,338,202,333,212,340,216,338,218,340,223,335,228,340,233,335,243,324,251,314,249,293,260,283,261,281,268,295,273,304,270,321,284,348,287,357,278,364,278,373,282,373,286,390,289,395,299,407,278,416,268,426,271,431,277,437,269,441,273" id="Area12" onclick="ChangeRegion(this, '.ico-selectablec')" onmouseout="MM_hideRegion()" onmouseover="MM_showRegion('/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/jihomoravsky-hover.png');" shape="poly" title="Jihomoravský" /> <area alt="Vysočina" coords="282,260,295,260,315,248,324,251,334,245,340,233,335,226,340,222,339,218,340,214,334,212,338,201,346,197,347,183,316,165,311,172,272,148,266,158,252,164,248,172,253,178,248,182,231,181,226,208,231,221,240,223,248,230,261,231,262,237,281,241,283,245,275,257" id="Area11" onclick="ChangeRegion(this, '.ico-selectablec')" onmouseout="MM_hideRegion()" onmouseover="MM_showRegion('/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/vysocina-hover.png');" shape="poly" title="Vysočina" /> <area alt="Jihočeský" coords="279,262,275,267,268,262,255,257,254,260,246,261,246,255,235,253,229,273,231,285,218,281,214,286,217,289,210,294,210,307,201,302,194,303,189,299,186,305,179,311,160,306,151,299,157,296,149,290,137,283,129,269,126,269,115,257,118,249,119,237,127,234,130,224,135,209,134,193,150,194,159,189,170,189,173,185,180,191,192,190,205,194,216,181,229,191,225,210,230,220,240,223,247,230,261,232,263,236,280,241,283,244,275,257" id="Area4" onclick="ChangeRegion(this, '.ico-selectablec')" onmouseout="MM_hideRegion()" onmouseover="MM_showRegion('/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/jihocesky-hover.png');" shape="poly" title="Jihočeský" /> <area alt="Plzeňský" coords="111,259,103,258,104,250,92,239,86,239,82,235,72,216,64,210,54,210,43,197,42,186,37,186,33,168,26,164,24,159,29,155,37,142,48,139,58,138,69,139,82,126,91,130,97,118,106,121,103,126,110,128,120,132,125,132,137,141,137,162,133,162,124,165,125,173,132,181,132,191,135,208,126,232,120,235,118,247,114,247" id="Area5" onclick="ChangeRegion(this, '.ico-selectablec')" onmouseout="MM_hideRegion()" onmouseover="MM_showRegion('/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/plzensky-hover.png');" shape="poly" title="Plzeňský" /> <area alt="Středočeský" coords="135,191,144,189,145,193,157,185,159,188,170,188,174,184,180,189,187,186,202,188,203,191,211,186,213,178,226,185,231,180,249,179,251,176,246,172,253,161,265,158,276,137,261,127,267,117,262,114,263,108,261,97,249,95,242,87,244,80,243,67,228,55,221,65,214,61,215,65,203,72,200,67,193,68,185,78,185,87,157,90,143,101,129,104,112,117,96,115,107,120,105,126,120,131,124,131,138,140,137,161,124,165,132,179,179,137,172,123,174,121,171,117,177,115,181,116,181,112,196,109,213,121,207,124,207,131,199,131,198,128,191,136,184,139,180,138,133,179" id="Area3" onclick="ChangeRegion(this, '.ico-selectablec')" onmouseout="MM_hideRegion()" onmouseover="MM_showRegion('/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/stredocesky-hover.png');" shape="poly" title="Středočeský" /> <area alt="Praha" coords="179,134,174,124,174,122,172,117,177,117,182,118,182,113,194,110,210,120,205,121,206,130,199,129,200,126,192,132,193,135,183,138" id="Area2" onclick="ChangeRegion(this, '.ico-selectablec')" onmouseout="MM_hideRegion()" onmouseover="MM_showRegion('/App_Themes/NAP.CommonStyles/Images/Locations/CZ/Shires/prazsky-hover.png');" shape="poly" title="Praha" /> <area alt="ČR" id="Area##All##" nohref="nohref" onclick="ChangeRegion(this, '.ico-selectablec')" shape="default" title="ČR" /></map>
+                    </div>
+                    <div class="clear">
+                    </div>
+                
+	</div>
+        </div>
+    
+</div>
+    <script type="text/javascript">
+        addLoadEvent(function () {
+
+            // replace static texts of states with multilingual texts
+            $j('#content ul.tabs li a').each(function (index) {
+                switch (index) {
+                    case 0:
+                        $j(this).text('Čechy a Morava');
+                        break;
+                }
+            });
+
+            // add states with external link to the filter tabs as the last items
+            $j('#content ul.tabs').append('<li><a href="http://www.vitajtecyklisti.sk" target="_blank">Slovensko</a></li>');
+            $j('#content ul.tabs').append('<li><a href="http://www.bettundbike.de" target="_blank">Německo</a></li>');
+            $j('#content ul.tabs').append('<li><a href="http://www.weinviertel.at/de/?tt=WEINV_R72" target="_blank">Rakousko</a></li>');
+            $j('#content ul.tabs').append('<li><a href="http://www.veloland.ch" target="_blank">Švýcarsko</a></li>');
+            $j('#content ul.tabs').append('<li><a href="http://www.francevelotourisme.com" target="_blank">Francie</a></li>');
+            $j('#content ul.tabs').append('<li><a href="http://www.fietsplatform.nl" target="_blank">Nizozemí</a></li>');
+            $j('#content ul.tabs').append('<li><a href="http://www.fiab-onlus.it" target="_blank">Itálie</a></li>');
+        });
+    </script>
+
+
+
+    <div id="related">
+        <div class="related-head">Doporučené objekty</div>
+        <div class="related-block">
+            <a onclick="nextOrPrevious(-1)" class="next-left float-left in-front"></a>
+		<div class="related-scrollable">
+                <ul class="items related float-left">
+<li>
+    <div class="related-img float-left"><img alt="" src="http://www.cyklistevitani.cz/getmedia/0c754330-fda0-432f-bb36-5aead817eb7e/404a.aspx?maxsidesize=140" /></div>
+<div class="related-body">                    
+<div class="introtext">
+<a href="/Objekty/Camp-Borny.aspx" class="title">Camp Borný</a>
+<p> Dvou a čtyř lůžkové bungalovy se social. zařízením kousek od pisčité pláže. 100 míst v restauraci,60 míst na terase,10 stánků s... </p>
+
+</div>
+<div class="related-link"><a href="/Objekty/Camp-Borny.aspx" class="readmore">Více</a> </div>
+<div class="clear"></div>
+</div>
+</li><li>
+    <div class="related-img float-left"><img alt="" src="http://www.cyklistevitani.cz/getmedia/99db6d9a-e07d-46cf-ad21-670cd3f4a94a/907a.aspx?maxsidesize=140" /></div>
+<div class="related-body">                    
+<div class="introtext">
+<a href="/Objekty/Dvur-Hlavac.aspx" class="title">Dvůr Hlaváč</a>
+<p> Historický lenní dvůr z r.1500,špičkové ubytováni ve 4 apartmánech se zvl. vchodem.koupáni v přehradě Witka v PLR asi 500 m.Půj... </p>
+
+</div>
+<div class="related-link"><a href="/Objekty/Dvur-Hlavac.aspx" class="readmore">Více</a> </div>
+<div class="clear"></div>
+</div>
+</li><li>
+    <div class="related-img float-left"><img alt="" src="http://www.cyklistevitani.cz/getmedia/a70ab37a-dcbe-4bfc-9cac-66edd09d54b7/1853a.aspx?maxsidesize=140" /></div>
+<div class="related-body">                    
+<div class="introtext">
+<a href="/Objekty/Pension-Lazenska.aspx" class="title">Pension Lázeňská</a>
+<p> Pension se nachází v klidné vilové čtvrti Staré Boleslavi, nedaleko lesoparku a tenisových kurtů, pouze 10 minut od Prahy a met... </p>
+
+</div>
+<div class="related-link"><a href="/Objekty/Pension-Lazenska.aspx" class="readmore">Více</a> </div>
+<div class="clear"></div>
+</div>
+</li><li>
+    <div class="related-img float-left"><img alt="" src="http://www.cyklistevitani.cz/getmedia/80f885f5-545d-40a9-9acb-b3045cee730f/10242a.aspx?maxsidesize=140" /></div>
+<div class="related-body">                    
+<div class="introtext">
+<a href="/Objekty/Hotel-GRAND-Tabor.aspx" class="title">Hotel GRAND Tábor</a>
+<p> ​Kvalitní hotelové ubytování v centru Tábora, vlastní parkoviště. K dispozici 7 pohodlných pokojů a 2 apartmány, vše se sprchou... </p>
+
+</div>
+<div class="related-link"><a href="/Objekty/Hotel-GRAND-Tabor.aspx" class="readmore">Více</a> </div>
+<div class="clear"></div>
+</div>
+</li><li>
+    <div class="related-img float-left"><img alt="" src="http://www.cyklistevitani.cz/getmedia/09327013-b731-4390-ad44-5f84536e87e0/10543a.aspx?maxsidesize=140" /></div>
+<div class="related-body">                    
+<div class="introtext">
+<a href="/Objekty/Hotel-U-Cisare.aspx" class="title">Hotel "U Císaře"</a>
+<p> Nově otevřený rodinný hotel v centru Mělníka Vám nabízí ubytování v 10 pokojích. </p>
+
+</div>
+<div class="related-link"><a href="/Objekty/Hotel-U-Cisare.aspx" class="readmore">Více</a> </div>
+<div class="clear"></div>
+</div>
+</li><li>
+    <div class="related-img float-left"><img alt="" src="http://www.cyklistevitani.cz/getmedia/01b909d8-7f23-42ff-86e6-362b4861f9e0/10738a.aspx?maxsidesize=140" /></div>
+<div class="related-body">                    
+<div class="introtext">
+<a href="/Objekty/Pension-Pstruzi.aspx" class="title">Pension Pstruží		</a>
+<p> PENZION PSTRUŽÍ (apartmánového stylu) má příjemnou atmosféru, kterou dokresluje lesní potůček a studánka, která lemuje pozemek ... </p>
+
+</div>
+<div class="related-link"><a href="/Objekty/Pension-Pstruzi.aspx" class="readmore">Více</a> </div>
+<div class="clear"></div>
+</div>
+</li><li>
+    <div class="related-img float-left"><img alt="" src="http://www.cyklistevitani.cz/getmedia/463e820d-3b06-465c-a67f-946e77698c31/13959a.aspx?maxsidesize=140" /></div>
+<div class="related-body">                    
+<div class="introtext">
+<a href="/Objekty/Hotel-Lidovy-dum.aspx" class="title">Hotel Lidový dům</a>
+<p> Hotel Lidový dům je moderní sportovní hotel nabízející svým klientům bohaté sportovní vyžití jak ve vlastním areálu, tak v člen... </p>
+
+</div>
+<div class="related-link"><a href="/Objekty/Hotel-Lidovy-dum.aspx" class="readmore">Více</a> </div>
+<div class="clear"></div>
+</div>
+</li> </ul>
+		</div>
+            <a onclick="nextOrPrevious(1)" class="next-right float-right related-test"></a>
+        <div class="clear"></div>
+    </div>
+</div>
+<script type="text/javascript"> 
+    $j(document).ready(function () {
+        $j(".related-scrollable").scrollable({ mousewheel: false, circular: true, speed: 1000 }).autoscroll({ autoplay: true, interval: 4000 });
+    });
+</script>
+<script type="text/javascript">
+function nextOrPrevious(i)
+{
+ $j(document).ready(function ()
+{
+     var api = $j(".related-scrollable").data("scrollable");
+     api.move(i);
+})
+}
+</script>
+    </div>
+</div>
+
+    <div id="pane">
+            <div class="pane-block">
+                    <ul class="pane">
+                            <li class="left">
+                                    <div class="pane-head"><a href="tipy.aspx">Věděli jste, že ... </a></div><script type="text/javascript"> 
+    $j(document).ready(function () {
+        $j(".tip-scrollable").scrollable({items: "tip-items",  mousewheel: false, circular: true, speed: 1000 }).autoscroll({ autoplay: true, interval: 6000 });
+    });
+</script>
+<script type="text/javascript">
+function nextOrPreviousTip(i)
+{
+ $j(document).ready(function ()
+{
+     var api = $j(".tip-scrollable").data("scrollable");
+     api.move(i);
+})
+}
+</script>
+<div class="pane-body">
+    <a onclick="nextOrPreviousTip(-1)" class="next-left float-left"></a>
+    <div class="tip-scrollable float-left">
+        <div class="tip-items float-left">
+<div class="introtext float-left">                        
+    <span class="title">Věděli jste, že...</span>
+    
+    <p>Hledáte zajímavou dovolenou? <a href="http://vinarske.stezky.cz" target="_blank">Vinařské stezky</a> Vás přivedou k lidem, kteři jsou prosluli pohostinností, dobrým vínem a otevřeným srdcem.</p>
+</div><div class="introtext float-left">                        
+    <span class="title">Zábava cestou do práce?</span>
+    
+    <p>Zúčastněte se i s vašimi kolegy soutěže <a href="http://www.dopracenakole.net" target="_blank">Do práce na kole</a>!</p>
+</div>
+        </div>
+    </div>
+    <a onclick="nextOrPreviousTip(1)" class="next-right float-right"></a>            
+    <div class="clear"></div>
+</div>
+                            </li>
+                            <li class="left-m">
+                                    <div class="pane-head"><a href="akce.aspx">Kalendář akcí </a></div><div class="pane-body"><div id="p_lt_zonePaneLeftM_EventCalendar_sys_pnlUpdate">
+	
+<div class="Calendar">
+    <table id="p_lt_zonePaneLeftM_EventCalendar_plcUp_calItems" class="EventCalendar" cellspacing="0" cellpadding="2" rules="all" Border="0" title="Calendar" style="border-width:1px;border-style:solid;border-collapse:collapse;">
+		<tr><td colspan="7" style="background-color:Transparent;"><table class="Title" cellspacing="0" style="width:100%;border-collapse:collapse;">
+			<tr><td class="Navigation" style="width:15%;"><a href="javascript:__doPostBack('p$lt$zonePaneLeftM$EventCalendar$plcUp$calItems','V6422')" style="color:Black" title="Go to the previous month">&lt;</a></td><td align="center" style="width:70%;">září 2017</td><td class="Navigation" align="right" style="width:15%;"><a href="javascript:__doPostBack('p$lt$zonePaneLeftM$EventCalendar$plcUp$calItems','V6483')" style="color:Black" title="Go to the next month">&gt;</a></td></tr>
+		</table></td></tr><tr><th class="DayHeader" align="center" abbr="pondělí" scope="col">po</th><th class="DayHeader" align="center" abbr="úterý" scope="col">út</th><th class="DayHeader" align="center" abbr="středa" scope="col">st</th><th class="DayHeader" align="center" abbr="čtvrtek" scope="col">čt</th><th class="DayHeader" align="center" abbr="pátek" scope="col">pá</th><th class="DayHeader" align="center" abbr="sobota" scope="col">so</th><th class="DayHeader" align="center" abbr="neděle" scope="col">ne</th></tr><tr><td class="OtherMonth" align="center" style="width:14%;"><div class="noEvent">
+	28
+</div></td><td class="OtherMonth" align="center" style="width:14%;"><div class="noEvent">
+	29
+</div></td><td class="OtherMonth" align="center" style="width:14%;"><div class="noEvent">
+	30
+</div></td><td class="OtherMonth" align="center" style="width:14%;"><div class="noEvent">
+	31
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	1
+</div></td><td class="Weekend" align="center" style="width:14%;"><div class="noEvent">
+	2
+</div></td><td class="Weekend" align="center" style="width:14%;"><div class="noEvent">
+	3
+</div></td></tr><tr><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	4
+</div></td><td class="Today" align="center" style="width:14%;"><div class="noEvent">
+	5
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	6
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	7
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	8
+</div></td><td class="Weekend" align="center" style="width:14%;"><div class="noEvent">
+	9
+</div></td><td class="Weekend" align="center" style="width:14%;"><div class="noEvent">
+	10
+</div></td></tr><tr><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	11
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	12
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	13
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	14
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	15
+</div></td><td class="Weekend" align="center" style="width:14%;"><div class="noEvent">
+	16
+</div></td><td class="Weekend" align="center" style="width:14%;"><div class="noEvent">
+	17
+</div></td></tr><tr><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	18
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	19
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	20
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	21
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	22
+</div></td><td class="Weekend" align="center" style="width:14%;"><div class="noEvent">
+	23
+</div></td><td class="Weekend" align="center" style="width:14%;"><div class="noEvent">
+	24
+</div></td></tr><tr><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	25
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	26
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	27
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	28
+</div></td><td class="Day" align="center" style="width:14%;"><div class="noEvent">
+	29
+</div></td><td class="Weekend" align="center" style="width:14%;"><div class="noEvent">
+	30
+</div></td><td class="OtherMonth" align="center" style="width:14%;"><div class="noEvent">
+	1
+</div></td></tr><tr><td class="OtherMonth" align="center" style="width:14%;"><div class="noEvent">
+	2
+</div></td><td class="OtherMonth" align="center" style="width:14%;"><div class="noEvent">
+	3
+</div></td><td class="OtherMonth" align="center" style="width:14%;"><div class="noEvent">
+	4
+</div></td><td class="OtherMonth" align="center" style="width:14%;"><div class="noEvent">
+	5
+</div></td><td class="OtherMonth" align="center" style="width:14%;"><div class="noEvent">
+	6
+</div></td><td class="OtherMonth" align="center" style="width:14%;"><div class="noEvent">
+	7
+</div></td><td class="OtherMonth" align="center" style="width:14%;"><div class="noEvent">
+	8
+</div></td></tr>
+	</table>
+</div>
+<div class="EventDetail">
+    
+</div>
+
+</div>    <a class="readmore" href="/akce.aspx">Všechny akce</a>
+</div>
+<script>
+/* Add this script to masterpage to have only one pageLoad function */
+/*
+function pageLoad(sender, args)
+{
+    // adds an effect called "myEffect" to the tooltip
+    $j.tools.tooltip.addEffect("myEffect",
+            // show function
+            function(done) {
+                    // 'this' variable is a reference to the tooltip API
+                    var conf = this.getConf(), tip = this.getTip(), tooltipTrigger = this.getTrigger();
+                    var tipPosition;
+                    tipPosition = tooltipTrigger.position().left - (tip.width() + parseInt(tip.css("padding-left"), 10)) / 2;
+                    // peform your effect. for example:
+                    tip.css({left: tipPosition + 'px'});
+                    tip.fadeIn();
+                    // after you have finished you must do
+                    done.call();
+            },
+            // hide function
+            function(done) {
+                    this.getTip().fadeOut();
+                    done.call();
+            }
+    );
+    $j("table.EventCalendar td div.dayEvent").tooltip({
+            effect: 'myEffect'
+    });
+}
+*/
+</script>
+                            </li>
+                            <li class="right-m">
+                                    <div class="pane-head"><a href="aktuality.aspx">Aktuality</a>
+</div><div class="pane-body"><div class="news first">
+    <div class="news-left float-left">
+      <div class="date">29.8.2017</div>
+      <div class="img">
+        <img src="http://www.cyklistevitani.cz/getattachment/ae1a522c-268f-4670-bd65-eb594c26af79/Stoneman-Bike-aneb-Krusnohorska-vyzva.aspx?maxSideSize=65"></img>
+      </div>
+    </div>
+    <div class="introtext float-left"><a class="title" href="/Aktuality/Stoneman-Bike-aneb-Krusnohorska-vyzva.aspx">Stoneman Bike aneb Krušnohorská ...</a>
+      <p>To je 162 km na kole, při nastoupání 4400 výškových metrů, přes 9 v...</p>
+    </div>
+</div>
+<div class="clear">&nbsp;</div><div class="news first">
+    <div class="news-left float-left">
+      <div class="date">3.8.2017</div>
+      <div class="img">
+        <img src="http://www.brnoviden.cz/getattachment/8c0ca653-850d-4e69-8362-4b6566340f5d/Cyklostezka-Brno-Viden-jednala-s-Rakouskem.aspx?maxSideSize=65"></img>
+      </div>
+    </div>
+    <div class="introtext float-left"><a class="title" href="http://www.brnoviden.cz/Aktuality/Cyklostezka-Brno-Viden-jednala-s-Rakouskem.aspx">Brno-Vídeň jednala s Rakouskem</a>
+      <p><b>Zástupci Cyklostezky Brno Vídeň jednali v Židlochovicích s rakou...</p>
+    </div>
+</div>
+<div class="clear">&nbsp;</div>     <a class="readmore" href="/aktuality.aspx">Všechny aktuality</a>
+</div>
+                            </li>
+                            <li class="right">
+                                    <div class="pane-head"><!--<a href="http://www.zazemilipovskestezky.cz" target="_blank">Lipovské stezky</a>-->
+<!--<a href="http://www.otevrenesklepy.cz" target="_blank">OTEVŘENÉ SKLEPY</a>-->
+<!--<a href="http://www.forbikes.cz" target="_blank">FOR BIKES</a>-->
+<a href="http://www.nadacepartnerstvi.cz" target="_blank">Nadace Partnerství</a></div><div class="pane-body"><a href="http://www.nadacepartnerstvi.cz" target="_blank"><img alt="" src="/getmedia/58219b37-fc74-42eb-9bf8-a02b94573079/NAP_barevne_tagline-RGB.aspx?width=170&amp;height=53" style="width: 170px; height: 53px; margin: 10px;" /></a><br />
+Největší česká nadace pro lidi a pro&nbsp;přírodu. Podporuje také rozvoj cyklistické dopravy a cykloturistiky. Certifikaci <strong>Cyklisté vítáni</strong> rozvíjí od&nbsp;roku 2005.
+
+
+
+	<br>
+    <a href="http://www.nadacepartnerstvi.cz" target="_blank" class="readmore">Více</a>
+</div>
+                            </li>
+                    </ul>
+                    <div class="clear"></div>
+            </div>
+    </div>
+    <div class="content-bottom"></div>
+    
+    <div id="banner">
+        <span><a href="/Partneri.aspx">Partneři</a></span>
+<div class="banner-body float-left"><a href="http://www.nadacecs.cz" target="_blank"><img src="/Greenways/media/Greenways/Loga/ncs.png" /></a> <a class="banner c" href="http://www.nakole.cz/" target="_blank">&nbsp;</a><a class="banner a" href="http://www.cykloturistika.cz/" target="_blank">&nbsp;</a> <a class="banner b" href="http://www.seznam.cz/" target="_blank">&nbsp;</a> <a class="banner d" href="http://www.shocart.cz/" target="_blank">&nbsp;</a></div>
+
+
+
+
+
+    </div>
+    <div id="foot">
+        <div class="foot-body float-left">
+            <ul>
+<li><a href="/Uvod.aspx">&#218;vod</a><span class="spacer"></span></li><li><a href="/kde-hledat.aspx">Kde hledat</a><span class="spacer"></span></li><li><a href="/Dobijeni-elektrokol-2.aspx">Dob&#237;jen&#237; elektrokol</a><span class="spacer"></span></li><li><a href="/Podminky-certifikace.aspx">Podm&#237;nky certifikace</a><span class="spacer"></span></li><li><a href="/Partneri.aspx">Partneři</a><span class="spacer"></span></li><li><a href="/o-nas.aspx">O n&#225;s</a></li>
+</ul>
+<div class="spacer"></div>
+<div class="float-left copyright">
+	<span>Copyright &copy; 2005 - 2017 | <a href="http://www.cyklistevitani.cz">www.cyklistevitani.cz</a> | Cyklisté vítáni, <a href="http://www.nadacepartnerstvi.cz" target="_blank">Nadace Partnerství</a></span></div>
+        </div>
+
+        <div class="foot-body float-right">
+            <div class="support"><img src="/App_Themes/NAP.CommonStyles/Images/mmr.jpg" /> <span>Podpořeno Ministerstvem pro místní rozvoj</span></div>
+
+<div class="clear">&nbsp;</div>
+
+<div class="kentico"><a href="http://www.kentico.com" title="Kentico CMS"><img class="float-left" height="29" src="/App_Themes/NAP.CommonStyles/Images/kentico.png" width="82" /> <span>CMS pro ASP.NET</span> </a>
+
+<div class="clear">&nbsp;</div>
+</div>
+<div class="realizace float-left">
+	<span>Realizace</span>
+        <a href="http://www.dragon-bits.com/" class="db developers-tooltip" target="_blank"></a>
+        <div class="tooltip">
+          <div class="absolute">
+            <div class="top"></div>
+            <div class="middle"><span><a href="http://www.dragon-bits.com/" target="_blank">DragonBits</a></span><span>Implementace v Kentico CMS</span></div>
+            <div class="bottom"></div>
+          </div>
+        </div>
+        <a href="http://www.net42.cz" class="br developers-tooltip" target="_blank"></a>
+        <div class="tooltip">
+          <div class="absolute">
+            <div class="top"></div>
+            <div class="middle"><span><a href="http://www.net42.cz" target="_blank">Net42</a></span> <span>Internetová agentura</span></div>
+            <div class="bottom"></div>
+          </div>
+        </div>
+        <a href="http://www.studioqe.cz" class="foot-logo developers-tooltip" target="_blank"></a>
+        <div class="tooltip">
+          <div class="absolute">
+            <div class="top"></div>
+            <div class="middle"><span><a href="http://www.studioqe.cz" target="_blank">StudioQe</a></span><span> Webdesign</span></div>
+            <div class="bottom"></div>
+          </div>
+        </div>
+</div>
+<div class="clear">
+	&nbsp;</div>
+<script>
+$j(document).ready(function() {
+    $j(".developers-tooltip").tooltip({position: 'top center', relative: true, effect: 'slide'});
+});
+</script>
+        </div>
+        </div>
+    </div>
+    <div id="bottom"></div>
+    
+</div>
+</div>
+</div>
+</div>
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("manScript_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();function MM_changeRegion(source, locationId, mapBase, hoverImgUrl, x, y, selected) {
+    var ddlist = document.getElementById('p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_drpSelectShire');
+    if (ddlist != null) {
+        ddlist.value = locationId;
+        $j('#' + mapBase + '_selectedImg').remove();
+        MM_showRegion(source, locationId, mapBase, hoverImgUrl, x, y, selected);
+        __doPostBack('p_lt_zoneContent_pageplaceholder_p_lt_zoneFilter_CV_HomePageFilter_drpSelectShire', '');
+    }
+}
+
+WebForm_InitCallback();
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+//]]>
+</script>
+</form>
+</body>
+</html>

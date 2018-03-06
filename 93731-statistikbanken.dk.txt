@@ -1,0 +1,644 @@
+
+<script language="Javascript1.2">
+function showspan()	{
+gettingdata.style.visibility="visible";
+}
+</script>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" >
+<HTML>
+<HEAD>
+<TITLE>Statistikbanken - data og tal</TITLE>
+
+<LINK rel="shortcut icon" href="http://statistikbanken.dk/statbank5a/Site/1/favorite.ico">
+<script type="text/javascript" src="../jQuery/js/jquery.min.js"></script>
+<link type="text/css" href="../jQuery/css/statbank/jquery.ui.statbank.css" rel="stylesheet" />	
+<script type="text/javascript" src="../jQuery/js/jquery.ui.custom.min.js"></script>
+<LINK rel="stylesheet" type="text/css" href="../site/StatBank1.css?rev2016-2">
+<script type="text/javascript" src="../site/1/topmenu.js?rev2016-1"></script>
+<script type="text/javascript" src="../site/1/webstat.js"></script>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+</HEAD>
+
+<BODY>
+<script type="text/javascript">
+
+//Insert texts for use in JavaScript function in correct language (see PTda.asp)
+var logonconfirm1 = 'Du skal logge på for at udtrække mere end ';
+var logonconfirm2 = ' tal pr. tabel. Vil du logge på?';
+var gstalert1 = 'Du kan maksimalt udtrække ';
+var gstalert2 = ' tal pr. tabel';
+var peralert = 'Visning af tabeller kræver at, du\nhar foretaget et valg i listen med tid.\n\nVælg en værdi og prøv igen.';
+var valuealert = 'Vælg en eller flere værdier fra ';
+var mapalert = 'Kort kan kun vises for områdefordelte statistikker';
+var undosort = 'Fortryd sortering';
+
+function showspan()	{
+gettingdata.style.visibility="visible";
+}
+
+function autologon(form1)	{
+	var al = document.forms[form1].elements['AutoLogon'].checked;
+	if(al)
+	window.open('../Help/autologon.asp?Planguage=0','autologon','width=470,height=400,resizable=1,scrollbars=auto');
+}
+
+function showgraph(lstnr) {
+if (lstnr == 7) {
+index = lstnr;
+}
+else {
+index = document.graphics.graphtype.selectedIndex;
+}
+para = document.graphics.graphtype.options[index].value;
+  if(para == 'graferror') {
+  alert(mapalert);
+  }
+  else {
+      window.open(para,'_blank','width=950,height=510,resizable=1,scrollbars=1');
+  }
+}
+
+function showpxsgraph(fil) {
+para = fil;
+window.open(para,'Diagram','width=950,height=500,resizable=1');
+}
+
+function showdiv(i,j) {
+  rediger.varno.value = i;
+  rediger.vartext.value = j;
+  vartitle.value = j;
+  scr1 = window.document.body.scrollTop;
+  scr2 = window.document.body.scrollLeft;
+  str1 = scr1 + window.event.clientY;
+  str2 = scr2 + window.event.clientX;
+  div1.style.top = str1;
+  div1.style.left = str2;
+  div1.style.visibility = "visible"  
+}
+
+function hidediv(i,j)	{
+  rediger.varno.value = "";
+  rediger.vartext.value = "";
+  div1.style.visibility = "hidden";
+}
+
+function calculate(i)	{
+  rediger.varno.value = $('#editorcalc').contents().find('#varno').val();
+  rediger.vartext.value = $('#editorcalc').contents().find('#vartosum').val();
+  rediger.valstring.value = $('#editorcalc').contents().find('#valtosum').val();
+  rediger.newvaltext.value = $('#editorcalc').contents().find('#newvaltext').val();
+  rediger.inclexcl.value = $('#editorcalc').contents().find('#inclexcl').val();
+  rediger.calconst.value = $('#editorcalc').contents().find('#calconst').val();
+  rediger.parmorder.value = $('#editorcalc').contents().find('#parmorder').val();
+  menusubmit(i);
+}
+
+function menusubmit(i)  {
+  rediger.altpivot.value= i;
+  document.rediger.submit();
+  showspan();
+}
+
+function bookmarkme(i)	{
+  url = "http://www." + i;
+  pres = i;
+  if (document.all)
+  window.external.AddFavorite(url,pres) 
+}
+
+function help(fil) {
+	window.open(fil,'Helps','width=800,height=600,resizable=1,toolbar=yes,toolbar=0');
+}
+
+function videoguide(url) {
+	window.open(url,'Guide','width=1000,height=650,resizable=1,toolbar=yes,toolbar=0');
+}
+
+function servertimer()
+{
+	if (hour > 24)
+		hour = '00';
+
+	if (min < 10 && min != '00')
+		dismin = '0' + min;
+	else
+		dismin = min;
+	
+	dissec = (sec < 10 ? sec = '0' + sec : sec);
+
+	document.getElementById('servertime').innerHTML = hour + ":" + dismin + ":" + dissec;
+
+	if (sec < 59)
+		sec++;
+	else
+	{
+		sec = '0';
+		min++;
+		if (min > 59)
+		{
+			min = '00';
+			hour++;
+		}
+	}
+	
+	window.setTimeout('servertimer()', 1000);
+}
+
+function logOffConfirm()
+{
+	time = new Date();
+	
+	answer = confirm('Automatisk pålogning vil blive deaktiveret.\n\nØnsker du at logge af?');
+
+	try
+	{	
+		elapsedSeconds = Math.floor((new Date() - time) / 1000);
+		sec = sec * 1 + elapsedSeconds;
+		
+		min = min * 1 + Math.floor(sec / 60);
+		sec = sec % 60;
+		
+		hour = hour * 1 + Math.floor(min / 60);
+		min = min % 60;
+		
+		hour = hour % 24;
+	}
+	catch(exception)
+	{}
+		
+	return answer;
+}
+
+//
+//rettet
+function createCookie(name,value,days)
+{
+	if (days)
+	{
+		var date = new Date();
+		date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+		var expires = '; expires=' + date.toGMTString();
+	}
+	else
+		var expires = '';
+		
+	document.cookie = name + ' = ' + value + expires + '; path=/';
+}
+
+//
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+//
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+
+function InternetExplorer()
+{
+	if ((navigator.appVersion.indexOf("MSIE") != -1) && (navigator.appVersion.indexOf("Macintosh") == -1))
+		return true;
+	else
+		return false;
+}
+
+function FrameDiv(titleInnerText, innerHTML, className, closeImageUrl)
+{
+	this.removed = false;
+	this.o = this;
+
+	if (!document.body.addEventListener)
+	{
+		document.body.addEventListener =
+			function(eventName, functionObject)
+			{
+				if (typeof eval('FrameDiv.oldBodyOn' + eventName) == 'undefined')
+				{
+					eval('FrameDiv.oldBodyOn' + eventName + ' = (document.body.on' + eventName + ' ? document.body.on' + eventName + ' : function() {})');
+					eval('document.body.on' + eventName + ' = function() { FrameDiv.oldBodyOn' + eventName + '(); functionObject() }');
+				}
+			}
+	}
+
+	if (FrameDiv.zIndex == undefined)
+		FrameDiv.zIndex = 1000;
+	else
+		FrameDiv.zIndex++;
+		
+	FrameDiv.CurrentFrame = null;
+	FrameDiv.CurrentDiv = null;
+	
+	this.setInnerHTML =
+		function(innerHTML)
+		{
+			bodyDiv.innerHTML = innerHTML;
+		}
+		
+	this.getBodyDiv =
+		function()
+		{
+			return bodyDiv;
+		}
+	
+	this.moveTo =
+	    function(x, y)
+	    {
+	        frame.style.left = x;
+	        div.style.left = x;
+
+	        frame.style.top = y;
+	        div.style.top = y;
+	    }
+
+    this.getTop = 
+        function()
+        {
+            return div.offsetTop;
+        }
+	    
+	this.setClassName =
+		function(className)
+		{
+			frame.style.zIndex = ++FrameDiv.zIndex;
+			div.style.zIndex = ++FrameDiv.zIndex;
+
+			div.className = className;
+			div.style.margin = 0;
+			div.style.padding = 0;
+			div.style.position = 'absolute';
+			
+			table.border = 0;
+			table.cellSpacing = 0;
+			
+			titleTd.className = className;
+			titleTd.style.border = 'none';
+			titleTd.style.height = 1;
+			
+			luk.style.position = 'absolute';
+			luk.style.top = 2;
+			luk.style.right = 2;
+			
+			bodyTd.colSpan = 2;
+
+			bodyDiv.className = className;
+			bodyDiv.style.border = 'none';
+			bodyDiv.style.overflow = 'auto';
+			
+			div.style.height = table.offsetHeight;
+			div.style.width = table.offsetWidth;
+			
+			frame.className = className;
+			frame.style.position = 'absolute';
+			frame.style.top = div.offsetTop - 1;
+			frame.style.left = div.offsetLeft - 1;
+			frame.style.width = div.offsetWidth + 2;
+			frame.style.height = div.offsetHeight + 2;
+			frame.style.border = '';
+		}
+
+	this.remove = 
+		function()
+		{
+			this.o.removed = true;
+		
+			for (var i = 0; i < div.getElementsByTagName('embed').length; i++)
+				if (typeof div.getElementsByTagName('embed')[i].stop != 'undefined')
+					div.getElementsByTagName('embed')[i].stop();
+			
+			document.body.removeChild(div);
+			if (microsoft())
+				document.body.removeChild(frame);
+		}
+		
+	this.append = 
+		function()
+		{
+			div.style.visibility = 'hidden';
+			div.style.filter = 'progid:DXImageTransform.Microsoft.Fade(duration=.3)';
+		
+			if (microsoft())
+				document.body.appendChild(frame);
+			document.body.appendChild(div);
+
+			if (microsoft())
+			{
+			    try
+			    {
+				    div.filters[0].apply();
+				    div.filters[0].play();
+				}
+				catch(exception)
+				{}
+			}
+			else
+			{
+				fadeIn(div);				
+			}
+			div.style.visibility = 'visible';
+		}
+
+	var frame = document.createElement('iframe');
+	var div = document.createElement('div');
+		div.parent = frame;
+		var table = document.createElement('table');
+		var tbody = document.createElement('tbody');
+			var headTr = document.createElement('tr');
+				var titleTd = document.createElement('td');
+					titleTd.parent = div;
+					var luk = document.createElement('img');
+			var bodyTr = document.createElement('tr');
+				var bodyTd = document.createElement('td');
+					var bodyDiv = document.createElement('div');
+	
+	titleTd.appendChild(luk);
+	headTr.appendChild(titleTd);
+	
+	bodyTd.appendChild(bodyDiv);
+	bodyTr.appendChild(bodyTd);
+	
+	tbody.appendChild(headTr);	
+	tbody.appendChild(bodyTr);	
+	
+	table.appendChild(tbody);
+	
+	div.appendChild(table);
+	
+	var image = new Image();
+	image.src = closeImageUrl;
+	
+	luk.src = closeImageUrl;
+	
+	this.title = document.createTextNode(titleInnerText);
+	titleTd.appendChild(this.title);
+	
+	this.setTitle =
+	    function(t)
+	    {
+	        this.title.innerText = t;
+	    }
+	
+	this.setInnerHTML(innerHTML);
+
+	this.append();
+	this.setClassName(className);
+
+	div.onmousedown =
+		function()
+		{
+			frame.style.zIndex = ++FrameDiv.zIndex;
+			div.style.zIndex = ++FrameDiv.zIndex;
+		}
+	
+	luk.o = this;
+	luk.onmouseup = this.remove;
+	
+	var yDiff, xDiff;
+	titleTd.onmousedown =
+		function(eventArg)
+		{
+			if (eventArg)
+				event = eventArg;
+		
+			if (event.srcElement == luk || event.target == luk)
+				return;
+			
+			FrameDiv.CurrentDiv = this.parent;
+			FrameDiv.CurrentFrame = this.parent.parent;
+
+			var x = (event.x ? event.x : event.pageX);
+			var y = (event.y ? event.y : event.pageY);
+
+			FrameDiv.yDiff = y - div.offsetTop;
+			FrameDiv.xDiff = x - div.offsetLeft;
+		}
+	
+	if (FrameDiv.eventsSet != true)
+	{
+		FrameDiv.eventsSet = true;
+		
+		document.body.addEventListener('mousemove',
+			function(eventArg)
+			{
+				if (eventArg)
+					event = eventArg;
+			
+				if (FrameDiv.CurrentFrame == null)
+					return;
+				
+				var x = (event.x ? event.x : event.pageX);
+				var y = (event.y ? event.y : event.pageY);
+
+				FrameDiv.CurrentDiv.style.top = y - FrameDiv.yDiff;
+				FrameDiv.CurrentDiv.style.left = x - FrameDiv.xDiff;
+
+				FrameDiv.CurrentFrame.style.top = y - FrameDiv.yDiff - 1;
+				FrameDiv.CurrentFrame.style.left = x - FrameDiv.xDiff - 1;
+			},
+			false);
+
+		document.body.addEventListener('mouseup',
+			function()
+			{
+				FrameDiv.CurrentFrame = null;
+				FrameDiv.CurrentDiv = null;
+			},
+			false);
+	}
+}
+
+function microsoft()
+{
+	return (navigator.appName.indexOf('Microsoft') > -1);
+}
+
+function safari()
+{
+	return (navigator.appVersion.indexOf('Safari') > -1);
+}
+
+var elem, opac;
+function fadeIn(element, opacity)
+{
+	if (opacity == null)
+		opacity = 0;
+	
+	element.style.opacity = opacity;
+	
+	if (opacity >= 1)
+	{
+		return;
+	}
+	else
+	{
+		opacity += .1;
+		elem = element;
+		opac = opacity;
+		setTimeout('fadeIn(elem, opac);', 10);
+	}
+}
+
+function colorRange(event, color) {
+	var e = (event.srcElement ? event.srcElement : event.target); 
+	while (e.nodeName != 'TR' && e.parentNode) e = e.parentNode; 
+	if (e.nodeName == 'TR') { e.className = (color ? 'hovertr' : 'mytablestr');} 
+}
+
+function MainConcepts(mt) {
+	$('.conceptcontent').remove();
+	var url = "../Common/getConcepts.asp?maintable=" + mt + "&Planguage=0";
+	var div = $('<div title="Begreber" class="conceptcontent"></div>');
+	$('body').append(div);
+	div.load(url,function() {$(this).dialog({width:500})});
+}
+
+function ShowConcepts(vs,tit) {
+    $('.conceptcontent').remove();
+	var url = "../Common/getConcepts.asp?valueset=" + vs + "&Planguage=0";
+	var div = $('<div title="Begreber" class="conceptcontent"></div>');
+	$('body').append(div);
+	div.load(url, function() {$(this).dialog({width:500});changevaluetxt(tit)});
+}
+
+function changevaluetxt(tit) {
+	$('#valuesetid').html(tit);
+	$('#variabelid').html(tit);
+	tit = tit.replace("/", "_Ss_")
+	tit = tit.replace("ø", "_oe_")
+	tit = tit.replace("Ø", "_OE_")
+	tit = tit.replace("æ", "_ae_")
+	tit = tit.replace("Æ", "_AE_")
+	tit = tit.replace("å", "_aa_")
+	tit = tit.replace("Å", "_AA_")
+	var url = "/" + '"' + tit + '"';
+	$('#variabelurl').attr('href',url);
+}
+
+function ShowTableInfo(mt) {
+	$('.infodialog').remove();
+	var url = "../SelectVarval/define.asp?Tabstrip=INFO&maintable=" + mt + "&Planguage=0";
+	$.get(
+		url,
+		function (data)
+		{
+			$('<div title="Information: '+ mt +'" class="infodialog"></div>').html($(data).find('.infotbl')).appendTo('body').dialog({width:600});
+		}						
+	);
+}
+
+function epost(user, domain, querystring)
+{
+	var t = user + qwerty(true) + domain;
+
+	if (querystring.length > 0)
+		t += '?' + querystring;
+
+	return t;
+}
+
+function qwerty(qwerty)
+{
+	if (qwerty)
+		return '@';
+	else
+		return '';
+}
+
+function adjustFootnote()
+{
+	$('.pxtable .footnote').each(
+		function()
+		{
+			var br = $(this).html().toLowerCase().indexOf('&nbsp;');
+
+			if (br > -1)
+			{
+				var hide = $(this).html().substring(br + 6);
+
+				$(this).html($(this).html().substring(0, br));
+
+				$('<span class="footnoteToggle"/>').appendTo($(this)).append(
+					'<span class="toggle hide">' + hide + '</span>',
+					'<span class="flnote handle toggle"><br/>Læs mere ... &raquo;</span>',
+					'<span class="flnote handle toggle hide"><br/>Læs mere ... &laquo;</span>'
+				).find('.handle').click(
+					function()
+					{
+						$(this).siblings('.toggle').andSelf().toggle();
+					}
+				);
+			}
+		}
+	);
+}
+</script>
+
+<SPAN ID="gettingdata" class="snail">Henter data ... <img src="../Site/1/larve.gif"> ... vent et øjeblik</SPAN>
+
+<table background="../Site/1/top_.gif?rev2016-1" class="toptbl">
+<tr>
+
+<td class="toplogotd" onclick="javascript:window.open('http://www.dst.dk');">
+<table class="toplogotbl"><tr><td>
+</td></tr></table>
+</td>
+
+<td class="topcrumstd" valign="bottom">
+<table class="topcrumstbl"><tr>
+<td><img src="../Site/1/hjem.gif" border="0">
+
+<a href="../SelectTable/Omrade0.asp?PLanguage=0" title="Startsiden" onclick="javascript:showspan()" class="topcrumslink"> Statistikbanken</a> <img src='../Site/1/crumbdivide.gif' class='crumsep'>
+<a href="searchresult.asp?Search=no&place=statbank&PLanguage=0" title="" onclick="javascript:showspan()" class="topcrumslink">søg</a> <img src='../Site/1/crumbdivide.gif' class='crumsep'>
+</td></tr></table>
+</td>
+
+<td class="topmenubartd" align="right" valign="bottom">
+<table class="topmenubartbl"><tr>
+<td>
+ <img src='../Site/1/sep.gif'> 
+<a href="../SelectTable/Omrade0.asp?logon=yes&PLanguage=0&SubjectCode=&MainTable=&pxsid=&TC=" title="Log på" class="topmenulink"><img src="../Site/1/lock.gif" border="0"> Log på</a>
+ <img src='../Site/1/sep.gif'>  <a href="../Search2003/SearchResult.asp?Search=no&place=statbank&PLanguage=1" title="English" class="topmenulink"><img src="../Site/1/English.gif" border="0"></a>
+ <img src='../Site/1/sep.gif'>  <a href="javascript:help('../Help/Help.asp?menuname=Searching&PLanguage=0');" title="Hjælp" class="topmenulink"><img src="../Site/1/spg12.gif" border="0"> Hjælp</a> 
+ <img src='../Site/1/sep.gif'> 
+</td></tr></table>
+</td>
+
+<td class="topsearchtd">
+
+</td></tr></table>
+<table class="searchtitletbl"><tr><td class="searchtitlebar">
+Søg
+</td></tr></table>
+
+<!-- LocalAdr: 91.208.143.100 --><FORM action="searchresult.asp?place=statbank" method=POST id=form1 name=form1>
+<table class="searchrestbl"><tr><td valign=top class="searchrestd1">
+<FIELDSET>
+<LEGEND>Information om søgning</LEGEND><br><table cellpadding=0 cellspacing=0 class="searchfs1"><tr height=19><td valign=top>
+<img src='../Site/1/mpil.gif'>&nbsp;</td><td><span class=fl>Søgningen 
+	<span class='flbold'></span>
+	 i tekster gav ingen resultater.</span></td></tr><tr height=19><td></td></tr><tr height=19><td></td></tr><tr height=19><td></td></tr>
+</table>
+</FIELDSET>
+</td><td valign=top class="searchrestd2">
+<FIELDSET><LEGEND>Ny søgning</LEGEND><br>
+<table cellspacing=0 cellpadding=0 class="searchfs2">
+<tr><td><input type="hidden" name=searchtextadd value=''>
+<input type="hidden" name=PLanguage value='0'>
+<INPUT size=30 type="text" name=searchtext class=searchinp>
+<input type="submit" value="Søg" onclick='javascript:showspan()' name=search1 class=searchbtn>
+</td></tr>
+<tr><td><input type="radio" name="searchin" value="1" checked><span class=fl>Tekster: Overskrifter og indhold i tabeller (normal søgning)</span></td></tr><tr><td><input type="radio" name="searchin" value="2" ><span class=fl>Tabelreference: Tabellens specifikke betegnelse (fx FOLK1)</span></td></tr><tr><td><input type="radio" name="searchin" value="3" ><span class=fl>Koder: Nomenklaturkoder (fx specifikke branche koder)</span></td></tr>
+</FIELDSET>
+</table>
+</td></tr>
+<tr><td colspan=2></td></tr></table></FORM></body>

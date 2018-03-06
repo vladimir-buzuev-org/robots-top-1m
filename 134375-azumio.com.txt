@@ -1,0 +1,599 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Azumio</title>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="s/lib/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="s/lib/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="s/lib/slick.js/slick/slick.css">
+	<link rel="stylesheet" href="s/css/main.min.css">
+	<script type="text/javascript" src="s/lib/jquery/dist/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- facebook meta tags -->
+	<meta property="og:title" content="Azumio" />
+	<meta property="og:site_name" content="Azumio"/>
+	<meta property="og:url" content="http://www.azumio.com" />
+	<meta property="og:description" content="Explore our apps: Argus, Instant Heart Rate, SleepTime, Fitness Buddy, Glucose Buddy" />
+	<meta property="og:image" content="http://www.azumio.com/s/images/640px/Argus.jpg" />
+
+	<meta name="norton-safeweb-site-verification" content="7sgvx-fti8slq2lggri3ayz7rcbzkt0bylh-4s27yqp0xekyw55d1hh8xjvz9qrizykho3h4z1etlf6dc3oyymqi43qcmevcz-6qguehdbx5zcd160wjajq9tcdvemyz" />
+
+	
+</head>
+<body id="main">
+<script type="text/javascript">
+	var endpoint = encodeURI(document.location.origin + "/v2/users/me?_headers={'Authentication':'OAuth null'}");
+		$.ajax({
+			url: endpoint,
+			type: 'GET',
+			async: false,
+			success: function(data) {
+				console.log(data);
+				if (data.error) {
+					// do nothing
+				} else {
+					window.location = "https://www.azumio.com/web";
+				}
+			}
+		});
+	</script>
+<nav class="navbar-fixed-top transparent">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false"
+			   aria-controls="menu">
+				<i class="fa extended fa-remove"></i><i class="fa fa-bars"></i>Menu</a>
+			</a>
+			<a class="navbar-brand" href="/"></a>
+		</div>
+		<div id="menu" class="navbar collapse navbar-collapse pull-right">
+			<ul class="nav navbar-nav">
+				<!--<li class="active"><a href="#">New user</a></li>-->
+				<li><a href="https://www.azumio.com/web">Log In</a></li>
+				<li class="active"><a href="/">Home</a></li>
+                <!-- <li><a href="/s/premium/index.html">Premium</a></li>  -->
+				<li>
+					<a class="dropdown-toggle" id="products" data-toggle="dropdown" aria-expanded="false" href="">Products</a>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="products">
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="s/argus/index.html">Argus</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.caloriemama.ai">Calorie Mama AI</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="s/instantheartrate/index.html">Instant Heart Rate</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="s/sleeptime/index.html">Sleep Time</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="s/fitnessbuddy/index.html">Fitness Buddy</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="s/glucosebuddy/index.html">Glucose Buddy</a></li>
+					</ul>
+				</li>
+				<li><a href="https://dev.caloriemama.ai">Food API</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="http://support.azumio.com/">Help & Support</a></li>
+				<!--<li><a href="">About</a></li>-->
+				<li><a href="s/contact/index.html">About</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<header>
+	<div class="app-carousel">
+		<div class="video-wrapper">
+			<video
+				class="hidden-xs"
+				poster="s/video/ar_poster.jpg"
+				src="s/video/ar5s.mp4"
+				preload="auto"
+
+				muted
+				>
+
+				<source type="video/mp4" src="s/video/ar5s.mp4">
+
+			</video>
+			<div class="header-overlay"></div>
+			<img src="s/images/mobile/Argus_temp.jpg" alt="Argus" class="visible-xs header">
+			<main style="display: none">
+				<a href = "s/argus/index.html">
+					<h1 class="argus">
+						<img src="s/images/105px/Argus-iTunesArtwork-105px.png" alt="Argus">
+						<span class="argus-logo" style=" background: url(s/images/argus/argus-text.png) no-repeat;width: 105px;height: 46px;display: block;margin: 22px auto;"></span>
+						<small>
+							Quantify your day-to-day
+						</small>
+					</h1>
+				</a>
+				<ul class="download list-inline">
+					<li>
+						<a href="https://itunes.apple.com/us/app/argus-pedometer-run-cycle/id624329444?mt=8&at=11l9S3&pt=574383&ct=argusWPIndexTop"
+						   class="app-store transparent">
+							<img src="s/images/store/appStoreTransparent.png" class="img-responsive">
+						</a>
+					</li>
+					<li>
+						<a href="https://play.google.com/store/apps/details?id=com.azumio.android.argus" class="google-play transparent">
+							<img src="s/images/store/googlePlayTransparent.png" class="img-responsive">
+						</a>
+					</li>
+				</ul>
+			</main>
+		</div>
+
+		<div class="video-wrapper">
+			<video
+				class="hidden-xs"
+				poster="s/video/fb_poster.jpg"
+				src="s/video/fb5s.mp4"
+				preload="auto"
+
+				muted
+				>
+				<source type="video/mp4" src="s/video/fb5s.mp4">
+			</video>
+
+			<div class="header-overlay"></div>
+			<img src="s/images/mobile/FB.jpg" alt="Fitness Buddy" class="visible-xs header">
+			<main style="display: none">
+				<a href = "s/fitnessbuddy/index.html">
+					<h1 class="fitness-buddy">
+						<img src="s/images/105px/FB-iTunesArtwork-105px.png" alt="Fitness Buddy">
+
+	                    <span class="babes-neue logo">Fitness
+	                        <span class="buddy">Buddy</span>
+	                    </span>
+						<small>
+							The world's most comprehensive<br> fitness application
+						</small>
+					</h1>
+				</a>
+				<ul class="download list-inline">
+					<li>
+						<a href="https://itunes.apple.com/us/app/fitness-buddy-1700+-exercise/id443646748?mt=8&at=11l9S3&pt=21889&ct=fitnessBuddyWPIndexTop"
+						   class="app-store transparent">
+							<img src="s/images/store/appStoreTransparent.png" class="img-responsive">
+						</a>
+					</li>
+					<li>
+						<a href="https://play.google.com/store/apps/details?id=com.skyhealth.fitnessbuddyandroid&hl=en"
+						   class="google-play transparent">
+							<img src="s/images/store/googlePlayTransparent.png" class="img-responsive">
+						</a>
+					</li>
+					<li>
+						<a href="http://www.windowsphone.com/en-us/store/app/fitness-buddy/9510d51a-8469-48e5-b48e-b2b2d3a3c951"
+						   class="windows-phone transparent">
+							<img src="s/images/store/windowsPhone.png" class="img-responsive">
+						</a>
+					</li>
+				</ul>
+			</main>
+		</div>
+
+		<div class="video-wrapper">
+			<video
+				class="hidden-xs"
+				poster="s/video/st_poster.jpg"
+				src="s/video/st5s.mp4"
+				preload="auto"
+
+				muted
+				>
+
+				<source type="video/mp4" src="s/video/st5s.mp4">
+			</video>
+
+			<div class="header-overlay"></div>
+			<img src="s/images/mobile/ST.jpg" alt="Sleep time" class="visible-xs header">
+			<main style="display: none">
+				<a href = "s/sleeptime/index.html">
+					<h1 class="sleep-time">
+						<img src="s/images/60px/ST-iTunesArtwork-60px.png" alt="Sleep Time">
+						<span class="sleep-time-logo"></span>
+
+						<small>The world's most intelligent alarm clock</small>
+
+					</h1>
+				</a>
+				<ul class="download list-inline">
+					<li>
+						<a href="https://itunes.apple.com/us/app/sleep-time+-sleep-cycle-smart/id498360026?mt=8&at=11l9S3&pt=574383&ct=sleepTimeWPIndexTop">
+							<img src="s/images/store/appStoreTransparent.png" class="img-responsive">
+						</a>
+					</li>
+					<li>
+						<a href="https://play.google.com/store/apps/details?id=com.azumio.android.sleeptime&hl=en">
+							<img src="s/images/store/googlePlayTransparent.png" class="img-responsive">
+						</a>
+					</li>
+				</ul>
+			</main>
+		</div>
+
+		<div  class = "video-wrapper glucosebuddy">
+			<main style = "display:none">
+				<a href = "s/glucosebuddy/index.html">
+					<h1 >
+						<img src="s/images/105px/GB-iTunesArtwork-105px.png" alt="Glucose Buddy">
+						<span class="unica-one logo">Glucose
+							<span class="buddy">Buddy</span>
+						</span>
+						<small class="raleway">
+							Trusted, Reliable, and Convenient<br>
+							Mobile Diabetes Management
+						</small>
+					</h1>
+				</a>
+				<ul class="download list-inline text-center">
+						<li>
+							<a href="https://itunes.apple.com/us/app/glucose-buddy-pro-diabetes/id533299240?mt=8&at=11l9S3&ct=gucoseBuddyWPIndexTop"
+							   class="app-store transparent">
+								<img src="s/images/store/appStoreTransparent.png" class="img-responsive">
+							</a>
+						</li>
+						<li>
+							<a href="https://play.google.com/store/apps/details?id=com.skyhealth.glucosebuddyfree&hl=en"
+							   class="google-play transparent">
+								<img src="s/images/store/googlePlayTransparent.png" class="img-responsive">
+							</a>
+						</li>
+					</ul>
+			</main>
+			</div>
+
+
+		<div class = "video-wrapper IHR">
+			<div class="header-overlay"></div>
+			<img src="s/images/mobile/IHR.jpg" alt="Instand Heart Rate" class="visible-xs header">
+			<main>
+				<a href = "s/instantheartrate/index.html">
+					<h1>
+						<img src="s/images/105px/IHR-iTunesArtwork-105px.png" alt="Instant Heart Rate">
+						<span>Instant Heart Rate</span>
+						<small>
+							The first, fastest, and most accurate<br>
+							mobile heart rate monitor.
+						</small>
+					</h1>
+				</a>
+				<ul class="download list-inline">
+					<li>
+						<a href="https://itunes.apple.com/us/app/instant-heart-rate-heart-rate/id395042892?mt=8&at=11l9S3&pt=429881&ct=ihrWPIndexTop"
+						   class="app-store transparent">
+							<img src="s/images/store/appStoreTransparent.png" class="img-responsive">
+						</a>
+					</li>
+					<li>
+						<a href="https://play.google.com/store/apps/details?id=com.azumio.instantheartrate.full&hl=en"
+						   class="google-play transparent">
+							<img src="s/images/store/googlePlayTransparent.png" class="img-responsive">
+						</a>
+					</li>
+					<li>
+						<a href="http://www.windowsphone.com/en-us/store/app/instant-heart-rate/6f9c2ed4-1106-48a1-8664-b44997c3e24e"
+						   class="windows-phone transparent">
+							<img src="s/images/store/windowsPhone.png" class="img-responsive">
+						</a>
+					</li>
+				</ul>
+			</main>
+		</div>
+		</div>
+	<div class="mobile-nav-container visible-xs">
+
+	</div>
+</header>
+
+<section class="apps container-fluid">
+	<h2 class="text-center">
+		Explore our apps
+	</h2>
+
+	<div class="col-xs-12 col-sm-6 col-lg-4">
+		<a href="s/argus/index.html">
+			<div class="frame">
+				<img src="s/images/640px/Argus.jpg" class="img-responsive">
+
+				<div class="blur argus">
+
+				</div>
+				<div class="footer argus">
+					<h4>Argus</h4>
+					<h5>Easy Activity Tracking in One Place</h5>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<div class="col-xs-12 col-sm-6 col-lg-4">
+		<a href="s/instantheartrate/index.html">
+			<div class="frame">
+				<img src="s/images/640px/IHR.jpg" class="img-responsive">
+
+				<div class="blur instant-heart-rate"></div>
+				<div class="footer instant-heart-rate">
+					<h4>Instant Heart Rate</h4>
+					<h5>Measure Your Heart Rate Wherever You Are</h5>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<div class="col-xs-12 col-sm-6 col-lg-4">
+		<a href="s/sleeptime/index.html">
+			<div class="frame">
+				<img src="s/images/640px/ST.jpg" class="img-responsive">
+
+				<div class="blur sleep-time"></div>
+
+				<div class="footer sleep-time">
+					<h4>Sleep Time</h4>
+					<h5>Wake up feeling refreshed</h5>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<div class="col-xs-12 col-sm-6 col-lg-4">
+		<a href="s/fitnessbuddy/index.html">
+			<div class="frame">
+				<img src="s/images/640px/FB.jpg" class="img-responsive">
+
+				<div class="blur fitness-buddy"></div>
+
+				<div class="footer fitness-buddy">
+					<h4>Fitness Buddy</h4>
+					<h5>Your Workout Journal</h5>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<div class="col-xs-12 col-sm-6 col-lg-4">
+		<a href="s/glucosebuddy/index.html">
+			<div class="frame">
+				<img src="s/images/640px/GB.jpg" class="img-responsive">
+
+				<div class="blur glucose-buddy"></div>
+				<div class="footer glucose-buddy">
+					<h4>Glucose Buddy</h4>
+					<h5>Diabetes and Blood Sugar Management</h5>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<div class="col-xs-12 col-sm-6 col-lg-4">
+		<a href="http://www.caloriemama.ai">
+			<div class="frame">
+				<img src="s/images/640px/CM.jpg" class="img-responsive">
+
+				<div class="blur fitness-buddy"></div>
+				<div class="footer calorie-mama">
+					<h4>Calorie Mama</h4>
+					<h5>Instant Food Recognition</h5>
+				</div>
+			</div>
+		</a>
+	</div>
+</section>
+
+<section class="testimonials container-fluid">
+	<div class="container text-center">
+		<h2 class="text-center">Words From Us</h2>
+
+		<div class="separator-small"></div>
+
+		<div class="fade-slider">
+			<div>
+				<p>
+                   &ldquo;Health care as we know it is on the verge of a revolution, a mobile
+                   revolution. Traditional systems are moving ever faster towards mobile
+                   devices - outside of the exam room. The future of health is shifting into
+                   the user's hands.&rdquo;
+				</p>
+
+				<p class="author">Bojan Bostjancic, CEO</p>
+			</div>
+
+			<div>
+				<p>
+					&ldquo;Azumio is about the integration of health data analysis and a creation of
+					a network of social, motivational support. Every user who takes a step or
+					records their heart rate provides insightful data for the community as a
+					whole.&rdquo;
+				</p>
+
+				<p class="author">Peter Kuhar, CTO</p>
+			</div>
+
+			<div>
+				<p>
+					&ldquo;It's all about making a fundamental difference in people's lives. We
+					want to hand you all the necessary tools to understand your own health
+					without the flashy, expensive devices. Only then does improvement
+					become possible.&rdquo;
+				</p>
+
+				<p class="author">Tom Xu, CPO</p>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section class="press container-fluid">
+	<div class="container">
+		<div class="press-slider">
+			<div>
+				<div class="featured ada"></div>
+			</div>
+			<div>
+				<div class="featured apple"></div>
+			</div>
+			<div>
+				<div class="featured buisnessinsider"></div>
+			</div>
+			<div>
+				<div class="featured chiacagotribune"></div>
+			</div>
+			<div>
+				<div class="featured cnet"></div>
+			</div>
+			<div>
+				<div class="featured NYT"></div>
+			</div>
+			<div>
+				<div class="featured CNN"></div>
+			</div>
+			<div>
+				<div class="featured diabetes"></div>
+			</div>
+			<div>
+				<div class="featured diabeteshealth"></div>
+			</div>
+			<div>
+				<div class="featured eatright"></div>
+			</div>
+			<div>
+				<div class="featured fitness"></div>
+			</div>
+			<div>
+				<div class="featured gigaom"></div>
+			</div>
+			<div>
+				<div class="featured healthline"></div>
+			</div>
+			<div>
+				<div class="featured mashable"></div>
+			</div>
+			<div>
+				<div class="featured medgadget"></div>
+			</div>
+			<div>
+				<div class="featured mobihealthnews"></div>
+			</div>
+			<div>
+				<div class="featured stanford-medicine"></div>
+			</div>
+			<div>
+				<div class="featured TC"></div>
+			</div>
+			<div>
+				<div class="featured theguardian"></div>
+			</div>
+			<div>
+				<div class="featured UCSF"></div>
+			</div>
+			<div>
+				<div class="featured USAtoday"></div>
+			</div>
+			<div>
+				<div class="featured wired"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<address>
+					230 S California Avenue, Ste 212<br>
+					Palo Alto, CA 94306<br>
+					Email: <a href="mailto:info@azumio.com">info@azumio.com</a>
+				</address>
+				<ul class="list-inline">
+					<li>
+						<a href="https://twitter.com/azumioinc">
+							<i class="fa fa-twitter"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.facebook.com/azumioinc">
+							<i class="fa fa-facebook"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://plus.google.com/111664965522600133150">
+							<i class="fa fa-google-plus"></i>
+						</a>
+					</li>
+				</ul>
+				<p>Apple, the Apple logo, and iPad are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.</p>
+			</div>
+<!-- 			<div class="col-md-3">
+				<h4>Latest from our blog</h4>
+				<ul class="list-unstyled">
+
+				</ul>
+			</div>-->
+			<div class="col-md-4">
+				<h4>Our apps</h4>
+				<ul class="our-apps list-unstyled">
+					<li><a href="s/argus/index.html"><span>Argus</span></a></li>
+					<li><a href="s/instantheartrate/index.html"><span>Instant Heart Rate</span></a></li>
+					<li><a href="s/fitnessbuddy/index.html"><span>Fitness Buddy</span></a></li>
+					<li><a href="s/sleeptime/index.html"><span>Sleep Time</span></a></li>
+					<li><a href="s/glucosebuddy/index.html"><span>Glucose Buddy</span></a></li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<h4>Download our apps</h4>
+				<ul class="download-apps list-unstyled">
+					<li>
+						<a href="https://itunes.apple.com/us/artist/azumio-inc./id439290207&at=11l9S3&pt=574383&ct=allWPIndexDownloadOurApps">
+							<i class="fa fa-apple fa-lg simple_social"></i> <span>Azumio on the App Store</span>
+						</a>
+					</li>
+					<li class="googlePlay">
+						<a href="https://play.google.com/store/apps/developer?id=Azumio+Inc.">
+							<i class="fa fa-android fa-lg simple_social"></i> <span>Google Play Store</span>
+						</a>
+					</li>
+					<li>
+						<a href="http://www.windowsphone.com/en-US/store/publishers?publisherId=Azumio%2BInc">
+							<i class="fa fa-windows fa-lg simple_social"></i> <span>Windows Phone</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="copyright text-center">
+		<a href = "http://azumio.com/page/privacypolicy">Privacy Policy</a> | &copy; Copyright Azumio Inc.
+	</div>
+</footer>
+<span class="visible-xs" id="isMobile"></span>
+
+<script type="text/javascript" src="s/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="s/lib/slick.js/slick/slick.min.js"></script>
+<script src="s/js/azumio.min.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24721534-1']);
+  _gaq.push(['_setDomainName', 'azumio.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+adroll_adv_id = "6I73IFT7GVHMNNV2G6AR3J"; adroll_pix_id = "3ZEXEXJ7VNBTBNQRGVYSUZ"; (function () { var oldonload = window.onload; window.onload = function(){ __adroll_loaded=true; var scr = document.createElement("script"); var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com"); scr.setAttribute('async', 'true'); scr.type = "text/javascript"; scr.src = host + "/j/roundtrip.js"; ((document.getElementsByTagName('head') || [null])[0] || document.getElementsByTagName('script')[0].parentNode).appendChild(scr);if(oldonload){oldonload()}};}());
+</script>
+<img height="1" width="1" style="border-style:none;" alt=""
+src="https://api.adsymptotic.com/api/s/trackconversion?_pid=12374&_psign=e8d8b2c04e64c19b22881b690fcdd773&_aid=12374&_lbl=RT_az_rt"/>
+</body>
+</html>

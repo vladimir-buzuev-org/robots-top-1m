@@ -1,0 +1,617 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="cs" xml:lang="cs" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="cs" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+
+
+	<title>Portál eAGRI - resortní portál Ministerstva zemědělství</title>
+
+<meta property="og:image" content="http://eagri.cz/public/web/pub/d8/3e/10/352485_600373_logo_mze_cmyk_stromek.JPG" />
+
+
+<link rel="stylesheet" media="screen,projection" type="text/css" href="/public/web/static/10941-1-PUB_PROD/none/resource/screen.css?_linkv=1375955953641" title="Základní styl" />
+<!--[if IE 6]><link rel="stylesheet" media="screen" type="text/css" href="/public/web/pub/9b/3f/43/11216_121696_ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" media="screen" type="text/css" href="/public/web/static/10941-1-PUB_PROD/none/resource/screen-ie7-new.css" /><![endif]-->
+<!--[if IE 8]><link rel="stylesheet" media="screen" type="text/css" href="/public/web/static/10941-1-PUB_PROD/none/resource/screen-ie8.css?_linkv=1375955953641" /><![endif]-->
+
+<link rel="stylesheet" media="print" type="text/css" href="/public/web/pub/cc/ec/c/11218_378579_print.css" />
+<link rel="alternate stylesheet" media="screen" type="text/css" href="/public/web/pub/cc/ec/c/11218_378579_print.css" title="Styl pro tisk" />
+
+<!--  STYLES  -->
+<style type="text/css">
+
+/*
+#page { width: auto; }
+#face, #tail > .wrapper { width: 960px; margin: 0 auto; position: relative; }
+#content>.box { width: 638px; height: 330px; }
+*/
+
+#face { padding-bottom: 50px; }
+
+#tail { display: table; border-spacing: 0; }
+
+#page div { border-color: transparent; }
+#face > h2 { font-weight: normal; }
+#content h2, #apps h2, { padding: .5em 0 1em 1em; font-weight: normal; margin-top: .8em; margin-bottom: 1.4em; }
+
+#content { direction: ltr; }
+#content #left-col { width: 308px; float: left; margin-right: 31px; }
+#content #right-col { width: 299px; float: left; }
+
+#apps { border-width: 0 0 0 5px; }
+
+#qlink-carousel { margin-top: -10px; }
+#qlink-carousel h2 { margin-left: 1.5em; margin-right: 1.5em; margin-top: 0; margin-bottom: 3px; font-weight: normal; padding-left: 5px; }
+
+ul.triangle { margin: 0.75em 0; padding: 0 1em; list-style: none; }
+ul.triangle li:before {  content: ""; border-color: transparent #2e5d28; border-style: solid; border-width: .35em 0 .35em .45em; display: block; height: 0; width: 0; left: -1em; top: 1.3em; position: relative; }
+div.triangle ul { margin: 0.75em 0; padding: 0 1em; list-style: none; }
+div.triangle ul li:before {  content: ""; border-color: transparent #2e5d28; border-style: solid; border-width: .35em 0 .35em .45em; display: block; height: 0; width: 0; left: -1em; top: 1.3em; position: relative; }
+
+.box > h2, .box > h2.h, .carousel h2 { float: left; margin-top: 0.8em; margin-bottom: 0.75em; font-weight: normal; padding-left: 10px; }
+.article-list > h2.h { background: none!important; color: #333!important; font-size: 1.5em; margin: 0; }
+.article-list > .data { clear: both; padding: 0 1em 0 1em; }
+.box > a { display: block; padding-top: 1.4em; text-align: right; }
+.triangle .meta, .triangle p { display: none;}
+
+.caption h2 { margin-top: .5em; }
+
+.box-x-news .data { padding: 1em; }
+.box-x-news .data h3 { font-weight: bold; font-size: 1.1em; padding: .3em 0 .3em 0; }
+.box-x-news .data .meta { font-size: 14px; font-weight: bold; color: #666; }
+
+#page .question { background: #ecf2d6; min-height: 228px}
+#page .question ul { margin: 0 0 1.25em 1em; }
+#page .question ul.social { margin: 0 0 0.75em 1em; }
+#page .question ul.social li { display: inline-block; margin-right: 10px; }
+#page .question ul.social li:before { border: none; }
+#question-box .triangle p { display: block; }
+#question-box h2 { margin-top: 0; }
+#right-col .events { margin-bottom: 0; }
+#apps .library { margin-top: 31px; }
+
+#content #left-col div.box.box-x-news ul.data { margin-top: 0; background: #ecf2d6; }
+#content #left-col div.box.box-x-news ul.data span.date { font-size: 14px; font-weight: bold; color: #666; }
+#content #left-col div.box.box-x-news ul.data p strong { font-size: 14px; }
+#content #right-col div.box.events div.data { padding: 0 1em 1.5em 0; height: 65px; width: 275px; }
+#content #right-col div.box.events div.data span.date { float: left; display: block; width: 60px; height: 50px; background: #a2bf30;  font-size: 14px; text-align: center; padding-top: 15px; }
+#content #right-col div.box.events div.data span.date>strong { font-size: 16px }
+#content #right-col div.box.events div.data p>strong { font-size: 14px; height: 35px; }
+#content #right-col div.box.events div.data p { padding-left: 70px; }
+#content #right-col div.box.events div.data span.timestamp { padding-left: 10px; }
+#content #right-col div.box.events div.data span.date.important { background: #e0a52f!important; }
+#content #right-col div.box.topics div.data { padding: 0; }
+#content #right-col div.box.topics div.data ul { list-style-type: none; margin-left: 1em; }
+#content #right-col div.box.topics div.data a { line-height: 24px; }
+#content #right-col div.box.topics div.data h3 { font-weight: bold; font-size: 1.2em; }
+
+#apps div.box.popular { min-height: 330px; background: #ecf2d6; width: 293px; }
+#apps div.box.popular div.data { padding: 0 1em 0 2.8em; }
+#apps div.box.popular h2 { padding: 1em 0 .5em 1em; }
+#apps div.box.popular ul { padding: 0 1em 0 2.5em; margin: 0; }
+#apps div.box.popular ul li { line-height: 22px; }
+#apps div.box.popular ul li a { color: #2e5d28; }
+#apps div.box.portrait { padding: 0; }
+#apps div.box.portrait h2 a:link, #apps div.box.portrait h2 a:visited { color: #333; text-decoration: none; }
+#apps div.box.portrait h2 a:hover { text-decoration: underline; }
+#apps div.box.portrait div.data { height: 185px; background: #c2d86c; position: relative; }
+#apps div.box.portrait div.data h3 { padding: .5em 0 1em 0.25em; font-weight: normal; font-size: 1.5em; }
+#apps div.box.portrait div.data ul { margin-top: -0.5em; margin-left: 1em; }
+#apps div.box.portrait div.data ul li:before { top: 1.1em; }
+#apps div.box.portrait div.data ul li a { font-size: 0,9em; }
+#apps div.box.portrait div.data img { position: absolute; bottom:0; right: 0; }
+#apps div.box.library div.data { background: #ededed; min-height: 158px; padding: 0; position: relative; }
+#apps div.box.library div.data a { color: #fff; width: 283px; position: absolute; height: 30px; padding: 10px 0 0 10px; bottom: 0; z-index: 5; }
+#apps div.box.library div.data img { position: absolute; bottom: 15px; left: 70%; margin-left: -140px; -webkit-box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 0.5); -moz-box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 0.5); box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 0.5); }
+#apps div.box.library h2 a:link, #apps div.box.library h2 a:visited { color: #333; text-decoration: none; }
+#apps div.box.library h2 a:hover { text-decoration: underline; }
+#apps div.box.christmass div.data { background: #ededed; min-height: 250px; padding: 0; position: relative; }
+#apps div.box.christmass div.data img { position: absolute; bottom: 0px; left: 0px;}
+#apps div.box.christmass h2 a:link, #apps div.box.library h2 a:visited { color: #333; text-decoration: none; }
+#apps div.box.christmass h2 a:hover { text-decoration: underline; }
+
+#tail { margin-top: 20px; padding-bottom: 28px;  background: #ededed; position: relative; margin-left: 1.5em; margin-right: 1.5em; width: 960px; }
+#tail p { background: none; }
+#tail ul li a:link, #tail ul li a:visited { display:block; text-align: left; text-decoration: none; }
+#tail ul li a:hover { text-decoration: underline; }
+#tail div.three * { vertical-align: baseline; }
+#tail div.three p { display:block; text-align: left; margin-top: 18px; height: auto; }
+#tail .wrapper>div { display: inline-block; vertical-align: top; width: 300px; padding-top: 35px; zoom: 1; *display: inline; } 
+#tail .wrapper>div h4 { color: #000; font-size: 18px; font-weight: normal; padding-left: 20px; margin-bottom: 10px; }
+#tail .wrapper ul { padding-left: 34px; }
+#tail .wrapper ul li { line-height: 18px; }
+#tail .wrapper ul li a { font-size: 12px; }
+#tail .wrapper .one { width: 260px; margin-right: 25px; }
+#tail .wrapper .two { width: 265px; padding-right: 15px; margin-left: -10px;}
+#tail .wrapper .two:after { content: ""; display: block; width: 1px; height: 90%; background: #a5a5a5; position: absolute; top: 40px; margin-left: 265px; }
+#tail .wrapper .three * { text-align: left; }
+#tail .wrapper .three { width: 320px; margin-left: -20px; }
+#tail .wrapper .three p { font-size: 12px; }
+#tail .wrapper .three h4, #tail .wrapper .three p { padding-left: 30px; }
+#tail .wrapper .three ul { list-style-type: none; padding: 10px 0 20px 30px; font-size: 12px; display: block; }
+#tail .wrapper .three ul li { background: url("/public/web/pub/5b/15/44/235205_380069_sprite.png") 0 5px no-repeat; padding-left: 22px; line-height: 22px; display: block; background-position: 0 5px; }
+#tail .wrapper .three ul li.mail { background-position: 0 -44px; }
+#tail .wrapper .three ul li.phone { background-position: 0 -91px; }
+#tail .wrapper .three ol { position: absolute; margin-left: 240px; margin-top: -50px; }
+#tail .wrapper .three ol li { margin: 0; display: inline-block; zoom: 1; *display: inline; }
+#tail .wrapper .three ol li a { width: 36px; height: 36px; text-indent: -9999em; }
+#tail .mze { position: absolute; top: 100px; margin-left: 230px; }
+#tail .iopeu { position: absolute; margin-left: 30px; bottom: 30px; }
+#tail .rss a { display: block; background: url("/public/web/pub/2b/25/24/235207_380074_social.png") 0 0 no-repeat; }
+#tail .yt a { display: block; background: url("/public/web/pub/2b/25/24/235207_380074_social.png") -48px 0 no-repeat; margin-right: 12px; }
+
+#tail .triangle li { display: block; }
+
+#foot p { background: transparent none; }
+
+
+/* carousel */
+.list_carousel {width: 930px; margin: auto; }
+.list_carousel ul {margin: 0;padding: 0;list-style: none;display: block;}
+.list_carousel li {border: 5px solid transparent;width: 140px;height: 100px;padding: 0;margin: 18px;display: block;float: left;}
+.list_carousel.responsive {width: auto;margin-left: 0;}
+.caroufredsel_wrapper { width: 930px; }
+.pager {float: left;width: 300px;text-align: center;}
+.pager a {margin: 0 5px;text-decoration: none;}
+.pager a.selected {text-decoration: underline;}
+.next, .prev { display: block; width: 23px; height: 100px; background: url("/public/web/pub/97/56/6e/237783_392721_arrows.png") no-repeat; margin-top: -122px; text-indent: -9999px; }
+.prev {float: left;margin-left: 10px; background-position: -44px 0; margin-left: -15px; }
+.next {float: right;margin-right: 10px; background-position: -5px 0; margin-right: -15px; }
+
+/* /carousel */
+
+/* bottom_banner */
+
+#bottom-banner { width: 960px; height: 100px; display: block; position: fixed; bottom: 0; left: 50%; margin-left: -480px; z-index: 99; opacity: 0.8; }
+.close { width: 16px; height: 16px; display: block; background: url('/public/web/pub/93/cb/92/317719_504846_close_banner.png') 0 0 no-repeat; position: absolute; right: 5px; top: 5px;cursor: pointer; }
+
+/* /bottom_banner */
+</style><script type="text/javascript"><!-- // --><![CDATA[//><!-- 
+var scriptList={basic:true,arr:[],nm:{}};
+scriptList.add=function(name,src){if(!this.nm[name]){this.nm[name]=true;this.arr[this.arr.length]=src;}}
+// --><!]]></script>
+
+<script type="text/javascript"><!-- // --><![CDATA[//><!-- 
+var dataLayer = dataLayer || []; // Google Tag Manager
+// --><!]]></script></head>
+
+<body class="language-version-cs root-page">
+
+<script src="/public/web/pub/ce/ff/a7/423705_628600_jquery_1_11_3_min.js"></script>
+
+<!--  Google Tag Manager  --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NBCHF6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript"><!-- // --><![CDATA[//><!-- 
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NBCHF6');
+// --><!]]></script><!--  End Google Tag Manager  --><div id="page" class="theme-root">
+
+<div id="micronav">
+	<h2>přechod na části stránky</h2>
+	<ul>
+		<li><a href="#search">hledání</a></li>
+		<li><a href="#content">hlavní obsah stránky</a></li>
+	</ul>
+</div><hr class="hidden" />
+
+	<div id="face">
+<div id="head-top">
+<div id="site-name">
+<h1>eAGRI<span></span></h1>
+</div><hr class="hidden" />
+<h2 class="hidden">jazyk / language</h2>
+<ul id="language">
+	<li class="selected"><strong>Česky</strong></li>
+	<li class="last"><a href="/public/web/en/mze/"><span>English</span></a></li>
+</ul><hr class="hidden" />
+			<h2 class="hidden">průřezové stránky</h2>
+<div id="menu">
+<ul class="r">
+<li><a href="/public/web/mze/verejne-zakazky/">Veřejné zakázky</a></li>
+<li><a href="/public/web/mze/uredni-desky/ministerstvo-zemedelstvi/">Úřední desky</a></li>
+<li><a href="/public/web/mze/tiskovy-servis/">Tiskový servis</a></li>
+<li><a href="/public/web/mze/kalendar-akci/">Kalendář akcí</a></li>
+<li><a href="/public/web/mze/legislativa/">Právní předpisy</a></li>
+<li><a href="/public/web/mze/kontakty/organizace/">Kontakty</a></li>
+<li><a href="/public/web/mze/e-podatelna/ministerstvo-zemedelstvi/">E-podatelna</a></li>
+</ul>
+</div></div>
+		<hr class="hidden" />
+		<div id="head-bot">
+			<h2 class="hidden"><label for="search-input">hledání</label></h2>
+<form id="search" class="arrow" action="/public/web/mze/vyhledavani/index$41111.html">
+	<div class="r">
+		<div id="simple-search"><div>
+			<input type="text" class="text placeholder" title="Hledaný výraz" name="query" id="search-input" value="" />
+			<input type="submit" class="submit" value="Hledej" />
+			<input type="hidden" name="segments" value="eagri." />
+		</div></div>
+		<div id="advanced-search"><a href="/public/web/mze/vyhledavani/?segments=eagri."><span>Podrobné hledání</span><span class="arr"></span></a></div>
+	</div>
+</form><hr class="hidden" />
+			<h2 class="hidden">tematické portály</h2>
+
+<div id="site-list" class="collapsed">
+		<a href="/public/web/mze/" class="expand-parent"><span>Rozcestník eAGRI</span><span class="arr"></span></a>
+
+		<div class="expanded-data expanded-data-double">
+			<div class="site-set">
+				<div class="name">Ministerstvo zemědělství</div>
+				<ul>
+<li><a href="/public/web/mze/ministerstvo-zemedelstvi/">Ministerstvo zemědělství</a></li>
+<li><a href="/public/web/mze/farmar/">Portál farmáře</a></li>
+<li><a href="/public/web/mze/dotace/">Dotace</a></li>
+<li><a href="/public/web/mze/venkov/">Venkov</a></li>
+<li><a href="/public/web/mze/zemedelstvi/">Zemědělství</a></li>
+<li><a href="/public/web/mze/ochrana-zvirat/">Ochrana zvířat</a></li>
+<li><a href="/public/web/mze/potraviny/">Potraviny</a></li>
+<li><a href="/public/web/mze/lesy/">Lesy</a></li>
+<li><a href="/public/web/mze/voda/">Voda</a></li>
+<li><a href="/public/web/mze/poradenstvi-a-vyzkum/">Poradenství a výzkum</a></li>
+<li><a href="/public/web/mze/zivotni-prostredi/">Životní prostředí</a></li>
+<li><a href="/public/web/mze/puda/">Půda</a></li>
+</ul>
+			</div>
+<div class="site-set site-set-additional">
+					<div class="name">Resortní organizace </div>
+					<ul>
+<li><a href="/public/web/cpi/portal/">Česká plemenářská inspekce</a></li>
+<li><a href="/public/web/svs/eagri/">Státní veterinární správa</a></li>
+<li><a href="/public/web/szpi/">Státní zemědělská a potravinářská inspekce</a></li>
+<li><a href="/public/web/uhul/">Ústav pro hospodářskou úpravu lesů</a></li>
+<li><a href="/public/web/uskvbl/">Ústav pro státní kontrolu veterinárních biopreparátů a léčiv</a></li>
+<li><a href="/public/web/ukzuz/portal/">Ústřední kontrolní a zkušební ústav zemědělský</a></li>
+<li><a href="/public/web/mze/ministerstvo-zemedelstvi/o-ministerstvu/podrizene-organizace/">Ostatní organizace</a></li>
+</ul>
+				</div>
+</div>
+	</div>
+</div>
+
+<hr class="hidden" />
+
+		<h2 class="hidden">přihlášení / uživatel</h2>
+
+
+<ul id="user">
+		<li class="first"><a href="https://eagri.cz/ssl/web/mze/">Přihlásit</a></li>
+	</ul>
+<div style="display:none; _display:block; margin: 50px 0 20px 0;  color: #C00 !important; background-color: #FFEBEB; padding: 3px; border: 1px solid #C00;"><b>Upozornění:</b><br>Používáte prohlížeč IE verze 6. Od 1. června 2012 <b>nebude možné</b> se s tímto prohlížečem do prostředí eAGRI přihlásit. Proveďte upgrade na IE verze min. 7 nebo použijte jiný prohlížeč (např. Mozilla Firefox nebo Google Chrome). Další informace <a href="/public/web/mze/farmar/aktuality/internet-explorer-6.html">zde</a>.</div><hr class="hidden" />
+<div id="main"><div class="r">
+<div id="content">
+<div class="banner">
+	<ul>
+<li style="background: transparent url('/public/web/pub/11/7c/44/547770_799958_Jurecka_Schmidt_1._9._2017.JPG');"><div class="caption veiled">
+				<h2><a href="/public/web/mze/tiskovy-servis/tiskove-zpravy/x2017_ministr-jurecka-mimoradna-opatreni-kvuli.html">Ministr Jurečka: Mimořádná opatření kvůli africkému moru prasat platíi po ukončení stavu nebezpečí</a></h2>
+				<p>   </p>
+			</div></li>
+<li style="background: transparent url('/public/web/pub/1d/af/cc/547715_799827_bio5.jpg');"><div class="caption veiled">
+				<h2><a href="/public/web/mze/tiskovy-servis/tiskove-zpravy/x2017_ministr-jurecka-ve-skolach-a-nemocnicich.html">Ministr Jurečka: Ve školách a nemocnicích by se mělo používat více biopotravin a regionálních produktů</a></h2>
+				<p>   </p>
+			</div></li>
+<li style="background: transparent url('/public/web/pub/8e/4d/68/547739_799908_obili3.jpg');"><div class="caption veiled">
+				<h2><a href="/public/web/mze/tiskovy-servis/aktualne/na-letne-se-budou-slavit-dozinky-2017.html">Na Letné se budou slavit Dožínky 2017: všichni jste zváni</a></h2>
+				<p>   </p>
+			</div></li>
+<li style="background: transparent url('/public/web/pub/87/1d/a8/542738_791912_Eduard_Kyslynskyy___2_.jpg');"><div class="caption veiled">
+				<h2><a href="https://www.svscr.cz/africky-mor-prasat-aktualni-informace/">Aktuálně k africkému moru prasat</a></h2>
+				<p></p>
+			</div></li>
+<li style="background: transparent url('/public/web/pub/6a/d9/5e/546240_797355_modra_zprava.jpg');"><div class="caption veiled">
+				<h2><a href="/public/web/mze/tiskovy-servis/tiskove-zpravy/x2017_modra-zprava-delsi-vodovodni-i.html">Modrá zpráva: delší vodovodní i kanalizační síť, více čistíren odpadních vod, peníze na prevenci před povodněmi</a></h2>
+				<p>   </p>
+			</div></li>
+</ul>
+</div>
+
+<div id="left-col">
+	<div class="box news">
+<div class="box article-list box-x-news">
+		<h2>Novinky</h2>
+<a href="/public/web/mze/novinky/"><strong>Další novinky</strong></a>
+<div class="clearfix"></div>
+		<ul class="data">
+
+<li>
+<div class="meta">1.9.2017</div>
+<h3><a href="/public/web/mze/tiskovy-servis/tiskove-zpravy/x2017_ministr-jurecka-mimoradna-opatreni-kvuli.html">Ministr Jurečka: Mimořádná opatření kvůli africkému moru prasat platí i po ukončení stavu nebezpečí</a></h3>
+<p>Přestože ve Zlínském kraji skončil stav nebezpečí v souvislosti s africkým morem prasat (AMP), všechna opatření vydaná&hellip;</p>
+</li>
+
+<li>
+<div class="meta">1.9.2017</div>
+<h3><a href="/public/web/mze/tiskovy-servis/tiskove-zpravy/x2017_ministr-jurecka-ve-skolach-a-nemocnicich.html">Ministr Jurečka: Ve školách a nemocnicích by se mělo používat více biopotravin a regionálních produktů</a></h3>
+<p>Dopis adresovaný zřizovatelům škol, nemocnic a dalších veřejných institucí, které poskytují společné stravování, odeslal&hellip;</p>
+</li>
+
+<li>
+<div class="meta">30.8.2017</div>
+<h3><a href="/public/web/mze/tiskovy-servis/tiskove-zpravy/x2017_ceske-veprove-maso-neobsahuje-zadne.html">České vepřové maso neobsahuje žádné zbytky antibiotik a hormonů, za pět let klesla jejich spotřeba o čtvrtinu </a></h3>
+<p>Čeští chovatelé prasat používají mnohem méně léčiv než například chovatelé v Německu, Polsku či Belgii. Jen mezi lety&hellip;</p>
+</li>
+</ul>
+	</div>
+</div>
+</div>
+<div id="right-col">
+
+<div class="box events">
+		<h2>Akce</h2>
+		<a href="/public/web/mze/kalendar-akci/"><strong>Další akce</strong></a>
+		<div class="clear"></div>
+
+
+<div class="data">
+			<span class="date"><strong>25</strong><br />SRP</span>
+			<p><strong><a href="/public/web/mze/dotace/program-rozvoje-venkova-na-obdobi-2014/aktuality/seminare-5-kolo-prijmu-zadosti-z.html">Semináře „5. kolo příjmu žádostí z...</a></strong></p>
+			<span class="timestamp">25.8.2017 14:00</span>
+		</div>
+
+
+<div class="data">
+			<span class="date"><strong>5</strong><br />ZÁŘ</span>
+			<p><strong><a href="/public/web/mze/zemedelstvi/ekologicke-zemedelstvi/aktuality/seminar-zpracovani-ovoce-a-zeleniny-v.html">Seminář: Zpracování ovoce a...</a></strong></p>
+			<span class="timestamp">5.9.2017 09:00</span>
+		</div>
+
+
+<div class="data">
+			<span class="date"><strong>7</strong><br />ZÁŘ</span>
+			<p><strong><a href="/public/web/mze/venkov/akce/regionalni-site-csv/region-jihozapad/priroda-jako-zdroj-zdravi.html">Příroda jako zdroj zdraví</a></strong></p>
+			<span class="timestamp">7.9.2017 09:15</span>
+		</div>
+</div>
+<div class="box" id="question-box">
+		<h2>Máte dotaz? Zeptejte se</h2>
+		<div class="clear"></div>
+		<div class="question">
+			<div class="triangle light">
+				<ul>
+<li>
+<p>Vaše dotazy zodpovíme na tel. čísle 221&nbsp;812&nbsp;425 nebo na <span class="eml">info@mze<img src="/dot.png">cz</span>.</p>
+<p>Využít můžete i <strong><a href="/public/web/mze/ministerstvo-zemedelstvi/casto-kladene-otazky/dotaznikovy-formular/">dotazníkový formulář</a></strong>&nbsp;v sekci Často kladené otázky, kde najdete předchozí odpovědi.</p>
+</li>
+<li>
+Jsme i na sociálních sítích.</li>
+</ul>
+				<ul class="social">
+<li>
+							<a href="https://twitter.com/MZeCr "><img src="/public/web/pub/50/d7/c0/328518_522846_twitter.png" alt="Twitter" width="32" height="32"></a>
+						</li>
+<li>
+							<a href="https://www.youtube.com/user/MINISTZEMEDELSTVI "><img src="/public/web/pub/ea/a5/64/328521_522848_youtube.png" alt="Youtube" width="32" height="32"></a>
+						</li>
+<li>
+							<a href="https://www.facebook.com/ministerstvozemedelstvicr "><img src="/public/web/pub/7f/ec/e/328524_522852_facebook.png" alt="Facebook" width="32" height="32"></a>
+						</li>
+</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div><hr class="hidden" />
+<div id="apps">
+<div class="box popular">
+	<div class="triangle light">
+<div class="box article-list non-printable">
+				<h2 class="h">Často hledáte</h2>
+				<ul class="data">
+<li><h3><a href="https://www.svscr.cz/africky-mor-prasat-aktualni-informace/#f=hpblok">Africký mor prasat – aktuální informace</a></h3></li>
+<li><h3><a href="/public/web/mze/zemedelstvi/zivocisna-vyroba/zelena-nafta-pro-zivocisnou-vyrobu.html">Zelená nafta pro živočišnou výrobu - upřesnění požadavků GŘ cel</a></h3></li>
+<li><h3><a href="/public/web/mze/ministerstvo-zemedelstvi/volna-pracovni-mista/#f=hpblok">Volná pracovní/služební místa</a></h3></li>
+<li><h3><a href="/public/web/mze/zemedelstvi/rostlinna-vyroba/rostlinne-komodity/obiloviny/prubeh-sklizne/sklizen-2017/#f=hpblok">Žňové zpravodajství</a></h3></li>
+<li><h3><a href="/public/web/mze/farmar/#f=hpblok">Portál farmáře eAGRI, registry a aplikace</a></h3></li>
+<li><h3><a href="/public/web/mze/dotace/#f=hpblok">Dotace, národní dotace, PRV, de minimis, greening</a></h3></li>
+<li><h3><a href="/public/web/mze/dotace/program-rozvoje-venkova-na-obdobi-2014/#f=hpblok">Program rozvoje venkova 2014-2020</a></h3></li>
+<li><h3><a href="/public/web/mze/potraviny/aktualni-temata/potraviny-a-stravovaci-sluzby/.html">Doporučení pro nákup potravin a stravovacích služeb v režimu VZ (GPP)</a></h3></li>
+</ul>
+			</div>
+</div>
+</div>
+<div class="box portrait">
+	<h2><a href="/public/web/mze/ministerstvo-zemedelstvi/ministr/">Ministr zemědělství</a></h2>
+	<div class="clear"></div>
+	<div class="data">
+		<h3>Marian Jurečka</h3>
+		<ul class="triangle light">
+<li><a href="/public/web/mze/ministerstvo-zemedelstvi/ministr/statni-tajemnik/">Státní tajemník</a></li>
+<li><a href="/public/web/mze/ministerstvo-zemedelstvi/ministr/namestci-ministra/">Náměstci ministra</a></li>
+<li><a href="/public/web/mze/ministerstvo-zemedelstvi/ministr/reditele-odboru/">Ředitelé odborů</a></li>
+<li><a href="/public/web/mze/ministerstvo-zemedelstvi/ministr/vystoupeni-a-clanky/">Vystoupení a články</a></li>
+<li><a href="/public/web/mze/ministerstvo-zemedelstvi/ministr/fotogalerie-z-akci/">Fotogalerie z akcí</a></li>
+</ul>
+<img src="/public/web/pub/b0/5f/78/291246_466082_ministr_na_web_3.png" alt="" width="157" height="177" /></div>
+</div>
+<div class="box library">
+	<h2><a href="/public/web/mze/ministerstvo-zemedelstvi/vyrocni-a-hodnotici-zpravy/newsletter-mze/zpravy-z-ministerstva-zemedelstvi-leto.html">Newsletter MZe</a></h2>
+	<div class="clear"></div>
+	<div class="data">
+		<a class="veiled" href="/public/web/mze/ministerstvo-zemedelstvi/vyrocni-a-hodnotici-zpravy/newsletter-mze/zpravy-z-ministerstva-zemedelstvi-leto.html">Zprávy z Ministerstva zemědělství LÉTO/2017</a>
+		<img src="/public/web/pub/70/3d/53/304029_795501_Newsletter7._2017_uvodni03.jpg" alt="multimedia">
+	</div>
+</div>
+</div></div></div>
+
+<div id="qlink-carousel">
+<h2>Externí odkazy</h2>
+<div class="clear"></div>
+
+<div class="list_carousel">
+	<ul id="carousel-bottom">
+<li><a href="http://www.mesicbiopotravin.cz"><img src="/public/web/pub/f4/e6/a0/545718_796247_MBio_2017.jpg" alt="Září - měsíc biopotravin " /></a></li>
+<li><a href="http://vinarskyzakon.cz"><img src="/public/web/pub/52/fa/c0/528377_771098_qlink_vinarsky_zakon_fin2.jpg" alt="Vinařský zákon" /></a></li>
+<li><a href="http://www.akademiekvality.cz/"><img src="/public/web/pub/e0/38/3c/476112_704878_AKADEMIE_KVALITY_A_CHUTI_sirsi_140x100.jpg" alt="Akademie kvality a chuti" /></a></li>
+<li><a href="http://www.poznejsvehofarmare.cz"><img src="/public/web/pub/32/ef/96/467338_693153_Poznej_sveho_farmare_externi_odkaz.jpg" alt="Poznej svého farmáře" /></a></li>
+<li><a href="http://www.regionalnipotraviny.cz"><img src="/public/web/pub/34/97/2e/32555_233606_Regionalni_potravina___odkaz.jpg" alt="Regionální potravina" /></a></li>
+<li><a href="http://www.potravinynapranyri.cz/"><img src="/public/web/pub/af/e9/4b/166916_292141_potraviny_na_pranyri.jpg" alt="Potraviny na pranýři" /></a></li>
+<li><a href="http://eagri.cz/public/app/svs_pub/mapy_vk/"><img src="/public/web/pub/b6/f1/45/242583_391962_svs_mapy_kontrol_banner.jpg" alt="Mapy kontrol SVS" /></a></li>
+<li><a href="http://www.bezpecnostpotravin.cz/rizika/seznam-rizik.aspx"><img src="/public/web/pub/de/b8/96/154456_271237_Logo_ICBP_barva_banner.jpg" alt="Informační centrum bezpečnosti potravin - seznam rizik" /></a></li>
+</ul>
+	<div class="clearfix"></div>
+	<a id="prev2" class="prev" href="#">&lt;</a>
+	<a id="next2" class="next" href="#">&gt;</a>
+</div>
+</div>
+
+<div id="tail">
+	<div class="wrapper">
+		<div class="one">
+			<h4>Ministerstvo zemědělství</h4>
+			<ul class="triangle">
+<li><a href="/public/web/mze/ministerstvo-zemedelstvi/"><b>Ministerstvo zemědělství</b></a></li>
+<li><a href="/public/web/mze/farmar/"><b>Portál farmáře</b></a></li>
+<li><a href="/public/web/mze/dotace/"><b>Dotace</b></a></li>
+<li><a href="/public/web/mze/venkov/"><b>Venkov</b></a></li>
+<li><a href="/public/web/mze/zemedelstvi/"><b>Zemědělství</b></a></li>
+<li><a href="/public/web/mze/ochrana-zvirat/"><b>Ochrana zvířat</b></a></li>
+<li><a href="/public/web/mze/potraviny/"><b>Potraviny</b></a></li>
+<li><a href="/public/web/mze/lesy/"><b>Lesy</b></a></li>
+<li><a href="/public/web/mze/voda/"><b>Voda</b></a></li>
+<li><a href="/public/web/mze/poradenstvi-a-vyzkum/"><b>Poradenství a výzkum</b></a></li>
+<li><a href="/public/web/mze/zivotni-prostredi/"><b>Životní prostředí</b></a></li>
+<li><a href="/public/web/mze/puda/"><b>Půda</b></a></li>
+</ul>
+		</div>
+		
+		<div class="two">
+			<h4>Resortní organizace</h4>
+			<ul class="triangle">
+<li><a href="/public/web/cpi/portal/">
+<b>ČPI</b> &ndash; Česká plemenářská inspekce
+</a></li>
+<li><a href="/public/web/svs/eagri/">
+<b>SVS</b> &ndash; Státní veterinární správa
+</a></li>
+<li><a href="/public/web/szpi/">
+<b>SZPI</b> &ndash; Státní zemědělská a potravinářská inspekce
+</a></li>
+<li><a href="/public/web/uhul/">
+<b>ÚHÚL</b> &ndash; Ústav pro hospodářskou úpravu lesů
+</a></li>
+<li><a href="/public/web/uskvbl/">
+<b>ÚSKVBL</b> &ndash; Ústav pro státní kontrolu veterinárních biopreparátů a léčiv
+</a></li>
+<li><a href="/public/web/ukzuz/portal/">
+<b>ÚKZÚZ</b> &ndash; Ústřední kontrolní a zkušební ústav zemědělský
+</a></li>
+<li><a href="/public/web/mze/ministerstvo-zemedelstvi/o-ministerstvu/podrizene-organizace/">
+<b>Ostatní organizace</b>
+</a></li>
+</ul>
+		</div>
+		
+		<div class="three">
+			<h4>Kontakt</h4>
+			<p>Ministerstvo zemědělství</p>
+			<ul>
+				<li>Těšnov 65/17<br />Praha 1, 11000</li>
+			</ul>
+			
+			<ul>
+				<li class="mail"><span class="eml">info@mze<img src="/dot.png">cz</span></li>
+				<li class="phone">221 811 111<br />224 810 478</li>
+			</ul>
+			
+			<ol>
+				<!--  <li class="yt"><a href="http://www.youtube.com/user/MINISTZEMEDELSTVI">YouTube</a></li>  -->
+				<li class="rss"><a href="http://eagri.cz/public/web/mze/rss/">RSS</a></li>
+			</ol>
+			
+			<img class="iopeu" src="/public/web/pub/93/f7/23/235209_380077_iopeu.png" alt="Integrovaný operační program a Európsky fond pro regionální rozvoj" />
+			<img class="mze" src="/public/web/pub/3c/93/36/235211_380079_mze.png" alt="Ministerstvo zemědelství" />
+		</div>			
+	</div>
+</div></div>
+
+<hr class="hidden" />
+<h2 class="hidden">důležité informace</h2>
+<div id="foot">
+	<ul>
+<li><a href="/public/web/mze/mapa-webu/">Mapa webu</a></li>
+<li><a href="/public/web/mze/registrovany-pristup/">Registrovaný přístup</a></li>
+<li><a href="/public/web/mze/rss/">RSS</a></li>
+<li><a href="/public/web/mze/pristupnost/">Přístupnost</a></li>
+<li><a href="/public/web/mze/webmaster/">Webmaster</a></li>
+<li><a href="/public/web/mze/o-portalu-eagri/">O portálu</a></li>
+</ul>	
+	<p>&copy; 2009-<script language="javascript" type="text/javascript">
+var datum = new Date()
+var rok = datum.getFullYear()
+document.write( + rok)
+</script> Ministerstvo zemědělství</p>
+</div>
+
+
+
+	</div>
+
+<script type="text/javascript" src="/public/web/pub/3e/15/9b/242824_626503_jquery_1._11._3.min.js"></script>
+<script type="text/javascript" src="/public/web/pub/fc/f3/47/235201_392681_"></script>
+<script type="text/javascript">
+<!-- // --><![CDATA[//><!-- 
+document.write(unescape("%3Cscript src='/urchin.js' type='text/javascript'%3E%3C/script%3E"));
+// --><!]]>
+</script>
+<script type="text/javascript">
+<!-- // --><![CDATA[//><!-- 
+(function(e,t){if(!e)return t;var n=function(){this.el=t;this.items=t;this.sizes=[];this.max=[0,0];this.current=0;this.interval=t;this.opts={speed:500,delay:3e3,complete:t,keys:!t,dots:t,fluid:t};var n=this;this.init=function(t,n){this.el=t;this.ul=t.children("ul");this.max=[t.outerWidth(),t.outerHeight()];this.items=this.ul.children("li").each(this.calculate);this.opts=e.extend(this.opts,n);this.setup();return this};this.calculate=function(t){var r=e(this),i=r.outerWidth(),s=r.outerHeight();n.sizes[t]=[i,s];if(i>n.max[0])n.max[0]=i;if(s>n.max[1])n.max[1]=s};this.setup=function(){this.el.css({overflow:"hidden",width:n.max[0],height:this.items.first().outerHeight()});this.ul.css({width:this.items.length*100+"%",position:"relative"});this.items.css("width",100/this.items.length+"%");if(this.opts.delay!==t){this.start();this.el.hover(this.stop,this.start)}this.opts.keys&&e(document).keydown(this.keys);this.opts.dots&&this.dots();if(this.opts.fluid){var r=function(){n.el.css("width",Math.min(Math.round(n.el.outerWidth()/n.el.parent().outerWidth()*100),100)+"%")};r();e(window).resize(r)}if(this.opts.arrows){this.el.parent().append('<p class="arrows"><span class="prev">â†</span><span class="next">â†’</span></p>').find(".arrows span").click(function(){e.isFunction(n[this.className])&&n[this.className]()})}if(e.event.swipe){this.el.on("swipeleft",n.prev).on("swiperight",n.next)}};this.move=function(t,r){if(!this.items.eq(t).length)t=0;if(t<0)t=this.items.length-1;var i=this.items.eq(t);var s={height:i.outerHeight()};var o=r?5:this.opts.speed;if(!this.ul.is(":animated")){n.el.find(".dot:eq("+t+")").addClass("active").siblings().removeClass("active");this.el.animate(s,o)&&this.ul.animate(e.extend({left:"-"+t+"00%"},s),o,function(i){n.current=t;e.isFunction(n.opts.complete)&&!r&&n.opts.complete(n.el)})}};this.start=function(){n.interval=setInterval(function(){n.move(n.current+1)},n.opts.delay)};this.stop=function(){n.interval=clearInterval(n.interval);return n};this.keys=function(t){var r=t.which;var i={37:n.prev,39:n.next,27:n.stop};if(e.isFunction(i[r])){i[r]()}};this.next=function(){return n.stop().move(n.current+1)};this.prev=function(){return n.stop().move(n.current-1)};this.dots=function(){var t='<ol class="dots">';e.each(this.items,function(e){t+='<li class="dot'+(e<1?" active":"")+'">'+(e+1)+"</li>"});t+="</ol>";this.el.addClass("has-dots").append(t).find(".dot").click(function(){n.move(e(this).index())})}};e.fn.unslider=function(t){var r=this.length;return this.each(function(i){var s=e(this);var u=(new n).init(s,t);s.data("unslider"+(r>1?"-"+(i+1):""),u)})}})(window.jQuery,false)
+// --><!]]>
+</script>
+<script type="text/javascript">
+<!-- // --><![CDATA[//><!-- 
+(function(e){if(typeof define==="function"&&define.amd){define(["jquery"],e)}else if(typeof exports==="object"){e(require("jquery"))}else{e(jQuery)}})(function(e){function n(e){return u.raw?e:encodeURIComponent(e)}function r(e){return u.raw?e:decodeURIComponent(e)}function i(e){return n(u.json?JSON.stringify(e):String(e))}function s(e){if(e.indexOf('"')===0){e=e.slice(1,-1).replace(/\\"/g,'"').replace(/\\\\/g,"\\")}try{e=decodeURIComponent(e.replace(t," "));return u.json?JSON.parse(e):e}catch(n){}}function o(t,n){var r=u.raw?t:s(t);return e.isFunction(n)?n(r):r}var t=/\+/g;var u=e.cookie=function(t,s,a){if(s!==undefined&&!e.isFunction(s)){a=e.extend({},u.defaults,a);if(typeof a.expires==="number"){var f=a.expires,l=a.expires=new Date;l.setTime(+l+f*864e5)}return document.cookie=[n(t),"=",i(s),a.expires?"; expires="+a.expires.toUTCString():"",a.path?"; path="+a.path:"",a.domain?"; domain="+a.domain:"",a.secure?"; secure":""].join("")}var c=t?undefined:{};var h=document.cookie?document.cookie.split("; "):[];for(var p=0,d=h.length;p<d;p++){var v=h[p].split("=");var m=r(v.shift());var g=v.join("=");if(t&&t===m){c=o(g,s);break}if(!t&&(g=o(g))!==undefined){c[m]=g}}return c};u.defaults={};e.removeCookie=function(t,n){if(e.cookie(t)===undefined){return false}e.cookie(t,"",e.extend({},n,{expires:-1}));return!e.cookie(t)}})
+// --><!]]>
+</script>
+<script type="text/javascript">
+<!-- // --><![CDATA[//><!-- 
+$(function() {
+	$('.banner').unslider({
+	speed: 500,
+	delay: 5000,
+	complete: function() {},
+	keys: true,
+	dots: true
+	});
+});
+// --><!]]>
+</script>
+<script type="text/javascript">
+<!-- // --><![CDATA[//><!-- 
+$(function() {
+	$('#carousel-bottom').carouFredSel({
+		auto: false,
+		circular: false,
+		infinite: false,
+		prev: '#prev2',
+		next: '#next2',
+		mousewheel: true
+	});
+});
+// --><!]]>
+</script>
+<script type="text/javascript">
+<!-- // --><![CDATA[//><!-- 
+$('#site-list').mouseenter(function() {
+	$(this).removeClass('collapsed').addClass('expanded');
+}).mouseleave(function() {
+	$(this).removeClass('expanded').addClass('collapsed');
+});
+$('#bottom-banner .close').on('click', function() {
+	$('#bottom-banner').hide();
+	$.cookie('banner_disabled', 'true', { expires: 365, path: '/' });
+});
+// --><!]]>
+</script>
+<script src="/public/web/static/10941-1-PUB_PROD/none/resource/scripts/js_main-js-bundle.js"></script>
+
+</body>
+</html>
+
+<!-- 
+__ETN_.O.K.__
+ -->
+

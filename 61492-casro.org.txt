@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <title>Insights Association</title>
+  <meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="alternate" type="application/rss+xml" title="Insights Association RSS" href="http://www.insightsassociation.org/rss.xml" />
+<link rel="shortcut icon" href="http://www.insightsassociation.org/sites/default/files/favicon_0_0.png" type="image/png" />
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge, chrome=1" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="cleartype" content="on" />
+          <link rel="shortcut icon" type="image/x-icon" href="http://www.insightsassociation.org/sites/default/files/favicon_0_0.png" />
+  <link type="text/css" rel="stylesheet" href="http://www.insightsassociation.org/sites/default/files/css/css_9Fq12KwvYi5PlXcIUEeemUyorvTVdQi_YH0pujTaydo.css" media="all" />
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+#block-views-marquee-block{background-image:url(http://www.insightsassociation.org/sites/default/files/styles/marquee/public/member_benefit_photos/todd.jpg?itok=cEKwDzQn);}
+
+/*]]>*/-->
+</style>
+<link type="text/css" rel="stylesheet" href="http://www.insightsassociation.org/sites/default/files/css/css_Ah7wR22a_yy2q0eU__bk8a-WktpW-ylYUPOEVTYH0oc.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.insightsassociation.org/sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" media="print" />
+    <script>
+      /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.createElementNS||!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||window.opera&&-1===navigator.userAgent.indexOf("Chrome")),o=function(o){var r=t.document.createElement("link"),a=t.document.getElementsByTagName("script")[0];r.rel="stylesheet",r.href=e[o&&n?0:o?1:2],a.parentNode.insertBefore(r,a)},r=new t.Image;r.onerror=function(){o(!1)},r.onload=function(){o(1===r.width&&1===r.height)},r.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+      grunticon(["/sites/all/themes/mra/css/icon/icons.data.svg.css", "/sites/all/themes/mra/css/icon/icons.data.png.css", "/sites/all/themes/mra/css/icon/icons.fallback.css"]);
+    </script>
+  <noscript><link href="/sites/all/themes/mra/css/icon/icons.fallback.css" rel="stylesheet"></noscript>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/contrib/jquery_update/replace/jquery/1.8/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://www.insightsassociation.org/sites/default/files/js/js_V1ZuwJK9uzfm6fFffOcHHubfxnimoxnbgG58pvTQdpY.js"></script>
+<script type="text/javascript" src="http://www.insightsassociation.org/sites/default/files/js/js_us9zeOugzcEZcnTkqAX7vM1iHLJRLL74EdC-9zpWkzI.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.CKEDITOR_BASEPATH = '/profiles/aten_dev_base/libraries/ckeditor/'
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://www.insightsassociation.org/sites/default/files/js/js_gPqjYq7fqdMzw8-29XWQIVoDSWTmZCGy9OqaHppNxuQ.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-3451647-15", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="//cdn.optimizely.com/js/3224521368.js"></script>
+<script type="text/javascript" src="http://www.insightsassociation.org/sites/default/files/js/js_WKKCLkaX8WnjP41shY_NX4uj6lQecB9QOiz1w-MGqO0.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"mra","theme_token":"fNgCm0Jrdylxcw7S7WmMWLed1h-s1E_ofSvmWRf-fsk","js":{"0":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.8.3\/jquery.min.js":1,"1":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/custom\/mra_stay_informed\/js\/loadmore.js":1,"2":1,"profiles\/aten_dev_base\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"3":1,"\/\/cdn.optimizely.com\/js\/3224521368.js":1,"sites\/all\/themes\/mra\/..\/..\/libraries\/jquery-ba-throttle-debounce\/jquery.ba-throttle-debounce.min.js":1,"sites\/all\/themes\/mra\/..\/..\/libraries\/toggle\/toggle.js":1,"sites\/all\/themes\/mra\/..\/..\/libraries\/tabbed\/tabbed.js":1,"sites\/all\/themes\/mra\/js\/mainNav.js":1,"sites\/all\/themes\/mra\/js\/tabs.js":1,"sites\/all\/themes\/mra\/..\/..\/modules\/custom\/mra_conference\/js\/sessions.js":1,"sites\/all\/themes\/mra\/js\/prc.js":1,"sites\/all\/themes\/mra\/js\/main.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/comment\/comment.css":1,"profiles\/aten_dev_base\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/aten_dev_base\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"profiles\/aten_dev_base\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/poll\/poll.css":1,"sites\/all\/modules\/contrib\/quiz\/quiz.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"profiles\/aten_dev_base\/modules\/contrib\/views\/css\/views.css":1,"profiles\/aten_dev_base\/modules\/contrib\/ctools\/css\/ctools.css":1,"0":1,"sites\/all\/themes\/center\/css\/override\/kill\/ctools.css":1,"sites\/all\/themes\/center\/css\/override\/kill\/field.css":1,"sites\/all\/themes\/center\/css\/override\/kill\/node.css":1,"sites\/all\/themes\/center\/css\/override\/kill\/system.messages.css":1,"sites\/all\/themes\/center\/css\/override\/kill\/system.menus.css":1,"sites\/all\/themes\/center\/css\/override\/kill\/user.css":1,"sites\/all\/themes\/center\/css\/override\/kill\/views.css":1,"sites\/all\/themes\/center\/css\/override\/kill\/field_collection.theme.css":1,"sites\/all\/themes\/center\/css\/override\/keep\/system.base.css":1,"sites\/all\/themes\/center\/css\/override\/keep\/system.theme.css":1,"sites\/all\/themes\/center\/css\/override\/keep\/search.css":1,"sites\/all\/themes\/center\/css\/override\/keep\/vertical-tabs.css":1,"sites\/all\/themes\/mra\/css\/screen.css":1,"sites\/all\/themes\/mra\/css\/override\/keep\/print.css":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/node":true,"\/":true},"better_exposed_filters":{"views":{"marquee":{"displays":{"block":{"filters":[]}}},"events":{"displays":{"block_1":{"filters":[]},"block":{"filters":[]}}},"on_demand_video":{"displays":{"block_1":{"filters":[]},"block":{"filters":[]}}},"stay_informed":{"displays":{"block":{"filters":[]}}},"stay_informed_links":{"displays":{"block":{"filters":[]}}}}}});
+//--><!]]>
+</script>
+  <script type="text/javascript" src="//fast.fonts.net/jsapi/fc24ffc9-199d-4cda-832c-314fd9b76ac2.js"></script>
+  <script src="//load.sumome.com/" data-sumo-site-id="523632968e41ba639c91e33e319dfd92895358dd0c86d1afc7aea2e8521d3f3c" async="async"></script>
+
+  <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function()
+    {n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}
+    ;if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','//connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '861374570642043');
+    fbq('track', "PageView");</script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=861374570642043&ev=PageView&noscript=1"
+    /></noscript>
+  <!-- End Facebook Pixel Code -->
+</head>
+
+<body class="html front not-logged-in no-sidebars page-node preload" >
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({ google_ad_client: "ca-pub-5740739466152056",
+  enable_page_level_ads: true 
+});
+</script>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <header id="header">
+  <div class="header-toolbar">
+    <div class="header-toolbar-inner l--constrained--bleed">
+      <h1 id="branding" class="header-branding branding--small">
+        <a href="/" title="Home" rel="home" class="branding-link active"><img src="/sites/all/themes/mra/insights_logo--dark.svg" alt="Insights Association"/></a>      </h1>
+      <div id="utility" class="header-utility">
+        <ul id="utility-menu" class="nav nav--utility"><li class="menu-544 nav-item first"><a href="/user/register" title="" class="nav-link">Register for news, events and more!</a></li>
+<li class="menu-543 nav-item last"><a href="/user/login?current=" title="" class="nav-link">Sign In</a></li>
+</ul>        <form class="search-form" action="/search/node" method="post" id="search-form" accept-charset="UTF-8"><div><div class="form-wrapper" id="edit-basic"><div class="form-item form-type-textfield form-item-keys">
+  <input placeholder="Search..." type="text" id="edit-keys" name="keys" value="" size="40" maxlength="255" class="form-text" />
+</div>
+<input class="icon-search form-submit" type="submit" id="edit-submit" name="op" value="Search" /></div><input type="hidden" name="form_build_id" value="form-WaRy2Ji_aPF9qhOCNzoagbGXLC7Xlmxgt6r0KG63VJU" />
+<input type="hidden" name="form_id" value="search_form" />
+</div></form>      </div>
+    </div>
+  </div>
+  <div class="header-menu">
+    <div class="header-menu-inner clearfix l--constrained--bleed">
+      <h1 class="header-menu-branding">
+        <a href="/" title="Home" rel="home" class="branding-link active"><img src="/sites/all/themes/mra/insights_logo--light.svg" alt="Insights Association"/></a>      </h1>
+      <nav class="header-menu-nav">
+        <ul id="primary-menu" class="nav nav--main"><li class="menu-2265 nav-item first"><a href="http://bluebook.insightsassociation.org" title="" class="nav-link">Find a Partner</a></li>
+<li class="menu-1291 nav-item"><a href="/be-a-member" title="Be a Member landing page" class="nav-link">Be a Member</a></li>
+<li class="menu-5473 nav-item"><a href="/get-support" class="nav-link">Get Support</a></li>
+<li class="menu-2266 nav-item"><a href="/issues-policies" class="nav-link">Promote MR/A</a></li>
+<li class="menu-1292 nav-item"><a href="/stay-informed" title="Stay Informed landing page" class="nav-link">Stay Informed</a></li>
+<li class="menu-2275 nav-item"><a href="/network-learn" class="nav-link">Network &amp; Learn</a></li>
+<li class="menu-2271 nav-item last"><a href="/advance-career" class="nav-link">Advance Your Career</a></li>
+</ul>      </nav>
+    </div>
+  </div>
+</header>
+
+<div id="page" class="page">
+  <div id="block-views-marquee-block" class="block block-views">
+      
+  <div  class="block-content block-content">
+    <div class="view view-marquee view-id-marquee view-display-id-block view-dom-id-b589eb66d6e6c0d737f8b964d6c237dd">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+    
+<div class="node node-member-benefit node--marquee node--marquee benefit--marquee l--constrained" about="/benefit/invaluable-insight-assistance-and-networking" typeof="sioc:Item foaf:Document">
+        <blockquote class="benefit-quote">
+      MRA and CASRO have been invaluable in providing insight, assistance and networking to help grow my business. I look forward to leveraging their combined strengths in the Insights Association to provide the valuable assets I’ve come to rely on.    </blockquote>
+      <div class="benefit-member-name">
+    C+R Research's Todd Eviston, Partner/SVP – Operations  </div>
+        <div class="benefit-member-since">
+      Member since <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-01-01T00:00:00-07:00">2017</span>    </div>
+      <div class="benefit-actions">
+    <a href="/be-a-member" class="button button--large button--arrow button--green">Join Now</a>          <a href="http://www.insightsassociation.org/company-member-directory" class="button button--large button--arrow button--blue">Company Members</a>      </div>
+  </div>
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+
+  <div id="main">
+      
+        <div id="above-content" class="is-inverse">
+          <div class="l--constrained">
+            
+                          <div id="block-mra-home-featured-events-learning" class="block block-mra-home">
+
+  
+  <div class="block-right">
+              <h2 class="block-title block-title--large">2016 Corporate Researchers Conference</h2>
+        
+          <div class="block-mra-home-subtitle">
+              </div>
+    
+          <div class="block-mra-home-summary"><h2 class="block-title--large">Upcoming Insights Association Conferences</h2>
+
+<ul>
+	<li><small><a href="http://www.insightsassociation.org/conference/2017-insights-leadership-conference"><span style="white-space:nowrap;"><strong>Insights </strong></span><strong>Leadership Conference</strong></a> (<em>formerly CASRO Annual</em>),&nbsp;<strong>September 26-28, 2017 </strong>The Breakers, Palm Beach, FL </small><a class="button button--large button--arrow button--green" href="/conference/2017-insights-leadership-conference/register" style="padding:3px;color:white;font-size:14px;">Register Now!</a></li>
+	<li><small><strong><a href="http://www.insightsassociation.org/conference/2017-corporate-researchers-conference-crc">Corporate Researchers Conference (CRC)</a>, October 16-18, 2017</strong> Swissotel, Chicago</small> <a class="button button--large button--arrow button--green" href="/crc-2017-registration" style="padding:3px;color:white;font-size:14px;">Register Now!</a></li>
+	<li><small><strong>CRC Leadership Forum, October 18-19, 2017</strong> Swissotel, Chicago</small></li>
+</ul>
+<style type="text/css">#block-mra-home-featured-events-learning .block-title {
+    margin-bottom: 0.13333em;
+    color: white;
+    visibility: hidden;
+height:0px;
+}
+
+#block-mra-home-featured-events-learning a::after {
+    content: none;
+ 
+    height: 0;
+    width: 0;
+    border-style: solid;
+    border-top: 5px solid transparent;
+    border-right: 0 none transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid;
+    border-left-color: #18a79d;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+</style>
+</div>    
+  </div>
+</div>
+            
+            <div class="l--2-column clearfix">
+              <div class="l-primary">
+                <div id="block-views-events-block" class="block block-views">
+        <h2 class="block-title block-title--large">Upcoming Events</h2>
+    
+  <div  class="block-content block-content">
+    <div class="view view-events view-id-events view-display-id-block view-dom-id-804f158aa630c29e53fb05a19dca4d16">
+        
+  
+  
+      <div class="view-content">
+      <ul class="list--promoted">
+      <li class="list-item"><article class="node node-conference-microsite node-promoted node--teaser-simple node--teaser-simple event--simple clearfix" about="/conference/2017-insights-leadership-conference" typeof="sioc:Item foaf:Document">
+      <div class="event-date clearfix">
+    <div class="event-date-start">
+      <div class="event-date-month">
+        Sep      </div>
+      <div class="event-date-day">
+        26      </div>
+    </div>
+        <div class="event-date-end">
+      <div class="event-date-month">
+        Sep      </div>
+      <div class="event-date-day">
+        28      </div>
+    </div>
+      </div>
+  <h3 class="event-title article-title--small"><a href="/conference/2017-insights-leadership-conference">2017 Insights Leadership Conference</a></h3>
+    <div class="event-location">
+      Palm Beach  </div>
+  </article>
+</li>
+      <li class="list-item"><article class="node node-event node--teaser-simple node--teaser-simple event--simple clearfix" about="/event/great-lakes-chapter-2017-fall-conference" typeof="sioc:Item foaf:Document">
+      <div class="event-date clearfix">
+    <div class="event-date-start">
+      <div class="event-date-month">
+        Sep      </div>
+      <div class="event-date-day">
+        06      </div>
+    </div>
+        <div class="event-date-end">
+      <div class="event-date-month">
+        Sep      </div>
+      <div class="event-date-day">
+        08      </div>
+    </div>
+      </div>
+  <h3 class="event-title article-title--small"><a href="/event/great-lakes-chapter-2017-fall-conference">Great Lakes Chapter 2017 Fall Conference</a></h3>
+    <div class="event-location">
+          Hilton St. Louis at the Ballpark      </div>
+  </article>
+</li>
+      <li class="list-item"><article class="node node-webinar node--teaser-simple node--teaser-simple event--simple clearfix" about="/webinar/business-continuity-planning-and-disaster-recovery" typeof="sioc:Item foaf:Document">
+      <div class="event-date clearfix">
+    <div class="event-date-start">
+      <div class="event-date-month">
+        Sep      </div>
+      <div class="event-date-day">
+        14      </div>
+    </div>
+      </div>
+      <div class="event-time">
+      <span class="event-time-start">
+                  2:00              </span>
+            <span class="event-seperator">&ndash;</span>
+      <span class="event-time-end">
+        3:00 PM      </span>
+            <span class="event-time-zone">
+        EDT      </span>
+    </div>
+    <h3 class="event-title article-title--small"><a href="/webinar/business-continuity-planning-and-disaster-recovery">Business Continuity Planning and Disaster Recovery</a></h3>
+  <div class="event-location">
+      Online  </div>
+</article>
+</li>
+  </ul>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+            
+    
+          <a href="/network-learn/events" class="button button--large button--arrow button--green">See All 9</a>        </div>
+  
+  
+</div>  </div>
+</div>
+              </div>
+              <div class="l-secondary">
+                <div id="block-views-on-demand-video-block" class="block block-views">
+        <h2 class="block-title block-title--large">On Demand Videos</h2>
+    
+  <div  class="block-content block-content">
+    <div class="view view-on-demand-video view-id-on_demand_video view-display-id-block view-dom-id-887e3c24c0445b8c3a27148cc75c6c84">
+        
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul class="list--promoted">          <li class="views-row views-row-1 views-row-odd views-row-first">
+<article class="node node-webinar-on-demand node--teaser-figure node--teaser-figure webinar--figure-teaser clearfix" about="/webinar-on-demand/compliance-meeting-your-client%E2%80%99s-contractual-obligations-0" typeof="sioc:Item foaf:Document">
+        <figure class="webinar-figure"><img typeof="foaf:Image" src="http://www.insightsassociation.org/sites/default/files/1503689822event_banner_large.jpg" width="4800" height="3200" /></figure>
+        <h3 class="webinar-title"><a href="/webinar-on-demand/compliance-meeting-your-client%E2%80%99s-contractual-obligations-0">Compliance - Meeting Your Client’s Contractual Obligations</a></h3>
+  <span property="dc:title" content="Compliance - Meeting Your Client’s Contractual Obligations" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>     <div class="webinar-speaker"><ul  class="field-items list--separated list--inline"><li  class="field-item list-item odd">
+<address class="node node-person node--teaser-minimal node--teaser-minimal speaker session-speaker clearfix">
+  <strong class="speaker-name">Darrin Maggy, CISSP |vCISO, Managing Director, Ezentria, Inc</strong></address>
+</li></ul></div>
+  </article>
+</li>
+          <li class="views-row views-row-2 views-row-even">
+<article class="node node-webinar-on-demand node--teaser-figure node--teaser-figure webinar--figure-teaser clearfix" about="/webinar-on-demand/compliance-meeting-your-client%E2%80%99s-contractual-obligations" typeof="sioc:Item foaf:Document">
+        <figure class="webinar-figure"><img typeof="foaf:Image" src="http://www.insightsassociation.org/sites/default/files/1503689810event_banner_large.jpg" width="4800" height="3200" /></figure>
+        <h3 class="webinar-title"><a href="/webinar-on-demand/compliance-meeting-your-client%E2%80%99s-contractual-obligations">Compliance - Meeting Your Client’s Contractual Obligations</a></h3>
+  <span property="dc:title" content="Compliance - Meeting Your Client’s Contractual Obligations" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>     <div class="webinar-speaker"><ul  class="field-items list--separated list--inline"><li  class="field-item list-item odd">
+<address class="node node-person node--teaser-minimal node--teaser-minimal speaker session-speaker clearfix">
+  <strong class="speaker-name">Darrin Maggy, CISSP |vCISO, Managing Director, Ezentria, Inc</strong></address>
+</li></ul></div>
+  </article>
+</li>
+          <li class="views-row views-row-3 views-row-odd views-row-last">
+<article class="node node-webinar-on-demand node--teaser-figure node--teaser-figure webinar--figure-teaser clearfix" about="/webinar-on-demand/government-affairs-webinar-%E2%80%93-quarterly-update-0" typeof="sioc:Item foaf:Document">
+        <figure class="webinar-figure"><img typeof="foaf:Image" src="http://www.insightsassociation.org/sites/default/files/1503689794event_banner_large.jpg" width="4300" height="2867" alt="" /></figure>
+        <h3 class="webinar-title"><a href="/webinar-on-demand/government-affairs-webinar-%E2%80%93-quarterly-update-0">Government Affairs Webinar – Quarterly Update</a></h3>
+  <span property="dc:title" content="Government Affairs Webinar – Quarterly Update" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>     <div class="webinar-speaker"><ul  class="field-items list--separated list--inline"><li  class="field-item list-item odd">
+<address class="node node-person node--teaser-minimal node--teaser-minimal speaker session-speaker clearfix">
+  <strong class="speaker-name">Howard Fienberg</strong>,
+    <em class="speaker-title">Director of Gov&#039;t Affairs</em>,
+    <span class="speaker-organization">Insights Association</span>
+  </address>
+</li><li  class="field-item list-item even">
+<address class="node node-person node--teaser-minimal node--teaser-minimal speaker session-speaker clearfix">
+  <strong class="speaker-name">Abby Devine</strong>,
+    <em class="speaker-title">Director of Government and Public Affairs</em>,
+    <span class="speaker-organization">Insights Association</span>
+  </address>
+</li></ul></div>
+  </article>
+</li>
+      </ul></div>    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <div class="view view-on-demand-video view-id-on_demand_video view-display-id-block_1 view-dom-id-66cccedc512a62d332484889c3c4710e">
+        
+  
+  
+      <div class="view-content">
+        <div>
+      
+          <a href="http://www.insightsassociation.org/advance-career/prc/opportunities/ondemand" class="button button--large button--arrow button--green">See All 90</a>    </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>    </div>
+  
+  
+</div>  </div>
+</div>
+              </div>
+            </div>
+            <div id="block-mra-find-partner-search" class="block block-mra-find-partner clearfix">
+        <h2 class="block-title partner-search-title icon-partner-search">Find a Research Partner</h2>
+    
+  <div  class="block-content block-content">
+    <form action="/" method="post" id="mra-find-partner-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-partner-search">
+  <label class="form-item-label" for="edit-partner-search">Search </label>
+ <input placeholder="Search" type="text" id="edit-partner-search" name="partner_search" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<button class="button--large button--blue-dark button--arrow form-submit" type="submit" id="edit-submit--2" name="op">Search Directory</button><input type="hidden" name="form_build_id" value="form-B62j0uw4Xq3B2RasvjnWAAQZmF8_tkTNwXY3XsjeetE" />
+<input type="hidden" name="form_id" value="mra_find_partner_form" />
+</div></form>  </div>
+</div>
+          </div>
+        </div>
+
+      <div id="main-content" class="clearfix">
+
+        
+        <div id="content">
+
+
+          <div class="l--sidebar-after l--constrained">
+            <div class="l-primary">
+              <div id="block-views-stay-informed-block" class="block block-views">
+        <h2 class="block-title block-title--large">Stay Informed</h2>
+    
+  <div  class="block-content block-content">
+    <div class="view view-stay-informed view-id-stay_informed view-display-id-block view-dom-id-a41fbb771cc6ebd7320ea47859243c00">
+        
+  
+  
+      <div class="view-content">
+      <ul class="list--content">
+      <li class="list-item">
+<article class="node node-article node-promoted node--teaser-simple node--teaser-simple article--simple clearfix" about="/article/fcc-should-establish-database-reassigned-wireless-numbers-tcpa-compliance" typeof="sioc:Item foaf:Document">
+        <figure class="article-image"><img typeof="foaf:Image" src="http://www.insightsassociation.org/sites/default/files/article_image/mobile-robin_ayoub_2.jpg" width="960" height="640" alt="cell phone" /></figure>
+    <div class="article-content">
+          <div class="article-date">August 29, 2017</div>
+        <h2 class="article-title"><a href="/article/fcc-should-establish-database-reassigned-wireless-numbers-tcpa-compliance">FCC Should Establish Database of Reassigned Wireless Numbers for TCPA Compliance</a></h2>
+        <div class="article-body"><p>The Federal Commnucations Commission (FCC) should establish a database of reassigned cell phone numbers to improve TCPA compliance by dialers and telephone sample providers, according to a leading research trade association.</p></div>
+    
+        <div class="article-tags"><a href="/stay-informed/news/government-affairs">Government Affairs</a></div>
+      </div>
+</article>
+</li>
+      <li class="list-item">
+<article class="node node-article node-promoted node--teaser-simple node--teaser-simple article--simple clearfix" about="/article/cirq-announces-iso-certifications-lightspeed-health" typeof="sioc:Item foaf:Document">
+        <figure class="article-image"><img typeof="foaf:Image" src="http://www.insightsassociation.org/sites/default/files/article_image/lh.png" width="350" height="145" alt="" /></figure>
+    <div class="article-content">
+          <div class="article-date">August 28, 2017</div>
+        <h2 class="article-title"><a href="/article/cirq-announces-iso-certifications-lightspeed-health"> CIRQ Announces ISO Certifications of Lightspeed Health </a></h2>
+        <div class="article-body"><p>CIRQ, a subsidiary of the Insights Association, has awarded certification to Lightspeed Health for compliance to both the ISO 20252 Standard for Market, Opinion and Social Research and the ISO 26362 Standard (Access Panels in Market, Opinion and Social Research).</p></div>
+    
+        <div class="article-tags"><a href="/stay-informed/news/business">Business</a></div>
+      </div>
+</article>
+</li>
+      <li class="list-item">
+<article class="node node-article node-promoted node--teaser-simple node--teaser-simple article--simple clearfix" about="/article/hurricane-harvey-and-insights-association-members" typeof="sioc:Item foaf:Document">
+      <div class="article-content">
+          <div class="article-date">August 28, 2017</div>
+        <h2 class="article-title"><a href="/article/hurricane-harvey-and-insights-association-members">Hurricane Harvey and Insights Association Members</a></h2>
+        <div class="article-body"><p>Dear Colleagues,</p>
+<p>If you have been affected in any way by Hurricane Harvey, please know that the staff and your fellow members in the Insights Association are here to help you in any way they can.</p></div>
+    
+        <div class="article-tags"><a href="/stay-informed/news/business">Business</a></div>
+      </div>
+</article>
+</li>
+      <li class="list-item">
+<article class="node node-article node-promoted node--teaser-simple node--teaser-simple article--simple clearfix" about="/article/cirq-announces-iso-certification-icf" typeof="sioc:Item foaf:Document">
+        <figure class="article-image"><img typeof="foaf:Image" src="http://www.insightsassociation.org/sites/default/files/article_image/icf_logo.png" width="200" height="129" alt="" /></figure>
+    <div class="article-content">
+          <div class="article-date">August 24, 2017</div>
+        <h2 class="article-title"><a href="/article/cirq-announces-iso-certification-icf"> CIRQ Announces ISO Certification of ICF </a></h2>
+        <div class="article-body"><p>CIRQ, a subsidiary of the Insights Association, has awarded certification to <a href="https://www.icf.com/">ICF</a>, a global consulting and technology services provider, for compliance to the ISO 20252 Standard for Market, Opinion and Social Research.</p></div>
+    
+        <div class="article-tags"><a href="/stay-informed/news/business">Business</a></div>
+      </div>
+</article>
+</li>
+      <li class="list-item">
+<article class="node node-article node-promoted node--teaser-simple node--teaser-simple article--simple clearfix" about="/article/smarty-pants%C2%AE-expands-staff" typeof="sioc:Item foaf:Document">
+        <figure class="article-image"><img typeof="foaf:Image" src="http://www.insightsassociation.org/sites/default/files/article_image/haley_k.jpg" width="1699" height="1128" alt="" /></figure>
+    <div class="article-content">
+          <div class="article-date">August 23, 2017</div>
+        <h2 class="article-title"><a href="/article/smarty-pants%C2%AE-expands-staff">Smarty Pants® Expands Staff  </a></h2>
+        <div class="article-body"><p>Smarty Pants, a youth and family market research consultancy and Insights Association member company, announced that Haley Kaiser has joined the organization as an Insights Whiz.</p></div>
+    
+        <div class="article-tags"><a href="/stay-informed/news/business">Business</a></div>
+      </div>
+</article>
+</li>
+  </ul>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+              <div id="block-views-stay-informed-links-block" class="block block-views">
+        <h2 class="block-title">View More</h2>
+    
+  <div  class="block-content block-content">
+    <div class="view view-stay-informed-links view-id-stay_informed_links view-display-id-block view-dom-id-cdbc906782ffcd4f54dfc77c95b5c8d0">
+        
+  
+  
+      <div class="view-content">
+      <ul class="list--actions">
+      <li class="list-item">  
+          <a href="/stay-informed/load-more/8" class="Government Affairs term-8 load-more">Government Affairs</a>  </li>
+      <li class="list-item">  
+          <a href="/stay-informed/load-more/6" class="Business term-6 load-more">Business</a>  </li>
+      <li class="list-item">  
+          <a href="/stay-informed/load-more/7" class="Technique term-7 load-more">Technique</a>  </li>
+  </ul>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+            </div>
+            <div class="l-secondary">
+                              <div id="block-boxes-home-ads" class="block block-boxes block-boxes-simple">
+      
+  <div  class="block-content block-content">
+    <div id='boxes-box-home_ads' class='boxes-box'><div class="boxes-box-content"><p><a href="http://www.schlesingerassociates.com?utm=mra" target="_blank"><img src="http://assets.marketingresearch.org/ads/BannerAd_290x300.gif"></a></p>
+<p><a href="https://www.sisinternational.com?utm=mra" target="_blank"><img src="http://assets.marketingresearch.org/ads/sis-mra-2.jpg"></a></p>
+
+<p><a href="http://marketing.broad.msu.edu/msmr/part-time-program-course-schedule?utm=insightsassociation" target="_blank"><img src="http://assets.marketingresearch.org/ads/MSMR_Button_green.jpg"></a></p>
+
+<p><a href="http://www.bluebook.org?utm=ia" target="_blank"><img src="/sites/default/files/misc_files/bb_mainsite.gif"></a></p>
+
+</div></div>  </div>
+</div>
+                          </div>
+          </div>
+
+          
+
+          
+        </div>
+      </div>
+
+      
+  </div>
+
+    <div id="footer-content">
+    <div class="l--3-column l--constrained clearfix">
+      <div class="l-primary">
+        <div id="block-boxes-about-us" class="block block-boxes block-boxes-simple">
+        <h2 class="block-title">About Us</h2>
+    
+  <div  class="block-content block-content">
+    <div id='boxes-box-about_us' class='boxes-box'><div class="boxes-box-content"><div class="content-inner">
+<p>Inspired by the 2017 merger of CASRO and MRA, all Insights Association proceeds are invested in advocacy, education and other initiatives to directly support the marketing research and analytics community. The new Insights Association helps empower intelligent business decisions as a voice, resource and network advancing the companies and individuals engaged in this important work.</p>
+</div>
+<p><a class="button button--large button--arrow button--green" href="/about">More About Us</a></p>
+</div></div>  </div>
+</div>
+      </div>
+      <div class="l-secondary">
+        <div id="block-boxes-member-benefits" class="block block-boxes block-boxes-simple">
+        <h2 class="block-title">Membership Benefits</h2>
+    
+  <div  class="block-content block-content">
+    <div id='boxes-box-member_benefits' class='boxes-box'><div class="boxes-box-content"><div class="content-inner">
+<p><strong>Companies and individuals working in marketing research and analytics succeed when they have...</strong></p>
+<ul><li>The knowledge and skills to generate marketing insights and analytics effectively and efficiently</li>
+<li>The commitment to do so with integrity</li>
+<li>The support network to grow their business and careers in new directions</li>
+</ul><p><strong>The Insights Association supports its members to achieve these goals. </strong></p>
+</div>
+<p><a class="button button--large button--arrow button--green" href="/be-a-member">Learn How We Do It</a></p>
+</div></div>  </div>
+</div>
+      </div>
+      <div class="l-tertiary">
+        <div id="block-boxes-contact-us" class="block block-boxes block-boxes-simple">
+        <h2 class="block-title">Contact Us</h2>
+    
+  <div  class="block-content block-content">
+    <div id='boxes-box-contact_us' class='boxes-box'><div class="boxes-box-content"><div class="content-inner"><div class="adr"><div class="street-address">1156 15th Street NW, Suite 302</div><span class="locality">Washington</span>, <abbr class="region" title="District of Columbia">DC</abbr> <span class="postal-code">20005</span></div><div class="tel"><a href="tel: (202) 800-2545">202.800.2545</a></div>
+
+<div class="adr" style="margin-top:10px;:><div class="street-address">170 North Country Road, Suite 4 </div><span class="locality">Port Jefferson</span>, <abbr class="region" title="New York">NY</abbr> <span class="postal-code">11777</span></div><div class="tel"><a href="tel: (631) 928-6954">202.800.2545</a></div>
+
+<ul class="nav nav--social"><li><a class="icon-social--linkedin" href="https://www.linkedin.com/groupInvitation?groupID=39871">LinkedIn</a></li><li><a class="icon-social--twitter" href="https://twitter.com/insightsmrx">Twitter</a></li><li><a class="icon-social--facebook" href="https://www.facebook.com/insightsassociation/">Facebook</a></li></ul></div>
+
+<!--<p><a class="button button--large button--arrow button--green" href="/about/contact">Contact Us</a>-->
+
+<script type="text/javascript">
+    adroll_adv_id = "US3KX4DDEJBZVNKNPWNTRU";
+    adroll_pix_id = "MWGJQ4QA2FADDAUHNNT4CV";
+    /* OPTIONAL: provide email to improve user identification */
+    /* adroll_email = "username@example.com"; */
+    (function () {
+        var _onload = function(){
+            if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
+            if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {window.addEventListener('load', _onload, false);}
+        else {window.attachEvent('onload', _onload)}
+    }());
+</script></div></div>  </div>
+</div>
+      </div>
+    </div>
+  </div>
+
+
+<div id="footer">
+  <div class="l--constrained footer-inner">
+    <div class="footer-branding branding--small">
+      <a href="/" title="Home" rel="home" class="branding-link active"><img src="/sites/all/themes/mra/insights_logo--dark.svg" alt="Insights Association"/></a>    </div>
+    <ul id="footer-menu" class="nav nav--footer"><li class="menu-491 nav-item first"><a href="/about/faq" title="" class="nav-link">FAQs</a></li>
+<li class="menu-4440 nav-item"><a href="/privacy-policy" title="" class="nav-link">Privacy Policy</a></li>
+<li class="menu-492 nav-item last"><a href="/media" title="" class="nav-link">Media</a></li>
+</ul>    <p class="copyright footer-copyright">&copy; Insights Association 2017</p>
+  </div>
+</div>
+
+
+</div>
+
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (mainNav.hasOwnProperty("menuBackground")) {
+      mainNav.menuBackground();
+    }
+//--><!]]>
+</script>
+
+    <!-- Google Code for Remarketing Tag -->
+  <script type="text/javascript">
+  /* <![CDATA[ */
+  var google_conversion_id = 943419490;
+  var google_custom_params = window.google_tag_params;
+  var google_remarketing_only = true;
+  /* ]]> */
+  </script>
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+  </script>
+  <noscript>
+  <div style="display:inline;">
+  <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/943419490/?value=0&guid=ON&script=0"/>
+  </div>
+  </noscript>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2a94147a1b","applicationID":"5459646","transactionName":"MlNWYxFTCEcDW01dWgsZYUUKHQ9aBl1BGkUNRg==","queueTime":0,"applicationTime":108,"atts":"HhRVFVlJG0k=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

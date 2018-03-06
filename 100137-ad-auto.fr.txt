@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="title" content="AD, entretien et réparation auto - Devis et rendez-vous en ligne"/>
+<meta name="description" content="Réseau AD, plus de 2 000 garages et carrosseries en France au meilleur prix - Faites entretenir votre véhicule par des professionnels multimarques"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+<title>AD, entretien et réparation auto - Devis et rendez-vous en ligne</title>
+<link rel="alternate" href="http://m.ad-auto.fr/"/>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD9mr0ucOehF6Yi3cTmWWvZXced76u8KSs"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="/css/reseau_refonte.1.min.css"/>
+<script type="text/javascript">window.RY=function(e){var t=["identify","track","trackLink","trackForm","transaction","page"];var n="realytics";var r=function(e){return!!(e&&(typeof e=="function"||typeof e=="object"))};var i=function(e,t){return function(){var n=Array.prototype.slice.call(arguments);if(!e[t])e[t]=[];e[t].push(n?n:[]);if(!e["_q"])e["_q"]=[];e["_q"].push(t)}};var s=function(r){for(var s=0;s<t.length;s++){var o=t[s];if(r)e[r][o]=i(e._q[r],o);else e[o]=e[n][o]=i(e._q[n],o)}};var o=function(t,r,i){var o=t?t:n;if(!e[o])e[o]={};if(!e._q[o])e._q[o]={};if(r)e._q[o]["init"]=[[r,i?i:null]];s(t)};if(!e._v){if(!e._q){e._q={};o(null,null,null)}e.init=function(e,n){var i=n?r(n)?n["name"]?n["name"]:null:n:null;if(i&&t)for(var s=0;s<t.length;s++)if(i==t[s]||i=="init")return;o(i,e,r(n)?n:null);var u=function(e){var t=document.createElement("script");t.type="text/javascript";t.async=true;t.src=("https:"==document.location.protocol?"https://":"http://")+e;var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)};u("i.realytics.io/tc.js?cb="+(new Date).getTime());u("dcniko1cv0rz.cloudfront.net/realytics-xd-1.2.min.js")}}return e}(window.RY||{});RY.init("ry-kj34qqz5",{xdm:true});RY.page();</script>
+<script>dataLayer=[{'pageName':'AD, + de 2000 garages et carrosseries en France - Devis et rdv en ligne pour entretien et réparation toutes marques de véhicules','pageCategory':'generic','idClient':'','cpClient':'','civClient':'','villeClient':''}];</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NHKWX4');</script>
+</head>
+<body class="ad-home">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHKWX4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="cookie_notice" data-chemin=".ad.fr">
+<div class="container">
+<div class="row">
+<div class="col s12">
+<p>Ce site utilise des cookies pour vous proposer une meilleure expérience utilisateur.</p>
+<a href="/mentions-legales" title="En savoir plus">En savoir plus</a>
+<a class="closer" title="ok">ok</a>
+</div>
+</div>
+</div>
+</div>
+<style>@media only screen and (max-width:719px){nav#index-header .nav-wrapper .menu-lateral{top:74px}.side-nav{top:74px}}@media (min-width:719px) and (max-width:1023px){.dm-tablet{padding-top:38px}nav#index-header .nav-wrapper .menu-lateral{top:38px}.side-nav{top:38px}}</style>	<nav id="index-header" class="white" role="heading">
+<div class="nav-wrapper container">
+<a href="/" class="brand-logo" alt="Site des réseaux de Garages et Carrosseries AD">
+<span>La bonne idée pour l'entretien de votre auto</span>
+</a>
+<div class="links">
+<ul class="nav-header">
+<li class="mobilite-1024"><a href="/reparateur-auto" class="link-s-garage-b" onClick="_gaq.push(['_trackEvent', 'Trouver un garage NAV - HP', 'Click']);"><span>Tous <br>les garages</span></a></li>
+<li class="mobilite-720"><a href="/contact" class="link-xl-contact-b"><span>Contact</span></a></li>
+<li class="mobilite-1024"><a href="/contact" class="link-s-contact-b"><span>Nous contacter</span></a></li>
+</ul>
+</div>
+<div class="form-search">
+<div>
+<input id="code-postal-data" type="text" class="numeric" value="" placeholder="" style="display:none">
+<input id="code-postal" type="text" value="" class="code-postal form-text required validate numeric" placeholder="Recherche garage (Code postal)" autocomplete="off">
+<div class="loupe-container">
+<span class="hide-on-med-and-up">garage</span>
+<a href="/reparateur-auto" id="pictoSearchGarage" class="link-xl-loupe-b">Rechercher</a>
+<input id="ville-place_id-header" type="hidden" value=""/>
+</div>
+</div>
+</div>
+<div class="menu-lateral">
+<a href="#" data-activates="nav-mobile" class="button-collapse button-menu">Menu</a>
+</div>
+<ul id="nav-mobile" class="side-nav collapsible">
+<li class="entete">
+<a href="/" class="button-menu"><img src="/images/refonte/logo/AD-logo-h70.png" alt="" class="logo"/></a>
+<img src="/images/refonte/__pictos/close.png" id="close-menu" alt=""/>
+</li>
+<li class="nav-1"><a href="/contact" class="link-s-contact-b">Nous contacter</a></li>
+<li class="nav-1"><a href="/reparateur-auto">Trouver un garage</a></li>
+<li class="nav-3">
+<div class="collapsible-header"><a href="#">Réparation mécanique</a></div>
+<div class="collapsible-body">
+<ul>
+<li><a class="link-s-moteur" href="/reseau/ad-auto/prestation/allumage-et-gestion-moteur" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘allumage-et-gestion-moteur'});">Allumage et gestion moteur</a></li>
+<li><a class="link-s-pneumatique" href="/reseau/ad-auto/prestation/pneumatiques" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘pneumatiques'});">Pneumatiques</a></li>
+<li><a class="link-s-" href="/reseau/ad-auto/prestation/entretien-auto-revision-vidange" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘entretien-auto-revision-vidange'});">Entretien Auto - Révision Vidange </a></li>
+<li><a class="link-s-" href="/reseau/ad-auto/prestation/freinage-disques-plaquettes" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘freinage-disques-plaquettes'});">Freinage - Disques &amp; Plaquettes</a></li>
+<li><a class="link-s-distribution" href="/reseau/ad-auto/prestation/distribution" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘distribution'});">Distribution</a></li>
+<li><a class="link-s-electronique" href="/reseau/ad-auto/prestation/diagnostic-electronique" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘diagnostic-electronique'});">Diagnostic électronique</a></li>
+<li><a class="link-s-echappement" href="/reseau/ad-auto/prestation/echappement" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘echappement'});">Echappement</a></li>
+<li><a class="link-s-amortisseur" href="/reseau/ad-auto/prestation/amortisseurs" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘amortisseurs'});">Amortisseurs</a></li>
+<li><a class="link-s-embrayage" href="/reseau/ad-auto/prestation/embrayage" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘embrayage'});">Embrayage</a></li>
+<li><a class="link-s-batterie" href="/reseau/ad-auto/prestation/batterie-alternateur-demarreur" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘batterie-alternateur-demarreur'});">Batterie - Alternateur - Démarreur</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-3">
+<div class="collapsible-header"><a href="#">Réparation carrosserie</a></div>
+<div class="collapsible-body">
+<ul>
+<li><a class="link-s-reparation-carrosserie-rapide" href="/reseau/ad-auto/prestation/prestations-carrosserie-rapide" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-carrosserie', 'sous-lien': ‘prestations-carrosserie-rapide'});">Prestations carrosserie rapide</a></li>
+<li><a class="link-s-pare-brise-vitrage" href="/reseau/ad-auto/prestation/pare-brise-vitrage" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-carrosserie', 'sous-lien': ‘pare-brise-vitrage'});">Pare brise - Vitrage</a></li>
+<li><a class="link-s-climatisation" href="/reseau/ad-auto/prestation/climatisation" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-carrosserie', 'sous-lien': ‘climatisation'});">Climatisation</a></li>
+<li><a class="link-s-optique" href="/reseau/ad-auto/prestation/renovation-optique" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-carrosserie', 'sous-lien': ‘renovation-optique'});">Rénovation Optique</a></li>
+<li><a class="link-s-renovation-plastique" href="/reseau/ad-auto/prestation/reparation-renovation-plastique" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-carrosserie', 'sous-lien': ‘reparation-renovation-plastique'});">Réparation &amp; rénovation plastique</a></li>
+<li><a class="link-s-reparation-carrosserie" href="/reseau/ad-auto/prestation/reparation-carrosserie" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-carrosserie', 'sous-lien': ‘reparation-carrosserie'});">Réparation carrosserie</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-3">
+<div class="collapsible-header"><a href="#">Ventes Véhicules</a></div>
+<div class="collapsible-body">
+<ul>
+<li><a class="link-s-particuliers" href="/ad-particuliers" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': 'ad-particuliers'});">Véhicules Particuliers</a></li>
+<li><a class="link-s-utilitaires" href="/ad-utilitaires" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': 'ad-utilitaires'});">Véhicules Utilitaires</a></li>
+<li><a class="link-s-reprises" href="/ad-auto-reprise" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': 'ad-reprise'});">Reprise Cash</a></li>
+<li><a class="link-s-occasions" href="/annonces-vehicules" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': 'occasions'});">Occasions</a></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</nav>
+<script type="text/javascript">var ville_session='';function initializeAutocomplete(id){element=document.getElementById(id);if(element){var options={types:['(regions)'],componentRestrictions:{country:'fr'},placeIdOnly:true};var autocomplete=new google.maps.places.Autocomplete(element,options);google.maps.event.addListener(autocomplete,'place_changed',onPlaceChanged);}}
+function initializeAutocomplete2(id){element_ville=document.getElementById(id);if(element_ville){var options={types:['(regions)'],componentRestrictions:{country:'fr'},placeIdOnly:true};var autocomplete=new google.maps.places.Autocomplete(element_ville,options);google.maps.event.addListener(autocomplete,'place_changed',onPlaceChanged2);}}
+function initializeAutocomplete3(id){element_depart=document.getElementById(id);if(element_depart){var options={types:['(regions)'],componentRestrictions:{country:'fr'},placeIdOnly:true};var autocomplete=new google.maps.places.Autocomplete(element_depart,options);google.maps.event.addListener(autocomplete,'place_changed',onPlaceChanged3);}}
+function onPlaceChanged(){var code_postale_place='';var place=this.getPlace();if(document.getElementById('ville-place_id')){document.getElementById('ville-place_id').value=place.place_id;}
+document.getElementById('ville-place_id-header').value=place.place_id;var ville=place.formatted_address;for(var i in place.address_components){if(place.address_components[i].types[0]=='postal_code'){code_postale_place=place.address_components[i].short_name;}
+else if(place.address_components[i].types[0]!='locality'){continue;}
+else{ville=code_postale_place+' '+place.address_components[i].long_name;}}
+if(ville!=undefined){element.value=ville;}}
+function onPlaceChanged2(){var code_postale_place='';var place=this.getPlace();var ville=place.formatted_address;for(var i in place.address_components){if(place.address_components[i].types[0]=='postal_code'){code_postale_place=place.address_components[i].short_name;}
+else if(place.address_components[i].types[0]!='locality'){continue;}
+else{ville=code_postale_place+' '+place.address_components[i].long_name;}}
+if(ville!=undefined){element_ville.value=ville;element_code_postal=document.getElementById('code_postale_place');element_code_postal.value=code_postale_place;}}
+function onPlaceChanged3(){var place=this.getPlace();var ville=place.formatted_address;for(var i in place.address_components){if(place.address_components[i].types[0]!='locality'){continue;}
+else{ville=place.address_components[i].long_name;}}
+if(ville!=undefined){element_depart.value=ville;}}
+google.maps.event.addDomListener(window,'load',function(){initializeAutocomplete('code-postal-data');});</script>	<div id="index-nav">
+<div class="container">
+<nav role="navigation">
+<ul class="nav-main collapsible">
+<li class="nav-rep-mecanique">
+<div class="collapsible-header">Réparation mécanique</div>
+<div class="collapsible-body">
+<div class="container links-2cols arrow">
+<div class="row">
+<ul class="_2cols">
+<li><a class="link-s-moteur" href="/reseau/ad-auto/prestation/allumage-et-gestion-moteur" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘allumage-et-gestion-moteur'});">Allumage et gestion moteur</a></li>
+<li><a class="link-s-pneumatique" href="/reseau/ad-auto/prestation/pneumatiques" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘pneumatiques'});">Pneumatiques</a></li>
+<li><a class="link-s-" href="/reseau/ad-auto/prestation/entretien-auto-revision-vidange" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘entretien-auto-revision-vidange'});">Entretien Auto - Révision Vidange </a></li>
+<li><a class="link-s-" href="/reseau/ad-auto/prestation/freinage-disques-plaquettes" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘freinage-disques-plaquettes'});">Freinage - Disques &amp; Plaquettes</a></li>
+<li><a class="link-s-distribution" href="/reseau/ad-auto/prestation/distribution" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘distribution'});">Distribution</a></li>
+<li><a class="link-s-electronique" href="/reseau/ad-auto/prestation/diagnostic-electronique" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘diagnostic-electronique'});">Diagnostic électronique</a></li>
+</ul><ul class="_2cols">	<li><a class="link-s-echappement" href="/reseau/ad-auto/prestation/echappement" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘echappement'});">Echappement</a></li>
+<li><a class="link-s-amortisseur" href="/reseau/ad-auto/prestation/amortisseurs" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘amortisseurs'});">Amortisseurs</a></li>
+<li><a class="link-s-embrayage" href="/reseau/ad-auto/prestation/embrayage" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘embrayage'});">Embrayage</a></li>
+<li><a class="link-s-batterie" href="/reseau/ad-auto/prestation/batterie-alternateur-demarreur" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-mecanique', 'sous-lien': ‘batterie-alternateur-demarreur'});">Batterie - Alternateur - Démarreur</a></li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-rep-carrosserie">
+<div class="collapsible-header">Réparation carrosserie</div>
+<div class="collapsible-body">
+<div class="container links-1col arrow">
+<div class="row">
+<ul>
+<li><a class="link-s-reparation-carrosserie-rapide" href="/reseau/ad-auto/prestation/prestations-carrosserie-rapide" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-carrosserie', 'sous-lien': ‘prestations-carrosserie-rapide'});">Prestations carrosserie rapide</a></li>
+<li><a class="link-s-pare-brise-vitrage" href="/reseau/ad-auto/prestation/pare-brise-vitrage" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-carrosserie', 'sous-lien': ‘pare-brise-vitrage'});">Pare brise - Vitrage</a></li>
+<li><a class="link-s-climatisation" href="/reseau/ad-auto/prestation/climatisation" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-carrosserie', 'sous-lien': ‘climatisation'});">Climatisation</a></li>
+<li><a class="link-s-optique" href="/reseau/ad-auto/prestation/renovation-optique" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-carrosserie', 'sous-lien': ‘renovation-optique'});">Rénovation Optique</a></li>
+<li><a class="link-s-renovation-plastique" href="/reseau/ad-auto/prestation/reparation-renovation-plastique" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-carrosserie', 'sous-lien': ‘reparation-renovation-plastique'});">Réparation &amp; rénovation plastique</a></li>
+<li><a class="link-s-reparation-carrosserie" href="/reseau/ad-auto/prestation/reparation-carrosserie" onclick="dataLayer.push({'Event': 'menu', 'nomLien': 'reparation-carrosserie', 'sous-lien': ‘reparation-carrosserie'});">Réparation carrosserie</a></li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-vehicules-national">
+<div class="collapsible-header">Ventes Véhicules</div>
+<div class="collapsible-body">
+<div class="container links-1col arrow">
+<div class="row">
+<ul class="links">
+<li><a class="link-s-particuliers" href="/ad-particuliers" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': 'ad-particuliers'});">Véhicules Particuliers</a></li>
+<li><a class="link-s-utilitaires" href="/ad-utilitaires" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': 'ad-utilitaires'});">Véhicules Utilitaires</a></li>
+<li><a class="link-s-reprises" href="/ad-auto-reprise" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': 'ad-reprise'});">Reprise Cash</a></li>
+<li><a class="link-s-occasions" href="/annonces-vehicules" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': 'occasions'});">Occasions</a></li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="block_devis">
+<ul class="blockDevisSlider">
+<li>
+<a class="blokDevisUrl" href="https://www.ad.fr/promotion/promotion_forfait_malin_amortisseurs" name="button1" onclick="dataLayer.push({'Event': 'Caroussel Promotion', 'nomLien': 'https://www.ad.fr/promotion/promotion_forfait_malin_amortisseurs'});"></a>
+<div class="slide_content">
+<div class="container_logo">
+<div></div>
+</div>
+<div class="slide_titre">
+<p></p>
+</div>
+</div>
+<div>
+<img src="/uploads/1/image/new_home_prix_malins_amortisseurs_desktop.jpg" data-src-desktop="/uploads/1/image/new_home_prix_malins_amortisseurs_desktop.jpg" data-src-tablet="/uploads/1/image/new_home_prix_malins_amortisseurs_tablette.jpg" data-src-mobile="/uploads/1/image/new_home_prix_malins_amortisseurs_phone.jpg"/>
+</div>
+<div class="slider_text">
+<p>
+<span style="color: rgb(47, 47, 47);">* Prix valable pour une Peugeot 106 1,1L 60cv, BV-843-ST</span></p>
+</div>
+</li>
+<li>
+<a class="blokDevisUrl" href="https://www.ad.fr/promotion/promotion_forfait_malin_freinage_plaquettes" name="button1" onclick="dataLayer.push({'Event': 'Caroussel Promotion', 'nomLien': 'https://www.ad.fr/promotion/promotion_forfait_malin_freinage_plaquettes'});"></a>
+<div class="slide_content">
+<div class="container_logo">
+<div></div>
+</div>
+<div class="slide_titre">
+<p></p>
+</div>
+</div>
+<div>
+<img src="/uploads/1/image/new_home_prix_malins_freinage_desktop.jpg" data-src-desktop="/uploads/1/image/new_home_prix_malins_freinage_desktop.jpg" data-src-tablet="/uploads/1/image/forfaits_malins_freinage_plaquette_044.jpg" data-src-mobile="/uploads/1/image/new_home_prix_malins_freinage_phone.jpg"/>
+</div>
+<div class="slider_text">
+<p>
+<span helvetica="" style="color: rgb(47, 47, 47); font-family: Arial, ">* Prix valable pour une Peugeot 106 1,1L 60cv, BV-843-ST</span></p>
+</div>
+</li>
+<li>
+<a class="blokDevisUrl" href="https://www.ad.fr/promotion/promotion_forfait_malin_vidange" name="button1" onclick="dataLayer.push({'Event': 'Caroussel Promotion', 'nomLien': 'https://www.ad.fr/promotion/promotion_forfait_malin_vidange'});"></a>
+<div class="slide_content">
+<div class="container_logo">
+<div></div>
+</div>
+<div class="slide_titre">
+<p></p>
+</div>
+</div>
+<div>
+<img src="/uploads/1/image/new_home_prix_malins_vidange_desktop_v2_opt.jpg" data-src-desktop="/uploads/1/image/new_home_prix_malins_vidange_desktop_v2_opt.jpg" data-src-tablet="/uploads/1/image/new_home_prix_malins_vidange_tablette_v2_opt.jpg" data-src-mobile="/uploads/1/image/new_home_prix_malins_vidange_mobile_v2_opt.jpg"/>
+</div>
+<div class="slider_text">
+<p>
+<span helvetica="" style="color: rgb(47, 47, 47); font-family: Arial, ">* Prix valable pour une Peugeot 106 1,1L 60cv, BV-843-ST</span></p>
+<p>
+&nbsp;</p>
+</div>
+</li>
+<li>
+<a class="blokDevisUrl" href="https://www.ad.fr/promotion/promotion_forfait_malin_freinage" name="button1" onclick="dataLayer.push({'Event': 'Caroussel Promotion', 'nomLien': 'https://www.ad.fr/promotion/promotion_forfait_malin_freinage'});"></a>
+<div class="slide_content">
+<div class="container_logo">
+<div></div>
+</div>
+<div class="slide_titre">
+<p></p>
+</div>
+</div>
+<div>
+<img src="/uploads/1/image/new_home_prix_malins_freinage_plaquettes_desktop.jpg" data-src-desktop="/uploads/1/image/new_home_prix_malins_freinage_plaquettes_desktop.jpg" data-src-tablet="/uploads/1/image/new_home_prix_malins_freinage_plaquettes_tablette.jpg" data-src-mobile="/uploads/1/image/new_home_prix_malins_freinage_plaquettes_phone.jpg"/>
+</div>
+<div class="slider_text">
+<p>
+<span style="color: rgb(47, 47, 47);">* Prix valable pour une Peugeot 106 1,1L 60cv, BV-843-ST</span></p>
+</div>
+</li>
+<li>
+<a class="blokDevisUrl" href="https://www.ad.fr/ad-particuliers" name="button1" onclick="dataLayer.push({'Event': 'Caroussel Promotion', 'nomLien': 'https://www.ad.fr/ad-particuliers'});"></a>
+<div class="slide_content">
+<div class="container_logo">
+<div></div>
+</div>
+<div class="slide_titre">
+<p></p>
+</div>
+</div>
+<div>
+<img src="/uploads/biblio_centrale/image/bandeau-vn/ea_1500x600.jpg" data-src-desktop="/uploads/biblio_centrale/image/bandeau-vn/ea_1500x600.jpg" data-src-tablet="/uploads/biblio_centrale/image/bandeau-vn/ea_750x500.jpg" data-src-mobile="/uploads/biblio_centrale/image/bandeau-vn/ea_470x500.jpg"/>
+</div>
+<div class="slider_text">
+</div>
+</li>
+</ul>
+<form method="post" action="https://devis.ad.fr/processForm/" id="formIdGarages">
+<div class="links-arrow">
+<a href="#" id="open-modal2" style="display: none;"></a>
+<div class="modal-bg2"></div>
+<div id="modal2" class="modal carte-grise">
+<div class="modal-content">
+<span class="modal-close2 ">&#10005;</span>
+<br/>
+<h4>
+Désolé, votre devis n'a pu être calculé. Veuillez réessayer ou contacter notre hotline au 01.69.79.87.91.
+</h4>
+</div>
+</div>
+<a href="#" id="open-modal-avertissement" style="display: none;"></a>
+<div class="modal-bg-avertissement"></div>
+<div id="modal-avertissement" class="modal carte-grise">
+<div class="modal-content">
+<span class="modal-close-avertissement">&#10005;</span>
+<br/>
+<h4>Veuillez remplir tous les champs afin de débuter votre demande de rendez-vous en ligne</h4>
+</div>
+</div>
+</div>
+<div class="block_devis_modals">
+<div class="links-arrow">
+<div id="select_prestation_modal" class="modal">
+<div class="modal-content">
+<span class="modal-close">&#10005;</span>
+<div class="row">
+<div class="col m12">
+<h4><span class="nbr-prestation-selectioner">0</span> Prestation sélectionnée</h4>
+</div>
+<div class="col m6 s12 leftBlock">
+<div class="col s12 modal_titre_categ">
+<h5>Prestation avec devis immédiat en ligne</h5>
+</div>
+<div class="col s12">
+<h6>COURROIE DE DISTRIBUTION</h6>
+<div>
+<label for="test0" class="cartgris_checkbox">
+<input id="test0" type="checkbox" data-codegamme="25" data-codessgamme="250101" value="Kit de distribution"/>
+<i></i>
+<span>Kit de distribution</span>
+</label>
+</div>
+</div>
+<div class="col s12">
+<h6>RÉVISION VIDANGE</h6>
+<div>
+<select class="choix-prestation browser-default">
+<option value="0">Choisir</option>
+<option data-codegamme="10" data-codessgamme="100101" value="Révision vidange – générale">Révision vidange – générale</option>
+<option data-codegamme="10" data-codessgamme="100301" value="Révision vidange – intermédiaire">Révision vidange – intermédiaire</option>
+</select>
+</div>
+</div>
+<div class="col s12">
+<h6>FREINAGE</h6>
+<div>
+<select class="choix-prestation browser-default">
+<option value="0">Choisir</option>
+<option data-codegamme="11" data-codessgamme="110202" value="Freinage – Disques et Plaquettes AR">Freinage – Disques et Plaquettes AR</option>
+<option data-codegamme="11" data-codessgamme="110201" value="Freinage – Disques et Plaquettes AV">Freinage – Disques et Plaquettes AV</option>
+<option data-codegamme="11" data-codessgamme="110203" value="Freinage – Disques et Plaquettes AV/AR">Freinage – Disques et Plaquettes AV/AR</option>
+<option data-codegamme="11" data-codessgamme="110102" value="Freinage – Plaquettes AR">Freinage – Plaquettes AR</option>
+<option data-codegamme="11" data-codessgamme="110101" value="Freinage – Plaquettes AV">Freinage – Plaquettes AV</option>
+<option data-codegamme="11" data-codessgamme="110103" value="Freinage – Plaquettes AV/AR">Freinage – Plaquettes AV/AR</option>
+</select>
+</div>
+</div>
+<div class="col s12">
+<h6>EMBRAYAGE</h6>
+<div>
+<select class="choix-prestation browser-default">
+<option value="0">Choisir</option>
+<option data-codegamme="24" data-codessgamme="240101" value="Kit d’embrayage">Kit d’embrayage</option>
+<option data-codegamme="24" data-codessgamme="240201" value="Kit d&#039;embrayage et Volant moteur">Kit d&#039;embrayage et Volant moteur</option>
+</select>
+</div>
+</div>
+<div class="col s12">
+<h6>AMORTISSEURS</h6>
+<div>
+<select class="choix-prestation browser-default">
+<option value="0">Choisir</option>
+<option data-codegamme="12" data-codessgamme="120103" value="Amortisseurs AV/AR">Amortisseurs AV/AR</option>
+<option data-codegamme="12" data-codessgamme="120102" value="Amortisseur AR">Amortisseur AR</option>
+<option data-codegamme="12" data-codessgamme="120101" value="Amortisseur AV">Amortisseur AV</option>
+</select>
+</div>
+</div>
+<div class="col s12">
+<h6>CLIMATISATION</h6>
+<div>
+<select class="choix-prestation browser-default">
+<option value="0">Choisir</option>
+<option data-codegamme="13" data-codessgamme="130301" value="Diagnostic climatisation">Diagnostic climatisation</option>
+<option data-codegamme="13" data-codessgamme="130101" value="Recharge climatisation">Recharge climatisation</option>
+<option data-codegamme="13" data-codessgamme="130201" value="Révision climatisation">Révision climatisation</option>
+</select>
+</div>
+</div>
+<div class="col s12">
+<h6>REMPLACEMENT DE FILTRE HABITACLE</h6>
+<div>
+<label for="test1" class="cartgris_checkbox">
+<input id="test1" type="checkbox" data-codegamme="19" data-codessgamme="190101" value="Remplacement filtre d&#039;habitacle"/>
+<i></i>
+<span>Remplacement filtre d&#039;habitacle</span>
+</label>
+</div>
+</div>
+<div class="col s12">
+<h6>ÉCHAPPEMENT</h6>
+<div>
+<label for="test2" class="cartgris_checkbox">
+<input id="test2" type="checkbox" data-codegamme="14" data-codessgamme="140201" value="Echappement – Silencieux arrière"/>
+<i></i>
+<span>Echappement – Silencieux arrière</span>
+</label>
+</div>
+</div>
+<div class="col s12">
+<h6>BATTERIE</h6>
+<div>
+<label for="test3" class="cartgris_checkbox">
+<input id="test3" type="checkbox" data-codegamme="15" data-codessgamme="150101" value="Remplacement batterie"/>
+<i></i>
+<span>Remplacement batterie</span>
+</label>
+</div>
+</div>
+<div class="col s12">
+<h6>RÉNOVATION PIÈCE CARROSSERIE</h6>
+<div>
+<select class="choix-prestation browser-default">
+<option value="0">Choisir</option>
+<option data-codegamme="31" data-codessgamme="310101" value="Rénovation – 1 élément carrosserie">Rénovation – 1 élément carrosserie</option>
+<option data-codegamme="31" data-codessgamme="310102" value="Rénovation – 2 éléments carrosserie">Rénovation – 2 éléments carrosserie</option>
+</select>
+</div>
+</div>
+<div class="col s12">
+<h6>RÉNOVATION PHARES</h6>
+<div>
+<label for="test4" class="cartgris_checkbox">
+<input id="test4" type="checkbox" data-codegamme="32" data-codessgamme="320102" value="Rénovation optique – 2 phares"/>
+<i></i>
+<span>Rénovation optique – 2 phares</span>
+</label>
+</div>
+</div>
+<div class="col s12">
+<h6>RÉNOVATION RÉTROVISEURS</h6>
+<div>
+<select class="choix-prestation browser-default">
+<option value="0">Choisir</option>
+<option data-codegamme="33" data-codessgamme="330101" value="Rénovation – 1 rétroviseur">Rénovation – 1 rétroviseur</option>
+<option data-codegamme="33" data-codessgamme="330102" value="Rénovation – 2 rétroviseurs">Rénovation – 2 rétroviseurs</option>
+</select>
+</div>
+</div>
+<div class="col s12">
+<h6>PARALLÉLISME</h6>
+<div>
+<select class="choix-prestation browser-default">
+<option value="0">Choisir</option>
+<option data-codegamme="16" data-codessgamme="160101" value="Parallélisme – Géométrie train AV">Parallélisme – Géométrie train AV</option>
+<option data-codegamme="16" data-codessgamme="160102" value="Parallélisme – Géométrie train AV/AR">Parallélisme – Géométrie train AV/AR</option>
+</select>
+</div>
+</div>
+<div class="col s12">
+<h6>INJECTEURS</h6>
+<div>
+<select class="choix-prestation browser-default">
+<option value="0">Choisir</option>
+<option data-codegamme="37" data-codessgamme="370101" value="Remplacement d&#039;un seul injecteur">Remplacement d&#039;un seul injecteur</option>
+<option data-codegamme="37" data-codessgamme="370102" value="Remplacement de tous les injecteurs">Remplacement de tous les injecteurs</option>
+</select>
+</div>
+</div>
+<div class="col s12">
+<h6>DIAGNOSTIC ÉLECTRONIQUE</h6>
+<div>
+<label for="test5" class="cartgris_checkbox">
+<input id="test5" type="checkbox" data-codegamme="28" data-codessgamme="280101" value="Diagnostic électronique"/>
+<i></i>
+<span>Diagnostic électronique</span>
+</label>
+</div>
+</div>
+<div class="col s12">
+<h6>DIAGNOSTIC SÉCURITÉ</h6>
+<div>
+<label for="test6" class="cartgris_checkbox">
+<input id="test6" type="checkbox" data-codegamme="29" data-codessgamme="290101" value="Diagnostic sécurité"/>
+<i></i>
+<span>Diagnostic sécurité</span>
+</label>
+</div>
+</div>
+<div class="col s12">
+<h6>REMPLACEMENT ET PURGE LIQUIDE DE FREIN</h6>
+<div>
+<label for="test7" class="cartgris_checkbox">
+<input id="test7" type="checkbox" data-codegamme="34" data-codessgamme="340101" value="Remplacement et purge liquide de frein"/>
+<i></i>
+<span>Remplacement et purge liquide de frein</span>
+</label>
+</div>
+</div>
+<div class="col s12">
+<h6>REMPLACEMENT ET PURGE LIQUIDE DE REFROIDISSEMENT</h6>
+<div>
+<label for="test8" class="cartgris_checkbox">
+<input id="test8" type="checkbox" data-codegamme="35" data-codessgamme="350101" value="Remplacement et purge liquide de refroidissement"/>
+<i></i>
+<span>Remplacement et purge liquide de refroidissement</span>
+</label>
+</div>
+</div>
+<div class="col s12">
+<h6>VANNE EGR</h6>
+<div>
+<label for="test9" class="cartgris_checkbox">
+<input id="test9" type="checkbox" data-codegamme="17" data-codessgamme="170101" value="Vanne EGR – Remplacement Vanne EGR"/>
+<i></i>
+<span>Vanne EGR – Remplacement Vanne EGR</span>
+</label>
+</div>
+</div>
+<input id="prestation_name" type="hidden" name="prestation"/>
+</div>
+<div class="col m6 s12 rightBlock">
+<div class="col s12">
+<div class="modal_titre_categ">
+<h5>Prestations sans devis immédiat en ligne</h5>
+</div>
+<p>Le devis sera établi par le garage que vous avez choisi pour le rendez-vous.</p>
+<hr/>
+</div>
+<div class="col s12">
+<h6>JE NE CONNAIS PAS MA PRESTATION</h6>
+<div>
+<label for="sans0" class="cartgris_checkbox">
+<input id="sans0" type="checkbox" data-codegamme="50" data-codessgamme="500101" value="Prendre rendez-vous"/>
+<i></i>
+<span>Prendre rendez-vous</span>
+</label>
+</div>
+<h6>RENDEZ-VOUS SANS DEVIS</h6>
+<div>
+<label for="sans1" class="cartgris_checkbox">
+<input id="sans1" type="checkbox" data-codegamme="51" data-codessgamme="510101" value="Alternateur"/>
+<i></i>
+<span>Alternateur</span>
+</label>
+</div>
+<div>
+<label for="sans2" class="cartgris_checkbox">
+<input id="sans2" type="checkbox" data-codegamme="52" data-codessgamme="520101" value="Démarreur"/>
+<i></i>
+<span>Démarreur</span>
+</label>
+</div>
+<div>
+<label for="sans3" class="cartgris_checkbox">
+<input id="sans3" type="checkbox" data-codegamme="59" data-codessgamme="590101" value="Changement bougies de préchauffage ou d&#039;allumage"/>
+<i></i>
+<span>Changement bougies de préchauffage ou d&#039;allumage</span>
+</label>
+</div>
+<div>
+<label for="sans4" class="cartgris_checkbox">
+<input id="sans4" type="checkbox" data-codegamme="63" data-codessgamme="630101" value="Remplacement injecteur"/>
+<i></i>
+<span>Remplacement injecteur</span>
+</label>
+</div>
+<div>
+<label for="sans5" class="cartgris_checkbox">
+<input id="sans5" type="checkbox" data-codegamme="53" data-codessgamme="530101" value="Triangle de suspensions"/>
+<i></i>
+<span>Triangle de suspensions</span>
+</label>
+</div>
+<div>
+<label for="sans6" class="cartgris_checkbox">
+<input id="sans6" type="checkbox" data-codegamme="75" data-codessgamme="750101" value="Rotule direction ou suspension"/>
+<i></i>
+<span>Rotule direction ou suspension</span>
+</label>
+</div>
+<div>
+<label for="sans7" class="cartgris_checkbox">
+<input id="sans7" type="checkbox" data-codegamme="54" data-codessgamme="540101" value="Biellette"/>
+<i></i>
+<span>Biellette</span>
+</label>
+</div>
+<div>
+<label for="sans8" class="cartgris_checkbox">
+<input id="sans8" type="checkbox" data-codegamme="55" data-codessgamme="550101" value="Cardan ou soufflet de cardan"/>
+<i></i>
+<span>Cardan ou soufflet de cardan</span>
+</label>
+</div>
+<div>
+<label for="sans9" class="cartgris_checkbox">
+<input id="sans9" type="checkbox" data-codegamme="56" data-codessgamme="560101" value="Courroie accessoires"/>
+<i></i>
+<span>Courroie accessoires</span>
+</label>
+</div>
+<div>
+<label for="sans10" class="cartgris_checkbox">
+<input id="sans10" type="checkbox" data-codegamme="58" data-codessgamme="580101" value="Roulement"/>
+<i></i>
+<span>Roulement</span>
+</label>
+</div>
+<div>
+<label for="sans11" class="cartgris_checkbox">
+<input id="sans11" type="checkbox" data-codegamme="60" data-codessgamme="600101" value="Remplacement optique phare/feu"/>
+<i></i>
+<span>Remplacement optique phare/feu</span>
+</label>
+</div>
+<div>
+<label for="sans12" class="cartgris_checkbox">
+<input id="sans12" type="checkbox" data-codegamme="61" data-codessgamme="610101" value="Remplacement ampoule"/>
+<i></i>
+<span>Remplacement ampoule</span>
+</label>
+</div>
+<div>
+<label for="sans13" class="cartgris_checkbox">
+<input id="sans13" type="checkbox" data-codegamme="65" data-codessgamme="650101" value="Remplacement thermostat ou calorstat"/>
+<i></i>
+<span>Remplacement thermostat ou calorstat</span>
+</label>
+</div>
+<div>
+<label for="sans14" class="cartgris_checkbox">
+<input id="sans14" type="checkbox" data-codegamme="66" data-codessgamme="660101" value="Remplacement mâchoire ou tambours arrière"/>
+<i></i>
+<span>Remplacement mâchoire ou tambours arrière</span>
+</label>
+</div>
+<div>
+<label for="sans15" class="cartgris_checkbox">
+<input id="sans15" type="checkbox" data-codegamme="67" data-codessgamme="670101" value="Ventilateur"/>
+<i></i>
+<span>Ventilateur</span>
+</label>
+</div>
+<div>
+<label for="sans16" class="cartgris_checkbox">
+<input id="sans16" type="checkbox" data-codegamme="70" data-codessgamme="700101" value="Contrôle circuit de charge"/>
+<i></i>
+<span>Contrôle circuit de charge</span>
+</label>
+</div>
+<div>
+<label for="sans17" class="cartgris_checkbox">
+<input id="sans17" type="checkbox" data-codegamme="71" data-codessgamme="710101" value="Traitement anti bactérien du circuit de climatisation"/>
+<i></i>
+<span>Traitement anti bactérien du circuit de climatisation</span>
+</label>
+</div>
+<div>
+<label for="sans18" class="cartgris_checkbox">
+<input id="sans18" type="checkbox" data-codegamme="72" data-codessgamme="720101" value="Remplacement filtre d&#039;habitacle"/>
+<i></i>
+<span>Remplacement filtre d&#039;habitacle</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="cartgris_modal" class="modal">
+<div class="modal-content">
+<span class="modal-close">&#10005;</span>
+<div class="row">
+<div class="col m12">
+<h5>Identifiez votre véhicule avec votre carte grise</h5>
+</div>
+<div class="row typemin_modal carte_warning_input">
+<div class="col s12 m6 l4">
+<span>TYPE MINE</span>
+<label for="">Suite de chiffres et lettres (longueur variable) *</label>
+<input type="text" name="rechercheImmatriculation[mine2]" id="input-field-mine2" placeholder="Exemple : 5414AB377" value=""/>
+<span class="carte_warning">Pas de résultat avec ces indications</span>
+</div>
+<div class="col s12 m6 l4">
+<span>DATE 1ère MISE EN CIRCULATION</span>
+<label for="">Au format JJ/MM/AAAA</label>
+<input type="text" name="rechercheImmatriculation[date_immat]" id="input-field-first-immat" placeholder="Exemple : 18/10/2009" value=""/>
+</div>
+<div class="col s12 m12 l4">
+<a class="btn-large waves-effect waves-light" id="btn-large-carte">OK</a>
+</div>
+</div>
+</div>
+<div class="row cartgris_result">
+<div class="col s12">
+<span class="nb_result">1 Result</span>
+<div class="row catrgris_result">
+<div class="col m12 s12 l9">
+<p>Opel Kadett 1.2 GT - 5 portes Berline Lorem ipsum </p>
+</div>
+<div class="col m12 s12 l3 btn_container">
+<a class="btn-large waves-effect waves-light">Sélectionner</a>
+</div>
+</div>
+</div>
+</div>
+<div class="row blockImage_cartgris">
+<div class="col m6 s12">
+<label for="">Avant 2014</label>
+<img src="/images/refonte/cartgris.jpg" alt="">
+</div>
+<div class="col m6 s12">
+<label for="">Apres 2014</label>
+<img src="/images/refonte/cartgris2.jpg" alt="">
+</div>
+</div>
+<div class="row">
+<p>
+<span>* A propos du TYPE MINE (Code national d'identification du type - CNIT - depuis 1995)</span>
+Si la carte grise de votre véhicule a été émise avant 2004 il est noté dans la zone «
+TYPE »
+Si la carte grise de votre véhicule a été émise après 2004 il est noté dans la zone «
+(D.2.1) »
+<span>Attention le type mine exact est parfois précédé des lettres correspondant à la marque du véhicule, qu'il ne faut pas indiquer ici..</span>
+Exemple pour une Renault :
+MRE5414AB377 (MRE = Marque Renault)
+<span>Le type mine est donc 5414AB377</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row btn-valider_container">
+<div class="btn-valider">
+<a class="btn-large waves-effect waves-light">Valider</a>
+</div>
+</div>
+<div class="row">
+<div class="container">
+<div class="block_devis_content">
+<input type="hidden" id="urlretour" name="urlretour" value=""/>
+<h2 class="devis-bloc-title">DEVIS GRATUIT INSTANTANÉ* ET RENDEZ-VOUS EN LIGNE</h2>
+<div class="row">
+<div class="col s12 m3">
+<div><span class="bloc-devis-text">Choisissez votre prestation</span></div>
+<div class="input-field">
+<div id="select_prestation" class="select_prestation">
+<span class="select_prestation_text">Choisir</span>
+<span class="picto_tria"></span>
+</div>
+<input type="hidden" id="prestation-choix" name="rechercheImmatriculation[prestation-choix]" value="">
+<input type="hidden" id="detail-prestation" name="rechercheImmatriculation[detail-prestation]" value="">
+<input type="hidden" id="type_ident" name="rechercheImmatriculation[type_ident]" value="">
+</div>
+</div>
+<div class="col s12 m3 bloc_immatri">
+<div>
+<label for="immat_radio" class="radiobox">
+<input id="immat_radio" type="radio" name="min_immat" checked>
+<i></i>
+<span>Immatriculation</span>
+</label>
+<label for="cartgris_radio" class="radiobox">
+<input id="cartgris_radio" type="radio" name="min_immat">
+<i></i>
+<span>Carte grise</span>
+</label>
+<label for="modele_radio" class="radiobox" style="display: none">
+<input id="modele_radio" type="radio" name="min_immat">
+<i></i>
+<span>Modèle</span>
+</label>
+</div>
+<div class="input-field input-field-euro" id="devis-immatriculation">
+<input type="text" id="input-field-2" name="rechercheImmatriculation[immatriculation]" value="" placeholder="ex : AB322CA"/>
+<input type="text" name="rechercheImmatriculation[type_mine]" id="input-field-type_mine" placeholder="Saisissez le type «mine»" class="hide" value=""/>
+</div>
+</div>
+<div class="col s12 m3 lieu-col">
+<div><span class="bloc-devis-text">Indiquez un lieu</span></div>
+<div class="input-field">
+<input id="input-field-3-data" type="text" value="" placeholder="" style="display:none" class="numeric">
+<input type="text" id="input-field-3" value="" name="rechercheImmatriculation[code_postal]" placeholder="CP" autocomplete="off" class="numeric"/>
+</div>
+</div>
+<div class="col s12 m3 btn-price">
+<div class="input-field input-field-submit">
+<input type="hidden" name="rechercheImmatriculation[code_postale_submitted]" id="code_postale_place" value="">
+<input type="hidden" name="rechercheImmatriculation[ville]" id="ville_place" value="">
+<input type="hidden" name="formname" value="rechercheImmatriculation">
+<a class="btn-large waves-effect waves-light" id="btn-large-imm" onclick="dataLayer.push({'Event': 'menuHp', 'nomLien': 'calculez-le-devis'});">Voir Les Prix Proposés</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div class="row btn-valider_row">
+<div class="btn-valider">
+<a class="btn-large waves-effect waves-light  ">Valider</a>
+</div>
+</div>
+<script type="text/javascript">var urlHomePage='https://www.ad.fr/reseau/ad-auto/devisError/';var urlHomePageErreurAjax='/sauvegarder';var erreurImmMine=false;var erreurImmMineMine=false;google.maps.event.addDomListener(window,'load',function(){initializeAutocomplete2('input-field-3-data');});'var arr_prestations_js = {} ';</script>
+<style>@media only screen and (max-width:719px){#index-banner .container .row .col>.input-field-submit a,.blocDevis .container .row .col>.input-field-submit a{width: calc(80% + 36px) !important}}@media only screen and (min-width:600px) and (max-width:695px){.block_devis_modals_ev{width:102%;height:85%;margin-top:85px;padding-top:0px}.btn-valider_container{position:fixed;text-align:center;z-index:1005;top:88%;background:rgba(0,0,0,.5);left: calc(1% + 4px);right:2%}}@media only screen and (min-width:695px) and (max-width:1024px){.block_devis_modals_ev{width:102%;height:90%;margin-top:50px;padding-top:0px}.btn-valider_container{position:fixed;text-align:center;z-index:1005;top:88%;background:rgba(0,0,0,.5);left:2%;right:19px}}@media only screen and (min-width:1024px){.block_devis_garage .bx-wrapper li>div>img{min-height:392px!important}.block_devis_modals_ev{width:102%;height:90%;margin-top:55px;padding-top:0px}.btn-valider_container{position:fixed;text-align:center;z-index:1005;top:calc(89% - 2px);left:calc(1% - 4px);right:0;width:1024px;background:rgba(0,0,0,.5);margin-bottom:0}.block_devis_garage .btn-valider_container{top:calc(88% + 5px)}}</style>
+<div id="block-links" class="hide-on-small-only">
+<div class="container">
+<div class="row">
+<div class="col s12 m3 title">
+<h3>Les engagements <span>du réseau AD</span></h3>
+</div>
+<div class="col s12 m9">
+<div class="col s12 m6">
+<div>
+<a href="/transparence-des-prix" class="link-xl-prix">Transparence<span>des prix</span></a>
+<a href="/transparence-des-prix" class="link-s-more">En savoir plus</a>
+</div>
+<div>
+<a href="/garantie-constructeur-preservee" class="link-xl-garantie">Garantie constructeur préservée</a>
+<a href="/garantie-constructeur-preservee" class="link-s-more">En savoir plus</a>
+</div>
+</div>
+<div class="col s12 m6">
+<div>
+<a href="/prestations-techniques-multimarques" class="link-xl-presta">Prestations techniques multimarques</a>
+<a href="/prestations-techniques-multimarques" class="link-s-more">En savoir plus</a>
+</div>
+<div>
+<a href="/devis-et-rdv-en-ligne" class="link-xl-devis">Devis et RDV en ligne immédiat 24h/24</a>
+<a href="/devis-et-rdv-en-ligne" class="link-s-more">En savoir plus</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="container container-ad">
+<div class="row">
+<div class="form-ve-loc">
+<div class="row title">
+<div class="col m12 l12">
+<h2 class="title-nos-prestations">Nos prestations disponibles en ligne</h2>
+</div>
+</div>
+<ul class="slider commerce-prestations hide-on-med-and-down">
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>DISTRIBUTION</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/distribution.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>199<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>FREINAGE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/freinage.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>89<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>RÉVISION / VIDANGE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/vidange.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>69<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>CLIMATISATION</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/clim.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>65<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>AMORTISSEURS</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/amortisseurs.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>259<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>EMBRAYAGE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/embrayage.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>359<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>PARALLÉLISME</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/parallelisme.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>69<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>ÉCHAPPEMENT</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/echappement.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>99<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>VANNE EGR</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/vanne_egr.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>169<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>DIAGNOSTIC ELECTRONIQUE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/diagnostique_electrique.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>29<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>DIAGNOSTIC SÉCURITÉ</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/diagnostique_securite.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>39<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>BATTERIE ALTERNATEUR DEMARREUR</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/battterie.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>79<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>REMPLACEMENT &amp; PURGE LIQUIDE </h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/liquide_frein_refroidissement.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>89<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>RÉNOVATION CARROSSERIE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/carosserie.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>159<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>RÉNOVATION PLASTIQUE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/retroviseur.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>39<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>RÉNOVATION OPTIQUE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/phare.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>49<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+</ul>
+<ul class="slider commerce-prestations-tablette hide-on-large-only hide-on-small-only">
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>DISTRIBUTION</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/distribution.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>199<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>FREINAGE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/freinage.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>89<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>RÉVISION / VIDANGE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/vidange.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>69<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>CLIMATISATION</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/clim.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>65<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>AMORTISSEURS</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/amortisseurs.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>259<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>EMBRAYAGE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/embrayage.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>359<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>PARALLÉLISME</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/parallelisme.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>69<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>ÉCHAPPEMENT</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/echappement.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>99<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>VANNE EGR</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/vanne_egr.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>169<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>DIAGNOSTIC ELECTRONIQUE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/diagnostique_electrique.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>29<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>DIAGNOSTIC SÉCURITÉ</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/diagnostique_securite.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>39<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>BATTERIE ALTERNATEUR DEMARREUR</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/battterie.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>79<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>REMPLACEMENT &amp; PURGE LIQUIDE </h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/liquide_frein_refroidissement.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>89<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>RÉNOVATION CARROSSERIE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/carosserie.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>159<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>RÉNOVATION PLASTIQUE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/retroviseur.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>39<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>RÉNOVATION OPTIQUE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/phare.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>49<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+</ul>
+<ul class="slider commerce-prestations-mobile hide-on-med-and-up">
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>DISTRIBUTION</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/distribution.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>199<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>FREINAGE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/freinage.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>89<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>RÉVISION / VIDANGE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/vidange.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>69<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>CLIMATISATION</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/clim.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>65<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>AMORTISSEURS</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/amortisseurs.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>259<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>EMBRAYAGE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/e-commerce/embrayage.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>359<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>PARALLÉLISME</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/parallelisme.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>69<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>ÉCHAPPEMENT</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/echappement.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>99<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>VANNE EGR</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/vanne_egr.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>169<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>DIAGNOSTIC ELECTRONIQUE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/diagnostique_electrique.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>29<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>DIAGNOSTIC SÉCURITÉ</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/diagnostique_securite.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>39<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>BATTERIE ALTERNATEUR DEMARREUR</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/battterie.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>79<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>REMPLACEMENT &amp; PURGE LIQUIDE </h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/liquide_frein_refroidissement.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>89<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>RÉNOVATION CARROSSERIE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/carosserie.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>159<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>RÉNOVATION PLASTIQUE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/retroviseur.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>39<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+<li>
+<a href="#" class="btn-rdv-clignotant">
+<article>
+<h3>RÉNOVATION OPTIQUE</h3>
+<div class="img-prestation">
+<img src="/uploads/1/image/phare.png" alt="">
+</div>
+<div class="itm-price">
+<span>&Agrave; PARTIR DE</span>
+<strong>49<em>,00&euro;*</em></strong>
+</div>
+<span class="c-main-button__first waves-effect waves-light">Prendre rendez-vous</span>
+</article>
+</a>
+</li>
+</ul>
+<div class="commerce-btn-prestations">
+<a href="/ecommerce" class="c-main-button__second waves-effect waves-light">
+Découvrez toutes nos offres
+</a>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="blocs-lien blocs-liens-3cols hide-on-small-only">
+<div class="col m4 l4">
+<h2 class="title">Nos services LOA et Reprise</h2>
+<div class="bloc type1 input-field-submit">
+<a href="/accueil-vehicule-ad-nos-nouveaux-services-loa-et-reprise" title="">
+<img src="/uploads/1/image/loa-desktop.png" alt="" data-src-tablet="/uploads/1/image/loa-720.png"/></a>
+<div class="imgbtn"><a href="/accueil-vehicule-ad-nos-nouveaux-services-loa-et-reprise" title="" class="btn-large waves-effect waves-light">En savoir plus</a></div>
+</div>
+</div>
+<div class="col m4 l4">
+<h2 class="title">Notre contrat d&#039;entretien</h2>
+<div class="bloc type1 input-field-submit">
+<a href="/accueil-nouveaux-services-notre-contrat-entretien" title="">
+<img src="/uploads/1/image/contrat-entretien-desktop.png" alt="" data-src-tablet="/uploads/1/image/contrat-entretien-720.png"/></a>
+<div class="imgbtn"><a href="/accueil-nouveaux-services-notre-contrat-entretien" title="" class="btn-large waves-effect waves-light">En savoir plus</a></div>
+</div>
+</div>
+<div class="col m4 l4">
+<h2 class="title">Découvrez les forfaits malins</h2>
+<div class="bloc type1 input-field-submit">
+<a href="/accueil-decouvrez-nos-forfaits-malins" title="">
+<img src="/uploads/1/image/forfaits_malins_generique_03.jpg" alt="" data-src-tablet="/uploads/1/image/forfaits_malins_generique_032.jpg"/></a>
+<div class="imgbtn"><a href="/accueil-decouvrez-nos-forfaits-malins" title="" class="btn-large waves-effect waves-light">En savoir plus</a></div>
+</div>
+</div>
+</div>
+<div class="hide-on-med-and-up ContratMobile">
+<div class="element" style="background:#f6f6f6 url(/uploads/1/image/loa2-320.png) no-repeat 0 0">
+<a href="/accueil-vehicule-ad-nos-nouveaux-services-loa-et-reprise" class="element">
+<h2 class="title">Nos services LOA et Reprise</h2>
+</a>
+</div>
+<div class="element" style="background:#f6f6f6 url(images/refonte/visuel/contrat-dentretien-320.png) no-repeat 0 0">
+<a href="/accueil-nouveaux-services-notre-contrat-entretien" class="element">
+<h2 class="title">Notre contrat d&#039;entretien</h2>
+</a>
+</div>
+<div class="element" style="background:#f6f6f6 url(/uploads/1/image/forfait-malin2-320.png) no-repeat 0 0">
+<a href="/accueil-decouvrez-nos-forfaits-malins" class="element">
+<h2 class="title">Découvrez les forfaits malins</h2>
+</a>
+</div>
+</div>
+</div>	<div class="row">
+<div class="form-ve-loc">
+<div class="hide-on-med-and-down">
+<div class="row title">
+<div class="col s12 m5">
+<h2>Vente & location de véhicules</h2>
+</div>
+<div class="col s12 m7">
+<div>
+<a class="btn-grey active" onclick="onclick=&quot;dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': ‘occasions});&quot;" href="/annonces-vehicules">Occasion</a> <a class="btn-grey" href="/ad-particuliers" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': 'ad-particuliers'});">Véhicules Particuliers</a>
+<a class="btn-grey" href="/ad-utilitaires" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': 'ad-utilitaires'});">Véhicules Utilitaires</a>
+<a class="btn-grey" href="/ad-auto-reprise" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': 'ad-reprise'});">Reprise Cash</a>
+<a href="/annonces-vehicules" title="Tous nos véhicules" class="link-vehicules" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': ‘occasions});">Tous nos véhicules</a>
+</div>
+</div>
+</div>
+<ul class="slider vehicules">
+<li>
+<a href="/reseau/ad-auto/annonce-vehicule/FIAT-500-2013/1776550?id=5235786" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/non_dispo.jpeg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>FIAT 500 (2013)</h4>
+<strong>11 390 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/TOYOTA-Auris-2016/1787940?id=5235798" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/non_dispo.jpeg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>TOYOTA Auris (2016)</h4>
+<strong>19 700 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/FIAT-500-2010/1793878?id=5235731" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/536193-1793878_1503750153_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>FIAT 500 (2010)</h4>
+<strong>5 990 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/HYUNDAI-I30-2013/1793864?id=5235734" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/38931-1793864_1503739769_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>HYUNDAI I30 (2013)</h4>
+<strong>10 500 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/CITROEN-C4-2009/1793868?id=5235736" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/38931-1793868_1503741514_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>CITROEN C4 (2009)</h4>
+<strong>5 900 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/CITROEN-C2-2009/1793872?id=5235745" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/744198-1793872_1503744469_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>CITROEN C2 (2009)</h4>
+<strong>4 000 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/CITROEN-C4+Grand+Picasso-2009/1749701?id=5235959" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/984-1749701_1481973993_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>CITROEN C4 Grand Picasso (2009)</h4>
+<strong>6 990 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/CITROEN-C4+Grand+Picasso-2014/1788900?id=5235960" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/68689-1788900_1500699914_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>CITROEN C4 Grand Picasso (2014)</h4>
+<strong>16 995 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/RENAULT-Captur-2014/1762804?id=5236019" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/403371-1762804_1489068651_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>RENAULT Captur (2014)</h4>
+<strong>12 390 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/BMW-Serie+1-2011/1791851?id=5235971" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/68689-1791851_1502279565_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>BMW Serie 1 (2011)</h4>
+<strong>8 990 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/CITROEN-Jumpy-2014/1780361?id=5235972" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/1246-1780361_1497370442_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>CITROEN Jumpy (2014)</h4>
+<strong>11 900 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/DACIA-Duster-2012/1792903?id=5235986" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/692595-1792903_1503157164_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>DACIA Duster (2012)</h4>
+<strong>10 490 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/TOYOTA-Rav+4-2002/1728684?id=5235989" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/984-1728684_1470304149_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>TOYOTA Rav 4 (2002)</h4>
+<strong>5 490 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/PEUGEOT-Partner-2015/1792780?id=5235990" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/25650-1792780_1503061553_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>PEUGEOT Partner (2015)</h4>
+<strong>10 800 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/RENAULT-Kangoo-2012/1792560?id=5236005" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/38931-1792560_1502951021_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>RENAULT Kangoo (2012)</h4>
+<strong>5 500 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/VOLKSWAGEN-Multivan-2012/1791843?id=5235931" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/68689-1791843_1502273527_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>VOLKSWAGEN Multivan (2012)</h4>
+<strong>33 900 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/CITROEN-DS3-2012/1788899?id=5235932" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/68689-1788899_1500699226_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>CITROEN DS3 (2012)</h4>
+<strong>11 995 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/VOLKSWAGEN-Scirocco-2012/1778240?id=5235933" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/68689-1778240_1496327747_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>VOLKSWAGEN Scirocco (2012)</h4>
+<strong>19 995 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/NISSAN-Patrol-2001/1791640?id=5235942" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/68689-1791640_1502268863_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>NISSAN Patrol (2001)</h4>
+<strong>9 995 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/FORD-Ranger-2012/1791849?id=5235948" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/68689-1791849_1502278079_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>FORD Ranger (2012)</h4>
+<strong>29 900 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/FORD-Focus-2014/1780900?id=5236263" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/503554-1780900_1497596024_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>FORD Focus (2014)</h4>
+<strong>8 990 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/FORD-Fiesta-2015/1780984?id=5236264" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/575552-1780984_1497541950_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>FORD Fiesta (2015)</h4>
+<strong>8 290 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/PEUGEOT-508+SW-2014/1792003?id=5236168" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/37173-1792003_1502367321_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>PEUGEOT 508 SW (2014)</h4>
+<strong>16 990 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/MERCEDES-GLA-2015/1789684?id=5236172" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/37173-1789684_1500999491_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>MERCEDES GLA (2015)</h4>
+<strong>32 790 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/AUDI-A3-2012/1768040?id=5236274" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/575552-1768040_1491490075_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>AUDI A3 (2012)</h4>
+<strong>11 990 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/AUDI-A5-2016/1791402?id=5236275" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/575552-1791402_1501922254_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>AUDI A5 (2016)</h4>
+<strong>39 900 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/AUDI-TT-2016/1756687?id=5236272" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/575552-1756687_1497540165_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>AUDI TT (2016)</h4>
+<strong>36 900 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/CITROEN-C3-2010/1761882?id=5236176" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/370070-1761882_1502345843_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>CITROEN C3 (2010)</h4>
+<strong>6 790 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/CITROEN-C5-2014/1782485?id=5236177" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/37173-1782485_1498209156_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>CITROEN C5 (2014)</h4>
+<strong>13 980 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/RENAULT-Trafic-2012/1790703?id=5236278" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/1187-1790703_1501867077_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>RENAULT Trafic (2012)</h4>
+<strong>10 800 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/SKODA-Fabia-2014/1760629?id=5236399" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/25650-1760629_1488018267_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>SKODA Fabia (2014)</h4>
+<strong>7 990 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/RENAULT-Twingo-2011/1767220?id=5236404" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/692595-1767220_1491208741_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>RENAULT Twingo (2011)</h4>
+<strong>5 790 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/RENAULT-Clio+IV-2014/1792002?id=5236183" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/37173-1792002_1502366615_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>RENAULT Clio IV (2014)</h4>
+<strong>9 280 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/CITROEN-Berlingo+2-2013/1792001?id=5236182" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/37173-1792001_1502364885_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>CITROEN Berlingo 2 (2013)</h4>
+<strong>13 290 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/PEUGEOT-308-2011/1778641?id=5236407" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/692595-1778641_1496567243_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>PEUGEOT 308 (2011)</h4>
+<strong>7 490 &euro;</strong>
+</div>
+</a>
+</li> <li>
+<a href="/reseau/ad-auto/annonce-vehicule/PEUGEOT-208-2014/1772128?id=5236409" onClick="_gaq.push(['_trackEvent', 'Annonces VO - HP', 'Click']);">
+<img src="/images/photos/vo/692595-1772128_1493478999_xl.jpg" width="150" height="99" alt=""/>
+<div class="detail">
+<h4>PEUGEOT 208 (2014)</h4>
+<strong>9 990 &euro;</strong>
+</div>
+</a>
+</li> </ul>
+</div>
+<div class="hide-on-large-only">
+<h2 class="title">Vente & location de véhicules</h2>
+<div class="row">
+<div class="col m4 s6 vehicules type2">
+<a href="/annonces-vehicules" title="" class="" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': ‘occasions});">
+<div class="item type2">
+Occasions
+<span>1314 véhicules</span>
+</div>
+</a>
+</div>
+<div class="col m4 s6 vehicules type2">
+<a href="/ad-particuliers" title="" class="" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': 'ad-particuliers'});">
+<div class="item type3">
+Véhicules Particuliers
+</div>
+</a>
+</div>
+<div class="col m4 s6 vehicules type2">
+<a href="/ad-utilitaires" title="" class="" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': 'ad-utilitaires'});">
+<div class="item type3">
+Véhicules Utilitaires
+</div>
+</a>
+</div>
+<div class="col m4 s6 vehicules type2">
+<a href="/ad-auto-reprise" title="" class="" onclick="dataLayer.push({'Event': 'menu', 'nomLien': ‘vehicules', 'sous-lien': ‘ad-reprise'});">
+<div class="item type4">
+Reprise Cash
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">var isHomePageReseau='true';</script>
+<div id="block-links" class="hide-on-med-and-up">
+<div class="container">
+<div class="row">
+<div class="col s12 m3 title">
+<h3>Les engagements <span>du réseau AD</span></h3>
+</div>
+<div class="col s12 m9">
+<div class="col s12 m6">
+<div>
+<a href="/transparence-des-prix" class="link-xl-mob-prix">Transparence des prix</a>
+<a href="/transparence-des-prix" class="link-s-more">En savoir plus</a>
+</div>
+<div>
+<a href="/garantie-constructeur-preservee" class="link-xl-mob-garantie">Garantie constructeur préservée</a>
+<a href="/garantie-constructeur-preservee" class="link-s-more">En savoir plus</a>
+</div>
+</div>
+<div class="col s12 m6">
+<div>
+<a href="/prestations-techniques-multimarques" class="link-xl-mob-presta">Prestations techniques multimarques</a>
+<a href="/prestations-techniques-multimarques" class="link-s-more">En savoir plus</a>
+</div>
+<div>
+<a href="/devis-et-rdv-en-ligne" class="link-xl-mob-devis">Devis et RDV en ligne immédiat 24h/24</a>
+<a href="/devis-et-rdv-en-ligne" class="link-s-more">En savoir plus</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>	<footer>
+<div class="row">
+<div class="iframe-partenaires container">
+<iframe src="/iframe_partenaires" name="partenaires" id="partenaires" height="34" frameborder="0"></iframe>
+</div>
+</div>
+<div class="wrp container hide-on-small-only">
+<div class="left footer-reparation">
+<h3><a href="/reseau/ad-auto /prestations?categorie=1">Entretien réparation</a></h3>
+<ul>
+<li>
+<a href="/reseau/ad-auto/prestation/allumage-et-gestion-moteur"> Allumage et gestion moteur</a>
+</li>
+<li>
+<a href="/reseau/ad-auto/prestation/pneumatiques"> Pneumatiques</a>
+</li>
+<li>
+<a href="/reseau/ad-auto/prestation/entretien-auto-revision-vidange"> Entretien Auto - Révision Vidange </a>
+</li>
+<li>
+<a href="/reseau/ad-auto/prestation/freinage-disques-plaquettes"> Freinage - Disques &amp; Plaquettes</a>
+</li>
+<li>
+<a href="/reseau/ad-auto/prestation/distribution"> Distribution</a>
+</li>
+<li>
+<a href="/reseau/ad-auto/prestation/diagnostic-electronique"> Diagnostic électronique</a>
+</li>
+</ul><ul>
+<li>
+<a href="/reseau/ad-auto/prestation/echappement"> Echappement</a>
+</li>
+<li>
+<a href="/reseau/ad-auto/prestation/amortisseurs"> Amortisseurs</a>
+</li>
+<li>
+<a href="/reseau/ad-auto/prestation/embrayage"> Embrayage</a>
+</li>
+<li>
+<a href="/reseau/ad-auto/prestation/batterie-alternateur-demarreur"> Batterie - Alternateur - Démarreur</a>
+</li>
+</ul>
+</div>
+<div class="left footer-carrosserie">
+<h3><a href="/prestations?categorie=2">Carrosserie</a></h3>
+<ul>
+<li>
+<a href="/reseau/ad-auto/prestation/prestations-carrosserie-rapide"> Prestations carrosserie rapide</a>
+</li>
+<li>
+<a href="/reseau/ad-auto/prestation/pare-brise-vitrage"> Pare brise - Vitrage</a>
+</li>
+<li>
+<a href="/reseau/ad-auto/prestation/climatisation"> Climatisation</a>
+</li>
+<li>
+<a href="/reseau/ad-auto/prestation/renovation-optique"> Rénovation Optique</a>
+</li>
+<li>
+<a href="/reseau/ad-auto/prestation/reparation-renovation-plastique"> Réparation &amp; rénovation plastique</a>
+</li>
+<li>
+<a href="/reseau/ad-auto/prestation/reparation-carrosserie"> Réparation carrosserie</a>
+</li>
+</ul>
+</div>
+<div class="right">
+<meta class="netreviewsWidget" id="netreviewsWidgetNum10854" data-jsurl="//cl.avis-verifies.com/fr/cache/3/1/f/31f7ee01-5e54-2ab4-499d-f65c2a53bca1/widget4/widget23-10854_script.js"/><script src="//cl.avis-verifies.com/fr/widget4/widget23.min.js"></script>
+</div>
+</div>
+<nav role="navigation">
+<div class="container">
+<ul>
+<li><a href="/reseau/ad-auto/presentation" title="">Présentation</a></li>
+<li><a href="/reseau/ad-auto/nous-rejoindre" title="">Nous rejoindre</a></li>
+<li><a href="/reseau/ad-auto/contact" title="">Nous contacter</a></li>
+<li><a href="/reseau/ad-auto/plan-du-site" title="">Plan du site</a></li>
+<li><a href="/reseau/ad-auto/mentions-legales" title="">Mentions légales</a></li>
+<li><a href="http://groupe-autodistribution.com" target="_blank">Sites du groupe</a></li>
+<li><a href="http://www.idgarages.com/frontgarage.php/login/" target="_blank">Espace Pro</a></li>
+</ul>
+</div>
+</nav>
+</footer>	<meta class="netreviewsWidget" id="netreviewsWidgetNum10853" data-jsurl="//cl.avis-verifies.com/fr/cache/3/1/f/31f7ee01-5e54-2ab4-499d-f65c2a53bca1/widget4/widget22-10853_script.js"/><script src="//cl.avis-verifies.com/fr/widget4/widget22.min.js"></script>
+<script type="text/javascript" src="/js/reseau_refonte.1.min.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ad6a1f78ba","applicationID":"11545319","transactionName":"NlwBMRMDCxYCUkQLWw8WIgYVCwoLTFlfD1FOUA0BBBo=","queueTime":0,"applicationTime":621,"atts":"GhsCR1sZGBg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

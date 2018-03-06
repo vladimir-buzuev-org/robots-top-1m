@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" ng-app="marketingAngular" ng-controller="MainControllerAngular">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Cache-Control" content="no-store"/>
+    <meta name="version" content="2.0.0"/>
+    <base href="/">
+
+    <title ng-bind="ngMeta.title"></title>
+
+    <meta ng-repeat="tag in content.metaTags"
+          name="{{ tag.name }}"
+          content="{{ tag.content }}"
+          charset="{{ tag.charset }}"
+          http-equiv="{{ tag['http-equiv'] }}">
+
+    <meta name="description" content="{{ ngMeta.description }}">
+    <meta name="keywords" content="{{ ngMeta.keywords }}">
+    <meta name="abstract" content="{{ ngMeta.abstract }}">
+
+    <link ng-repeat="link in content.links"
+          href="{{ link.uri }}"
+          media="{{ link.media }}"
+          rel="{{ link.rel }}"
+          type="{{ link.type }}">
+
+    <!-- Adobe DTM Header Code -->
+    <script src="/marketing/adobedtm.js?v=201708171608"></script>
+
+    <script>window['adrum-start-time'] = new Date().getTime();</script>
+    <script app-dynamics></script>
+
+    <!-- Local fallback for Bootstrap and Font-Awesome -->
+    <script type="text/javascript" src="/cssFallback.js?v=201708171608"></script>
+
+    <!-- Adobe Target -->
+    <script type="text/javascript">
+        window.angularFeaturesConfig = {RTD99: '1' };
+    </script>
+
+    <!-- CDNs for Bootstrap and Font-Awesome -->
+    <link id="bootstrapFallback" onError="stylesheetFallback(this)" onLoad="ieFallbackCheck(this)" cssFallback="/bootstrap.min.css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css?v=201708171608">
+    <link id="fontAwesomeFallback" onError="stylesheetFallback(this)" onLoad="ieFallbackCheck(this)" cssFallback="/font-awesome.min.css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css?v=201708171608">
+
+    <!-- HAL fonts begins -->
+    <link rel="stylesheet" type="text/css" href="/index.css?v=201708171608">
+    <link rel="stylesheet" type="text/css" href="/sbn.css?v=201708171608" ng-if="Configuration.companyCode === 'SBN'">
+    <link ng-if="Configuration.companyCode === 'HAL'" rel="stylesheet" type="text/css" ng-href="../assets/common/css/fonts.css">
+    <link ng-if="Configuration.companyCode === 'HAL'" rel="stylesheet" type="text/css" ng-href="../assets/common/css/common.css">
+    <!-- HAL fonts ends -->
+
+</head>
+
+<body ng-class="{ 'sbn-home-page': isSbnRedesignPage }">
+
+<div class="container-fluid">
+
+    <header ng-if="Configuration.companyCode === 'HAL'" class="main-header privateBrowsingMode">
+        <top-header></top-header>
+        <div class="horiz-rule"></div>
+        <primary-nav></primary-nav>
+        <private-browsing-mode-disclaimer></private-browsing-mode-disclaimer>
+    </header>
+
+    <navbar ng-if="Configuration.companyCode === 'SBN'"></navbar>
+
+    <div ng-if="!appReady" class="page-spinner-app">
+        <h1 class="hidden">hidden h1 text</h1>
+        <i class="fa fa-spinner fa-spin"></i>
+    </div>
+
+    <div class="content ui-view-container" ui-view="main" tabindex="-1"></div>
+
+    <div class="clearfix"></div>
+
+    <footer ng-if="Configuration.companyCode === 'HAL'">
+        <div class="container containerFooter">
+            <count-down></count-down>
+            <recently-viewed></recently-viewed>
+            <message-bar></message-bar>
+            <div ng-if="socialLinksAboveSignUpBar == 'true'">
+                <social-bar social-above="true"></social-bar>
+                <footer-nav social-above="true"></footer-nav>
+            </div>
+            <div ng-if="socialLinksAboveSignUpBar == 'false'">
+                <social-bar social-above="false"></social-bar>
+                <footer-nav social-above="false"></footer-nav>
+            </div>
+            <legal-footer></legal-footer>
+        </div>
+        <floating-footer section="'homepage'"></floating-footer>
+    </footer>
+
+    <app-footer ng-if="Configuration.companyCode === 'SBN'"></app-footer>
+
+    <system-maintenance ng-if="Configuration.companyCode === 'SBN'"></system-maintenance>
+
+</div>
+
+<script type="text/javascript">
+    currentserver = window.location.hostname;
+</script>
+<script type="text/javascript" src="/main/js/countrycode.js?v=201708171608"></script>
+<script type="text/javascript">
+    function callCountrySelector() {
+        //var currentPageUrl = document.location.href;
+        redirectToProperLocale(currentPageUrl, false);
+    }
+    countryselector();
+</script>
+
+<!-- compiled Javascript begins -->
+<script type="text/javascript" src="/index.js?v=201708171608"></script>
+<!-- compiled Javascript ends -->
+</body>
+</html>

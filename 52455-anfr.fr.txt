@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" xml:lang="fr"> <![endif]-->
+<!--[if IE 7]> <html class="no-js ie7 oldie" xml:lang="fr"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8 oldie" xml:lang="fr"> <![endif]-->
+<!--[if gt IE 8]> <!--><html class="no-js" xml:lang="fr"> <!--<![endif]-->
+<head>
+
+<meta charset="utf-8">
+<!-- 
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2016 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at http://typo3.org/
+-->
+
+<base href="http://www.anfr.fr/">
+<link rel="shortcut icon" href="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/favicon.ico" type="image/x-icon; charset=binary">
+<link rel="icon" href="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/favicon.ico" type="image/x-icon; charset=binary">
+
+<meta name="generator" content="TYPO3 CMS">
+<meta name="keywords" content="anfr, arcep, csa, rspg, atdi, iot, uit, itu, cept">
+<meta name="robots" content="index,follow">
+
+
+<link rel="stylesheet" type="text/css" href="http://www.anfr.fr/typo3temp/compressor/merged-d02d560882a55a7ebce23e4a4e72aa92-78563e5c26f6080e4e6c694563e104cf.css?1503306437" media="all">
+<link rel="stylesheet" type="text/css" href="http://www.anfr.fr/typo3temp/compressor/print-a26773da0e0666361d4e851055cf3199.css?1493215514" media="print">
+
+<style type="text/css">
+/*<![CDATA[*/
+<!-- 
+/*TSFEinlineStyle*/
+/* default styles for extension "tx_felogin_pi1" */
+	.tx-felogin-pi1 label {
+		display: block;
+	}
+/* default styles for extension "tx_fileupload_pi1" */
+	
+/* default styles for extension "tx_cssstyledcontent" */
+	/* Headers */
+	.csc-header-alignment-center { text-align: center; }
+	.csc-header-alignment-right { text-align: right; }
+	.csc-header-alignment-left { text-align: left; }
+
+	div.csc-textpic-responsive, div.csc-textpic-responsive * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;  }
+
+	/* Clear floats after csc-textpic and after csc-textpic-imagerow */
+	div.csc-textpic, div.csc-textpic div.csc-textpic-imagerow, ul.csc-uploads li { overflow: hidden; }
+
+	/* Set padding for tables */
+	div.csc-textpic .csc-textpic-imagewrap table { border-collapse: collapse; border-spacing: 0; }
+	div.csc-textpic .csc-textpic-imagewrap table tr td { padding: 0; vertical-align: top; }
+
+	/* Settings for figure and figcaption (HTML5) */
+	div.csc-textpic .csc-textpic-imagewrap figure, div.csc-textpic figure.csc-textpic-imagewrap { margin: 0; display: table; }
+
+	/* Captions */
+	figcaption.csc-textpic-caption { display: table-caption; }
+	.csc-textpic-caption { text-align: left; caption-side: bottom; }
+	div.csc-textpic-caption-c .csc-textpic-caption, .csc-textpic-imagewrap .csc-textpic-caption-c { text-align: center; }
+	div.csc-textpic-caption-r .csc-textpic-caption, .csc-textpic-imagewrap .csc-textpic-caption-r { text-align: right; }
+	div.csc-textpic-caption-l .csc-textpic-caption, .csc-textpic-imagewrap .csc-textpic-caption-l { text-align: left; }
+
+	/* Float the columns */
+	div.csc-textpic div.csc-textpic-imagecolumn { float: left; }
+
+	/* Border just around the image */
+	div.csc-textpic-border div.csc-textpic-imagewrap img {
+		border: 2px solid black;
+		padding: 0px 0px;
+	}
+
+	div.csc-textpic .csc-textpic-imagewrap img { border: none; display: block; }
+
+	/* Space below each image (also in-between rows) */
+	div.csc-textpic .csc-textpic-imagewrap .csc-textpic-image { margin-bottom: 10px; }
+	div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagerow-last .csc-textpic-image { margin-bottom: 0; }
+
+	/* colSpace around image columns, except for last column */
+	div.csc-textpic-imagecolumn, td.csc-textpic-imagecolumn .csc-textpic-image { margin-right: 10px; }
+	div.csc-textpic-imagecolumn.csc-textpic-lastcol, td.csc-textpic-imagecolumn.csc-textpic-lastcol .csc-textpic-image { margin-right: 0; }
+
+	/* Add margin from image-block to text (in case of "Text & Images") */
+	div.csc-textpic-intext-left .csc-textpic-imagewrap,
+	div.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap {
+		margin-right: 10px;
+	}
+	div.csc-textpic-intext-right .csc-textpic-imagewrap,
+	div.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap {
+		margin-left: 10px;
+	}
+
+	/* Positioning of images: */
+
+	/* Center (above or below) */
+	div.csc-textpic-center .csc-textpic-imagewrap, div.csc-textpic-center figure.csc-textpic-imagewrap { overflow: hidden; }
+	div.csc-textpic-center .csc-textpic-center-outer { position: relative; float: right; right: 50%; }
+	div.csc-textpic-center .csc-textpic-center-inner { position: relative; float: right; right: -50%; }
+
+	/* Right (above or below) */
+	div.csc-textpic-right .csc-textpic-imagewrap { float: right; }
+	div.csc-textpic-right div.csc-textpic-text { clear: right; }
+
+	/* Left (above or below) */
+	div.csc-textpic-left .csc-textpic-imagewrap { float: left; }
+	div.csc-textpic-left div.csc-textpic-text { clear: left; }
+
+	/* Left (in text) */
+	div.csc-textpic-intext-left .csc-textpic-imagewrap { float: left; }
+
+	/* Right (in text) */
+	div.csc-textpic-intext-right .csc-textpic-imagewrap { float: right; }
+
+	/* Right (in text, no wrap around) */
+	div.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap { float: right; }
+
+	/* Left (in text, no wrap around) */
+	div.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap { float: left; }
+
+	div.csc-textpic div.csc-textpic-imagerow-last, div.csc-textpic div.csc-textpic-imagerow-none div.csc-textpic-last { margin-bottom: 0; }
+
+	/* Browser fixes: */
+
+	/* Fix for unordered and ordered list with image "In text, left" */
+	.csc-textpic-intext-left ol, .csc-textpic-intext-left ul { padding-left: 40px; overflow: auto; }
+
+	/* File Links */
+	ul.csc-uploads { padding: 0; }
+	ul.csc-uploads li { list-style: none outside none; margin: 1em 0; }
+	ul.csc-uploads img { float: left; margin-right: 1em; vertical-align: top; }
+	ul.csc-uploads span { display: block; }
+	ul.csc-uploads span.csc-uploads-fileName { text-decoration: underline; }
+
+	/* Table background colors: */
+
+	table.contenttable-color-1 { background-color: #EDEBF1; }
+	table.contenttable-color-2 { background-color: #F5FFAA; }
+	table.contenttable-color-240 { background-color: black; }
+	table.contenttable-color-241 { background-color: white; }
+	table.contenttable-color-242 { background-color: #333333; }
+	table.contenttable-color-243 { background-color: gray; }
+	table.contenttable-color-244 { background-color: silver; }
+/* default styles for extension "tx_ebulleinfo" */
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-e-bulle-info table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-e-bulle-info table th {
+		font-weight:bold;
+	}
+
+	.tx-e-bulle-info table td {
+		vertical-align:top;
+	}
+	.einfobulle_active {
+            background-color: white;
+            font-size: 1em;
+            height: auto;
+            padding: 10px 20px 20px;
+            margin: auto;
+            margin-top:350px;
+            width: 30%;
+        }
+        .tx-ebulleinfo-pi1_active {
+        	background-color: #000000;
+            cursor: pointer;
+            height: 100%;
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 90;
+        	background-color: rgb(50,50,50);
+        	background-color: rgba(50,50,50,0.79);
+        }
+        .einfobulle_hidden{
+        	display:none;
+
+        }
+        .einfobulle_fermer{
+        	margin-bottom:20px;
+        	display:none;
+        }
+        .einfobulle_fermer_active {
+        	margin-bottom:20px;
+        	display:block;
+        }
+/* default styles for extension "tx_srfreecap" */
+		.tx-srfreecap-captcha label { display: inline-block; width: 150px; }
+		img.tx-srfreecap-image { margin-left: 1em; margin-right: 1em; vertical-align: middle; }
+		.tx-srfreecap-image-accessible {
+			background-color: transparent;
+			vertical-align: middle;
+		}
+		.tx-srfreecap-accessible-link { width: 10em; float: right; vertical-align: middle; margin-right: 7em; }
+		.tx-srfreecap-cant-read { display: inline-block; width: 150px; }
+		.tx-srfreecap-cant-read a:link { background-color:transparent; font-weight:bold; text-decoration:none; }
+/* default styles for extension "tx_srfreecap_pi2" */
+		img.tx-srfreecap-pi2-image { margin-left: 1em; margin-right: 1em; vertical-align: middle; }
+		.tx-srfreecap-pi2-accessible-image { vertical-align: middle; }
+		.tx-srfreecap-pi2-accessible-link { width: 10em; float: right; vertical-align: middle; margin-right: 7em;}
+		.tx-srfreecap-pi2-cant-read { font-size: .9em; color:#35006d; }
+		.tx-srfreecap-pi2-cant-read a:link { background-color:transparent; font-weight:bold; text-decoration:none; }
+/* default styles for extension "tx_a21glossary" */
+		acronym, dfn, abbr, span.abbr { border-bottom: 1px dotted black; cursor: help; }
+		.tx-glossary-list dt { font-weight: bold; margin: 0 0 3px 0; font-style: normal; }
+		.tx-glossary-list dd { margin: 0 0 15px 20px; }
+		.tx-glossary-list dd.tx-glossary-abstract { margin: 0; padding: 0; }
+		.tx-glossary-list dd.tx-glossary-description { margin: 0; padding: 0; }
+-->
+/*]]>*/
+</style>
+
+
+<script src="http://www.anfr.fr/typo3temp/compressor/merged-88e1efe99f7e2e51afa5b7346ed673b8-605445e7bfba7116cbc59ed135a808de.js?1493215501" type="text/javascript"></script>
+
+<script src="http://www.anfr.fr/typo3temp/compressor/merged-362659c9c1a2b09dd8dc887e1063e21e-2a14200e015803cab8ee829c33d30f9a.js?1493215501" type="text/javascript"></script>
+
+
+
+<script>window.jQuery || document.write('<script src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/js/jquery-1.7.2.min.js"><\/script>')</script><title>ANFR-Accueil</title>	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="msapplication-config" content="none"/>
+    <!--[if lt IE 9]>
+	    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+	    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+    <![endif]--><link rel="stylesheet" href="http://www.anfr.fr/typo3conf/ext/perfectlightbox/res/css/slightbox.css" type="text/css" media="screen,projection" /><script type="text/javascript" src="http://www.anfr.fr/typo3conf/ext/perfectlightbox/res/js/slimbox.2.0.4.yui.js"></script><script type="text/javascript">
+	SlimboxOptions.resizeSpeed = 400;
+	SlimboxOptions.overlayOpacity = 0.8;
+	SlimboxOptions.loop = true;
+	SlimboxOptions.allowSave = false;
+	SlimboxOptions.slideshowAutoplay = false;
+	SlimboxOptions.slideshowInterval = 5000;
+	SlimboxOptions.slideshowAutoclose = true;
+	SlimboxOptions.counterText = 'Image ###x### de ###y###';</script>
+<meta name="DC.title" content="Accueil">
+<meta name="keywords" content="anfr, arcep, csa, rspg, atdi, iot, uit, itu, cept">
+<meta name="DC.Subject" content="anfr, arcep, csa, rspg, atdi, iot, uit, itu, cept">
+<meta name="date" content="2017-07-10T15:36:01+02:00">
+<meta name="DC.date" content="2017-07-10T15:36:01+02:00">
+<meta name="robots" content="index,follow">
+<link rel="start" href="http://www.anfr.fr/accueil/">
+<link rel="up" href="http://www.anfr.fr/accueil/">
+<link rel="canonical" href="http://www.anfr.fr/accueil/">
+
+
+
+<script type="text/javascript" src="http://www.anfr.fr/typo3/js/jsfunc.updateform.js"></script>
+</head>
+<body>
+
+<div id="menu_accessible">
+  <ul id="menu_accessible">
+        <li><a href="http://www.anfr.fr/accueil/#contenu">contenu</a></li><li><a href="http://www.anfr.fr/accueil/#nav">nav</a></li><li><a href="http://www.anfr.fr/accueil/#recherche">recherche</a></li></ul>
+</div>
+<!-- Cookie -->
+<div class="fond-cookie">
+  <div class="cookie">
+    <div class="cookie-container clearfix">
+      <div class="cookie-img-info">
+        <img class="info" src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/info.png" alt="">
+      </div>
+      <div class="cookie-texte">
+        <div id="c2390" class="content"><p class="bodytext">Notre site utilise des cookies pour mesurer l'audience et les usages de nos visiteurs, et vous offrir la possibilité de partager les contenus sur les réseaux sociaux. En poursuivant votre navigation sur notre site, vous acceptez l'utilisation de ces cookies. <a href="http://www.anfr.fr/cookies/" title="Opens internal link in current window" class="internal-link">&gt; En savoir plus</a>&gt; OK </p></div>
+      </div>
+      <div class="cookie-btn-fermer">
+        <img class="buttonclose" src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/fermer.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Menu1 -->
+<nav id="cssmenu">
+  <div class="logo_home_cssmenu"><h1><img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/logo2.png" width="280" height="118"   alt="ANFR" ></h1></div>
+  <button>toggle</button>
+  <section class="bloc-reseaux-sociaux-t-s">
+    <div class="ligne-info">
+      <img class="button-fermer" src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/fermer2.png" alt="">
+          <div class="menu-langues">
+            <a href="http://www.anfr.fr/fr/accueil/" class="active">FR</a><a href="http://www.anfr.fr/en/home/">EN</a>
+          </div>
+      
+	        <div class="lien-reseaux-sociaux">
+    				<span><a href="http://dailymotion.com/anfr" class="hvr-buzz-out avide"><img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/dailymotion2.png" width="33" height="30"   alt="" ></a></span>
+    				<span><a href="https://twitter.com/anfr" class="hvr-buzz-out avide"><img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/twitter2.png" width="26" height="30"   alt="" ></a></span>
+    				<span><a href="https://www.flickr.com/photos/127963163@N07/" class="hvr-buzz-out avide"><img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/flickr2.png" width="26" height="30"   alt="" ></a></span>
+    				<span><a href="http://www.anfr.fr/fr/l-anfr/actualites/dernieres-actualites/rss" target="_blank" class="hvr-buzz-out avide"><img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/reseau.png" width="25" height="30"   alt="" ></a></span>
+  			</div>
+	<div class="ligne-accessibilite">
+		<p><a href="http://www.anfr.fr/accessibilite/">Accessibilité</a></p><p><a href="http://www.anfr.fr/ancienne-faq/">Aide</a></p>
+    </div>
+    <div class="ligne-recherche">
+		<div id="c4566" class="content"><div class="tx-solr">
+		
+
+	
+	<div class="tx-solr-searchbox">
+		<script type="text/javascript">
+				/*<![CDATA[*/
+				var tx_solr_suggestUrl = 'http://www.anfr.fr/?eID=tx_solr_suggest&id=14';
+				/*]]>*/
+				</script>
+			
+		<!--<form id="tx-solr-search-form-pi-search" action="http://www.anfr.fr/recherche/" method="get" accept-charset="utf-8">
+			<input type="hidden" name="id" value="886" />
+			<input type="hidden" name="L" value="0" />
+			<input type="text" id="inputText" class="tx-solr-q" name="q" value="" />
+			<input type="image" id="inputButton" src="/typo3conf/ext/solr/Resources/Public/Images/SearchButton.gif" alt="Search" title="Search" />
+		</form>-->
+		<form id="recherche" action="http://www.anfr.fr/recherche/" method="get" accept-charset="utf-8">
+			<input type="hidden" name="id" value="886" />
+			<input type="hidden" name="L" value="0" />
+         <label for="q">Rechercher</label>
+         <input id="mot_cle" name="q" type="text"/>
+         <input class="button-recherche" type="submit" value="Ok"  title="Lancer une recherche sur le site" />
+      </form>
+	</div>
+	
+
+
+	</div>
+	</div>
+    </div>
+  </section>
+    <ul><li class="fht"><a href="http://www.anfr.fr/accueil/"><span>Accueil</span></a></li><li class="has-sub"><span><a href="http://www.anfr.fr/l-anfr/actualites/toutes-les-actualites/">L'ANFR</a></span><ul><li><a href="http://www.anfr.fr/l-anfr/actualites/toutes-les-actualites/">Actualités</a></li><li><a href="http://www.anfr.fr/l-anfr/qui-sommes-nous/">Qui sommes-nous ?</a></li><li><a href="http://www.anfr.fr/l-anfr/organisation/">Organisation</a></li><li><a href="http://www.anfr.fr/l-anfr/nos-missions/">Nos missions</a></li><li><a href="http://www.anfr.fr/l-anfr/quest-ce-que-le-spectre/">Qu'est-ce que le spectre ?</a></li><li><a href="http://www.anfr.fr/l-anfr/chiffres-cles/">Chiffres clés</a></li><li><a href="http://www.anfr.fr/l-anfr/recrutement/">Recrutement</a></li></ul></li><li class="has-sub"><span><a href="http://www.anfr.fr/international/negociations/">International</a></span><ul><li><a href="http://www.anfr.fr/international/negociations/">Négociations</a></li><li><a href="http://www.anfr.fr/international/coordination/">Coordination</a></li><li><a href="http://www.anfr.fr/international/cooperation/">Coopération</a></li></ul></li><li class="has-sub"><span><a href="http://www.anfr.fr/gestion-des-frequences-sites/le-tnrbf/">Gestion des fréquences & sites</a></span><ul><li><a href="http://www.anfr.fr/gestion-des-frequences-sites/le-tnrbf/">Le TNRBF</a></li><li><a href="http://www.anfr.fr/gestion-des-frequences-sites/bande-700-mhz/">Bande 700 MHz</a></li><li><a href="http://www.anfr.fr/gestion-des-frequences-sites/sites-servitudes-et-assignations/sites/nos-missions/">Sites, servitudes et assignations</a></li><li><a href="http://www.anfr.fr/gestion-des-frequences-sites/internet-des-objets/synthese-de-la-consultation/">Internet des objets</a></li><li><a href="http://www.anfr.fr/gestion-des-frequences-sites/lobservatoire-2g-3g-4g/">L'observatoire 2G, 3G, 4G</a></li><li><a href="http://www.anfr.fr/gestion-des-frequences-sites/frs/">FRS</a></li><li><a href="http://www.anfr.fr/gestion-des-frequences-sites/cartoradio/presentation-de-cartoradio/">Cartoradio</a></li><li><a href="http://www.anfr.fr/gestion-des-frequences-sites/signal-horaire/quest-ce-que-le-signal-horaire/">Signal horaire</a></li></ul></li><li class="has-sub"><span><a href="http://www.anfr.fr/autorisations-demissions/satellites/">Autorisations d'émissions</a></span><ul><li><a href="http://www.anfr.fr/autorisations-demissions/satellites/">Satellites</a></li><li><a href="http://www.anfr.fr/autorisations-demissions/reseaux-professionnels/">Réseaux professionnels</a></li><li><a href="http://www.anfr.fr/autorisations-demissions/radiomaritime/">Radiomaritime</a></li><li><a href="http://www.anfr.fr/autorisations-demissions/radioamateurs/">Radioamateurs</a></li><li><a href="http://www.anfr.fr/autorisations-demissions/aides-pmse/">Aides PMSE</a></li></ul></li><li class="has-sub"><span><a href="http://www.anfr.fr/controle-des-frequences/controle-de-conformite/">Contrôle des fréquences</a></span><ul><li><a href="http://www.anfr.fr/controle-des-frequences/controle-de-conformite/">Contrôle de conformité</a></li><li><a href="http://www.anfr.fr/controle-des-frequences/les-grands-evenements/">Les grands événements</a></li><li><a href="http://www.anfr.fr/controle-des-frequences/protection-de-la-reception-tv/">Protection de la réception TV</a></li><li><a href="http://www.anfr.fr/controle-des-frequences/surveillance-du-marche/">Surveillance du marché</a></li><li><a href="http://www.anfr.fr/controle-des-frequences/exposition-du-public-aux-ondes/">Exposition du public aux ondes</a></li><li><a href="http://www.anfr.fr/controle-des-frequences/navires/nos-missions/">Navires</a></li><li><a href="http://www.anfr.fr/controle-des-frequences/brouillage/">Brouillage</a></li></ul></li><li class="has-sub"><span><a href="http://www.anfr.fr/publications/presse/communiques-et-dossiers-de-presse/">Publications</a></span><ul><li><a href="http://www.anfr.fr/publications/contrat-objectifs-et-performance/">Contrat objectifs et performance</a></li><li><a href="http://www.anfr.fr/publications/consultations/">Consultations</a></li><li><a href="http://www.anfr.fr/publications/presse/communiques-et-dossiers-de-presse/">Presse</a></li><li><a href="http://www.anfr.fr/publications/rapports-annuels/">Rapports annuels</a></li><li><a href="http://www.anfr.fr/publications/dossiers-thematiques/le-systeme-galileo/">Dossiers thématiques</a></li><li><a href="http://www.anfr.fr/publications/etudes/quelques-mots/">Études</a></li><li><a href="http://www.anfr.fr/publications/rapports-dintervention/brouillages-des-reseaux-de-telephonie-mobile/">Rapports d'intervention</a></li><li><a href="http://www.anfr.fr/publications/lettres-dinformation/liste-des-lettres-dinformation/">Lettres d'information</a></li></ul></li><li class="has-sub"><span><a href="http://www.anfr.fr/contact/poser-votre-question/">Contact</a></span><ul><li><a href="http://www.anfr.fr/contact/poser-votre-question/" target="blank">Poser votre question</a></li><li><a href="http://www.anfr.fr/contact/venir-nous-voir/">Venir nous voir</a></li><li><a href="http://www.anfr.fr/contact/envoyer-un-courrier/">Envoyer un courrier</a></li><li><a href="http://www.anfr.fr/contact/telephoner/">Téléphoner</a></li></ul></li></ul>
+</nav>
+<!-- Carousel -->
+<div class="carousel-content">
+  <div class="carousel">
+    <div class="header-logo"><h1><img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/logo2.png" width="280" height="118"   alt="ANFR" ></h1></div>
+    <div class="bloc-reseaux-sociaux clearfix">
+        <div class="langue">
+          <a href="http://www.anfr.fr/fr/accueil/" class="active">FR</a><a href="http://www.anfr.fr/en/home/">EN</a>
+        </div>
+        <div class="accessibilite">
+          <p><a href="http://www.anfr.fr/accessibilite/">Accessibilité</a></p><p><a href="http://www.anfr.fr/ancienne-faq/">Aide</a></p>
+          <div id="c4566" class="content"><div class="tx-solr">
+		
+
+	
+	<div class="tx-solr-searchbox">
+		<script type="text/javascript">
+				/*<![CDATA[*/
+				var tx_solr_suggestUrl = 'http://www.anfr.fr/?eID=tx_solr_suggest&id=14';
+				/*]]>*/
+				</script>
+			
+		<!--<form id="tx-solr-search-form-pi-search" action="http://www.anfr.fr/recherche/" method="get" accept-charset="utf-8">
+			<input type="hidden" name="id" value="886" />
+			<input type="hidden" name="L" value="0" />
+			<input type="text" id="inputText" class="tx-solr-q" name="q" value="" />
+			<input type="image" id="inputButton" src="/typo3conf/ext/solr/Resources/Public/Images/SearchButton.gif" alt="Search" title="Search" />
+		</form>-->
+		<form id="recherche" action="http://www.anfr.fr/recherche/" method="get" accept-charset="utf-8">
+			<input type="hidden" name="id" value="886" />
+			<input type="hidden" name="L" value="0" />
+         <label for="q">Rechercher</label>
+         <input id="mot_cle" name="q" type="text"/>
+         <input class="button-recherche" type="submit" value="Ok"  title="Lancer une recherche sur le site" />
+      </form>
+	</div>
+	
+
+
+	</div>
+	</div>
+        </div>
+        <div class="lien-reseaux-sociaux">
+			<span><a href="http://dailymotion.com/anfr" class="hvr-buzz-out avide"><img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/dailymotion2.png" width="33" height="30"   alt="" ></a></span>
+			<span><a href="https://twitter.com/anfr" class="hvr-buzz-out avide"><img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/twitter2.png" width="26" height="30"   alt="" ></a></span>
+			<span><a href="https://www.flickr.com/photos/127963163@N07/" class="hvr-buzz-out avide"><img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/flickr2.png" width="26" height="30"   alt="" ></a></span>
+			<span><a href="http://www.anfr.fr/fr/l-anfr/actualites/dernieres-actualites/rss" target="_blank" class="hvr-buzz-out avide"><img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/reseau.png" width="25" height="30"   alt="" ></a></span>
+        </div>
+    </div>
+    <div id="c2459" class="content">
+
+
+
+<div class="news">
+	
+	
+			
+					<div class="slider autoplay">
+						
+							
+
+<div class="article articletype-0 topnews">
+	
+		<div class="carousel-container">
+			<a class="link-carousel" title="Brouillage à Nantes:" href="http://www.anfr.fr/toutes-les-actualites/actualites/brouillage-a-nantes/">
+				<div class="titre-carousel">Brouillage à Nantes:</div>
+				<div class="sous-titre-carousel">L’ANFR a résolu un grave brouillage à l'aéroport</div>
+				<div class="texte-carousel"><p class="bodytext">Un Rochelais de 50 ans a retardé le départ de quatre avions en laissant un brouilleur GPS en fonctionnement dans sa voiture, garée sur un parking proche du tarmac de l’aéroport de Nantes.</p>
+<p class="bodytext">L’appareil a généré...</p></div>
+			</a>
+			<a class="btn-lire-la-suite" href="http://www.anfr.fr/toutes-les-actualites/actualites/brouillage-a-nantes/">Lire la suite</a>
+		     	<a class="btn-nos-actualites" href="http://www.anfr.fr/l-anfr/actualites/toutes-les-actualites/">Voir toutes nos actualités</a>
+		</div>
+	   <div class="image">
+			
+					<div class="news-img-wrap">
+						
+								
+								<a class="avide" title="Brouillage à Nantes:" href="http://www.anfr.fr/toutes-les-actualites/actualites/brouillage-a-nantes/">
+									
+										
+												
+													<img src="http://www.anfr.fr/fileadmin/_processed_/csm_Actu-brouilleur-ae%CC%81roport_aab8709232.jpg" width="1400" height="500" alt="" />
+												
+												
+												
+											
+									
+										
+											
+									
+								</a>
+							
+					</div>
+				
+	   </div>
+
+</div>
+						
+							
+
+<div class="article articletype-0 topnews">
+	
+		<div class="carousel-container">
+			<a class="link-carousel" title="Observatoire ANFR:" href="http://www.anfr.fr/toutes-les-actualites/actualites/observatoire-anfr-7/">
+				<div class="titre-carousel">Observatoire ANFR:</div>
+				<div class="sous-titre-carousel">plus de 36 000 sites 4G autorisés par l’ANFR au...</div>
+				<div class="texte-carousel"><p class="bodytext"><span style="font-weight: bold;">Au 1er août, 36 332 sites sont autorisés par l’ANFR, dont 31 898 en service, pour la téléphonie mobile très haut débit (4G) tous opérateurs confondus.&nbsp;</span></p>
+<p class="bodytext">Au mois de juillet, les autorisations et mises en service...</p></div>
+			</a>
+			<a class="btn-lire-la-suite" href="http://www.anfr.fr/toutes-les-actualites/actualites/observatoire-anfr-7/">Lire la suite</a>
+		     	<a class="btn-nos-actualites" href="http://www.anfr.fr/l-anfr/actualites/toutes-les-actualites/">Voir toutes nos actualités</a>
+		</div>
+	   <div class="image">
+			
+					<div class="news-img-wrap">
+						
+								
+								<a class="avide" title="Observatoire ANFR:" href="http://www.anfr.fr/toutes-les-actualites/actualites/observatoire-anfr-7/">
+									
+										
+											
+									
+										
+												
+													<img src="http://www.anfr.fr/fileadmin/_processed_/csm_actu-observatoire-v2_f2abc9bb42.jpg" width="1400" height="500" alt="" />
+												
+												
+												
+											
+									
+								</a>
+							
+					</div>
+				
+	   </div>
+
+</div>
+						
+							
+
+<div class="article articletype-0 topnews">
+	
+		<div class="carousel-container">
+			<a class="link-carousel" title="Recevoirlatnt.fr:" href="http://www.anfr.fr/toutes-les-actualites/actualites/recevoirlatntfr/">
+				<div class="titre-carousel">Recevoirlatnt.fr:</div>
+				<div class="sous-titre-carousel">Les fréquences changent, notre site aussi</div>
+				<div class="texte-carousel"><p class="bodytext">Le 5 avril 2016, la TNT est passée à la haute définition grâce à la généralisation du MPEG-4. Cette évolution permet désormais de libérer des fréquences pour un nouvel usage : donner plus de capacité aux...</p></div>
+			</a>
+			<a class="btn-lire-la-suite" href="http://www.anfr.fr/toutes-les-actualites/actualites/recevoirlatntfr/">Lire la suite</a>
+		     	<a class="btn-nos-actualites" href="http://www.anfr.fr/l-anfr/actualites/toutes-les-actualites/">Voir toutes nos actualités</a>
+		</div>
+	   <div class="image">
+			
+					<div class="news-img-wrap">
+						
+								
+								<a class="avide" title="Recevoirlatnt.fr:" href="http://www.anfr.fr/toutes-les-actualites/actualites/recevoirlatntfr/">
+									
+										
+												
+													<img src="http://www.anfr.fr/fileadmin/_processed_/csm_Actu-ANFR-nouveautes-recevoir_cd68d3fcba.jpg" width="1400" height="500" alt="" />
+												
+												
+												
+											
+									
+										
+											
+									
+								</a>
+							
+					</div>
+				
+	   </div>
+
+</div>
+						
+							
+
+<div class="article articletype-0 topnews">
+	
+		<div class="carousel-container">
+			<a class="link-carousel" title="Rapport annuel:" href="http://www.anfr.fr/toutes-les-actualites/actualites/rapport-annuel/">
+				<div class="titre-carousel">Rapport annuel:</div>
+				<div class="sous-titre-carousel">L'ANFR publie son rapport annuel de l'année 2016</div>
+				<div class="texte-carousel"><div><p class="bodytext">L'année 2016 a été marquée par le <span style="font-weight: bold;">passage à la TNT HD</span>, dont l’ANFR a assuré la campagne d'information nationale et l’accompagnement du public, notamment des plus fragiles. L'objectif de cette campagne était de <span style="font-weight: bold;">...</span></p></div></div>
+			</a>
+			<a class="btn-lire-la-suite" href="http://www.anfr.fr/toutes-les-actualites/actualites/rapport-annuel/">Lire la suite</a>
+		     	<a class="btn-nos-actualites" href="http://www.anfr.fr/l-anfr/actualites/toutes-les-actualites/">Voir toutes nos actualités</a>
+		</div>
+	   <div class="image">
+			
+					<div class="news-img-wrap">
+						
+								
+								<a class="avide" title="Rapport annuel:" href="http://www.anfr.fr/toutes-les-actualites/actualites/rapport-annuel/">
+									
+										
+											
+									
+										
+												
+													<img src="http://www.anfr.fr/fileadmin/_processed_/csm_Actu-RA2016_d1569d42f2.jpg" width="1400" height="500" alt="" />
+												
+												
+												
+											
+									
+								</a>
+							
+					</div>
+				
+	   </div>
+
+</div>
+						
+							
+
+<div class="article articletype-0 topnews">
+	
+		<div class="carousel-container">
+			<a class="link-carousel" title="Connectivité urbaine:" href="http://www.anfr.fr/toutes-les-actualites/actualites/connectivite-urbaine-2/">
+				<div class="titre-carousel">Connectivité urbaine:</div>
+				<div class="sous-titre-carousel">lancement d'une étude à Montreuil pour favoriser...</div>
+				<div class="texte-carousel"><div><p class="bodytext">Une étude est lancée dans la ville de Montreuil, du 12 juillet au 18 août 2017, pour <span style="font-weight: bold;">tester de nouvelles solutions de connectivité au très haut débit mobile</span>, face aux enjeux de densification des réseaux mobiles...</p></div></div>
+			</a>
+			<a class="btn-lire-la-suite" href="http://www.anfr.fr/toutes-les-actualites/actualites/connectivite-urbaine-2/">Lire la suite</a>
+		     	<a class="btn-nos-actualites" href="http://www.anfr.fr/l-anfr/actualites/toutes-les-actualites/">Voir toutes nos actualités</a>
+		</div>
+	   <div class="image">
+			
+					<div class="news-img-wrap">
+						
+								
+								<a class="avide" title="Connectivité urbaine:" href="http://www.anfr.fr/toutes-les-actualites/actualites/connectivite-urbaine-2/">
+									
+										
+											
+									
+										
+												
+													<img src="http://www.anfr.fr/fileadmin/_processed_/csm_Actu-experimentation-mobile_bef87b8965.jpg" width="1400" height="500" alt="" />
+												
+												
+												
+											
+									
+								</a>
+							
+					</div>
+				
+	   </div>
+
+</div>
+						
+					</div>
+				
+		
+
+</div>
+</div>
+  </div>
+</div>
+<nav id="nav" class="menu2">
+  <div id="accordian">
+			<ul><li class="home"><a href="http://www.anfr.fr/accueil/" class="home"><img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/home.png" width="30" height="25"   alt="Retour à l'accueil" ></a></li><li class="item-nav-principal-level-1"><a>L'ANFR</a><ul><div class="sousmenu"><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/l-anfr/actualites/toutes-les-actualites/">Actualités</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/l-anfr/qui-sommes-nous/">Qui sommes-nous ?</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/l-anfr/organisation/">Organisation</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/l-anfr/nos-missions/">Nos missions</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/l-anfr/quest-ce-que-le-spectre/">Qu'est-ce que le spectre ?</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/l-anfr/chiffres-cles/">Chiffres clés</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/l-anfr/recrutement/">Recrutement</a></li></div></ul></li><li class="item-nav-principal-level-1"><a>International</a><ul><div class="sousmenu"><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/international/negociations/">Négociations</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/international/coordination/">Coordination</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/international/cooperation/">Coopération</a></li></div></ul></li><li class="item-nav-principal-level-1"><a>Gestion des fréquences & sites</a><ul><div class="sousmenu"><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/gestion-des-frequences-sites/le-tnrbf/">Le TNRBF</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/gestion-des-frequences-sites/bande-700-mhz/">Bande 700 MHz</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/gestion-des-frequences-sites/sites-servitudes-et-assignations/sites/nos-missions/">Sites, servitudes et assignations</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/gestion-des-frequences-sites/internet-des-objets/synthese-de-la-consultation/">Internet des objets</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/gestion-des-frequences-sites/lobservatoire-2g-3g-4g/">L'observatoire 2G, 3G, 4G</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/gestion-des-frequences-sites/frs/">FRS</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/gestion-des-frequences-sites/cartoradio/presentation-de-cartoradio/">Cartoradio</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/gestion-des-frequences-sites/signal-horaire/quest-ce-que-le-signal-horaire/">Signal horaire</a></li></div></ul></li><li class="item-nav-principal-level-1"><a>Autorisations d'émissions</a><ul><div class="sousmenu"><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/autorisations-demissions/satellites/">Satellites</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/autorisations-demissions/reseaux-professionnels/">Réseaux professionnels</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/autorisations-demissions/radiomaritime/">Radiomaritime</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/autorisations-demissions/radioamateurs/">Radioamateurs</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/autorisations-demissions/aides-pmse/">Aides PMSE</a></li></div></ul></li><li class="item-nav-principal-level-1"><a>Contrôle des fréquences</a><ul><div class="sousmenu"><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/controle-des-frequences/controle-de-conformite/">Contrôle de conformité</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/controle-des-frequences/les-grands-evenements/">Les grands événements</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/controle-des-frequences/protection-de-la-reception-tv/">Protection de la réception TV</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/controle-des-frequences/surveillance-du-marche/">Surveillance du marché</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/controle-des-frequences/exposition-du-public-aux-ondes/">Exposition du public aux ondes</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/controle-des-frequences/navires/nos-missions/">Navires</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/controle-des-frequences/brouillage/">Brouillage</a></li></div></ul></li><li class="item-nav-principal-level-1"><a>Publications</a><ul><div class="sousmenu"><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/publications/contrat-objectifs-et-performance/">Contrat objectifs et performance</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/publications/consultations/">Consultations</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/publications/presse/communiques-et-dossiers-de-presse/">Presse</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/publications/rapports-annuels/">Rapports annuels</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/publications/dossiers-thematiques/le-systeme-galileo/">Dossiers thématiques</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/publications/etudes/quelques-mots/">Études</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/publications/rapports-dintervention/brouillages-des-reseaux-de-telephonie-mobile/">Rapports d'intervention</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/publications/lettres-dinformation/liste-des-lettres-dinformation/">Lettres d'information</a></li></div></ul></li><li class="item-nav-principal-level-1"><a>Contact</a><ul><div class="sousmenu"><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/contact/poser-votre-question/" target="blank">Poser votre question</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/contact/venir-nous-voir/">Venir nous voir</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/contact/envoyer-un-courrier/">Envoyer un courrier</a></li><li class="item-nav-principal-level-2"><a href="http://www.anfr.fr/contact/telephoner/">Téléphoner</a></li></div></ul></li></ul>
+		</div>
+</nav>
+<div id="contenu" class="content">
+  <div class="visible avide">
+	<a href="http://www.anfr.fr/accueil/#" class="scrollToTop" target="">retour en haut</a>
+  </div>
+  <div class="entete">
+    <div class="entete-container clearfix">
+      <div class="entete-bloc1">
+        
+        <div id="c2350" class="content"><h1>L'ANFR en quelques mots</h1>
+<p class="bodytext">&nbsp;</p>
+<p class="bodytext">Les fréquences radioélectriques appartiennent au domaine public de l'État. Celui-ci a confié à l'Agence nationale des fréquences des missions de planification, de gestion de l’implantation des émetteurs, de contrôle et enfin de délivrance de certaines autorisations et certificats radio.</p>
+<p class="bodytext"><a href="http://www.anfr.fr/l-anfr/nos-missions/" class="internal-link btn-en-savoir-plus">En savoir plus</a></p></div>
+      </div>
+      <div class="entete-bloc2">
+        <div id="c8866" class="content"><div id="c2366" class="content"><p class="bodytext"><a href="http://www.anfr.fr/contact/poser-votre-question/" class="internal-link nous-contacter">Nous contacter</a></p></div></div><div id="c8865" class="actualite-bloc2"><div id="c2365" class="content"><div class="csc-header csc-header-n1"><h2 class="csc-header-alignment-0 csc-firstHeader">Recevez l'actualité de l'anfr</h2></div>
+<form action="index.php?id=829" method="post" name="lettreInfo" id="lettreInfo" class="inscription_newsletter_home">
+ <div class="bloc_newsletter">
+   <label for="mailformMail">inscription newsletter</label>
+   <input type="text"  id="mailformMail" placeholder="jean.dupont@gmail.com" name="FE[tt_address][email]" />
+   <input type="submit" class="submit" value="" title="{register:defaultSubmitTitle}" />
+   <input type="hidden" name="noWarnings" value="1" title="noWarnings"/>
+   <p><a href="index.php?id=829&cmd=infomail&backURL=http%3A%2F%2Fwww.anfr.fr%2Faccueil%2F%3F"> > Modifier votre profil</a></p>
+ </div>
+</form>
+<script type="text/javascript">
+	/*<![CDATA[*/ 
+	updateForm('tt_address_form','FE[tt_address][pid]','');
+	updateForm('tt_address_form','FE[tt_address][hidden]','');
+	updateForm('tt_address_form','FE[tt_address][gender]','');
+	updateForm('tt_address_form','FE[tt_address][name]','');
+	updateForm('tt_address_form','FE[tt_address][first_name]','');
+	updateForm('tt_address_form','FE[tt_address][middle_name]','');
+	updateForm('tt_address_form','FE[tt_address][last_name]','');
+	updateForm('tt_address_form','FE[tt_address][title]','');
+	updateForm('tt_address_form','FE[tt_address][address]','');
+	updateForm('tt_address_form','FE[tt_address][building]','');
+	updateForm('tt_address_form','FE[tt_address][room]','');
+	updateForm('tt_address_form','FE[tt_address][birthday]','');
+	updateForm('tt_address_form','FE[tt_address][phone]','');
+	updateForm('tt_address_form','FE[tt_address][fax]','');
+	updateForm('tt_address_form','FE[tt_address][mobile]','');
+	updateForm('tt_address_form','FE[tt_address][www]','');
+	updateForm('tt_address_form','FE[tt_address][email]','');
+	updateForm('tt_address_form','FE[tt_address][city]','');
+	updateForm('tt_address_form','FE[tt_address][zip]','');
+	updateForm('tt_address_form','FE[tt_address][company]','');
+	updateForm('tt_address_form','FE[tt_address][region]','');
+	updateForm('tt_address_form','FE[tt_address][country]','');
+	updateForm('tt_address_form','FE[tt_address][image]','');
+	updateForm('tt_address_form','FE[tt_address][description]','');
+	/*]]>*/
+</script>
+</div></div><div id="c8864" class="actualite-bloc2-fin"><div id="c2364" class="content"><p class="bodytext"><a href="http://www.anfr.fr/publications/lettres-dinformation/liste-des-lettres-dinformation/" title="Opens internal link in current window" class="internal-link">&gt; Accéder à la dernière lettre d'information</a></p></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="tuile">
+    <div class="tuile-separateur">
+    <img class="image-separateur-top separateur-smartphone" src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/separateur01.png" alt="">
+      <div class="tuile-container clearfix">
+        <div id="c2360" class="content"><div class="csc-header csc-header-n1"><h2 class="csc-header-alignment-0 csc-firstHeader">Nos thématiques</h2></div></div><div id="c2357" class="content-tuile"><div class="item-tuile">
+	<a href="http://www.anfr.fr/gestion-des-frequences-sites/lobservatoire-2g-3g-4g/">
+		<img src="http://www.anfr.fr/fileadmin/mediatheque/documents/Tuiles/tuile_observatoire_3.jpg" width="375" height="235"   alt="" >
+		
+			<div class="legende">
+			  <p>OBSERVATOIRE 2G, 3G &amp; 4G</p>
+			</div>
+			<div class="caption animated zoomIn">
+			  <img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/oeil.png " alt="">
+			  <p>OBSERVATOIRE 2G, 3G &amp; 4G</p>
+			  <p><br />
+<br />
+L’Observatoire de l’ANFR permet de rendre compte de l’évolution des déploiements des réseaux mobiles des opérateurs de téléphonie.<br />
+Cliquez pour en savoir plus</p>
+			</div>
+		
+	</a>
+</div></div><div id="c6063" class="content-tuile"><div class="item-tuile">
+	<a href="http://www.recevoirlatnt.fr">
+		<img src="http://www.anfr.fr/fileadmin/mediatheque/documents/Tuiles/Tuile-recevoir.jpg" width="375" height="235"   alt="" >
+		
+	</a>
+</div></div><div id="c8804" class="content-tuile"><div class="item-tuile">
+	<a href="http://www.anfr.fr/controle-des-frequences/exposition-du-public-aux-ondes/">
+		<img src="http://www.anfr.fr/fileadmin/mediatheque/documents/Tuiles/tuile_-_exposition_3.jpg" width="375" height="235"   alt="" >
+		
+			<div class="legende">
+			  <p>Exposition aux ondes</p>
+			</div>
+			<div class="caption animated zoomIn">
+			  <img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/oeil.png " alt="">
+			  <p>Exposition aux ondes</p>
+			  <p><br />
+<br />
+L’Agence veille au respect des valeurs limites d’exposition du public aux ondes radioélectriques. Elle contrôle la conformité des équipements et des terminaux mis sur le marché et tient à jour le protocole de mesure. Elle gère le dispositif national de surveillance et de mesure des ondes.<br />
+<br />
+Cliquez pour en savoir plus</p>
+			</div>
+		
+	</a>
+</div></div><div id="c8807" class="content-tuile"><div class="item-tuile">
+	<a href="http://www.anfr.fr/controle-des-frequences/les-grands-evenements/">
+		<img src="http://www.anfr.fr/fileadmin/mediatheque/documents/Tuiles/grands_evenementsv3.jpg" width="375" height="235"   alt="" >
+		
+			<div class="legende">
+			  <p>Grands événements</p>
+			</div>
+			<div class="caption animated zoomIn">
+			  <img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/oeil.png " alt="">
+			  <p>Grands événements</p>
+			  <p><br />
+<br />
+Pour assurer sa mission de contrôle, l'ANFR est parfois appelée à intervenir lors de &quot;grands événements&quot;, pour lesquels l'Agence gère la planification et le contrôle du spectre radioélectrique.<br />
+<br />
+Cliquez pour en savoir plus</p>
+			</div>
+		
+	</a>
+</div></div><div id="c8805" class="content-tuile"><div class="item-tuile">
+	<a href="http://www.anfr.fr/autorisations-demissions/reseaux-professionnels/">
+		<img src="http://www.anfr.fr/fileadmin/mediatheque/documents/Tuiles/Reseaux_professionnels5.jpg" width="375" height="235"   alt="" >
+		
+			<div class="legende">
+			  <p>RÉSEAUX PROFESSIONNELS</p>
+			</div>
+			<div class="caption animated zoomIn">
+			  <img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/oeil.png " alt="">
+			  <p>RÉSEAUX PROFESSIONNELS</p>
+			  <p><br />
+<br />
+L’ANFR assure la gestion des fréquences pour les réseaux professionnels et utilisations temporaires, en collaboration avec l'ARCEP<br />
+<br />
+Cliquez pour en savoir plus</p>
+			</div>
+		
+	</a>
+</div></div><div id="c8362" class="content-tuile"><div class="item-tuile">
+	<a href="http://www.anfr.fr/gestion-des-frequences-sites/cartoradio/presentation-de-cartoradio/">
+		<img src="http://www.anfr.fr/fileadmin/mediatheque/documents/Tuiles/tuiles_Implatation_des_sites_3.JPG" width="375" height="235"   alt="" >
+		
+			<div class="legende">
+			  <p>IMPLANTATION DES SITES</p>
+			</div>
+			<div class="caption animated zoomIn">
+			  <img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/oeil.png " alt="">
+			  <p>IMPLANTATION DES SITES</p>
+			  <p><br />
+<br />
+Pour une meilleure visibilité de l'implantation des sites émetteurs de fréquences, l'ANFR a créé l'outil de cartographie Cartoradio.<br />
+<br />
+Cliquez pour en savoir plus</p>
+			</div>
+		
+	</a>
+</div></div><div id="c6097" class="content-tuile"><div class="item-tuile">
+	<a href="http://www.anfr.fr/international/negociations/">
+		<img src="http://www.anfr.fr/fileadmin/mediatheque/documents/Tuiles/Tuile_-_Negociations-internationales_3.jpg" width="375" height="235"   alt="" >
+		
+			<div class="legende">
+			  <p>Négociations internationales</p>
+			</div>
+			<div class="caption animated zoomIn">
+			  <img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/oeil.png " alt="">
+			  <p>Négociations internationales</p>
+			  <p>L’Agence nationale des fréquences prépare, coordonne et défend les positions françaises dans les enceintes internationales traitant de politique et d’harmonisation des fréquences, sur l’ensemble du spectre. <br />
+<br />
+Cliquez pour en savoir plus</p>
+			</div>
+		
+	</a>
+</div></div><div id="c2359" class="content-tuile"><div class="item-tuile">
+	<a href="http://www.anfr.fr/autorisations-demissions/radiomaritime/">
+		<img src="http://www.anfr.fr/fileadmin/mediatheque/documents/Tuiles/Tuile_-_Radio_en_mer_4.jpg" width="375" height="235"   alt="" >
+		
+			<div class="legende">
+			  <p>RADIO EN MER</p>
+			</div>
+			<div class="caption animated zoomIn">
+			  <img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/oeil.png " alt="">
+			  <p>RADIO EN MER</p>
+			  <p><br />
+<br />
+Pour le compte du Ministère de l’Ecologie, du Développement Durable et de l’Energie, l’Agence assure la gestion des licences, des MMSI et indicatifs et organise les examens du CRR (Certificat Restreint de radiotéléphoniste). <br />
+<br />
+Cliquez pour en savoir plus.</p>
+			</div>
+		
+	</a>
+</div></div><div id="c2351" class="content-tuile"><div class="item-tuile">
+	<a href="http://www.anfr.fr/outre-mer/">
+		<img src="http://www.anfr.fr/fileadmin/mediatheque/documents/Tuiles/outremer_3.jpg" width="375" height="235"   alt="" >
+		
+			<div class="legende">
+			  <p>OUTRE-MER</p>
+			</div>
+			<div class="caption animated zoomIn">
+			  <img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/oeil.png " alt="">
+			  <p>OUTRE-MER</p>
+			  <p><br />
+<br />
+Afin d'être présent auprès des communautés d'Outre-Mer, l'ANFR possède des antennes en Polynésie, Nouvelle-Calédonie, une antenne pour la zone Antilles/Guyane, et une autre pour la zone Réunion/Mayotte.<br />
+<br />
+Cliquez pour en savoir plus</p>
+			</div>
+		
+	</a>
+</div></div>
+      </div>
+      <img class="image-separateur-bottom separateur-smartphone" src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/separateur02.png" alt="">
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="wrapper-container clearfix">
+      <div class="wrapper-bloc1">
+        <div id="c2362" class="content"><div class="csc-header csc-header-n1"><h2 class="csc-header-alignment-0 csc-firstHeader">Sur Twitter</h2></div></div><div id="c2361" class="content"><div>
+  <a class="twitter-timeline" href="https://twitter.com/anfr" data-widget-id="601030683872616448">Tweets de @anfr</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div></div>
+      </div>
+      <div class="wrapper-bloc2">
+          <div id="c2363" class="content"><div class="csc-header csc-header-n1"><h2 class="csc-header-alignment-0 csc-firstHeader">Guichet innovation</h2></div><p class="bodytext">A la demande d’Axelle Lemaire, Secrétaire d’Etat chargée du numérique, l’ANFR a mis en place un service d’accompagnement des porteurs de projets innovants qui nécessitent le recours à des fréquences radioélectriques, comprises entre 100 kHz et 300 GHz.</p>
+<p class="bodytext">Les utilisateurs innovants du spectre sont souvent des acteurs de petite taille n’ayant pas toujours la capacité d’identifier le bon point d’entrée au sein des différentes administrations. Ces acteurs ont désormais la possibilité d’être accompagnés par l’ANFR qui les orientera vers le bon interlocuteur, que celui-ci se trouve au sein de l’ANFR, du  <acronym lang="fr" title="Conseil Supérieur de l&#039;Audiovisuel">CSA</acronym> , de l’ARCEP ou encore d’un autre affectataire (ministère de la défense, ministère de l’intérieur, ministère de l’écologie, du développement durable et de l’énergie, ministère de la recherche).</p>
+<p class="bodytext"><a href="http://www.anfr.fr/innovation/guichet-innovation/presentation/" class="btn-en-savoir-plus">En savoir plus</a></p></div>
+      </div>
+    </div>
+  </div>
+  <div class="acces">
+  <div class="acces-separateur">
+    <img class="image-separateur-top separateur-tablette separateur-smartphone" src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/separateur03.png" alt="">
+    <div class="acces-container clearfix">
+      <div class="acces-bloc1">
+        <div class="acces-bloc1-img">
+          <img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/acces.png" width="54" height="59"   alt="" >
+        </div>
+        <div class="acces-bloc1-titre">
+          <h2>Accès rapide aux bases</h2>
+        </div>
+        <div class="clear"></div>
+        <div class="acces-bloc1-ul">
+          <ul class="texte-acces">
+            <ul><li><a href="http://www.anfr.fr/http://www.anfr.fr/index.php?id=850"><a href="http://www.cartoradio.fr/cartoradio/web/" target="_blank">Cartoradio (carte des émetteurs)</a></a></li><li><a href="http://www.anfr.fr/http://www.anfr.fr/index.php?id=851"><a href="https://maritime-eadministration.anfr.fr/mmi-recherche-multicriteres" target="_blank">Base maritime : accès public</a></a></li><li><a href="http://www.anfr.fr/http://www.anfr.fr/index.php?id=852"><a href="https://radiomaritime.anfr.fr" target="_blank">Base maritime : accès CROSS et ANFR</a></a></li><li><a href="http://www.anfr.fr/http://www.anfr.fr/index.php?id=853"><a href="http://amatpres.anfr.fr/presentation.do?reqCode=annuaire" target="_blank">Annuaire des radioamateurs</a></a></li><li><a href="http://www.anfr.fr/http://www.anfr.fr/index.php?id=854"><a href="http://servitudes.anfr.fr/" target="_blank">Servitudes radioélectriques</a></a></li></ul>
+          </ul>
+        </div>
+      </div>
+      <div class="sep01">
+        <img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/sep01.png" alt="">
+      </div>
+      <div class="acces-bloc2">
+        <div class="nos-autres-sites">
+          <div class="nos-autres-sites-img">
+            <img src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/arobase.png" width="55" height="59"   alt="" >
+          </div>
+          <div class="nos-autres-sites-titre">
+            <h2>Nos autres sites</h2>
+          </div>
+        </div>
+        <div class="le-site clearfix">
+          <div class="france">
+            <a class="img-france avide" href="http://www.cartoradio.fr/cartoradio/web/" target="blank">france</a>
+            <p>> Le site <a href="http://www.cartoradio.fr/cartoradio/web/" target="blank">cartoradio.fr</a></p>
+          </div>
+          <div class="tnt">
+            <a class="img-tnt avide" href="http://recevoirlatnt.fr" target="blank">tnt</a>
+            <p>> Le site <a href="http://recevoirlatnt.fr" target="blank">recevoirlatnt.fr</a></p>
+          </div>
+          <div class="spectre">
+            <a class="img-spectre avide" href="http://conference.anfr.fr" target="blank">spectre</a>
+            <p>> Le site <a href="http://conference.anfr.fr" target="blank">conference.anfr.fr</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img class="image-separateur-bottom separateur-tablette separateur-smartphone" src="http://www.anfr.fr/typo3conf/ext/e_magineurs/res/anfr/ressources/images/separateur04.png" alt="">
+  </div>
+</div>
+<div class="footer">
+  <div class="footer-container clearfix">
+    <div class="footer-bloc1">
+      <h2 class="titre-footer">Accès rapide</h2>
+      <ul><li><a href="http://www.anfr.fr/plan-du-site/">Plan du site</a></li><li><a href="http://www.anfr.fr/mentions-legales/">Mentions légales</a></li><li><a href="http://www.anfr.fr/contact/poser-votre-question/">Contact</a></li><li><a href="http://www.anfr.fr/publications/presse/communiques-et-dossiers-de-presse/">Presse</a></li><li><a href="http://www.anfr.fr/l-anfr/recrutement/">Recrutement</a></li><li><a href="http://www.anfr.fr/la-boutique-anfr/">La boutique ANFR</a></li><li><a href="http://www.anfr.fr/publications/lettres-dinformation/liste-des-lettres-dinformation/">Lettres d'information</a></li></ul><ul><li><a href="http://www.anfr.fr/marches-publics/">Marchés publics</a></li><li><a href="http://www.anfr.fr/espace-juridique/infos/fonctionnement-de-lanfr/">Espace juridique</a></li><li><a href="http://www.anfr.fr/lien-faq/" target="_blank">FAQ</a></li><li><a href="http://www.anfr.fr/innovation/guichet-innovation/presentation/">Guichet innovation</a></li><li><a href="http://www.anfr.fr/glossaire/">Glossaire</a></li><li><a href="http://www.anfr.fr/credits/">Crédits</a></li><li><a href="http://www.anfr.fr/publications/lettres-dinformation/inscription-a-la-lettre-dinformation-de-lanfr/">S'inscrire</a></li></ul>
+    </div>
+    <div class="footer-bloc2">
+      <h2 class="titre-footer">Nous suivre</h2>
+      <a class="twitter-footer avide" href="https://twitter.com/anfr" target="blank">twitter</a>
+      <a class="flickr avide" href="https://www.flickr.com/photos/127963163@N07/" target="blank">flickr</a>
+      <a class="dailymotion avide" href="http://dailymotion.com/anfr" target="blank">dailymotion</a>
+
+      <h2 class="titre-footer">Notre appli cartoradio</h2>
+
+      <a class="appstore avide" href="https://itunes.apple.com/fr/app/cartoradio-mobile/id694622086" target="blank">appstore</a> 
+      <a class="googleplay avide" href="https://play.google.com/store/apps/details?id=com.anfr.cartoradio.mobile" target="blank">google play</a> 
+    </div>
+    <div class="footer-bloc3">
+      <h2 class="titre-footer">Nous contacter</h2>
+      <div id="c4126" class="content"><p class="bodytext">78, avenue du Général de Gaulle <br />94704 MAISONS-ALFORT</p>
+<p class="bodytext"><b><a href="tel:+33145187272" title="Opens external link in new window" target="_blank" class="external-link-new-window">01 45 18 72 72</a></b></p></div>
+    </div>
+  </div>
+</div>
+</div><script>
+var _paq = _paq || [];
+(function(){
+var u=(("https:" == document.location.protocol) ? "https://piwik.anfr.fr/" : "http://piwik.anfr.fr/");
+_paq.push(['setSiteId', 1]);
+_paq.push(['setTrackerUrl', u+'piwik.php']);
+_paq.push(['setDomains', 'anfr.fr']);
+_paq.push(['setCookieDomain', 'anfr.fr']);
+_paq.push(['setDoNotTrack', '1']);
+
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+var d=document,
+	g=d.createElement('script'),
+	s=d.getElementsByTagName('script')[0];
+	g.type='text/javascript';
+	g.defer=true;
+	g.async=true;
+	g.src=u+'piwik.js';
+	s.parentNode.insertBefore(g,s);
+})();
+</script><noscript><p><img src="//piwik.anfr.fr/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+
+<script src="http://www.anfr.fr/typo3temp/compressor/merged-5bfda980dadfde09d5dc09f03d02b0de-2611a9a42676190b41265211c7ee2669.js?1493215514" type="text/javascript"></script>
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', '']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+<script src="http://www.anfr.fr/typo3conf/ext/solr/Resources/JavaScript/JQuery/jquery-ui.core.min.js?1443791306" type="text/javascript"></script>
+<script src="http://www.anfr.fr/typo3conf/ext/solr/Resources/JavaScript/JQuery/jquery-ui.autocomplete.min.js?1443791306" type="text/javascript"></script>
+<script src="http://www.anfr.fr/typo3conf/ext/solr/Resources/JavaScript/EidSuggest/suggest.js?1443791306" type="text/javascript"></script>
+
+</body>
+</html>
+<!-- Cached page generated 02-09-17 18:30. Expires 03-09-17 06:30 -->
+<!-- Parsetime: 0ms -->

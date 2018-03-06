@@ -1,0 +1,69 @@
+# Define access-restrictions for robots/spiders
+# http://www.robotstxt.org/wc/norobots.html
+
+# By default we allow robots to access all areas of our site 
+# already accessible to anonymous users
+
+# Googlebot-specific syntax extension to exclude forms 
+# that are repeated for each piece of content in the site 
+# the wildcard is only supported by Googlebot
+# http://www.google.com/support/webmasters/bin/answer.py?answer=40367&ctx;=sibling
+User-agent: Googlebot
+Disallow: /*sendto_form$
+Disallow: /*folder_factories$
+Disallow: /app/*
+Disallow: /pls/*
+Disallow: /companies/app/*
+Disallow: /fsp/app/*
+Disallow: /data/app/*
+Disallow: /recliq-reports/*
+Disallow: /company-docs/*
+Disallow: /oasis3-web/*
+Disallow: /ppsr2-web/*
+Disallow: /java/*
+Disallow: /edit-cms/*
+Disallow: /@@searchlite*
+Disallow: /@@company-search*
+Disallow: /company-search*
+Disallow: /@@fb-searchlite*
+Disallow: /@@fb-tabbed-searchlite*
+Disallow: /ajax-search*
+Disallow: /do-it-online/register-a-company/addresssearch*
+Disallow: /do-it-online/register-a-company/companydetails/*
+Disallow: /do-it-online/register-a-company/directorsearch*
+Disallow: /do-it-online/register-a-company/shareholdersearch*
+Disallow: /*online-services*
+Disallow: /*your-online-account*
+Disallow: /*scan*es*
+
+
+# All other robots must follow strict Robots Exclusion Standard syntax
+# http://en.wikipedia.org/wiki/Robots_exclusion_standard
+User-agent: *
+Disallow: /app/
+Disallow: /pls/
+Disallow: /companies/app/
+Disallow: /fsp/app/
+Disallow: /data/app/
+Disallow: /recliq-reports/
+Disallow: /company-docs/
+Disallow: /oasis3-web/
+Disallow: /ppsr2-web/
+Disallow: /java/
+Disallow: /edit-cms/
+Disallow: /@@searchlite
+Disallow: /@@company-search
+Disallow: /company-search
+Disallow: /@@fb-searchlite
+Disallow: /@@fb-tabbed-searchlite
+Disallow: /ajax-search
+Disallow: /do-it-online/register-a-company/addresssearch/
+Disallow: /do-it-online/register-a-company/companydetails/
+Disallow: /do-it-online/register-a-company/directorsearch/
+Disallow: /do-it-online/register-a-company/shareholdersearch/
+Disallow: /*sendto_form$ # unlikely to work * not supported
+Disallow: /*folder_factories$ # unlikely to work * not supported
+Disallow: /*online-services* # unlikely to work * not supported
+Disallow: /*your-online-account* # unlikely to work * not supported
+Disallow: /*scan*es* # unlikely to work * not supported
+

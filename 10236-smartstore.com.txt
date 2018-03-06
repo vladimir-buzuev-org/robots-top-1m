@@ -1,0 +1,3132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartStore.NET | Open Source ASP.NET E-Commerce Software</title>
+    <!-- Remove Tap Highlight on Windows Phone IE -->
+    <meta name="msapplication-tap-highlight" content="no" />
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kostenlose und moderne ASP.NET E-Commerce L&#xF6;sung mit perfektem Design, einfacher Bedienung und modularem Aufbau">
+    <meta name="keywords" content="e-commerce, ecommerce, e commerce, open source, shopsystem, shopsoftware, shopping cart, software, smartstore, kostenlos, gratis, onlineshop, shop, download, erstellen, asp.net, mvc, bootstrap, entity framework, less js">
+    
+
+    <script>
+    window.Res = {
+        "Common.Notification": "&quot;Common.Notification&quot;",
+        "Products.Longdesc.More": "&quot;Products.Longdesc.More&quot;",
+        "Products.Longdesc.Less": "&quot;Products.Longdesc.Less&quot;",
+        "Jquery.Validate.Email": "&quot;Jquery.Validate.Email&quot;",
+        "Jquery.Validate.Required": "&quot;Jquery.Validate.Required&quot;",
+        "Jquery.Validate.Remote": "&quot;Jquery.Validate.Remote&quot;",
+        "Jquery.Validate.Url": "&quot;Jquery.Validate.Url&quot;",
+        "Jquery.Validate.Date": "&quot;Jquery.Validate.Date&quot;",
+        "Jquery.Validate.DateISO": "&quot;Jquery.Validate.DateISO&quot;",
+        "Jquery.Validate.Number": "&quot;Jquery.Validate.Number&quot;",
+        "Jquery.Validate.Digits": "&quot;Jquery.Validate.Digits&quot;",
+        "Jquery.Validate.Creditcard": "&quot;Jquery.Validate.Creditcard&quot;",
+        "Jquery.Validate.Equalto": "&quot;Jquery.Validate.Equalto&quot;",
+        "Jquery.Validate.Maxlength": "&quot;Jquery.Validate.Maxlength&quot;",
+        "Jquery.Validate.Minlength": "&quot;Jquery.Validate.Minlength&quot;",
+        "Jquery.Validate.Rangelength": "&quot;Jquery.Validate.Rangelength&quot;",
+        "Jquery.Validate.Range": "&quot;Jquery.Validate.Range&quot;",
+        "Jquery.Validate.Max": "&quot;Jquery.Validate.Max&quot;",
+        "Jquery.Validate.Min": "&quot;Jquery.Validate.Min&quot;"
+    }
+</script>
+
+<script>
+    try {
+        if (typeof navigator === 'undefined') navigator = {};
+        html = document.documentElement;
+        if ('mozMatchesSelector' in html) { html.className += ' moz' }
+        else if ('webkitMatchesSelector' in html) { html.className += ' wkit' };
+        html.className += (this.top === this.window ? ' not-' : ' ') + 'framed';
+    } catch (e) { }
+</script>
+
+<!--[if IE 9]><script>try{html.className+=' ie ie9 iepost8 iepre10'}catch(e){};navigator.isIE=9</script><![endif]-->
+<!--[if IE 8]><script>try{html.className+=' ie ie8 iepre9 iepre10'}catch(e){};navigator.isIE=8</script><![endif]-->
+<!--[if IE 7]><script>try{html.className+=' ie ie7 iepre9 iepre10'}catch(e){};navigator.isIE=7</script><![endif]-->
+<!--[if gt IE 9]><script>try{html.className+=' ie ie10 iepost8'}catch(e){};navigator.isIE=10</script><![endif]-->
+<!--[if !IE]>-->
+<script>var ieMode = 0; try { if (document.documentMode) { ieMode = document.documentMode; html.className += ' ie iepost8 ie' + document.documentMode } else { html.className += ' not-ie' }; } catch (e) { }; navigator.isIE = ieMode</script>
+<!-- <![endif]-->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-131740-2', 'auto');
+  ga('set', 'contentGroup1', 'SmartStoreNET');
+  ga('send', 'pageview');
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '983108958473929');
+fbq('track', "PageView");</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=983108958473929&ev=PageView&noscript=1" />
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+<link rel="alternate" hreflang="de" href="http://www.smartstore.com/de/net/">
+<link rel="alternate" hreflang="en" href="http://www.smartstore.com/en/net/">
+<link rel="shortcut icon" href="/Themes/SmartStoreHP/favicon.ico">
+    <link rel="stylesheet" href="/Themes/SmartStoreHP/smartstorehp.css" />
+    <script src="/Themes/SmartStoreHP/smartstorehp.js"></script>
+    <script src="/Themes/SmartStoreHP/smartstorehpbundles.js"></script>
+    <script src="/js/jquery.validate.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="70" class="lyt-cols-1 homepage">
+
+    <a id="navigate-top" href="#">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+
+    
+
+<header id="header">
+	<div id="topbar">
+		<div class="container">
+			<div id="topbar-title" class="pull-left">
+				<span class="hidden-xs">Free </span><strong>Open Source</strong> <span class="hidden-xs">ASP.NET MVC Shopping Cart </span>E-Commerce Solution
+			</div>
+
+            <div id="language-selector" class="regional-selector pull-right">
+                <ul class="list-unstyled clearfix">
+                    <li>
+                        <a title="Deutsch (Deutschland)" class="language flag" href="/change-culture/?cultureName=de-DE&amp;returnUrl=%2Fde%2Fnet%2F">
+                            <img title="Deutsch" alt="Deutsch" src="/Themes/SmartStoreHP/Content/Images/flags/de.png" width="16" height="11">
+                        </a>
+                    </li>
+                    <li class="selected">
+                        <a title="English (United States)" class="language flag" href="/change-culture/?cultureName=en-US&amp;returnUrl=%2Fen%2Fnet%2F">
+                            <img title="English" alt="English" class="selected" src="/Themes/SmartStoreHP/Content/Images/flags/us.png" width="16" height="11">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+			<div id="topbar-links" class="pull-right hidden-xs">
+				<a href="http://community.smartstore.com/index.php?/forum/85-smartstorenet-english/&k=880ea6a14ea49e853634fbdc5015a024&setlanguage=1&cal_id=&langid=1" target="_blank" title="SmartStore.NET Forum">
+					<i class="fa fa-users"></i>
+					Community
+				</a>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="navbar" class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sm-navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand">
+					<img src="/Themes/SmartStoreHP/Content/images/logo.png" alt="SmartStore.NET - Free Open Source ASP.NET MVC Shopping Cart E-Commerce Solution" title="SmartStore.NET - Free Open Source ASP.NET MVC Shopping Cart E-Commerce Solution" />
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="sm-navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#content">Highlights</a>
+					</li>
+					<li>
+						<a href="#section-features">Features</a>
+					</li>
+					<li>
+						<a href="#section-demo">Demo</a>
+					</li>
+					<li>
+						<a href="#section-pricing">Prices</a>
+					</li>
+					<li>
+						<a href="#section-contact">Contact</a>
+					</li>
+					<li class="visible-xs-block">
+						<a href="http://community.smartstore.com/index.php?/forum/85-smartstorenet-english/&k=880ea6a14ea49e853634fbdc5015a024&setlanguage=1&cal_id=&langid=1" target="_blank" title="SmartStore.NET Forum">
+							Community
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
+    <section id="content">
+        <section id="section-slider" class="content-section">
+            
+<script>
+	$(function () {
+		$("#layerslider").layerSlider({
+			skin: 'v5',
+			responsive: true,
+			responsiveUnder: 1140,
+			layersContainer: 1140,
+			skinsPath: '/Themes/SmartStoreHP/Content/layerslider/skins/'
+		});
+	})
+</script>
+
+
+
+<div id="layerslider" class="slider hidden-xs" style="width: 100%; height: 500px; margin: 0px auto;">
+
+    <!-- Main Slide -->
+    <div class="ls-slide" data-ls="slidedelay:8000;transition2d:76;" style="background: transparent">
+
+
+        <!-- Packshot -->
+        <img class="ls-l" style="top:50%;left:50%;" data-ls="durationin:1500;scalexin:0.8;scaleyin:0.8;scalexout:0.8;scaleyout:0.8;easingin:easeInOutCubic" src="/Themes/SmartStoreHP/Content/Images/slider/packshot-medium.png" alt="SmartStore.NET - Free Open Source ASP.NET MVC 5 Shopping Cart E-Commerce Solution">
+
+        <img class="ls-l" style="top:50%; left:50%; white-space: nowrap;" data-ls="offsetxin:0;durationin:1000;delayin:3500;easingin:linear;scalexin:0;scaleyin:0;offsetxout:0;durationout:1500;showuntil:1;easingout:linear;scalexout:2;scaleyout:2;" src="/Themes/SmartStoreHP/Content/Images/slider/circle.png" alt="">
+
+        <img class="ls-l" style="top:50%;left:50%;white-space: nowrap;" data-ls="offsetxin:0;durationin:1000;delayin:4500;easingin:linear;scalexin:0;scaleyin:0;offsetxout:0;durationout:1500;showuntil:1;easingout:linear;scalexout:2;scaleyout:2;" src="/Themes/SmartStoreHP/Content/Images/slider/circle.png" alt="">
+
+
+        <!-- Text -->
+		<h3>
+			<span class="ls-l slide-t slide-t1" style="top:150px; left:20px; width:400px"
+				  data-ls="offsetxin:30;offsetyin:0;durationin:1500;delayin:700;offsetxout:50;durationout:1000;easingin:easeInOutCubic">
+				Free <strong>Open Source</strong>
+			</span>
+
+			<span class="ls-l slide-t slide-t2" style="top: 195px; left: 20px; width: 400px"
+				  data-ls="offsetxin:30;offsetyin:0;durationin:1500;delayin:1000;offsetxout:50;durationout:1000;easingin:easeInOutCubic">
+				<span>ASP.NET MVC</span> <em>Shopsoftware</em>
+			</span>
+
+			<span class="ls-l slide-t slide-t3" style="top: 280px; left: 20px; width: 400px"
+				  data-ls="offsetxin:0;offsetyin:50;durationin:2000;delayin:4000;offsetyout:50;durationout:1000;easingin:easeOutQuad">
+				for companies of any size
+			</span>
+		</h3>
+
+
+        <!-- USPs -->
+        <p class="ls-l slide-usp"
+           style="top: 100px; left: 740px;"
+           data-ls="offsetxin:-200;durationin:1000;skewxin:100;easingin:easeOutBack;delayin:2000; offsetxout:300;durationout:1000;easingout:easeInBack">
+		   Open Source
+        </p>
+
+        <p class="ls-l slide-usp"
+           style="top: 150px; left: 740px;"
+           data-ls="offsetxin:-200;durationin:1000;skewxin:100;easingin:easeOutBack; delayin:2250;offsetxout:300;durationout:1000;easingout:easeInBack">
+			Hundreds of features out of the box
+        </p>
+
+        <p class="ls-l slide-usp"
+           style="top: 200px; left: 740px;"
+           data-ls="offsetxin:-200;durationin:1000;skewxin:100;easingin:easeOutBack; delayin:2500;offsetxout:300;durationout:1000;easingout:easeInBack">
+			Perfect design in front- & backend
+        </p>
+
+        <p class="ls-l slide-usp"
+           style="top: 250px; left: 740px;"
+           data-ls="offsetxin:-200;durationin:1000;skewxin:100;easingin:easeOutBack; delayin:2750;offsetxout:300;durationout:1000;easingout:easeInBack">
+			Easy to use
+        </p>
+
+        <p class="ls-l slide-usp"
+           style="top: 300px; left: 740px;"
+           data-ls="offsetxin:-200;durationin:1000;skewxin:100;easingin:easeOutBack; delayin:3000;offsetxout:300;durationout:1000;easingout:easeInBack">
+			Multilingual, SEO &amp; Mobile-optimized 
+        </p>
+
+        <p class="ls-l slide-usp"
+           style="top: 350px; left: 740px;"
+           data-ls="offsetxin:-200;durationin:1000;skewxin:100;easingin:easeOutBack; delayin:3250;offsetxout:300;durationout:1000;easingout:easeInBack">
+			Modern, modular, scalable
+        </p>
+
+        <!-- Icons (easeOutBounce, easeInOutBack, easeOutCubic, easeOutCart) -->
+
+        <p class="ls-l usp-icon" style="top:447px; left:0;"
+           data-ls="delayin:4000;durationin:1000;offsetxin:0;offsetyin:-50;rotatein:-90;easingin:easeOutBounce">
+            <span class="fa-stack fa-2x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-users fa-stack-1x fa-inverse"></i>
+            </span>
+        </p>
+        <p class="ls-l usp-icon" style="top: 447px; left: 60px; "
+           data-ls="delayin:4100;durationin:1000;offsetxin:0;offsetyin:-50;rotatein:-90;easingin:easeOutBounce">
+            <span class="fa-stack fa-2x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+            </span>
+        </p>
+        <p class="ls-l usp-icon" style="top: 447px; left: 120px; "
+           data-ls="delayin:4200;durationin:1000;offsetxin:0;offsetyin:-50;rotatein:-90;easingin:easeOutBounce">
+            <span class="fa-stack fa-2x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-paint-brush fa-stack-1x fa-inverse"></i>
+            </span>
+        </p>
+        <p class="ls-l usp-icon" style="top: 447px; left: 180px; "
+           data-ls="delayin:4300;durationin:1000;offsetxin:0;offsetyin:-50;rotatein:-90;easingin:easeOutBounce">
+            <span class="fa-stack fa-2x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-credit-card fa-stack-1x fa-inverse"></i>
+            </span>
+        </p>
+        <p class="ls-l usp-icon" style="top: 447px; left: 240px; "
+           data-ls="delayin:4200;durationin:1000;offsetxin:0;offsetyin:-50;rotatein:-90;easingin:easeOutBounce">
+            <span class="fa-stack fa-2x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-language fa-stack-1x fa-inverse"></i>
+            </span>
+        </p>
+        <p class="ls-l usp-icon" style="top: 447px; left: 300px; "
+           data-ls="delayin:4100;durationin:1000;offsetxin:0;offsetyin:-50;rotatein:-90;easingin:easeOutBounce">
+            <span class="fa-stack fa-2x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i>
+            </span>
+        </p>
+        <p class="ls-l usp-icon" style="top: 447px; left: 360px; "
+           data-ls="delayin:4000;durationin:1000;offsetxin:0;offsetyin:-50;rotatein:-90;easingin:easeOutBounce">
+            <span class="fa-stack fa-2x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
+            </span>
+        </p>
+
+    </div>
+
+</div>
+
+
+        </section>
+
+        <!-- HIGHLIGHTS Section -->
+        <section id="section-highlights" class="content-section">
+            
+<div class="special-section margin-bottom-30" style="padding-top: 30px">
+
+	<div id="current-version-info" class="hide" title="Highlights">
+		<p class="text-muted fsize13">Release Date: 15/05/2017</p>
+		<ul class="fsize13">
+            <li><b>Flex:</b> New mobile-first responsive Theme based on Bootstrap 4</li>
+			<li>
+				<b>Mega Search:</b> highly professional search framework based on Lucene.NET (commercial plugin exclusively bundled with Pro Edition)
+				<ul>
+					<li>Ultra fast search results, even with millions of items</li>
+					<li>Faceted search</li>
+					<li>Synonyms</li>
+					<li>Compound word splitting</li>
+				</ul>
+			</li>
+			<li><b>Mega Menu:</b> highly customizable catalog menu widgets (commercial plugin exclusively bundled with Pro Edition)</li>
+			<li><b>Content Slider:</b> creates eye-catching content to boost sales (commercial plugin exclusively bundled with Pro Edition)</li>
+			<li><b>Output Cache</b> with "donut hole caching" for maximum speed and scalability (commercial plugin exclusively bundled with Premium Edition)</li>
+			<li><b>Microsoft AZURE</b> provider for media storage (commercial plugin exclusively bundled with Premium Edition)</li>
+			<li>Web Farms: <b>REDIS</b> providers for Business Cache, Output Cache and Session State (commercial plugin exclusively bundled with Enterprise Edition)</li>
+			<li>Product variant <b>option sets</b></li>
+			<li>New product specification attribute type: <b>numeric range</b></li>
+			<li>Image support for variant attributes</li>
+		</ul>
+		
+
+	</div>
+
+	<div class="container">
+		<ul class="release-links text-center text-muted margin-bottom-20">
+			<li>Current: <a id="current-version" href="javascript:void()">v3.0.2</a></li>
+			<li>·</li>
+			<li>License: GPLv3</li>
+			<li>·</li>
+			<li><a href="https://github.com/smartstoreag/SmartStoreNET/releases/tag/3.0.2" target="_blank">Release Notes</a></li>
+			<li>·</li>
+			<li><a href="https://github.com/smartstoreag/SmartStoreNET/releases" target="_blank">All Releases</a></li>
+			<li>·</li>
+			<li><a href="https://github.com/smartstoreag/SmartStoreNET/issues" target="_blank">Issues</a></li>
+            <li>·</li>
+            <li><a href="http://docs.smartstore.com/display/SMNET/SmartStore.NET+Documentation+Home" target="_blank">Documentation</a></li>
+		</ul>
+		<div class="hero-buttons">
+			<a class="btn btn-primary btn-lg btn-download" href="https://github.com/smartstoreag/SmartStoreNET/releases/download/3.0.2/SmartStoreNET.Community.3.0.2.zip" target="_blank">
+				<i class="fa fa-download"></i>
+				<span class="btn-label">
+					<span>Download</span>
+					<span class="btn-label-sub"><br />Free... 90 MB...</span>
+				</span>
+			</a>
+
+			<a class="btn btn-default btn-lg btn-codeplex" href="https://github.com/smartstoreag/SmartStoreNET" target="_blank">
+				<i class="fa fa-github"></i>
+				<span class="btn-label">
+					<span class="btn-label-codeplex"><span class="semi">GitHub</span></span>
+					<span class="btn-label-sub"><br />visit project</span>
+				</span>
+			</a>
+
+            <a class="btn btn-default btn-lg btn-marketplace" href="http://community.smartstore.com/marketplace" target="_blank">
+                <i class="fa fa-users"></i>
+                <span class="btn-label">
+                    <span class="btn-label-codeplex"><span class="semi">Marketplace</span></span>
+                    <span class="btn-label-sub"><br />Themes, Plugins & more</span>
+                </span>
+            </a>
+		</div>
+        
+        <h3 class="app-name">smart<span>store</span>.NET</h3>
+		<h1 class="page-title text-center">Open Source E-Commerce Solution for .NET enthusiasts</h1>
+		<p class="intro text-center" style="margin-bottom: 0">
+			SmartStore.NET is a powerful open source e-commerce solution with beautiful design,
+			easy handling and cutting-edge architecture. It includes all essential features
+			to create a <strong>complete</strong> webshop right out of the box, without any hidden costs!
+			Its highly modular design approach makes it the ideal e-commerce platform for .NET professionals.
+		</p>
+	</div>
+</div>
+
+<section class="container content-section">
+	<div class="row highlight-grid xanimated" data-animtype="fadeInLeft" data-animspeed="2s">
+		<div class="col-md-4 sm-margin-bottom-50">
+			<span class="fa-stack fa-5x">
+				<i class="fa fa-circle fa-stack-2x" style="color:#f90"></i>
+				<i class="fa fa-github fa-stack-1x fa-inverse"></i>
+			</span>
+			<h4>
+				100% Open Source
+			</h4>
+			<p>
+				SmartStore.NET is 100% open source - no dual licensing, no hidden costs. Hundreds of features are included already. There's no need to spend money for extensions enabling simple features.
+			</p>
+		</div>
+		<div class="col-md-4">
+			<span class="fa-stack fa-5x">
+				<i class="fa fa-circle fa-stack-2x" style="color: #3498db"></i>
+				<i class="fa fa-paint-brush fa-stack-1x fa-inverse"></i>
+			</span>
+			<h4>
+				Perfect Design
+			</h4>
+			<p>
+				Stand out from your competitors! Wonderful responsive design makes your webshop unique. With 100+ variables, you can moreover customize your shop theme with maximum ease.
+			</p>
+		</div>
+		<div class="col-md-4 sm-margin-bottom-50">
+			<span class="fa-stack fa-5x">
+				<i class="fa fa-circle fa-stack-2x" style="color:#c0392b"></i>
+				<i class="fa fa-cogs fa-stack-1x fa-inverse"></i>
+			</span>
+			<h4>
+				Easy Handling
+			</h4>
+			<p>
+				In the sleek admin backend you have everything under control easily: Products, Customers, Orders, Payments, Inventory, Discounts, Coupons, Newsletter, Blogs, News, Boards and much more.
+			</p>
+		</div>
+	</div>
+
+	<hr class="special" />
+
+	<div class="row highlight-grid xanimated" data-animtype="fadeInLeft" data-animspeed="2s">
+		<div class="col-md-4 sm-margin-bottom-50">
+			<span class="fa-stack fa-5x">
+				<i class="fa fa-circle fa-stack-2x" style="color: #8bc34a"></i>
+				<i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+			</span>
+			<h4>
+				Multi-Store
+			</h4>
+			<p>
+				Manage multiple stores from a single installation and database in order to boost brands, make the most of seasonal sales, satisfy consumers and business buyers, promote special products and much more.
+			</p>
+		</div>
+		<div class="col-md-4">
+			<span class="fa-stack fa-5x">
+				<i class="fa fa-circle fa-stack-2x" style="color: #009688"></i>
+				<i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
+			</span>
+			<h4>
+				SEO-optimized
+			</h4>
+			<p>
+				Search engine friendly URLs, modern HTML-Layout, Meta-Tags-, Sitemap- & Robots-Generator, Google Analytics integration and many more provide the basis for a high ranking on Google & Co.
+			</p>
+		</div>
+		<div class="col-md-4 sm-margin-bottom-50">
+			<span class="fa-stack fa-5x">
+				<i class="fa fa-circle fa-stack-2x" style="color: #3f51b5"></i>
+				<i class="fa fa-tablet fa-stack-1x fa-inverse"></i>
+			</span>
+			<h4>
+				Mobile Commerce
+			</h4>
+			<p>
+				The continuous implementation of a responsive design provides a shop layout which is optimized for mobile devices and gives your customers a perfect shopping experience.
+			</p>
+		</div>
+	</div>
+
+	<hr class="special" />
+
+	<div class="row highlight-grid">
+		<div class="col-md-4 sm-margin-bottom-50">
+			<span class="fa-stack fa-5x">
+				<i class="fa fa-circle fa-stack-2x" style="color: #d35400;"></i>
+				<i class="fa fa-language fa-stack-1x fa-inverse"></i>
+			</span>
+			<h4>
+				Multilingual
+			</h4>
+			<p>
+				Ready to go global? SmartStore.NET offers multi-language support and fine grained globalization settings for currency management, tax calculation, shipping and many more.
+			</p>
+		</div>
+		<div class="col-md-4 sm-margin-bottom-50">
+			<span class="fa-stack fa-5x">
+				<i class="fa fa-circle fa-stack-2x" style="color: #26bac8"></i>
+				<i class="fa fa-plug fa-stack-1x fa-inverse"></i>
+			</span>
+			<h4>
+				RESTful Web API
+			</h4>
+			<p>
+				Integrate SmartStore.NET into your business processes and applications and bring you workflow to perfection. The powerful Web API provides read and write access to almost all app resources.
+			</p>
+		</div>
+		<div class="col-md-4">
+			<span class="fa-stack fa-5x">
+				<i class="fa fa-circle fa-stack-2x" style="color: #324c80"></i>
+				<i class="fa fa-database fa-stack-1x fa-inverse"></i>
+			</span>
+			<h4>
+				Latest technology
+			</h4>
+			<p>
+				The state-of-the-art architecture of SmartStore.NET - with ASP.NET MVC 5 in its heart - makes it easy to extend, extremely flexible and essentially fun to work with.
+			</p>
+		</div>
+	</div>
+
+	<hr class="special margin-bottom-30" />
+</section>
+
+        </section>
+
+
+        <section id="section-ui" class="content-section container">
+            <div class="row">
+	<div class="col-md-2 col-sm-4 col-xs-6 sm-margin-bottom-30 ui-logo">
+		<img src="/Themes/SmartStoreHP/Content/images/ui-html5.png" alt="HTML 5" title="HTML 5" />
+	</div>
+	<div class="col-md-2 col-sm-4 col-xs-6 sm-margin-bottom-30 ui-logo">
+		<img src="/Themes/SmartStoreHP/Content/images/ui-css3.png" alt="CSS 3" title="CSS 3" />
+	</div>
+	<div class="col-md-2 col-sm-4 col-xs-6 sm-margin-bottom-30 ui-logo">
+		<img src="/Themes/SmartStoreHP/Content/images/ui-jquery.png" alt="jQuery - write less, do more" title="jQuery - write less, do more" />
+	</div>
+	<div class="col-md-2 col-sm-4 col-xs-6 sm-margin-bottom-30 ui-logo">
+		<img src="/Themes/SmartStoreHP/Content/images/ui-jquery-mobile.png" alt="jQuery mobile framework" title="jQuery mobile framework" />
+	</div>
+	<div class="col-md-2 col-sm-4 col-xs-6 sm-margin-bottom-30 ui-logo">
+		<img src="/Themes/SmartStoreHP/Content/images/ui-sasscss.png" alt="LESS css" title="LESS css" />
+	</div>
+	<div class="col-md-2 col-sm-4 col-xs-6 ui-logo">
+		<img src="/Themes/SmartStoreHP/Content/images/ui-bootstrap.png" alt="Twitter Bootstrap" title="Twitter Bootstrap" />
+	</div>
+</div>
+<div class="ui-info muted">
+	With HTML 5, CSS 3, jQuery, Sass CSS, Twitter Bootstrap, FontAwesome & Co. as well as a powerful theme engine SmartStore.NET offers designers a cutting-edge foundation for creativity, thereby enabling shop design at the highest level. 
+</div>
+
+<div class="row margin-top-60">
+	<div class="col-md-2 col-sm-4 col-xs-6 col-md-offset-1 sm-margin-bottom-30 ui-logo">
+		<img src="/Themes/SmartStoreHP/Content/images/tech-vs2013.png" alt="Visual Studio 2013" title="Visual Studio 2013" />
+	</div>
+	<div class="col-md-2 col-sm-4 col-xs-6 sm-margin-bottom-30 ui-logo">
+		<img src="/Themes/SmartStoreHP/Content/images/tech-aspnet.png" alt="ASP.NET MVC" title="ASP.NET MVC" />
+	</div>
+	<div class="clearfix visible-xs-block"></div>
+	<div class="col-md-2 col-sm-4 col-xs-6 sm-margin-bottom-30 ui-logo">
+		<img src="/Themes/SmartStoreHP/Content/images/tech-ef.png" alt="Entity Framework 6" title="Entity Framework 6" />
+	</div>
+	<div class="clearfix visible-sm-block"></div>
+	<div class="col-md-2 col-sm-4 col-xs-6 sm-margin-bottom-30 ui-logo">
+		<img src="/Themes/SmartStoreHP/Content/images/tech-mssql.png" alt="Microsoft SQL Server" title="Microsoft SQL Server" />
+	</div>
+	<div class="clearfix visible-xs-block"></div>
+	<div class="col-md-2 col-sm-4 col-xs-6 sm-margin-bottom-30 ui-logo">
+		<img src="/Themes/SmartStoreHP/Content/images/tech-autofac.png" alt="Autofac - An addictive .NET IoC" title="Autofac - An addictive .NET IoC" />
+	</div>
+</div>
+<p class="ui-info text-muted">
+	The state-of-the-art architecture of SmartStore.NET - with ASP.NET 4.5 + MVC 5, Entity Framework 6, MS SQL Server, IoC and Domain Driven Design approach - makes it easy to extend, extremely flexible and essentially fun to work with.
+</p>
+<div class="row margin-top-60">
+    <div class="col-md-3 col-md-offset-3 sm-margin-bottom-30 ui-logo">
+        <a href="http://www.trustedshops.de/shopbetreiber/shoploesungen.html" target="_blank">
+            <img src="/Themes/SmartStoreHP/Content/images/trustedshops_certified.png" alt="TrustedShops Certified" title="TrustedShops Certified" />
+        </a>
+    </div>
+    <div class="col-md-3 sm-margin-bottom-30 ui-logo">
+        <a href="https://payments.amazon.de/integration-options" target="_blank">
+            <img src="/Themes/SmartStoreHP/Content/images/amazon_certified.png" alt="Amazon Certified Partner" title="Amazon Certified Partner" />
+        </a>
+    </div>
+</div>
+<p class="ui-info text-muted">
+    As a shop software that is pre-certified by TrustedShops SmartStore.NET meets all legal requirements for web shops in Germany & EU.
+    Our plugins & interfaces are built in close partnership with the respective providers to guarantee a perfect usage of the present services.
+</p>
+        </section>
+
+        <!-- FEATURES Section -->
+        <section id="section-features" class="content-section">
+            
+
+<script>
+
+    $(function () {
+
+        $(".ft-img").click(function () {
+            var el = $(this);
+            var title = el.parents(".ft-row").find(".ft-info h3").text();
+            var modal = $("#modal-features");
+            $(".modal-title", modal).html(title);
+            $(".modal-body", modal).html('<img src="' + el.attr("data-big") + '" class="img-responsive" style="margin: 0 auto">');
+
+            if (el.attr("data-big")) {
+                modal.modal('show');
+            }
+            return false;
+        });
+
+        var nav = $('.feature-nav');
+        var all = nav.find('.feature-group');
+
+        var owl = $("#feature-slides > .owl-carousel").owlCarousel({
+            navigation: true,
+            singleItem: true,
+            autoHeight: true,
+            transitionStyle: "backSlide",
+            slideSpeed: 500,
+            paginationSpeed: 400,
+            navigationText: ['prev', 'Got to <strong></strong>&nbsp;&nbsp;<i class="fa fa-arrow-circle-right" style="color: #f90"></i>'],
+            afterMove: function () {
+                var idx = owl.currentItem;
+                var a = all.eq(idx);
+                highlightActiveLink(a);
+
+                if ($(window).scrollTop() > $("#feature-slides").offset().top) {
+                    _.delay(function () {
+                        $.scrollTo("#feature-slides", 800, { offset: -100 });
+                    }, 600);
+                }
+            }
+        }).data('owlCarousel');
+
+        nav.on('click', '.feature-group', function (e) {
+            e.preventDefault();
+            var idx = all.index(this);
+            owl.goTo(idx);
+        });
+
+        function highlightActiveLink(a) {
+            all.removeClass('active');
+            a.addClass("active");
+
+            var idx = all.index(a);
+            var next = idx + 1 < all.length ? all.eq(idx + 1) : all.eq(0);
+            owl.buttonNext.find("strong").text(next.text());
+        }
+
+        highlightActiveLink(all.first());
+
+    });
+</script>
+
+<div class="features-content container">
+    <h1 class="section-title">Features</h1>
+</div>
+
+<div class="features-shell special-section">
+
+    <div class="container">
+
+        <div class="row">
+
+			<div class="feature-nav col-lg-3 col-md-3 col-sm-3 hidden-xs">
+				<ul class="list-unstyled">
+						<li>
+							<a class="feature-group" href="#"><i class="fa fa-fw fa-sliders"></i>General functions</a>
+						</li>
+						<li>
+							<a class="feature-group" href="#"><i class="fa fa-fw fa-users"></i>Customer management</a>
+						</li>
+						<li>
+							<a class="feature-group" href="#"><i class="fa fa-fw fa-cubes"></i>Product management</a>
+						</li>
+						<li>
+							<a class="feature-group" href="#"><i class="fa fa-fw fa-tablet"></i>Mobile devices</a>
+						</li>
+						<li>
+							<a class="feature-group" href="#"><i class="fa fa-fw fa-bullhorn"></i>Marketing</a>
+						</li>
+						<li>
+							<a class="feature-group" href="#"><i class="fa fa-fw fa-truck"></i>Shipping</a>
+						</li>
+						<li>
+							<a class="feature-group" href="#"><i class="fa fa-fw fa-search"></i>SEO</a>
+						</li>
+						<li>
+							<a class="feature-group" href="#"><i class="fa fa-fw fa-credit-card"></i>Payment interfaces</a>
+						</li>
+				</ul>
+			</div>
+
+			<div id="feature-slides" class="slider-shell col-lg-9 col-md-9 col-sm-9 col-xs-12">
+
+				<div class="owl-carousel">
+
+						<div class="features-pane" id="tab-general">
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/login.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/login.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Customer Login / MyAccount</h3>
+										<p>
+											A customer account is set up for each shop visitor who registers at the shop.
+									Through the account, he/she can record addresses, view orders, and track delivery status.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/biz-import.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/biz-import.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>SmartStore.biz Import</h3>
+										<p>
+											Get started immediately! With the SmartStore.biz Import, you can easily transfer almost all of the data (*) from your existing SmartStore.biz Shop.
+										</p>
+											<p class="text-muted" style="font-size: 11px">
+												* Detailed information about the exact coverage of the import <a href='http://documents.smartstore.com/SmartStoreNET_BIZ-Importer.pdf' target='_blank'>can be found here</a>
+											</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/stock_1.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/stock_1.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Stock level management</h3>
+										<p>
+											With the integrated stock level management, you get an overview of which products need to be reordered.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/orders.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/orders.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Order and customer management</h3>
+										<p>
+											In the integrated back office, you can print invoices as well as enable product ratings and blog entries.
+										</p>
+									</div>
+								</div>
+															<div class="ft-row row">
+									<div class="ft-info ft-summary">
+										<h3 class="col-md-12">More Features</h3>
+											<div class="col-md-6">
+												<ul class="list-unstyled">
+														<li>
+															<span>Revolutionary shop bar</span>
+														</li>
+														<li>
+															<span>Autosuggest search</span>
+														</li>
+														<li>
+															<span>Discounts and gift vouchers</span>
+														</li>
+														<li>
+															<span>Guest access (anonymous checkout)</span>
+														</li>
+														<li>
+															<span>Multi-currency support with online exchange rate update</span>
+														</li>
+														<li>
+															<span>CMS system</span>
+														</li>
+														<li>
+															<span>B2B shops</span>
+														</li>
+														<li>
+															<span>Product tags</span>
+														</li>
+												</ul>
+											</div>
+											<div class="col-md-6">
+												<ul class="list-unstyled">
+														<li>
+															<span>SSL support</span>
+														</li>
+														<li>
+															<span>Autosuggest</span>
+														</li>
+														<li>
+															<span>Configurable measures and weights</span>
+														</li>
+														<li>
+															<span>Export and import with XML, Excel and SmartStore.biz</span>
+														</li>
+														<li>
+															<span>Multilingual support</span>
+														</li>
+														<li>
+															<span>Support of affiliate programs</span>
+														</li>
+												</ul>
+											</div>
+									</div>
+								</div>
+						</div>
+						<div class="features-pane" id="tab-crm">
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/customer-groups.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/customer-groups.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Management of different customer groups</h3>
+										<p>
+											Define customer groups and specify the visibility of prices for different customer groups.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/poll.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Surveys</h3>
+										<p>
+											Create surveys and receive feedback on your products or campaigns.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/giftcard.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/giftcard.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Gift vouchers</h3>
+										<p>
+											Offer your customers the option to buy gift vouchers for your shop.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/wishlist.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/wishlist.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Wish lists</h3>
+										<p>
+											Offer your customers the option to create their own wish lists and forward them conveniently to friends and acquaintances.
+										</p>
+									</div>
+								</div>
+															<div class="ft-row row">
+									<div class="ft-info ft-summary">
+										<h3 class="col-md-12">More Features</h3>
+											<div class="col-md-6">
+												<ul class="list-unstyled">
+														<li>
+															<span>Print orders in PDF format</span>
+														</li>
+														<li>
+															<span>Customer group-oriented prices</span>
+														</li>
+														<li>
+															<span>Customized prices for customer groups (ACL)</span>
+														</li>
+														<li>
+															<span>Bonus points</span>
+														</li>
+														<li>
+															<span>OpenID, Facebook, Twitter</span>
+														</li>
+														<li>
+															<span>Forum</span>
+														</li>
+												</ul>
+											</div>
+											<div class="col-md-6">
+												<ul class="list-unstyled">
+														<li>
+															<span>Blog</span>
+														</li>
+														<li>
+															<span>Live Chat</span>
+														</li>
+														<li>
+															<span>100% adaptable design through use of templates</span>
+														</li>
+														<li>
+															<span>Freely definable customer data (e.g. birthdate, telephone etc.)</span>
+														</li>
+												</ul>
+											</div>
+									</div>
+								</div>
+						</div>
+						<div class="features-pane" id="tab-product-admin">
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/attrs.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/attrs.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Attributes</h3>
+										<p>
+											Define comprehensive product attributes to give a clear overview.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/variants.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/variants.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Extensive variant system</h3>
+										<p>
+											Offer different variations of products.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/compare.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/compare.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Product comparison</h3>
+										<p>
+											Offer your customers the option to compare products at your shop.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/download.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/download.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Electronic downloads (ESD)</h3>
+										<p>
+											Configurable download permission of virtual products, including optional delivery of license data and user agreements
+										</p>
+									</div>
+								</div>
+															<div class="ft-row row">
+									<div class="ft-info ft-summary">
+										<h3 class="col-md-12">More Features</h3>
+											<div class="col-md-6">
+												<ul class="list-unstyled">
+														<li>
+															<span>Attributes</span>
+														</li>
+														<li>
+															<span>Bundle products</span>
+														</li>
+														<li>
+															<span>Product filter</span>
+														</li>
+														<li>
+															<span>Zoom function</span>
+														</li>
+														<li>
+															<span>Quantity discounts</span>
+														</li>
+														<li>
+															<span>Unlimited number of variants</span>
+														</li>
+												</ul>
+											</div>
+											<div class="col-md-6">
+												<ul class="list-unstyled">
+														<li>
+															<span>Elaborate rebate system</span>
+														</li>
+														<li>
+															<span>Subscription products</span>
+														</li>
+														<li>
+															<span>Unlimited number of item categories and products</span>
+														</li>
+														<li>
+															<span>Text options on products, e.g. for engravings</span>
+														</li>
+												</ul>
+											</div>
+									</div>
+								</div>
+						</div>
+						<div class="features-pane" id="tab-mobile">
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/mobile.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/mobile.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>100% optimized for mobile devices</h3>
+										<p>
+											SmartStore.NET automatically recognizes when your shop visitors are accessing your shop
+									from a mobile device and displays the shop in an optimized view for low resolutions.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/comingsoon.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>SMS notifications</h3>
+										<p>
+											With the integrated SMS notifications, you notify your customers as soon as a requested product is back in stock.
+										</p>
+									</div>
+								</div>
+													</div>
+						<div class="features-pane" id="tab-marketing">
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/newsletter.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/newsletter.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Email marketing</h3>
+										<p>
+											Email marketing by newsletter, direct support from MailChimp, adaptable templates
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/bonuspoints.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/bonuspoints.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Bonus points and loyalty program</h3>
+										<p>
+											Bonus points and loyalty program, customer retention and enticement to make multiple purchases
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/reviews.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/reviews.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Reviews & Ratings</h3>
+										<p>
+											Increase your sales and encourage more customers to make a purchase with product reviews and ratings
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/cross-promotion.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/cross-promotion.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Cross-promotion</h3>
+										<p>
+											Intelligent cross-promotion e.g. based on previously viewed products
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/comingsoon.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Export to shopping portals</h3>
+										<p>
+											Interfaces to price comparison portals: Google Base, billiger.de, ShopWahl
+										</p>
+									</div>
+								</div>
+													</div>
+						<div class="features-pane" id="tab-shipping">
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/preorder.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Pre-orders</h3>
+										<p>
+											With SmartStore.NET, you offer your customers the option of pre-ordering products if these are not yet available.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/rma.gif')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Management of returned goods / RMA</h3>
+										<p>
+											Save time and money on handling returned goods. The management and communication costs are minimized.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/tracking.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/tracking.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Delivery tracking</h3>
+										<p>
+											Customers can check the status of their orders online.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/checkout-attrs.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/checkout-attrs.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Input fields during the order process</h3>
+										<p>
+											Freely defined input fields during the order process (e.g. “pack as present”).
+										</p>
+									</div>
+								</div>
+													</div>
+						<div class="features-pane" id="tab-seo">
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/meta-tags.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/meta-tags.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Meta tags</h3>
+										<p>
+											Define customized meta and title tags for each product, item category and manufacturer.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/news.png">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/news.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Displaying news on the homepage</h3>
+										<p>
+											Ensure that news is displayed automatically on your homepage,
+									so that search engines always classify your content as current, hence giving it a high ranking.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/comingsoon.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Search engine friendly URLs</h3>
+										<p>
+											Thanks to so-called speaking URLs, you receive top ratings from all relevant search engines.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/comingsoon.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Automatic URL rewriting</h3>
+										<p>
+											Assign search engine friendly page names for content such as product and item category pages.
+										</p>
+									</div>
+								</div>
+															<div class="ft-row row">
+									<div class="ft-info ft-summary">
+										<h3 class="col-md-12">More Features</h3>
+											<div class="col-md-12">
+												<ul class="list-unstyled">
+														<li>
+															<span>Google XML Sitemap support</span>
+														</li>
+														<li>
+															<span>RSS</span>
+														</li>
+												</ul>
+											</div>
+									</div>
+								</div>
+						</div>
+						<div class="features-pane" id="tab-payment">
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/standard-payment.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Payment on delivery, pre-payment, credit card</h3>
+										<p>
+											In SmartStore.NET, all standard payment methods such as payment on delivery,
+									pre-payment or credit card are available to you in addition to the online payment methods.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/sue.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>SofortÜberweisung</h3>
+										<p>
+											SofortÜberweisung is the direct transfer scheme of SOFORT AG. With SofortÜberweisung,
+									the shop visitor conveniently transfers the corresponding amount while ordering.
+									The merchant receives instant confirmation directly after order completion, so that he/she can send the goods right away without risk.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/pp-logo-big.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>Paypal Express</h3>
+										<p>
+											PayPal Express offers your customers a particularly quick payment method by shortening the purchasing process,
+									thereby reducing the number of purchase cancellations at your shop.
+										</p>
+									</div>
+								</div>
+								<div class="ft-row clearfix">
+									<div class="img-frame reflift">
+                                        <figure class="ft-img" data-big="/Themes/SmartStoreHP/Content/screens/big/">
+                                            <div style="background-image: url('/Themes/SmartStoreHP/Content/screens/thumb/ipayment.png')"></div>
+                                        </figure>
+									</div>
+									<div class="ft-info">
+										<h3>iPayment</h3>
+										<p>
+											ipayment is the cost-effective and professional processing of online payments.
+									The interface communication takes place entirely in the background without being redirected to ipayment,
+									giving the shop visitor the impression that the payment is not being processed by a third-party provider.
+										</p>
+									</div>
+								</div>
+													</div>
+				</div>
+			</div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<div id="modal-features" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        </section>
+
+        <!-- DEMO Section -->
+        <section id="section-demo" class="content-section">
+            <div class="container">
+    <h1 class="section-title">Demo</h1>
+
+    <p class="intro">
+        We have set up a live demo for you to be able to test SmartStore.NET right away without installation.
+        Get a feel for it and put all the available functions to the test, in the front as well as back-end!
+        Please note that this is a public live demo, so other users can edit data at the same time.
+    </p>
+
+    <div class="row">
+        <div class="demo col-md-6">
+            <div class="screen-caption">Frontend</div>
+            <div class="img-frame reflift">
+                <figure>
+                    <a href="http://frontend.smartstore.net/en" target="_blank">
+                        <div style="background-image:url('/Themes/SmartStoreHP/Content/images/frontend.png')" class="screen"></div>
+                    </a>
+                </figure>
+            </div>
+            <div class="screen-desc">
+                <span>Customer:</span> demo<br />
+                <span>Password:</span> 1234
+            </div>
+        </div>
+
+        <div class="demo col-md-6">
+            <div class="screen-caption">Backend</div>
+            <div class="img-frame reflift">
+                <figure>
+                    <a href="http://backend.smartstore.net/en/login?ReturnUrl=http://backend.smartstore.net/en/admin" target="_blank">
+                        <div style="background-image:url('/Themes/SmartStoreHP/Content/images/backend.png')" class="screen"></div>
+                    </a>
+                </figure>
+            </div>
+            <div class="screen-desc">
+                <span>Admin:</span> demo<br />
+                <span>Password:</span> 1234
+            </div>
+        </div>
+    </div>
+
+    <hr class="special margin-top-50 margin-bottom-50" />
+</div>
+
+
+<div class="content-section">
+    <div class="container">
+        <h3 class="section-heading">
+            Show<strong>case</strong>
+        </h3>
+
+        <p class="intro">
+            A small selection of top-shops created with SmartStore.NET
+        </p>
+
+        <div class="row">
+            
+            <div class="col-md-4 col-sm-6 col-xs-6 showcase-item">
+                <div class="view view-tenth">
+                    <img class="img-responsive" src="/Themes/SmartStoreHP/Content/images/showcase/sacher.jpg" alt="">
+                    <div class="mask">
+                        <h2>Original Sacher Onlineshop</h2>
+                        <p>A piece of Vienna. Since 1832</p>
+                        <a href="https://shop.sacher.com/en/" class="btn btn-warning" target="_blank"><i class="fa fa-external-link"></i>&nbsp;Visit Shop</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-6 showcase-item">
+                <div class="view view-tenth">
+                    <img class="img-responsive" src="/Themes/SmartStoreHP/Content/images/showcase/beringtime.jpg" alt="">
+                    <div class="mask">
+                        <h2>BERING</h2>
+                        <p>BERING is a Danish watch and jewellery brand, inspired by the arctic beauty.</p>
+                        <a href="http://www.beringtime.com/en-us/" class="btn btn-warning" target="_blank"><i class="fa fa-external-link"></i>&nbsp;Visit Shop</a>
+                    </div>
+                </div>
+            </div>
+			
+			<div class="col-md-4 col-sm-6 col-xs-6 showcase-item">
+                <div class="view view-tenth">
+                    <img class="img-responsive" src="/Themes/SmartStoreHP/Content/images/showcase/bauer-music.jpg" alt="">
+                    <div class="mask">
+                        <h2>Bauer-Music</h2>
+                        <p>Expert for keyboard instrument since 1972</p>
+                        <a href="https://www.bauer-music.de/" class="btn btn-warning" target="_blank"><i class="fa fa-external-link"></i>&nbsp;Visit Shop</a>
+                    </div>
+                </div>
+            </div>
+			
+
+            <div class="col-md-4 col-sm-6 col-xs-6 showcase-item">
+                <div class="view view-tenth">
+                    <img class="img-responsive" src="/Themes/SmartStoreHP/Content/images/showcase/ketabamin.jpg" alt="">
+                    <div class="mask">
+                        <h2>Amin Book Store</h2>
+                        <p>Supplier of books and stationery</p>
+                        <a href="http://ketabamin.com/" class="btn btn-warning" target="_blank"><i class="fa fa-external-link"></i>&nbsp;Visit Shop</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-6 showcase-item">
+                <div class="view view-tenth">
+                    <img class="img-responsive" src="/Themes/SmartStoreHP/Content/images/showcase/weddingfavours.jpg" alt="">
+                    <div class="mask">
+                        <h2>UK Wedding Favours</h2>
+                        <p>Shop for beautiful hand-made wedding favours and personalised wedding gifts, from the UK's largest wedding favour site.</p>
+                        <a href="https://www.ukweddingfavours.co.uk/" class="btn btn-warning" target="_blank"><i class="fa fa-external-link"></i>&nbsp;Visit Shop</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-6 showcase-item">
+                <div class="view view-tenth">
+                    <img class="img-responsive" src="/Themes/SmartStoreHP/Content/images/showcase/karibu-saunen.png" alt="">
+                    <div class="mask">
+                        <h2>Karibu Sauna-Onlineshop</h2>
+                        <p>Offers classic Saunas next to other Heat Sources on Infrared Base</p>
+                        <a href="http://www.karibu-saunen.de/" class="btn btn-warning" target="_blank"><i class="fa fa-external-link"></i>&nbsp;Visit Shop</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+			<div class="col-md-4 col-sm-6 col-xs-6 showcase-item">
+				<div class="view view-tenth">
+					<img class="img-responsive" src="/Themes/SmartStoreHP/Content/images/showcase/felgen-online.jpg" alt="">
+					<div class="mask">
+						<h2>Felgen Online</h2>
+						<p>The big Rim- and Complete Wheel Shop</p>
+						<a href="http://www.felgen-online.de/" class="btn btn-warning" target="_blank"><i class="fa fa-external-link"></i>&nbsp;Visit Shop</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-sm-6 col-xs-6 showcase-item">
+				<div class="view view-tenth">
+					<img class="img-responsive" src="/Themes/SmartStoreHP/Content/images/showcase/reinhardt-ladenbau.jpg" alt="">
+					<div class="mask">
+						<h2>Reinhardt Ladenbau</h2>
+						<p>More than 50 Years Experience in Shop Construction and Design</p>
+						<a href="http://reinhardt-ladenbau.de/" class="btn btn-warning" target="_blank"><i class="fa fa-external-link"></i>&nbsp;Visit Shop</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-6 showcase-item">
+				<div class="view view-tenth">
+                    <img class="img-responsive" src="/Themes/SmartStoreHP/Content/images/showcase/farben-hornauer.png" alt="">
+					<div class="mask">
+						<h2>Farben Hornauer</h2>
+                        <p>Farben Hornauer is the first and meanwhile also oldest specialty store for colors in Bamberg.</p>
+                        <a href="http://www.farben-hornauer.de/" class="btn btn-warning" target="_blank"><i class="fa fa-external-link"></i>&nbsp;Visit Shop</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-sm-6 col-xs-6 showcase-item">
+				<div class="view view-tenth">
+					<img class="img-responsive" src="/Themes/SmartStoreHP/Content/images/showcase/atempause-kaffee.jpg" alt="">
+					<div class="mask">
+						<h2>Atempause</h2>
+						<p>Tea, Herbs &amp; Coffee</p>
+						<a href="http://www.atempause-kaffee.de" class="btn btn-warning" target="_blank"><i class="fa fa-external-link"></i>&nbsp;Visit Shop</a>
+					</div>
+				</div>
+			</div>
+            <div class="col-md-4 col-sm-6 col-xs-6 showcase-item">
+                <div class="view view-tenth">
+                    <img class="img-responsive" src="/Themes/SmartStoreHP/Content/images/showcase/yogisan-shop.png" alt="">
+                    <div class="mask">
+                        <h2>Yogisan</h2>
+                        <p>Yogapillows, Yogamats & Yoga Accessories for your Yoga</p>
+                        <a href="http://www.yogisan-shop.com/" class="btn btn-warning" target="_blank"><i class="fa fa-external-link"></i>&nbsp;Visit Shop</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-6 showcase-item">
+                <div class="view view-tenth">
+                    <img class="img-responsive" src="/Themes/SmartStoreHP/Content/images/showcase/gamoni.png" alt="">
+                    <div class="mask">
+                        <h2>Gamoni.de</h2>
+                        <p>I love my garden.</p>
+                        <a href="http://gamoni.de/" class="btn btn-warning" target="_blank"><i class="fa fa-external-link"></i>&nbsp;Visit Shop</a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- row -->
+    </div>
+</div>
+
+
+<div class="container">
+    <h1 class="section-title">
+        Editions & Support
+    </h1>
+</div>
+        </section>
+
+        <!-- PRICING Section -->
+        <section id="section-pricing" class="content-section">
+            <div class="special-section">
+                
+
+
+<div id="section-services" class="container">
+
+    <h3 class="section-heading">Maximum <strong>Service</strong></h3>
+    <p class="section-info">
+        Simply choose what you need: SmartStore.NET <strong>is available in 4 editions</strong> which are not only differing in the scope of features 
+        but also <strong>are bookable in combination with certain support levels</strong> which are matching the feature scope of the edition.
+        This way you can be sure to obtain the best support for your edition.
+
+        For developers, agencies and end users alike, the SmartStore.NET service programs offer the optimal solution for everyone.
+    </p>
+
+    <div class="row">
+            <div id="ce-col" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 md-margin-bottom-20">
+                <div class="pricing ce" data-animtype="fadeInUp" data-animdelay="0ms" data-animspeed="2s" style="overflow:visible">
+                    <div class="pricing-head" style="overflow:hidden;position:relative">
+                            <div class="sticker-right">Free</div>
+
+                        <h3>Community <span>&nbsp;</span></h3>
+                    </div>
+                    <ul class="pricing-content list-unstyled fsize13">
+                            <li >
+                                <i class="fa fa-fw fa-tablet sym"></i>
+                                <span class="has-hint" title="Modern, very appealing and mobile friendly theme based on Bootstrap 4 and Sass">
+                                    Responsive Theme (Flex)
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-search sym"></i>
+                                <span class="has-hint notavail" title="High performance, very intelligent, scalable and robust search engine for the product catalog">
+                                    Mega Search
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-search sym"></i>
+                                <span class="has-hint notavail" title="Provides features for multi language, multishop & inclusion of attributes into the facett search">
+                                    Mega Search Plus
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-list-alt sym"></i>
+                                <span class="has-hint notavail" title="Very appealing and modern navigation element for the product catalog in the style of Amazon & Co.">
+                                    Mega Menu
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-picture-o sym"></i>
+                                <span class="has-hint notavail" title="Very appealing and modern content slider for the homepage and category pages">
+                                    Content Slider
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-upload sym"></i>
+                                <span class="notavail" title="">
+                                    Export (CSV, XML)
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-file-pdf-o sym"></i>
+                                <span class="notavail" title="">
+                                    PDF Catalog
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-filter sym"></i>
+                                <span class="notavail" title="">
+                                    Payment/Shipping-Filter
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa- sym"></i>
+                                <span class="has-hint notavail" title="Powerful performance tool for extremly short response times.">
+                                    Output Cache
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa- sym"></i>
+                                <span class="has-hint notavail" title="OpenTrans Export & BMECat Import/Export">
+                                    OpenTrans &amp; BMECat
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-windows sym"></i>
+                                <span class="has-hint notavail" title="Filesystem adapter, which stores media files as well as dynamically generated files in the Microsoft Azure BLOB Storage Cloud">
+                                    Azure BLOB Storage
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-refresh sym"></i>
+                                <span class="has-hint notavail" title="Enables connections to third party apps of every kind. (Free access for developers)">
+                                    WebApi
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-puzzle-piece sym"></i>
+                                <span class="notavail" title="">
+                                    Plug-Ins (Multishop)
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa- sym"></i>
+                                <span class="notavail" title="">
+                                    Plug-Ins (Open source)
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-exchange sym"></i>
+                                <span class="has-hint notavail" title="Easy data exchange (e.g. complete products) between two stores">
+                                    Shop Connector
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-database sym"></i>
+                                <span class="has-hint notavail" title="Powerful performance tool for unlimited scalability. It is the basic prerequisite to run SmartStore.NET on a webfarm.">
+                                    Redis
+                                </span>
+
+                                                            </li>
+                                <li style="border-bottom:0">
+                                    <span style="font-size:13px"><b>Support</b></span>
+                                </li>
+                                <li style="padding-right: 10px">
+                                        <select id="ce" class="support-contract form-control margin-bottom-10" disabled>
+                                            <option value="platinum">None</option>
+                                        </select>
+
+
+
+                                </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-users sym"></i>
+                                <span class="" title="">
+                                    Access to support forum
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-cloud-upload sym"></i>
+                                <span class="" title="">
+                                    Access to updates
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-download sym"></i>
+                                <span class="has-hint notavail" title="Installation of SmartStore.NET on an adequate webspace (system requirements have to be fulfilled)">
+                                    Initial Installation
+                                </span>
+
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-desktop sym"></i>
+                                <span class="notavail" title="">
+                                    Online-Helpdesk | Ticketing
+                                </span>
+
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-clock-o sym"></i>
+                                <span class="notavail" title="">
+                                    Response guarantee
+                                </span>
+
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-institution sym"></i>
+                                <span class="notavail" title="">
+                                    Liability &amp; warranty
+                                </span>
+
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-upload sym"></i>
+                                <span class="has-hint notavail" title="Major- and minor-versions are installed by the manufacturer">
+                                    Update service by manufacturer
+                                </span>
+
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-umbrella sym"></i>
+                                <span class="has-hint notavail" title="... for urgent configuration errors">
+                                    Emergency support
+                                </span>
+
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-code sym"></i>
+                                <span class="has-hint notavail" title="Problem analysis and assistence by manufaturer">
+                                    Proprietary development support
+                                </span>
+
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-envelope-o sym"></i>
+                                <span class="has-hint notavail" title="Assistance by the developers of SmartStore.NET">
+                                    Developer support via email
+                                </span>
+
+                                                            </li>
+                    </ul>
+                    <div class="pricing-footer" style="overflow:visible">
+
+                            <div class="price-block primary row margin-bottom-30">
+                                <div class="col-lg-5 col-md-4 col-sm-2 price-wrapper">
+                                    <div class="price">0 <em>€</em> <sup>*</sup></div>
+                                </div>
+                                <div class="col-lg-7 col-md-8 col-sm-10 price-hint">
+                                    <div>
+                                        Open Source<br />
+                                        License: GPLv3
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                <a href="https://github.com/smartstoreag/SmartStoreNET/releases/download/3.0.2/SmartStoreNET.Community.3.0.2.zip" class="btn btn-default btn-lg btn-block"><i class="fa fa-download"></i>&nbsp;&nbsp;Download</a>
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div id="professional-col" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 md-margin-bottom-20">
+                <div class="pricing silver" data-animtype="fadeInUp" data-animdelay="100ms" data-animspeed="2s" style="overflow:visible">
+                    <div class="pricing-head" style="overflow:hidden;position:relative">
+
+                        <h3>Professional <span>&nbsp;</span></h3>
+                    </div>
+                    <ul class="pricing-content list-unstyled fsize13">
+                            <li >
+                                <i class="fa fa-fw fa-tablet sym"></i>
+                                <span class="has-hint" title="Modern, very appealing and mobile friendly theme based on Bootstrap 4 and Sass">
+                                    Responsive Theme (Flex)
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-search sym"></i>
+                                <span class="has-hint" title="High performance, very intelligent, scalable and robust search engine for the product catalog">
+                                    Mega Search
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-search sym"></i>
+                                <span class="has-hint notavail" title="Provides features for multi language, multishop & inclusion of attributes into the facett search">
+                                    Mega Search Plus
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-list-alt sym"></i>
+                                <span class="has-hint" title="Very appealing and modern navigation element for the product catalog in the style of Amazon & Co.">
+                                    Mega Menu
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-picture-o sym"></i>
+                                <span class="has-hint" title="Very appealing and modern content slider for the homepage and category pages">
+                                    Content Slider
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-upload sym"></i>
+                                <span class="" title="">
+                                    Export (CSV, XML)
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-file-pdf-o sym"></i>
+                                <span class="" title="">
+                                    PDF Catalog
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-filter sym"></i>
+                                <span class="" title="">
+                                    Payment/Shipping-Filter
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa- sym"></i>
+                                <span class="has-hint notavail" title="Powerful performance tool for extremly short response times.">
+                                    Output Cache
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa- sym"></i>
+                                <span class="has-hint notavail" title="OpenTrans Export & BMECat Import/Export">
+                                    OpenTrans &amp; BMECat
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-windows sym"></i>
+                                <span class="has-hint notavail" title="Filesystem adapter, which stores media files as well as dynamically generated files in the Microsoft Azure BLOB Storage Cloud">
+                                    Azure BLOB Storage
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-refresh sym"></i>
+                                <span class="has-hint notavail" title="Enables connections to third party apps of every kind. (Free access for developers)">
+                                    WebApi
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-puzzle-piece sym"></i>
+                                <span class="notavail" title="">
+                                    Plug-Ins (Multishop)
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa- sym"></i>
+                                <span class="notavail" title="">
+                                    Plug-Ins (Open source)
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-exchange sym"></i>
+                                <span class="has-hint notavail" title="Easy data exchange (e.g. complete products) between two stores">
+                                    Shop Connector
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-database sym"></i>
+                                <span class="has-hint notavail" title="Powerful performance tool for unlimited scalability. It is the basic prerequisite to run SmartStore.NET on a webfarm.">
+                                    Redis
+                                </span>
+
+                                                            </li>
+                                <li style="border-bottom:0">
+                                    <span style="font-size:13px"><b>Support</b></span>
+                                </li>
+                                <li style="padding-right: 10px">
+
+                                        <select id="professional" class="support-contract form-control margin-bottom-10">
+                                            <option value="1">Silver</option>
+                                            <option value="2">Gold</option>
+                                        </select>
+
+
+                                </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-users sym"></i>
+                                <span class="" title="">
+                                    Access to support forum
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-cloud-upload sym"></i>
+                                <span class="" title="">
+                                    Access to updates
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-download sym"></i>
+                                <span class="has-hint" title="Installation of SmartStore.NET on an adequate webspace (system requirements have to be fulfilled)">
+                                    Initial Installation
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-desktop sym"></i>
+                                <span class="" title="">
+                                    Online-Helpdesk | Ticketing
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-clock-o sym"></i>
+                                <span class="" title="">
+                                    Response guarantee
+                                </span>
+
+                                                                    <span class="indicator">24 h</span>
+                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-institution sym"></i>
+                                <span class="" title="">
+                                    Liability &amp; warranty
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-upload sym"></i>
+                                <span class="has-hint notavail" title="Major- and minor-versions are installed by the manufacturer">
+                                    Update service by manufacturer
+                                </span>
+
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-umbrella sym"></i>
+                                <span class="has-hint notavail" title="... for urgent configuration errors">
+                                    Emergency support
+                                </span>
+
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-code sym"></i>
+                                <span class="has-hint notavail" title="Problem analysis and assistence by manufaturer">
+                                    Proprietary development support
+                                </span>
+
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-envelope-o sym"></i>
+                                <span class="has-hint notavail" title="Assistance by the developers of SmartStore.NET">
+                                    Developer support via email
+                                </span>
+
+                                                            </li>
+                    </ul>
+                    <div class="pricing-footer" style="overflow:visible">
+
+                            <div class="price-block primary row">
+                                <div class="col-lg-5 col-md-4 col-sm-2 price-wrapper">
+                                    <div class="price">1,990 <em>€</em> <sup>*</sup></div>
+                                </div>
+                                <div class="col-lg-7 col-md-8 col-sm-10 price-hint" style="padding-right: 0">
+                                    <div>
+
+                                        <strong>one-time</strong>
+                                        <br />
+                                        <span class="contract-hint">incl. Silver Support</span>
+                                        &nbsp;
+                                        <a href="#" onclick="return false;" class="further-infos-link">
+                                            <i class="fa fa-question" style="font-size: 14px;color: #666;"></i>
+                                        </a>
+
+                                        <div class="further-infos hide popover">
+                                            <h5>License + 12 months <span class="contract-name">Silver</span> Support</h5>
+
+                                            <p>
+                                                The license cost for the Professional edition of <span style="font-weight:bold">1,000</span> € is a one-time payment.
+                                                The cost for the <span class="contract-name">Silver</span> 
+                                                support contract with the term of 12 months are yearly fees of 
+                                                <span class="contract-price" style="font-weight:bold">990</span> €.
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+                <div class="clearfix visible-md-block"></div>
+            <div id="premium-col" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 md-margin-bottom-20">
+                <div class="pricing gold" data-animtype="fadeInUp" data-animdelay="200ms" data-animspeed="2s" style="overflow:visible">
+                    <div class="pricing-head" style="overflow:hidden;position:relative">
+                            <div class="sticker-right">TOP</div>
+
+                        <h3>Premium <span>&nbsp;</span></h3>
+                    </div>
+                    <ul class="pricing-content list-unstyled fsize13">
+                            <li >
+                                <i class="fa fa-fw fa-tablet sym"></i>
+                                <span class="has-hint" title="Modern, very appealing and mobile friendly theme based on Bootstrap 4 and Sass">
+                                    Responsive Theme (Flex)
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-search sym"></i>
+                                <span class="has-hint" title="High performance, very intelligent, scalable and robust search engine for the product catalog">
+                                    Mega Search
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-search sym"></i>
+                                <span class="has-hint" title="Provides features for multi language, multishop & inclusion of attributes into the facett search">
+                                    Mega Search Plus
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-list-alt sym"></i>
+                                <span class="has-hint" title="Very appealing and modern navigation element for the product catalog in the style of Amazon & Co.">
+                                    Mega Menu
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-picture-o sym"></i>
+                                <span class="has-hint" title="Very appealing and modern content slider for the homepage and category pages">
+                                    Content Slider
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-upload sym"></i>
+                                <span class="" title="">
+                                    Export (CSV, XML)
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-file-pdf-o sym"></i>
+                                <span class="" title="">
+                                    PDF Catalog
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-filter sym"></i>
+                                <span class="" title="">
+                                    Payment/Shipping-Filter
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa- sym"></i>
+                                <span class="has-hint" title="Powerful performance tool for extremly short response times.">
+                                    Output Cache
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa- sym"></i>
+                                <span class="has-hint" title="OpenTrans Export & BMECat Import/Export">
+                                    OpenTrans &amp; BMECat
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-windows sym"></i>
+                                <span class="has-hint" title="Filesystem adapter, which stores media files as well as dynamically generated files in the Microsoft Azure BLOB Storage Cloud">
+                                    Azure BLOB Storage
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-refresh sym"></i>
+                                <span class="has-hint" title="Enables connections to third party apps of every kind. (Free access for developers)">
+                                    WebApi
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-puzzle-piece sym"></i>
+                                <span class="" title="">
+                                    Plug-Ins (Multishop)
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa- sym"></i>
+                                <span class="notavail" title="">
+                                    Plug-Ins (Open source)
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-exchange sym"></i>
+                                <span class="has-hint notavail" title="Easy data exchange (e.g. complete products) between two stores">
+                                    Shop Connector
+                                </span>
+
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-database sym"></i>
+                                <span class="has-hint notavail" title="Powerful performance tool for unlimited scalability. It is the basic prerequisite to run SmartStore.NET on a webfarm.">
+                                    Redis
+                                </span>
+
+                                                            </li>
+                                <li style="border-bottom:0">
+                                    <span style="font-size:13px"><b>Support</b></span>
+                                </li>
+                                <li style="padding-right: 10px">
+
+
+                                        <select id="premium" class="support-contract form-control margin-bottom-10">
+                                            <option value="2">Gold</option>
+                                            <option value="3">Platinum</option>
+                                        </select>
+
+                                </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-users sym"></i>
+                                <span class="" title="">
+                                    Access to support forum
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-cloud-upload sym"></i>
+                                <span class="" title="">
+                                    Access to updates
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-download sym"></i>
+                                <span class="has-hint" title="Installation of SmartStore.NET on an adequate webspace (system requirements have to be fulfilled)">
+                                    Initial Installation
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-desktop sym"></i>
+                                <span class="" title="">
+                                    Online-Helpdesk | Ticketing
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-clock-o sym"></i>
+                                <span class="" title="">
+                                    Response guarantee
+                                </span>
+
+                                                                    <span class="indicator">8 h</span>
+                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-institution sym"></i>
+                                <span class="" title="">
+                                    Liability &amp; warranty
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-upload sym"></i>
+                                <span class="has-hint" title="Major- and minor-versions are installed by the manufacturer">
+                                    Update service by manufacturer
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-umbrella sym"></i>
+                                <span class="has-hint notavail" title="... for urgent configuration errors">
+                                    Emergency support
+                                </span>
+
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-code sym"></i>
+                                <span class="has-hint notavail" title="Problem analysis and assistence by manufaturer">
+                                    Proprietary development support
+                                </span>
+
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-envelope-o sym"></i>
+                                <span class="has-hint notavail" title="Assistance by the developers of SmartStore.NET">
+                                    Developer support via email
+                                </span>
+
+                                                            </li>
+                    </ul>
+                    <div class="pricing-footer" style="overflow:visible">
+
+                            <div class="price-block primary row">
+                                <div class="col-lg-5 col-md-4 col-sm-2 price-wrapper">
+                                    <div class="price">4,990 <em>€</em> <sup>*</sup></div>
+                                </div>
+                                <div class="col-lg-7 col-md-8 col-sm-10 price-hint" style="padding-right: 0">
+                                    <div>
+
+                                        <strong>one-time</strong>
+                                        <br />
+                                        <span class="contract-hint">incl. Gold Support</span>
+                                        &nbsp;
+                                        <a href="#" onclick="return false;" class="further-infos-link">
+                                            <i class="fa fa-question" style="font-size: 14px;color: #666;"></i>
+                                        </a>
+
+                                        <div class="further-infos hide popover">
+                                            <h5>License + 12 months <span class="contract-name">Gold</span> Support</h5>
+
+                                            <p>
+                                                The license cost for the Premium edition of <span style="font-weight:bold">3,000</span> € is a one-time payment.
+                                                The cost for the <span class="contract-name">Gold</span> 
+                                                support contract with the term of 12 months are yearly fees of 
+                                                <span class="contract-price" style="font-weight:bold">1,990</span> €.
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div id="enterprise-col" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 md-margin-bottom-20">
+                <div class="pricing platinum" data-animtype="fadeInUp" data-animdelay="300ms" data-animspeed="2s" style="overflow:visible">
+                    <div class="pricing-head" style="overflow:hidden;position:relative">
+
+                        <h3>Enterprise <span>&nbsp;</span></h3>
+                    </div>
+                    <ul class="pricing-content list-unstyled fsize13">
+                            <li >
+                                <i class="fa fa-fw fa-tablet sym"></i>
+                                <span class="has-hint" title="Modern, very appealing and mobile friendly theme based on Bootstrap 4 and Sass">
+                                    Responsive Theme (Flex)
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-search sym"></i>
+                                <span class="has-hint" title="High performance, very intelligent, scalable and robust search engine for the product catalog">
+                                    Mega Search
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-search sym"></i>
+                                <span class="has-hint" title="Provides features for multi language, multishop & inclusion of attributes into the facett search">
+                                    Mega Search Plus
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-list-alt sym"></i>
+                                <span class="has-hint" title="Very appealing and modern navigation element for the product catalog in the style of Amazon & Co.">
+                                    Mega Menu
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-picture-o sym"></i>
+                                <span class="has-hint" title="Very appealing and modern content slider for the homepage and category pages">
+                                    Content Slider
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-upload sym"></i>
+                                <span class="" title="">
+                                    Export (CSV, XML)
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-file-pdf-o sym"></i>
+                                <span class="" title="">
+                                    PDF Catalog
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-filter sym"></i>
+                                <span class="" title="">
+                                    Payment/Shipping-Filter
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa- sym"></i>
+                                <span class="has-hint" title="Powerful performance tool for extremly short response times.">
+                                    Output Cache
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa- sym"></i>
+                                <span class="has-hint" title="OpenTrans Export & BMECat Import/Export">
+                                    OpenTrans &amp; BMECat
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-windows sym"></i>
+                                <span class="has-hint" title="Filesystem adapter, which stores media files as well as dynamically generated files in the Microsoft Azure BLOB Storage Cloud">
+                                    Azure BLOB Storage
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-refresh sym"></i>
+                                <span class="has-hint" title="Enables connections to third party apps of every kind. (Free access for developers)">
+                                    WebApi
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-puzzle-piece sym"></i>
+                                <span class="" title="">
+                                    Plug-Ins (Multishop)
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa- sym"></i>
+                                <span class="" title="">
+                                    Plug-Ins (Open source)
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-exchange sym"></i>
+                                <span class="has-hint" title="Easy data exchange (e.g. complete products) between two stores">
+                                    Shop Connector
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li >
+                                <i class="fa fa-fw fa-database sym"></i>
+                                <span class="has-hint" title="Powerful performance tool for unlimited scalability. It is the basic prerequisite to run SmartStore.NET on a webfarm.">
+                                    Redis
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                                <li style="border-bottom:0">
+                                    <span style="font-size:13px"><b>Support</b></span>
+                                </li>
+                                <li style="padding-right: 10px">
+
+
+
+                                        <select id="enterprise" class="support-contract form-control margin-bottom-10" disabled>
+                                            <option value="3">Enterprise</option>
+                                        </select>
+                                </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-users sym"></i>
+                                <span class="" title="">
+                                    Access to support forum
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-cloud-upload sym"></i>
+                                <span class="" title="">
+                                    Access to updates
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-download sym"></i>
+                                <span class="has-hint" title="Installation of SmartStore.NET on an adequate webspace (system requirements have to be fulfilled)">
+                                    Initial Installation
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-desktop sym"></i>
+                                <span class="" title="">
+                                    Online-Helpdesk | Ticketing
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-clock-o sym"></i>
+                                <span class="" title="">
+                                    Response guarantee
+                                </span>
+
+                                                                    <span class="indicator">24/7</span>
+                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-institution sym"></i>
+                                <span class="" title="">
+                                    Liability &amp; warranty
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-upload sym"></i>
+                                <span class="has-hint" title="Major- and minor-versions are installed by the manufacturer">
+                                    Update service by manufacturer
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-umbrella sym"></i>
+                                <span class="has-hint" title="... for urgent configuration errors">
+                                    Emergency support
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-code sym"></i>
+                                <span class="has-hint" title="Problem analysis and assistence by manufaturer">
+                                    Proprietary development support
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                            <li class=support-feat>
+                                <i class="fa fa-fw fa-envelope-o sym"></i>
+                                <span class="has-hint" title="Assistance by the developers of SmartStore.NET">
+                                    Developer support via email
+                                </span>
+
+                                    <span class="indicator"><i class="fa fa-fw fa-check"></i></span>
+                                                            </li>
+                    </ul>
+                    <div class="pricing-footer" style="overflow:visible">
+
+                            <div class="price-block primary row">
+                                <div class="col-12 price-wrapper">
+                                    <div class="price text-center">
+                                        <a href="javascript:void(0);" class="further-price-infos-link">
+                                            On Request
+                                            <em>&nbsp;</em> <sup>&nbsp;</sup>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+
+        _.defer(function () {
+            $('.pricing span.has-hint').tooltip({
+                placement: 'left',
+                container: 'body',
+                html: true
+            });
+        }, 100);
+
+        $(".support-contract").on("change", function (e) {
+
+            e.preventDefault();
+
+            var selectBox = $(e.currentTarget);
+            var contract = selectBox.val();
+            var edition = selectBox.attr("id");
+
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                data: { contract: contract, edition: edition, culture: "en" },
+                url: /getprices/,
+                success: function (result) {
+
+                    // remove all current support features
+                    $("#" + edition + "-col .support-feat").remove();
+                    var html = "";
+
+                    // update support features for current edition
+                    $.each(result.supportFeatures, function(index, item) {
+                        //console.log(item);
+
+                        if(item.Name.length == 0) return true;
+
+                        var cssClass = item.Hint ? "has-hint" : "";
+                        var avail = item.Values[contract];     // TODO: 1...
+
+                        if (!avail) cssClass += " notavail";
+
+                        html += '<li class=support-feat>';
+                        html += '   <i class="fa fa-fw fa-' + item.Icon + ' sym"></i>';
+
+                        html += '   <span class="' + cssClass + '" title="' + item.Hint + '">' + item.Name + '</span>';
+
+                        if (typeof avail === 'boolean' && avail)
+                        {
+                            html += '<span class="indicator"><i class="fa fa-fw fa-check"></i></span>';
+                        }
+
+                        if (typeof avail === 'string' && avail)
+                        {
+                            html += '<span class="indicator">' + avail + '</span>';
+                        }
+
+                        html += '</li>';
+
+                    });
+
+                    var currentEditionCol = $("#" + edition + "-col");
+
+                    // update features
+                    $(".pricing-content", currentEditionCol).append(html);
+
+                    // update price
+                    $(".further-price-infos-link", currentEditionCol).html(result.price + " <em>€</em><sup> * </sup>");
+                    $(".contract-hint", currentEditionCol).html();
+
+                    $('.pricing span.has-hint', currentEditionCol).tooltip({
+                        placement: 'left',
+                        container: 'body',
+                        html: true
+                    });
+
+                    // update texts
+                    $(".contract-hint", currentEditionCol).text("inkl. " + result.supportName + " Support");
+                    $(".contract-name", currentEditionCol).text(result.supportName);
+                    $(".contract-price", currentEditionCol).text(result.priceSupport);
+                },
+                error:function (xhr, ajaxOptions, thrownError) {
+                    // TODO: what now?
+                }
+            });
+
+            return false;
+        });
+    });
+</script>
+            </div>
+
+            <div class="content-section">
+                <div class="container service-desc margin-top-40">
+
+    <h3 class="section-heading">Maximum <strong>Service</strong></h3>
+    <p class="section-info">
+        To ensure that your online shop is up and running in good time, we offer you qualified support.
+        We take care of the initial installation for you or adjust the design according to your wishes.
+        And all this with the competence of the manufacturer.
+    </p>
+
+    <div class="services-shell">
+
+        <div class="cnt-service clearfix" style="border:none !important">
+
+            <div class="pic">
+				<i class="fa fa-download"></i>
+            </div>
+                    
+            <div class="price">
+                <span>
+                    200 <em>$</em> <sup>*</sup>
+                </span>
+            </div>
+
+            <div class="desc">
+                <h4>Initial Installation</h4>
+                <p>
+                    Save time and effort by letting us install your SmartStore.NET online shop. 
+                    We are happy to advise you on choosing a suitable hosting provider as well.
+                </p>
+                
+                <a href="#" onclick="return false;" class="further-infos-link">Further Information</a>
+
+                <div class="further-infos hide">
+                    <p>
+                        Installation of SmartStore.NET on suitable web space (system requirements must be met)
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cnt-service clearfix">
+
+            <div class="pic">
+				<i class="fa fa-cogs"></i>
+            </div>
+
+            <div class="price">
+                <span>
+                    250 <em>$</em> <sup>*</sup>
+                </span>
+            </div>
+
+            <div class="desc">
+
+                <h4>Web server setup</h4>
+                <p>
+                    You want to install SmartStore.NET on your vServer or "dedicated" server but are missing the necessary programs and services? 
+                    We are happy to install and configure the necessary programs for you.
+                </p>
+                
+                <a href="#" onclick="return false;" class="further-infos-link">Further Information</a>
+
+                <div class="further-infos hide">
+                    <p>
+                        Installation and setup of the necessary software to operate SmartStore.NET on your own dedicated server 
+                    </p>
+
+                    <ul>
+                        <li>Installation MS SQL Server Express Edition</li>
+                        <li>Installation .NET Framework 4.5 &amp; MVC 4</li>
+                        <li>Setup and configuration of a website in IIS</li>
+                        <li>Configuration of the application pool</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+                      
+        <div class="cnt-service clearfix">
+            <div class="pic">
+                <i class="fa fa-sliders"></i>
+            </div>
+
+            <div class="price">
+                <span>
+                    490 <em>$</em> <sup>*</sup>
+                </span>
+            </div>
+
+            <div class="desc">
+
+                <h4>Shop basic setup</h4>
+                <p>
+                    Don’t waste any time.  We will install all the settings in your SmartStore.NET online shop and configure all the necessary plug-ins for you. 
+                    Your SmartStore.net online shop will be ready before you know it! 
+                </p>
+                
+                <a href="#" onclick="return false;" class="further-infos-link">Further Information</a>
+
+                <div class="further-infos hide">
+
+                    <ul>
+                        <li>Input of master data and contact details, including contact e-mail (data must be available)</li>
+                        <li>Data import from SmartStore.biz *</li>
+                        <li>Installation of payment interfaces *</li>
+                        <li>Setup of Trusted Shops Interface (seal of approval) including all widgets *</li>
+                        <li>Setup of shipment methods</li>
+                        <li>Installation of SSL and Captcha function</li>
+                        <li>Creation of surveys and news articles (two of each; content must be available)</li>
+                        <li>Setup of Google Analytics (data must be available)</li>
+                        <li>Establishment of forums (2 of them)</li>
+                        <li>Adjustment of country settings (invoicing, VAT etc.)</li>
+                        <li>Stipulation of main currency and activation of online currency exchange service</li>
+                        <li>Setup of delivery times</li>
+                        <li>Integration of a logo (logo data must be available)</li>
+                    </ul>
+
+                    <div style="text-align:right;font-size:11px;color:#999">
+                        * As long as a license for the requiered plugins is available
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<div class="cnt-service clearfix">
+            <div class="pic">
+				<i class="fa fa-cloud-upload"></i>
+            </div>
+
+            <div class="price">
+                <span>
+                    490 <em>€</em> <sup>*</sup>
+                </span>
+            </div>
+
+            <div class="desc">
+
+                <h4>Automatic Backup</h4>
+                <p>
+					Frequently and reliable data backup is very important and can't be neglected or even be missed totally.
+					If no backup is performed it soon can be to late at all. Therefore we offer a backup service on a regular basis to you.
+                </p>
+                
+                <a href="#" onclick="return false;" class="further-infos-link">Further Information</a>
+
+                <div class="further-infos hide">
+
+                    <ul>
+                        <li>
+							Our one-time configuration service includes options and services which range from creation of an invidual account for <i>CrashPlan</i> to its configuration.
+							We support you when it comes to the administration of your acount and will make it effective and safe.
+						</li>
+						<li>
+							We offer the configuration of an automatic backup of all of your shop data on a daily base.
+							The SmartStore.NET database and the web folder will be backed up with all the corresponding data.
+						</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cnt-service clearfix">    
+            <div class="pic">
+                <i class="fa fa-database"></i>
+            </div>
+
+            <div class="price">
+                <span>
+                    1.990 <em>$</em> <sup>*</sup>
+                </span>
+            </div>
+
+            <div class="desc">
+                <h4>
+                    Theming
+                </h4>
+                <p>
+                    A company’s image makes it distinctive, setting it apart from the competition.
+                    The online shop also forms part of its corporate identity.
+                    Therefore, the visual appearance in this context should also correspond seamlessly with the company’s image. 
+                    We adapt your SmartStore.NET online shop optically, put 4 slides into the content slider and create 10 new content pages.   
+                </p>
+
+                <a href="#" onclick="return false;" class="further-infos-link">Further Information</a>
+
+                <div class="further-infos hide">
+                    <p>
+                        Basic theme adaptions
+                    </p>
+                    <ul>
+                        <li>Optical theme adaptations through theme-configurator and CSS</li>
+                        <li>Color adjustment based on customer needs </li>
+                        <li>Typography adjustment based on customer needs</li>
+                        <li>Creation of four slides for the content slider on the homepage (text and graphics must be available)</li>
+                        <li>Image cropping for the content slider</li>
+                        <li>Generating and linking up to 10 new content pages (content must be available)</li>
+                        <li>Customization of the footer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            
+        <div class="cnt-service clearfix">    
+
+            <div class="pic">
+				<i class="fa fa-wrench"></i>
+            </div>
+
+            <div class="price" style="margin-top: 20px; margin-right: 20px">
+                <span class="muted" style="font-size: 24px; line-height: 24px">
+                    on<br />request
+                </span>
+            </div>
+
+            <div class="desc">
+
+                <h4>
+                    Customizing
+                </h4>
+                <p>
+                    Do you have an idea or need extra functions or extensions? We bring your ideas to life with the competence of the manufacturer. 
+                </p>
+                
+                <a href="#" onclick="return false;" class="further-infos-link">Further Information</a>
+
+                <div class="further-infos hide">
+                    <p style="margin-bottom: 8px">
+                        And if that’s not enough…do you want a unique online shop or need extra functions?  We can fine-tune your shop’s processes, 
+                        create extensions according to your specifications and offer you support in forming a connection to your existing business procedures.  
+                    </p>
+                    <div>
+                        Solutions:
+                        <ul>
+                            <li>Extensions and plug-ins</li>
+                            <li>Workflow adjustments within your shop</li>
+                            <li>Graphical design (theming)</li>
+                            <li>Connection to business procedures</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+            
+    </div>
+            
+    <div id="content-foot">&nbsp;</div>
+
+</div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT Section -->
+        <section id="section-contact" class="content-section container">
+            <h1 class="section-title">Contact</h1>
+
+<hr class="special margin-bottom-30" />
+
+<div class="row">
+    <div class="col-md-6 margin-bottom-40">
+        <h3 style="font-size: 26px;">You've got <strong>questions?</strong></h3>
+        <h3>We've got the <strong>answers!</strong></h3>
+        <!--
+        <div class="phone-number margin-top-10">
+            <i class="fa fa-phone"></i>
+            <p>+49 (0) 231 5335-0</p>
+        </div>
+        -->
+    </div>
+    <div class="col-md-6">
+        <div class="margin-bottom-40">
+
+            <form action="/en/net/" method="post">
+                <fieldset>
+
+                    <legend class="hide"></legend>
+
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-fw fa-lg fa-user"></i></span>
+                            <input type="text" class="form-control input-lg" placeholder="Name, Firstname, Company" id="LastName" name="LastName" value="" />
+                        </div>
+                        <span class="text-danger field-validation-valid" data-valmsg-for="LastName" data-valmsg-replace="true"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-fw fa-lg fa-envelope"></i></span>
+                            <input type="text" class="form-control input-lg" placeholder="Email-Address" data-val="true" data-val-required="The Email field is required." id="Email" name="Email" value="" />
+                        </div>
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-control input-lg" rows="7" placeholder="Your inquery" data-val="true" data-val-required="The your message field is required." id="Message" name="Message">
+</textarea>
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Message" data-valmsg-replace="true"></span>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <button id="contact-submit" type="submit" name="send-email" class="btn btn-default btn-lg">
+								<i class="fa fa-fw fa-mail-forward"></i>
+								Submit
+							</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GABeGBEqlxFiFApb4riyYS80GpMKFwQUbSyFd2uIScA_gjpZYX96-bjKTqi1_9BBhFSw6UhJGTFkr94xewmLPOPDF0wGkMe0kBabbdwC9yHEBfT5sRNUsysQwbRPfd9IiNNthEqQlnqu_ovnOcsIQ8" /></form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+        $("#contact-submit").click(function (e) {
+
+            e.preventDefault();
+
+            var btn = $(e.currentTarget);
+            var icn = btn.find("i");
+
+            btn.attr("disabled", true);
+            icn.removeClass("fa-mail-forward").addClass("fa-spinner fa-spin");
+
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                data: btn.closest('form').serialize(),
+                url: /contactuspostnet/,
+                success: function (result) {
+                    btn.closest('form')[0].reset();
+                    OnNewsletterSubscribeResponse(result.Result, !result.Success);
+                    btn.removeAttr("disabled");
+                    icn.removeClass("fa-spinner fa-spin").addClass("fa-mail-forward");
+                },
+                error:function (xhr, ajaxOptions, thrownError) {
+                    OnNewsletterSubscribeResponse(thrownError, true);
+                    btn.removeAttr("disabled");
+                    icn.removeClass("fa-spinner fa-spin").addClass("fa-mail-forward");
+                }
+            });
+        });
+    });
+</script>
+        </section>
+
+    </section>
+
+    <footer>
+    <div class="footer">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-top-10 sm-margin-bottom-40">
+                    <a href="http://www.smartstore.com" title="Onlineshop Systems for Professionals and Beginners">
+                        <img class="img-responsive" src="/Themes/SmartStoreHP/Content/images/logo-footer.png" />
+                    </a>
+                    <p class="margin-top-10">
+                        SmartStore.NET is a product of SmartStore AG
+                    </p>
+					<!-- Newsletter -->
+					<div id="newsletter-subscribe-block" class="margin-top-20">
+						<h3>Newsletter</h3>
+
+						<div class="input-group">
+                            <input type="email" id="newsletter-email-first">
+							<input type="email" id="newsletter-email" class="form-control input-sm" placeholder="Email Address">
+							<span class="input-group-btn">
+								<button id="newsletter-subscribe-button" class="btn btn-sm btn-danger" type="button" data-href=''>Submit</button>
+							</span>
+						</div>
+						<div class="margin-top-10">
+							<label class="radio-inline">
+								<input type="radio" id="newsletter-subscribe" value="newsletter-subscribe" name="optionsRadios" checked="checked">
+								Subscribe
+							</label>
+							<label class="radio-inline">
+								<input type="radio" id="newsletter-unsubscribe" value="newsletter-unsubscribe" name="optionsRadios">
+								Unsubscribe
+							</label>
+						</div>
+					</div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6 sm-margin-bottom-40">
+                    <div class="headline">
+                        <h2 class="heading-sm">Links</h2>
+                    </div>
+                    <ul class="list-unstyled link-list">
+                        <li>
+                            <a href="http://documents.smartstore.com/SmartStoreNET_Systemvoraussetzungen_DE.pdf" target="_blank">System requirements</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="http://documents.smartstore.com/SmartStoreNET_BIZ-Importer.pdf" target="_blank">SmartStore.biz Import</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="http://community.smartstore.com/index.php?/forum/85-smartstorenet-english/&k=880ea6a14ea49e853634fbdc5015a024&setlanguage=1&cal_id=&langid=1" target="_blank">Community</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+						<li>
+							<a href="https://github.com/smartstoreag/SmartStoreNET" target="_blank">GitHub</a>
+							<i class="fa fa-angle-right"></i>
+						</li>
+                    </ul>
+                </div>
+
+                <div class="clearfix visible-sm-block"></div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 sm-margin-bottom-40">
+                    <div class="headline">
+                        <h2 class="heading-sm">Imprint</h2>
+                    </div>
+                    <address class="md-margin-bottom-40" style="font-size: 12px">
+                        <strong>Director of Board:</strong><br /> Pavlos Tsulfaidis<br>
+                        <strong>Supervisory Board:</strong> Murat Cakir<br>
+                        <strong>Registration Court:</strong> District Court Dortmund<br>
+                        <strong>Register Number:</strong> HRB 14105<br>
+                        <strong>VAT ID number:</strong><br /> DE 812887094<br>
+                    </address>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="headline">
+                        <h2 class="heading-sm">Contact</h2>
+                    </div>
+                    <address class="md-margin-bottom-40">
+                        <i class="fa fa-home"></i>Kaiserstr. 63-65, 44135 Dortmund<br>
+                        <i class="fa fa-phone"></i>Fon: +49 (0) 231.5335-0<br>
+                        <i class="fa fa-fax"></i>Fax: +49 (0) 231.5335-101<br>
+                        <i class="fa fa-globe"></i>Website: <a href="http://www.smartstore.com" title="E-Commerce Solutions for Professionals and Beginners">www.smartstore.com</a><br>
+                        <i class="fa fa-envelope"></i>Email: <a href="mailto:info@smartstore.com">info@smartstore.com</a>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright fsize13">
+        <div class="container">
+            <p class="text-center">Copyright © 2017 SmartStore AG. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+
+    $('#newsletter-subscribe-button').on('click', function (e) {
+		e.preventDefault();
+
+		var honeypotField = $('#newsletter-email-first').val();
+
+		if (honeypotField == "")
+        {
+		    var btn = $(this);
+		    btn.attr("disabled", true);
+
+		    var subscribe = 'true';
+		    if($('#newsletter-unsubscribe').is(':checked')) {
+			    subscribe = 'false';
+		    }
+		    var email = $("#newsletter-email").val();
+
+		    $.ajax({
+			    cache: false,
+			    type: "POST",
+		        //url: btn.data("href"),
+			    url: "/Subscribe",
+			    data: { "subscribe": subscribe, "email": email },
+			    success: function (data) {
+				    OnNewsletterSubscribeResponse(data.Result, !data.Success);
+				    if (!data.Success) {
+					    btn.removeAttr("disabled");
+				    }
+			    },
+			    error:function (xhr, ajaxOptions, thrownError) {
+				    OnNewsletterSubscribeResponse(thrownError, true);
+				    btn.removeAttr("disabled");
+			    }
+		    });
+		}
+		return false;
+	});
+
+    function OnNewsletterSubscribeResponse(msg, isError) {
+        displayNotification(msg, isError ? "error" : "success", isError /* sticky */);
+    };
+
+</script>
+
+    <script>
+        $(function () {
+            $('#navigate-top').click(function (e) {
+                e.preventDefault();
+                $.scrollTo(0, 800);
+                return false;
+            });
+
+            $(window).on("scroll resize", function (e) {
+                var y = $(this).scrollTop();
+                if (y == 0) {
+                    $('#navigate-top').removeClass("visible");
+                }
+                else {
+                    $('#navigate-top').addClass("visible");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

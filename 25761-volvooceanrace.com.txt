@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<!-- Style sheets and conditional switches to detect IE versions. Modernizr.js compatible. -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"/> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"/> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"/> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <!-- iOS web app capabilities -->
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- Disable scale mode in mobile devices. -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <!-- Avoid IE to run compatibility. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+            <meta name="theme-color" content="#000000">
+                    <style>
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+                display: none !important;
+            }
+        </style>
+                    <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-K3SNFQR');</script>
+        <!-- End Google Tag Manager -->
+        <!-- Start Alexa Certify Javascript -->
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"RPeXo1IWx810lS", domain:"volvooceanrace.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src=" " style="display:none" height="1" width="1" alt="" /></noscript>
+<!-- End Alexa Certify Javascript -->     <!-- Style sheets -->
+    <link rel="stylesheet" href="http://www.volvooceanrace.com/static/assets/2017-18/dist/css/style.css"/>
+        <!-- Icons -->
+    <link rel="icon" href="http://www.volvooceanrace.com/static/assets/2017-18/dist/img/apple-touch-icon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://www.volvooceanrace.com/static/assets/2017-18/dist/img/apple-touch-icon.ico" type="image/x-icon" />
+    <!-- iOS generic -->
+    <link rel="apple-touch-icon" href="http://www.volvooceanrace.com/static/assets/2017-18/dist/img/ios-icon-iphone.png" />
+    <!-- iPad -->
+    <link rel="apple-touch-icon" sizes="72x72" href="http://www.volvooceanrace.com/static/assets/2017-18/dist/img/ios-icon-ipad.png" />
+    <!-- iOS Retina -->
+    <link rel="apple-touch-icon" href="http://www.volvooceanrace.com/static/assets/2017-18/dist/img/ios-icon-retina.png" media="screen and (-webkit-min-device-pixel-ratio: 2)" />
+    <!-- Startup image -->
+    <link rel="apple-touch-startup-image" href="http://www.volvooceanrace.com/static/assets/2017-18/dist/img/startup.png">
+
+    <!-- scripts exception -->
+    <script>
+        (function(document,navigator,standalone) {
+            // prevents links from apps from oppening in mobile safari
+            // this javascript must be the first script in your head
+            if ((standalone in navigator) && navigator[standalone]) {
+                var curnode, location=document.location, stop=/^(a|html)$/i;
+                document.addEventListener('click', function(e) {
+                    curnode=e.target;
+                    while (!(stop).test(curnode.nodeName)) {
+                        curnode=curnode.parentNode;
+                    }
+                    // Condidions to do this only on links to your own app
+                    // if you want all links, use if('href' in curnode) instead.
+                    if('href' in curnode && ( curnode.href.indexOf('http') || ~curnode.href.indexOf(location.host) ) ) {
+                        e.preventDefault();
+                        location.href = curnode.href;
+                    }
+                },false);
+            }
+        })(document,window.navigator,'standalone');
+    </script>
+    
+    <script src="http://www.volvooceanrace.com/static/assets/2017-18/dist/js/libs/modernizr.custom.22061.js"></script>
+
+    <title>Volvo Ocean Race 2017-18</title>        <meta name="Lang" content="en" />
+<meta name="description" content="The Volvo Ocean Race is the world's premier offshore race, an exceptional test of sailing prowess and human endeavour, which started over 37 years ago as the Whitbread Round the World Race. The Volvo Ocean Race crews will experience life at the extreme as they race day and night for more than 20 days at a time, living on freeze-dried food and combating the harshest weather conditions the planet can offer. Keep up to date with the action here." />
+<meta name="copyright" content="Volvo Ocean Race" />
+<meta name="robots" content="INDEX, FOLLOW" />
+<meta name="author" content="Volvo Ocean Race" />
+<meta name="Generator" content="" />
+<meta name="Origen" content="" />
+<meta name="Language" content="en" />                </head>
+<body class="home fixed-header" ng-app="App" id="ng-app" ng-controller="MainController">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3SNFQR"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+        <!-- Facebook Like SDK -->
+    <div id="fb-root"></div>
+    <script>
+                (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=178050459056315";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div id="container" role="document">
+    
+<header id="header" class="clearfix" role="banner" ng-controller="HeaderController" ng-init="init('/en/web-menu.json')" window-size>
+    <div class="wrapper row-one">
+        <div class="left-content">
+	        <!-- Logo -->
+	        <a href="/en/home.html" title="Return to the homepage" class="logo-a">
+                <img src="http://www.volvooceanrace.com/static/assets/2017-18/dist/img/site-logo.png" alt="Official Logo" id="logo">
+            </a><!-- end #logo -->
+        </div>
+        <div class="center-content">
+	        <div class="headers-widgets">
+                <div ng-repeat="item in widgetsItems.slice(1,entries.length)|limitTo:1" ng-repeat-end-watch="menuWidgetsLoaded" class="header-widgets-json" ng-cloak>
+                    <div ng-bind-html-unsafe="item">
+                        {{item}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="headers-widgets">
+                <div ng-repeat="item in widgetsItems.slice(2,entries.length)|limitTo:1" ng-repeat-end-watch="menuWidgetsLoaded" class="header-widgets-json" ng-cloak>
+                    <div ng-bind-html-unsafe="item">
+                        {{item}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <!-- Secondary Navigation -->
+        
+    </div>
+    <div class="wrapper row-two">
+	    <div class="left-content">
+            <!-- Navigation -->
+            <nav id="navigation" class="menu clearfix" role="navigation">
+                <ul class="menu">
+                    <li class="dropdown burger">
+                        <a href="" analytics-on analytics-event="burger" analytics-category="menu" analytics-label="Burger click" >
+                            <span><i class="ion-android-menu"></i> menu</span>
+                            <i class="ion-android-menu"></i>
+                        </a>
+                        <ul class="submenu sitemap">
+                            <li class="{{item.class}}" ng-repeat="item in menuItemsSecondary" ng-repeat-end-watch="menuLoaded" ng-cloak>
+                                <a analytics-on analytics-event="burger-main-item-desktop" analytics-category="menu" analytics-label="{{item.title}}" ng-if="item.blank" ng-show="windowWidth>=768" href="{{item.link}}" class="{{item.icon}}" target="_blank" ng-bind-html="item.title"></a>
+                                <a analytics-on analytics-event="burger-main-item-desktop" analytics-category="menu" analytics-label="{{item.title}}" ng-if="!item.blank" ng-show="windowWidth>=768" href="{{item.link}}" class="{{item.icon}}" ng-bind-html="item.title"></a>
+
+                                <a analytics-on analytics-event="burger-main-item-dropdown-mobile" analytics-category="menu" analytics-label="{{item.title}}" ng-if="item.blank && item.submenu" ng-show="windowWidth<768" ng-href="{{item.link}}" class="{{item.icon}}" target="_blank" ng-click="$event.preventDefault(); toggleDropdown($index, windowWidth); $event.stopPropagation();" ng-bind-html="item.title"></a>
+                                <a analytics-on analytics-event="burger-main-item-dropdown-mobile" analytics-category="menu" analytics-label="{{item.title}}" ng-if="!item.blank && item.submenu" ng-show="windowWidth<768"  ng-href="{{item.link}}" class="{{item.icon}}" ng-click="$event.preventDefault(); toggleDropdown($index, windowWidth); $event.stopPropagation();" ng-bind-html="item.title"></a>
+                                
+                                <a analytics-on analytics-event="burger-main-item-mobile" analytics-category="menu" analytics-label="{{item.title}}" ng-if="item.blank && !item.submenu" ng-show="windowWidth<768" href="{{item.link}}" class="{{item.icon}}" target="_blank" ng-bind-html="item.title"></a>
+                                <a analytics-on analytics-event="burger-main-item-mobile" analytics-category="menu" analytics-label="{{item.title}}"ng-if="!item.blank && !item.submenu" ng-show="windowWidth<768" href="{{item.link}}" class="{{item.icon}}" ng-bind-html="item.title"></a>
+
+                                <ul class="submenu" ng-if="item.submenu" ng-show="showResMenu(windowWidth,item.hideSubMenu)">
+                                    <li class="{{subitem.class}}" ng-repeat="subitem in item.submenu" ng-repeat-end-watch="menuLoaded">
+                                        <a analytics-on analytics-event="burger-submenu-item" analytics-category="menu" analytics-label="{{subitem.title}}" href="{{subitem.link}}" class="{{subitem.icon}}" target="_blank" ng-if="subitem.blank" ng-bind-html="subitem.title"></a>
+                                        <a analytics-on analytics-event="burger-submenu-item" analytics-category="menu" analytics-label="{{subitem.title}}" href="{{subitem.link}}" class="{{subitem.icon}}" ng-if="!subitem.blank" ng-bind-html="subitem.title"></a>
+                                    </li>
+                                    <li class="item_sub">
+                                        <a analytics-on analytics-event="burger-submenu-item" analytics-category="menu" analytics-label="{{subitem.title}}" href="{{item.link}}" class="{{item.icon}}" target="_blank" ng-if="item.blank" ng-bind-html="item.subtitle1"></a>
+                                        <a analytics-on analytics-event="burger-submenu-item" analytics-category="menu" analytics-label="{{subitem.title}}" href="{{item.link}}" class="{{item.icon}}" ng-if="!item.blank" ng-bind-html="item.subtitle1"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li ng-repeat="item in widgetsItems.slice(3,entries.length)|limitTo:1" ng-repeat-end-watch="menuWidgetsLoaded" class="header-widgets-json headers-widgets user is-mobile" ng-cloak>
+                                <div ng-bind-html-unsafe="item">
+                                    {{item}}
+                                </div>
+                            </li>
+                            <li class="is-mobile mobile-menu-extras">
+                     	        <div class="headers-widgets">
+                                    
+                                    <div ng-repeat="item in widgetsItems|limitTo:1" ng-repeat-end-watch="menuWidgetsLoaded" class="header-widgets-json" ng-cloak>
+                                        <div ng-bind-html-unsafe="item">
+                                             {{item}}
+                                        </div>
+                                    </div>
+                                </div>
+                     	        <nav id="right-navigation">
+                     		        <ul class="menu">
+                                         
+                                         <li id="languages" class="dropdown" ng-if="siteLangs.length > 1">
+                                             <a class="lang-bt lang_en_us" ng-class="currentLang.class" href="#"  ng-bind-html="currentLang.name"></a>
+                                         </li>
+                                         <li ng-class="item.class" ng-repeat="item in siteLangs" ng-repeat-end-watch="menuLoaded" ng-cloak>
+                                             <a href="{{item.url}}" ng-bind-html="item.name" ></a>
+                                         </li>
+                                         <li ng-repeat="item in widgetsItems.slice(4,entries.length)|limitTo:1" ng-repeat-end-watch="menuWidgetsLoaded" class="header-widgets-json headers-widgets" ng-cloak> 
+                                             <div ng-bind-html-unsafe="item">
+                                                 {{item}}
+                                             </div>
+                                         </li>
+                                         
+                     		        </ul>
+                     	        </nav>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="{{item.class}}" ng-repeat="item in menuItems" ng-repeat-end-watch="menuLoaded" ng-cloak>
+                        <a href="{{item.link}}" class="{{item.icon}}" target="_blank" ng-if="item.blank" ng-bind-html="item.title" analytics-on analytics-event="main-item" analytics-category="menu" analytics-label="{{item.title}}" ></a>
+                        <a href="{{item.link}}" class="{{item.icon}}" ng-if="!item.blank" ng-bind-html="item.title" analytics-on analytics-event="main-item" analytics-category="menu" analytics-label="{{item.title}}" ></a>
+                        <ul class="submenu" ng-if="item.submenu">
+                            <li class="{{subitem.class}}" ng-repeat="subitem in item.submenu" ng-repeat-end-watch="menuLoaded">
+                                <a href="{{subitem.link}}" class="{{subitem.icon}}" target="_blank" ng-if="subitem.blank" ng-bind-html="subitem.title"></a>
+                                <a href="{{subitem.link}}" class="{{subitem.icon}}" ng-if="!subitem.blank" ng-bind-html="subitem.title"></a>
+                            </li>
+                            <li class="item_sub">
+                                <a href="{{item.link}}" class="{{item.icon}}" target="_blank" ng-if="item.blank" ng-bind-html="item.subtitle1"></a>
+                                <a href="{{item.link}}" class="{{item.icon}}" ng-if="!item.blank" ng-bind-html="item.subtitle1"></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="center-content">
+        </div>
+        <div class="right-content" >
+	        <div class="headers-widgets">
+                <div ng-repeat="item in widgetsItems|limitTo:1" ng-repeat-end-watch="menuWidgetsLoaded" class="header-widgets-json" ng-cloak>
+                    <div ng-bind-html-unsafe="item">
+                        {{item}}
+                    </div>
+                </div>
+            </div>
+	        <nav id="right-navigation">
+		        <ul class="menu">
+			        <li class="header-widgets-json headers-widgets dropdown hidden">
+			            <div id="user" class="dropdown">
+                            <a href="#" layout="row" layout-align="center center" ng-class="{'logged': currentUser.isAccountAuthenticated}">
+	                            <i class="ion-person"></i> 
+	                        </a>
+                            <ul class="submenu">
+                        	    <li ng-if="currentUser.isAccountAuthenticated" class="user-name">
+	                        	    <a href="#">Hi, <strong ng-bind-html="currentUser.name"></strong></a>
+	                        	</li>
+                        	    <li ng-if="!currentUser.isAccountAuthenticated">
+                        	        <a ng-click="openModalClass('modal-signin')" target="_self" >Login</a>
+                        	    </li>
+                        	    <li ng-if="!currentUser.isAccountAuthenticated"><a href="/en/registration.html">Sign up</a></li>
+                        	    <li ng-if="currentUser.isAccountAuthenticated"><a href="/en/profile.html">Profile</a></li>
+                        	    <li ng-if="currentUser.isAccountAuthenticated" ng-click="logOut()"><a>Logout</a></li>
+                            </ul>
+                        </div>
+			        </li>
+                    <li ng-repeat="item in widgetsItems.slice(3,entries.length)|limitTo:1" ng-repeat-end-watch="menuWidgetsLoaded" class="header-widgets-json headers-widgets" ng-cloak>
+                        <div ng-bind-html-unsafe="item">
+                            {{item}}
+                        </div>
+                    </li>
+                    <li id="languages" class="dropdown" ng-if="siteLangs.length > 1">
+                        <a class="lang-bt lang_en_us" ng-class="currentLang.class" href="#"  ng-bind-html="currentLang.name"></a>
+                        <ul class="submenu">
+                            <li ng-class="item.class" ng-repeat="item in siteLangs" ng-repeat-end-watch="menuLoaded" ng-cloak>
+                                <a href="{{item.url}}" ng-bind-html="item.name" ></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li ng-repeat="item in widgetsItems.slice(4,entries.length)|limitTo:1" ng-repeat-end-watch="menuWidgetsLoaded" class="header-widgets-json headers-widgets" ng-cloak> 
+                        <div ng-bind-html-unsafe="item">
+                            {{item}}
+                        </div>
+                    </li>
+		        </ul>
+	        </nav>
+        </div>
+    </div>
+    <div class="md-modal md-effect-3 ng-cloak signup" focus-input1 id="modal-signin" ng-cloak>
+        <div class="md-content" >
+            <div class="md-header">
+                <h2 class="md-header-title" >Login</h2>
+                <a class="md-close" ><i class="fa fa-close"></i></a>
+            </div>
+            <div id="screen" gigid="showScreenSet">
+                <p class="md-header-text"></p>
+                <div ng-show="loading" class="loading-container" ng-cloak class="ng-cloak">
+                    <i class="icon-loading"></i>
+                </div>
+                <h1 id="screen_content_caption" style="display: none;">&nbsp;</h1>
+                <div id="screen_child" class="gigya-hidden"></div>
+                <div id="screen_content" >
+                    <div id="gigya-login-screen" data-screenset-element-id="gigya-login-screen" data-screenset-element-id-publish="true" data-screenset-roles="instance">
+                        <div class="message-error" ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><span ng-bind-html="alert.msg"></span></div>
+                        <div class="row row-one">
+                            <div class="col1">
+                                <form ng-submit="logIn(user)" name="loginForm" ng-hide="modalSignup" class="gigya-login-form" data-screenset-element-id="__gig_template_element_3_1435061906659" data-screenset-element-id-publish="false" data-screenset-roles="instance">
+                                    <div class="control-group email">
+                                        <label class="control-label">
+                                            <span class="label">Email Address</span>
+                                            <span class="gigya-error-display email" data-bound-to="loginID" data-screenset-element-id="__gig_template_element_1_1435061906659" data-screenset-element-id-publish="false" data-screenset-roles="instance">enter-valid-email</span>
+                                        </label>
+                                        <div class="controls">
+                                            <input type="text" tabindex="1" placeholder="Email Address" focus-me1="someFocusVariable" ng-model="user.username" name="username" class="input-lg input-block-level email" autofocus="autofocus" required>
+                                        </div>
+                                        <span class="help-inline" ng-show="submitted && loginForm.user.username.$error.required">required</span>
+                                    </div>
+                                    <div class="control-group password">
+                                        <label class="control-label">
+                                            <span class="label">Password</span>
+                                            <span class="gigya-error-display" data-bound-to="password" data-screenset-element-id="__gig_template_element_2_1435061906659" data-screenset-element-id-publish="false" data-screenset-roles="instance">enter-your-password</span>
+                                        </label>
+                                        <div class="controls">
+                                            <input type="password" ng-model="user.password" placeholder="Password" name="password" class="input-lg input-block-level gigya-input-password" tabindex="2" data-screenset-element-id="__gig_template_element_5_1435061906660" data-screenset-element-id-publish="false" data-screenset-roles="instance" data-gigya-name="password" data-original-value="" required>
+                                        </div>
+                                    </div>
+                                    <div class="control-group submit">
+                                        <div class="controls">
+                                            <input type="submit" value="submit" ng-show="false">
+                                            <button type="submit" ng-disabled="!loginForm.$valid" promise-btn="successPromise" class="btn btn-success btn-block btn-lg" tabindex="4" value="SIGN IN" data-screenset-element-id="__gig_template_element_6_1435061906660" data-screenset-element-id-publish="false" data-screenset-roles="instance">
+                                                <span data-ng-hide="loadingLogin">
+                                                    Login                                                </span>
+                                                <span data-ng-show="loadingLogin">
+                                                waiting                                                    <i class="fa fa-spinner fa-spin"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div ng-show="responseForgotRequest">{{responseForgotRequest}}</div>
+                                <div ng-show="responseLoginSuccess">{{responseLoginSuccess}}</div>
+                            </div>
+                            <div class="col2">
+                                <div class="control-group" >
+                                    <a ng-click="openModal('modal-forgot');">Forgot your password? Click here.</a>
+                                </div>
+                                                            </div>
+                            <hr class="devider">
+                            <div class="col3">
+                                <div class="control-group" >
+                                    Don't have an account? <a href="/en/registration.html">Sign up here</a>                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="md-modal md-effect-3 ng-cloak signup" focus-input1 id="modal-forgot" ng-cloak>
+        <div class="md-content">
+            <div class="md-header">
+                <h2 class="md-header-title" >Forgot Password?</h2>
+                <a class="md-close" ><i class="fa fa-close"></i></a>
+            </div>
+            <div id="screen" gigid="showScreenSet">
+                <p class="md-header-text"></p>
+                <h1 id="screen_content_caption" style="display: none;">&nbsp;</h1>
+                <div id="screen_child" class="gigya-hidden"></div>
+                <div id="screen_content" >
+                    <div id="gigya-login-screen" >
+                        <div class="message-error" ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><span ng-bind-html="alert.msg"></span></div>
+                        <div class="message-success" ng-show="forgotSent"><span>We have sent you an email with instructions to recover your password.</span></div>
+                        <div class="row row-one">
+                            <div class="col1">
+                                <form ng-submit="forgotSend(user)" name="forgotForm" class="gigya-login-form" ng-show="!forgotSent">
+                                    <div class="control-group email">
+                                        <label class="control-label">
+                                            <span class="label">Email Address</span>
+                                            <span class="gigya-error-display email" data-bound-to="loginID">enter-valid-email</span>
+                                        </label>
+                                        <div class="controls">
+                                            <input type="text" tabindex="1" placeholder="Email Address" focus-me1="someFocusVariable" ng-model="user.username" name="username" class="input-lg input-block-level email" autofocus="autofocus" required>
+                                        </div>
+                                        <span class="help-inline" ng-show="submitted && forgotForm.user.username.$error.required">required</span>
+                                    </div>
+                                    <div class="control-group submit">
+                                        <div class="controls">
+                                            <input type="submit" value="submit" ng-show="false">
+                                            <button type="submit" ng-disabled="!forgotForm.$valid" promise-btn="successPromise" class="btn btn-success btn-block btn-lg" tabindex="4" value="Send">
+                                                <span data-ng-hide="loadingForgot">
+                                                    Send                                                </span>
+                                                <span data-ng-show="loadingForgot">
+                                                waiting                                                    <i class="fa fa-spinner fa-spin"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="md-overlay"></div>
+</header>        <div id="content">
+        <div id="main" role="main" class="wrapper">
+            <span class="slider-banner"> </span>
+            <div id="row-first" class="row-fluid clearfix one">
+                <div class="column full-content zone-1">
+                    
+<section id="home-top-stories" class="widget top-stories full-width is-desktop" >
+
+	
+            <div class="home-top-stories">
+                <div class="slides fotorama" data-margin="0">
+                    <div data-img="http://www.volvooceanrace.com/static/assets/2017-18/cropped/1024/m102312_crop166005_1440x550_15022857692E47.jpg" class="slide topstory-text-left bottom-box" >
+                        <div class="slide-content">
+                            <h2 class="slide-title"><a href="/en/news/9900_Turn-the-Tide-on-Plastic-sign-up-four-more-young-stars.html" >Turn the Tide on Plastic sign up four more young stars</a></h2>
+                            <p >Dee Caffari snaps up two Brits and two Portuguese sailors for 2017-18</p>
+        		        </div>
+        		        
+                        <a class="all-box-link" href="/en/news/9900_Turn-the-Tide-on-Plastic-sign-up-four-more-young-stars.html" target="_self"> </a>
+                    </div>
+                    <div data-img="http://www.volvooceanrace.com/static/assets/2017-18/cropped/1028/m102749_crop166005_1440x550_15036545418889.jpg" class="slide topstory-text-left bottom-box" >
+                        <div class="slide-content">
+                            <h2 class="slide-title"><a href="/en/news/9898_-You-feel-it-in-your-heart-when-the-Volvo-Ocean-Race-is-calling-.html" >'You feel it in your heart when the Volvo Ocean Race is calling'</a></h2>
+                            <p >Meet Francesa Clapcich – the first Italian female in the Volvo Ocean Race for 27 years</p>
+        		        </div>
+        		        
+                        <a class="all-box-link" href="/en/news/9898_-You-feel-it-in-your-heart-when-the-Volvo-Ocean-Race-is-calling-.html" target="_self"> </a>
+                    </div>
+                    <div data-img="http://www.volvooceanrace.com/static/assets/2017-18/cropped/1028/m102723_crop166005_1440x550_15034997061F4B.jpg" class="slide " >
+                        <div class="slide-content">
+                            <h2 class="slide-title"><a href="/en/news/9893_Exclusive-first-look-at-the-next-Volvo-Ocean-Race-boat-design.html" >Exclusive first look at the next Volvo Ocean Race boat design</a></h2>
+                            <p >Work is well underway on the racing machines of the future – and here's a sneak peek at the Guillaume Verdier's exciting 60-ft foiling monohull concept</p>
+        		        </div>
+        		        
+                        <a class="all-box-link" href="/en/news/9893_Exclusive-first-look-at-the-next-Volvo-Ocean-Race-boat-design.html" target="_self"> </a>
+                    </div>
+                    <div data-img="http://www.volvooceanrace.com/static/assets/2017-18/cropped/1026/m102570_crop166005_1440x550_150297663748D2.jpg" class="slide " data-video="//www.youtube.com/embed/P5BnnOtP8s0?rel=0&autoplay=1">
+                        <div class="slide-content">
+                            <h2 class="slide-title"><a href="/en/video/9890_Leg-Zero-DONE.html" >Leg Zero: DONE!</a></h2>
+                            <p >What a start to the 2017-18 edition Leg Zero has been – four races to test the fleet, all conditions and some incredible action. Here's a look at how it happened...</p>
+        		        </div>
+        		        
+                        <a class="all-box-link" href="/en/video/9890_Leg-Zero-DONE.html" target="_self"> </a>
+                    </div>
+                    <div data-img="http://www.volvooceanrace.com/static/assets/2017-18/cropped/1025/m102479_crop166005_1440x550_1502856903CB40.jpg" class="slide " >
+                        <div class="slide-content">
+                            <h2 class="slide-title"><a href="/en/news/9884_MAPFRE-seal-overall-Leg-Zero-victory-as-light-winds-force-shortened-course-on-final-stage.html" >MAPFRE seal overall Leg Zero victory as light winds force shortened course on final stage</a></h2>
+                            <p >Racing was stopped at 0430 UTC Wednesday, with Vestas 11th Hour Racing winning the stage and MAPFRE finishing top of the qualifying standings</p>
+        		        </div>
+        		        
+                        <a class="all-box-link" href="/en/news/9884_MAPFRE-seal-overall-Leg-Zero-victory-as-light-winds-force-shortened-course-on-final-stage.html" target="_self"> </a>
+                    </div>
+                </div>
+            
+	
+        </div>
+</section>
+<section id="top-stories-mobile" class="one-large widget full-width center-box white box more-items is-mobile">
+    <ul class="more-items-list pages page-1 clearfix">
+            <li class="more-items-item Articles " >
+            <a href="/en/news/9900_Turn-the-Tide-on-Plastic-sign-up-four-more-young-stars.html">
+<img src="http://www.volvooceanrace.com/static/assets/2017-18/cropped/1024/m102312_crop32001_375x255_15022857680ECB.jpg" alt="102312" class="more-items-img" />            </a>
+            <div class="wrapper">
+                <h2><a href="/en/news/9900_Turn-the-Tide-on-Plastic-sign-up-four-more-young-stars.html" class="more-items-title">Turn the Tide on Plastic sign up four more young stars</a></h2>
+                <p class="more-items-text">
+                    Dee Caffari snaps up two Brits and two Portuguese sailors for 2017-18                </p>
+            </div>
+        </li>
+        <li class="more-items-item Articles " >
+            <a href="/en/news/9898_-You-feel-it-in-your-heart-when-the-Volvo-Ocean-Race-is-calling-.html">
+<img src="http://www.volvooceanrace.com/static/assets/2017-18/cropped/1028/m102749_crop32001_375x255_15036545376211.jpg" alt="102749" class="more-items-img" />            </a>
+            <div class="wrapper">
+                <h2><a href="/en/news/9898_-You-feel-it-in-your-heart-when-the-Volvo-Ocean-Race-is-calling-.html" class="more-items-title">'You feel it in your heart when the Volvo Ocean Race is calling'</a></h2>
+                <p class="more-items-text">
+                    Meet Francesa Clapcich – the first Italian female in the Volvo Ocean Race for 27 years                </p>
+            </div>
+        </li>
+        <li class="more-items-item Articles " >
+            <a href="/en/news/9893_Exclusive-first-look-at-the-next-Volvo-Ocean-Race-boat-design.html">
+<img src="http://www.volvooceanrace.com/static/assets/2017-18/cropped/1028/m102723_crop32001_375x255_15034997062755.jpg" alt="102723" class="more-items-img" />            </a>
+            <div class="wrapper">
+                <h2><a href="/en/news/9893_Exclusive-first-look-at-the-next-Volvo-Ocean-Race-boat-design.html" class="more-items-title">Exclusive first look at the next Volvo Ocean Race boat design</a></h2>
+                <p class="more-items-text">
+                    Work is well underway on the racing machines of the future – and here's a sneak peek at the Guillaume Verdier's exciting 60-ft foiling monohull concept                </p>
+            </div>
+        </li>
+        <li class="more-items-item Video " >
+            <a href="/en/video/9890_Leg-Zero-DONE.html">
+<img src="http://www.volvooceanrace.com/static/assets/2017-18/cropped/1026/m102570_crop32001_375x255_1502976637053F.jpg" alt="102570" class="more-items-img" />            </a>
+            <div class="wrapper">
+                <h2><a href="/en/video/9890_Leg-Zero-DONE.html" class="more-items-title">Leg Zero: DONE!</a></h2>
+                <p class="more-items-text">
+                    What a start to the 2017-18 edition Leg Zero has been – four races to test the fleet, all conditions and some incredible action. Here's a look at how it happened...                </p>
+            </div>
+        </li>
+        <li class="more-items-item Articles " >
+            <a href="/en/news/9884_MAPFRE-seal-overall-Leg-Zero-victory-as-light-winds-force-shortened-course-on-final-stage.html">
+<img src="http://www.volvooceanrace.com/static/assets/2017-18/cropped/1025/m102479_crop32001_375x255_1502856902BFE6.jpg" alt="102479" class="more-items-img" />            </a>
+            <div class="wrapper">
+                <h2><a href="/en/news/9884_MAPFRE-seal-overall-Leg-Zero-victory-as-light-winds-force-shortened-course-on-final-stage.html" class="more-items-title">MAPFRE seal overall Leg Zero victory as light winds force shortened course on final stage</a></h2>
+                <p class="more-items-text">
+                    Racing was stopped at 0430 UTC Wednesday, with Vestas 11th Hour Racing winning the stage and MAPFRE finishing top of the qualifying standings                </p>
+            </div>
+        </li>
+    </ul>
+    </section>
+<section id="angular-news" class="widget angular-news one-four more-items center-tabs icon-tabs" ng-controller="TabsController" ng-init="init('eyJ1cmwiOiJcL2VuXC9mZWVkXC9uZXdzXC9sYXRlc3QuanNvbiJ9','20', 'http://www.volvooceanrace.com/static/assets/2017-18/dist/img/no-image.jpg','angular-news', '', '','','','','renderActionangular_news()')">
+
+    <header class="clearfix">
+        <ul class="tabs seleccion-selector" role="toolbar">
+ 
+            <li class="tab latest ">
+                <a href="#content-angular-news" class="active" data-ng-click="setFilterDefault('latest','')" >
+                  <span>Latest</span>
+                </a>
+               
+                            </li>
+ 
+            <li class="tab highlighted-1 ">
+                <a href="#content-angular-news" class="" data-ng-click="setFilterClass('highlighted-1','')" >
+                  <span>Trending</span>
+                </a>
+               
+                            </li>
+ 
+            <li class="tab articles ">
+                <a href="#content-angular-news" class="" data-ng-click="setFilterClass('articles','')" >
+                  <span>Articles</span>
+                </a>
+               
+                            </li>
+ 
+            <li class="tab video ">
+                <a href="#content-angular-news" class="" data-ng-click="setFilterClass('video','')" >
+                  <span>Video</span>
+                </a>
+               
+                            </li>
+ 
+            <li class="tab photo ">
+                <a href="#content-angular-news" class="" data-ng-click="setFilterClass('photo','')" >
+                  <span>Photo</span>
+                </a>
+               
+                            </li>
+        </ul>
+    </header>
+
+    <div class="tabs-content">
+            <section id="content-angular-news" class="widget home-items more-items active">
+                <div ng-show="isLoading && page==1" class="loading-container ng-cloak" ng-cloak>
+                    <i class="ion-load-c" aria-hidden="true"></i>
+                </div>
+                <div ng-show="!isLoading && noresults" class="no-results-container ng-cloak" ng-cloak>
+                    No results found :(                </div>
+                <ul ng-class="{'latest-list': filterLatest}" class="more-items-list pages clearfix" >
+                                        
+                    <li class="content-angular-news-item more-items-item {{item.extraClass}}" ng-repeat="item in pagedItemsLoaded" ng-cloak>
+                        <div class="item-img-container" on-finish-render ng-style="imgBackgroundOverlay(item)">
+                            <!-- {{item.mediaVideo | json}} -->
+                            <div class="video-play"></div>
+                            <div class="item-img-mask"></div>
+                            <img ng-src="{{item.mediaShow}}" class="more-items-img" imageonload ng-if="item.mediaShow && !item.mediaVideo">
+                            <video class="more-items-img" ng-if="item.mediaVideo" width="100%" id="vide{{item.id}}" preload="metadata" ng-cloak>
+	                            <source ng-src="{{item.mediaVideo | trustUrl}}" type="video/mp4">
+	                            Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="wrapper ng-cloak" ng-cloak>
+                            <div class="item-icon" ng-if="item.icon"><i class="icon-{{item.icon}}"></i></div>
+                            <div class="item-category" ng-if="item.category">{{item.category}}</div>
+                            <div class="item-subcategory" ng-if="item.subcategory">{{item.subcategory}}</div>
+                            <div class="item-tag" ng-if="item.tagName">{{item.tagName}}</div>
+                            <h2>{{item.title}}</h2>
+                            <div class="item-subtitle" ng-if="item.subtitle"><i class="icon-{{item.subtitle}}"></i></div>
+                            <div class="item-short-text" ng-if="item.short_text">{{item.short_text}}</div>
+                            <div class="plus-text-icon" ng-class="get_plus_icon(item)" ng-if="item.plus_text" ng-click="show_plus(item)"></div>
+                            <div class="plus-text" ng-bind-html-unsafe="item.plus_text" ng-if="item.plus_text" ng-show="item.show_plus == true">
+                                {{item.plus_text}}
+                            </div>
+                            <div class="code" ng-bind-html-unsafe="item.code" ng-if="item.code">
+                                {{item.code}}
+                            </div>
+                        </div>
+                        <footer>
+                            <div class="item-subsection" ng-bind-html-unsafe="item.subsection" ng-if="item.subsection">{{item.subsection}}</div>
+                            <time class="item-time" ng-if="item.date" datetime="{{item.date}}">
+                                <span class="date">{{item.date  | amDateFormat:'MMMM D, YYYY'}} </span>
+                                <span class="date-time">{{item.date  | amDateFormat:'HH:mm'}} UTC</span>
+                            </time>
+                        </footer>
+                        <a ng-href="{{item.url}}" target="_blank" class="all-box-link" ng-if="item.blank == true"></a>
+                        <a ng-href="{{item.url}}" class="all-box-link" ng-if="item.blank == false"></a>
+                    </li>
+                </ul>
+                <div class=" load-more">
+                    <span ng-show="isLoading && page>1" class="loading ng-cloak" ng-cloak> {{percentLoaded}}% loading... </span>
+                    <a class="load-more-bt ng-cloak" ng-show="(has_more() && !isLoading)" ng-click="show_more()" ng-cloak>
+    	                <i class="ion-ios-plus-outline" aria-hidden="true"></i>
+    	                <span>View more</span>
+    	            </a>
+                </div>
+
+            </section>
+    </div><!-- end .tab-content -->
+</section><!-- end #biography-widgets -->
+                </div>
+            </div>
+        </div>
+    </div><!-- end #main -->
+        <div class="prefooter" >
+        <div class="wrapper" ng-cloack>
+            <div class="footer-widgets">
+                <div class="footer-widgets-json level1"  >
+	                  <div ng-bind-html="trustedHtml(extraWidgets.bannersSponsor)" >
+	                    
+                    </div>  
+                </div>
+                <div class="footer-widgets-json level1B" >
+	                <div ng-bind-html="trustedHtml(extraWidgets.logosSustainability)"  >
+	                    
+                    </div>
+                </div>
+                <div class="footer-widgets-json level2">
+                    <div ng-bind-html="trustedHtml(extraWidgets.footer)" >
+	                    
+                    </div>
+                </div>
+                <div class="footer-widgets-json level3" >
+	                <div ng-bind-html="trustedHtml(extraWidgets.footermenu)" >
+		            </div>
+	                    
+                </div>
+            </div>
+                    </div>
+    </div>
+    <footer id="footer" class="wrapper clearfix" role="contentinfo" >
+        <div class="wrapper">
+            <div id="copyright" role="contentinfo">©2017 Volvo Ocean Race SLU. All rights reserved</div>
+        </div>
+    </footer>
+
+            <div id="cookiesbar" style="display: none;">
+            <div class="inner">
+                This website uses cookies to ensure you get the best experience on our website. <a href="javascript:void(0);" class="ok" onclick="acceptCookies();"><b>ACCEPT</b></a>
+                                    <a href="/en/cookies.html" class="info">More information</a>
+                            </div>
+        </div>
+        </div>
+<!-- end #container -->
+
+<!-- Scripts at the end for a faster page loading: -->
+<!-- jQuery loading from Google's CDN with fallback to local file. -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://www.volvooceanrace.com/static/assets/2017-18/dist/js/libs/jquery-1.10.0.min.js"><\/script>')</script>
+
+
+<script src="http://www.volvooceanrace.com/static/assets/2017-18/dist/js/plugins.js"></script>
+    <script src="http://www.volvooceanrace.com/static/assets/2017-18/dist/js/plugins-ng.js"></script>
+        <!-- scripts.js contains customized code. -->
+    <script src="http://www.volvooceanrace.com/static/assets/2017-18/dist/js/script.js"></script>
+    <script src="http://www.volvooceanrace.com/static/assets/2017-18/dist/js/script-ng.js"></script>
+    <!-- end scripts-->
+<script type="text/javascript">
+    
+    
+function centerBox52975(){
+    setTimeout(function() {
+        if ($('#home-top-stories .slides.fotorama').data('fotorama') === undefined || $(".bg-vid .center-box ").length > 0) {
+            slideContentHeight= $('.bg-vid').find('div.slide-content').height();
+            $('.bg-vid').find('div.slide-content').css('margin-top',(slideContentHeight-(slideContentHeight*2))/2);
+        } else {
+            fIndex = $('#home-top-stories .slides.fotorama').data('fotorama').activeFrame.html
+            if ($(fIndex).hasClass('center-box')) {
+                slideContentHeight= $(fIndex).find('div.slide-content').height();
+                $(fIndex).find('div.slide-content').css('margin-top',(slideContentHeight-(slideContentHeight*2))/2);
+            }
+        }
+    }, 100);
+}
+
+$(document).ready(function() {
+  
+    $('#home-top-stories .slides.fotorama').fotorama({
+        width: '100%',
+        maxwidth: '100%',
+        ratio: 1440/550,
+        allowfullscreen: false,
+        nav: 'dots',
+        transition: 'Slide',
+        autoplay:true,
+        fit:'cover',
+        click:false,
+        loop:true
+    });
+    $(window).resize(function() {
+        centerBox52975();
+
+    });
+    $('#home-top-stories .slides.fotorama').on('fotorama:show', function (e, fotorama) {
+        centerBox52975();     
+    });
+
+    $('#home-top-stories .slides.fotorama').on('fotorama:load', function (e, fotorama) {
+        centerBox52975();
+
+    });
+    centerBox52975();
+ 
+});
+    
+</script>    <script type="text/javascript">
+        App.value("system_language", "en_US").value("siteDomain", "http://www.volvooceanrace.com/");
+                App.value("auth_api", 1);
+                App.value("facebookAppId", '178050459056315');
+            </script>
+    <!-- Installation Chrome's dialog box for IE6. -->
+<!--[if lt IE 7 ]>
+<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+<![endif]-->
+</body>
+</html>

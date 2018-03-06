@@ -1,0 +1,16 @@
+<?php
+// Thanks to a special setting in httpd.conf, the PHP processor is called on
+// this file
+
+header('Content-type: text/plain');
+
+// There's probably a nicer way to do this, but this seems like the easiest...
+// just get the contents of /wiki/Special:Robots and display it here
+$domain = $_SERVER['HTTP_HOST'];
+if (strpos($domain, 'gingerwiki.com') !== false)
+	$domain = 'gingerwiki.referata.com';
+elseif (strpos($domain, 'b3ok.org') !== false)
+	$domain = 'b3ok.referata.com';
+print file_get_contents('http://' . $domain . '/wiki/Special:Robots');
+?>
+Crawl-delay: 30 or higher

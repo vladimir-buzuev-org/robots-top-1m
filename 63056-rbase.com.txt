@@ -1,0 +1,135 @@
+#####################################
+# Forum Post:
+# http://tech.groups.yahoo.com/group/webanalytics/message/25700
+# http://groups.google.com/a/googleproductforums.com/d/topic/analytics/BsZ41iF2iFM/discussion
+# 
+# This file is applied at sub-domain level - upload to each subdomain, e.g:
+# blog.yourdomain.com/robots.txt
+# www.yourdomain.com/robots.txt
+# 
+# WHITELIST for ALLOW-robots.txt - ONLY add known bots
+# Alexa and Facebook.com both use this technique:
+# www.facebook.com/robots.txt
+# www.alexa.com/robots.txt
+#
+# Note1: Bad bots will ignore robots.txt thus use htaccess deny on IP, user-agent or referral.
+# Note2: AdwordsPPC bot ignores User-agent:* but it obeys User-agent: Adsbot-Google
+# Note3: WHITELIST is more effective that BLACKLIST
+# But here are 2 BLACKLIST examples:
+# http://www.omniture.com/robots.txt
+# http://en.wikipedia.org/robots.txt
+# http://www.andreamoro.eu/robots.txt
+#
+# Note4: Bots Traffic can also be blocked by GA EXCLUDE filter on ISP-organization Field:
+# site confidence test agent servers|site[ ]?confidence
+# nielsen netratings
+# apache ltd\.
+# inktomi corporation|ac search and media europe ltd|iac search media inc
+# google inc\.
+# yahoo\! inc\.
+# microsoft corp
+# facebook inc\.
+# stumbleupon inc\.
+# dub6 ec2 #Amazon A9 Web Services
+# amazon technologies inc.
+# amazon data services ireland ltd
+# amazon web services elastic compute # cloud ec2 eu
+# amazon.com inc.
+# taptu limited
+# global crossing
+#
+# 255 GA filter limit
+# ^(inktomi corporation|iac search.*|yahoo\! inc\.|facebook inc\.|stumbleupon inc\.|dub6 ec2|site confidence.*|apache ltd\.|nielsen netratings|affinity internet inc|dub6 ec2|Amazon (A9|Web|Data|Tech).*|amazon\.com inc\.|microsoft corp)$
+# full list
+# ^(inktomi corporation|iac search and media europe ltd|iac search media inc|yahoo\! inc\.|facebook inc\.|stumbleupon inc\.|dub6 ec2|site confidence test agent servers|site ?confidence|apache ltd\.|nielsen netratings|affinity internet inc|dub6 ec2|Amazon A9 Web Services|amazon technologies inc\.|amazon data services ireland ltd|amazon web services elastic compute cloud ec2 eu|amazon\.com inc\.|microsoft corp)$
+#
+# Note5: Bots Traffic can also be blocked using a GA INCLUDE Browser whitelist
+# ^(Internet Explorer|Firefox|Chrome|Safari|Safari \(in-app\)|Opera|Opera Mini|Android Browser|Apple Browser)$
+#
+# Google offical doc: developers.google.com/webmasters/control-crawl-index/docs/robots_txt 
+# Google video: www.youtube.com/watch?feature=player_embedded&v=KBdEwpRQRD0
+#####################################
+# List of WHITELIST ALLOW user-agents
+
+# CPM: Adsense banner and contexual bots
+User-agent: Mediapartners-Google* # support.google.com/adsense/bin/answer.py?hl=en&answer=99376
+User-agent: Mediapartners-Google # Adsense contextual targeting bot
+User-agent: msnbot-media/1.0 # MSN contextual targeting bot
+Disallow:
+Allow: /
+
+# PPC: Adwords & AdCenter landing page bots
+User-agent: Adsbot-Google # AdwordsPPC tinyurl.com/list-of-Google-Crawlers
+User-agent: AdsBot-Google-Mobile # AdwordsPPC for mobile campaigns
+User-agent: Adidxbot # BingPPC (aka MSNPTC) www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0
+User-agent: Yahoo!-AdCrawler # YahooPPC tinyurl.com/About-Yahoo-Adcrawler
+Disallow:
+Allow: /
+
+# SEO: Organic Crawlers
+User-agent: Googlebot # support.google.com/webmasters/bin/answer.py?hl=en&answer=1061943
+User-agent: Googlebot-Mobile
+User-agent: Googlebot-News
+User-agent: Googlebot-Video
+User-agent: Googlebot-Image
+User-agent: gsa-crawler # Google-Appliance tinyurl.com/google-sitesearch-appliance
+User-agent: bingbot # aka MSNBOT www.bing.com/bingbot.htm
+User-agent: MSNBot # old version of bingbot still used for multimedia and feeds crawls
+User-agent: BingPreview # bing.com/community/site_blogs/b/webmaster/archive/2012/10/26/page-snapshots-in-bing-windows-8-app-to-bring-new-crawl-traffic-to-sites.aspx
+User-agent: Slurp # aka Yahoo! Slurp - now part of Bingbot
+User-agent: Teoma # Ask.com
+User-agent: Baiduspider # Chinese search engine
+User-agent: Yandex # Russian search engine
+User-agent: naverbot # South Korean search engine
+User-agent: seznambot # Czech search engine
+User-agent: rogerbot # www.seomoz.org/dp/rogerbot
+User-agent: MJ12bot # Majestic SEO link index
+User-agent: AhrefsBot # Ahrefs SEO link index
+User-agent: RavenCrawler #SEOcrawler
+User-agent: Blekkobot #Blekko
+User-agent: xenu's # Link Sleuth
+User-agent: Xenu's Link Sleuth 1.1c
+User-agent: ia_archiver # archive.org
+User-agent: ScoutJet # help.blekko.com/index.php/can-i-submit-my-site-to-be-crawled/
+User-agent: Feedfetcher-Google # Feedburner www.google.com/feedfetcher.html
+User-agent: facebookexternalhit # www.facebook.com/externalhit_uatext.php
+User-agent: Twitterbot
+User-agent: LinkedInBot
+User-agent: bitlybot
+User-agent: Pinterest
+User-agent: ChangeDetection #changedetection.com/bot.html
+Crawl-delay: 20 # Reduce Server-Load using 20sec crawl delay 
+Disallow:
+Allow: /
+
+#####################################
+# Other user agents you might want to include:
+# ArchitextSpider, Lycos_Spider_(T-Rex), FAST-WebCrawler, JikeSpider
+# gulliver, fast, scooter, vscooter, Nutch, ZyBorg, SurveyBot
+#####################################
+
+# Server-Monitoring: BLACKLIST SiteConfidence & Gomez just incase they ignore user-agent: *
+User-agent: SiteCon # siteconfidence.com/services/load-testing/website.aspx
+User-agent: GomezAgent # gomeznetworks.com/help/gpn/MySettings/Last_Mile_PP_Test_Settings.htm
+User-agent: GomezAgent 1.0
+User-agent: GomezAgent 2.0
+User-agent: GomezAgent 3.0
+User-agent: YottaaMonitor
+User-agent: FunWebProducts
+Disallow: / #BLOCK
+
+# All undefined bots - Disallow website Crawl.
+User-agent: *
+Disallow: / #BLOCK
+
+#Sitemap: http://www.yourdomain.com/sitemap.xml #ENTER your-domain here
+
+# Pings
+#http://google.com/webmasters/tools/ping?sitemap=www.yourdomain.com/sitemap.xml
+#http://bing.com/webmaster/ping.aspx?siteMap=www.yourdomain.com/sitemap.xml
+#http://submissions.ask.com/ping?sitemap=www.yourdomain.com/sitemap.xml
+#http://blogs.yandex.ru/pings/?status=success&url=www.yourdomain.com/sitemap.xml
+#https://google.com/webmasters/tools/submit-url/
+#http://blogsearch.google.com/ping
+#http://pingomatic.com/
+#http://technorati.com/account/signup/

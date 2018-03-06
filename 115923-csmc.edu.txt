@@ -1,0 +1,708 @@
+
+	
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<!-- 255398 -->  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0, maximum-scale=1.0,user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    		<title>Cedars-Sinai - A Non-Profit Hospital in Los Angeles</title>
+	    		<meta name="apple-itunes-app" content="app-id=1034088603, affiliate-data=11l5aE" />
+
+    <!-- Custom styles for this template -->
+    <!--[if lt IE 9]>
+    <link href="/resources/assets/styles/ie.legacy.css" rel="stylesheet">
+    <![endif]-->
+    <link href="/resources/assets/styles/main.css?d=20170807" rel="stylesheet">
+    
+	<link rel="stylesheet" href="/resources/css/pf_main.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7795272/708722/css/fonts.css" />
+    <link rel="stylesheet" href="/resources/css/search.css" />
+	<link rel="stylesheet" href="/resources/css/jquery-ui-1.8.23.custom.css" media="all" />
+	<link rel="stylesheet" href="/resources/css/colorbox.css" media="all" />
+	
+	<script src="/resources/assets/scripts/lib/jquery.min.js"></script>
+    <script src="https://cdn.optimizely.com/js/7263150222.js"></script>
+    <script src="/resources/js/jquery.colorbox.js"></script>
+	<script src="/resources/js/jquery-ui-1.8.23.custom.min.js"></script>
+	<script src="/resources/js/modernizr.custom.39261.js"></script>
+	<script src="/resources/js/flowplayer-3.2.13.min.js"></script>
+	<script src="/resources/js/moodular.js"></script>
+			<script>
+        window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+          t._e.push(f);
+        };
+
+        return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
+	
+			
+		
+		<link rel="canonical" href="https://www.cedars-sinai.edu/" />
+
+
+			
+						
+																				
+		
+			
+	
+	
+				
+						
+																						
+		
+
+<script type="text/javascript">
+		$(document).ready(function() {
+
+			var bordervalue = $('table[border]').attr('border');
+			if (bordervalue == 1){
+				$("table").css("border", "1px solid #000");
+				$("td").css("border", "1px solid #000");
+			}
+		
+			//Detailed insurance info expand and collapse
+			//$(".insuranceDetailInfo").hide();
+			$(".insuranceDetailTop").addClass("hand");
+			$(".insuranceDetailTop").find("img").attr("src","/resources/images/white_plus.gif");
+			$(".insuranceDetailTop").click(function(){
+				if($(this).next(".insuranceDetailInfo").css("display")=="none"){
+					$(this).next(".insuranceDetailInfo").show();
+					$(this).find("img").attr("src","/resources/images/white_minus.gif");
+				}
+				else{
+					$(this).next(".insuranceDetailInfo").hide();
+					$(this).find("img").attr("src","/resources/images/white_plus.gif");
+				}
+			});
+		var ua = navigator.userAgent.toLowerCase();
+		var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+		if(isAndroid) {
+			$('#androidAppBanner').css('display','block');
+		}
+		
+		$('#demo').moodular({
+					/* core parameters */
+						// effects separated by space
+						effects: 'fade',
+						// controls separated by space
+						controls: 'pagination stopOnMouseOver',
+						// if you want some yummy transition
+						easing: '',
+						// step 
+						step: 1,
+						// selector is to specify the children of your element (tagName)
+						selector: 'li',
+						// if timer is 0 the carrousel isn't automatic, else it's the interval in ms between each step
+						timer: 7000,
+						// speed is the time in ms of the transition
+						speed: 2000,
+						// queuing animation ?
+						queue: false,
+					/* parameters for controls or effects */
+						// pagination control
+						pagination: jQuery('#index')
+				});
+		
+
+		$("#callback a").click(function (){
+					$("#callBackForm").attr("src","http://cti.connextions.com/?company=cedarssinai&track=MDFIND1");
+					$("#overlayContainer").height($("body").height());
+					var overlayTop = $(window).scrollTop() + ($(window).height() - $("#callbackWrapper").height()) / 2;
+					$("#callbackWrapper").css("top",overlayTop);
+					$("#overlayContainer").show();
+					$("#callbackWrapper").show();
+					$("#colorbox").hide();
+					$("#cboxOverlay").hide();
+                    
+					return false;
+				});
+		$("#rightColumnVideoImage a").click(function (){
+					$("#overlayContainer").height($("body").height());
+					var overlayTop = $(window).scrollTop() + ($(window).height() - $("#videoWrapper").height()) / 2;
+					$("#videoWrapper").css("top",overlayTop);
+					if(isNaN($(this).attr("data-ytID"))){
+						$('#im_box_ep').hide();
+						$('#im_player_ep').remove();
+						$("#ytVideo").show().attr("src","http://www.youtube.com/embed/"+$(this).attr("data-ytID")+"?autoplay=1");
+					}
+					else{
+						$("#ytVideo").hide();
+						$('#im_box_ep').show();
+						im_is_loaded_ep({ video_id:$(this).attr("data-ytID") });
+					}
+					
+					$("#overlayContainer").show();
+					$("#videoWrapper").show();
+					return false;
+				});
+	    $("#overlayClose,.overlayClose2,#overlayContainer").click(function () {
+                    $("#overlayContainer").hide();
+                    $("#videoWrapper").hide();
+                    $("#ytVideo").attr("src","about:blank");
+                    $('#im_player_ep').remove();
+                    $("#callbackWrapper").hide();
+                    $("#callBackForm").attr("src","about:blank");
+					$("#mapWrapper").hide();
+                });
+				
+				
+				
+                $("#researchWrapper .learnMoreInfo").hide();
+                $("#researchWrapper .learnMoreLabMember").addClass("hand"); //.learnMore
+                $("#researchWrapper .learnMoreLabMember").click(function(event){ //.learnMore
+                    // prevents scrolling when clicking read more link
+                    if(document.all){
+                        event.returnValue = false;
+                    }
+                    else{
+                        event.preventDefault();
+                    }
+
+                    if($(this).next("#researchWrapper .learnMoreInfo").css("display") == "none"){
+
+                        $(this).next("#researchWrapper .learnMoreInfo").show();
+                        $(this).css("background-image", "url(/resources/images/tiny_arrow_opened.png)");
+                    }
+                    else{
+
+                        $(this).next("#researchWrapper .learnMoreInfo").hide();
+                        $(this).css("background-image", "url(/resources/images/tiny_arrow.png)");
+                    }
+                });
+				
+				$('#top_nav li').click( function() {
+    				$(this).siblings().removeClass('selected');
+  					$(this).addClass('selected');
+ 				 });
+ 				$(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390,maxWidth:'90%',maxHeight:'90%'});
+				$(".cbl a.255398").colorbox({rel:'255398', transition:"none",maxWidth:'90%',maxHeight:'90%'});
+				$(".cbr a.255398").colorbox({rel:'255398', transition:"none",maxWidth:'90%',maxHeight:'90%'});
+				$(".cbc a.255398").colorbox({rel:'255398', transition:"none",maxWidth:'90%',maxHeight:'90%'});
+
+				
+    			var nav_items = new Array("Patients/Health","Patients/Programs","edu/Patients","edu/Medical","edu/Research","edu/Education");
+    			var the_url_path = location.href;
+         				
+				$('#conditions_submit').mouseleave(function() {
+ 					$("#greyBoxSearchErrorMsg").html('&nbsp;');
+				}); 
+				$(".videoLink").colorbox({inline:true,innerWidth:800,innerHeight:460});
+					
+
+					
+					$('#showLocate .more').toggle(function(){
+						$('#showLocate').css('border-color','#000');
+						$('#locate').toggle();
+						$('#showLocate .more').html('Less');
+					}, function() {
+						$('#locate').toggle();
+						$('#showLocate .more').html('More');
+						$('#showLocate').css('border-color','#fff');
+					});
+					
+					if( $('#tertiaryContainer').length )         // use this if you are using id to check
+					{
+					     $('#resLeftMenu').addClass('leftMenuBB');
+					     $('#contentTitle').addClass('indentContentTitle');
+					}
+				
+				    var $window = $(window);
+				    var $pane = $('#pane1');
+				
+				    function checkWidth() {
+				        var windowsize = $window.width();
+				        if ((windowsize > 1000)&&($('#locate').css('display') == 'none')) {
+				            $('#locate').css('display','block');
+				        }
+				        if ((windowsize > 600)&&($('ul#top_nav').css('display') == 'none')) {
+				        	$('ul#top_nav').css('display','block');
+				        }
+				
+				    }
+				    checkWidth();
+				    $(window).resize(function(){
+						checkWidth();
+				    });
+			});
+	</script>
+  </head>
+  <body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-BQDX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-BQDX');</script>
+<!-- End Google Tag Manager -->
+
+
+    <div class="container" role="main">
+
+
+<!-- BEGIN HEADER -->
+<header class="content">
+	<div class="header-inner">
+		<!-- BEGIN LOGO -->
+		<div class="header__logo">			<a href="https://www.cedars-sinai.edu/"><img src="/resources/assets/images/cedars_sinai_logo.png" alt="Cedars-Sinai" /></a>
+		</div>
+		<!-- END LOGO -->
+
+		<!-- BEGIN SEARCH -->
+		<div class="header__search">
+			<ul class="header__search-wrap mobile-nav--link-spacing">
+				<li class="header__search-field">
+					<form name="gs" method="get" id="suggestion_form" action="http://search.csmc.edu/search" onsubmit="return (this.q.value == '') ? false : true;">
+						<input type="hidden" name="entqr" value="0" />
+                        <input type="hidden" name="ud" value="1" />
+                        <input type="hidden" name="site" value="default_collection" />
+                        <input type="hidden" name="output" value="xml_no_dtd" />
+                        <input type="hidden" name="client" value="default_frontend" />
+                        <input type="hidden" name="proxystylesheet" value="pf_www" />
+                        <input type="hidden" name="ie" value="UTF-8" />
+                        <input type="hidden" name="oe" value="UTF-8" />
+                        <input type="hidden" name="sort" value="date:D:L:d1">
+                        <input type="text" name="q" placeholder="What can we help you find?" class="input__text header__search-input" />
+						<button class="search__btn"><i class="fa fa-search"></i></button>
+                   	</form>
+				    <table class="ss-gac-m" id="search_suggest"></table>
+				
+				</li>
+				<li class="header__login"><a class="" href="https://www.mycslink.org/">Go to My CS-Link</a></li>
+			</ul>
+		</div>
+		<!-- END SEARCH -->
+		<!-- MENU TOGGLE -->
+		<label id="toggleNav" class="menu-toggle">
+			<div class="menu-icon">
+				<div class="center-bar"></div>
+			</div>
+		</label>
+		<!-- END MENU TOGGLE -->
+		<div class="menu__background">
+			<!-- BEGIN MAIN NAV -->
+			<ul class="main-nav__links mobile-nav--link-spacing">
+				   
+            		<li id="findDoctorTopNav" data-path="" title="Find a Doctor" class=""><a href="https://find-a-doctor.cedars-sinai.edu/">Find a Doctor</a></li>
+         	 	<li id="treatmentsTopNav" data-path="Patients/Health" title="Conditions &amp; Treatments" class=""><a href="/Patients/Health-Conditions/">Conditions &amp; Treatments</a></li>
+         	 	<li id="programsTopNav" data-path="Patients/Programs" title="Programs & Services" class=""><a href="/Patients/Programs-and-Services/">Programs & Services</a></li>
+         	 	<li id="guideTopNav" data-path="edu/Patients" title="Patients &amp; Visitors Guide" class=""><a href="/Patients/">Patients &amp; Visitors Guide</a></li>
+         	 	<li id="professionalsTopNav" data-path="edu/Medical" title="For Medical Professionals" class=""><a href="/Medical-Professionals/">For Medical Professionals</a></li>
+         	 	<li id="researchTopNav" data-path="edu/Research" title="Research" class=""><a href="/Research/">Research</a></li>
+         	 	<li id="educationTopNav" data-path="edu/Education" title="Education" class=""><a href="/Education/">Education</a></li>
+      
+
+			</ul>
+			<!-- END MAIN NAV -->
+						<ul id="resMenuHome" class="cf">
+				<li><a href="https://find-a-doctor.cedars-sinai.edu/" id="resFindDoctor">Find a Doctor</a></li>
+			</ul>
+						<!-- BEGIN UTILITY NAV -->
+			<ul class="utility-nav mobile-nav--link-spacing">
+				   
+      											<li><a href=http://apps.csmc.edu/ContactUs/>Contact Us</a></li>
+		   											<li><a href=/Patients/Patient-and-Visitor-Resources/Getting-Here/>Locations & Directions</a></li>
+		   											<li><a href=/applications/mddb/>Medical Staff Directory</a></li>
+		   											<li><a href=/Careers/>Careers</a></li>
+		   											<li><a href=http://giving.cedars-sinai.edu/>Giving</a></li>
+		   								
+							<li><span class="fa fa-globe"></span><a href=/International-Patients/>International Patients</a></li>
+		   
+							</ul>
+		</div>
+	</div>
+	<!-- END UTILITY NAV -->
+</header>
+<!-- END HEADER -->
+
+
+
+
+
+
+
+
+	
+	<!-- BEGIN HERO -->
+<section class="hero">
+	<div class="content">
+		<div class="carousel-wrap">
+			<div id="heroSlider" class="owl-carousel">
+			
+
+	
+
+
+<!-- SLIDE ITEM -->
+<div class="slide-item"><!-- 265465 -->
+<div class="whiteunderlay"></div>
+<!-- black -->
+	<div class="img-content">
+	    																		
+<img alt="" title="Cedars-Sinai Playa Vista" src="/About-Us/HH-Images/Playa-Vista-reception.png" />
+														</div>
+	<div class="text-content">
+		<h1><B>CEDARS-SINAI</br> IS NOW IN</BR> PLAYA VISTA</b></h1>
+		<p>Urgent Care is at Runway Playa Vista. Opening later this year: primary care, OB-GYN & pediatrics.</p>
+		<a href="/About-Us/Playa-Vista.aspx" class="btn btn--sinai-red">Learn More</a>
+			</div>
+</div>
+<!-- END SLIDE ITEM -->
+
+			</div>
+		</div>
+		<!-- OPAQUE WINDOW OFF TO THE SIDE -->
+			<div class="opaque-window">
+				<div class="doctor-box">
+					<h1 class="doctor-box__heading">Find A Doctor</h1>
+					<p class="doctor-box__line1">Call</p>
+					<p class="doctor-box__phone1">
+						<span>1-800-CEDARS-1</span>
+					</p>
+					<p class="doctor-box__phone2">
+						(1-800-233-2771)
+					</p>
+					<p class="doctor-box__phone2">
+						TTY 711
+					</p>
+					<p class="doctor-box__line4">
+						Available 24 Hours A Day
+					</p>
+					<p class="doctor-box__line5">
+					</p>
+					<script>
+						function callbackwin(){
+							window.open ('http://cti.connextions.com/?company=cedarssinai&track=MDFIND1', 'newwindow', config='height=360,width=490, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, directories=no, status=no')
+						}
+					</script>
+					<div class="cta-set">	
+						<a class="btn-full-width btn" href="https://find-a-doctor.cedars-sinai.edu/" alt="Online Referral" title="Online Referral">Online Referral</a>
+						<div id="""><a class="btn-full-width btn" href="javascript:callbackwin()" alt="Schedule a Callback" title="Schedule a Callback">Schedule a Callback</a></div>
+					</div>
+				</div>
+			</div>
+			<!-- END OPAQUE WINDOW OFF TO THE SIDE -->
+	</div>
+</section>
+
+<!-- END HERO -->
+
+<!-- BEGIN TILE GRID -->
+<section class="content tile-grid">
+	<!-- BEGIN TILE -->
+	<div class="tile-grid__col">
+	
+
+
+
+
+
+
+<div class="tile grey-blue-base">
+	<h2><a href="/Patients/Patient-and-Visitor-Resources/"><span>Patient & Visitor Information</span><i class="fa fa-caret-right"></i></a></h2>
+	
+	<ul class="list--bulleted cta--anchor-bottom"><li>
+
+	
+<a href="/Patients/Patient-and-Visitor-Resources/Getting-Here/" title="Locations & Directions">Locations & Directions</a>
+		
+	</li><li>
+
+	
+<a href="/Patients/Patient-and-Visitor-Resources/Visitor-Services/" title="Visitor Policy and Hours">Visitor Policy and Hours</a>
+		
+	</li><li>
+
+	
+<a href="/Patients/Patient-and-Visitor-Resources/Billing-and-Insurance/" title="Billing & Insurance">Billing & Insurance</a>
+		
+	</li></ul></div>	</div>
+	<!-- END TILE -->
+	
+	<!-- BEGIN TILE -->
+	<div class="tile-grid__col">
+	
+
+
+
+
+
+
+
+<div class="tile tile__bg--mycslink">
+
+	
+<img alt="My CS Link" title="My CS Link" src="/About-Us/Images/sbmycslink.png" class="imgbground" />
+	<h2><a class="tile-cta grey-blue-base" href="https://www.mycslink.org/"><span>My CS-Link</span><i class="fa fa-caret-right"></i></a></h2>
+	<p class="snippet">A secure online tool that connects you to your personal health information.</p>
+	
+
+	<div class="cta--anchor-bottom">
+		<a class="btn btn--clear btn--border btn--border-grey-blue-base" href="https://www.mycslink.org/">Log In</a>
+					<a class="btn btn--clear" href="https://www.mycslink.org/#needaccess">Sign Up</a>
+			</div>
+</div>	</div>
+	<!-- END TILE -->
+	
+	<!-- BEGIN TILE -->
+	<div class="tile-grid__col swap-right">
+	
+
+
+
+
+
+
+<div class="tile chartreuse-dark">
+	<h2><a href="/Research/Clinical-Research/"><span>Clinical Trials</span><i class="fa fa-caret-right"></i></a></h2>
+	<p class="snippet">In the past year, we had 482 ongoing clinical research projects covering a wide array of diseases.</p>
+	<ul class="list--bulleted cta--anchor-bottom"><li>
+
+	
+<a href="/Research/Clinical-Research/Search-Clinical-Trials.aspx" title="Search Clinical Trials">Search Clinical Trials</a>
+		
+	</li></ul></div>	</div>
+	<!-- END TILE -->
+	
+	<!-- BEGIN TILE -->
+	<div class="tile-grid__col swap-left">
+	
+
+
+
+
+
+
+<div class="tile">
+	
+<img alt="Newsroom" title="Newsroom" src="/About-Us/News/sbnewsroom.png" class="imgbground" />
+		<h2><a href="/About-Us/News/"><span>Newsroom</span><i class="fa fa-caret-right"></i></a></h2>
+	<p class="snippet">Read how Cedars-Sinai is making news.</p>
+	</div>	</div>
+	<!-- END TILE -->
+	
+	<!-- BEGIN TILE -->
+	<div class="tile-grid__col">
+		<div class="tile tile--no-anchor tile--twit-spaced">
+			<a class="twitter-timeline" data-chrome="noheader nofooter noborders transparent noscrollbar" href="https://twitter.com/CedarsSinai" data-tweet-limit="1" data-link-color="#3E5A6C" data-theme="light">Tweets by @CedarsSinai</a>
+		</div>
+	</div>
+	<!-- END TILE -->
+	
+	<!-- BEGIN TILE -->
+	<div class="tile-grid__col">
+	
+
+
+
+
+
+
+<div class="tile video tile__bg--video" style="">
+	
+<img alt="Cedars-Sinai " title="Cedars-Sinai " src="/About-Us/Images/Video-tile.jpg" class="imgbground" />
+	<label for="modal-1">
+		<div class="modal-trigger play">
+			<span>
+				<i class="fa fa-play"></i>
+				<strong>Watch our legacy of healing</strong>
+			</span>
+		</div>
+	</label>
+</div>
+<!-- MODAL -->
+<div class="modal">
+  <input class="modal-state" id="modal-1" type="checkbox" />
+  <div class="modal-fade-screen">
+    <div class="modal-inner">
+      <div id="playerClose" class="modal-close" for="modal-1"></div>
+      <!-- To enable YouTube video functions, the parameter '?enablejsapi=1' will need to be appended to the end of the video ID -->
+      <!-- http://stackoverflow.com/a/30358006/2096649 -->
+      <!-- https://developers.google.com/youtube/iframe_api_reference#Playback_controls -->
+      <iframe id="player" class="yt_player_iframe" width="16" height="9" src="https://www.youtube.com/embed/PE59eAIZjUE?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+<!-- END MODAL -->
+
+	</div>
+	<!-- END TILE -->
+</section>
+
+<!-- END TILE GRID -->
+	
+	<div id="overlayContainer"></div>
+	<div class="callbackWrapper" id="callbackWrapper">
+		<div class="callbackCloseBtn">
+			<a id="overlayClose">close</a>
+		</div>
+		<div class="callbackContent">
+			<iframe id="callBackForm" width="490" height="360" src="javascript:false;" allowfullscreen></iframe>
+		</div>
+	</div>	
+	
+
+
+
+<!-- BEGIN UTILITY FOOTER NAV -->
+<section class="content utility-footer">
+	<div class="utility-footer__wrap">
+		
+
+
+					<ul class="utility-footer-nav">		
+				<li>				
+	
+	
+	<a href="/About-Us/" rel="nofollow">About Us</a>
+
+		</li>
+		
+		
+			
+				<li>				
+	
+	
+	<a href="/Patients/Patient-and-Visitor-Resources/Billing-and-Insurance/" rel="nofollow">Billing & Insurance</a>
+
+		</li>
+		
+		
+			
+				<li>				
+	
+	
+	<a href="/Careers/" rel="nofollow">Career Opportunities </a>
+
+		</li>
+		
+		
+			
+			</ul><ul class="utility-footer-nav">
+				<li>				
+	
+	
+	<a href="/Community-Benefit/" rel="nofollow">Community Benefit</a>
+
+		</li>
+		
+		
+			
+				<li>				
+	
+	
+	<a href="/Patients/Programs-and-Services/Medical-Delivery-Network/" rel="nofollow">Medical Network</a>
+
+		</li>
+		
+		
+			
+				<li>				
+	
+	
+	<a href="/Patients/" rel="nofollow">Patients & Visitors Guide</a>
+
+		</li>
+		
+		
+			
+			</ul><ul class="utility-footer-nav">
+				<li>				
+	
+	
+	<a href="/About-Us/News/" rel="nofollow">Newsroom</a>
+
+		</li>
+		
+		
+			
+				<li>				
+	
+	
+	<a href="https://blog.cedars-sinai.edu/" rel="nofollow">Blog</a>
+
+		</li>
+		
+		
+			
+				<li class="last">				
+	
+	
+	<a href="/Patients/Quality-Measures/" rel="nofollow">Quality Measures</a>
+
+		</li>
+		
+		
+				</ul>		</div>
+</section>
+
+<!-- END UTILITY FOOTER NAV -->
+
+<!-- BEGIN SOCIAL FOLLOW US -->
+<section class="content follow-us">
+	
+</section>
+
+<!-- END SOCIAL FOLLOW US -->
+
+<!-- BEGIN FOOTER -->
+<footer class="content">
+	<div class="social">
+		<ul class="list-inline list__social">
+			<li><a href="https://twitter.com/cedarssinai" target="_blank"><span class="fa fa-twitter"></span></a></li>
+			<li><a href="https://www.facebook.com/CedarsSinai" target="_blank"><span class="fa fa-facebook"></span></a></li>
+			<li><a href="https://www.instagram.com/cedarssinai/" target="_blank"><span class="fa fa-instagram"></span></a></li>
+			<li><a href="https://www.youtube.com/user/CEDARSSINAI" target="_blank"><span class="fa fa-youtube"></span></a></li>
+		</ul>
+	</div>
+	<nav class="footer__links cf">
+		
+	
+<ul class="footer-nav__legal">	<li><a href="/Website-Terms-and-Conditions.aspx" rel="nofollow">Website Terms and Conditions</a></li>
+	<li><a href="/Privacy-Policy.aspx" rel="nofollow">Privacy Policy</a></li>
+	<li class="last"><a href="/staff-link.aspx" rel="nofollow">Staff Link</a></li>
+</ul>	
+		</nav>
+	<p class="footer__disclaimer">
+		2017 &copy; Cedars-Sinai. All Rights Reserved. A 501(c)(3) non-profit organization
+	</p>
+</footer>
+
+<!-- END FOOTER -->
+
+
+    </div>
+
+
+
+
+    <!-- jQuery -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Owl Carousel js plugin -->
+    <script src="/resources/assets/scripts/lib/owl.carousel.js"></script>
+    <script src="/resources/assets/scripts/jquery.typeahead.min.js"></script>
+    <script src="/resources/assets/scripts/main.js?d=20170317"></script>
+    
+
+	<script src="/resources/js/flowplayer-3.2.13.min.js"></script>
+
+	
+	
+	
+  </body>
+</html>

@@ -1,0 +1,1126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>Sitges Film Festival - Festival Internacional de Cinema Fant&agrave;stic de Catalunya</title>
+
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="sitges,film,festival,internacional,cinema,fantastic,catalunya,festival cine,fantastico" />
+<meta name="description" content="Primer festival de cinema fantàstic del món i la manifestació cultural amb més ressò mediàtic de Catalunya" />
+<meta http-equiv="expires" content="0">
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+<meta http-equiv="pragma" content="no-cache">
+
+<script type="text/javascript" src="http://sitgesfilmfestival.com/comun/js/jquery-1.3.min.js"></script><script type="text/javascript" src="http://sitgesfilmfestival.com/comun/js/hkiffmainmenu.js"></script><script type="text/javascript" src="/scripts/cookies/cookie.js"></script>	<style>.msgcookie{display:block;position:fixed;bottom:0;height:50px;width:100%;background:rgba(0,0,0,0.8);color:#fff;font-size:11px;font-family:sans-serif}.msgcookie p{width:960px;margin:0 auto;background:url(/scripts/cookies/cookie.png) 0 0 no-repeat;padding:10px 0 0 30px}.msgcookie p a:link,.msgcookie p a:active,.msgcookie p a:visited,.msgcookie p a:hover{color:#fff}.msgcookie a.close{float:right;display:block;width:16px;height:50px;background:url(/scripts/cookies/cookie.png) 0 -45px no-repeat;overflow:hidden;text-indent:-80px;opacity:0.5;margin:0 0 0 40px}a.close:hover{opacity:1}</style>
+	
+<script type="text/javascript" src="http://sitgesfilmfestival.com/comun/js/jquery.dimensions.min.js"></script>
+<script type="text/javascript" src="http://sitgesfilmfestival.com/comun/js/jquery.cycle.all.min.js"></script>
+<script type="text/javascript" src="http://sitgesfilmfestival.com/comun/js/jquery.imghover-1.1rc.min.js"></script>
+<script type="text/javascript" src="http://sitgesfilmfestival.com/comun/js/common.js"></script>
+
+<script type="text/javascript" src="http://sitgesfilmfestival.com/comun/js/AC_RunActiveContent.js"></script>
+
+
+<script type="text/javascript">
+/////////// CAMPO PASSWORD
+function onFocusHandler_p(fld){
+	fld.style.display = 'none';
+	var fld2 = (document.getElementById) ? document.getElementById('password_p') : document.all['password_p'];
+	fld2.style.display = 'block';
+	fld2.focus();
+	return true;
+}
+function onBlurHandler_p(fld){
+	if(fld.value === ''){
+		fld.style.display = 'none';
+		var fld2 = (document.getElementById) ? document.getElementById('fauxpassword_p') : document.all['fauxpassword_p'];
+		fld2.style.display = 'block';
+	}
+	return true;
+}
+
+	
+	$(document).ready(function() {
+		slideShow();
+
+
+		
+			if (!$.cookie("msgcookie"))
+			{
+				$("body").prepend("<div class='msgcookie'><p><a href='http://sitgesfilmfestival.com/?cookies=32' class='close'>cerrar mensaje</a>Este sitio web utiliza cookies de terceros para recopilar información que ayuda a optimizar su visita, así como la recogida de estadísticas. Las cookies no se utilizan para recoger información de carácter personal. Si continua navegando, consideramos que acepta su uso. Puede cambiar la configuración u obtener más información en nuestra <a href='http://sitgesfilmfestival.com/cat/cookies'>Política de Cookies</a></p></div>");
+				
+				$("body").on("click", ".close", function(e) {
+					e.preventDefault();
+					$.cookie('msgcookie', 'aceptado');
+					$(".msgcookie").hide();
+				});
+				
+				$("body").on("click", ".msgcookie p a:not(.close)", function(e) {
+					e.preventDefault();
+					alert("Este enlace debe ir a tu pol\u00EDtica de privacidad");
+				});
+			}
+			
+
+	});
+	
+	function slideShow() {
+		//Set the opacity of all images to 0
+		$('#gallery a').css({opacity: 0.0});
+		//Get the first image and display it (set it to full opacity)
+		$('#gallery a:first').css({opacity: 1.0});
+		//Set the caption background to semi-transparent
+		$('#gallery .caption').css({opacity: 0.8});
+		//Resize the width of the caption according to the image width
+		$('#gallery .caption').css({width: $('#gallery a').find('img').css('width')});
+		//Get the caption of the first image from REL attribute and display it
+		$('#gallery .content').html($('#gallery a:first').find('img').attr('rel'))
+		.animate({opacity: 0.7}, 400);
+		//Call the gallery function to run the slideshow, 6000 = change to next image after 6 seconds
+		setInterval('gallery()',6000);
+	}
+	
+	function gallery() {
+		//if no IMGs have the show class, grab the first image
+		var current = ($('#gallery a.show')?  $('#gallery a.show') : $('#gallery a:first'));
+		//Get next image, if it reached the end of the slideshow, rotate it back to the first image
+		var next = ((current.next().length) ? ((current.next().hasClass('caption'))? $('#gallery a:first') :current.next()) : $('#gallery a:first'));	
+		//Get next image caption
+		var caption = next.find('img').attr('rel');	
+		//Set the fade in effect for the next image, show class has higher z-index
+		next.css({opacity: 0.0})
+		.addClass('show')
+		.animate({opacity: 1.0}, 1000);
+		//Hide the current image
+		current.animate({opacity: 0.0}, 1000)
+		.removeClass('show');
+		//Set the opacity to 0 and height to 1px
+		$('#gallery .caption').animate({opacity: 0.0}, { queue:false, duration:0 }).animate({height: '1px'}, { queue:true, duration:300 });	
+		//Animate the caption, opacity to 0.7 and heigth to 100px, a slide up effect
+		$('#gallery .caption').animate({opacity: 0.8},100 ).animate({height: '50px'},500 );
+		//Display the content
+		$('#gallery .content').html(caption);
+	}
+	
+	
+</script> 
+ 
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://sitgesfilmfestival.com/rss/cat/" />
+<link rel="stylesheet" type="text/css" media="screen, print" href="http://sitgesfilmfestival.com/i_cat/css/all-min.css"/>
+<link rel="stylesheet" type="text/css" media="screen, print" href="http://sitgesfilmfestival.com/comun/css/diseny2.css"/>
+<link rel="stylesheet" type="text/css" media="screen, print" href="http://sitgesfilmfestival.com/comun/css/galeria_imagenes.css"/>
+<link rel="stylesheet" type="text/css" media="screen, print" href="http://sitgesfilmfestival.com/comun/css/botones.css"/>
+<link rel="shortcut icon" href="http://sitgesfilmfestival.com/favicon.ico" />
+
+<style type="text/css">
+
+div.patro_logo{
+	margin: 0 30px 0 0;
+	display: inline-block;  
+	/* IE 7 hack */
+	*zoom:1;
+	*display: inline;
+	vertical-align: middle;
+}
+
+div.patro_container{
+	height:auto;
+	vertical-align: middle;
+}
+
+div.fbfan{
+	height:33px;
+	background-color:#e40808;
+	border-left: 1px solid #e40808;
+	border-right: 1px solid #e40808;
+	margin: 10px 0 0 0;
+	padding:0px;
+	text-align:right;
+}
+
+a#bt_facebook, a#bt_twitter, a#bt_youtube, a#bt_rss, a#bt_instagram {
+	display:block;
+	width:25px;
+	height:25px;
+	background:url("http://sitgesfilmfestival.com/comun/img/ico_web.gif") no-repeat;
+}
+
+a#bt_facebook { background-position: 0px 0px; }
+a#bt_facebook:hover { background-position: -25px 0px; }
+
+a#bt_twitter { background-position: 0px -25px; }
+a#bt_twitter:hover { background-position: -25px -25px; }
+
+a#bt_youtube { background-position: 0px -75px; }
+a#bt_youtube:hover { background-position: -25px -75px; }
+
+a#bt_rss { background-position: 0px -50px; }
+a#bt_rss:hover { background-position: -25px -50px; }
+
+a#bt_instagram { background-position: 0px -100px; }
+a#bt_instagram:hover { background-position: -25px -100px; }
+
+.clear {
+
+	clear:both
+
+}
+
+
+
+#gallery {
+	position:relative;
+	height:330px
+}
+
+#gallery a {
+	float:left;
+	position:absolute;
+}
+
+#gallery a img {
+	border:none;
+}
+
+#gallery a.show {
+	z-index:500
+}
+
+#gallery .caption {
+	z-index:600; 
+	background-color:#000; 
+	color:#FFFFFF; 
+	height:50px; 
+	width:100%; 
+	position:absolute;
+	bottom:0;
+}
+
+#gallery .caption .content {
+	margin:5px
+}
+
+#gallery .caption .content h3 {
+	z-index:800;
+	margin:0;
+	padding:0;
+	color:#FFFFFF;
+	font-size: 15px;
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24808248-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+<body>
+<a name="top" id="top"></a>
+<div align="center">
+	<table class="apartado" width="930">
+		<tr>
+			<td colspan="2">
+				<div align="right" style="vertical-align:middle">
+										<a class="menu" href="http://sitgesfilmfestival.com/cathttp://sitgesfilmfestival.com/robots.txt">Catal&agrave;</a> <span class="linea">|</span> <a class="menu" href="http://sitgesfilmfestival.com/cashttp://sitgesfilmfestival.com/robots.txt">Castellano</a> <span class="linea">|</span> <a class="menu" href="http://sitgesfilmfestival.com/enghttp://sitgesfilmfestival.com/robots.txt">English</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" valign="top" height="1">
+				<table class="cabecera" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td colspan="4" valign="top">
+							<img src="http://sitgesfilmfestival.com/img/site/doble_linea.gif" width="100%" height="3" align="top" />
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="14">
+						</td>
+					</tr>
+					<tr>
+						<td align="left" width="100">
+
+													</td>
+						<td height="1" align="center" style="padding: 0 0 0 0px;">
+							<div class="cabecera_logo" align="center">
+								<a href="http://sitgesfilmfestival.com/cat">
+																		<img src="http://sitgesfilmfestival.com/comun/img/logo-2017-04.png" />
+									
+								</a>
+							</div>
+														
+
+						</td>
+						<td>
+														
+						</td>
+						<td width="100" valign="top" align="right" style="text-align:right; vertical-align:top;">
+							<table cellpadding="0" cellspacing="0" height="63" width="10" border="0" align="right">
+								<tr>
+									<td style="text-align:right; vertical-align:top;">
+										<div align="right">
+											<a id="bt_twitter" href="http://twitter.com/sitgesfestival"></a>
+										</div>
+									</td>
+									<td style="text-align:right; vertical-align:top;">
+										<div align="right">
+											<a id="bt_facebook" href="http://www.facebook.com/sitgesfilmfestival"></a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align:right; vertical-align:top">
+										<div align="right">
+											<a id="bt_youtube" href="http://www.youtube.com/user/SitgesFilmFestival"></a>
+										</div>
+									</td>
+									<td style="text-align:right; vertical-align:top">
+										<div align="right">
+											<a id="bt_rss" href="http://sitgesfilmfestival.com/rss/cat"></a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align:right; vertical-align:top">
+										<div align="right">
+											<a id="bt_instagram" href="https://instagram.com/sitgesfestival"></a>
+										</div>
+									</td>
+									<td style="text-align:right; vertical-align:top">
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<!--[if gte IE 7]><div id="ie7"><![endif]-->
+				<!--[if IE 6]><div id="ie6"><![endif]--> 
+				
+				<div id="master-topmenu-container">
+					<div id="master-topmenu">
+						<div id="mainmenu" align="center">
+							<span class="first" id="menuitem-1"><a id="menuitem-1-link" href="http://sitgesfilmfestival.com/cat/noticies"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin_01.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_01_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_01.gif';" /></span></a></span>
+							<span class="" id="menuitem-2"><a id="menuitem-2-link" href="http://sitgesfilmfestival.com/cat/festival/editorial"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin_02.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_02_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_02.gif';" /></span></a></span>
+							<span class="" id="menuitem-3"><a id="menuitem-3-link" href="http://sitgesfilmfestival.com/cat/programa/pel_licules"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin_03.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_03_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_03.gif';" /></span></a></span>
+							<span class="" id="menuitem-4"><a id="menuitem-4-link" href="http://sitgesfilmfestival.com/cat/acreditacions/premsa"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin_04.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_04_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_04.gif';" /></span></a></span>
+							<span class="" id="menuitem-5"><a id="menuitem-5-link" href="http://sitgesfilmfestival.com/cat/patrocinadors/patrocinadors_col_laboradors"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin_05.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_05_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_05.gif';" /></span></a></span>
+							<span class="" id="menuitem-6"><a id="menuitem-6-link" href="http://sitgesfilmfestival.com/cat/arxiu"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin_06.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_06_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_06.gif';" /></span></a></span>
+							<span class="" id="menuitem-8"><a id="menuitem-8-link" href="http://sitgesfilmfestival.com/cat/guia_sitges/sitges"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin_08.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_08_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_08.gif';" /></span></a></span>
+							<span class="last" id="menuitem-7"><a id="menuitem-7-link" href="http://sitgesfilmfestival.com/cat/contacte"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin_07.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_07_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin_07.gif';" /></span></a></span>
+						</div>
+
+						<div id="submenus">
+							<!-- Submenu 1 -->
+							<table id="submenu-1" class="submenu">
+								<tr>
+									<th><a href="http://sitgesfilmfestival.com/cat/noticies"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies01.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies01_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies01.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://www.facebook.com/sitgesfilmfestival" target="_blank"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies02.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies02_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies02.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://twitter.com/sitgesfestival" target="_blank"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies03.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies03_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies03.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/diari_festival"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies04.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies04_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies04.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/sitges_live"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies05.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies05_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies05.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/newsletter"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies06.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies06_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies06.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/festival_tv"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies07.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies07_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_noticies07.gif';" /></span></a></td>
+								</tr>
+							</table>
+							<!-- Submenu 2 -->
+							<table id="submenu-2" class="submenu">
+								<tr>
+									<th><a href="http://sitgesfilmfestival.com/cat/festival/editorial"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals01.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals01_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals01.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/festival/seccions"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals02.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals02_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals02.gif';" /></span></a></td>
+						  									  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/festival/premis"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals03.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals03_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals03.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/festival/palmares"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals03_palmares.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals03_palmares_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals03_palmares.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/festival/jurats"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals04.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals04_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals04.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/festival/homenatges_i_premis_honorifics"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals05.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals05_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals05.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/festival/espais"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals06.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals06_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals06.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/festival/imatge_festival"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals07.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals07_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals07.gif';" /></span></a></td>
+									<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/festival/xifres_1"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals08.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals08_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals08.gif';" /></span></a></td>
+									<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/festival/reglament"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals12.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals12_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals12.gif';" /></span></a></td>
+									<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/festival/patronat"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals10.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals10_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals10.gif';" /></span></a></td>
+									<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/festival/equip"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals11.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals11_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals11.gif';" /></span></a></td>
+								</tr>
+							</table>
+				  			<!-- Submenu 3 -->
+							<table id="submenu-3" class="submenu">
+								<tr>
+									<th><a href="http://sitgesfilmfestival.com/cat/programa/pel_licules"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa01.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa01_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa01.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<td><a href="http://sitgesfilmfestival.com/cat/programa/trailers"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa02.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa02_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa02.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/programa/projeccions"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa03.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa03_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa03.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/programa/entrades"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa05.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa05_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa05.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<td><a href="http://sitgesfilmfestival.com/cat/programa/mymovies"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa04.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa04_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa04.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+
+									<td><a href="http://sitgesfilmfestival.com/cat/programa/zombie_walk"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa10.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa10_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa10.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+
+						  			<td><a href="http://sitgesfilmfestival.com/cat/programa/activitats_paral_leles"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa06.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa06_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa06.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  									  			<td><a href="http://sitgesfilmfestival.com/cat/programa/publicacions"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa07.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa07_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa07.gif';" /></span></a></td>
+
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/inscripcio_pel_licules"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa08.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa08_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_programa08.gif';" /></span></a></td>
+								</tr>
+							</table>
+				  			<!-- Submenu 4 -->
+							<table id="submenu-4" class="submenu">
+								<tr>
+									<th><a href="http://sitgesfilmfestival.com/cat/acreditacions/premsa"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_acreditacions01.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_acreditacions01_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_acreditacions01.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/acreditacions/professionals"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_acreditacions02.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_acreditacions02_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_acreditacions02.gif';" /></span></a></td>
+								</tr>
+							</table>
+				  			<!-- Submenu 5 -->
+							<table id="submenu-5" class="submenu">
+								<tr>
+									<th><a href="http://sitgesfilmfestival.com/cat/patrocinadors/patrocinadors_col_laboradors"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_patrocinadors01.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_patrocinadors01_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_patrocinadors01.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/patrocinadors/suports_publicitat"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_patrocinadors03.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_patrocinadors03_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_patrocinadors03.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/patrocinadors/galeria_fotografica"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_patrocinadors04.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_patrocinadors04_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_patrocinadors04.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/patrocinadors/xifres_2"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals08.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals08_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_festivals08.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/patrocinadors/contacte"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_patrocinadors06.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_patrocinadors06_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_patrocinadors06.gif';" /></span></a></td>
+								</tr>
+							</table>
+							<table id="submenu-6" class="submenu">
+								<tr>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2016"><span><img src="http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2016.gif" onmouseover="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2016_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2016.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2015"><span><img src="http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2015.gif" onmouseover="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2015_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2015.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2014"><span><img src="http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2014.gif" onmouseover="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2014_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2014.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2013"><span><img src="http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2013.gif" onmouseover="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2013_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2013.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2012"><span><img src="http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2012.gif" onmouseover="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2012_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2012.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2011"><span><img src="http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2011.gif" onmouseover="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2011_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2011.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2010"><span><img src="http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2010.gif" onmouseover="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2010_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu2010.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2009"><span><img src="http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu001.gif" onmouseover="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu001_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/comun/img/menu/menu_prin2_arxiu001.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2008"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu01.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu01_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu01.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2007"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu02.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu02_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu02.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2006"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu03.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu03_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu03.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2005"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu04.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu04_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu04.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2004"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu05.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu05_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu05.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2003"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu06.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu06_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu06.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2002"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu07.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu07_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu07.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2001"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu08.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu08_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu08.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/2000"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu09.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu09_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu09.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/1999"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu10.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu10_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu10.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/1998"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu11.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu11_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu11.gif';" /></span></a></th>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/1997"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu12.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu12_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu12.gif';" /></span></a></th>
+																		<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+									<th><a href="http://sitgesfilmfestival.com/cat/arxiu/mes_edicions"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu21.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu21_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_arxiu21.gif';" /></span></a></th>
+						  		</tr>
+							</table>
+							<!-- Submenu 7 -->
+							<table id="submenu-7" class="submenu">
+								<tr>
+									<th><a href="http://sitgesfilmfestival.com/cat/guia_sitges/sitges"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges01.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges01_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges01.gif';" /></span></a></th>
+									<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/guia_sitges/mapa"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges04.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges04_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges04.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/guia_sitges/com_arribar"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges02.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges02_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges02.gif';" /></span></a></td>
+									<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/guia_sitges/hotels_i_locals_destacats"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges08.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges08_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges08.gif';" /></span></a></td>
+															  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/guia_sitges/port_aiguadolc"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges07.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges07_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges07.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/guia_sitges/village_stands"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges06.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges06_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges06.gif';" /></span></a></td>
+						  			<td class="sep"><img src="http://sitgesfilmfestival.com/comun/img/menu_prin2_separacion.gif" /></td>
+						  			<td><a href="http://sitgesfilmfestival.com/cat/guia_sitges/packs_hotel"><span><img src="http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges09.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges09_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_prin2_sitges09.gif';" /></span></a></td>
+								</tr>
+							</table>
+						</div>
+		  			</div>
+				</div>
+				<div class="clear"></div>
+				<!--[if IE]>  </div>  <![endif]-->
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="linea"> </div>
+			</td>
+		</tr>
+	</table>
+	<table width="930" cellpadding="0" cellspacing="0">
+		<tr class="linea_navegacion" height="2">
+			<td width="184" id="contenido2" valign="top" class="izq">
+				<form class="no_margin" enctype="multipart/form-data" id="form1" name="form1" method="get" action="http://sitgesfilmfestival.com/cat/buscador/">
+				<table class="no_margin" width="100%">
+					<tr>
+						<td align="left">
+							<input name="buscar_txt" type="text" class="formulari01" size="14" value=""/>
+						</td>
+						<td align="right">
+							<input name="buscar" type="submit" class="formulari_boto_mini" value="Cercar" />
+						</td>
+					</tr>
+				</table>
+				</form>
+			</td>
+			<td class="med" valign="top">
+				<table class="no_margin">
+					<tr>
+						<td>
+				<a class="menu" href="http://sitgesfilmfestival.com/cat">Home</a>						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="der" valign="top" align="right">
+							<form class="formulario_login" enctype="multipart/form-data" id="form1" name="form1" method="post" action="http://sitgesfilmfestival.com/robots.txt">
+					<table class="no_margin">
+						<tr>
+							<td>
+								<input name="login_p" type="text" class="formulari01" size="19" onclick="if(this.value=='usuari')this.value='';" onmouseout="if(this.value=='')this.value='usuari';" value="usuari"/>
+							</td>
+							<td>
+								<input name="fauxpassword_p" id="fauxpassword_p" type="text" class="formulari01" size="14" value="contrasenya" onfocus="onFocusHandler_p(this);" /><input name="password_p" id="password_p" type="password" class="formulari01" size="14" value="" style="display:none;" onblur="onBlurHandler_p(this);" />
+							</td>
+							<td>
+								<input name="login_p_b" type="submit" class="formulari_boto_mini" value="login" />
+							</td>
+							<td>
+								<a title="Recordar contrasenya" href="http://sitgesfilmfestival.com/cat/recordar_contrasenya"><img align="absbottom" vspace="1" src="http://sitgesfilmfestival.com/comun/img/recordar.gif" /></a>
+							</td>
+						</tr>
+											</table>
+				</form>
+							</td>
+		</tr>
+		<tr>
+			<td id="contenido5">
+				<hr class="rojo">
+			</td>
+			<td id="contenido4" colspan="2">
+				<hr class="gris">
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" align="left" width="184">
+								<p class="menu_iz_1">
+										<a href="http://sitgesfilmfestival.com/cat/newsletter"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_01.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_01_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_01.gif';" /></a>
+				</p>
+								<p class="menu_iz_2">
+										<a href="http://sitgesfilmfestival.com/cat/inscripcio_pel_licules"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_12.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_12_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_12.gif';" /></a>
+				</p>
+				
+
+				<p class="menu_iz_2">
+										<a href="http://sitgesfilmfestival.com/cat/programa/projeccions"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_02.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_02_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_02.gif';" /></a>
+				</p>
+
+				<p class="menu_iz_2">
+										<a href="http://sitgesfilmfestival.com/cat/programa/pel_licules"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_14.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_14_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_14.gif';" /></a>
+				</p>				
+				<p class="menu_iz_2">
+										<a href="http://sitgesfilmfestival.com/cat/programa/trailers"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_03.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_03_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_03.gif';" /></a>
+				</p>
+
+
+
+				
+				<p class="menu_iz_2">
+										<a href="http://sitgesfilmfestival.com/cat/programa/entrades"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_04.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_04_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_04.gif';" /></a>
+				</p>
+				
+								<p class="menu_iz_2">
+										<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003369"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_20.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_20_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_20.gif';" /></a>
+				</p>
+
+				<p class="menu_iz_2">
+										<a href="http://sitgesfilmfestival.com/cat/sitges_live"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_06.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_06_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_06.gif';" /></a>
+				</p>
+				
+				<p class="menu_iz_2">
+										<a href="http://sitgesfilmfestival.com/cat/diari_festival"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_08.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_08_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_08.gif';" /></a>
+				</p>
+				<p class="menu_iz_2">
+										<a href="http://sitgesfilmfestival.com/cat/guia_sitges/com_arribar"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_09.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_09_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_09.gif';" /></a>
+				</p>
+									<script type="text/javascript">
+						function muestra(id){
+							$('#'+id).slideDown(500);
+						}
+					</script>
+
+											<p class="menu_iz_2">
+														<a href="#" onclick="muestra('ml-17')"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_17.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_17_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_17.gif';" /></a>
+						</p>
+						<div id="ml-17" class="submenulateral" style="display:none;">
+							<ul>
+								<li>
+																		<a href="http://sitgesfilmfestival.com/archivos/instruccions-contractacio.pdf" target="_blank">Instruccions de contractació</a>
+								</li>
+							</ul>
+
+							<br>
+							<ul>
+								<li><b>Contractació Servei Ticketing</b></li>
+								<ul>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-ticketing-anuncio.pdf" target="_blank">Anunci</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-ticketing-pliego-clausulas-administrativas.pdf" target="_blank">Plec Clàusules Administratives</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-ticketing-pliego-caracteristicas-tecnicas.pdf" target="_blank">Plec Característiques tècniques</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-ticketing-adjudicacio.pdf" target="_blank">Adjudicació</a>
+									</li>
+								</ul>
+
+								<br>
+
+								<li><b>Contractació Servei Seguretat</b></li>
+								<ul>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-seguretat-anunci.pdf" target="_blank">Anunci</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-seguretat-plec.pdf" target="_blank">Plec Clàusules Administratives</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-seguretat-adjudicacio.pdf" target="_blank">Adjudicació</a>
+									</li>
+								</ul>
+
+								<br>
+
+								<li><b>Contractació Servei Subtitulat</b></li>
+								<ul>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-subtitulat-anunci.pdf" target="_blank">Anunci</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-subtitulat-plec.pdf" target="_blank">Plec Clàusules Administratives</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-subtitulat-adjudicacio.pdf" target="_blank">Adjudicació</a>
+									</li>
+								</ul>
+
+								<br>
+
+								<li><b>Contractació Servei Comunicació</b></li>
+								<ul>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-comunicacio-anunci.pdf" target="_blank">Anunci</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-comunicacio-plec.pdf" target="_blank">Plec Clàusules Administratives</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-comunicacio-adjudicacio.pdf" target="_blank">Adjudicació</a>
+									</li>
+								</ul>
+
+								<br>
+
+								<li><b>Contractació Servei Video, So i il·luminació</b></li>
+								<ul>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-lsi-anunci.pdf" target="_blank">Anunci</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-lsi-plec.pdf" target="_blank">Plec Clàusules Administratives</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-lsi-adjudicacio.pdf" target="_blank">Adjudicació</a>
+									</li>
+								</ul>
+
+								<br>
+
+								<li><b>Concurs Stands</b></li>
+								<ul>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-stands-anunci.pdf" target="_blank">Anunci</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-stands-plec.pdf" target="_blank">Plec Clàusules Administratives</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-stands-adjudicacio.pdf" target="_blank">Adjudicació</a>
+									</li>
+								</ul>
+
+								<br>
+
+								<li><b>Concurs Audiovisual</b></li>
+								<ul>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-audiovisual-anunci.pdf" target="_blank">Anunci</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-audiovisual-plec.pdf" target="_blank">Plec Clàusules Administratives</a>
+									</li>
+									<li>
+										<a href="http://sitgesfilmfestival.com/archivos/2017-audiovisual-adjudicacio.pdf" target="_blank">Adjudicació</a>
+									</li>
+								</ul>
+							</ul>
+													</div>
+						
+									<p class="menu_iz_0">
+										<a href="http://sitgesfilmfestival.com/cat/premsa"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_10.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_10_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_10.gif';" /></a>
+				</p>
+								<p class="menu_iz_0">
+										<a href="http://sitgesfilmfestival.com/cat/voluntaris" target="_blank"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_13.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_13_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_13.gif';" /></a>
+				</p>
+
+				<p class="menu_iz_0">
+										<a href="http://sitgesfilmfestival.com/cat/convocatories"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_11.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_11_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_11.gif';" /></a>
+				</p>
+
+				<p class="menu_iz_0">
+										<a href="http://sitgesfilmfestival.com/cat/americatour"><img src="http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_18.gif" onmouseover="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_18_over.gif';" onmouseout="this.src='http://sitgesfilmfestival.com/i_cat/img/menu_lateral/home_lat_18.gif';" /></a>
+				</p>
+				
+								<p class="menu_iz_ult" style="padding: 0 0 0 0; margin: 10px 0 0 0;">
+					<a href="http://sitgesfilmfestival.com/cat/festival/imatge_festival">
+						<img src="http://sitgesfilmfestival.com/comun/img/cartell_sitges_2017_3.jpg" width="184" />
+					</a>
+				</p>
+
+
+				<p class="menu_iz_ult" style="padding: 0 0 0 0; margin: 10px 0 0 0;">
+					<a href="http://sitgesfilmfestival.com/cat/programa/entrades">
+						<img src="http://sitgesfilmfestival.com/banner/img/2017-venta.png" width="184" />
+					</a>
+				</p>
+
+				<p class="menu_iz_ult" style="padding: 0 0 0 0; margin: 10px 0 0 0;">
+					<a href="http://sitgesfilmfestival.com/voluntarisform/form.php" target="_blank">
+						<img src="http://sitgesfilmfestival.com/banner/img/sitges_voluntaris_2017.gif" width="184" />
+					</a>
+				</p>					
+
+
+				
+				<p class="menu_iz_ult" style="padding: 0 0 0 0; margin: 10px 0 0 0;">
+					<a href="http://sitgesfilmfestival.com/cat/inscripcio_pel_licules">
+						<img src="http://sitgesfilmfestival.com/banner/img/film-submission.gif" width="184" />
+					</a>
+				</p>
+
+
+
+				
+
+				<p class="menu_iz_ult" style="padding: 0 0 0 0; margin: 10px 0 0 0;">
+					<iframe id='43677457' name='43677457' src='http://sitgesfilmfestival.com/banner/ban2.php?z=2' frameborder='0' scrolling='no' width='184' height='94'></iframe>
+				</p>
+
+				<p class="menu_iz_ult" style="padding: 0 0 0 0; margin: 10px 0 0 0;">
+					<a href="http://sitgesfanblog.blogspot.com.es/" target="_blank">
+						<img src="http://sitgesfilmfestival.com/comun/banners/blocfan.jpg" />
+					</a>
+				</p>
+
+				<p class="menu_iz_ult" style="padding: 0 0 0 0; margin: 10px 0 0 0;">
+					<a href="http://elblogdelangelsala.blogspot.com.es/">
+						<img src="http://sitgesfilmfestival.com/comun/img/angelsala_cat.jpg" />
+					</a>
+				</p>
+
+
+
+
+
+
+
+
+
+				
+
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+
+
+
+				
+
+
+
+
+
+
+
+				
+
+
+							</td>
+			<td colspan="2" valign="top" id="contenido3">
+				<table class="cero" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<td colspan="2" valign="top" style="padding: 0 0 10px 0;">
+			<div id="gallery">
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003436" class="show">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371171.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>L'&uacute;ltima producci&oacute; d'&Aacute;lex de la Iglesia i Carolina Bang, 'Errementari', ser&agrave; estrena mundial a Sitges 2017</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003435">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371168.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>El Festival de Sitges obre una finestra a Par&iacute;s</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003434">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371166.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Sitges 2017 estrenar&agrave; 'La Zona', una s&egrave;rie original de Movistar+</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003433">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371163.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>'La forma del agua', de Guillermo del Toro, inaugurar&agrave; Sitges 2017</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003432">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371161.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Sitges 2017 escalfa motors amb la projecci&oacute; de curts a la fresca</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003431">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371156.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>El millor fant&agrave;stic del planeta es projectar&agrave; en un Sitges que premiar&agrave; Susan Sarandon</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003430">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371154.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Yoshihiro Nishimura guanya el Premi Sitges Pitchbox del festival core&agrave; BIFAN 2017 </h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003429">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371153.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Sitges estrenar&agrave; la segona part del film 'Proyecto Tiempo', dirigit per Isabel Coixet i produ&iuml;t per Gas Natural Fenosa</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003428">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371148.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Sitges i l'Ag&egrave;ncia Catalana de la Joventut amplien la col&middot;laboraci&oacute;</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003427">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371143.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Sitges Pitchbox 2017 es consolida i s'internacionalitza</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003426">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371140.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Els patrocinadors del Festival de Sitges gaudiran de beneficis fiscals</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003425">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371137.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Pablo T&eacute;bar guanya el Premi Minotauro 2017, que es lliurar&agrave; a Sitges </h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003423">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371136.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>L'exposici&oacute; 'El cinema &eacute;s fant&agrave;stic' recorre la hist&ograve;ria del Festival de Sitges</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003422">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371133.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Oberta la inscripci&oacute; de peces de realitat virtual a Samsung Sitges Cocoon</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003420">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371131.png" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>La figura de Dr&agrave;cula protagonitza el cinquantenari del Festival de Sitges</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003419">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371121.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>William Friedkin, primer Gran Premi Honor&iacute;fic del 50 aniversari de Sitges</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003418">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371115.png" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Els 70 anys de Cannes saluden els 50 de Sitges</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003416">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371112.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>El 50&egrave; aniversari de Sitges viatja a Cannes</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003412">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371106.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>El Festival de Sitges rep la Creu de Sant Jordi</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003411">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371102.png" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Sitges i la UOC estrenen un m&agrave;ster en cinema fant&agrave;stic</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003410">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371099.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>'Fanhunter: Dr&aacute;cula', c&ograve;mic oficial del 50&egrave; aniversari de Sitges </h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003409">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371096.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>El cinema de Sitges viatja al Festival de M&agrave;laga</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003408">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371093.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Moritz amplia el seu suport al Festival de Sitges </h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003406">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371088.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Taboo'ks: La ind&uacute;stria cinematogr&agrave;fica i la literatura fant&agrave;stica uneixen esfor&ccedil;os al Festival de Sitges</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003404">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371084.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>El Festival de Sitges presenta el 50&egrave; aniversari a Los Angeles</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003402">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371072.png" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>La cartellera es vesteix de Sitges </h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003401">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371071.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>El Festival de Sitges celebrar&agrave; el 2017 la 50a edici&oacute; amb un homenatge al cinema de g&egrave;nere</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003400">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371061.jpg" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Sitges obre una finestra a Buenos Aires</h3>" />
+				</a>
+				
+				<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003399">
+					<img src="/sitgesadmin/uploads/web_noticies_rel_img/1232371060.png" alt="Flowing Rock" width="736" height="330" title="" alt="" rel="<h3>Les dades de Sitges 2016 confirmen la seva aposta pel fant&agrave;stic heterogeni i l'obertura a la ind&uacute;stria</h3>" />
+				</a>
+				
+			<div class="caption"><div class="content"></div></div>
+			</div>
+			<div class="clear"></div>
+
+
+		</td>
+	</tr>
+		<tr>
+		<td align="left" valign="top" style="padding: 0 10px 0 0;">
+
+			
+			<table class="recuadro_noticias_home" cellpadding="0" cellspacing="0">
+						<tr><td align="left" valign="top" style="padding: 0 5px 10px 0;"><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003436"><img src="http://sitgesfilmfestival.com/scripts/phpthumb_2/phpThumb.php?src=http://sitgesfilmfestival.com/sitgesadmin/uploads/web_noticies_rel_img/1232371172.jpg&amp;w=113&amp;h=84&amp;zc=1&amp;hash=c9666ffd07c908dff2a3d52e5c1cb93c" /></a></td><td align="left" valign="top"><div class="home_noticia_1">
+							<div class="noti_home_txtnoti">
+							<b><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003436">L'&uacute;ltima producci&oacute; d'&Aacute;lex de la Iglesia i Carolina Bang, 'Errementari', ser&agrave; estrena mundial a Sitges 2017</a></b>
+							</div>
+							<div class="noti_home_txtnoticia">Altres t&iacute;tols del cinema de g&egrave;nere de nova fornada, com l&rsquo;esperat &lsquo;Leatherface&rsquo;, s&rsquo;afegeixen a la programaci&oacute;&nbsp;
+El proper 5 d&rsquo;octubre arrencar&agrave; la 50a edici&oacute; del Sitges &ndash; Festival Internacional de Cinema...</div></div></td></tr><tr><td align="left" valign="top" style="padding: 0 5px 10px 0;"><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003435"><img src="http://sitgesfilmfestival.com/scripts/phpthumb_2/phpThumb.php?src=http://sitgesfilmfestival.com/sitgesadmin/uploads/web_noticies_rel_img/1232371169.jpg&amp;w=113&amp;h=84&amp;zc=1&amp;hash=53a8e0df1f5773966829430c89e9fc0f" /></a></td><td align="left" valign="top"><div class="home_noticia_1">
+							<div class="noti_home_txtnoti">
+							<b><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003435">El Festival de Sitges obre una finestra a Par&iacute;s</a></b>
+							</div>
+							<div class="noti_home_txtnoticia">L&rsquo;&Eacute;trange Festival acollir&agrave; un focus de cinema fant&agrave;stic catal&agrave; amb la col&middot;laboraci&oacute; de l&rsquo;Institut Ramon Llull
+Par&iacute;s i l&rsquo;Institut Ramon Llull se sumen a les celebracions del 50&egrave; aniversari de Sitges amb la...</div></div></td></tr><tr><td align="left" valign="top" style="padding: 0 5px 10px 0;"><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003434"><img src="http://sitgesfilmfestival.com/scripts/phpthumb_2/phpThumb.php?src=http://sitgesfilmfestival.com/sitgesadmin/uploads/web_noticies_rel_img/1232371167.jpg&amp;w=113&amp;h=84&amp;zc=1&amp;hash=8dbb9754838e1b2cb45233cfac25a301" /></a></td><td align="left" valign="top"><div class="home_noticia_1">
+							<div class="noti_home_txtnoti">
+							<b><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003434">Sitges 2017 estrenar&agrave; 'La Zona', una s&egrave;rie original de Movistar+</a></b>
+							</div>
+							<div class="noti_home_txtnoticia">L&rsquo;estrena mundial del thriller polic&iacute;ac creat per Jorge i Alberto S&aacute;nchez-Cabezudo tindr&agrave; lloc en el marc del 50&egrave; aniversari de Sitges
+Un any m&eacute;s, Movistar+ converteix el Festival de Sitges en el seu millor aparador de cinema i s&egrave;ries de...</div></div></td></tr><tr><td align="left" valign="top" style="padding: 0 5px 10px 0;"><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003433"><img src="http://sitgesfilmfestival.com/scripts/phpthumb_2/phpThumb.php?src=http://sitgesfilmfestival.com/sitgesadmin/uploads/web_noticies_rel_img/1232371164.jpg&amp;w=113&amp;h=84&amp;zc=1&amp;hash=c1b9213bfb36e6d927af9b867b87fb7b" /></a></td><td align="left" valign="top"><div class="home_noticia_1">
+							<div class="noti_home_txtnoti">
+							<b><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003433">'La forma del agua', de Guillermo del Toro, inaugurar&agrave; Sitges 2017</a></b>
+							</div>
+							<div class="noti_home_txtnoticia">El padr&iacute; del 50&egrave; aniversari obrir&agrave; el certamen amb un conte fant&agrave;stic ambientat en la Guerra Freda
+El Festival de Sitges aixecar&agrave; el tel&oacute; de la seva 50a edici&oacute; amb La forma del agua, l&rsquo;esperat &uacute;ltim film escrit i dirigit pel...</div></div></td></tr><tr><td align="left" valign="top" style="padding: 0 5px 10px 0;"><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003432"><img src="http://sitgesfilmfestival.com/scripts/phpthumb_2/phpThumb.php?src=http://sitgesfilmfestival.com/sitgesadmin/uploads/web_noticies_rel_img/1232371162.png&amp;w=113&amp;h=84&amp;zc=1&amp;hash=1ca9b73c9040450b363a116fa8c8a182" /></a></td><td align="left" valign="top"><div class="home_noticia_1">
+							<div class="noti_home_txtnoti">
+							<b><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003432">Sitges 2017 escalfa motors amb la projecci&oacute; de curts a la fresca</a></b>
+							</div>
+							<div class="noti_home_txtnoticia">Falten tot just dos mesos per la 50a edici&oacute; del Sitges &ndash; Festival Internacional de Cinema Fant&agrave;stic de Catalunya i, per fer m&eacute;s agradable l&rsquo;espera, el Festival ha organitzat dues sessions de curtmetratges.&nbsp;
+Aquesta iniciativa se celebra des de fa cinc...</div></div></td></tr><tr><td align="left" valign="top" style="padding: 0 5px 10px 0;"><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003431"><img src="http://sitgesfilmfestival.com/scripts/phpthumb_2/phpThumb.php?src=http://sitgesfilmfestival.com/sitgesadmin/uploads/web_noticies_rel_img/1232371157.jpg&amp;w=113&amp;h=84&amp;zc=1&amp;hash=630a23bf9882faceba85a8cb1bd0b290" /></a></td><td align="left" valign="top"><div class="home_noticia_1">
+							<div class="noti_home_txtnoti">
+							<b><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003431">El millor fant&agrave;stic del planeta es projectar&agrave; en un Sitges que premiar&agrave; Susan Sarandon</a></b>
+							</div>
+							<div class="noti_home_txtnoticia">El cinquantenari reunir&agrave; l&rsquo;&uacute;ltim i esfere&iuml;dor film de Yorgos Lanthimos, el millor cinema asi&agrave;tic, el retorn de Jaume Balaguer&oacute;, l&rsquo;esperada &lsquo;La pell freda&rsquo; i premiar&agrave; Santiago Segura, entre d&rsquo;altres propostes
+El Festival...</div></div></td></tr><tr><td align="left" valign="top" style="padding: 0 5px 10px 0;"><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003430"><img src="http://sitgesfilmfestival.com/scripts/phpthumb_2/phpThumb.php?src=http://sitgesfilmfestival.com/sitgesadmin/uploads/web_noticies_rel_img/1232371155.jpg&amp;w=113&amp;h=84&amp;zc=1&amp;hash=718cf99d2ee27c5a6bd0aa5395f1b0d5" /></a></td><td align="left" valign="top"><div class="home_noticia_1">
+							<div class="noti_home_txtnoti">
+							<b><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003430">Yoshihiro Nishimura guanya el Premi Sitges Pitchbox del festival core&agrave; BIFAN 2017 </a></b>
+							</div>
+							<div class="noti_home_txtnoticia">El director japon&egrave;s i especialista en efectes especials i maquillatge Yoshihiro Nishimura ha resultat vencedor de l&rsquo;edici&oacute; d&rsquo;enguany del Sitges Pitchbox Award, que se celebra dins el marc del NAFF (Network of Asian Fantastic Films) del BIFAN &ndash; Bucheon International...</div></div></td></tr><tr><td align="left" valign="top" style="padding: 0 5px 10px 0;"><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003429"><img src="http://sitgesfilmfestival.com/scripts/phpthumb_2/phpThumb.php?src=http://sitgesfilmfestival.com/sitgesadmin/uploads/web_noticies_rel_img/1232371151.jpg&amp;w=113&amp;h=84&amp;zc=1&amp;hash=7dc3f24ab6013256daa48c201d7f66b5" /></a></td><td align="left" valign="top"><div class="home_noticia_1">
+							<div class="noti_home_txtnoti">
+							<b><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003429">Sitges estrenar&agrave; la segona part del film 'Proyecto Tiempo', dirigit per Isabel Coixet i produ&iuml;t per Gas Natural Fenosa</a></b>
+							</div>
+							<div class="noti_home_txtnoticia">La companyia energ&egrave;tica renova per sis&egrave; any l&rsquo;acord com a patrocinador principal del Sitges &ndash; Festival Internacional de Cinema Fant&agrave;stic de Catalunya
+Gas Natural Fenosa presentar&agrave; al Festival de Sitges la segona part de la pel&middot;l&iacute;cula...</div></div></td></tr><tr><td align="left" valign="top" style="padding: 0 5px 10px 0;"><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003428"><img src="http://sitgesfilmfestival.com/scripts/phpthumb_2/phpThumb.php?src=http://sitgesfilmfestival.com/sitgesadmin/uploads/web_noticies_rel_img/1232371149.jpg&amp;w=113&amp;h=84&amp;zc=1&amp;hash=d8354d0400808214392fc8dd209df16a" /></a></td><td align="left" valign="top"><div class="home_noticia_1">
+							<div class="noti_home_txtnoti">
+							<b><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003428">Sitges i l'Ag&egrave;ncia Catalana de la Joventut amplien la col&middot;laboraci&oacute;</a></b>
+							</div>
+							<div class="noti_home_txtnoticia">El consolidat Jurat Carnet Jove s&rsquo;internacionalitza amb motiu del 50&egrave; aniversari i incorporar&agrave; joves europeus
+Sitges &ndash; Festival Internacional de Cinema Fant&agrave;stic de Catalunya i l&rsquo;Ag&egrave;ncia Catalana de la Joventut han signat un acord de...</div></div></td></tr><tr><td align="left" valign="top" style="padding: 0 5px 10px 0;"><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003427"><img src="http://sitgesfilmfestival.com/scripts/phpthumb_2/phpThumb.php?src=http://sitgesfilmfestival.com/sitgesadmin/uploads/web_noticies_rel_img/1232371144.jpg&amp;w=113&amp;h=84&amp;zc=1&amp;hash=4bf9028af183e164fd030039125d7ea6" /></a></td><td align="left" valign="top"><div class="home_noticia_1">
+							<div class="noti_home_txtnoti">
+							<b><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003427">Sitges Pitchbox 2017 es consolida i s'internacionalitza</a></b>
+							</div>
+							<div class="noti_home_txtnoticia">Projectes de llargmetratge de terror, ci&egrave;ncia ficci&oacute; i fant&agrave;stic ja poden inscriure's per optar a ser un dels set seleccionats
+Arrenca una nova edici&oacute; de Sitges Pitchbox, l'esdeveniment de pitching organitzat per la plataforma online Filmarket Hub en...</div></div></td></tr><tr><td align="left" valign="top" style="padding: 0 5px 10px 0;"><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003426"><img src="http://sitgesfilmfestival.com/scripts/phpthumb_2/phpThumb.php?src=http://sitgesfilmfestival.com/sitgesadmin/uploads/web_noticies_rel_img/1232371141.jpg&amp;w=113&amp;h=84&amp;zc=1&amp;hash=8562f0ce7a9f049c44e857aacebcd5ee" /></a></td><td align="left" valign="top"><div class="home_noticia_1">
+							<div class="noti_home_txtnoti">
+							<b><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003426">Els patrocinadors del Festival de Sitges gaudiran de beneficis fiscals</a></b>
+							</div>
+							<div class="noti_home_txtnoticia">El programa de suport ha estat adaptat amb motiu de la 50a edici&oacute; i abasta des de l&rsquo;1 de gener de 2017 fins al 31 de desembre de 2019&nbsp;
+La celebraci&oacute; del 50&egrave; aniversari del Sitges &ndash; Festival Internacional de Cinema Fant&agrave;stic de Catalunya...</div></div></td></tr><tr><td align="left" valign="top" style="padding: 0 5px 10px 0;"><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003425"><img src="http://sitgesfilmfestival.com/scripts/phpthumb_2/phpThumb.php?src=http://sitgesfilmfestival.com/sitgesadmin/uploads/web_noticies_rel_img/1232371138.jpg&amp;w=113&amp;h=84&amp;zc=1&amp;hash=c37419a4fd3601c68734c1608e676897" /></a></td><td align="left" valign="top"><div class="home_noticia_1">
+							<div class="noti_home_txtnoti">
+							<b><a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003425">Pablo T&eacute;bar guanya el Premi Minotauro 2017, que es lliurar&agrave; a Sitges </a></b>
+							</div>
+							<div class="noti_home_txtnoticia">Per quart any consecutiu, el Premi Minotauro es vincula a Sitges &ndash; Festival Internacional de Cinema Fant&agrave;stic de Catalunya, que en aquesta edici&oacute; celebra el seu 50 aniversari
+Nieve en Marte, una novel&middot;la de ci&egrave;ncia ficci&oacute; escrita per Pablo...</div></div></td></tr>			</table>
+		</td>
+		<td align="right" valign="top" width="184">
+
+				<p class="menu_iz_ult" style="padding: 0 0 0 0; margin: 10px 0 0 0;">
+					<a href="http://sitgesfilmfestival.com/cat/noticies/?id=1003423" target="_blank">
+						<img src="http://sitgesfilmfestival.com/banner/img/es_fantastic.jpg" />
+					</a>
+				</p>
+
+				<p class="menu_iz_ult" style="padding: 0 0 0 0; margin: 10px 0 0px 0;">
+					
+		<a href="http://sitgesfilmfestival.com/banner/ad.php?id=20" target="_blank">
+			<img src="http://sitgesfilmfestival.com/banner/img/banner-web-sitges-eng.gif" width="184" />
+		</a>
+					</p>
+				<p class="menu_iz_ult" style="padding: 0 0 0 0; margin: 10px 0 0px 0;">
+					
+		<a href="http://sitgesfilmfestival.com/banner/ad.php?id=21" target="_blank">
+			<img src="http://sitgesfilmfestival.com/banner/img/uoc.gif" width="184" />
+		</a>
+					</p>
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+
+
+
+
+
+
+				
+
+
+
+
+
+
+						
+
+
+
+			
+			
+
+<div class="fbfan"><img src="/comun/img/facebook.png" style="margin: 9px 9px 0 0;" /></div>
+<div style="padding:0px; margin:0px; border: 1px solid #e40808;">
+<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fsitgesfilmfestival&amp;width=182&amp;height=100&amp;show_faces=false&amp;colorscheme=light&amp;stream=false&amp;show_border=false&amp;header=false&amp;appId=247670078606616" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:182px; height:71px;" allowTransparency="true"></iframe>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+					</td>
+	</tr>
+</table>			
+			</td>
+		</tr>
+	</table>
+	
+	<table width="930" id="botton">
+		<tr >
+			<td align="center" >
+				<a class="menu" href="#top">Go to top</a> 
+				<span class="linea">|</span>
+				<a class="menu" href="http://sitgesfilmfestival.com/cat/avis_legal">AVÍS LEGAL</a>
+				<span class="linea">|</span>
+				<a class="menu" href="http://sitgesfilmfestival.com/cat/sitemap">Sitemap</a>
+				<span class="linea">|</span>
+				<a class="menu" href="http://sitgesfilmfestival.com/cat/privacitat">Política de privacitat</a>
+				<span class="linea">|</span>
+				<a class="menu" href="http://sitgesfilmfestival.com/cat/condicions_venda">Condicions de venda</a>
+			</td>
+		</tr>	
+		<tr >
+			<td align="center" >
+				<span class="dire"> Sant Honorat, 32-34. 08870 Sitges (Barcelona)  Tf. +34 93 894 99 90 · +34 671 552 188</span>
+			</td>			
+		</tr>	
+	</table>
+</div>
+
+</body>
+
+</html>

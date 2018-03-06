@@ -1,0 +1,486 @@
+<!doctype html>
+<html ng-app="app" ng-controller="AppCtrl" lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+   <base href="/"> <!-- needed for html5 pretty urls -->
+   <meta charset="utf-8">
+   <title ng-bind-html="pageTitle()" >Impactstory: Discover the online impact of your research</title>
+   <meta name="viewport" content="initial-scale=1" />
+
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" >
+   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.css">
+   <link href="/static/dist/animate.css" rel="stylesheet">
+   <link href="/static/dist/main.css" rel="stylesheet">
+   <link rel="icon" type="image/ico" href="/static/img/favicon.ico" />
+
+</head>
+
+
+<body ng-cloak class="template-{{ global.template }} is-focus-page-{{ global.isFocusPage }}">
+
+    <!-- site header -->
+   <div class="ti-nav landing-page-{{ global.isLandingPage }}" ng-hide="global.hideHeader">
+      <h1>
+         <a href="/">
+            <img src="static/img/impactstory-logo-white.png" alt="Impactstory" ng-show="!global.isLandingPage">
+            <img src="static/img/impactstory-logo-sideways.png" alt="Impactstory" ng-show="global.isLandingPage">
+         </a>
+      </h1>
+      <span class="controls logged-in" ng-show="currentUser.isLoggedIn() && currentUser.d.finished_wizard">
+         <a class="profile-link" href="u/{{ currentUser.d.orcid_id }}">
+            <span class="hi">hi,</span>
+            <span class="name">{{ auth.isAuthenticated && auth.getPayload().first_name }}</span>
+         </a>
+         <a class="settings-link" href="me/settings">
+            <i class="fa fa-gear"></i>
+         </a>
+         <a ng-click="currentUser.logout()" href="">
+            <i class="fa fa-sign-out"></i>
+         </a>
+      </span>
+
+      <span class="controls not-logged-in" ng-show="!auth.isAuthenticated()">
+         <a href="login" class="login-btn">Log in</a>
+      </span>
+   </div>
+
+
+    <!-- site content -->
+   <div class="main-view container-fluid" ng-view></div>
+
+
+    <!--
+   <div>
+       <h3>For debugging: here's the user's token contents:</h3>
+       <pre>{{ auth.getPayload() | json }}</pre>
+   </div>
+   -->
+   <div class="container-fluid" ng-show="global.showBottomStuff">
+      <div id="site-footer" class="row logged-in-{{ auth.isAuthenticated() }}">
+         <div class="col-md-5 links">
+            <a href="about">About</a>
+            <a href="http://twitter.com/impactstory">Twitter</a>
+            <a href="https://github.com/Impactstory/impactstory-tng">GitHub</a>
+
+         </div>
+         <div class="col-md-2 logo">
+            <a href="/">
+               <img src="static/img/impactstory-symbol.png">
+            </a>
+         </div>
+         <div class="col-md-5 funders">
+            Supported by the
+            <span class="funder">National Science Foundation</span>
+            <span class="funder second">and Alfred P. Sloan Foundation</span>
+         </div>
+      </div>
+
+   </div>
+
+   <div id="pitch-banner" ng-show="!auth.isAuthenticated() && global.showBottomStuff">
+      <span class="pitch">
+         Discover the online impact of your research:
+      </span>
+      <a ng-click="currentUser.twitterAuthenticate('register')" class="btn btn-primary">
+          <i class="fa fa-twitter"></i>
+          Join for free with Twitter
+      </a>
+   </div>
+
+    <!--
+   <div ng-include="'loading.tpl.html'" ng-show="true"></div>
+   -->
+
+
+
+
+
+
+
+   <!-- PUBLICATION ITEM -->
+   <script type="text/ng-template" id="publication-item.tpl.html">
+        <div class="publication view-item">
+            <div class="icon">
+                <md-tooltip md-direction="top">
+                    {{ product.genre }}
+                </md-tooltip>
+                <i class="fa fa-{{ getGenreIcon(product.genre) }}"></i>
+            </div>
+
+            <div class="content">
+                <div class="title-row row">
+                    <div class="title col-md-10">
+                        <a href="u/{{person.d.orcid_id}}/p/{{ product.id }}">{{ product.title }}</a>
+                    </div>
+                    <div class="fulltext col-md-2">
+                        <a class="val"
+                           target="_blank"
+                           href="{{ product.fulltext_url }}"
+                           ng-show="product.fulltext_url">
+                            [full text]
+                        </a>
+                        <!--a class="val"
+                           target="_blank"
+                           href="{{ product.license }}"
+                           ng-show="product.license && product.license != 'unknown'">
+                            <img  width="80" ng-src="/static/img/licenses/{{ product.license }}.png">
+                        </a-->
+                    </div>
+
+                </div>
+                <div class="under">
+                    <span class="year date">{{ product.year }}</span>
+                    <span class="attr">
+                        {{ product.journal }}
+                        <a class="missing-doi"
+                           href="u/{{ person.d.orcid_id }}/p/{{ product.id }}"
+                           ng-show="!product.doi">
+                            <md-tooltip>
+                                We may be missing data for this publication
+                            </md-tooltip>
+                            <i class="fa fa-adjust"></i>
+                        </a>
+                    </span>
+                </div>
+                <div class="source-icons" ng-show="product.num_mentions">
+                    <a href="u/{{ person.d.orcid_id }}/p/{{ product.id }}" class="sort-score">
+                        <span class="val">{{ product.num_mentions }}</span>
+                    </a>
+                    <span class="source-icon"
+                      ng-repeat="source in product.sources | orderBy: 'display_name'">
+                        <a href="u/{{ person.d.orcid_id }}/p/{{ product.id }}/{{ source.source_name }}">
+                            <img ng-src="/static/img/favicons/{{ source.source_name }}.ico"
+                                 class="{{source.source_name}} channel-icon">
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+   </script>
+
+
+
+
+
+
+
+
+
+   <!-- BADGE ITEM -->
+   <script type="text/ng-template" id="badge-item.tpl.html">
+        <div class="achievement group-{{ badge.group }} badge-{{ badge.name }} view-item"
+             ng-controller="badgeItemCtrl">
+
+            <div class="icon group-{{ badge.group }}">
+                <img ng-src="static/img/badges/{{ badge.name }}.png" alt="">
+            </div>
+
+            <div class="content">
+                <div class="title group-{{ badge.group }}">
+                    <span class="name">{{badge.display_name}}</span>
+                    <!--
+                    <span class="val extra" ng-show="badge.percentile > .5">
+                        <md-tooltip>
+                            {{ numFormat.decimalToPerc(badge.percentile) }} percentile
+                        </md-tooltip>
+                        {{ numFormat.decimalToPerc(badge.percentile) }}
+                    </span>
+                    -->
+                    <span class="extra badge-level bronze-badge" ng-show="badge.percentile > .5 && badge.percentile < .75">
+                        <i class="fa fa-bookmark"></i>
+                        <md-tooltip md-direction="top">Based on a sample of 30k researchers on ORCID</md-tooltip>
+                        <span class="text">Top 50%</span>
+                    </span>
+                    <span class="extra badge-level silver-badge" ng-show="badge.percentile >= .75 && badge.percentile < .9">
+                        <i class="fa fa-star"></i>
+                        <md-tooltip md-direction="top">Based on a sample of 30k researchers on ORCID</md-tooltip>
+                        <span class="text">Top 25%</span>
+                    </span>
+                    <span class="extra badge-level gold-badge" ng-show="badge.percentile >= .9">
+                        <i class="fa fa-trophy"></i>
+                        <md-tooltip md-direction="top">Based on a sample of 30k researchers on ORCID</md-tooltip>
+                        <span class="text">Top 10%</span>
+                    </span>
+
+                </div>
+                <div class="under">
+                    <div class="descr">
+                        <span class="short-descr" ng-bind-html="trustHtml(badge.description)"></span>
+                        <span class="context" ng-bind-html="trustHtml(badge.context)"></span>
+                        <span class="why-it-matters" ng-bind-html="trustHtml(badge.extra_description)"></span>
+                    </div>
+                    <div class="support" ng-show="badge.support_intro">
+                        <div class="support-icon" ng-show="badge.support_intro">
+                            <i class="fa fa-hand-o-right"></i>
+                        </div>
+                        <div class="support-content">
+                            <span class="intro" ng-bind-html="trustHtml(badge.support_intro)"></span>
+                            <span class="items" ng-show="badge.support_items.length">
+                                <span class="support-item-repeater"
+                                      ng-repeat="itemStr in badge.support_items | limitTo: showMaxItems">
+                                    <span class="support-item" ng-bind-html="trustHtml(itemStr)"></span><span ng-show="!$last" class="comma">,</span>
+                                </span>
+                                <span class="more" ng-click="showMaxItems=99999"
+                                      ng-show="badge.support_items.length > 3 && showMaxItems==3">
+                                    and {{ badge.support_items.length - 3}} more.
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <span class="badge-actions" ng-show="person.belongsToCurrentUser()">
+                    <a class="permalink badge-group-{{ badge.group }}"
+                       href="/u/{{ person.d.orcid_id }}/a/{{ badgeUrlName(badge)}}">
+                        <i class="fa fa-link"></i>
+                        <span class="text">link</span>
+                    </a>
+                    <a class="share badge-group-{{ badge.group }}"
+                       target="_blank"
+                       ng-click="shareBadge(badge.name)"
+                       href="https://twitter.com/intent/tweet?url=https://impactstory.org/u/{{ person.d.orcid_id }}/a/{{ badgeUrlName(badge) }}&text=I unlocked the '{{ badge.display_name }}' achievement on @Impactstory:">
+                        <i class="fa fa-twitter"></i>
+                        <span class="text">share</span>
+                    </a>
+                </span>
+            </div>
+        </div>
+   </script>
+
+
+
+
+
+
+
+
+
+   <!-- MENTION ITEM -->
+   <script type="text/ng-template" id="mention-item.tpl.html">
+
+
+       <!-- tweet rollup -->
+       <div class="mentions view-item rollup tweet-rollup"
+            ng-controller="tweetRollupCtrl"
+            ng-if="post.source == 'tweetRollup'">
+            <div class="icon">
+                <img ng-src="/static/img/favicons/twitter.ico">
+            </div>
+           <div class="content">
+               <div class="title" ng-click="showTweets = !showTweets">
+                   <i ng-show="showTweets" class="fa fa-minus-square show-hide"></i>
+                   <i ng-show="!showTweets" class="fa fa-plus-square show-hide"></i>
+                   {{ post.tweets.length }} tweets
+                   <span class="extra">click to
+                        <span ng-show="showTweets">hide</span>
+                        <span ng-show="!showTweets">show</span>
+                   </span>
+               </div>
+               <div class="under">
+                    <span class="date-and-attr">
+                        {{ moment(post.posted_on).fromNow() }}
+                    </span>
+               </div>
+
+               <div class="under tweet-summaries" ng-show="showTweets">
+                   <div class="tweet-summary" ng-repeat="tweet in post.tweets | orderBy: '-posted_on'">
+                       <div class="icon">
+                           <i class="fa fa-twitter"></i>
+                       </div>
+                       <div class="content">
+                           <div class="main">
+                               <a  href="{{ tweet.url }}" class="post-date">
+                                   {{ moment(tweet.posted_on).format('MMM Do') }}
+                               </a>
+                               <span class="by"> by</span>
+                               <span class="name">{{ tweet.twitter_handle }}</span>
+                               <span class="followers" ng-if="tweet.followers">
+                                   <span class="val">{{ numFormat.short(tweet.followers) }}</span> followers
+                               </span>
+                           </div>
+                           <div class="support">
+                               <a class="cites-title target"
+                                  ng-if="tweet.citesTitle"
+                                  href="/u/{{person.d.orcid_id}}/p/{{ tweet.citesPublication }}">
+                                   <i class="fa fa-file-text-o"></i>
+                                   <!--
+                                   <span class="ti-label">on</span>
+                                   -->
+                                   <short text="tweet.citesTitle"></short>
+                                </a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+
+       <!-- regular post -->
+        <div class="mentions view-item {{ post.source }}" ng-if="post.source != 'tweetRollup'">
+            <div class="icon">
+                <img ng-src="/static/img/favicons/{{ post.source }}.ico">
+            </div>
+            <div class="content">
+                <div class="title" ng-show="post.source != 'twitter'">
+                    {{post.title}}
+                </div>
+                <div class="title" ng-show="post.source == 'twitter'">
+                    <a href="{{ post.url }}">
+                        Tweet from {{post.attribution}}
+                        <span class="extra">
+                            to
+                            <span class="val">
+                                {{ numFormat.short(post.followers) }}
+                            </span>
+                             followers
+                        </span>
+                        <i class="fa fa-external-link"></i>
+                    </a>
+                </div>
+
+
+
+                <div class="under">
+                    <div class="date-and-attr">
+                        <span class="date">
+
+                            <span class="ti-label">
+                            </span>
+                            <a href="{{ post.url }}" class="post-date">
+                                {{ moment(post.posted_on).fromNow() }}
+                            </a>
+                        </span>
+                        <span class="ti-label">by</span>
+                        <span class="attr">{{post.attribution}}</span>
+                    </div>
+
+                    <div class="target">
+                        <a href="/u/{{person.d.orcid_id}}/p/{{ post.citesPublication }}" ng-if="post.citesTitle">
+                            <span class="ti-label">
+                                <i class="fa fa-file-text-o"></i>
+                                <!--
+                                <span class="ti-label">on</span>
+                                -->
+                            </span>
+                            <short text="post.citesTitle" len="80"></short>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </script>
+
+   <!-- TWEETER ITEM -->
+   <script type="text/ng-template" id="tweeter-item.tpl.html">
+        <div class="tweeters view-item">
+            <div class="icon">
+                <img ng-src="{{ tweeter.img }}">
+            </div>
+            <div class="content">
+                <div class="title">
+                    <a href="{{ tweeter.url }}">
+                        {{tweeter.name}}
+                    </a>
+                    <span class="extra">
+                        <span class="count">
+                            {{  numFormat.short(tweeter.followers) }}
+                        </span>
+                        followers
+                    </span>
+                </div>
+                <div class="under">
+                    <span class="attr">{{tweeter.description}}</span>
+                </div>
+            </div>
+        </div>
+   </script>
+
+
+   <!-- CHANNELS LIST -->
+   <script type="text/ng-template" id="channels-list.tpl.html">
+       <div class="channels-list">
+
+           <div class="channel last-real-channel-{{ $last }} first-real-channel-{{ $first }}"
+                ng-class="{selected: selectedChannel.source_name==channel.source_name, unselected: selectedChannel && selectedChannel.source_name != channel.source_name}"
+                ng-click="toggleSelectedChannel(channel)"
+                ng-repeat="channel in sources | orderBy: '-posts_count'">
+
+               <!--
+            <span class="look-left" ng-show="viewThisChannel==channel.source_name">
+                <i class="fa fa-chevron-left"></i>
+            </span>
+            -->
+           <span class="favicon">
+                <img ng-src="/static/img/favicons/{{ channel.source_name }}.ico">
+            </span>
+               <span class="name">{{ channel.display_name }}</span>
+            <span class="icon-right">
+                <span class="new-last-week"
+                      tooltip="{{ channel.events_last_week_count }} new this week"
+                      ng-show="channel.events_last_week_count">
+                    <i class="fa fa-arrow-up"></i>
+                </span>
+            </span>
+            <span class="value">
+                {{ numFormat.short(channel.posts_count) }}
+            </span>
+           </div>
+       </div>
+   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- load our javascript -->
+   <script>
+      var stripePublishableKey = "pk_live_UZVRPix6VRnXfe6LPLNr6Kqa"
+
+   </script>
+
+   <!-- low-level local libs  -->
+   <script type="text/javascript" src="/static/vendor/pluralize.js"></script>
+
+   <!-- Angular and Angular-ecosystem dependencies  -->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-resource.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-sanitize.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-animate.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>
+
+   <!-- externally hosted libs outside the Angular ecosystem -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+   <script src="//cdn.jsdelivr.net/satellizer/0.13.3/satellizer.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
+   <script src="https://checkout.stripe.com/checkout.js"></script>
+
+    <!-- inlined scripts -->
+    <!-- ng-progress (progressbar) -->
+    <script>angular.module("ngProgress.provider",["ngProgress.directive"]).service("ngProgress",function(){"use strict";return["$document","$window","$compile","$rootScope","$timeout",function(a,b,c,d,e){this.autoStyle=!0,this.count=0,this.height="3px",this.$scope=d.$new(),this.color="#1565C0",this.parent=a.find("body")[0],this.count=0,this.progressbarEl=c("<ng-progress></ng-progress>")(this.$scope),this.parent.appendChild(this.progressbarEl[0]),this.$scope.count=this.count,void 0!==this.height&&this.progressbarEl.eq(0).children().css("height",this.height),void 0!==this.color&&(this.progressbarEl.eq(0).children().css("background-color",this.color),this.progressbarEl.eq(0).children().css("color",this.color)),this.intervalCounterId=0,this.start=function(){this.show();var a=this;clearInterval(this.intervalCounterId),this.intervalCounterId=setInterval(function(){isNaN(a.count)?(clearInterval(a.intervalCounterId),a.count=0,a.hide()):(a.remaining=100-a.count,a.count=a.count+.15*Math.pow(1-Math.sqrt(a.remaining),2),a.updateCount(a.count))},200)},this.updateCount=function(a){this.$scope.count=a,this.$scope.$$phase||this.$scope.$apply()},this.setHeight=function(a){return void 0!==a&&(this.height=a,this.$scope.height=this.height,this.$scope.$$phase||this.$scope.$apply()),this.height},this.setColor=function(a){return void 0!==a&&(this.color=a,this.$scope.color=this.color,this.$scope.$$phase||this.$scope.$apply()),this.color},this.hide=function(){this.progressbarEl.children().css("opacity","0");var a=this;a.animate(function(){a.progressbarEl.children().css("width","0%"),a.animate(function(){a.show()},500)},500)},this.show=function(){var a=this;a.animate(function(){a.progressbarEl.children().css("opacity","1")},100)},this.animate=function(a,b){void 0!==this.animation&&e.cancel(this.animation),this.animation=e(a,b)},this.status=function(){return this.count},this.stop=function(){clearInterval(this.intervalCounterId)},this.set=function(a){return this.show(),this.updateCount(a),this.count=a,clearInterval(this.intervalCounterId),this.count},this.css=function(a){return this.progressbarEl.children().css(a)},this.reset=function(){return clearInterval(this.intervalCounterId),this.count=0,this.updateCount(this.count),0},this.complete=function(){this.count=100,this.updateCount(this.count);var a=this;return clearInterval(this.intervalCounterId),e(function(){a.hide(),e(function(){a.count=0,a.updateCount(a.count)},500)},1e3),this.count},this.setParent=function(a){if(null===a||void 0===a)throw new Error("Provide a valid parent of type HTMLElement");null!==this.parent&&void 0!==this.parent&&this.parent.removeChild(this.progressbarEl[0]),this.parent=a,this.parent.appendChild(this.progressbarEl[0])},this.getDomElement=function(){return this.progressbarEl},this.setAbsolute=function(){this.progressbarEl.css("position","absolute")}}]}).factory("ngProgressFactory",["$injector","ngProgress",function(a,b){var c={createInstance:function(){return a.instantiate(b)}};return c}]),angular.module("ngProgress.directive",[]).directive("ngProgress",["$window","$rootScope",function(a,b){var c={replace:!0,restrict:"E",link:function(a,b,c,d){a.$watch("count",function(c){(void 0!==c||null!==c)&&(a.counter=c,b.eq(0).children().css("width",c+"%"))}),a.$watch("color",function(c){(void 0!==c||null!==c)&&(a.color=c,b.eq(0).children().css("background-color",c),b.eq(0).children().css("color",c))}),a.$watch("height",function(c){(void 0!==c||null!==c)&&(a.height=c,b.eq(0).children().css("height",c))})},template:'<div id="ngProgress-container"><div id="ngProgress"></div></div>'};return c}]),angular.module("ngProgress",["ngProgress.directive","ngProgress.provider"]);</script>
+
+
+
+
+
+
+   <!-- our actual app -->
+   <script type="text/javascript" src="/static/dist/ti.js"></script>
+
+   
+</body>
+</html>
+

@@ -1,0 +1,63 @@
+# Authored by Jon Ritchie 2017-06-28 
+#
+# This file tells search engines what parts of the website to ignore
+# Examples:
+# Query paramenters - different URLs leading to the same content because of a marketing code
+# Content management systems - Drupal CMS entery uses the subfolder /user which shouldn't be public
+# 
+# 
+#
+# For more information: http://www.robotstxt.org/robotstxt.html
+# 
+#
+# GAMASUTRA
+#
+# Wildcard * is used to note that all web crawlers should use this file
+User-agent: *
+# Crawl-delay is ignored by Google, but slows other webcrawlers to not overload your site (in seconds)
+Crawl-delay: 10
+
+# Ensures that JavaScript, Images, and CSS (Cascading Style Sheet) are not blocked (Help Googlebot understand your site)
+Allow: *.css
+Allow: *.js
+Allow: *.gif
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+
+# Hides variations of URLs from Query Parameters (tracking codes, internal search and filter values) - ON Gamasutra
+Disallow: /*?
+
+# Hides error messages - on Gamasutra
+Disallow: /error
+
+# Hides search results - ON Gamasutra
+Disallow: /search/
+
+# Hides back-end files
+Disallow: /cron.php
+
+# Hides other parts of the site - ON Gamasutra
+Disallow: /welcome.php
+Disallow: /omniture
+Disallow: /adminarticlelinks
+Disallow: /loadcommentdetails
+Disallow: /checkauth.php
+Disallow: /omnloginstatus.php
+Disallow: /authenticate
+Disallow: /auth/login/token
+Disallow: /auth/extauth/auth
+Disallow: /auth/extauth/success
+Disallow: /sso/login.php
+Disallow: /sso/login.php?*
+Disallow: /registration/index?*
+Disallow: /login?*
+Disallow: /forgotpassword?*
+Disallow: /changepassword
+Disallow: /admin/*
+Disallow: /registration/creategamaaccount
+Disallow: /registerthankyou
+Disallow: /auth/password/reset
+
+# Provides sitemap URL
+Sitemap: http://www.gamasutra.com/sitemap.xml

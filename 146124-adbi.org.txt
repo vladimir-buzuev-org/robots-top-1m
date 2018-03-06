@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie11 lt-ie10 lt-ie9"  lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie11 lt-ie10"  lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 10]>         <html class="no-js lt-ie11"  lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 10]><!--> <html class="no-js" lang="en" dir="ltr"> 
+<head>
+<meta charset="utf-8"/><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<link rel="shortcut icon" href="https://www.adb.org/sites/all/themes/adb_2016/favicon.ico" type="image/vnd.microsoft.icon"/>
+<meta name="description" content="ADBI is a Tokyo-based think tank that helps build capacity, skills, and knowledge on poverty reduction and other areas that support long-term growth and competitiveness in developing economies in Asia and the Pacific."/>
+<meta name="abstract" content="ADBI is a Tokyo-based think tank that helps build capacity, skills, and knowledge on poverty reduction and other areas that support long-term growth and competitiveness in developing economies in Asia and the Pacific."/>
+<meta name="keywords" content="adb, asian development bank, asdb, 亚洲开发银行, アジア開発銀行, Азиатский банк развития, asia, pacific, poverty asia, adbi, adb institute, asian development bank institute, development think tanks, research institute, capacity building and training, research publications, asia pacific think tanks, development knowledge, research, capacity building and training"/>
+<meta name="news_keywords" content="adbi, adb institute, asian development bank institute, development think tanks, research institute, capacity building and training, research publications, asia pacific think tanks, development knowledge, research, capacity building and training"/>
+<link rel="canonical" href="https://www.adb.org/adbi/main"/>
+<link rel="shortlink" href="https://www.adb.org/adbi/main"/>
+<meta name="original-source" content="http://www.adb.org"/>
+<meta property="fb:app_id" content="107568019265399"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Asian Development Bank"/>
+<meta property="og:title" content="ADB Institute (ADBI)"/>
+<meta property="og:url" content="https://www.adb.org/adbi/main"/>
+<meta property="og:description" content="ADBI is a Tokyo-based think tank that helps build capacity, skills, and knowledge on poverty reduction and other areas that support long-term growth and competitiveness in developing economies in Asia and the Pacific."/>
+<meta property="og:updated_time" content="2017-09-07T10:48:25+08:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:creator" content="@ADB_HQ"/>
+<meta name="twitter:url" content="https://www.adb.org/adbi/main"/>
+<meta name="twitter:title" content="ADB Institute (ADBI)"/>
+<meta name="twitter:description" content="ADBI is a Tokyo-based think tank that helps build capacity, skills, and knowledge on poverty reduction and other areas that support long-term growth and competitiveness in developing economies in Asia and the Pacific."/>
+<meta property="article:published_time" content="2015-01-23T00:00:00+08:00"/>
+<meta property="article:modified_time" content="2017-09-07T10:48:25+08:00"/>
+<meta name="dcterms.title" content="ADB Institute (ADBI)"/>
+<meta name="dcterms.creator" content="headhoncho"/>
+<meta name="dcterms.subject" content="ADB administration and governance"/>
+<meta name="dcterms.description" content="ADBI is a Tokyo-based think tank that helps build capacity, skills, and knowledge on poverty reduction and other areas that support long-term growth and competitiveness in developing economies in Asia and the Pacific."/>
+<meta name="dcterms.publisher" content="Asian Development Bank"/>
+<meta name="dcterms.contributor" content="Asian Development Bank"/>
+<meta name="dcterms.date" content="2015-01-23T00:00+08:00"/>
+<meta name="dcterms.type" content="Text"/>
+<meta name="dcterms.format" content="Page"/>
+<meta name="dcterms.identifier" content="https://www.adb.org/adbi/main"/>
+<meta name="dcterms.language" content="en"/>
+<meta name="dcterms.modified" content="2017-09-07T10:48+08:00"/>
+<title>ADB Institute (ADBI) | Asian Development Bank</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="fb:pages" content="353576190962"/>
+
+
+<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/adb_2016/apple-touch-icon.png">
+
+<style type="text/css" media="all">
+@import url("https://www.adb.org/sites/all/modules/access_unpublished/css/access_unpublished.css?ov3cz1");
+@import url("https://www.adb.org/sites/all/modules/date/date_api/date.css?ov3cz1");
+@import url("https://www.adb.org/sites/all/modules/date/date_popup/themes/datepicker.1.7.css?ov3cz1");
+@import url("https://www.adb.org/sites/all/modules/file_maintenance/css/file_maintenance.css?ov3cz1");
+@import url("https://www.adb.org/sites/all/modules/extlink/extlink.css?ov3cz1");
+@import url("https://www.adb.org/sites/all/modules/views/css/views.css?ov3cz1");
+</style>
+<style type="text/css" media="all">
+@import url("https://www.adb.org/sites/all/modules/ctools/css/ctools.css?ov3cz1");
+@import url("https://www.adb.org/sites/all/modules/easychart/modules/easychart_wysiwyg/plugins/css/plugin.css?ov3cz1");
+@import url("https://www.adb.org/sites/all/libraries/fancybox/source/jquery.fancybox.css?ov3cz1");
+@import url("https://www.adb.org/sites/all/modules/print/print_ui/css/print_ui.theme.css?ov3cz1");
+</style>
+<link type="text/css" rel="stylesheet" href="https://cdn.olasearch.com/production/5910080696b7644e74cefeac/olasearch.min.css" media="all"/>
+<style type="text/css" media="all">
+@import url("https://www.adb.org/sites/all/themes/adb_2016/css/styles.min.css?ov3cz1");
+@import url("https://www.adb.org/sites/all/themes/adb_2016/css/custom.css?ov3cz1");
+@import url("https://www.adb.org/sites/all/themes/adb_2016/css/custom-guido.css?ov3cz1");
+</style>
+<style type="text/css" media="all">
+@import url("https://www.adb.org/sites/all/themes/adb_2016/css/adbi.min.css?ov3cz1");
+</style>
+
+<script src="/sites/all/themes/adb_2016/js/modernizr-respond.min.js"></script>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-153276 node-type-page i18n-en adbi-main">
+<div class="page">
+<header class="header" role="banner">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<a class="header-logo" href="/" title="Home" rel="home">
+<span>Asian Development Bank</span>
+</a>
+<div class="header-bar collapse">
+<nav class="header-links" role="navigation">
+<ul class="inline-block">
+<li class="first"><a href="https://www.adb.org/zh">中文</a></li>
+<li><a href="https://www.adb.org/careers">Careers</a></li>
+<li><a href="https://www.adb.org/contacts">Contacts</a></li>
+</ul> </nav>
+<div class="header-search">
+<form action="/adbi/search" method="get" id="views-exposed-form-search-adbi-search" accept-charset="UTF-8"><div>
+<div class="form-item form-type-textfield form-item-keywords">
+<input type="text" id="edit-keywords" name="keywords" value size="30" maxlength="128" class="form-text"/>
+</div>
+<input type="submit" id="edit-submit-search" name value="" class="form-submit"/>
+</div></form>
+</div>
+</div>
+<div class="header-toggle">
+<button class="toggle toggle-search"><i class="ico ico-search"></i><span>Toggle Search</span></button>
+<button class="toggle toggle-burger toggle-nav needsclick"><b></b><span>Toggle Navigation</span></button>
+</div> </div>
+</div>
+</div>
+</header>
+<div id="mainNav" class="main-nav collapse">
+<div class="container">
+<div class="row">
+<nav class="nav-main col-sm-12" role="navigation" tabindex="-1">
+<ul>
+<li class="has-children">
+<a href="/about">About ADB</a>
+<div class="row row-4-cols">
+<div class="col-md-3">
+<ul>
+<li class="has-children">
+<a href="/about"><strong>Who We are</strong></a>
+</li>
+</ul>
+<ul>
+<li><a href="/about/members">Members</a></li>
+<li><a href="/about/history">History</a></li>
+<li><a href="/adb50"><span class="__cf_email__" data-cfemail="bdfcf9fffd888d">[email&#160;protected]</span></a></li>
+</ul>
+<ul>
+<li class="has-children">
+<a href="/about/how-were-organized"><strong>How We're Organized</strong></a>
+</li>
+</ul>
+<ul>
+<li><a href="/about/board-governors">Board of Governors</a></li>
+<li><a href="/about/board-directors">Board of Directors</a></li>
+<li><a href="/about/management/takehiko-nakao">President</a></li>
+<li><a href="/about/management">Management</a></li>
+<li><a href="/about/departments-offices">Departments and Offices</a></li>
+<li><a href="/about/annual-meetings">Annual Meetings</a></li>
+</ul>
+<ul>
+<li class="has-children">
+<a href="/about/our-work"><strong>Our Work</strong></a>
+</li>
+</ul>
+<ul>
+<li><a href="/about/infrastructure">Infrastructure</a></li>
+<li><a href="/about/social-development">Social Development</a></li>
+<li><a href="/about/operations">Operations - Project Design and Management</a></li>
+<li><a href="/about/policies-and-strategies">Policies and Strategies</a></li>
+<li><a href="/about/policies-and-strategies/new-strategy">ADB's Road to 2030</a></li>
+<li><a href="/about/partners">Partners</a></li>
+</ul>
+</div>
+<div class="col-md-3">
+<ul>
+<li class="has-children">
+<a href="#" class="no-link">
+<strong>Products</strong>
+</a>
+</li>
+</ul>
+<ul>
+<li><a href="/site/public-sector-financing/main">Public Sector (Sovereign) Financing</a></li>
+<li><a href="/site/private-sector-financing/main">Private Sector (Nonsovereign) Financing</a></li>
+<li><a href="/site/cofinancing/main">Cofinancing Partnerships</a></li>
+<li><a href="/site/public-sector-financing/results-based-lending-programs">Results-Based Lending for Programs</a></li>
+<li><a href="/site/trade-finance-program">Trade Finance Program</a></li>
+<li><a href="/site/funds/main">Funds and Resources</a></li>
+<li><a href="/site/funds/adf">Asian Development Fund</a></li>
+<li><a href="/site/aif/main">ASEAN Infrastructure Fund</a></li>
+<li><a href="/site/investors/main" class="inline-link">Investor Relations</a> <a href="/ja/site/investors/main" class="inline-link">[日本語]</a></li>
+</ul>
+</div>
+<div class="col-md-3">
+<ul>
+<li class="has-children">
+<a href="#" class="no-link">
+<strong>Opportunities</strong>
+</a>
+</li>
+</ul>
+<ul>
+<li><a href="/site/careers/main">Careers</a></li>
+<li><a href="/site/business-opportunities/main">Business Opportunities</a></li>
+<li><a href="/consulting">Consulting Services</a></li>
+<li><a href="/jsp">Scholarship Program</a></li>
+</ul>
+</div>
+<div class="col-md-3">
+<ul>
+<li class="has-children">
+<a href="#" class="no-link">
+<strong>Transparency and Accountability</strong>
+</a>
+</li>
+</ul>
+<ul>
+<li><a href="/site/disclosure/main">Access to Information</a></li>
+<li class="first"><a href="/site/accountability-mechanism/main">Accountability Mechanism</a></li>
+<li><a href="/site/ngos/main">ADB and Civil Society</a></li>
+<li><a href="/site/integrity/main">Anticorruption and Integrity</a></li>
+<li><a href="/site/development-effectiveness/main">Development Effectiveness and Results</a></li>
+<li><a href="/site/safeguards/main">Safeguards</a></li>
+<li class="nav-main-divider hidden-xs hidden-sm"></li>
+<li><a href="/site/evaluation/main">Independent Evaluation</a></li>
+<li><a href="/about/administrative-tribunal">Administrative Tribunal</a></li>
+</ul>
+</div>
+</div>
+</li>
+<li class="has-children">
+<a href="/news">News &amp; Events</a>
+<div class="row row-2-cols">
+<div class="col-md-6">
+<ul>
+<li class="visible-xs visible-sm">
+<a href="/news">Overview</a>
+</li>
+<li class="nav-main-divider visible-xs visible-sm"></li>
+<li class="has-children">
+<a href="/news"><strong>News</strong></a>
+<ul>
+<li><a href="/news/releases">News Releases</a></li>
+<li><a href="/news/speeches">Speeches</a></li>
+<li><a href="/news/op-ed">Op-Eds and Opinion</a></li>
+<li><a href="/news/features">Articles</a></li>
+<li><a href="/news/results">Project Results and Case Studies</a></li>
+</ul>
+</li>
+<li class="nav-main-divider hidden-xs hidden-sm"></li>
+<li class="has-children">
+<a href="#" class="no-link"><strong>Events</strong></a>
+<ul>
+<li class="first"><a href="/news/events/calendar">Calendar of Events</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="col-md-6">
+<ul>
+<li class="has-children">
+<a href="#" class="no-link">
+<strong>Multimedia</strong>
+</a>
+<ul>
+<li class="first"><a href="/news/multimedia">Multimedia Features</a></li>
+<li><a href="/news/photo-essays">Photo Essays</a></li>
+<li><a href="/news/videos">Videos</a></li>
+<li><a href="/news/infographics">Infographics</a></li>
+<li><a href="/news/photos-download">Photos</a></li>
+</ul>
+</li>
+<li class="nav-main-divider"></li>
+<li><a href="/news/social-media-hub">Social Media Hub</a></li>
+<li><a href="/news/contacts">Media Contacts</a></li>
+<li><a href="/news/services">Subscriber Services</a></li>
+<li class="nav-main-divider"></li>
+<li><a href="http://blogs.adb.org" target="_blank">Asian Development Blog</a></li>
+</ul>
+</div>
+</div>
+</li>
+<li class="has-children">
+<a href="/data">Data &amp; Research</a>
+<ul>
+<li class="visible-xs visible-sm"><a href="/data">Data &amp; Research Overview</a></li>
+<li><a href="/data/publications">Economic Research Publications</a></li>
+<li><a href="/data/statistics">Statistics and Databases</a></li>
+<li><a href="/data/economic-research-initiatives">Featured Economic Research Initiatives</a></li>
+<li><a href="/data/infographics">Infographics</a></li>
+<li><a href="/data/adb-chief-economist">Chief Economist</a></li>
+<li class="last"><a href="/data/contacts">Contacts</a></li>
+</ul>
+</li>
+<li class="has-children">
+<a href="/publications">Publications</a>
+<div class="row row-2-cols">
+<div class="col-md-6">
+<ul>
+<li class="visible-xs visible-sm"><a href="/publications">Publications Overview</a></li>
+<li><a href="/publications/books">Books</a></li>
+<li><a href="/publications/reports">Reports</a></li>
+<li><a href="/publications/papers">Papers and Briefs</a></li>
+<li><a href="/publications/serials">Serials</a></li>
+<li><a href="/publications/proceedings">Conference Proceedings</a></li>
+<li><a href="/publications/guides">Guides</a></li>
+<li><a href="/publications/policies-strategies-and-plans">Policies, Strategies, Plans</a></li>
+<li><a href="/publications/statutory-reports">Official Records</a></li>
+<li><a href="/publications/brochures">Brochures and Flyers</a></li>
+</ul>
+</div>
+<div class="col-md-6">
+<ul>
+<li class="has-children">
+<a href="#" class="no-link">
+<strong>See Also</strong>
+</a>
+<ul>
+<li><a href="/countries/documents/main">Country Planning Documents</a></li>
+<li><a href="/projects/documents">Project Documents</a></li>
+<li><a href="/site/evaluation/resources">Evaluation Documents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class="has-children">
+<a href="/countries">Countries</a>
+<div class="row row-3-cols nav-main-center">
+<div class="col-md-7">
+<ul>
+<li class="has-children">
+<a href="#" class="no-link">
+<strong>Countries with Operations</strong>
+</a>
+<div class="row">
+<div class="col-md-6">
+<ul>
+<li><a href="/countries/afghanistan/main">Afghanistan</a></li>
+<li><a href="/countries/armenia/main">Armenia</a></li>
+<li><a href="/countries/azerbaijan/main">Azerbaijan</a></li>
+<li><a href="/countries/bangladesh/main">Bangladesh</a></li>
+<li><a href="/countries/bhutan/main">Bhutan</a></li>
+<li><a href="/countries/cambodia/main">Cambodia</a></li>
+<li><a href="/countries/prc/main" class="inline-link">China, People's Republic of</a> <a href="/zh/prc/main" class="inline-link">[中文]</a></li>
+<li><a href="/countries/cook-islands/main">Cook Islands</a></li>
+<li><a href="/countries/fiji/main">Fiji</a></li>
+<li><a href="/countries/georgia/main">Georgia</a></li>
+<li><a href="/countries/india/main">India</a></li>
+<li><a href="/countries/indonesia/main" class="inline-link">Indonesia</a> <a href="/id/indonesia/main" class="inline-link">[Bahasa Indonesia]</a></li>
+<li><a href="/countries/kazakhstan/main">Kazakhstan</a> <a href="/ru/kazakhstan/main" class="inline-link">[Русский]</a></li>
+<li class="last"><a href="/countries/kiribati/main">Kiribati</a></li>
+<li><a href="/countries/kyrgyz-republic/main">Kyrgyz Republic</a></li>
+<li><a href="/countries/lao-pdr/main">Lao People's Democratic Republic</a></li>
+<li><a href="/countries/maldives/main">Maldives</a></li>
+<li><a href="/countries/marshall-islands/main">Marshall Islands</a></li>
+</ul>
+</div>
+<div class="col-md-6">
+<ul>
+<li><a href="/countries/micronesia/main">Micronesia, Federated States of</a></li>
+<li><a href="/countries/mongolia/main">Mongolia</a></li>
+<li><a href="/countries/myanmar/main">Myanmar</a></li>
+<li><a href="/countries/nauru/main">Nauru</a></li>
+<li><a href="/countries/nepal/main">Nepal</a></li>
+<li><a href="/countries/pakistan/main">Pakistan</a></li>
+<li><a href="/countries/palau/main">Palau</a></li>
+<li><a href="/countries/papua-new-guinea/main">Papua New Guinea</a></li>
+<li><a href="/countries/philippines/main">Philippines</a></li>
+<li><a href="/countries/samoa/main">Samoa</a></li>
+<li><a href="/countries/solomon-islands/main">Solomon Islands</a></li>
+<li><a href="/countries/sri-lanka/main">Sri Lanka</a></li>
+<li><a href="/countries/tajikistan/main">Tajikistan</a></li>
+<li><a href="/countries/thailand/main">Thailand</a></li>
+<li><a href="/countries/timor-leste/main">Timor-Leste</a></li>
+<li><a href="/countries/tonga/main">Tonga</a></li>
+<li><a href="/countries/turkmenistan/main">Turkmenistan</a></li>
+<li><a href="/countries/tuvalu/main">Tuvalu</a></li>
+<li><a href="/countries/uzbekistan/main">Uzbekistan</a></li>
+<li><a href="/countries/vanuatu/main">Vanuatu</a></li>
+<li><a href="/countries/viet-nam/main" class="inline-link">Viet Nam</a> <a href="/vi/countries/viet-nam/main" class="inline-link">[Tiếng Việt]</a></li>
+</ul>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="col-md-5">
+<ul>
+<li class="has-children">
+<a href="#" class="no-link">
+<strong>Subregional Programs</strong>
+</a>
+<ul>
+<li><a href="/bimp-eaga">Brunei Darussalam-Indonesia-Malaysia-Philippines East ASEAN Growth Area (BIMP-EAGA)</a></li>
+<li><a href="/carec">Central Asia Regional Economic Cooperation (CAREC)</a></li>
+<li><a href="/gms">Greater Mekong Subregion (GMS)</a></li>
+<li><a href="/imt-gt">Indonesia-Malaysia-Thailand Growth Triangle (IMT-GT)</a></li>
+<li><a href="/sasec">South Asia Subregional Economic Cooperation (SASEC)</a></li>
+</ul>
+</li>
+<li class="nav-main-divider hidden-xs hidden-sm"></li>
+<li class="has-children">
+ <a href="#" class="no-link">
+<strong>Other Offices</strong>
+</a>
+<ul>
+<li><a href="/ero">European Representative Office</a></li>
+<li><a href="/jro" class="inline-link">Japanese Representative Office</a> <a href="/ja/japan/main" class="inline-link">[日本語]</a></li>
+<li><a href="/naro">North American Representative Office</a></li>
+<li><a href="/plco">Pacific Liaison and Coordination Office</a></li>
+<li><a href="/spso">Pacific Subregional Office</a></li>
+</ul>
+</li>
+<li class="nav-main-divider hidden-xs hidden-sm"></li>
+<li><a href="/countries/documents/main">Country Planning Documents</a></li>
+</ul>
+</div>
+</div>
+</li>
+<li class="has-children">
+<a href="/projects">Projects &amp; Tenders</a>
+<ul>
+<li><a href="/projects">Projects</a></li>
+<li><a href="/projects/documents">Documents</a></li>
+<li><a href="/projects/tenders">Tenders</a></li>
+</ul>
+</li>
+<li class="has-children">
+<a href="/focus-areas">Focus Areas</a>
+<div class="row row-2-cols row-wide nav-main-right">
+<div class="col-md-6">
+<ul>
+<li><a href="#" class="no-link"><strong>Infrastructure</strong></a>
+<ul>
+<li><a href="/sectors/energy/main">Energy</a></li>
+<li><a href="/sectors/ict/main">Information and Communications Technology</a></li>
+<li><a href="/sectors/transport/main">Transport</a></li>
+<li><a href="/themes/urban-development/main">Urban Development</a></li>
+<li><a href="/sectors/water/main">Water</a></li>
+</ul>
+</li>
+<li><a href="#" class="no-link"><strong>Other Focus Areas</strong></a>
+<ul>
+<li><a href="/sectors/agriculture/main">Agriculture and Food Security</a></li>
+<li><a href="/themes/climate-change-disaster-risk-management/main">Climate Change and Disaster Risk Management</a></li>
+<li><a href="/sectors/education/main">Education</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="col-md-6">
+<ul>
+<li><a href="/themes/environment/main">Environment</a></li>
+<li><a href="/sectors/finance/main">Finance Sector Development</a></li>
+<li><a href="/themes/gender/main">Gender and Development</a></li>
+<li><a href="/sectors/governance/main">Governance and Public Management</a></li>
+<li><a href="/sectors/health/main">Health</a></li>
+<li><a href="/site/public-private-partnerships/main">Public-Private Partnerships</a></li>
+<li><a href="/themes/regional-cooperation/main">Regional Cooperation and Integration</a></li>
+<li><a href="/themes/social-development/main">Social Development and Poverty</a></li>
+<li><a href="/site/sdg/main">Sustainable Development Goals</a></li>
+</ul>
+</div>
+</div>
+</li>
+<li class="has-children">
+<a href="/adbi/main">ADB Institute</a>
+<ul class="nav-main-right">
+<li><a href="/adbi/main">ADBI Home</a></li>
+<li><a href="/adbi/research">Research</a></li>
+<li><a href="/adbi/capacity-building-training">Capacity Building and Training</a></li>
+<li><a href="/adbi/publications">Publications</a></li>
+<li><a href="/adbi/podcast">Podcast</a></li>
+<li><a href="/adbi/news">News and Views</a></li>
+<li><a href="/adbi/events">Events</a></li>
+<li><a href="/adbi/about">About ADBI</a></li>
+<li><a href="/adbi/year-in-review">Year in Review</a></li>
+<li><a href="/adbi/about/opportunities">Employment Opportunities</a></li>
+<li><a href="/adbi/contact">Contacts</a></li>
+</ul>
+</li>
+</ul> </nav>
+</div>
+</div>
+</div>
+<div class="hero hero-adbi">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<a class="hero-logo" href="/adbi/main" title="Asian Development Bank Institute (ADBI)"><span>Asian Development Bank Institute (ADBI)</span></a>
+<h3 class="hero-tagline">At the forefront of growth and development in Asia and the Pacific</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="main">
+<div class="container">
+<div class="row">
+<main class="main-content column" role="main">
+
+<div class="page-meta"><ul class="links inline"><li class="translation_ja first last"><a href="/ja/adbi/main" title="ADB Institute (ADBI)" class="translation-link" xml:lang="ja">日本語</a></li>
+</ul></div>
+<div class="row">
+<div class="col-md-8"><div class="view view-adbi view-id-adbi view-display-id-subsite_hero featured view-dom-id-347b82a7567e508c41b92da55b76cc38">
+<div class="view-content">
+<div class="slider slider-featured slider-featured-primary"> <ul> <li class>
+<a class="img-zoom" href="https://www.adb.org/news/events/financing-infrastructure-connectivity-economic-corridor-development"><img src="/sites/default/files/content-media/21311-adbi-homepage-090617.jpg" alt="Financing Infrastructure Connectivity for Economic Corridor Development"/></a>
+<div>
+<h2><a href="https://www.adb.org/news/events/financing-infrastructure-connectivity-economic-corridor-development">Financing Infrastructure Connectivity for Economic Corridor Development</a></h2>
+<p><p>A <a href="/news/events/financing-infrastructure-connectivity-economic-corridor-development">joint workshop</a> by ADBI and Public Debt Management Office (PDMO) Thai Ministry of Finance (MOF) on 30-31 August in Bangkok tackled economic corridor development as well as possible methods to develop and finance infrastructure connectivity. Key issues included the role of infrastructure in supporting the development of economic corridors and the spillover effects of infrastructure and private sector financing in Asia. The workshop also highlighted a range of methods for financing infrastructure connectivity. ADBI Dean Naoyuki Yoshino and Executive Director Anchana Wongsawang of the Public Infrastructure Project Financing Bureau, PDMO MOF, gave keynote speeches. ADBI Deputy Dean Chul Ju Kim and Bond Market Advisor Theeraj Athanavanich of PDMO MOF Thailand delivered the opening remarks. <a href="/news/events/financing-infrastructure-connectivity-economic-corridor-development">Read more</a>.</p></p>
+</div> </li>
+<li class>
+<a class="img-zoom" href="https://www.adb.org/news/events/implementation-agenda-2030-financial-economic-and-political-challenges"><img src="/sites/default/files/content-media/21251-adbi-homepage-083117.jpg" alt="Key Issues in Implementing the SDGs examined"/></a>
+<div>
+<h2><a href="https://www.adb.org/news/events/implementation-agenda-2030-financial-economic-and-political-challenges">Key Issues in Implementing the SDGs examined</a></h2>
+<p><p>A joint <a href="/news/events/implementation-agenda-2030-financial-economic-and-political-challenges">conference</a> by ADBI and the Japanese-German Center held on 25 August in Tokyo discussed the implementation of the 17 Sustainable Development Goals (SDGs). Key issues included SDGs financing in the form of bilateral development and peer-to-peer lending, as well as the linkages between SDGs and trade such as in health and women empowerment. The event also highlighted the role of the private sector in implementing the SDGs, for example, through greener business models and the use of artificial intelligence. ADBI Dean Naoyuki Yoshino and Japanese-German Center Secretary General Friederike Bosse delivered the opening remarks. United Nations Information Centre (UNIC)'s Director Kaoru Nemoto gave the keynote address. <a href="/news/events/implementation-agenda-2030-financial-economic-and-political-challenges">Read more</a>.</p></p>
+</div> </li>
+<li class>
+<a class="img-zoom" href="https://www.adb.org/news/events/tax-compliance-developing-digital-economy"><img src="/sites/default/files/content-media/21116-adbi-homepage-082417v2.jpg" alt="Tax Compliance in the Digital Economy"/></a>
+<div>
+<h2><a href="https://www.adb.org/news/events/tax-compliance-developing-digital-economy">Tax Compliance in the Digital Economy</a></h2>
+<p><p>Japan National Tax Agency Deputy Commissioner Takahiro Yasui and ADBI Dean Naoyuki Yoshino emphasized the importance of understanding the implications of a digital economy on taxation systems at the workshop: <a href="/news/events/tax-compliance-developing-digital-economy">Tax Compliance in the Developing Digital Economy</a>, held on 21-24 August at ADBI. The workshop provided opportunities to analyze the challenges posed by the development of the digital economy and develop responses to ensure fair taxation and compliance. <a href="/news/events/tax-compliance-developing-digital-economy">Read more</a>.</p></p>
+</div> </li>
+<li class>
+<a class="img-zoom" href="http://www.serconf.org/"><img src="/sites/default/files/content-media/20971-adbi-homepage-080817.jpg" alt="ADBI hosts session on Infrastructure Investment in Asia at the Singapore Economic Review Conference"/></a>
+<div>
+<h2><a href="http://www.serconf.org/">ADBI hosts session on Infrastructure Investment in Asia at the Singapore Economic Review Conference</a></h2>
+<p><p>ADB Institute organized a plenary session on "Infrastructure Investment in Asia" at the biennial <a href="http://www.serconf.org/">Singapore Economic Review Conference</a> on 2-4 August. Presentations included ADBI Dean Naoyuki Yoshino on spillover effects, ADB Chief Economist Yasuyuki Sawada on ADB's new infrastructure forecast report, as well as others by Economic Advisor Abdul Abiad, and Principal Financial Sector Specialist Vivek Rao. ADBI Senior Consulting Economist Peter J. Morgan, and Research Fellow Bihong Huang presented in other sessions as well. <a href="http://www.serconf.org/">Read more</a>.</p></p>
+</div> </li>
+</ul></div> </div>
+</div></div>
+<div class="col-md-4">
+<p><a class="banner banner-ico banner-primary" href="/adbi/newsletter"><span class="ico ico-envelope-o"> </span> <span class="h3">ADBI Newsletter</span> <span class="go">Get the best of ADBI. Subscribe now</span></a></p>
+<p><a href="https://soundcloud.com/adbinstitute"><img alt=" Asia's Developing Future" class="img-center" src="/sites/default/files/page/153276/images/adbi-homepage-podcast.jpg"/></a></p>
+<p><a class="banner banner-ico banner-secondary" href="/adbi/research/call-for-papers"><span class="ico ico-file-text"> </span> <span class="h3">Call for Papers</span> <span class="go">We are looking for original research papers</span></a></p>
+<p><a class="banner banner-ico banner-secondary-hot" href="/adbi/year-in-review"><span class="ico ico-info"> </span> <span class="h3">ADBI Year in Review 2016</span> <span class="go">Find out ADBI's key achievements in 2016.</span></a></p>
+<p><a href="https://think-asia.org/"><img alt="Think-Asia - Go to knowledge from Asia’s top think tanks" class="img-center" src="/sites/default/files/page/323711/images/adbi-think-asia.jpg"/></a></p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="item-list item-list-divider">
+<h3><a class="go" href="http://www.asiapathways-adbi.org/">Asia Pathways Blog</a></h3>
+<ul><li><a href="https://www.asiapathways-adbi.org/2017/09/what-are-the-policy-options-for-reversing-productivity-decline/"><span class="meta">7 September 2017 | Economics, Education, Finance, and Poverty Reduction</span>What are the policy options for reversing productivity decline?</a></li>
+<li><a href="https://www.asiapathways-adbi.org/2017/09/video-blog-remove-trade-barriers-to-improve-health-systems-and-lower-patients-costs/"><span class="meta">4 September 2017 | Health</span>VIDEO BLOG: Remove trade barriers to improve health systems and lower patients’ costs</a></li>
+<li><a href="https://www.asiapathways-adbi.org/2017/08/financial-literacy-and-savings-evidence-from-cambodia-and-viet-nam/"><span class="meta">31 August 2017 | Economics, Education, and Finance</span>Financial literacy and savings: Evidence from Cambodia and Viet Nam</a></li>
+<li><a href="https://www.asiapathways-adbi.org/2017/08/international-remittances-and-poverty-reduction/"><span class="meta">24 August 2017 | Economics, Finance, Poverty Reduction, and Social Development and Poverty</span>International remittances and poverty reduction</a></li>
+</ul><p><a class="go" href="http://www.asiapathways-adbi.org/">See all blogs</a></p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="item-list item-list-divider">
+<h3><a class="go" href="/adbi/events">Events</a></h3>
+<div class="item-list item-list-divider">
+<div class="block"><div class="view view-adbi view-id-adbi view-display-id-events_list view-dom-id-e1798a975f597e87fb3de2b3a150b020">
+<div class="view-content">
+<div class="item-list item-list-divider"> <ul> <li class="views-row-odd views-row-first">
+<a href="/news/events/13th-east-asia-top-level-officials-meeting-competition-policy-and-10th-east-asia"><span class="meta"><span class="date-display-single" property="schema:startDate" datatype="xsd:dateTime" content="2017-09-06T00:00:00+08:00">06 Sep 2017</span></span>The 13th East Asia Top-Level Officials’ Meeting on Competition Policy and 10th East Asia Conference on Competition Law and Policy</a> </li>
+<li class="views-row-even">
+<a href="/news/events/regulating-peer-peer-lending-smes"><span class="meta"><span class="date-display-single" property="schema:startDate" datatype="xsd:dateTime" content="2017-09-12T00:00:00+08:00">12 Sep 2017</span></span>Seminar: Regulating Peer-to-Peer Lending to SMEs</a> </li>
+<li class="views-row-odd">
+<a href="/news/events/second-annual-conference-japan-economy-network-japan-and-asian-economy"><span class="meta"><span class="date-display-single" property="schema:startDate" datatype="xsd:dateTime" content="2017-09-14T00:00:00+08:00">14 Sep 2017</span></span>Second Annual Conference of the Japan Economy Network: Japan and the Asian Economy</a> </li>
+<li class="views-row-even views-row-last">
+<a href="/news/events/shocks-brave-farmers-evidence-randomized-agricultural-microfinance-bangladesh"><span class="meta"><span class="date-display-single" property="schema:startDate" datatype="xsd:dateTime" content="2017-09-19T00:00:00+08:00">19 Sep 2017</span></span>Seminar: Shocks and Brave Farmers: Evidence from a Randomized Agricultural Microfinance Experiment in Bangladesh</a> </li>
+</ul></div> </div>
+</div></div>
+<p><a class="go" href="/adbi/events">See all events</a></p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<h3><a class="go" href="/adbi/publications/books">Books</a></h3>
+<div class="item-list item-list-divider">
+<div class="block"><div class="view view-adbi view-id-adbi view-display-id-pub_latest view-dom-id-93b9744a5f695350852038486f752387">
+<div class="view-content">
+<div class="item-list"> <ul> <li class="views-row views-row-1 views-row-odd views-row-first">
+<a href="/publications/financial-inclusion-regulation-education-asian-perspectives"><img src="/sites/default/files/styles/thumbnail/public/publication/350186/cover-adbi-financial-inclusion-regulation-education-asian-perspectives.jpg?itok=dxP6WM_o" class="float-left-margin img-xs"/>Financial Inclusion, Regulation, and Education: Asian Perspectives<br/></a>
+<p>This book looks at how low-income households and small firms access financial services in Asia.</p> </li>
+<li class="views-row views-row-2 views-row-even views-row-last">
+<a href="/publications/win-win-how-international-trade-can-help-meet-sdgs"><img src="/sites/default/files/styles/thumbnail/public/publication/327451/cover-adbi-win-win-how-international-trade-can-help-meet-sdgs.jpg?itok=ALORueZI" class="float-left-margin img-xs"/>Win-Win: How International Trade Can Help Meet the Sustainable Development Goals<br/></a>
+<p>The objective of this book is to demonstrate to the international development community, including policy makers in developing countries, the contribution that international trade can make to achieving the SDGs.</p> </li>
+</ul></div> </div>
+</div></div>
+<p><a class="go" href="/adbi/publications/books">See all books</a></p>
+</div>
+</div>
+</div>
+<h3>Latest</h3>
+<div><div class="view view-adbi view-id-adbi view-display-id-contentstream view-dom-id-7b0453a686ade3e768559520be1430d4">
+<div class="view-content views-stream equalize" data-equalize="li > .panel">
+<ul> <li class="views-type-video"><div class="panel">
+<div class="panel-header meta">
+<a href="/news/videos/cheaper-faster-better-meds">
+Video </a>
+<span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-08-30T00:00:00+08:00">30 Aug 2017</span> </div>
+<a href="/news/videos/cheaper-faster-better-meds" title="[title]" class="panel-image av-thumb"><img typeof="foaf:Image" src="https://www.adb.org/sites/default/files/styles/stream_image/public/brightcove_thumbnail/791607097001_5557094335001_5556958159001-vs.jpg?itok=_d6Q92S3" alt/></a> <div class="panel-body">
+<h3>
+<a href="/news/videos/cheaper-faster-better-meds">
+Cheaper, Faster, Better Meds </a>
+</h3>
+Three smart things countries can do to keep the import of life-saving medicines and vaccines free from delays, unnecessary tariffs, and high costs--watch the second video in ADBI's new animated series. </div>
+</div>
+</li>
+<li class="views-type-publication"><div class="panel">
+<div class="panel-header meta">
+<a href="/publications/tax-kicker-bond-budget-neutral-financing-private-infrastructure">
+Publication </a>
+<span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-08-30T00:00:00+08:00">30 Aug 2017</span> </div>
+<div class="panel-body">
+<h3>
+<a href="/publications/tax-kicker-bond-budget-neutral-financing-private-infrastructure">
+<img type="image" src="/sites/default/files/styles/thumbnail/public/publication/358481/cover-adbi-pb2017-3.png?itok=3N-QD4ae"/> Introducing the Tax-Kicker Bond: Budget-Neutral Financing of Private Infrastructure by Back-End Participation in Future Tax Revenue Growth </a>
+</h3>
+This brief for practitioners shows how to attract private investors to infrastructure. We propose a new form of retail debt security instrument with a model term sheet. </div>
+</div>
+</li>
+<li class="views-type-publication"><div class="panel">
+<div class="panel-header meta">
+<a href="/publications/foreign-direct-investment-spillovers-pharmaceutical-innovation-role-ipr">
+Publication </a>
+<span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-08-24T00:00:00+08:00">24 Aug 2017</span> </div>
+<div class="panel-body">
+<h3>
+<a href="/publications/foreign-direct-investment-spillovers-pharmaceutical-innovation-role-ipr">
+<img type="image" src="/sites/default/files/styles/thumbnail/public/publication/357656/cover-adbi-wp775.jpg?itok=5kTN6sMF"/> Foreign Direct Investment Spillovers and Pharmaceutical Innovation: The Role of Intellectual Property Rights </a>
+</h3>
+Stronger intellectual property rights in the People’s Republic of China encourage foreign direct investment and lead to greater pharmaceutical innovation. </div>
+</div>
+</li>
+<li class="views-type-publication"><div class="panel">
+<div class="panel-header meta">
+<a href="/publications/globalization-structural-change-interregional-productivity">
+Publication </a>
+<span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-08-23T00:00:00+08:00">23 Aug 2017</span> </div>
+<div class="panel-body">
+<h3>
+<a href="/publications/globalization-structural-change-interregional-productivity">
+<img type="image" src="/sites/default/files/styles/thumbnail/public/publication/357611/cover-adbi-wp774.jpg?itok=mykEIayO"/> Globalization, Structural Change, and Interregional Productivity Growth in the Emerging Countries </a>
+</h3>
+Structural change boosts labor productivity growth, but not consistently across regions. </div>
+</div>
+</li>
+<li class="views-type-publication"><div class="panel">
+<div class="panel-header meta">
+<a href="/publications/growth-pro-poorness-intertemporal-perspective-application-indonesia">
+Publication </a>
+<span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-08-22T00:00:00+08:00">22 Aug 2017</span> </div>
+<div class="panel-body">
+<h3>
+<a href="/publications/growth-pro-poorness-intertemporal-perspective-application-indonesia">
+<img type="image" src="/sites/default/files/styles/thumbnail/public/publication/357581/cover-adbi-wp773.jpg?itok=FKpgiHei"/> Growth Pro-Poorness from an Intertemporal Perspective with an Application to Indonesia, 1997–2007 </a>
+</h3>
+Studies that have traditionally focused on the impact of growth on poverty would be more comprehensive if they also considered income dynamics and the impact of growth on mobility. </div>
+</div>
+</li>
+<li class="views-type-publication"><div class="panel">
+<div class="panel-header meta">
+<a href="/publications/public-equity-markets-and-innovation">
+Publication </a>
+<span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-08-21T00:00:00+08:00">21 Aug 2017</span> </div>
+<div class="panel-body">
+<h3>
+<a href="/publications/public-equity-markets-and-innovation">
+<img type="image" src="/sites/default/files/styles/thumbnail/public/publication/357566/cover-adbi-wp772.jpg?itok=G61NNO8d"/> Public Equity Markets and Innovation </a>
+</h3>
+Public equity markets are essential to firms’ innovation and entrepreneurship. </div>
+</div>
+</li>
+</ul> </div>
+<div class="item-list"><ul class="pager pager-load-more"><li class="pager-next first last"><a href="/adbi/main?page=1">Load more</a></li>
+</ul></div>
+</div></div>
+<hr class="hr-bold"/><div class="row">
+<div class="col-md-4">
+<div class="item-list item-list-divider">
+<h3><a class="go" href="/adbi/videos">Videos</a></h3>
+<ul><li><a href="/news/videos/cheaper-faster-better-meds"><span class="meta">30 August 2017</span>Cheaper, Faster, Better Meds</a></li>
+<li><a href="/news/videos/remittances-and-financial-inclusion"><span class="meta">11 July 2017</span>Remittances and Financial Inclusion</a></li>
+<li><a href="/news/videos/making-migrant-recruitment-fairer"><span class="meta">10 July 2017</span>Making Migrant Recruitment Fairer</a></li>
+</ul><p><a class="go" href="/adbi/videos">See all videos</a></p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="item-list item-list-divider">
+<h3><a class="go" href="/adbi/podcast">Podcast</a></h3>
+<ul><li><a href="https://soundcloud.com/adbinstitute/everyone-is-born-an-entrepreneur-yunus-grameen-bank"><span class="meta">4 September 2017</span>“Everyone is born an entrepreneur.” M. Yunus, Grameen Bank, Nobel laureate</a></li>
+<li><a href="https://soundcloud.com/adbinstitute/the-sharp-rise-in-overweight-and-obesity-in-asia-and-the-pacific-threatens-their-prosperity"><span class="meta">4 September 2017</span>The sharp rise in overweight and obesity in Asia and the Pacific threatens their prosperity</a></li>
+<li><a href="https://soundcloud.com/adbinstitute/how-does-exchange-rate-volatility-influence-exports"><span class="meta">4 September 2017</span>How does exchange rate volatility influence exports?</a></li>
+</ul><p><a class="go" href="/adbi/podcast">See all episodes</a></p>
+</div>
+</div>
+<div class="col-md-4">
+<h3><a class="go" href="https://www.flickr.com/photos/adbinstitute/">Flickr Photostream</a></h3>
+<div class="flickr_badge_wrapper">
+<div class="flickr_badge_image"><div class="flickr-photoset"><div class="flickr-album " style><span class="flickr-wrap flickr-no-title" style="><span class=" flickr-image"><a href="https://www.flickr.com/photos/adbinstitute/33734280823" title="Global Think Tank Summit 2017" target="_blank" class="flickr-img-wrap"><img class="flickr-photo-img" typeof="foaf:Image" src="https://farm5.staticflickr.com/4185/33734280823_9219701bdf_s.jpg" alt="Global Think Tank Summit 2017" title="Global Think Tank Summit 2017"/></a></span></span><span class="flickr-wrap flickr-no-title" style="><span class=" flickr-image"><a href="https://www.flickr.com/photos/adbinstitute/34503453416" title="Global Think Tank Summit 2017" target="_blank" class="flickr-img-wrap"><img class="flickr-photo-img" typeof="foaf:Image" src="https://farm5.staticflickr.com/4191/34503453416_5d8d2a6520_s.jpg" alt="Global Think Tank Summit 2017" title="Global Think Tank Summit 2017"/></a></span></span><span class="flickr-wrap flickr-no-title" style="><span class=" flickr-image"><a href="https://www.flickr.com/photos/adbinstitute/34383951352" title="Global Think Tank Summit 2017" target="_blank" class="flickr-img-wrap"><img class="flickr-photo-img" typeof="foaf:Image" src="https://farm5.staticflickr.com/4163/34383951352_7f7ef0ee57_s.jpg" alt="Global Think Tank Summit 2017" title="Global Think Tank Summit 2017"/></a></span></span><span class="flickr-wrap flickr-no-title" style="><span class=" flickr-image"><a href="https://www.flickr.com/photos/adbinstitute/33702309744" title="Global Think Tank Summit 2017" target="_blank" class="flickr-img-wrap"><img class="flickr-photo-img" typeof="foaf:Image" src="https://farm5.staticflickr.com/4189/33702309744_84bedc0bee_s.jpg" alt="Global Think Tank Summit 2017" title="Global Think Tank Summit 2017"/></a></span></span><span class="flickr-wrap flickr-no-title" style="><span class=" flickr-image"><a href="https://www.flickr.com/photos/adbinstitute/33734344803" title="Global Think Tank Summit 2017" target="_blank" class="flickr-img-wrap"><img class="flickr-photo-img" typeof="foaf:Image" src="https://farm5.staticflickr.com/4164/33734344803_7f6a6d8b1f_s.jpg" alt="Global Think Tank Summit 2017" title="Global Think Tank Summit 2017"/></a></span></span><span class="flickr-wrap flickr-no-title" style="><span class=" flickr-image"><a href="https://www.flickr.com/photos/adbinstitute/34414689061" title="Global Think Tank Summit 2017" target="_blank" class="flickr-img-wrap"><img class="flickr-photo-img" typeof="foaf:Image" src="https://farm5.staticflickr.com/4156/34414689061_40a91545ac_s.jpg" alt="Global Think Tank Summit 2017" title="Global Think Tank Summit 2017"/></a></span></span><span class="flickr-wrap flickr-no-title" style="><span class=" flickr-image"><a href="https://www.flickr.com/photos/adbinstitute/34414708561" title="Global Think Tank Summit 2017" target="_blank" class="flickr-img-wrap"><img class="flickr-photo-img" typeof="foaf:Image" src="https://farm5.staticflickr.com/4171/34414708561_f792ab4a19_s.jpg" alt="Global Think Tank Summit 2017" title="Global Think Tank Summit 2017"/></a></span></span><span class="flickr-wrap flickr-no-title" style="><span class=" flickr-image"><a href="https://www.flickr.com/photos/adbinstitute/34545083005" title="Global Think Tank Summit 2017" target="_blank" class="flickr-img-wrap"><img class="flickr-photo-img" typeof="foaf:Image" src="https://farm5.staticflickr.com/4189/34545083005_f565f43606_s.jpg" alt="Global Think Tank Summit 2017" title="Global Think Tank Summit 2017"/></a></span></span><span class="flickr-wrap flickr-no-title" style="><span class=" flickr-image"><a href="https://www.flickr.com/photos/adbinstitute/34384025742" title="Global Think Tank Summit 2017" target="_blank" class="flickr-img-wrap"><img class="flickr-photo-img" typeof="foaf:Image" src="https://farm5.staticflickr.com/4155/34384025742_52ee146ae6_s.jpg" alt="Global Think Tank Summit 2017" title="Global Think Tank Summit 2017"/></a></span></span></div></div></div>
+</div>
+</div>
+</div>
+</main>
+<nav class="region region-sidebar-first column" role="navigation">
+<div id="block-menu-block-10" class="block block-menu-block first last odd">
+<h3 class="block-title">ADB Institute</h3>
+<div class="menu-block-wrapper menu-block-10 menu-name-menu-adbi parent-mlid-0 menu-level-2">
+<ul class="menu"><li class="active"><a href="/adbi/main" title class="active-trail active">ADBI Home</a></li>
+<li class="collapsed menu-mlid-7131"><a href="/adbi/research" class>Research</a></li>
+<li class="collapsed menu-mlid-7139"><a href="/adbi/capacity-building-training" class>Capacity Building and Training</a></li>
+<li class="collapsed menu-mlid-7264"><a href="/adbi/publications" class>Publications</a></li>
+<li><a href="/adbi/podcast" class>Podcast</a></li>
+<li class="collapsed menu-mlid-7428"><a href="/adbi/news" class>News and Views</a></li>
+<li><a href="/adbi/events" class>Events</a></li>
+<li class="collapsed menu-mlid-7402"><a href="/adbi/about" class>About ADBI</a></li>
+<li class="collapsed menu-mlid-8442"><a href="/adbi/year-in-review" class>Year in Review</a></li>
+<li><a href="/adbi/about/opportunities" class>Employment Opportunities</a></li>
+<li><a href="/adbi/contact" title class>Contacts</a></li>
+</ul></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<footer class="footer" role="contentinfo">
+<div class="container">
+<div class="container">
+<div class="row">
+<div class="col-sm-12 col-md-6 col-md-push-6">
+<ul class="footer-follow">
+<li class="hidden-xs"><a href="https://alerts.adb.org/" title="Subscribe to our e-mail alerts" target="_blank"><i class="ico ico-envelope"></i></a></li>
+<li class="hidden-xs"><a href="/rss" title="Subscribe to ADB RSS feeds"><i class="ico ico-rss"></i></a></li>
+<li><a href="https://twitter.com/ADBInstitute" title="Follow ADBI on Twitter" target="_blank"><i class="ico ico-twitter"></i></a></li>
+<li><a href="https://www.youtube.com/user/ADBInstitute" title="Subscribe to ADBI Youtube Channel" target="_blank"><i class="ico ico-youtube-play"></i></a></li>
+<li><a href="https://www.facebook.com/Asian.Development.Bank.Institute" title="Find ADBI on Facebook" target="_blank"><i class="ico ico-facebook"></i></a></li>
+<li><a href="https://plus.google.com/+AdbiOrg" title="Find ADBI on Google+" target="_blank"><i class="ico ico-google-plus"></i></a></li>
+<li><a href="https://www.flickr.com/photos/adbinstitute/" title="Follow ADBI on Flickr" target="_blank"><i class="ico ico-flickr"></i></a></li>
+<li class="hidden-xs"><a href="https://www.scribd.com/ADBInstitute" title="Follow ADBI on Scribd" target="_blank"><i class="ico ico-scribd"></i></a></li>
+<li><a href="https://www.linkedin.com/company/asian-development-bank-institute" title="Follow ADBI on LinkedIn" target="_blank"><i class="ico ico-linkedin"></i></a></li>
+</ul>
+</div>
+<div class="col-sm-12 visible-xs visible-sm"><button class="toggle toggle-burger toggle-footer"><i><b></b></i><span>Toggle Footer Contents</span></button></div>
+<div class="col-sm-12 col-md-6 col-md-pull-6">
+<p class="footer-copyright">&copy; 2017 Asian Development Bank Institute. <a href="/adbi/terms-use">Terms of Use</a></p>
+</div>
+</div>
+<div class="collapse footer-collapse">
+<hr>
+<div class="row">
+<div class="col-md-6">
+<div class="footer-logo"></div>
+<p>Kasumigaseki Building 8F, 3-2-5, Kasumigaseki, Chiyoda-ku, Tokyo 100-6008, Japan</p>
+<ul class="inline">
+<li><a href="tel:+81335935500"><i class="ico ico-phone"></i> +81 3 3593 5500</a></li>
+<li class="no-link"><i class="ico ico-fax"></i> +81 3 3593 5571</li>
+<li class="no-link"><i class="ico ico-clock-o"></i> 9:30AM - 5:45PM</li>
+<li><a href="/adbi/contact"><i class="ico ico-envelope-o"></i> Email contact form</a></li>
+</ul>
+</div>
+<div class="col-md-6">
+<hr class="visible-xs visible-sm">
+<h5>About ADBI</h5>
+<p>The Asian Development Bank Institute was established in 1997 in Tokyo, Japan, to help build capacity, skills, and knowledge related to poverty reduction and other areas that support long-term growth and competitiveness in developing economies in Asia and the Pacific.</p>
+<hr class="visible-xs visible-sm">
+<h5>ADBI News</h5>
+<p>Subscribe to our newsletter to get the latest news and find out about our upcoming events and job openings.<a href="/adbi/newsletter"></a></p>
+</div>
+</div>
+<hr>
+<p class="footer-subscriber"><a href="/news/services"><strong>Subscriber Services</strong> - <span class="text-muted">Subscribe to ADB's Newsletter, e-Alerts and RSS feeds.</span></a></p>
+
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+<script>!function(e,t,r,n,c,h,o){function a(e,t,r,n){for(r='',n='0x'+e.substr(t,2)|0,t+=2;t<e.length;t+=2)r+=String.fromCharCode('0x'+e.substr(t,2)^n);return r}try{for(c=e.getElementsByTagName('a'),o='/cdn-cgi/l/email-protection#',n=0;n<c.length;n++)try{(t=(h=c[n]).href.indexOf(o))>-1&&(h.href='mailto:'+a(h.href,t+o.length))}catch(e){}for(c=e.querySelectorAll('.__cf_email__'),n=0;n<c.length;n++)try{(h=c[n]).parentNode.replaceChild(e.createTextNode(a(h.getAttribute('data-cfemail'),0)),h)}catch(e){}}catch(e){}}(document);</script><script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.9/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www.adb.org/sites/default/files/js/js_aczm2rRgH_slWBPnvD3KMrK7rwa1i99HOq8IUAb99Co.js"></script>
+<script type="text/javascript" src="https://www.adb.org/sites/default/files/js/js_BLxotNs2yt7YGlf9QRI9L9AMfdnkQfnN-_ADBTW3SiE.js"></script>
+<script type="text/javascript" src="https://www.adb.org/sites/default/files/js/js_NpX2cwCeepkWZZ194B6-ViyVBHleaYLOx5R9EWBOMRU.js"></script>
+<script type="text/javascript" src="https://sadmin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script type="text/javascript" src="https://www.adb.org/sites/default/files/js/js__oI9lDnv0YmXDZ4ZAcwyepXFKijWCal5IRgQNf5V1Bs.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.adb.org/sites/default/files/googleanalytics/analytics.js?ov3cz1","ga");ga("create", "UA-7621515-1", {"cookieDomain":".adb.org"});ga("set", "dimension1", "Page");ga("set", "dimension2", "Subsite Landing Page");ga("set", "dimension5", "ADB administration and governance");ga("set", "dimension6", "January 2015");ga("set", "dimension7", "adbi, adb institute, asian development bank institute, development think tanks, research institute, capacity building and training, research publicati");ga("set", "dimension14", "January 2015");ga("set", "dimension15", "ADBi");ga("set", "dimension16", "en");ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://cdn.olasearch.com/production/5910080696b7644e74cefeac/olasearch.min.js"></script>
+<script type="text/javascript" src="https://www.adb.org/sites/default/files/js/js_nBC36Mx62fbaRm7ZZZGyqN-mWQ7NDFrW7t6svwQG7TY.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"adb_2016","theme_token":"wI3DKqGQVDRO3ffoqTTfbAc5Oj3N9EKZwaliy9-KQvY","jquery_version":"1.9","js":{"sites\/all\/modules\/browserclass\/browserclass.js":1,"\/\/code.jquery.com\/jquery-1.9.1.min.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/extlink\/extlink.js":1,"https:\/\/sadmin.brightcove.com\/js\/BrightcoveExperiences.js":1,"sites\/all\/modules\/brightcove\/brightcove_field\/js\/events.js":1,"sites\/all\/modules\/fancybox\/fancybox.js":1,"sites\/all\/libraries\/fancybox\/source\/jquery.fancybox.pack.js":1,"sites\/all\/libraries\/fancybox\/lib\/jquery.mousewheel-3.0.6.pack.js":1,"sites\/all\/modules\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/views_load_more\/views_load_more.js":1,"sites\/all\/modules\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"1":1,"https:\/\/cdn.olasearch.com\/production\/5910080696b7644e74cefeac\/olasearch.min.js":1,"sites\/all\/libraries\/jquery.placeholder\/jquery.placeholder.js":1,"sites\/all\/modules\/form_placeholder\/form_placeholder.js":1},"css":{"sites\/all\/modules\/access_unpublished\/css\/access_unpublished.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/file_maintenance\/css\/file_maintenance.css":1,"sites\/all\/modules\/extlink\/extlink.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/easychart\/modules\/easychart_wysiwyg\/plugins\/css\/plugin.css":1,"sites\/all\/libraries\/fancybox\/source\/jquery.fancybox.css":1,"sites\/all\/modules\/print\/print_ui\/css\/print_ui.theme.css":1,"https:\/\/cdn.olasearch.com\/production\/5910080696b7644e74cefeac\/olasearch.min.css":1,"sites\/all\/themes\/adb_2016\/css\/styles.min.css":1,"sites\/all\/themes\/adb_2016\/css\/custom.css":1,"sites\/all\/themes\/adb_2016\/css\/custom-guido.css":1,"sites\/all\/themes\/adb_2016\/css\/adbi.min.css":1}},"fancybox":{"options":{"openEffect":"none","closeEffect":"none","nextEffect":"none","prevEffect":"none","openSpeed":400,"openEasing":"easeOutBack","closeEasing":"easeOutBack","nextEasing":"easeOutBack","prevEasing":"easeOutBack"},"selectors":["a.lightbox"]},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:7b0453a686ade3e768559520be1430d4":{"view_name":"adbi","view_display_id":"contentstream","view_args":"6\/load_more\/all\/all\/all","view_path":"node\/153276","view_base_path":null,"view_dom_id":"7b0453a686ade3e768559520be1430d4","pager_element":0},"views_dom_id:ad0ab6371fcc42971fae7ac490402b6a":{"view_name":"adbi","view_display_id":"contentstream","view_args":"6\/load_more\/all\/all\/all","view_path":"node\/153276","view_base_path":null,"view_dom_id":"ad0ab6371fcc42971fae7ac490402b6a","pager_element":0}}},"extlink":{"extTarget":"_blank","extClass":0,"extLabel":"(link is external)","extImgClass":0,"extSubdomains":1,"extExclude":"www\\.adb\\.org|wcm\\.adb\\.org|adb\\.org","extInclude":"openaccess\\.adb\\.org|blogs\\.adb\\.org|reflections\\.adb\\.org","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external website. This link from ADB.org does not imply endorsement to the website, nor does the bank provide any guarantees relating to the completeness or accuracy of information in this website.","mailtoClass":"mailto","mailtoLabel":"(link sends e-mail)"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|docx|exe|epub|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|mrc|msi|msp|pdf|phps|png|ppt|pptx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xlsx|xml|z|zip","trackDomainMode":"1"},"form_placeholder":{"fallback_support":true,"include":"#views-exposed-form-search-search-projects,#user-login *,#user-pass *,#ecard-node-form *","exclude":"","required_indicator":"leave"},"urlIsAjaxTrusted":{"\/adbi\/search":true}});
+//--><!]]>
+</script>
+<script src="/sites/all/themes/adb_2016/js/plugins.min.js"></script>
+<script src="/sites/all/themes/adb_2016/js/scripts.min.js"></script>
+<script type="text/javascript" src="https://www.adb.org/sites/default/files/js/js_pMpn-aGMsGKgMnAtmxLe-SZAZXUOnXxQqYAoiRN9DJI.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"a044d8302c","applicationID":"70695493,70695494","transactionName":"ZgRQZEpZD0VQAUFZV19Oc1NMUQ5YHgxaVF1uEVNXXWcXX1QV","queueTime":0,"applicationTime":6810,"atts":"SkNTEgJDHEs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

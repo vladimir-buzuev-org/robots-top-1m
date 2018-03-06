@@ -1,0 +1,637 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta http-equiv="content-language" content="fr" />
+<title></title>
+<meta name="robots" content="INDEX, FOLLOW"/>
+
+<link rel="canonical" href="http://www.store-factory.com"/>
+<meta name="description" content="" />
+<meta name="identifier-url" content="http://www.store-factory.com" />
+<meta name="author" content="Store-Factory" />
+<meta name="version" content="PROD_2-4-0" />
+<meta name="copyright" content="http://www.store-factory.com" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<link rel="shortcut icon" type="image/x-icon" href="http://www.store-factory.com/img/favicon.ico" />
+
+<script type="text/javascript" src="http://js.static-store.com/scripts/jquery/jquery-1.8.2.min.js"></script>
+
+<!-- END FILTER FACET -->
+
+<!-- BEGIN CSS -->
+<link rel="stylesheet" type="text/css" href="http://css.static-store.com/css/basic.css?v=201706272" media="screen" />
+	<!-- sur mesure -->
+<link rel="stylesheet" type="text/css" href="http://www.store-factory.com/style.css?v=201702231556" media="screen" />
+	<link rel="stylesheet" type="text/css" href="http://www.store-factory.com/store.css?v=201602151201" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://www.store-factory.com/print.css" media="print" />
+<!-- END CSS -->
+
+<script type="text/javascript">
+var sf_currency = "&#8364;";
+</script>
+<script type="text/javascript" src="http://js.static-store.com/scripts/lib_ajax_v2.js?d=20170616"></script>
+<script type="text/javascript" src="http://js.static-store.com/scripts/common.js?d=20170809"></script>
+
+
+<script src="http://www.store-factory.com/jquery1.min.js"></script>
+<script src="http://www.store-factory.com/animation.js"></script>
+
+
+
+
+<script src="/mag/scripts/md5.js" type="text/javascript"></script>
+<script src="/mag/scripts/createstore.js?v=201609201" type="text/javascript"></script>
+
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:82635,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script type="text/javascript">
+(function(a,e,c,f,g,b,d){var h={ak:"1029744702",cl:"OtRgCOWi0GEQvtCC6wM"};a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};a[f]||(a[f]=h.ak);b=e.createElement(g);b.async=1;b.src="//www.gstatic.com/wcm/loader.js";d=e.getElementsByTagName(g)[0];d.parentNode.insertBefore(b,d);a._googWcmGet=function(b,d,e){a[c](2,b,h,d,null,new Date,e)}})(window,document,"_googWcmImpl","_googWcmAk","script");
+</script>
+
+<script type="text/javascript">
+var callback = function(formatted_number, unformatted_number) {
+var e = document.getElementsByClassName('Click2Call')[0];
+e.href = "tel:" + unformatted_number;
+e.innerHTML = "";
+e.appendChild(document.createTextNode(formatted_number));
+};
+ window.onload=_googWcmGet(callback, '01 84 16 79 37');
+</script>
+
+
+<script type="text/javascript">
+function showChar(numit,total){
+	sf_innerHTML('par_g','(');
+	sf_innerHTML('par_d',')');
+    if (numit == 0) {
+        sf_innerHTML('numit_basket', '0');
+        sf_innerHTML('charact_basket', 'article');
+    } else if (numit == 1) sf_innerHTML('charact_basket', 'article');
+    else if (numit > 1) sf_innerHTML('charact_basket', 'articles');
+	if(total){
+		 var it='T.T.C.';
+				sf_innerHTML('chartotal_basket','Total:');
+		sf_innerHTML('currency_basket','&#8364;');
+		sf_innerHTML('charit_basket',it);
+ 	}else{
+		sf_innerHTML('chartotal_basket','');
+		sf_innerHTML('currency_basket','');
+		sf_innerHTML('charit_basket','');
+	}
+}
+
+function showChar_dbasket(total){
+	 var it = 'T.T.C.';
+    	sf_innerHTML('chartotal_dbasket','Total:');
+	sf_innerHTML('currency_dbasket','&#8364;');
+	sf_innerHTML('charit_dbasket',it);
+	if(total!=0){
+		}else{
+		sf_innerHTML('d_basket_delivery','');
+	}
+}
+function numstock(){
+		alert('En rupture de stock');
+	}
+
+function popup_alert(type, divname, param) {
+    if (type == 'stocklimit')
+        sf_innerHTML(divname, "<span>Le stock est insuffisant. " + param + " unités ont été rajoutées au panier</span>");
+
+    document.getElementById(divname).style.display = 'inline';
+}
+</script>
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-9480276-1', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+
+</head>
+<body onload="callGetBasket('fr','1','','');">
+	
+  
+<div class="bkg_texture">
+<div id="master">
+<div id="top">
+<div id="logo" itemscope itemtype="http://schema.org/Organization">
+    <a itemprop="url" href="http://www.store-factory.com" title="Accueil">
+
+     
+			<img itemprop="logo" src="http://www.store-factory.com/img/logo_temp.gif"  alt="" />
+			<span>
+		 
+			Accueil
+			</span>
+</a>
+        	    </div>
+<div id="comand">
+<ul>
+<li class="start"></li>
+<li class="help"><a href="http://www.store-factory.com/mag/fr/help_99.php" title="aide"><span>aide</span></a></li>
+<li class="account"><a href="http://www.store-factory.com/mag/fr/acc_menu.php" title="mon compte"><span>mon compte</span></a></li>
+
+
+<li class="basket"><a href="http://www.store-factory.com/mag/fr/shoppingcart.php" title="panier"><span>panier</span></a>
+<div id="item_basket">
+<span id="par_g" class="par_g"></span>
+<div id="nb_article">
+<span id="numit_basket"></span>
+<span id="charact_basket"></span>
+</div>
+<div id="total_basket">
+<span id="chartotal_basket"></span>
+<span id="totalit_basket"></span><span id="currency_basket"></span><span id="charit_basket"></span>
+</div>
+<span id="par_d" class="par_d"></span>
+</div>
+</li>
+<li class="order"><a href="http://www.store-factory.com/mag/fr/basket.php" title="commander"><span>commander</span></a></li>
+
+<li class="end"></li>
+</ul>
+</div>
+</div>
+     
+<!-- POPUP POUR LE PANIER -->
+		
+	
+			<div id="popup_div_bkjs" class="pop_up pop_alert">
+				<table><tr><td >
+					<div class="sf_pop sf_pop_height">
+							<div class="top">
+								<span>Ajouter au panier</span>
+								<input class="btn_short close" type="button" value="X" onclick="document.getElementById('popup_div_bkjs').style.display='none'"  />
+							</div>
+							<div class="contener">
+								<p>Le produit a été ajouté au panier <span id="popupbkjs_quantity"></span></p><p id="popupbkjs_stockinsufficient">Le stock est insuffisant.<span id="popupbkjs_stockinsufficient_number"></span> unités ont été rajoutées au panier</p><div id="content_popup_div_bkjs"></div><div id="content_popup_bsk_onglet""></div>
+							</div>
+							<div class="bottom">
+								<input type="button" class="btn btn_1" onclick="document.getElementById('popup_div_bkjs').style.display='none'" value="Continuer" />		<input type="button" class="btn btn_2" onclick="window.location='http://www.store-factory.com/mag/fr/shoppingcart.php'" value="Commander" />
+							</div>
+					</div>
+				</td></tr></table>
+			</div>     
+<!-- POPUP POUR LE STOCK -->
+    
+	
+			<div id="alertStock" class="pop_up pop_alert">
+				<table><tr><td >
+					<div class="sf_pop sf_pop_height">
+							<div class="top">
+								<span>Stock épuisé.</span>
+								<input class="btn_short close" type="button" value="X" onclick="document.getElementById('alertStock').style.display='none'"  />
+							</div>
+							<div class="contener">
+								<span id='txt_alertStock'>En rupture de stock</span>
+							</div>
+							<div class="bottom">
+								<input type="button" class="btn btn_1" onclick="document.getElementById('alertStock').style.display='none'" value="Fermer" />
+							</div>
+					</div>
+				</td></tr></table>
+			</div> <div id="popup_div_stocklimit" class="pop_up"></div>
+
+    
+			<div id="alertMiniQuantityPurchase" class="pop_up pop_alert">
+				<table><tr><td >
+					<div class="sf_pop sf_pop_height">
+							<div class="top">
+								<span>Quantité minimum d'achat</span>
+								<input class="btn_short close" type="button" value="X" onclick="document.getElementById('alertMiniQuantityPurchase').style.display='none'"  />
+							</div>
+							<div class="contener">
+								<span id='txt_alertMiniQuantityPurchase'>La quantité minimum d'achat n'est pas atteinte</span>
+							</div>
+							<div class="bottom">
+								<input type="button" class="btn btn_1" onclick="document.getElementById('alertMiniQuantityPurchase').style.display='none'" value="Fermer" />
+							</div>
+					</div>
+				</td></tr></table>
+			</div> 
+<div id="navig">
+		<ul id="menu">
+	<li class="start">&nbsp;</li> 
+				
+									<li class="m1 mns" >
+		<a title="Agences" href="http://www.store-factory.com/nos-agences.htm" class="menu"><span>Agences</span></a>
+	</li>						<li class="i" ></li>
+							<li class="m2 mns" >
+		<a title="Boutique" href="http://www.store-factory.com/boutique.htm" class="menu"><span>Boutique</span></a>
+	</li>						<li class="i" ></li>
+							<li class="m3 mns" >
+		<a title="Back-office" href="http://www.store-factory.com/votre-outil-administration.htm" class="menu"><span>Back-office</span></a>
+	</li>						<li class="i" ></li>
+							<li class="m4 mns" >
+		<a title="Assistance" href="http://www.store-factory.com/votre-assistance.htm" class="menu"><span>Assistance</span></a>
+	</li>						<li class="i" ></li>
+							<li class="m5 mns" >
+		<a title="Tarifs" href="http://www.store-factory.com/chez-store-factory-tout-est-compris.htm" class="menu"><span>Tarifs</span></a>
+	</li>						<li class="i" ></li>
+							<li class="m6 mns" >
+		<a title="Références" href="http://www.store-factory.com/nos-references.htm" class="menu"><span>Références</span></a>
+	</li>						<li class="i" ></li>
+							<li class="m7 mns" >
+		<a title="Partenaires" href="http://www.store-factory.com/nos-partenaires.htm" class="menu"><span>Partenaires</span></a>
+	</li>		<li class="end">&nbsp;</li>
+	</ul>
+	</div>
+
+		
+<!-- horizontal menu -->
+<div id="left"><p id="left_top"><span>&nbsp;</span></p><div id="left_contener">
+<div id="ff_container" style="display:none"></div>
+<div id="offer" class="arround offer">
+
+<ul>
+<li>
+<a href="http://www.store-factory.com/nouveautes.htm" class="p1" title="Nouveautés">Nouveautés</a>
+</li>
+<li>
+<a href="http://www.store-factory.com/promotions.htm" class="p2" title="Promotions">Promotions</a>
+</li>
+</ul>
+</div>
+<div id="offer_2" class="arround offer">
+<h2>Mise en avant liste</h2><ul>
+
+<li>
+<a href="http://www.store-factory.com/gamme-apple.htm" class="p1" title="Gamme Apple">Gamme Apple</a>
+</li>
+</ul>
+</div>
+<form action="http://www.store-factory.com/mag/fr/search_list.php" method="post" onsubmit="if(document.getElementById('ctx_search').value.length>1){ return true;} else{ alert('Veuillez-saisir au moins 3 caractères!'); return false;}">
+<div id="search" class="arround">
+<p>
+<input type="text" name="ctx_search" id="ctx_search" size="10" class="ibox"/><input type="button" value="ok" class="btn_short" onclick="if(document.getElementById('ctx_search').value.length>1) this.form.submit(); else alert('Veuillez-saisir au moins 3 caractères!');" />
+</p>
+</div>
+</form>
+<div id="contact_us" class="arround">
+<input type="submit" value="contact" class="btn" onclick='window.location="http://www.store-factory.com/mag/fr/contact.php"' />
+</div>
+<div id="newsletter" class="arround">
+	<p></p>
+<input type="submit" value="s'abonner" class="btn" onclick='window.location="http://www.store-factory.com/mag/fr/account_04.php"' />
+</div>
+
+<div id="service" class="arround service">
+<ul>
+<li class="pq"><a href="http://www.store-factory.com/mag/fr/help_12.php">Mentions légales</a></li><li class="pa"><a href="http://www.store-factory.com/mag/fr/help_07.php">Sécurité</a></li></ul>
+</div>
+<div id="partner" class="arround">
+	<ul>
+
+<li class="p1">
+							<img src="http://www.store-factory.com/content/lnk_577456_fr_h.gif" alt="CB"/>
+				</li>
+</ul>
+</div>
+</div>
+<p id="left_bottom"><span>&nbsp;</span></p>
+</div>
+<script type="text/javascript">
+if(document.getElementById('ff_container') && document.getElementById('left')){
+		document.getElementById('left').className='left_filter_facet';
+}
+</script>
+<!-- menu_cached -->
+	
+
+
+<form method="post" action="http://www.store-factory.com/mag/fr/home.php" id="formulaire">
+</form>
+<div id="work" class="work_home">
+<div id="home" class="work_margin">
+<h1>&nbsp;</h1>
+<!-- homepagetype : tab-->
+<table cellspacing="0" cellpadding="0" id="mag_table_home" class="mag_table_home">
+  <tr id="tl_01">
+     <td  colspan="1" id="tc_01">
+<h2><a href="http://www.store-factory.com/mag/fr/page-577500.htm"></a></h2>
+<p class="text"></p>
+<p class="btn_pos"><input value="continuer" type="button" class="btn btn_hp_003"
+onclick="document.getElementById('formulaire').action='http://www.store-factory.com/mag/fr/page-577500.htm';document.getElementById('formulaire').submit();" /></p>
+</td>
+  </tr>
+  <tr id="tl_02">
+     <td  colspan="1" id="tc_02">
+</td>
+  </tr>
+  <tr id="tl_03">
+     <td  colspan="1" id="tc_03">
+<h2><a href="http://www.store-factory.com/577501.htm"></a></h2>
+<p class="text"><div class="leftBlock">
+<h2 class="h2">Créer un site e-commerce<br />
+n&#039;a jamais été aussi simple</h2>
+
+<h3>Pilotez votre e-commerce avec l&#039;outil le plus simple<br />
+du marché.</h3>
+
+<p><input onclick="self.location.href=&#039;http://www.store-factory.com/essai-gratuit.htm&#039;;" type="submit" value="faire un essai" /></p>
+</div></p>
+<p class="btn_pos"><input value="continuer" type="button" class="btn btn_hp_003"
+onclick="document.getElementById('formulaire').action='http://www.store-factory.com/577501.htm';document.getElementById('formulaire').submit();" /></p>
+</td>
+  </tr>
+  <tr id="tl_04">
+     <td  colspan="1" id="tc_04">
+<h2><a href="http://www.store-factory.com/577501-577503.htm"></a></h2>
+<p class="text"><div class="leftBlock">
+<h2 class="h2">Professionnel, et fier de<br />
+son expérience</h2>
+
+<h3>Depuis plus de 10 ans, Plusieurs milliers d&#039;e-commerçants<br />
+ont fait confiance à Store Factory.</h3>
+
+<p><input type="submit" value="voir nos références" onclick="self.location.href=&#039;http://www.store-factory.com/nos-references.htm&#039;;"/></p>
+</div>
+
+<div class="rightBlock"><img alt="" src="http://www.store-factory.com/media/accueil_image_professionnel.png" style="width: 458px; height: 304px;" /></div></p>
+<p class="btn_pos"><input value="continuer" type="button" class="btn btn_hp_003"
+onclick="document.getElementById('formulaire').action='http://www.store-factory.com/577501-577503.htm';document.getElementById('formulaire').submit();" /></p>
+</td>
+  </tr>
+  <tr id="tl_05">
+     <td  colspan="1" id="tc_05">
+<h2><a href="http://www.store-factory.com/577501-577503-577504.htm"></a></h2>
+<p class="text"><div class="rightBlock">
+<h2 class="h2">La solution la plus<br />
+complète et performante</h2>
+
+<h3>Un outil complet avec plus de 500 fonctionnalités :<br />
+filtre à facette, mobile, codes promotion,<br />
+exports paramétrables.</h3>
+
+<p><input onclick="self.location.href=&#039;http://www.store-factory.com/les-fonctionnalites-chez-store-factory.htm&#039;;" type="submit" value="découvrir nos fonctionnalités" /></p>
+</div>
+
+<div class="leftBlock"><img alt="" src="http://www.store-factory.com/media/accueil_image_solution.png" style="width: 448px; height: 363px;" /></div></p>
+<p class="btn_pos"><input value="continuer" type="button" class="btn btn_hp_003"
+onclick="document.getElementById('formulaire').action='http://www.store-factory.com/577501-577503-577504.htm';document.getElementById('formulaire').submit();" /></p>
+</td>
+  </tr>
+  <tr id="tl_06">
+     <td  colspan="1" id="tc_06">
+<h2><a href="http://www.store-factory.com/577501-577503-577504-577505.htm"></a></h2>
+<p class="text"><div class="leftBlock">
+<h2 class="h2">Résolument humain dans son<br />
+accompagnement</h2>
+
+<h3>Notre équipe de professionnels est à votre disposition pour<br />
+vous accompagner tout le long de votre projet.</h3>
+
+<p><input onclick="self.location.href=&#039;http://www.store-factory.com/l-equipe-store-factory.htm&#039;;" type="submit" value="découvrir notre équipe" /></p>
+</div>
+
+<div class="rightBlock"><img alt="" src="http://www.store-factory.com/media/accueil_image_humain.jpg" style="width: 420px; height: 437px;" /></div></p>
+<p class="btn_pos"><input value="continuer" type="button" class="btn btn_hp_003"
+onclick="document.getElementById('formulaire').action='http://www.store-factory.com/577501-577503-577504-577505.htm';document.getElementById('formulaire').submit();" /></p>
+</td>
+  </tr>
+</table>
+
+
+</div>
+</div>
+
+
+<div id="link_contener">
+<div id="link">
+<ul>
+<li class="start"><a href="http://www.store-factory.com/mag/fr/contact.php" class="link_contact" title="Contact">Contact</a></li>
+
+        <li class="i"><a id="linkFavorite" href="http://www.store-factory.com" rel="sidebar" class="link_favorites" title="store-factory.com">Ajouter à mes favoris</a></li>
+    
+<li class="i"><a href="http://www.store-factory.com/mag/fr/help_99.php" class="link_help" title="Aide">Aide</a></li>
+<li class="i"><a href="http://www.store-factory.com/mag/fr/help_06.php" class="link_cgv" title="Conditions de vente">Conditions de vente</a></li>
+<li class="i"><a href="http://www.store-factory.com/mag/fr/help_11.php" class="link_copyright" title="Copyright">Copyright</a></li>
+<li class="i"><a href="http://www.store-factory.com/mag/fr/help_12.php" class="link_legales" title="Mentions légales">Mentions légales</a></li>
+<li class="i"><a href="http://" class="link_designer" title=""></a></li>
+<li class="end"><a href="http://www.store-factory.com" class="link_sup" title="Boutique en ligne" target="_blank">Store-Factory</a></li>
+</ul></div></div></div>
+</div><!-- fin bkg_color -->
+                <div id="footer_contener"><div id="footer"><table border="0" cellpadding="0" cellspacing="0" style="height:380px;width:960px;">
+	<tbody>
+		<tr>
+			<td class="footerTitle" style="width: 395px;">Les nouveautés</td>
+			<td class="footerTitle" style="width: 195px;">Nos clients</td>
+			<td class="footerTitle" style="width: 265px;">Nos engagements</td>
+			<td class="footerTitle">A propos</td>
+		</tr>
+		<tr>
+			<td class="footerList">
+			<div style="color: rgb(85, 85, 85); font-family: Arial, Helvetica, sans-serif, sans-serif; line-height: normal;"><span style="color:#FFFFFF;"><span style="font-size: 15px;"><strong>Un nouvel outil de communication est désormais disponible pour vous informer des mises à jour de la plateforme !</strong></span></span></div>
+
+			<div style="color: rgb(85, 85, 85); font-family: Arial, Helvetica, sans-serif, sans-serif; line-height: normal;"><br />
+			<span style="color:#FFFFFF;">Cette page détaille les principales corrections et améliorations fournies par l’équipe technique à chaque nouvelle version.<br />
+			Le site se découpe de la manière suivante : Détail de la prochaine version, et historique des versions précédentes.</span></div>
+
+			<div style="color: rgb(85, 85, 85); font-family: Arial, Helvetica, sans-serif, sans-serif; line-height: normal;"> </div>
+
+			<div style="color: rgb(85, 85, 85); font-family: Arial, Helvetica, sans-serif, sans-serif; line-height: normal;"><span style="font-size:16px;"><a href="http://next.store-factory.com/"><span style="color:#00CAE9;"><u><strong>DECOUVRIR L'OUTIL</strong></u></span></a></span></div>
+
+			<div style="color: rgb(85, 85, 85); font-family: Arial, Helvetica, sans-serif, sans-serif; line-height: normal;"> </div>
+
+			<div style="color: rgb(85, 85, 85); font-family: Arial, Helvetica, sans-serif, sans-serif; line-height: normal;"> </div>
+			</td>
+			<td class="footerList">
+			<ul>
+				<li><a href="http://www.store-factory.com/nos-references.htm">Les références</a></li>
+			</ul>
+			</td>
+			<td class="footerList">
+			<ul>
+				<li><a href="http://www.store-factory.com/assistance-technique.htm">Assistance technique</a></li>
+				<li><a href="http://www.store-factory.com/hebergement.htm">Hébergement</a></li>
+				<li><a href="http://www.store-factory.com/maintenance-et-evolutivite.htm">Maintenance et Evolutivité</a></li>
+			</ul>
+			</td>
+			<td class="footerList">
+			<ul>
+				<li><a href="http://www.store-factory.com/valeurs.htm">Valeurs</a></li>
+				<li><a href="http://www.store-factory.com/historique.htm">Historique</a></li>
+				<li><a href="http://www.store-factory.com/nos-partenaires.htm">Partenaires</a></li>
+				<li><a href="http://www.store-factory.com/recrutement.htm">Recrutement</a></li>
+				<li><a href="/mentions-legales-698620.htm">Mentions légales</a></li>
+				<li><a href="/698618.htm">C.G.U</a></li>
+				<li><a href="/la-politique-de-store-factory-en-matiere-utilisation-de-cookies.htm">Utilisation des cookies</a></li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" id="footerBottom">
+			<ul id="footerSocial">
+				<li><a href="http://www.store-factory.com/rss_sf.xml" onclick="return !window.open(this.href);"><img src="http://www.store-factory.com/img/top_rss.png" /></a></li>
+				<li><a href="https://www.facebook.com/pages/Store-Factory/145296492173809" onclick="return !window.open(this.href);"><img src="http://www.store-factory.com/img/top_facebook.png" /></a></li>
+				<li><a href="https://twitter.com/Store_Factory" onclick="return !window.open(this.href);"><img src="http://www.store-factory.com/img/top_twitter.png" /></a></li>
+			</ul>
+			<img id="footerTelephone" src="http://www.store-factory.com/img/footer_telephone.png" />
+			<ul id="footerTopButtons">
+				<li><a href="http://www.store-factory.com/contactez-nous.htm">Contactez-nous</a></li>
+				<li><a href="http://www.store-factory.com/essai-gratuit.htm">Essai gratuit</a></li>
+				<li><a href="http://bo.store-factory.com/" onclick="return !window.open(this.href);">Espace client</a></li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" id="footerPartners"><span>Nos partenaires</span>
+			<div id="partnersLogosContainer">
+			<div id="partnersLogos"><img alt="" src="http://www.store-factory.com/media/logos_partenaires.png" style="width: 3191px; height: 38px;" /></div>
+			</div>
+			 </td>
+		</tr>
+	</tbody>
+</table></div></div>
+        
+
+
+    <!--cookie banner -->
+    <script type="text/javascript">
+        var okCookie = getCookie("okCookie");
+        var affichage = "";
+
+        if (okCookie === null) {
+            affichage += "<div id=\"cookie-law-info-bar\"><p>";
+            var txtCookie = "En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de Cookies à des fins statistiques et commerciales.";
+            if (txtCookie !== null && txtCookie !== "") {
+                affichage += txtCookie;
+            } else {
+                var locale = "1";
+                if (locale === 1) {
+                    affichage += "En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de Cookies à  des fins statistiques et commerciales.";
+                } else {
+                    affichage += "This website uses cookies to improve your experience. Continuing the navigation you allow the use of cookies.";
+                }
+            }
+            affichage += "<br/><a id=\"cookie-law-close-button\"><button onclick=\"closeCookieBar()\">OK</button></a></p></div>";
+            document.body.innerHTML += affichage;
+        }
+    </script>
+
+
+<style>
+    #extraTelephone {position:absolute; top: 0; font-size: 2em; font-weight: bold; letter-spacing: .0625em;}
+</style>
+
+<!-- - - - - - - - - - - - - HOME - - - - - - - - - - - - - -->
+
+
+<!-- - - - - - - - STYLE - - - - - - - - -->
+
+<style>
+
+body {background:url(img/body_home.jpg) top center no-repeat;}
+#top {position:absolute;background:none;}
+#navig {position:absolute;background:none;}
+#extraSocial {position:absolute;}
+#extraTopButtons {position:absolute;}
+#extraLogo {position:absolute;}
+
+</style>
+
+<div id="extradiv2">
+
+<!-- - - - - - - ANIMATION - - - - - - - -->
+
+    <ul class="animation">
+        <li id="animationImg1"><a href="/migrez-votre-boutique-en-ligne-584148.htm"><img src="img/pix.gif" alt=""></a></li>
+        <li id="animationImg2"><a href="/nos-marques.htm"><img src="img/pix.gif" alt=""></a></li>
+        <li id="animationImg3"><a href="/votre-boutique-sur-mobile-incluse-dans-abonnement-store-factory.htm"><img src="img/pix.gif" alt=""></a></li>
+        <li id="animationImg4"><a href="/hebergement.htm"><img src="img/pix.gif" alt=""></a></li>
+        <li id="animationImg5"><a href="/chez-store-factory-tout-est-compris.htm"><img src="img/pix.gif" alt=""></a></li>
+    </ul>
+
+<!-- - - - - - - COMPTEURS - - - - - - - -->
+
+    <div id="extraCounters">
+        <input type="hidden" id="counter_pages" name="counter_pages" value="0" />
+        <script type="text/javascript">
+        getCounter('fr');
+        refreshCounter('fr');
+        </script>
+    <div id="number" style="z-index: 2000;"></div>
+    </div>
+
+</div>
+
+<div id="extraMenu"></div>
+
+
+<!-- - - - - - - - - - - -  EXTRADIV - - - - - - - - - - - -->
+
+<div id="extradiv">
+    <ul id="extraSocial">
+        <li><a href="http://www.store-factory.com/rss_sf.xml" onclick="return !window.open(this.href);"><img src="http://www.store-factory.com/img/top_rss.png" /></a></li>
+        <li><a href="https://www.facebook.com/pages/Store-Factory/145296492173809" onclick="return !window.open(this.href);"><img src="http://www.store-factory.com/img/top_facebook.png" /></a></li>
+        <li><a href="https://twitter.com/Store_Factory" onclick="return !window.open(this.href);"><img src="http://www.store-factory.com/img/top_twitter.png" /></a></li>
+    </ul>
+    <!--<img id="extraTelephone" src="http://www.store-factory.com/img/top_telephone.png" />-->
+    <p id="extraTelephone"><a class="Click2Call" href="tel:01 84 16 79 37">01 84 16 79 37</a></p>
+    <ul id="extraTopButtons">
+        <li><a href="http://www.store-factory.com/contactez-nous.htm">Contactez-nous</a></li>
+        <li><a href="http://www.store-factory.com/essai-gratuit.htm">Essai gratuit</a></li>
+        <li><a href="http://bo.store-factory.com" onclick="return !window.open(this.href);">Espace client</a></li>
+    </ul>
+    <div id="extraLogo">
+        <a href="http://www.store-factory.com"><img src="http://www.store-factory.com/img/logo.png" alt="Accueil" /></a>
+    </div>
+</div>
+
+<script>
+
+if(document.querySelector("#formPost table")) document.querySelector("#formPost table").setAttribute("width","460");
+
+</script>
+
+<!-- - - - - - - -  FORMULAIRE ESSAI GRATUIT - - - - - - - -->
+
+
+<a href="https://plus.google.com/110336086079209486262" rel="publisher">Google+</a>
+
+
+
+<!-- Code Google de la balise de remarketing -->
+<!--------------------------------------------------
+Les balises de remarketing ne peuvent pas être associées aux informations personnelles ou placées sur des pages liées aux catégories à caractère sensible. Pour comprendre et savoir comment configurer la balise, rendez-vous sur la page http://google.com/ads/remarketingsetup.
+--------------------------------------------------->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1029744702;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1029744702/?value=0&guid=ON&script=0"/>
+</div>
+</noscript>
+
+<!-- Code SalesIQ Live Chat -->
+<script type="text/javascript">
+var $zoho= $zoho || {salesiq:{values:{},ready:function(){}}};var d=document;s=d.createElement("script");s.type="text/javascript";
+s.defer=true;s.src="https://salesiq.zoho.com/fiducialyproximite/float.ls?embedname=fiducialyproximite";
+t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);
+</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4341dee21b","applicationID":"5266018","transactionName":"ZVdQbUtYXRECW0FZVlwdZ0tQFkQHAWdYUV4dVVdXXEtSDjxRW1RcShxCUUk=","queueTime":0,"applicationTime":33,"atts":"SRBTGwNCTh8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

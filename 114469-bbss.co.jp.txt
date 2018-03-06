@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html jang="ja">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="shortcut icon" type="image/x-icon" href="https://www.bbss.co.jp/favicon.ico" />
+<link rel="stylesheet" href="css/video.css" />
+<meta name="ROBOTS" content="NOINDEX" />
+<title>BBソフトサービス株式会社</title>
+<meta name="description" content="このサイトは、BBソフトサービス株式会社が運営する、企業情報サイトです。">
+<link rel="canonical" href="https://www.bbss.co.jp/" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N25PTX5');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N25PTX5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="covervid-wrapper">
+    <video class="covervid-video" onended="fadeOut();" autoplay  onclick="this.play(); return(false) controls='controls';">
+    <source src="media/op2.mp4" type="video/mp4;">
+    <source src="media/op2.webm" type="video/webm;" codecs="vp8, vorbis">
+    </video>
+    <div class="skip"><a id="skipbtn"><img src="images/btn_skip.png" width="155" alt="skip" /></a></div>
+</div>
+
+<script src="js/vendor/jquery.min.js"></script> 
+<script src="js/vendor/covervid.min.js"></script> 
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+
+var redirectPass = 'home.html';
+
+$(function(){
+    /*if($.cookie("access")){
+        $('#first').window.location.href = 'home.html';);
+    }*/
+    $(window).load(function(){
+        $.cookie("access",$('body').addClass('access'));
+    })
+	
+	//デバイスを判定して、SP・タブレットをhome.htmlに飛ばす
+    var agent = navigator.userAgent;
+    if(agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1 || agent.search(/iPod/) != -1 || agent.search(/Android/) != -1){
+        location.href = redirectPass;
+	}
+	
+	// ページ遷移時にフェードアウトさせるclickイベントの要素を指定。
+	$('#skipbtn').click(function() {
+		fadeOut();
+	});
+});
+
+function  fadeOut(){
+   $(function(){
+	  // アニメーションで透過0になるまでフェードアウトさせる。速度ミリ秒
+	  $('body').animate({"opacity": 0}, 1000, function() {
+		location.href = redirectPass;
+	  });
+	  return false;
+   });
+}
+
+//videoを画面いっぱいにする
+$('.covervid-video').coverVid(1920, 1080);
+
+</script> 
+<!-- SiteCatalyst code
+Copyright 1997-2008 Omniture, Inc. More info available at
+http://www.omniture.com --> 
+<script language="JavaScript" type="text/javascript" src="js/s_code.js"></script>
+<script language="JavaScript" type="text/javascript"><!--
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+s.pageName=""
+s.server=""
+s.channel=""
+s.pageType=""
+s.prop1=""
+s.prop2=""
+s.prop3=""
+s.prop4=""
+s.prop5=""
+s.prop6=""
+s.prop7=""
+s.prop8=""
+s.prop9=""
+s.prop10=""
+/* Conversion Variables */
+s.campaign=""
+s.state=""
+s.zip=""
+s.events=""
+s.products=""
+s.purchaseID=""
+s.eVar1=""
+s.eVar2=""
+s.eVar3=""
+s.eVar4=""
+s.eVar5=""
+s.eVar6=""
+s.eVar7=""
+s.eVar8=""
+s.eVar9=""
+s.eVar10=""
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script> 
+<!--/DO NOT REMOVE/--> 
+<!-- End SiteCatalyst code -->
+</body>
+</html>

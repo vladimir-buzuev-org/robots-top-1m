@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Let's Ride - Homepage</title>
+
+    <meta name="description" content="Free bike rides to join, and great cycle routes to explore, from British Cycling and HSBC UK.">
+    <meta property="og:title" content="Homepage">
+    <meta property="og:type" content="website">
+    
+    <meta property="og:description" content="Free bike rides to join, and great cycle routes to explore, from British Cycling and HSBC UK.">
+    <meta property="og:url" content="https://www.letsride.co.uk">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Homepage">
+    <meta name="twitter:description" content="Free bike rides to join, and great cycle routes to explore, from British Cycling and HSBC UK.">
+    
+    <meta name="twitter:url" content="https://www.letsride.co.uk">
+    <link rel="canonical" href="https://www.letsride.co.uk" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://www.letsride.co.uk/images/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.letsride.co.uk/images/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.letsride.co.uk/images/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.letsride.co.uk/images/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://www.letsride.co.uk/images/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://www.letsride.co.uk/images/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="https://www.letsride.co.uk/images/favicon/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="https://www.letsride.co.uk/images/favicon/favicon-16x16.png" sizes="16x16"/>
+    <meta name="application-name" content="Let's Ride"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="https://www.letsride.co.uk/images/favicon/mstile-144x144.png" />
+
+    <!-- CSS -->
+        <link href="/css/global.min.css?t=1504189848" rel="stylesheet" type="text/css">
+
+    
+        
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+                    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-54D8P2');</script>
+    <!-- End Google Tag Manager -->
+
+
+</head>
+<body class="page-default">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54D8P2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="header">
+    <div id="header-messages"></div>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <!--Full width, float logo, pos:abs menu button-->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img src="https://www.letsride.co.uk/images/bc-hsbc-logo-color.svg" alt="" /></a>
+                <button type="button" class="btn btn-primary collapsed menu-button" data-toggle="collapse" data-target="#js-nav-collapse" aria-expanded="false" aria-controls="js-nav-collapse">Menu</button>
+            </div>
+
+            <!--pos:abs login|join links-->
+            <div class="header__account navbar-right">
+                                    <a href="#" class="btn btn-default" role="button" data-toggle="collapse" data-target="#user-login-panel" aria-expanded="false" aria-controls="user-login-panel">Log in</a><a href="https://www.letsride.co.uk/users/account/signup" class="btn btn-keyline-purple">Join</a>
+                            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="js-nav-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Rides
+                            <i class="bc-fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/city-ride">HSBC UK City Ride</a></li>
+                            <li><a href="/guided-rides">HSBC UK Guided Rides</a></li>
+                            <li><a href="/social">HSBC UK Ride Social</a></li>
+                            <li><a href="/breeze">HSBC UK Breeze</a></li>
+                            <li><a href="/routes">Cycle routes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Guides
+                            <i class="bc-fa-chevron-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/guides/bikes">Bikes</a></li>
+                            <li><a href="/guides/places">Places</a></li>
+                            <li><a href="/guides/healthy-living">Healthy living</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+
+    <div class="collapse" id="user-login-panel">
+        <div id="header-login" class="header__login" >
+            <div class="js-login">
+            <div id="header-login-form-message" role="alert" class="collapse in  header__login ">
+    </div>
+
+            <form method="POST" action="https://www.letsride.co.uk/users/account/login"
+                  class="js-validate-form"
+                  id="header-login-login-form"
+                  data-response-type="url"
+                  data-message-wrapper="#header-login-form-message"
+                  data-message-set="login"
+                  data-loader="#header-login-login-loader">
+
+                <input type="hidden" name="_token" value="zvpf97BxRwiD2JazmVTthBAPz9hFymyDaJKVxFlT">
+
+
+                <input type="hidden" name="redirect_to" value="https://www.letsride.co.uk">
+                <div class="form-group">
+                    <label for="header-login-login-email">Email</label>
+                    <input id="header-login-login-email" name="email" type="email"
+                           class="form-control js-quick-signup-email parsley--hide-success-style" data-parsley-trigger="change"
+                           data-parsley-type="email" data-parsley-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="header-login-login-password">Password</label>
+                    <input id="header-login-login-password" name="password" type="password" class="form-control parsley--hide-success-style"
+                           data-parsley-trigger="change" data-parsley-required="true">
+                </div>
+
+
+                <div class="button-container">
+
+                    <input id="header-login-login-submit" class="btn btn-default" type="submit" value="Log in">
+
+                    
+                    
+                                            <a href="https://www.letsride.co.uk/users/account/forgot-password?" class="js-link-forgot-password js-hide-trigger forgot-password highlighted-link js-copy-field-val" role="button" data-toggle="collapse" data-target="#header-login-forgot-password" aria-expanded="false" aria-controls="header-login-forgot-password" data-hide-target="#header-login .js-login" data-hide-effect="slideUp" data-copy-trigger="click" data-copy-from="#header-login-login-email" data-copy-to="#header-login-forgot-password-email">Forgot password?</a>
+                    
+
+                                            <a href="#" class="bc-glyphicon-remove dashboard-navigation__actions__close " data-toggle="collapse" data-target="#user-login-panel" aria-expanded="false" aria-controls="user-login-panel"></a>
+                    
+
+                </div>
+
+                <div id="header-login-login-loader" class="loader"></div>
+
+            </form>
+        </div>
+
+        <div id="header-login-forgot-password" class="collapse">
+    <p class="sr-only">Forgot password</p>
+
+    <div id="header-login-forgot-password-form-message"></div>
+
+    <form method="POST" action="https://www.letsride.co.uk/users/account/forgot-password" accept-charset="UTF-8" id="form-forgot-password" class="js-validate-form" data-response-type="url" data-message-wrapper="#header-login-forgot-password-form-message" data-message-set="forgot-password"><input name="_token" type="hidden" value="zvpf97BxRwiD2JazmVTthBAPz9hFymyDaJKVxFlT">
+
+        <input type="hidden" name="redirect_to" class="js-void-value-change" value="/users/account/forgot-password-message">
+
+        <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input class="form-control" id="header-login-forgot-password-email" data-parsley-trigger="change" data-parsley-type="email" data-parsley-required="true" name="forgot-password-email" type="email">
+        </div>
+
+        <div class="button-container">
+
+            <input id="header-login-forgot-password-submit" class="btn btn-default" type="submit" value="Reset password">
+
+            <a href="#" class="h-no-js__hide js-show-trigger highlighted-link"
+               data-show-effect="slideDown"
+               data-show-target="#header-login .js-login"
+               data-toggle="collapse"
+               role="button"
+               data-target="#header-login-forgot-password"
+               aria-expanded="true"
+               aria-controls="header-login-forgot-password">
+                Back to login
+            </a>
+        </div>
+
+    </form>
+</div>
+
+
+</script>
+
+
+    
+    </div>
+
+
+
+
+    </div>
+
+    
+            <div class="header__search">
+    <div class="container-fluid">
+        <div class="header__search__form">
+    <form method="GET" action="" class="search-location js-search-location">
+        <div id="header-form-message" role="alert" class="collapse in  header__search__form ">
+    </div>
+        <p>Find a</p>
+        <div class="input-group input-group-search">
+            <div class="input-group-btn dropdown js-search-category">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span data-selected-search="search-ride" class="js-dropdown-action">Ride</span><span class="bc-fa-chevron-down" aria-hidden="true"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a data-search-category data-action="https://www.letsride.co.uk/rides" data-defaults="search-ride" href="#">Ride</a></li>
+                    <li><a data-search-category data-action="https://www.letsride.co.uk/routes/search" data-defaults="search-route" href="#">Route</a></li>
+                    <li><a data-search-category data-action="https://www.letsride.co.uk/buddies" data-defaults="search-buddy" href="#">Buddy</a></li>
+                    <li><a data-search-category data-action="https://www.letsride.co.uk/groups" data-defaults="search-group" href="#">Group</a></li>
+                </ul>
+            </div>
+
+            <input id="header-location" class="js-gm-autocomplete form-control" type="text" name="location" placeholder="Near my location" data-message-wrapper="#header-form-message" data-submit="true" data-latitude="#header-lat" data-longitude="#header-lng" value="">
+
+                        <input data-search-ride data-search-route data-search-buddy data-search-group type="hidden" id="header-lat" class="js-gm-lat" name="lat" value="">
+            <input data-search-ride data-search-route data-search-buddy data-search-group type="hidden" id="header-lng" class="js-gm-lng" name="lng" value="">
+            <input data-search-ride data-search-route data-search-buddy data-search-group type="hidden" value="10" name="radius">
+            <input data-search-ride type="hidden" value="04/09/2017" name="date_from">
+            <input data-search-ride type="hidden" value="04/12/2017" name="date_to">
+            <input data-search-ride data-search-route type="hidden" value="0" name="distance_min">
+            <input data-search-ride data-search-route type="hidden" value="40" name="distance_max">
+            <input data-search-ride type="hidden" value="0" name="duration_min">
+            <input data-search-ride type="hidden" value="10" name="duration_max">
+            <input data-search-ride type="hidden" value="true" name="permitted_gender">
+            <input data-search-group type="hidden" value="3" name="with_rides">
+            <input data-search-ride type="hidden" name="has_booking_spaces" value="true">
+
+                        
+            <span class="input-group-btn">
+                <button class="btn btn-default js-search-require-lat-lon" data-location="#header-location" data-latitude="#header-lat" data-longitude="#header-lng" type="submit">
+                    <span class="bc-glyphicon-search"></span>
+                    <span class="sr-only">search</span>
+                </button>
+            </span>
+        </div>
+    </form>
+</div>
+
+    </div>
+</div>    </header>
+
+    
+        <div class="container-fluid">
+        <div id="default-message" role="alert" class="collapse in ">
+                                                                                        
+        </div>
+    </div>
+        <div class='block_group_container block_group_container-position_main block_group_container-type_Rows'><div class='block_container block_container-type_row-hero'><div class="row-block color-block  hero-block hero-lg
+            white
+            
+            no-transparency"
+         style="background-image: url('https://media.letsride.co.uk/image/7b1faab7523c9da74af7ca34f4e19294/1920/500');">
+
+    
+    <div class="container-fluid">
+        
+        
+            </div>
+
+    
+</div>
+
+ 
+</div><div class='block_container block_container-type_row-featured'><div class="row-block color-block grey">
+            <div class="container-fluid">
+            <div class="row title">
+                <div class="col-12 text-center">
+                    <h2></h2>
+                </div>
+            </div>
+
+            <div class="row clearfix blocks">
+                <div class="col-6 image-block js-hoverdir">
+    <div class="image-block__background" style="background-image: url('https://media.letsride.co.uk/image/bdac4689e1bcf120075ae9423872f405/820/410')">
+        <h2 class="image-block__title js-hoverdir-title" style="display: block;">Don&rsquo;t miss &lsquo;The Secret Life of Cyclists&rsquo;</h2>
+        <div class="js-hoverdir-overlay image-block__overlay" style="display: block; left: 0px; top: 100%; transition: all 300ms ease;">
+            <h2>Don&rsquo;t miss &lsquo;The Secret Life of Cyclists&rsquo;</h2>
+            <p>HSBC UK have joined forces with Channel 4 for a special cycling edition of &lsquo;The Secret Life of 4, 5 and 6 year olds&rsquo;</p>
+            <a href="https://www.youtube.com/watch?v=f_54TF1Z-QA&amp;list=PLRz9ao70iRy28O-Z6BVxf3oAafAamZKjH&amp;index=1" class="btn btn-white">WATCH NOW</a>
+        </div>
+    </div>
+</div>
+<div class="col-6 image-block js-hoverdir">
+    <div class="image-block__background" style="background-image: url('https://media.letsride.co.uk/image/307afd6c895912efa4060397224c5d1a/820/410')">
+        <h2 class="image-block__title js-hoverdir-title" style="display: block;">Ride for Rewards: Free British Cycling water bottle</h2>
+        <div class="js-hoverdir-overlay image-block__overlay" style="display: block; left: 0px; top: 100%; transition: all 300ms ease;">
+            <h2>Ride for Rewards: Free British Cycling water bottle</h2>
+            <p>We&#039;re giving away a free British Cycling water bottle to everyone who completes the HSBC UK Ride Social Challenge. </p>
+            <a href="https://www.letsride.co.uk/Ride-For-Rewards-Summer-Challenge" class="btn btn-white">Find out more</a>
+        </div>
+    </div>
+</div>
+<div class="col-6 image-block js-hoverdir">
+    <div class="image-block__background" style="background-image: url('https://media.letsride.co.uk/image/305fbf18c47ecabab4f7d79fc2acd019/820/410')">
+        <h2 class="image-block__title js-hoverdir-title" style="display: block;">Join an HSBC UK City Ride</h2>
+        <div class="js-hoverdir-overlay image-block__overlay" style="display: block; left: 0px; top: 100%; transition: all 300ms ease;">
+            <h2>Join an HSBC UK City Ride</h2>
+            <p>Find one of our big traffic-free city centre rides near you and register for free</p>
+            <a href="/city-ride" class="btn btn-white">Find a city ride</a>
+        </div>
+    </div>
+</div>
+<div class="col-6 image-block js-hoverdir">
+    <div class="image-block__background" style="background-image: url('https://media.letsride.co.uk/image/0cfa27a4d46ae206de02cd63a6377c05/820/410')">
+        <h2 class="image-block__title js-hoverdir-title" style="display: block;">Volunteer with British Cycling</h2>
+        <div class="js-hoverdir-overlay image-block__overlay" style="display: block; left: 0px; top: 100%; transition: all 300ms ease;">
+            <h2>Volunteer with British Cycling</h2>
+            <p>Become a British Cycling trained Ride Leader with HSBC UK Guided Rides.</p>
+            <a href="/volunteers" class="btn btn-white">Become a Ride Leader</a>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+
+    
+            <a href="#" class="btn btn-alternate btn-circle js-scroll-to-next btn-circle-bottom-fixed">
+            <span class="bc-fa-chevron-down"></span>
+        </a>
+    
+</div>
+</div><div class='block_container block_container-type_row-onbike'><div class="row-block color-block light">
+    <div class="container-fluid featured-search">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>FIND ME SOME GREAT BIKE RIDES </h1>
+                <div class='wysiwyg clearfix'></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <form class="form-inline js-onbike" action="https://www.letsride.co.uk/rides" data-url-ride="https://www.letsride.co.uk/rides" data-url-route="https://www.letsride.co.uk/routes/search" method="get">
+                    <div class="form-group">
+                        <label for="inputKey" class="control-label">I like to</label>
+                        <div class="styled-select">
+                            <select class="form-control js-onbike-type">
+                                <option value="alone">Ride in a group</option>
+                                <option value="group">Ride alone</option>
+                            </select>
+                        </div>
+                        <label for="inputValue" class="control-label">and I'm looking for</label>
+                        <div class="styled-select js-onbike-ride">
+                            <select class="form-control" name="ride_level[]">
+                                                                    <option value="1">Easygoing rides</option>
+                                                                    <option value="2">Steady rides</option>
+                                                                    <option value="3">Challenging rides</option>
+                                                                    <option value="4">Mountain bike rides</option>
+                                                            </select>
+                        </div>
+                        <div class="styled-select js-onbike-route hide">
+                            <select class="form-control " name="x">
+                                <option value="0,10">Routes 0-10 miles</option>
+                                <option value="10,25">Routes 10-25 miles</option>
+                                <option value="25,">Routes over 25 miles</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputKey" class="control-label">suitable for</label>
+                        <div class="styled-select">
+                            <select class="form-control" name="cycle_types[]">
+                                                                    <option value="5">Road</option>
+                                                                    <option value="4">Hybrid (road tyres)</option>
+                                                                    <option value="3">Hybrid (off road tyres)</option>
+                                                                    <option value="2">Mountain Bike</option>
+                                                            </select>
+                        </div>
+                        <label for="inputValue" class="control-label">near</label>
+                        <input type="text" class="form-control js-gm-autocomplete" required name="location" data-latitude="#block-8-lat" data-longitude="#block-8-lng" value="">
+                    </div>
+
+                    <input type="hidden" class="js-onbike-distance-min" name="" value="0" />
+                    <input type="hidden" class="js-onbike-distance-max" name="" value="10" />
+                    <input type="hidden" id="block-8-lat" name="lat" value="">
+                    <input type="hidden" id="block-8-lng" name="lng" value="">
+
+                    <div class="form-group">
+                        <input class="btn btn-white btn-lg" type="submit" value="Show Me!"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+            <a href="#" class="btn btn-alternate btn-circle js-scroll-to-next btn-circle-bottom-fixed">
+            <span class="bc-fa-chevron-down"></span>
+        </a>
+    
+</div>
+
+</div><div class='block_container block_container-type_row-articles'><div class="row-block color-block grey">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>The latest from the let&rsquo;s ride blog</h2>
+                                    <p>Ideas, advice and inspiration and more from the team at British Cycling </p>
+                            </div>
+        </div>
+
+        <div class="row">
+                            <div class="col-sm-6 col-md-3">
+                    <div class="featured-block recommended-article">
+
+    <div class="image-container">
+        <a href="https://www.letsride.co.uk/article/cycle-routes/5-reasons-for-cycling-in-the-evening">
+            <img src="https://media.letsride.co.uk/image/14f3a0dfce9a26ebd20cbe699fbf6c71/400/215/fit" width="400" alt="" class="main">
+        </a>
+    </div>
+
+    <div class="inner">
+
+        <div class="title">
+            <a href="https://www.letsride.co.uk/article/cycle-routes/5-reasons-for-cycling-in-the-evening">
+                5 reasons for cycling in the evening
+            </a>
+        </div>
+
+
+
+                    <div class="inner-details">
+                <div class='wysiwyg clearfix'><p>Make the most of the remaining long evenings – British Cycling’s Tommy Morrisroe gives us five great reasons for choosing to cycle towards sunset.</p></div>
+            </div>
+
+            <div class="action">
+                <a href="https://www.letsride.co.uk/article/cycle-routes/5-reasons-for-cycling-in-the-evening" class="btn btn-alternate">Read More</a>
+            </div>
+        
+
+
+        
+
+    </div>
+</div>
+                </div>
+                            <div class="col-sm-6 col-md-3">
+                    <div class="featured-block recommended-article">
+
+    <div class="image-container">
+        <a href="https://www.letsride.co.uk/article/bike-love/five-hot-tips-for-cycling-in-the-heat">
+            <img src="https://media.letsride.co.uk/image/6a869e215800ad06c501d92807d068da/400/215/fit" width="400" alt="" class="main">
+        </a>
+    </div>
+
+    <div class="inner">
+
+        <div class="title">
+            <a href="https://www.letsride.co.uk/article/bike-love/five-hot-tips-for-cycling-in-the-heat">
+                Five hot tips for cycling in the heat
+            </a>
+        </div>
+
+
+
+                    <div class="inner-details">
+                <div class='wysiwyg clearfix'><p>When the sun shines, it’s all too tempting to just grab your bike and go. But check out our top five tips for staying safe in the summer sun. </p></div>
+            </div>
+
+            <div class="action">
+                <a href="https://www.letsride.co.uk/article/bike-love/five-hot-tips-for-cycling-in-the-heat" class="btn btn-alternate">Read More</a>
+            </div>
+        
+
+
+        
+
+    </div>
+</div>
+                </div>
+                            <div class="col-sm-6 col-md-3">
+                    <div class="featured-block recommended-article">
+
+    <div class="image-container">
+        <a href="https://www.letsride.co.uk/article/breeze/dianes-fifty-miler">
+            <img src="https://media.letsride.co.uk/image/41e0bfafd31b18ea3d639e47a2b3a24a/400/215/fit" width="400" alt="" class="main">
+        </a>
+    </div>
+
+    <div class="inner">
+
+        <div class="title">
+            <a href="https://www.letsride.co.uk/article/breeze/dianes-fifty-miler">
+                Diane tackles her first fifty miler
+            </a>
+        </div>
+
+
+
+                    <div class="inner-details">
+                <div class='wysiwyg clearfix'><p>In the sixth instalment of our sportives series we hear from Diane Gollop, who last week took part in the White Rose Classic sportive with her daughter Liz. </p></div>
+            </div>
+
+            <div class="action">
+                <a href="https://www.letsride.co.uk/article/breeze/dianes-fifty-miler" class="btn btn-alternate">Read More</a>
+            </div>
+        
+
+
+        
+
+    </div>
+</div>
+                </div>
+                            <div class="col-sm-6 col-md-3">
+                    <div class="featured-block recommended-article">
+
+    <div class="image-container">
+        <a href="https://www.letsride.co.uk/article/breeze/jacintas-crash-course-in-riding-clipless">
+            <img src="https://media.letsride.co.uk/image/2a2c30ac8dc04e09ccb790c2517284a7/400/215/fit" width="400" alt="" class="main">
+        </a>
+    </div>
+
+    <div class="inner">
+
+        <div class="title">
+            <a href="https://www.letsride.co.uk/article/breeze/jacintas-crash-course-in-riding-clipless">
+                Jacinta&rsquo;s crash course in riding clipless
+            </a>
+        </div>
+
+
+
+                    <div class="inner-details">
+                <div class='wysiwyg clearfix'><p>In the fifth part of our sportive series, Jacinta Jolly takes the plunge and tries riding clipless in preparation for the Tour d’Arts Alive sportive.
+</p></div>
+            </div>
+
+            <div class="action">
+                <a href="https://www.letsride.co.uk/article/breeze/jacintas-crash-course-in-riding-clipless" class="btn btn-alternate">Read More</a>
+            </div>
+        
+
+
+        
+
+    </div>
+</div>
+                </div>
+                    </div>
+
+                    <div class="row">
+                <div class="col-md-12 text-center">
+                    <a class="btn btn-primary btn-lg" href="/blog">Show me more</a>
+                </div>
+            </div>
+        
+    </div>
+
+    
+</div>
+</div><div class='block_container block_container-type_row-social-icons'><section class="row-block color-block-social cta-block social-block red">
+    <ul>
+                    <li>
+                <a href="https://www.facebook.com/letsrideuk"><i class="bc-fa-facebook"></i></a>
+            </li>
+                            <li>
+                <a href="https://twitter.com/letsrideuk"><i class="bc-fa-twitter"></i></a>
+            </li>
+                            <li>
+                <a href="https://www.instagram.com/letsrideuk/"><i class="bc-fa-instagram"></i></a>
+            </li>
+                            <li>
+                <a href="https://www.youtube.com/c/letsride"><i class="bc-fa-youtube-play"></i></a>
+            </li>
+            </ul>
+</section>
+</div></div>
+
+    <a id="js-back-to-top" href="#" class="btn btn-primary btn-lg back-to-top"
+   role="button"
+   title="Click to return on the top page">
+
+        <span class="bc-glyphicon-chevron-up"></span>
+</a>
+
+    <footer>
+    <div class="footer__top">
+        <div class="container-fluid">
+            <div class="footer__newslestter col-12">
+    <p class="col-sm-6 col-md-7 h-font-bold">Subscribe me to the mailing list for advance info &amp; the best from the blog</p>
+
+    <div class="form-inline col-sm-6 col-md-5">
+                    <div id="footer-newsletter-signup-message" role="alert" class="collapse in ">
+    </div>
+            <form id="footer-newsletter-form"
+                  action="https://www.letsride.co.uk/newsletter"
+                  method="POST"
+                  class="js-validate-form"
+                  data-loader="#footer-newsletter-loader"
+                  data-message-set="newsletter"
+                  data-message-wrapper="#footer-newsletter-signup-message"
+                  data-response-type="callback"
+                  data-require-module="components/global/global"
+                  data-require-method="confirmSubscription">
+
+                <input type="hidden" name="_token" value="zvpf97BxRwiD2JazmVTthBAPz9hFymyDaJKVxFlT">
+                <input type="hidden" name="redirect_to" value="https://www.letsride.co.uk">
+                <div class="form-group">
+                    <label class="sr-only" for="email">Email address:</label>
+                                        <input type="email" class="form-control" name="email" id="email" data-parsley-required="true" data-parsley-trigger="change" data-parsley-type="email" placeholder="my email address" value="">
+                </div>
+
+                <div class="loader-wrapper">
+                    <button type="submit" class="btn btn-reverse btn-lg">Subscribe</button>
+                    <div class="loader" id="footer-newsletter-loader"></div>
+                </div>
+            </form>
+            </div>
+</div>            <div class="footer__contact col-12">
+    <div class="row">
+        <div class="footer__contact-sponsor col-sm-6">
+          <img src="https://www.letsride.co.uk/images/sponsor.svg" alt="sponsor logo">
+        </div>
+        <div class="footer__contact-contact col-sm-6">
+          <a href="/contact" class="btn btn-alternate">Contact Us</a>
+        </div>
+    </div>
+</div>        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="container-fluid">
+            <ul class="footer__links">
+        <li><a href="/accessibility">Accessibility</a></li>
+        <li><a href="/terms">Terms & conditions</a></li>
+        <li><a href="/privacy">Privacy & cookies</a></li>
+        <li><a href="/terms-of-use">Terms of use</a></li>
+        <li>&copy; British Cycling 2017</li>
+    </ul>
+        </div>
+    </div>
+</footer>
+    <!-- Scripts -->
+    <script src="/scripts/libs.min.js?t=1504189844"></script>
+    <script src="/scripts/core.min.js?t=1504189845"></script>
+    <script src="/scripts/lib/require.min.js?t=1504189838"></script>
+
+    <script>
+        require(['https://www.letsride.co.uk/scripts/common.js'], function(common){
+            require(['init'], function(init){
+                init.start();
+            });
+            require(['modules/googleMapsAutocomplete'], function (googleMapsAutocomplete) {
+                googleMapsAutocomplete.init('AIzaSyCZ3pZytU4diu_PBr-itrvl2J2T0q8p7tk');
+            });
+            
+    require(['components/users/account/login'], function (login) {
+        login.forgotPassword();
+    });
+        });
+    </script>
+
+        
+    <div id="google_maps_attribution_target" class="hidden"></div>
+
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"af091086ea","applicationID":"30325741,30324200","transactionName":"YQEDMUYHCxACUUBaWVhLIAZADwoNTFpbXlM=","queueTime":0,"applicationTime":109,"atts":"TUYARw4dGB4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

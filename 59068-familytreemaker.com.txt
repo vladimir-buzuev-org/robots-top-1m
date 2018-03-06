@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Test Drive"/>
+    <meta property="og:site_name" content="Software MacKiev - Family Tree Maker"/>
+    <meta property="og:image" content="/images/ftm/ftm2017/og_img/ftm-bnr.jpg"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image" content="/images/ftm/ftm2017/og_img/ftm-bnr_2x.jpg"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="1200"/>
+    <meta property="og:url" content="/familytreemaker/betatest/drive_system/check_registration.html"/>
+    <meta property="og:description"
+          content="Family Tree Maker makes it easier than ever to discover your family story, preserve your legacy and share your unique heritage. If you&#39;re new to family history, you&#39;ll appreciate how this intuitive program lets you easily grow your family tree with simple navigation, tree-building tools, and integrated Web searching. If you’re already an expert, you can dive into the more advanced features, options for managing data, and a wide variety of charts and reports. The end result is a family history that you and your family will treasure for years to come!"/>
+    <title>Family Tree Maker</title>
+    <link rel="stylesheet" href="/fonts/myriadpro.css"/>
+    <link rel="stylesheet" href="/css/menu.css"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/ftm/product_style.css"/>
+    <link href="/css/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" media="screen"/>
+    <script src="/js/jquery/1.12.2/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/plugins/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/js/smk.js"></script>
+</head>
+<script>
+
+    var popupData = {
+        "main_store": {
+            "title": "Welcome to the Software MacKiev Education Store!",
+            "link": {
+                "type": "href",
+                "us": "/store_us.html?productTab=ftmbutton",
+                intern: "/store_intern.html?productTab=ftmbutton"
+            }
+        },
+        "gift_store": {
+            "title": "Welcome to the FTM Gift Collection Store!",
+            "link": {
+                "type": "href",
+                "us": "/store/ftm/offers/gifts/index.html",
+                intern: "/store/ftm/offers/gifts/intern.html"
+            }
+        }
+    };
+
+    $(function () {
+
+        function fillText(element, elementValue, info) {
+            if ($.type(info) === 'object') {
+                var elementAttribute = info.type;
+                element.attr(elementAttribute, info[elementValue]);
+            } else {
+                element.html(info);
+            }
+        }
+
+        $('.popup').click(function (e) {
+            var element = $(this),
+                elementType = element.attr('data-type'),
+                fancyBoxInfo = popupData[elementType];
+
+            if (fancyBoxInfo) {
+                $.each(fancyBoxInfo, function (i, v) {
+                    var fancyAttr = 'data-' + i, fancyElement = $('[' + fancyAttr + ']'), fancyValue;
+
+                    if (fancyElement) {
+
+                        $.each(fancyElement, function (item, el) {
+                            fancyElement = $(el);
+                            fancyValue = fancyElement.attr(fancyAttr);
+                            fillText(fancyElement, fancyValue, v);
+                        })
+
+                    } else {
+                        console.log("Element is not found in fancybox!");
+                    }
+                })
+            } else {
+                console.log("Correct the data in popupData object by clicked ID element!");
+            }
+        });
+
+        $('.popup').fancybox();
+
+    })
+
+</script>
+
+<script type="text/javascript">
+    function trackOutboundLink(el, label) {
+        _gaq.push(['_trackEvent', 'event', label, 'click']);
+        document.location = el.href;
+    }
+    $(document).ready(function () {
+        $('.track-link').click(function () {
+            trackOutboundLink(this, this.id);
+        });
+        $(".fancybox").fancybox({});
+        $('.item-block').click(function () {
+            $('#shadow').hide();
+            $('#select-wrap').hide();
+        });
+
+        $('#mailingList').click(function () {
+            $('#shadow').show();
+            var mailingBlock = $("#select-wrap");
+            var win_ava = mailingBlock.width() / 2;
+            var m_wid = ($(window).width() / 2) - win_ava;
+            mailingBlock.css("left", m_wid);
+            mailingBlock.show();
+        })
+    });
+
+</script>
+<body>
+<div class="container">
+    <div class="menu-wrap">
+        <script>
+    (function (d, href) {
+        var l = d.createElement('link'); l.href=href; l.type='text/css'; l.rel='stylesheet'; d.getElementsByTagName('head')[0].appendChild(l);
+    })(document, '/css/menu_header.css?v=20160222f2');
+</script>
+
+<!--[if lte IE 7]>
+	<link href="../css/screen_globedeluxe_select.css" rel="stylesheet" type="text/css" />
+    <link href="../css/screen_3dwg_upgrade.css" rel="stylesheet" type="text/css" />
+    <link href="../css/screen_mavis2011_offer.css" rel="stylesheet" type="text/css" />
+    <link href="../css/screen_mavis.css" rel="stylesheet" type="text/css" />
+    <link href="../css/store_intern.css" rel="stylesheet" type="text/css" />
+    <link href="../css/screen_tps1_directcd.css" rel="stylesheet" type="text/css" />
+    <link href="../css/store_au.css" rel="stylesheet" type="text/css" />
+    <link href="../css/screen_wb_reviews.css" rel="stylesheet" type="text/css" />
+    <link href="../css/screen_offer.css" rel="stylesheet" type="text/css" />
+    <link href="../css/screen_newsletter.css" rel="stylesheet" type="text/css" />
+    <link href="../css/mavis_2009.css" rel="stylesheet" type="text/css" />
+    <link href="../css/screen_tps.css" rel="stylesheet" type="text/css" />
+    <link href="../css/screen_hs_specs.css" rel="stylesheet" type="text/css" />
+    <link href="../css/screen_iste2010.css" rel="stylesheet" type="text/css" />
+    <link href="../css/screen_kp.css" rel="stylesheet" type="text/css" />
+ <![endif]-->
+
+<!--
+<script type="text/javascript">
+	document.body.onload = function(){
+		var os = navigator.appName;
+		if (os.indexOf('X 10.7') != -1 || os.indexOf('X 10_7') != -1){
+			document.getElementsByClassName('page')[0].style.width = "870px";
+		}
+	};
+</script>
+-->
+<div id="header" class="header-menu">
+	<h1><a href="/index.html">
+            <img src="/images/mackiev_top_logo_1x.png" style="width: 251px;" srcset="/images/mackiev_top_logo_1x.png 1x, /images/mackiev_top_logo_2x.png 2x" alt="mackiev.com"/>
+			</a></h1>
+	    <ul class="menu-right">
+        <li><a class="item-support " href="/support.html">Support</a></li>
+        <li><a class="item-wtb " href="/wheretobuy.html">Where to Buy</a></li>
+        <li class="menu-right-store"><a class="item-store " href="/store.html">Store</a></li>
+    </ul>
+	<ul class="menu-top "><li><a href="/ftm/index.html">Family Tree Maker</a></li><li><a href="/printshop3/features/whatsnew.html">The Print Shop</a></li><li><a href="/kidpix/index.html">KID PIX</a></li><li><a href="/world_book.html">WORLD BOOK</a></li><li><a href="/3d_globe.html">3D Weather Globe</a></li><li><a href="/hyperstudio/select.html">HyperStudio</a></li><li><a href="/mavis/index.html">Mavis Beacon</a></li><li><a href="/cluefinders/index.html">ClueFinders</a></li><li><a href="/thinkinthings/index.html">Edmark</a></li>	<!--</nobr>-->
+    </ul>
+</div>    </div>
+    <div class="header-image">
+        <a href="#fancybox" class="popup" data-type="main_store">
+            <img class="product-logo" src="/images/ftm/ftm2017/logo/ftm_2017-lg-552w-184h_1x.png"
+                 srcset="/images/ftm/ftm2017/logo/ftm_2017-lg-552w-184h_1x.png 1x, /images/ftm/ftm2017/logo/ftm_2017-lg-552w-184h_2x.png 2x"
+                 alt=""/>
+            <span class=image-title>
+                <span class="text-yellow">Available now!</span> As a download or on a disс.
+            </span>
+        </a>
+        <a href="/familytreemaker/ftm/ftm_signup.html?ext=yes" class="news modal-window" data-popup="0,0,700,745,true">
+            <img src="/images/ftm/product_page/UPGRADE-label-1x.png"
+                 srcset="/images/ftm/product_page/UPGRADE-label-1x.png 1x, /images/ftm/product_page/UPGRADE-label_2x.png 2x"
+                 alt=""/>
+        </a>
+
+    </div>
+    <ul class="product-menu">
+
+        <li>
+            <a href="/familytreemaker/ftm/ftm_signup.html?ext=yes" class="modal-window" data-popup="0,0,700,750,true">Mailing
+                List</a>
+        </li>
+        <li class="li_dot">&#8226</li>
+        <li>
+            <a href="/familytreemaker/ftm/ftm_feedback.html?ext=yes" class="modal-window" data-popup="0,0,700,840,true">Feedback</a>
+        </li>
+        <li class="li_dot">&#8226</li>
+        <li>
+            <a href="/familytreemaker/ftm/ftm_feedback.html?type=featurerequest&ext=yes" class="modal-window"
+               data-popup="0,0,700,840,true">Suggest a Feature</a>
+        </li>
+        <li class="li_dot">&#8226</li>
+
+        <li>
+            <a href="/familytreemaker/ftm/ftm_feedback.html?type=betatest&ext=yes" class="modal-window"
+               data-popup="0,0,700,850,true">Beta Test</a>
+        </li>
+        <li class="li_dot">&#8226</li>
+        <li>
+            <a href="#section-minspeq">REQUIREMENTS</a>
+        </li>
+
+        <li>
+            <a href="https://support.mackiev.com/" target="_blank">
+                <img class="buy_now_icon" src="/images/ftm/product_page/Support-icon.png"
+                     srcset="/images/ftm/product_page/Support-icon.png 1x, /images/ftm/product_page/Support-icon@2x.png 2x"
+                     alt=""/>
+                SUPPORT</a>
+        </li>
+
+        <li>
+            <a href="/familytreemaker/ftm/faq.html" class="modal-window" data-popup="0,0,700,850,true">
+                <img class="buy_now_icon" src="/images/ftm/product_page/FAQ-icon.png"
+                     srcset="/images/ftm/product_page/FAQ-icon.png 1x, /images/ftm/product_page/FAQ-icon@2x.png 2x"
+                     alt=""/>
+                FAQ</a>
+        </li>
+    </ul>
+
+</div>
+<div class="section section-preview dir-center">
+    <div class="inner-container">
+        <h2>Discover Your Family Story With <span class="ftm_for_h">Family Tree Maker!</span></h2>
+        <div class="row">
+            <div class="col-xs-7">
+                <h3><span class="text-bold">FTM 2017</span> <span class="text-semibold">for Mac and Windows</span></h3>
+                <p class="mt-16 mb-27">
+                    Family Tree Maker makes it easier than ever to discover your family story, preserve your legacy and
+                    share your unique heritage. If you’re new to family history, you’ll appreciate how this intuitive
+                    program lets you easily grow your family tree with simple navigation, tree-building tools, and
+                    integrated Web searching. If you’re already an expert, you can dive into the more advanced features,
+                    options for managing data, and a wide variety of charts and reports. The end result is a family
+                    history that you and your family will treasure for years to come!
+                </p>
+            </div>
+            <div class="col-xs-5 mt-25">
+                <a href="#fancybox" class="fancybox update-center track-img-buy_now" id="ftm_buy_now">
+                    <img class="buy_now_icon" src="/images/ftm/product_page/buy-now-icon_1x.png"
+                         srcset="/images/ftm/product_page/buy-now-icon_1x.png 1x, /images/ftm/product_page/buy-now-icon_2x.png 2x"
+                         alt=""/>
+                    <img class="img" src="/images/ftm/product_page/ftm2017-image_1x.png"
+                         srcset="/images/ftm/product_page/ftm2017-image_1x.png 1x, /images/ftm/product_page/ftm2017-image_2x.png 2x"
+                         alt=""/>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-5">
+                <a href="#store_link" class="fancybox">
+                    <img src="/images/ftm/product_page/FTM_GIFT_banner-2017.png"
+                         srcset="/images/ftm/product_page/FTM_GIFT_banner-2017.png 1x, /images/ftm/product_page/FTM_GIFT_banner-2017_2x.png 2x"
+                         alt="FTM_GIFT_banner">
+                </a>
+            </div>
+            <div class="col-xs-7 mt-25 features">
+                <h3>Key product features</h3>
+                <ul>
+                    <li><span>Quickly and easily build your family tree</span></li>
+                    <li><span>Update your tree on the go with FamilySync<sup>™&nbsp;*</sup></span></li>
+                    <li><span>Enhance your tree with charts, reports, photos, and more</span></li>
+                    <li><span>View family history timelines and interactive maps</span></li>
+                    <li><span>Includes a digital version of the Companion Guide</span></li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="features" class="section section-whats-new dir-center">
+    <div class="inner-container">
+        <h2>What’s New in <span class="ftm_for_h">Family Tree Maker 2017?</span> Plenty!</h2>
+        <div class="row wtr1">
+            <div class="col-xs-12">The first Family Tree Maker edition under our own steam is here! FTM 2017 brings home
+                a year of work on a state-of-the-art syncing technology built together with Ancestry, plus integration
+                with FamilySearch, color coding, a photo repair tool and much more!
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="wn_item">
+                    <div class="wn_item_logo"><img src="/images/ftm/product_page/familysync-tile_1x.png"
+                                                   srcset="/images/ftm/product_page/familysync-tile_1x.png 1x, /images/ftm/product_page/familysync-tile_2x.png 2x"
+                                                   alt=""/></div>
+                    <h4>FamilySync<sup>™</sup></h4>
+                    <h5>An upgrade from TreeSync<sup>®</sup>.</h5>
+                    <p class="wn_item_description">
+                        FamilySync is our version of the
+                        new technology replacing TreeSync.
+                        Families will love the new ability
+                        to sync multiple copies of FTM to one Ancestry tree.
+                    </p>
+                    <a style="margin-bottom: 7px;" target="_blank"
+                       href="/ftm/features/familysync.html">Learn&nbsp;more…</a>
+                    <img src="/images/ftm/product_page/ancestry_1x.png"
+                         srcset="/images/ftm/product_page/ancestry_1x.png 1x, /images/ftm/product_page/ancestry_2x.png 2x"
+                         alt=""/>
+                    <p style="font-size: 12px;font-weight: bold;margin-left: 10px">Three computers. One Ancestry tree.
+                        No problem</p>
+                </div>
+                <div class="wn_item">
+                    <div class="wn_item_logo"><img src="/images/ftm/product_page/colorcoding-tile_1x.png"
+                                                   srcset="/images/ftm/product_page/colorcoding-tile_1x.png 1x, /images/ftm/product_page/colorcoding-tile_2x.png 2x"
+                                                   alt=""/></div>
+                    <h4>Color Coding</h4>
+                    <h5>Tracing your past.</h5>
+                    <p class="wn_item_description">
+                        Get organized and gain insights into your
+                        family history using our new color coding
+                        tools with up to eight colors at a time on
+                        a single person.
+                    </p>
+                    <a target="_blank" href="/ftm/features/color_coding.html">Learn&nbsp;more…</a>
+                    <img src="/images/ftm/product_page/color-coding-image.png"
+                         srcset="/images/ftm/product_page/color-coding-image.png 1x, /images/ftm/product_page/color-coding-image2x.png 2x"
+                         alt=""/>
+                </div>
+            </div>
+            <div class="col-xs-6 mt-25">
+                <div class="wn_item">
+                    <div class="wn_item_logo"><img src="/images/ftm/product_page/syncweather-tile_1x.png"
+                                                   srcset="/images/ftm/product_page/syncweather-tile_1x.png 1x, /images/ftm/product_page/syncweather-tile_2x.png 2x"
+                                                   alt=""/></div>
+                    <h4>Sync Weather Report<sup>™</sup></h4>
+                    <h5>What’s the weather like where you sync?</h5>
+                    <p class="wn_item_description">
+                        Now each time you go to sync, if there’s a
+                        reason you should maybe think twice,
+                        a window pops up to say so.
+                    </p>
+                    <a target="_blank" href="/ftm/features/sync_weather_report.html">Learn&nbsp;more…</a>
+                    <img src="/images/ftm/product_page/sync-weather-image.png"
+                         srcset="/images/ftm/product_page/sync-weather-image.png 1x, /images/ftm/product_page/sync-weather-image@2x.png 2x"
+                         alt=""/>
+                </div>
+                <div class="wn_item">
+                    <div class="wn_item_logo"><img src="/images/ftm/product_page/photo-darkroom-tile_1x.png"
+                                                   srcset="/images/ftm/product_page/photo-darkroom-tile_1x.png 1x, /images/ftm/product_page/photo-darkroom-tile_2x.png 2x"
+                                                   alt=""/></div>
+                    <h4>Photo Darkroom<sup>™</sup></h4>
+                    <h5>Elegantly simple editing tools.</h5>
+                    <p class="wn_item_description">
+                        Powerful but easy-to-use tools that in just a few clicks can take an old photo faded beyond
+                        recognition and restore it to look like the day it was printed.
+                    </p>
+                    <a target="_blank" href="/ftm/features/photo_darkroom.html">Learn&nbsp;more…</a>
+
+                    <img src="/images/ftm/product_page/PhotoDarkroom_img.png"
+                         srcset="/images/ftm/product_page/PhotoDarkroom_img.png 1x, /images/ftm/product_page/PhotoDarkroom_img_2x.png 2x"
+                         alt=""/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="wn_item">
+                    <div class="wn_item_logo"><img src="/images/ftm/product_page/familysearch-icon_1x.png"
+                                                   srcset="/images/ftm/product_page/familysearch-icon_1x.png 1x, /images/ftm/product_page/familysearch-icon_2x.png 2x"
+                                                   alt=""/></div>
+                    <h4>FamilySearch <span>Searching, matching & merging.</span></h4>
+
+                    <p class="wn_item_description" style="width: 77%;">
+                        FamilySearch is integrated into FTM 2017 so you can get match suggestions automatically,
+                        search billions of free online records**, and merge them into your tree. <a target="_blank"
+                                                                                                    href="/ftm/features/familysearch.html">Learn&nbsp;more…</a>
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="section section-top-feature">
+    <div class="inner-container">
+        <h2><span class="ftm_for_h">Family Tree Maker</span> TOP FEATURES</h2>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="tf_item">
+                    <h5>Follow the hints</h5>
+                    <p>
+                        Just enter what you know into your family tree.
+                        Hints (green leaves or blue squares) will soon appear,
+                        linking you to historical records and trees that might
+                        hold answers about your ancestors.
+                    </p>
+                    <img src="/images/ftm/product_page/hints-image_1x.png"
+                         srcset="/images/ftm/product_page/hints-image_1x.png 1x, /images/ftm/product_page/hints-image_2x.png 2x"
+                         alt=""/>
+                    <p class="desc desc1">Helpful hints – just click the green-leaf or blue icons.</p>
+                </div>
+
+            </div>
+
+            <div class="col-xs-6">
+                <div class="tf_item">
+                    <h5>Organize media with ease</h5>
+                    <p>
+                        Illustrate your family story with photos,
+                        historical records, and audio and video files.
+                        The easy-to-use tools in Family Tree Maker help
+                        you manage media faster than ever before, as well
+                        as add photos directly from iPhoto®, scan images
+                        directly into your tree, and even create slideshows.
+                    </p>
+                    <img src="/images/ftm/product_page/media-image_1x.png"
+                         srcset="/images/ftm/product_page/media-image_1x.png 1x, /images/ftm/product_page/media-image_2x.png 2x"
+                         alt=""/>
+                    <p class="desc">Store photos and more right inside Family Tree Maker.</p>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="tf_item">
+                    <h5>Digital Companion Guide</h5>
+                    <p>
+                        This guide offers you a step-by-step tour of the program and all that you can accomplish with
+                        it. Learn Family Tree Maker's most popular features with quick lessons that make research fast
+                        and fun.
+                    </p>
+                    <img src="/images/ftm/product_page/companion-guide-image_1x.png"
+                         srcset="/images/ftm/product_page/companion-guide-image_1x.png 1x, /images/ftm/product_page/companion-guide-image_2x.png 2x"
+                         alt=""/>
+                </div>
+
+            </div>
+
+            <div class="col-xs-6">
+                <div class="tf_item">
+                    <h5>Put your ancestors on the map</h5>
+                    <p>
+                        Access interactive street and satellite maps to view important locations in your ancestors'
+                        lives and track your family’s migration paths.
+                    </p>
+                    <img src="/images/ftm/product_page/map-image_1x.png"
+                         srcset="/images/ftm/product_page/map-image_1x.png 1x, /images/ftm/product_page/map-image_2x.png 2x"
+                         alt=""/>
+                    <p class="desc">Trace your ancestors’ footsteps.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="tf_item">
+                    <h5>Charts & Reports</h5>
+                    <p>
+                        View and share your discoveries with a
+                        variety of colorful family tree charts, such
+                        as pedigree, descendant, bowtie and fan charts,
+                        and create reports that provide a snapshot of your
+                        family tree and help you plan what to research next.
+                        More options and views let you display an individual's
+                        ancestors, spouses, and children together. Also, the
+                        Index of Individuals Report has been expanded with options
+                        for anniversary, birthday, contact lists, and more.
+                    </p>
+                </div>
+
+            </div>
+            <div class="col-xs-4">
+                <div class="tf_item">
+                    <img src="/images/ftm/product_page/charts-reports-image_1x.png"
+                         srcset="/images/ftm/product_page/charts-reports-image_1x.png 1x, /images/ftm/product_page/charts-reports-image_2x.png 2x"
+                         alt=""/>
+                    <p class="desc">View charts and reports and share with friends and family.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+<div class="section section-product-feature">
+    <div class="bg-shadow">
+        <div class="inner-container-longer">
+            <div class="row" style="max-width: 100%">
+                <div class="col-xs-6">
+                    <h2 class="text-white text-left mb-20" style="white-space: nowrap">Family Tree Maker includes:</h2>
+                    <ul class="feature-list">
+                        <li>Everything you need to begin your journey through your family’s history</li>
+                        <li>A variety of charts and dozens of reports</li>
+                        <li>Themed backgrounds, borders, and embellishments collection for printing</li>
+                        <li>Locations database with more than 3 million place names for consistent data entry</li>
+                        <li>Access to online street and satellite maps</li>
+                        <li>Digital version of the Companion Guide</li>
+                        <li>Convenient onscreen Help system</li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 includeImg">
+                    <img src="/images/ftm/product_page/ftm-include-image_1x.png"
+                         srcset="/images/ftm/product_page/ftm-include-image_1x.png 1x, /images/ftm/product_page/ftm-include-image_2x.png 2x"
+                         alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="section-minspeq" class="section section-minspeq">
+    <div class="inner-container">
+        <h2>Minimum System Requirements</h2>
+        <div class="row">
+            <div class="mispeq-item col-xs-6">
+                <h5>Macintosh</h5>
+                <p>OS X 10.9 or later, including macOS Sierra 10.12, 900 MB hard disk space, 2 GB of RAM (4 GB recommended), 1280 x 800 screen resolution.</p>
+            </div>
+            <div class="mispeq-item col-xs-6">
+                <h5>Windows</h5>
+                <p>Windows 7 or later, including Windows 10, 900 MB hard disk space, 2 GB of RAM (4 GB recommended), 1024 x 768 screen resolution.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="#store_link" class="fancybox update-center track-img-gifts" id="ftm_gifts">
+
+
+    <div class="section section-gift-collection">
+        <div class="inner-container">
+            <img class="gift_item" src="/images/ftm/product_page/charting-companion-tile_1x.png"
+                 srcset="/images/ftm/product_page/charting-companion-tile_1x.png 1x, /images/ftm/product_page/charting-companion-tile_2x.png 2x"
+                 alt=""/>
+            <img class="gift_item" src="/images/ftm/product_page/essential-photo-organizing-tile_1x.png"
+                 srcset="/images/ftm/product_page/essential-photo-organizing-tile_1x.png 1x, /images/ftm/product_page/essential-photo-organizing-tile_2x.png 2x"
+                 alt=""/>
+            <img class="gift_item" src="/images/ftm/product_page/family-book-creator-tile_1x.png"
+                 srcset="/images/ftm/product_page/family-book-creator-tile_1x.png 1x, /images/ftm/product_page/family-book-creator-tile_2x.png 2x"
+                 alt=""/>
+            <img class="gift_item" src="/images/ftm/product_page/preserving-tile_1x.png"
+                 srcset="/images/ftm/product_page/preserving-tile_1x.png 1x, /images/ftm/product_page/preserving-tile_2x.png 2x"
+                 alt=""/>
+            <img class="gift_item" src="/images/ftm/product_page/explanation-tile_1x.png"
+                 srcset="/images/ftm/product_page/explanation-tile_1x.png 1x, /images/ftm/product_page/explanation-tile_2x.png 2x"
+                 alt=""/>
+            <img class="gift_item" src="/images/ftm/product_page/the-grandma-gap-tile_1x.png"
+                 srcset="/images/ftm/product_page/the-grandma-gap-tile_1x.png 1x, /images/ftm/product_page/the-grandma-gap-tile_2x.png 2x"
+                 alt=""/>
+
+            <p class="gift_item">GIFT Collection</p>
+
+            <img class="gift_item" src="/images/ftm/product_page/gift-box-tile_1x.png"
+                 srcset="/images/ftm/product_page/gift-box-tile_1x.png 1x, /images/ftm/product_page/gift-box-tile_2x.png 2x"
+                 alt=""/>
+
+
+        </div>
+    </div>
+</a>
+
+<div class="section section-faq">
+    <div class="inner-container">
+        <a href="/familytreemaker/ftm3/faq.html" class="section section-faq modal-window" data-popup="0,0,700,745,true">
+            <img class="gift_item" src="/images/ftm/product_page/faq-icon_1x.png"
+                 srcset="/images/ftm/product_page/faq-icon_1x.png 1x, /images/ftm/product_page/faq-icon_2x.png 2x"
+                 alt=""/>
+            <p>This FAQ provides answers to common questions about Family Tree Maker.</p>
+
+        </a>
+    </div>
+</div>
+<div class="section section-note">
+    <div class="inner-container">
+        <p>*Requires an account with Ancestry.com.</p>
+        <p>**FamilySearch features require registering for a free membership.</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row footer">
+        <p class="col-xs-10">
+            &copy; 2017 The Software MacKiev Company. Family Tree Maker is a registered trademark, and
+            Software MacKiev,
+            FamilySync and Photo Darkroom are trademarks of The Software MacKiev Company. Ancestry.com and TreeSync are
+            registered trademarks of Ancestry.com Operations, Inc.. FamilySearch is a trademark of Intellectual Reserve,
+            Inc., an affiliate of FamilySearch International.
+        </p>
+        <a href="/" class="col-xs-2">
+            <img src="/images/smk_logo_x1.png" srcset="/images/smk_logo_x1.png 1x, /images/smk_logo_x2.png 2x" alt=""/>
+        </a>
+    </div>
+</div>
+<div id="fancybox" data-fancybox="main_store">
+    <h1 data-title="title">Welcome to the Software MacKiev Education Store!</h1>
+    <p>Order directly from the developer, publisher and manufacturer!</p>
+    <div class="store_link-select">
+        <p>Select the right store for where you live.</p>
+        <div class="item">
+            <h2 class="item-title">United States</h2>
+            <div class="item-image">
+                <a data-link="us" href='/store_us.html?productTab=ftmbutton'>
+                    <img src="/images/store/flag_us_1x.png"
+                         srcset="/images/store/flag_us_1x.png 1x, /images/store/flag_us_2x.png 2x"/>
+                </a>
+            </div>
+            <p class="item-description">
+                For shipping to U.S. addresses plus APO and FPO shipments. Must have a U.S. credit card.
+            </p>
+        </div>
+        <div class="item">
+            <div class="item-title">All Other Countries</div>
+            <div class="item-image">
+                <a data-link="intern" href='/store_intern.html?productTab=ftmbutton'>
+                    <img src="/images/store/flag_inter_1x.png"
+                         srcset="/images/store/flag_inter_1x.png 1x, /images/store/flag_inter_2x.png 2x"/>
+                </a>
+            </div>
+            <p class="item-description">For all other countries</p>
+        </div>
+    </div>
+</div>
+<div id="store_link" class="store-link" style="display: none;">
+    <!--                    <div class="fancy_bg_top"></div>-->
+    <h1 class="intern-title">
+        <nobr>Welcome to the FTM Gift Collection Store!</nobr>
+    </h1>
+    <p class="intern-title-subscription">
+        Order directly from the developer, publisher and manufacturer!
+    </p>
+    <p style="text-align: center; font-size: 16px;  padding: 0; margin: 1em 0;">
+        Select the right store for where you live.
+    </p>
+    <div style="text-align:center;  margin-bottom: 59px;">
+        <div class="item" style="margin-right:58px;">
+            <div class="item-title">United States</div>
+            <div class="item-el">
+                <a href="../store/ftm/offers/gifts/index.html">
+                    <img src="/images/store/flag_us_1x.png" border="0"
+                         srcset="/images/store/flag_us_1x.png 1x, /images/store/flag_us_2x.png 2x">
+                </a>
+            </div>
+            <div class="el-descr">
+                For shipping to U.S. addresses plus APO and FPO shipments. Must have a U.S.
+                credit card.
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-title">All Other Countries</div>
+            <a href="../store/ftm/offers/gifts/intern.html?edition=us" class="item-el">
+                <img src="/images/store/flag_inter_1x.png" border="0" style="margin-bottom: 4px;"
+                     srcset="/images/store/flag_inter_1x.png 1x, /images/store/flag_inter_2x.png 2x">
+            </a>
+            <div class="el-descr">
+                <div>
+                    For all other countries
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--                    <div class="fancy_bg_bottom"></div>-->
+</div>
+</body>
+</html>

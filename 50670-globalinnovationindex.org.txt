@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	GII
+</title><meta content="IE=EmulateIE9; IE=8; IE=7; IE=EDGE" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="encoding" content="utf-8" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css" /><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42073602-1', 'auto');
+  ga('send', 'pageview');
+
+ga('require', 'ec');</script><link href="/css/bootstrap.min.css" rel="stylesheet" /><link href="/css/style.css" rel="stylesheet" />
+    <script src="/js/jquery-2.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/gii.js"></script>
+    <script type="text/javascript" src="/js/jquery.mThumbnailScroller.min.js"></script>
+
+    <link rel="stylesheet" href="/css/jquery.mThumbnailScroller.css" /><link rel="icon" href="/favicon.png" type="image/ico" />
+    <script>
+        function loadPtitle(pagetitle) {
+
+            $("#PTitle").text(pagetitle);
+        }
+        $(document).ready(function () {
+
+            loadGallery(true, 'a.thumbnail');
+
+            function disableButtons(counter_max, counter_current) {
+                $('#show-previous-image, #show-next-image').show();
+                if (counter_max == counter_current) {
+                    $('#show-next-image').hide();
+                } else if (counter_current == 1) {
+                    $('#show-previous-image').hide();
+                }
+            }
+
+            function loadGallery(setIDs, setClickAttr) {
+                var current_image,
+                    selector,
+                    counter = 0;
+
+                $('#show-next-image, #show-previous-image').click(function () {
+                    if ($(this).attr('id') == 'show-previous-image') {
+                        current_image--;
+                    } else {
+                        current_image++;
+                    }
+
+                    selector = $('[data-image-id="' + current_image + '"]');
+                    updateGallery(selector);
+                });
+
+                function updateGallery(selector) {
+                    var $sel = selector;
+                    current_image = $sel.data('image-id');
+                    $('#image-gallery-heading').text($sel.data('heading'));
+                    $('#image-gallery-caption').text($sel.data('caption'));
+                    $('#image-gallery-title').text($sel.data('title'));
+                    $('#image-gallery-image').attr('src', $sel.data('image'));
+                    disableButtons(counter, $sel.data('image-id'));
+                }
+
+                if (setIDs == true) {
+                    $('[data-image-id]').each(function () {
+                        counter++;
+                        $(this).attr('data-image-id', counter);
+                    });
+                }
+                $(setClickAttr).on('click', function () {
+                    updateGallery($(this));
+                });
+            }
+        });
+        function ActiveAboutMenu() {
+            $("#about").addClass("active");
+        }
+        function ActiveReportMenu() {
+            $("#report").addClass("active");
+        }
+        function LoadReportDownloadGA() {
+            ga("ec:setAction", "click", {
+                "Category": "Report",
+                "Action": "Download",
+                "Label": "GIIReport",
+                "Value": "1"
+            });
+            ga("send", "event", "report", "click", "");
+        }
+        function LoadCHReportDownloadGA() {
+            ga("ec:setAction", "click", {         
+                "Category": "Report Download",    
+                "Action": "Click",
+                "Label":"GIIChineseReport",  
+                "Value":"2"
+            });
+            ga("send", "event", "chreport", "click", "");
+        }
+        function LoadWebinarGA() {
+            ga("ec:setAction", "click", {
+                "Category": "Webinar",
+                "Action": "Click",
+                "Label": "GIIWebinar",
+                "Value": "3"
+            });
+            ga("send", "event", "webinar", "click", "");
+        }
+        function LoadReportDownload2017GA() {
+            ga("ec:setAction", "click", {
+                "Category": "Download 2017 Report Home",
+                "Action": "Click",
+                "Label": "GII2017Report",
+                "Value": "1"
+            });
+            ga("send", "event", "home2017report", "click", "");
+        }
+    </script>
+<meta property="og:url" content="https://www.globalinnovationindex.org/error" /><meta property="og:type" content="Website" /><meta property="og:site_name" content="Global Innovation Index" /><meta property="og:title" content="GII" /><meta property="og:image" content="https://www.globalinnovationindex.org/UploadedFiles/Og_97b0cdffa1e34856bd37fcf3d84121c8.JPG" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /><meta property="og:locale" content="en_uk" /><meta name="twitter:title" content="GII" /><meta name="twitter:image" content="https://www.globalinnovationindex.org/UploadedFiles/Og_97b0cdffa1e34856bd37fcf3d84121c8.JPG" /><meta itemprop="name" content="GII" /><meta itemprop="image" content="https://www.globalinnovationindex.org/UploadedFiles/Og_97b0cdffa1e34856bd37fcf3d84121c8.JPG" /></head>
+<body>
+    <form name="form1" method="post" action="/error" id="form1">
+<input type="hidden" name="ToolkitScriptManager1_HiddenField" id="ToolkitScriptManager1_HiddenField" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="4GzGOs23Rc8mcq/bFBqt6xWHdw5FY4PgwGF8U8c0hKTqL8RaNWe1UB5OE9pTZdi0vXytbURfBGjOlldL/3OS+0dPjcIjSubiaS98JPYUd4Oi/uGo2xESof+Mr/bn8sWYCQY3BlLJ6S0o7uokoyoqXna5d5VVNbXJLv2Ac01rI40SRBUVr0+xN2Naufbcnr8Tiyuunl0/OT+81gsVFHcHzcLYUKOWuUP3V+ucEPUzq1juzeWqjsxHX6wBfza08aCK4cvi9RUlEHQ0UMe/JapHFrw8D1AC/v0bv43Q6u5Mztvr/YgkAJ6EKRRKfeADUJiKsdVCekI+klPNZ5cnTojIEUyUi0WwoBLLbWv7WJeUMBnLlIgfCF0b6S2XyZQry5f8agbiI86XWKxoHpRiuZwMW7aP6M5H56R5biniwcE526E1NpmOhY+3xRpFCQJDCha5Um7NADe2FjpQuDKDzYHX/a+UsLMPyHfxyWKg9ubB64cHKJx2VZXJBVbN+NUDbm37Cf0R0OB78NWJqjZNzwWNFsQm9zo3c/jNhqhLSanMKLL619Is1KnjqTdvQ8mb8PF1yH5LUuz837twgcGB+jyiLbNLIQk1lQrMUM5S+/C1pXtzKihbpcylUfUuao68mgJbKLObolf2m6DgVAzXfDEHWDekhcAKfbUa2GrMqkYToZufG4fvPCg0zSqObFycbUXR1efkwjIlmA/q1sP1MOYZN5q3nMadZJJpnbz3yzx1TVPjfZZBISYzMSzFqrESz0+bVPf8OUH+Q557I2PAhId9qkh5TZiROFsYTMK6dAs6f7a+v2z7djJJsCNO2H5ki+YTvjLKtOPCifVOCZ3scJXtXWF2GVLVKQpHP+qY3ZjUALVTDZ5n8REfim3aE9TUPHcSKt1M554pQ8hv4zwqEqCtH+nHNOx9isEDCGuLVSlfVkfJXST4QqigHBg3IP2+cWFtFNzA37Z8gh/hgmJtxuOyugEDOkem0rHDxfl3zKpC7pct/F3MDQi80sfdZVYH8LC3v0jRemm3RpRGvlF9yr10fBRiGk47LLHsUy9MyxNq6bzSp6NY6So7DXne3JBz96SmbzS68CWOQgp/vlW5PCN66w==" />
+
+
+<script src="/ScriptResource.axd?d=yeSNAJTOPtPimTGCAo3LlSIGGrfhpT7IplGAEKy84BzSqRO7MlAU386pBDVRKe6_gZcFyPJMBtsZpQwTsAFHAo333auvabimmLeEVyNeMSaDW5T9k43XySgPXyv9aAAd0&amp;t=3f0ccc7f" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="65E7F3AF" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="uJ7nQm31d49Mrm+kHLugG6LUmSF5KSJ7oEb89h6h7g1YjIXdVjiffmExk43RL1my1iNWDG6nZgUI+ZTi4b4s0h8eivPHBIx1trdtENnK3mGDI+u4zaCImfVcwJqesCwg68iUM8uZ6XOrAEY1X6lH1tXSbrn9hvh2r5S7BL9VHmq8pwosu0fVV8rpM7k7hnSB" />
+
+        
+        <script>
+    $(document).ready(function (e) {
+        $('.Dwnld').click(function () {
+
+            var path = '/userfiles/file/reportpdf/gii-2016-report-cn-v1.pdf';//name of the file
+            $("#iframe1").attr("src", "/Download.aspx?file=" + path);
+
+        });
+    });
+
+</script><iframe id="iframe1" style="display: none;"></iframe>
+<div class="container-fluid" id="header">
+	<div class="scrollbg"></div>
+	<div class="container">
+		<div class="navbar-header">
+			<button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><img class="collapse-img rotate-reset" src="/css/css-images/collapse.png" /></button><a class="navbar-brand" href="/home"><img alt="The Global Innovation Index" class="img-responsive" src="/images/logo.png" /></a></div>
+		<p class="pagetitle" id="PTitle">
+			LEADING INNOVATION REFERENCE</p>
+		
+<div class="navbar-form navbar-right search pull-right" role="search">
+    <input name="ctl22$TxtSearch" type="text" id="ctl22_TxtSearch" class="form-control" placeholder="SEARCH" onkeydown="if(event.which || event.keyCode){if ((event.which == 13) || (event.keyCode == 13)) {document.getElementById(&#39;ctl22_LnkBSearch&#39;).click();return false;}} else {return true}; " />
+    
+    <a id="ctl22_LnkBSearch" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl22$LnkBSearch&quot;, &quot;&quot;, true, &quot;seach&quot;, &quot;&quot;, false, true))">
+    <i style="  float: right;" class="sp-search"></i>
+
+    </a>
+</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav" id="UlMenu">
+				<li id="Rpt1">
+					<a href="/gii-2017-report">2017 REPORT</a></li>
+				<li id="analysis">
+					<a href="/analysis-indicator">ANALYSIS</a></li>
+				<li id="multi">
+					<a href="/media-photos">MEDIA</a></li>
+				<li id="events">
+					<a href="/gii-events">EVENTS</a></li>
+				<li id="blog">
+					<a href="/gii-blog">BLOG</a></li>
+				<li class="visible-xs" id="about1">
+					<a href="/about-gii">ABOUT</a></li>
+				<li class="dropdown hidden-xs" id="about">
+					<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">ABOUT</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="/about-gii#history">HISTORY</a></li>
+						<li>
+							<a href="/about-gii#reports">PAST REPORTS</a></li>
+						<li>
+							<a href="/about-gii#framework">GII FRAMEWORK</a></li>
+						<li>
+							<a href="/about-gii#board">ADVISORY BOARD</a></li>
+						<li>
+							<a href="/about-gii#partners">KNOWLEDGE PARTNERS</a></li>
+						<li>
+							<a href="/about-gii#contactus">CONTACT US</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="virtualhead"></div><script>
+        var timer = setTimeout(function() {
+            window.location='/home'
+        }, 10000);
+    </script>
+<div class="container">
+	<div class="col-xs-12 whitebg vspace errorpage">
+		<div class="col-xs-12">
+			<h1>
+				The page you are looking for could not be found.</h1>
+			<p>
+				Either click back on your browser button or you will be redirected to the homepage within 10 seconds.</p>
+			<p>
+				Alternatively, you can visit the following pages:</p>
+			<br />
+			<ul>
+				<li>
+					<a href="/gii-2016-report">GII report </a></li>
+				<li>
+					<a href="/analysis-indicator">Analysis </a></li>
+				<li>
+					<a href="/media-photos">Media </a></li>
+			</ul>
+			<br />
+			<a class="btn-orange" href="/home">HOME PAGE</a></div>
+	</div>
+</div>
+        <div style="display: none">
+            <iframe src="/KeepSessionAlive.aspx" id="KeepAliveFrame" frameborder="0" width="0" height="0"></iframe>
+        </div>
+        
+        
+        <div id="ft_Upd">
+	
+         <div class="footer">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="col-xs-12">
+                    <div class="col-sm-6 col-xs-12">
+                        <img src="/images/logo.png" class="img-responsive" alt="">
+                        <p class="copyright">Copyright © 2017 Cornell INSEAD WIPO. Read our <a href="/terms-conditions#tnc">Terms & Conditions</a> and <a href="/terms-conditions#policy">Privacy Policy.</a></p>
+                    </div>
+                    <div class="col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-0 col-xs-12 vspace">
+                        <p class="copyright text-right">Get the latest on innovation in the GII newsletter</p>
+                        <div class="subscription">
+                            <input name="ft$txtEmail" type="text" id="ft_txtEmail" class="form-control" placeholder="Email" />
+
+                            <input type="submit" name="ft$btnSubmit" value="SUBSCRIBE" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ft$btnSubmit&quot;, &quot;&quot;, true, &quot;vgSubmit&quot;, &quot;&quot;, false, false))" id="ft_btnSubmit" class="subscriptionbutton" style="border:medium none" />
+                        </div>
+                        
+                        
+                        <span id="ft_LblMsg" style="display:none;font-size:smaller;"><font color="White"></font></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+    
+</div>
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+loadPtitle('GII');//]]>
+</script>
+</form>
+
+</body>
+</html>

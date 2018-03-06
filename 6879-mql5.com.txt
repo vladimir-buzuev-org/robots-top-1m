@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head itemscope itemtype="http://schema.org/WebSite">
+    <meta itemprop="name" content="MQL5.Community" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="mql5 automated forex trading, strategy tester, advisers, custom indicators, MetaTrader">
+    <meta name="description" content="MQL5: language of trade strategies built-in the MetaTrader 5 Trading Platform, allows writing your own trading robots, technical indicators, scripts and libraries of functions">
+    <meta property="og:title" content="Automated Trading and Strategy Testing">
+    <meta property="og:description" content="MQL5: language of trade strategies built-in the MetaTrader 5 Trading Platform, allows writing your own trading robots, technical indicators, scripts and libraries of functions">
+    <meta property="og:image" content="https://c.mql5.com/i/community/logo_mql5.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@mql5com">
+    <meta name="twitter:image" content="https://c.mql5.com/i/community/logo_mql5_twitter.png">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=413251709">
+    <link rel="shortcut icon" href="https://c.mql5.com/i/favicon.ico">
+    <meta name="msapplication-config" content="none"/>
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <link href="https://c.mql5.com/styles/core.8c3552ac9bfba6e6c89833d484f85e2e.css" type="text/css" rel="stylesheet" media="all">
+    <link href="https://c.mql5.com/styles/all.6768f35398a528b642fb0b622de5e639.css" type="text/css" rel="stylesheet" media="all">
+    <link href="https://c.mql5.com/styles/home.baceed78bdab663f32610c2d3cec89ba.css" type="text/css" rel="stylesheet" media="all">
+    
+    <link href="/en/forum/rss" rel="alternate" type="application/rss+xml" title="MetaTrader 5 trading, automated systems and strategy testing forum">
+    <link href="/en/articles/rss" rel="alternate" type="application/rss+xml" title="Articles on the development and application of MetaTrader {0} trading robots and technical indicators">
+    <link href="/en/code/rss" rel="alternate" type="application/rss+xml" title="Code Base - free database of MetaTrader 5 trading robots and technical indicators">
+    <link href="/en/job/rss" rel="alternate" type="application/rss+xml" title="Freelance service for traders">
+    <link rel="alternate" hreflang="x-default" href="https://www.mql5.com">
+    <link rel="alternate" hreflang="en" href="https://www.mql5.com/en">
+    <link rel="alternate" hreflang="ru" href="https://www.mql5.com/ru">
+    <link rel="alternate" hreflang="zh" href="https://www.mql5.com/zh">
+    <link rel="alternate" hreflang="es" href="https://www.mql5.com/es">
+    <link rel="alternate" hreflang="pt" href="https://www.mql5.com/pt">
+    <link rel="alternate" hreflang="ja" href="https://www.mql5.com/ja">
+    <link rel="alternate" hreflang="de" href="https://www.mql5.com/de">
+    <title>MQL5: automated forex trading, strategy tester and custom indicators with MetaTrader</title>
+    <script type="text/javascript">
+        var mqGlobal = {};
+        mqGlobal.AddOnLoad = function(callback)
+        {
+            if(!this._onload) this._onload = [];
+            this._onload[this._onload.length] = callback;
+            if(this.PageReady)
+              callback();
+        };
+        mqGlobal.AddOnReady = function(callback)
+        {
+            if(!this._onready) this._onready = [];
+            this._onready[this._onready.length] = callback;
+            if(this.PageLoaded)
+              callback();
+        };
+        mqGlobal.AddOnActiveWindowChange = function(callback)
+        {
+            if(!this._onvisibility) this._onvisibility = [];
+            this._onvisibility[this._onvisibility.length] = callback;
+        };
+        mqGlobal.PageLoaded = false;
+        mqGlobal.CookieDomain = ".mql5.com";
+        mqGlobal.PageReady = false;
+        mqGlobal.AddOnLoad(function(){mqGlobal.PageLoaded = true;});
+        mqGlobal.AddOnReady(function(){mqGlobal.PageReady = true;});
+        mqGlobal.Language = 'en';
+        mqGlobal.IsMobile = false;
+                                              
+    mqGlobal.ClearRteStorage = function(frameUid)
+      {
+      if(!window.GStorage)
+      {
+        window.GStorage = globalStorage(window.globalStorageDomain,window.globalStoragePage);
+      }
+      if(!window.GStorage.supported)
+      {
+        return;
+      }
+      try
+      {
+        var frameUidLocal = frameUid;
+        window.GStorage.getItem("rte_autosave_uid",function(key,value)
+          {
+          var storedUid = value;
+          if(storedUid == frameUidLocal)
+          {
+            window.GStorage.removeItem("rte_autosave_text");
+            window.GStorage.removeItem("rte_autosave_date");
+            window.GStorage.removeItem("rte_autosave_uid");
+          }
+        });
+      }
+      catch(e)
+      {
+      } 
+    }
+</script>
+    <style type="text/css">
+      div.top-band { border-bottom: none; }
+    </style>
+
+    <meta property="fb:admins" content="100003321148816" />
+    <meta property="qc:admins" content="36367170677651456375" />
+    <meta property="wb:webmaster" content="073d7690269bcd81" />
+
+    <script type="text/javascript">
+        (function (a, b) { a[b] || (a.FintezaCoreObject = b, a[b] = a[b] || function () { (a[b].q = a[b].q || []).push(arguments) }, a[b].l = 1 * new Date); })(window, "fz");
+        window.fz("register", "website", "sqjxkxkswybhifrohpyooonwgbvsfzmayq");
+        
+    </script>
+</head>
+
+<body>
+<div class="cover" id="cover">
+    
+    <div class="head">
+        <a href="https://www.mql5.com" class="logo" title="MQL5 - Language of trade strategies built-in the MetaTrader 5 client terminal"></a>
+
+        <ul id="mainmenu" class="menu dropdown" itemscope itemtype="http://schema.org/SiteNavigationElement" style="padding-right: 0;">
+        <li class="selected">
+        <a id="mainMenuSelected"><span>Home</span></a>
+         <ul id="mainmenuItems">
+<li><a href='/en/trading' itemprop='url'><span>WebTerminal</span></a></li>
+<li><a href='/en/docs' itemprop='url'><span>Documentation</span></a></li>
+<li><a href='/en/economic-calendar' itemprop='url'><span>Calendar</span></a></li>
+<li><a href='/en/code' itemprop='url'><span>CodeBase</span></a></li>
+<li><a href='/en/articles' itemprop='url'><span>Articles</span></a></li>
+<li><a href='/en/job' itemprop='url'><span>Freelance</span></a></li>
+<li><a href='/en/market' itemprop='url'><span>Market</span></a></li>
+<li><a href='/en/signals' itemprop='url'><span>Signals</span></a></li>
+<li><a href='/en/vps' itemprop='url'><span>VPS</span></a></li>
+<li><a href='/en/forum' itemprop='url'><span>Forum</span></a></li>
+</ul>
+         </li>
+            <li><input class="blurHandler" id="mainMenuBlurHandler" type="checkbox"></li>
+         </ul>
+
+        <div class="toolbar" id="headerToolbar">
+            
+            <div class="container loginRegister"><ul id="loginRegisterButtons"><li><a class="login" title="Please sign in. OpenID supported" href="https://www.mql5.com/en/auth_login">Login</a></li><li><a class="registration en" title="Please register" href="https://www.mql5.com/en/auth_register">Sign up &gt;&gt;</a></li></ul></div>
+
+            <div class="groupMenu" id="groupMenu">
+                
+                <div class="container langMenuContainer"><div id="langMenuContainer"><b id="langMenuSelected" class="en"><span>English</span></b><ul class="langmenu" id="langmenu"><li class="ru"><a href="/ru"><span>Русский</span></a></li><li class="zh"><a href="/zh"><span>中文</span></a></li><li class="es"><a href="/es"><span>Español</span></a></li><li class="pt"><a href="/pt"><span>Português</span></a></li><li class="ja"><a href="/ja"><span>日本語</span></a></li><li class="de"><a href="/de"><span>Deutsch</span></a></li><li><input class="blurHandler" id="langmenuBlurHandler" type="checkbox"></li></ul></div></div>
+                <div class="container searchBoxContainer"><div id="searchBoxContainer">
+<form action='https://www.mql5.com/en/search' onsubmit='document.location.assign(("https://www.mql5.com/en/search") + ($("keyword").value.length>0?("#!keyword="+encodeURIComponent($("keyword").value)):"")); if(document.location.href.indexOf("/en/search#")>=0)setTimeout(function(){document.location.reload(true);},10);return false;' id='main_search_form' method='post'>
+<div class='box'><div class='inputWrapper'><input name="keyword" type="text" title="Enter search text" id="keyword" /></div></div><input type='submit' value='' class='hiddenSearchSubmit' /><div class='searchSubmit' id='searchSubmit'></div></form><script type="text/javascript">mqGlobal.AddOnLoad(function(){window.keywordMainFormSuggests = new Suggestions("keyword","https://search.mql5.com/api/suggest","en",function(){$('main_search_form').onsubmit();});});</script></div></div>
+            </div>
+            
+        </div>
+        <div class="sub-nav__container" style="right: 282px; display: none;" id="subNavContainer">
+            <div class="sub-nav__toggle" id="subNavToggle">...</div>
+            <ul id="subNavList"></ul>
+            <input class="blurHandler" id="blurHandlerSubNav" type="checkbox">
+        </div>
+    </div>
+    
+
+    
+        <div class="annons line download" id="annonsLine2">
+          <a href="https://download.mql5.com/cdn/web/metaquotes.software.corp/mt5/mt5setup.exe?utm_campaign=MQL5.community" rel="nofollow" onclick="AnnonsLines.Close(false,2); window.fpush('Download+MT5+Windows');"><span>Download MetaTrader 5</span></a>
+          <i onclick="AnnonsLines.Close(true, 2)" title="Close"></i> 
+        </div><div id='bfogggabsofabcpxuzmgaibarmaxasdrj' class="top_container_f ff"><script type='text/javascript'>window.fz("show","bfogggabsofabcpxuzmgaibarmaxasdrj");</script></div>
+
+        
+        
+
+    <div class="body" id="bodyContent">
+        <div class="top-band">
+    <div style="text-align: right;">
+        <strong><a href="https://www.mql5.com/en/auth_login">Log in</a></strong> or <strong><a href="https://www.mql5.com/en/auth_register">Register</a></strong> to gain access to the benefits from all our services.
+    </div>
+    </div>
+    <div class="home-section widget-calendar ">
+        <div class="intro">
+            <div class="wrapper">
+              <h2><a href="/en/economic-calendar">Economic Calendar</a></h2>
+                <p>Check out the latest economic events and indicators from all over the world. All data are collected and updated in real time.</p>
+<p>You can monitor macroeconomic indicators straight from the MetaTrader 5 platform using release time labels displayed <a href="https://www.metatrader5.com/en/terminal/help/fundamental?utm_source=www.mql5.com&utm_campaign=en.main.page.mql5#chart">on financial symbol charts</a>. </p>
+            </div>
+          </div>
+        <div class="columns">
+            <iframe src="https://www.mql5.com/en/economic-calendar/widget?mode=1" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+    
+    <div class="home-section signals">
+      <div class="intro">
+        <div class="wrapper">
+          
+          <h2><a href="/en/signals">Trading Signals</a></h2><p>Choose a suitable trading strategy and subscribe to it with a few clicks. All Signals are provided with detailed statistics and informative charts. </p>
+<p><a href="https://www.mql5.com/en/articles/591" target="_blank">Become</a> a trading signal provider and sell subscriptions to thousands of traders around the world. 
+With the Signals service, your successful strategy can generate income with a small start-up budget!</p>          
+
+          <div class="subsections">
+            <a href="/en/signals/mt5">MetaTrader 5</a>, 
+            <a href="/en/signals/mt4">MetaTrader 4</a>
+          </div>
+        </div>
+      </div>
+  
+      
+      <div class="columns">
+        <div class="block b1">
+          <div class="wrapper signalsBlock narrow"><div class="signal">
+  <div class="logo">
+    <div class="signalAvatarW signals_states">
+      <a class="signalAvatar bg" href="https://www.mql5.com/en/signals/243624" rel="nofollow">
+        <canvas width="58" height="58"></canvas>
+        <input type="hidden" value="3, 0, 0, 0, 0, 1, 6, 7, 11, 5, 9, 16, 35, 36, 41, 44, 45, 52, 53, 0, "/>
+      </a>
+      <span class="ico_state real bg" title="Real Account"></span>
+    </div>
+    <span class="price" title="35.00 USD">35.00</span>
+  </div>
+  <div class="details">
+    <div class="title signals_states">
+      <span class="heading">
+        <a href="https://www.mql5.com/en/signals/243624" title="'AlgoTrading 2183 WIN' by Fabiano Oliveira">AlgoTrading 2183 WIN</a>
+      </span>
+      <span class="tools">
+      </span>
+    </div>
+    <dl class="numbers">
+      <dt class="first"><span>Growth</span></dt>
+      <dd class="first blue" title="Profit/Month: 13%"><span>230%</span></dd>
+      <dt><span>Subscribers</span></dt>
+      <dd><span>7</span></dd>
+      <dt><span>Weeks</span></dt>
+      <dd><span>40</span></dd>
+      <dt><span>Trades</span></dt>
+      <dd><span>117</span></dd>
+      <dt><span>Win</span></dt>
+      <dd><span>70%</span></dd>
+      <dt><span>Profit Factor</span></dt>
+      <dd><span>2.55</span></dd>
+      <dt><span>Max DD</span></dt>
+      <dd><span>19%</span></dd>
+    </dl>
+  </div>
+</div>
+<div class="signal">
+  <div class="logo">
+    <div class="signalAvatarW signals_states">
+      <a class="signalAvatar bg" href="https://www.mql5.com/en/signals/178686" rel="nofollow">
+        <canvas width="58" height="58"></canvas>
+        <input type="hidden" value="0, 0, 0, 0, 0, 0, 1, 1, 9, 19, 26, 26, 22, 29, 35, 32, 45, 43, 57, 53, "/>
+      </a>
+      <span class="ico_state real bg" title="Real Account"></span>
+    </div>
+    <span class="price" title="30.00 USD">30.00</span>
+  </div>
+  <div class="details">
+    <div class="title signals_states">
+      <span class="heading">
+        <a href="https://www.mql5.com/en/signals/178686" title="'Tendencia de Valor' by Marcelo Sampaio">Tendencia de Valor</a>
+      </span>
+      <span class="tools">
+      </span>
+    </div>
+    <dl class="numbers">
+      <dt class="first"><span>Growth</span></dt>
+      <dd class="first blue" title="Profit/Month: -5%"><span>639%</span></dd>
+      <dt><span>Subscribers</span></dt>
+      <dd><span>5</span></dd>
+      <dt><span>Weeks</span></dt>
+      <dd><span>76</span></dd>
+      <dt><span>Trades</span></dt>
+      <dd><span>1454</span></dd>
+      <dt><span>Win</span></dt>
+      <dd><span>67%</span></dd>
+      <dt><span>Profit Factor</span></dt>
+      <dd><span>1.68</span></dd>
+      <dt><span>Max DD</span></dt>
+      <dd class="red"><span>32%</span></dd>
+    </dl>
+  </div>
+</div>
+<div class="signal">
+  <div class="logo">
+    <div class="signalAvatarW signals_states">
+      <a class="signalAvatar bg" href="https://www.mql5.com/en/signals/285218" rel="nofollow">
+        <canvas width="58" height="58"></canvas>
+        <input type="hidden" value="0, 0, 4, 7, 10, 14, 17, 20, 25, 30, 33, 35, 38, 41, 44, 48, 52, 52, 53, 55, "/>
+      </a>
+      <span class="ico_state real bg" title="Real Account"></span>
+    </div>
+    <span class="price" title="30.00 USD">30.00</span>
+  </div>
+  <div class="details">
+    <div class="title signals_states">
+      <span class="heading">
+        <a href="https://www.mql5.com/en/signals/285218" title="'Hydrargyrum 7886' by Viktor Lyapin">Hydrargyrum 7886</a>
+      </span>
+      <span class="tools">
+      </span>
+    </div>
+    <dl class="numbers">
+      <dt class="first"><span>Growth</span></dt>
+      <dd class="first blue" title="Profit/Month: 7%"><span>868%</span></dd>
+      <dt><span>Subscribers</span></dt>
+      <dd><span>4</span></dd>
+      <dt><span>Weeks</span></dt>
+      <dd><span>23</span></dd>
+      <dt><span>Trades</span></dt>
+      <dd><span>213</span></dd>
+      <dt><span>Win</span></dt>
+      <dd><span>94%</span></dd>
+      <dt><span>Profit Factor</span></dt>
+      <dd><span>4.42</span></dd>
+      <dt><span>Max DD</span></dt>
+      <dd class="red"><span>52%</span></dd>
+    </dl>
+  </div>
+</div>
+<div class="signal">
+  <div class="logo">
+    <div class="signalAvatarW signals_states">
+      <a class="signalAvatar bg" href="https://www.mql5.com/en/signals/309262" rel="nofollow">
+        <canvas width="58" height="58"></canvas>
+        <input type="hidden" value="0, 0, 8, 12, 12, 12, 12, 28, 41, 37, 26, 27, 34, 44, 46, 35, 51, 57, 35, 29, "/>
+      </a>
+      <span class="ico_state real bg" title="Real Account"></span>
+    </div>
+    <span class="price" title="20.00 USD">20.00</span>
+  </div>
+  <div class="details">
+    <div class="title signals_states">
+      <span class="heading">
+        <a href="https://www.mql5.com/en/signals/309262" title="'SlavinFBS' by Yaroslav Gnidets">SlavinFBS</a>
+      </span>
+      <span class="tools">
+      </span>
+    </div>
+    <dl class="numbers">
+      <dt class="first"><span>Growth</span></dt>
+      <dd class="first blue" title="Profit/Month: -8%"><span>29%</span></dd>
+      <dt><span>Subscribers</span></dt>
+      <dd><span>5</span></dd>
+      <dt><span>Weeks</span></dt>
+      <dd><span>13</span></dd>
+      <dt><span>Trades</span></dt>
+      <dd><span>262</span></dd>
+      <dt><span>Win</span></dt>
+      <dd><span>79%</span></dd>
+      <dt><span>Profit Factor</span></dt>
+      <dd><span>1.24</span></dd>
+      <dt><span>Max DD</span></dt>
+      <dd><span>20%</span></dd>
+    </dl>
+  </div>
+</div>
+<div class="signal">
+  <div class="logo">
+    <div class="signalAvatarW signals_states">
+      <a class="signalAvatar bg" href="https://www.mql5.com/en/signals/336012" rel="nofollow">
+        <canvas width="58" height="58"></canvas>
+        <input type="hidden" value="0, 0, 2, 5, 11, 13, 15, 20, 26, 28, 30, 34, 41, 47, 50, 34, 43, 45, 54, 58, "/>
+      </a>
+      <span class="ico_state real bg" title="Real Account"></span>
+    </div>
+    <span class="price" title="30.00 USD">30.00</span>
+  </div>
+  <div class="details">
+    <div class="title signals_states">
+      <span class="heading">
+        <a href="https://www.mql5.com/en/signals/336012" title="'Deep Lex' by Simone Lezi">Deep Lex</a>
+      </span>
+      <span class="tools">
+      </span>
+    </div>
+    <dl class="numbers">
+      <dt class="first"><span>Growth</span></dt>
+      <dd class="first blue" title="Profit/Month: 29%"><span>34%</span></dd>
+      <dt><span>Subscribers</span></dt>
+      <dd><span>15</span></dd>
+      <dt><span>Weeks</span></dt>
+      <dd><span>6</span></dd>
+      <dt><span>Trades</span></dt>
+      <dd><span>986</span></dd>
+      <dt><span>Win</span></dt>
+      <dd><span>98%</span></dd>
+      <dt><span>Profit Factor</span></dt>
+      <dd><span>4.54</span></dd>
+      <dt><span>Max DD</span></dt>
+      <dd><span>14%</span></dd>
+    </dl>
+  </div>
+</div>
+</div>
+        </div>
+        <div class="block b2">
+          <div class="wrapper signalsBlock narrow"><div class="signal">
+  <div class="logo">
+    <div class="signalAvatarW signals_states">
+      <a class="signalAvatar bg" href="https://www.mql5.com/en/signals/272351" rel="nofollow">
+        <canvas width="58" height="58"></canvas>
+        <input type="hidden" value="0, 0, 7, 9, 5, 14, 13, 20, 28, 26, 31, 34, 25, 33, 33, 29, 42, 42, 57, 58, "/>
+      </a>
+      <span class="ico_state real bg" title="Real Account"></span>
+    </div>
+    <span class="price" title="35.00 USD">35.00</span>
+  </div>
+  <div class="details">
+    <div class="title signals_states">
+      <span class="heading">
+        <a href="https://www.mql5.com/en/signals/272351" title="'Chronos' by Anna Kuksenko">Chronos</a>
+      </span>
+      <span class="tools">
+      </span>
+    </div>
+    <dl class="numbers">
+      <dt class="first"><span>Growth</span></dt>
+      <dd class="first blue" title="Profit/Month: 29%"><span>1890%</span></dd>
+      <dt><span>Subscribers</span></dt>
+      <dd><span>68</span></dd>
+      <dt><span>Weeks</span></dt>
+      <dd><span>27</span></dd>
+      <dt><span>Trades</span></dt>
+      <dd><span>360</span></dd>
+      <dt><span>Win</span></dt>
+      <dd><span>48%</span></dd>
+      <dt><span>Profit Factor</span></dt>
+      <dd><span>1.65</span></dd>
+      <dt><span>Max DD</span></dt>
+      <dd class="red"><span>44%</span></dd>
+    </dl>
+  </div>
+</div>
+<div class="signal">
+  <div class="logo">
+    <div class="signalAvatarW signals_states">
+      <a class="signalAvatar bg" href="https://www.mql5.com/en/signals/258435" rel="nofollow">
+        <canvas width="58" height="58"></canvas>
+        <input type="hidden" value="0, 0, 0, 0, 1, 4, 6, 8, 12, 19, 22, 23, 24, 31, 43, 58, 51, 48, 48, 53, "/>
+      </a>
+      <span class="ico_state real bg" title="Real Account"></span>
+    </div>
+    <span class="price" title="20.00 USD">20.00</span>
+  </div>
+  <div class="details">
+    <div class="title signals_states">
+      <span class="heading">
+        <a href="https://www.mql5.com/en/signals/258435" title="'Ft2 activtrades' by Paul Thatcher">Ft2 activtrades</a>
+      </span>
+      <span class="tools">
+      </span>
+    </div>
+    <dl class="numbers">
+      <dt class="first"><span>Growth</span></dt>
+      <dd class="first blue" title="Profit/Month: 63%"><span>1421%</span></dd>
+      <dt><span>Subscribers</span></dt>
+      <dd><span>28</span></dd>
+      <dt><span>Weeks</span></dt>
+      <dd><span>33</span></dd>
+      <dt><span>Trades</span></dt>
+      <dd><span>905</span></dd>
+      <dt><span>Win</span></dt>
+      <dd><span>84%</span></dd>
+      <dt><span>Profit Factor</span></dt>
+      <dd><span>1.66</span></dd>
+      <dt><span>Max DD</span></dt>
+      <dd><span>28%</span></dd>
+    </dl>
+  </div>
+</div>
+<div class="signal">
+  <div class="logo">
+    <div class="signalAvatarW signals_states">
+      <a class="signalAvatar bg" href="https://www.mql5.com/en/signals/273946" rel="nofollow">
+        <canvas width="58" height="58"></canvas>
+        <input type="hidden" value="0, 0, 0, 1, 6, 9, 14, 16, 18, 20, 21, 27, 33, 31, 29, 50, 49, 47, 51, 52, "/>
+      </a>
+      <span class="ico_state real bg" title="Real Account"></span>
+    </div>
+    <span class="price" title="20.00 USD">20.00</span>
+  </div>
+  <div class="details">
+    <div class="title signals_states">
+      <span class="heading">
+        <a href="https://www.mql5.com/en/signals/273946" title="'Gains ECN' by Vladimir Borilyuk">Gains ECN</a>
+      </span>
+      <span class="tools">
+      </span>
+    </div>
+    <dl class="numbers">
+      <dt class="first"><span>Growth</span></dt>
+      <dd class="first blue" title="Profit/Month: 7%"><span>685%</span></dd>
+      <dt><span>Subscribers</span></dt>
+      <dd><span>17</span></dd>
+      <dt><span>Weeks</span></dt>
+      <dd><span>38</span></dd>
+      <dt><span>Trades</span></dt>
+      <dd><span>512</span></dd>
+      <dt><span>Win</span></dt>
+      <dd><span>79%</span></dd>
+      <dt><span>Profit Factor</span></dt>
+      <dd><span>1.53</span></dd>
+      <dt><span>Max DD</span></dt>
+      <dd class="red"><span>33%</span></dd>
+    </dl>
+  </div>
+</div>
+<div class="signal">
+  <div class="logo">
+    <div class="signalAvatarW signals_states">
+      <a class="signalAvatar bg" href="https://www.mql5.com/en/signals/137898" rel="nofollow">
+        <canvas width="58" height="58"></canvas>
+        <input type="hidden" value="0, 0, 8, 13, 19, 23, 25, 28, 28, 31, 34, 37, 42, 47, 51, 53, 56, 50, 49, 56, "/>
+      </a>
+      <span class="ico_state real bg" title="Real Account"></span>
+    </div>
+    <span class="price" title="20.00 USD">20.00</span>
+  </div>
+  <div class="details">
+    <div class="title signals_states">
+      <span class="heading">
+        <a href="https://www.mql5.com/en/signals/137898" title="'EA PAMM' by Weichao Chen">EA PAMM</a>
+      </span>
+      <span class="tools">
+      </span>
+    </div>
+    <dl class="numbers">
+      <dt class="first"><span>Growth</span></dt>
+      <dd class="first blue" title="Profit/Month: 7%"><span>570%</span></dd>
+      <dt><span>Subscribers</span></dt>
+      <dd><span>42</span></dd>
+      <dt><span>Weeks</span></dt>
+      <dd><span>105</span></dd>
+      <dt><span>Trades</span></dt>
+      <dd><span>1383</span></dd>
+      <dt><span>Win</span></dt>
+      <dd><span>71%</span></dd>
+      <dt><span>Profit Factor</span></dt>
+      <dd><span>1.70</span></dd>
+      <dt><span>Max DD</span></dt>
+      <dd><span>27%</span></dd>
+    </dl>
+  </div>
+</div>
+<div class="signal">
+  <div class="logo">
+    <div class="signalAvatarW signals_states">
+      <a class="signalAvatar bg" href="https://www.mql5.com/en/signals/84685" rel="nofollow">
+        <canvas width="58" height="58"></canvas>
+        <input type="hidden" value="0, 0, 0, 1, 2, 3, 5, 7, 8, 11, 13, 15, 18, 22, 24, 29, 35, 42, 50, 57, "/>
+      </a>
+      <span class="ico_state real bg" title="Real Account"></span>
+    </div>
+    <span class="price" title="20.00 USD">20.00</span>
+  </div>
+  <div class="details">
+    <div class="title signals_states">
+      <span class="heading">
+        <a href="https://www.mql5.com/en/signals/84685" title="'Splitter FX Kit 1' by Dmitry Verza">Splitter FX Kit 1</a>
+      </span>
+      <span class="tools">
+      </span>
+    </div>
+    <dl class="numbers">
+      <dt class="first"><span>Growth</span></dt>
+      <dd class="first blue" title="Profit/Month: 6%"><span>772%</span></dd>
+      <dt><span>Subscribers</span></dt>
+      <dd><span>21</span></dd>
+      <dt><span>Weeks</span></dt>
+      <dd><span>208</span></dd>
+      <dt><span>Trades</span></dt>
+      <dd><span>4639</span></dd>
+      <dt><span>Win</span></dt>
+      <dd><span>66%</span></dd>
+      <dt><span>Profit Factor</span></dt>
+      <dd><span>1.68</span></dd>
+      <dt><span>Max DD</span></dt>
+      <dd class="red"><span>42%</span></dd>
+    </dl>
+  </div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  
+    
+    <div class="home-section market">
+      <div class="intro">
+        <div class="wrapper">
+          
+          <h2><a href="/en/market">MQL5 Programs Market</a></h2><p>Dozens of new automated trading applications appear in the MQL5 Market every day. Choose the right app among 10,000 products and forget about unnecessary routine operations of manual trading. </p>
+<p><a href="https://www.mql5.com/en/articles/401" target="_blank">Sell </a>your algorithmic trading programs through the largest store of trading applications!</p>
+          <div class="subsections">
+            
+            <a href="/en/market/mt5">MetaTrader 5</a>, 
+            <a href="/en/market/mt4">MetaTrader 4</a>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="block b1">
+          <div class="wrapper">
+            <div class="item">
+              <div class="avatar">
+                <a class="frame" href="/en/market/product/380">
+                  <span class="bg"><img src="https://c.mql5.com/31/1/Virtual_pending_buy_stoporder_60x60.png" width="60" height="60" alt="Virtual pending buy stop order"/></span>
+                </a>
+                <div class="rating small"><div class="v30"></div></div>
+              </div>
+              <div class="body">
+                <h4><a href="/en/market/product/380">Virtual pending buy stop order</a></h4>
+                <p>The script is intended for automatic placing of Buy Stop pending orders, Stop Losses and Take Profits on the user specified levels.
+Main Purposes:
+  Avoiding unwanted entering a long position in case of false hitting the level as a result of widening of the spread by a dealing center.  Avoiding unwanted triggering of a Stop Loss in case a quote pierces a significant level (fractal) without further confirmation with the close price.  Setting a necessary virtual order and entering the market in </p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a class="frame" href="/en/market/product/381">
+                  <span class="bg"><img src="https://c.mql5.com/31/1/Virtual_pending_sell_stop_order_60x60.png" width="60" height="60" alt="Virtual pending sell stop order"/></span>
+                </a>
+                <div class="rating small"><div class="v50"></div></div>
+              </div>
+              <div class="body">
+                <h4><a href="/en/market/product/381">Virtual pending sell stop order</a></h4>
+                <p>The script is intended for automatic placing of Sell Stop pending orders, Stop Losses and Take Profits on the user specified levels. This script is not that useful as &quot;Virtual pending buy stop&quot;, since short positions are opened as Bid price crosses the levels. Thus spread widening is not dangerous. Nevertheless, you need to have this script to prevent unwanted hitting of the Stop Loss levels.
+Main Purposes:
+   Automation of the process of placing the Sell Stop pending orders, Stop Losses and T</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a class="frame" href="/en/market/product/19509">
+                  <span class="bg"><img src="https://c.mql5.com/31/146/oandax-5-download-manager-logo-60x60-7560.png" width="60" height="60" alt="OandaX 5 Download Manager"/></span>
+                </a>
+                <div class="rating small"><div class=""></div></div>
+              </div>
+              <div class="body">
+                <h4><a href="/en/market/product/19509">OandaX 5 Download Manager</a></h4>
+                <p>The OandaX product series is designed to display additional data on orders and positions provided by the Oanda FxLabs service.
+The OandaX Download Manager EA is included in the OandaX product series and is designed to download data for all OandaX indicators running in the terminal.
+To test your trading strategies and for historical data analysis, you can use free OandaX 5 Download Manager BETA. It is similar to Download Manager but provides data with a delay for a day.
+Note. The EA uses WebRe</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a class="frame" href="/en/market/product/88">
+                  <span class="bg"><img src="https://c.mql5.com/31/0/MAonRealtimeDeals_60x60.png" width="60" height="60" alt="MA on Realtime Deals"/></span>
+                </a>
+                <div class="rating small"><div class=""></div></div>
+              </div>
+              <div class="body">
+                <h4><a href="/en/market/product/88">MA on Realtime Deals</a></h4>
+                <p>This script help user record the value of Moving Average and OHLC at the moment once deals happen. 
+The datas save as .CSV format file so you can quantitative analysis someone&#39;s trading. 
+Please input value of MA&#39;s parameters you like. It tells you the path of data file when script is stopped.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a class="frame" href="/en/market/product/4861">
+                  <span class="bg"><img src="https://c.mql5.com/31/33/active-lines-logo-60x60-3729.png" width="60" height="60" alt="Active Lines"/></span>
+                </a>
+                <div class="rating small"><div class=""></div></div>
+              </div>
+              <div class="body">
+                <h4><a href="/en/market/product/4861">Active Lines</a></h4>
+                <p>Active Lines - a powerful professional tool for operations with lines on charts. Active Lines provides a wide range of actions for events when the price crosses lines. For example: notify, open/modify/close a position, place/remove pending orders. With Active Lines you can assign several tasks to one line, for each of which you can set individual trigger conditions, as well as conditions for re-activations and the number of possible activations.
+Active Lines helps you easily organize various tr</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block b2">
+          <div class="wrapper">
+            <div class="item">
+              <div class="avatar">
+                <a class="frame" href="/en/market/product/5716">
+                  <span class="bg"><img src="https://c.mql5.com/31/141/sfe-price-action-logo-60x60-3417.png" width="60" height="60" alt="SFE Price Action"/></span>
+                </a>
+                <div class="rating small"><div class="v40"></div></div>
+              </div>
+              <div class="body">
+                <h4><a href="/en/market/product/5716">SFE Price Action</a></h4>
+                <p>SFE Price Action is an Expert Advisor with a great diversification of operations and different systems working in 15 pairs and 4 timeframes. This increases the chances of sustained growth and reduces exposure to a single pair or individual operations. The risk is very controlled.
+Based on own price action rules, no hedge, martingale, grid or any other type of dangerous practices are used, such as not closing failed operations.
+You do not need any knowledge, the configuration is very easy and y</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a class="frame" href="/en/market/product/20619">
+                  <span class="bg"><img src="https://c.mql5.com/31/159/veno-ea-logo-60x60-5302.png" width="60" height="60" alt="Veno EA"/></span>
+                </a>
+                <div class="rating small"><div class="v45"></div></div>
+              </div>
+              <div class="body">
+                <h4><a href="/en/market/product/20619">Veno EA</a></h4>
+                <p>Veno EA is a safe and fully automated  medium-term trading robot.
+The EA does NOT use hedging, martingale, grid strategies, arbitration, etc.
+Veno Expert System automatically analyzes the appearance of participants with distinct preference towards buying or selling on the market. Trades are conducted on strong cluster and news based movements. The robot automatically analyzes the market volumes and volatility and follows strong supply and demand movements. It smoothly sets breakeven levels and</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a class="frame" href="/en/market/product/23473">
+                  <span class="bg"><img src="https://c.mql5.com/31/182/yans-logo-60x60-4010.png" width="60" height="60" alt="Yans"/></span>
+                </a>
+                <div class="rating small"><div class="v50"></div></div>
+              </div>
+              <div class="body">
+                <h4><a href="/en/market/product/23473">Yans</a></h4>
+                <p>Yet another night scalper (YANS) is an Expert Adviser (EA) that works between the end of the New York and beginning of the Asian session. YANS is optimized for the EURUSD pair. You can use it on any timeframe as the TF for the built-in indicators are fix.
+It is recommended to use a low spread broker and a VPS. You can start using it with $100 only.
+YANS is always using stop loss and take profit values! It does not use
+    Martingale    Grid    HedgeYANS is FIFO compatible if you set &quot;How many</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a class="frame" href="/en/market/product/24254">
+                  <span class="bg"><img src="https://c.mql5.com/31/191/advanced-scalper-logo-60x60-6737.png" width="60" height="60" alt="Advanced Scalper"/></span>
+                </a>
+                <div class="rating small"><div class="v40"></div></div>
+              </div>
+              <div class="body">
+                <h4><a href="/en/market/product/24254">Advanced Scalper</a></h4>
+                <p>Advanced Scalper is the result of more than 15 years of studying the markets and programming expert advisors. It uses very advanced exit-algorithms and has a build in spread-filter and slippage-control algorithms. It is fully customisable to suit the client&#39;s needs and offers many setup possibilities. Ofcourse there are also recommended settings which will be availabe in the comments-pages.
+The basic logic of the EA is already running for more than 2 years on live accounts with success. These r</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a class="frame" href="/en/market/product/19650">
+                  <span class="bg"><img src="https://c.mql5.com/31/147/setslav-scalper-s1-logo-60x60-6701.png" width="60" height="60" alt="Setslav Scalper S1"/></span>
+                </a>
+                <div class="rating small"><div class="v45"></div></div>
+              </div>
+              <div class="body">
+                <h4><a href="/en/market/product/19650">Setslav Scalper S1</a></h4>
+                <p>Setslav_Scalper_S#1 is a scalping Expert Advisor developed specifically for working on real accounts, which does not require any strict conditions or a specific broker. This is not a typical scalper since it has the following distinguishing features:
+    no need to select a broker - it works with any broker;    no need for a minimum spread - spread value does not affect the EA operation;    no need for high-speed VPS;    not affected by account type;    losses are limited by StopLoss level whic</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="home-section job">
+      <div class="intro">
+        <div class="wrapper">
+          
+          <h2><a href="/en/job">Jobs for Freelancers</a></h2><p>Order a custom technical indicator, a trading robot or any other app for the MetaTrader platforms from trusted developers.</p>
+<p>Professional programmers deal with <a href="https://www.mql5.com/en/job" target="_blank">hundreds of orders</a> in the MQL5 Freelance section with guaranteed payment and instant withdrawal of earnings through convenient payment systems.</p> 
+
+          <div class="subsections">
+            <a href="/en/job/indicator">indicators</a>, <a href="/en/job/expert">experts</a>, <a href="/en/job/script">scripts</a>, <a href="/en/job/integration">integration</a>, <a href="/en/job/convertation">converting</a>, <a href="/en/job/translation">translation</a>, <a href="/en/job/design">design</a>, <a href="/en/job/consultation">consultation</a>, <a href="/en/job/other">other</a>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="block b1">
+          <div class="wrapper">
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/job/67849" class="frame" title="Take part for 50 USD!"><span class="bg budget">
+                      <span class="img"></span>
+                      <span class="budgetValue">50</span>
+                      
+                  </span></a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/job/67849">Objects</a></h4>
+                <p>&nbsp;&nbsp; hello guys!&nbsp; Sorry if am being igonorant , I would like to order a hor objects to draw on chart , one of them is horiizontal fibonacci and also a speed resistance like advfn java platform gets.&nbsp; Thanks !</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/job/67845" class="frame" title="Take part for 0 USD!"><span class="bg budget">
+                      <span class="img"></span>
+                      <span class="budgetValue">0</span>
+                      
+                  </span></a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/job/67845">Jojo</a></h4>
+                <p>//+------------------------------------------------------------------+//|&nbsp;Script&nbsp;program&nbsp;start&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/job/67844" class="frame" title="Take part for 0 USD!"><span class="bg budget">
+                      <span class="img"></span>
+                      <span class="budgetValue">0</span>
+                      
+                  </span></a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/job/67844">Convert EA MT4 to JAVA</a></h4>
+                <p>convertEA Mt4In JavaPer eseguire sulla piattaforma JforexI give the information to those who will do the job thank youPS: only those who can use java for jforex for Dukascopy.. thanks</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/job/67840" class="frame" title="Take part for 100 USD!"><span class="bg budget">
+                      <span class="img"></span>
+                      <span class="budgetValue">100</span>
+                      
+                  </span></a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/job/67840">Need to change my mt4  indiactor</a></h4>
+                <p>i need to change my mt4 indiactor. Looking fort indian programmer metatrader 4, please contact me eslabbb@gmail.com.You&nbsp; must have big expirenced and half payment done by verifying by team viewer.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/job/67839" class="frame" title="Take part for 0 USD!"><span class="bg budget">
+                      <span class="img"></span>
+                      <span class="budgetValue">0</span>
+                      
+                  </span></a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/job/67839">Moving average</a></h4>
+                <p>Strategy consist of 2 different period moving average when slow period goes down higher period , stochastic&nbsp; show downward trend ( means green lines goes below red line) and RSI is below 50 then it will open sell trade, it will close when stochastic green line goes above red line or vise versa...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block b2">
+          <div class="wrapper">
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/job/67835" class="frame" title="Take part for 0 USD!"><span class="bg budget">
+                      <span class="img"></span>
+                      <span class="budgetValue">0</span>
+                      
+                  </span></a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/job/67835">Convert an Indicator to EA</a></h4>
+                <p>I need ea for Easytrend indicator.I will write details when approving.I need source codes, standart sl, tp, trail settings. etc.Working hours, money management. Reverse mode and stochastic filter zones.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/job/67833" class="frame" title="Take part for 0 USD!"><span class="bg budget">
+                      <span class="img"></span>
+                      <span class="budgetValue">0</span>
+                      
+                  </span></a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/job/67833">Debugging a zero divide error in my EA</a></h4>
+                <p>Hi, I have a 3000 line code for EA and there is a divide zero error that i need to be fixed.&nbsp;I mention the following because it might help to spot which code line is passing this error" I have read in a forum thread that you can write a checking function (check if the divisor is equal to...</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/job/67831" class="frame" title="Take part for 500 USD!"><span class="bg budget">
+                      <span class="img"></span>
+                      <span class="budgetValue">500</span>
+                      
+                  </span></a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/job/67831">Stable profit 5pips-10pips daily</a></h4>
+                <p>I need a EA that can be at least 95% accuracy on profiting 5-10pips everyday EA program, I believe you guys have experienced a lot projects ,if one of your projects like mine or you have one, please contact me , and name your price, I can afford what ever it values.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/job/67815" class="frame" title="Take part for 0 USD!"><span class="bg budget">
+                      <span class="img"></span>
+                      <span class="budgetValue">0</span>
+                      
+                  </span></a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/job/67815">An expert adviser based on oscillator</a></h4>
+                <p>Hi developers,i need a EA which is based on custom indicator Trend signal.&nbsp;entry and exit&nbsp; at second candle when crossover is occurred.every signal is square of at the end of week. give me email and sound alert at every entry exit point.Second thing is that i need&nbsp; email alert for...</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/job/67813" class="frame" title="Take part for 200 USD!"><span class="bg budget">
+                      <span class="img"></span>
+                      <span class="budgetValue">200</span>
+                      
+                  </span></a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/job/67813">Renko chart dependent of closing time</a></h4>
+                <p>Need to create an indicator to show renko boxes on mt4.The renko boxes need to close by a selected time of 1, 2 or 5 minutes. The separate indicator must accept moving averages, do not repaint and be set the initial block so the chart look the same as tradingview.com. The EA will buy every green box...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="home-section articles">
+      <div class="intro">
+        <div class="wrapper">
+          
+          <h2><a href="/en/articles">Financial Trading Articles</a></h2><p>Learn how to create your own technical indicators and trading robots from the huge database of articles written by expert traders.</p>
+<p>Share your trading and programming experience with those who are new to algorithmic trading, <a href="https://www.mql5.com/en/forum/384" target="_blank">write</a> an article about it and earn $200. In addition, we will translate your article to six languages.</p>
+          <div class="subsections">
+            <a href="/en/articles/mt5">MetaTrader 5</a>, 
+            <a href="/en/articles/mt4">MetaTrader 4</a>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="block b1">
+          <div class="wrapper">
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/articles/3270" class="frame" title="Vasiliy Sokolov">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/2/28/1tjuu2qd9po_i8o2.png" alt="Universal Expert Advisor: Accessing Symbol Properties (Part 8)"></span>
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/articles/3270">Universal Expert Advisor: Accessing Symbol Properties (Part 8)</a></h4>
+                <p>The eighth part of the article features the description of the CSymbol class, which is a special object that provides access to any trading instrument. When used inside an Expert Advisor, the class provides a wide set of symbol properties, while allowing to simplify Expert Advisor programming and to expand its functionality.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/articles/3339" class="frame" title="Andrei Novichkov">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/2/28/articles_234__1.png" alt="Testing patterns that arise when trading currency pair baskets. Part I"></span>
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/articles/3339">Testing patterns that arise when trading currency pair baskets. Part I</a></h4>
+                <p>We begin testing the patterns and trying the methods described in the articles about trading currency pair baskets. Let&#39;s see how oversold/overbought level breakthrough patterns are applied in practice.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/articles/3366" class="frame" title="Anatoli Kazharski">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/2/28/av.png" alt="Graphical Interfaces XI: Rendered controls (build 14.2)"></span>
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/articles/3366">Graphical Interfaces XI: Rendered controls (build 14.2)</a></h4>
+                <p>In the new version of the library, all controls will be drawn on separate graphical objects of the OBJ_BITMAP_LABEL type. We will also continue to describe the optimization of code: changes in the core classes of the library will be discussed.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/articles/3237" class="frame" title="12m">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/2/27/MQL5-avatar-corner-003.png" alt="Angles in Trading. Further Study Required"></span>
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/articles/3237">Angles in Trading. Further Study Required</a></h4>
+                <p>In this article, we discuss the method of trading analysis by measuring angles in the MetaTrader 4 terminal. The article provides a general plan of using angles for trend movement analysis, as well as non-standard ways to the practical application of angle analysis in trading. The article also provides conclusions that can be useful for trading.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/articles/3266" class="frame" title="Andrei Novichkov">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/2/28/articles_234.png" alt="Patterns available when trading currency baskets. Part III"></span>
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/articles/3266">Patterns available when trading currency baskets. Part III</a></h4>
+                <p>This is the final article devoted to the patterns that occur when trading currency pair baskets. It considers combined trend-following indicators and application of standard graphical constructions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block b2">
+          <div class="wrapper">
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/articles/3365" class="frame" title="Anatoli Kazharski">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/2/28/MQL5-avatar-XI-build14.png" alt="Graphical Interfaces XI: Refactoring the Library code (build 14.1)"></span>
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/articles/3365">Graphical Interfaces XI: Refactoring the Library code (build 14.1)</a></h4>
+                <p>As the library grows, its code must be optimized again in order to reduce its size. The version of the library described in this article has become even more object-oriented. This made the code easier to learn. A detailed description of the latest changes will allow the readers to develop the library independently based on their own needs.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/articles/3118" class="frame" title="Dmitrii Troshin">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/2/27/MQL5-avatar-sort-003.png" alt="Sorting methods and their visualization using MQL5"></span>
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/articles/3118">Sorting methods and their visualization using MQL5</a></h4>
+                <p>The Graphic.mqh library has been designed to work with graphics in MQL5. The article provides an example of its practical application and explains the idea of sorting. The general concept of sorting is described here since each type of sorting already has at least one separate article, while some of sorting types are objects of detailed studies.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/articles/3112" class="frame" title="Andrei Novichkov">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/2/26/i0020rp.png" alt="Creating Documentation Based on MQL5 Source Code"></span>
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/articles/3112">Creating Documentation Based on MQL5 Source Code</a></h4>
+                <p>This article considers creation of documentation for MQL5 code starting with the automated markup of required tags. It also provides the description of how to use the Doxygen software, how to properly configure it and how to receive results in different formats, including html, HtmlHelp and PDF.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/articles/3298" class="frame" title="Alexander Fedosov">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/2/28/Pyramid60w60-2.png" alt="Custom indicators and infographics in CCanvas"></span>
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/articles/3298">Custom indicators and infographics in CCanvas</a></h4>
+                <p>The article considers new types of indicators with more complex structural implementation. It also describes the development of pseudo-3D indicator types and dynamic infographics.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/articles/3395" class="frame" title="Enrico Lambino">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/2/28/Cross_Platform_Expert_Advisor__3.png" alt="Cross-Platform Expert Advisor: Time Filters"></span>
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/articles/3395">Cross-Platform Expert Advisor: Time Filters</a></h4>
+                <p>This article discusses the implementation of various methods of time filtering a cross-platform expert advisor. The time filter classes are responsible for checking whether or not a given time falls under a certain time configuration setting.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="home-section forum">
+      <div class="intro">
+        <div class="wrapper">
+          <h2><a href="/en/forum">Traders Forum</a></h2><p>Ask questions on technical analysis, discuss trading systems and improve your <a href="https://www.mql5.com/en/docs" target="_blank">MQL5</a> programming skills to develop your own trading strategies. </p>
+<p>Communicate and share your experience with traders from anywhere in the world, answer questions and help beginners — MQL5.community is developing along with you.</p>
+          <div class="subsections">
+            <a href="/en/forum/general">general discussions</a>, <a href="/en/forum/trading_systems">trading systems</a>, <a href="/en/forum/stock-exchange">exchange</a>, <a href="/en/forum/ea">robots and expert advisors</a>, <a href="/en/forum/indicators">technical indicators</a>, <a href="/en/forum/art">trading articles</a>, <a href="/en/forum/mql4">mql4 and metatrader 4</a>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="block b1">
+          <div class="wrapper">
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/forum/214789" class="frame" title="How do you call a function from within a second function? Online help is not cutting it">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/avatar/2017/6/594293E4-957C.jpg" alt="nadiawicket"></span>
+                  
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/forum/214789">How do you call a function from within a second function? Online help is not cutting it</a></h4>
+                <p>Hello, Im just almost done coding my EA and am really happy about it, however I am unable to select a function within inside of a second function in this EA, and this is preventing me from finishing my EA. Heres the EA. I just need to select the second opened sell order after the first one, so as to...</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/forum/146630" class="frame" title="simultaneous processing of multiple order tickets?">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/avatar/2014/3/43393_1322257541.png" alt="4evermaat1"></span>
+                  
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/forum/146630">simultaneous processing of multiple order tickets?</a></h4>
+                <p>Can asynchronous order tickets be processed at the same time?  Meaning can I make a trade open/modify/close request #2,3,4, etc without waiting for confirmation from request #1. &quot;MT4 does process multiple orders at the same time and this change was made during a relatively recent update by...</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/forum/161007" class="frame" title="Indicators: Harmonic Pattern Finder V2">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/avatar/2014/12/548F1186-B143.jpg" alt="Automated-Trading"></span>
+                  
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/forum/161007">Indicators: Harmonic Pattern Finder V2</a></h4>
+                <p>Harmonic Pattern Finder V2: Indicator to display existent and emerging harmonic chart patterns. Author: Andre Enger</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/forum/175037" class="frame" title="Elite indicators :)">
+                      <span class="bg counter">14978</span>
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/forum/175037">Elite indicators :)</a></h4>
+                <p>Hello, Does anyone know where I can find an indicator that takes in price values, which when reached or surpassed will cause the indicator to send a sound alert?</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/forum/179446" class="frame" title="Eurusd/gbpusd">
+                      <span class="bg counter">22727</span>
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/forum/179446">Eurusd/gbpusd</a></h4>
+                <p>This thread is all about trading the euro and GBP/USDU using Metatrader indicators, Neural Net and general technical analysis. This site is rich with indicators and systems so let&#39;s work together to make more pips using our accumulated expertise. Notch aka Firscall P.S.   Feel free to post!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block b2">
+          <div class="wrapper">
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/forum/214779" class="frame" title="use machine learning to discover perfect trading strategies">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/avatar/2017/8/5987BB2E-CD81.jpg" alt="mrluck012"></span>
+                  
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/forum/214779">use machine learning to discover perfect trading strategies</a></h4>
+                <p>Last year the best human go player in the world was beaten by a machine, now a machine can beat any human in poker, or basically any game, so really it seems&#160; like a good idea to create a software that test trades multiple times and get better, the difference is that a machine can trade and test...</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/forum/214790" class="frame" title="Can you please develop a Linux native app?">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/avatar/2017/6/594293E4-957C.jpg" alt="nadiawicket"></span>
+                  
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/forum/214790">Can you please develop a Linux native app?</a></h4>
+                <p>Is it that hard?</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/forum/214780" class="frame" title="Automatic 10 Pip Stop Loss with One-Click Trading in MT4">
+                      <span class="bg counter">2</span>
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/forum/214780">Automatic 10 Pip Stop Loss with One-Click Trading in MT4</a></h4>
+                <p>Hi, I&#39;ll keep this quick. I am a scalper and use MT4 through my broker (they don&#39;t use MT5, yet) and i am looking for one very specific program: something that can add a set amount of pips lets say 10 pips as an automatic stop loss when i open trade with the One-Click trading function. I have found...</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/forum/214723" class="frame" title="No MQL editor under Android operating system">
+                  <span class="bg"><img width="60" height="60" src="https://c.mql5.com/avatar/2014/3/11820_1333136927.jpg" alt="puncher"></span>
+                  
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/forum/214723">No MQL editor under Android operating system</a></h4>
+                <p>I do not understand one thing. Since Meta Trader, Windows, Android and all scripts, strategies and Expert Advisors for MT4 are written in C ++ or C # or similar C language. So far, Android has not created the MQL compiler under MT4 yet? I mean no MQL Editor for Android. Besides, there is no...</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="avatar">
+                <a href="/en/forum/214468" class="frame" title="History Profit in MQL5 ?">
+                      <span class="bg counter">6</span>
+                </a>
+              </div>
+              <div class="body">
+                <h4><a href="/en/forum/214468">History Profit in MQL5 ?</a></h4>
+                <p>How can I get History Profit in MQL5 ? This is &#160;MT4 code... Have any example ? Thank you. double Profit()&#160;&#160;{&#160;&#160; double pp;&#160;&#160; for(int i=OrdersHistoryTotal()-1; i&gt;=0; i--)&#160;&#160;&#160;&#160; {&#160;&#160;&#160;&#160;&#160;&#160;if(OrderSelect(i,SELECT_BY_POS,MODE_HISTORY)==true )&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; if(OrderSymbol()==Symbol() &amp;&amp;...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+        mqGlobal.AddOnReady(function () {
+        Signals.RenderAvatars();
+    });
+    </script>
+    <!--[if lte IE 8]>
+    <script type="text/javascript">
+    if (document.documentElement.clientWidth < 800) {
+        document.body.className = 'force-single';
+    } else if (document.documentElement.clientWidth < 1200) {
+        document.body.className = 'force-double';
+    }
+    </script>
+    <![endif]-->
+
+    </div>
+
+    <div class="footer desktop">
+        <ul class="links">
+            <li id="navFooterCommunity">
+                <b>MQL5.community</b>
+                <ul>
+                    <li><a href="/en/trading">Online trading / WebTerminal</a></li>
+                    <li><a href="/en/code">Free technical indicators and robots</a></li>
+                    <li><a href="/en/articles">Articles about programming and trading</a></li>
+                    <li><a href="/en/job">Order trading robots on the Freelance</a></li>
+                    <li><a href="/en/market">Market of Expert Advisors and applications	</a></li>
+                    <li><a href="/en/signals">Follow forex signals</a></li>
+                    <li><a href="/en/vps">Low latency forex VPS</a></li>
+                    <li><a href="/en/forum">Traders forum</a></li>
+                    <li><a href="/en/blogs">Trading blogs</a></li>
+                    <li><a href="/en/charts">Charts</a></li>
+                </ul>
+            </li><!--
+
+         --><li id="navFooterMt5">
+                <b>MetaTrader 5</b>
+                <ul>
+                    <li><a href="https://www.metatrader5.com"><span class="nobr">MetaTrader 5</span> Trading Platform</a></li>
+                    <li><a href="https://www.metatrader5.com/en/terminal/help"><span class="nobr">MetaTrader 5</span> User Manual</a></li>
+                    <li><a href="/en/docs">MQL5 automation language</a></li>
+                    <li><a href="https://cloud.mql5.com">MQL5 Cloud Network</a></li>
+                    <li><a href="https://download.mql5.com/cdn/web/metaquotes.software.corp/mt5/mt5setup.exe?utm_campaign=MQL5.community">Download <span class="nobr">MetaTrader 5</span></a></li>
+                    <li><a href="https://www.metatrader5.com/en/terminal/help/start_advanced/installation">Install Platform</a></li>
+                    <li><a href="https://www.metatrader5.com/en/terminal/help/start_advanced/deinstallation">Uninstall Platform</a></li>
+                </ul>
+             
+                
+            </li><!--
+
+         --><li id="navFooterWebsite">
+             
+                
+                <b >Website</b>
+                <ul>
+                    <li><a href="/en/about">About</a></li><li><a href="/en/wall">Timeline</a></li><li><a href="/en/about/terms">Terms and Conditions</a></li>
+                    <li><a href="/en/about/privacy">Privacy Policy</a></li>
+                    <li><a href="/en/contact">Contacts and requests</a></li>
+                    
+                </ul>
+
+                
+            </li><!--
+
+         --><li id="navFooterDownload">
+                <b>Join us — download <span class="nobr">MetaTrader 5!</span></b>
+                <ul>
+                    <li class="icon windows"><a href="https://download.mql5.com/cdn/web/metaquotes.software.corp/mt5/mt5setup.exe?utm_campaign=MQL5.community" onclick="window.fpush('Download+MT5+Windows');" title="Download MetaTrader 5 for Windows Free!">Windows</a></li><li class="icon ios"><a href="https://download.mql5.com/cdn/mobile/mt5/ios?hl=en&amp;utm_campaign=MQL5.community" target="_blank" rel="nofollow" onclick="window.fpush('Download+MT5+iOS');" title="Download MetaTrader 5 for iPhone Free!">iPhone/iPad</a></li><li class="icon macos"><a href="/en/articles/619" target="_blank" title="How to install MetaTrader 5 on Mac OS">Mac OS</a></li><li class="icon android"><a href="https://download.mql5.com/cdn/mobile/mt5/android?hl=en&amp;utm_campaign=MQL5.community" target="_blank" rel="nofollow" onclick="window.fpush('Download+MT5+Android');" title="Download MetaTrader 5 Android from Google Play Free!"><span>Android</span></a></li><li class="icon linux"><a href="/en/articles/625" target="_blank" title="MetaTrader 5 on Linux"><span>Linux</span></a></li>
+                </ul>
+                
+                <div class="copyright">Copyright 2000-2017, <span class="nobr">MQL5 Ltd.</span></div>
+            </li>
+
+        </ul>
+
+
+    </div>
+    <div class="layer" id="layer"></div>
+</div>
+
+<script src="https://c.mql5.com/js/all.ab96ac00645eb85829da0c41e85f3a93.js" type="text/javascript"></script>
+<script src="https://c.mql5.com/js/signals.a2f30903aa704926ed8022fcac698168.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  window.globalStorageDomain = "https://c.mql5.com";
+  mqGlobal.AddOnLoad(function(){Mql5Cookie.init('mql5.com','59A7ADDD-968A',null);});
+  
+  if(typeof Attach !== "undefined")
+    Attach.setAcceptFilter(".gif,.png,.jpg,.jpeg,.zip,.txt,.log,.mqh,.ex5,.mq5,.mq4,.ex4,.mt5,.set,.tpl");
+</script>
+    
+    <script type="text/javascript">mqGlobal.AddOnLoad(function(){ $("fbpxl").setAttribute("src","https://www.facebook.com/tr/?id=106067236553176&ev=PageView&dl=https%3A%2F%2Fwww.mql5.com%2Fen&rl=https%3A%2F%2Fwww.mql5.com%2Fen&if=false&ts=1504154045819&v=2.7.19&ec=0&o=28"); })  </script>
+    <img id="fbpxl" style="position: absolute;left:-9999px;" />
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "url": "https://www.mql5.com",
+  "logo": "https://c.mql5.com/i/community/logo_mql5.png",
+  "sameAs": [
+    "https://www.facebook.com/mql5.community",
+    "https://www.twitter.com/mql5com"
+   ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.mql5.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.mql5.com/en/search?keyword={keyword}",
+    "query-input": "required name=keyword"
+  }
+}
+</script>
+</body>
+</html>
+<!-- Generated in 1.935 ms -->

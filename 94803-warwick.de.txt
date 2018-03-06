@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.1//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-2.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    version="XHTML+RDFa 1.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.w3.org/1999/xhtml
+                        http://www.w3.org/MarkUp/SCHEMA/xhtml-rdfa-2.xsd"
+    lang="en"
+    xml:lang="en"
+    
+    xmlns:fb="http://ogp.me/ns/fb#">
+    
+	<head  profile="http://www.w3.org/2005/10/profile">
+		<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=0.9" />
+		
+		
+		<link rel="icon" href="http://warwick.de/images/warwick_favicon.png" type="image/png" />
+		<link rel="shortcut icon" href="http://warwick.de/images/warwick_favicon.png" type="image/png" />
+		
+	
+	<script type="text/javascript">
+			<!--
+			
+/*
+	jQuery's document.ready/$(function(){}) should
+	you wish to use a cross-browser DOMReady solution
+	without opting for a library.
+
+	Demo: http://jsfiddle.net/8j85t/
+
+	usage:
+	$(function(){
+		// your code
+	});
+
+	Parts: jQuery project, Diego Perini, Lucent M.
+	This version: Addy Osmani, David Dallet
+*/
+(function( window ) {
+	"use strict";
+
+	// Define a local copy of $
+	var $ = function( callback ) {
+			registerOrRunCallback( callback );
+			bindReady();
+		},
+		// Use the correct document accordingly with window argument (sandbox)
+		document = window.document,
+		readyBound = false,
+		callbackQueue = [],
+		registerOrRunCallback = function( callback ) {
+			if ( typeof callback === "function" ) {
+				callbackQueue.push(callback);
+			}
+		},
+		DOMReadyCallback = function() {
+			while( callbackQueue.length ) {
+				(callbackQueue.shift())();
+			}
+			registerOrRunCallback = function( callback ) {
+				callback();
+			};
+		},
+
+		// The ready event handler
+		DOMContentLoaded = function() {
+			if ( document.addEventListener ) {
+					document.removeEventListener( "DOMContentLoaded", DOMContentLoaded, false );
+			} else {
+					// we're here because readyState !== "loading" in oldIE
+					// which is good enough for us to call the dom ready!
+					document.detachEvent( "onreadystatechange", DOMContentLoaded );
+			}
+			DOMReady();
+		},
+
+		// Handle when the DOM is ready
+		DOMReady = function() {
+			// Make sure that the DOM is not already loaded
+			if ( !$.isReady ) {
+				// Make sure body exists, at least, in case IE gets a little overzealous (ticket #5443).
+				if ( !document.body ) {
+					return setTimeout( DOMReady, 1 );
+				}
+				// Remember that the DOM is ready
+				$.isReady = true;
+				// If there are functions bound, to execute
+				DOMReadyCallback();
+				// Execute all of them
+			}
+		}, // /ready()
+
+		bindReady = function() {
+			var toplevel = false;
+
+			if ( readyBound ) {
+				return;
+			}
+			readyBound = true;
+
+			// Catch cases where $ is called after the
+			// browser event has already occurred.
+			if ( document.readyState !== "loading" ) {
+				DOMReady();
+			}
+
+			// Mozilla, Opera and webkit nightlies currently support this event
+			if ( document.addEventListener ) {
+				// Use the handy event callback
+				document.addEventListener( "DOMContentLoaded", DOMContentLoaded, false );
+				// A fallback to window.onload, that will always work
+				window.addEventListener( "load", DOMContentLoaded, false );
+				// If IE event model is used
+			} else if ( document.attachEvent ) {
+				// ensure firing before onload,
+				// maybe late but safe also for iframes
+				document.attachEvent( "onreadystatechange", DOMContentLoaded );
+				// A fallback to window.onload, that will always work
+				window.attachEvent( "onload", DOMContentLoaded );
+				// If IE and not a frame
+				// continually check to see if the document is ready
+				try {
+					toplevel = window.frameElement == null;
+				} catch (e) {}
+				if ( document.documentElement.doScroll && toplevel ) {
+					doScrollCheck();
+				}
+			}
+		},
+
+		// The DOM ready check for Internet Explorer
+		doScrollCheck = function() {
+			if ( $.isReady ) {
+				return;
+			}
+			try {
+				// If IE is used, use the trick by Diego Perini
+				// http://javascript.nwbox.com/IEContentLoaded/
+				document.documentElement.doScroll("left");
+			} catch ( error ) {
+				setTimeout( doScrollCheck, 1 );
+				return;
+			}
+			// and execute any waiting functions
+			DOMReady();
+		};
+
+	// Is the DOM ready to be used? Set to true once it occurs.
+	$.isReady = false;
+
+	// Expose $ to the global object
+	// geaendert SH
+	//window.$ = $;
+	window.my_documentReady = $;
+
+})( window );
+-->			
+		</script>			
+		
+		
+		<script type="text/javascript">
+			// Die Url wird ermittelt für die Base
+			js_var_site_lang = '304930434';
+			sr=function(h,n,o){vari=-1;if(o){i=(h+'').slice(o).lastIndexOf(n);if(i!==-1){i+=o;}}else{i=(h+'').lastIndexOf(n);}return i >= 0 ? i : false;};
+			tn = location.pathname.substr(0,sr(location.pathname,"/"));
+			current_lang = tn.substr(sr(tn,'/')+1);
+			tn = tn.substr(0,sr(tn,"/"));
+		
+			document.write("\<BASE href='http://" + location.host + tn + "/' \/\>");
+			document.write("\<script src='http://" + location.host + tn + "/" + "js/modernizr.js' type='text/javascript'\>\<\/script\>");
+			document.write("\<script src='http://" + location.host + tn + "/" + "js/browser_detect.js' type='text/javascript'\>\<\/script\>");
+			document.write("\<script src='http://" + location.host + tn + "/" + "js/jquery-1.8.2.js' type='text/javascript'\>\<\/script\>");
+			document.write("\<script src='http://" + location.host + tn + "/" + "js/jquery-ui.js' type='text/javascript'\>\<\/script\>");
+			document.write("\<script src='http://" + location.host + tn + "/" + "js/sliders.js' type='text/javascript'\>\<\/script\>");
+			document.write("\<script src='http://" + location.host + tn + "/" + "js/google.js' type='text/javascript'\>\<\/script\>");
+			document.write("\<script src='http://" + location.host + tn + "/" + "js/jquery.tinyscrollbar.js' type='text/javascript'\>\<\/script\>");
+			document.write("\<script src='http://" + location.host + tn + "/" + "js/jwplayer.js' type='text/javascript'\>\<\/script\>");
+			document.write("\<script src='http://" + location.host + tn + "/" + "js/jquery.hyphenator.min.js' type='text/javascript'\>\<\/script\>");
+			document.write("\<script src='http://" + location.host + tn + "/" + "js/detectmobilebrowser.js' type='text/javascript'\>\<\/script\>");
+			document.write("\<script src='http://" + location.host + tn + "/" + "js/for_head.js' type='text/javascript'\>\<\/script\>");
+			document.write("\<script src='http://" + location.host + tn + "/" + "js/slick/slick.js' type='text/javascript'\>\<\/script\>");
+		
+		</script>
+	    	
+		
+		<meta http-equiv="expires" content="0"/>
+		<meta http-equiv="cache-control" content="no-cache"/>
+		<meta http-equiv="pragma" content="no-cache"/>
+
+
+		<title>en/Home.html</title>
+		<meta name="keywords" content="Warwick,Framus,Warwick Bass,Framus Guitar,Framus Gitarre,Bass,Guitar,Gitarre,electric bass,electric guitar,E-Bass,E-Gitarre,Framus & Warwick,Framus & Warwick Campus,Framus & Warwick Grand Auditorium,Framus & Warwick Music Hall,Amps,Amplifier,Bass amplifiers,Guitar amplifiers,Bass cabinets,Bassist,Guitarist,musical instruments"/>
+		<meta name="description" content=""/>
+		
+		<meta name="revisit-after" content="3 days"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Warwick GmbH & Music Equipment KG"/>
+		<meta name="copyright" content="Warwick GmbH & Music Equipment KG"/>
+		<meta name="publisher" content="Warwick GmbH & Music Equipment KG"/>
+		<meta name="audience" content="alle"/>
+		<meta name="Pragma" content="no-cache"/>
+		<meta name="Content-language" content="en"/>
+		
+		
+		<meta property='og:image' content='http://warwick.de/images/startscreen.png'/>
+		
+	    	<link rel="stylesheet" href="file_site_css.css" type="text/css" />
+
+		<script type="text/javascript">jwplayer.key="p2Vcrh2LXHtdVlESgcMJJZ9jTcLTWYax/RC+Jw==";</script>
+		
+		
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-11122641-1']);
+		  _gaq.push(['_trackPageview']);
+		</script>
+	</head>
+	
+	<body>
+		<div id="fb-root"></div>
+		<div id="loading_spinner"><img src="images/loading_big.gif"></div>
+	
+		
+		
+			<div id='new_head_bg' style="display: none;">
+				
+			</div>	
+
+<div id='layout_chooser' class='layout2 startsite'>
+	
+		<div id='site'>
+
+	
+	
+			<div id='head_bg'>
+				
+			</div>	
+			
+			<div id='main_bg'>
+				
+
+				<div id='inner_main_bg'>
+					
+				</div>
+			</div>	
+			
+			<div id='foot_bg'>
+				<div id='foot_bg_top' class='head_foot_top'>
+
+				</div>
+				<div id='foot_bg_bottom' class='foot_bottom'>
+
+				</div>
+
+			</div>
+	
+			<div id='inner_site'>	
+				<div id='head'>	
+					
+					<div class='clearer'>
+					</div>
+	
+				</div>
+
+				<div id='main'>
+				
+					<div id='content_area'>
+						
+					
+					</div>	
+					<div class='clearer'>
+					</div>
+				</div>
+
+				<div id='foot'>
+					
+					<div id='foot_arrow_left'>
+						<img src='images/pfeil_l.png' alt='' />
+					</div>
+					<div id='foot_arrow_right'>
+						<img src='images/pfeil.png' alt='' />
+					</div>
+					<div id='dynamic_foot_area' class='foot_bottom startseiten_foot_area'>
+						<div id='foot_slider' class='startseiten_foot_slider'>	
+						
+							<div id='startseite_foot_slider_left'>
+								<span class='startseite_text_unten_links'>Welcome to our website choose your brand</span>
+							</div>
+							<div id='startseite_foot_slider_right'>
+								<a href='en/Framus-.html'><img src='images/framus_logo_website.jpg' alt='' style='width:100%;' /></a>
+							</div>
+							<div id='startseite_foot_slider_center'>
+								<a href='en/Warwick-.html'><img src='images/warwick_logo_website.jpg' alt='' style='width:100%;' /></a>
+							</div>
+							
+							
+							
+							<div class='clearer'>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<div class='warwick_copyright'>
+					&copy; 2017 Warwick GmbH & Co Music Equipment KG
+				</div>
+						
+				
+			</div>
+			<div id='startseiten_slider'>		
+				<div id='full_content'>
+					<div id='main_content' class='content_container'>
+						
+				<div class='background_slider_element'>
+						<img src='sys/tools/phpthumb/phpThumb.php?w=1295&amp;h=458&amp;src=../../../warwick/data/Warwick.de/Slideshow_pics/Slightshow1/2017/April 2017/Web_Banner_Production_01_0409.jpg' />
+				</div>
+				<div class='background_slider_element'>
+						<img src='sys/tools/phpthumb/phpThumb.php?w=1295&amp;h=458&amp;src=../../../warwick/data/Warwick.de/Slideshow_pics/Slightshow1/2017/April 2017/Web_Banner_Production_02_0409.jpg' />
+				</div>
+					</div>
+				</div>
+			</div>
+			<div id='startseiten_slider_front'>		
+				<div id='full_content_front'>
+					<div id='main_content_front' class='content_container'>
+						
+				<div class='front_slider_element' style='display:none;'><div  class='front_slider_element__inner'><img src='./images/blank.png' width='1297' height='640' style='width:100%;height:100%;' /></div><div class="slieder_area_link_div__1_1"></div><div class="slieder_area_link_div__1_2"></div><div class="slieder_area_link_div__1_3"></div><div class="slieder_area_link_div__2_1"></div><div class="slieder_area_link_div__2_2"></div><div class="slieder_area_link_div__2_3"></div></div>
+			
+				<div class='front_slider_element' style='display:none;'><div  class='front_slider_element__inner'><img src='./images/blank.png' width='1297' height='640' style='width:100%;height:100%;' /></div><div class="slieder_area_link_div__1_1"><a href="0.06"><img src="./images/blank.png" style="width:100%;height:100%;" /></a></div><div class="slieder_area_link_div__1_2"><a href="0.06"><img src="./images/blank.png" style="width:100%;height:100%;" /></a></div><div class="slieder_area_link_div__1_3"><a href="0.06"><img src="./images/blank.png" style="width:100%;height:100%;" /></a></div><div class="slieder_area_link_div__2_1"><a href="0.06"><img src="./images/blank.png" style="width:100%;height:100%;" /></a></div><div class="slieder_area_link_div__2_2"><a href="0.06"><img src="./images/blank.png" style="width:100%;height:100%;" /></a></div><div class="slieder_area_link_div__2_3"><a href="0.06"><img src="./images/blank.png" style="width:100%;height:100%;" /></a></div></div>
+			
+					</div>
+				</div>
+			</div>
+		</div>
+		<style>
+			#inner_site{
+				z-index:1;
+			}
+		</style>
+		
+		<!--[if IE 8]>
+			<style>
+				.custom_galerie_product_title, a .custom_galerie_product_title, .custom_galerie_product_title a{
+					position:relative;
+				 }
+			</style>
+		<![endif]-->
+		
+		
+		
+		<script src="js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+		<script src="js/main.js" type="text/javascript"></script>  
+		
+		<script type="text/javascript">
+		set_mobile_state('0');
+		$(function() {	
+			   function pseudoBgSize(el, bgWidth, bgHeight) {
+				  if (el) {
+					    $(el).css("background-image").match(/"(.*)"/);
+					    var elBg = RegExp.$1;
+					    if(!(elBg=='i')){
+						    if (!$(el) || $(el).css("z-index") != ""){
+								$(el).css("z-index", "");
+						      }
+						    else{
+								var elZIndex = parseInt($(el).css("z-index"));
+						      }
+						    if (!bgWidth){
+								bgWidth = "auto";
+						      }
+						    if (!bgHeight){
+								bgHeight = "auto";
+						      }
+						    $(el).css("background", "transparent").append("<div style='position:absolute; top:0; left:0; width:100%;height:100%;'><img src='" + elBg + "' alt='' style='width:" + bgWidth + "; height:" + bgHeight + "'></div>");
+					    } 
+				  } else{
+					    return false;
+				  }
+			   };
+
+			   pseudoBgSize('#new_head_bg','100%','100%');
+		});
+		
+		 $(function() {
+			   slider.foot_slider();
+			   foot_slider_controller.test();
+			   
+			   
+			   var startseite_mainSlider = function(divArray,turn){
+				   	
+				var divArray2 =  $('.front_slider_element');
+				   	
+				var delay1 = 4900;
+				var delay2 = 4500;
+				var duration1 = 3200;
+				var duration2 = 2700;
+				
+			   	if(divArray.length > 1){
+			   	
+				   	if(turn > 0){
+					   	if(turn < divArray.length){
+					   		$(divArray[turn-1]).delay(delay1).fadeOut(duration1,
+					   				function(){ 
+						   				$(divArray2[turn-1]).css({'display':'none'});
+						   			});
+						   	$(divArray2[turn-1]).delay(delay1).fadeOut(900);
+					   		$(divArray[turn]).delay(delay2).fadeIn(duration2, 
+						   			function(){ 
+						   				$(divArray2[turn]).css({'display':'block'});
+						   				startseite_mainSlider(divArray,(turn+1));
+						   			}
+						   	);
+						   	
+
+					   	}else{
+					   		startseite_mainSlider(divArray,0);
+					   	}
+				   	}else{
+				   		$(divArray[divArray.length-1]).delay(delay1).fadeOut(duration1,
+				   					function(){ 
+						   				$(divArray2[divArray.length-1]).css({'display':'none'});
+						   			});
+						$(divArray2[divArray.length-1]).delay(delay1).fadeOut(900);
+				   		$(divArray[turn]).delay(delay2).fadeIn(duration2, 
+					   			function(){ 
+					   				$(divArray2[turn]).css({'display':'block'});
+					   				startseite_mainSlider(divArray,(turn+1));
+					   			}
+					   	);
+				   	}
+				   	
+			   	}
+			   };
+			   
+			   var tmp = $('.background_slider_element');
+			   $(tmp[0]).css({'display':'block'});
+			   var front =  $('.front_slider_element');
+			   $(front[0]).css({'display':'block'});
+			   var tempTime = setTimeout(function(){startseite_mainSlider(tmp,1);},10);
+			   
+			   
+			
+		});
+		
+		
+
+		</script>   
+	<div id="zum_abdunkeln"></div>	
+</div>
+
+		
+		
+		
+	<script type="text/javascript">
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>	
+	</body>
+		
+		
+		<script>
+		my_documentReady(function(){
+			(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/us_EN/sdk.js#xfbml=1&version=v2.4&appId=505824276112757";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		});
+		</script>
+		<script type="text/javascript">
+			document.write("\<script src='http://" + location.host + tn + "/" + "js/Hyphenator.js' type='text/javascript'\>\<\/script\>");
+			document.write("\<script src='https://apis.google.com/js/plusone.js' type='text/javascript'\>{lang: 'en-US', parsetags: 'explicit'}\<\/script\>");
+		</script>
+		
+		
+		
+		
+	
+	
+		
+	<!-- Timestamp last Update: 2017-09-04 16:53:11 Array
+(
+    [selected_modul_erp_site_domain] => 3343434343399
+    [selected_modul_erp_site_menu] => D0214351001372673832A4
+    [round] => 1
+    [direct] => 1
+    [selected_lang] => 304930434
+    [selected_site_export] => siteexport__warwick_neu_de
+)
+ -->
+</html>
