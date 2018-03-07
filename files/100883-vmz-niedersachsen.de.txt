@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+<head>
+
+<meta charset="utf-8">
+<!-- 
+	VMZ Niedersachsen - TYPO3 Template - http://neonaut.de - Neonaut GmbH
+	========================================================================================================
+
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2016 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at http://typo3.org/
+-->
+
+
+
+<title>VMZ Niedersachsen: Startseite</title>
+<meta name="generator" content="TYPO3 CMS">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Aktuelle Verkehrsmeldungen und Kamerabilder für Niedersachsen und Hannover.">
+<meta name="keywords" content="A2, A1, A7, Niedersachsen, Autobahn, Verkehrsinformation, Baustellen Verkehrskamera, Verkehrslage, Verkehrsmeldung, Stau, Straßenbaustelle, Straßenzustand, Verkehrsbeeinflussung, Webcam, Autobahn, Bundestraße, Hannover">
+
+
+<link rel="stylesheet" type="text/css" href="//static.vmz-niedersachsen.de/tpl/Css/Main.28.css" media="all">
+<noscript><link rel="stylesheet" type="text/css" href="//static.vmz-niedersachsen.de/tpl/Css/Async.28.css" media="all"></noscript>
+
+<style type="text/css">
+/*<![CDATA[*/
+<!-- 
+/*additionalTSFEInlineStyle*/
+.vmznds-banner, body { background-image: url("/media/_processed_/csm_background_7de736733e.jpg"); }@media screen and (min-width: 800px) { .vmznds-banner, body { background-image: url("/media/_processed_/csm_background_f5ac0b4b56.jpg"); } }@media screen and (min-width: 1200px) { .vmznds-banner, body { background-image: url("/media/_processed_/csm_background_d611ea77ae.jpg"); } }
+-->
+/*]]>*/
+</style>
+
+
+
+
+<script type="text/javascript">
+/*<![CDATA[*/
+/*_scriptCode*/
+
+			// decrypt helper function
+		function decryptCharcode(n,start,end,offset) {
+			n = n + offset;
+			if (offset > 0 && n > end) {
+				n = start + (n - end - 1);
+			} else if (offset < 0 && n < start) {
+				n = end - (start - n - 1);
+			}
+			return String.fromCharCode(n);
+		}
+			// decrypt string
+		function decryptString(enc,offset) {
+			var dec = "";
+			var len = enc.length;
+			for(var i=0; i < len; i++) {
+				var n = enc.charCodeAt(i);
+				if (n >= 0x2B && n <= 0x3A) {
+					dec += decryptCharcode(n,0x2B,0x3A,offset);	// 0-9 . , - + / :
+				} else if (n >= 0x40 && n <= 0x5A) {
+					dec += decryptCharcode(n,0x40,0x5A,offset);	// A-Z @
+				} else if (n >= 0x61 && n <= 0x7A) {
+					dec += decryptCharcode(n,0x61,0x7A,offset);	// a-z
+				} else {
+					dec += enc.charAt(i);
+				}
+			}
+			return dec;
+		}
+			// decrypt spam-protected emails
+		function linkTo_UnCryptMailto(s) {
+			location.href = decryptString(s,-1);
+		}
+		
+
+/*TS_inlineJS*/
+
+/*! VMZ Niedersachsen - TYPO3 Template - v0.1.1 - 2017-02-06 - http://neonaut.de - Paul Golmann (Neonaut GmbH) *//*! A fix for the iOS orientationchange zoom bug.
+ Script by @scottjehl, rebound by @wilto.
+ MIT / GPLv2 License.
+*/
+!function(a){function b(){k.setAttribute("content",n),o=!0}function c(){k.setAttribute("content",m),o=!1}function d(d){j=d.accelerationIncludingGravity,g=Math.abs(j.x),h=Math.abs(j.y),i=Math.abs(j.z),
+// If portrait orientation and in one of the danger zones
+a.orientation&&180!==a.orientation||!(g>7||(i>6&&h<8||i<8&&h>6)&&g>5)?o||b():o&&c()}
+// This fix addresses an iOS bug, so return early if the UA claims it's something else.
+var e=navigator.userAgent;if(/iPhone|iPad|iPod/.test(navigator.platform)&&/OS [1-5]_[0-9_]* like Mac OS X/i.test(e)&&e.indexOf("AppleWebKit")>-1){var f=a.document;if(f.querySelector){var g,h,i,j,k=f.querySelector("meta[name=viewport]"),l=k&&k.getAttribute("content"),m=l+",maximum-scale=1",n=l+",maximum-scale=10",o=!0;k&&(a.addEventListener("orientationchange",b,!1),a.addEventListener("devicemotion",d,!1))}}}(this),/*! modernizr 3.3.1 (Custom Build) | MIT *
+ * http://modernizr.com/download/?-backgroundsize-canvas-csstransforms-csstransitions-svg-touchevents-setclasses-shiv !*/
+!function(a,b,c){function d(a,b){return typeof a===b}function e(){var a,b,c,e,f,g,h;for(var i in s)if(s.hasOwnProperty(i)){if(a=[],b=s[i],b.name&&(a.push(b.name.toLowerCase()),b.options&&b.options.aliases&&b.options.aliases.length))for(c=0;c<b.options.aliases.length;c++)a.push(b.options.aliases[c].toLowerCase());for(e=d(b.fn,"function")?b.fn():b.fn,f=0;f<a.length;f++)g=a[f],h=g.split("."),1===h.length?u[h[0]]=e:(!u[h[0]]||u[h[0]]instanceof Boolean||(u[h[0]]=new Boolean(u[h[0]])),u[h[0]][h[1]]=e),v.push((e?"":"no-")+h.join("-"))}}function f(a){var b=w.className,c=u._config.classPrefix||"";if(x&&(b=b.baseVal),u._config.enableJSClass){var d=new RegExp("(^|\\s)"+c+"no-js(\\s|$)");b=b.replace(d,"$1"+c+"js$2")}u._config.enableClasses&&(b+=" "+c+a.join(" "+c),x?w.className.baseVal=b:w.className=b)}function g(){return"function"!=typeof b.createElement?b.createElement(arguments[0]):x?b.createElementNS.call(b,"http://www.w3.org/2000/svg",arguments[0]):b.createElement.apply(b,arguments)}function h(){var a=b.body;return a||(a=g(x?"svg":"body"),a.fake=!0),a}function i(a,c,d,e){var f,i,j,k,l="modernizr",m=g("div"),n=h();if(parseInt(d,10))for(;d--;)j=g("div"),j.id=e?e[d]:l+(d+1),m.appendChild(j);return f=g("style"),f.type="text/css",f.id="s"+l,(n.fake?n:m).appendChild(f),n.appendChild(m),f.styleSheet?f.styleSheet.cssText=a:f.appendChild(b.createTextNode(a)),m.id=l,n.fake&&(n.style.background="",n.style.overflow="hidden",k=w.style.overflow,w.style.overflow="hidden",w.appendChild(n)),i=c(m,a),n.fake?(n.parentNode.removeChild(n),w.style.overflow=k,w.offsetHeight):m.parentNode.removeChild(m),!!i}function j(a,b){return!!~(""+a).indexOf(b)}function k(a){return a.replace(/([A-Z])/g,function(a,b){return"-"+b.toLowerCase()}).replace(/^ms-/,"-ms-")}function l(b,d){var e=b.length;if("CSS"in a&&"supports"in a.CSS){for(;e--;)if(a.CSS.supports(k(b[e]),d))return!0;return!1}if("CSSSupportsRule"in a){for(var f=[];e--;)f.push("("+k(b[e])+":"+d+")");return f=f.join(" or "),i("@supports ("+f+") { #modernizr { position: absolute; } }",function(a){return"absolute"==getComputedStyle(a,null).position})}return c}function m(a){return a.replace(/([a-z])-([a-z])/g,function(a,b,c){return b+c.toUpperCase()}).replace(/^-/,"")}function n(a,b,e,f){function h(){k&&(delete D.style,delete D.modElem)}if(f=!d(f,"undefined")&&f,!d(e,"undefined")){var i=l(a,e);if(!d(i,"undefined"))return i}for(var k,n,o,p,q,r=["modernizr","tspan"];!D.style;)k=!0,D.modElem=g(r.shift()),D.style=D.modElem.style;for(o=a.length,n=0;o>n;n++)if(p=a[n],q=D.style[p],j(p,"-")&&(p=m(p)),D.style[p]!==c){if(f||d(e,"undefined"))return h(),"pfx"!=b||p;try{D.style[p]=e}catch(s){}if(D.style[p]!=q)return h(),"pfx"!=b||p}return h(),!1}function o(a,b){return function(){return a.apply(b,arguments)}}function p(a,b,c){var e;for(var f in a)if(a[f]in b)return c===!1?a[f]:(e=b[a[f]],d(e,"function")?o(e,c||b):e);return!1}function q(a,b,c,e,f){var g=a.charAt(0).toUpperCase()+a.slice(1),h=(a+" "+B.join(g+" ")+g).split(" ");return d(b,"string")||d(b,"undefined")?n(h,b,e,f):(h=(a+" "+E.join(g+" ")+g).split(" "),p(h,b,c))}function r(a,b,d){return q(a,c,c,b,d)}var s=[],t={_version:"3.3.1",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(a,b){var c=this;setTimeout(function(){b(c[a])},0)},addTest:function(a,b,c){s.push({name:a,fn:b,options:c})},addAsyncTest:function(a){s.push({name:null,fn:a})}},u=function(){};u.prototype=t,u=new u;var v=[],w=b.documentElement,x="svg"===w.nodeName.toLowerCase();x||!function(a,b){function c(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function d(){var a=t.elements;return"string"==typeof a?a.split(" "):a}function e(a,b){var c=t.elements;"string"!=typeof c&&(c=c.join(" ")),"string"!=typeof a&&(a=a.join(" ")),t.elements=c+" "+a,j(b)}function f(a){var b=s[a[q]];return b||(b={},r++,a[q]=r,s[r]=b),b}function g(a,c,d){if(c||(c=b),l)return c.createElement(a);d||(d=f(c));var e;return e=d.cache[a]?d.cache[a].cloneNode():p.test(a)?(d.cache[a]=d.createElem(a)).cloneNode():d.createElem(a),!e.canHaveChildren||o.test(a)||e.tagUrn?e:d.frag.appendChild(e)}function h(a,c){if(a||(a=b),l)return a.createDocumentFragment();c=c||f(a);for(var e=c.frag.cloneNode(),g=0,h=d(),i=h.length;i>g;g++)e.createElement(h[g]);return e}function i(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return t.shivMethods?g(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+d().join().replace(/[\w\-:]+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(t,b.frag)}function j(a){a||(a=b);var d=f(a);return!t.shivCSS||k||d.hasCSS||(d.hasCSS=!!c(a,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),l||i(a,d),a}var k,l,m="3.7.3",n=a.html5||{},o=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,p=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,q="_html5shiv",r=0,s={};!function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",k="hidden"in a,l=1==a.childNodes.length||function(){b.createElement("a");var a=b.createDocumentFragment();return"undefined"==typeof a.cloneNode||"undefined"==typeof a.createDocumentFragment||"undefined"==typeof a.createElement}()}catch(c){k=!0,l=!0}}();var t={elements:n.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:m,shivCSS:n.shivCSS!==!1,supportsUnknownElements:l,shivMethods:n.shivMethods!==!1,type:"default",shivDocument:j,createElement:g,createDocumentFragment:h,addElements:e};a.html5=t,j(b),"object"==typeof module&&module.exports&&(module.exports=t)}("undefined"!=typeof a?a:this,b);var y=t._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):[];t._prefixes=y;var z=t.testStyles=i;u.addTest("touchevents",function(){var c;if("ontouchstart"in a||a.DocumentTouch&&b instanceof DocumentTouch)c=!0;else{var d=["@media (",y.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join("");z(d,function(a){c=9===a.offsetTop})}return c}),u.addTest("svg",!!b.createElementNS&&!!b.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect);var A="Moz O ms Webkit",B=t._config.usePrefixes?A.split(" "):[];t._cssomPrefixes=B;var C={elem:g("modernizr")};u._q.push(function(){delete C.elem});var D={style:C.elem.style};u._q.unshift(function(){delete D.style});var E=t._config.usePrefixes?A.toLowerCase().split(" "):[];t._domPrefixes=E,t.testAllProps=q,t.testAllProps=r,u.addTest("backgroundsize",r("backgroundSize","100%",!0)),u.addTest("csstransforms",function(){return-1===navigator.userAgent.indexOf("Android 2.")&&r("transform","scale(1)",!0)}),u.addTest("csstransitions",r("transition","all",!0)),u.addTest("canvas",function(){var a=g("canvas");return!(!a.getContext||!a.getContext("2d"))}),e(),f(v),delete t.addTest,delete t.addAsyncTest;for(var F=0;F<u._q.length;F++)u._q[F]();a.Modernizr=u}(window,document),/*! Picturefill - v2.3.1 - 2015-04-09
+* http://scottjehl.github.io/picturefill
+* Copyright (c) 2015 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT */
+window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.styleMedia||window.media;if(!a){var b=document.createElement("style"),c=document.getElementsByTagName("script")[0],d=null;b.type="text/css",b.id="matchmediajs-test",c.parentNode.insertBefore(b,c),d="getComputedStyle"in window&&window.getComputedStyle(b,null)||b.currentStyle,a={matchMedium:function(a){var c="@media "+a+"{ #matchmediajs-test { width: 1px; } }";return b.styleSheet?b.styleSheet.cssText=c:b.textContent=c,"1px"===d.width}}}return function(b){return{matches:a.matchMedium(b||"all"),media:b||"all"}}}()),function(a,b,c){"use strict";function d(b){"object"==typeof module&&"object"==typeof module.exports?module.exports=b:"function"==typeof define&&define.amd&&define("picturefill",function(){return b}),"object"==typeof a&&(a.picturefill=b)}function e(a){var b,c,d,e,f,i=a||{};b=i.elements||g.getAllElements();for(var j=0,k=b.length;k>j;j++)if(c=b[j],d=c.parentNode,e=void 0,f=void 0,"IMG"===c.nodeName.toUpperCase()&&(c[g.ns]||(c[g.ns]={}),i.reevaluate||!c[g.ns].evaluated)){if(d&&"PICTURE"===d.nodeName.toUpperCase()){if(g.removeVideoShim(d),e=g.getMatch(c,d),e===!1)continue}else e=void 0;(d&&"PICTURE"===d.nodeName.toUpperCase()||!g.sizesSupported&&c.srcset&&h.test(c.srcset))&&g.dodgeSrcset(c),e?(f=g.processSourceSet(e),g.applyBestCandidate(f,c)):(f=g.processSourceSet(c),(void 0===c.srcset||c[g.ns].srcset)&&g.applyBestCandidate(f,c)),c[g.ns].evaluated=!0}}function f(){function c(){clearTimeout(d),d=setTimeout(h,60)}g.initTypeDetects(),e();var d,f=setInterval(function(){return e(),/^loaded|^i|^c/.test(b.readyState)?void clearInterval(f):void 0},250),h=function(){e({reevaluate:!0})};a.addEventListener?a.addEventListener("resize",c,!1):a.attachEvent&&a.attachEvent("onresize",c)}if(a.HTMLPictureElement)return void d(function(){});b.createElement("picture");var g=a.picturefill||{},h=/\s+\+?\d+(e\d+)?w/;g.ns="picturefill",function(){g.srcsetSupported="srcset"in c,g.sizesSupported="sizes"in c,g.curSrcSupported="currentSrc"in c}(),g.trim=function(a){return a.trim?a.trim():a.replace(/^\s+|\s+$/g,"")},g.makeUrl=function(){var a=b.createElement("a");return function(b){return a.href=b,a.href}}(),g.restrictsMixedContent=function(){return"https:"===a.location.protocol},g.matchesMedia=function(b){return a.matchMedia&&a.matchMedia(b).matches},g.getDpr=function(){return a.devicePixelRatio||1},g.getWidthFromLength=function(a){var c;if(!a||a.indexOf("%")>-1!=0||!(parseFloat(a)>0||a.indexOf("calc(")>-1))return!1;a=a.replace("vw","%"),g.lengthEl||(g.lengthEl=b.createElement("div"),g.lengthEl.style.cssText="border:0;display:block;font-size:1em;left:0;margin:0;padding:0;position:absolute;visibility:hidden",g.lengthEl.className="helper-from-picturefill-js"),g.lengthEl.style.width="0px";try{g.lengthEl.style.width=a}catch(d){}return b.body.appendChild(g.lengthEl),c=g.lengthEl.offsetWidth,0>=c&&(c=!1),b.body.removeChild(g.lengthEl),c},g.detectTypeSupport=function(b,c){var d=new a.Image;return d.onerror=function(){g.types[b]=!1,e()},d.onload=function(){g.types[b]=1===d.width,e()},d.src=c,"pending"},g.types=g.types||{},g.initTypeDetects=function(){g.types["image/jpeg"]=!0,g.types["image/gif"]=!0,g.types["image/png"]=!0,g.types["image/svg+xml"]=b.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),g.types["image/webp"]=g.detectTypeSupport("image/webp","data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=")},g.verifyTypeSupport=function(a){var b=a.getAttribute("type");if(null===b||""===b)return!0;var c=g.types[b];return"string"==typeof c&&"pending"!==c?(g.types[b]=g.detectTypeSupport(b,c),"pending"):"function"==typeof c?(c(),"pending"):c},g.parseSize=function(a){var b=/(\([^)]+\))?\s*(.+)/g.exec(a);return{media:b&&b[1],length:b&&b[2]}},g.findWidthFromSourceSize=function(c){for(var d,e=g.trim(c).split(/\s*,\s*/),f=0,h=e.length;h>f;f++){var i=e[f],j=g.parseSize(i),k=j.length,l=j.media;if(k&&(!l||g.matchesMedia(l))&&(d=g.getWidthFromLength(k)))break}return d||Math.max(a.innerWidth||0,b.documentElement.clientWidth)},g.parseSrcset=function(a){for(var b=[];""!==a;){a=a.replace(/^\s+/g,"");var c,d=a.search(/\s/g),e=null;if(-1!==d){c=a.slice(0,d);var f=c.slice(-1);if((","===f||""===c)&&(c=c.replace(/,+$/,""),e=""),a=a.slice(d+1),null===e){var g=a.indexOf(",");-1!==g?(e=a.slice(0,g),a=a.slice(g+1)):(e=a,a="")}}else c=a,a="";(c||e)&&b.push({url:c,descriptor:e})}return b},g.parseDescriptor=function(a,b){var c,d=b||"100vw",e=a&&a.replace(/(^\s+|\s+$)/g,""),f=g.findWidthFromSourceSize(d);if(e)for(var h=e.split(" "),i=h.length-1;i>=0;i--){var j=h[i],k=j&&j.slice(j.length-1);if("h"!==k&&"w"!==k||g.sizesSupported){if("x"===k){var l=j&&parseFloat(j,10);c=l&&!isNaN(l)?l:1}}else c=parseFloat(parseInt(j,10)/f)}return c||1},g.getCandidatesFromSourceSet=function(a,b){for(var c=g.parseSrcset(a),d=[],e=0,f=c.length;f>e;e++){var h=c[e];d.push({url:h.url,resolution:g.parseDescriptor(h.descriptor,b)})}return d},g.dodgeSrcset=function(a){a.srcset&&(a[g.ns].srcset=a.srcset,a.srcset="",a.setAttribute("data-pfsrcset",a[g.ns].srcset))},g.processSourceSet=function(a){var b=a.getAttribute("srcset"),c=a.getAttribute("sizes"),d=[];return"IMG"===a.nodeName.toUpperCase()&&a[g.ns]&&a[g.ns].srcset&&(b=a[g.ns].srcset),b&&(d=g.getCandidatesFromSourceSet(b,c)),d},g.backfaceVisibilityFix=function(a){var b=a.style||{},c="webkitBackfaceVisibility"in b,d=b.zoom;c&&(b.zoom=".999",c=a.offsetWidth,b.zoom=d)},g.setIntrinsicSize=function(){var c={},d=function(a,b,c){b&&a.setAttribute("width",parseInt(b/c,10))};return function(e,f){var h;e[g.ns]&&!a.pfStopIntrinsicSize&&(void 0===e[g.ns].dims&&(e[g.ns].dims=e.getAttribute("width")||e.getAttribute("height")),e[g.ns].dims||(f.url in c?d(e,c[f.url],f.resolution):(h=b.createElement("img"),h.onload=function(){if(c[f.url]=h.width,!c[f.url])try{b.body.appendChild(h),c[f.url]=h.width||h.offsetWidth,b.body.removeChild(h)}catch(a){}e.src===f.url&&d(e,c[f.url],f.resolution),e=null,h.onload=null,h=null},h.src=f.url)))}}(),g.applyBestCandidate=function(a,b){var c,d,e;a.sort(g.ascendingSort),d=a.length,e=a[d-1];for(var f=0;d>f;f++)if(c=a[f],c.resolution>=g.getDpr()){e=c;break}e&&(e.url=g.makeUrl(e.url),b.src!==e.url&&(g.restrictsMixedContent()&&"http:"===e.url.substr(0,"http:".length).toLowerCase()?void 0!==window.console&&console.warn("Blocked mixed content image "+e.url):(b.src=e.url,g.curSrcSupported||(b.currentSrc=b.src),g.backfaceVisibilityFix(b))),g.setIntrinsicSize(b,e))},g.ascendingSort=function(a,b){return a.resolution-b.resolution},g.removeVideoShim=function(a){var b=a.getElementsByTagName("video");if(b.length){for(var c=b[0],d=c.getElementsByTagName("source");d.length;)a.insertBefore(d[0],c);c.parentNode.removeChild(c)}},g.getAllElements=function(){for(var a=[],c=b.getElementsByTagName("img"),d=0,e=c.length;e>d;d++){var f=c[d];("PICTURE"===f.parentNode.nodeName.toUpperCase()||null!==f.getAttribute("srcset")||f[g.ns]&&null!==f[g.ns].srcset)&&a.push(f)}return a},g.getMatch=function(a,b){for(var c,d=b.childNodes,e=0,f=d.length;f>e;e++){var h=d[e];if(1===h.nodeType){if(h===a)return c;if("SOURCE"===h.nodeName.toUpperCase()){null!==h.getAttribute("src")&&void 0!==typeof console&&console.warn("The `src` attribute is invalid on `picture` `source` element; instead, use `srcset`.");var i=h.getAttribute("media");if(h.getAttribute("srcset")&&(!i||g.matchesMedia(i))){var j=g.verifyTypeSupport(h);if(j===!0){c=h;break}if("pending"===j)return!1}}}}return c},f(),e._=g,d(e)}(window,window.document,new window.Image);if(!window.VMZNDS){window.VMZNDS={};}				VMZNDS.version='28';
+				VMZNDS.staticsUrl='//static.vmz-niedersachsen.de/';
+				VMZNDS.tilesUrl='//tiles.vmz-niedersachsen.de';
+
+
+/*]]>*/
+</script>
+
+
+<meta property="og:type" content="website"><meta property="og:title" content="Startseite - VMZ Niedersachsen Region Hannover"><meta property="og:site_name" content="VMZ Niedersachsen Region Hannover"><meta property="og:description" content="Aktuelle Verkehrsmeldungen und Kamerabilder für Niedersachsen und Hannover. "><meta property="og:locale" content="de_DE">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<link rel="mask-icon" href="/typo3conf/ext/nn_vmznds_base/Resources/Public/Images/Icons/Fav/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="apple-touch-icon" sizes="180x180" href="/typo3conf/ext/nn_vmznds_base/Resources/Public/Images/Icons/Fav/apple-touch-icon.png">
+<link rel=icon type="image/png" href="/typo3conf/ext/nn_vmznds_base/Resources/Public/Images/Icons/Fav/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/typo3conf/ext/nn_vmznds_base/Resources/Public/Images/Icons/Fav/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/typo3conf/ext/nn_vmznds_base/Resources/Public/Images/Icons/Fav/favicon-96x96.png" sizes="96x96">
+<meta name="theme-color" content="#ffffff">
+
+<link rel=alternate type="application/rss+xml" title="Verkehrsmeldungen" href="http://www.vmz-niedersachsen.de/feeds/InfoRss.xml">
+<link rel=alternate type="application/rss+xml" title="Schulausfälle" href="http://www.vmz-niedersachsen.de/feeds/SchulRss.xml">
+<!--[if lt IE 9]>
+<link href="//static.vmz-niedersachsen.de//respond-proxy.html" id=respond-proxy rel=respond-proxy>
+<link href="/typo3conf/ext/nn_vmznds_base/Resources/Public/respond.proxy.gif" id=respond-redirect rel=respond-redirect>
+<script src="/typo3conf/ext/nn_vmznds_base/Resources/Public/JavaScript/Ie8.28.js"></script>
+<style>body,.vmznds-banner{-ms-behavior:url("/typo3conf/ext/nn_vmznds_base/Resources/Public/backgroundsize.min.htc")}</style>
+<![endif]-->
+
+
+</head>
+<body class="vmznds-style-0 vmznds-layout-1 vmznds-uid-20 vmznds--list-view">
+
+
+<div class="vmznds-skip-links">
+    <a href="#vmznds-main" tabindex=10 class="visuallyhidden focusable">Zum Inhalt springen&hellip;</a>
+    
+</div>
+
+<header class="vmznds-banner" role="banner">
+    <a href="/" class=vmznds-navigation-item--page-20>        <picture class="vmznds-banner__logo">
+            <!--[if IE 9]><video style="display:none"><![endif]-->
+            <source srcset="/typo3conf/ext/nn_vmznds_base/Resources/Public/Images/logo.svg, /typo3conf/ext/nn_vmznds_base/Resources/Public/Images/logo.svg 2x" type="image/svg+xml">
+            <source srcset="/typo3conf/ext/nn_vmznds_base/Resources/Public/Images/logo-small.png, /typo3conf/ext/nn_vmznds_base/Resources/Public/Images/logo-small@2x.png 2x"
+                    media="(max-width:480px)">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="/typo3conf/ext/nn_vmznds_base/Resources/Public/Images/logo.png, /typo3conf/ext/nn_vmznds_base/Resources/Public/Images/logo@2x.png 2x" alt="">
+        </picture>
+
+        <h1 class="vmznds-banner__header visuallyhidden">
+            VMZ Niedersachsen Region Hannover
+        </h1></a>
+    
+</header>
+
+<div class="vmznds-container clearfix">
+    <nav role="navigation"
+     class="vmznds-container__left fixedsticky"
+     tabindex="0"
+     id="vmznds-main-navigation">
+    <div class="vmznds-main-navigation">
+        <ul><li class="vmznds-navigation-item--first"><a href="/" class="vmznds-navigation-item--page-49"><span>  Startseite  </span></a></li><li><span>  Niedersachsen  </span><ul><li class="vmznds-navigation-item--first"><a href="/niedersachsen/verkehrslage/" class="vmznds-navigation-item--page-48"><span>  Verkehrslage  </span></a></li><li><a href="/niedersachsen/stauprognose/" class="vmznds-navigation-item--page-117"><span>  Stauprognose  </span></a></li><li><a href="/wissenswertes/schulausfall/" class="vmznds-navigation-item--page-119"><span>  Schulausfälle  </span></a></li><li><a href="/niedersachsen/baustellen-aktuell/" class="vmznds-navigation-item--page-47"><span>  Baustellen aktuell  </span></a></li><li><a href="/niedersachsen/baustellen-vorschau/" class="vmznds-navigation-item--page-102"><span>  Baustellen Vorschau  </span></a></li><li class="vmznds-navigation-item--last"><a href="/niedersachsen/veranstaltungen/" class="vmznds-navigation-item--page-46"><span>  Veranstaltungen  </span></a></li></ul></li><li><span>  Region Hannover  </span><ul><li class="vmznds-navigation-item--first"><a href="/hannover/baustellenverkehrgvh/" class="vmznds-navigation-item--page-41"><span>  Baustellen/Verkehr/GVH  </span></a></li><li><a href="/region-hannover/verkehrskameras/" class="vmznds-navigation-item--page-45"><span>  Verkehrskameras  </span></a></li><li><a href="/hannover/parkleitsystem-city/" class="vmznds-navigation-item--page-43"><span>  Parkleitsystem City  </span></a></li><li class="vmznds-navigation-item--last"><a href="/hannover/messe/" class="vmznds-navigation-item--page-70"><span>  Messe  </span></a></li></ul></li><li><a href="/bundesweit/" class="vmznds-navigation-item--page-39"><span>  Bundesweit  </span></a></li><li><a href="/wissenswertes/" class="vmznds-navigation-item--page-38"><span>  Wissenswertes  </span></a></li><li class="vmznds-navigation-item--last"><a href="/ueber-uns/" class="vmznds-navigation-item--page-37"><span>  Über uns  </span></a></li></ul>
+        
+    </div>
+
+    <div class="vmznds-footer-navigation">
+        <ul><li class="vmznds-navigation-item--first"><a href="/impressum/" class="vmznds-navigation-item--page-36"><span>  Impressum  </span></a></li><li class="vmznds-navigation-item--last"><a href="/datenschutz/" class="vmznds-navigation-item--page-115"><span>  Datenschutz  </span></a></li></ul>
+        
+    </div>
+</nav>
+
+    <div class="vmznds-container__middle__outer-wrapper">
+        <main class="vmznds-main vmznds-container__middle clearfix" id="vmznds-main" role="main" tabindex="0">
+            <p class="vmznds-tool-box">
+    <a class="vmznds-container__expand-left-button vmznds-js-main-navigation-toggle-button fixedsticky"
+       href="#vmznds-main-navigation"
+       title="Hauptmenü"
+       aria-label="Hauptmenü"><i></i></a>
+</p>
+            
+    <div class="vmznds-template--two">
+        <a id="c99"></a><div id="c14" class="csc-default"><h1 class="csc-firstHeader">Willkommen</h1><p class="bodytext">auf dem Portal der </p>
+<p class="bodytext"><b>Verkehrsmanagementzentrale Niedersachsen / Region Hannover</b>.</p></div><a id="c89"></a><div class="vmznds-notifications" data-options='{"defaultText":"Keine Meldungen","feeds":[{"url":"http:\/\/www.vmz-niedersachsen.de\/feeds\/GefahrRss.xml","encoding":"UTF-8","label":"gefahren"},{"url":"http:\/\/www.vmz-niedersachsen.de\/index.php?id=61","label":"news"},{"url":"http:\/\/www.vmz-niedersachsen.de\/feeds\/SchulRss.xml","encoding":"UTF-8","label":"schulausf\u00e4lle","entryTitleOverride":"Schulausfall","maxEntries":{"number":2,"title":"Schulausfall","description":"Es gibt mehrere Schulausf\u00e4lle in Niedersachen...","link":"\/index.php?id=72"}}],"feedTicks":300000}'><div data-reactid=".uyn48g3y80" data-react-checksum="-70775713"></div></div>
+    </div>
+
+    <div class="vmznds-template--cols">
+        <div class="vmznds-col--1"><a id="c130"></a><section class="vmznds-js-situations-list vmznds-box" data-props='{"title":"Verkehrslage","headerIconClass":"vmznds-sign--traffic","topLevel":true,"geojsonUrl":"http://www.vmz-niedersachsen.de/geojson/important-traffic.geojson","completteGeojsonUrl":"http://www.vmz-niedersachsen.de/geojson/traffic-nds.geojson","refreshInterval":120000,"withSorting":true,"withFilter":true,"withMapButton":false,"moreLinkUrl":"http://www.vmz-niedersachsen.de/index.php?id=48","mapLayerId":"traffic-nds.geojson","situations":[{"type":"Feature","id":"lms-nir-lms-ni25903-d-ni-lms-ni","properties":{"type":"traffic-jam","isAbolished":false,"updatedAt":"2017-09-05T09:43:07+0000","id":"lms-nir-lms-ni25903-d-ni-lms-ni","name":"A7 Hamburg Richtung Hannover zwischen Westenholz und Schwarmstedt","description":"zwischen Westenholz und Schwarmstedt\n5 km Stau, Markierungsarbeiten","roadNumber":"A7","segment":"Hamburg Richtung Hannover","meldestelle":"Niedersachsen","centroid":{"x":9.6784300000099,"y":52.723235000056}},"geometry":{"type":"GeometryCollection","geometries":[{"type":"LineString","coordinates":[[9.66632,52.77073],[9.66613,52.77017],[9.66603,52.76986],[9.66591,52.76949],[9.66576,52.76905],[9.66563,52.76863],[9.66525,52.76731],[9.66515,52.7669],[9.66502,52.76633],[9.66486,52.76545],[9.66476,52.76488],[9.66458,52.76345],[9.66452,52.76288],[9.66446,52.762],[9.66445,52.76189],[9.66444,52.76137],[9.66442,52.76069],[9.66441,52.76005],[9.66442,52.75926],[9.66445,52.75838],[9.66453,52.75712],[9.66457,52.75649],[9.66463,52.75603],[9.66473,52.75531],[9.66483,52.75467],[9.66508,52.75331],[9.66516,52.75292],[9.66535,52.75225],[9.66555,52.75152],[9.66574,52.75092],[9.66612,52.7498],[9.66634,52.74919],[9.66681,52.74807],[9.66725,52.74709],[9.66773,52.74602],[9.66801,52.7454],[9.66897,52.74333],[9.66955,52.74208],[9.67036,52.7406],[9.67102,52.73937],[9.67166,52.73833],[9.67237,52.73718],[9.67305,52.73606],[9.67386,52.73472],[9.67471,52.73333],[9.67582,52.73136],[9.67631,52.73048],[9.67665,52.72981],[9.677,52.72911],[9.67737,52.72833],[9.67773,52.72758],[9.67805,52.7269],[9.6782,52.7266],[9.67823,52.72653],[9.67853,52.72586],[9.67869,52.7255],[9.67887,52.72508],[9.679,52.72478],[9.67946,52.72369],[9.68017,52.72191],[9.68061,52.72074],[9.68069,52.72053],[9.68129,52.71888],[9.68162,52.71793],[9.68192,52.71699],[9.68221,52.71606],[9.68247,52.71523],[9.68268,52.71457],[9.6831,52.7131],[9.68341,52.71191],[9.68349,52.71162],[9.68379,52.71046],[9.68421,52.70868],[9.68441,52.70779],[9.68457,52.70704],[9.68503,52.70479],[9.68528,52.7036],[9.68544,52.70281],[9.68558,52.70211],[9.68591,52.70035],[9.68619,52.69889],[9.68625,52.6986],[9.68649,52.69733],[9.68654,52.69711],[9.6867,52.69625],[9.68688,52.6954],[9.6871,52.69429],[9.68735,52.69303],[9.68759,52.69194],[9.68783,52.69087],[9.68788,52.69067],[9.68794,52.69042],[9.68805,52.68999],[9.68823,52.68922],[9.68841,52.68846],[9.68847,52.6882],[9.6885,52.68807],[9.68854,52.68789],[9.68872,52.68715],[9.68874,52.68707],[9.68895,52.68628],[9.68914,52.68555],[9.68927,52.68517],[9.68932,52.68504],[9.68941,52.68474],[9.68956,52.68421],[9.68985,52.68323],[9.69016,52.68227],[9.69041,52.68151],[9.69063,52.6808],[9.69072,52.68053],[9.69112,52.67935],[9.69124,52.679],[9.69131,52.6788],[9.69155,52.67813],[9.69194,52.67706],[9.69219,52.67641],[9.69245,52.67574]]},{"type":"LineString","coordinates":[[9.66632,52.77073],[9.66613,52.77017],[9.66603,52.76986],[9.66591,52.76949],[9.66576,52.76905],[9.66563,52.76863],[9.66525,52.76731],[9.66515,52.7669],[9.66502,52.76633],[9.66486,52.76545],[9.66476,52.76488],[9.66458,52.76345],[9.66452,52.76288],[9.66446,52.762],[9.66445,52.76189],[9.66444,52.76137],[9.66442,52.76069],[9.66441,52.76005],[9.66442,52.75926],[9.66445,52.75838],[9.66453,52.75712],[9.66457,52.75649],[9.66463,52.75603],[9.66473,52.75531],[9.66483,52.75467],[9.66508,52.75331],[9.66516,52.75292],[9.66535,52.75225],[9.66555,52.75152],[9.66574,52.75092],[9.66612,52.7498],[9.66634,52.74919],[9.66681,52.74807],[9.66725,52.74709],[9.66773,52.74602],[9.66801,52.7454],[9.66897,52.74333],[9.66955,52.74208],[9.67036,52.7406],[9.67102,52.73937],[9.67166,52.73833],[9.67237,52.73718],[9.67305,52.73606],[9.67386,52.73472],[9.67471,52.73333],[9.67582,52.73136],[9.67631,52.73048],[9.67665,52.72981],[9.677,52.72911],[9.67737,52.72833],[9.67773,52.72758],[9.67805,52.7269],[9.6782,52.7266],[9.67823,52.72653],[9.67853,52.72586],[9.67869,52.7255],[9.67887,52.72508],[9.679,52.72478],[9.67946,52.72369],[9.68017,52.72191],[9.68061,52.72074],[9.68069,52.72053],[9.68129,52.71888],[9.68162,52.71793],[9.68192,52.71699],[9.68221,52.71606],[9.68247,52.71523],[9.68268,52.71457],[9.6831,52.7131],[9.68341,52.71191],[9.68349,52.71162],[9.68379,52.71046],[9.68421,52.70868],[9.68441,52.70779],[9.68457,52.70704],[9.68503,52.70479],[9.68528,52.7036],[9.68544,52.70281],[9.68558,52.70211],[9.68591,52.70035],[9.68619,52.69889],[9.68625,52.6986],[9.68649,52.69733],[9.68654,52.69711],[9.6867,52.69625],[9.68688,52.6954],[9.6871,52.69429],[9.68735,52.69303],[9.68759,52.69194],[9.68783,52.69087],[9.68788,52.69067],[9.68794,52.69042],[9.68805,52.68999],[9.68823,52.68922],[9.68841,52.68846],[9.68847,52.6882],[9.6885,52.68807],[9.68854,52.68789],[9.68872,52.68715],[9.68874,52.68707],[9.68895,52.68628],[9.68914,52.68555],[9.68927,52.68517],[9.68932,52.68504],[9.68941,52.68474],[9.68956,52.68421],[9.68985,52.68323],[9.69016,52.68227],[9.69041,52.68151],[9.69063,52.6808],[9.69072,52.68053],[9.69112,52.67935],[9.69124,52.679],[9.69131,52.6788],[9.69155,52.67813],[9.69194,52.67706],[9.69219,52.67641],[9.69245,52.67574]]},{"type":"Point","coordinates":[9.66632,52.77073]},{"type":"Point","coordinates":[9.66632,52.77073]}]},"bbox":[9.66441,52.67574,9.69245,52.77073]},{"type":"Feature","id":"lms-nir-lms-ni25898-d-ni-lms-ni","properties":{"type":"situation","isAbolished":false,"updatedAt":"2017-09-05T09:32:56+0000","id":"lms-nir-lms-ni25898-d-ni-lms-ni","name":"A27 Walsrode Richtung Bremen zwischen Walsrode-Süd und Walsrode-West","description":"zwischen Walsrode-Süd und Walsrode-West\nGefahr durch defektes Fahrzeug auf dem Standstreifen","roadNumber":"A27","segment":"Walsrode Richtung Bremen","meldestelle":"Niedersachsen","centroid":{"x":9.573914999821,"y":52.84475999901}},"geometry":{"type":"GeometryCollection","geometries":[{"type":"LineString","coordinates":[[9.59362,52.83622],[9.59164,52.83734],[9.59118,52.83759],[9.59081,52.83779],[9.59073,52.83784],[9.59055,52.83794],[9.58962,52.83846],[9.58949,52.83853],[9.58826,52.83917],[9.58774,52.83944],[9.58585,52.84037],[9.58477,52.84091],[9.58296,52.84171],[9.58222,52.84204],[9.58209,52.8421],[9.58188,52.84219],[9.58106,52.84253],[9.58007,52.84294],[9.57909,52.84334],[9.5783,52.84366],[9.57768,52.8439],[9.57528,52.84484],[9.5726,52.84583],[9.57038,52.84663],[9.56855,52.84729],[9.56739,52.84773],[9.56602,52.84822],[9.5646,52.84877],[9.56289,52.84944],[9.56115,52.85014],[9.55982,52.85071],[9.55898,52.85107],[9.55794,52.85154],[9.55779,52.85161],[9.55775,52.85163],[9.55742,52.85178],[9.55671,52.85212],[9.55421,52.8533]]},{"type":"LineString","coordinates":[[9.59362,52.83622],[9.59164,52.83734],[9.59118,52.83759],[9.59081,52.83779],[9.59073,52.83784],[9.59055,52.83794],[9.58962,52.83846],[9.58949,52.83853],[9.58826,52.83917],[9.58774,52.83944],[9.58585,52.84037],[9.58477,52.84091],[9.58296,52.84171],[9.58222,52.84204],[9.58209,52.8421],[9.58188,52.84219],[9.58106,52.84253],[9.58007,52.84294],[9.57909,52.84334],[9.5783,52.84366],[9.57768,52.8439],[9.57528,52.84484],[9.5726,52.84583],[9.57038,52.84663],[9.56855,52.84729],[9.56739,52.84773],[9.56602,52.84822],[9.5646,52.84877],[9.56289,52.84944],[9.56115,52.85014],[9.55982,52.85071],[9.55898,52.85107],[9.55794,52.85154],[9.55779,52.85161],[9.55775,52.85163],[9.55742,52.85178],[9.55671,52.85212],[9.55421,52.8533]]},{"type":"Point","coordinates":[9.59362,52.83622]},{"type":"Point","coordinates":[9.59362,52.83622]}]},"bbox":[9.55421,52.83622,9.59362,52.8533]},{"type":"Feature","id":"lms-nir-lms-ni25902-d-ni-lms-ni","properties":{"type":"accident","isAbolished":false,"updatedAt":"2017-09-05T09:32:16+0000","id":"lms-nir-lms-ni25902-d-ni-lms-ni","name":"A7 Hamburg Richtung Hannover zwischen Soltau-Süd und Dorfmark","description":"zwischen Soltau-Süd und Dorfmark\nGefahr durch ungesicherte Unfallstelle, Gasse für Rettungs- und Einsatzfahrzeuge bilden","roadNumber":"A7","segment":"Hamburg Richtung Hannover","meldestelle":"Niedersachsen","centroid":{"x":9.8165699999097,"y":52.916204999512}},"geometry":{"type":"GeometryCollection","geometries":[{"type":"LineString","coordinates":[[9.87003,52.94429],[9.86925,52.9438],[9.86873,52.94348],[9.86852,52.94336],[9.86743,52.94271],[9.86656,52.94223],[9.86572,52.94178],[9.86543,52.94162],[9.86519,52.94149],[9.86369,52.94071],[9.86173,52.93977],[9.86078,52.93932],[9.8596,52.93881],[9.8581,52.93818],[9.85677,52.93764],[9.85471,52.93684],[9.85159,52.93572],[9.8452,52.93346],[9.84303,52.93269],[9.84276,52.93259],[9.84227,52.93241],[9.84071,52.93185],[9.83971,52.93149],[9.83947,52.93141],[9.83762,52.93075],[9.8359,52.93014],[9.8313,52.9285],[9.83059,52.92825],[9.82317,52.9256],[9.82235,52.92531],[9.81985,52.92443],[9.81747,52.92354],[9.81607,52.92299],[9.8159,52.92292],[9.81547,52.92275],[9.81506,52.92259],[9.81443,52.92232],[9.8124,52.9214],[9.81125,52.92085],[9.81033,52.92039],[9.8084,52.91938],[9.80699,52.91861],[9.80579,52.91791],[9.8048,52.91731],[9.80435,52.91703],[9.80348,52.91648],[9.80221,52.91564],[9.80066,52.91453],[9.79957,52.91372],[9.79908,52.91334],[9.79796,52.91242],[9.79653,52.91123],[9.79434,52.90934],[9.79127,52.90669],[9.78801,52.90386],[9.78739,52.90333],[9.78644,52.90254],[9.78557,52.90181],[9.78443,52.90091],[9.7836,52.90029],[9.7821,52.89923],[9.781,52.89849],[9.77956,52.89756],[9.77892,52.89717],[9.77819,52.89673],[9.77748,52.89631],[9.77668,52.89585],[9.77566,52.89527],[9.77435,52.89453],[9.77229,52.89336],[9.77026,52.89221],[9.76843,52.89119],[9.76795,52.89091],[9.7674,52.89059],[9.76695,52.89034],[9.76477,52.88909],[9.76427,52.8888],[9.76311,52.88812]]},{"type":"LineString","coordinates":[[9.87003,52.94429],[9.86925,52.9438],[9.86873,52.94348],[9.86852,52.94336],[9.86743,52.94271],[9.86656,52.94223],[9.86572,52.94178],[9.86543,52.94162],[9.86519,52.94149],[9.86369,52.94071],[9.86173,52.93977],[9.86078,52.93932],[9.8596,52.93881],[9.8581,52.93818],[9.85677,52.93764],[9.85471,52.93684],[9.85159,52.93572],[9.8452,52.93346],[9.84303,52.93269],[9.84276,52.93259],[9.84227,52.93241],[9.84071,52.93185],[9.83971,52.93149],[9.83947,52.93141],[9.83762,52.93075],[9.8359,52.93014],[9.8313,52.9285],[9.83059,52.92825],[9.82317,52.9256],[9.82235,52.92531],[9.81985,52.92443],[9.81747,52.92354],[9.81607,52.92299],[9.8159,52.92292],[9.81547,52.92275],[9.81506,52.92259],[9.81443,52.92232],[9.8124,52.9214],[9.81125,52.92085],[9.81033,52.92039],[9.8084,52.91938],[9.80699,52.91861],[9.80579,52.91791],[9.8048,52.91731],[9.80435,52.91703],[9.80348,52.91648],[9.80221,52.91564],[9.80066,52.91453],[9.79957,52.91372],[9.79908,52.91334],[9.79796,52.91242],[9.79653,52.91123],[9.79434,52.90934],[9.79127,52.90669],[9.78801,52.90386],[9.78739,52.90333],[9.78644,52.90254],[9.78557,52.90181],[9.78443,52.90091],[9.7836,52.90029],[9.7821,52.89923],[9.781,52.89849],[9.77956,52.89756],[9.77892,52.89717],[9.77819,52.89673],[9.77748,52.89631],[9.77668,52.89585],[9.77566,52.89527],[9.77435,52.89453],[9.77229,52.89336],[9.77026,52.89221],[9.76843,52.89119],[9.76795,52.89091],[9.7674,52.89059],[9.76695,52.89034],[9.76477,52.88909],[9.76427,52.8888],[9.76311,52.88812]]},{"type":"Point","coordinates":[9.87003,52.94429]},{"type":"Point","coordinates":[9.87003,52.94429]}]},"bbox":[9.76311,52.88812,9.87003,52.94429]},{"type":"Feature","id":"lms-nir-lms-ni25900-d-ni-lms-ni","properties":{"type":"situation","isAbolished":false,"updatedAt":"2017-09-05T09:09:30+0000","id":"lms-nir-lms-ni25900-d-ni-lms-ni","name":"A2 Dortmund Richtung Hannover zwischen Bad Nenndorf und Wunstorf-Kolenfeld","description":"zwischen Bad Nenndorf und Wunstorf-Kolenfeld\nGefahr durch Gegenstände auf der Fahrbahn","roadNumber":"A2","segment":"Dortmund Richtung Hannover","meldestelle":"Niedersachsen","centroid":{"x":9.4423149999925,"y":52.361274999956}},"geometry":{"type":"GeometryCollection","geometries":[{"type":"LineString","coordinates":[[9.40545,52.33218],[9.40609,52.33259],[9.40689,52.3331],[9.40798,52.33382],[9.40823,52.33398],[9.40852,52.33416],[9.40871,52.33428],[9.40933,52.33468],[9.41045,52.33541],[9.41106,52.3358],[9.41128,52.33596],[9.41141,52.33604],[9.4116,52.33616],[9.41217,52.33652],[9.41242,52.33668],[9.41379,52.33757],[9.41439,52.33797],[9.41499,52.33838],[9.41556,52.33882],[9.4161,52.33925],[9.41629,52.3394],[9.41662,52.33968],[9.41712,52.34014],[9.41762,52.34061],[9.41808,52.34109],[9.41851,52.34157],[9.4191,52.34229],[9.41938,52.34267],[9.41958,52.34295],[9.41963,52.34303],[9.41976,52.34322],[9.41983,52.34332],[9.42007,52.34368],[9.42031,52.34407],[9.42066,52.34467],[9.42169,52.34643],[9.42224,52.3473],[9.42295,52.34831],[9.42328,52.34872],[9.42366,52.34919],[9.42372,52.34926],[9.42407,52.34968],[9.42455,52.35022],[9.4247,52.35039],[9.42536,52.3511],[9.42617,52.35197],[9.42694,52.35281],[9.42749,52.3534],[9.42875,52.35477],[9.42933,52.35539],[9.43052,52.35667],[9.43125,52.35744],[9.43201,52.35822],[9.43284,52.35898],[9.43402,52.35997],[9.43494,52.36071],[9.43651,52.36193],[9.43778,52.3629],[9.43911,52.36394],[9.43987,52.36453],[9.4406,52.3651],[9.44248,52.36655],[9.44313,52.36705],[9.44407,52.36778],[9.44538,52.36874],[9.44646,52.36949],[9.44705,52.36988],[9.44778,52.37034],[9.44821,52.37062],[9.44842,52.37076],[9.4485,52.37081],[9.44905,52.37113],[9.4503,52.37187],[9.45182,52.37274],[9.45465,52.37437],[9.45753,52.37604],[9.46007,52.3775],[9.46101,52.37804],[9.46196,52.37859],[9.46336,52.37941],[9.46464,52.38013],[9.46529,52.38052],[9.4661,52.38101],[9.46677,52.38142],[9.46728,52.38176],[9.46769,52.38203],[9.46879,52.38279],[9.47027,52.38386],[9.47136,52.38465],[9.47355,52.38625],[9.47518,52.38744],[9.47575,52.38786],[9.47602,52.38807],[9.47668,52.38855],[9.47918,52.39037]]},{"type":"LineString","coordinates":[[9.40545,52.33218],[9.40609,52.33259],[9.40689,52.3331],[9.40798,52.33382],[9.40823,52.33398],[9.40852,52.33416],[9.40871,52.33428],[9.40933,52.33468],[9.41045,52.33541],[9.41106,52.3358],[9.41128,52.33596],[9.41141,52.33604],[9.4116,52.33616],[9.41217,52.33652],[9.41242,52.33668],[9.41379,52.33757],[9.41439,52.33797],[9.41499,52.33838],[9.41556,52.33882],[9.4161,52.33925],[9.41629,52.3394],[9.41662,52.33968],[9.41712,52.34014],[9.41762,52.34061],[9.41808,52.34109],[9.41851,52.34157],[9.4191,52.34229],[9.41938,52.34267],[9.41958,52.34295],[9.41963,52.34303],[9.41976,52.34322],[9.41983,52.34332],[9.42007,52.34368],[9.42031,52.34407],[9.42066,52.34467],[9.42169,52.34643],[9.42224,52.3473],[9.42295,52.34831],[9.42328,52.34872],[9.42366,52.34919],[9.42372,52.34926],[9.42407,52.34968],[9.42455,52.35022],[9.4247,52.35039],[9.42536,52.3511],[9.42617,52.35197],[9.42694,52.35281],[9.42749,52.3534],[9.42875,52.35477],[9.42933,52.35539],[9.43052,52.35667],[9.43125,52.35744],[9.43201,52.35822],[9.43284,52.35898],[9.43402,52.35997],[9.43494,52.36071],[9.43651,52.36193],[9.43778,52.3629],[9.43911,52.36394],[9.43987,52.36453],[9.4406,52.3651],[9.44248,52.36655],[9.44313,52.36705],[9.44407,52.36778],[9.44538,52.36874],[9.44646,52.36949],[9.44705,52.36988],[9.44778,52.37034],[9.44821,52.37062],[9.44842,52.37076],[9.4485,52.37081],[9.44905,52.37113],[9.4503,52.37187],[9.45182,52.37274],[9.45465,52.37437],[9.45753,52.37604],[9.46007,52.3775],[9.46101,52.37804],[9.46196,52.37859],[9.46336,52.37941],[9.46464,52.38013],[9.46529,52.38052],[9.4661,52.38101],[9.46677,52.38142],[9.46728,52.38176],[9.46769,52.38203],[9.46879,52.38279],[9.47027,52.38386],[9.47136,52.38465],[9.47355,52.38625],[9.47518,52.38744],[9.47575,52.38786],[9.47602,52.38807],[9.47668,52.38855],[9.47918,52.39037]]},{"type":"Point","coordinates":[9.40545,52.33218]},{"type":"Point","coordinates":[9.40545,52.33218]}]},"bbox":[9.40545,52.33218,9.47918,52.39037]},{"type":"Feature","id":"lms-nir-lms-ni25889-d-ni-lms-ni","properties":{"type":"traffic-jam","isAbolished":false,"updatedAt":"2017-09-05T06:51:41+0000","id":"lms-nir-lms-ni25889-d-ni-lms-ni","name":"A7 Hannover Richtung Kassel zwischen Hildesheim-Drispenstedt und Hildesheim","description":"zwischen Hildesheim-Drispenstedt und Hildesheim\nFahrbahn auf einen Fahrstreifen verengt, Tagesbaustelle, Stau zu erwarten","roadNumber":"A7","segment":"Hannover Richtung Kassel","meldestelle":"Niedersachsen","centroid":{"x":9.9777849998526,"y":52.172029999231}},"geometry":{"type":"GeometryCollection","geometries":[{"type":"LineString","coordinates":[[9.96698,52.18531],[9.96746,52.185],[9.96768,52.18486],[9.96822,52.18454],[9.96949,52.18378],[9.97068,52.18302],[9.97156,52.18242],[9.97251,52.18176],[9.9735,52.18103],[9.97437,52.18034],[9.97525,52.17962],[9.97576,52.17918],[9.97656,52.17844],[9.97723,52.1778],[9.97788,52.17712],[9.97861,52.17631],[9.97886,52.17602],[9.97933,52.17547],[9.97955,52.17519],[9.97976,52.17493],[9.98,52.17464],[9.98021,52.17436],[9.98101,52.17323],[9.9812,52.17295],[9.98168,52.17217],[9.98226,52.17123],[9.98292,52.1701],[9.98304,52.16988],[9.98321,52.16956],[9.98379,52.16847],[9.9846,52.16687],[9.98504,52.16596],[9.98526,52.16551],[9.98537,52.16529],[9.98541,52.16523],[9.98543,52.16518],[9.98555,52.16493],[9.98574,52.16452],[9.98619,52.16362],[9.98654,52.16292],[9.9875,52.16098],[9.98754,52.1609],[9.98859,52.15875]]},{"type":"LineString","coordinates":[[9.96698,52.18531],[9.96746,52.185],[9.96768,52.18486],[9.96822,52.18454],[9.96949,52.18378],[9.97068,52.18302],[9.97156,52.18242],[9.97251,52.18176],[9.9735,52.18103],[9.97437,52.18034],[9.97525,52.17962],[9.97576,52.17918],[9.97656,52.17844],[9.97723,52.1778],[9.97788,52.17712],[9.97861,52.17631],[9.97886,52.17602],[9.97933,52.17547],[9.97955,52.17519],[9.97976,52.17493],[9.98,52.17464],[9.98021,52.17436],[9.98101,52.17323],[9.9812,52.17295],[9.98168,52.17217],[9.98226,52.17123],[9.98292,52.1701],[9.98304,52.16988],[9.98321,52.16956],[9.98379,52.16847],[9.9846,52.16687],[9.98504,52.16596],[9.98526,52.16551],[9.98537,52.16529],[9.98541,52.16523],[9.98543,52.16518],[9.98555,52.16493],[9.98574,52.16452],[9.98619,52.16362],[9.98654,52.16292],[9.9875,52.16098],[9.98754,52.1609],[9.98859,52.15875]]},{"type":"Point","coordinates":[9.96698,52.18531]},{"type":"Point","coordinates":[9.96698,52.18531]}]},"bbox":[9.96698,52.15875,9.98859,52.18531]}],"statistics":{"total":{"featureCount":6},"filtered":{"featureCount":5}}}'><article class="vmznds-list vmznds-list--situations" data-map-view-layer-id="traffic-nds.geojson" data-reactid=".2g0xwvxmo" data-react-checksum="-1012616576"><div class="vmznds-status-indicator" data-reactid=".2g0xwvxmo.$si"></div><header data-reactid=".2g0xwvxmo.$h"><h1 data-reactid=".2g0xwvxmo.$h.$h"><i class="vmznds-sign--traffic" data-reactid=".2g0xwvxmo.$h.$h.0"></i><span data-reactid=".2g0xwvxmo.$h.$h.1"> </span><span data-reactid=".2g0xwvxmo.$h.$h.2">Verkehrslage</span></h1><div class="vmznds-list__filter-box" data-reactid=".2g0xwvxmo.$h.$f"><fieldset data-reactid=".2g0xwvxmo.$h.$f.0"><label data-reactid=".2g0xwvxmo.$h.$f.0.0"><span class="visuallyhidden" data-reactid=".2g0xwvxmo.$h.$f.0.0.0">Textsuche</span></label><input type="search" placeholder="Suchen …" name="search" value="" data-reactid=".2g0xwvxmo.$h.$f.0.1"><button type="reset" data-reactid=".2g0xwvxmo.$h.$f.0.2">zurücksetzen</button></fieldset><div data-reactid=".2g0xwvxmo.$h.$f.1"><fieldset class="vmznds-filter-tabs" data-reactid=".2g0xwvxmo.$h.$f.1.0"><legend data-reactid=".2g0xwvxmo.$h.$f.1.0.$label">Straßenart</legend><label class="" data-count="5" data-reactid=".2g0xwvxmo.$h.$f.1.0.$autobahn"><span class="visuallyhidden" data-reactid=".2g0xwvxmo.$h.$f.1.0.$autobahn.0"><input type="radio" name="a" value="a" data-reactid=".2g0xwvxmo.$h.$f.1.0.$autobahn.0.0"></span><span class="label" data-reactid=".2g0xwvxmo.$h.$f.1.0.$autobahn.1">Autobahnen</span><span class="count" data-reactid=".2g0xwvxmo.$h.$f.1.0.$autobahn.2">5</span></label><label class="" data-count="0" data-reactid=".2g0xwvxmo.$h.$f.1.0.$andere"><span class="visuallyhidden" data-reactid=".2g0xwvxmo.$h.$f.1.0.$andere.0"><input type="radio" name="a" value="o" data-reactid=".2g0xwvxmo.$h.$f.1.0.$andere.0.0"></span><span class="label" data-reactid=".2g0xwvxmo.$h.$f.1.0.$andere.1">Andere</span><span data-reactid=".2g0xwvxmo.$h.$f.1.0.$andere.2"></span></label></fieldset></div></div><div class="vmznds-situations-sorting" data-reactid=".2g0xwvxmo.$h.$s"><button type="button" class="vmznds-hint--left vmznds-hint--rounded close" data-hint="Meldungen sortieren …" data-reactid=".2g0xwvxmo.$h.$s.0"><i data-reactid=".2g0xwvxmo.$h.$s.0.0">öffnen</i></button><div data-reactid=".2g0xwvxmo.$h.$s.1"></div></div></header><div class="vmznds-box__inset" role="list" data-reactid=".2g0xwvxmo.$c"><article id="vmznds-lms-nir-lms-ni25903-d-ni-lms-ni" data-mapsight-feature-id="lms-nir-lms-ni25903-d-ni-lms-ni" class="vmznds-list__item vmznds-situation--tic" role="listitem" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25903-d-ni-lms-ni"><header data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25903-d-ni-lms-ni.$h"><h1 class="vmznds-situation--tic__road-number" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25903-d-ni-lms-ni.$h.$locationName">A7</h1><time class="vmznds-situation--tic__datetime vmznds-hint--bottom vmznds-hint--rounded" datetime="2017-09-05T09:43:07.000Z" data-hint="Dienstag, 5. September 2017 11:43" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25903-d-ni-lms-ni.$h.$updatedAt">05.09.2017, 11:43</time><h2 class="vmznds-situation--tic__direction" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25903-d-ni-lms-ni.$h.$locationDetails">Hamburg → Hannover</h2></header><p data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25903-d-ni-lms-ni.$c">zwischen Westenholz und Schwarmstedt
+<em class="vmznds-state vmznds-state--2">5 km Stau</em>, Markierungsarbeiten</p></article><article id="vmznds-lms-nir-lms-ni25898-d-ni-lms-ni" data-mapsight-feature-id="lms-nir-lms-ni25898-d-ni-lms-ni" class="vmznds-list__item vmznds-situation--tic" role="listitem" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25898-d-ni-lms-ni"><header data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25898-d-ni-lms-ni.$h"><h1 class="vmznds-situation--tic__road-number" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25898-d-ni-lms-ni.$h.$locationName">A27</h1><time class="vmznds-situation--tic__datetime vmznds-hint--bottom vmznds-hint--rounded" datetime="2017-09-05T09:32:56.000Z" data-hint="Dienstag, 5. September 2017 11:32" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25898-d-ni-lms-ni.$h.$updatedAt">05.09.2017, 11:32</time><h2 class="vmznds-situation--tic__direction" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25898-d-ni-lms-ni.$h.$locationDetails">Walsrode → Bremen</h2></header><p data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25898-d-ni-lms-ni.$c">zwischen Walsrode-Süd und Walsrode-West
+<em class="vmznds-state vmznds-state--1">Gefahr</em> durch  defektes Fahrzeug auf dem Standstreifen</p></article><article id="vmznds-lms-nir-lms-ni25902-d-ni-lms-ni" data-mapsight-feature-id="lms-nir-lms-ni25902-d-ni-lms-ni" class="vmznds-list__item vmznds-situation--tic" role="listitem" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25902-d-ni-lms-ni"><header data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25902-d-ni-lms-ni.$h"><h1 class="vmznds-situation--tic__road-number" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25902-d-ni-lms-ni.$h.$locationName">A7</h1><time class="vmznds-situation--tic__datetime vmznds-hint--bottom vmznds-hint--rounded" datetime="2017-09-05T09:32:16.000Z" data-hint="Dienstag, 5. September 2017 11:32" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25902-d-ni-lms-ni.$h.$updatedAt">05.09.2017, 11:32</time><h2 class="vmznds-situation--tic__direction" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25902-d-ni-lms-ni.$h.$locationDetails">Hamburg → Hannover</h2></header><p data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25902-d-ni-lms-ni.$c">zwischen Soltau-Süd und Dorfmark
+<em class="vmznds-state vmznds-state--1">Gefahr</em> durch  ungesicherte Unfallstelle, Gasse für Rettungs- und Einsatzfahrzeuge bilden</p></article><article id="vmznds-lms-nir-lms-ni25900-d-ni-lms-ni" data-mapsight-feature-id="lms-nir-lms-ni25900-d-ni-lms-ni" class="vmznds-list__item vmznds-situation--tic" role="listitem" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25900-d-ni-lms-ni"><header data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25900-d-ni-lms-ni.$h"><h1 class="vmznds-situation--tic__road-number" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25900-d-ni-lms-ni.$h.$locationName">A2</h1><time class="vmznds-situation--tic__datetime vmznds-hint--bottom vmznds-hint--rounded" datetime="2017-09-05T09:09:30.000Z" data-hint="Dienstag, 5. September 2017 11:09" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25900-d-ni-lms-ni.$h.$updatedAt">05.09.2017, 11:09</time><h2 class="vmznds-situation--tic__direction" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25900-d-ni-lms-ni.$h.$locationDetails">Dortmund → Hannover</h2></header><p data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25900-d-ni-lms-ni.$c">zwischen Bad Nenndorf und Wunstorf-Kolenfeld
+<em class="vmznds-state vmznds-state--1">Gefahr</em> durch  Gegenstände auf der Fahrbahn</p></article><article id="vmznds-lms-nir-lms-ni25889-d-ni-lms-ni" data-mapsight-feature-id="lms-nir-lms-ni25889-d-ni-lms-ni" class="vmznds-list__item vmznds-situation--tic" role="listitem" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25889-d-ni-lms-ni"><header data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25889-d-ni-lms-ni.$h"><h1 class="vmznds-situation--tic__road-number" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25889-d-ni-lms-ni.$h.$locationName">A7</h1><time class="vmznds-situation--tic__datetime vmznds-hint--bottom vmznds-hint--rounded" datetime="2017-09-05T06:51:41.000Z" data-hint="Dienstag, 5. September 2017 08:51" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25889-d-ni-lms-ni.$h.$updatedAt">05.09.2017, 08:51</time><h2 class="vmznds-situation--tic__direction" data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25889-d-ni-lms-ni.$h.$locationDetails">Hannover → Kassel</h2></header><p data-reactid=".2g0xwvxmo.$c.$lms-nir-lms-ni25889-d-ni-lms-ni.$c">zwischen Hildesheim-Drispenstedt und Hildesheim
+Fahrbahn auf einen Fahrstreifen verengt, Tagesbaustelle, <em class="vmznds-state vmznds-state--2">Stau</em> zu erwarten</p></article></div><footer class="vmznds-list__footer" data-reactid=".2g0xwvxmo.$f"><p data-reactid=".2g0xwvxmo.$f.0"><a class="vmznds-list__more-link" href="http://www.vmz-niedersachsen.de/index.php?id=48" data-reactid=".2g0xwvxmo.$f.0.0">Zeige alle 6 Meldungen an …</a></p></footer></article></section></div><div class="vmznds-col--2"><a id="c129"></a><section class="vmznds-js-situations-list vmznds-box" data-props='{"title":"Baustellen","headerIconClass":"vmznds-sign--construction-work","topLevel":true,"geojsonUrl":"http://www.vmz-niedersachsen.de/geojson/important-construction-work.geojson","completteGeojsonUrl":"http://www.vmz-niedersachsen.de/geojson/construction-work.geojson","refreshInterval":420000,"withSorting":true,"withFilter":true,"withMapButton":false,"moreLinkUrl":"index.php?id=47","mapLayerId":"construction-work.geojson","situations":[{"type":"Feature","id":"lms-nir-lms-ni1035-d-ni-lms-ni","properties":{"type":"traffic-jam","isAbolished":false,"id":"lms-nir-lms-ni1035-d-ni-lms-ni","name":"A1 Osnabrück Richtung Bremen zwischen Dreieck Stuhr und Bremen/Brinkum","description":"zwischen Dreieck Stuhr und Bremen/Brinkum\nin beiden Richtungen Fahrbahn auf zwei Fahrstreifen verengt, geänderte Verkehrsführung im Baustellenbereich, Stau zu erwarten, bis 31.12.2017","roadNumber":"A1","segment":"Osnabrück - Bremen","meldestelle":"Niedersachsen","source":"tic","centroid":{"x":8.80246,"y":53.02335},"when":{"stop":"2017-12-31T22:59:00+0000"}},"geometry":{"type":"GeometryCollection","geometries":[{"type":"Point","coordinates":[8.80246,53.02335]},{"type":"Point","coordinates":[8.80246,53.02335]}]},"when":{"stop":"2017-12-31T22:59:00+0000"},"bbox":[8.80246,53.02335,8.80246,53.02335]},{"type":"Feature","id":"lms-nir-lms-ni25743-d-ni-lms-ni","properties":{"type":"construction-work","isAbolished":false,"id":"lms-nir-lms-ni25743-d-ni-lms-ni","name":"A1 Osnabrück Richtung Bremen Einfahrt Cloppenburg","description":"Einfahrt Cloppenburg\nEinfahrt gesperrt, Baustelle, rechter Fahrstreifen gesperrt, bis 06.09.2017","roadNumber":"A1","segment":"Osnabrück Richtung Bremen","meldestelle":"Niedersachsen","source":"tic","centroid":{"x":8.21246,"y":52.81256},"when":{"@type":"Interval","start":"2017-09-03T22:00:00+0000","stop":"2017-09-06T21:59:00+0000"}},"geometry":{"type":"GeometryCollection","geometries":[{"type":"Point","coordinates":[8.21246,52.81256]},{"type":"Point","coordinates":[8.21246,52.81256]}]},"when":{"@type":"Interval","start":"2017-09-03T22:00:00+0000","stop":"2017-09-06T21:59:00+0000"},"bbox":[8.21246,52.81256,8.21246,52.81256]},{"type":"Feature","id":"lms-nir-lms-ni25313-d-ni-lms-ni","properties":{"type":"construction-work","isAbolished":false,"id":"lms-nir-lms-ni25313-d-ni-lms-ni","name":"A1 Osnabrück Richtung Bremen zwischen Wildeshausen-Nord und Groß Ippener","description":"zwischen Wildeshausen-Nord und Groß Ippener\nFahrbahn auf einen Fahrstreifen verengt, Nachtbaustelle, bis 09.09.2017, täglich zwischen 19:00 Uhr und 06:00 Uhr","roadNumber":"A1","segment":"Osnabrück Richtung Bremen","meldestelle":"Niedersachsen","source":"tic","centroid":{"x":8.45188,"y":52.91559},"when":{"stop":"2017-09-09T04:00:00+0000"}},"geometry":{"type":"GeometryCollection","geometries":[{"type":"Point","coordinates":[8.45188,52.91559]},{"type":"Point","coordinates":[8.45188,52.91559]}]},"when":{"stop":"2017-09-09T04:00:00+0000"},"bbox":[8.45188,52.91559,8.45188,52.91559]}],"statistics":{"total":{"featureCount":135},"filtered":{"featureCount":3}}}'><article class="vmznds-list vmznds-list--situations" data-map-view-layer-id="construction-work.geojson" data-reactid=".r5h5mz8w74" data-react-checksum="-1139318759"><div class="vmznds-status-indicator" data-reactid=".r5h5mz8w74.$si"></div><header data-reactid=".r5h5mz8w74.$h"><h1 data-reactid=".r5h5mz8w74.$h.$h"><i class="vmznds-sign--construction-work" data-reactid=".r5h5mz8w74.$h.$h.0"></i><span data-reactid=".r5h5mz8w74.$h.$h.1"> </span><span data-reactid=".r5h5mz8w74.$h.$h.2">Baustellen</span></h1><div class="vmznds-list__filter-box" data-reactid=".r5h5mz8w74.$h.$f"><fieldset data-reactid=".r5h5mz8w74.$h.$f.0"><label data-reactid=".r5h5mz8w74.$h.$f.0.0"><span class="visuallyhidden" data-reactid=".r5h5mz8w74.$h.$f.0.0.0">Textsuche</span></label><input type="search" placeholder="Suchen …" name="search" value="" data-reactid=".r5h5mz8w74.$h.$f.0.1"><button type="reset" data-reactid=".r5h5mz8w74.$h.$f.0.2">zurücksetzen</button></fieldset><div data-reactid=".r5h5mz8w74.$h.$f.1"><fieldset class="vmznds-filter-tabs" data-reactid=".r5h5mz8w74.$h.$f.1.0"><legend data-reactid=".r5h5mz8w74.$h.$f.1.0.$label">Straßenart</legend><label class="" data-count="3" data-reactid=".r5h5mz8w74.$h.$f.1.0.$autobahn"><span class="visuallyhidden" data-reactid=".r5h5mz8w74.$h.$f.1.0.$autobahn.0"><input type="radio" name="a" value="a" data-reactid=".r5h5mz8w74.$h.$f.1.0.$autobahn.0.0"></span><span class="label" data-reactid=".r5h5mz8w74.$h.$f.1.0.$autobahn.1">Autobahnen</span><span class="count" data-reactid=".r5h5mz8w74.$h.$f.1.0.$autobahn.2">3</span></label><label class="" data-count="0" data-reactid=".r5h5mz8w74.$h.$f.1.0.$andere"><span class="visuallyhidden" data-reactid=".r5h5mz8w74.$h.$f.1.0.$andere.0"><input type="radio" name="a" value="o" data-reactid=".r5h5mz8w74.$h.$f.1.0.$andere.0.0"></span><span class="label" data-reactid=".r5h5mz8w74.$h.$f.1.0.$andere.1">Andere</span><span data-reactid=".r5h5mz8w74.$h.$f.1.0.$andere.2"></span></label></fieldset></div></div><div class="vmznds-situations-sorting" data-reactid=".r5h5mz8w74.$h.$s"><button type="button" class="vmznds-hint--left vmznds-hint--rounded close" data-hint="Meldungen sortieren …" data-reactid=".r5h5mz8w74.$h.$s.0"><i data-reactid=".r5h5mz8w74.$h.$s.0.0">öffnen</i></button><div data-reactid=".r5h5mz8w74.$h.$s.1"></div></div></header><div class="vmznds-box__inset" role="list" data-reactid=".r5h5mz8w74.$c"><article id="vmznds-lms-nir-lms-ni1035-d-ni-lms-ni" data-mapsight-feature-id="lms-nir-lms-ni1035-d-ni-lms-ni" class="vmznds-list__item vmznds-situation--tic" role="listitem" data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni1035-d-ni-lms-ni"><header data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni1035-d-ni-lms-ni.$h"><h1 class="vmznds-situation--tic__road-number" data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni1035-d-ni-lms-ni.$h.$locationName">A1</h1><h2 class="vmznds-situation--tic__direction" data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni1035-d-ni-lms-ni.$h.$locationDetails">Osnabrück - Bremen</h2></header><p data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni1035-d-ni-lms-ni.$c">zwischen Dreieck Stuhr und Bremen/Brinkum
+in beiden Richtungen Fahrbahn auf zwei Fahrstreifen verengt, geänderte Verkehrsführung im Baustellenbereich, <em class="vmznds-state vmznds-state--2">Stau</em> zu erwarten, bis 31.12.2017</p></article><article id="vmznds-lms-nir-lms-ni25743-d-ni-lms-ni" data-mapsight-feature-id="lms-nir-lms-ni25743-d-ni-lms-ni" class="vmznds-list__item vmznds-situation--tic" role="listitem" data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni25743-d-ni-lms-ni"><header data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni25743-d-ni-lms-ni.$h"><h1 class="vmznds-situation--tic__road-number" data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni25743-d-ni-lms-ni.$h.$locationName">A1</h1><h2 class="vmznds-situation--tic__direction" data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni25743-d-ni-lms-ni.$h.$locationDetails">Osnabrück → Bremen</h2></header><p data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni25743-d-ni-lms-ni.$c">Einfahrt Cloppenburg
+Einfahrt gesperrt, Baustelle, rechter Fahrstreifen gesperrt, bis 06.09.2017</p></article><article id="vmznds-lms-nir-lms-ni25313-d-ni-lms-ni" data-mapsight-feature-id="lms-nir-lms-ni25313-d-ni-lms-ni" class="vmznds-list__item vmznds-situation--tic" role="listitem" data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni25313-d-ni-lms-ni"><header data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni25313-d-ni-lms-ni.$h"><h1 class="vmznds-situation--tic__road-number" data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni25313-d-ni-lms-ni.$h.$locationName">A1</h1><h2 class="vmznds-situation--tic__direction" data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni25313-d-ni-lms-ni.$h.$locationDetails">Osnabrück → Bremen</h2></header><p data-reactid=".r5h5mz8w74.$c.$lms-nir-lms-ni25313-d-ni-lms-ni.$c">zwischen Wildeshausen-Nord und Groß Ippener
+Fahrbahn auf einen Fahrstreifen verengt, Nachtbaustelle, bis 09.09.2017, täglich zwischen 19:00 Uhr und 06:00 Uhr</p></article></div><footer class="vmznds-list__footer" data-reactid=".r5h5mz8w74.$f"><p data-reactid=".r5h5mz8w74.$f.0"><a class="vmznds-list__more-link" href="index.php?id=47" data-reactid=".r5h5mz8w74.$f.0.0">Zeige alle 135 Meldungen an …</a></p></footer></article></section><a id="c100"></a><a id="c78"></a><section class="vmznds-box vmznds-box--webcam">
+    
+        <h1>
+            <i class="vmznds-icon--info"></i>
+            Verkehrskameras
+        </h1>
+    
+
+    
+    
+
+    
+        <div class="vmznds-box__inset" role="list">
+            <a title="45" href="/region-hannover/verkehrskameras/">
+                
+                    <figure role="listitem"
+                            class="vmznds-webcam vmznds-webcam--big">
+
+                        
+                            <img src="/webcams/kam21.jpg?v=2" data-refresh-interval="120" alt="">
+                        
+                        <figcaption>A2 Bothfeld</figcaption>
+                    </figure>
+                
+                    <figure role="listitem"
+                            class="vmznds-webcam">
+
+                        
+                            <img src="/webcams/kam2.jpg?v=2" data-refresh-interval="120" alt="">
+                        
+                        <figcaption>A2 Herrenhausen</figcaption>
+                    </figure>
+                
+                    <figure role="listitem"
+                            class="vmznds-webcam">
+
+                        
+                            <img src="/webcams/kam4.jpg?v=2" data-refresh-interval="120" alt="">
+                        
+                        <figcaption>A2 Lahe</figcaption>
+                    </figure>
+                
+            </a>
+        </div>
+    
+
+
+    
+            <footer class="vmznds-list__footer">
+                <p><a class="vmznds-list__more-link" title="45" href="/region-hannover/verkehrskameras/">
+                Alle Kameras anzeigen ...
+                </a></p>
+            </footer>
+    
+</section></div><div class="vmznds-col--3"><a id="c43"></a>
+
+
+
+
+
+
+    <section class="vmznds-box vmznds-list vmznds-list--messages">
+
+        <h1>
+            
+            
+            
+                <i class="vmznds-icon--events"></i>
+            
+            Veranstaltungen
+        </h1>
+
+        
+        
+
+<!--    Templates/News/EventList.html -->
+
+
+        <div class="vmznds-box__inset" role="list">
+			
+						
+							
+
+<!--
+	=====================
+		Partials/EventList/Item.html
+-->
+
+
+<article class="vmznds-list__item vmznds-event articletype-0" role="listitem">
+    
+
+
+    
+
+            <a class="clearfix" href="/veranstaltung/news/skate-by-night-2017/">
+
+                
+
+                <p class="vmznds-list__sub-head">
+                    
+
+<!--
+	=====================
+		Partials/Event/Item.html
+-->
+
+        
+               06.09.2017 bis 21.09.2017
+            
+    
+
+    - Hannover, Hemmingen, Garbsen, Langenhagen
+
+
+                </p>
+                <header>
+                    <h1 class="vmznds-list__head">Skate by Night 2017</h1>
+                </header>
+                <p>
+                    
+                            Auch in diesem Jahr finden 10 Skater-Veranstaltungen  im Rahmen der "Skate by Night" mit den Streckenverläufen in Hannover, Hemmingen, Garbsen und...
+                        
+                </p>
+            </a>
+
+        
+
+</article>
+
+					
+							
+
+<!--
+	=====================
+		Partials/EventList/Item.html
+-->
+
+
+<article class="vmznds-list__item vmznds-event articletype-0" role="listitem">
+    
+
+
+    
+
+            <a class="clearfix" href="/veranstaltung/news/emo-2017/">
+
+                
+                    <div class="vmznds-message__imgwrap">
+                        
+                            
+                                
+                                    <img title="EMO 2017" src="/media/_processed_/csm_emo_e34562e4a6.jpg" width="200" height="200" alt="" />
+                                
+                                
+                            
+                        
+
+                    </div>
+                
+
+                <p class="vmznds-list__sub-head">
+                    
+
+<!--
+	=====================
+		Partials/Event/Item.html
+-->
+
+        
+               18.09.2017 bis 23.09.2017
+            
+    
+
+    - Hannover, Messegelände
+
+
+                </p>
+                <header>
+                    <h1 class="vmznds-list__head">EMO 2017</h1>
+                </header>
+                <p>
+                    
+                            Vom 18. bis 23. September 2017 wird das Messegelände mit der EMO Hannover 2017 zum weltweit bedeutendsten Ort für die Werkzeugmaschinenbranche.
+                        
+                </p>
+            </a>
+
+        
+
+</article>
+
+					
+				
+		</div>
+
+        
+                <footer class="vmznds-list__footer">
+                    <p><a class="vmznds-list__more-link" href="/niedersachsen/veranstaltungen/">
+                        Zeige alle Veranstaltungen an ...
+                    </a></p>
+                </footer>
+        
+	
+
+    </section>
+
+<a id="c15"></a>
+
+
+
+
+
+
+    <section class="vmznds-box vmznds-list vmznds-list--messages">
+
+        <h1>
+            
+                <i class="vmznds-icon--info"></i>
+            
+            
+            
+            Tipps &amp; Infos
+        </h1>
+
+        
+        
+
+    
+            <div class="vmznds-box__inset" role="list">
+                
+                        
+                            
+
+<article class="vmznds-list__item vmznds-message articletype-0 topnews " role="listitem">
+    
+
+    <!-- News  -->
+    
+
+        
+                <a class="clearfix" href="/nachricht/news/autobahngrossbaustellen-in-niedersachsen-und-nachbarlaendern/">
+
+                    
+
+                    <header>
+                        <h1 class="vmznds-list__head">Autobahngroßbaustellen in Niedersachsen und Nachbarländern</h1>
+                    </header>
+
+                    <p>
+                        
+                                Auf der A7 Hannover - Kassel muss durch eine Autobahngroßbaustelle mit Verkehrsproblemen gerechnet werden. 
+                            
+                    </p>
+                </a>
+
+            
+    
+
+    <!-- News on internal or external page -->
+    
+
+
+
+</article>
+
+                        
+                            
+
+<article class="vmznds-list__item vmznds-message articletype-1 topnews " role="listitem">
+    
+
+    <!-- News  -->
+    
+
+    <!-- News on internal or external page -->
+    
+        <a href="/wissenswertes/schulausfall/">
+
+            
+
+            <header>
+                <h1 class="vmznds-list__head">Schul- und Unterrichtsausfälle</h1>
+            </header>
+
+            <p>
+                
+                        Übersicht der aktuellen Ausfälle.
+                    
+            </p>
+        </a>
+    
+
+
+
+</article>
+
+                        
+                    
+            </div>
+
+            
+                <footer class="vmznds-list__footer">
+                    <p><a class="vmznds-list__more-link" href="/wissenswertes/">
+                        Zeige alle Artikel an ...
+                    </a>
+                    </p>
+                </footer>
+            
+
+
+
+        
+
+    </section>
+
+</div>
+    </div>
+
+        </main>
+    </div>
+</div>
+<script src="//static.vmz-niedersachsen.de/tpl/JavaScript/Combined.28.js" type="text/javascript"></script>
+
+
+
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//service.neonaut.de/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 13]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//service.neonaut.de/piwik/piwik.php?idsite=13" style="border:0;" alt="" /></p></noscript>
+
+</body>
+</html>

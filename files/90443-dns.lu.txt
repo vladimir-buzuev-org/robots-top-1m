@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" media="screen,projection" href="/media/css/master.css" />
+<link rel="stylesheet" type="text/css" media="print" href="/media/css/print.css" />
+<meta http-equiv="content-language" content="fr"/>
+<meta name="description" content=""/>
+<meta name="keywords" content="" />
+<!--[if lte IE 6.9]>
+<link href="/media/css/ie.css" rel="stylesheet" type="text/css" media="screen" />
+<![endif]-->
+
+<script src="/media/js/jquery.js" type="text/javascript"></script>
+
+<title>DNS Luxembourg - www.dns.lu</title>
+
+<script>
+	//<![CDATA[
+    var p_title = document.title;
+    var p_url = document.location.href;
+    function addToFavorites(){
+        if (document.all && !window.opera){ //IE
+			window.external.Addfavorite(p_url,p_title);
+		} else if ((typeof window.sidebar == 'object') && (typeof window.sidebar.addPanel == 'function')){ //FF
+    		window.sidebar.addPanel (p_title,p_url,'');
+		} else {// other
+			alert("Appuyez Ctrl + D pour ajouter cette page à vos favoris");
+		}
+    }
+    function nstestAddNS(frm) {
+      var cnt = frm.hostcount;
+      if (parseInt(cnt.value) >= 10)
+        return false;
+      var ns = document.getElementById('nstest_hosts');
+      var d = document.createElement('div');
+      /* ns */
+      var d1 = document.createElement('div');
+      d1.setAttribute('class', 'm_left');
+      var l1 = document.createElement('label');
+      l1.setAttribute('for', 'id_host_'+cnt.value);
+      l1.appendChild(document.createTextNode('Test noms de serveurs'));
+      d1.appendChild(l1);
+      var i1 = document.createElement('input');
+      i1.setAttribute('name', 'host_'+cnt.value);
+      i1.setAttribute('id', 'id_host_'+cnt.value);
+      i1.setAttribute('value', '');
+      i1.setAttribute('type', 'text');
+      i1.setAttribute('class', 'input check-nameserver');
+      d1.appendChild(i1);
+      d.appendChild(d1);
+      /* ip addr */
+      d1 = document.createElement('div');
+      d1.setAttribute('class', 'm_right');
+      l1 = document.createElement('label');
+      l1.setAttribute('for', 'id_addr_'+cnt.value);
+      l1.appendChild(document.createTextNode('Adresse IP'));
+      d1.appendChild(l1);
+      i1 = document.createElement('input');
+      i1.setAttribute('name', 'addr_'+cnt.value);
+      i1.setAttribute('id', 'id_addr_'+cnt.value);
+      i1.setAttribute('value', '');
+      i1.setAttribute('type', 'text');
+      i1.setAttribute('class', 'input check-ip-address');
+      d1.appendChild(i1);
+      d.appendChild(d1);
+      ns.appendChild(d);
+      cnt.value = parseInt(cnt.value)+1;
+      return false;
+    }
+    function nstestDelNS(frm) {
+      var cnt = frm.hostcount;
+      if (parseInt(cnt.value) <= 2)
+        return false;
+      var ns = document.getElementById('nstest_hosts');
+      var d = ns.firstChild;
+      while (d && d.nextSibling)
+        d = d.nextSibling;
+      ns.removeChild(d);
+      cnt.value = parseInt(cnt.value)-1;
+      return false;
+    }
+    function nstestToggleDnsSec(ckb) {
+      var d = document.getElementById('nstest_ds');
+      d.style.display = ckb.checked ? 'block' : 'none';
+      return false;
+    }
+	//]]>
+</script>
+
+</head>
+<body class="fr">
+<div id="container">
+  <div id="contentcontainer">
+    <div id="headercontainer">
+      <div class="language">
+    <ul class="language">
+      <li><a href="/en/home/" class="first">EN</a></li>
+      <li><a href="/fr/home/" class="open">FR</a></li>
+    </ul>
+  </div>
+  <div class="menucontainer">
+    <ul class="menulist">
+      
+      <li class="first">
+        <a href="/fr/lu-domains/">Domaines LU</a>
+      </li>
+      
+      <li>
+        <a href="/fr/support/">Support</a>
+      </li>
+      
+      <li>
+        <a href="/fr/registrars/">Registrars</a>
+      </li>
+      
+      <li>
+        <a href="/fr/about-dnslu/">A propos de DNS-LU</a>
+      </li>
+      
+    </ul>
+  </div>
+  <!-- End: Menucontainer -->
+    <div class="search">
+      <h2>Recherche</h2>
+      <form action="/fr/search/">
+          <input id="id_searchtext" type="text" name="q" maxlength="134" class="input searchtext" />
+          <input class="button submit_search" type="image" value=">" src="/media/images/icon/search_icon.jpg" />
+      </form>
+    </div>
+  <a href="/fr/home/"><img class="dns_logo" src="/media/images/dns_logo.gif" alt="DNS.lu Logo" /></a></div>
+   	<div id="content">
+      <div class="left">
+    <ul class="navi"></ul>
+  </div>
+  <div class="right">
+  <div id="content_main" class="c_left">
+   
+<div id="container_5" class=""><h1 id="headline_2">Bienvenue</h1><p>Bienvenue sur le site de l'organisme d'enregistrement des noms de domaine sous la racine nationale .lu. Au Luxembourg, la gestion du domaine g&eacute;ographique de premier niveau .lu est un service public op&eacute;r&eacute; par le R&eacute;seau T&eacute;l&eacute;informatique de l'Education Nationale et de la Recherche (Fondation RESTENA). La Fondation RESTENA assure la coordination des ressources internet au niveau national, dont la gestion des domaines .lu par le biais de son service DNS-LU. Etablie en 2000, la Fondation r&eacute;unit des organismes de recherche et d'enseignement de tout ordre, ainsi que les minist&egrave;res en charge de l'&eacute;ducation nationale et de la recherche.</p>
+<p>&nbsp;</p>
+<div class="gray_box domaincheck">
+  <h3>Recherche de nom de domaine</h3>
+  <p>Vérifiez si votre nom de domaine sous .lu est disponible:</p>
+    <p>&nbsp;</p>
+  <p><span class="www">www.</span>
+  <form action="/fr/support/domainname-availability/domcheck/" method="post">
+    <input type="text" id="id_domain" name="domain" maxlength="320" class="input domaincheck_text"/>
+    <span class="point_domain">.lu</span>
+        <input type="image" class="button domcheck-fr" value="" src="/media/images/button/more-fr.jpg"/>
+  </form></p>
+</div>
+<div class="module_m_m">
+  <div class="m_left">
+    <div id="container_6" class=""><h3 id="headline_3"><a href="/fr/about-dnslu/">DNS-LU</a></h3><p>Le service DNS-LU de la <a href="https://www.restena.lu/" class="extern">Fondation RESTENA</a> est l&rsquo;autorit&eacute; en charge de la gestion centrale du syst&egrave;me des noms de domaine enregistr&eacute;s sous le premier niveau .lu et garantit &agrave; ce titre son bon fonctionnement.</p><a href="/fr/about-dnslu/" class="more">Plus</a></div>
+  </div>
+  <div class="m_right">
+    <div id="container_7" class=""><h3 id="headline_4"><a href="/fr/support/general-information/domain-name-policy-lu-charter/">La Charte de Nommage</a></h3><p>La Charte de Nommage contient les principes directeurs mis en &oelig;uvre lors de l'enregistrement des noms de domaine sous .lu. Elle r&eacute;sulte d'une &eacute;troite collaboration entre la Fondation RESTENA et les acteurs priv&eacute;s et publics repr&eacute;sentatifs de la communaut&eacute; internet locale.</p><a href="/fr/support/general-information/domain-name-policy-lu-charter/" class="more">Plus</a></div>
+  </div>  
+</div>
+<div class="module_m_m">
+  <div class="m_left">
+    <div id="container_39" class=""><h3 id="headline_33"><a href="/fr/lu-domains/">Noms de Domaine LU </a></h3><p>Cette partie contient tous les outils et techniques &agrave; disposition des titulaires actuels et futurs en vue de l'enregistrement et de la gestion de leurs noms de domaine sous .lu.</p><a href="/fr/lu-domains/" class="more">Plus</a></div>
+  </div>
+  <div class="m_right">
+    <div id="container_40" class=""><h3 id="headline_34"><a href="/fr/support/faq/">FAQ pour enregistrants</a></h3><p>Questions et r&eacute;ponses. Les titulaires actuels et futurs y trouveront toutes les informations qui les guideront dans l'enregistrement et la gestion de leurs noms de domaine.</p><a href="/fr/support/faq/" class="more">Plus</a></div>
+  </div>  
+</div></div>
+
+  </div>
+  <div id="content_right" class="c_right">
+        <h3>Quick-Links</h3>
+        <ul>
+          
+          <li><a href="/online/" class="quicklinks">Enregistrement en ligne</a></li>
+          
+          <li><a href="/fr/registrars/list-registrars/" class="quicklinks">Liste des Registrars</a></li>
+          
+          <li><a href="/fr/lu-domains/classic-registration/" class="quicklinks">Enregistrement Classique</a></li>
+          
+          <li><a href="/fr/support/general-information/dispute/" class="quicklinks">Contestation de titulaire de nom de domaine</a></li>
+          
+          <li><a href="/fr/support/domainname-availability/whois-gateway/" class="quicklinks">Recherche Whois</a></li>
+          
+          <li><a href="/fr/support/general-information/domain-name-policy-lu-charter/" class="quicklinks">Politique d’enregistrement</a></li>
+          
+          <li><a href="/fr/support/checking-nameservers/" class="quicklinks">Test noms de serveurs</a></li>
+          
+          <li><a href="/fr/support/faq/transfert-de-gestion/65/" class="quicklinks">Changer de Registrar</a></li>
+          
+          <li><a href="/fr/about-dnslu/news/" class="quicklinks">Nouvelles</a></li>
+          
+        </ul>
+        <!--Usability-->
+        <div id="usabilitybuttons">
+        <ul class="mir">
+        <li> <a id="btn_print" href="javascript:window.print()" title="Imprimer">Imprimer</a></li>
+        <li><a id="btn_email" href="mailto:?subject=Linkempfehlung&amp;body=https://www.dns.lu/fr/home/" title="Envoyer">Envoyer</a></li>
+        <li><a id="btn_bookmark" href="javascript:addToFavorites()" title="Mettre en favori">Mettre en favori</a></li> 
+        </ul>
+        </div><!--End Usability-->
+
+	<div id="mydns">
+		<p><a class="intern" href="/fr/online/">Connectez vous</a> à</p>
+		<a href="/fr/online/"><img src="/media/images/mylu-100.png" alt="logo my.lu" /></a>
+		<p><a class="intern" href="/fr/online/">my.lu</a> vous permet de gérer vos noms de domaine .lu en ligne - n'importe quand, n'importe où</p>
+	</div>
+
+	
+
+	
+
+	<div id="atjnd">
+		<a href="/media/content/pdf/DNS_BROCHURE_2012_FR.pdf"><img src="/media/images/dnslu-atjnd.png" alt="dns.lu - aspects techniques et juridiques des noms de domaine" /></a>
+	</div>
+      </div>
+
+  </div>
+  </div>
+  </div>
+  <div id="footercontainer">
+  <div id="footer">
+    <div class="linkbox">
+    <h5>Home</h5>
+    <ul>
+      <li><a href="/fr/site-copyright/">Copyright</a></li>
+      <li><a href="/fr/site-protection/">Aspects légaux</a></li>
+    </ul>
+    </div>
+    
+    
+    <div class="linkbox">
+    <h5>Domaines LU</h5>
+    <ul>
+      
+        
+      <li><a href="/fr/lu-domains/list-registrars/">Registrars accrédités</a></li>
+        
+      
+        
+      
+        
+      <li><a href="/online/">Gestion des noms de domaine en ligne</a></li>
+        
+      
+        
+      <li><a href="/fr/lu-domains/classic-registration/">Enregistrement classique</a></li>
+        
+      
+        
+      <li><a href="/fr/contact/">Contacter DNS-LU</a></li>
+        
+       
+      
+    </ul>
+    </div>
+    
+    <div class="linkbox">
+    <h5>Support</h5>
+    <ul>
+      
+        
+      <li><a href="/fr/support/general-information/">Informations et principes</a></li>
+        
+      
+        
+      <li><a href="/fr/support/faq/">FAQ pour enregistrants</a></li>
+        
+      
+        
+      <li><a href="/fr/support/domainname-availability/">Recherche de nom de domaine</a></li>
+        
+      
+        
+      <li><a href="/fr/support/checking-nameservers/">Test noms de serveurs</a></li>
+        
+      
+        
+      <li><a href="/fr/support/technical-references/">Références techniques</a></li>
+        
+      
+        
+      <li><a href="/fr/support/statistics/">Statistiques</a></li>
+        
+      
+        
+      <li><a href="/fr/support/contact/">Contacter DNS-LU</a></li>
+        
+       
+      
+    </ul>
+    </div>
+    
+    <div class="linkbox">
+    <h5>Registrars</h5>
+    <ul>
+      
+        
+      <li><a href="/fr/registrars/list-registrars/">Registrars accrédités </a></li>
+        
+      
+        
+      <li><a href="/fr/registrars/becoming/">Devenir registrar</a></li>
+        
+      
+        
+      <li><a href="/fr/registrars/doc/">Documentation technique</a></li>
+        
+      
+        
+      <li><a href="/fr/registrars/test-system/">Accès au système test</a></li>
+        
+      
+        
+      <li><a href="/fr/registrars/restricted/">Espace registrar</a></li>
+        
+      
+        
+      <li><a href="/fr/registrars/contact/">Contacter DNS-LU</a></li>
+        
+       
+      
+    </ul>
+    </div>
+    
+    <div class="linkbox">
+    <h5>A propos de DNS-LU</h5>
+    <ul>
+      
+        
+      <li><a href="/fr/about-dnslu/news/">Nouvelles</a></li>
+        
+      
+        
+      <li><a href="/fr/about-dnslu/activities/">Activités</a></li>
+        
+      
+        
+      <li><a href="/fr/about-dnslu/structure/">Structure</a></li>
+        
+      
+        
+      <li><a href="/fr/about-dnslu/activities/history/">Historique</a></li>
+        
+      
+        
+      <li><a href="/fr/about-dnslu/staff/">Personnel</a></li>
+        
+      
+        
+      <li><a href="/fr/about-dnslu/links/">Liens</a></li>
+        
+      
+        
+      <li><a href="/fr/about-dnslu/contact/">Contacter DNS-LU</a></li>
+        
+       
+      
+    </ul>
+    </div>
+     
+  </div>
+  </div>
+</div>
+</body>
+</html>

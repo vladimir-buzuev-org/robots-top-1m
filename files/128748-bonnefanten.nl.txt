@@ -1,0 +1,490 @@
+<html>
+	<head>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+		<base href="http://www.bonnefanten.nl/wwwroot/content/"></base>
+		<title>bonnefantenmuseum maastricht - bonnefanten.nl</title>
+		<link type="image/x-icon" href="http://www.bonnefanten.nl/wwwroot/content/favicon.ico" rel="SHORTCUT ICON" />
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+		<link rel="stylesheet" type="text/css" href="css/content2.css" />
+		<link rel="stylesheet" type="text/css" href="css/tooltip.css" />
+		<link rel="stylesheet" type="text/css" href="css/reservering.css" />
+		<link rel="stylesheet" type="text/css" href="css/agenda.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" />
+
+		<script type="text/javascript" src="js/modernizr.js"></script>
+
+<!--
+		<script type="text/javascript" src="js/javascript.js"></script>
+		<script type="text/javascript" src="js/browser.js"></script>
+		<script type="text/javascript" src="js/addEvent.js"></script>
+		<script type="text/javascript" src="js/sweetTitles.js"></script>
+		<script type="text/javascript" src="js/flashobject.js"></script>
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cycle.pack.js"></script>
+		<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" src="js/jquery.animate-enhanced.min.js"></script>
+		<script type="text/javascript" src="js/extra_iejs.js"></script>
+		<script type="text/javascript" src="js/agenda.js"></script>
+-->
+
+		<script type="text/javascript" src="js/javascript.min.js"></script>
+
+		<script type="text/javascript" src="js/jquery.validate.js"></script>
+		<script type="text/javascript">
+
+			function fixWit(){
+				var submenu			= document.getElementById('submenu');
+				var columns			= document.getElementById('columns');
+
+				// Calculate the base height, on a new page, the submenu is the minimum, but via ajax, the submenu must be compared with its childs
+				childHeight			= 0;
+				for(i=0; i<submenu.childNodes.length; i++){
+					obj		= submenu.childNodes[i];
+					if ((obj == undefined) || (obj.nodeName == undefined) || (obj.nodeName.toUpperCase() == '#TEXT')) continue;
+
+					childHeight		+= obj.offsetHeight;
+				}
+
+				var hoogste			= (childHeight+30);
+
+				for(i=0; i<columns.childNodes.length; i++){
+					obj		= columns.childNodes[i];
+					if(obj.nodeName == 'DIV'){
+
+						//alert('ID: '+obj.id+'\nType: '+obj.nodeName+'\nOffset: '+obj.offsetHeight+'\nClientheight: '+obj.clientHeight+'\nStyleheight: '+obj.style.height);
+
+						hoogste		= (obj.clientHeight>hoogste) ? obj.clientHeight : hoogste;
+					}
+				}
+
+				hoogste					+= 20;
+
+				submenu.style.height	= hoogste;
+				columns.style.height	= hoogste;
+			}
+
+			function fixWithNew()
+			{
+				// determine highest
+				var highest = 0;
+				$('#submenu, .column').each(function(){
+					var h = $(this).height();
+					if(h > highest)
+						highest = ($(this).hasClass('column')) ? h+20 : h;
+				});
+
+				// set highest to all
+				// $('#submenu, #indexBG, #columns').css({'min-height': highest+'px'});
+				$('#indexBG, #columns').css({'min-height': highest+'px'});
+				$('#submenu').css({'min-height': '55px'});
+			}
+
+			function resizeAgenda(hoogte){
+				div = document.getElementById('agendacontent');
+				div.style.height = hoogte;
+				fixWit();
+			}
+
+			function checkLiveForm() {
+
+				var fields				= new Object();
+				fields['naam']			= $('#naam').val();
+				fields['adres']			= $('#adres').val();
+				fields['plaats']		= $('#plaats').val();
+				fields['postcode']		= $('#postcode').val();
+				fields['telefoon']		= $('#telefoon').val();
+				fields['email']			= $('#email').val();
+				var errorMsg			= '';
+
+				for (i in fields) {
+					console.log(i + ' : ' + fields[i]);
+					if (fields[i]=='') {
+						errorMsg 		+= '\t'+i+'\n';
+					}
+				}
+
+				if (errorMsg!='') {
+
+					errorMsg	= 'U heeft de volgende velden niet ingevuld:\n\n'+errorMsg+'\nUw aanvraag wordt pas verstuurd als u alle velden heeft ingevuld.';
+					alert(errorMsg);
+					return false;
+				}
+				return true;
+			}
+
+			function checkVrijmarktForm() {
+
+				var fields				= new Object();
+				fields['naam']			= $('#naam').val();
+				fields['adres']			= $('#adres').val();
+				fields['plaats']		= $('#plaats').val();
+				fields['postcode']		= $('#postcode').val();
+				fields['telefoon']		= $('#telefoon').val();
+				fields['email']			= $('#email').val();
+				fields['opleiding']		= $('#opleiding').val();
+				fields['beschrijving']	= $('#beschrijving').val();
+				fields['aantal']		= $('#aantal').val();
+				fields['prijs']			= $('#prijs').val();
+				var errorMsg			= '';
+
+				for (i in fields) {
+					console.log(i + ' : ' + fields[i]);
+					if (fields[i]=='') {
+						errorMsg 		+= '\t'+i+'\n';
+					}
+				}
+
+				if (errorMsg!='') {
+
+					errorMsg	= 'U heeft de volgende velden niet ingevuld:\n\n'+errorMsg+'\nUw aanvraag wordt pas verstuurd als u alle velden heeft ingevuld.';
+					alert(errorMsg);
+					return false;
+				}
+				return true;
+			}
+
+			$(window).load(function() {
+				if ($('div[id^="diashow_"]').length>0) {
+                    $('div[id^="diashow_"]').cycle({
+ 						fx : 'fade',
+ 						before : function (curr,next,opts) {
+       						var $slide = $(next);
+							var w 	= $slide.outerWidth();
+							var h 	= $slide.outerHeight();
+							var dim = $slide.parent().outerHeight();
+							$slide.css({
+								marginTop: 0/*(dim - h) / 2*/,
+								marginLeft: 0/*(dim - w) / 2*/
+							});
+ 						}
+			 		});
+				}
+			});
+
+
+
+			$(document).ready(function(){
+				fixWithNew();
+				setInterval( function(){ 
+					fixWithNew();
+				}, 500)
+			})
+			
+
+		</script>
+		<!-- Facebook Pixel Code -->
+		<script>
+		!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+		n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+		document,'script','//connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '503329293333205');
+		fbq('track', 'PageView');
+		</script>
+		<noscript>
+		<img height="1" width="1" src="https://www.facebook.com/tr?id=503329293333205&ev=PageView&noscript=1"/>
+		</noscript>
+		<!-- End Facebook Pixel Code -->
+	</head>
+	<body>
+		
+				<script type="text/javascript">
+					document.body.style.backgroundImage='url(upload/crop/crop_131_colw_1910.jpg)';
+				</script>
+			
+		<div id="site-wrapper">
+			<div id="hoofdmenu">
+
+				<div id="menu-container">
+					<div id="meta-menu">
+				<a href="http://www.bonnefanten.nl/nl/" target="_self" class="meta-menu-item meta-menu-item-first">
+					home
+				</a>
+				<a href="http://www.bonnefanten.nl/nl/bezoek/bereikbaarheid" target="_self" class="meta-menu-item">
+					contact
+				</a>
+				<a href="http://www.bonnefanten.nl/en/" target="_self" class="meta-menu-item">
+					english
+				</a>
+				<a href="http://www.bonnefanten.nl/nl/de" target="_self" class="meta-menu-item">
+					deutsch
+				</a>
+				<a href="http://www.bonnefanten.nl/nl/fr" target="_self" class="meta-menu-item">
+					français
+				</a>
+				<a href="http://www.bonnefanten.nl/nl/chinese" target="_self" class="meta-menu-item">
+					中文
+				</a>
+				<a href="http://www.bonnefanten.nl/nl/actueel/pers" target="_self" class="meta-menu-item">
+					pers
+				</a>
+				<a href="http://www.bonnefanten.nl/nl/over_bonnefanten/support_en_samenwerkingsverbanden/vrienden" target="_self" class="meta-menu-item">
+					vrienden
+				</a>
+				<a href="http://www.bonnefanten.nl/nl/over_bonnefanten/support_en_samenwerkingsverbanden/young_office" target="_self" class="meta-menu-item meta-menu-item-last">
+					YOUNG OFFICE
+				</a>
+				<div class="clear"></div>
+			</div>
+		
+			<div id="menu">
+			<a href="http://www.bonnefanten.nl/nl/" class="menu-item">Bonnefantenmuseum<br />Maastricht</a><br />
+		
+				<a href="http://www.bonnefanten.nl/nl/bezoek" class="menu-item menu-item-first">Bezoek</a><span class="menu-item-sep"> /</span>
+			
+				<a href="http://www.bonnefanten.nl/nl/tentoonstellingen" class="menu-item">Tentoonstellingen</a><span class="menu-item-sep"> /</span>
+			
+				<a href="http://www.bonnefanten.nl/nl/agenda" class="menu-item">Agenda</a><span class="menu-item-sep"> /</span>
+			
+				<a href="http://www.bonnefanten.nl/nl/actueel" class="menu-item">Actueel</a><span class="menu-item-sep"> /</span>
+			
+				<a href="http://www.bonnefanten.nl/nl/educatie" class="menu-item">Educatie</a><span class="menu-item-sep"> /</span>
+			
+				<a href="http://www.bonnefanten.nl/nl/collectie" class="menu-item">Collectie</a><span class="menu-item-sep"> /</span>
+			
+				<a href="http://www.bonnefanten.nl/nl/museum_shop" class="menu-item">Museum Shop</a><span class="menu-item-sep"> /</span>
+			
+				<a href="http://www.bonnefanten.nl/nl/kunstuitleen" class="menu-item">Kunstuitleen</a><span class="menu-item-sep"> /</span>
+			
+				<a href="http://www.bonnefanten.nl/nl/over_bonnefanten" class="menu-item">Over Bonnefanten</a>
+			
+				<div class="clear"></div>
+			</div>
+						</div>
+
+			</div>
+
+			<div id="submenu">
+				<div style="margin-left:10px; margin-top:20px; font-weight:bold;"><a style="color:#cc0000;" href="http://www.bonnefanten.nl/nl">bonnefanten.nl</a></div>
+						<ul>
+							<li><a href="http://www.bonnefanten.nl/nl/bezoek/online_tickets">- Koop uw tickets online</a></li>
+							<li><a href="http://webshop.bonnefanten.nl/" target="_blank">- Bezoek onze webshop</a></li>
+							<li><a href="http://www.bonnefanten.nl/nl/bezoek/rondleidingen">- Boek een rondleiding</a></li>
+							<li><a href="http://www.bonnefanten.nl/nl/bezoek/rent_a_museum">- Zaalverhuur</a></li>
+							<li><a href="http://www.bonnefanten.nl/nl/over_bonnefanten/support_en_samenwerkingsverbanden/vrienden">- Word Vriend!</a></li>
+							<li><a href="http://www.bonnefanten.nl/nieuwsbrieven/subscribe.php?type=1">- Inschrijven nieuwsbrief</a></li>
+							<li><a href="http://www.bonnefanten.nl/nl/over_bonnefanten/support_en_samenwerkingsverbanden/mecenaat_aan_de_maas">- Mecenaat aan de Maas</a></li>
+						</ul>
+								</div>
+			
+						
+
+			<div id="columns">				<div style="position:absolute; width:765px; left:8; top:8px;" class="column" id="col_1"></div><div style="position:absolute; width:745px; left:8; top:8px;" class="column" id="col_1">
+				<div class="bin" id="bin_27502" >
+					
+					<div id="youtube_27502" class="youtube"><iframe width="735" height="614" src="https://www.youtube.com/embed/1PHMGfJoD00" frameborder="0" allowfullscreen></iframe></div>
+				</div>
+			
+				<div class="bin" id="bin_27458" >
+					
+					<h3>Nieuws</h3>
+				</div>
+			
+				<div class="bin" id="bin_27614" >
+					
+					<br />
+<h1>Rembrandt, Appel, Steen, Monet, Picasso	<br />
+Tien topstukken on tour door Nederland dankzij de deelnemers van de BankGiro Loterij</h1>
+<h2>&nbsp;</h2>
+Het Kr&ouml;ller-M&uuml;ller Museum, het Van Gogh Museum, het Rijksmuseum en het Mauritshuis gaan in het najaar van 2017 een bijzondere samenwerking aan. De vier musea sturen van 4 oktober 2017 tot en met 25 maart 2018 tien topstukken op tournee langs verschillende musea in Nederland waaronder het Bonnefantenmuseum.<br />
+<a href="http://www.bonnefanten.nl/nl/actueel/pers/persbericht_topstukken_on_tour">lees meer&nbsp;</a><br />
+<br />
+<h1><br />
+Your moment of fame</h1>
+The One Minutes is een wereldwijd netwerk voor bewegend beeld en sinds 1998 heeft The One Minutes meer dan 17.000 videowerken van makers van meer dan 120 nationaliteiten geproduceerd en gedistribueerd. Tot en met 15 augustus kun je je eigen filmpje insturen naar The One Minutes en je eigen 'Moment of fame' claimen. <br />
+<a href="http://www.bonnefanten.nl/nl/tentoonstellingen/programma_2017/one_minutes_movies_2017">lees meer</a><br />
+<br />
+				</div>
+			
+				<div class="bin" id="bin_27550" >
+					
+					<h1>Tentoonstelling <em>:</em> van gerlach en koop in het Bonnefantenmuseum genomineerd voor AICA Oorkonde 2017 voor 'Beste tentoonstelling in Nederland in de periode 2014-2016'</h1>
+<br />
+De tentoonstelling <a href="http://www.bonnefanten.nl/nl/tentoonstellingen/programma_2016/gerlach_en_koop"><em>:</em> van gerlach en koop</a>, die in 2016 te zien was in het Bonnefantenmuseum, is door AICA Nederland (Internationale Vereniging van Kunstcritici/Association Internationale des Critiques d'Art) genomineerd voor de <a href="http://www.aicanederland.org/">AICA Oorkonde 2017</a>. Deze oorkonde wordt sinds 1997 beurtelings toegekend aan een kunstinstelling, publicatie en tentoonstelling in Nederland. <br />
+<a href="http://www.bonnefanten.nl/nl/actueel/pers/nominatie_aica_oorkonde_2017">lees meer<br />
+</a><br type="_moz" />
+				</div>
+			
+				<div class="bin" id="bin_14369" >
+					
+					<font color="#c30080" face="Arial, Helvetica, sans-serif"><span style="font-size: 24px;"><b>Nu te zien</b></span></font>&nbsp;
+				</div>
+			
+				<div class="bin" id="bin_14368" >
+					
+					<h1>Raymond Pettibon: A Pen of All Work<br />
+&nbsp;</h1>
+Vanaf 2 juni presenteert het Bonnefantenmuseum het omvangrijke retrospectief <em>A Pen of All Work</em> van de Amerikaanse kunstenaar Raymond Pettibon. De tentoonstelling omvat ruim 700 werken uit de periode van de jaren &acute;60 tot heden. Zijn gehele oeuvre wordt gekenmerkt door de onlosmakelijke verbinding tussen tekst en beeld.&nbsp;<br />
+<a href="http://www.bonnefanten.nl/nl/tentoonstellingen/programma_2017/raymond_pettibon">Lees meer...</a>
+				</div>
+			
+				<div class="bin" id="bin_14377" >
+					
+					<h1>Stanley Donwood: Optical Glade en Paintings from A Moon Shaped Pool</h1>
+<h1>&nbsp;</h1>
+De Cupola van het Bonnefantenmuseum lijkt hetzelfde soort gevoel op te roepen dat ik krijg als ik een kathedraal, moskee of langgraf betreed: een drang om kalm of stil te zijn en mijn gedachten even stop te zetten. Misschien valt mijn mond onwillekeurig een beetje open. De behoefte om omhoog te kijken, zo zeldzaam in het normale dagelijks leven, is veel duidelijker aanwezig.<br />
+<a href="http://www.bonnefanten.nl/nl/tentoonstellingen/programma_2017/stanley_donwood">Lees meer...</a>
+				</div>
+			
+				<div class="bin" id="bin_14394" >
+					
+					
+											<div style="background-color:#ffffff; margin-bottom:20px; padding:8px;">
+												<h1>Look at me and see what I could not (yet) see</h1>
+												<h1>Gilbert De Bontridder</h1>
+through the eyes of: Sara Bachour &amp; Joep Hinssen, Maarten Davidse &amp; Simon Weins, Studio Oneindigheid (Charlotte Lagro, Chaim van Luit, Joep Vossebeld), Tim Rutten &amp; Roel Pansters en Krist Gruijthuijsen<br />
+<br />
+Het Bonnefantenmuseum de tentoonstelling presenteert de tentoonstelling Look at me and see what I could not (yet) see met werk van de Belgische schilder Gilbert De Bontridder (1944 - 1996) en laureaten van de Gilbert De Bontridder Prijs, welke jaarlijks wordt uitgereikt door de Maastricht Academy of Fine Arts and Design (MAFAD) en Stichting Art Promotion Limburg. <br /><br/>
+												<a href="http://www.bonnefanten.nl/nl/tentoonstellingen/programma_2017/gilbert_de_bontridder" target="_self">Lees meer...</a><br/>
+											</div>
+											<div style="background-color:#ffffff; margin-bottom:20px; padding:8px;">
+												<h1>Ernst Caramelle</h1>
+												Ernst Caramelle maakt sinds begin jaren tachtig naam met een veelzijdig oeuvre van kunstenaarsboeken, posters, zon-gebleekte papierwerken en illusionistische muurfresco's waarin conceptualisme en schilderkunst op een opmerkelijke manier samenkomen. Voor het Bonnefantenmuseum maakte hij onder andere een wandfresco en een muurschildering.<br/>
+												<a href="http://www.bonnefanten.nl/nl/tentoonstellingen/programma_2016/ernst_caramelle" target="_self">Lees meer...</a><br/>
+											</div>
+											<div style="background-color:#ffffff; margin-bottom:20px; padding:8px;">
+												<h1>Schatkamer Collectie Neutelings</h1>
+												Vanaf januari 2017 is een nieuwe bijzonder vormgegeven presentatie te zien van de Collectie Neutelings. De collectie Neutelings omvat het legaat van verzamelaar Willem Neutelings (1916-1986), die zich toelegde op het verzamelen van West-Europese middeleeuwse sculptuur en kunstnijverheid. Al in de jaren '80 behoorde zijn verzameling tot de beste en meest veelzijdige van Nederland op dit gebied.<br/>
+												<a href="http://www.bonnefanten.nl/nl/tentoonstellingen/programma_2016/schatkamer_collectie_neutelings" target="_self">Lees meer...</a><br/>
+											</div>
+				</div>
+			
+				<div class="bin" id="bin_14367" >
+					
+					<strong style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;"><span style="color: rgb(195, 0, 128); font-family: Arial, Helvetica, sans-serif; font-size: 24px;">Verwacht</span></strong>&nbsp;
+				</div>
+			
+				<div class="bin" id="bin_12917" >
+					
+					<h1>&nbsp;</h1>
+<h1><a href="http://www.bonnefanten.nl/nl/tentoonstellingen/programma_2017/pierre_kemp">De hand van Pierre Kemp</a></h1>
+<h1><a href="http://www.bonnefanten.nl/nl/tentoonstellingen/programma_2017/pierre_kemp">Studies, schetsen, werken op papier﻿</a></h1>
+<h2>22 september 2017</h2>
+<br />
+<h1><a href="http://www.bonnefanten.nl/nl/tentoonstellingen/programma_2017/one_minutes_movies_2017">The One Minutes</a></h1>
+<h2>1 oktober 2017</h2>
+<br />
+<h1><a href="http://www.bonnefanten.nl/nl/tentoonstellingen">Verzameling Jacques &amp; Miny Defauwes</a></h1>
+<h2>13 oktober 2017</h2>
+<br />
+<h1><a href="http://www.bonnefanten.nl/nl/tentoonstellingen">Kahlil Joseph</a></h1>
+<h2>December 2017</h2>
+<br />
+<h1><a href="http://www.bonnefanten.nl/nl/tentoonstellingen">Robin de Puy</a></h1>
+<h2>Januari 2018</h2>
+<br />
+<br />
+<script type="text/javascript" async="true"> (function() { setTimeout(function(){ var adscienceScript = document.createElement("script"); adscienceScript.type = "text/javascript"; adscienceScript.async = true; adscienceScript.src = "//rtb8.adscience.nl/segmentpixel.php?advertiser_id=178"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(adscienceScript, s); },1); })(); </script><noscript><img src="//rtb7.adscience.nl/cgi-bin/sgmnt.fcgi?advertiser_id=178"/></noscript><br />
+				</div>
+			
+				<div class="bin" id="bin_5347" >
+					
+					<div style="width: 374px;">
+<div style="padding: 8px; background-color: rgb(255,255,255);">Volg ons op <a target="_blank" href="http://www.facebook.com/pages/Maastricht-Netherlands/Bonnefantenmuseum-Maastricht-NL/187308877489">Facebook <img style="vertical-align: middle" alt="" src="http://www.bonnefanten.nl/img/facebook.png" /></a>,&nbsp;<a target="_blank" href="http://twitter.com/Bonnefanten/">Twitter <img style="vertical-align: middle" alt="" src="http://www.bonnefanten.nl/img/twitter.png" /></a>&nbsp;en <a href="https://instagram.com/bonnefanten/" target="_blank">Instagram</a>.<br />
+Ontvang onze&nbsp;<a class="fbox-iframe" href="http://www.bonnefanten.nl/nieuwsbrieven/subscribe.php?type=1">nieuwsbrief</a>.</div>
+</div>
+				</div>
+			
+				<div class="bin" id="bin_7565" >
+					
+					<h1>STEUN DE NEDERLANDSE MUSEA</h1>
+<br />
+Speel mee in de <a href="http://www.bankgiroloterij.nl">BankGiro Loterij </a>
+				</div>
+			
+				<div class="bin" id="bin_12947" >
+					
+					<img src="http://www.bonnefanten.nl/wwwroot/content/upload/crop/crop_22943_colw_730.jpg" title="" />
+				</div>
+			
+				<div class="bin" id="bin_27609" >
+					
+					<script>
+<!-- Facebook Pixel Code -->
+fbq('track', 'ViewContent');
+</script>
+				</div>
+			
+				<div class="bin" id="bin_27615" >
+					
+					
+				</div>
+			</div>			</div>
+		</div>
+
+			<link rel="stylesheet" type="text/css" href="http://www.bonnefanten.nl/wwwroot/content/cookies/css/cookie.style.css">
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#cookieAccept-btn-accept').unbind('click').bind('click',function(e){
+				$.getJSON('http://www.bonnefanten.nl/wwwroot/content/cookies/cookieaccept.php',{a:'acceptCookie',url:window.location.href}, function(data) {
+					if(data.success){
+												$('#cookieAccept').remove();
+						
+					var _gaq = _gaq || [];
+					_gaq.push(['_setAccount', 'UA-5280493-1']);
+					_gaq.push(['_trackPageview']);
+					_gaq.push (['_gat._anonymizeIp']);
+					
+					(function() {
+					  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+					})();
+									}
+				});
+				e.preventDefault();
+			});
+			$('#cookieAccept-btn-refuse').unbind('click').bind('click',function(e){
+				$.getJSON('http://www.bonnefanten.nl/wwwroot/content/cookies/cookieaccept.php',{a:'refuseCookie',url:window.location.href}, function(data) {
+					if(data.success){
+												$('#cookieAccept').remove();
+						
+					var _gaq = _gaq || [];
+					_gaq.push(['_setAccount', 'UA-5280493-1']);
+					_gaq.push(['_trackPageview']);
+					_gaq.push (['_gat._anonymizeIp']);
+					
+					(function() {
+					  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+					})();
+									}
+				});
+				e.preventDefault();
+			});
+		});
+	</script>
+	<div id="cookieAccept" class="layout_2">
+		<div id="cookieAccept-content">
+			<div id="cookieAccept-header">COOKIES</div>
+			
+				Deze website maakt gebruik van cookies.
+				 
+				Wilt u cookies toestaan?
+						<br /><br />
+			<button type="button" id="cookieAccept-btn-accept">Ja, geen probleem</button>
+			<button id="cookieAccept-btn-refuse">Liever niet</button>			<br />
+			<button id="cookieAccept-btn-moreinfo" onclick="window.location='http://www.bonnefanten.nl/nl/cookies'">Meer informatie over cookies op deze website</button>
+			<div class="clear"></div>
+		</div>
+	</div>
+		
+		<!-- AddThis Button BEGIN -->
+<style type="text/css">
+	.addthis_default_style a {
+		float: right !important;
+		padding-left: 5px !important;
+		padding-right: 0 !important;
+	}
+</style>
+<div class="addthis_toolbox addthis_default_style addthis_16x16_style" style="position: absolute; width:369px; left: 50%; margin-left:111px; top: 70px;">
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_compact"></a>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-536b63411c44c0c7"></script>
+<!-- AddThis Button END -->	</body>
+</html>

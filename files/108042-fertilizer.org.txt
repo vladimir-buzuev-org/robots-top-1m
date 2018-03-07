@@ -1,0 +1,737 @@
+
+
+<!DOCTYPE html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+
+<html id="MainHtml">
+    <head id="ctl00_Head1"><meta charset="UTF-8" /><title>
+	iMIS Login
+</title><link rel="shortcut icon" href="/IMIS20/favicon.ico" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var gDocumentTitle = document.title;
+var gPostBackFormObject = null;
+var gWindowOnLoad = new Array();
+var gPostBackFormProcessSubmit = true;
+var gUserLanguage = 'en-US';
+var gWebRoot= '/IMIS20';
+var gAdminWebRoot = gWebRoot + '/Admin';
+var gWebsiteKey = '411e9724-4bda-422f-abfc-8152ed74f306';
+var gHKey = '';
+var gIsPostBack = false;
+var gDefaultConfirmMessage = 'Continue without saving changes?';
+var gIsEasyEditEnabled = false;
+var gMasterPage = '/imis20/templates/masterpages/ifa.master';
+
+if(gWebsiteKey != 'fbdf17a3-cae7-4943-b1eb-71b9c0dd65d2' && gWebsiteKey != 'fad2fd17-7e27-4c96-babe-3291ecde4822'){
+    gIsEasyEditEnabled = false;  
+}
+//]]>
+</script><!--[if lt IE 9]>
+<script src="/IMIS20/AsiCommon/Scripts/HTML5/html5shiv.min.js" type="text/javascript"></script>
+<![endif]-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-49057197-1']);
+  _gaq.push(['_setDomainName', 'fertilizer.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><meta name="rating" content="General" /><meta name="Author" content="Advanced Solutions International, Inc." /><link href="../../../../App_Themes/IFA/01-MasterPage.css" type="text/css" rel="stylesheet" /><link href="../../../../App_Themes/IFA/30-Compatibility.css" type="text/css" rel="stylesheet" /><link href="../../../../App_Themes/IFA/99-Aspen.css" type="text/css" rel="stylesheet" /><link href="../../../../App_Themes/IFA/Menu.Aspen.css" type="text/css" rel="stylesheet" /><link href="../../../../App_Themes/IFA/Menu.Cottonwood.css" type="text/css" rel="stylesheet" /><link href="../../../../App_Themes/IFA/SlideNew/engine1/style.css" type="text/css" rel="stylesheet" /><link href="../../../../App_Themes/IFA/Slider%20-%20Copy/Backup%20from%20srv-test/Slider/engine1/style.css" type="text/css" rel="stylesheet" /><link href="../../../../App_Themes/IFA/Slider%20-%20Copy/Backup/engine1/style.css" type="text/css" rel="stylesheet" /><link href="../../../../App_Themes/IFA/Slider%20-%20Copy/Copy%20David%20Desktop/engine1/style.css" type="text/css" rel="stylesheet" /><link href="../../../../App_Themes/IFA/Slider%20-%20Copy/engine1/style.css" type="text/css" rel="stylesheet" /><link href="../../../../App_Themes/IFA/Slider/Backup%20from%20srv-test/Slider/engine1/style.css" type="text/css" rel="stylesheet" /><link href="../../../../App_Themes/IFA/Slider/Backup/engine1/style.css" type="text/css" rel="stylesheet" /><link href="../../../../App_Themes/IFA/Slider/Copy%20David%20Desktop/engine1/style.css" type="text/css" rel="stylesheet" /><link href="../../../../App_Themes/IFA/Slider/engine1/style.css" type="text/css" rel="stylesheet" /><link href="../../../../App_Themes/IFA/Window.IFA.css" type="text/css" rel="stylesheet" /><script src="/imis20/AsiCommon/Scripts/Jquery/Jquery.min.js" type="text/javascript"></script><script src="/imis20/AsiCommon/Scripts/Jquery/jquery-migrate-1.2.1.min.js" type="text/javascript"></script><script src="/imis20/AsiCommon/Scripts/Jquery/jquery-ui.custom.min.js" type="text/javascript"></script><link href="/imis20/WebResource.axd?d=8HBJ_vrpPoy6DfMSiZYXdNdhViJNHfed04IbJU0G90XWhHWk1fN1vnvRYV_fYlhu0-i_ZyPAqOGDUCP06p4oCIsHPdyVzdqKdugSdc0eFfrMd1vsjGZWjV7IJDoDpmyz1nJJlqd2tz5ReOg9wMyU0g2&amp;t=635195099320000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/imis20/WebResource.axd?d=yvrGE3XJdLfhraRKMUaGm86fHYtgq7KZXJGaRw90rlWQn39aZloPo5rz4u1Kv1FUPvzOh4KQDHoiCm0ZhurGnpanS_p71cBpLUkw0VsQVLvVE_TMetu4DUKR6ehOcc-TRJWojtWIpBIdfymNjXxA5g2&amp;t=635195099320000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/imis20/WebResource.axd?d=-Y9NUCG-TKkQg9ftV4H4HuoA2AHM4xlKsS1wFPhzkbFJ9aY80FllpUSeTKAsM63FRd6HR4tHkmcKu1WH3uHGHHghqjCENb3W0oA0zQYgqRpDzgwQdKJjG7ygi0UN3raT4MgdB91c1pFciLjqmpypWxB6yUXbS1MWK6XZYFr5AkM1&amp;t=635195099320000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+    <body id="MainBody">
+   
+        <input name="ctl00$lastClickedElementId" type="hidden" id="ctl00_lastClickedElementId" />   
+    <a href="#contentstart" class="screen-reader-text">Skip to main content</a>
+    <form name="aspnetForm" method="post" action="./Login.aspx?WebsiteKey=411e9724-4bda-422f-abfc-8152ed74f306&amp;LoginMessage=Your+session+has+timed+out.+Please+try+your+operation+again." id="aspnetForm">
+<input type="hidden" name="__CTRLKEY" id="__CTRLKEY" value="" />
+<input type="hidden" name="__SHIFTKEY" id="__SHIFTKEY" value="" />
+<input type="hidden" name="ctl00_ScriptManager1_TSM" id="ctl00_ScriptManager1_TSM" value="" />
+<input type="hidden" name="PageInstanceKey" id="PageInstanceKey" value="3a3d691f-41ef-43ce-acd2-e3708b7b0d70" />
+<input type="hidden" name="TemplateUserMessagesID" id="TemplateUserMessagesID" value="ctl00_TemplateUserMessages_ctl00_Messages" />
+<input type="hidden" name="PageIsDirty" id="PageIsDirty" value="false" />
+<input type="hidden" name="IsControlPostBackctl00$TopSection$TopSection" id="IsControlPostBackctl00$TopSection$TopSection" value="1" />
+<input type="hidden" name="IsControlPostBackctl00$HeaderLogo$HeaderLogoSpan" id="IsControlPostBackctl00$HeaderLogo$HeaderLogoSpan" value="1" />
+<input type="hidden" name="IsControlPostBackctl00$SearchField" id="IsControlPostBackctl00$SearchField" value="1" />
+<input type="hidden" name="NavMenuClientID" id="NavMenuClientID" value="ctl00_TemplateMainNavigation_Primary_NavMenu" />
+<input type="hidden" name="IsControlPostBackctl00$FooterCommunications$FooterCommunications" id="IsControlPostBackctl00$FooterCommunications$FooterCommunications" value="1" />
+<input type="hidden" name="IsControlPostBackctl00$FooterCommunications$HiddeniFrameforAutoDownloader" id="IsControlPostBackctl00$FooterCommunications$HiddeniFrameforAutoDownloader" value="1" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPaA8FDzhkNGY0YTVlOTczNGQ0MRgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WCAUYY3RsMDAkTG9naW5TdGF0dXMxJGN0bDAxBRhjdGwwMCRMb2dpblN0YXR1czEkY3RsMDMFLGN0bDAwJFRlbXBsYXRlTWFpbk5hdmlnYXRpb24kUHJpbWFyeSROYXZNZW51BTZjdGwwMCRUZW1wbGF0ZUJvZHkkTG9naW4xJExvZ2luVmlldzEkTG9naW4xJFJlbWVtYmVyTWUFC2N0bDAwJGN0bDE1BRNjdGwwMCRHZW5lcmljV2luZG93BRNjdGwwMCRPYmplY3RCcm93c2VyBRljdGwwMCRPYmplY3RCcm93c2VyRGlhbG9nO8X5rWv6G2e+dxvWCc3+8UQpR7+TKn4fL23h/lGmSmw=" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+var __cultureInfo = {"name":"en-GB","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":".","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":",","CurrencySymbol":"£","NaNSymbol":"NaN","CurrencyNegativePattern":1,"NumberNegativePattern":1,"PercentPositivePattern":1,"PercentNegativePattern":1,"NegativeInfinitySymbol":"-Infinity","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":".","NumberGroupSeparator":",","CurrencyPositivePattern":0,"PositiveInfinitySymbol":"Infinity","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":".","PercentGroupSeparator":",","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"AM","Calendar":{"MinSupportedDateTime":"\/Date(-62135596800000)\/","MaxSupportedDateTime":"\/Date(253402297199999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":true},"DateSeparator":"/","FirstDayOfWeek":1,"CalendarWeekRule":2,"FullDateTimePattern":"dd MMMM yyyy HH:mm:ss","LongDatePattern":"dd MMMM yyyy","LongTimePattern":"HH:mm:ss","MonthDayPattern":"d MMMM","PMDesignator":"PM","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"dd/MM/yyyy","ShortTimePattern":"HH:mm","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM yyyy","AbbreviatedDayNames":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"ShortestDayNames":["Su","Mo","Tu","We","Th","Fr","Sa"],"DayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"AbbreviatedMonthNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthNames":["January","February","March","April","May","June","July","August","September","October","November","December",""],"IsReadOnly":true,"NativeCalendarName":"Gregorian Calendar","AbbreviatedMonthGenitiveNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthGenitiveNames":["January","February","March","April","May","June","July","August","September","October","November","December",""]},"eras":[1,"A.D.",null,0]};//]]>
+</script>
+
+<script src="/imis20/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl00_ScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bAjaxControlToolkit%2c+Version%3d4.1.50508%2c+Culture%3dneutral%2c+PublicKeyToken%3d28f01b0e84b6d53e%3aen-GB%3a0c8c847b-b611-49a7-8e75-2196aa6e72fa%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%2c+Version%3d2013.2.717.45%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-GB%3a4401a8f1-5215-4b97-a426-3601ce0fa0ff%3a16e4e7cd%3af7645509%3a24ee1bba%3ae330518b%3a2003d0b8%3a1e771326%3ac8618e41%3a92fe8ea0%3a874f8ea2%3afa31b949%3a19620875%3af46195d3%3a490a9d4e%3abd8f85e4%3bAjaxControlToolkit%2c+Version%3d4.1.50508.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d28f01b0e84b6d53e%3aen-GB%3a0c8c847b-b611-49a7-8e75-2196aa6e72fa%3a782b16ab" type="text/javascript"></script>
+<script src="/IMIS20/AsiCommon/scripts/Asi.js" type="text/javascript"></script>
+<script src="/IMIS20/AsiCommon/Scripts/Asi.Web.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+var PageMethods = function() {
+PageMethods.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+PageMethods.prototype = {
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return PageMethods._staticInstance.get_path();},
+GetActionLink:function(action,templateType,docType,hierarchyKey,documentVersionKey,folderHierarchyKey,itemCount,closeWindowOnCommit,websiteKey,pageInstanceKey,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetActionLink',false,{action:action,templateType:templateType,docType:docType,hierarchyKey:hierarchyKey,documentVersionKey:documentVersionKey,folderHierarchyKey:folderHierarchyKey,itemCount:itemCount,closeWindowOnCommit:closeWindowOnCommit,websiteKey:websiteKey,pageInstanceKey:pageInstanceKey},succeededCallback,failedCallback,userContext); },
+GetWindowProperties:function(action,templateType,docType,hierarchyKey,documentVersionKey,folderHierarchyKey,itemCount,closeWindowOnCommit,websiteKey,pageInstanceKey,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetWindowProperties',false,{action:action,templateType:templateType,docType:docType,hierarchyKey:hierarchyKey,documentVersionKey:documentVersionKey,folderHierarchyKey:folderHierarchyKey,itemCount:itemCount,closeWindowOnCommit:closeWindowOnCommit,websiteKey:websiteKey,pageInstanceKey:pageInstanceKey},succeededCallback,failedCallback,userContext); },
+GetAddressCompletionList:function(prefixText,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetAddressCompletionList',false,{prefixText:prefixText},succeededCallback,failedCallback,userContext); },
+CheckForPasteConflict:function(selectedKeys,targetHierarchyKey,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'CheckForPasteConflict',false,{selectedKeys:selectedKeys,targetHierarchyKey:targetHierarchyKey},succeededCallback,failedCallback,userContext); }}
+PageMethods.registerClass('PageMethods',Sys.Net.WebServiceProxy);
+PageMethods._staticInstance = new PageMethods();
+PageMethods.set_path = function(value) { PageMethods._staticInstance.set_path(value); }
+PageMethods.get_path = function() { return PageMethods._staticInstance.get_path(); }
+PageMethods.set_timeout = function(value) { PageMethods._staticInstance.set_timeout(value); }
+PageMethods.get_timeout = function() { return PageMethods._staticInstance.get_timeout(); }
+PageMethods.set_defaultUserContext = function(value) { PageMethods._staticInstance.set_defaultUserContext(value); }
+PageMethods.get_defaultUserContext = function() { return PageMethods._staticInstance.get_defaultUserContext(); }
+PageMethods.set_defaultSucceededCallback = function(value) { PageMethods._staticInstance.set_defaultSucceededCallback(value); }
+PageMethods.get_defaultSucceededCallback = function() { return PageMethods._staticInstance.get_defaultSucceededCallback(); }
+PageMethods.set_defaultFailedCallback = function(value) { PageMethods._staticInstance.set_defaultFailedCallback(value); }
+PageMethods.get_defaultFailedCallback = function() { return PageMethods._staticInstance.get_defaultFailedCallback(); }
+PageMethods.set_enableJsonp = function(value) { PageMethods._staticInstance.set_enableJsonp(value); }
+PageMethods.get_enableJsonp = function() { return PageMethods._staticInstance.get_enableJsonp(); }
+PageMethods.set_jsonpCallbackParameter = function(value) { PageMethods._staticInstance.set_jsonpCallbackParameter(value); }
+PageMethods.get_jsonpCallbackParameter = function() { return PageMethods._staticInstance.get_jsonpCallbackParameter(); }
+PageMethods.set_path("Login.aspx");
+PageMethods.GetActionLink= function(action,templateType,docType,hierarchyKey,documentVersionKey,folderHierarchyKey,itemCount,closeWindowOnCommit,websiteKey,pageInstanceKey,onSuccess,onFailed,userContext) {PageMethods._staticInstance.GetActionLink(action,templateType,docType,hierarchyKey,documentVersionKey,folderHierarchyKey,itemCount,closeWindowOnCommit,websiteKey,pageInstanceKey,onSuccess,onFailed,userContext); }
+PageMethods.GetWindowProperties= function(action,templateType,docType,hierarchyKey,documentVersionKey,folderHierarchyKey,itemCount,closeWindowOnCommit,websiteKey,pageInstanceKey,onSuccess,onFailed,userContext) {PageMethods._staticInstance.GetWindowProperties(action,templateType,docType,hierarchyKey,documentVersionKey,folderHierarchyKey,itemCount,closeWindowOnCommit,websiteKey,pageInstanceKey,onSuccess,onFailed,userContext); }
+PageMethods.GetAddressCompletionList= function(prefixText,onSuccess,onFailed,userContext) {PageMethods._staticInstance.GetAddressCompletionList(prefixText,onSuccess,onFailed,userContext); }
+PageMethods.CheckForPasteConflict= function(selectedKeys,targetHierarchyKey,onSuccess,onFailed,userContext) {PageMethods._staticInstance.CheckForPasteConflict(selectedKeys,targetHierarchyKey,onSuccess,onFailed,userContext); }
+var gtc = Sys.Net.WebServiceProxy._generateTypedConstructor;
+Type.registerNamespace('Asi.Web.UI.Common.BSA');
+if (typeof(Asi.Web.UI.Common.BSA.WindowProperties) === 'undefined') {
+Asi.Web.UI.Common.BSA.WindowProperties=gtc("Asi.Web.UI.Common.BSA.WindowProperties");
+Asi.Web.UI.Common.BSA.WindowProperties.registerClass('Asi.Web.UI.Common.BSA.WindowProperties');
+}
+Type.registerNamespace('Asi.Web.UI');
+if (typeof(Asi.Web.UI.PageOperation) === 'undefined') {
+Asi.Web.UI.PageOperation = function() { throw Error.invalidOperation(); }
+Asi.Web.UI.PageOperation.prototype = {None: 0,Edit: 1,New: 2,Execute: 3,Select: 4,SelectAndReturnValue: 5,Delete: 6,Purge: 7,Import: 8,Export: 9,Publish: 10,Versions: 11,Refresh: 12,Cut: 13,Copy: 14,Paste: 15,Undo: 16,SelectAll: 17,Search: 18,Preview: 19,Submit: 20,RequestDelete: 21,PurgeAll: 22}
+Asi.Web.UI.PageOperation.registerEnum('Asi.Web.UI.PageOperation', true);
+}
+if (typeof(Asi.Web.UI.TemplateType) === 'undefined') {
+Asi.Web.UI.TemplateType = function() { throw Error.invalidOperation(); }
+Asi.Web.UI.TemplateType.prototype = {I: 0,D: 1,P: 2,E: 3,T: 4,F: 5,A: 6}
+Asi.Web.UI.TemplateType.registerEnum('Asi.Web.UI.TemplateType', true);
+}
+//]]>
+</script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2176E3DC" />
+    <input type="hidden" name="ctl00$ScriptManager1" id="ctl00_ScriptManager1" />
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.setServerId("ctl00_ScriptManager1", "ctl00$ScriptManager1");
+Sys.Application._enableHistoryInScriptManager();
+//]]>
+</script>
+
+    <!-- This control will display the progress image when a page load activity is taking a longer than expected time to load -->
+    <div id="ctl00_TemplateFillLoadingPanel" style="display:none;">
+	
+            <div class="NotPrinted" id="FillProgressDiv">
+                Loading
+                <img id="ctl00_ProgressImage2" src="/IMIS20/images/ImageLibrary/loading.gif" alt="Loading" border="0" />                          
+            </div> 
+        
+</div>
+
+	<div id="LanguageLinks" align="right">
+							<!-- <div class="yui-bd">
+<div class="yui-g shade"><div id="ctl00_TopSection_Zone1PlaceHolder">
+	<div id="ste_container_TopSection" class="ContentItemContainer"><div class="ContentItemButtonPanel">
+
+</div><a href="http://ns2291111.ovh.net/IMIS_PROD/En/Default.aspx"><img alt="" alternatetext="China" src="http://ns2291111.ovh.net/IMIS_PROD/App_Themes/IFA/Images/1362417696_China_flat.png" style="vertical-align: text-bottom;" />中文</a>
+<a href="http://ns2291111.ovh.net/IMIS_PROD/En/Default.aspx"><img alt="" alternatetext="Russian Federation" src="http://ns2291111.ovh.net/IMIS_PROD/App_Themes/IFA/Images/1362417757_Russian Federation.png" style="vertical-align: text-bottom;" />Русскоязычный Портал</a></div>
+</div></div>
+</div><div class="ContentRecordPageButtonPanel">
+
+</div> -->
+						<div id="masterTopBarAuxiliary" class="ClearFix">	
+							<div role="navigation">
+                           
+                            <ul class='NavigationUnorderedList'><li class='NavigationListItem'></li><li class='NavigationListItem'><a id="ctl00_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl02_NavigationLink" class="NavigationLink" href="/IMIS20/En/Cart/En/Knowledge_Resources/Library/Cart_Home.aspx?hkey=dcb22179-238c-4dcd-b930-42777e42ebca">Cart <span class="cartEmpty"><span class="cartSprite"></span></span></a></li></ul>	
+							</div>
+						</div>
+	</div>    
+<div id="masterWrapper">
+         <header id="hd" class="ClearFix">
+                    <div id="masterHeaderBackground" class="ClearFix">
+                        <!-- This <div> block is for optional display of a header image -->
+                        <div id="masterLogoArea">
+                            <!-- Logo -->
+	     	                <div class="yui-bd">
+<div class="yui-g shade"><div id="ctl00_HeaderLogo_Zone1PlaceHolder">
+	<div id="ste_container_HeaderLogoSpan" class="ContentItemContainer"><div class="ContentItemButtonPanel">
+
+</div><img alt="" src="/IMIS20/images/IFA/HeaderLogo.png" /><a href="http://www.fertilizer.org/Home"></a></div>
+</div></div>
+</div><div class="ContentRecordPageButtonPanel">
+
+</div>  
+                        </div>               
+                        <div id="Menu" class="ClearFix">
+                            
+                            <div id="masterTopBarAuxiliary" class="ClearFix">
+                                <div role="navigation">                               
+						<a href="http://www.fertilizer.org/en/Benefits.aspx?hkey=0bf30604-5ed6-416f-98e3-36484238216f"><img alt="" style="vertical-align: text-bottom;" src="http://www.fertilizer.org/App_Themes/IFA/Images/becomeamember.png" alternatetext="China" /></a>
+						<a href="http://www.fertilizer.org/En/Contact/Contact_IFA.aspx"><img alt="" style="vertical-align: text-bottom;" src="http://www.fertilizer.org/App_Themes/IFA/Images/contact.png" alternatetext="Contact Us" /></a>
+					
+                            
+                            <a id="ctl00_LoginStatus1" accesskey="l" href="javascript:__doPostBack(&#39;ctl00$LoginStatus1$ctl02&#39;,&#39;&#39;)"><img alt='' style='vertical-align: text-bottom;' src='http://www.fertilizer.org/APP_THEMES/IFA/IMAGES/Login1.png' id='loginbutton'></a>                   
+                                                                
+							
+                                    
+                                    
+                                    <img id="ctl00_KeepAliveTarget" src="../../../Images/3x3.gif" alt=" " border="0" />
+                                    
+                                </div>
+						<br /><br /><br />
+                         <div id="masterSocial">
+                            <a href="mailto:ifa@fertilizer.org" title="Contact" target="_blank" style="font-weight: normal; line-height: 1.385em; text-align: left;">
+                            <img alt="" src="http://www.fertilizer.org/APP_THEMES/IFA/IMAGES/emailGrey.png" /></a>
+		                    <a href="http://twitter.com/fertilizernews" title="Visit our Twitter page" target="_blank" style="font-weight: normal; line-height: 1.385em; text-align: left;">
+                            <img alt="" src="http://www.fertilizer.org/APP_THEMES/IFA/IMAGES/TweeterGrey.png" /></a>
+                            <a href="http://www.pinterest.com/fertiliser/" title="Visit our Pinterest page" target="_blank" style="font-weight: normal; line-height: 1.385em; text-align: left;">
+                            <img alt="" src="http://www.fertilizer.org/APP_THEMES/IFA/IMAGES/pinterestGrey.png" /></a>
+                            <a href="http://www.linkedin.com/companies/international-fertilizer-association-ifa" title="Visit our LinkedIn page" target="_blank" style="font-weight: normal; line-height: 1.385em; text-align: left;">
+                            <img alt="" src="http://www.fertilizer.org/APP_THEMES/IFA/IMAGES/LinGrey.png" /></a>
+                            <a href="http://www.youtube.com/IFAfertilizers" title="Visit our YouTube channel" target="_blank" style="font-weight: normal; line-height: 1.385em; text-align: left;">
+                            <img alt="" src="http://www.fertilizer.org/APP_THEMES/IFA/IMAGES/YoutubeGrey.png" /></a>
+                            <a href="http://www.flickr.com/photos/ifa_fertilizers/sets/" title="Visit our Flickr page" target="_blank" style="font-weight: normal; line-height: 1.385em; text-align: left;">
+                            <img alt="" src="http://www.fertilizer.org/APP_THEMES/IFA/IMAGES/flikrGrey.png" /></a>
+	                    </div> 
+                       
+                        <br /><br />
+
+                        <div role="search">
+                            
+                            <div id="SimpleSearchBlock"><label for="ctl00_SearchField_SearchTerms" id="ctl00_SearchField_Prompt" class="screen-reader-text">Keyword Search</label><input name="ctl00$SearchField$SearchTerms" type="text" value="Keyword Search" id="ctl00_SearchField_SearchTerms" class=" Watermarked" onfocus="SimpleSearchField_OnFocus(&#39;ctl00_SearchField_SearchTerms&#39;, ctl00_SearchField_SearchTermsProperties);" onblur="SimpleSearchField_OnBlur(&#39;ctl00_SearchField_SearchTerms&#39;, ctl00_SearchField_SearchTermsProperties);" onkeypress="return clickButton(event,&#39;ctl00_SearchField_GoSearch&#39;);" /><input type="button" name="ctl00$SearchField$GoSearch" value="Go" onclick="SimpleSearchField_ExecuteSearch(&#39;ctl00_SearchField_SearchTerms&#39;, ctl00_SearchField_SearchTermsProperties); return cancelEvent();WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$SearchField$GoSearch&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))" id="ctl00_SearchField_GoSearch" class="TextButton" /></div>
+                        </div>
+</div>
+                            <div id="masterTopBarAuxiliaryBottom">                                
+                            </div>
+                        </div>
+                    </div> 
+					<div id="ctl00_NavPanel" role="navigation">
+	
+                        
+                            
+                            
+<div id="ctl00_TemplateMainNavigation_Primary_NavMenu" class="RadMenu RadMenu_Austin rmSized" style="z-index:2999;">
+		<!-- 2013.2.717.45 --><ul class="rmRootGroup rmHorizontal">
+			<li class="rmItem rmFirst"><a href="/IMIS20/En/Home/En/Default.aspx?hkey=6c3f9638-dbf5-4ec7-84b3-d6a993e7db8a" class="rmLink rmRootLink Homepic"><span class="rmText">Home</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/IFAsGovernance" class="rmLink rmRootLink"><span class="rmText">About IFA</span></a><div class="rmSlide">
+				<ul class="rmVertical rmGroup rmLevel1">
+					<li class="rmItem rmFirst"><a href="http://www.fertilizer.org/IFAsGovernance" class="rmLink"><span class="rmText">IFA Structure</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a href="http://www.fertilizer.org/IFAsGovernance" class="rmLink"><span class="rmText">IFA&#39;s Governance</span></a></li><li class="rmItem rmLast"><a href="http://www.fertilizer.org/IFASecretariat" class="rmLink"><span class="rmText">IFA&#39;s Secretariat</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a href="http://www.fertilizer.org/AgricultureCommittee" class="rmLink"><span class="rmText">IFA Committees</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a href="http://www.fertilizer.org/AgricultureCommittee" class="rmLink"><span class="rmText">Agriculture Committee</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/PITCommittee" class="rmLink"><span class="rmText">Production and International Trade Committee</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/TechnicalSHECommittee" class="rmLink"><span class="rmText">Technical &amp; SHE Committee</span></a></li><li class="rmItem rmLast"><a href="http://www.fertilizer.org/CommunicationsPACommittee" class="rmLink"><span class="rmText">Communications &amp; Public Affairs Committee</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a href="http://www.fertilizer.org/SearchMembers" class="rmLink"><span class="rmText">IFA Members</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a href="http://www.fertilizer.org/SearchMembers" class="rmLink"><span class="rmText">Search for IFA Members</span></a></li><li class="rmItem rmLast"><a href="http://www.fertilizer.org/ConsultingCompanies" class="rmLink"><span class="rmText">Consulting Companies</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a href="http://www.fertilizer.org/EngagementsWithInternationalOrganizations" class="rmLink"><span class="rmText">International Engagement</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/RegionalInitiatives" class="rmLink"><span class="rmText">Regional Initiatives</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/Awards" class="rmLink"><span class="rmText">Awards</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a href="http://www.fertilizer.org/AwardBorlaug" class="rmLink"><span class="rmText">IFA Norman Borlaug Award</span></a></li><li class="rmItem rmLast"><a href="http://www.fertilizer.org/IFAGreenLeafAward" class="rmLink"><span class="rmText">IFA Green Leaf Award</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a href="http://www.fertilizer.org/LegalNotice" class="rmLink"><span class="rmText">Legal Notice</span></a></li><li class="rmItem rmLast"><a href="/IMIS20/En/About_IFA/Job_Opportunities/En/About_IFA/RecruitmentIFA/RecruitmentComPA_English.aspx?hkey=cc102fcc-b42f-47df-a422-2a03c41b5d21" class="rmLink"><span class="rmText">Job Opportunities</span></a></li>
+				</ul>
+			</div></li><li class="rmItem "><a href="http://www.fertilizer.org/AboutFertilizers" class="rmLink rmRootLink"><span class="rmText">Knowledge Resources</span></a><div class="rmSlide">
+				<ul class="rmVertical rmGroup rmLevel1">
+					<li class="rmItem rmFirst"><a href="http://www.fertilizer.org/AboutFertilizers" class="rmLink"><span class="rmText">About Fertilizers</span></a></li><li class="rmItem "><a href="/IMIS20/En/Knowledge_Resources/Industry_Facts/En/Knowledge_Resources/Industry_Facts/Industry_Facts_Home_Page.aspx?hkey=58e629cf-c6c8-40cc-908c-542a701f1ab0" class="rmLink"><span class="rmText">Industry Facts</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/Library" class="rmLink"><span class="rmText">Library</span></a></li><li class="rmItem rmLast"><a href="http://www.fertilizer.org/ClimateChange" class="rmLink"><span class="rmText">Topics</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a href="http://www.fertilizer.org/ClimateChange" class="rmLink"><span class="rmText">Climate Change</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/SmallholdersAccessFertilizers" class="rmLink"><span class="rmText">Smallholders Access to Fertilizers in Africa</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/Soils" class="rmLink"><span class="rmText">Soils</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/SustainableDevelopmentGoals" class="rmLink"><span class="rmText">SDGs</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/Phosphogypsum" class="rmLink"><span class="rmText">Phosphogypsum</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/FoodNutritionSecurity" class="rmLink"><span class="rmText">Food and Nutrition Security</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/SupplyAvailability" class="rmLink"><span class="rmText">Supply Availability</span></a></li><li class="rmItem rmLast"><a href="/IMIS20/En/Knowledge_Resources/Topics/Innovation/En/Knowledge_Resources/Topics/Innovation/Innovation_Home_Page.aspx?hkey=d7713918-ca62-4ebb-b238-495c158f9f43" class="rmLink"><span class="rmText">Innovation</span></a></li>
+						</ul>
+					</div></li>
+				</ul>
+			</div></li><li class="rmItem "><a href="http://www.fertilizer.org/MarketOutlooks" class="rmLink rmRootLink"><span class="rmText">Statistics</span></a><div class="rmSlide">
+				<ul class="rmVertical rmGroup rmLevel1">
+					<li class="rmItem rmFirst"><a href="http://www.fertilizer.org/MarketOutlooks" class="rmLink"><span class="rmText">Market Outlooks</span></a></li><li class="rmItem "><a href="/IMIS20/En/Statistics/Trade_Map/En/Statistics/Fertilizer_Trade_Maps.aspx?hkey=3b2c0c78-c72d-4571-ba1b-c6f9b00f5441" class="rmLink"><span class="rmText">Fertilizer Trade Maps</span></a></li><li class="rmItem rmLast"><a href="http://www.fertilizer.org/Statistics" class="rmLink"><span class="rmText">Statistics Databases</span></a></li>
+				</ul>
+			</div></li><li class="rmItem "><a href="http://www.fertilizer.org/ProductStewardship" class="rmLink rmRootLink"><span class="rmText">Stewardship</span></a><div class="rmSlide">
+				<ul class="rmVertical rmGroup rmLevel1">
+					<li class="rmItem rmFirst"><a href="http://www.fertilizer.org/ProductStewardship" class="rmLink"><span class="rmText">Product Stewardship</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/NutrientStewardship" class="rmLink"><span class="rmText">Nutrient Stewardship</span></a></li><li class="rmItem rmLast"><a href="http://www.fertilizer.org/FarmerStewardship" class="rmLink"><span class="rmText">Farmer Stewardship</span></a></li>
+				</ul>
+			</div></li><li class="rmItem "><a href="http://www.fertilizer.org/IFAEvents" class="rmLink rmRootLink"><span class="rmText">Events</span></a><div class="rmSlide">
+				<ul class="rmVertical rmGroup rmLevel1">
+					<li class="rmItem rmFirst"><a href="http://www.fertilizer.org/IFAEvents" class="rmLink"><span class="rmText">Upcoming IFA Events</span></a></li><li class="rmItem "><a href="/IMIS20/En/Events/Past_IFA_Events/En/Events/IFA_Events/IFA_Past_events_Home_Page.aspx?hkey=1ae3c16c-aa90-4fd8-957e-cf3e1ad76f9d" class="rmLink"><span class="rmText">Past IFA Events</span></a></li><li class="rmItem "><a href="/IMIS20/En/Events/Get_IFA_Conferences_App/En/Events/IFA_Events/Get_IFA_Conferences_App.aspx?hkey=73d2717b-9086-4e91-a3bf-4d840d1c9906" class="rmLink"><span class="rmText">Get IFA Conferences App</span></a></li><li class="rmItem "><a href="/IMIS20/En/Events/IFA_Participation_in_International_Events/En/Events/IFA_Participation_in_International_Events/IFA_Participation_in_International_Events_Home_Page.aspx?hkey=19200673-4806-42eb-8d92-a0bfd5745a03" class="rmLink"><span class="rmText">IFA Participation in International Events</span></a></li><li class="rmItem rmLast"><a href="http://www.fertilizer.org/nonIFAEvents" class="rmLink"><span class="rmText">Non-IFA Events</span></a></li>
+				</ul>
+			</div></li><li class="rmItem rmLast"><a href="/IMIS20/En/Media/En/Media/IFA_Newsletters.aspx?hkey=102a51b2-7a69-4631-ba76-39ccb5483f65" class="rmLink rmRootLink"><span class="rmText">Media</span></a><div class="rmSlide">
+				<ul class="rmVertical rmGroup rmLevel1">
+					<li class="rmItem rmFirst"><a href="http://www.fertilizer.org/IFANotebook" title="IFA Notebook" class="rmLink"><span class="rmText">IFA Notebook</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/IFAsExpertBlog" class="rmLink"><span class="rmText">IFA&#39;s Expert Blog</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/Newsletters" class="rmLink"><span class="rmText">Newsletters</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/PressRelease" class="rmLink"><span class="rmText">Press Releases</span></a></li><li class="rmItem "><a href="http://www.fertilizer.org/InTheNews" class="rmLink"><span class="rmText">IFA in the News</span></a></li><li class="rmItem rmLast"><a href="/IMIS20/En/Media/Videos_Hall/En/Media/Videos_Hall/IFA_Videos_Hall_Public.aspx?hkey=2b15b0a2-3128-49cc-b2f8-246809ef9a7e" class="rmLink"><span class="rmText">Videos Hall</span></a></li>
+				</ul>
+			</div></li>
+		</ul><input id="ctl00_TemplateMainNavigation_Primary_NavMenu_ClientState" name="ctl00_TemplateMainNavigation_Primary_NavMenu_ClientState" type="hidden" />
+	</div> 
+                        
+                    
+</div>
+                </header>
+        <div id="bd">
+                    <div id="masterContentArea">
+                        <!-- This <div> provides a placeholder for an optional block of sidebar content that -->
+                        <!-- will appear to the left of the Main content area. This sidebar panel will only -->
+                        <!-- display for pages that display content in the SideBarPlaceHolder control below-->
+                        <div id="masterSideBarPanel" class="yui-b">
+                            
+                            
+                 </div>
+                        <div id="yui-main">
+                            <div class="yui-b">
+                            <!-- Group Breadcrumbs, Proxy and Page Tasks so they can be controlled together -->
+                            <div id="masterReferenceArea" class="ClearFix">
+                                <div id="masterMainBreadcrumb" role="navigation">
+                                    <!-- This control will display the currently applicable Breadcrumb Navigation (if any) -->
+                                    <a href="#breadcrumbskiplink" id="breadcrumbhref" class="screen-reader-text show-on-focus">Skip breadcrumb navigation</a>
+                                    
+                                    <a id="breadcrumbskiplink" tabindex="-1"></a> 
+                                </div>
+                      <div id="masterPageTasks">
+                                    <!-- This control will display the print, text-only and email buttons -->
+                                    <div id="ctl00_PageTasksPanel" class="PageTasksPanel NotPrinted">
+	
+                                            <a id="ctl00_TemplatePageTasks_PrintButton" title="Printable version of this page" class="PrintButton" href="javascript:__doPostBack(&#39;ctl00$TemplatePageTasks$PrintButton&#39;,&#39;&#39;)"></a><a title="Switch to a text-only version of this website." class="TextOnlyButton" href="javascript:__doPostBack(&#39;ctl00$TemplatePageTasks$ctl00&#39;,&#39;&#39;)" style="cursor:pointer;"></a><a onclick="return emailAFriend(&#39;iMIS Login&#39;);" title="E-mail this page to a friend" class="EmailButton" href="javascript:__doPostBack(&#39;ctl00$TemplatePageTasks$ctl01&#39;,&#39;&#39;)"></a>
+                                    
+</div>
+                                </div>
+                       <div id="masterMainImpersonation">
+                                    <!-- This control displays the On Behalf Of control -->
+                                    
+                                </div>
+                            </div>
+<!-- This panel contains the Main content area for a page -->
+                            <a id="contentstart" tabindex="-1"></a>
+                            <div id="ctl00_ContentPanel" role="main" class="ContentPanel">
+	
+                                
+                                <div id="ctl00_UserMessagesUpdatePanel">
+		
+                                    <!-- This provides a placeholder for any applicable User Messages that a page needs to display -->
+                                    
+                                    
+                                    
+	</div>
+                                <div id="ctl00_TemplatePrintDisplay">
+		
+                                
+	</div>
+                                
+	<script type="text/javascript">
+		/* 
+		Temporary frame breakout for login page. 
+		Redirects back to requested target parent frame after authentication.
+		*/
+		try
+		{
+			if (parent !== self)
+				self.parent.location.replace(document.URL.replace(/\?ReturnUrl=.*$/i, "?ReturnUrl=" + escape(parent.document.URL)));
+		}
+		catch(e){}
+	</script>
+    <div id="login">
+	    
+
+<script type="text/javascript">
+    addLoadEvent(focusLogonName);
+    function focusLogonName()
+    {
+        var logonNameId = 'ctl00_TemplateBody_Login1_LoginView1_Login1_UserName';
+        if (logonNameId.length > 0)
+            $get(logonNameId).focus();
+    }
+</script>
+<div style="width:100%; text-align: center;">
+<div id="ctl00_TemplateBody_Login1_LoginUpdatePanel">
+		
+    <p><span id="ctl00_TemplateBody_Login1_lblMessage">Your session has timed out. Please try your operation again.</span></p>
+    <p class="error"></p>
+    
+            <table id="ctl00_TemplateBody_Login1_LoginView1_Login1" cellspacing="0" cellpadding="0" border="0" width="275" style="margin:auto;">
+			<tr>
+				<td>
+                    <div id="ctl00_TemplateBody_Login1_LoginView1_Login1_PanelTemplate1" class="StandardPanel">
+					<div id="ctl00_TemplateBody_Login1_LoginView1_Login1_PanelTemplate1_Head" class="PanelHead Distinguish">
+						<h2 class="PanelTitle">Log On</h2>
+					</div><div id="ctl00_TemplateBody_Login1_LoginView1_Login1_PanelTemplate1_Body" class="PanelBody">
+						                        
+                        <span class="Error" style="width:99%; text-align:center;">
+                            
+                        </span>
+                        <div class="PanelField AutoWidth">
+                            <label for="ctl00_TemplateBody_Login1_LoginView1_Login1_UserName" id="ctl00_TemplateBody_Login1_LoginView1_Login1_UserNameLabel" style="width:6em !important;">Logon</label>
+                            <div class="PanelFieldValue">
+                                <input name="ctl00$TemplateBody$Login1$LoginView1$Login1$UserName" type="text" id="ctl00_TemplateBody_Login1_LoginView1_Login1_UserName" style="width:11em;" /> 
+                            </div>
+                        </div>
+                        <div class="PanelField AutoWidth">
+                            <label for="ctl00_TemplateBody_Login1_LoginView1_Login1_Password" id="ctl00_TemplateBody_Login1_LoginView1_Login1_PasswordLabel" style="width:6em !important;">Password</label>
+                            <div class="PanelFieldValue">
+                                <input name="ctl00$TemplateBody$Login1$LoginView1$Login1$Password" type="password" id="ctl00_TemplateBody_Login1_LoginView1_Login1_Password" style="width:11.1em;" /> 
+                            </div>
+                        </div>
+                        <div id="ctl00_TemplateBody_Login1_LoginView1_Login1_Div1" class="PanelField AutoWidth FloatNone" style="text-align:left;">
+                            <input id="ctl00_TemplateBody_Login1_LoginView1_Login1_RememberMe" type="checkbox" name="ctl00$TemplateBody$Login1$LoginView1$Login1$RememberMe" /><label for="ctl00_TemplateBody_Login1_LoginView1_Login1_RememberMe">Remember me on this computer.</label>
+                        </div>
+                        <div class="PanelField" style="text-align:right; margin-left: auto; border-bottom: none;">
+                            <input type="submit" name="ctl00$TemplateBody$Login1$LoginView1$Login1$Login" value="Log On" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$TemplateBody$Login1$LoginView1$Login1$Login&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_TemplateBody_Login1_LoginView1_Login1_Login" title="Log On" class=" TextButton" />
+                        </div>
+                        <div id="ctl00_TemplateBody_Login1_LoginView1_Login1_ForgotMyLogon" class="PanelField" style="text-align:left; border-bottom: none;">
+                            <a id="ctl00_TemplateBody_Login1_LoginView1_Login1_ForgotMyLogonLink" href="../../../../Core/FindMePage.aspx">Forgot my logon</a>
+                        </div>
+                        <div class="PanelField" style="text-align:left; border-bottom: none;">
+                            <a id="ctl00_TemplateBody_Login1_LoginView1_Login1_RecoverPasswordLink" href="RecoverPassword.aspx">Forgot my password</a>
+                        </div>
+                        <div id="ctl00_TemplateBody_Login1_LoginView1_Login1_CreateAccount" class="PanelField" style="text-align:left;">
+                            <a id="ctl00_TemplateBody_Login1_LoginView1_Login1_CreateAnAccountLink" href="../../../../En/Contacts/CreateAccount.aspx?LoginMessage=Your+session+has+timed+out.+Please+try+your+operation+again.">Create a new account</a>
+                        </div>
+                        <div class="PanelField" style="text-align:right; margin-left: auto;">
+                            <img id="ctl00_TemplateBody_Login1_LoginView1_Login1_iMISOrangeImage" src="../../../../App_Themes/IFA/images/login/imis_login_logo.jpg" border="0" />
+                        </div>
+                    
+					</div>
+				</div>
+                </td>
+			</tr>
+		</table>
+        
+    
+	</div>
+</div>
+
+    </div>	
+
+                            
+</div>
+                            <!-- This panel will contain the Button panel for any page that has command buttons (e.g., Save/Cancel) -->
+                            <div id="ctl00_ButtonPanel" class="ButtonPanel NotPrinted">
+	
+                                <div id="masterMainButtonBar" class="CommandBar">
+                                    <span id="ctl00_ButtonBar"></span>
+                                    
+                                    
+                                </div>
+                            
+</div>
+                            </div>
+                        </div>
+					</div>
+                </div>
+                <div id="masterFooterPush"></div>
+            </div>
+            <footer id="ft">
+			<div id="masterFooterContent" class="ClearFix">
+			<!-- The following control will display the applicable Footer Navigation (if any) -->			
+				<div class="yui-bd">
+<div class="yui-g shade"><div id="ctl00_FooterCommunications_Zone1PlaceHolder">
+	<div id="ste_container_FooterCommunications" class="ContentItemContainer"><div class="ContentItemButtonPanel">
+
+</div><style type="text/css">
+    a.legal {
+    color: #FFFFFF;
+    text-decoration: none;
+    }
+</style>
+<div id="masterFooterConnectWithUs" style="text-align: center;">
+<a title="Visit our Twitter page" style="text-align: left; line-height: 1.38em; font-weight: normal;" href="http://twitter.com/fertilizernews" target="_blank">
+<img alt="" src="/IMIS20/images/NewDesign/TweeterWhite.png" /></a>
+<a title="Visit our Pinterest page" style="text-align: left; line-height: 1.38em; font-weight: normal;" href="http://www.pinterest.com/fertiliser/" target="_blank">
+<img alt="" src="/IMIS20/images/NewDesign/pinterestWhite.png" /></a>
+<a title="Visit our LinkedIn page" style="text-align: left; line-height: 1.38em; font-weight: normal;" href="http://www.linkedin.com/companies/international-fertilizer-industry-association-ifa" target="_blank">
+<img alt="" src="/IMIS20/images/NewDesign/LinWhite.png" /></a>
+<a title="Visit our YouTube channel" style="text-align: left; line-height: 1.38em; font-weight: normal;" href="http://www.youtube.com/IFAfertilizers" target="_blank">
+<img alt="" src="/IMIS20/images/NewDesign/YoutubeWhite.png" /></a>
+<a title="Visit our Flickr page" style="text-align: left; line-height: 1.38em; font-weight: normal;" href="http://www.flickr.com/photos/ifa_fertilizers/sets/" target="_blank">
+<img alt="" src="/IMIS20/images/NewDesign/flikrWhite.png" /></a>
+<a title="Contact" style="text-align: left; line-height: 1.38em; font-weight: normal;" href="mailto:ifa@fertilizer.org" target="_blank">
+<img alt="" src="/IMIS20/images/NewDesign/emailWhite.png" /></a>
+</div>
+<div id="masterFooterNewsletter" style="text-align: right;">
+<img alt="" src="/IMIS20/images/IFA/Homepage/ifa-Web-footer-white-logo-v2.png" style="width: 360px; height: 51px;" /><br />
+<a class="legal" href="/IMIS20/En/Legal_notice_home_page.aspx">Legal Notice</a>
+</div></div><div id="ste_container_HiddeniFrameforAutoDownloader" class="ContentItemContainer"><div class="ContentItemButtonPanel">
+
+</div><iframe name="hidden" style="height: 0px;  width: 0px;   visibility: hidden;border: medium none;"></iframe></div>
+</div></div>
+</div><div class="ContentRecordPageButtonPanel">
+
+</div>
+		</div>  
+	</footer> 
+    <div id="ctl00_ctl15" style="display:none;">
+	<div id="ctl00_GenericWindow" style="display:none;">
+		<div id="ctl00_GenericWindow_C" style="display:none;">
+
+		</div><input id="ctl00_GenericWindow_ClientState" name="ctl00_GenericWindow_ClientState" type="hidden" />
+	</div><div id="ctl00_ObjectBrowser" style="display:none;">
+		<div id="ctl00_ObjectBrowser_C" style="display:none;">
+
+		</div><input id="ctl00_ObjectBrowser_ClientState" name="ctl00_ObjectBrowser_ClientState" type="hidden" />
+	</div><div id="ctl00_ObjectBrowserDialog" style="display:none;">
+		<div id="ctl00_ObjectBrowserDialog_C" style="display:none;">
+
+		</div><input id="ctl00_ObjectBrowserDialog_ClientState" name="ctl00_ObjectBrowserDialog_ClientState" type="hidden" />
+	</div><div id="ctl00_ctl15_alerttemplate" style="display:none;">
+		<div class="rwDialogPopup radalert">			
+			<div class="rwDialogText">
+			{1}				
+			</div>
+			
+			<div>
+				<a  onclick="$find('{0}').close(true);"
+				class="rwPopupButton" href="javascript:void(0);">
+					<span class="rwOuterSpan">
+						<span class="rwInnerSpan">##LOC[OK]##</span>
+					</span>
+				</a>				
+			</div>
+		</div>
+		</div><div id="ctl00_ctl15_prompttemplate" style="display:none;">
+		 <div class="rwDialogPopup radprompt">			
+			    <div class="rwDialogText">
+			    {1}				
+			    </div>		
+			    <div>
+				    <script type="text/javascript">
+				    function RadWindowprompt_detectenter(id, ev, input)
+				    {							
+					    if (!ev) ev = window.event;                
+					    if (ev.keyCode == 13)
+					    {															        
+					        var but = input.parentNode.parentNode.getElementsByTagName("A")[0];					        
+					        if (but)
+						    {							
+							    if (but.click) but.click();
+							    else if (but.onclick)
+							    {
+							        but.focus(); var click = but.onclick; but.onclick = null; if (click) click.call(but);							 
+							    }
+						    }
+					       return false;
+					    } 
+					    else return true;
+				    }	 
+				    </script>
+				    <input title="Enter Value" onkeydown="return RadWindowprompt_detectenter('{0}', event, this);" type="text"  class="rwDialogInput" value="{2}" />
+			    </div>
+			    <div>
+				    <a onclick="$find('{0}').close(this.parentNode.parentNode.getElementsByTagName('input')[0].value);"				
+					    class="rwPopupButton" href="javascript:void(0);" ><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+				    <a onclick="$find('{0}').close(null);" class="rwPopupButton"  href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+			    </div>
+		    </div>				       
+		</div><div id="ctl00_ctl15_confirmtemplate" style="display:none;">
+		<div class="rwDialogPopup radconfirm">			
+			<div class="rwDialogText">
+			{1}				
+			</div>						
+			<div>
+				<a onclick="$find('{0}').close(true);"  class="rwPopupButton" href="javascript:void(0);" ><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+				<a onclick="$find('{0}').close(false);" class="rwPopupButton"  href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+			</div>
+		</div>		
+		</div><input id="ctl00_ctl15_ClientState" name="ctl00_ctl15_ClientState" type="hidden" />
+</div>
+
+<script type="text/javascript">
+    //<![CDATA[
+    var language;
+    jQuery.ajax({
+        type: "POST",
+        url: gWebRoot + "/WebMethodUtilities.aspx/GetCurrentUserLanguage",
+        data: "{}",
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+        success: function (result) {
+            if (result.d == '' || result.d == null) {
+                alert('In your browser options, specify a language.');
+                gUserLanguage = 'en-US';
+            } else if (result.d == 'NEUTRAL') {
+                alert('In your browser options, specify a language that is not culture neutral as the first language.');
+                gUserLanguage = 'en-US';
+            } else
+                gUserLanguage = result.d;
+        },
+        async: true
+    });
+
+    var gCartCount;
+    var cartDiv = $get("CartItemCount");
+    if (cartDiv != null){
+        jQuery.ajax({
+            type: "POST",
+            url: gWebRoot + "/WebMethodUtilities.aspx/GetCartItemCount",
+            data: "{}",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            success: function(result) {
+                if (result.d != '' && result.d != null) {
+                    gCartCount = result.d;
+                    if (gCartCount != null) {
+                        cartDiv.innerHTML = gCartCount;
+                    }
+                }
+            },
+            async: true
+        });
+    }
+
+    function CheckForChildren() {
+        var contentRecordPageButtonPanelHasChildren = false;
+        var contentRecordPageButtonPanel = jQuery('div.ContentRecordPageButtonPanel');
+        for (var i = 0, max = contentRecordPageButtonPanel.length; i < max; i++) {
+            if (contentRecordPageButtonPanel[i].children.length > 0) {
+                contentRecordPageButtonPanelHasChildren = true;
+                break;
+            }
+        }
+        if (!contentRecordPageButtonPanelHasChildren) {
+            jQuery("Body").addClass("TemplateAreaEasyEditOn");
+        }
+    }
+    if (gIsEasyEditEnabled)
+        CheckForChildren();  
+    //]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+__Document_Head_Init('http://fertilizer.org/IMIS20/NoCookies.html', '', true);NavigationList_NavControlId = 'Auxiliary_rptWrapper';NavigationList_Init();var ctl00_SearchField_SearchTermsProperties = new SimpleSearchFieldProperties();
+ctl00_SearchField_SearchTermsProperties.WatermarkClass = 'Watermarked';
+ctl00_SearchField_SearchTermsProperties.WatermarkText = 'Keyword Search';
+ctl00_SearchField_SearchTermsProperties.SearchTarget = 'http://www.fertilizer.org/Search';
+NavigationList_NavControlId = 'ctl00_TemplateMainNavigation_Primary_NavMenu';NavigationList_Init();PageNavR_NavMenuClientID = 'ctl00_TemplateMainNavigation_Primary_NavMenu';PanelTemplateControls.push($('ctl00_TemplateBody_Login1_LoginView1_Login1_PanelTemplate1'));Sys.Application.add_init(function() {
+    $create(AsiWebControls.KeepAliveBehavior, {"KeepAlivePageUrl":"/IMIS20/KeepSessionAlive.aspx?PreserveStatefulBusinessContainer=true\u0026PageInstanceKey=3a3d691f-41ef-43ce-acd2-e3708b7b0d70","MaxReconnectAttempts":-1,"SessionTimeoutLength":7200000,"TooltipFormatText":"Idle for at least {0} minutes","id":"ctl00_KeepAliveControl"}, null, null, $get("ctl00_KeepAliveTarget"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadMenu, {"_childListElementCssClass":null,"_skin":"Austin","attributes":{},"autoScrollMinimumWidth":100,"clientStateFieldID":"ctl00_TemplateMainNavigation_Primary_NavMenu_ClientState","collapseAnimation":"{\"duration\":450}","defaultGroupSettings":"{\"flow\":0,\"offsetX\":0}","enableAutoScroll":true,"expandAnimation":"{\"duration\":450}","itemData":[{"value":"Home","navigateUrl":"/IMIS20/En/Home/En/Default.aspx?hkey=6c3f9638-dbf5-4ec7-84b3-d6a993e7db8a","cssClass":"Homepic"},{"items":[{"items":[{"value":"IFA\u0027s Governance","navigateUrl":"http://www.fertilizer.org/IFAsGovernance"},{"value":"IFA\u0027s Secretariat","navigateUrl":"http://www.fertilizer.org/IFASecretariat"}],"value":"IFA Structure","navigateUrl":"http://www.fertilizer.org/IFAsGovernance"},{"items":[{"value":"Agriculture Committee","navigateUrl":"http://www.fertilizer.org/AgricultureCommittee"},{"value":"Production and International Trade Committee","navigateUrl":"http://www.fertilizer.org/PITCommittee"},{"value":"Technical \u0026 SHE Committee","navigateUrl":"http://www.fertilizer.org/TechnicalSHECommittee"},{"value":"Communications \u0026 Public Affairs Committee","navigateUrl":"http://www.fertilizer.org/CommunicationsPACommittee"}],"value":"IFA Committees","navigateUrl":"http://www.fertilizer.org/AgricultureCommittee"},{"items":[{"value":"Search for IFA Members","navigateUrl":"http://www.fertilizer.org/SearchMembers"},{"value":"Consulting Companies","navigateUrl":"http://www.fertilizer.org/ConsultingCompanies"}],"value":"IFA Members","navigateUrl":"http://www.fertilizer.org/SearchMembers"},{"value":"International Engagement","navigateUrl":"http://www.fertilizer.org/EngagementsWithInternationalOrganizations"},{"value":"Regional Initiatives","navigateUrl":"http://www.fertilizer.org/RegionalInitiatives"},{"items":[{"value":"IFA Norman Borlaug Award","navigateUrl":"http://www.fertilizer.org/AwardBorlaug"},{"value":"IFA Green Leaf Award","navigateUrl":"http://www.fertilizer.org/IFAGreenLeafAward"}],"value":"Awards","navigateUrl":"http://www.fertilizer.org/Awards"},{"value":"Legal Notice","navigateUrl":"http://www.fertilizer.org/LegalNotice"},{"value":"Job Opportunities","navigateUrl":"/IMIS20/En/About_IFA/Job_Opportunities/En/About_IFA/RecruitmentIFA/RecruitmentComPA_English.aspx?hkey=cc102fcc-b42f-47df-a422-2a03c41b5d21"}],"value":"About IFA","navigateUrl":"http://www.fertilizer.org/IFAsGovernance"},{"items":[{"value":"About Fertilizers","navigateUrl":"http://www.fertilizer.org/AboutFertilizers"},{"value":"Industry Facts","navigateUrl":"/IMIS20/En/Knowledge_Resources/Industry_Facts/En/Knowledge_Resources/Industry_Facts/Industry_Facts_Home_Page.aspx?hkey=58e629cf-c6c8-40cc-908c-542a701f1ab0"},{"value":"Library","navigateUrl":"http://www.fertilizer.org/Library"},{"items":[{"value":"Climate Change","navigateUrl":"http://www.fertilizer.org/ClimateChange"},{"value":"Smallholders Access to Fertilizers in Africa","navigateUrl":"http://www.fertilizer.org/SmallholdersAccessFertilizers"},{"value":"Soils","navigateUrl":"http://www.fertilizer.org/Soils"},{"value":"SDGs","navigateUrl":"http://www.fertilizer.org/SustainableDevelopmentGoals"},{"value":"Phosphogypsum","navigateUrl":"http://www.fertilizer.org/Phosphogypsum"},{"value":"Food and Nutrition Security","navigateUrl":"http://www.fertilizer.org/FoodNutritionSecurity"},{"value":"Supply Availability","navigateUrl":"http://www.fertilizer.org/SupplyAvailability"},{"value":"Innovation","navigateUrl":"/IMIS20/En/Knowledge_Resources/Topics/Innovation/En/Knowledge_Resources/Topics/Innovation/Innovation_Home_Page.aspx?hkey=d7713918-ca62-4ebb-b238-495c158f9f43"}],"value":"Topics","navigateUrl":"http://www.fertilizer.org/ClimateChange"}],"value":"Knowledge Resources","navigateUrl":"http://www.fertilizer.org/AboutFertilizers"},{"items":[{"value":"Market Outlooks","navigateUrl":"http://www.fertilizer.org/MarketOutlooks"},{"value":"Fertilizer Trade Maps","navigateUrl":"/IMIS20/En/Statistics/Trade_Map/En/Statistics/Fertilizer_Trade_Maps.aspx?hkey=3b2c0c78-c72d-4571-ba1b-c6f9b00f5441"},{"value":"Statistics Databases","navigateUrl":"http://www.fertilizer.org/Statistics"}],"value":"Statistics","navigateUrl":"http://www.fertilizer.org/MarketOutlooks"},{"items":[{"value":"Product Stewardship","navigateUrl":"http://www.fertilizer.org/ProductStewardship"},{"value":"Nutrient Stewardship","navigateUrl":"http://www.fertilizer.org/NutrientStewardship"},{"value":"Farmer Stewardship","navigateUrl":"http://www.fertilizer.org/FarmerStewardship"}],"value":"Stewardship","navigateUrl":"http://www.fertilizer.org/ProductStewardship"},{"items":[{"value":"Upcoming IFA Events","navigateUrl":"http://www.fertilizer.org/IFAEvents"},{"value":"Past IFA Events","navigateUrl":"/IMIS20/En/Events/Past_IFA_Events/En/Events/IFA_Events/IFA_Past_events_Home_Page.aspx?hkey=1ae3c16c-aa90-4fd8-957e-cf3e1ad76f9d"},{"value":"Get IFA Conferences App","navigateUrl":"/IMIS20/En/Events/Get_IFA_Conferences_App/En/Events/IFA_Events/Get_IFA_Conferences_App.aspx?hkey=73d2717b-9086-4e91-a3bf-4d840d1c9906"},{"value":"IFA Participation in International Events","navigateUrl":"/IMIS20/En/Events/IFA_Participation_in_International_Events/En/Events/IFA_Participation_in_International_Events/IFA_Participation_in_International_Events_Home_Page.aspx?hkey=19200673-4806-42eb-8d92-a0bfd5745a03"},{"value":"Non-IFA Events","navigateUrl":"http://www.fertilizer.org/nonIFAEvents"}],"value":"Events","navigateUrl":"http://www.fertilizer.org/IFAEvents"},{"items":[{"value":"IFA Notebook","navigateUrl":"http://www.fertilizer.org/IFANotebook"},{"value":"IFA\u0027s Expert Blog","navigateUrl":"http://www.fertilizer.org/IFAsExpertBlog"},{"value":"Newsletters","navigateUrl":"http://www.fertilizer.org/Newsletters"},{"value":"Press Releases","navigateUrl":"http://www.fertilizer.org/PressRelease"},{"value":"IFA in the News","navigateUrl":"http://www.fertilizer.org/InTheNews"},{"value":"Videos Hall","navigateUrl":"/IMIS20/En/Media/Videos_Hall/En/Media/Videos_Hall/IFA_Videos_Hall_Public.aspx?hkey=2b15b0a2-3128-49cc-b2f8-246809ef9a7e"}],"value":"Media","navigateUrl":"/IMIS20/En/Media/En/Media/IFA_Newsletters.aspx?hkey=102a51b2-7a69-4631-ba76-39ccb5483f65"}]}, {"load":PageNavR_OnClientLoadHandler}, null, $get("ctl00_TemplateMainNavigation_Primary_NavMenu"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindow, {"_dockMode":false,"behaviors":117,"clientStateFieldID":"ctl00_GenericWindow_ClientState","formID":"aspnetForm","height":"550px","iconUrl":"about:blank","minimizeIconUrl":"about:blank","modal":true,"name":"GenericWindow","showContentDuringLoad":false,"skin":"Default","visibleStatusbar":false,"width":"800px"}, null, null, $get("ctl00_GenericWindow"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindow, {"_dockMode":false,"behaviors":117,"clientStateFieldID":"ctl00_ObjectBrowser_ClientState","formID":"aspnetForm","height":"550px","iconUrl":"about:blank","minimizeIconUrl":"about:blank","modal":true,"name":"ObjectBrowser","showContentDuringLoad":false,"skin":"Default","visibleStatusbar":false,"width":"760px"}, null, null, $get("ctl00_ObjectBrowser"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindow, {"_dockMode":false,"behaviors":117,"clientStateFieldID":"ctl00_ObjectBrowserDialog_ClientState","formID":"aspnetForm","height":"400px","iconUrl":"about:blank","minimizeIconUrl":"about:blank","modal":true,"name":"ObjectBrowserDialog","showContentDuringLoad":false,"skin":"Default","visibleStatusbar":false,"width":"600px"}, null, null, $get("ctl00_ObjectBrowserDialog"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindowManager, {"behaviors":117,"clientStateFieldID":"ctl00_ctl15_ClientState","formID":"aspnetForm","iconUrl":"","minimizeIconUrl":"","name":"ctl15","skin":"Default","windowControls":"['ctl00_GenericWindow','ctl00_ObjectBrowser','ctl00_ObjectBrowserDialog']"}, null, {"child":"ctl00_GenericWindow"}, $get("ctl00_ctl15"));
+});
+//]]>
+</script>
+</form>
+        <script type="text/javascript">
+            //<![CDATA[
+            var ie6 = false;
+        
+            // if there is something in the side bar this converts the layout to 2 columns
+            if ($('masterSideBarPanel').children.length != 0) {
+                $('masterWrapper').setAttribute("class", "yui-t2 HasSubNav");
+            }
+            
+            // hide the skip breadcrumb link when the AsiSiteMapProvider breadcrumb control is hidden
+            var breadcrumbControl = $get("");
+            var breadcrumbhref = $('breadcrumbhref');
+            breadcrumbhref.style.display = 'none';
+            if (breadcrumbControl != null) {
+                breadcrumbhref.style.display = 'block';
+            }
+            //]]>
+        </script>
+
+        <!--jscript from Page.ResgisterStartupScript extention is loaded here -->
+        <Div><script type="text/javascript">Sys.Application.add_load(function () {{ MasterPageBase_Init(); }});</script>
+</Div>	    
+        
+	    <!-- Facebook API is loaded into here -->
+	    <div id="fb-root"></div>
+
+        <!-- Translation - part 2 of 2 in master-->
+        <script type='text/javascript'>
+            var culturejs1 = 'en';
+            function ShowContentForCulture() {
+                var elem = document.querySelectorAll("div.translatex");  // "div.note, div.alert"
+                for (var i = 0, max = elem.length; i < max; i++) {
+                    if (elem[i].id.substring(0, 12) == 'translate-' + culturejs1)
+                        elem[i].style.display = 'block';
+                }
+                document.getElementsByTagName("html")[0].setAttribute("lang", culturejs1);
+            }
+            ShowContentForCulture();
+        </script>
+<!-- added custom stuff from Alex to get downloads to open directly -->
+<script type="text/javascript">
+//<![CDATA] 
+	addLoadEvent(PDFDownload);
+	function PDFDownload()
+	{		
+		var litems = document.getElementsByTagName("a");
+		for (var i=0; i<litems.length; i++)
+		{
+			if (litems[i].title.indexOf("Click to download the file") !== -1)
+			{
+				if ((litems[i].parentNode.innerHTML.indexOf("(Adobe PDF File)") !== -1) || (litems[i].parentNode.innerHTML.indexOf("(Microsoft Excel Workbook)") !== -1))
+				{
+				    
+				    if (isIE() <= 9 && isIE() != false) {
+				        litems[i].click();
+				    }
+				    else
+				        fireEvent(litems[i], 'click'); 
+				}
+			}
+		}
+    }
+
+    function isIE() {
+        var myNav = navigator.userAgent.toLowerCase();
+        return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+    }
+
+    function fireEvent(obj, evt) {
+
+        var fireOnThis = obj;
+        if (document.createEvent) {
+            var evObj = document.createEvent('MouseEvents');
+            evObj.initEvent(evt, true, false);
+            fireOnThis.dispatchEvent(evObj);
+
+        } else if (document.createEventObject) {
+            var evObj = document.createEventObject();
+            fireOnThis.fireEvent('on' + evt, evObj);
+        }
+    }
+
+//]]>
+</script>
+    </body>
+
+</html>

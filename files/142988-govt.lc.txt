@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>
+	Web Portal of the Government of Saint Lucia
+</title>
+<script type="text/javascript">
+    // This script defines the site Urls.
+    var Settings = {
+        siteName: 'Access Government',
+        imageServer: 'www.govt.lc/media.govt.lc'
+    };
+
+    function setBookmark() {
+        // Mozilla Firefox Bookmark
+        if ('sidebar' in window && 'addPanel' in window.sidebar) {
+            window.sidebar.addPanel(location.href, document.title, "");
+        } else if ( /*@cc_on!@*/false) { // IE Favorite
+            window.external.AddFavorite(location.href, document.title);
+        } else { // webkit - safari/chrome
+            alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
+        }
+
+        return false;
+    }
+
+    var _safeconsole = true;
+
+    function safeconsole(message) {
+        if (!_safeconsole) {
+            return;
+        }
+        else {
+            try {
+                window.console.log(message);
+            } catch (e) {
+                _safeconsole = false;
+            }
+        }
+    }
+
+</script>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" /><meta name="viewport" content="width=device-width" /><link href="/App_Themes/common.css" rel="stylesheet" /><link href="/App_Themes/pagination.css" rel="stylesheet" /><link href="/App_Themes/mediaelementplayer.css" rel="stylesheet" /><meta name="title" content="Saint Lucia - Access Government" /><meta name="description" content="Official Web Site of the Government of Saint Lucia" /><meta property="og:title" content="Saint Lucia - Access Government" /><meta property="og:description" content="Official Web Site of the Government of Saint Lucia" /><meta property="og:site_name" content="Saint Lucia - Access Government" /><meta property="og:url" content="http://www.govt.lc" /><meta property="og:image" content="http://www.govt.lc/images/528px-Coat_of_Arms_of_Saint_Lucia.svg.png" />
+    <style type="text/css">
+        #footer-menu {
+            display: table;
+            margin: 0 auto;
+        }
+
+            #footer-menu ul {
+                height: 40px;
+                background-color: #fff;
+                margin: 0;
+                padding: 0;
+                /*margin: 4px 8px 0 8px;*/
+            }
+
+            #footer-menu li {
+                display: inline-block;
+                padding: 10px 10px 0 10px;
+                height: 30px;
+            }
+
+            #footer-menu li:nth-child(5),
+            #footer-menu li:nth-child(6) {
+                padding: 8px 4px 0 4px;
+                height: 32px;
+                }
+
+            #footer-menu li:hover {
+                background-color: #000;
+            }
+
+            #footer-menu li:hover a {
+                color: #fff;
+            }
+
+                #footer-menu li a {
+                    font-family: Arial, Verdana, Helvetica, sans-serif;
+                    font-size: 10pt;
+                    color: #000;
+                    text-decoration: none;
+                    margin-top: 8px;
+                }
+
+            #footer-menu img {
+                border: none;
+            }
+
+        #mnuFooter a.static {
+            padding: 0;
+        }
+
+    </style>
+<link href="App_Themes/Default/htmldocs.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/master.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/menu.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/number_slideshow.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/ourgovt.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/screen.css" type="text/css" rel="stylesheet" /></head>
+<body>
+    <form method="post" action="./robots.txt" id="ctl01">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="/ScriptResource.axd?d=YJCxcK2hI-bLBJXUFvzl1xwDG4qG9UBzf7KAkPWgvO5honvvR13AUa0oUBBUEk5cWZrk30Npv-SCnKDWx_HcK_z3NdoCZl1AhBDboEwAHfp_YZjd9GaeSXo0xVRn2anlRAvXJOrweel_QuFGTDg37g2&amp;t=c895100" type="text/javascript"></script>
+<script src="Scripts/WebForms/MsAjax/MicrosoftAjax.js" type="text/javascript"></script>
+<script src="Scripts/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="Scripts/jquery-ui-1.11.4.min.js" type="text/javascript"></script>
+<script src="/bundles/WebFormsJs?v=N8tymL9KraMLGAMFuPycfH3pXe6uUlRXdhtYv8A_jUU1" type="text/javascript"></script>
+<script src="scripts/jquery.json-2.4.min.js" type="text/javascript"></script>
+<script src="scripts/knockout-3.4.0.js" type="text/javascript"></script>
+<script src="scripts/knockout.mapping-latest.js" type="text/javascript"></script>
+<script src="scripts/bitValues.js" type="text/javascript"></script>
+<script src="scripts/knockout.bindinghandlers.js" type="text/javascript"></script>
+<script src="scripts/xmlToObject.js" type="text/javascript"></script>
+<script src="scripts/mediaelement-and-player.js" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="193A34DB" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="vrOtOdIXTmeQbkbexSPH2O6ukNcqE4fJXJtvoD16pkRYUQEGrEE/2aXz22e7j6Xku59DdcIXJJiF7jqCX7gMymvz0ygtop56wgkIO6gPDuwHZkEEGA7gRrJLGbLVA0jZ+CT2tcfHXHFu8ZQxdqVGLA==" />
+        
+
+<div id="header">
+<div id="header-trap" style="background-image: url('/images/header.jpg'); background-repeat: no-repeat; width: 1024px; height: 217px">
+    
+    <!--brand--><br />    
+</div><!--header-trap-->
+</div><!--header-->
+<span id="mainMenu"><div class="navbar"><div class="nav-trap"><ul class="navigation"><li class="red"><a href="/">Home</a></li><li class="orange"><a href="/citizens-residents">Citizens / Residents</a></li><li class="pink"><a href="/non-residents-visitors">Non-Residents</a></li><li class="green"><a href="/businesses">Businesses</a></li><li class="blue"><a href="/government-employees">Government Employees</a></li>
+        
+<li class="searchbox"><input name="ctl00$mainMenu$SearchRequest$search" type="text" id="mainMenu_SearchRequest_search" class="inquiry" placeholder="Search" /></li>
+<li class="searchbtn"><input type="submit" name="ctl00$mainMenu$SearchRequest$cmdSearch" value="SEARCH" id="mainMenu_SearchRequest_cmdSearch" class="btn-submit" /></li>
+
+    </ul></div></div></span>
+
+<div class='container'>
+
+
+<div style="background-color: #FFFFFF;" class="clear">&nbsp;</div>
+<div id="side-left">
+    <div class="side-widget-v">
+	<h1 class="theme-match">
+		Our Government
+	</h1><ul>
+		<li><a href="http://governorgeneral.govt.lc">Governor General</a></li><li><a href="http://opm.govt.lc">Prime Minister</a></li><li><a href="/cabinet">Cabinet of Ministers</a></li><li><a href="/senate">Members of the Senate</a></li><li><a href="/house-of-assembly">House of Assembly</a></li>
+	</ul>
+</div>
+    <div class="side-widget-v">
+	<h1 class="theme-match">
+		Access Government
+	</h1><ul>
+		<li><a href="/departments">Departments</a></li><li><a href="/directory">Directory</a></li><li><a href="/statutory-bodies">Statutory Bodies</a></li><li><a href="/overseas-missions">Saint Lucia's Representatives</a></li>
+	</ul>
+</div>
+    <div class="side-widget-v">
+	<h1 class="theme-match">
+		Legislation
+	</h1><ul>
+		<li><a href="/constitution">Constitution</a></li><li><a href="/criminal-code">Criminal Code</a></li><li><a href="/legislation/labour-code">Labour Code</a></li><li><a href="/treaty-of-basseterre">Treaty of Basseterre (revised)</a></li>
+	</ul>
+</div>
+    <div class="side-widget-v">
+	<h1 class="theme-match">
+		Study
+	</h1><ul>
+		<li><a href="/scholarships">Scholarships</a></li>
+	</ul>
+</div>
+    <div class="side-widget-v">
+	<h1 class="theme-match">
+		Work with Government
+	</h1><ul>
+		<li><a href="/jobs">Job Opportunities</a></li><li><a href="/tenders">Tenders</a></li><li><a href="/consultancies">Consultancies</a></li><li><a href="/agreements">Collective Agreements</a></li>
+	</ul>
+</div>
+    <div class="side-widget-v">
+	<h1 class="theme-match">
+		Media
+	</h1><ul>
+		<li><a href="/news">Press Room</a></li><li><a href="/notices">Government Notices</a></li><li><a href="/speeches">Government Speeches</a></li>
+	</ul>
+</div>
+    <div class="side-widget-v">
+	<h1 class="theme-match">
+		Useful Links
+	</h1><ul>
+		<li><a href="/faqs">FAQs</a></li>
+	</ul>
+</div>
+    <div class="clear"></div><!--clear-->
+</div><!--side-left-->   
+
+<div id="home-mid">
+    
+    <h1>
+        
+    </h1>
+    <div>
+        
+    </div>
+
+    <div class="clear"></div><!--clear-->
+</div><!--home-mid-->  
+<div id="side-right">
+    
+        <style>
+
+#home-mid {
+    width: 548px;
+}
+        </style>
+        <div class="side-widget-v">
+	<h1 class="theme-match">
+		E-Services
+	</h1><ul>
+		<li><a href="http://efiling.govt.lc">Tax e-Filing</a></li><li><a href="http://www.rocip.gov.lc">Companies / IP</a></li><li><a href="https://customs.gov.lc">Customs / Excise</a></li>
+	</ul>
+</div>
+        <div class="side-widget-v">
+	<h1 class="theme-match">
+		Services
+	</h1><ul id="r_ServicesWidget">
+		<li><a href="/services/accounting-business-services">Accounting/Business Services</a></li><li><a href="/services/accreditation-of-ambassadors-and-presentation-of-credentials">Accreditation of Ambassadors and Presentation of Credentials</a></li><li><a href="/services/accreditation-of-saint-lucian-representatives-overseas">Accreditation of Saint Lucian Representatives Overseas</a></li><li><a href="/services/administration-services">Administration services</a></li><li><a href="/services/">More...</a></li>
+	</ul>
+</div>
+        <div class="side-widget-v">
+	<h1 class="theme-match">
+		Forms
+	</h1><ul id="r_FormsWidget">
+		<li><a href="/forms/-awards-in-confidence--nomination-form-v2-0-doc">- AWARDS IN CONFIDENCE - Nomination Form v2.0.doc</a></li><li><a href="/forms/client-information-request-form"> Client Information Request Form</a></li><li><a href="/forms/application-for-a-live-and-featured-music-permit">Application for a Live and Featured Music Permit</a></li><li><a href="/forms/application-for-a-saint-lucia-passport-form-a-">Application for a Saint Lucia Passport (Form A)</a></li><li><a href="/forms/">More...</a></li>
+	</ul>
+</div>
+        
+        <div class="side-widget-v">
+	<h1 class="theme-match">
+		Popular Links
+	</h1><ul id="r_PopularLinksWidget">
+		<li><a href="http://athena.smu.ca/survey/index.php?sid=36126&amp;lang=en " target="_blank">2015-2020 Education Sector Strategy Survey</a></li><li><a href="http://www.carcip.govt.lc/" target="_blank">CARCIP</a></li><li><a href="http://www.caricom.org" target="_blank">Caribbean Community (CARICOM)</a></li><li><a href="http://www.cdema.org" target="_blank">Caribbean Disaster Emergency Management Agency (CDEMA)</a></li><li><a href="http://www.col.org" target="_blank">Commonwealth of Learning</a></li>
+	</ul>
+</div>
+        <div class="side-widget-v">
+	<h1 class="theme-match">
+		Publications
+	</h1><ul id="r_PublicationsWidget">
+		<li><a href="/media.govt.lc/www/resources/publications/csa.salcc-collective-agreement-2013-2016.pdf">CSA.SALCC COLLECTIVE AGREEMENT 2013-2016.pdf</a></li><li><a href="/publications/saint-lucia-civil-service-association-2013-2016">Saint Lucia Civil Service Association 2013-2016</a></li><li><a href="/publications/national-workers-union-2013-2016">National Workers Union 2013-2016</a></li><li><a href="/publications/salcc-and-csa-2013-2016">SALCC and CSA 2013-2016</a></li><li><a href="/publications/">More...</a></li>
+	</ul>
+</div>
+        <div class="clear">
+        </div>
+        <!--clear-->
+    
+</div>
+<!--side-left-->    
+<div class="clear">
+</div>
+<!--clear-->
+</div><!--container-->
+<div id="footer">
+	<div id="footer-trap">
+
+            <div id="footer-menu" style="margin: 20px auto 20px auto;">
+                <div id="mnuFooter">
+	<ul class="level1">
+		<li><a class="level1" href="/">Home Page</a></li><li><a class="level2" href="/feedback">Feedback</a></li><li><a class="level2" href="/##"><span style='cursor:pointer;' onclick='return setBookmark();'>Bookmark</span></a></li><li><a class="level2" href="/login">Login</a></li><li><a class="level2" href="https://www.facebook.com/SaintLuciaGovernment"><img src="images/Facebook-icon-24.png" alt="" title="" class="icon" /></a></li><li><a class="level2" href="http://www.youtube.com/user/saintluciagovernment"><img src="images/youtube-icon2-24.png" alt="" title="" class="icon" /></a></li>
+	</ul>
+</div>
+                
+            </div>
+
+    <div class="clear"></div><!--clear-->
+    </div>
+</div><!--footer-->
+
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-47259099-1', 'govt.lc');
+    ga('send', 'pageview');
+
+</script>
+
+
+<script type='text/javascript'>new Sys.WebForms.Menu({ element: 'mnuFooter', disappearAfter: 500, orientation: 'horizontal', tabIndex: 0, disabled: false });</script></form>
+</body>
+</html>

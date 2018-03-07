@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 fieldsetansitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Web Hosting Control Panel Login</title>
+	<link rel="stylesheet" type="text/css" href="/themes/black-tie/theme.css" id="themeid" />
+	<link href="/js/video-js/video-js.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/styles.min.css?v=1503908908" />
+<script type="text/javascript" src="/js/jses.min.js?v=1493043023"></script>
+<script type="text/javascript">
+//<![CDATA[
+var please_wait_lang = 'Please wait a few seconds';
+var msg_loading_lang = 'Loading';
+var msg_success_lang = 'Hurray!';
+var msg_error_lang = 'Oops!';
+var msg_notice_lang = 'Important notice';
+//]]>
+</script>
+	<script type="text/javascript" src="/js/jquery_plugins/jquery-fonteffect-1.0.0.min.js"></script> 
+	<script src="/js/video-js/video.min.js"></script>	
+	<script type="text/javascript">
+		  _V_.options.flash.swf = "/js/video-js/video-js.swf";
+
+		$(function(){ 
+			$('#forgottenPass').FontEffect({ 
+				mirror:true,
+				mirrorColor: "#686868",
+				mirrorOffset: 34,
+				mirrorHeight: 100,
+				mirrorDetail: 1,
+				mirrorTStart: 0.2
+			});
+
+			$('#username').focus();
+			create_dialog($('#intro_video_dialog'), {
+				'buttons': {
+					'Continue': function() {
+						$(this).dialog('close');
+					}
+				}
+			}, false);
+			$('#intro_video_link').click(function() {
+				$('#intro_video_dialog').dialog('open');
+			});
+
+			
+			$("#login-form form").on('submit', function() {
+				$('input[type=image]', this).each(function() {
+					$(this).prop("disabled", true);
+				});
+			});
+
+									
+			//$('#normal_login_button').on('click', function() { $("#login-form form").submit(); });
+			
+			$('#username, #password').on('keypress', function(e) {
+				if (e.keyCode == 13)
+					$("#login-form form").submit();
+			});
+		});
+
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	      
+		ga('create', 'UA-1074220-29', 'us.cloudlogin.co');
+		ga('send', 'pageview');
+	      
+		/*
+		var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-1074220-29']);
+				_gaq.push(['_setDomainName', 'us.cloudlogin.co']);
+				_gaq.push(['_trackPageview']);
+	      
+		(function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  //ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+		*/
+  
+	
+	</script>
+</head>
+<body class="loginpage">
+<div id="tm_logo"></div>
+<div id="login-form">
+	<form action="/login" method="post"  class="loginform">
+		<fieldset>
+			<label for="username">Username:</label>
+			<input type="text" name="username" id="username" value="" />
+		</fieldset>
+		<fieldset>
+			<label for="password">Password:</label>
+			<input type="password" name="password" id="password" value="" />
+			<input type="hidden" name="returnURL" id="returnURL" value="" />
+		</fieldset>
+				<div style="text-align: center">
+			<input type="submit" value="Login" id="normal_login_button">
+					<div id="idps">
+		<div class="header">Login with:</div>
+				<div class="inside">
+			<a href="https://social.cloudlogin.co?state=eEd1TlVHRjI3OHlKUGNkMlZIWnVBb1NJNWNQR3NWZzU0QS93dW5aTGhzUWEzLzUrNDY2elZaYUZ4UWE2b1ZDNTZacGhCZXY3UWdOZmVYN0lHcTRMQjcyeW9WcTE2WUtnbXhZL3U2TE91blFkSnZ0MitRZG9WY0ZVTXpka2crMGEzaFVZUGcrOHZ3WFlOYlBNYWhXaWxRMTNmWUZnRWNIditLTUVscXErR3k3UnQ5VVZOR2xRNFh0OEhXdHFKeEZR&_ts=1504143761" class="link_to" data-popup-width="400" data-popup-height="500">
+				<img src="/images/facebook_icon_48.png" width="32" title="facebook" />
+			</a>
+		</div>
+				<div class="inside">
+			<a href="https://social.cloudlogin.co?state=eEd1TlVHRjI3OHlKUGNkMlZIWnVBb1NJNWNQR3NWZzU0QS93dW5aTGhzUWEzLzUrNDY2elZaYUZ4UWE2b1ZDNTZacGhCZXY3UWdOZmVYN0lHcTRMQjcyeW9WcTE2WUtnbXhZL3U2TE91blFkSnZ0MitRZG9WY0ZVTXpka2crMGFrT241cU5EWVl6NGw1YmtFb0xzcm03QXczazA0Y1p4a3Bta0thUmI2eGEvZjI3WTNhSEV0VklqbHk2UGR3SXpZ&_ts=1504143761" class="link_to" data-popup-width="430" data-popup-height="570">
+				<img src="/images/google_icon_48.png" width="32" title="google" />
+			</a>
+		</div>
+				<div class="inside">
+			<a href="https://social.cloudlogin.co?state=eEd1TlVHRjI3OHlKUGNkMlZIWnVBb1NJNWNQR3NWZzU0QS93dW5aTGhzUWEzLzUrNDY2elZaYUZ4UWE2b1ZDNTZacGhCZXY3UWdOZmVYN0lHcTRMQjcyeW9WcTE2WUtnbXhZL3U2TE91blFkSnZ0MitRZG9WY0ZVTXpka2crMGFrTUU5Y0d4bDFtWjBFVEYzNkxqc1lGcUs3N3lSTjE2ZnBadFJmWUNBbHBaN1ByUm9UVG56L25BOGlYcnIvTkd5&_ts=1504143761" class="link_to" data-popup-width="600" data-popup-height="570">
+				<img src="/images/yahoo_icon_48.png" width="32" title="yahoo" />
+			</a>
+		</div>
+			</div>
+	
+	<script type="text/javascript">
+		$(".link_to").on('click', function(e) {
+			e.preventDefault();
+			var width = $(this).data('popup-width') || 600;
+			var height = $(this).data('popup-height') || 500;
+			popupwindow($(this).attr('href'), 'hybridauth_social_sing_on', width, height);
+		});
+	</script>
+			<div id="forgot">
+				<a href="/login/lost-password">
+					<span id="forgottenPass">Forgotten Password</span>
+				</a>
+			</div>
+		</div>
+	</form>
+</div>
+	<div id="support-cont">
+	<span class="support-head">
+		<strong>NEED HELP?</strong>
+	</span>
+	<span class="support-text">
+		Give us a call at: 
+		<p><strong>Toll-free USA:</strong> +1-855-211-0932 | <strong>UK:</strong> +44-20-3695-1294 | <strong>AU:</strong> +61-2-8417-2372<p>
+	</span>
+</div>
+
+<center>
+<a id="intro_video_link"><img src="/images/play_icon.png" border="0" /> Watch Hepsia Web Hosting Control Panel Introduction Video</a>
+<div id="intro_video_dialog" title="Control Panel Introduction" style="display: none">
+	<video id="intro_video" class="video-js vjs-default-skin" controls preload="auto" width="640" height="378" data-setup="{}">
+	  <source src="https://videos.hepsia.com/intro-video/intro-video.flv" type='video/flv'>
+	</video>
+</div>
+</center>
+</body>
+</html>

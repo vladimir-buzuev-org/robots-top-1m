@@ -1,0 +1,64 @@
+# Authored by Jon Ritchie 2017-06-28 
+#
+# This file tells search engines what parts of the website to ignore
+# Examples:
+# Query paramenters - different URLs leading to the same content because of a marketing code
+# Content management systems - Drupal CMS entery uses the subfolder which shouldn't be public
+# 
+# 
+#
+# For more information: http://www.robotstxt.org/robotstxt.html
+# 
+#
+# NO JITTER
+#
+# Wildcard * is used to note that all web crawlers should use this file
+User-agent: *
+
+# Crawl-delay is ignored by Google, but slows other webcrawlers to not overload your site (in seconds)
+Crawl-delay: 10
+
+# Ensures that JavaScript, Images, and CSS (Cascading Style Sheet) are not blocked (Help Googlebot understand your site)
+Allow: *.css
+Allow: *.js
+Allow: *.gif
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+
+# Hides variations of URLs from Query Parameters (tracking codes, internal search and filter values) ON No Jitter
+Disallow: /*?
+
+# Hides error messages - NOT on No Jitter
+Disallow: /errors/
+# Hides search results - ON No Jitter
+Disallow: /search/
+Disallow: /sitesearch/
+Disallow: /advanced_search/
+
+# Hides CMS entry - No Jitter
+Disallow: /edit/
+Disallow: /nojitter-admin*
+Disallow: /site-admin*
+
+# Hides Other links - No Jitter
+Disallow: /welcome.php
+Disallow: /omniture
+Disallow: /adminarticlelinks
+Disallow: /loadcommentdetails
+Disallow: /checkauth.php
+Disallow: /omnloginstatus.php
+Disallow: /authenticate
+Disallow: /auth/login/token
+Disallow: /disqussetting
+Disallow: /login
+Disallow: /auth/exauth/success
+Disallow: /auth/exauth/auth
+Disallow: /forgotpassword
+Disallow: /registration/index
+Disallow: /registerthankyou
+Disallow: /changepassword/
+Disallow: /auth/password/reset
+
+# Provides sitemap URL
+Sitemap: http://www.nojitter.com/sitemap.xml

@@ -1,0 +1,2562 @@
+<!DOCTYPE html>
+	<html xml:lang="de" lang="de">
+	<head>		<title>Buchsuchmaschine - gebrauchte, antiquarische Bücher günstig kaufen</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Eurobuch.com ist DER Preisvergleicher für gebrauchte oder antiquarische Bücher und Neubücher in Europa." /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0" />
+								<link rel="alternate" hreflang="de" href="https://www.eurobuch.com/" />
+									<link rel="alternate" hreflang="de-de" href="https://www.eurobuch.de/" />
+									<link rel="alternate" hreflang="de-at" href="https://www.eurobuch.at/" />
+									<link rel="alternate" hreflang="de-ch" href="https://www.eurobuch.ch/" />
+									<link rel="alternate" hreflang="fr-ch" href="https://fr.eurobuch.ch/" />
+									<link rel="alternate" hreflang="it-ch" href="https://it.eurobuch.ch/" />
+									<link rel="alternate" hreflang="en-gb" href="https://www.euro-book.co.uk/" />
+									<link rel="alternate" hreflang="en" href="https://www.find-more-books.com/" />
+									<link rel="alternate" hreflang="it" href="https://www.eurolibro.it/" />
+									<link rel="alternate" hreflang="fr" href="https://www.eurolivre.fr/" />
+									<link rel="alternate" hreflang="es-es" href="https://www.terralibro.es/" />
+									<link rel="alternate" hreflang="es" href="https://www.terralibro.com/" />
+									<link rel="alternate" hreflang="nl" href="https://www.euro-boek.nl/" />
+									<link rel="alternate" hreflang="pt" href="https://www.eurolivro.pt/" />
+									<link rel="alternate" hreflang="pt-br" href="https://www.terralivro.com/" />
+									<link rel="alternate" hreflang="x-default" href="https://www.eurobuch.com/" />
+						<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="verify-v1" content="slHYf9q90OHE+jEx1CHSgq6nYDxeagj5PksQN2GQ8T8=" />
+		<meta property="og:site_name" content="Eurobuch" />
+		<meta property="og:title" content="Buchsuchmaschine - gebrauchte, antiquarische Bücher günstig kaufen" />
+		<meta property="og:locale" content="de" />
+				<meta name="robots" content="index, follow, all" />
+				<link rel="shortcut icon" href="//www.eurobuch.com/favicon02.ico" />
+		<link rel="apple-touch-icon" href="//www.eurobuch.com/apple-touch-icon.png"/>
+		<link href="/css-min/layout-2017-05-17-min.css" rel="stylesheet" type="text/css" />			<link rel="search" type="application/opensearchdescription+xml" title="Eurobuch" href="https://www.eurobuch.com/browser_plugins/opensearch/eurobuch_openSearch.xml" />
+			<link rel="search" type="application/opensearchdescription+xml" title="Eurobuch (Autor)" href="https://www.eurobuch.com/browser_plugins/opensearch/eurobuch_openSearch_author.xml" />
+			<link rel="search" type="application/opensearchdescription+xml" title="Eurobuch (Titel)" href="https://www.eurobuch.com/browser_plugins/opensearch/eurobuch_openSearch_title.xml" />
+			<link rel="search" type="application/opensearchdescription+xml" title="Eurobuch (ISBN)" href="https://www.eurobuch.com/browser_plugins/opensearch/eurobuch_openSearch_isbn.xml" />
+					<script type="text/javascript">
+			var URL_EUROBUCH = '/';
+			var URL_AJAX = '/ajax/';
+			var RESULTS_NUM_MANY = '120';
+		</script>
+		<script src="/js-min/all-2017-05-17.min.js" type="text/javascript"></script><script type="text/javascript" src="/extlib/xoad/js/xoad_optimized.js"></script>
+	<script>
+
+		function facebookLoginShowLoader() {
+			$('.fb-login-button').hide();
+			$('.fb-login-button-loader').show();
+		}
+
+		// Login button onlogin handler
+		function facebookLoginCallback(registrationType, loginBacklink) {
+			FB.getLoginStatus(function (response) {
+				facebookStatusChanged(response.status, registrationType, loginBacklink);
+			});
+		}
+
+		function facebookStatusChanged(status, registrationType, loginBacklink) {
+			if (typeof loginBacklink === 'undefined') {
+							}
+			facebookLoginShowLoader();
+			if (status === 'connected') {
+				$.ajax({
+					url: "/ajax/facebook_login.php",
+					cache: false,
+					async: false,
+					data: {
+						'registrationType': registrationType
+					},
+					success: function(data, textStatus, jqXHR) {
+						if (typeof loginBacklink !== 'undefined') {
+							window.location.href = loginBacklink;
+						} else {
+							var loginForm = $('#login_small');
+							if (loginForm.length > 0) {
+								loginForm.html('<img src="/images/parts/loader_01.gif" />');
+								$.ajax({
+									url: "/ajax/control_center.php",
+									cache: false,
+									async: true,
+									success: function(data, textStatus, jqXHR) {
+										loginForm.replaceWith(data);
+										if (typeof FB !== 'undefined') {
+											FB.XFBML.parse();
+										}
+									}
+								})
+							}
+						}
+					}
+				});
+			}
+			else {
+				$.ajax({
+					url: "/ajax/facebook_logout.php",
+					cache: false,
+					async: false,
+					success: function (data, textStatus, jqXHR) {
+						window.location.href = '/facebook_logged_out.php';
+					}
+				});
+			}
+		}
+
+		window.fbAsyncInit = function () {
+			FB.init({
+				appId: '1562292770733565',
+				cookie: true,  // enable cookies to allow the server to access the session
+				xfbml: true,  // parse social plugins on this page
+				version: 'v2.6' // use version 2.1
+			});
+
+			var eurobuchFacebookSessionSet = false;
+			var eurobuchFacebookSessionBroken = false;
+			var facebookLogoutUrl = '';
+						FB.getLoginStatus(function (response) {
+				if (response.status === 'connected' ? !eurobuchFacebookSessionSet : eurobuchFacebookSessionSet) {
+					facebookStatusChanged(response.status, -1);
+				}
+				if (response.status === 'connected' && eurobuchFacebookSessionBroken) {
+					$.ajax({
+						url: "/ajax/facebook_clearBroken.php",
+						cache: false,
+						async: false,
+						success: function (data, textStatus, jqXHR) {
+							window.location.href = facebookLogoutUrl;
+						}
+					});
+				}
+			});
+		};
+
+				// Load Facebook SDK asynchronously
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/de_DE/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+	</script>
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5505348-1', 'eurobuch.com');
+  ga('set', 'anonymizeIp', true);
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>
+	</head>
+		<body>
+	<script type="text/javascript">
+	(function rdRawInit() {
+		if (eurobuch.app.isForceWideLayout()) {
+			return;
+		}
+		var w = window,
+			d = document,
+			e = d.documentElement,
+			g = d.getElementsByTagName('body')[0],
+			x = w.innerWidth || e.clientWidth || g.clientWidth;
+		if (x && x > 100 && g) {
+			if (x >= 1000) {
+				return;
+			} else if(x>=787) {
+				g.className=g.className + " mm1";
+			} else if(x>=517) {
+				g.className=g.className + " mm2";
+			} else {
+				g.className=g.className + " mm3";
+			}
+		}
+	})();
+	</script>
+	<script src="/extlib/wz_tooltip/wz_tooltip-min.js" type="text/javascript"></script>
+		  <div id="page_margins" class="pageframe-default">
+	    <div id="topnav">
+	      <!-- start: skip link navigation -->
+	      <a class="skip" title="skip link" href="#navigation"> Skip to the navigation </a><span class="hideme">.</span>
+	      <a class="skip" title="skip link" href="#content">Skip to the content</a><span class="hideme">.</span>
+	      <!-- end: skip link navigation -->
+	    </div>
+	    	    <div id="page">
+		  <div id="lang_globe"><a title="Deutsch" href="#"><img src="/images/layout/globus.png" alt="Deutsch" /></a></div>
+		<div id="lang_flag"><a title="Niederlande" href="#"><img style="padding-left:7px;padding-top:6px" src="/images/flags32/NLD.png" alt="Niederlande" /></a></div>
+				<div id="lang_hider" style="display:none;"></div>
+		<div id="lang_box">
+		<a id="lang_close" href="#">&nbsp;</a>
+		<input id="lang_search" name="lang_search" value="" type="text" />
+		<div id="lang_result">
+		<div class="lang_result_entry"><a rel="nofollow" href="https://www.eurobuch.de/?sCountry=deu" title="Deutschland/Deutsch"><img src="/images/flags/DEU.gif" alt="Deutschland" />Deutsch</a></div><div class="lang_result_entry"><a rel="nofollow" href="https://www.eurobuch.at/?sCountry=aut" title="Österreich/Deutsch"><img src="/images/flags/AUT.gif" alt="Österreich" />Deutsch</a></div><div class="lang_result_entry"><a rel="nofollow" href="https://www.eurobuch.ch/?sCountry=che" title="Schweiz/Deutsch"><img src="/images/flags/CHE.gif" alt="Schweiz" />Deutsch</a></div><div class="lang_result_entry"><a rel="nofollow" href="https://fr.eurobuch.ch/?sCountry=che" title="Schweiz/Français"><img src="/images/flags/CHE.gif" alt="Schweiz" />Français</a></div><div class="lang_result_entry"><a rel="nofollow" href="https://it.eurobuch.ch/?sCountry=che" title="Schweiz/Italiano"><img src="/images/flags/CHE.gif" alt="Schweiz" />Italiano</a></div><div class="lang_result_entry"><a rel="nofollow" href="https://www.find-more-books.com/?sCountry=usa" title="United States/English"><img src="/images/flags/USA.gif" alt="United States" />English</a></div><div class="lang_result_entry"><a rel="nofollow" href="https://www.euro-book.co.uk/" title="United Kingdom/English"><img src="/images/flags/GBR.gif" alt="United Kingdom" />English</a></div><div class="lang_result_entry"><a rel="nofollow" href="https://www.terralibro.es/" title="España/Español"><img src="/images/flags/ESP.gif" alt="España" />Español</a></div><div class="lang_result_entry"><a rel="nofollow" href="https://www.terralibro.com/?sCountry=mex" title="México/Español"><img src="/images/flags/MEX.gif" alt="México" />Español</a></div><div class="lang_result_entry"><a rel="nofollow" href="https://www.eurolivre.fr/?sCountry=fra" title="France/Français"><img src="/images/flags/FRA.gif" alt="France" />Français</a></div><div class="lang_result_entry"><a rel="nofollow" href="https://www.eurolibro.it/?sCountry=ita" title="Italia/Italiano"><img src="/images/flags/ITA.gif" alt="Italia" />Italiano</a></div><div class="lang_result_entry"><a rel="nofollow" href="https://www.euro-boek.nl/?sCountry=nld" title="Nederland/Nederlands"><img src="/images/flags/NLD.gif" alt="Nederland" />Nederlands</a></div><div class="lang_result_entry"><a rel="nofollow" href="https://www.eurolivro.pt/?sCountry=prt" title="Portugal/Português"><img src="/images/flags/PRT.gif" alt="Portugal" />Português</a></div><div class="lang_result_entry"><a rel="nofollow" href="https://www.terralivro.com/?sCountry=bra" title="Brasilien/Português"><img src="/images/flags/BRA.gif" alt="Brasilien" />Português</a></div>		</div>
+		<div id="lang_shadow_ro"></div>
+		<div id="lang_shadow_r"></div>
+		<div id="lang_shadow_ru"></div>
+		<div id="lang_shadow_u"></div>
+		<div id="lang_shadow_lu"></div>
+		</div>
+		<script type="text/javascript">
+			jQuery(function () {
+			    jQuery("#lang_hider, #lang_box").hide();
+				jQuery("#lang_globe a,#lang_flag a").click(function (e) {
+					e.preventDefault();
+					jQuery("#lang_search").css("background-image","url('/images/layout/lang_mylanguage.png')").val("");
+					jQuery("#lang_flag").fadeOut(400);
+					jQuery("#lang_box, #lang_hider").fadeIn(400);
+					jQuery("#lang_search").focus();
+					
+				});
+				jQuery("#lang_close").click(function (e) {
+					e.preventDefault();
+					jQuery("#lang_flag").fadeIn(400);
+					jQuery("#lang_box, #lang_hider").fadeOut(400);
+				});
+				jQuery("#lang_search").keyup(function (e) {
+					var val;
+					jQuery("#lang_search").css("background-image","none");
+					val=jQuery("#lang_search").val();
+					if(val.length>0) {
+						jQuery.getJSON('/i.php?jsonpcallback=?',{op:'lse',search:val,baseUrl:"\/",scriptFilename:"\/ssd\/www\/eurobuch\/index.php",isbn:null,hid:null},function (html) {
+							jQuery("#lang_result").html(html);
+						});
+					}
+				});
+			});
+		</script>						<div id="header" class="floatbox">
+	      	<div class="floatbox">
+	      		<div id="nav_header">
+			<div style="float: right;"><span id="nav_header_membership"><a href="/membership.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">MEIN EUROBUCH</a><img src="/images/layout/nav_header_divider_01.gif" alt=" " /></span><span id="nav_header_help"><a href="/help.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Hilfe</a><img src="/images/layout/nav_header_divider_01.gif" alt=" " /></span><span id="nav_header_contact"><a href="/contact.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Kontakt</a><img src="/images/layout/nav_header_divider_01.gif" alt=" " /></span><span id="nav_header_about"><a href="/about.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Über uns</a></span>
+			</div>
+			<span id="hamburger-back" class="hidden" data-label="Zurück"></span>
+	    </div>	      	</div>
+	      	<a title="eurobuch.com" href="/?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"><img id="logo" src="/images/layout/logo_header_02.gif" alt="eurobuch.com" /></a>	      	<h1 id="claim"><a title="eurobuch.com" href="/?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Bücher: Finden. Vergleichen. Kaufen.</a></h1>
+							<img id="banner_1" src="/images/layout/banner_header_bg_01.gif" alt="eurobuch.com" />
+				<h2 id="slogan">Die Buch-Such-Maschine<br/>
+		<span style="font-size: 80%; font-weight: normal;">Antiquariat, Neubücher, Musik</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>						  </div>
+	      <div id="nav">
+	        <!-- skiplink anchor: navigation -->
+	        <a id="navigation"></a>
+	        <div id="nav_main">
+	       	  <img id="nav_corner" src="/images/layout/nav_main_corner_02.gif" alt="" />
+			  		<ul id="mainNavigationBar">
+						            <li><a onclick="ga('send','event','CLK-Main-Nav','Alle B\u00fccher');" href="/search.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Alle Bücher</a></li>
+							            <li><a onclick="ga('send','event','CLK-Main-Nav','Gedruckte B\u00fccher');" href="/search.php?mediatype=13&PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Gedruckte Bücher</a></li>
+							            <li><a onclick="ga('send','event','CLK-Main-Nav','eBooks');" href="/search.php?mediatype=11&PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">eBooks</a></li>
+							            <li><a onclick="ga('send','event','CLK-Main-Nav','H\u00f6rb\u00fccher');" href="/search.php?mediatype=12&PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Hörbücher</a></li>
+							            <li><a onclick="ga('send','event','CLK-Main-Nav','Musik');" href="/search.php?mediatype=1&PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Musik</a></li>
+								</ul>	          <!-- main navigation: #nav_main -->
+	        </div>
+	      </div>
+				<div id="nav2">						<img id="nav_corner2" src="/images/layout/nav_main_corner_04.gif" alt="" />
+					<div id="nav_bar2"></div>
+				</div>
+	      <div id="main">
+	        <div id="col1">
+	          <div id="col1_content" class="clearfix">
+	          			<div class="boxstack">
+					      <div class="box_title" id="boxTitle_login_small">
+		        <img class="corner_left" src="/images/layout/box_title_left_01.gif" alt="" />
+						<img class="corner_right" src="/images/layout/box_title_right_01.gif" alt="" />
+						Anmelden		          	</div>
+					<div class="box_content" id="boxContent_login_small">
+						<div id="login_small">			<form action="https://www.eurobuch.com/login.php" method="post" accept-charset="UTF-8"><input type="hidden" name="PHPSESSID" value="4tfr2lvf0uh4uhr40fna4oute6" />
+					<input type="hidden" name="backlink" value="/index.php?" />
+		<input type="hidden" name="login_remember_optional" value="1" />
+					<div><label for="login_email">E-Mail:</label></div>
+				<div><input type="text" name="ajax_login_email" id="login_email" /></div>
+				<div><label for="login_password">Passwort:</label></div>
+				<div><input type="password" name="ajax_login_password" id="login_password" /></div>
+				<div id="login_small_submit">
+					<input class="button" type="submit" name="ajax_login_submit" value="einloggen" />
+					<div>
+						<table cellpadding="0" cellspacing="0">
+							<tr style="height: 20px;">
+								<td valign="middle"><input type="checkbox" class="checkbox" name="login_remember" id="login_remember" checked="checked" value="1" /></td>
+								<td valign="middle"><label for="login_remember">&nbsp;angemeldet bleiben</label></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</form>
+							<hr />
+				Anmelden mit Facebook:<br/>
+				<div style="height: 25px; margin-top: 2px;">
+					<div scope="public_profile,email" onlogin="facebookLoginCallback(0);" class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
+					<img src="/images/parts/loader_01.gif" class="fb-login-button-loader" />
+				</div>
+							<hr />
+			<p>
+				<a rel="nofollow" href="/registration.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Registrieren</a><br/>
+				<a rel="nofollow" onclick="redirectToPasswordForgotten(jQuery('#login_email').val()); return false;" href="/request_password.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Passwort vergessen?</a><br/>
+			</p>
+			<hr />
+			<p>
+				<a rel="nofollow" href="/search_history.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Such-Historie</a><br/>
+				<a rel="nofollow" href="/watchlist.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Merkliste</a><br/>
+				<a rel="nofollow" href="/partner_components.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Links zu eurobuch.com</a>
+			</p>
+					</div>					</div>
+							      <div class="box_title" id="boxTitle_social_bookmarks">
+		        <img class="corner_left" src="/images/layout/box_stacked_title_left_01.gif" alt="" />
+						<img class="corner_right" src="/images/layout/box_stacked_title_right_01.gif" alt="" />
+						Social Bookmarks		          	</div>
+					<div class="box_content" id="boxContent_social_bookmarks">
+						<div class="floatbox" id="social_bookmarks">
+					<div id="fb-root"></div>
+			<script>(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/de_DE/all.js#xfbml=1";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+			<div class="layout float_left">
+			<div class="fb-like" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false" ></div>			</div>
+			<div class="layout float_left">
+			<div class="g-plusone" data-size="tall"></div>				<script type="text/javascript">
+				  window.___gcfg = {lang: 'de'};
+
+				  (function() {
+					var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+					po.src = 'https://apis.google.com/js/platform.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+				  })();
+				</script>			
+			</div>
+			<div class="layout float_left">
+			<a class="twitter-share-button" href="https://twitter.com/intent/tweet"  data-hashtags="eurobuch.com" data-size="large" data-lang="de">T</a>
+			<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+</div>
+					</div>					</div>
+							      <div class="box_title">
+		        <img class="corner_left" src="/images/layout/box_stacked_title_left_01.gif" alt="" />
+						<img class="corner_right" src="/images/layout/box_stacked_title_right_01.gif" alt="" />
+						Aktuelles		          	</div>
+					<div class="box_content">
+						<div style="width: 160px; margin: 0 auto;"><a style="display:block;" href="/click.php?link_id=194&PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6" target="_blank" title="Phönix 2018"><img src="/upload/banner/194.jpg?r=4081" border="0" alt="Phönix 2018" title="Phönix 2018" /></a>
+</div>					</div>
+							      <div class="box_title">
+		        <img class="corner_left" src="/images/layout/box_stacked_title_left_01.gif" alt="" />
+						<img class="corner_right" src="/images/layout/box_stacked_title_right_01.gif" alt="" />
+						Tipp von eurobuch.com		          	</div>
+					<div class="box_content">
+						<div style="width:160px;padding-bottom:8px; margin: 0 auto;"><strong><a style="color:black;font-size:16px;" href="/selling.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Buch verkaufen</a></strong><br /><hr /></div>
+		<div style="width: 160px; margin: 0 auto;"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Wide Sky -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-0027486169271809"
+     data-ad-slot="1177020972"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>					</div>
+							      <div class="box_title">
+		        <img class="corner_left" src="/images/layout/box_stacked_title_left_01.gif" alt="" />
+						<img class="corner_right" src="/images/layout/box_stacked_title_right_01.gif" alt="" />
+						Mitgliedsantiquariate		          	</div>
+					<div class="box_content">
+						<div class="bookstore_presentation_company">
+				Antiquariat Christian<br />Goerlitz			</div>
+						<div class="bookstore_presentation_address">
+				Industriestr. 9<br/>96919 Utting a.<br />Ammersee			</div>
+			<div class="bookstore_presentation_link">
+				<a target="_self" href="/visitingcard.php?id=55395&PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Homepage</a>
+			</div>
+					<hr />
+		<div style="text-align: center">
+			<a href="member_bookstores.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">alle Mitgliedsantiquariate..</a>
+		</div>					</div>
+							      <div class="box_title">
+		        <img class="corner_left" src="/images/layout/box_stacked_title_left_01.gif" alt="" />
+						<img class="corner_right" src="/images/layout/box_stacked_title_right_01.gif" alt="" />
+						Partner-Websites		          	</div>
+					<div class="box_content">
+						<div class="partner_presentation_name">
+				<a rel="nofollow" href="http://www.roma-antiqua.de" target="_blank">
+					www.roma-antiqua.de				</a>
+			</div>
+					
+							<div class="partner_presentation_logo">
+					<a rel="nofollow" target="_blank" href="http://www.roma-antiqua.de"><img src="/images/thumbcache/2fe8d02236b39e7f1374886ab60ef7bc.150.jpg" width="150" height="150" alt="" class="bordered" style="max-width: 150px; max-height: 150px;" /></a>
+				</div>				
+							<div class="partner_presentation_description">
+				Das antike Rom,<br />Reise-Infos,<br />Diskussionsforum			</div>
+					<hr />
+		<div style="text-align: center">
+			<a rel="nofollow" href="partners.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">alle Affiliates..</a>
+		</div>					</div>
+									<div class="box_footer">
+					<img class="corner_left" src="/images/layout/box_bottom_left_01.gif" alt="" />
+					<img class="corner_right" src="/images/layout/box_bottom_right_01.gif" alt="" />
+				</div>
+						</div>
+			          </div>
+	        </div>
+	        <div id="col3" >
+	          <div id="col3_content" class="clearfix">
+	
+              <!--Hier beginnt der neue startseitentext, geht bis zum schluß!-->
+              			  <h2 id="titleDesktop" class="s4">Jedes Buch - eurobuch.com <span class="subtitle">- wenn Sie Ihr Buch hier nicht finden, wo sonst?</span></h2>
+				  <h2 id="titleMobile" class="s4">Jedes Buch - <span class="subtitle">Finden. Vergleichen. Kaufen</span></h2><div class="searchFormContainer">
+			<form rel="nofollow" id="search-main" class="searchForm collapsed mediatype-0" method="get" action="/search_results.php" data-label="Suche" data-autocomplete="true"><input type="hidden" name="PHPSESSID" value="4tfr2lvf0uh4uhr40fna4oute6" />
+				<div class="tabRow">
+					<div>
+						<img style="float: left;" src="/images/layout/box_tab_left_current_02.gif" />
+						<img style="float: right;" src="/images/layout/box_tab_right_current_02.gif" />
+					</div>
+				</div>
+
+					<input type="hidden" name="updatePresets" value="1" />
+		<input type="hidden" name="updateProState" value="1" />
+		<input type="hidden" name="proSearch" value="" />
+		<input type="hidden" name="mediatype" value="" />
+	
+								<div class="fulltextContainer labeledInput">
+					<label for="search-main_search"><span title="Stichwort">Volltext</span>:</label>
+					<div>
+						<input id="search-main_search" type="text" name="search" value="" />
+					</div>
+				</div>
+
+				<div class="basicSearchRow">
+					<div class="basicInputCol">
+
+													<div class="labeledInput">
+								<label for="search-main_author">Autor:</label>
+								<div>
+									<input type="text" id="search-main_author" name="author" value="" />
+								</div>
+							</div>
+						
+												<div class="labeledInput">
+							<label for="search-main_title">Titel:</label>
+							<div>
+								<input type="text" id="search-main_title" name="title" value="" />
+							</div>
+						</div>
+
+						
+												<div class="labeledInput">
+							<label for="search-main_isbn">ISBN:</label>
+							<div>
+								<input type="text" id="search-main_isbn" name="isbn" value="" />
+							</div>
+						</div>
+
+													<div class="labeledInput publisherInput">
+								<label for="search-main_publisher">
+									Verlag:
+								</label>
+								<div>
+									<input type="text" id="search-main_publisher" name="publisher" value="" />
+								</div>
+							</div>
+							
+								<div class="toggleCollapsedContainer">
+			<input class="simpleSearch button" type="submit" value="Detailsuche" />
+			<img class="simpleSearch" src="/images/parts/search_expand.png" />
+			<input class="proSearch button" type="submit" value="Einfache Suche" />
+			<img class="proSearch" src="/images/parts/search_collapse.png" />
+		</div>
+		<img class="resetDetails" src="/images/parts/search_reset_details.png" />
+							</div>
+					<div class="basicOptionsCol">
+													<select name="doEbooks" size="1">
+								<option value="1" selected="selected">
+									mit eBooks								</option>
+								<option value="0" >
+									ohne eBooks								</option>
+							</select>
+													<select name="doAudiobooks" size="1">
+								<option value="1" selected="selected">
+									mit Hörbüchern								</option>
+								<option value="0" >
+									ohne Hörbücher								</option>
+							</select>
+														<select name="noReprint" size="1">
+								<option value="0" selected="selected">
+									mit Print-on-demand								</option>
+								<option value="1" >
+									kein Print-on-demand								</option>
+							</select>
+							<div class="reprintHint" style="top: 40px;">
+								(?)
+								<div class="hidden tooltip-content">Es werden alle Bücher ausgefiltert, die bestimmte Schlüsselworte für Nachdrucke, Print on Demand oder Facsimiles enthalten. Es ist möglich, dass auch Bücher ausgefiltert werden, die keine Nachdrucke etc. sind.</div>
+							</div>
+													<select name="noBids" size="1" class="auctions">
+							<option value="0" selected="selected">
+								mit Auktionen							</option>
+							<option value="1" >
+								keine Auktionen							</option>
+						</select>
+											</div>
+							<div class="buttons">
+							<div class="searchButton">
+					<input class="button" name="search_submit" type="submit" value="suchen" />
+					<img alt="suchen" src="/images/parts/search.gif" />
+				</div>
+				<div class="saveButton">
+										<input class="button" name="search_header_blackboard" type="submit" value="speichern" />
+					<img alt="speichern" src="/images/parts/blackboard_icon2.gif" />
+				</div>
+							<div class="resetButton linkButton">
+				<div class="hidden tooltip-content">löschen</div>
+			</div>
+					<div class="toggleCollapsedContainer">
+			<input class="simpleSearch button" type="submit" value="Detailsuche" />
+			<img class="simpleSearch" src="/images/parts/search_expand.png" />
+			<input class="proSearch button" type="submit" value="Einfache Suche" />
+			<img class="proSearch" src="/images/parts/search_collapse.png" />
+		</div>
+		<img class="resetDetails" src="/images/parts/search_reset_details.png" />
+				</div>
+						</div>
+				<div class="proSearchRow hidden">
+					<div class="sellersCol">
+						<div class="labeledInput">
+							<label>Anbieter:</label>
+							<div class="sellersSelectionControl">
+																<div style="float: right">
+									<div class="labeledOption">
+										<input id="search-main_selectAllSellersCheckbox" class="selectAllSellersCheckbox checkbox" type="checkbox" />
+										<label for="search-main_selectAllSellersCheckbox">alle</label>
+									</div>
+									<div class="labeledOption">
+										<input id="search-main_selectNoSellerCheckbox" class="selectNoSellerCheckbox checkbox" type="checkbox" />
+										<label for="search-main_selectNoSellerCheckbox">keine</label>
+									</div>
+								</div>
+															</div>
+							<div class="sellersList">
+																	<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doAbeDe" name="doAbeDe" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doAbeDe">
+											Abebooks.de											<span class="" id="numResults_39"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_39" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doAchtungBuecher" name="doAchtungBuecher" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doAchtungBuecher">
+											Achtung-Buecher.de											<span class="" id="numResults_62"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_62" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doAko" name="doAko" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doAko">
+											Ako.nl											<span class="" id="numResults_2070"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2070" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doAlibris" name="doAlibris" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doAlibris">
+											Alibris.com											<span class="" id="numResults_18"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_18" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doAmazonUk" name="doAmazonUk" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doAmazonUk">
+											Amazon.co.uk											<span class="" id="numResults_23"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_23" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doAmazonCom" name="doAmazonCom" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doAmazonCom">
+											Amazon.com											<span class="" id="numResults_19"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_19" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption hidden">
+										<input class="checkbox default-checked" id="doAmazonComKindle" name="doAmazonComKindle" type="checkbox" value="1" />
+										<label class="selectSellerButton linkButton" data-seller-name="doAmazonComKindle">
+											Amazon.com (Kindle)											<span class="pale" id="numResults_52"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_52" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doAmazon" name="doAmazon" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doAmazon">
+											Amazon.de											<span class="" id="numResults_21"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_21" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doAmazonEs" name="doAmazonEs" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doAmazonEs">
+											Amazon.es											<span class="" id="numResults_55"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_55" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doAmazonFr" name="doAmazonFr" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doAmazonFr">
+											Amazon.fr											<span class="" id="numResults_16"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_16" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doAmazonIt" name="doAmazonIt" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doAmazonIt">
+											Amazon.it											<span class="" id="numResults_54"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_54" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doProlibri" name="doProlibri" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doProlibri">
+											Antiquariat.de											<span class="" id="numResults_30"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_30" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doAudibile" name="doAudibile" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doAudibile">
+											Audible.de											<span class="" id="numResults_133"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_133" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBn" name="doBn" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBn">
+											Barnesandnoble.com											<span class="" id="numResults_2046"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2046" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBbBuch" name="doBbBuch" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBbBuch">
+											bb-buch.de											<span class="" id="numResults_2048"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2048" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBeckshop" name="doBeckshop" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBeckshop">
+											Beck-shop.de											<span class="" id="numResults_2106"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2106" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBetterworld" name="doBetterworld" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBetterworld">
+											Betterworldbooks.com											<span class="" id="numResults_2052"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2052" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBiblio" name="doBiblio" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBiblio">
+											Biblio.com											<span class="" id="numResults_32"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_32" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBlackwell" name="doBlackwell" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBlackwell">
+											Blackwell.co.uk											<span class="" id="numResults_70"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_70" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBookdepository" name="doBookdepository" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBookdepository">
+											Bookdepository.com											<span class="" id="numResults_57"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_57" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBooklooker" name="doBooklooker" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBooklooker">
+											Booklooker.de											<span class="" id="numResults_15"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_15" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBruna" name="doBruna" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBruna">
+											Bruna.nl											<span class="" id="numResults_2040"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2040" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBUCHCH" name="doBUCHCH" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBUCHCH">
+											Buch.ch											<span class="" id="numResults_2029"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2029" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBuch24" name="doBuch24" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBuch24">
+											Buch24.de											<span class="" id="numResults_130"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_130" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBuchfreund" name="doBuchfreund" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBuchfreund">
+											Buchfreund.de											<span class="" id="numResults_25"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_25" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBuchhaus" name="doBuchhaus" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBuchhaus">
+											Buchhaus.ch											<span class="" id="numResults_2101"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2101" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBuchmarie" name="doBuchmarie" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBuchmarie">
+											Buchmarie.de											<span class="" id="numResults_69"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_69" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doBuecherDe" name="doBuecherDe" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doBuecherDe">
+											Buecher.de											<span class="" id="numResults_2027"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2027" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doCalendars" name="doCalendars" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doCalendars">
+											Calendars.com											<span class="" id="numResults_2103"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2103" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doCasaDelLibro" name="doCasaDelLibro" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doCasaDelLibro">
+											Casadellibro.com											<span class="" id="numResults_2041"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2041" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption hidden">
+										<input class="checkbox default-checked" id="doCdAndLp" name="doCdAndLp" type="checkbox" value="1" />
+										<label class="selectSellerButton linkButton" data-seller-name="doCdAndLp">
+											CdAndLp.com											<span class="pale" id="numResults_2108"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2108" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doCiando" name="doCiando" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doCiando">
+											Ciando.de											<span class="" id="numResults_139"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_139" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doDodaxAt" name="doDodaxAt" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doDodaxAt">
+											Dodax.at											<span class="" id="numResults_2082"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2082" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doDodaxCh" name="doDodaxCh" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doDodaxCh">
+											Dodax.ch											<span class="" id="numResults_2083"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2083" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doDodaxDe" name="doDodaxDe" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doDodaxDe">
+											Dodax.de											<span class="" id="numResults_2081"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2081" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doEBay" name="doEBay" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doEBay">
+											E-Bay											<span class="" id="numResults_33"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_33" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doLibriEB" name="doLibriEB" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doLibriEB">
+											eBook.de											<span class="" id="numResults_140"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_140" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doEBooknl" name="doEBooknl" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doEBooknl">
+											eBook.nl											<span class="" id="numResults_2074"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2074" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doEbookscom" name="doEbookscom" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doEbookscom">
+											Ebooks.com											<span class="" id="numResults_2054"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2054" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doEci" name="doEci" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doEci">
+											Eci											<span class="" id="numResults_2037"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2037" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doElsevier" name="doElsevier" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doElsevier">
+											Elsevier.com											<span class="" id="numResults_2055"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2055" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doFnac" name="doFnac" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doFnac">
+											Fnac.com											<span class="" id="numResults_2013"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2013" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doFnacEs" name="doFnacEs" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doFnacEs">
+											Fnac.es											<span class="" id="numResults_2014"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2014" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doFoyles" name="doFoyles" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doFoyles">
+											Foyles.co.uk											<span class="" id="numResults_2063"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2063" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doGoogle" name="doGoogle" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doGoogle">
+											Google.com											<span class="" id="numResults_2032"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2032" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doHive" name="doHive" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doHive">
+											Hive.co.uk											<span class="" id="numResults_2060"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2060" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doHoepli" name="doHoepli" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doHoepli">
+											Hoepli.it											<span class="" id="numResults_2045"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2045" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doHugendubel" name="doHugendubel" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doHugendubel">
+											Hugendubel.de											<span class="" id="numResults_2023"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2023" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doIbs" name="doIbs" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doIbs">
+											Ibs.it											<span class="" id="numResults_2079"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2079" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doImosver" name="doImosver" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doImosver">
+											Imosver.com											<span class="" id="numResults_2050"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2050" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doIndigo" name="doIndigo" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doIndigo">
+											Indigo.ca											<span class="" id="numResults_2056"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2056" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption hidden">
+										<input class="checkbox default-checked" id="doITunes" name="doITunes" type="checkbox" value="1" />
+										<label class="selectSellerButton linkButton" data-seller-name="doITunes">
+											iTunes.com											<span class="pale" id="numResults_2026"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2026" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doJokers" name="doJokers" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doJokers">
+											Jokers.de											<span class="" id="numResults_122"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_122" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doKobo" name="doKobo" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doKobo">
+											Kobo											<span class="" id="numResults_2015"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2015" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doLaFeltrinelli" name="doLaFeltrinelli" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doLaFeltrinelli">
+											Lafeltrinelli.it											<span class="" id="numResults_2042"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2042" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doLehmanns" name="doLehmanns" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doLehmanns">
+											Lehmanns.de											<span class="" id="numResults_7"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_7" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doWebster" name="doWebster" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doWebster">
+											Libreriauniversitaria.it											<span class="" id="numResults_2044"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2044" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doLibroco" name="doLibroco" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doLibroco">
+											Libroco.it											<span class="" id="numResults_2068"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2068" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doLonelyplanet" name="doLonelyplanet" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doLonelyplanet">
+											Lonelyplanet.com											<span class="" id="numResults_2097"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2097" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doLuisterboeken" name="doLuisterboeken" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doLuisterboeken">
+											Luisterboeken.nl											<span class="" id="numResults_2075"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2075" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doMondadori" name="doMondadori" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doMondadori">
+											Mondadoristore.it											<span class="" id="numResults_2051"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2051" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doMusicnotes" name="doMusicnotes" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doMusicnotes">
+											Musicnotes.com											<span class="" id="numResults_2091"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2091" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doMusicroom" name="doMusicroom" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doMusicroom">
+											Musicroom.com											<span class="" id="numResults_2064"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2064" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption hidden">
+										<input class="checkbox default-checked" id="doMusicstack" name="doMusicstack" type="checkbox" value="1" />
+										<label class="selectSellerButton linkButton" data-seller-name="doMusicstack">
+											Musicstack.com											<span class="pale" id="numResults_2107"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2107" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doNotenbuch" name="doNotenbuch" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doNotenbuch">
+											Notenbuch.de											<span class="" id="numResults_2047"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2047" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doOnderwijsboek" name="doOnderwijsboek" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doOnderwijsboek">
+											Onderwijsboek.nl											<span class="" id="numResults_2080"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2080" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doPalgrave" name="doPalgrave" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doPalgrave">
+											Palgrave.com											<span class="" id="numResults_2095"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2095" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doPriceminister" name="doPriceminister" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doPriceminister">
+											Priceminister.com											<span class="" id="numResults_2109"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2109" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doPrimera" name="doPrimera" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doPrimera">
+											Primera.nl											<span class="" id="numResults_2085"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2085" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doProxis" name="doProxis" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doProxis">
+											Proxis.com											<span class="" id="numResults_2072"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2072" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doScholastic" name="doScholastic" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doScholastic">
+											Scholastic.co.uk											<span class="" id="numResults_2065"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2065" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doSpringer" name="doSpringer" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doSpringer">
+											Springer.com											<span class="" id="numResults_2094"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2094" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doStudystore" name="doStudystore" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doStudystore">
+											Studystore.nl											<span class="" id="numResults_2067"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2067" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doThaliaAt" name="doThaliaAt" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doThaliaAt">
+											Thalia.at											<span class="" id="numResults_2016"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2016" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doThaliaDe" name="doThaliaDe" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doThaliaDe">
+											Thalia.de											<span class="" id="numResults_2000"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2000" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doTheBookPeople" name="doTheBookPeople" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doTheBookPeople">
+											TheBookPeople.co.uk											<span class="" id="numResults_2105"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2105" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doThriftbooks" name="doThriftbooks" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doThriftbooks">
+											Thriftbooks.com											<span class="" id="numResults_2073"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2073" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doVoordeelboekenonline" name="doVoordeelboekenonline" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doVoordeelboekenonline">
+											Voordeelboekenonline.nl											<span class="" id="numResults_2076"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2076" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doWaterstones" name="doWaterstones" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doWaterstones">
+											Waterstones.com											<span class="" id="numResults_2062"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2062" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doWordery" name="doWordery" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doWordery">
+											Wordery.com											<span class="" id="numResults_2092"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_2092" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+																		<div class="labeledOption ">
+										<input class="checkbox default-checked" id="doZVAB" name="doZVAB" type="checkbox" value="1" checked="checked"/>
+										<label class="selectSellerButton linkButton" data-seller-name="doZVAB">
+											ZVAB.com											<span class="" id="numResults_6"></span>
+										</label>
+										<img class="sellerStateIcon" id="sellerState_6" src="/images/layout/seller_state_none.gif" alt="" />
+									</div>
+									<hr />										<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doAmazonCa" name="doAmazonCa" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doAmazonCa">
+												Amazon.ca												<span class="pale" id="numResults_20"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_20" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doAmazonBr" name="doAmazonBr" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doAmazonBr">
+												Amazon.com.br												<span class="pale" id="numResults_68"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_68" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doAmazonMx" name="doAmazonMx" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doAmazonMx">
+												Amazon.com.mx												<span class="pale" id="numResults_67"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_67" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doApress" name="doApress" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doApress">
+												Apress.com												<span class="pale" id="numResults_2093"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2093" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doBiggerbooks" name="doBiggerbooks" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doBiggerbooks">
+												Biggerbooks.com												<span class="pale" id="numResults_2053"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2053" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doBolCom" name="doBolCom" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doBolCom">
+												Bol.com												<span class="pale" id="numResults_2077"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2077" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doBookoutlet" name="doBookoutlet" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doBookoutlet">
+												Bookoutlet.com												<span class="pale" id="numResults_2096"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2096" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doDover" name="doDover" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doDover">
+												Doverpublications.com												<span class="pale" id="numResults_2099"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2099" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doECampus" name="doECampus" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doECampus">
+												eCampus.com												<span class="pale" id="numResults_2104"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2104" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doFamilychristian" name="doFamilychristian" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doFamilychristian">
+												Familychristian.com												<span class="pale" id="numResults_2098"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2098" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption hidden">
+											<input class="checkbox default-unchecked" id="doFye" name="doFye" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doFye">
+												Fye.com												<span class="pale" id="numResults_2059"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2059" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doInformit" name="doInformit" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doInformit">
+												Informit.com												<span class="pale" id="numResults_2089"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2089" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doKnet" name="doKnet" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doKnet">
+												Knetbooks.com												<span class="pale" id="numResults_2057"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2057" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doLivrariacultura" name="doLivrariacultura" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doLivrariacultura">
+												Livrariacultura.com.br												<span class="pale" id="numResults_2090"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2090" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doOreilly" name="doOreilly" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doOreilly">
+												Oreilly.com												<span class="pale" id="numResults_2102"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2102" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doOrellfuessli" name="doOrellfuessli" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doOrellfuessli">
+												Orellfuessli.ch												<span class="pale" id="numResults_2100"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2100" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doPearson" name="doPearson" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doPearson">
+												Pearson.com												<span class="pale" id="numResults_2087"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2087" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption hidden">
+											<input class="checkbox default-unchecked" id="doSecondspin" name="doSecondspin" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doSecondspin">
+												Secondspin.com												<span class="pale" id="numResults_2061"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2061" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doTextbooks" name="doTextbooks" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doTextbooks">
+												Textbooks.com												<span class="pale" id="numResults_2078"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2078" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																			<div class="labeledOption ">
+											<input class="checkbox default-unchecked" id="doVitalSource" name="doVitalSource" type="checkbox" value="1" />
+											<label class="selectSellerButton linkButton" data-seller-name="doVitalSource">
+												Vitalsource.com												<span class="pale" id="numResults_2086"></span>
+											</label>
+											<img class="sellerStateIcon" id="sellerState_2086" src="/images/layout/seller_state_none.gif" alt="" />
+										</div>
+																</div>
+						</div>
+													<div class="search_categories_container">
+								<input class="search_categories button" name="search_categories" type="submit" value="Bestseller..." />
+								<img src="/images/parts/categories_icon.png" />
+							</div>
+									<div class="buttons">
+							<div class="searchButton">
+					<input class="button" name="search_submit" type="submit" value="suchen" />
+					<img alt="suchen" src="/images/parts/search.gif" />
+				</div>
+				<div class="saveButton">
+										<input class="button" name="search_header_blackboard" type="submit" value="speichern" />
+					<img alt="speichern" src="/images/parts/blackboard_icon2.gif" />
+				</div>
+							<div class="resetButton linkButton">
+				<div class="hidden tooltip-content">löschen</div>
+			</div>
+					<div class="toggleCollapsedContainer">
+			<input class="simpleSearch button" type="submit" value="Detailsuche" />
+			<img class="simpleSearch" src="/images/parts/search_expand.png" />
+			<input class="proSearch button" type="submit" value="Einfache Suche" />
+			<img class="proSearch" src="/images/parts/search_collapse.png" />
+		</div>
+		<img class="resetDetails" src="/images/parts/search_reset_details.png" />
+				</div>
+							</div>
+					<div class="proOptionsCol">
+
+													<select name="land" size="1" tabindex="9" class="default-empty">
+			<option value="">
+				alle Sprachen			</option>
+			<option value="1" >
+				deutsch			</option>
+			<option value="2" >
+				englisch			</option>
+			<option value="3" >
+				französisch			</option>
+			<option value="4" >
+				italienisch			</option>
+			<option value="5" >
+				spanisch			</option>
+		</select>							<br />
+													<select name="usedState" size="1" class="default-empty">
+								<option value="">
+									neu und gebraucht								</option>
+								<option value="1" >
+									nur neu								</option>
+								<option value="2" >
+									nur gebraucht								</option>
+							</select>
+													<select name="professionalState" size="1" class="default-empty">
+							<option value="">
+								Profi- und Privatangebote							</option>
+							<option value="1" >
+								nur Profi-Angebote							</option>
+							<option value="2" >
+								nur Privat-Angebote							</option>
+						</select>
+
+													<select name="coverState" class="books_exclusive default-empty" size="1">
+								<option value="">
+									alle Einbände								</option>
+								<option value="1" >
+									nur gebundene								</option>
+								<option value="2" >
+									nur Taschenbücher								</option>
+							</select>
+							<br/>
+														<div class="labeledOption">
+								<input class="checkbox default-unchecked" type="checkbox" id="search-main_newReleases" name="newReleases" value="1" />
+								<label class="checkbox" for="search-main_newReleases">nur Neuzugänge&nbsp;</label>
+								<div class="newReleasesHint">
+									(?)
+									<div class="hidden tooltip-content">Es werden nur Neuzugänge bzw. Neuerscheinungen der Plattformen ZVAB und E-Bay angezeigt.</div>
+								</div>
+								<div style="margin-left: 65%">
+																		<select style="float: right;" name="fromDateDays">
+										<option value="2" >2 Tage</option>
+										<option value="5" >5 Tage</option>
+										<option value="7" selected="selected">7 Tage</option>
+										<option value="14" >14 Tage</option>
+									</select>
+								</div>
+							</div>
+														<div class="labeledOption">
+								<input class="checkbox clear_left default-unchecked" type="checkbox" id="search-main_firstEdition" name="first_edition" value="1" />
+								<label class="checkbox" for="search-main_firstEdition">nur Erstausgabe</label>
+							</div>
+														<div class="labeledOption">
+								<input id="search-main_signed" class="default-unchecked" type="checkbox" name="signed" value="1" />
+								<label for="search-main_signed">nur signiert</label>
+							</div>
+														<div class="labeledOption">
+								<input type="checkbox" class="default-unchecked" id="search-main_easyOrder" name="easyOrder" value="1"  />
+								<label for="search-main_easyOrder">nur EasyOrder</label>
+							</div>
+							
+												<div class="fromToInput">
+							<label for="search-main_minPrice" class="from">Preis: &euro;</label>
+							<input id="search-main_minPrice" class="default-empty" name="minPrice" type="text" value="" />
+							<label for="search-main_maxPrice" class="to">bis &euro;</label>
+							<input id="search-main_maxPrice" class="default-empty" name="maxPrice" type="text" value="" />
+						</div>
+
+													<div class="fromToInput">
+								<label class="from" for="search-main_minJahr">Jahr:</label>
+								<input class="default-empty" id="search-main_minJahr" name="minJahr" type="text" value="" />
+								<label class="to" for="search-main_maxJahr">bis</label>
+								<input class="default-empty" id="search-main_maxJahr" name="maxJahr" type="text" value="" />
+							</div>
+							
+						<div class="labeledInput pageLenInput">
+							<label for="search-main_pageLen">
+								Ergebnisse pro Seite:
+							</label>
+							<div>
+								<input type="text" id="search-main_pageLen" name="pageLen" value="20" />
+							</div>
+						</div>
+
+								<div class="buttons">
+							<div class="searchButton">
+					<input class="button" name="search_submit" type="submit" value="suchen" />
+					<img alt="suchen" src="/images/parts/search.gif" />
+				</div>
+				<div class="saveButton">
+										<input class="button" name="search_header_blackboard" type="submit" value="speichern" />
+					<img alt="speichern" src="/images/parts/blackboard_icon2.gif" />
+				</div>
+							<div class="resetButton linkButton">
+				<div class="hidden tooltip-content">löschen</div>
+			</div>
+					</div>
+							</div>
+				</div>
+
+						<div class="toggleCollapsedContainer">
+			<input class="simpleSearch button" type="submit" value="Detailsuche" />
+			<img class="simpleSearch" src="/images/parts/search_expand.png" />
+			<input class="proSearch button" type="submit" value="Einfache Suche" />
+			<img class="proSearch" src="/images/parts/search_collapse.png" />
+		</div>
+		<img class="resetDetails" src="/images/parts/search_reset_details.png" />
+					</form>
+		</div>
+<script type="text/javascript">
+		// <![CDATA[
+			function overCategory(level, catId, activeCatId) {
+				var cssCatId = catId.replace(/\./g, "\\.");
+				var subMenu = jQuery('#books-category-menu-' + cssCatId);
+				if (!subMenu.length) {
+					jQuery.ajax({
+						url: "/books_category.php",
+						cache: false,
+						data: {
+							part: 'submenu',
+							categoryId: catId,
+							activeCategoryId: activeCatId
+						},
+						async: true,
+						success: function(data, textStatus, jqXHR) {
+							jQuery('#books-category-' + cssCatId).parent('.books-category-menu').append(data);
+						}
+					});
+				}
+				setTimeout(function() {
+					checkAndShowSubMenu(level, catId, 1);
+				}, 400);
+			}
+
+			function checkAndShowSubMenu(level, catId, tryNum) {
+				var cssCatId = catId.replace(/\./g, "\\.");
+				if (jQuery('#books-category-' + cssCatId + ":hover").length) {
+					if (!jQuery('#books-category-menu-' + cssCatId).length) {
+						if (tryNum++ < 20) {
+							setTimeout(function() {
+								checkAndShowSubMenu(level, catId, tryNum);
+							}, 200);
+						}
+					}
+					else {
+						showSubMenu(level, catId);
+					}
+				}
+			}
+			
+			function showSubMenu(level, catId) {
+
+				var cssCatId = catId.replace(/\./g, "\\.");
+				var parentMenuEntry = jQuery('#books-category-' + cssCatId);
+				var parentMenu = parentMenuEntry.parent('.books-category-menu');
+				if (parentMenu.is('.static'))
+					level = 1; // static submenu - hide all level's submenus
+				hideSubMenus(level);
+
+                var pos = parentMenuEntry.position();
+                var width = parentMenuEntry.outerWidth();
+				var subMenu = jQuery('#books-category-menu-' + cssCatId);
+				subMenu.mouseleave(outOfSubMenu);
+                subMenu.css({
+                    position: "absolute",
+                    top: pos.top + "px",
+                    left: pos.left + width + 3 + "px"
+                }).show();
+			}
+
+			function outOfSubMenu() {
+				setTimeout(function() {
+					if (jQuery('.books-category:hover').not('.active').length == 0 && jQuery('#search_categories:hover').length == 0)
+						hideSubMenus(0)
+				}, 500);
+			}
+
+			function hideSubMenus(level) {
+				for (var curLevel = 5; curLevel >= level + 1; curLevel--) {
+					jQuery('.flying.level-' + curLevel).filter(":visible")
+						.unbind('mouseleave', outOfSubMenu)
+						.hide();
+				}
+			}
+			
+			$(function() {
+				jQuery('#books-category-menu-').mouseleave(outOfSubMenu);
+				jQuery('#books-category-menu- .books-category-menu').each(function() {
+					jQuery(this).appendTo(jQuery(this).parent('.books-category').parent('.books-category-menu'));
+				});
+							});
+		// ]]>			
+		</script>
+		
+		<div
+			id="books-category-menu-"
+			class="books-category-menu flying level-1"
+		>
+			<a
+			id="books-category-10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(1, '10', '')"			href="/category/10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Literatur		</a>
+		<div
+			id="books-category-menu-10"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-10.05"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '10.05', '')"			href="/category/10.05.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Anthologien		</a><a
+			id="books-category-10.10"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '10.10', '')"			href="/category/10.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Aphorismen		</a><a
+			id="books-category-10.15"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '10.15', '')"			href="/category/10.15.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Biografien / Erfahrungsberichte		</a><a
+			id="books-category-10.20"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '10.20', '')"			href="/category/10.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Briefe / Tagebücher		</a><a
+			id="books-category-10.25"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(2, '10.25', '')"			href="/category/10.25.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Comic / Humor / Manga		</a><a
+			id="books-category-10.30"
+			class="books-category color-roll-5  "
+			onmouseover="overCategory(2, '10.30', '')"			href="/category/10.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Essays / Feuilleton		</a><a
+			id="books-category-10.35"
+			class="books-category color-roll-6  "
+			onmouseover="overCategory(2, '10.35', '')"			href="/category/10.35.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Fantasy / Science Fiction		</a><a
+			id="books-category-10.37"
+			class="books-category color-roll-7  "
+			onmouseover="overCategory(2, '10.37', '')"			href="/category/10.37.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Historische Romane		</a><a
+			id="books-category-10.39"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '10.39', '')"			href="/category/10.39.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Klassiker / Moderne Klassiker		</a><a
+			id="books-category-10.40"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '10.40', '')"			href="/category/10.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Krimi / Thriller / Horror		</a><a
+			id="books-category-10.45"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '10.45', '')"			href="/category/10.45.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Lyrik / Dramatik		</a><a
+			id="books-category-10.50"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '10.50', '')"			href="/category/10.50.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Märchen / Sagen		</a><a
+			id="books-category-10.55"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(2, '10.55', '')"			href="/category/10.55.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Romane / Erzählungen		</a><a
+			id="books-category-10.60"
+			class="books-category color-roll-5  "
+			onmouseover="overCategory(2, '10.60', '')"			href="/category/10.60.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Zweisprachige Ausgaben		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-15"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(1, '15', '')"			href="/category/15.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Kunst / Musik / Theater		</a>
+		<div
+			id="books-category-menu-15"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-15.10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '15.10', '')"			href="/category/15.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Allgemeines / Lexika		</a><a
+			id="books-category-15.13"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '15.13', '')"			href="/category/15.13.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Antiquitäten		</a><a
+			id="books-category-15.15"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '15.15', '')"			href="/category/15.15.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Design / Innenarchitektur / Mode		</a><a
+			id="books-category-15.20"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '15.20', '')"			href="/category/15.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Film / TV		</a><a
+			id="books-category-15.30"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(2, '15.30', '')"			href="/category/15.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Fotokunst		</a><a
+			id="books-category-15.40"
+			class="books-category color-roll-5  "
+			onmouseover="overCategory(2, '15.40', '')"			href="/category/15.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Kunstgeschichte / Kunststile		</a><a
+			id="books-category-15.45"
+			class="books-category color-roll-6  "
+			onmouseover="overCategory(2, '15.45', '')"			href="/category/15.45.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Malerei / Plastik		</a><a
+			id="books-category-15.50"
+			class="books-category color-roll-7  "
+			onmouseover="overCategory(2, '15.50', '')"			href="/category/15.50.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Musik		</a><a
+			id="books-category-15.60"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '15.60', '')"			href="/category/15.60.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Theater / Ballett		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-20"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(1, '20', '')"			href="/category/20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Sachbuch / Ratgeber		</a>
+		<div
+			id="books-category-menu-20"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-20.10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '20.10', '')"			href="/category/20.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Beruf / Finanzen / Recht / Wirtschaft		</a><a
+			id="books-category-20.20"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '20.20', '')"			href="/category/20.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Essen / Trinken		</a><a
+			id="books-category-20.30"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '20.30', '')"			href="/category/20.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Freizeit / Hobby		</a><a
+			id="books-category-20.40"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '20.40', '')"			href="/category/20.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Geschichte / Politik / Zeitgeschehen		</a><a
+			id="books-category-20.50"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(2, '20.50', '')"			href="/category/20.50.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Gesundheit / Leben / Psychologie		</a><a
+			id="books-category-20.60"
+			class="books-category color-roll-5  "
+			onmouseover="overCategory(2, '20.60', '')"			href="/category/20.60.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Natur / Technik / Wissenschaft		</a><a
+			id="books-category-20.80"
+			class="books-category color-roll-6  "
+			onmouseover="overCategory(2, '20.80', '')"			href="/category/20.80.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Sport		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-22"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(1, '22', '')"			href="/category/22.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Reisen		</a>
+		<div
+			id="books-category-menu-22"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-22.10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '22.10', '')"			href="/category/22.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Bildbände		</a><a
+			id="books-category-22.20"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '22.20', '')"			href="/category/22.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Globen		</a><a
+			id="books-category-22.30"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '22.30', '')"			href="/category/22.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Hotel- / Restaurantführer		</a><a
+			id="books-category-22.40"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '22.40', '')"			href="/category/22.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Karten / Stadtpläne / Atlanten		</a><a
+			id="books-category-22.50"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(2, '22.50', '')"			href="/category/22.50.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Kartenzubehör / Sonstiges		</a><a
+			id="books-category-22.60"
+			class="books-category color-roll-5  "
+			onmouseover="overCategory(2, '22.60', '')"			href="/category/22.60.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Reiseberichte		</a><a
+			id="books-category-22.70"
+			class="books-category color-roll-6  "
+			onmouseover="overCategory(2, '22.70', '')"			href="/category/22.70.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Reiseführer		</a><a
+			id="books-category-22.80"
+			class="books-category color-roll-7  "
+			onmouseover="overCategory(2, '22.80', '')"			href="/category/22.80.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Sport- / Aktivreisen		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-25"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(1, '25', '')"			href="/category/25.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Kinder- / Jugendbuch		</a>
+		<div
+			id="books-category-menu-25"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-25.10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '25.10', '')"			href="/category/25.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Bilderbücher		</a><a
+			id="books-category-25.20"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '25.20', '')"			href="/category/25.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Biographien		</a><a
+			id="books-category-25.30"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '25.30', '')"			href="/category/25.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Erstlesealter / Vorschulalter		</a><a
+			id="books-category-25.40"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '25.40', '')"			href="/category/25.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Gedichte / Lieder		</a><a
+			id="books-category-25.50"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(2, '25.50', '')"			href="/category/25.50.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Jugendbücher ab 12 Jahre		</a><a
+			id="books-category-25.60"
+			class="books-category color-roll-5  "
+			onmouseover="overCategory(2, '25.60', '')"			href="/category/25.60.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Kinderbücher bis 11 Jahre		</a><a
+			id="books-category-25.70"
+			class="books-category color-roll-6  "
+			onmouseover="overCategory(2, '25.70', '')"			href="/category/25.70.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Sachbücher		</a><a
+			id="books-category-25.80"
+			class="books-category color-roll-7  "
+			onmouseover="overCategory(2, '25.80', '')"			href="/category/25.80.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Spielen / Lernen		</a><a
+			id="books-category-25.90"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '25.90', '')"			href="/category/25.90.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Vorlesebücher / Märchen		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-30"
+			class="books-category color-roll-5  "
+			onmouseover="overCategory(1, '30', '')"			href="/category/30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Schulbuch / Lexikon und Wörterbuch		</a>
+		<div
+			id="books-category-menu-30"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-30.10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '30.10', '')"			href="/category/30.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Deutsch als Zweitsprache		</a><a
+			id="books-category-30.15"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '30.15', '')"			href="/category/30.15.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Erwachsenenbildung / Volkshochschule		</a><a
+			id="books-category-30.20"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '30.20', '')"			href="/category/30.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Lektüren / Interpretationen		</a><a
+			id="books-category-30.25"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '30.25', '')"			href="/category/30.25.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Lernhilfen		</a><a
+			id="books-category-30.30"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(2, '30.30', '')"			href="/category/30.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Lexikon / Nachschlagewerk / Chroniken		</a><a
+			id="books-category-30.35"
+			class="books-category color-roll-5  "
+			onmouseover="overCategory(2, '30.35', '')"			href="/category/30.35.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Schulbuch / Allgemeinbildende Schulen		</a><a
+			id="books-category-30.40"
+			class="books-category color-roll-6  "
+			onmouseover="overCategory(2, '30.40', '')"			href="/category/30.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Schulbuch / Berufs- und Fachschule		</a><a
+			id="books-category-30.42"
+			class="books-category color-roll-7  "
+			onmouseover="overCategory(2, '30.42', '')"			href="/category/30.42.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Software / Lernsoftware		</a><a
+			id="books-category-30.45"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '30.45', '')"			href="/category/30.45.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Sprach- und Wörterbuch / Deutsch		</a><a
+			id="books-category-30.50"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '30.50', '')"			href="/category/30.50.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Sprach- und Wörterbuch / Fremdsprachen		</a><a
+			id="books-category-30.55"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '30.55', '')"			href="/category/30.55.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Unterrichtsvorbereitung		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-35"
+			class="books-category color-roll-6  "
+			onmouseover="overCategory(1, '35', '')"			href="/category/35.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Sonstiges		</a>
+		<div
+			id="books-category-menu-35"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-35.10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '35.10', '')"			href="/category/35.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Alben		</a><a
+			id="books-category-35.20"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '35.20', '')"			href="/category/35.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Geschenkbücher		</a><a
+			id="books-category-35.30"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '35.30', '')"			href="/category/35.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Immerwährende Kalender		</a><a
+			id="books-category-35.40"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '35.40', '')"			href="/category/35.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Postkartenbücher		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-40"
+			class="books-category color-roll-7  "
+			onmouseover="overCategory(1, '40', '')"			href="/category/40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Geisteswissenschaften		</a>
+		<div
+			id="books-category-menu-40"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-40.05"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '40.05', '')"			href="/category/40.05.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Archäologie		</a><a
+			id="books-category-40.10"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '40.10', '')"			href="/category/40.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Geschichte		</a><a
+			id="books-category-40.20"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '40.20', '')"			href="/category/40.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Philosophie		</a><a
+			id="books-category-40.30"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '40.30', '')"			href="/category/40.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Psychologie		</a><a
+			id="books-category-40.40"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(2, '40.40', '')"			href="/category/40.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Religion / Theologie		</a><a
+			id="books-category-40.50"
+			class="books-category color-roll-5  "
+			onmouseover="overCategory(2, '40.50', '')"			href="/category/40.50.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Sprach- / Literaturwissenschaft		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-45"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(1, '45', '')"			href="/category/45.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Mathematik / Informatik		</a>
+		<div
+			id="books-category-menu-45"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-45.10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '45.10', '')"			href="/category/45.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Informatik		</a><a
+			id="books-category-45.20"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '45.20', '')"			href="/category/45.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Mathematik		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-50"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(1, '50', '')"			href="/category/50.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Medizin / Pharmazie		</a>
+		<div
+			id="books-category-menu-50"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-50.05"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '50.05', '')"			href="/category/50.05.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Allgemeines / Lexika		</a><a
+			id="books-category-50.10"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '50.10', '')"			href="/category/50.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Gesundheitsfachberufe		</a><a
+			id="books-category-50.20"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '50.20', '')"			href="/category/50.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Gesundheitswesen		</a><a
+			id="books-category-50.30"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '50.30', '')"			href="/category/50.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Klinik und Praxis		</a><a
+			id="books-category-50.40"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(2, '50.40', '')"			href="/category/50.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Naturheilkunde		</a><a
+			id="books-category-50.50"
+			class="books-category color-roll-5  "
+			onmouseover="overCategory(2, '50.50', '')"			href="/category/50.50.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Pflege		</a><a
+			id="books-category-50.60"
+			class="books-category color-roll-6  "
+			onmouseover="overCategory(2, '50.60', '')"			href="/category/50.60.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Pharmazie		</a><a
+			id="books-category-50.70"
+			class="books-category color-roll-7  "
+			onmouseover="overCategory(2, '50.70', '')"			href="/category/50.70.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Physiotherapie / Ergotherapie		</a><a
+			id="books-category-50.80"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '50.80', '')"			href="/category/50.80.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Studium		</a><a
+			id="books-category-50.90"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '50.90', '')"			href="/category/50.90.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Zahnmedizin		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-55"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(1, '55', '')"			href="/category/55.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Naturwissenschaften		</a>
+		<div
+			id="books-category-menu-55"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-55.10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '55.10', '')"			href="/category/55.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Biologie		</a><a
+			id="books-category-55.20"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '55.20', '')"			href="/category/55.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Chemie		</a><a
+			id="books-category-55.30"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '55.30', '')"			href="/category/55.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Geowissenschaften		</a><a
+			id="books-category-55.40"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '55.40', '')"			href="/category/55.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Physik / Astronomie		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-60"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(1, '60', '')"			href="/category/60.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Recht / Steuern		</a>
+		<div
+			id="books-category-menu-60"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-60.10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '60.10', '')"			href="/category/60.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Allgemeines / Lexika		</a><a
+			id="books-category-60.20"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '60.20', '')"			href="/category/60.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Arbeits- / Sozialrecht		</a><a
+			id="books-category-60.30"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '60.30', '')"			href="/category/60.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Europäisches / Internationales Recht		</a><a
+			id="books-category-60.40"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '60.40', '')"			href="/category/60.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Öffentliches Recht		</a><a
+			id="books-category-60.50"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(2, '60.50', '')"			href="/category/60.50.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Privatrecht / Bürgerliches Recht		</a><a
+			id="books-category-60.60"
+			class="books-category color-roll-5  "
+			onmouseover="overCategory(2, '60.60', '')"			href="/category/60.60.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Steuern / Steuerrecht		</a><a
+			id="books-category-60.70"
+			class="books-category color-roll-6  "
+			onmouseover="overCategory(2, '60.70', '')"			href="/category/60.70.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Strafrecht		</a><a
+			id="books-category-60.80"
+			class="books-category color-roll-7  "
+			onmouseover="overCategory(2, '60.80', '')"			href="/category/60.80.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Wirtschaftsrecht		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-65"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(1, '65', '')"			href="/category/65.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Sozialwissenschaften		</a>
+		<div
+			id="books-category-menu-65"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-65.10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '65.10', '')"			href="/category/65.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Ethnologie		</a><a
+			id="books-category-65.20"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '65.20', '')"			href="/category/65.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Kommunikation- / Medienwissenschaft		</a><a
+			id="books-category-65.30"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '65.30', '')"			href="/category/65.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Pädagogik		</a><a
+			id="books-category-65.40"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '65.40', '')"			href="/category/65.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Politik / Verwaltung		</a><a
+			id="books-category-65.50"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(2, '65.50', '')"			href="/category/65.50.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Soziologie		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-70"
+			class="books-category color-roll-5  "
+			onmouseover="overCategory(1, '70', '')"			href="/category/70.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Technik		</a>
+		<div
+			id="books-category-menu-70"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-70.10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '70.10', '')"			href="/category/70.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Architektur		</a><a
+			id="books-category-70.15"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '70.15', '')"			href="/category/70.15.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Bauwesen		</a><a
+			id="books-category-70.20"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '70.20', '')"			href="/category/70.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Bergbau		</a><a
+			id="books-category-70.25"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '70.25', '')"			href="/category/70.25.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Elektrotechnik / Energietechnik		</a><a
+			id="books-category-70.30"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(2, '70.30', '')"			href="/category/70.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Fahrzeug- / Schiffbau		</a><a
+			id="books-category-70.35"
+			class="books-category color-roll-5  "
+			onmouseover="overCategory(2, '70.35', '')"			href="/category/70.35.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Lebensmitteltechnologie		</a><a
+			id="books-category-70.40"
+			class="books-category color-roll-6  "
+			onmouseover="overCategory(2, '70.40', '')"			href="/category/70.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Luft- / Raumfahrttechnik		</a><a
+			id="books-category-70.45"
+			class="books-category color-roll-7  "
+			onmouseover="overCategory(2, '70.45', '')"			href="/category/70.45.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Maschinenbau		</a><a
+			id="books-category-70.50"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '70.50', '')"			href="/category/70.50.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Medizintechnik		</a><a
+			id="books-category-70.55"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '70.55', '')"			href="/category/70.55.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Nachrichtentechnik		</a><a
+			id="books-category-70.60"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '70.60', '')"			href="/category/70.60.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Umwelttechnik / Biotechnologie		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-75"
+			class="books-category color-roll-6  "
+			onmouseover="overCategory(1, '75', '')"			href="/category/75.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Veterinärmedizin		</a>
+		<div
+			id="books-category-menu-75"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-75.10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '75.10', '')"			href="/category/75.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Allgemein		</a><a
+			id="books-category-75.20"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '75.20', '')"			href="/category/75.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Vorklinik		</a><a
+			id="books-category-75.30"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '75.30', '')"			href="/category/75.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Klinische Fächer		</a><a
+			id="books-category-75.40"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '75.40', '')"			href="/category/75.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Kleintier		</a><a
+			id="books-category-75.50"
+			class="books-category color-roll-4  "
+			onmouseover="overCategory(2, '75.50', '')"			href="/category/75.50.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Heimtier		</a><a
+			id="books-category-75.60"
+			class="books-category color-roll-5  "
+			onmouseover="overCategory(2, '75.60', '')"			href="/category/75.60.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Großtier		</a><a
+			id="books-category-75.70"
+			class="books-category color-roll-6  "
+			onmouseover="overCategory(2, '75.70', '')"			href="/category/75.70.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Pferd		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-80"
+			class="books-category color-roll-7  "
+			onmouseover="overCategory(1, '80', '')"			href="/category/80.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Wirtschaft		</a>
+		<div
+			id="books-category-menu-80"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-80.10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '80.10', '')"			href="/category/80.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Allgemeines / Lexika		</a><a
+			id="books-category-80.20"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '80.20', '')"			href="/category/80.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Betriebswirtschaft / Management		</a><a
+			id="books-category-80.30"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '80.30', '')"			href="/category/80.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Volkswirtschaftslehre		</a>				<div class="categories-border-bottom level-1"></div>
+						</div><a
+			id="books-category-85"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(1, '85', '')"			href="/category/85.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Weitere Fachgebiete		</a>
+		<div
+			id="books-category-menu-85"
+			class="books-category-menu flying level-2"
+		>
+			<a
+			id="books-category-85.10"
+			class="books-category color-roll-0  "
+			onmouseover="overCategory(2, '85.10', '')"			href="/category/85.10.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Anthroposophie		</a><a
+			id="books-category-85.20"
+			class="books-category color-roll-1  "
+			onmouseover="overCategory(2, '85.20', '')"			href="/category/85.20.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Handwerk		</a><a
+			id="books-category-85.30"
+			class="books-category color-roll-2  "
+			onmouseover="overCategory(2, '85.30', '')"			href="/category/85.30.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Landwirtschaft / Forstwirtschaft / Fischerei		</a><a
+			id="books-category-85.40"
+			class="books-category color-roll-3  "
+			onmouseover="overCategory(2, '85.40', '')"			href="/category/85.40.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"
+		>
+			Sportwissenschaft		</a>				<div class="categories-border-bottom level-1"></div>
+						</div>				<div class="categories-border-bottom level-1"></div>
+						</div>
+<hr/>
+	<h2 class="s1">eurobuch.com ist die Buch-Such-Maschine für absolut jedes Buch.</h2>
+	<ul>
+		<li>Blitzschnelle Suche in über <strong>250 Millionen Titeln</strong></li>
+<li>Neue, gebrauchte, antiquarische, vergriffene Bücher</li>
+<li>E-Books, Hörbücher, Musik, Schulbücher (neu und gebraucht)</li>
+<li>ISBN-Suche und Autor/Titel-Suche</li>
+<li>Preissuchmaschine zum Preisvergleich <strong>aller Anbieter</strong></li>	</ul>
+	<p>
+		Um das gewünschte Buch für Sie zu finden, recherchiert die Büchersuchmaschine Eurobuch.com parallel bei <strong>60.000 Antiquariaten, Remittenden- und Neubuchhändlern</strong>.	</p>
+	<hr/>
+	<div class="st_banner" style="padding: 10px 0;">
+		<a style="display:block;" href="/click.php?link_id=210&PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6" target="_self" title="EasyReader - die Gedankenstütze"><img src="/upload/banner/210.jpg?r=2646" border="0" alt="EasyReader - die Gedankenstütze" title="EasyReader - die Gedankenstütze" /></a>
+		<hr/>
+	</div>
+	<h2 class="s5">eurobuch.com erfasst alle wichtigen Online-Anbieter:</h2>
+	<p>
+		Abebooks.de | Achtung-Buecher.de | Ako.nl | Alibris.com | Amazon.co.uk | Amazon.com | Amazon.com (Kindle) | Amazon.de | Amazon.es | Amazon.fr | Amazon.it | Antiquariat.de | Audible.de | Barnesandnoble.com | bb-buch.de | Beck-shop.de | Betterworldbooks.com | Biblio.com | Blackwell.co.uk | Bookdepository.com | Booklooker.de | Bruna.nl | Buch.ch | Buch24.de | Buchfreund.de | Buchhaus.ch | Buchmarie.de | Buecher.de | Calendars.com | Casadellibro.com | CdAndLp.com | Ciando.de | Dodax.at | Dodax.ch | Dodax.de | E-Bay | eBook.de | eBook.nl | Ebooks.com | Eci | Elsevier.com | Fnac.com | Fnac.es | Foyles.co.uk | Google.com | Hive.co.uk | Hoepli.it | Hugendubel.de | Ibs.it | Imosver.com | Indigo.ca | iTunes.com | Jokers.de | Kobo | Lafeltrinelli.it | Lehmanns.de | Libreriauniversitaria.it | Libroco.it | Lonelyplanet.com | Luisterboeken.nl | Mondadoristore.it | Musicnotes.com | Musicroom.com | Musicstack.com | Notenbuch.de | Onderwijsboek.nl | Palgrave.com | Priceminister.com | Primera.nl | Proxis.com | Scholastic.co.uk | Springer.com | Studystore.nl | Thalia.at | Thalia.de | TheBookPeople.co.uk | Thriftbooks.com | Voordeelboekenonline.nl | Waterstones.com | Wordery.com | ZVAB.com</p>
+	<div class="floatbox">
+		<img src="/images/showroom/showroom_seller_39.gif" width="77"
+						 alt="Abebooks.de" />
+		<img src="/images/showroom/showroom_seller_56.gif" width="77"
+						 alt="Alibris.co.uk" />
+		<img src="/images/showroom/showroom_seller_21.gif" width="77"
+						 alt="Amazon.de" />
+		<img src="/images/showroom/showroom_seller_32.gif" width="77"
+						 alt="Biblio.com" />
+		<img src="/images/showroom/showroom_seller_15.gif" width="77"
+						 alt="Booklooker.de" />
+		<img src="/images/showroom/showroom_seller_33.gif" width="77"
+						 alt="E-Bay" />
+		<img src="/images/showroom/showroom_seller_7.gif" width="77"
+						 alt="Lehmanns.de" />
+		<img src="/images/showroom/showroom_seller_6.gif" width="77"
+						 alt="ZVAB.com" />
+			</div>
+	<hr/>
+	<h2 class="s5">Preisvergleich für über 250 Millionen Bücher</h2>
+
+	<ul>
+		<li>Bücher suchen und schnell finden ! Ein optimierter Suchalgorithmus liefert eine hohe Trefferquote</li>
+<li>Bücher vergleichen ! Sie können sowohl Preis - auch anhand unserer <strong>exklusiven Preistendenz</strong> Datenbank - als auch Zustand und weitere Sondereigenschaften vergleichen</li>
+<li>Bücher kaufen - direkt beim Händler, sofort und zu jeder Zeit</li>
+		<li>Diesen Service gibt es nur bei eurobuch.com</li>
+	</ul>
+	<hr/>
+	<div class="floatbox">
+		<a href="blackboard_index.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"><img class="float_right" src="/images/parts/blackboard_02.gif" alt="das
+																				schwarze Brett" /></a>
+
+		<h2 class="s6">Auf der Suche nach dem verlorenen Buch</h2>
+
+		<p>Falls Ihr gewünschtes Buch einmal nicht sofort gefunden wird, können Sie es an das <a href="blackboard_index.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">schwarze Brett</a> posten. Sobald es ein Anbieter hat, werden Sie benachrichtigt.		</p>
+	</div>
+		<hr/>
+	<div class="floatbox">
+		<a href="partner.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6"><img class="float_left" src="/images//parts/affiliate_01.gif"
+															 alt="Affiliateprogramm"/></a>
+
+		<h2 class="s6">Geldverdienen mit Ihrer Website mit dem eurobuch.com Affiliateprogramm</h2>
+
+		<p>Sie wollen Ihren Usern einen ganz besonderen Service bieten? Integrieren Sie unsere Such-Technologie in Ihre Website und erhöhen Sie dadurch Ihre Kundenbindung.
+<a href="partner.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Mehr dazu...</a>		</p>
+	</div>
+<hr style="margin-bottom: 20px;"/>
+		<h2>Aktuelle Bestseller Liste für Bücher von Eurobuch.com</h2>
+		<div class="content_booktip_container">
+			<div class="floatbox">
+									<div class="content_booktip">
+						<div class="booktip_author">
+				<a href="https://www.eurobuch.com/buch/isbn/9780521296342.html">
+				    William Shakespeare;..:
+				</a>
+			</div>
+    				<div class="booktip_title">
+			<a href="https://www.eurobuch.com/buch/isbn/9780521296342.html">
+			    The First Part of King<br />Henry VI			</a>
+		</div>
+		<div class="booktip_image"><a href="https://www.eurobuch.com/buch/isbn/9780521296342.html"><img src="https://www.lehmanns.de/media/13223616" alt="The First Part of King Henry VI" class="bordered" style="max-width: 90px; max-height: 120px;" /></a></div>
+		<div class="booktip_price">neu € 10,95</div><div class="booktip_platform_name"><a href="https://www.eurobuch.com/buch/isbn/9780521296342.html">Neu oder gebraucht vergleichen bei eurobuch.com</a></div>					</div>
+										<div class="content_booktip">
+						<div class="booktip_author">
+				<a href="https://www.eurobuch.com/buch/isbn/9780521418195.html">
+				    William Shakespeare;..:
+				</a>
+			</div>
+    				<div class="booktip_title">
+			<a href="https://www.eurobuch.com/buch/isbn/9780521418195.html">
+			    The First Quarto of<br />Hamlet			</a>
+		</div>
+		<div class="booktip_image"><a href="https://www.eurobuch.com/buch/isbn/9780521418195.html"><img src="https://www.lehmanns.de/media/13213454" alt="The First Quarto of Hamlet" class="bordered" style="max-width: 90px; max-height: 120px;" /></a></div>
+		<div class="booktip_price">neu € 88,15</div><div class="booktip_platform_name"><a href="https://www.eurobuch.com/buch/isbn/9780521418195.html">Neu oder gebraucht vergleichen bei eurobuch.com</a></div>					</div>
+										<div class="content_booktip">
+						<div class="booktip_author">
+				<a href="https://www.eurobuch.com/buch/isbn/9780521418188.html">
+				    William Shakespeare;..:
+				</a>
+			</div>
+    				<div class="booktip_title">
+			<a href="https://www.eurobuch.com/buch/isbn/9780521418188.html">
+			    The First Quarto of<br />King Richard III			</a>
+		</div>
+		<div class="booktip_image"><a href="https://www.eurobuch.com/buch/isbn/9780521418188.html"><img src="https://www.lehmanns.de/media/13213792" alt="The First Quarto of King Richard III" class="bordered" style="max-width: 90px; max-height: 120px;" /></a></div>
+		<div class="booktip_price">neu € 119,95</div><div class="booktip_platform_name"><a href="https://www.eurobuch.com/buch/isbn/9780521418188.html">Neu oder gebraucht vergleichen bei eurobuch.com</a></div>					</div>
+										<div class="content_booktip">
+						<div class="booktip_author">
+				<a href="https://www.eurobuch.com/buch/isbn/9780521402385.html">
+				    F. Scott Fitzgerald;..:
+				</a>
+			</div>
+    				<div class="booktip_title">
+			<a href="https://www.eurobuch.com/buch/isbn/9780521402385.html">
+			    F. Scott Fitzgerald:<br />Tales of the Jazz Age			</a>
+		</div>
+		<div class="booktip_image"><a href="https://www.eurobuch.com/buch/isbn/9780521402385.html"><img src="https://www.lehmanns.de/media/13212992" alt="F. Scott Fitzgerald: Tales of the Jazz Age" class="bordered" style="max-width: 90px; max-height: 120px;" /></a></div>
+		<div class="booktip_price">neu € 99,95</div><div class="booktip_platform_name"><a href="https://www.eurobuch.com/buch/isbn/9780521402385.html">Neu oder gebraucht vergleichen bei eurobuch.com</a></div>					</div>
+											</div>
+						<div class="floatbox">
+											<div class="content_booktip">
+						<div class="booktip_author">
+				<a href="https://www.eurobuch.com/buch/isbn/9780521402392.html">
+				    F. Scott Fitzgerald;..:
+				</a>
+			</div>
+    				<div class="booktip_title">
+			<a href="https://www.eurobuch.com/buch/isbn/9780521402392.html">
+			    Fitzgerald: My Lost<br />City			</a>
+		</div>
+		<div class="booktip_image"><a href="https://www.eurobuch.com/buch/isbn/9780521402392.html"><img src="https://www.lehmanns.de/media/13219892" alt="Fitzgerald: My Lost City" class="bordered" style="max-width: 90px; max-height: 120px;" /></a></div>
+		<div class="booktip_price">neu € 99,95</div><div class="booktip_platform_name"><a href="https://www.eurobuch.com/buch/isbn/9780521402392.html">Neu oder gebraucht vergleichen bei eurobuch.com</a></div>					</div>
+										<div class="content_booktip">
+						<div class="booktip_author">
+				<a href="https://www.eurobuch.com/buch/isbn/9780631205487.html">
+				    William Wordsworth:
+				</a>
+			</div>
+    				<div class="booktip_title">
+			<a href="https://www.eurobuch.com/buch/isbn/9780631205487.html">
+			    The Five-Book Prelude			</a>
+		</div>
+		<div class="booktip_image"><a href="https://www.eurobuch.com/buch/isbn/9780631205487.html"><img src="https://www.lehmanns.de/media/13157382" alt="The Five-Book Prelude" class="bordered" style="max-width: 90px; max-height: 120px;" /></a></div>
+		<div class="booktip_price">neu € 106,45</div><div class="booktip_platform_name"><a href="https://www.eurobuch.com/buch/isbn/9780631205487.html">Neu oder gebraucht vergleichen bei eurobuch.com</a></div>					</div>
+										<div class="content_booktip">
+						<div class="booktip_author">
+				<a href="https://www.eurobuch.com/buch/isbn/9780631205494.html">
+				    William Wordsworth:
+				</a>
+			</div>
+    				<div class="booktip_title">
+			<a href="https://www.eurobuch.com/buch/isbn/9780631205494.html">
+			    The Five-Book Prelude			</a>
+		</div>
+		<div class="booktip_image"><a href="https://www.eurobuch.com/buch/isbn/9780631205494.html"><img src="https://www.lehmanns.de/media/13159420" alt="The Five-Book Prelude" class="bordered" style="max-width: 90px; max-height: 120px;" /></a></div>
+		<div class="booktip_price">neu € 36,7</div><div class="booktip_platform_name"><a href="https://www.eurobuch.com/buch/isbn/9780631205494.html">Neu oder gebraucht vergleichen bei eurobuch.com</a></div>					</div>
+										<div class="content_booktip">
+						<div class="booktip_author">
+				<a href="https://www.eurobuch.com/buch/isbn/9780195054651.html">
+				    Robert Dallek:
+				</a>
+			</div>
+    				<div class="booktip_title">
+			<a href="https://www.eurobuch.com/buch/isbn/9780195054651.html">
+			    Flawed Giant			</a>
+		</div>
+		<div class="booktip_image"><a href="https://www.eurobuch.com/buch/isbn/9780195054651.html"><img src="https://www.lehmanns.de/media/12882778" alt="Flawed Giant" class="bordered" style="max-width: 90px; max-height: 120px;" /></a></div>
+		<div class="booktip_price">neu € 89,8</div><div class="booktip_platform_name"><a href="https://www.eurobuch.com/buch/isbn/9780195054651.html">Neu oder gebraucht vergleichen bei eurobuch.com</a></div>					</div>
+											</div>
+						<div class="floatbox">
+											<div class="content_booktip">
+						<div class="booktip_author">
+				<a href="https://www.eurobuch.com/buch/isbn/9780520205048.html">
+				    Thomas C. Caramagno:
+				</a>
+			</div>
+    				<div class="booktip_title">
+			<a href="https://www.eurobuch.com/buch/isbn/9780520205048.html">
+			    The Flight of the Mind			</a>
+		</div>
+		<div class="booktip_image"><a href="https://www.eurobuch.com/buch/isbn/9780520205048.html"><img src="https://www.lehmanns.de/media/13261834" alt="The Flight of the Mind" class="bordered" style="max-width: 90px; max-height: 120px;" /></a></div>
+		<div class="booktip_price">neu € 39,95</div><div class="booktip_platform_name"><a href="https://www.eurobuch.com/buch/isbn/9780520205048.html">Neu oder gebraucht vergleichen bei eurobuch.com</a></div>					</div>
+										<div class="content_booktip">
+						<div class="booktip_author">
+				<a href="https://www.eurobuch.com/buch/isbn/9780520204409.html">
+				    Hugo Ball; John Elde..:
+				</a>
+			</div>
+    				<div class="booktip_title">
+			<a href="https://www.eurobuch.com/buch/isbn/9780520204409.html">
+			    Flight Out of Time			</a>
+		</div>
+		<div class="booktip_image"><a href="https://www.eurobuch.com/buch/isbn/9780520204409.html"><img src="https://www.lehmanns.de/media/13262642" alt="Flight Out of Time" class="bordered" style="max-width: 90px; max-height: 120px;" /></a></div>
+		<div class="booktip_price">neu € 32,95</div><div class="booktip_platform_name"><a href="https://www.eurobuch.com/buch/isbn/9780520204409.html">Neu oder gebraucht vergleichen bei eurobuch.com</a></div>					</div>
+										<div class="content_booktip">
+						<div class="booktip_author">
+				<a href="https://www.eurobuch.com/buch/isbn/9780521282970.html">
+				    Margaret Penn:
+				</a>
+			</div>
+    				<div class="booktip_title">
+			<a href="https://www.eurobuch.com/buch/isbn/9780521282970.html">
+			    The Foolish Virgin			</a>
+		</div>
+		<div class="booktip_image"><a href="https://www.eurobuch.com/buch/isbn/9780521282970.html"><img src="https://www.lehmanns.de/media/13221956" alt="The Foolish Virgin" class="bordered" style="max-width: 90px; max-height: 120px;" /></a></div>
+		<div class="booktip_price">neu € 31,8</div><div class="booktip_platform_name"><a href="https://www.eurobuch.com/buch/isbn/9780521282970.html">Neu oder gebraucht vergleichen bei eurobuch.com</a></div>					</div>
+										<div class="content_booktip">
+						<div class="booktip_author">
+				<a href="https://www.eurobuch.com/buch/isbn/9780195090239.html">
+				    James M. McPherson:
+				</a>
+			</div>
+    				<div class="booktip_title">
+			<a href="https://www.eurobuch.com/buch/isbn/9780195090239.html">
+			    For Cause and Comrades			</a>
+		</div>
+		<div class="booktip_image"><a href="https://www.eurobuch.com/buch/isbn/9780195090239.html"><img src="https://www.lehmanns.de/media/12882460" alt="For Cause and Comrades" class="bordered" style="max-width: 90px; max-height: 120px;" /></a></div>
+		<div class="booktip_price">neu € 31,45</div><div class="booktip_platform_name"><a href="https://www.eurobuch.com/buch/isbn/9780195090239.html">Neu oder gebraucht vergleichen bei eurobuch.com</a></div>					</div>
+								</div>
+		</div>		<hr style="margin-bottom: 20px;"/>
+<h2>Archiv aller ISBNs</h2><div><ul class="sar"><li><a href="archive-978300.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978300</a></li></ul><ul class="sar"><li><a href="archive-978301.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978301</a></li></ul><ul class="sar"><li><a href="archive-978302.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978302</a></li></ul><ul class="sar"><li><a href="archive-978303.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978303</a></li></ul><ul class="sar"><li><a href="archive-978304.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978304</a></li></ul><ul class="sar"><li><a href="archive-978305.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978305</a></li></ul><ul class="sar"><li><a href="archive-978306.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978306</a></li></ul><ul class="sar"><li><a href="archive-978307.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978307</a></li></ul><ul class="sar"><li><a href="archive-978308.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978308</a></li></ul><ul class="sar"><li><a href="archive-978309.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978309</a></li></ul><ul class="sar"><li><a href="archive-978310.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978310</a></li></ul><ul class="sar"><li><a href="archive-978311.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978311</a></li></ul><ul class="sar"><li><a href="archive-978312.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978312</a></li></ul><ul class="sar"><li><a href="archive-978313.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978313</a></li></ul><ul class="sar"><li><a href="archive-978314.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978314</a></li></ul><ul class="sar"><li><a href="archive-978315.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978315</a></li></ul><ul class="sar"><li><a href="archive-978316.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978316</a></li></ul><ul class="sar"><li><a href="archive-978317.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978317</a></li></ul><ul class="sar"><li><a href="archive-978318.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978318</a></li></ul><ul class="sar"><li><a href="archive-978319.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978319</a></li></ul><ul class="sar"><li><a href="archive-978320.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978320</a></li></ul><ul class="sar"><li><a href="archive-978321.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978321</a></li></ul><ul class="sar"><li><a href="archive-978322.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978322</a></li></ul><ul class="sar"><li><a href="archive-978323.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978323</a></li></ul><ul class="sar"><li><a href="archive-978324.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978324</a></li></ul><ul class="sar"><li><a href="archive-978325.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978325</a></li></ul><ul class="sar"><li><a href="archive-978326.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978326</a></li></ul><ul class="sar"><li><a href="archive-978327.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978327</a></li></ul><ul class="sar"><li><a href="archive-978328.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978328</a></li></ul><ul class="sar"><li><a href="archive-978329.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978329</a></li></ul><ul class="sar"><li><a href="archive-978330.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978330</a></li></ul><ul class="sar"><li><a href="archive-978331.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978331</a></li></ul><ul class="sar"><li><a href="archive-978332.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978332</a></li></ul><ul class="sar"><li><a href="archive-978333.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978333</a></li></ul><ul class="sar"><li><a href="archive-978334.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978334</a></li></ul><ul class="sar"><li><a href="archive-978335.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978335</a></li></ul><ul class="sar"><li><a href="archive-978336.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978336</a></li></ul><ul class="sar"><li><a href="archive-978337.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978337</a></li></ul><ul class="sar"><li><a href="archive-978338.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978338</a></li></ul><ul class="sar"><li><a href="archive-978339.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978339</a></li></ul><ul class="sar"><li><a href="archive-978340.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978340</a></li></ul><ul class="sar"><li><a href="archive-978341.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978341</a></li></ul><ul class="sar"><li><a href="archive-978342.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978342</a></li></ul><ul class="sar"><li><a href="archive-978343.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978343</a></li></ul><ul class="sar"><li><a href="archive-978344.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978344</a></li></ul><ul class="sar"><li><a href="archive-978345.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978345</a></li></ul><ul class="sar"><li><a href="archive-978346.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978346</a></li></ul><ul class="sar"><li><a href="archive-978347.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978347</a></li></ul><ul class="sar"><li><a href="archive-978348.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978348</a></li></ul><ul class="sar"><li><a href="archive-978349.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978349</a></li></ul><ul class="sar"><li><a href="archive-978350.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978350</a></li></ul><ul class="sar"><li><a href="archive-978351.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978351</a></li></ul><ul class="sar"><li><a href="archive-978352.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978352</a></li></ul><ul class="sar"><li><a href="archive-978353.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978353</a></li></ul><ul class="sar"><li><a href="archive-978354.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978354</a></li></ul><ul class="sar"><li><a href="archive-978355.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978355</a></li></ul><ul class="sar"><li><a href="archive-978356.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978356</a></li></ul><ul class="sar"><li><a href="archive-978357.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978357</a></li></ul><ul class="sar"><li><a href="archive-978358.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978358</a></li></ul><ul class="sar"><li><a href="archive-978359.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978359</a></li></ul><ul class="sar"><li><a href="archive-978360.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978360</a></li></ul><ul class="sar"><li><a href="archive-978361.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978361</a></li></ul><ul class="sar"><li><a href="archive-978362.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978362</a></li></ul><ul class="sar"><li><a href="archive-978363.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978363</a></li></ul><ul class="sar"><li><a href="archive-978364.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978364</a></li></ul><ul class="sar"><li><a href="archive-978365.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978365</a></li></ul><ul class="sar"><li><a href="archive-978366.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978366</a></li></ul><ul class="sar"><li><a href="archive-978367.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978367</a></li></ul><ul class="sar"><li><a href="archive-978368.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978368</a></li></ul><ul class="sar"><li><a href="archive-978369.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978369</a></li></ul><ul class="sar"><li><a href="archive-978370.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978370</a></li></ul><ul class="sar"><li><a href="archive-978371.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978371</a></li></ul><ul class="sar"><li><a href="archive-978372.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978372</a></li></ul><ul class="sar"><li><a href="archive-978373.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978373</a></li></ul><ul class="sar"><li><a href="archive-978374.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978374</a></li></ul><ul class="sar"><li><a href="archive-978375.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978375</a></li></ul><ul class="sar"><li><a href="archive-978376.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978376</a></li></ul><ul class="sar"><li><a href="archive-978377.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978377</a></li></ul><ul class="sar"><li><a href="archive-978378.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978378</a></li></ul><ul class="sar"><li><a href="archive-978379.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978379</a></li></ul><ul class="sar"><li><a href="archive-978380.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978380</a></li></ul><ul class="sar"><li><a href="archive-978381.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978381</a></li></ul><ul class="sar"><li><a href="archive-978382.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978382</a></li></ul><ul class="sar"><li><a href="archive-978383.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978383</a></li></ul><ul class="sar"><li><a href="archive-978384.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978384</a></li></ul><ul class="sar"><li><a href="archive-978385.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978385</a></li></ul><ul class="sar"><li><a href="archive-978386.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978386</a></li></ul><ul class="sar"><li><a href="archive-978387.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978387</a></li></ul><ul class="sar"><li><a href="archive-978388.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978388</a></li></ul><ul class="sar"><li><a href="archive-978389.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978389</a></li></ul><ul class="sar"><li><a href="archive-978390.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978390</a></li></ul><ul class="sar"><li><a href="archive-978391.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978391</a></li></ul><ul class="sar"><li><a href="archive-978392.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978392</a></li></ul><ul class="sar"><li><a href="archive-978393.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978393</a></li></ul><ul class="sar"><li><a href="archive-978394.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978394</a></li></ul><ul class="sar"><li><a href="archive-978395.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978395</a></li></ul><ul class="sar"><li><a href="archive-978396.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978396</a></li></ul><ul class="sar"><li><a href="archive-978397.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978397</a></li></ul><ul class="sar"><li><a href="archive-978398.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978398</a></li></ul><ul class="sar"><li><a href="archive-978399.html?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">978399</a></li></ul><div style="clear:left;"></div></div>               <hr />
+                <h2 class="s4">Bei eurobuch.com finden Sie wirklich alle Bücher!</h2>
+				<ul class="styled">
+				<li><a href="https://www.eurobuch.com/" target="_blank">Eurobuch.com - Deutsch</a>.</li>
+				<li><a href="https://www.eurobuch.de/" target="_blank">Eurobuch.de - Deutsch, Deutschland</a>.</li>
+				<li><a href="https://www.eurobuch.at/" target="_blank">Eurobuch.at - Deutsch, Österreich</a>.</li>
+				<li><a href="https://www.eurobuch.ch/" target="_blank">Eurobuch.ch - Deutsch, Schweiz</a>.</li>
+				<li><a href="https://fr.eurobuch.ch/" target="_blank">Eurobuch.ch - Français, Suisse</a>.</li>
+				<li><a href="https://it.eurobuch.ch/" target="_blank">Eurobuch.ch - Italinano, Svizzera</a>.</li>
+				<li lang="en"><a href="https://www.euro-book.co.uk/" target="_blank">Euro-Book.co.uk - English, United Kingdom</a>.</li>
+				<li lang="en"><a href="https://www.find-more-books.com/" target="_blank">Find-More-Books.com - English, United States of America</a>.</li>
+				<li lang="fr"><a href="https://www.eurolivre.fr/" target="_blank">Eurolivre.fr - Français, France</a>.</li>
+				<li lang="it"><a href="https://www.eurolibro.it/" target="_blank">Eurolibro.it - Italinano, Italia</a>.</li>
+				<li lang="nl"><a href="https://www.euro-boek.nl/" target="_blank">Euro-boek.nl - Nederlands, Nederland</a>.</li>
+				<li lang="es"><a href="https://www.terralibro.es/" target="_blank">Terralibro.es - Español, España</a>.</li>
+				<li lang="es"><a href="https://www.terralibro.com/" target="_blank">Terralibro.com - Español, México</a>.</li>
+				<li lang="pt"><a href="https://www.eurolivro.pt/" target="_blank">Eurolivro.pt - Português, Portugal</a>.</li>
+				<li lang="pt"><a href="https://www.terralivro.com/" target="_blank">Terralivro.com - Português, Brasil</a>.</li>
+				</ul>
+
+	          </div>
+	          <!-- IE Column Clearing -->
+	          <div id="ie_clearing"> &#160; </div>
+	        </div>
+	      </div>
+	      <div id="footer">
+        <img id="bottom_corner" src="/images/layout/main_corner_bottom_02.gif" alt="" />
+		  	<div id="nav_footer">				&copy; 2017				<a href="/credits.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Eurobuch</a> | eurobuch.com ist ein Unternehmen der <a href="/credits.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Mediantis Corp.</a>							<span id="nav_footer_elems">
+				<span class="rd-mobile-button hidden hamburger-hidden"> | </span>
+				<a class="nav_footer_link rd-mobile-button hidden hamburger-hidden" href="javascript:void(0);" onclick="eurobuch.app.setForceWideLayout(false); return false;">zur Mobilversion</a>
+				 | <a class="nav_footer_link" href="/blackboard_index.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Schwarzes Brett</a> | <a class="nav_footer_link" href="/selling.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Buch verkaufen</a> | <a class="nav_footer_link" href="/partner.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Affiliateprogramm</a> | <a class="nav_footer_link" href="/press.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Presse</a> | <a class="nav_footer_link" href="/credits.php?PHPSESSID=4tfr2lvf0uh4uhr40fna4oute6">Impressum</a>				<span class="rd-wide-button hidden"> | </span>
+				<a class="nav_footer_link rd-wide-button hidden" href="javascript:void(0);" onclick="eurobuch.app.setForceWideLayout(true); return false;">zur Vollversion</a>
+							</span></div>		  </div>
+		</div>
+			</div>
+
+	<script type="text/javascript">
+		$(function() {
+			$(".searchForm").each(function() {
+				(new eurobuch.SearchForm(this)).init();
+			});
+		});
+	</script>
+
+	<script>
+</script>
+	<script type="application/ld+json">
+	{  "@context" : "http://schema.org",
+		 "@type" : "WebSite",
+		 "name" : "Eurobuch",
+		 "alternateName" : "Buchsuchmaschine - gebrauchte, antiquarische Bücher günstig kaufen",
+		 "url" : "https://www.eurobuch.com"
+	}
+	</script></body>
+		</html>
+	

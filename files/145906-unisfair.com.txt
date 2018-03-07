@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7"  lang="en-gb" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7"  lang="en-gb" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8"  lang="en-gb" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9"  lang="en-gb" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html  lang="en-gb" dir="ltr" prefix="fb: http://ogp.me/ns/fb# og: http://ogp.me/ns# article: http://ogp.me/ns/article# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile# video: http://ogp.me/ns/video# product: http://ogp.me/ns/product#"><!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<link href="https://www.westuc.com/pt-br/digital-media-services/virtual-environments" rel="alternate" hreflang="pt-br" />
+<link href="https://www.westuc.com/es-419/digital-media-services/virtual-environments" rel="alternate" hreflang="es-419" />
+<link rel="shortcut icon" href="https://www.westuc.com/files/favicon_6.ico" type="image/vnd.microsoft.icon" />
+<link href="https://www.westuc.com/ja-jp/webinars-enterprise-streaming/virtual-environments" rel="alternate" hreflang="ja-jp" />
+<link href="https://www.westuc.com/fr-ca/services-digital-m%C3%A9dia/environnements-virtuels" rel="alternate" hreflang="fr-ca" />
+<link href="https://www.westuc.com/de-de/digital-media-services/virtuelle-umgebungen" rel="alternate" hreflang="de-de" />
+<link href="https://www.westuc.com/en-us/webinars-enterprise-streaming/virtual-environments" rel="alternate" hreflang="en-us" />
+<link href="https://www.westuc.com/en-sg/digital-media-services/virtual-environments" rel="alternate" hreflang="en-sg" />
+<link href="https://www.westuc.com/fr-fr/digital-media-services/environnements-virtuels" rel="alternate" hreflang="fr-fr" />
+<meta name="description" content="Virtual Environments empowers you to spread brand awareness, expand market reach and accelerate sales while lowering production costs for content." />
+<meta name="abstract" content="Virtual event and virtual environment platform" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://www.westuc.com/en-gb/virtual-environments" />
+  <title>Virtual Environments – Targeted content direct to your audience</title>
+
+      <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="cleartype" content="on">
+
+  <link type="text/css" rel="stylesheet" href="https://www.westuc.com/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.westuc.com/files/css/css_UIkfV0QfnUnZyx6BH6JKjwdbsHJtL2OBaN0VEWJxuR8.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.westuc.com/files/css/css_wLn4vHYh8G0rAdAmvpFpS6r5TC8Eg6dzb1_ISw7mSlI.css" media="all" />
+<style>#sliding-popup.sliding-popup-top{background:#0779BF;}#sliding-popup .popup-content #popup-text h2,#sliding-popup .popup-content #popup-text p{color:#ffffff !important;}
+</style>
+<link type="text/css" rel="stylesheet" href="https://www.westuc.com/files/css/css_b5ZuE13NjpRzbuWiXjv0t7fzz3tZwv43Q2tAm1_q7z8.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.westuc.com/files/css/css_TFZndHTXFdxhBWJ-6jKvrhLnE_xocgg8aZEj49mqsHk.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.westuc.com/files/css/css_7cbUeudJBwdGtisMV2STvbmXS6XA8dvJ3_cWB1lPlQE.css" media="all" />
+  <script src="https://www.westuc.com/files/js/js_thhFjX8xlcWsDNOhd3nGVetfFnqaK6ppC1x8AhNDEk0.js"></script>
+<script src="https://www.westuc.com/files/js/js_BLxotNs2yt7YGlf9QRI9L9AMfdnkQfnN-_ADBTW3SiE.js"></script>
+<script>document.createElement( "picture" );</script>
+<script src="https://www.westuc.com/files/js/js_NpX2cwCeepkWZZ194B6-ViyVBHleaYLOx5R9EWBOMRU.js"></script>
+<script src="https://www.westuc.com/files/js/js_2BEJ3qAw9_PTzVfcJ53keUGqJtIJg8iC-rZM2z9-lME.js"></script>
+<script src="https://www.westuc.com/files/js/js_KI8x-FnmqgYAgrk2Fq7Abn99FMA1qC-gmC1lmKAwasw.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"en-gb\/","ajaxPageState":{"theme":"west","theme_token":"Hfn40k1hneiPaYJ-zwXI_6a4Zp2ucOCPiSVrUslsPcA","jquery_version":"1.9","js":{"sites\/all\/modules\/contrib\/picture\/picturefill2\/picturefill.min.js":1,"sites\/all\/modules\/contrib\/picture\/picture.min.js":1,"sites\/all\/modules\/custom\/wuc_panel_styles\/plugins\/styles\/wuc_hero_modal\/js\/wuc_hero_modal.js":1,"sites\/all\/modules\/contrib\/eu_cookie_compliance\/js\/eu_cookie_compliance.js":1,"sites\/all\/modules\/custom\/wuc_panel_styles\/plugins\/styles\/wuc_sticky_tabs\/js\/wuc_sticky_tabs.js":1,"sites\/all\/modules\/custom\/wuc_panel_styles\/plugins\/layouts\/wuc_secondary_nav\/js\/wuc_menu.js":1,"sites\/all\/modules\/custom\/features\/wuc_features_menu_sticky_tabs\/js\/wuc_features_menu_sticky_tabs.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"0":1,"sites\/all\/modules\/contrib\/extlink\/extlink.js":1,"public:\/\/languages\/en-gb_Lo6SVPyDsnmNbyOYYnGdHcOrBmcorNZDOUoKVqiAQGs.js":1,"sites\/all\/modules\/contrib\/apachesolr_autocomplete\/apachesolr_autocomplete.js":1,"sites\/all\/modules\/contrib\/apachesolr_autocomplete\/jquery-autocomplete\/jquery.autocomplete.js":1,"sites\/all\/modules\/contrib\/eloqua\/eloqua.js":1,"sites\/all\/libraries\/rrssb\/js\/rrssb.min.js":1,"sites\/all\/modules\/contrib\/better_exposed_filters\/better_exposed_filters.js":1,"sites\/all\/modules\/contrib\/views_load_more\/views_load_more.js":1,"sites\/all\/modules\/contrib\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/views\/js\/ajax_view.js":1,"misc\/textarea.js":1,"sites\/all\/modules\/custom\/wuc_language_switcher\/js\/lang_select.js":1,"sites\/all\/modules\/contrib\/lang_dropdown\/lang_dropdown.js":1,"sites\/all\/modules\/custom\/features\/wuc_features_configuration_languages\/js\/wuc_features_configuration_languages.js":1,"sites\/all\/modules\/contrib\/eloqua\/eloqua_webform\/eloqua_webform.js":1,"sites\/all\/modules\/contrib\/webform\/js\/webform.js":1,"sites\/all\/themes\/west\/js\/jquery.matchHeight-min.js":1,"sites\/all\/themes\/west\/js\/jquery.backgroundcover.js":1,"sites\/all\/themes\/west\/js\/jquery.placeholder.min.js":1,"sites\/all\/themes\/west\/js\/slick\/slick.js":1,"sites\/all\/themes\/west\/js\/chosen\/chosen.jquery.min.js":1,"sites\/all\/themes\/west\/js\/script.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/picture\/picture_wysiwyg.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/extlink\/extlink.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/apachesolr_autocomplete\/apachesolr_autocomplete.css":1,"sites\/all\/modules\/contrib\/apachesolr_autocomplete\/jquery-autocomplete\/jquery.autocomplete.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/libraries\/rrssb\/css\/rrssb.css":1,"sites\/all\/modules\/contrib\/exposed_filter_data\/exposed_filter_data.css":1,"0":1,"sites\/all\/modules\/contrib\/eu_cookie_compliance\/css\/eu_cookie_compliance.css":1,"public:\/\/ctools\/css\/ad57ff1546b4e3e493a0d16eb09e3ad9.css":1,"sites\/all\/modules\/contrib\/lang_dropdown\/lang_dropdown.css":1,"sites\/all\/modules\/contrib\/webform\/css\/webform.css":1,"sites\/all\/modules\/contrib\/panels\/plugins\/layouts\/flexible\/flexible.css":1,"sites\/all\/themes\/west\/system.menus.css":1,"sites\/all\/themes\/west\/system.messages.css":1,"sites\/all\/themes\/west\/system.theme.css":1,"sites\/all\/themes\/west\/js\/slick\/slick.css":1,"sites\/all\/themes\/west\/css\/styles.css":1,"public:\/\/ctools\/css\/75ab59d33cbf2979032acfd1aa405f4a.css":1}},"apachesolr_autocomplete":{"path":"\/en-gb\/apachesolr_autocomplete"},"eloqua":{"siteId":"1354"},"better_exposed_filters":{"datepicker":false,"slider":false,"settings":[],"autosubmit":false,"views":{"service_resources":{"displays":{"pane":{"filters":{"field_resource_type_tid":{"required":false}}}}},"services":{"displays":{"panel_pane_1":{"filters":[]}}},"use_cases_on_services":{"displays":{"panel_pane_1":{"filters":[]}}}}},"urlIsAjaxTrusted":{"\/en-gb\/virtual-environments":true,"\/en-gb\/system\/ajax":true},"views":{"ajax_path":"\/en-gb\/views\/ajax","ajaxViews":{"views_dom_id:929adadd401e50826fb314c4a06e2bb0":{"view_name":"service_resources","view_display_id":"pane","view_args":"5346\/en-gb","view_path":"node\/5346","view_base_path":"node\/5346","view_dom_id":"929adadd401e50826fb314c4a06e2bb0","pager_element":0}}},"webform":{"conditionals":{"webform-client-form-10336":{"ruleGroups":{"rgid_0":{"andor":"and","actions":{"aid_0":{"target":"webform-component--ownernumber","invert":0,"action":"show","argument":""}},"rules":{"rid_0":{"source":"webform-component--customer","value":"1","callback":"conditionalOperatorStringEqual"},"rid_1":{"source":"webform-component--category","value":"Conferencing \u0026 Collaboration","callback":"conditionalOperatorStringEqual"}}},"rgid_1":{"andor":"or","actions":{"aid_0":{"target":"webform-component--email","invert":0,"action":"set","argument":""}},"rules":{"rid_0":{"source":"webform-component--company","value":"Acunetix","callback":"conditionalOperatorStringEqual"},"rid_1":{"source":"webform-component--phone","value":"123456","callback":"conditionalOperatorStringEqual"}}}},"sourceMap":{"webform-component--customer":{"rgid_0":"rgid_0"},"webform-component--category":{"rgid_0":"rgid_0"},"webform-component--company":{"rgid_1":"rgid_1"},"webform-component--phone":{"rgid_1":"rgid_1"}},"values":[]},"webform-client-form-8466":{"ruleGroups":{"rgid_0":{"andor":null,"actions":{"aid_0":{"target":"webform-component--ownernumber","invert":0,"action":"show","argument":""}},"rules":{"rid_0":{"source":"webform-component--customer","value":"1","callback":"conditionalOperatorStringEqual"}}},"rgid_1":{"andor":"or","actions":{"aid_0":{"target":"webform-component--email","invert":0,"action":"set","argument":""}},"rules":{"rid_0":{"source":"webform-component--company","value":"Acunetix","callback":"conditionalOperatorStringEqual"},"rid_1":{"source":"webform-component--phone","value":"123456","callback":"conditionalOperatorStringEqual"}}},"rgid_2":{"andor":"and","actions":{"aid_0":{"target":"webform-component--fname","invert":0,"action":"set","argument":""}},"rules":{"rid_0":{"source":"webform-component--company","value":"google","callback":"conditionalOperatorStringEqual"},"rid_1":{"source":"webform-component--email","value":"google.com","callback":"conditionalOperatorStringDoesNotContain"}}}},"sourceMap":{"webform-component--customer":{"rgid_0":"rgid_0"},"webform-component--company":{"rgid_1":"rgid_1","rgid_2":"rgid_2"},"webform-component--phone":{"rgid_1":"rgid_1"},"webform-component--email":{"rgid_2":"rgid_2"}},"values":[]},"webform-client-form-11156":{"ruleGroups":{"rgid_1":{"andor":"or","actions":{"aid_0":{"target":"webform-component--email","invert":0,"action":"set","argument":""}},"rules":{"rid_0":{"source":"webform-component--company","value":"Acunetix","callback":"conditionalOperatorStringEqual"},"rid_1":{"source":"webform-component--company","value":"google","callback":"conditionalOperatorStringEqual"}}},"rgid_5":{"andor":null,"actions":{"aid_0":{"target":"webform-component--customer","invert":1,"action":"show","argument":""},"aid_1":{"target":"webform-component--ownernumber","invert":1,"action":"show","argument":""}},"rules":{"rid_0":{"source":"webform-component--email","value":"jmclemore@west.com","callback":"conditionalOperatorStringNotEqual"}}}},"sourceMap":{"webform-component--company":{"rgid_1":"rgid_1"},"webform-component--email":{"rgid_5":"rgid_5"}},"values":[]},"webform-client-form-6896":{"ruleGroups":{"rgid_3":{"andor":null,"actions":{"aid_0":{"target":"webform-component--productselected","invert":1,"action":"show","argument":""}},"rules":{"rid_0":{"source":"webform-component--product","value":"","callback":"conditionalOperatorStringNotEmpty"}}},"rgid_0":{"andor":null,"actions":{"aid_0":{"target":"webform-component--ownernumber","invert":0,"action":"show","argument":""}},"rules":{"rid_0":{"source":"webform-component--customer","value":"1","callback":"conditionalOperatorStringEqual"}}},"rgid_1":{"andor":null,"actions":{"aid_0":{"target":"webform-component--email","invert":0,"action":"set","argument":""}},"rules":{"rid_0":{"source":"webform-component--company","value":"google","callback":"conditionalOperatorStringEqual"}}},"rgid_2":{"andor":null,"actions":{"aid_0":{"target":"webform-component--email","invert":0,"action":"set","argument":""}},"rules":{"rid_0":{"source":"webform-component--company","value":"Acunetix","callback":"conditionalOperatorStringEqual"}}},"rgid_4":{"andor":null,"actions":{"aid_0":{"target":"webform-component--email","invert":0,"action":"set","argument":""}},"rules":{"rid_0":{"source":"webform-component--pagetitle","value":"403","callback":"conditionalOperatorStringEqual"}}}},"sourceMap":{"webform-component--product":{"rgid_3":"rgid_3"},"webform-component--customer":{"rgid_0":"rgid_0"},"webform-component--company":{"rgid_1":"rgid_1","rgid_2":"rgid_2"},"webform-component--pagetitle":{"rgid_4":"rgid_4"}},"values":[]},"webform-client-form-3156":{"ruleGroups":{"rgid_0":{"andor":null,"actions":{"aid_0":{"target":"webform-component--email","invert":0,"action":"set","argument":""}},"rules":{"rid_0":{"source":"webform-component--url","value":"403","callback":"conditionalOperatorStringEndsWith"}}},"rgid_1":{"andor":null,"actions":{"aid_0":{"target":"webform-component--email","invert":0,"action":"set","argument":""}},"rules":{"rid_0":{"source":"webform-component--url","value":"404","callback":"conditionalOperatorStringEndsWith"}}},"rgid_2":{"andor":null,"actions":{"aid_0":{"target":"webform-component--fname","invert":0,"action":"set","argument":""}},"rules":{"rid_0":{"source":"webform-component--email","value":"sample@email.tst","callback":"conditionalOperatorStringEqual"}}}},"sourceMap":{"webform-component--url":{"rgid_0":"rgid_0","rgid_1":"rgid_1"},"webform-component--email":{"rgid_2":"rgid_2"}},"values":[]}}},"ajax":{"edit-webform-ajax-submit-10336":{"callback":"webform_ajax_callback","wrapper":"webform-ajax-wrapper-10336","progress":{"message":"","type":"throbber"},"event":"click","url":"\/en-gb\/system\/ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Connect with an Expert"}},"edit-webform-ajax-submit-8466":{"callback":"webform_ajax_callback","wrapper":"webform-ajax-wrapper-8466","progress":{"message":"","type":"throbber"},"event":"click","url":"\/en-gb\/system\/ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Submit"}},"edit-webform-ajax-submit-11156":{"callback":"webform_ajax_callback","wrapper":"webform-ajax-wrapper-11156","progress":{"message":"","type":"throbber"},"event":"click","url":"\/en-gb\/system\/ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Submit"}},"edit-webform-ajax-submit-6896":{"callback":"webform_ajax_callback","wrapper":"webform-ajax-wrapper-6896","progress":{"message":"","type":"throbber"},"event":"click","url":"\/en-gb\/system\/ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Connect with Support"}},"edit-webform-ajax-submit-3156":{"callback":"webform_ajax_callback","wrapper":"webform-ajax-wrapper-3156","progress":{"message":"","type":"throbber"},"event":"click","url":"\/en-gb\/system\/ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Sign Up For News"}}},"eu_cookie_compliance":{"popup_enabled":1,"popup_agreed_enabled":0,"popup_hide_agreed":0,"popup_clicking_confirmation":1,"popup_html_info":"\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cp\u003EWest UC uses cookies to ensure that we give you the best experience when you visit our websites or use our Services. If you continue without changing your browser settings, you are agreeing to our use of cookies. Find out more by reading our \u003Ca href=\u0022http:\/\/www.west.com\/privacy-policy\/\u0022\u003Eprivacy policy\u003C\/a\u003E.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button\u0022\u003EYes, I agree\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","popup_html_agreed":"\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content agreed\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      Thanks    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022hide-popup-button\u0022\u003EHide\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button\u0022 \u003EMore info\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/www.west.com\/privacy-policy\/","popup_link_new_window":1,"popup_position":1,"popup_language":"en-gb","domain":""},"extlink":{"extTarget":"_blank","extClass":0,"extLabel":"(link is external)","extImgClass":0,"extSubdomains":1,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site.","mailtoClass":0,"mailtoLabel":"(link sends e-mail)"},"language":{"language":"en-gb","name":"English - UK","native":"English - UK","direction":"0","enabled":"1","plurals":"2","formula":"($n!=1)","domain":"","prefix":"en-gb","weight":"-9","javascript":"Lo6SVPyDsnmNbyOYYnGdHcOrBmcorNZDOUoKVqiAQGs","lingotek_enabled":"0","lingotek_locale":"en_GB","provider":"locale-url","dir":"ltr"},"languages":{"en":{"language":"en","name":"English - US","native":"English - US","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"en-us","weight":"-10","javascript":"","lingotek_enabled":"0","lingotek_locale":"en_US"},"en-gb":{"language":"en-gb","name":"English - UK","native":"English - UK","direction":"0","enabled":"1","plurals":"2","formula":"($n!=1)","domain":"","prefix":"en-gb","weight":"-9","javascript":"Lo6SVPyDsnmNbyOYYnGdHcOrBmcorNZDOUoKVqiAQGs","lingotek_enabled":"0","lingotek_locale":"en_GB"},"en-SG":{"language":"en-SG","name":"English - Singapore","native":"English - Singapore","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"en-sg","weight":"-8","javascript":"","lingotek_enabled":"0","lingotek_locale":"en_SG"},"fr":{"language":"fr","name":"French","native":"Fran\u00e7ais - FR","direction":"0","enabled":"1","plurals":"2","formula":"($n\u003E1)","domain":"","prefix":"fr-fr","weight":"-7","javascript":"8XpTNhapyPerpKTFA7b2HfEJmO8m2fQaBqqcIoVVfu4","lingotek_enabled":"1","lingotek_locale":"fr_FR"},"de":{"language":"de","name":"German","native":"Deutsch - DE","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"de-de","weight":"-6","javascript":"xBhlv5Lz9JrRBZgbBlhRCVNC5DIrq1Bnjl23TV_FEiM","lingotek_enabled":"1","lingotek_locale":"de_DE"},"ja":{"language":"ja","name":"Japanese","native":"\u65e5\u672c\u8a9e","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"ja-jp","weight":"-5","javascript":"D-zyFkQD5k7THR9mKWZNfKEUNu8dVw2SH1x3jAQYZZQ","lingotek_enabled":"1","lingotek_locale":"ja_JP"},"fr-ca":{"language":"fr-ca","name":"French_CA","native":"Fran\u00e7ais_CA","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"fr-ca","weight":"0","javascript":"bxt_7gQo7ZFPD30UHXerEiC5-eaFQ0vZNGF1uD9vjOs","lingotek_enabled":"1","lingotek_locale":"fr_CA"},"fr-us":{"language":"fr-us","name":"French_Intl","native":"Fran\u00e7ais_Intl","direction":"0","enabled":"0","plurals":"0","formula":"","domain":"","prefix":"fr-us","weight":"0","javascript":"","lingotek_enabled":"1","lingotek_locale":"fr_US"},"pt-br":{"language":"pt-br","name":"Portuguese","native":"Portugu\u00eas","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"pt-br","weight":"0","javascript":"RHyND3y7QrKcWUjvDCmM3hCCKF5vNFL7EYyUvlfazrc","lingotek_enabled":"1","lingotek_locale":"pt_BR"},"es":{"language":"es","name":"Spanish-419","native":"Espa\u00f1ol","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"es-419","weight":"0","javascript":"TsEy802cBJ3mxQHMo3NDwBhlpSdxvCMmAQXAoLZjU4w","lingotek_enabled":"1","lingotek_locale":"es_419"},"es-es":{"language":"es-es","name":"Spanish-SP","native":"Espa\u00f1ol","direction":"0","enabled":"0","plurals":"0","formula":"","domain":"","prefix":"es-es","weight":"0","javascript":"","lingotek_enabled":"1","lingotek_locale":"es_ES"},"es-us":{"language":"es-us","name":"Spanish-US","native":"Espa\u00f1ol","direction":"0","enabled":"0","plurals":"0","formula":"","domain":"","prefix":"es-us","weight":"0","javascript":"","lingotek_enabled":"1","lingotek_locale":"es_US"}}});</script>
+      <!--[if lt IE 9]>
+    <script src="/sites/all/themes/zen/js/html5-respond.js"></script>
+    <![endif]-->
+  </head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-5346 node-type-service node-promoted node-sticky i18n-en-gb section-virtual-environments page-panels"  onload="_googWcmGet('number','877.489.7647')">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-56P6P6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-56P6P6');</script>
+<!-- End Google Tag Manager -->
+      <p id="skip-link">
+      <a href="#main-menu" class="element-invisible element-focusable">Jump to navigation</a>
+    </p>
+      <div class="panel-pane pane-panels-mini pane-utility-nav-bar" >
+  
+      
+  
+  
+<div class="container-outer-utility">
+  <section class="mod-utility">
+    <div class="logo">
+      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="55px" height="44px" viewBox="0 0 55 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Imported Layers Copy 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Imported-Layers-Copy-4" sketch:type="MSLayerGroup" transform="translate(-0.269322, 0.155456)">
+            <path d="M6.02283951,0.615864198 L6.02283951,15.8773457 L7.81067901,15.8773457 L7.81067901,2.36703704 L47.7719136,2.36703704 L47.7719136,41.5127778 L7.81067901,41.5127778 L7.81067901,28.0024691 L6.02283951,28.0024691 L6.02283951,43.2639506 L49.5590741,43.2639506 L49.5590741,0.615864198 L6.02283951,0.615864198" id="Fill-1" fill="#ED1D24" sketch:type="MSShapeGroup"></path>
+            <path d="M3.23888889,17.820679 L4.41561728,23.5854938 L5.68944444,17.820679 L8.33351852,17.820679 L9.47833333,23.6330247 L10.8010494,17.820679 L13.364321,17.820679 L10.8492593,26.0652469 L8.1562963,26.0652469 L6.91506173,20.568642 L5.65753086,26.0652469 L2.93265432,26.0652469 L0.626728395,17.820679 L3.23888889,17.820679" id="Fill-2" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M52.4503086,42.9604321 C51.6409259,42.9604321 50.8037037,42.3574691 50.8037037,41.3470988 C50.8037037,40.4372222 51.5268519,39.7242593 52.4503086,39.7242593 C52.9038889,39.7242593 53.3228395,39.8906173 53.6297531,40.1934568 C53.9400617,40.4990123 54.1098148,40.9104938 54.1070988,41.3518519 C54.1023457,42.2535802 53.3751235,42.9604321 52.4503086,42.9604321 M53.8497531,39.9795679 C53.4837654,39.6190123 52.9867284,39.4207407 52.4503086,39.4207407 C51.3530247,39.4207407 50.4933951,40.2667901 50.4933951,41.3470988 C50.4933951,42.5469136 51.4888272,43.2639506 52.4503086,43.2639506 C53.5475926,43.2639506 54.4112963,42.4246914 54.4167284,41.3532099 C54.4201235,40.8303704 54.2184568,40.3428395 53.8497531,39.9795679" id="Fill-3" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M52.4346914,41.1291358 L52.0999383,41.1291358 L52.0999383,40.5220988 L52.358642,40.5220988 C52.6275309,40.5220988 52.6784568,40.5220988 52.7592593,40.5574074 C52.8862346,40.6117284 52.9222222,40.7359877 52.9222222,40.8208642 C52.9222222,41.1338889 52.5969753,41.1291358 52.4346914,41.1291358 M52.8617901,41.3179012 C53.1503704,41.2432099 53.3289506,41.0693827 53.3289506,40.7855556 C53.3289506,40.5723457 53.2060494,40.3537037 52.962284,40.2688272 C52.8203704,40.2192593 52.6628395,40.2138272 52.4306173,40.2138272 L51.6884568,40.2138272 L51.6884568,42.4464198 L52.0945062,42.4464198 L52.0945062,41.4469136 L52.2364198,41.4469136 C52.5311111,41.4523457 52.688642,41.4767901 52.7497531,41.7952469 C52.7592593,41.8495679 52.7952469,42.0885802 52.8054321,42.1381481 C52.8407407,42.3316667 52.8760494,42.4117901 52.8964198,42.4464198 L53.3581481,42.4464198 C53.2569753,42.2474691 53.2366049,42.1232099 53.185679,41.7850617 C53.1354321,41.4815432 53.0437654,41.3973457 52.8617901,41.3179012" id="Fill-4" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M32.5966667,15.4353086 L35.0628395,15.4353086 L35.0628395,17.820679 L36.6911111,17.820679 L36.6911111,19.305 L35.0465432,19.305 L35.0465432,23.2059259 C35.0309259,23.7117901 35.0309259,24.1382099 35.692284,24.1382099 L36.5790741,24.1062963 L36.5790741,26.0014198 C36.0460494,26.0808642 35.7241975,26.127716 35.2726543,26.127716 C34.4177778,26.127716 33.4827778,26.0808642 32.9511111,25.3224074 C32.612284,24.8328395 32.5966667,24.2482099 32.5966667,23.4585185 L32.5966667,19.305 L31.3703704,19.305 L31.3703704,17.820679 L32.5966667,17.820679 L32.5966667,15.4353086" id="Fill-5" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M24.3256173,23.3091358 C25.0025926,23.9569136 25.8411728,24.4464815 26.7761728,24.4464815 C27.3730247,24.4464815 28.2761111,24.257037 28.2761111,23.6411728 C28.2761111,23.3566667 28.0982099,23.2459877 27.9535802,23.1672222 C27.5821605,22.9777778 27.002284,22.9302469 26.5181481,22.8514815 C26.1474074,22.7876543 25.7603704,22.7088889 25.3896296,22.5982099 C24.8735802,22.4562963 24.3575309,22.2512346 23.9867901,21.887963 C23.6160494,21.5246914 23.3580247,20.955679 23.3580247,20.3398148 C23.3580247,18.9817901 24.5510494,17.5755556 26.9051852,17.5755556 C28.8885802,17.5755556 30.0816049,18.4127778 30.6621605,18.807963 L29.1303086,20.1979012 C28.3399383,19.5976543 27.5984568,19.3762963 27.0179012,19.3762963 C26.0509877,19.3762963 25.8248765,19.7551852 25.8248765,19.9921605 C25.8248765,20.4661111 26.3572222,20.5611728 27.1632099,20.7030864 C28.8559877,21.0032099 30.8230864,21.4452469 30.8230864,23.4041975 C30.8230864,25.3468519 28.8240741,26.2940741 26.840679,26.2940741 C24.5028395,26.2940741 23.2935185,25.188642 22.7618519,24.6990741 L24.3256173,23.3091358" id="Fill-6" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M19.6506173,20.9040741 C19.6024074,20.5604938 19.5392593,20.1069136 19.1882099,19.747716 C18.8846914,19.4509877 18.422284,19.2948148 17.9917901,19.2948148 C17.4017284,19.2948148 16.9868519,19.5759259 16.7478395,19.8258025 C16.4130864,20.185 16.332963,20.5604938 16.2535185,20.9040741 L19.6506173,20.9040741 L19.6506173,20.9040741 Z M22.0909877,23.9195679 C21.8037654,24.3412346 21.5165432,24.747963 21.0860494,25.1383951 C20.3683333,25.794321 19.2839506,26.2947531 17.9442593,26.2947531 C15.4719753,26.2947531 13.7330247,24.747963 13.7330247,22.0760494 C13.7330247,20.1069136 14.7223457,17.5762346 18.0080864,17.5762346 C18.5024074,17.5762346 19.9378395,17.6230864 21.0066049,18.7475309 C22.0909877,19.8882716 22.1548148,21.4819136 22.1867284,22.4040123 L16.2372222,22.4040123 C16.2216049,23.4198148 16.8116667,24.4349383 18.1350617,24.4349383 C19.4754321,24.4349383 19.9378395,23.5759877 20.240679,22.9974691 L22.0909877,23.9195679 L22.0909877,23.9195679 Z" id="Fill-7" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>    </div>
+    <div class="utility-nav">
+      <div class="panel-pane pane-block pane-wuc-language-switcher-lang-switch" >
+  
+      
+  
+  <div class="language-switcher-block"><div class="selected-language"><a href="#" id="lan_select"><span class="language">English</span>|<span class="region">EMEA</span></a></div><div class="dropdown"><div class="row clearfix"><div class="col1"><div class="region">AMERICAS</div><ul class="languages"><li><a href="/en-us/node/5346?langpick=y">English</a></li><li><a href="/fr-ca/node/5346?langpick=y">Français</a></li><li><a href="/es-419/node/5346?langpick=y">Español</a></li><li><a href="/pt-br/node/5346?langpick=y">Português</a></li></ul></div><div class="col2"><div class="region">EUROPE, MIDDLE EAST AND AFRICA</div><ul class="languages"><li><a href="/de-de/node/5346?langpick=y">Deutsch</a></li><li><a href="/fr-fr/node/5346?langpick=y">Français</a></li><li><a class="active" href="/en-gb/node/5346?langpick=y">English</a></li></ul></div><div class="col3"><div class="region">ASIA PACIFIC</div><ul class="languages"><li><a href="/ja-jp/node/5346?langpick=y">日本語</a></li><li><a href="/en-sg/node/5346?langpick=y">English</a></li></ul></div></div></div></div>
+  
+  </div>
+<!-- Header Contact --><ul class="menu--utility"><li class="menu--utility__link menu--utility__about">
+<a class="toggle--about" href="#">About</a><br /><ul class="menu--utility__submenu menu--about"><li class="menu--utility__link menu--utility__about">
+<div><a href="/en-gb/about-us">Mission</a></div>
+<div><a href="/en-gb/about/leadership-team">Leadership Team</a></div>
+<div><a href="/en-gb/press-room">Press Room</a></div>
+</li>
+<li class="menu--utility__link menu--utility__about">
+<div><a href="/en-gb/awards">Awards</a></div>
+<div><a href="/en-gb/certifications">Certifications</a></div>
+<div><a href="/en-gb/blog">Blog</a></div>
+</li>
+<li class="menu--utility__link menu--utility__about">
+<div><a href="/en-gb/resale-partners">Resale Partners</a></div>
+<div><a href="/en-gb/technology-partners">Technology Partners</a></div>
+<div><a href="/en-gb/strategic-business-partners">Business Partners</a></div>
+</li>
+</ul></li>
+<li class="menu--utility__link menu--utility__connect"><a class="toggle--connect" href="#">Connect with Us</a><br /><ul class="menu--utility__submenu menu--connect"><li class="menu--utility__link menu--utility__connect">
+Sales &amp; Service:<br /> +44 (0) 330 606 8 606</li>
+<li style="visibility: hidden;width:0px;height:0px;" class="menu--utility__link menu--utility__connect" href="javascript://Chat" onclick="liveagent.startChat('')">
+<!--Live Chat--></li>
+<li class="menu--utility__link menu--utility__connect"><a href="/en-gb/europe-middle-east-africa-emea">Contact Information</a></li>
+</ul></li>
+<li class="menu--utility__link menu--utility__support"><a class="toggle--meeting" href="#">My Account</a><br /><ul class="menu--utility__submenu menu--meeting"><li class="menu--utility__link menu--utility__support">Manage your account at InterCall Online<br /><a class="btn-white" data-href="include" href="http://www.intercallonline.com" target="_blank">Log in now</a></li>
+<li class="menu--utility__link menu--utility__support">
+<div class="l-3up">Lost your Pin or Password? Call us for help.</div>
+<div class="l-3up"><small>Customer Service 24/7</small>
+<p>+44 (0) 1452 553 456</p>
+</div>
+<div class="l-3up"><small>Sales</small>
+<p>+44 (0)330 606 8 606</p>
+</div>
+</li>
+</ul></li>
+<li class="menu--utility__link menu--utility__support"><a class="toggle--support" href="#">Search Resources<em>Which product are you using?</em></a></li>
+</ul><div class="panel-pane pane-block pane-wuc-search-wuc-search-get-support form--search--2" >
+  
+      
+  
+  <div class="services-search-copy">Which product are you using?</div>
+<form action="/en-gb/virtual-environments" method="post" id="wuc-search-get-support-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-keyword">
+  <label for="edit-keyword">Which product are you using? <span class="form-required" title="This field is required.">*</span></label>
+ <input class="apachesolr-autocomplete unprocessed form-text required" type="text" id="edit-keyword" name="keyword" value="" size="60" maxlength="128" />
+</div>
+<input type="submit" id="edit-submit" name="" value="Search" class="form-submit" /><input type="hidden" name="form_build_id" value="form-9eapM5CcxLrHNmP3tIPowlOkocGXyVoePtK35pFHdGs" />
+<input type="hidden" name="form_id" value="wuc_search_get_support_form" />
+</div></form>
+  
+  </div>
+    </div>
+  </section>
+</div>
+  
+  </div>
+<div class="panel-pane pane-panels-mini pane-primary-navigation" >
+  
+      
+  
+  
+<div class="site-header">
+  
+<div class="header__container">
+  <header class="header">
+    <div class="header__branding">
+      <div class="header__site-name" id="site-name"><a href="/en-gb" title="Home" class="header__site-link" rel="home">Unified Communications <br />Services</a></div>    </div>
+    <div class="header__nav">
+      <a href="#" class="toggle--menu">
+        <div class="toggle--menu-open"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="23px" height="19px" viewBox="0 0 23 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 162 + Rectangle 162 Copy 3 + Rectangle 162 Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Rectangle-162-+-Rectangle-162-Copy-3-+-Rectangle-162-Copy-2" sketch:type="MSLayerGroup" transform="translate(-1.000000, 0.000000)" fill="#FFFFFF">
+            <rect id="Rectangle-162" sketch:type="MSShapeGroup" x="1" y="0" width="23" height="2"></rect>
+            <rect id="Rectangle-162-Copy-3" sketch:type="MSShapeGroup" x="1" y="8" width="23" height="2"></rect>
+            <rect id="Rectangle-162-Copy-2" sketch:type="MSShapeGroup" x="1" y="17" width="23" height="2"></rect>
+        </g>
+    </g>
+</svg></div>
+        <div class="toggle--menu-close"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 162 Copy 4 + Rectangle 162 Copy 5 Copy Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Rectangle-162-Copy-4-+-Rectangle-162-Copy-5-Copy-Copy" sketch:type="MSLayerGroup" transform="translate(9.000000, 9.000000) rotate(-315.000000) translate(-9.000000, -9.000000) translate(-3.000000, -3.000000)" fill="#FFFFFF">
+            <rect id="Rectangle-162-Copy-4" sketch:type="MSShapeGroup" x="0.8677996" y="11.0711728" width="22.5075649" height="1.71530878"></rect>
+            <rect id="Rectangle-162-Copy-5" sketch:type="MSShapeGroup" transform="translate(12.121582, 11.928827) rotate(-90.000000) translate(-12.121582, -11.928827) " x="0.8677996" y="11.0711728" width="22.5075649" height="1.71530878"></rect>
+        </g>
+    </g>
+</svg></div>
+      </a>
+      <ul class="menu--primary">
+                  <header>
+            <h2 class="element-invisible">Main menu</h2>
+          </header>
+                
+<li class="menu--primary__item"><a href="/en-gb/cloud-contact-centre" class="menu--primary__link" id="main-menu-network">Cloud Contact <br />Centre</a></li><li class="menu--primary__item"><a href="/en-gb/conferencing-collaboration" class="menu--primary__link" id="main-menu-conferencing">Conferencing <br />& Collaboration</a></li><li class="menu--primary__item"><a href="/en-gb/hosted-enterprise-communications" class="menu--primary__link" id="main-menu-managed-voice">Hosted Voice <br />& Networks</a></li><li class="menu--primary__item"><a href="/en-gb/digital-media-services" class="menu--primary__link active-trail active-trail" id="main-menu-digital-media">Webinars & <br />Enterprise Streaming</a></li><li class="menu--primary__item"><a href="/en-gb/resources-insights" class="menu--primary__link" id="main-menu-resources">Resources <br />& Insights</a></li>      </ul>
+    </div>
+  </header>
+</div>  <nav class="nav nav-mega-container">
+    <div class="nav-mega" id="main-menu-conferencing-children">
+      
+<div class="l-2up--1">
+  <div class="mega-summary">
+    <div class="panel-pane pane-node" >
+  
+        <h2 class="pane-title">Conferencing &amp; Collaboration</h2>
+    
+  
+  <article class="node-3361 node node-category node-teaser clearfix">
+
+  
+  
+  <div>Conferencing &amp; Collaboration solutions by West Unified Communications Services enhance enterprise audio, video &amp; web interactions for greater productivity at lower cost. </div>
+
+  <ul class="links inline"><li class="node-readmore first last"><a href="/en-gb/conferencing-collaboration" rel="tag" title="">Read more<span class="element-invisible"> about </span></a></li>
+</ul>
+  
+</article>
+
+  
+  </div>
+  </div>
+</div>
+<div class="l-2up--2">
+  <ul class="nav-mega__list">
+    
+  <header>
+    <h2 class="element-invisible">Conferencing &lt;br /&gt;&amp; Collaboration</h2>
+  </header>
+
+<li class="menu--secondary__item"><a href="/en-gb/conferencing-collaboration/audio-conferencing" class="menu--secondary__link" id="">Audio Conferencing</a></li><li class="menu--secondary__item"><a href="/en-gb/conferencing-collaboration/video-conferencing" class="menu--secondary__link" id="">Video Conferencing</a></li><li class="menu--secondary__item"><a href="/en-gb/conferencing-collaboration/web-conferencing" class="menu--secondary__link" id="">Web Conferencing</a></li><li class="menu--secondary__item"><a href="/en-gb/conferencing-collaboration/collaboration-tools" class="menu--secondary__link" id="">Collaboration Tools</a></li>  </ul>
+</div>
+    </div>
+    <div class="nav-mega" id="main-menu-digital-media-children">
+      
+<div class="l-2up--1">
+  <div class="mega-summary">
+    <div class="panel-pane pane-node" >
+  
+        <h2 class="pane-title">Webinars &amp; Enterprise Streaming</h2>
+    
+  
+  <article class="node-3196 node node-category node-teaser clearfix">
+
+  
+  
+  <div>Webinars &amp; Enterprise Streaming by West Unified Communications Services engage audiences on a global scale with interactive webcasts, webinars &amp; virtual event environments. </div>
+
+  <ul class="links inline"><li class="node-readmore first last"><a href="/en-gb/digital-media-services" rel="tag" title="">Read more<span class="element-invisible"> about </span></a></li>
+</ul>
+  
+</article>
+
+  
+  </div>
+  </div>
+</div>
+<div class="l-2up--2">
+  <ul class="nav-mega__list">
+    
+  <header>
+    <h2 class="element-invisible">Webinars &amp; &lt;br /&gt;Enterprise Streaming</h2>
+  </header>
+
+<li class="menu--secondary__item"><a href="/en-gb/webcast-essentials" class="menu--secondary__link" id="">Webcast Essentials</a></li><li class="menu--secondary__item"><a href="/en-gb/digital-media-services/webcast-pro" class="menu--secondary__link" id="">Webcast Pro</a></li><li class="menu--secondary__item"><a href="/en-gb/virtual-environments" class="menu--secondary__link active-trail active" id="">Virtual Environments</a></li><li class="menu--secondary__item"><a href="/en-gb/webinars-enterprise-streaming/site-event-capture" class="menu--secondary__link" id="">On-Site Event Capture</a></li><li class="menu--secondary__item"><a href="/en-gb/west-corporatetube" class="menu--secondary__link" id="">West CorporateTube</a></li>  </ul>
+</div>
+    </div>
+    <div class="nav-mega" id="main-menu-managed-voice-children">
+      
+<div class="l-2up--1">
+  <div class="mega-summary">
+    <div class="panel-pane pane-node" >
+  
+        <h2 class="pane-title">Hosted Voice &amp; Networks</h2>
+    
+  
+  <article class="node-11416 node node-category node-teaser clearfix">
+
+  
+  
+  <div>West provides completely flexible unified communications and network solutions that scale at a moment’s notice – backed by the resiliency, security and support of the West Cloud.</div>
+
+  <ul class="links inline"><li class="node-readmore first last"><a href="/en-gb/hosted-enterprise-communications" rel="tag" title="">Read more<span class="element-invisible"> about </span></a></li>
+</ul>
+  
+</article>
+
+  
+  </div>
+  </div>
+</div>
+<div class="l-2up--2">
+  <ul class="nav-mega__list">
+    
+  <header>
+    <h2 class="element-invisible">Hosted Voice &lt;br /&gt;&amp; Networks</h2>
+  </header>
+
+<li class="menu--secondary__item"><a href="/en-gb/hosted-voice-networks/voice-unified-communications" class="menu--secondary__link" id="">Voice &amp; Unified Communications</a></li><li class="menu--secondary__item"><a href="/en-gb/hosted-voice-networks/networks-connectivity" class="menu--secondary__link" id="">Networks &amp; Connectivity</a></li>  </ul>
+</div>
+    </div>
+    <div class="nav-mega" id="main-menu-network-children">
+      
+<div class="l-2up--1">
+  <div class="mega-summary">
+    <div class="panel-pane pane-node" >
+  
+        <h2 class="pane-title">Cloud Contact Centre</h2>
+    
+  
+  <article class="node-11266 node node-category node-teaser clearfix">
+
+  
+  
+  <div>Improve customer interactions with highly scalable cloud contact centre solutions - West Cloud Contact, Cloud Contact Pro and Cloud Contact CE - designed for the way you do business.</div>
+
+  <ul class="links inline"><li class="node-readmore first last"><a href="/en-gb/cloud-contact-centre" rel="tag" title="">Read more<span class="element-invisible"> about </span></a></li>
+</ul>
+  
+</article>
+
+  
+  </div>
+  </div>
+</div>
+<div class="l-2up--2">
+  <ul class="nav-mega__list">
+    
+  <header>
+    <h2 class="element-invisible">Cloud Contact &lt;br /&gt;Centre</h2>
+  </header>
+
+<li class="menu--secondary__item"><a href="/en-gb/cloud-contact-centre/agent-scripting" class="menu--secondary__link" id="">Agent Scripting</a></li><li class="menu--secondary__item"><a href="/en-gb/cloud-contact-centre/contact-flow" class="menu--secondary__link" id="">Contact Flow</a></li><li class="menu--secondary__item"><a href="/en-gb/cloud-contact-centre/intelligent-call-routing" class="menu--secondary__link" id="">Intelligent Call Routing</a></li><li class="menu--secondary__item"><a href="/en-gb/cloud-contact-centre/management-monitoring" class="menu--secondary__link" id="">Management &amp; Monitoring</a></li><li class="menu--secondary__item"><a href="/en-gb/cloud-contact-centre/security-compliance" class="menu--secondary__link" id="">Security &amp; Compliance</a></li>  </ul>
+</div>
+    </div>
+  </nav>
+</div>
+<div class="mobile-nav-container">
+  <nav class="mobile-nav">
+    <!--Mobile Nav--><ul class="menu--utility"><li class="menu--utility__link menu--utility__connect"><a class="toggle--connect" href="#">Connect with Us</a><br /><ul class="menu--utility__submenu menu--connect"><li class="menu--utility__link menu--utility__connect">+44 (0)330 606 8 606</li>
+<!--<li class="menu--utility__link menu--utility__connect" href="javascript://Chat" onclick="liveagent.startChat('57360000000Kyja')">Live Chat</li>--><li class="menu--utility__link menu--utility__connect"><a href="/en-gb/europe-middle-east-africa-emea">Contact Information</a></li>
+</ul></li>
+<li class="menu--utility__link menu--utility__support"><a class="toggle--meeting" href="#">My Account</a><br /><ul class="menu--utility__submenu menu--meeting"><li class="menu--utility__link menu--utility__support">Manage your account at InterCall Online<br /><a class="btn-white" href="https://www-emea.intercallonline.com/IOL.action">Log in Now</a></li>
+<li class="menu--utility__link menu--utility__support">
+<div class="l-3up">
+<p>Lost your Pin or Password?<br /> Call us for help.</p>
+</div>
+<div class="l-3up">
+<p class="right">0845 3022 622</p>
+<p>						<small>24/7</small></p></div>
+<div class="l-3up">
+<p class="right">+44 (0)330 606 8 606</p>
+<p>							<small>Sales</small></p></div>
+</li>
+</ul></li>
+<li class="menu--utility__link menu--utility__support"><a class="toggle--support" href="#">Get Support</a><br /><ul class="menu--utility__submenu menu--support"><li class="menu--utility__link menu--utility__support">This should display the search field to perform a scoped search on Service Detail support pages</li>
+</ul></li>
+</ul><div class="panel-pane pane-block pane-wuc-search-wuc-search-get-support" >
+  
+      
+  
+  <div class="services-search-copy">Which product are you using?</div>
+<form action="/en-gb/virtual-environments" method="post" id="wuc-search-get-support-form--2" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-keyword">
+  <label for="edit-keyword--2">Which product are you using? <span class="form-required" title="This field is required.">*</span></label>
+ <input class="apachesolr-autocomplete unprocessed form-text required" type="text" id="edit-keyword--2" name="keyword" value="" size="60" maxlength="128" />
+</div>
+<input type="submit" id="edit-submit--2" name="" value="Search" class="form-submit" /><input type="hidden" name="form_build_id" value="form-JCVh9hZo2yub_kKEEjXEbGS3N50Jidvj6ey4xCTfpQQ" />
+<input type="hidden" name="form_id" value="wuc_search_get_support_form" />
+</div></form>
+  
+  </div>
+
+<ul class="menu--mobile">
+      <header>
+      <h2 class="element-invisible">Main menu</h2>
+    </header>
+    
+<li class="menu--mobile__item"><a href="/en-gb/cloud-contact-centre" class="menu--mobile__link" id="main-menu-network">Cloud Contact <br />Centre</a></li><li class="menu--mobile__item"><a href="/en-gb/conferencing-collaboration" class="menu--mobile__link" id="main-menu-conferencing">Conferencing <br />& Collaboration</a></li><li class="menu--mobile__item"><a href="/en-gb/hosted-enterprise-communications" class="menu--mobile__link" id="main-menu-managed-voice">Hosted Voice <br />& Networks</a></li><li class="menu--mobile__item"><a href="/en-gb/digital-media-services" class="menu--mobile__link active-trail" id="main-menu-digital-media">Webinars & <br />Enterprise Streaming</a></li><li class="menu--mobile__item"><a href="/en-gb/resources-insights" class="menu--mobile__link" id="main-menu-resources">Resources <br />& Insights</a></li></ul>
+<form class="lang_dropdown_form language" id="lang_dropdown_form_language" action="/en-gb/virtual-environments" method="post" accept-charset="UTF-8"><div><div class="form-item form-type-select form-item-lang-dropdown-select">
+ <select style="width:165px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language" name="lang_dropdown_select"><option value="en">English - US</option><option value="en-gb" selected="selected">English - UK</option><option value="en-SG">English - Singapore</option><option value="fr">Français - FR</option><option value="de">Deutsch - DE</option><option value="ja">日本語</option><option value="fr-ca">Français_CA</option><option value="pt-br">Português</option><option value="es">Español</option></select>
+</div>
+<img class="language-icon" src="https://www.westuc.com/sites/all/modules/contrib/languageicons/flags/en-gb.png" width="16" height="12" alt="English - UK" title="English - UK" /><input type="hidden" name="en" value="/en-us/webinars-enterprise-streaming/virtual-environments" />
+<input type="hidden" name="en-gb" value="/en-gb/virtual-environments" />
+<input type="hidden" name="en-SG" value="/en-sg/digital-media-services/virtual-environments" />
+<input type="hidden" name="fr" value="/fr-fr/digital-media-services/environnements-virtuels" />
+<input type="hidden" name="de" value="/de-de/digital-media-services/virtuelle-umgebungen" />
+<input type="hidden" name="ja" value="/ja-jp/webinars-enterprise-streaming/virtual-environments" />
+<input type="hidden" name="fr-ca" value="/fr-ca/services-digital-m%C3%A9dia/environnements-virtuels" />
+<input type="hidden" name="pt-br" value="/pt-br/digital-media-services/virtual-environments" />
+<input type="hidden" name="es" value="/es-419/digital-media-services/virtual-environments" />
+<noscript><div>
+<input type="submit" id="edit-submit--3" name="op" value="Go" class="form-submit" />
+</div></noscript><input type="hidden" name="form_build_id" value="form-npy-Wjh1bzIgJB5KPCsREp6cGYxwwQ1QclGwd55WW_8" />
+<input type="hidden" name="form_id" value="lang_dropdown_form" />
+</div></form>  </nav>
+</div>
+
+  
+  </div>
+
+
+<div class="l-66-33--2 hero__cta-group container__sticky-tabs">
+  <div id="hero__sticky-tabs" class="closed">
+    <a id="toggle--sticky-tabs" class="icon-down-open-mini" href="#">Hide</a>
+    <ul class="menu"><div class="hero__cta-item">
+  <a class="toggle--sticky-tabs-modal toggle--form" menulink="toggle--sticky-tabs-modal--8466" href="#">
+          Request a Quote <i class="icon-right"></i>
+        </a></div>
+
+<!-- If this is a form, render the form into a modal window -->
+  <div class="sticky-tabs-modal__overlay form-modal__overlay" id="toggle--sticky-tabs-modal--8466">
+    <div class="modal__background"></div>
+    <div class="modal__content-wrap">
+      <div class="modal__content modal__form">
+        <a href="#" class="toggle--sticky-tabs-modal btn--form-close modal__message-close" menulink="toggle--sticky-tabs-modal--8466">Close </a>
+        
+
+<div id="form__content" class="form--webform">
+      <h6>
+  Need a pricing quote? Complete this form and a specialist will contact you to help select the right product and pricing options.</h6>
+    <div id="webform-ajax-wrapper-8466"><form class="webform-client-form webform-client-form-8466" enctype="multipart/form-data" action="/en-gb/virtual-environments" method="post" id="webform-client-form-8466" accept-charset="UTF-8"><div><div  class="form-item webform-component webform-component-checkboxes webform-component--customer">
+  <label class="element-invisible" for="edit-submitted-customer--2">Current Customer? </label>
+ <div id="edit-submitted-customer--2" class="form-checkboxes"><div class="form-item form-type-checkbox form-item-submitted-customer-1">
+ <input type="checkbox" id="edit-submitted-customer--2-1" name="submitted[customer][1]" value="1" class="form-checkbox" />  <label class="option" for="edit-submitted-customer--2-1">Current Customer? </label>
+
+</div>
+</div>
+ <div class="description">Is your organization a current customer of West Unified Communications/InterCall?</div>
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--ownernumber">
+  <label for="edit-submitted-ownernumber--2">Owner Number </label>
+ <input placeholder="You can find this in your welcome email" type="text" id="edit-submitted-ownernumber--2" name="submitted[ownernumber]" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<div  class="form-item webform-component webform-component-email webform-component--email">
+  <label for="edit-submitted-email--2">Email Address <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" class="email form-text form-email required" type="email" id="edit-submitted-email--2" name="submitted[email]" size="60" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--fname">
+  <label for="edit-submitted-fname--2">First name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-fname--2" name="submitted[fname]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--lname">
+  <label for="edit-submitted-lname--2">Last name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-lname--2" name="submitted[lname]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--company">
+  <label for="edit-submitted-company--2">Company name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-company--2" name="submitted[company]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-select webform-component--country">
+  <label for="edit-submitted-country--2">Country <span class="form-required" title="This field is required.">*</span></label>
+ <select required="required" id="edit-submitted-country--2" name="submitted[country]" class="form-select required"><option value="" selected="selected">- Select -</option><optgroup label="North American Countries"><option value="CA">Canada</option><option value="MX">Mexico</option><option value="US">United States</option><option value="UM">United States Minor Outlying Islands</option></optgroup><optgroup label="Core EMEA Countries"><option value="BE">Belgium</option><option value="DK">Denmark</option><option value="FI">Finland</option><option value="FR">France</option><option value="DE">Germany</option><option value="IT">Italy</option><option value="NL">Netherlands</option><option value="ES">Spain</option><option value="ZA">South Africa</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option></optgroup><optgroup label="Rest of EMEA"><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AT">Austria</option><option value="BH">Bahrain</option><option value="BY">Belarus</option><option value="BJ">Benin</option><option value="BA">Bosnia and Herzegovina</option><option value="BW">Botswana</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="CM">Cameroon</option><option value="CV">Cape Verde</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="KM">Comoros</option><option value="HR">Croatia</option><option value="CY">Cyprus</option><option value="CZ">Czech Republic</option><option value="DJ">Djibouti</option><option value="EG">Egypt</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="FO">Faroe Islands</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GG">Guernsey</option><option value="GN">Guinea</option><option value="GW">Guinea-Bissau</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IR">Iran</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IM">Isle of Man</option><option value="IL">Israel</option><option value="CI">Ivory Coast</option><option value="JE">Jersey</option><option value="JO">Jordan</option><option value="KE">Kenya</option><option value="KW">Kuwait</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MK">Macedonia</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="MD">Moldova</option><option value="MC">Monaco</option><option value="ME">Montenegro</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="OM">Oman</option><option value="PS">Palestinian Territory</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="QA">Qatar</option><option value="RO">Romania</option><option value="RW">Rwanda</option><option value="SM">San Marino</option><option value="ST">Sao Tome and Principe</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="RS">Serbia</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SO">Somalia</option><option value="SY">Syria</option><option value="TZ">Tanzania</option><option value="TG">Togo</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="VA">Vatican</option><option value="YE">Yemen</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option></optgroup><optgroup label="Core APAC Countries"><option value="AU">Australia</option><option value="CN">China</option><option value="HK">Hong Kong S.A.R., China</option><option value="IN">India</option><option value="JP">Japan</option><option value="MY">Malaysia</option><option value="NZ">New Zealand</option><option value="SG">Singapore</option><option value="KR">South Korea</option></optgroup><optgroup label="Rest of APAC"><option value="BD">Bangladesh</option><option value="KH">Cambodia</option><option value="ID">Indonesia</option><option value="LA">Laos</option><option value="MN">Mongolia</option><option value="MM">Myanmar</option><option value="KP">North Korea</option><option value="PH">Philippines</option><option value="TW">Taiwan</option><option value="TH">Thailand</option><option value="VN">Vietnam</option></optgroup><optgroup label="Other Countries"><option value="AF">Afghanistan</option><option value="AX">Aland Islands</option><option value="AS">American Samoa</option><option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua and Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BB">Barbados</option><option value="BZ">Belize</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BV">Bouvet Island</option><option value="BR">Brazil</option><option value="IO">British Indian Ocean Territory</option><option value="VG">British Virgin Islands</option><option value="BN">Brunei</option><option value="BQ">Caribbean Netherlands</option><option value="KY">Cayman Islands</option><option value="CL">Chile</option><option value="CX">Christmas Island</option><option value="CC">Cocos (Keeling) Islands</option><option value="CO">Colombia</option><option value="CG">Congo (Brazzaville)</option><option value="CD">Congo (Kinshasa)</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="CU">Cuba</option><option value="CW">Curaçao</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="EC">Ecuador</option><option value="SV">El Salvador</option><option value="FK">Falkland Islands</option><option value="FJ">Fiji</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Territories</option><option value="GL">Greenland</option><option value="GD">Grenada</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HM">Heard Island and McDonald Islands</option><option value="HN">Honduras</option><option value="JM">Jamaica</option><option value="KZ">Kazakhstan</option><option value="KI">Kiribati</option><option value="KG">Kyrgyzstan</option><option value="MO">Macao S.A.R., China</option><option value="MV">Maldives</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="YT">Mayotte</option><option value="FM">Micronesia</option><option value="MS">Montserrat</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="AN">Netherlands Antilles</option><option value="NC">New Caledonia</option><option value="NI">Nicaragua</option><option value="NU">Niue</option><option value="NF">Norfolk Island</option><option value="MP">Northern Mariana Islands</option><option value="NO">Norway</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PN">Pitcairn</option><option value="PR">Puerto Rico</option><option value="RE">Reunion</option><option value="RU">Russia</option><option value="BL">Saint Barthélemy</option><option value="SH">Saint Helena</option><option value="KN">Saint Kitts and Nevis</option><option value="LC">Saint Lucia</option><option value="MF">Saint Martin (French part)</option><option value="PM">Saint Pierre and Miquelon</option><option value="VC">Saint Vincent and the Grenadines</option><option value="WS">Samoa</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SX">Sint Maarten</option><option value="SB">Solomon Islands</option><option value="GS">South Georgia and the South Sandwich Islands</option><option value="SS">South Sudan</option><option value="LK">Sri Lanka</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SJ">Svalbard and Jan Mayen</option><option value="SZ">Swaziland</option><option value="TJ">Tajikistan</option><option value="TL">Timor-Leste</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TT">Trinidad and Tobago</option><option value="TM">Turkmenistan</option><option value="TC">Turks and Caicos Islands</option><option value="TV">Tuvalu</option><option value="VI">U.S. Virgin Islands</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VE">Venezuela</option><option value="WF">Wallis and Futuna</option><option value="EH">Western Sahara</option></optgroup></select>
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--title">
+  <label for="edit-submitted-title--2">Title <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-title--2" name="submitted[title]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--phone">
+  <label for="edit-submitted-phone--2">Phone number <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-phone--2" name="submitted[phone]" value="" size="60" maxlength="15" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-select webform-component--category">
+  <label for="edit-submitted-category--2">Category <span class="form-required" title="This field is required.">*</span></label>
+ <select required="required" id="edit-submitted-category--2" name="submitted[category]" class="form-select required"><option value="Conferencing &amp; Collaboration">Conferencing &amp; Collaboration</option><option value="Webinars &amp; Enterprise Streaming" selected="selected">Webinars &amp; Enterprise Streaming</option><option value="Cloud Contact Center">Cloud Contact Centre</option><option value="Hosted Voice &amp; Networks">Hosted Voice &amp; Networks</option></select>
+ <div class="description">Select your primary topic of interest</div>
+</div>
+<div  class="form-item webform-component webform-component-textarea webform-component--comments">
+  <label for="edit-submitted-comments--2">Tell Us About You and Your Needs: </label>
+ <div class="form-textarea-wrapper resizable"><textarea id="edit-submitted-comments--2" name="submitted[comments]" cols="60" rows="5" class="form-textarea"></textarea></div>
+</div>
+<div  class="form-item webform-component webform-component-checkboxes webform-component--optin">
+  <label for="edit-submitted-optin--2">Opt-in </label>
+ <div id="edit-submitted-optin--2" class="form-checkboxes"><div class="form-item form-type-checkbox form-item-submitted-optin-1">
+ <input type="checkbox" id="edit-submitted-optin--2-1" name="submitted[optin][1]" value="1" class="form-checkbox" />  <label class="option" for="edit-submitted-optin--2-1">Subscribe to Product News emails </label>
+
+</div>
+</div>
+</div>
+<input type="hidden" name="details[sid]" />
+<input type="hidden" name="details[page_num]" value="1" />
+<input type="hidden" name="details[page_count]" value="1" />
+<input type="hidden" name="details[finished]" value="0" />
+<input type="hidden" name="form_build_id" value="form-a5-58wtz5aWvu2e7BIY-_RkVM7fSH1Y8r4xPEJ5TLcU" />
+<input type="hidden" name="form_id" value="webform_client_form_8466" />
+<input type="hidden" name="elqFormName" value="na-pricing" />
+<input type="hidden" name="elqSiteId" value="1354" />
+<input type="hidden" name="elqDefaultTargetURL" value="" />
+<input type="hidden" name="elqPost" value="" />
+<input id="edit-elqCustomerGUID" type="hidden" name="elqCustomerGUID" value="" />
+<input type="hidden" name="elqCookieWrite" value="0" />
+<input type="hidden" name="user_headers" value="a:0:{}" />
+<input type="hidden" name="webform_ajax_wrapper_id" value="webform-ajax-wrapper-8466" />
+<input id="was-submitted" type="hidden" name="was_submitted" value="0" />
+<div class="form-actions"><input class="webform-submit button-primary form-submit" type="submit" id="edit-webform-ajax-submit-8466" name="op" value="Submit" /></div></div></form></div></div>
+      </div>
+    </div>
+  </div>
+<div class="hero__cta-item">
+  <a class="toggle--sticky-tabs-modal toggle--form" menulink="toggle--sticky-tabs-modal--11156" href="#">
+          Connect with Sales <i class="icon-right"></i>
+        </a></div>
+
+<!-- If this is a form, render the form into a modal window -->
+  <div class="sticky-tabs-modal__overlay form-modal__overlay" id="toggle--sticky-tabs-modal--11156">
+    <div class="modal__background"></div>
+    <div class="modal__content-wrap">
+      <div class="modal__content modal__form">
+        <a href="#" class="toggle--sticky-tabs-modal btn--form-close modal__message-close" menulink="toggle--sticky-tabs-modal--11156">Close </a>
+        
+
+<div id="form__content" class="form--webform">
+      <h6>
+  Ready to learn more? Complete this form to hear from one of our experts on how we can help you reach your global audience.</h6>
+    <div id="webform-ajax-wrapper-11156"><form class="webform-client-form webform-client-form-11156" enctype="multipart/form-data" action="/en-gb/virtual-environments" method="post" id="webform-client-form-11156" accept-charset="UTF-8"><div><div  class="form-item webform-component webform-component-checkboxes webform-component--customer">
+  <label class="element-invisible" for="edit-submitted-customer--3">Current Customer? </label>
+ <div id="edit-submitted-customer--3" class="form-checkboxes"><div class="form-item form-type-checkbox form-item-submitted-customer-1">
+ <input type="checkbox" id="edit-submitted-customer--3-1" name="submitted[customer][1]" value="1" class="form-checkbox" />  <label class="option" for="edit-submitted-customer--3-1">Current Customer? </label>
+
+</div>
+</div>
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--ownernumber">
+  <label for="edit-submitted-ownernumber--3">Owner Number </label>
+ <input placeholder="You can find this in your welcome email" type="text" id="edit-submitted-ownernumber--3" name="submitted[ownernumber]" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<div  class="form-item webform-component webform-component-email webform-component--email">
+  <label for="edit-submitted-email--3">Email Address <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" class="email form-text form-email required" type="email" id="edit-submitted-email--3" name="submitted[email]" size="60" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--fname">
+  <label for="edit-submitted-fname--3">First name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-fname--3" name="submitted[fname]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--lname">
+  <label for="edit-submitted-lname--3">Last name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-lname--3" name="submitted[lname]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--company">
+  <label for="edit-submitted-company--3">Company name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-company--3" name="submitted[company]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-select webform-component--country">
+  <label for="edit-submitted-country--3">Country <span class="form-required" title="This field is required.">*</span></label>
+ <select required="required" id="edit-submitted-country--3" name="submitted[country]" class="form-select required"><optgroup label="North American Countries"><option value="CA">Canada</option><option value="MX">Mexico</option><option value="US" selected="selected">United States</option><option value="UM">United States Minor Outlying Islands</option></optgroup><optgroup label="Core EMEA Countries"><option value="BE">Belgium</option><option value="DK">Denmark</option><option value="FI">Finland</option><option value="FR">France</option><option value="DE">Germany</option><option value="IT">Italy</option><option value="NL">Netherlands</option><option value="ES">Spain</option><option value="ZA">South Africa</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option></optgroup><optgroup label="Rest of EMEA"><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AT">Austria</option><option value="BH">Bahrain</option><option value="BY">Belarus</option><option value="BJ">Benin</option><option value="BA">Bosnia and Herzegovina</option><option value="BW">Botswana</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="CM">Cameroon</option><option value="CV">Cape Verde</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="KM">Comoros</option><option value="HR">Croatia</option><option value="CY">Cyprus</option><option value="CZ">Czech Republic</option><option value="DJ">Djibouti</option><option value="EG">Egypt</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="FO">Faroe Islands</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GG">Guernsey</option><option value="GN">Guinea</option><option value="GW">Guinea-Bissau</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IR">Iran</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IM">Isle of Man</option><option value="IL">Israel</option><option value="CI">Ivory Coast</option><option value="JE">Jersey</option><option value="JO">Jordan</option><option value="KE">Kenya</option><option value="KW">Kuwait</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MK">Macedonia</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="MD">Moldova</option><option value="MC">Monaco</option><option value="ME">Montenegro</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="OM">Oman</option><option value="PS">Palestinian Territory</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="QA">Qatar</option><option value="RO">Romania</option><option value="RW">Rwanda</option><option value="SM">San Marino</option><option value="ST">Sao Tome and Principe</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="RS">Serbia</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SO">Somalia</option><option value="SY">Syria</option><option value="TZ">Tanzania</option><option value="TG">Togo</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="VA">Vatican</option><option value="YE">Yemen</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option></optgroup><optgroup label="Core APAC Countries"><option value="AU">Australia</option><option value="CN">China</option><option value="HK">Hong Kong S.A.R., China</option><option value="IN">India</option><option value="JP">Japan</option><option value="MY">Malaysia</option><option value="NZ">New Zealand</option><option value="SG">Singapore</option><option value="KR">South Korea</option></optgroup><optgroup label="Rest of APAC"><option value="BD">Bangladesh</option><option value="KH">Cambodia</option><option value="ID">Indonesia</option><option value="LA">Laos</option><option value="MN">Mongolia</option><option value="MM">Myanmar</option><option value="KP">North Korea</option><option value="PH">Philippines</option><option value="TW">Taiwan</option><option value="TH">Thailand</option><option value="VN">Vietnam</option></optgroup><optgroup label="Other Countries"><option value="AF">Afghanistan</option><option value="AX">Aland Islands</option><option value="AS">American Samoa</option><option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua and Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BB">Barbados</option><option value="BZ">Belize</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BV">Bouvet Island</option><option value="BR">Brazil</option><option value="IO">British Indian Ocean Territory</option><option value="VG">British Virgin Islands</option><option value="BN">Brunei</option><option value="BQ">Caribbean Netherlands</option><option value="KY">Cayman Islands</option><option value="CL">Chile</option><option value="CX">Christmas Island</option><option value="CC">Cocos (Keeling) Islands</option><option value="CO">Colombia</option><option value="CG">Congo (Brazzaville)</option><option value="CD">Congo (Kinshasa)</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="CU">Cuba</option><option value="CW">Curaçao</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="EC">Ecuador</option><option value="SV">El Salvador</option><option value="FK">Falkland Islands</option><option value="FJ">Fiji</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Territories</option><option value="GL">Greenland</option><option value="GD">Grenada</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HM">Heard Island and McDonald Islands</option><option value="HN">Honduras</option><option value="JM">Jamaica</option><option value="KZ">Kazakhstan</option><option value="KI">Kiribati</option><option value="KG">Kyrgyzstan</option><option value="MO">Macao S.A.R., China</option><option value="MV">Maldives</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="YT">Mayotte</option><option value="FM">Micronesia</option><option value="MS">Montserrat</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="AN">Netherlands Antilles</option><option value="NC">New Caledonia</option><option value="NI">Nicaragua</option><option value="NU">Niue</option><option value="NF">Norfolk Island</option><option value="MP">Northern Mariana Islands</option><option value="NO">Norway</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PN">Pitcairn</option><option value="PR">Puerto Rico</option><option value="RE">Reunion</option><option value="RU">Russia</option><option value="BL">Saint Barthélemy</option><option value="SH">Saint Helena</option><option value="KN">Saint Kitts and Nevis</option><option value="LC">Saint Lucia</option><option value="MF">Saint Martin (French part)</option><option value="PM">Saint Pierre and Miquelon</option><option value="VC">Saint Vincent and the Grenadines</option><option value="WS">Samoa</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SX">Sint Maarten</option><option value="SB">Solomon Islands</option><option value="GS">South Georgia and the South Sandwich Islands</option><option value="SS">South Sudan</option><option value="LK">Sri Lanka</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SJ">Svalbard and Jan Mayen</option><option value="SZ">Swaziland</option><option value="TJ">Tajikistan</option><option value="TL">Timor-Leste</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TT">Trinidad and Tobago</option><option value="TM">Turkmenistan</option><option value="TC">Turks and Caicos Islands</option><option value="TV">Tuvalu</option><option value="VI">U.S. Virgin Islands</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VE">Venezuela</option><option value="WF">Wallis and Futuna</option><option value="EH">Western Sahara</option></optgroup></select>
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--title">
+  <label for="edit-submitted-title--3">Title <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-title--3" name="submitted[title]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--phone">
+  <label for="edit-submitted-phone--3">Phone number <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-phone--3" name="submitted[phone]" value="" size="60" maxlength="15" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-select webform-component--category">
+  <label for="edit-submitted-category--3">Category <span class="form-required" title="This field is required.">*</span></label>
+ <select required="required" id="edit-submitted-category--3" name="submitted[category]" class="form-select required"><option value="Conferencing &amp; Collaboration">Conferencing &amp; Collaboration</option><option value="Webinars &amp; Enterprise Streaming" selected="selected">Webinars &amp; Enterprise Streaming</option><option value="Cloud Contact Center">Cloud Contact Centre</option><option value="Hosted Voice &amp; Networks">Hosted Voice &amp; Networks</option></select>
+ <div class="description">Select your primary topic of interest</div>
+</div>
+<div  class="form-item webform-component webform-component-textarea webform-component--comments">
+  <label for="edit-submitted-comments--3">Tell Us About You and Your Needs: </label>
+ <div class="form-textarea-wrapper resizable"><textarea id="edit-submitted-comments--3" name="submitted[comments]" cols="60" rows="5" class="form-textarea"></textarea></div>
+</div>
+<div  class="form-item webform-component webform-component-checkboxes webform-component--optin">
+  <label for="edit-submitted-optin--3">Opt-in </label>
+ <div id="edit-submitted-optin--3" class="form-checkboxes"><div class="form-item form-type-checkbox form-item-submitted-optin-1">
+ <input type="checkbox" id="edit-submitted-optin--3-1" name="submitted[optin][1]" value="1" class="form-checkbox" />  <label class="option" for="edit-submitted-optin--3-1">Subscribe to Product News emails </label>
+
+</div>
+</div>
+</div>
+<input type="hidden" name="details[sid]" />
+<input type="hidden" name="details[page_num]" value="1" />
+<input type="hidden" name="details[page_count]" value="1" />
+<input type="hidden" name="details[finished]" value="0" />
+<input type="hidden" name="form_build_id" value="form-NJbCdZKN7QKIMJPweQbD9TzJvk_3dAOyiGNmzKy9490" />
+<input type="hidden" name="form_id" value="webform_client_form_11156" />
+<input type="hidden" name="elqFormName" value="GLExpertConnect" />
+<input type="hidden" name="elqSiteId" value="1354" />
+<input type="hidden" name="elqDefaultTargetURL" value="" />
+<input type="hidden" name="elqPost" value="" />
+<input id="edit-elqCustomerGUID" type="hidden" name="elqCustomerGUID" value="" />
+<input type="hidden" name="elqCookieWrite" value="0" />
+<input type="hidden" name="user_headers" value="a:0:{}" />
+<input type="hidden" name="webform_ajax_wrapper_id" value="webform-ajax-wrapper-11156" />
+<input id="was-submitted" type="hidden" name="was_submitted" value="0" />
+<div class="form-actions"><input class="webform-submit button-primary form-submit" type="submit" id="edit-webform-ajax-submit-11156" name="op" value="Submit" /></div></div></form></div></div>
+      </div>
+    </div>
+  </div>
+<div class="hero__cta-item">
+  <a class="toggle--sticky-tabs-modal toggle--form" menulink="toggle--sticky-tabs-modal--6896" href="#">
+          Open a Support Case <i class="icon-right"></i>
+        </a></div>
+
+<!-- If this is a form, render the form into a modal window -->
+  <div class="sticky-tabs-modal__overlay form-modal__overlay" id="toggle--sticky-tabs-modal--6896">
+    <div class="modal__background"></div>
+    <div class="modal__content-wrap">
+      <div class="modal__content modal__form">
+        <a href="#" class="toggle--sticky-tabs-modal btn--form-close modal__message-close" menulink="toggle--sticky-tabs-modal--6896">Close </a>
+        
+
+<div id="form__content" class="form--webform">
+      <h6>
+  Ready to learn more? Complete this form to hear from one of our experts on how we can help you reach your global audience.</h6>
+    <div id="webform-ajax-wrapper-6896"><form class="webform-client-form webform-client-form-6896" enctype="multipart/form-data" action="/en-gb/virtual-environments" method="post" id="webform-client-form-6896" accept-charset="UTF-8"><div><div  class="form-item webform-component webform-component-checkboxes webform-component--customer">
+  <label class="element-invisible" for="edit-submitted-customer--4">Current Customer? </label>
+ <div id="edit-submitted-customer--4" class="form-checkboxes"><div class="form-item form-type-checkbox form-item-submitted-customer-1">
+ <input type="checkbox" id="edit-submitted-customer--4-1" name="submitted[customer][1]" value="1" checked="checked" class="form-checkbox" />  <label class="option" for="edit-submitted-customer--4-1">Current Customer? </label>
+
+</div>
+</div>
+</div>
+<div  class="form-item webform-component webform-component-select webform-component--productselected">
+  <label for="edit-submitted-productselected">I need help with: <span class="form-required" title="This field is required.">*</span></label>
+ <select required="required" id="edit-submitted-productselected" name="submitted[productselected]" class="form-select required"><option value="" selected="selected">- Select -</option><option value="ACP for Skype for Business">ACP for Skype for Business</option><option value="Adobe Connect">Adobe Connect</option><option value="BlueJeans">BlueJeans</option><option value="BlueJeans Primetime">BlueJeans Primetime</option><option value="Cisco Collaboration Meeting Rooms">Cisco Collaboration Meeting Rooms</option><option value="Cisco Jabber">Cisco Jabber</option><option value="Cisco Spark">Cisco Spark</option><option value="Cisco Spark Hybrid">Cisco Spark Hybrid</option><option value="Cisco WebEx Cloud Connected Audio">Cisco WebEx Cloud Connected Audio</option><option value="Cisco WebEx Event Center">Cisco WebEx Event Center</option><option value="Cisco WebEx Meeting Center">Cisco WebEx Meeting Center</option><option value="Cisco WebEx Support Center">Cisco WebEx Support Center</option><option value="Cisco WebEx Training Center">Cisco WebEx Training Center</option><option value="Consulting and System Integration">Consulting and System Integration</option><option value="ESNA iLink for Cisco">ESNA iLink for Cisco</option><option value="ESNA iLink for WebEx">ESNA iLink for WebEx</option><option value="InterCall Call Manager">InterCall Call Manager</option><option value="InterCall ECC Lync Edition">InterCall ECC Lync Edition</option><option value="InterCall for Hangouts">InterCall for Hangouts</option><option value="InterCall MobileMeet">InterCall MobileMeet</option><option value="InterCall Reservationless - Plus with Dolby Voice">InterCall Reservationless - Plus with Dolby Voice</option><option value="InterCall TXT">InterCall TXT</option><option value="InterCall Unified Meeting 5">InterCall Unified Meeting 5</option><option value="MaxxConnect SIP Trunking">MaxxConnect SIP Trunking</option><option value="Maxxis Application Network">Maxxis Application Network</option><option value="Maxxis Network Monitor">Maxxis Network Monitor</option><option value="MaxxSecure">MaxxSecure</option><option value="Microsoft Office 365">Microsoft Office 366</option><option value="Microsoft Skype for Business">Microsoft Skype for Business</option><option value="Mobile Connect">Mobile Connect</option><option value="On-Site Event Capture">On-Site Event Capture</option><option value="Operator Assisted Conferencing">Operator Assisted Conferencing</option><option value="Professional Digital Media Services">Professional Digital Media Services</option><option value="UC Exchange">UC Exchange</option><option value="Video Conferencing Solutions">Video Conferencing Solutions</option><option value="Virtual Environments">Virtual Environments</option><option value="VoiceMaxx">VoiceMaxx</option><option value="VoiceMaxx CE">VoiceMaxx CE</option><option value="Webcast Essentials">Webcast Essentials</option><option value="Webcast Pro">Webcast Pro</option><option value="West Cloud Call Recording">West Cloud Call Recording</option><option value="West Cloud Contact">West Cloud Contact</option><option value="West Cloud Contact CE">West Cloud Contact CE</option><option value="West Cloud Contact Pro">West Cloud Contact Pro</option><option value="West CorporateTube">West CorporateTube</option><option value="West Video Meeting Gateway">West Video Meeting Gateway</option><option value="Other">Other</option></select>
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--ownernumber">
+  <label for="edit-submitted-ownernumber--4">Owner Number </label>
+ <input placeholder="You can find your Owner Number in your welcome email" type="text" id="edit-submitted-ownernumber--4" name="submitted[ownernumber]" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<div  class="form-item webform-component webform-component-email webform-component--email">
+  <label for="edit-submitted-email--4">Email Address <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" class="email form-text form-email required" type="email" id="edit-submitted-email--4" name="submitted[email]" size="60" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--fname">
+  <label for="edit-submitted-fname--4">First name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-fname--4" name="submitted[fname]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--lname">
+  <label for="edit-submitted-lname--4">Last name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-lname--4" name="submitted[lname]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--company">
+  <label for="edit-submitted-company--4">Company name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-company--4" name="submitted[company]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--title">
+  <label for="edit-submitted-title--4">Title <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-title--4" name="submitted[title]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--phone">
+  <label for="edit-submitted-phone--4">Phone number <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-phone--4" name="submitted[phone]" value="" size="60" maxlength="15" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textarea webform-component--comments">
+  <label for="edit-submitted-comments--4">How can we help? </label>
+ <div class="form-textarea-wrapper resizable"><textarea id="edit-submitted-comments--4" name="submitted[comments]" cols="60" rows="5" class="form-textarea"></textarea></div>
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--leadother" style="display: none">
+ <input type="hidden" name="submitted[leadother]" value="Virtual Environments" />
+
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--product" style="display: none">
+ <input type="hidden" name="submitted[product]" value="Virtual Environments" />
+
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--lang" style="display: none">
+ <input type="hidden" name="submitted[lang]" value="en-gb" />
+
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--region" style="display: none">
+ <input type="hidden" name="submitted[region]" value="EMEA" />
+
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--category" style="display: none">
+ <input type="hidden" name="submitted[category]" value="Conferencing &amp; Collaboration" />
+
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--type" style="display: none">
+ <input type="hidden" name="submitted[type]" value="Across" />
+
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--pagetitle" style="display: none">
+ <input type="hidden" name="submitted[pagetitle]" value="Virtual Environments" />
+
+</div>
+<input type="hidden" name="details[sid]" />
+<input type="hidden" name="details[page_num]" value="1" />
+<input type="hidden" name="details[page_count]" value="1" />
+<input type="hidden" name="details[finished]" value="0" />
+<input type="hidden" name="form_build_id" value="form-ZsenK5EEPKj1eu3PLnKhJK5F1ENkctEnOUc8PPSLLW0" />
+<input type="hidden" name="form_id" value="webform_client_form_6896" />
+<input type="hidden" name="elqFormName" value="supportconnect" />
+<input type="hidden" name="elqSiteId" value="1354" />
+<input type="hidden" name="elqDefaultTargetURL" value="" />
+<input type="hidden" name="elqPost" value="" />
+<input id="edit-elqCustomerGUID" type="hidden" name="elqCustomerGUID" value="" />
+<input type="hidden" name="elqCookieWrite" value="0" />
+<input type="hidden" name="user_headers" value="a:0:{}" />
+<input type="hidden" name="webform_ajax_wrapper_id" value="webform-ajax-wrapper-6896" />
+<input id="was-submitted" type="hidden" name="was_submitted" value="0" />
+<div class="form-actions"><input class="webform-submit button-primary form-submit" type="submit" id="edit-webform-ajax-submit-6896" name="op" value="Connect with Support" /></div></div></form></div></div>
+      </div>
+    </div>
+  </div>
+</ul>  </div>
+</div>
+  <div class="section--service-hero"
+      >
+    <nav class="breadcrumb" role="navigation"><h2 class="element-invisible">You are here</h2><ol><li><a href="/en-gb">Home</a> › </li><li><a href="/en-gb/digital-media-services" id="main-menu-digital-media">Webinars & Enterprise Streaming</a> › </li><li>Virtual Environments</li></ol></nav>
+<div class="l-66-33--1">
+      <h1 class="hero__title"><div class="panel-pane pane-node-title" >
+  
+      
+  
+  Virtual Environments
+  
+  </div>
+</h1>
+        <div class="intro">
+  Deliver targeted content directly to your audience in a fully-branded online location. Present trade shows, product launches, job fairs and other important events. Serve live and on-demand content to global partners or employees 24/7.</div>
+  </div>
+<div class="l-66-33--2 hero__cta-group">
+          <div class="hero__cta-item"><a class="toggle--hero-modal toggle--form" href="#">
+  Contact Sales <i class="icon-right"></i></a></div>
+  
+      <div class="hero__cta-item phone-number">
+      Call Us  <span class="right">
+  +44 (0)330 606 8 606</span>
+    </div>
+  
+  
+      <div class="hero__cta-item">
+      <a class="" href="https://www.westuc.com/en-gb/support/virtual-environments-support">Support Resources&nbsp;<i class="icon-right"></i></a>
+    </div>
+  </div>
+
+  <div class="hero-modal__overlay form-modal__overlay">
+    <div class="modal__background"></div>
+    <div class="modal__content-wrap">
+      <div class="modal__content modal__form">
+        <a href="#" class="toggle--hero-modal btn--form-close"><span class="element-invisible">Close Modal</span><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <g id="Finished---To-Go-Into-Prototype" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="close_button" sketch:type="MSArtboardGroup" fill="#D8D8D8">
+            <g id="Rectangle-227-+-Rectangle-227-Copy-4" sketch:type="MSLayerGroup">
+                <rect id="Rectangle-227" sketch:type="MSShapeGroup" transform="translate(17.500000, 17.500000) rotate(-45.000000) translate(-17.500000, -17.500000) " x="-5" y="16" width="45" height="3"></rect>
+                <rect id="Rectangle-227-Copy" sketch:type="MSShapeGroup" transform="translate(17.500000, 17.500000) rotate(-315.000000) translate(-17.500000, -17.500000) " x="-5" y="16" width="45" height="3"></rect>
+            </g>
+        </g>
+    </g>
+</svg></a>
+        
+  
+
+<div id="form__content" class="form--webform">
+      <h6>
+  Ready to learn more? Complete this form to hear from one of our experts on how we can help you reach your global audience.</h6>
+    <div id="webform-ajax-wrapper-10336"><form class="webform-client-form webform-client-form-10336" enctype="multipart/form-data" action="/en-gb/virtual-environments" method="post" id="webform-client-form-10336" accept-charset="UTF-8"><div><div  class="form-item webform-component webform-component-checkboxes webform-component--customer">
+  <label class="element-invisible" for="edit-submitted-customer">Current Customer? </label>
+ <div id="edit-submitted-customer" class="form-checkboxes"><div class="form-item form-type-checkbox form-item-submitted-customer-1">
+ <input type="checkbox" id="edit-submitted-customer-1" name="submitted[customer][1]" value="1" class="form-checkbox" />  <label class="option" for="edit-submitted-customer-1">Current Customer? </label>
+
+</div>
+</div>
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--ownernumber">
+  <label for="edit-submitted-ownernumber">Owner Number </label>
+ <input placeholder="You can find this in your welcome email" type="text" id="edit-submitted-ownernumber" name="submitted[ownernumber]" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<div  class="form-item webform-component webform-component-email webform-component--email">
+  <label for="edit-submitted-email">Email Address <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" class="email form-text form-email required" type="email" id="edit-submitted-email" name="submitted[email]" size="60" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--fname">
+  <label for="edit-submitted-fname">First name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-fname" name="submitted[fname]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--lname">
+  <label for="edit-submitted-lname">Last name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-lname" name="submitted[lname]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--title">
+  <label for="edit-submitted-title">Position <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-title" name="submitted[title]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--company">
+  <label for="edit-submitted-company">Company name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-company" name="submitted[company]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--phone">
+  <label for="edit-submitted-phone">Phone number <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" type="text" id="edit-submitted-phone" name="submitted[phone]" value="" size="60" maxlength="15" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-select webform-component--country">
+  <label for="edit-submitted-country">Country <span class="form-required" title="This field is required.">*</span></label>
+ <select required="required" id="edit-submitted-country" name="submitted[country]" class="form-select required"><option value="" selected="selected">- Select -</option><optgroup label="Core EMEA Countries"><option value="BE">Belgium</option><option value="DK">Denmark</option><option value="FI">Finland</option><option value="FR">France</option><option value="DE">Germany</option><option value="IT">Italy</option><option value="NL">Netherlands</option><option value="ES">Spain</option><option value="ZA">South Africa</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option></optgroup><optgroup label="Rest of EMEA"><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AT">Austria</option><option value="BH">Bahrain</option><option value="BY">Belarus</option><option value="BJ">Benin</option><option value="BA">Bosnia and Herzegovina</option><option value="BW">Botswana</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="CM">Cameroon</option><option value="CV">Cape Verde</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="KM">Comoros</option><option value="HR">Croatia</option><option value="CY">Cyprus</option><option value="CZ">Czech Republic</option><option value="DJ">Djibouti</option><option value="EG">Egypt</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="FO">Faroe Islands</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GG">Guernsey</option><option value="GN">Guinea</option><option value="GW">Guinea-Bissau</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IR">Iran</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IM">Isle of Man</option><option value="IL">Israel</option><option value="CI">Ivory Coast</option><option value="JE">Jersey</option><option value="JO">Jordan</option><option value="KE">Kenya</option><option value="KW">Kuwait</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MK">Macedonia</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="MD">Moldova</option><option value="MC">Monaco</option><option value="ME">Montenegro</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="OM">Oman</option><option value="PS">Palestinian Territory</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="QA">Qatar</option><option value="RO">Romania</option><option value="RW">Rwanda</option><option value="SM">San Marino</option><option value="ST">Sao Tome and Principe</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="RS">Serbia</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SO">Somalia</option><option value="SY">Syria</option><option value="TZ">Tanzania</option><option value="TG">Togo</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="VA">Vatican</option><option value="YE">Yemen</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option></optgroup><optgroup label="Other Countries"><option value="AF">Afghanistan</option><option value="AX">Aland Islands</option><option value="AS">American Samoa</option><option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua and Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AU">Australia</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BZ">Belize</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BV">Bouvet Island</option><option value="BR">Brazil</option><option value="IO">British Indian Ocean Territory</option><option value="VG">British Virgin Islands</option><option value="BN">Brunei</option><option value="KH">Cambodia</option><option value="CA">Canada</option><option value="BQ">Caribbean Netherlands</option><option value="KY">Cayman Islands</option><option value="CL">Chile</option><option value="CN">China</option><option value="CX">Christmas Island</option><option value="CC">Cocos (Keeling) Islands</option><option value="CO">Colombia</option><option value="CG">Congo (Brazzaville)</option><option value="CD">Congo (Kinshasa)</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="CU">Cuba</option><option value="CW">Curaçao</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="EC">Ecuador</option><option value="SV">El Salvador</option><option value="FK">Falkland Islands</option><option value="FJ">Fiji</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Territories</option><option value="GL">Greenland</option><option value="GD">Grenada</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HM">Heard Island and McDonald Islands</option><option value="HN">Honduras</option><option value="HK">Hong Kong S.A.R., China</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="KZ">Kazakhstan</option><option value="KI">Kiribati</option><option value="KG">Kyrgyzstan</option><option value="LA">Laos</option><option value="MO">Macao S.A.R., China</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="FM">Micronesia</option><option value="MN">Mongolia</option><option value="MS">Montserrat</option><option value="MM">Myanmar</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="AN">Netherlands Antilles</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NU">Niue</option><option value="NF">Norfolk Island</option><option value="MP">Northern Mariana Islands</option><option value="KP">North Korea</option><option value="NO">Norway</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PN">Pitcairn</option><option value="PR">Puerto Rico</option><option value="RE">Reunion</option><option value="RU">Russia</option><option value="BL">Saint Barthélemy</option><option value="SH">Saint Helena</option><option value="KN">Saint Kitts and Nevis</option><option value="LC">Saint Lucia</option><option value="MF">Saint Martin (French part)</option><option value="PM">Saint Pierre and Miquelon</option><option value="VC">Saint Vincent and the Grenadines</option><option value="WS">Samoa</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SX">Sint Maarten</option><option value="SB">Solomon Islands</option><option value="GS">South Georgia and the South Sandwich Islands</option><option value="KR">South Korea</option><option value="SS">South Sudan</option><option value="LK">Sri Lanka</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SJ">Svalbard and Jan Mayen</option><option value="SZ">Swaziland</option><option value="TW">Taiwan</option><option value="TJ">Tajikistan</option><option value="TH">Thailand</option><option value="TL">Timor-Leste</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TT">Trinidad and Tobago</option><option value="TM">Turkmenistan</option><option value="TC">Turks and Caicos Islands</option><option value="TV">Tuvalu</option><option value="VI">U.S. Virgin Islands</option><option value="US">United States</option><option value="UM">United States Minor Outlying Islands</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VE">Venezuela</option><option value="VN">Vietnam</option><option value="WF">Wallis and Futuna</option><option value="EH">Western Sahara</option></optgroup></select>
+</div>
+<div  class="form-item webform-component webform-component-textarea webform-component--comments">
+  <label for="edit-submitted-comments">Tell Us About You and Your Needs: </label>
+ <div class="form-textarea-wrapper resizable"><textarea id="edit-submitted-comments" name="submitted[comments]" cols="60" rows="5" class="form-textarea"></textarea></div>
+</div>
+<div  class="form-item webform-component webform-component-checkboxes webform-component--optin">
+  <label for="edit-submitted-optin">Opt-in </label>
+ <div id="edit-submitted-optin" class="form-checkboxes"><div class="form-item form-type-checkbox form-item-submitted-optin-1">
+ <input type="checkbox" id="edit-submitted-optin-1" name="submitted[optin][1]" value="1" class="form-checkbox" />  <label class="option" for="edit-submitted-optin-1">Subscribe to Product News emails </label>
+
+</div>
+</div>
+</div>
+<input type="hidden" name="details[sid]" />
+<input type="hidden" name="details[page_num]" value="1" />
+<input type="hidden" name="details[page_count]" value="1" />
+<input type="hidden" name="details[finished]" value="0" />
+<input type="hidden" name="form_build_id" value="form-f_R-Nv4jyLDsHWL37cc95i99ionjua08LkHezgxHGlU" />
+<input type="hidden" name="form_id" value="webform_client_form_10336" />
+<input type="hidden" name="elqFormName" value="em-expertconnect" />
+<input type="hidden" name="elqSiteId" value="1354" />
+<input type="hidden" name="elqDefaultTargetURL" value="" />
+<input type="hidden" name="elqPost" value="" />
+<input id="edit-elqCustomerGUID" type="hidden" name="elqCustomerGUID" value="" />
+<input type="hidden" name="elqCookieWrite" value="0" />
+<input type="hidden" name="user_headers" value="a:0:{}" />
+<input type="hidden" name="webform_ajax_wrapper_id" value="webform-ajax-wrapper-10336" />
+<input id="was-submitted" type="hidden" name="was_submitted" value="0" />
+<div class="form-actions"><input class="webform-submit button-primary form-submit" type="submit" id="edit-webform-ajax-submit-10336" name="op" value="Connect with an Expert" /></div></div></form></div></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+  <div class="section--body">
+    <div class="panel-pane pane-entity-field pane-node-body drawer__content l-66-33--1" >
+
+
+
+<div class="l-66-33--1__content">
+  
+  <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+    <h2>Save time, optimize your budget and create lasting impressions that influence decisions</h2>
+<p>Streamline content delivery, lower production costs and maintain a continuous, engaging presence. Our Virtual Environment platform enables you to train, promote brand awareness, expand market reach and accelerate sales.</p>
+<ul></ul><h2>Generate interest from prospects</h2>
+<ul><li>Trade Shows</li>
+<li>Road Shows</li>
+<li>Product Launches</li>
+</ul><h2>Deliver education to employees and partners</h2>
+<ul><li>Corporate Universities</li>
+<li>Training Programs</li>
+<li>Sales &amp; Marketing Kick-Offs</li>
+</ul><h2>Inspire recruits to join your team</h2>
+<ul><li>Job Fairs</li>
+<li>Company Showcases</li>
+<li>Road Shows</li>
+</ul><h2>Interact with key audiences, and deliver targeted digital and print content</h2>
+<ul><li>Customer Communities</li>
+<li>Advisory Councils &amp; Roundtables</li>
+<li>User Conferences</li>
+</ul>  </div>
+</div>
+
+
+</div>
+<div class="panel-pane pane-entity-field pane-node-field-article-download drawer__content l-66-33--2" >
+
+
+
+<div class="l-66-33--2__content">
+  
+  <div class="field field-name-field-article-download field-type-entityreference field-label-hidden">
+    
+
+<h6 class="download--category__title"></h6>
+<div class="download--category__wrapper">
+  
+  <span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="/modules/file/icons/application-pdf.png" /> <a href="https://www.westuc.com/files/article/download/virtual-environments-datasheet-en-gb.pdf" type="application/pdf; length=481736">virtual-environments-datasheet-en-gb.pdf</a></span></div>
+
+  </div>
+</div>
+
+
+</div>
+  </div>
+
+
+  <div class="section--sidekicks">
+    <div class="panel-pane pane-panels-mini pane-sidekick" >
+  
+      
+  
+  
+<!-- if layout is Stacked -->
+
+<!-- if layout is Across -->
+  <!-- if there is a third item, 3-up -->
+      <div class="l-3up--1 sidekick__item">
+      
+<article class="node-5351 node node-sidekick view-mode-full clearfix">
+
+      <header>
+     <!--               <h6 class="node__title node-title"><a href="/en-gb/market-leader">Market Leader</a></h6>
+             -->
+
+      
+          </header>
+  
+      <figure class="sidekick__image--teaser">
+          </figure>
+  
+
+  
+  <div class="sidekick__content">
+  <h4>A blend of simplicity, flexibility and power</h4>
+<p>Our virtual event specialists are available to design and manage your event. With customizable design templates and a built-in management console, you can tailor your Virtual Environment to every event. </p>
+<ul><li>13 support centers across 4 continents</li>
+<li>Attendee interface available in 17 languages</li>
+<li>Use the library of templates or design a unique experience</li>
+</ul><p> </p>
+</div>
+
+</article>
+    </div>
+
+    <div class="l-3up--2 sidekick__item">
+      
+<article class="node-5356 node node-sidekick view-mode-full clearfix">
+
+      <header>
+     <!--               <h6 class="node__title node-title"><a href="/en-gb/award-winner-virtual-environments">Award Winner - Virtual Environments</a></h6>
+             -->
+
+      
+          </header>
+  
+      <figure class="sidekick__image--teaser">
+          </figure>
+  
+
+  
+  <div class="sidekick__content">
+  <h4>Setting the standard</h4>
+<p>Recognized for excellence in technology and service</p>
+<ul><li>Award of Excellence: Virtual Event – Business Marketing Association</li>
+<li>EX and Gold Award – Event Marketer Magazine</li>
+<li>100 Companies that Matter Most in Online Video – Streaming Media 100</li>
+<li>New Product of the Year – Software – American Business Awards</li>
+<li>Best Learning Environment – Elearning Awards</li>
+</ul></div>
+
+</article>
+    </div>
+
+    <div class="l-3up--3 sidekick__item">
+      
+<article class="node-5361 node node-sidekick view-mode-full clearfix">
+
+      <header>
+     <!--               <h6 class="node__title node-title"><a href="/en-gb/roi-generator-virtual-environments">ROI Generator - Virtual Environments</a></h6>
+             -->
+
+      
+          </header>
+  
+      <figure class="sidekick__image--teaser">
+          </figure>
+  
+
+  
+  <div class="sidekick__content">
+  <h4>Virtual environments that generate ROI</h4>
+<p>Industry leaders use our virtual environment platform to produce compelling results</p>
+<ul><li>Kuerig increased partner training attendance by 400%</li>
+<li>Careerbuilder lowered cost per hire by 70%</li>
+<li>CGI Technologies grew sales by 35%</li>
+</ul></div>
+
+</article>
+    </div>
+  <!-- if there is NOT a third item, 2-up -->
+  
+<!-- if layout is 2 over 1-->
+
+<!-- if layout is 1 over 2-->
+
+  
+  </div>
+  </div>
+
+
+  <div class="section--use-cases clearfix">
+    <div class="panel-pane pane-views-panes pane-use-cases-on-services-panel-pane-1" >
+  
+        <h2 class="pane-title">Use Cases</h2>
+    
+  
+  <div class="view view-use-cases-on-services view-id-use_cases_on_services view-display-id-panel_pane_1 view-dom-id-d63ff38f3c37ca59a2b6cf66ceddbb93">
+        
+  
+  
+      <div class="view-content">
+      
+
+<ul class="use-case__list">      <li class="use-case--item">
+        
+  <div class="views-field views-field-field-related-use-case-revision-id">        <div class="field-content">
+
+<h3 class="teaser__heading">Lead Generation</h3>
+  <p class="teaser__content">West Digital Media Services provides webcast/webinar, video and virtual environment solutions for lead generation.</p>
+<div class="teaser__more">
+  <a href="https://www.westuc.com/en-gb/digital-media-services/lead-generation">Learn More <span class="element-invisible">about Lead Generation</span> <i class="icon-right"></i></a>
+</div></div>  </div>    </li>
+        <li class="use-case--item">
+        
+  <div class="views-field views-field-field-related-use-case-revision-id">        <div class="field-content">
+
+<h3 class="teaser__heading">Virtual Learning</h3>
+  <p class="teaser__content">Develop & sustain a highly skilled workforce & knowledgeable partner ecosystem using West Digital Media Services’ high-impact, low-cost training solutions.</p>
+<div class="teaser__more">
+  <a href="https://www.westuc.com/en-gb/digital-media-services/virtual-learning">Learn More <span class="element-invisible">about Virtual Learning</span> <i class="icon-right"></i></a>
+</div></div>  </div>    </li>
+        <li class="use-case--item">
+        
+  <div class="views-field views-field-field-related-use-case-revision-id">        <div class="field-content">
+
+<h3 class="teaser__heading">Product Launches</h3>
+  <p class="teaser__content">Webcast, Webinar and Virtual Event solutions for product launches that drive revenue and win market share</p>
+<div class="teaser__more">
+  <a href="https://www.westuc.com/en-gb/digital-media-services/product-launches">Learn More <span class="element-invisible">about Product Launches</span> <i class="icon-right"></i></a>
+</div></div>  </div>    </li>
+        <li class="use-case--item">
+        
+  <div class="views-field views-field-field-related-use-case-revision-id">        <div class="field-content">
+
+<h3 class="teaser__heading">Virtual Town Halls</h3>
+  <p class="teaser__content">Webinars & Enterprise Streaming webcasts will engage and resonate with your global workforce for town hall meetings and video corporate communications.</p>
+<div class="teaser__more">
+  <a href="https://www.westuc.com/en-gb/digital-media-services/virtual-town-halls">Learn More <span class="element-invisible">about Virtual Town Halls</span> <i class="icon-right"></i></a>
+</div></div>  </div>    </li>
+  </ul>    </div>
+  
+  
+  
+  
+  
+  
+</div>
+  
+  </div>
+  </div>
+
+  <div class="section--resource-cards--service section--resource-cards">
+    <div class="panel-pane pane-views-panes pane-service-resources-pane" >
+  
+        <h2 class="pane-title">Relevant Resources &amp; Insights</h2>
+    
+  
+  <div class="view view-service-resources view-id-service_resources view-display-id-pane card-cabinet view-dom-id-929adadd401e50826fb314c4a06e2bb0">
+      
+  <div class="view-filters l-25-75--1">
+
+    
+    <div id="view-products__filter-toggle">Narrow Your Choices</div>
+
+          <form action="/en-gb/virtual-environments" method="get" id="views-exposed-form-service-resources-pane" accept-charset="UTF-8"><div><div class="views-exposed-form">
+  <div class="views-exposed-widgets clearfix">
+          <div id="edit-field-resource-type-tid-wrapper" class="views-exposed-widget views-widget-filter-field_resource_type_tid">
+                  <label for="edit-field-resource-type-tid">
+            Resource Type          </label>
+                        <div class="views-widget">
+          <div class="form-item form-type-select form-item-field-resource-type-tid">
+ <div class="form-checkboxes"><ul class="bef-tree"><ul class='bef-tree-child bef-tree-depth-1'><li><div class="form-item form-type-bef-checkbox form-item-edit-field-resource-type-tid-246">
+ <input type="checkbox" name="field_resource_type_tid[]" id="edit-field-resource-type-tid-246" value="246"  class="form-checkboxes" /> <label class='option' for='edit-field-resource-type-tid-246'>User Guides</label>
+</div>
+</li><li><div class="form-item form-type-bef-checkbox form-item-edit-field-resource-type-tid-591">
+ <input type="checkbox" name="field_resource_type_tid[]" id="edit-field-resource-type-tid-591" value="591"  class="form-checkboxes" /> <label class='option' for='edit-field-resource-type-tid-591'>Training</label>
+</div>
+</li><li><div class="form-item form-type-bef-checkbox form-item-edit-field-resource-type-tid-256">
+ <input type="checkbox" name="field_resource_type_tid[]" id="edit-field-resource-type-tid-256" value="256"  class="form-checkboxes" /> <label class='option' for='edit-field-resource-type-tid-256'>How To Videos</label>
+</div>
+</li><li><div class="form-item form-type-bef-checkbox form-item-edit-field-resource-type-tid-241">
+ <input type="checkbox" name="field_resource_type_tid[]" id="edit-field-resource-type-tid-241" value="241"  class="form-checkboxes" /> <label class='option' for='edit-field-resource-type-tid-241'>FAQs</label>
+</div>
+</li><li><div class="form-item form-type-bef-checkbox form-item-edit-field-resource-type-tid-176">
+ <input type="checkbox" name="field_resource_type_tid[]" id="edit-field-resource-type-tid-176" value="176"  class="form-checkboxes" /> <label class='option' for='edit-field-resource-type-tid-176'>Release Notes</label>
+</div>
+</li><li><div class="form-item form-type-bef-checkbox form-item-edit-field-resource-type-tid-181">
+ <input type="checkbox" name="field_resource_type_tid[]" id="edit-field-resource-type-tid-181" value="181"  class="form-checkboxes" /> <label class='option' for='edit-field-resource-type-tid-181'>Technical Guides</label>
+</div>
+</li><li><div class="form-item form-type-bef-checkbox form-item-edit-field-resource-type-tid-186">
+ <input type="checkbox" name="field_resource_type_tid[]" id="edit-field-resource-type-tid-186" value="186"  class="form-checkboxes" /> <label class='option' for='edit-field-resource-type-tid-186'>Technical Requirements</label>
+</div>
+</li><li><div class="form-item form-type-bef-checkbox form-item-edit-field-resource-type-tid-226">
+ <input type="checkbox" name="field_resource_type_tid[]" id="edit-field-resource-type-tid-226" value="226"  class="form-checkboxes" /> <label class='option' for='edit-field-resource-type-tid-226'>Free Trial/Demo</label>
+</div>
+</li><li><div class="form-item form-type-bef-checkbox form-item-edit-field-resource-type-tid-221">
+ <input type="checkbox" name="field_resource_type_tid[]" id="edit-field-resource-type-tid-221" value="221"  class="form-checkboxes" /> <label class='option' for='edit-field-resource-type-tid-221'>Case Studies</label>
+</div>
+</li><li><div class="form-item form-type-bef-checkbox form-item-edit-field-resource-type-tid-231">
+ <input type="checkbox" name="field_resource_type_tid[]" id="edit-field-resource-type-tid-231" value="231"  class="form-checkboxes" /> <label class='option' for='edit-field-resource-type-tid-231'>Brochures</label>
+</div>
+</li><li><div class="form-item form-type-bef-checkbox form-item-edit-field-resource-type-tid-196">
+ <input type="checkbox" name="field_resource_type_tid[]" id="edit-field-resource-type-tid-196" value="196"  class="form-checkboxes" /> <label class='option' for='edit-field-resource-type-tid-196'>Blog Posts</label>
+</div>
+</li><li><div class="form-item form-type-bef-checkbox form-item-edit-field-resource-type-tid-206">
+ <input type="checkbox" name="field_resource_type_tid[]" id="edit-field-resource-type-tid-206" value="206"  class="form-checkboxes" /> <label class='option' for='edit-field-resource-type-tid-206'>Whitepapers</label>
+</div>
+</li><li><div class="form-item form-type-bef-checkbox form-item-edit-field-resource-type-tid-201">
+ <input type="checkbox" name="field_resource_type_tid[]" id="edit-field-resource-type-tid-201" value="201"  class="form-checkboxes" /> <label class='option' for='edit-field-resource-type-tid-201'>Videos</label>
+</div>
+</li></ul></li></ul></div>
+</div>
+        </div>
+              </div>
+          <div id="edit-sort-bef-combine-wrapper" class="views-exposed-widget views-widget-sort-sort_bef_combine">
+                        <div class="views-widget">
+          <div class="form-item form-type-select form-item-sort-bef-combine">
+  <label for="edit-sort-bef-combine">Sort by </label>
+ <select id="edit-sort-bef-combine" name="sort_bef_combine" class="form-select"><option value="weight ASC" selected="selected">Featured</option><option value="created ASC">Post date Asc</option><option value="created DESC">Post date Desc</option><option value="title_field_value ASC">A -&gt; Z</option><option value="title_field_value DESC">Z -&gt; A</option></select>
+</div>
+        </div>
+              </div>
+                    <div class="views-exposed-widget views-submit-button">
+      <input class="my-views-filter-submit form-submit" type="submit" id="edit-submit-service-resources" name="" value="Apply" /><div class="views-exposed-widget cabinet-reset-button views-reset-button"><input type="submit" class="form-submit" value="Clear All" onclick="javascript:jQuery(this.form).clearForm();jQuery(this.form).find('#edit-submit-service-resources').trigger('click');return false"></div>    </div>
+      </div>
+</div>
+</div></form>    
+    
+  </div>
+
+      <div class="view-content l-25-75--2">
+      
+
+<ul class="card__cabinet">      <li class="resource-card-wrap">
+      
+
+  <figure class="resource-card__image">
+  <a href="/en-gb/survey-it-managers-unified-communications-workplace-2016-infographic"><img src="https://www.westuc.com/files/styles/resource_card_340x200/public/article/The-Status-of-Unified-Communications-in-the-Workplace_thumbnail.jpg?itok=WuRLOdpS" width="340" height="200" alt="The Status of Unified Communications in the Workplace" title="The Status of Unified Communications in the Workplace" /></a></figure>
+<div class="resource-card__item clearfix wuc-resource-card sticky">
+  <div class="resource-card__date">
+      </div>
+
+      <h5 class="resource-card__heading"><div class="panel-pane pane-entity-field pane-node-title-field" >
+  
+      
+  
+  <div class="field field-name-title-field field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">How Companies are Using Collaboration Solutions</div></div></div>
+  
+  </div>
+</h5>
+  
+  
+  We surveyed over 250 IT managers to better understand how they are utilizing unified communications and collaboration tools in 2016 - infographic included.
+  <div class="resource-card__author">
+      </div>
+
+      <div class="card__more">
+      <div class="panel-pane pane-learn-more-link" >
+  
+      
+  
+  <a href="/en-gb/survey-it-managers-unified-communications-workplace-2016-infographic">Learn More<span class="element-invisible">about How Companies are Using Collaboration Solutions</span><i class="icon-right"></i></a>
+  
+  </div>
+    </div>
+  
+      <div class="card__type">
+      <a href="/en-gb/resources-insights?field_resource_type_tid%5B%5D=196">View All 
+  Blog Posts<i class="icon-right"></i></a>    </div>
+  </div>
+    </li>
+        <li class="resource-card-wrap">
+      
+
+  <figure class="resource-card__image">
+  <a href="/en-gb/videos/4-new-truths-demand-webinar"><img src="https://www.westuc.com/files/styles/resource_card_340x200/public/card-user-dm.png?itok=ORN28hIP" width="340" height="200" /></a></figure>
+<div class="resource-card__item clearfix wuc-resource-card">
+  <div class="resource-card__date">
+      </div>
+
+      <h5 class="resource-card__heading"><div class="panel-pane pane-entity-field pane-node-title-field" >
+  
+      
+  
+  <div class="field field-name-title-field field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">4 New Truths On-Demand Webinar</div></div></div>
+  
+  </div>
+</h5>
+  
+  
+  4 New Truths B2B Marketers Need to Know in the Age of the Customer with Laura Ramos, Vice President &amp; Principal Analyst Forrester Research
+  <div class="resource-card__author">
+      </div>
+
+      <div class="card__more">
+      <div class="panel-pane pane-learn-more-link" >
+  
+      
+  
+  <a href="/en-gb/videos/4-new-truths-demand-webinar">Learn More<span class="element-invisible">about 4 New Truths On-Demand Webinar</span><i class="icon-right"></i></a>
+  
+  </div>
+    </div>
+  
+      <div class="card__type">
+      <a href="/en-gb/resources-insights?field_resource_type_tid%5B%5D=201">View All 
+  Videos<i class="icon-right"></i></a>    </div>
+  </div>
+    </li>
+        <li class="resource-card-wrap">
+      
+
+  <figure class="resource-card__image">
+  <a href="/en-gb/brochures/virtual-environments-overview"><img src="https://www.westuc.com/files/styles/resource_card_340x200/public/article/card-general-dm.png?itok=iwhL2t8u" width="340" height="200" alt="digital media services icon" /></a></figure>
+<div class="resource-card__item clearfix wuc-resource-card sticky">
+  <div class="resource-card__date">
+      </div>
+
+      <h5 class="resource-card__heading"><div class="panel-pane pane-entity-field pane-node-title-field" >
+  
+      
+  
+  <div class="field field-name-title-field field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">Virtual Environments Overview</div></div></div>
+  
+  </div>
+</h5>
+  
+  
+  Save time, optimize your budget and create lasting impressions that influence decisions
+  <div class="resource-card__author">
+      </div>
+
+      <div class="card__more">
+      <div class="panel-pane pane-learn-more-link" >
+  
+      
+  
+  <a href="/en-gb/brochures/virtual-environments-overview">Learn More<span class="element-invisible">about Virtual Environments Overview</span><i class="icon-right"></i></a>
+  
+  </div>
+    </div>
+  
+      <div class="card__type">
+      <a href="/en-gb/resources-insights?field_resource_type_tid%5B%5D=231">View All 
+  Brochures<i class="icon-right"></i></a>    </div>
+  </div>
+    </li>
+        <li class="resource-card-wrap">
+      
+
+  <figure class="resource-card__image">
+  <a href="/en-gb/blog/webinars-enterprise-streaming/event-recap-leveraging-enterprise-video-increase-engagement"><img src="https://www.westuc.com/files/styles/resource_card_340x200/public/Enterprise-Video-Increase-Engagement.jpg?itok=vvB-9E-L" width="340" height="200" alt="Enterprise Video to Increase Engagement" title="Enterprise Video to Increase Engagement" /></a></figure>
+<div class="resource-card__item clearfix wuc-resource-card">
+  <div class="resource-card__date">
+    
+  <span class="date-display-single">Wed Aug 23,  2017</span>  </div>
+
+      <h5 class="resource-card__heading"><div class="field field-name-title-field field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">Event Recap: Leveraging Enterprise Video to Increase Engagement</div></div></div></h5>
+  
+  
+  Review the benefits and risks of adopting enterprise video and how, if done correctly, it can significantly increase engagement across the organization.
+  <div class="resource-card__author">
+      </div>
+
+      <div class="card__more">
+      <div class="panel-pane pane-read-more-link" >
+  
+      
+  
+  <a href="/en-gb/blog/webinars-enterprise-streaming/event-recap-leveraging-enterprise-video-increase-engagement">Read More<span class="element-invisible">about Event Recap: Leveraging Enterprise Video to Increase Engagement</span><i class="icon-right"></i></a>
+  
+  </div>
+    </div>
+  
+  </div>
+    </li>
+        <li class="resource-card-wrap">
+      
+
+  <figure class="resource-card__image">
+  <a href="/en-gb/blog/webinars-enterprise-streaming/5-tips-b2b-person-events-increase-roi"><img src="https://www.westuc.com/files/styles/resource_card_340x200/public/In-Person%20B2B%20Event%20Speaker.jpg?itok=7nP36sdF" width="340" height="200" alt="B2B Event Speaker" title="B2B Event Speaker" /></a></figure>
+<div class="resource-card__item clearfix wuc-resource-card">
+  <div class="resource-card__date">
+    
+  <span class="date-display-single">Tue Oct 27,  2015</span>  </div>
+
+      <h5 class="resource-card__heading"><div class="field field-name-title-field field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">5 Tips for B2B In-Person Events to Increase ROI</div></div></div></h5>
+  
+  
+  B2B marketers are finding that smaller, targeted in-person events are more effective than large scale marketing efforts. Here are 5 ways to take advantage.
+  <div class="resource-card__author">
+      </div>
+
+      <div class="card__more">
+      <div class="panel-pane pane-read-more-link" >
+  
+      
+  
+  <a href="/en-gb/blog/webinars-enterprise-streaming/5-tips-b2b-person-events-increase-roi">Read More<span class="element-invisible">about 5 Tips for B2B In-Person Events to Increase ROI</span><i class="icon-right"></i></a>
+  
+  </div>
+    </div>
+  
+  </div>
+    </li>
+        <li class="resource-card-wrap">
+      
+
+  <figure class="resource-card__image">
+  <a href="/en-gb/case-studies/keurig-university-case-study-summary"><img src="https://www.westuc.com/files/styles/resource_card_340x200/public/article/card-general-dm.png?itok=iwhL2t8u" width="340" height="200" alt="digital media services icon" /></a></figure>
+<div class="resource-card__item clearfix wuc-resource-card">
+  <div class="resource-card__date">
+      </div>
+
+      <h5 class="resource-card__heading"><div class="panel-pane pane-entity-field pane-node-title-field" >
+  
+      
+  
+  <div class="field field-name-title-field field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">Keurig University Case Study Summary</div></div></div>
+  
+  </div>
+</h5>
+  
+  
+  Case study summary of Kuerig partner training.
+  <div class="resource-card__author">
+      </div>
+
+      <div class="card__more">
+      <div class="panel-pane pane-learn-more-link" >
+  
+      
+  
+  <a href="/en-gb/case-studies/keurig-university-case-study-summary">Learn More<span class="element-invisible">about Keurig University Case Study Summary</span><i class="icon-right"></i></a>
+  
+  </div>
+    </div>
+  
+      <div class="card__type">
+      <a href="/en-gb/resources-insights?field_resource_type_tid%5B%5D=221">View All 
+  Case Studies<i class="icon-right"></i></a>    </div>
+  </div>
+    </li>
+        <li class="resource-card-wrap">
+      
+
+  <figure class="resource-card__image">
+  <a href="/en-gb/case-studies/manchester-business-school-case-study"><img src="https://www.westuc.com/files/styles/resource_card_340x200/public/article/card-general-dm.png?itok=iwhL2t8u" width="340" height="200" alt="digital media services icon" /></a></figure>
+<div class="resource-card__item clearfix wuc-resource-card">
+  <div class="resource-card__date">
+      </div>
+
+      <h5 class="resource-card__heading"><div class="panel-pane pane-entity-field pane-node-title-field" >
+  
+      
+  
+  <div class="field field-name-title-field field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">Manchester Business School Case Study</div></div></div>
+  
+  </div>
+</h5>
+  
+  
+  Virtual Careers Platform Connects Global Talent
+  <div class="resource-card__author">
+      </div>
+
+      <div class="card__more">
+      <div class="panel-pane pane-learn-more-link" >
+  
+      
+  
+  <a href="/en-gb/case-studies/manchester-business-school-case-study">Learn More<span class="element-invisible">about Manchester Business School Case Study</span><i class="icon-right"></i></a>
+  
+  </div>
+    </div>
+  
+      <div class="card__type">
+      <a href="/en-gb/resources-insights?field_resource_type_tid%5B%5D=221">View All 
+  Case Studies<i class="icon-right"></i></a>    </div>
+  </div>
+    </li>
+        <li class="resource-card-wrap">
+      
+
+  <figure class="resource-card__image">
+  <a href="/en-gb/blog/webinars-enterprise-streaming/how-make-employee-training-work-introverts"><img src="https://www.westuc.com/files/styles/resource_card_340x200/public/Employee-Training-Introverts.jpg?itok=41mBmI4X" width="340" height="200" alt="Employee Training for Introverts" title="Employee Training for Introverts" /></a></figure>
+<div class="resource-card__item clearfix wuc-resource-card">
+  <div class="resource-card__date">
+    
+  <span class="date-display-single">Tue Feb 7,  2017</span>  </div>
+
+      <h5 class="resource-card__heading"><div class="field field-name-title-field field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">How to Make Employee Training Work for Introverts</div></div></div></h5>
+  
+  
+  It&#039;s important that your employee training be effective for all workers. Here is how you can make sure introverts get the most out of training.
+  <div class="resource-card__author">
+      </div>
+
+      <div class="card__more">
+      <div class="panel-pane pane-read-more-link" >
+  
+      
+  
+  <a href="/en-gb/blog/webinars-enterprise-streaming/how-make-employee-training-work-introverts">Read More<span class="element-invisible">about How to Make Employee Training Work for Introverts</span><i class="icon-right"></i></a>
+  
+  </div>
+    </div>
+  
+  </div>
+    </li>
+        <li class="resource-card-wrap">
+      
+
+  <figure class="resource-card__image">
+  <a href="/en-gb/blog/webinars-enterprise-streaming/marketers-likely-return-users-virtual-events"><img src="https://www.westuc.com/files/styles/resource_card_340x200/public/Virtual%20Events%20for%20Marketers.jpg?itok=9xMMk5Xr" width="340" height="200" alt="Virtual Events Marketers" title="Virtual Events Marketers" /></a></figure>
+<div class="resource-card__item clearfix wuc-resource-card">
+  <div class="resource-card__date">
+    
+  <span class="date-display-single">Tue Mar 10,  2015</span>  </div>
+
+      <h5 class="resource-card__heading"><div class="field field-name-title-field field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">Marketers Likely Return Users of Virtual Events</div></div></div></h5>
+  
+  
+  Survey of marketing professionals shows slow adoption of Virtual Events despite the admitted and experienced benefits of the platform by marketers for lead generation.
+  <div class="resource-card__author">
+      </div>
+
+      <div class="card__more">
+      <div class="panel-pane pane-read-more-link" >
+  
+      
+  
+  <a href="/en-gb/blog/webinars-enterprise-streaming/marketers-likely-return-users-virtual-events">Read More<span class="element-invisible">about Marketers Likely Return Users of Virtual Events</span><i class="icon-right"></i></a>
+  
+  </div>
+    </div>
+  
+  </div>
+    </li>
+  </ul>    </div>
+  
+      <div class="item-list"><ul class="pager pager-load-more"><li class="pager-next first last"><a href="/en-gb/virtual-environments?&amp;sort_bef_combine=weight%20ASC&amp;sort_order=ASC&amp;sort_by=weight&amp;page=1">Load more</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div>
+  
+  </div>
+  </div>
+
+  <div class="section--other-services">
+    <div class="panel-pane pane-entity-field pane-node-field-related-services l-1up" >
+
+
+
+<div class="l-1up__content">
+    <h3 class="field-label">
+    Other services to consider  </h3>
+
+  
+
+<div class="card__item clearfix wuc-card">
+      <h2 class="card__heading">Professional Webinars &amp; Enterprise Streaming</h2>
+  
+  <div class="panel-pane pane-entity-field pane-node-field-description" >
+  
+      
+  
+  
+  Focus your attention on what’s most important during your event: your presentation and delivering your message. Our experts can do the rest.
+  
+  </div>
+
+      <div class="card__more">
+      <div class="panel-pane pane-learn-more-link" >
+  
+      
+  
+  <a href="/en-gb/webinars-enterprise-streaming/professional-webinars-enterprise-streaming">Learn More<span class="element-invisible">about Professional Webinars &amp; Enterprise Streaming</span><i class="icon-right"></i></a>
+  
+  </div>
+    </div>
+  </div>
+  
+
+<div class="card__item clearfix wuc-card sticky">
+      <h2 class="card__heading">Webcast Pro</h2>
+  
+  <div class="panel-pane pane-entity-field pane-node-field-description" >
+  
+      
+  
+  
+  Webcasts to engage your customer base, your marketplace and your entire organization
+  
+  </div>
+
+      <div class="card__more">
+      <div class="panel-pane pane-learn-more-link" >
+  
+      
+  
+  <a href="/en-gb/digital-media-services/webcast-pro">Learn More<span class="element-invisible">about Webcast Pro</span><i class="icon-right"></i></a>
+  
+  </div>
+    </div>
+  </div>
+  
+
+<div class="card__item clearfix wuc-card sticky">
+      <h2 class="card__heading">Webcast Essentials</h2>
+  
+  <div class="panel-pane pane-entity-field pane-node-field-description" >
+  
+      
+  
+  
+  Take control of your own webcasts & webinars with Webcast Essentials
+  
+  </div>
+
+      <div class="card__more">
+      <div class="panel-pane pane-learn-more-link" >
+  
+      
+  
+  <a href="/en-gb/webcast-essentials">Learn More<span class="element-invisible">about Webcast Essentials</span><i class="icon-right"></i></a>
+  
+  </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+  </div>
+
+  <div class="section">
+    <div class="panel-pane pane-panels-mini pane-global-validation l-1up" >
+
+
+
+<div class="l-1up__content">
+  
+
+<div class="proof-point">
+
+      <div class="statistic">
+      
+  5yrs    </div>
+         <div class="intro">
+       
+  Gartner Magic Quadrant Leader in UCaaS for 5 consecutive years     </div>
+      
+    
+  </div>
+
+
+<div class="proof-point">
+
+      <div class="statistic">
+      
+  28B    </div>
+         <div class="intro">
+       
+  Supported 28 billion minutes of conferencing last year     </div>
+      
+    
+  </div>
+
+
+<div class="proof-point">
+
+      <div class="statistic">
+      
+  89    </div>
+         <div class="intro">
+       
+  of Fortune 100 companies rely on West     </div>
+      
+    
+  </div>
+</div>
+
+
+</div>
+  </div>
+<div class="panel-pane pane-panels-mini pane-footer" >
+  
+      
+  
+  
+<footer class="site__footer">
+  <div class="panel-pane pane-panels-mini pane-footer-mega footer__mega" >
+
+
+<div class="panel-pane pane-custom pane-3 l-2up" >
+  
+      
+  
+  <p>West Unified Communications Services helps enterprise organizations stay connected through tailor-made conferencing and collaboration solutions.</p>
+
+  
+  </div>
+
+<ul class="menu--footer">
+      <header>
+      <h2 class="element-invisible">Main menu v.2</h2>
+    </header>
+    
+<li class="menu--footer__item"><a href="/en-gb/conferencing-collaboration" class="menu--footer__link" id="main-menu-conferencing">Conferencing <br />& Collaboration</a></li><li class="menu--footer__item"><a href="/en-gb/digital-media-services" class="menu--footer__link active-trail" id="main-menu-digital-media">Webinars & <br />Enterprise Streaming</a></li><li class="menu--footer__item"><a href="/en-gb/resources-insights" class="menu--footer__link" id="main-menu-resources">Resources <br />& Insights</a></li></ul>
+<div class="panel-pane pane-node footer--form" >
+  
+        <h2 class="pane-title">Stay Informed</h2>
+    
+  
+  
+
+<div id="form__content" class="form--webform">
+    <div id="webform-ajax-wrapper-3156"><form class="webform-client-form webform-client-form-3156" enctype="multipart/form-data" action="/en-gb/virtual-environments" method="post" id="webform-client-form-3156" accept-charset="UTF-8"><div><div  class="form-item webform-component webform-component-textfield webform-component--fname">
+  <label class="element-invisible" for="edit-submitted-fname--5">First Name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" placeholder="First Name" type="text" id="edit-submitted-fname--5" name="submitted[fname]" value="" size="60" maxlength="128" class="form-text required" />
+</div>
+<div  class="form-item webform-component webform-component-email webform-component--email">
+  <label class="element-invisible" for="edit-submitted-email--5">Email Address <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" class="email form-text form-email required" placeholder="Email Address" type="email" id="edit-submitted-email--5" name="submitted[email]" size="60" />
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--url" style="display: none">
+ <input type="hidden" name="submitted[url]" value="https://www.westuc.com/en-gb/virtual-environments" />
+
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--category" style="display: none">
+ <input type="hidden" name="submitted[category]" value="Webinars &amp; Enterprise Streaming" />
+
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--product" style="display: none">
+ <input type="hidden" name="submitted[product]" value="Virtual Environments" />
+
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--lang" style="display: none">
+ <input type="hidden" name="submitted[lang]" value="en-gb" />
+
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--region" style="display: none">
+ <input type="hidden" name="submitted[region]" value="EMEA" />
+
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--type" style="display: none">
+ <input type="hidden" name="submitted[type]" value="Signup Form" />
+
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--pagetitle" style="display: none">
+ <input type="hidden" name="submitted[pagetitle]" value="Virtual Environments" />
+
+</div>
+<div  class="form-item webform-component webform-component-hidden webform-component--title-tag" style="display: none">
+ <input type="hidden" name="submitted[title_tag]" value="Stay Informed" />
+
+</div>
+<input type="hidden" name="details[sid]" />
+<input type="hidden" name="details[page_num]" value="1" />
+<input type="hidden" name="details[page_count]" value="1" />
+<input type="hidden" name="details[finished]" value="0" />
+<input type="hidden" name="form_build_id" value="form-Iy_xgJVhXKF032743XhDgrZTEwz9IoLdfVwOpwoY3bM" />
+<input type="hidden" name="form_id" value="webform_client_form_3156" />
+<input type="hidden" name="elqFormName" value="stayinformed" />
+<input type="hidden" name="elqSiteId" value="1354" />
+<input type="hidden" name="elqDefaultTargetURL" value="" />
+<input type="hidden" name="elqPost" value="" />
+<input id="edit-elqCustomerGUID" type="hidden" name="elqCustomerGUID" value="" />
+<input type="hidden" name="elqCookieWrite" value="0" />
+<input type="hidden" name="user_headers" value="a:0:{}" />
+<input type="hidden" name="webform_ajax_wrapper_id" value="webform-ajax-wrapper-3156" />
+<input id="was-submitted" type="hidden" name="was_submitted" value="0" />
+<button type="submit" id="edit-webform-ajax-submit-3156" name="op" class="webform-submit form-submit">Sign Up For News<i class="icon-right"></i></button><div class="form-actions"><input class="webform-submit button-primary element-invisible form-submit" id="" type="submit" name="op" value="Sign Up For News" /></div></div></form></div></div>
+
+  
+  </div>
+<div class="panel-pane pane-custom pane-4 footer--form" >
+  
+        <h2 class="pane-title">Contact Sales</h2>
+    
+  
+  <div class="form__content">
+<p>New Customer Sales:<br /><span class="phone">+ 44 (0) 330 606 8 567</span></p>
+<p>Customer Service &amp; Support:</p>
+<p><a href="/europe-middle-east-africa-emea"><span class="phone">List of Contact Numbers</span></a></p>
+<!--
+		<p><p>Online 8am-7pm EST:</p>
+<div><a class="btn chat" href="javascript://Chat" id="liveagent_button_online_57360000000TO8i" onclick="liveagent.startChat('57360000000TO8i')" style="display: none;">Live Chat</a></div>
+<div id="liveagent_button_offline_57360000000TO8i" style="display: none;">Agent Offline</div>
+<script type="text/javascript"> if (!window._laq) { window._laq = []; } window._laq.push(function(){liveagent.showWhenOnline('57360000000TO8i', document.getElementById('liveagent_button_online_57360000000TO8i')); liveagent.showWhenOffline('57360000000TO8i', document.getElementById('liveagent_button_offline_57360000000TO8i')); });</script><script type='text/javascript' src='https://c.la2w1cs.salesforceliveagent.com/content/g/js/34.0/deployment.js'></script><script type='text/javascript'> liveagent.init('https://d.la2w1.salesforceliveagent.com/chat', '57260000000KyjG', '00D300000000FAQ'); liveagent.setChatWindowHeight(500); liveagent.setChatWindowWidth(520); </script></div>
+<p>-->
+</div>
+  
+  </div>
+
+</div><div class="panel-pane pane-panels-mini pane-footer-ancillary footer__ancillary" >
+
+
+
+<ul class="menu--ancillary">
+      <header>
+      <h2 class="element-invisible">Footer Ancillary EMEA APAC blk</h2>
+    </header>
+    
+<li class="menu--ancillary__item"><a href="/en-gb/sitemap" class="menu--ancillary__link" id="">Sitemap</a></li><li class="menu--ancillary__item"><a href="/en-gb/terms-conditions-policies" class="menu--ancillary__link" id="">Terms &amp; Privacy Policies</a></li><li class="menu--ancillary__item"><a href="/en-gb/training" class="menu--ancillary__link" id="">Training</a></li></ul>
+
+<ul class="menu--social">
+      <header>
+      <h2 class="element-invisible">Social menu</h2>
+    </header>
+    
+<li class="menu--social__item"><a href="https://www.linkedin.com/company/west-unified-communications" class="menu--social__link icon--social icon-linkedin" id="">LinkedIn</a></li><li class="menu--social__item"><a href="https://twitter.com/West_UC" class="menu--social__link icon--social icon-twitter-1" id="">Twitter</a></li><li class="menu--social__item"><a href="https://www.facebook.com/WestUC" class="menu--social__link icon--social icon-facebook-1" id="">Facebook</a></li><li class="menu--social__item"><a href="https://plus.google.com/+WestUnifiedCommunicationsServices" class="menu--social__link icon--social icon-gplus" id="">Google Plus</a></li><li class="menu--social__item"><a href="https://www.youtube.com/c/WestUnifiedCommunicationsServices" class="menu--social__link icon--social icon-youtube" id="">YouTube</a></li></ul>
+
+</div><div class="panel-pane pane-panels-mini pane-footer-global footer__global" >
+
+
+
+
+<div class="footer__logo"><a href="http://www.west.com" target=_blank>
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="268px" height="213px" viewBox="0 0 268 213" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="logo-wuc-footer" sketch:type="MSLayerGroup" fill="#FFFFFF">
+            <path d="M27.4,0.1 L27.4,76 L36.3,76 L36.3,8.8 L235,8.8 L235,203.5 L36.3,203.5 L36.3,136.3 L27.4,136.3 L27.4,212.2 L243.9,212.2 L243.9,0.1 L27.4,0.1 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+            <path d="M13.5,85.7 L19.4,114.3 L25.7,85.7 L38.9,85.7 L44.6,114.6 L51.1,85.7 L63.9,85.7 L51.4,126.7 L38,126.7 L31.8,99.3 L25.6,126.7 L12,126.7 L0.5,85.7 L13.5,85.7 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+            <path d="M258.3,210.7 C254.3,210.7 250.1,207.7 250.1,202.7 C250.1,198.2 253.7,194.6 258.3,194.6 C260.6,194.6 262.6,195.4 264.2,196.9 C265.7,198.4 266.6,200.5 266.6,202.7 C266.5,207.2 262.9,210.7 258.3,210.7 M265.2,195.9 C263.4,194.1 260.9,193.1 258.2,193.1 C252.7,193.1 248.5,197.3 248.5,202.7 C248.5,208.7 253.5,212.2 258.2,212.2 C263.7,212.2 268,208 268,202.7 C268.1,200.1 267.1,197.7 265.2,195.9" id="Shape" sketch:type="MSShapeGroup"></path>
+            <path d="M258.2,201.6 L256.5,201.6 L256.5,198.6 L257.8,198.6 C259.1,198.6 259.4,198.6 259.8,198.8 C260.4,199.1 260.6,199.7 260.6,200.1 C260.6,201.6 259,201.6 258.2,201.6 M260.3,202.5 C261.7,202.1 262.6,201.3 262.6,199.9 C262.6,198.8 262,197.8 260.8,197.3 C260.1,197.1 259.3,197 258.2,197 L254.5,197 L254.5,208.1 L256.5,208.1 L256.5,203.1 L257.2,203.1 C258.7,203.1 259.4,203.2 259.8,204.8 C259.8,205.1 260,206.3 260.1,206.5 C260.3,207.5 260.5,207.9 260.6,208 L262.9,208 C262.4,207 262.3,206.4 262,204.7 C261.7,203.3 261.2,202.9 260.3,202.5" id="Shape" sketch:type="MSShapeGroup"></path>
+            <path d="M159.5,73.8 L171.8,73.8 L171.8,85.7 L179.9,85.7 L179.9,93.1 L171.7,93.1 L171.7,112.5 C171.6,115 171.6,117.1 174.9,117.1 L179.3,116.9 L179.3,126.3 C176.7,126.7 175.1,126.9 172.8,126.9 C168.5,126.9 163.9,126.7 161.3,122.9 C159.6,120.5 159.5,117.6 159.5,113.6 L159.5,93 L153.4,93 L153.4,85.6 L159.5,85.6 L159.5,73.8 L159.5,73.8 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+            <path d="M118.4,113 C121.8,116.2 125.9,118.7 130.6,118.7 C133.6,118.7 138.1,117.8 138.1,114.7 C138.1,113.3 137.2,112.7 136.5,112.3 C134.7,111.4 131.8,111.1 129.4,110.7 C127.6,110.4 125.6,110 123.8,109.4 C121.2,108.7 118.7,107.7 116.8,105.9 C115,104.1 113.7,101.3 113.7,98.2 C113.7,91.4 119.6,84.5 131.3,84.5 C141.2,84.5 147.1,88.7 150,90.6 L142.4,97.5 C138.5,94.5 134.8,93.4 131.9,93.4 C127.1,93.4 126,95.3 126,96.5 C126,98.9 128.6,99.3 132.7,100 C141.1,101.5 150.9,103.7 150.9,113.4 C150.9,123.1 141,127.8 131.1,127.8 C119.5,127.8 113.5,122.3 110.8,119.9 L118.4,113 L118.4,113 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+            <path d="M95.1,101 C94.9,99.3 94.5,97 92.8,95.2 C91.3,93.7 89,92.9 86.8,92.9 C83.9,92.9 81.8,94.3 80.6,95.5 C78.9,97.3 78.5,99.2 78.1,100.9 L95.1,100.9 L95.1,101 Z M107.3,116 C105.9,118.1 104.4,120.1 102.3,122.1 C98.7,125.4 93.3,127.9 86.7,127.9 C74.4,127.9 65.8,120.2 65.8,106.9 C65.8,97.1 70.7,84.5 87.1,84.5 C89.6,84.5 96.7,84.7 102,90.3 C107.4,96 107.7,103.9 107.9,108.5 L78.3,108.5 C78.2,113.6 81.2,118.6 87.7,118.6 C94.4,118.6 96.7,114.3 98.2,111.5 L107.3,116 L107.3,116 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+    <image src="/sites/all/themes/west/images/icons/logo-footer.png" />
+</svg></a>
+</div>
+<div class="small">
+  <p>West Corporation is a global provider of communication and network infrastructure services. West helps its clients more effectively communicate, collaborate and connect with their audiences through a diverse portfolio of solutions that include unified communications services, safety services, interactive services such as automated notifications, telecom services and specialty agent services. For 30 years, West has provided reliable, high-quality, voice and data services. West has sales and operations in the United States, Canada, Europe, the Middle East, Asia Pacific and Latin America. For more information, please call 1-800-841-9000 or visit <a href="http://www.west.com">www.west.com</a>.</p>
+</div>
+
+
+<ul class="menu--global">
+      <header>
+      <h2 class="element-invisible">Global Menu</h2>
+    </header>
+    
+<li class="menu--global__item"><a href="http://www.west.com/about-us/" class="menu--global__link" id="">About West</a></li><li class="menu--global__item"><a href="http://www.west.com/privacy-policy/" class="menu--global__link" id="">West Privacy Policy</a></li><li class="menu--global__item"><a href="http://www.west.com/code-of-ethics/" class="menu--global__link" id="">West Code of Ethics</a></li><li class="menu--global__item"><a href="http://investor.shareholder.com/west/contactus.cfm" class="menu--global__link" id="">Media</a></li><li class="menu--global__item"><a href="http://investor.shareholder.com/west/" class="menu--global__link" id="">Investors</a></li><li class="menu--global__item"><a href="http://www.west.com/careers/" class="menu--global__link" id="">Job Seekers</a></li></ul>
+
+</div></footer>
+
+  
+  </div>
+  <script src="https://www.westuc.com/files/js/js_7Ukqb3ierdBEL0eowfOKzTkNu-Le97OPm-UqTS5NENU.js"></script>
+<script src="https://www.westuc.com/files/js/js_ICVWX-C5a3Kc3mXre35ahZqDf8YMATws79vrpt-9QVo.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"bdcef9ca6d","applicationID":"56770853","transactionName":"NVwEMERVXEdSU0UNCgwWJwdCXV1aHEBQAwA9VAcKV1NXRmxeXgAAPU8PAUFrQlVUVQ==","queueTime":0,"applicationTime":6389,"atts":"GRsHRgxPT0k=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

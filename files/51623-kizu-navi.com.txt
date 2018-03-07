@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+    <meta http-equiv="Content-Language" content="ja" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="Description" content="Kizu-Navi.comです。" />
+    <meta name="Keywords" content="Kizu-Navi.com,地図" />
+    <meta name="robots" content="INDEX,FOLLOW" />
+
+		<title>キズナひろがるポータルサイト Kizu-Navi</title>
+
+    <!-- Contents navigation -->
+    <link rel="start" href="http://www.kizu-navi.com" title="Kizu-Navi.com" />
+    <link rel="help" href="http://www.kizu-navi.com/help.php" title="Kizu-Navi.comの使い方" />
+
+    <!-- Import Style Sheet files -->
+    <link rel="stylesheet" href="/css/import.css" type="text/css" media="all" />
+    
+    <!-- Import javascript files -->
+    <script type="text/javascript" src="/js/rom.js"></script>
+    <script type="text/javascript" src="/js/setLoadingImage.js"></script>
+    <script type="text/javascript" src="/js/change_menu.js"></script>
+    <script type="text/javascript" src="/js/prototype.js"></script>
+    <script type="text/javascript" src="/js/effects.js"></script>
+    <script type="text/javascript" src="/js/control.modal.js" ></script>
+    <!--<script type="text/javascript" src="/js/modal_link.js" ></script>-->
+
+    <link rev="made" href="mailto:info@kizuna-group.jp" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24873662-8']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>
+<a id="Top" name="Top"></a>
+
+
+
+
+<!-- header start ********************************************************************************************************* -->
+
+<div id="header">
+
+	<h1><a id="h1_title" href="http://www.kizu-navi.com">Kizu-Navi.com</a></h1>
+	<p id="Description">地図の検索サイトKIZU-NAVI【キズナビ】は全国のお店検索サイト！グルメ・美容・健康をはじめ、あなたの町情報を検索！！</p>
+
+	<div id="topnav">
+       	<a href="./help.php" id="ml_help">Kizu-Navi.comの使い方</a>
+        <a href="./contact.php" id="ml_contact">お問い合わせ</a>
+	</div>
+
+</div>
+
+<!-- header end *********************************************************************************************************** -->
+
+
+
+<script type="text/JavaScript">
+<!--
+
+// Event.observe(window, 'load', setLoadingImage);
+
+function changeGenre() {
+    document.search_form.keyword.focus();
+}
+function go_sub(prefecture_id){
+    document.pref_form.prefecture_id.value = prefecture_id;
+    document.pref_form.submit();
+}
+function search_submit(){
+    nowLoadingFlag = true;
+    visibleLoadingImage();
+    
+    document.search_dmy_form.LATITUDE.value = document.form1.LATITUDE.value;
+    document.search_dmy_form.LONGITUDE.value = document.form1.LONGITUDE.value;
+    document.search_dmy_form.ZOOM.value = document.form1.ZOOM.value;
+    document.search_dmy_form.bounds.value = document.form1.bounds.value;
+    // document.getElementById('initDisp').style.display = 'none';
+}
+/**
+ * AJAX戻るボタン対策用
+*/
+function redraw_page() {
+    // hiddenの値をチェックし格納されている場合、上書きする
+    if (document.getElementById('contents_back').value != '' && 
+        document.getElementById('contents_back').value != undefined) {
+        var result = eval("(" + document.getElementById('contents_back').value + ")");
+        
+        document.getElementById('contents').innerHTML = result.contents;
+        document.getElementById('shs').innerHTML = result.page_navi;
+        // カテゴリ復帰
+        setGenreOption(document.getElementById('category_id_back').value);
+        document.search_form.keyword.value = document.getElementById('keyword_back').value;
+        
+        if (document.getElementById('menu_type').value == 'line') {
+            ChDsp2('line','area');
+            changeRailwayDivision(document.getElementById('railway_division_id'));
+        } else {
+            ChDsp2('area', 'line');
+        }
+        
+        map_disp();
+        set_marker(result.map_data);
+    }
+}
+
+function selectReset(name) {
+    document.getElementById(name).selectedIndex = 0;
+}
+function selectResetRail(name) {
+    selectBackupClear();
+
+    document.getElementById(name).selectedIndex = 0;
+    changeRailwayDivision(document.getElementById(name));
+}
+function selectBackupClear() {
+    document.getElementById('area_id_back').value = '';
+    document.getElementById('railway_division_id_back').value = '';
+    document.getElementById('railway_id_back').value = '';
+    document.getElementById('station_id_back').value = '';
+}
+//-->
+</script>
+<script type="text/javascript" src="./js/popup_select.js"></script>
+<script type="text/javascript" src="./js/shop_search.js"></script>
+<script type="text/javascript" src="./js/moveAction.js"></script>
+<script src="./js/flash.js" type="text/javascript"></script>
+
+
+
+
+<!-- 検索ナビ  -->
+<!-- global navigation start ********************************************************************************************** -->
+<div id="gln">
+    <ul>
+                        <li><a href="area_top.php?district_id=1"><img src="/images/globalnavi/gln_1.jpg" alt="関東" class="swap" /></a></li>
+                        <li><a href="area_top.php?district_id=2"><img src="/images/globalnavi/gln_2_o.jpg" alt="関西"  /></a></li>
+                        <li><a href="area_top.php?district_id=3"><img src="/images/globalnavi/gln_3.jpg" alt="北海道・東北" class="swap" /></a></li>
+                        <li><a href="area_top.php?district_id=4"><img src="/images/globalnavi/gln_4.jpg" alt="北陸" class="swap" /></a></li>
+                        <li><a href="area_top.php?district_id=5"><img src="/images/globalnavi/gln_5.jpg" alt="中部" class="swap" /></a></li>
+                        <li><a href="area_top.php?district_id=6"><img src="/images/globalnavi/gln_6.jpg" alt="中国" class="swap" /></a></li>
+                        <li><a href="area_top.php?district_id=7"><img src="/images/globalnavi/gln_7.jpg" alt="四国" class="swap" /></a></li>
+                        <li><a href="area_top.php?district_id=8"><img src="/images/globalnavi/gln_8.jpg" alt="九州・沖縄" class="swap" /></a></li>
+            </ul>
+</div>
+<!-- global navigation end ************************************************************************************************ -->
+
+<!-- 検索ナビ END -->
+
+
+<!-- osdw R.makio 2011-08-30 フラッシュ領域 start ***************** -->
+<div id="flash">
+
+<!-- saved from url=(0022)http://www.kizu-navi.com -->
+<script type="text/javascript">RunBanner();</script>
+
+</div>
+<!-- osdw R.makio 2011-08-30 フラッシュ領域 end ******************* -->
+
+
+<!-- main container start ************************************************************************************************* -->
+<div id="main_container">
+
+    <!-- contents start -->
+    <div id="contents" class="clearfix">
+
+
+        <!-- index idx_searchbox start -->
+            <div id="idx_searchbox">
+
+<!-- Begin Yahoo Search Form -->
+<div id="searchform">
+<form method="get" action="http://search.yahoo.co.jp/search" target="_blank">
+	<p><a href="http://www.yahoo.co.jp/" target="_blank">
+		<img src="http://i.yimg.jp/images/search/guide/searchbox/yjapan_logo_110_29.gif" alt="Yahoo! JAPAN" style="border:none;padding:0;" width="110" height="29"></a>
+	</p>
+	<p>
+		<input type="text" name="p" size="20" style="width:280px">
+	</p>
+	<p>
+		<input type="hidden" name="fr" value="yssnb">
+		<input type="hidden" name="ei" value="▲▲▲">
+		<input type="submit" name="search" value="検索" class="searchbutton" />
+	</p>
+</form>
+	<img src="http://custom.search.yahoo.co.jp/images/window/006c75a92ba244c6b4cbe2709aa17d7b.gif" width="1" height="1" style="display:block;position:absolute">
+</div>
+<!-- End Yahoo! Search Form -->
+
+
+
+<!-- Google  -->
+<div id="searchform">
+<form method=get action="http://www.google.co.jp/search" target="_blank">
+<p><a href="http://www.google.co.jp/" style="text-align:center;"><img src="http://www.google.com/logos/Logo_40wht.gif" border="0" alt="Google" align="absmiddle" /></a><p>
+<p>
+	<input type=text name=q size=31 maxlength=255 value="" style="width:280px" />
+	<input type=hidden name=ie value=UTF-8>
+	<input type=hidden name=oe value=UTF-8>
+	<input type=hidden name=hl value="ja"><br>
+	<input type="submit" name=btnG value="検索" name="search" class="searchbutton" />
+</p>
+</form>
+</div>
+<!-- Google -->
+
+
+<!-- side_banner -->
+<p id='side_banner' style='margin-top:30px;'>
+	<img src='../images/side/app-qr_1.jpg' alt='スマートフォンからはキズナビ専用アプリを使って簡単検索！' />
+</p>
+<p id='side_banner'>
+	<a href='http://itunes.apple.com/jp/app/kizunavi/id499430251?mt=8' target="_blank">
+		<img src='../images/side/app-qr_2.jpg' alt='iPhone&iPod touch用アプリはこちら' />
+	</a>
+</p>
+<p id='side_banner' style='margin-bottom:30px;'>
+	<a href='https://play.google.com/store/apps/details?id=com.kizu.navi.app' target="_blank">
+		<img src='../images/side/app-qr_3.jpg' alt='Android用アプリはこちら' />
+	</a>
+</p>
+<!-- side_banner -->
+
+
+<DIV style="font-size:12px;text-align:center;margin-top:20px;">
+<IFRAME src="http://link.tenki-yoho.com/img.php?all,fc2" width=150 height=180 scrolling=NO frameborder=0 marginwidth=0 marginheight=0><A href="http://www.tenki-yoho.com/" target="_blank">天気予報</A></IFRAME><br>-<A href="http://www.tenki-yoho.com/" target=_blank>天気予報コム</A>- -<A href="http://fc2.com/" target=_blank>FC2</A>-</DIV>
+
+
+
+
+<!--
+                <div class="rev_box1">
+                    <div class="rev_box_inner1">
+                        <h2>関西の新着レビュー</h2>
+
+
+                                                <div class="line_shop_box">データが登録されていません。</div>
+                        
+
+                    </div>
+                </div>
+-->
+
+
+
+            </div>
+        <!-- index new review end -->
+
+    	<!-- index new arrival shop start -->
+        <div id="initDisp">
+            <div id="idx_nas">
+                <div class="title1 mgn_b10"><h2>関西の新着店舗</h2></div>
+                                
+				
+                <div class="line_shop_box" style="width: 450px;">
+                    <div class="thum">
+                        <p class="thum_line1_ctg1">
+                                                <img style="align:center; vertical-align:middle;" src="http://www.kizu-navi.com/shop/0029/001/01410288_1.png" alt="唐揚げキッチン ここはな" height="66" />
+                                            </p>
+                    </div>
+                    <div class="shop_data sdw_1top">
+                        <dl>
+                            <dt>
+                                <img src="images/common/pin_ctg1_1.gif" alt="" width="25" height="32" />
+                            </dt>
+                            <dd class="sdddw_1" style="width: 330px; float: left; ">
+                                <p class="ctg_genre" style="margin-left: 10px;">グルメ・飲食 / 肉料理・和食・弁当・宅配</p>
+                                <strong class="shopname" style="margin-left: 10px;">
+                                                                <a href="/shop/detail.php?id=1410288">
+                                
+                                                                唐揚げキッチン ここはな                                                                </a>
+                                                                </strong>
+                            </dd>
+                            <dd class="addr" style="width: 330px; float: left; ">大阪市東住吉区北田辺4-17-4</dd>
+                            <dd class="tel" style="width: 330px; float: left; ">06-6713-9987</dd>
+                        </dl>
+                    </div>
+                    <div class="lsb_hr"><hr /></div>
+                </div>
+                
+					
+                
+                
+				
+                <div class="line_shop_box" style="width: 450px;">
+                    <div class="thum">
+                        <p class="thum_line1_ctg7">
+                                                <img style="align:center; vertical-align:middle;" src="http://www.kizu-navi.com/shop/0081/001/04010700_1.jpg" alt="株式会社 空土" height="66" />
+                                            </p>
+                    </div>
+                    <div class="shop_data sdw_1top">
+                        <dl>
+                            <dt>
+                                <img src="images/common/pin_ctg7_2.gif" alt="" width="25" height="32" />
+                            </dt>
+                            <dd class="sdddw_1" style="width: 330px; float: left; ">
+                                <p class="ctg_genre" style="margin-left: 10px;">ビジネス / 農業</p>
+                                <strong class="shopname" style="margin-left: 10px;">
+                                                                <a href="/shop/detail.php?id=4010700">
+                                
+                                                                株式会社 空土                                                                </a>
+                                                                </strong>
+                            </dd>
+                            <dd class="addr" style="width: 330px; float: left; ">奈良市水間町124番地の1</dd>
+                            <dd class="tel" style="width: 330px; float: left; ">0742-81-1910</dd>
+                        </dl>
+                    </div>
+                    <div class="lsb_hr"><hr /></div>
+                </div>
+                
+					
+                
+                
+				
+                <div class="line_shop_box" style="width: 450px;">
+                    <div class="thum">
+                        <p class="thum_line1_ctg14">
+                                                <img style="align:center; vertical-align:middle;" src="/images/common/thum_ctg_14.jpg" alt="西大和畳店" height="66" />
+                                            </p>
+                    </div>
+                    <div class="shop_data sdw_1top">
+                        <dl>
+                            <dt>
+                                <img src="images/common/pin_ctg14_3.gif" alt="" width="25" height="32" />
+                            </dt>
+                            <dd class="sdddw_1" style="width: 330px; float: left; ">
+                                <p class="ctg_genre" style="margin-left: 10px;">住まい / リフォーム</p>
+                                <strong class="shopname" style="margin-left: 10px;">
+                                                                <a href="/shop/detail.php?id=4010699">
+                                
+                                                                西大和畳店                                                                </a>
+                                                                </strong>
+                            </dd>
+                            <dd class="addr" style="width: 330px; float: left; ">北葛城郡河合町広瀬台2-10-8</dd>
+                            <dd class="tel" style="width: 330px; float: left; ">0745-32-0797</dd>
+                        </dl>
+                    </div>
+                    <div class="lsb_hr"><hr /></div>
+                </div>
+                
+					
+                
+                
+				
+                <div class="line_shop_box" style="width: 450px;">
+                    <div class="thum">
+                        <p class="thum_line1_ctg10">
+                                                <img style="align:center; vertical-align:middle;" src="/images/common/thum_ctg_10.jpg" alt="伴・阿部舞踊研究所" height="66" />
+                                            </p>
+                    </div>
+                    <div class="shop_data sdw_1top">
+                        <dl>
+                            <dt>
+                                <img src="images/common/pin_ctg10_4.gif" alt="" width="25" height="32" />
+                            </dt>
+                            <dd class="sdddw_1" style="width: 330px; float: left; ">
+                                <p class="ctg_genre" style="margin-left: 10px;">教育・習い事 / 趣味</p>
+                                <strong class="shopname" style="margin-left: 10px;">
+                                                                <a href="/shop/detail.php?id=4010697">
+                                
+                                                                伴・阿部舞踊研究所                                                                </a>
+                                                                </strong>
+                            </dd>
+                            <dd class="addr" style="width: 330px; float: left; ">神戸市長田区西丸山町1-2-18</dd>
+                            <dd class="tel" style="width: 330px; float: left; ">078-691-4739</dd>
+                        </dl>
+                    </div>
+                    <div class="lsb_hr"><hr /></div>
+                </div>
+                
+					
+                
+                
+				
+                <div class="line_shop_box" style="width: 450px;">
+                    <div class="thum">
+                        <p class="thum_line1_ctg6">
+                                                <img style="align:center; vertical-align:middle;" src="/images/common/thum_ctg_6.jpg" alt="プロショップ来夢" height="66" />
+                                            </p>
+                    </div>
+                    <div class="shop_data sdw_1top">
+                        <dl>
+                            <dt>
+                                <img src="images/common/pin_ctg6_5.gif" alt="" width="25" height="32" />
+                            </dt>
+                            <dd class="sdddw_1" style="width: 330px; float: left; ">
+                                <p class="ctg_genre" style="margin-left: 10px;">自動車・バイク / その他サービス・車検・整備・修理・カー用品</p>
+                                <strong class="shopname" style="margin-left: 10px;">
+                                                                <a href="/shop/detail.php?id=4010712">
+                                
+                                                                プロショップ来夢                                                                </a>
+                                                                </strong>
+                            </dd>
+                            <dd class="addr" style="width: 330px; float: left; ">堺市美原区大饗149-7</dd>
+                            <dd class="tel" style="width: 330px; float: left; ">072-363-1600</dd>
+                        </dl>
+                    </div>
+                    <div class="lsb_hr"><hr /></div>
+                </div>
+                
+					
+                
+                
+				
+                <div class="line_shop_box" style="width: 450px;">
+                    <div class="thum">
+                        <p class="thum_line1_ctg10">
+                                                <img style="align:center; vertical-align:middle;" src="http://www.kizu-navi.com/shop/0081/001/04010676_1.jpg" alt="KH Study Room～学びの場～" height="66" />
+                                            </p>
+                    </div>
+                    <div class="shop_data sdw_1top">
+                        <dl>
+                            <dt>
+                                <img src="images/common/pin_ctg10_6.gif" alt="" width="25" height="32" />
+                            </dt>
+                            <dd class="sdddw_1" style="width: 330px; float: left; ">
+                                <p class="ctg_genre" style="margin-left: 10px;">教育・習い事 / その他・資格・語学・趣味</p>
+                                <strong class="shopname" style="margin-left: 10px;">
+                                                                <a href="/shop/detail.php?id=4010676">
+                                
+                                                                KH Study Room～学びの場～                                                                </a>
+                                                                </strong>
+                            </dd>
+                            <dd class="addr" style="width: 330px; float: left; ">大阪市福島区福島1-2-30　2階</dd>
+                            <dd class="tel" style="width: 330px; float: left; ">06-6458-2254</dd>
+                        </dl>
+                    </div>
+                    <div class="lsb_hr"><hr /></div>
+                </div>
+                
+					
+                
+                
+				
+                <div class="line_shop_box" style="width: 450px;">
+                    <div class="thum">
+                        <p class="thum_line1_ctg4">
+                                                <img style="align:center; vertical-align:middle;" src="http://www.kizu-navi.com/shop/0081/001/04010677_1.jpg" alt="三峰堂原野整骨院" height="66" />
+                                            </p>
+                    </div>
+                    <div class="shop_data sdw_1top">
+                        <dl>
+                            <dt>
+                                <img src="images/common/pin_ctg4_7.gif" alt="" width="25" height="32" />
+                            </dt>
+                            <dd class="sdddw_1" style="width: 330px; float: left; ">
+                                <p class="ctg_genre" style="margin-left: 10px;">医療・健康・介護 / 整体等各種療術・接骨・柔道整復</p>
+                                <strong class="shopname" style="margin-left: 10px;">
+                                                                <a href="/shop/detail.php?id=4010677">
+                                
+                                                                三峰堂原野整骨院                                                                </a>
+                                                                </strong>
+                            </dd>
+                            <dd class="addr" style="width: 330px; float: left; ">堺市堺区大町西2-2-28センチュリープラザ１Ｆ</dd>
+                            <dd class="tel" style="width: 330px; float: left; ">072-223-0400</dd>
+                        </dl>
+                    </div>
+                    <div class="lsb_hr"><hr /></div>
+                </div>
+                
+					
+                
+                
+				
+                <div class="line_shop_box" style="width: 450px;">
+                    <div class="thum">
+                        <p class="thum_line1_ctg13">
+                                                <img style="align:center; vertical-align:middle;" src="http://www.kizu-navi.com/shop/0081/001/04010650_1.jpg" alt="善グリーンパートナーズ" height="66" />
+                                            </p>
+                    </div>
+                    <div class="shop_data sdw_1top">
+                        <dl>
+                            <dt>
+                                <img src="images/common/pin_ctg13_8.gif" alt="" width="25" height="32" />
+                            </dt>
+                            <dd class="sdddw_1" style="width: 330px; float: left; ">
+                                <p class="ctg_genre" style="margin-left: 10px;">冠婚葬祭・イベント / 写真・ビデオ・スライド</p>
+                                <strong class="shopname" style="margin-left: 10px;">
+                                                                <a href="/shop/detail.php?id=4010650">
+                                
+                                                                善グリーンパートナーズ                                                                </a>
+                                                                </strong>
+                            </dd>
+                            <dd class="addr" style="width: 330px; float: left; ">生駒郡斑鳩町幸前2-3-6</dd>
+                            <dd class="tel" style="width: 330px; float: left; ">0745-74-6650</dd>
+                        </dl>
+                    </div>
+                    <div class="lsb_hr"><hr /></div>
+                </div>
+                
+					
+                
+                
+				
+                <div class="line_shop_box" style="width: 450px;">
+                    <div class="thum">
+                        <p class="thum_line1_ctg4">
+                                                <img style="align:center; vertical-align:middle;" src="http://www.kizu-navi.com/shop/0081/001/04010634_1.jpg" alt="グロウアップ" height="66" />
+                                            </p>
+                    </div>
+                    <div class="shop_data sdw_1top">
+                        <dl>
+                            <dt>
+                                <img src="images/common/pin_ctg4_9.gif" alt="" width="25" height="32" />
+                            </dt>
+                            <dd class="sdddw_1" style="width: 330px; float: left; ">
+                                <p class="ctg_genre" style="margin-left: 10px;">医療・健康・介護 / 介護・福祉</p>
+                                <strong class="shopname" style="margin-left: 10px;">
+                                                                <a href="/shop/detail.php?id=4010634">
+                                
+                                                                グロウアップ                                                                </a>
+                                                                </strong>
+                            </dd>
+                            <dd class="addr" style="width: 330px; float: left; ">堺市中区毛穴町21番地１</dd>
+                            <dd class="tel" style="width: 330px; float: left; ">072-247-5445</dd>
+                        </dl>
+                    </div>
+                    <div class="lsb_hr"><hr /></div>
+                </div>
+                
+					
+                
+                
+				
+                <div class="line_shop_box" style="width: 450px;">
+                    <div class="thum">
+                        <p class="thum_line1_ctg1">
+                                                <img style="align:center; vertical-align:middle;" src="http://www.kizu-navi.com/shop/0081/001/04010637_1.jpg" alt="焼鳥さぶちゃん" height="66" />
+                                            </p>
+                    </div>
+                    <div class="shop_data sdw_1top">
+                        <dl>
+                            <dt>
+                                <img src="images/common/pin_ctg1_10.gif" alt="" width="25" height="32" />
+                            </dt>
+                            <dd class="sdddw_1" style="width: 330px; float: left; ">
+                                <p class="ctg_genre" style="margin-left: 10px;">グルメ・飲食 / 肉料理・飲み屋・ラーメン・その他グルメ・居酒屋</p>
+                                <strong class="shopname" style="margin-left: 10px;">
+                                                                <a href="/shop/detail.php?id=4010637">
+                                
+                                                                焼鳥さぶちゃん                                                                </a>
+                                                                </strong>
+                            </dd>
+                            <dd class="addr" style="width: 330px; float: left; ">堺市南区豊田1033</dd>
+                            <dd class="tel" style="width: 330px; float: left; ">072-296-4546</dd>
+                        </dl>
+                    </div>
+                    <div class="lsb_hr"><hr /></div>
+                </div>
+                
+					
+                
+                            </div>
+            <div id="shop_info" style="display:none;">
+                                                                    <div id="shop_info1" style="background-color: white; width: 330px; height: 120px;  overflow: auto; margin: 0px 9px 0px 0px;">
+                                                                <table cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                <td rowspan="2" style="width: 50px; ">
+                                                                        <img style="border-color:#CC6666;border-width:2px;border-style:solid;" src="http://www.kizu-navi.com/shop/0029/001/01410288_1.png" width="50" height="50" alt="唐揚げキッチン ここはな" />
+                                                                    </td>
+                                <td style="width: 240px; float: left; padding-left: 10px;">
+                                    グルメ・飲食/肉料理・和食・弁当・宅配                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:text-top; text-align: left; padding-left: 10px;">
+                                    <strong>
+                                                                        <a style="font-size:14px; vertical-align:text-top;" href="http://www.kizu-navi.com/shop/0029/001/01410288.html">
+                                                                        唐揚げキッチン ここはな                                                                        </a>
+                                                                        </strong><BR>
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_rev_star0.gif" alt="0.0" />(0.0)
+                                    &nbsp;
+                                    <img src="/images/common/ico_review.gif" alt="" />(0)
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_4.gif" alt="" />
+                                        大阪市東住吉区北田辺4-17-4                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><img src="/images/common/ico_5.gif" alt="" />
+                                    06-6713-9987                                </td>
+                            </tr>
+                        </table>
+                                                                    </div>
+                                                    <div id="shop_info2" style="background-color: white; width: 330px; height: 120px;  overflow: auto; margin: 0px 9px 0px 0px;">
+                                                                <table cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                <td rowspan="2" style="width: 50px; ">
+                                                                        <img style="border-color:#CC6666;border-width:2px;border-style:solid;" src="http://www.kizu-navi.com/shop/0081/001/04010700_1.jpg" width="50" height="50" alt="株式会社 空土" />
+                                                                    </td>
+                                <td style="width: 240px; float: left; padding-left: 10px;">
+                                    ビジネス/農業                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:text-top; text-align: left; padding-left: 10px;">
+                                    <strong>
+                                                                        <a style="font-size:14px; vertical-align:text-top;" href="http://www.kizu-navi.com/shop/0081/001/04010700.html">
+                                                                        株式会社 空土                                                                        </a>
+                                                                        </strong><BR>
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_rev_star0.gif" alt="0.0" />(0.0)
+                                    &nbsp;
+                                    <img src="/images/common/ico_review.gif" alt="" />(0)
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_4.gif" alt="" />
+                                        奈良市水間町124番地の1                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><img src="/images/common/ico_5.gif" alt="" />
+                                    0742-81-1910                                </td>
+                            </tr>
+                        </table>
+                                                                    </div>
+                                                    <div id="shop_info3" style="background-color: white; width: 330px; height: 120px;  overflow: auto; margin: 0px 9px 0px 0px;">
+                                                                <table cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                <td rowspan="2" style="width: 50px; ">
+                                                                        <img style="border-color:#CC6666;border-width:2px;border-style:solid;" src="/images/common/thum_ctg_14.jpg" width="50" height="50" alt="西大和畳店" />
+                                                                    </td>
+                                <td style="width: 240px; float: left; padding-left: 10px;">
+                                    住まい/リフォーム                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:text-top; text-align: left; padding-left: 10px;">
+                                    <strong>
+                                                                        <a style="font-size:14px; vertical-align:text-top;" href="http://www.kizu-navi.com/shop/0081/001/04010699.html">
+                                                                        西大和畳店                                                                        </a>
+                                                                        </strong><BR>
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_rev_star0.gif" alt="0.0" />(0.0)
+                                    &nbsp;
+                                    <img src="/images/common/ico_review.gif" alt="" />(0)
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_4.gif" alt="" />
+                                        北葛城郡河合町広瀬台2-10-8                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><img src="/images/common/ico_5.gif" alt="" />
+                                    0745-32-0797                                </td>
+                            </tr>
+                        </table>
+                                                                    </div>
+                                                    <div id="shop_info4" style="background-color: white; width: 330px; height: 120px;  overflow: auto; margin: 0px 9px 0px 0px;">
+                                                                <table cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                <td rowspan="2" style="width: 50px; ">
+                                                                        <img style="border-color:#CC6666;border-width:2px;border-style:solid;" src="/images/common/thum_ctg_10.jpg" width="50" height="50" alt="伴・阿部舞踊研究所" />
+                                                                    </td>
+                                <td style="width: 240px; float: left; padding-left: 10px;">
+                                    教育・習い事/趣味                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:text-top; text-align: left; padding-left: 10px;">
+                                    <strong>
+                                                                        <a style="font-size:14px; vertical-align:text-top;" href="http://www.kizu-navi.com/shop/0081/001/04010697.html">
+                                                                        伴・阿部舞踊研究所                                                                        </a>
+                                                                        </strong><BR>
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_rev_star0.gif" alt="0.0" />(0.0)
+                                    &nbsp;
+                                    <img src="/images/common/ico_review.gif" alt="" />(0)
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_4.gif" alt="" />
+                                        神戸市長田区西丸山町1-2-18                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><img src="/images/common/ico_5.gif" alt="" />
+                                    078-691-4739                                </td>
+                            </tr>
+                        </table>
+                                                                    </div>
+                                                    <div id="shop_info5" style="background-color: white; width: 330px; height: 120px;  overflow: auto; margin: 0px 9px 0px 0px;">
+                                                                <table cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                <td rowspan="2" style="width: 50px; ">
+                                                                        <img style="border-color:#CC6666;border-width:2px;border-style:solid;" src="/images/common/thum_ctg_6.jpg" width="50" height="50" alt="プロショップ来夢" />
+                                                                    </td>
+                                <td style="width: 240px; float: left; padding-left: 10px;">
+                                    自動車・バイク/その他サービス・車検・整備・修理・カー用品                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:text-top; text-align: left; padding-left: 10px;">
+                                    <strong>
+                                                                        <a style="font-size:14px; vertical-align:text-top;" href="http://www.kizu-navi.com/shop/0081/001/04010712.html">
+                                                                        プロショップ来夢                                                                        </a>
+                                                                        </strong><BR>
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_4.gif" alt="" />
+                                        堺市美原区大饗149-7                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><img src="/images/common/ico_5.gif" alt="" />
+                                    072-363-1600                                </td>
+                            </tr>
+                        </table>
+                                                                    </div>
+                                                    <div id="shop_info6" style="background-color: white; width: 330px; height: 120px;  overflow: auto; margin: 0px 9px 0px 0px;">
+                                                                <table cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                <td rowspan="2" style="width: 50px; ">
+                                                                        <img style="border-color:#CC6666;border-width:2px;border-style:solid;" src="http://www.kizu-navi.com/shop/0081/001/04010676_1.jpg" width="50" height="50" alt="KH Study Room～学びの場～" />
+                                                                    </td>
+                                <td style="width: 240px; float: left; padding-left: 10px;">
+                                    教育・習い事/その他・資格・語学・趣味                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:text-top; text-align: left; padding-left: 10px;">
+                                    <strong>
+                                                                        <a style="font-size:14px; vertical-align:text-top;" href="http://www.kizu-navi.com/shop/0081/001/04010676.html">
+                                                                        KH Study Room～学びの場～                                                                        </a>
+                                                                        </strong><BR>
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_rev_star0.gif" alt="0.0" />(0.0)
+                                    &nbsp;
+                                    <img src="/images/common/ico_review.gif" alt="" />(0)
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_4.gif" alt="" />
+                                        大阪市福島区福島1-2-30　2階                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><img src="/images/common/ico_5.gif" alt="" />
+                                    06-6458-2254                                </td>
+                            </tr>
+                        </table>
+                                                                    </div>
+                                                    <div id="shop_info7" style="background-color: white; width: 330px; height: 120px;  overflow: auto; margin: 0px 9px 0px 0px;">
+                                                                <table cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                <td rowspan="2" style="width: 50px; ">
+                                                                        <img style="border-color:#CC6666;border-width:2px;border-style:solid;" src="http://www.kizu-navi.com/shop/0081/001/04010677_1.jpg" width="50" height="50" alt="三峰堂原野整骨院" />
+                                                                    </td>
+                                <td style="width: 240px; float: left; padding-left: 10px;">
+                                    医療・健康・介護/整体等各種療術・接骨・柔道整復                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:text-top; text-align: left; padding-left: 10px;">
+                                    <strong>
+                                                                        <a style="font-size:14px; vertical-align:text-top;" href="http://www.kizu-navi.com/shop/0081/001/04010677.html">
+                                                                        三峰堂原野整骨院                                                                        </a>
+                                                                        </strong><BR>
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_rev_star0.gif" alt="0.0" />(0.0)
+                                    &nbsp;
+                                    <img src="/images/common/ico_review.gif" alt="" />(0)
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_4.gif" alt="" />
+                                        堺市堺区大町西2-2-28センチュリープラザ１Ｆ                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><img src="/images/common/ico_5.gif" alt="" />
+                                    072-223-0400                                </td>
+                            </tr>
+                        </table>
+                                                                    </div>
+                                                    <div id="shop_info8" style="background-color: white; width: 330px; height: 120px;  overflow: auto; margin: 0px 9px 0px 0px;">
+                                                                <table cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                <td rowspan="2" style="width: 50px; ">
+                                                                        <img style="border-color:#CC6666;border-width:2px;border-style:solid;" src="http://www.kizu-navi.com/shop/0081/001/04010650_1.jpg" width="50" height="50" alt="善グリーンパートナーズ" />
+                                                                    </td>
+                                <td style="width: 240px; float: left; padding-left: 10px;">
+                                    冠婚葬祭・イベント/写真・ビデオ・スライド                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:text-top; text-align: left; padding-left: 10px;">
+                                    <strong>
+                                                                        <a style="font-size:14px; vertical-align:text-top;" href="http://www.kizu-navi.com/shop/0081/001/04010650.html">
+                                                                        善グリーンパートナーズ                                                                        </a>
+                                                                        </strong><BR>
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_4.gif" alt="" />
+                                        生駒郡斑鳩町幸前2-3-6                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><img src="/images/common/ico_5.gif" alt="" />
+                                    0745-74-6650                                </td>
+                            </tr>
+                        </table>
+                                                                    </div>
+                                                    <div id="shop_info9" style="background-color: white; width: 330px; height: 120px;  overflow: auto; margin: 0px 9px 0px 0px;">
+                                                                <table cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                <td rowspan="2" style="width: 50px; ">
+                                                                        <img style="border-color:#CC6666;border-width:2px;border-style:solid;" src="http://www.kizu-navi.com/shop/0081/001/04010634_1.jpg" width="50" height="50" alt="グロウアップ" />
+                                                                    </td>
+                                <td style="width: 240px; float: left; padding-left: 10px;">
+                                    医療・健康・介護/介護・福祉                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:text-top; text-align: left; padding-left: 10px;">
+                                    <strong>
+                                                                        <a style="font-size:14px; vertical-align:text-top;" href="http://www.kizu-navi.com/shop/0081/001/04010634.html">
+                                                                        グロウアップ                                                                        </a>
+                                                                        </strong><BR>
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_rev_star0.gif" alt="0.0" />(0.0)
+                                    &nbsp;
+                                    <img src="/images/common/ico_review.gif" alt="" />(0)
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_4.gif" alt="" />
+                                        堺市中区毛穴町21番地１                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><img src="/images/common/ico_5.gif" alt="" />
+                                    072-247-5445                                </td>
+                            </tr>
+                        </table>
+                                                                    </div>
+                                                    <div id="shop_info10" style="background-color: white; width: 330px; height: 120px;  overflow: auto; margin: 0px 9px 0px 0px;">
+                                                                <table cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                <td rowspan="2" style="width: 50px; ">
+                                                                        <img style="border-color:#CC6666;border-width:2px;border-style:solid;" src="http://www.kizu-navi.com/shop/0081/001/04010637_1.jpg" width="50" height="50" alt="焼鳥さぶちゃん" />
+                                                                    </td>
+                                <td style="width: 240px; float: left; padding-left: 10px;">
+                                    グルメ・飲食/肉料理・飲み屋・ラーメン・その他グルメ・居酒屋                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:text-top; text-align: left; padding-left: 10px;">
+                                    <strong>
+                                                                        <a style="font-size:14px; vertical-align:text-top;" href="http://www.kizu-navi.com/shop/0081/001/04010637.html">
+                                                                        焼鳥さぶちゃん                                                                        </a>
+                                                                        </strong><BR>
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_rev_star0.gif" alt="0.0" />(0.0)
+                                    &nbsp;
+                                    <img src="/images/common/ico_review.gif" alt="" />(0)
+                                </td>
+                            </tr>
+                                                                <tr>
+                                <td colspan="2">
+                                    <img src="/images/common/ico_4.gif" alt="" />
+                                        堺市南区豊田1033                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><img src="/images/common/ico_5.gif" alt="" />
+                                    072-296-4546                                </td>
+                            </tr>
+                        </table>
+                                                                    </div>
+                                                                <input type="hidden" name="shop_count" value="10" id="shop_count" />
+            </div>
+        
+        <!-- index new arrival shop end -->
+        
+        
+        </div>
+        <div id="info_sec">
+            <div class="info_box1">
+    <h2>お知らせ</h2>
+    <dl>
+                <dt>2013.09.18</dt>
+        
+        <dd>
+            <a href="info_article2.php?notice_id=3" 
+                id="ml_infoarticle3"
+                onfocus="($('ml_infoarticle3'),);" >システム不具合についてのお詫び</a>
+        </dd>
+
+                <dt>2012.05.15</dt>
+        
+        <dd>
+            <a href="info_article2.php?notice_id=2" 
+                id="ml_infoarticle2"
+                onfocus="($('ml_infoarticle2'),);" >アプリバージョンアップしました。</a>
+        </dd>
+
+                <dt>2012.03.26</dt>
+        
+        <dd>
+            <a href="info_article2.php?notice_id=1" 
+                id="ml_infoarticle1"
+                onfocus="($('ml_infoarticle1'),);" >アプリができました。</a>
+        </dd>
+
+            </dl>
+    <p><a href="info_list.php?district_id=2">お知らせ一覧</a></p>
+</div>
+
+
+<!-- osdw R.makio 2011-09-02 -->
+<p class='mgn_b10'><a href="http://www.reve21.co.jp/" target="_blank"><img src="http://www.kizu-navi.com/images/infosec/reve21.gif" alt="薄毛・抜け毛の悩みは、育毛や増毛より発毛のリーブ21" width="220" height="80" /></a> </p>
+<p class='mgn_b10'><a href="https://www.yamada-syouten.com/shop/" target="_blank"><img src="http://www.kizu-navi.com/images/infosec/bnr_yamada-syouten.jpg" alt="本家山田商店" width="220" height="80" /></a></p>
+<p class='mgn_b10'><a href="http://yodoyabashi-golf.com/" target="_blank"><img src="http://www.kizu-navi.com/images/infosec/bnr_ygc.jpg" alt="淀屋橋ゴルフ倶楽部" width="220" height="160" /></a></p>
+<p class='mgn_b10'><a href="http://www.sportsoasis.co.jp/" target="_blank"><img src="http://www.kizu-navi.com/images/infosec/bnr_oasis-big.jpg" alt="スポーツ＆フィットネス 東急スポーツオアシス" width="220" height="160" /></a>
+</p>
+<p class='mgn_b10'><a href="http://www.ds-smile.com/ " target="_blank"><img src="http://www.kizu-navi.com/images/infosec/diving_smile.jpg" alt="diving_smile" width="220" height="80" /></a> 
+</p>
+<p class='mgn_b10'><a href="http://da-c.co.jp/" target="_blank"><img src="http://www.kizu-navi.com/images/infosec/bnr_da-c.jpg" alt="デリシアスエーシー" width="220" height="80" /></a></p>
+<p class='mgn_b10'><a href="http://vi-navi.com/" target="_blank"><img src="http://www.kizu-navi.com/images/infosec/bnr_vi-navi.jpg" alt="美ナビ" width="220" height="80" /></a></p>
+<!-- osdw R.makio 2011-09-02 -->
+        </div>
+    
+    <!-- information section start -->
+    </div>
+    <!-- contents end -->
+
+<!-- page top anker start -->
+    <div class="top_anker">
+        <p><a href="#" onclick="new Effect.ScrollTo('Top'); return false;"><img src="images/common/btn_top_anker.gif" alt="ページ上部へ" width="98" height="22" class="swap" /></a></p>
+    </div>
+<!-- page top anker end -->
+</div>
+
+<!-- footer start -->
+<div id="footer">
+    <p>
+        <a href="./rule.php" id="ml_rule" target="_blank">ご利用規約</a>
+        <a href="./privacy.php#privacypolicy" id="ml_privacy" target="_blank">プライバシーポリシー</a>
+        <a href="./privacy.php#manegementcompany" id="ml_company" target="_blank">運営会社</a>
+        <a href="./advertcoll.php" id="ml_advertisement" target="_blank">広告募集</a>
+        <a href="./entry/index.php" id="ml_advertisement" target="_blank">e</a>
+    </p>
+</div>
+
+<address>Copyright (C) 2011 <strong>KIZU-NAVI</strong>.com All Rights Reserved.</address>
+<!-- footer end -->
+
+
+</div>
+<!-- main container end *************************************************************************************************** -->
+
+</body>
+</html>

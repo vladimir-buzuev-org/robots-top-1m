@@ -1,0 +1,936 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head id="Head1"><meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" /><title>
+	
+    City of Charlottesville | Home
+
+</title>
+    <script type="text/javascript">
+        //script for making "view full site" button work on mobile devices 
+        function getCookie(c_name) {
+            var i, x, y, ARRcookies = document.cookie.split(";");
+            for (i = 0; i < ARRcookies.length; i++) {
+                x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+                y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+                x = x.replace(/^\s+|\s+$/g, "");
+                if (x == c_name) {
+                    return unescape(y);
+                }
+            }
+        }
+
+        function setCookie(c_name, value, exdays) {
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() + exdays);
+            var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+            c_value = (window.location.protocol == 'https:') ? c_value + "; secure" : c_value;
+            document.cookie = c_name + "=" + c_value;
+        }
+
+        var isResponsive = getCookie('ISRESPONSIVE');
+        if (isResponsive != "no" && isResponsive != "yes") {
+            setCookie('ISRESPONSIVE', 'yes', 7);
+            document.write('<meta name="viewport" content="width=device-width" />');
+            isResponsive = 'yes';
+        } else {
+            if (isResponsive == "no") {
+                document.write('<meta name="viewport" content="width=980" />');
+            }
+            else {
+                document.write('<meta name="viewport" content="width=device-width" />');
+            }
+        }
+    </script>
+
+    <link href="/DefaultContent/Default/StyleBundleDesignTheme.cssbnd?v=thE6kwUbL_IA1S-rm3y1R1tIGsYif2o6xe5RLw076Ys1" rel="stylesheet"/>
+<link href="/Project/Contents/Main/StyleBundleDesignTheme.cssbnd?v=U9n4vydZAXmegSqfog54XD1gfr9nm6qgmQr5q6ROCK41" rel="stylesheet"/>
+<link href="/Areas/Admin/Content/StyleBundleFrontendExtra.cssbnd?v=-cG6bfciEzyG0pVpDdXAbInOUnqKuoiK61z7_e6NMxo1" rel="stylesheet"/>
+<link href="/DefaultContent/Default/Print.cssbnd?v=LagRFhur4RMxiqMN2QR0jEYqBcqJfKB2ZqfNph75L3A1" rel="stylesheet" media="print" />
+<link href="/Project/Contents/Main/Print.cssbnd?v=bLUgX7y-_C2liahoRb_uFiH8DdQt2T71OlK3YdiQJ-g1" rel="stylesheet" media="print" />
+<link href="/DefaultContent/Default/kendo/StyleBundleKendo.cssbnd?v=xST1bsl5yknXpl9jp1HsezLGTLBh6mO_aQWPARk7ONM1" rel="stylesheet"/>
+<script src="/Scripts/ScriptBundleFAllInOne.jsbnd?v=vPvLN-Yigy2mTKrHCq_QQ3et-U4hdLohYoAzlc3biqA1"></script>
+
+    <script>
+        function handleExternalURL() {
+            $("a[target='_blank'][href*='____isexternal']").each(function (index, item) {                
+                var href = $(item).attr("href");
+                href = href.replace("&____isexternal=true", "");
+                href = href.replace("?____isexternal=true", "");
+                $(item).attr("href", href);
+                if ($(item).closest(".no_external_url_indication,.footer_copyright").length <= 0) {
+                    $(item).removeClass("external_link_url").addClass("external_link_url");
+                }
+            });
+
+            $("a[target='_blank']:not([href*='____isexternal'])").each(function (index, item) {
+                var linkUrl = $(item).attr("href");
+                if ($.isUrl(linkUrl) && $(item).closest(".no_external_url_indication,.footer_copyright").length<=0) {
+                    $(item).removeClass("external_link_url").addClass("external_link_url");
+                }
+            });
+        }
+
+        ; (function ($) {
+            $.ajaxSetup({
+                complete: function (XMLHttpRequest, textStatus) {                    
+                    handleExternalURL();
+                }
+            });
+        })(jQuery);
+    </script>
+    <script>window.visionOptions = {virtualApplicationPath:'/',logOnPath:'Admin/LogOn',logOffPath:'Admin/LogOff',enableSessionTimeout:false,sessionTimeoutInMinutes:60,timeToAlertBeforeSessionTimeoutInMinutes:15,extendSessionTimeoutPath:'Admin/Account/ExtendSessionTimeout',mainFolderPath:'/Project/Contents/Main/',centerLocation:'Charlottesville, VA', siteID:1, navigationID:1, isHomePage:true, emergencyNoticeChanged:false, loggedIn:false, showTopTips:true, currentDesignFolderPath:'/Project/Contents/Main/', useDesignThemFontSizeCss:false , clientResponsiveTableEnabled:true, imageUrl:'/Home/ShowImage?id=', engagementAdminEndPoint:'/Admin/Engagement/', visionLiveAdminEndPoint:'/Admin/Components/', cmsAdminEndPoint:'/Admin/' };;window.visionApps={"cms_core":{"DateFormat":"MM/dd/yyyy","TimeFormat":"h:mm tt","PhoneFormat":"(999) 999-9999","OrganizationName":"City of Charlottesville","GoogleReCaptchaPublicKey":"6LfQuxsUAAAAACWtdSF0mIqIZHvjCFDIV_eHFMEl","GoogleReCaptchaPrivateKey":"6LfQuxsUAAAAABXVcNHuF54a5ez7Zj7GNj3qhRr7"}};;window.visionApps.token="eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwiayI6Ik02VVJUYmJYcVlHM3M4MDFMbDhBN1E9PSJ9.1LEul34ZEHyj7IvuItPjUmf6RP_duLEjNmSVTx4KVM9-sSP2i3DPM-92azg_eraIdKiI9tG8vG2BoIMQtUzQbkFv5SS6uwWQ.3m1C4MNC69sBz2K6R2veuw.KDQXOrE2nMT0vgMnQB-IHPX1JgxK-3LMp8-tBCMe2Js4xGZ51iU0VEkpHGBBTRvSAOrclZcyKfDw5JiaWvs3pVBhmhXpicp5rkICcLUIsVHSRxM11c6p3geKOYD0CImAopzhnSEteH7JWvJ_2MZ-p4wAR_h29rFhpDQnFiSLdS0sPrrmey6wnK0hVbAxBneh9agZ0qEp1RVmi_IKIS7rfJCWpzYyX1rZDOEwE0BOIkk.AD6AobbIGww_OwnZ9iqvuWPs7W4mD_yLUPu0fvsbInA";</script>
+
+    <script type="text/javascript">
+        // added the htmlEncode and htmlDecode method to fixed the js load order issue.
+        $.extend($, {
+            htmlEncode: function (html) {
+                var temp = document.createElement("div");
+                (temp.textContent != undefined) ? (temp.textContent = html) : (temp.innerText = html);
+                var output = temp.innerHTML;
+                temp = null;
+                return output;
+            },
+            htmlDecode: function (text) {
+                var temp = document.createElement("div");
+                temp.innerHTML = text;
+                var output = temp.innerText || temp.textContent;
+                temp = null;
+                return output;
+            }
+        });
+
+        //script for view full site button, placed here to keep firefox for mobile devices happy
+        $(function () {
+            var viewFullElement = document.getElementById("view-full");
+            if (viewFullElement) {
+                if (isResponsive == "yes") {
+                    viewFullElement.className = 'mobile_only fullsite';
+                }
+                else {
+                    viewFullElement.innerHTML = 'View Mobile Optimized';
+                    viewFullElement.className = '';
+                }
+            }
+        });
+    </script>
+    
+<script>
+    $(function () {
+        handleExternalURL();
+    });
+</script>
+
+
+    <!--[if lt IE 9]>
+        <script src="/Scripts/ScriptBundleOthers.jsbnd?v=3Q7FhTQfRrKx8h7Kvdbh9bBluzlNlXKsFAERd4g8_TY1"></script>
+
+	<![endif]-->
+
+    
+    
+    
+    
+    <link id="active_font" rel="stylesheet" type="text/css" href="/Project/Contents/Main/x-small.css">
+    
+    <link rel="Shortcut Icon" href="/favicon.ico" />
+
+    
+    
+
+<!-- Google Universal Analytics -->
+<script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-3722434-1', 'auto');
+    ga('require', 'displayfeatures');
+    //TFS 21771, Enhanced Link Attribution, https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-link-attribution
+    ga('require', 'linkid'); 
+    ga('set', 'dimension1', 'Home, ID:1');
+    ga('set', 'dimension2', '2017');
+    ga('send', 'pageview');
+</script>
+<!-- End Google Universal Analytics -->
+
+      
+    
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    
+<script type="text/javascript" src="//cmsres.visioninternet.com/scripts/jquery-plugins/flexslider/jquery.flexslider.js"></script></head>
+
+<body class="front_end_body site_standardsitetemplate ">
+    <link href="/DefaultContent/Default/StyleBundleAngularLib.cssbnd?v=sED2Qjf38ysQJYZW_ZvZj-7IGXKm4NOJhdA51oOtG5A1" rel="stylesheet"/>
+
+<script src="/Scripts/ScriptBundleAngularLib.jsbnd?v=tGBL15R0DOD4q4WyxhlQVEPHoz0NZ7g4VVdWaIn7RNo1"></script>
+
+<script>
+    (function (window, angular) {
+        
+        $("body").attr("ng-app", "vi.cms");
+        
+        window.viCurrentModule = angular.module("vi.cms", []);
+    })(window, angular)
+</script>
+
+<script>
+    window.frontendCommonConfig = {
+        loginPage: 'http://www.charlottesville.org/sys/sso/login',
+        photoBaseUrlForPeople: 'http://www.charlottesville.org/sys/sso/ShowProfilePhoto?id=',
+        photoBaseUrl: 'http://www.charlottesville.org/Home/ShowImage?id=',
+        token: window.visionApps ? window.visionApps.token : '',
+        cmsUserLogged: false,
+        anonymousAvatar: 'http://www.charlottesville.org/DefaultContent/Default/_gfx/anonymous.png',
+        loginUser: {
+            name: '',
+            avatar: '',
+            userID: null,
+            firstName: '',
+            lastName: '',
+            imageID: null,
+            email: '',
+        }
+    };
+
+</script>
+
+
+    
+    <!--stopindex-->
+    <noscript>
+        <div class="noscript_alert"><span>Please enable JavaScript in your browser for a better user experience.</span></div>
+    </noscript>
+    <!--startindex-->
+    <div class="vi-temp-message-container" style="display:none;"></div>
+
+
+    
+    
+
+<div class="sitewrapper site_template mainSpan_wrapper_home">
+    <div class="mainSpan" id="mainSpan_wrapper_Screen">
+        <!--stopindex-->
+        <div id="skipnav">
+            <a href="#pagebody">
+                <img alt="Skip to page body" src="/DefaultContent/Default/_gfx/spacer.gif"></a>
+            
+            <a title="Home" href="/home">
+                <img alt="Home" src="/DefaultContent/Default/_gfx/spacer.gif"></a>
+            
+            <a title="About Charlottesville" href="/about-charlottesville">
+                <img alt="About Charlottesville" src="/DefaultContent/Default/_gfx/spacer.gif"></a>
+            
+            <a title="Community" href="/community">
+                <img alt="Community" src="/DefaultContent/Default/_gfx/spacer.gif"></a>
+            
+            <a title="Business" href="/business">
+                <img alt="Business" src="/DefaultContent/Default/_gfx/spacer.gif"></a>
+            
+            <a title="Visitors" href="/visitors">
+                <img alt="Visitors" src="/DefaultContent/Default/_gfx/spacer.gif"></a>
+            
+            <a title="Departments and Services" href="/departments-and-services">
+                <img alt="Departments and Services" src="/DefaultContent/Default/_gfx/spacer.gif"></a>
+            
+            <a title="I Want To ..." href="/i-want-to">
+                <img alt="I Want To ..." src="/DefaultContent/Default/_gfx/spacer.gif"></a>
+            
+            <a title="Online Services" href="/online-services">
+                <img alt="Online Services" src="/DefaultContent/Default/_gfx/spacer.gif"></a>
+            
+        </div>
+        <!--startindex-->
+
+        <header id="siteheader" class="">
+            <!--stopindex-->
+            <a id="home_link" href="/home">Home</a>
+            <a id="home_link2" href="/home">Home</a>
+            
+            <a class="menu_trigger mobile_only" href="javascript:void(0);">Menu</a>
+            
+            <!--startindex-->
+            
+<div id="headercolumn" class="site_template_column  header_column   " >
+
+                <!--stopindex-->
+                
+<div class="social_icons">
+		<a href="/?splash=http%3a%2f%2fwww.facebook.com%2fcharlottesvillecityhall&____isexternal=true" target="_self" title="Facebook">
+			<img src="/Home/ShowImage?id=11313&t=636009107638070000" alt="facebook" />
+		</a>
+		<a href="/?splash=http%3a%2f%2fwww.twitter.com%2fcvillecityhall&____isexternal=true" target="_self" title="Twitter">
+			<img src="/Home/ShowImage?id=11322&t=636009107997600000" alt="twitter" />
+		</a>
+		<a href="/?splash=https%3a%2f%2fwww.vimeo.com%2fcvilletv10&____isexternal=true" target="_self" title="Vimeo">
+			<img src="/Home/ShowImage?id=11315&t=636009107846670000" alt="vimeo" />
+		</a>
+		<a href="/community/community-news/charlottesville-tv10" target="_self" title="TV10">
+			<img src="/Home/ShowImage?id=11914&t=636009128446530000" alt="TV10_LOGO" />
+		</a>
+</div>
+                <!--startindex-->
+            
+
+                <!--stopindex-->
+                
+<div id="top_nav">
+
+		<a href="https://www.governmentjobs.com/careers/charlottesville" target="_blank">Jobs Board</a>
+		<a href="http://www.charlottesville.org/enotification" target="_blank">eNotifications</a>
+		<a href="/community/city-hall-contact-numbers" target="_blank">Contact Us</a>
+
+	
+</div>
+                <!--startindex-->
+            
+
+                <!--stopindex-->
+                <div id="searchbox" class="clearfix">
+	<label style="display: none;" for="search_text">Search</label>
+	<input type="text" title="Search..."  id="search_text" placeholder="Search..."/>		
+	<a href="javascript:void(0);"></a>
+</div>
+	<script>
+		    $(document).ready(function () {
+       			 $("#search_text").focusin(function () {
+			            $(this).parent('#searchbox').addClass('active');
+			        });		
+
+			        $("#search_text").focusout(function () {			
+					var searchContainer =   $(this).parent('#searchbox');
+					setTimeout(function () {      	
+         					searchContainer.removeClass('active');         
+					}, 800);	
+			        });		
+
+			});
+	    $(function () {
+	        $("#searchbox input").keydown(function (e) {
+	            if (e.keyCode == 13) {
+	                $("#searchbox a").click();
+	            }
+	        });
+	        $("#searchbox a").click(function () {
+	            var keyWord = $("#searchbox input#search_text").val();
+	            if (keyWord.length <= 0) { return false; }
+	            keyWord  = keyWord.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+	            keyWord = encodeURIComponent(keyWord.replace("<"," ").replace(">"," ") );
+	            var link = '/search';
+	            if (link.indexOf("?") >= 0 )
+	                link = link + "&q=" + keyWord;
+	            else
+	                link = link + "?q=" + keyWord;
+	            window.location.href = link;
+	        });
+	    });
+	</script>
+                <!--startindex-->
+            
+
+                <!--stopindex-->
+                <div class="translatebox desktop_only">
+    <div id="google_translate_element"></div>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+		//includedLanguages: 'ar,zh-CN,zh-TW,tl,hi,ja,ko,fa,pt,ru,es,vi',
+                pageLanguage: 'en'
+                
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</div>
+                <!--startindex-->
+            
+
+</div>
+
+        </header>
+
+        
+
+<div class="homepagelayout clearfix" id="sitebody">
+    
+<div id="ColumnUserControl1" class="column   top_col clearfix  "  >
+    <!--!!WidgetStart, vi-orderdata="0"  vi-hideonmobile="false" vi-widgetinstancedata="189"WidgetStart!!-->
+
+                <!--stopindex-->
+                <div class=" main_menu_widget"><link href="/DefaultContent/Default/StyleBundleMegaMenuDropDown.cssbnd?v=CD_eN-fYJU8KKPigt6x-Ey-z8_WTsoZ7bqx2pLTZtXU1" rel="stylesheet"/>
+<link href="/Project/Contents/Main/StyleBundleMegaMenuDropDown.cssbnd?v=X19tB7_Ua8C_O5XUnQeAgABnznZ7vxZhYyPLzKGOBYU1" rel="stylesheet"/>
+<nav class="regularmegamenu mainnav" id="menuContainer_189_0_20"><ul class="dropdownmenu clearfix"><li class="megamenu_first" id="dropdownrootitem1"><a class="dropdownrootitem1" href="/home" title="Home" data-navid="1" >Home</a></li><li class="megamenu_first" id="dropdownrootitem2"><a class="dropdownrootitem2" href="/about-charlottesville" title="About Charlottesville" data-navid="2" >About Charlottesville</a><div class="megamenu_container widthcontainer4col"><div class="inner_container"><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/about-charlottesville/awards-and-recognitions" title="Awards and Recognitions" data-navid="158" >Awards and Recognitions</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-charlottesville/city-strategic-plan" title="City Strategic Plan" data-navid="2045" target="_self">City Strategic Plan</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-charlottesville/city-management" title="City Management" data-navid="2578" target="_self">City Management</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/community/city-hall-contact-numbers" title="City Hall Contact Numbers" data-navid="2186" target="_self">City Hall Contact Numbers</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-charlottesville/charlottesville-news" title="Charlottesville News" data-navid="2125" target="_self">Charlottesville News</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-charlottesville/directions-to-city-hall" title="Directions to City Hall" data-navid="1731" >Directions to City Hall</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/about-charlottesville/sister-cities-program" title="Sister Cities Program" data-navid="1735" >Sister Cities Program</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-charlottesville/transportation" title="Transportation" data-navid="156" >Transportation</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-charlottesville/visitors" title="Visitors" data-navid="157" target="_self">Visitors</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/about-charlottesville/about-this-site" title="About This Site" data-navid="3235" >About This Site</a></li></ul></div></div></li><li class="megamenu_first" id="dropdownrootitem3"><a class="dropdownrootitem3" href="/community" title="Community" data-navid="3" >Community</a><div class="megamenu_container widthcontainer4col"><div class="inner_container"><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/community/boards-and-commissions" title="Boards and Commissions" data-navid="1683" target="_self">Boards and Commissions</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/charlottesville-city-council" title="Charlottesville City Council" data-navid="2453" >Charlottesville City Council</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/business/city-holiday-schedule" title="City Holiday Schedule" data-navid="3352" >City Holiday Schedule</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/city-holiday-schedule" title="City Holiday Schedule" data-navid="3383" >City Holiday Schedule</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/neighborhood-connection/city-phone-list" title="City  Phone List" data-navid="2044" >City Phone List</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/city-services-fair" title="City Services Fair" data-navid="3472" >City Services Fair</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/community/city-meetings-and-events-calendar" title="City Meetings and Events Calendar" data-navid="3380" >City Meetings and Events Calendar</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/community-news" title="Community News" data-navid="162" >Community News</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/community-resources" title="Community Resources" data-navid="163" >Community Resources</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/community-initiatives" title="Community Initiatives" data-navid="2385" >Community Initiatives</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/education" title="Education" data-navid="164" >Education</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/community-resources/emergency-preparedness" title="Emergency Preparedness" data-navid="1623" >Emergency Preparedness</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/community/employment" title="Employment" data-navid="165" >Employment</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/frequently-asked-questions" title="Frequently Asked Questions" data-navid="2913" >Frequently Asked Questions</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/grand-illumination-2016" title="Grand Illumination! 2016" data-navid="6041" >Grand Illumination! 2016</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/info-hub-9160" title="Info Hub" data-navid="9160" >Info Hub for August 12, 2017</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/neighborhood-connection" title="Neighborhood Connection" data-navid="2035" >Neighborhood Connection</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/our-town-meeting-archive" title="Our Town Meeting Archive" data-navid="5960" >Our Town Meeting Archive</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/community/resources-for-people-with-disabilities" title="Resources for People with Disabilities" data-navid="2540" >Resources for People with Disabilities</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/safety" title="Safety" data-navid="6014" target="_self">Safety</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/snow-information" title="Snow Information" data-navid="3544" >Snow Information</a></li></ul></div></div></li><li class="megamenu_first" id="dropdownrootitem4"><a class="dropdownrootitem4" href="/business" title="Business" data-navid="4" >Business</a><div class="megamenu_container widthcontainer4col"><div class="inner_container"><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/business/bids-and-contracts" title="Bids and Contracts" data-navid="936" >Bids and Contracts</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/business/business-startup" title="Business Startup" data-navid="944" >Business Startup</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/business/chamber-of-commerce" title="Chamber of Commerce" data-navid="2912" >Chamber of Commerce</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/business/directions-to-city-hall" title="Directions to City Hall" data-navid="1733" target="_self">Directions to City Hall</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/business/doing-business-in-charlottesville" title="Doing Business in Charlottesville" data-navid="949" target="_self">Doing Business in Charlottesville</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/business/employment" title="Employment" data-navid="951" >Employment</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/business/laws-and-codes" title="Laws and Codes" data-navid="945" >Laws and Codes</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/business/licensing" title="Licensing" data-navid="946" target="_self">Licensing</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/business/vendor-registration" title="Vendor Registration" data-navid="950" >Vendor Registration</a></li></ul></div></div></li><li class="megamenu_first" id="dropdownrootitem5"><a class="dropdownrootitem5" href="/visitors" title="Visitors" data-navid="5" >Visitors</a><div class="megamenu_container widthcontainer4col"><div class="inner_container"><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/visitors/charlottesville-attractions" title="Charlottesville Attractions" data-navid="176" >Charlottesville Attractions</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/visitors/directions-to-city-hall" title="Directions to City Hall" data-navid="1732" target="_self">Directions to City Hall</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/visitors/downtown-mall" title="Downtown Mall" data-navid="177" >Downtown Mall</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/visitors/maps" title="Maps" data-navid="181" >Maps</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/visitors/meadowcreek-golf-course" title="Meadowcreek Golf Course" data-navid="1398" >Meadowcreek Golf Course</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/visitors/parking-information" title="Parking Information" data-navid="9148" >Parking Information</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/visitors/transportation" title="Transportation" data-navid="1282" >Transportation</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/visitors/university-of-virginia" title="University of Virginia" data-navid="184" >University of Virginia</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/visitors/visitors-bureau" title="Visitors Bureau" data-navid="185" target="_blank">Visitors Bureau</a></li></ul></div></div></li><li class="megamenu_first" id="dropdownrootitem6"><a class="dropdownrootitem6" href="/departments-and-services" title="Departments and Services" data-navid="6" >Departments and Services</a><div class="megamenu_container widthcontainer4col"><div class="inner_container"><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/departments-and-services/departments-a-g" title="Departments A-G" data-navid="9" >Departments A-G</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/departments-and-services/departments-h-z" title="Departments H-Z" data-navid="1379" >Departments H-Z</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/departments-and-services/city-services" title="City Services" data-navid="10" >City Services</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/departments-and-services/boards-and-commissions" title="Boards and Commissions" data-navid="1684" >Boards and Commissions</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/departments-and-services/city-staff-phone-list" title="City Staff Phone List" data-navid="2288" target="_self">City Staff Phone List</a></li></ul></div></div></li><li class="megamenu_first" id="dropdownrootitem7"><a class="dropdownrootitem7" href="/i-want-to" title="I Want To ..." data-navid="7" >I Want To ...</a><div class="megamenu_container widthcontainer4col"><div class="inner_container"><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to-/apply-for" title="Apply For" data-navid="167" >Apply For</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to-/check-status-of" title="Check Status of" data-navid="168" >Check Status of</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to-/contact" title="Contact" data-navid="3233" >Contact</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to-/get" title="Get" data-navid="169" >Get</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/parking-information" title="Parking Information" data-navid="9147" >Parking Information</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to-/pay" title="Pay" data-navid="170" >Pay</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to-/register-or-enroll" title="Register or Enroll" data-navid="171" >Register or Enroll</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to-/report" title="Report" data-navid="173" >Report</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to-/request" title="Request" data-navid="174" >Request</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to-/take-a-survey" title="Take a Survey" data-navid="2669" target="_self">Take a Survey</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/submit-a-foia-request" title="Submit a FOIA Request" data-navid="5981" >Submit a FOIA Request</a></li></ul></div></div></li><li class="megamenu_first" id="dropdownrootitem8"><a class="dropdownrootitem8" href="/online-services" title="Online Services" data-navid="8" >Online Services</a><div class="megamenu_container widthcontainer4col"><div class="inner_container"><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/building-permits-and-development-records" title="Building Permits and Development Records" data-navid="2941" >Building Permits and Development Records</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/city-assessor-online-records" title="City Assessor Online Records" data-navid="1651" target="_self">City Assessor Online Records</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/city-contact-numbers" title="City Contact Numbers" data-navid="2185" target="_self">City Contact Numbers</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/city-law-and-codes" title="City Law and Codes" data-navid="1691" >City Law and Codes</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/fall-loose-leaf-collection" title="Fall Loose Leaf Collection" data-navid="1730" target="_self">Fall Loose Leaf Collection</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/maps-and-gis-data" title="Maps and GIS Data" data-navid="155" >Maps and GIS Data</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/online-matters-by-the-public" title="Online Matters by the Public " data-navid="3019" >Online Matters by the Public </a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/parking-tickets" title="Parking Tickets" data-navid="54" target="_self">Parking Tickets</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/parks-and-recreation-class-registration" title="Parks and Recreation Class Registration" data-navid="2811" target="_self">Parks and Recreation Class Registration</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/personal-property-taxes" title="Personal Property Taxes" data-navid="55" >Personal Property Taxes</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/real-estate-taxes" title="Real Estate Taxes" data-navid="56" >Real Estate Taxes</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/report-a-crime" title="Report a Crime" data-navid="1601" target="_self">Report a Crime</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/request-a-service" title="Request a Service" data-navid="57" >Request a Service</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/surveys-and-forms" title="Surveys, Forms and Service Requests" data-navid="454" >Surveys and Forms</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/utilities-customers" title="Utilities Customers" data-navid="58" >Utilities Customers</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/vendor-registration" title="Vendor Registration" data-navid="59" >Vendor Registration</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/online-services/webmail" title="Employee Webmail" data-navid="3361" target="_self">Employee Webmail</a></li></ul></div></div></li></ul><script>
+$(function () {
+ var menuContainer = $('#menuContainer_189_0_20')
+ $(".dropdownmenu a[data-navid='1']", menuContainer).closest('.dropdownmenu>li').addClass('active');
+});
+</script></nav></div>
+
+
+<script>
+    /**********************************************************
+    Dropdown Menu delay disappearance on mouse out
+    *********************************************************/
+    /*javascript to delay the disappearance of the menu when the user mouses out.  Uses jquery library.*/
+    $(function () {
+        
+
+        var timer = null;
+        var delay = 800; //change this number for shorter or longer delay
+
+        
+        //using megamenu
+        var dropdowncontainer = '>.megamenu_container';
+        var activePage = $(".mainnav .dropdownmenu > li.active");
+        $(".mainnav > .dropdownmenu > li").hoverIntent(
+
+            //what happens on hover over
+             function () {
+                 //end timer and stop hiding if they are mousing back in.
+                 if (timer != null) {
+                     clearTimeout(timer);
+                     timer = null;
+                 }
+                 // Find the hovered menu's sub-menu
+                 var $menu = $(this);
+                 var $submenu = $(this).find(dropdowncontainer);
+
+                 // hide any other submenus that are open
+                 $('.mainnav > .dropdownmenu>li' + dropdowncontainer).not($submenu).css('display', 'none');
+                 $('.mainnav > .dropdownmenu li.active').not($menu).not(activePage).removeClass('active');
+
+                 // show current menu
+                 $submenu.css('display', 'block');
+                 $menu.addClass('active');
+             },
+
+            //what happens on mouse out
+            function () {
+                var $submenu = $(this).find(dropdowncontainer);
+                var $menu = $(this);
+                // delay disappearance
+                var mouseDelay = $(this).data("mouseDelay") || delay;
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    $submenu.css('display', 'none'); $menu.not(activePage).removeClass('active');
+                    clearTimeout(timer); timer = null;
+                }, mouseDelay);
+            }
+        );
+        
+    });
+</script>
+
+<script>
+    //$(function () 
+    {
+        var menuContainerID = "menuContainer_189_0_20";
+        var menuContainer = $("#" + menuContainerID);
+        
+        function isIE(userAgent) {
+            userAgent = userAgent || navigator.userAgent;
+            return userAgent.indexOf("MSIE ") > -1 || userAgent.indexOf("Trident/") > -1;
+        }
+
+        function isIE9(userAgent) {
+            userAgent = userAgent || navigator.userAgent;
+            return userAgent.indexOf("MSIE 9") > -1;
+        }
+
+        function isTouchScreenEvent(event) {
+            var _isTouchScreen = false;
+            if ("ontouchstart" in window) {
+                _isTouchScreen = true;
+            } else if ("onpointerdown" in window) {
+                _isTouchScreen = event.originalEvent.pointerType == "touch";
+            } else if (window.MSPointerEvent) {
+                _isTouchScreen = event.originalEvent.pointerType == event.originalEvent.MSPOINTER_TYPE_TOUCH; // 2 ; http://blogs.msdn.com/b/ie/archive/2011/09/20/touch-input-for-ie10-and-metro-style-apps.aspx
+            } else {
+            }
+            return _isTouchScreen;
+        }
+
+        var _isIE = isIE();
+        var _isIE9 = isIE9();
+        var isMegaMenu = $('.megamenu_first', menuContainer).length > 0;
+        var currentMenu = $('> ul.dropdownmenu > li.active', menuContainer);
+
+        $(function () {
+            if (currentMenu.length == 0)
+                currentMenu = $('> ul.dropdownmenu > li.active', menuContainer);
+        });
+
+        if (("ontouchstart" in window   // Chrome & Safari (IOS) && Firefox
+         || "onpointerdown" in window   // IE 11 
+         || window.MSPointerEvent       // IE 10
+         ) && ($(window).width() > 648)) {
+            var eventName = "ontouchstart" in window ? "touchstart"
+                          : "onpointerdown" in window ? "pointerdown"
+                          : window.MSPointerEvent ? "MSPointerDown"
+                          : "";
+            if (eventName.length > 0) {                
+                $('> ul.dropdownmenu  li>a[data-navid]', menuContainer).bind(eventName, function (event) {
+                    
+                    if (isTouchScreenEvent(event) == false) {
+                        return true;
+                    }
+    
+                    var currentLevelAnchor = $(this);
+                    var currentLeveLi = currentLevelAnchor.closest("li");
+                    var firstLevelLi = currentLevelAnchor.closest("li[id^='dropdownrootitem']");
+                    var firstLevelAnchor = firstLevelLi.find(">a[data-navid]");
+                    var inFirstLevel = currentLevelAnchor[0] == firstLevelAnchor[0];
+
+                    var hasSubMenu = currentLevelAnchor.next("ul,div").length > 0;
+                    if (hasSubMenu) {
+                        $(this).closest("li").data("mouseDelay", 1);
+
+                        // Menu is not selected
+                        if (!firstLevelLi.hasClass('touch-active')) {                
+                            if ($(this).attr("href")) {
+                                $(this).attr("data-href", $(this).attr("href"));
+                                $(this).attr("href", "javascript:void(0);");
+                            }
+                            $(menuContainer).find('.touch-active').removeClass('touch-active').not(currentMenu).removeClass('active');                           
+                            
+                            firstLevelLi.addClass('touch-active active');
+                            currentLevelAnchor.addClass('touch-active active');
+                            currentMenu.addClass("active");
+
+                            $(' li:not(.touch-active)', menuContainer).not(firstLevelLi).removeClass('_current');    
+                            $(' li:not(.touch-active) li', menuContainer).not(currentLeveLi).removeClass('_current');
+
+                            $('> ul.dropdownmenu > li:not(.touch-active) > a[data-navid]', menuContainer).next().css('display', 'none');
+                            $('> ul.dropdownmenu > li.touch-active > a[data-navid]', menuContainer).next().css('display', 'block');
+
+                            event.preventDefault();
+                        }
+                            // Menu is selected
+                        else {
+                            if (inFirstLevel) {
+                                // non clickable
+                                if (currentLevelAnchor.attr('href') == undefined) {
+                                    //has class touch-active and no link
+                                    removeClassAndHideMenu();
+                                    event.preventDefault();
+                                } else if ($(this).attr("data-href")) { //clickable, but href have been moved to data.
+                                    $(this).attr("href", $(this).attr("data-href"));
+                                }
+                            }
+                            else {
+                                if (isMegaMenu)
+                                    return true;
+
+                                if (!currentLeveLi.hasClass('touch-active')) {
+                                    if ($(this).attr("href")) {
+                                        $(this).attr("data-href", $(this).attr("href"));
+                                        $(this).attr("href", "javascript:void(0);");
+                                    }
+                                    $(firstLevelLi).find('.touch-active').removeClass('touch-active').not(currentMenu).removeClass('active');
+                                    currentLeveLi.parent().children("li._current").removeClass("_current");
+                                    currentLeveLi.addClass('touch-active active _current');
+
+                                    currentLevelAnchor.addClass('touch-active active');
+
+                                    //$(' li:not(.touch-active)', menuContainer).not(firstLevelLi).removeClass('_current');    
+                                    //$(' li:not(.touch-active) li', menuContainer).not(currentLeveLi).removeClass('_current');
+
+                                    $(' li:not(.touch-active) > a[data-navid]', currentLeveLi.parent()).next().css('display', 'none');
+                                    $('> li.touch-active > a[data-navid]', currentLeveLi.parent()).next().css('display', 'block');
+
+                                    event.preventDefault();
+                                } else {
+                                    if (currentLevelAnchor.attr('href') == undefined) {
+                                        //has class touch-active and no link
+                                        removeClassAndHideMenu();
+                                        event.preventDefault();
+                                    } else if ($(this).attr("data-href")) {
+                                        $(this).attr("href", $(this).attr("data-href"));
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                });
+            }
+        }
+
+        
+
+        function removeClassAndHideMenu() {
+            $(menuContainer).find('a.touch-active, li.touch-active').removeClass('touch-active active');
+            $('> ul.dropdownmenu > li > a[data-navid]', menuContainer).next().css('display', 'none');
+            // If we don't change the menu item, we should keep the old one.
+            if ($('> ul.dropdownmenu > li.active', menuContainer).length == 0) {
+                currentMenu.addClass("active");
+            }
+        }
+
+        $('body').bind(eventName, function (event) {
+            if (isTouchScreenEvent(event) == false) {
+                return true;
+            }
+            if (!$(event.target).closest('li.touch-active').length) {
+                removeClassAndHideMenu();
+            }
+        });
+    }
+    //);
+</script>
+                
+                <!--startindex-->
+                <!--!!WidgetEnd-->
+
+    
+</div>
+
+    <div class="home_top">
+        <div class="col_left">
+            
+<figure id="ColumnUserControl2" class="column   home_collage flexslider  "  >
+    <!--!!WidgetStart, vi-orderdata="0"  vi-hideonmobile="true" vi-widgetinstancedata="190"WidgetStart!!-->
+
+                <!--stopindex-->
+                
+<ul class="slides clearfix">
+        <li>
+<a href="/community/info-hub-9160" style="background-image: url(/Home/ShowImage?id=18446&amp;t=636396908860070000)" title="CMS_WebBanner_InfoHub" target="_blank"></a></li>
+        <li>
+<a href="http://www.charlottesville.org/Home/Components/News/News/8422/635" style="background-image: url(/Home/ShowImage?id=18414&amp;t=636384886255000000)" title="CMS_WebBanner_Condolences" target="_blank"></a></li>
+</ul>
+<script>
+    $(function() {
+        
+        $('.home_collage').flexslider({
+		controlNav: true,
+		directionNav: true,
+            	prevTitle: "Click to tab to the left",
+            	nextTitle: "Click to tab to the right",
+            	slideshowSpeed: 3*1000
+        });
+                    
+    });
+</script>
+<noscript>
+    
+<a href="/community/info-hub-9160" style="background-image: url(/Home/ShowImage?id=18446&amp;t=636396908860070000)" title="CMS_WebBanner_InfoHub" target="_blank"></a>
+</noscript>
+ 
+                
+                <!--startindex-->
+                
+<script>window.hashiddenwidgets = true;</script>
+<!--!!WidgetEnd-->
+
+    
+</figure>
+
+        </div>
+
+        <div class="col_mid">
+            
+<section id="ColumnUserControl4" class="column   home_spotlight clearfix mobile_box  "  >
+    <!--!!WidgetStart, vi-orderdata="0"  vi-hideonmobile="false" vi-widgetinstancedata="192"WidgetStart!!-->
+
+                <!--stopindex-->
+                
+<h2 class="mobile_header mobile_only">in the <span>SPOTLIGHT</span></h2>
+<div class="box_content clearfix">                                
+	<b>The City has received a number of inquiries regarding donations. &nbsp;For information on how to support our community in the wake of the events of August 12, 2017, please click <a href="/community/info-hub/support-our-community">here</a>.</b>
+</div>
+                
+                <!--startindex-->
+                <!--!!WidgetEnd-->
+
+    
+</section>
+
+        </div>
+
+        <div class="col_right">
+            
+<div id="ColumnUserControl3" class="column   home_buttons clearfix mobile_list  "  >
+    <!--!!WidgetStart, vi-orderdata="0"  vi-hideonmobile="false" vi-widgetinstancedata="191"WidgetStart!!-->
+
+                <!--stopindex-->
+                
+	<ul>	                
+	        <li>
+	            <a href="http://gisweb.charlottesville.org/gisviewer" target="_self" title="GIS Data & Assessments">
+	<img class="desktop_only" src="/Home/ShowImage?id=11301&amp;t=635792143494870000" alt="3"/>
+	<span class="mobile_only">GIS Data & Assessments</span>
+</a>
+	        </li>
+	        <li>
+	            <a href="/departments-and-services/departments-h-z/parks-recreation-/facilities" target="_self" title="Recreation Centers">
+	<img class="desktop_only" src="/Home/ShowImage?id=11373&amp;t=635792022942600000" alt="Recreation Icon"/>
+	<span class="mobile_only">Recreation Centers</span>
+</a>
+	        </li>
+	        <li>
+	            <a href="/departments-and-services/city-services/charlottesville-area-transit-cat" target="_self" title="Transit">
+	<img class="desktop_only" src="/Home/ShowImage?id=11371&amp;t=635792024464330000" alt="Bus Icon"/>
+	<span class="mobile_only">Transit</span>
+</a>
+	        </li>
+	        <li>
+	            <a href="/i-want-to-/pay" target="_self" title="Pay Bills Online">
+	<img class="desktop_only" src="/Home/ShowImage?id=11299&amp;t=635748398927070000" alt="2"/>
+	<span class="mobile_only">Pay Bills Online</span>
+</a>
+	        </li>
+	        <li>
+	            <a href="/departments-and-services/departments-a-g/city-council" target="_self" title="City Council">
+	<img class="desktop_only" src="/Home/ShowImage?id=11369&amp;t=635792017498670000" alt="Gavel Icon"/>
+	<span class="mobile_only">City Council</span>
+</a>
+	        </li>
+	        <li>
+	            <a href="/departments-and-services/departments-a-g/budget-and-performance-management" target="_self" title="Budget">
+	<img class="desktop_only" src="/Home/ShowImage?id=11305&amp;t=635748398932230000" alt="5"/>
+	<span class="mobile_only">Budget</span>
+</a>
+	        </li>
+	</ul>
+
+ 
+                
+                <!--startindex-->
+                <!--!!WidgetEnd-->
+
+    
+</div>
+
+        </div>
+    </div>
+
+    <div class="home_mid">
+
+        <div class="col_mid">
+            
+<section id="ColumnUserControl5" class="column   home_meetings clearfix  mobile_list  "  >
+    <!--!!WidgetStart, vi-orderdata="0"  vi-hideonmobile="false" vi-widgetinstancedata="193"WidgetStart!!-->
+
+                <!--stopindex-->
+                
+<h2 class="mobile_header">Calendar</h2>
+	<ul class="clearfix">
+
+
+
+<li>
+    <div class="datebox">Sep<span>05</span></div>
+    <a href="/Home/Components/Calendar/Event/8074/3380">Tree Commission</a>
+    <p class="box_item_summary desktop_only">
+        Parks and Recreation - Large Conference Room | 5:00PM
+    </p>    
+</li>
+
+
+<li>
+    <div class="datebox">Sep<span>05</span></div>
+    <a href="/Home/Components/Calendar/Event/10496/3380">City Council Meeting</a>
+    <p class="box_item_summary desktop_only">
+        City Hall Council Chambers | 7:00PM
+    </p>    
+</li>
+
+
+<li>
+    <div class="datebox">Sep<span>06</span></div>
+    <a href="/Home/Components/Calendar/Event/10794/3380">Farmers in the Park</a>
+    <p class="box_item_summary desktop_only">
+        Meade Park | 3:00PM
+    </p>    
+</li>
+
+
+<li>
+    <div class="datebox">Sep<span>07</span></div>
+    <a href="/Home/Components/Calendar/Event/10872/3380">Bicycle and Pedestrian Advisory Committee</a>
+    <p class="box_item_summary desktop_only">
+        City Hall - NDS Conference Room | 5:00PM
+    </p>    
+</li>	</ul>
+	<a class="box_bottomlink" href="/community/city-meetings-and-events-calendar">More &gt;&gt;</a>
+
+
+
+<script type="text/javascript">
+    $(function() {
+        
+    })
+</script>
+                
+                <!--startindex-->
+                <!--!!WidgetEnd-->
+
+    
+</section>
+
+        </div>
+
+        <div class="col_right">
+            
+<section id="ColumnUserControl9" class="column   home_news clearfix mobile_list  "  >
+    <!--!!WidgetStart, vi-orderdata="0"  vi-hideonmobile="false" vi-widgetinstancedata="194"WidgetStart!!-->
+
+                <!--stopindex-->
+                <h2 class="mobile_header">News</h2>
+
+<ul class="clearfix">		
+	<li>
+	
+	<a href="/Home/Components/News/News/8438/635 ">
+			<img class="desktop_only" alt="Statements of Charlottesville City Council - August 30, 2017" src="/Home/ShowImage?id=11627&amp;t=635805781578430000"/>	
+		Statements of Charlottesville City Council - August 30, 2017
+	</a>
+	<p class="box_item_summary desktop_only">
+		Statements by the Mayor and City Councilors		
+	</p>	
+</li><li>
+	
+	<a href="/Home/Components/News/News/8436/635 ">
+			<img class="desktop_only" alt="Victim and Witness Assistance Services Available" src="/Home/ShowImage?id=11627&amp;t=635805781578430000"/>	
+		Victim and Witness Assistance Services Available
+	</a>
+	<p class="box_item_summary desktop_only">
+		The City&#39;s Office of Victim and Witness Assistance would like to ensure that people who have been injured are aware that they may be eligible for assistance. 		
+	</p>	
+</li><li>
+	
+	<a href="/Home/Components/News/News/8434/635 ">
+			<img class="desktop_only" alt="Independent Review Announced" src="/Home/ShowImage?id=11627&amp;t=635805781578430000"/>	
+		Independent Review Announced
+	</a>
+	<p class="box_item_summary desktop_only">
+		The City of Charlottesville has hired Tim Heaphy, former U.S. Attorney for the Western District of Virginia, to lead an independent, external review of the City&#39;s response to three events during the last three months.		
+	</p>	
+</li><li>
+	
+	<a href="/Home/Components/News/News/8432/635 ">
+			<img class="desktop_only" alt="UPDATE! Community Recovery Town Hall Rescheduled" src="/Home/ShowImage?id=11627&amp;t=635805781578430000"/>	
+		UPDATE! Community Recovery Town Hall Rescheduled
+	</a>
+	<p class="box_item_summary desktop_only">
+		Community Recovery Town Hall has been rescheduled to Sunday, August 27th from 3PM–5PM at the MLK Performing Arts Center.		
+	</p>	
+</li>
+</ul>
+
+<a href="/community/community-news/news-and-press-releases" class="box_bottomlink">More >></a>
+                
+                <!--startindex-->
+                <!--!!WidgetEnd-->
+
+    
+</section>
+
+        </div>
+    </div>
+
+    <script src="/Project/Contents/Main/homelayout_scripts.js"></script>
+
+</div>
+
+
+        <footer id="page_footer" class="">
+            <!--stopindex-->
+            
+<div id="footercolumn" class="site_template_column  footer_column   " >
+
+                <!--stopindex-->
+                
+<div class="footer_nav">
+		<a href="/home" target="_self">Home</a>		
+		<a href="/about-charlottesville" target="_self">About Charlottesville</a>		
+		<a href="/community" target="_self">Community</a>		
+		<a href="/business" target="_self">Business</a>		
+		<a href="/visitors" target="_self">Visitors</a>		
+		<a href="/departments-and-services" target="_self">Departments & Services</a>		
+		<a href="/i-want-to" target="_self">I want to...</a>		
+		<a href="/online-services" target="_self">Online Services</a>		
+		<a href="/about-charlottesville/about-this-site/site-map" target="_self">Site Map</a>		
+		<a href="/departments-and-services/departments-h-z/neighborhood-development-services/neighborhoods/ada-ada-advisory-committee" target="_self">ADA Compliance Information</a>		
+		<a href="/i-want-to/submit-a-foia-request" target="_self">FOIA Information</a>		
+</div>
+<p class="footer_copyright">© 2017 City of Charlottesville. All Rights Reserved. | Website Created & Hosted by <a class="vision_link" target="_blank" href="http://visioninternet.com/sitecredit">Vision Internet</a> – Innovators of Online Government</p>
+                <!--startindex-->
+            
+
+</div>
+
+            <!--startindex-->
+        </footer>
+        <div id="view-options"><a href="javascript:void(0);" id="view-full" onclick="viewfullsite()" class="mobile_only">View Full Site</a></div>
+    </div>
+</div>
+
+<script src="/Project/Contents/Main/mobile_nav_scripts.js" type="text/javascript"></script>
+
+    
+
+    
+    <script>
+        $(function () {
+            $(".reComment[comment]").removeClass("reComment")
+                                    .removeAttr("comment")
+                                    .removeAttr("author")
+                                    .removeAttr("title")
+                                    .removeAttr("timestamp");
+        })
+    </script>
+    
+
+    
+
+    <script src="/Scripts/ScriptBundleVisionFrontend.jsbnd?v=ssdjXsB-GnjhWtD7xxfJTYSJvLTLMX-W3_Tgd4G8Uoc1"></script>
+
+
+    
+    
+    <script>
+        try { manualRenderMobile(); } catch (err) {}
+    </script>
+    
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T7JG59"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+    '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'userDataLayer', 'GTM-T7JG59');
+(function (window) {
+    var dataLayer = window.userDataLayer = window.userDataLayer || [];
+    dataLayer.push(
+        {"Env":"LIVE","SessionID":"opepazweywpyfdavbiaw5thz","Identity":"4856206aa5e24c01bc320cbf37d74e54","OrganizationName":"City of Charlottesville","LoginUser":"","LoginUserType":"","LoginWebsiteUser":"","LoginMember":""}
+        );
+})(window)
+</script>
+<!-- End Google Tag Manager -->
+    <script src="/Scripts/ScriptBundleKendo.jsbnd?v=cEEdDEKkQvxYZlycCZrn6LHDJIkVHn_YmBnGahnPO0o1"></script>
+
+    <script src="/Scripts/Components/ScriptsFEBundle.jsbnd?v=VFH8jMxyZD0yGk1KoQzWyr3v9XLZc76VrAiOrX51Zk41"></script>
+
+    <script>
+        $(function() {
+            var sitewrapper = $(".sitewrapper");
+            if(sitewrapper.length && !sitewrapper.hasClass("")) {
+                sitewrapper.addClass("");
+            }
+        });
+    </script>
+
+    
+</body>
+</html>

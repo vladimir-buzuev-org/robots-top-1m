@@ -1,0 +1,648 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="cache-control" content="no-store"><title>Rendia</title><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:{profile:false},oracle:0,paths:{cloudflare:"//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=9eecb7db59/"},atok:"6c8eca3380a38cf4155814cee217cf1d",petok:"771c82439bd2726f1250afa9c79ee03ac17aaebb-1504299850-1800",performance:0,zone:"rendia.com",apps:{}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=b0b772d031/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link href="//fonts.googleapis.com/css?family=Roboto:400,300,400italic,700" rel="stylesheet" type="text/css"><link rel="stylesheet" href="/dist/styles/login.css" type="text/css" media="screen" charset="utf-8"><script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/nmwjkq6j';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script></head><body></body></html>
+<script type="text/x-handlebars" id="cc" class="column small-6 small-centered text-center"><form {{action "send" on="submit"}} class="column small-6 small-centered text-center">
+      {{input type="hidden" value=expirationDate}}
+      {{input type="hidden" value=model.subscriptionID}}
+        <h1>
+            {{#link-to "login"}}
+                <img src="/dist/assets/images/rendia-logo.svg" alt="Rendia" id="logo" />
+            {{/link-to}}
+        </h1>
+        <div>
+            <h3>Update Payment Details for {{model.name}}</h3>
+        </div>
+        <div class="column small">
+            {{input value=cardNumber placeholder="Card number" required=true autofocus=true maxlength="16"}}
+            {{input value=nameOnCard placeholder="Name on card" required=true}}
+        </div>
+        <div class="column small-3">
+            {{input value=expirationMonth placeholder="MM" required=true maxlength="2"}}
+        </div>
+        <div class="column small-3">
+            {{input value=expirationYear placeholder="YYYY" required=true maxlength="4"}}
+        </div>
+        <div class="column small-6">
+            {{input value=cvc placeholder="CVC" required=true maxlength="4"}}
+        </div>
+        <div class="row">
+          <div class="error">{{error_msg}}</div>
+            {{#unless disabled}}
+              {{#if continue}}
+                <button {{action "login"}} class="button primary radius column small-8 small-centered">
+                    Continue to Rendia
+                </button>
+              {{else}}
+                <button type="submit" class="button primary radius column small-8 small-centered">
+                    Update Payment Information
+                </button>
+              {{/if}}
+            {{else}}
+                <button disabled class="button success radius column small-8 small-centered">
+                    Validating...
+                </button>
+            {{/unless}}
+        </div>
+        <footer>
+            For further assistance, please contact Rendia Support at 877.321.5481, Ext. 8651.
+        </footer>
+    </form></script>
+<script type="text/x-handlebars" id="em"><form {{action "rendia" on="submit"}} class="column small-6 small-centered text-center">
+        <div>
+              <h1><img src="/src/assets/images/echo2rendia.gif" alt="Rendia" id="logo" class="gif" /></h1>
+              <p>Echo by Eyemaginations is now Rendia</p>
+        </div>
+        <p class="error">{{{error_msg}}}</p>
+        <div class="row">
+            {{#unless disabled}}
+                <button type="submit" class="button primary radius column small-6 small-centered">
+                    Continue
+                </button>
+            {{else}}
+                <button disabled class="button primary radius column small-6 small-centered">
+                    {{icon "check"}} {{t "login_submitted"}}
+                </button>
+            {{/unless}}
+        </div>
+    </form></script>
+<script type="text/x-handlebars" id="expired"><form {{action "send" on="submit"}} class="column small-6 small-centered text-center">
+      <h1>
+          {{#link-to "login"}}
+              <img src="/dist/assets/images/rendia-logo.svg" alt="Rendia" id="logo" />
+          {{/link-to}}
+      </h1>
+      <div>
+          <h3>{{t "login_renew_acct_title"}}</h3>
+      </div>
+      <div>
+        <p>{{t "login_renew_acct_helper"}}</p>
+      </div>
+      <div>
+          <label class="left">Practice Name</label>
+          {{input value=practiceName placeholder=lang.login_renew_acct_practice_name required=true}}
+      </div>
+      <div>
+          <label class="left">Message</label>
+          {{textarea value=message rows="5" required=true autofocus=true}}
+      </div>
+      <div class="row">
+          {{#unless disabled}}
+              <button type="submit" class="button primary radius column small-8 small-centered">
+                  {{t "contact_form_submit"}}
+              </button>
+          {{else}}
+              <button disabled class="button success radius column small-8 small-centered">
+                  {{icon "check"}} {{t "login_forgot_pass_submitted"}}
+              </button>
+          {{/unless}}
+      </div>
+  </form></script>
+<script type="text/x-handlebars" id="expired_confirm"><div class="column small-6 small-centered text-center">
+      <h1>
+          {{#link-to "login"}}
+              <img src="/dist/assets/images/rendia-logo.svg" alt="Rendia" id="logo" />
+          {{/link-to}}
+      </h1>
+      <div>
+          <h3>{{t "login_renew_acct_title"}}</h3>
+      </div>
+      <p class="error"></p>
+      {{#if emailFail}}
+      <div>
+        {{t "login_renew_fail"}}
+      </div>
+      {{else}}
+      <div>
+          {{t "login_renew_confirm"}}
+      </div>
+      {{/if}}
+      <p class="error"></p>
+      <footer class="row">
+          {{t "login_renew_blog_link"}} <a href="https://blog.rendia.com/" target="_blank">Rendia.</a>
+      </footer>
+  </div></script>
+<script type="text/x-handlebars" id="forgot_pass" class="column small-6 small-centered text-center"><form {{action "send" on="submit"}} class="column small-6 small-centered text-center">
+        <h1>
+            {{#link-to "login"}}
+                <img src="/dist/assets/images/rendia-logo.svg" alt="Rendia" id="logo" />
+            {{/link-to}}
+        </h1>
+        <div>
+            <h3>{{t "login_forgot_pass_title"}}</h3>
+        </div>
+        <div>
+            {{input value=email placeholder=lang.login_forgot_pass_email_placeholder required=true autofocus=true}}
+        </div>
+        <p class="error">{{{error_msg}}}</p>
+        <div class="row">
+            {{#unless disabled}}
+                <button type="submit" class="button primary radius column small-8 small-centered">
+                    {{icon "share-email"}} {{t "login_forgot_pass_submit"}}
+                </button>
+            {{else}}
+                <button disabled class="button success radius column small-8 small-centered">
+                    {{icon "check"}} {{t "login_forgot_pass_submitted"}}
+                </button>
+            {{/unless}}
+        </div>
+        <footer>
+            {{t "login_forgot_pass_helper"}}
+        </footer>
+    </form></script>
+<script type="text/x-handlebars"><div id="content" class="row fadeIn animated">
+        <aside class="content layout-middle">
+            {{outlet}}
+        </aside>
+    </div></script>
+<script type="text/x-handlebars" id="login"><form {{action "login" on="submit"}} class="column small-6 small-centered text-center">
+        <div>
+            <h1><img src="/dist/assets/images/rendia-logo.svg" alt="Rendia" id="logo" class="svg" /></h1>
+        </div>
+        <p class="error">{{{error_msg}}}</p>
+        <div>
+            {{input value=un placeholder=lang.functions_login_placeholder_email required=true autofocus=true}}
+            {{input type="password" value=pass placeholder=lang.functions_login_placeholder_password required=true}}
+        </div>
+        <div class="row">
+            {{#unless disabled}}
+                <button type="submit" class="button primary radius column small-6 small-centered">
+                    {{t "functions_login"}}
+                </button>
+            {{else}}
+                <button disabled class="button primary radius column small-6 small-centered">
+                    {{icon "check"}} {{t "login_submitted"}}
+                </button>
+            {{/unless}}
+        </div>
+        <div>
+            {{#link-to "forgot_pass"}}
+                {{t "login_forgotpass"}}
+            {{/link-to}}
+        </div>
+        <footer class="row">
+            Don't have an account? <a href="https://get.rendia.com/trial" target="_blank">Try it for free.</a>
+        </footer>
+    </form></script>
+<script type="text/x-handlebars" id="maintenance"><div class="text-center" id="maintenance">
+      <div>
+            <h1><img src="/dist/assets/images/rendia-logo.svg" alt="Rendia" id="logo" class="svg" /></h1>
+      </div>
+        <h4>
+            {{{model.description}}}
+        </h4>
+        <button class="primary large" {{action "agree"}}>
+            Continue to Rendia
+        </button>
+    </div></script>
+<script type="text/x-handlebars" id="reset_pass"><form data-abide="ajax" class="column small-6 small-centered text-center">
+        <h1>
+            {{#link-to "login"}}
+                <img src="/dist/assets/images/rendia-logo.svg" alt="Rendia" id="logo" />
+            {{/link-to}}
+        </h1>
+        {{!--<h5>{{t "login_reset_pass_title"}}</h5>--}}
+        <div>
+          <input type="password" class="radius" required name="password_new" id="password_new" pattern="echo_password" placeholder="{{unbound lang.login_reset_pass_new}}" />
+          <small class="error panel radius animated zoomIn">{{t "profile_error_pass_val"}}</small>
+        </div>
+        <div>
+          <input type="password" class="radius" required name="password_confirm" data-equalto="password_new" placeholder="{{unbound lang.login_reset_pass_confirm}}" />
+          <small class="error panel radius animated zoomIn">{{t "profile_error_passwords"}}</small>
+        </div>
+        {{#unless view.disabled}}
+            <button type="submit" class="button primary radius column small-6 small-centered">
+                {{t "functions_login"}}
+            </button>
+        {{else}}
+            <button disabled class="button success radius column small-6 small-centered">
+                {{partial "loading"}}
+            </button>
+        {{/unless}}
+    </form>
+    {{#if view.error_msg}}
+        <small class="error panel radius animated zoomIn">{{{view.error_msg}}}</small>
+    {{/if}}</script>
+<script type="text/x-handlebars" id="sla"><div class="text-center" id="sla">
+      <div>
+            <h1><img src="/dist/assets/images/rendia-logo.svg" alt="Rendia" id="logo" class="svg" /></h1>
+      </div>
+        <h4>
+            {{t "login_sla_header_beginning"}}
+            <a href="http://eyemaginations.com/SLA" target="_blank">
+                {{t "login_sla_header_link"}}
+            </a>
+            {{t "login_sla_header_end"}}
+        </h4>
+        <h6>{{t "login_sla_subheader"}}</h6>
+        <button class="primary large" {{action "agree"}}>
+            {{t "login_sla_button_confirm"}}
+        </button>
+    </div></script>
+<script type="text/x-handlebars" data-template-name="_login_footer"><footer>
+        <p>
+            <small>{{t "login_footer_offer"}} <a href="https://eyemaginations.appointlet.com/" target="_blank">{{t "login_footer_offer_link"}}</a></small>
+        </p>
+        <p>
+            <small>
+                {{t "support_footer_before"}}
+                <a href="http://eyemaginations.com/" target="_blank">{{t "company"}}</a>
+                {{t "support_footer_after"}}
+            </small>
+        </p>
+    </footer></script>
+<script type="text/x-handlebars" data-template-name="_login_splash">{{#if model.url}}
+        <a {{bind-attr href=model.url}} target="_blank">
+            <img {{bind-attr src=model.src}} alt=""></img>
+        </a>
+    {{else}}
+        <img {{bind-attr src=model.src}} alt=""></img>
+    {{/if}}</script>
+<script type="text/x-handlebars" data-template-name="components/echo-player">{{#if isLoading}}
+        {{partial "loading"}}
+    {{/if}}
+
+    {{#if noticeShow}}
+        <div {{bind-attr class="noticeType :animated :text-center :panel :radius :notice"}}>
+            {{#if noticeData.title}}
+                <h3>
+                    {{#if noticeType}}
+                        {{icon noticeType}}
+                    {{else}}
+                        {{icon noticeData.icon}}
+                    {{/if}}
+                    {{noticeData.title}}
+                </h3>
+            {{/if}}
+            {{#if noticeData.description}}
+            {{log noticeData}}
+                <p>{{noticeData.description}}</p>
+            {{/if}}
+        </div>
+    {{/if}}
+
+    {{#if player.posterframe}}
+        <div class="poster">
+            <img itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject" {{bind-attr src=player.posterframe}} alt="" />
+        </div>
+    {{/if}}
+
+    <h1 class="watermark" itemprop="sourceOrganization">{{user.practice.name}}</h1>
+    {{view "echo-player-canvas" component=this}}
+
+    <video {{bind-attr autoplay=player.video.autoplay src=player.video.src}} itemtype='http://schema.org/VideoObject' itemscope preload="none">
+      {{log "props" player user}}
+      {{log player.video.autoplay}}
+      <meta itemprop="name" {{bind-attr content=player.title}} />
+      <meta itemprop="description" {{bind-attr content=player.description}} />
+      <meta itemprop="thumbnailUrl" {{bind-attr content=player.posterframe}} />
+      <meta itemprop="uploadDate" {{bind-attr content=player.uploadDate}} />
+    </video>
+
+    {{!--#unboundIf player.is.shared--}}
+        {{partial "player_tray"}}
+    {{!--/unboundIf--}}
+    {{#if player.is.shared}}
+      {{partial "player_screen_end"}}
+    {{/if}}
+    {{partial "player_screen_email"}}
+    {{partial "player_nav_slideshow"}}
+    {{partial "player_nav_floating_replay"}}
+    {{partial "player_nav_floating"}}
+
+    {{#if trackTransitioning}}
+        <p {{bind-attr class="hideCaptions:hide :animated :fadeOut :track"}}>{{trackCurrent}}</p>
+        <p {{bind-attr class="hideCaptions:hide :animated :fadeIn :track"}}>{{trackNew}}</p>
+    {{else}}
+        <p {{bind-attr class="hideCaptions:hide :track"}}>{{trackCurrent}}</p>
+    {{/if}}
+
+    {{partial "player_nav_bar"}}</script><!--<script type="text/x-handlebars" data-template-name="components/echo-player-marker">
+    {{!--<main class="hide">
+        <img src="{{unbound asset.thumbnail}}_thumb_large.jpg" alt="" />
+        <div class="text-center">
+            <time>{{timestamp asset.timeInPlaylist.start}}</time>
+            <time>{{timestamp asset.timeInPlaylist.start}}</time>
+        </div>
+    </main>--}}
+</script>-->
+<script type="text/x-handlebars" data-template-name="components/echo-popover"><main class="hide">
+        {{#if activities}}
+            <ul class="side-nav">
+            	{{#each activity in activities}}
+            	    <li>
+                        <a {{action activity.event target=target}}>
+                            {{icon activity.icon}} {{activity.title}}
+                        </a>
+            	{{/each}}
+            </ul>
+        {{/if}}
+    </main></script>
+<script type="text/x-handlebars" data-template-name="_player_nav_bar"><nav class="bar">
+        <div class="timeline">
+            {{#if player.playlist.duration}}
+                <div class="scrubber">
+                    {{!--{{#unboundIf player.is.playlist}}
+                        {{#unboundIf player.is.playbackmode_0}}
+                            <div class="markers">
+                                {{#each asset in player.playlist.medialist}}
+                                    {{echo-player-marker
+                                        asset=asset
+                                        onClick="marker_clicked"
+                                        show="popover_opened"
+                                        hide="popover_closed"
+                                    }}
+                                {{/each}}
+                            </div>
+                        {{/unboundIf}}
+                    {{/unboundIf}}--}}
+                    <div class="bufferContainer" {{bind-attr style=bufferContainerStyle}}>
+                        <div class="buffered" {{bind-attr style=bufferedStyle}}></div>
+                    </div>
+                    {{input type="range" step="0.005" max=player.currentAssetTime value=player.playlist.currentTime onSlide="scrubberSlide" onSlideEnd="scrubberSlideEnd"}}
+                </div>
+            {{/if}}
+        </div>
+
+        <div class="controls">
+            <section class="left">
+                <button {{bind-attr disabled="player.canPlay::disabled"}} {{action "video_playtoggle"}}>
+                    {{#if player.video.is.playing}}
+                        {{icon "player-pause"}}
+                    {{else}}
+                        {{icon "player-play"}}
+                    {{/if}}
+                </button>
+                {{#unboundIf player.is.playlist}}
+                    {{#unless player.is.playbackmode_2}}
+                        <button {{bind-attr disabled="player.canPlay::disabled"}} {{action "video_index_back"}}>{{icon "player-back"}}</button>
+                        <span class="index">{{inc player.video.indexPretty}}</span>
+                        <span class="items secondary">/{{player.playlist.medialist.length}}</span>
+                        <button {{bind-attr disabled="player.canPlay::disabled"}} {{action "video_index_next"}}>{{icon "player-next"}}</button>
+                    {{/unless}}
+                {{/unboundIf}}
+                <div class="volume">
+                    <button {{action "video_mute"}}>{{icon player.video.volumeicon}}</button>
+                    {{input type="range" step="0.05" max="1" value=player.video.volume class="volumeSlider"}}
+                </div>
+            </section>
+
+            <section class="right">
+                <span class="durations">
+                    <time>{{timestamp player.playlist.currentTimeInSeconds}}</time>
+                    <time class="secondary">/{{timestamp player.playlist.duration}}</time>
+                </span>
+                {{#unless player.is.shared}}
+                    {{#unboundIf player.is.playlist}}
+                        {{#unless player.is.playbackmode_2}}
+                            <div class="popup">
+                                <button {{action "popup" "settings"}}>{{icon "player-settings"}}</button>
+                                {{partial "player_popup_settings"}}
+                            </div>
+                        {{/unless}}
+                    {{/unboundIf}}
+                {{/unless}}
+                <div class="popup">
+                    <button class="languages" {{bind-attr disabled="player.canPlay::disabled"}}{{action "popup" "languages"}}>{{icon "player-track"}}</button>
+                    {{partial "player_popup_languages"}}
+                </div>
+                {{#unless player.is.shared}}
+                    {{#unless isFullscreen}}
+                        <button {{action "fullscreen_toggle"}}>{{icon "player-fullscreen"}}</button>
+                    {{else}}
+                        <button {{action "fullscreen_toggle"}}>{{icon "player-minimize"}}</button>
+                    {{/unless}}
+                {{/unless}}
+            </section>
+
+            <section class="middle">
+                <div class="ellipsis">
+                    <span class="title">{{player.title}}</span>
+                </div>
+            </section>
+        </div>
+
+        {{!--#unless player.is.shared--}}
+            {{!--partial "player_tray"--}}
+        {{!--/unless--}}
+
+        {{!--partial "player_track"--}}
+    </nav></script>
+<script type="text/x-handlebars" data-template-name="_player_nav_floating"><nav class="floating">
+        {{#if player.is.playlist}}
+            {{#unless drawing}}
+                {{!-- <div class="tray"> --}}
+                    <button class="button radius" {{action "tray_toggle"}}>
+                        {{icon "player-tray"}}
+                    </button>
+                {{!-- </div> --}}
+            {{/unless}}
+        {{/if}}
+        {{#if player.is.shared}}
+            <button class="button radius" {{action "screen" "end"}}>
+                {{icon "share"}}
+            </button>
+        {{else}}
+            <div class="drawing">
+                <button class="button radius" {{action "drawing_toggle"}}>
+                    {{#if drawing}}
+                        {{icon "close-simple"}}
+                    {{else}}
+                        {{icon "player-draw"}}
+                    {{/if}}
+                </button>
+                <div {{bind-attr class="drawing:fadeInDown drawing::hide :panel :animated"}} data-chosencolor {{bind-style color="user.settings.player_drawing_color"}}>
+                    {{ember-radio value=config.drawing.style.normal checked=user.settings.player_drawing_style id="line-style-normal" name="drawingStyle" class="hide"}}
+                    <label for="line-style-normal">{{icon "player-line-medium"}}</label>
+                    {{ember-radio value=config.drawing.style.dashed checked=user.settings.player_drawing_style id="line-style-dashed" name="drawingStyle" class="hide"}}
+                    <label for="line-style-dashed">{{icon "player-line-dashed"}}</label>
+                </div>
+                <div {{bind-attr class="drawing:fadeInDown drawing::hide :panel :animated"}} data-chosencolor {{bind-style color="user.settings.player_drawing_color"}}>
+                    {{ember-radio value=config.drawing.size.thin checked=user.settings.player_drawing_size id="line-size-thin" name="drawingSize" class="hide"}}
+                    <label for="line-size-thin">{{icon "player-line-thin"}}</label>
+                    {{ember-radio value=config.drawing.size.medium checked=user.settings.player_drawing_size id="line-size-medium" name="drawingSize" class="hide"}}
+                    <label for="line-size-medium">{{icon "player-line-medium"}}</label>
+                    {{ember-radio value=config.drawing.size.thick checked=user.settings.player_drawing_size id="line-size-thick" name="drawingSize" class="hide"}}
+                    <label for="line-size-thick">{{icon "player-line-thick"}}</label>
+                </div>
+                <div {{bind-attr class="drawing:fadeInDown drawing::hide :panel :animated"}}>
+                    {{#each color in config.drawing.colors}}
+                        {{ember-radio value=color checked=user.settings.player_drawing_color id=color name="drawingColor" class="hide line-color"}}
+                        <label {{bind-attr for=color}} {{bind-style background-color="color"}}></label>
+                    {{/each}}
+                </div>
+            </div>
+        {{/if}}
+    </nav></script>
+<script type="text/x-handlebars" data-template-name="_player_nav_floating_replay"><nav class="floating replay">
+    {{#unless player.is.shared}}
+    <button class="button radius" {{action "restart"}}>
+      {{icon "player-replay-2"}}</br>
+      REPLAY
+    </button>
+    {{/unless}}
+  </nav></script>
+<script type="text/x-handlebars" data-template-name="_player_nav_slideshow">{{#if player.canPlay}}
+        <nav class="slideshow">
+            <button {{bind-attr class="player.video.autoplay:hide :play :radius"}} {{action "video_play"}}>
+                {{icon "player-play"}}
+            </button>
+            {{#if player.is.playbackmode_1}}
+                <button class="radius back" {{bind-attr disabled="player.canPlay::disabled"}} {{action "video_index_back"}}>
+                    {{icon "player-back"}}
+                </button>
+                <button class="radius next" {{bind-attr disabled="player.canPlay::disabled"}} {{action "video_index_next"}}>
+                    {{icon "player-next"}}
+                </button>
+            {{/if}}
+        </nav>
+    {{/if}}</script>
+<script type="text/x-handlebars" data-template-name="_player_popup_languages"><div {{bind-attr class="popup_languages:active"}}>
+        {{#if player.video.languages_audio}}
+            <label>{{t "player_audio_header"}}</label>
+            {{view "select" name="languages_audio" content=player.video.languages_audio class="tiny" optionValuePath="content.value" optionLabelPath="content.title" value=player.language}}
+        {{/if}}
+        {{#if player.video.languages_track}}
+            <label>{{t "player_track_header"}}</label>
+            {{view "select"  name="languages_track" content=player.video.languages_track class="tiny" optionValuePath="content.value" optionLabelPath="content.title" value=player.track}}
+        {{/if}}
+    </div></script>
+<script type="text/x-handlebars" data-template-name="_player_popup_settings"><div {{bind-attr class="popup_settings:active"}}>
+        {{#unboundIf player.is.playlist}}
+            {{#unless player.is.playbackmode_2}}
+                <span>{{t "workarea_playback_label"}}</span>
+                <label {{action "playback" 0 true}} {{bind-attr class="player.is.playbackmode_0:active"}}>
+                    {{icon "player-slideshow-on"}} {{t "workarea_playback_0"}}
+                </label>
+                <label {{action "playback" 1 true}} {{bind-attr class="player.is.playbackmode_1:active"}}>
+                    {{icon "player-slideshow-off"}} {{t "workarea_playback_1"}}
+                </label>
+            {{/unless}}
+        {{/unboundIf}}
+    </div></script>
+<script type="text/x-handlebars" data-template-name="_player_screen_email"><div class="screen email">
+        <a class="close" {{action "screen" "null"}}>{{icon "close-simple"}}</a>
+        <div class="content">
+            <h3>{{t "player_email_header"}}</h3>
+            <form {{action "email" on="submit"}}>
+                <div class="row collapse">
+                    <div class="small-6 column">
+                        {{input value=player.email_fromname placeholder=lang.player_email_label_name required="required"}}
+                    </div>
+                    <div class="small-6 column">
+                        {{input type="email" class="inspectletIgnore" value=player.email_to placeholder=lang.player_email_placeholder_email required="required"}}
+                    </div>
+                </div>
+                <div class="row collapse">
+                    {{textarea class="inspectletIgnore" value=player.email_message placeholder=lang.player_email_label_message required="required"}}
+                </div>
+                <button type="submit" class="expand radius primary">{{t "player_email_send"}}</button>
+            </form>
+        </div>
+    </div></script>
+<script type="text/x-handlebars" data-template-name="_player_screen_end"><div class="screen end">
+        <a class="close" {{action "screen" "null"}}>{{icon "close-simple"}}</a>
+        <div class="content text-center">
+            {{#unboundIf player.is.shared}}
+                {{#unless player.is.embed}}
+                    <div class="doctorinfo clearfix">
+                        <img src="{{unbound player.user.thumbnail}}" alt="" />
+                        <div class="info">
+                            <span class="ellipsis">
+                                {{player.user.display_name}}
+                            </span>
+                            <a class="ellipsis" href="{{unbound prep_url player.user.display_website}}" title="{{unbound player.user.display_website}}">
+                                {{player.user.display_website}}
+                            </a>
+                        </div>
+                    </div>
+                    <hr />
+                {{/unless}}
+                <ul class="button-group radius">
+                    <li>
+                        <a class="button small" {{bind-attr class="player.facebookScraped::disabled :button :small"}} {{action "share" "facebook"}}>
+                            {{icon "share-facebook-simple"}}
+                        </a>
+                    </li>
+                    <li>
+                        <a class="button small" {{action "share" "twitter"}}>
+                            {{icon "share-twitter-simple"}}
+                        </a>
+                    </li>
+                    <li>
+                        <a class="button small" {{action "share" "linkedin"}}>
+                            {{icon "share-linkedin-simple"}}
+                        </a>
+                    </li>
+                    <li>
+                        <a class="button small" {{action "share" "googleplus"}}>
+                            {{icon "share-googleplus-simple"}}
+                        </a>
+                    </li>
+                    <li>
+                        <a class="button small" {{action "screen" "email"}}>
+                            {{icon "share-email"}}
+                        </a>
+                    </li>
+                </ul>
+                <hr />
+            {{/unboundIf}}
+            <button class="primary radius" {{action "restart"}}>
+                {{icon "player-replay"}}
+                {{t "player_action_replay"}}
+            </button>
+        </div>
+    </div></script>
+<script type="text/x-handlebars" data-template-name="_player_tray"><div class="tray bar">
+        <button class="right" {{action "tray_toggle"}}>
+            {{icon "player-tray-close"}}
+        </button>
+    </div>
+    <div class="tray bar bottom">
+        {{#unless player.is.shared}}
+            <button class="right" {{action "fullscreen_toggle"}}>
+                {{#unless isFullscreen}}
+                    {{icon "player-fullscreen"}}
+                {{else}}
+                    {{icon "player-minimize"}}
+                {{/unless}}
+            </button>
+        {{/unless}}
+    </div>
+    <div class="tray items">
+        <ul class="scrollbar">
+            {{#each asset in player.playlist.medialist}}
+                <li {{action "video_index_jumpto" asset.sort}} {{bind-attr class="asset.current:active"}}>
+                    <img src="{{unbound asset.thumbnail}}_thumb_large.jpg" alt="" />
+                    <div class="bar">
+                        <span class="right viewed">
+                            {{#if asset.current}}
+                                {{icon "player-watching" lang.player_watching}}
+                            {{else}}
+                                {{#if asset.viewed}}
+                                    {{icon "player-watched" lang.player_watched}}
+                                {{/if}}
+                            {{/if}}
+                        </span>
+                        <span class="left">{{unbound asset.index}}.&nbsp;</span>
+                        <div class="layout-middle ellipsis title">{{unbound asset.title}}</div>
+                        <div class="hide middle-me play">{{icon "player-play"}}</div>
+                        <time class="hide">{{unbound timestamp asset.duration}}</time>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    </div></script>
+<script type="text/x-handlebars" data-template-name="loading"><div class="loading-spinner text-center">
+      <svg class="logo" id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158.23 229.21">
+        <defs>
+          <style>.rrr{fill:#5f82db;}.dot{fill:#4ac5b8;}</style>
+        </defs>
+        <title>Rendia</title>
+        <path class="rrr" d="M242.43,217.26C268,207,286,184.91,286,157.86c0-35-28.82-63.22-64.11-63.22h-84.1a5.58,5.58,0,0,0-5.59,5.58L132,248.28a5.58,5.58,0,0,0,5.59,5.59h27.05a5.78,5.78,0,0,0,5.58-5.59l.41-118.35h47.59c15.73,0,29.49,12.86,29.45,28.6,0,16.43-13.55,29.92-29.11,29.92h-23a5.15,5.15,0,0,0-4.6,7.46l51.18,102a5,5,0,0,0,4.68,2.61h30.88c5,0,7.06-4.7,5-8.53Z" transform="translate(-127.72, -94.64)"/>
+        <path class="dot" d="M174.48,300.62a22.91,22.91,0,0,1-23.23,23.23,23.16,23.16,0,0,1-23.52-23.23,23.4,23.4,0,0,1,23.52-23.52A23.16,23.16,0,0,1,174.48,300.62Z" transform="translate(-127.72, -94.64)"/>
+      </svg>
+  </div></script>
+<script src="/dist/scripts/plugins.js"></script><script src="/dist/scripts/login.js"></script>

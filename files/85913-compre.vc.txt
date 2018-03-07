@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="hotsite" ng-controller="SuperOfertasController">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super Ofertas</title>
+
+<meta name="description" content="#">
+<meta name="keywords" content="#" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Super Ofertas" />
+<meta property="og:description"
+	content="As melhores ofertas você encontra aqui!" />
+<meta property="og:image"
+	content="http://superofertas.compre.vc/img/super_ofertas_share.png" />
+
+<link type="image/x-icon" href="img/favicon.png" rel="shortcut icon">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500'
+	rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/all.css">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96356900-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<style>
+.sprite-bg_topo {
+	background-color: #F01616
+}
+
+.cont-img {
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.cont-ofert-img-txt img {
+	width: 100%;
+}
+
+.loaderCenter {
+	border: 4px solid #ed1c24;
+	border-top: 4px solid #cbcbcb;
+	border-radius: 50%;
+	animation: spin 2s linear infinite;
+	display: none;
+	padding: 10px;
+	margin: auto;
+	width: 0px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+</head>
+
+<body>
+	<header>
+		<span class="sprite-bg_topo"></span>
+		<div class="container">
+
+			<a class="top-logo" ng-click="home()"> <img
+				src="img/super_ofertas.png"></a>
+			<!--<a class="top-logo" href="" ng-click="home()";> 
+			<span class="sprite sprite-logo-black-friday"></span></a>-->
+
+			<div class="cont-search-align">
+				<form class="form-inline">
+					<div class="form-group cont-bg-search">
+						<span class="sprite sprite-bg-search"></span> <input type="text"
+							class="form-control bg-search" id="keyword" ng-model="keyword"
+							placeholder="Digite o produto, marca ou modelo">
+						<button type="submit" class="btn btn-default btn-search"
+							ng-click="offersByKeyword();">Buscar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</header>
+
+	<div>
+		<div class="container cont-nav-categ-filter hidden-xs">
+			<ul class="nav nav-pills nav-justified">
+				<li role="presentation" class=""><a href=""
+					ng-click="offersByCategory(10)"><div class="cont-ico-categ">
+							<span class="sprite sprite-ico_celular"></span>
+						</div>Celulares</a></li>
+				<li role="presentation" class=""><a href=""
+					ng-click="offersByCategory(20)"><div class="cont-ico-categ">
+							<span class="sprite sprite-ico_tv"></span>
+						</div>TV</a></li>
+				<li role="presentation" class=""><a href=""
+					ng-click="offersByCategory(40)"><div class="cont-ico-categ">
+							<span class="sprite sprite-ico_headfone"></span>
+						</div>Eletrônicos</a></li>
+				<li role="presentation" class=""><a href=""
+					ng-click="offersByCategory(30)"><div class="cont-ico-categ">
+							<span class="sprite sprite-ico_laptop"></span>
+						</div>informática</a></li>
+				<li role="presentation" class=""><a href=""
+					ng-click="offersByCategory(50)"><div class="cont-ico-categ">
+							<span class="sprite sprite-ico_eletrodomestico"></span>
+						</div>Eletrodomésticos</a></li>
+				<li role="presentation" class=""><a href=""
+					ng-click="offersByCategory(60)"><div class="cont-ico-categ">
+							<span class="sprite sprite-ico_sofa"></span>
+						</div>Casa e decoração</a></li>
+				<li role="presentation" class=""><a href=""
+					ng-click="offersByCategory(80)"><div class="cont-ico-categ">
+							<span class="sprite sprite-ico_bicicleta"></span>
+						</div>esporte e lazer</a></li>
+				<li role="presentation" class=""><a href=""
+					ng-click="offersByCategory(130)"><div class="cont-ico-categ">
+							<span class="sprite sprite-ico_livros"></span>
+						</div>Livros</a></li>
+				<li role="presentation" class="dropdown"><a
+					class="dropdown-toggle ico mais" data-toggle="dropdown" href="#"
+					role="button" aria-haspopup="true" aria-expanded="false"><div
+							class="cont-ico-categ">
+							<span class="sprite sprite-ico_mais"></span>
+						</div>mais categorias</a>
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li><a ng-click="offersByCategory(70)">Games</a></li>
+						<li><a ng-click="offersByCategory(140)">Automotivo</a></li>
+						<li><a ng-click="offersByCategory(100)">Fotografia</a></li>
+						<li><a ng-click="offersByCategory(110)">Saúde e Beleza</a></li>
+						<li><a ng-click="offersByCategory(150)">Bebê e CIA</a></li>
+						<li><a ng-click="offersByCategory(90)">Moda e Acessórios</a></li>
+					</ul></li>
+			</ul>
+		</div>
+
+		<div class="container">
+			<!-- filtro combos -->
+			<div class="cont-dropdown center-block">
+				<div class="larg-al-dropdown">
+					<div class="dropdown pull-left">
+						<a id="dLabelOrder" class="btn-drop" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Ordenar por: <span
+							class="caret"></span>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-right" id="filterOrder"
+							aria-labelledby="dLabelOrder">
+							<li><a ng-click="clearFilter()">Limpar Filtro</a></li>
+							<li><a id="menorpreco" ng-click="sort('lowestprice')">Menor
+									preço</a></li>
+							<li><a id="maiordesconto" ng-click="sort('higherdiscount')">Maior
+									desconto</a></li>
+							<li><a id="popularity" ng-click="sort('popularity')">Popularidade</a></li>
+						</ul>
+					</div>
+					<div class="dropdown pull-left">
+						<a id="dLabelPrice" class="btn-drop" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Faixa de preço: <span
+							class="caret"></span>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-right" id="filterPrice"
+							aria-labelledby="dLabelPrice">
+							<li><a ng-click="clearFilterPrice()">Limpar Filtro</a></li>
+							<li ng-repeat="price in prices"><a
+								ng-click="offersByPrice(price.priceMin,price.priceMax)">de
+									R${{price.priceMin}} a R${{price.priceMax}}</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- FIM filtro combos -->
+		</div>
+		<div class="container">
+			<!-- box oferta  -->
+			<div ng-if="bws == false">
+				<div class="cont-box {{index}}" ng-repeat="offer in offers">
+					<div id="offer{{$index}}"
+						class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-block">
+						<div class="box" onclick="$(this).find('a')[0].click()">
+							<div class="cont-ofert-img-txt">
+								<div class="cont-img">
+									<img ng-src="{{offer.thumbnail}}" alt="{{offer.name}}">
+								</div>
+								<div class="ofert-txt">
+									<p class="tl">{{offer.name}}</p>
+									<div ng-if="offer.product.priceMax != offer.price">
+										<p class="vl">R$ {{offer.product.priceMax | currency :
+											""}}</p>
+									</div>
+									<div ng-if="offer.product.priceMax == offer.price">
+										<p class="vl" style="text-decoration: none;">&nbsp;</p>
+									</div>
+									<p class="vl-desc">R$ {{offer.price | currency : "" }}</p>
+								</div>
+							</div>
+							<a id="link{{$index}}" target="_blank" class="sourceId"
+								href="https://redir.lomadee.com/v2/offer/{{offer.id}}?sourceId={{offers.sourceId}}&appId=9052"></a>
+							<div ng-if="offer.discount == 0">
+								<p class="txt-desc">&nbsp;</p>
+							</div>
+							<div ng-if="offer.discount != 0">
+								<p class="txt-desc">{{offer.discount+'% Desconto'}}</p>
+							</div>
+							<div class="cont-anun-img">
+								<div>
+									<img ng-src="{{offer.store.thumbnail}}" alt="{{offer.store.name}}">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div ng-if="bws == true">
+				<div class="cont-box">
+					<div id="offer{{$index}}"
+						class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-block"
+						ng-repeat="offer in offers">
+						<div class="box" ng-click="openOffer(offer.link, $event)">
+							<div class="cont-ofert-img-txt">
+								<div class="cont-img">
+									<img ng-src="{{offer.thumbnail}}" alt="{{offer.name}}">
+								</div>
+								<div class="ofert-txt">
+									<p class="tl">{{offer.name}}</p>
+									<p class="vl">{{(offer.product.priceFromValue != undefined)
+										? 'R$: ' + offer.product.priceFromValue : ''}}</p>
+									<p class="vl-desc">R$ {{offer.product.priceMax | currency :
+										"" }}</p>
+								</div>
+							</div>
+							<p class="txt-desc">{{offer.discount != undefined ?
+								offer.discount+'% Desconto' : '&nbsp;'}}</p>
+							<div class="cont-anun-img">
+								<div>
+									<img ng-src="{{offer.store.thumbnail}}" alt="{{offer.store.name}}">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- fim box oferta -->
+		<div class="loaderCenter"></div>
+		<!-- botão mais posts -->
+		<div id="message"
+			style="font-size: 17px; font-family: alwynnew-font-lt, sans-serif; color: black; text-align: center; margin-top: 40px; margin-bottom: 40px;"></div>
+		<div class="cont_btn_more">
+			<div ng-if="bws == false">
+				<a ng-click="paginateCuradoria()" id="button"
+					class="btn btn-lg_more"> Mais ofertas </a>
+			</div>
+			<div ng-if="bws == true">
+				<a ng-click="paginateByKeyword()" id="button"
+					class="btn btn-lg_more"> Mais ofertas </a>
+			</div>
+		</div>
+	</div>
+	<!-- fim botão mais posts -->
+	<footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div class="container">
+			<div class="footerRp">
+
+				<div class="produtoBuscape">
+					<p class="tlFooter">UM PRODUTO:</p>
+					<span class="lgFooter sprite sprite-logo_footer_lomadee"></span>
+				</div>
+				<div class="socialMedia">
+					<p class="tlFooter">COMPARTILHE</p>
+					<a href="" ng-click="shareFacebook()" target="_blank"><span
+						class="sprite sprite-ico_facebook"></span></a> <a href=""
+						ng-click=shareTwitter(); target="_blank"><span
+						class="sprite sprite-ico_twitter"></span></a>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+	<div class="copyright">
+		<p>Todos os direitos reservados © 2015 - 2016 lomadee.com.</p>
+	</div>
+
+	<script src="http://api.lomadee.com/sdk/curadoria.js"></script>
+	<script src="js/all.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.5.8/angular-locale_br.js"></script>
+	<script src="assets/controller/SuperOfertasController.js"></script>
+</body>
+</html>
+
+<script>
+	$(document).ready(function() {
+		$(".nav").find("a").on('click', function() {
+			$(".nav").find("li").find("a").removeClass('ativo');
+			$(this).addClass('ativo');
+		});
+	});
+</script>
+
+<script>
+	(function() {
+		var _fbq = window._fbq || (window._fbq = []);
+		if (!_fbq.loaded) {
+			var fbds = document.createElement('script');
+			fbds.async = true;
+			fbds.src = 'https://connect.facebook.net/en_US/fbds.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(fbds, s);
+			_fbq.loaded = true;
+		}
+	})();
+	window._fbq = window._fbq || [];
+	window._fbq.push([ 'track', '6049570544802', {
+		'value' : '0.01',
+		'currency' : 'BRL'
+	} ]);
+</script>

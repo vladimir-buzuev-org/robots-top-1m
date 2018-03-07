@@ -1,0 +1,1136 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":4,"licenseKey":"646c3c011e","agent":"","transactionName":"Z1NQZEtSCEcAVEQPWF4ZdEVXUBJdDlkfBFJeQl1vWl4VGgdFXwhDVVhWHk9aA0MSDUIDWVRTQG9VWhBRPkdRAVI=","applicationID":"31139230","errorBeacon":"bam.nr-data.net","applicationTime":85}</script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><link href="https://d1qbemlbhjecig.cloudfront.net/prod/filer_public/_bento_media/css/bootstrap.min.css" rel="stylesheet"><link href="https://d1qbemlbhjecig.cloudfront.net/prod/filer_public/_bento_media/css/bootstrap-responsive.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,600,600italic,700,700italic,300|Arvo:400,700" rel="stylesheet" type="text/css">
+        <link type="text/css" href="https://d1qbemlbhjecig.cloudfront.net/prod/3.11.0/staticfiles/dist/frontend/css/frontend_style.css" rel="stylesheet"/>
+        <link type="text/css" href="https://d1qbemlbhjecig.cloudfront.net/prod/3.11.0/staticfiles/dist/frontend/js/frontend_js.css" rel="stylesheet"/>
+        
+
+        <title>Reading Rainbow</title><!-- Twitter Card data --><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@Reading Rainbow"/><meta name="twitter:title" content="Reading Rainbow"><meta name="twitter:description"
+      content="None"/><!-- Open Graph data --><meta property="og:title" content="Reading Rainbow"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.readingrainbow.org/"/><meta property="og:description"
+      content="None"/><meta property="og:site_name" content="Reading Rainbow"/><meta name="robots" content="index, follow"/><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/><link rel="apple-touch-icon" sizes="180x180" href="https://d1qbemlbhjecig.cloudfront.net/prod/3.11.0/staticfiles/bento_cms/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" href="https://d1qbemlbhjecig.cloudfront.net/prod/3.11.0/staticfiles/bento_cms/favicons/favicon-32x32.png" sizes="32x32"><link rel="icon" type="image/png" href="https://d1qbemlbhjecig.cloudfront.net/prod/3.11.0/staticfiles/bento_cms/favicons/favicon-16x16.png" sizes="16x16"><link rel="manifest" href="https://d1qbemlbhjecig.cloudfront.net/prod/3.11.0/staticfiles/bento_cms/favicons/manifest.json"><link rel="mask-icon" href="https://d1qbemlbhjecig.cloudfront.net/prod/3.11.0/staticfiles/bento_cms/favicons/safari-pinned-tab.svg" color="#5bbad5"><meta name="theme-color" content="#438eb9"><script type="application/ld+json">
+
+{
+    "publisher": {
+        "logo": {}, 
+        "@type": "Organization", 
+        "name": "Reading Rainbow"
+    }, 
+    "description": "", 
+    "url": "https://www.readingrainbow.org/", 
+    "keywords": "", 
+    "@context": "http://schema.org", 
+    "@type": "WebSite", 
+    "name": "Reading Rainbow"
+}
+
+</script>
+    </head>
+
+    <body class="studio bento3">
+        <style type="text/css">
+            a {
+    color: #126eb5;
+}
+
+a:hover,
+a:active,
+a:visited {
+    color: #0a538b;
+}
+
+/* expose accent classes */
+
+.colorPalette-accent1 {
+    color: #0a538b !important;
+}
+
+.colorPalette-accent3 {
+    color: #e4f3fb !important;
+}
+
+.colorPalette-main {
+    color: #126eb5 !important;
+}
+
+.colorPalette-accent4 {
+    color: #eff9fd !important;
+}
+
+.colorPalette-accent2 {
+    color: #d7eefb !important;
+}
+
+
+            </style><header><div class="row-fluid"><div id="layout-0"
+            
+            class="container"><div id="column-0"
+                 class="span12 column-12"></div></div></div></header>
+        <div class="content">
+            <div class="row-fluid"><div id="layout-62f67480-7ec7-11e7-bbbf-5d8c866784bd"
+            
+            class="container"><div id="column-62f67481-7ec7-11e7-bbbf-5d8c866784bd"
+                 class="span12 column-12"><div id="component-651005b0-7ec7-11e7-bbbf-5d8c866784bd" class="component"><div
+    id="651005b0-7ec7-11e7-bbbf-5d8c866784bd"
+    class="filer-image-container
+        
+        
+    "><img class="filer-image"
+             alt=""
+             src="https://d1qbemlbhjecig.cloudfront.net/prod/filer_public/readingrainbow-bento-live-pbs/Graphics/Headers/9cbfaad565_RR_Header_01.jpg"/></div></div></div></div></div><div class="row-fluid"><div id="layout-7ba79d60-7ecc-11e7-bbbf-5d8c866784bd"
+            
+            class="container"><div id="column-7ba79d61-7ecc-11e7-bbbf-5d8c866784bd"
+                 class="span8 column-8"><div id="component-87423220-7ecc-11e7-bbbf-5d8c866784bd" class="component"><div class="text-container"><div id="component-87423220-7ecc-11e7-bbbf-5d8c866784bd"><h2>Launched in 1983, and co-created by WNED-TV and Nebraska ETV, Reading Rainbow became the most watched PBS program in the classroom. The series was formulated because of the “summer loss phenomena,"&nbsp;whereby a child loses some of his or her reading abilities because they tend not to read during the summer. While the concept of Reading Rainbow began as a summer program, it quickly grew into a broadcast blockbuster, classroom staple and cultural icon.<br />&nbsp;</h2><p>During its 26-year run, Reading Rainbow garnered more than 250 awards, including the prestigious George Foster Peabody Award, Telly Awards, Parent’s and Teacher’s Choice Awards, and a total of 26 Emmy Awards, including ten for outstanding series.</p>Reading Rainbow timeline:<br />&nbsp;<ul><li>Launched in&nbsp;<strong>1983</strong>, it was the most-watched PBS program in the classroom featuring a library of over 150 programs.&nbsp;<br />&nbsp;</li><li>In the&nbsp;<strong>2004</strong>&nbsp;PBS Study of Video and Television Use Among K-12 Teachers,&nbsp;<em>Reading Rainbow</em>&nbsp;was the number one most-watched PBS program in classrooms nationwide.<br />&nbsp;</li><li>As of&nbsp;<strong>2005</strong>:<br />&nbsp;<ul><li><em>Reading Rainbow</em>&nbsp;was carried on 95% of the Public Television Stations, serving 85% of the DMA.<br />&nbsp;</li><li>Based on carriage reports, an average of 670,000 individuals per week watched&nbsp;<em>Reading Rainbow</em>. However these numbers don’t include the approximately 10 million students who watched RR weekly in school...via broadcast, VHS, DVD or video streaming.<br />&nbsp;</li><li>Over 500,000+ copies of RR episodes have been sold since 1995.<br />&nbsp;</li><li>Each year 40,000+ children K-3rd grade entered the Reading Rainbow Young Writers &amp; Illustrators Contest.<br />&nbsp;</li><li><em>PBSKIDS.org/readingrainbow</em>&nbsp;(primary audience is children, secondary audience is parents) received an average 1,433,626 page views/month.&nbsp;<em>readingrainbow.org</em>&nbsp;(primary audience is educators) received an average of 90,000 visitors/month who downloaded over 20,000 PDF files.<br />&nbsp;</li></ul></li><li>In&nbsp;<strong>2006</strong>&nbsp;each week, over 2.1 million children, teachers and parents tuned in to&nbsp;<em>Reading Rainbow</em>.<br />&nbsp;</li><li>August&nbsp;<strong>2009&nbsp;</strong><em>Reading Rainbow</em>&nbsp;comes to the end of its broadcast run.</li></ul></div><script type="text/javascript">
+ (function(document) {
+     var baseURL = 'https://www.readingrainbow.org/',
+         component = document.getElementById('component-87423220-7ecc-11e7-bbbf-5d8c866784bd'),
+         aTags = component.querySelectorAll('a[data-link-page-id]'),
+         filerImages = component.querySelectorAll('img[data-img-filer-id]'),
+         filerImage;
+
+     if (baseURL.endsWith('/')) {
+         baseURL = baseURL.substr(0, baseURL.length - 1);
+     }
+
+     for (var index=0; index < aTags.length; index++) {
+         aTags[index].href = baseURL + aTags[index].dataset.linkPageId;
+     }
+
+     for (var imgIndex=0; imgIndex < filerImages.length; imgIndex++) {
+         filerImage = filerImages[imgIndex];
+         filerImage.src = filerImage.dataset.imgFilerId;
+     }
+    })(document);
+</script></div></div><div id="component-09261780-8bf1-11e7-a6e1-bfa43d234f9d" class="component"><div class="text-container"><div id="component-09261780-8bf1-11e7-a6e1-bfa43d234f9d"><br />After <i>Reading Rainbow</i> went off the air, WNED licensed several companies, including LeVar Burton’s RRKIDZ, Inc, to provide content and services under the <i>Reading Rainbow </i>brand. Recent legal disputes between WNED and LeVar Burton/RRKIDZ have been resolved and RRKIDZ no longer licenses the <i>Reading Rainbow</i> brand from WNED. WNED is currently working on the next chapter of <i>Reading Rainbow</i> and will continue its mission of fostering education for a new generation. WNED wishes RRKIDZ good luck in all future efforts on behalf of children everywhere.
+</div><script type="text/javascript">
+ (function(document) {
+     var baseURL = 'https://www.readingrainbow.org/',
+         component = document.getElementById('component-09261780-8bf1-11e7-a6e1-bfa43d234f9d'),
+         aTags = component.querySelectorAll('a[data-link-page-id]'),
+         filerImages = component.querySelectorAll('img[data-img-filer-id]'),
+         filerImage;
+
+     if (baseURL.endsWith('/')) {
+         baseURL = baseURL.substr(0, baseURL.length - 1);
+     }
+
+     for (var index=0; index < aTags.length; index++) {
+         aTags[index].href = baseURL + aTags[index].dataset.linkPageId;
+     }
+
+     for (var imgIndex=0; imgIndex < filerImages.length; imgIndex++) {
+         filerImage = filerImages[imgIndex];
+         filerImage.src = filerImage.dataset.imgFilerId;
+     }
+    })(document);
+</script></div></div></div><div id="column-5b0b36e4-5380-4587-baec-3d8b969bb730"
+                 class="span4 column-4"><div id="component-bc994940-7ecc-11e7-bbbf-5d8c866784bd" class="component"><div
+    id="bc994940-7ecc-11e7-bbbf-5d8c866784bd"
+    class="filer-image-container
+        
+        
+    "><img class="filer-image"
+             alt=""
+             src="https://d1qbemlbhjecig.cloudfront.net/prod/filer_public/readingrainbow-bento-live-pbs/Photos/001d55b215_ThinkstockPhotos-506062932.jpg"/></div></div><div id="component-d088e4b0-7ecc-11e7-bbbf-5d8c866784bd" class="component"><div
+    id="d088e4b0-7ecc-11e7-bbbf-5d8c866784bd"
+    class="filer-image-container
+        
+        
+    "><img class="filer-image"
+             alt=""
+             src="https://d1qbemlbhjecig.cloudfront.net/prod/filer_public/readingrainbow-bento-live-pbs/Photos/9101be63a7_ThinkstockPhotos-498054072.jpg"/></div></div><div id="component-54d88e00-81ed-11e7-bf19-3d209feb0acb" class="component"><div
+    id="54d88e00-81ed-11e7-bf19-3d209feb0acb"
+    class="filer-image-container
+        
+        
+    "><img class="filer-image"
+             alt=""
+             src="https://d1qbemlbhjecig.cloudfront.net/prod/filer_public/readingrainbow-bento-live-pbs/Photos/907ddce574_ThinkstockPhotos-610765932.jpg"/></div></div></div></div></div><div class="row-fluid"><div id="layout-66279990-811f-11e7-9c20-2b07b1390e51"
+            
+            class="container"><div id="column-66279991-811f-11e7-9c20-2b07b1390e51"
+                 class="span4 column-4"><div id="component-72637760-811f-11e7-9c20-2b07b1390e51" class="component"><style type="text/css">
+ #video-component_72637760-811f-11e7-9c20-2b07b1390e51.video-component {
+    border: 1px solid #e4f3fb;
+}
+
+#video-component_72637760-811f-11e7-9c20-2b07b1390e51 .video-container {
+    background-color: #eff9fd;
+}
+
+#video-component_72637760-811f-11e7-9c20-2b07b1390e51 section {
+    background-color: #eff9fd;
+}
+
+#video-component_72637760-811f-11e7-9c20-2b07b1390e51 .playlist-item {
+    border-color: #eff9fd;
+    background-color: #eff9fd;
+}
+
+#video-component_72637760-811f-11e7-9c20-2b07b1390e51 .playlist-item-title {
+    color: #126eb5;
+}
+
+#video-component_72637760-811f-11e7-9c20-2b07b1390e51 .playlist-item.selected-item .playlist-item-title,
+#video-component_72637760-811f-11e7-9c20-2b07b1390e51 .playlist-item:hover .playlist-item-title {
+    color: #0a538b;
+}
+
+#video-component_72637760-811f-11e7-9c20-2b07b1390e51 .playlist-item.selected-item,
+#video-component_72637760-811f-11e7-9c20-2b07b1390e51 .playlist-item:hover {
+    background-color: #e4f3fb;
+}
+
+#video-component_72637760-811f-11e7-9c20-2b07b1390e51 .playlist-header {
+    background-color: #d7eefb;
+}
+
+</style><div id='video-component_72637760-811f-11e7-9c20-2b07b1390e51' class='video-component '><div class="video-container__wrapper"><!-- The <iframe> (and video player) will replace this <div> tag. --><div id='video-container_72637760-811f-11e7-9c20-2b07b1390e51' class='video-container'></div><section><h5 class='channel'>Reading Rainbow</h5><h3 class='title'>Pete Seeger Reads 'Abiyoyo' on Reading Rainbow</h3><p class='description'>Pete Seeger joins host LeVar Burton to read (and sing) the classic African folktale 'Abiyoyo' on Reading Rainbow. In this complete Reading Rainbow segment from 1986, legendary American folk singer Pete Seeger sings and tells us the story of a fearsome giant named Abiyoyo. Watch as a father and son use music and magic to battle a mighty giant.&nbsp;</p></section></div></div></div></div><div id="column-4a9d8f04-e0bf-4562-8909-f33ca9180168"
+                 class="span4 column-4"><div id="component-7d2b52d0-811f-11e7-9c20-2b07b1390e51" class="component"><style type="text/css">
+ #video-component_7d2b52d0-811f-11e7-9c20-2b07b1390e51.video-component {
+    border: 1px solid #e4f3fb;
+}
+
+#video-component_7d2b52d0-811f-11e7-9c20-2b07b1390e51 .video-container {
+    background-color: #eff9fd;
+}
+
+#video-component_7d2b52d0-811f-11e7-9c20-2b07b1390e51 section {
+    background-color: #eff9fd;
+}
+
+#video-component_7d2b52d0-811f-11e7-9c20-2b07b1390e51 .playlist-item {
+    border-color: #eff9fd;
+    background-color: #eff9fd;
+}
+
+#video-component_7d2b52d0-811f-11e7-9c20-2b07b1390e51 .playlist-item-title {
+    color: #126eb5;
+}
+
+#video-component_7d2b52d0-811f-11e7-9c20-2b07b1390e51 .playlist-item.selected-item .playlist-item-title,
+#video-component_7d2b52d0-811f-11e7-9c20-2b07b1390e51 .playlist-item:hover .playlist-item-title {
+    color: #0a538b;
+}
+
+#video-component_7d2b52d0-811f-11e7-9c20-2b07b1390e51 .playlist-item.selected-item,
+#video-component_7d2b52d0-811f-11e7-9c20-2b07b1390e51 .playlist-item:hover {
+    background-color: #e4f3fb;
+}
+
+#video-component_7d2b52d0-811f-11e7-9c20-2b07b1390e51 .playlist-header {
+    background-color: #d7eefb;
+}
+
+</style><div id='video-component_7d2b52d0-811f-11e7-9c20-2b07b1390e51' class='video-component '><div class="video-container__wrapper"><!-- The <iframe> (and video player) will replace this <div> tag. --><div id='video-container_7d2b52d0-811f-11e7-9c20-2b07b1390e51' class='video-container'></div><section><h5 class='channel'>Reading Rainbow</h5><h3 class='title'>Fairytales - Classic Reading Rainbow</h3><p class='description'>In this Classic Reading Rainbow segment, LeVar Burton heads to a Renaissance Faire and learns about the entire process of making garments in days of old, from sheering, to spinning, to weaving, to dyeing.</p></section></div></div></div></div><div id="column-eaef2b1f-5f86-4ec1-8fc4-f631c77c79ba"
+                 class="span4 column-4"><div id="component-86976ed0-811f-11e7-9c20-2b07b1390e51" class="component"><style type="text/css">
+ #video-component_86976ed0-811f-11e7-9c20-2b07b1390e51.video-component {
+    border: 1px solid #e4f3fb;
+}
+
+#video-component_86976ed0-811f-11e7-9c20-2b07b1390e51 .video-container {
+    background-color: #eff9fd;
+}
+
+#video-component_86976ed0-811f-11e7-9c20-2b07b1390e51 section {
+    background-color: #eff9fd;
+}
+
+#video-component_86976ed0-811f-11e7-9c20-2b07b1390e51 .playlist-item {
+    border-color: #eff9fd;
+    background-color: #eff9fd;
+}
+
+#video-component_86976ed0-811f-11e7-9c20-2b07b1390e51 .playlist-item-title {
+    color: #126eb5;
+}
+
+#video-component_86976ed0-811f-11e7-9c20-2b07b1390e51 .playlist-item.selected-item .playlist-item-title,
+#video-component_86976ed0-811f-11e7-9c20-2b07b1390e51 .playlist-item:hover .playlist-item-title {
+    color: #0a538b;
+}
+
+#video-component_86976ed0-811f-11e7-9c20-2b07b1390e51 .playlist-item.selected-item,
+#video-component_86976ed0-811f-11e7-9c20-2b07b1390e51 .playlist-item:hover {
+    background-color: #e4f3fb;
+}
+
+#video-component_86976ed0-811f-11e7-9c20-2b07b1390e51 .playlist-header {
+    background-color: #d7eefb;
+}
+
+</style><div id='video-component_86976ed0-811f-11e7-9c20-2b07b1390e51' class='video-component '><div class="video-container__wrapper"><!-- The <iframe> (and video player) will replace this <div> tag. --><div id='video-container_86976ed0-811f-11e7-9c20-2b07b1390e51' class='video-container'></div><section><h5 class='channel'>Reading Rainbow</h5><h3 class='title'>Changes - Classic Reading Rainbow</h3><p class='description'>In this Classic Reading Rainbow segment, LeVar discusses how important changes affected him as a child like being separated from his favorite blanket to welcoming a new baby sister. What is one difficult change you remember making as a child?</p></section></div></div></div></div></div></div><div class="row-fluid"><div id="layout-50196e70-8120-11e7-9c20-2b07b1390e51"
+            
+            class="container"><div id="column-50196e71-8120-11e7-9c20-2b07b1390e51"
+                 class="span12 column-12"><div id="component-51f22610-8120-11e7-9c20-2b07b1390e51" class="component"><div class="text-container"><div id="component-51f22610-8120-11e7-9c20-2b07b1390e51"><div style="text-align: center;">Reading Rainbow ® and its logo are registered trademarks of Western New York Public Broadcasting Association (WNED-TV).&nbsp;<br />WNED is the sole owner of all Reading Rainbow ® intellectual property.</div></div><script type="text/javascript">
+ (function(document) {
+     var baseURL = 'https://www.readingrainbow.org/',
+         component = document.getElementById('component-51f22610-8120-11e7-9c20-2b07b1390e51'),
+         aTags = component.querySelectorAll('a[data-link-page-id]'),
+         filerImages = component.querySelectorAll('img[data-img-filer-id]'),
+         filerImage;
+
+     if (baseURL.endsWith('/')) {
+         baseURL = baseURL.substr(0, baseURL.length - 1);
+     }
+
+     for (var index=0; index < aTags.length; index++) {
+         aTags[index].href = baseURL + aTags[index].dataset.linkPageId;
+     }
+
+     for (var imgIndex=0; imgIndex < filerImages.length; imgIndex++) {
+         filerImage = filerImages[imgIndex];
+         filerImage.src = filerImage.dataset.imgFilerId;
+     }
+    })(document);
+</script></div></div></div></div></div>
+            
+
+        </div>
+        <footer><div class="row-fluid"><div id="layout-0"
+            
+            class="container"><div id="column-0"
+                 class="span12 column-12"></div></div></div></footer>
+
+        
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="https://d1qbemlbhjecig.cloudfront.net/prod/filer_public/_bento_media/js/pbs-bootstrap.min.js"></script>
+        <script src="https://d1qbemlbhjecig.cloudfront.net/prod/filer_public/_bento_media/js/pbs-player-responsive.js"></script>
+        <script src="https://d1qbemlbhjecig.cloudfront.net/prod/filer_public/_bento_media/js/libs/modernizr.js"></script>
+        <script type="text/javascript">
+         PBS = window.PBS || {};
+         PBS.BentoConfig = PBS.BentoConfig || {};
+         PBS.BentoConfig.baseURL = 'https://www.readingrainbow.org/';
+         PBS.BentoConfig.APIBaseURL = 'https://www.readingrainbow.org/';
+        </script>
+
+        <script type="text/javascript" src="https://d1qbemlbhjecig.cloudfront.net/prod/3.11.0/staticfiles/dist/frontend/css/frontend_style.js"></script>
+        <script type="text/javascript" src="https://d1qbemlbhjecig.cloudfront.net/prod/3.11.0/staticfiles/dist/frontend/js/frontend_js.js"></script>
+
+        <script>
+    $(document).ready(function() {
+        var currentPlaylist = playlistMapping['72637760-811f-11e7-9c20-2b07b1390e51'];
+        var currentSettings = settingsMapping['72637760-811f-11e7-9c20-2b07b1390e51'];
+
+        $('.playlist-item').on('click', function () {
+            $(this).addClass('selected-item').siblings().removeClass('selected-item');
+        });
+        if(currentPlaylist[0].videoSource === 'cove') {
+            loadCoveVideo('72637760-811f-11e7-9c20-2b07b1390e51', 0, currentPlaylist, currentSettings);
+        }
+    });
+
+    function displayCoveInfoItem(type, item, metadataSection) {
+        var tag = '';
+
+        var label = type && (type[0].toUpperCase() + type.slice(1));
+        var tag = type !== 'runtime' ? label : '';
+
+        if (item){
+            $('<div class="additional-cove-info '+ type + '"></div>').appendTo(metadataSection);
+            var coveInfoItem = $(metadataSection + ' .' + type);
+            tag && coveInfoItem.html(label + ': ');
+            coveInfoItem.append(item);
+        }
+    }
+
+    function loadVideoIframe(response, playerObject) {
+        template = response.player_code.template;
+        var iframe = jQuery(template);
+        playerObject.html(iframe);
+        fitCoveVideo(iframe);
+        iframe.load(function(){
+            fitCoveVideo(jQuery(this));
+        });
+    }
+
+    function loadVideoMetadata(currentSettings, item, metadataSection) {
+        currentSettings.showTitle &&
+            $(metadataSection + ' .title').html(item.title);
+
+        currentSettings.showContentChannel &&
+            $(metadataSection + ' .channel').html(item.channel);
+
+        $(metadataSection + ' .additional-cove-info').remove();
+        if(currentSettings.showAdditionalCoveInfo) {
+            var coveInfoTypes = ['runtime', 'published', 'expires', 'rating'];
+            var coveInfoTypesLength = coveInfoTypes.length;
+            for(var i = 0; i <=  coveInfoTypesLength; i++) {
+                displayCoveInfoItem(coveInfoTypes[i], item[coveInfoTypes[i]], metadataSection);
+            }
+        }
+
+        if (currentSettings.showDescription) {
+            $(metadataSection + ' .description').remove();
+            $('<p class="description"></p>').appendTo(metadataSection);
+            $(metadataSection + ' .description').html(item.description);
+        }
+    }
+
+    function loadCoveVideo(componentId, index, currentPlaylist, currentSettings) {
+        var youtubeWrapper = '#youtube-wrapper_' + componentId;
+        var videoContainer = '#video-container_' + componentId;
+        var videoComponent = '#video-component_' + componentId;
+        var videoContainerWrapper = videoComponent + ' .video-container__wrapper';
+        var metadataSection = videoComponent + ' section';
+
+        $(youtubeWrapper).remove();
+        $(videoContainer).remove();
+
+        var videoContainerEl = document.createElement('div');
+        videoContainerEl.id = 'video-container_' + componentId;
+        videoContainerEl.className = 'video-container';
+        $(videoContainerWrapper).prepend(videoContainerEl);
+
+        var videoId = currentPlaylist[index].videoId;
+        var APIBaseURL = PBS.BentoConfig.APIBaseURL || '/';
+
+        $.ajax({
+            url: APIBaseURL + 'merlin_plugin/video_frame/' + videoId + '/',
+            dataType: 'json',
+            success: function (response) {
+                var template, notAvailableImg;
+                var playerObject = $('#video-container_' + componentId);
+                var imgUrl = currentPlaylist[index].img.url;
+
+                if (response.player_code) {
+                    loadVideoIframe(response, playerObject);
+                }
+                else {
+                    var notAvailableVideo = $('<img />');
+                    notAvailableVideo.attr('src', imgUrl);
+                    playerObject.html($(notAvailableVideo));
+                }
+
+                loadVideoMetadata(currentSettings, currentPlaylist[index], metadataSection);
+
+            },
+            error: (xhr, status, err) => {
+                console.error(xhr, status, err.toString());
+            }
+        });
+    }
+</script>
+<script>
+    // This code loads the IFrame Player API code asynchronously.
+    var scriptTag = document.createElement('script');
+
+    scriptTag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(scriptTag, firstScriptTag);
+
+    $(document).ready(function() {
+        var currentPlaylist = playlistMapping['72637760-811f-11e7-9c20-2b07b1390e51'];
+        var currentSettings = settingsMapping['72637760-811f-11e7-9c20-2b07b1390e51'];
+
+        window.youtubeIframeList = window.youtubeIframeList || [];
+        if(currentPlaylist[0].videoSource === 'youtube') {
+            if (typeof window.youtubeIframeList === 'undefined') {
+                window.youtubeIframeList = [];
+            }
+            window.youtubeIframeList['72637760-811f-11e7-9c20-2b07b1390e51'] = {
+                                                                'playlist': currentPlaylist,
+                                                                'settings': currentSettings,
+                                                            };
+        }
+
+        //check if single video & no metadata
+        if ((currentPlaylist.length === 1 || !currentSettings.showPlaylist) &&
+            !currentSettings.showTitle &&
+            !currentSettings.showContentChannel &&
+            !currentSettings.showDescription &&
+            !currentSettings.showAdditionalCoveInfo){
+            $('#video-component_' + '72637760-811f-11e7-9c20-2b07b1390e51').css({border: 'none'});
+        }
+    })
+
+    // This function creates an <iframe> (and YouTube player) after the API code downloads.
+    function onYouTubeIframeAPIReady() {
+        for (var componentId in youtubeIframeList) {
+             var currentPlaylist = youtubeIframeList[componentId]['playlist'];
+             var currentSettings = youtubeIframeList[componentId]['settings'];
+             loadYoutubeVideo(componentId, 0, currentPlaylist, currentSettings);
+        }
+    }
+
+    function loadYoutubeVideo(componentId, index, currentPlaylist, currentSettings) {
+        var player;
+        var videoComponent = '#video-component_' + componentId;
+        var youtubeWrapper = document.createElement('div');
+        youtubeWrapper.id = 'youtube-wrapper_' + componentId;
+        youtubeWrapper.className = 'youtube-wrapper video-container';
+
+        $('#video-container_' + componentId).remove();
+        $('#youtube-wrapper_' + componentId).remove();
+        var videoContainerEl = document.createElement('div');
+        videoContainerEl.id = 'video-container_' + componentId;
+
+        $(videoComponent + ' .video-container__wrapper').prepend(youtubeWrapper);
+
+        $(videoComponent + ' .youtube-wrapper').prepend(videoContainerEl);
+
+        player = new YT.Player('video-container_' + componentId, {
+            videoId: currentPlaylist[index].videoId
+        });
+
+        currentSettings.showTitle &&
+            $(videoComponent + ' .title').html(currentPlaylist[index].title);
+
+        currentSettings.showContentChannel &&
+            $(videoComponent + ' .channel').html(currentPlaylist[index].channel);
+
+        currentSettings.showDescription &&
+            $(videoComponent + ' .description').html(currentPlaylist[index].description);
+
+        $(videoComponent + ' .additional-cove-info').remove();
+    }
+</script>
+<script>
+    
+        var playlistJson = [
+    {
+        "description": "Pete Seeger joins host LeVar Burton to read (and sing) the classic African folktale 'Abiyoyo' on Reading Rainbow. In this complete Reading Rainbow segment from 1986, legendary American folk singer Pete Seeger sings and tells us the story of a fearsome giant named Abiyoyo. Watch as a father and son use music and magic to battle a mighty giant.&nbsp;", 
+        "img": {
+            "url": "https://i.ytimg.com/vi/cPZtuPyXRfw/hqdefault.jpg", 
+            "isDefault": false
+        }, 
+        "title": "Pete Seeger Reads 'Abiyoyo' on Reading Rainbow", 
+        "url": "https://www.youtube.com/watch?v=cPZtuPyXRfw", 
+        "videoSource": "youtube", 
+        "videoId": "cPZtuPyXRfw", 
+        "published": "", 
+        "channel": "Reading Rainbow"
+    }
+];
+        var settingsJson = {
+    "showDescription": true, 
+    "showContentChannel": true, 
+    "showAdditionalCoveInfo": true, 
+    "showTitle": true, 
+    "showPlaylist": false
+}
+    
+    if (typeof window.playlistMapping === 'undefined') {
+        window.playlistMapping = [];
+    }
+
+    if (typeof window.settingsMapping === 'undefined') {
+        window.settingsMapping = [];
+    }
+    window.playlistMapping['72637760-811f-11e7-9c20-2b07b1390e51'] = playlistJson;
+    window.settingsMapping['72637760-811f-11e7-9c20-2b07b1390e51'] = settingsJson;
+
+    function selectPlaylistItem(componentId, index, videoSource) {
+        var currentPlaylist = playlistMapping[componentId];
+        var currentSettings = settingsMapping[componentId];
+        switch(videoSource) {
+            case 'cove':
+                loadCoveVideo(componentId, index, currentPlaylist, currentSettings);
+                break;
+            case 'youtube':
+                loadYoutubeVideo(componentId, index, currentPlaylist, currentSettings);
+                break;
+            default:
+                loadDefault(componentId, index, currentPlaylist, currentSettings);
+                break;
+        }
+
+    }
+
+    function loadDefault(componentId, index, currentPlaylist, currentSettings) {
+        var youtubeWrapper = '#youtube-wrapper_' + componentId;
+        var videoContainer = '#video-container_' + componentId;
+        var videoComponent = '#video-component_' + componentId;
+
+        $(youtubeWrapper).remove();
+        $(videoContainer).remove();
+
+        var videoContainerEl = document.createElement('div');
+        videoContainerEl.id = 'video-container_' + componentId;
+        videoContainerEl.className = 'video-container';
+        $(videoComponent + ' .video-container__wrapper').prepend(videoContainerEl);
+
+        var defaultImg = document.createElement('img');
+        defaultImg.alt = currentPlaylist[index].title||currentPlaylist[index].titlePlaceholder;
+        defaultImg.src = currentPlaylist[index].img.url;
+        $(videoContainerEl).prepend(defaultImg);
+
+        currentSettings.showTitle &&
+            $(videoComponent + ' .title').html(currentPlaylist[index].title||currentPlaylist[index].titlePlaceholder);
+
+        currentSettings.showContentChannel &&
+            $(videoComponent + ' .channel').html(currentPlaylist[index].channel||currentPlaylist[index].channelPlaceholder);
+
+        currentSettings.showDescription &&
+            $(videoComponent + ' .description').html(currentPlaylist[index].description||currentPlaylist[index].descriptionPlaceholder);
+
+        $(videoComponent + ' .additional-cove-info').remove();
+    }
+
+    function showCurrentIndex(index, componentId) {
+        var itemsCount = $('#playlist-items-count_' + componentId);
+        var currentItem = itemsCount.children('span');
+        currentItem.text(index + '/');
+    }
+
+    function togglePlaylist(componentId) {
+        var playlistHeader = $('#playlist-header_' + componentId);
+        var playlistBody = $('#playlist-body_' + componentId);
+        playlistBody.slideToggle('slow');
+        playlistHeader.children('i').toggleClass('fa-caret-up fa-caret-down');
+    }
+
+</script>
+<script>
+    $(document).ready(function() {
+        var currentPlaylist = playlistMapping['7d2b52d0-811f-11e7-9c20-2b07b1390e51'];
+        var currentSettings = settingsMapping['7d2b52d0-811f-11e7-9c20-2b07b1390e51'];
+
+        $('.playlist-item').on('click', function () {
+            $(this).addClass('selected-item').siblings().removeClass('selected-item');
+        });
+        if(currentPlaylist[0].videoSource === 'cove') {
+            loadCoveVideo('7d2b52d0-811f-11e7-9c20-2b07b1390e51', 0, currentPlaylist, currentSettings);
+        }
+    });
+
+    function displayCoveInfoItem(type, item, metadataSection) {
+        var tag = '';
+
+        var label = type && (type[0].toUpperCase() + type.slice(1));
+        var tag = type !== 'runtime' ? label : '';
+
+        if (item){
+            $('<div class="additional-cove-info '+ type + '"></div>').appendTo(metadataSection);
+            var coveInfoItem = $(metadataSection + ' .' + type);
+            tag && coveInfoItem.html(label + ': ');
+            coveInfoItem.append(item);
+        }
+    }
+
+    function loadVideoIframe(response, playerObject) {
+        template = response.player_code.template;
+        var iframe = jQuery(template);
+        playerObject.html(iframe);
+        fitCoveVideo(iframe);
+        iframe.load(function(){
+            fitCoveVideo(jQuery(this));
+        });
+    }
+
+    function loadVideoMetadata(currentSettings, item, metadataSection) {
+        currentSettings.showTitle &&
+            $(metadataSection + ' .title').html(item.title);
+
+        currentSettings.showContentChannel &&
+            $(metadataSection + ' .channel').html(item.channel);
+
+        $(metadataSection + ' .additional-cove-info').remove();
+        if(currentSettings.showAdditionalCoveInfo) {
+            var coveInfoTypes = ['runtime', 'published', 'expires', 'rating'];
+            var coveInfoTypesLength = coveInfoTypes.length;
+            for(var i = 0; i <=  coveInfoTypesLength; i++) {
+                displayCoveInfoItem(coveInfoTypes[i], item[coveInfoTypes[i]], metadataSection);
+            }
+        }
+
+        if (currentSettings.showDescription) {
+            $(metadataSection + ' .description').remove();
+            $('<p class="description"></p>').appendTo(metadataSection);
+            $(metadataSection + ' .description').html(item.description);
+        }
+    }
+
+    function loadCoveVideo(componentId, index, currentPlaylist, currentSettings) {
+        var youtubeWrapper = '#youtube-wrapper_' + componentId;
+        var videoContainer = '#video-container_' + componentId;
+        var videoComponent = '#video-component_' + componentId;
+        var videoContainerWrapper = videoComponent + ' .video-container__wrapper';
+        var metadataSection = videoComponent + ' section';
+
+        $(youtubeWrapper).remove();
+        $(videoContainer).remove();
+
+        var videoContainerEl = document.createElement('div');
+        videoContainerEl.id = 'video-container_' + componentId;
+        videoContainerEl.className = 'video-container';
+        $(videoContainerWrapper).prepend(videoContainerEl);
+
+        var videoId = currentPlaylist[index].videoId;
+        var APIBaseURL = PBS.BentoConfig.APIBaseURL || '/';
+
+        $.ajax({
+            url: APIBaseURL + 'merlin_plugin/video_frame/' + videoId + '/',
+            dataType: 'json',
+            success: function (response) {
+                var template, notAvailableImg;
+                var playerObject = $('#video-container_' + componentId);
+                var imgUrl = currentPlaylist[index].img.url;
+
+                if (response.player_code) {
+                    loadVideoIframe(response, playerObject);
+                }
+                else {
+                    var notAvailableVideo = $('<img />');
+                    notAvailableVideo.attr('src', imgUrl);
+                    playerObject.html($(notAvailableVideo));
+                }
+
+                loadVideoMetadata(currentSettings, currentPlaylist[index], metadataSection);
+
+            },
+            error: (xhr, status, err) => {
+                console.error(xhr, status, err.toString());
+            }
+        });
+    }
+</script>
+<script>
+    // This code loads the IFrame Player API code asynchronously.
+    var scriptTag = document.createElement('script');
+
+    scriptTag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(scriptTag, firstScriptTag);
+
+    $(document).ready(function() {
+        var currentPlaylist = playlistMapping['7d2b52d0-811f-11e7-9c20-2b07b1390e51'];
+        var currentSettings = settingsMapping['7d2b52d0-811f-11e7-9c20-2b07b1390e51'];
+
+        window.youtubeIframeList = window.youtubeIframeList || [];
+        if(currentPlaylist[0].videoSource === 'youtube') {
+            if (typeof window.youtubeIframeList === 'undefined') {
+                window.youtubeIframeList = [];
+            }
+            window.youtubeIframeList['7d2b52d0-811f-11e7-9c20-2b07b1390e51'] = {
+                                                                'playlist': currentPlaylist,
+                                                                'settings': currentSettings,
+                                                            };
+        }
+
+        //check if single video & no metadata
+        if ((currentPlaylist.length === 1 || !currentSettings.showPlaylist) &&
+            !currentSettings.showTitle &&
+            !currentSettings.showContentChannel &&
+            !currentSettings.showDescription &&
+            !currentSettings.showAdditionalCoveInfo){
+            $('#video-component_' + '7d2b52d0-811f-11e7-9c20-2b07b1390e51').css({border: 'none'});
+        }
+    })
+
+    // This function creates an <iframe> (and YouTube player) after the API code downloads.
+    function onYouTubeIframeAPIReady() {
+        for (var componentId in youtubeIframeList) {
+             var currentPlaylist = youtubeIframeList[componentId]['playlist'];
+             var currentSettings = youtubeIframeList[componentId]['settings'];
+             loadYoutubeVideo(componentId, 0, currentPlaylist, currentSettings);
+        }
+    }
+
+    function loadYoutubeVideo(componentId, index, currentPlaylist, currentSettings) {
+        var player;
+        var videoComponent = '#video-component_' + componentId;
+        var youtubeWrapper = document.createElement('div');
+        youtubeWrapper.id = 'youtube-wrapper_' + componentId;
+        youtubeWrapper.className = 'youtube-wrapper video-container';
+
+        $('#video-container_' + componentId).remove();
+        $('#youtube-wrapper_' + componentId).remove();
+        var videoContainerEl = document.createElement('div');
+        videoContainerEl.id = 'video-container_' + componentId;
+
+        $(videoComponent + ' .video-container__wrapper').prepend(youtubeWrapper);
+
+        $(videoComponent + ' .youtube-wrapper').prepend(videoContainerEl);
+
+        player = new YT.Player('video-container_' + componentId, {
+            videoId: currentPlaylist[index].videoId
+        });
+
+        currentSettings.showTitle &&
+            $(videoComponent + ' .title').html(currentPlaylist[index].title);
+
+        currentSettings.showContentChannel &&
+            $(videoComponent + ' .channel').html(currentPlaylist[index].channel);
+
+        currentSettings.showDescription &&
+            $(videoComponent + ' .description').html(currentPlaylist[index].description);
+
+        $(videoComponent + ' .additional-cove-info').remove();
+    }
+</script>
+<script>
+    
+        var playlistJson = [
+    {
+        "description": "In this Classic Reading Rainbow segment, LeVar Burton heads to a Renaissance Faire and learns about the entire process of making garments in days of old, from sheering, to spinning, to weaving, to dyeing.", 
+        "img": {
+            "url": "https://i.ytimg.com/vi/706aYqaro9M/maxresdefault.jpg", 
+            "isDefault": false
+        }, 
+        "title": "Fairytales - Classic Reading Rainbow", 
+        "url": "https://www.youtube.com/watch?v=706aYqaro9M", 
+        "videoSource": "youtube", 
+        "videoId": "706aYqaro9M", 
+        "published": "", 
+        "channel": "Reading Rainbow"
+    }
+];
+        var settingsJson = {
+    "showDescription": true, 
+    "showContentChannel": true, 
+    "showAdditionalCoveInfo": true, 
+    "showTitle": true, 
+    "showPlaylist": false
+}
+    
+    if (typeof window.playlistMapping === 'undefined') {
+        window.playlistMapping = [];
+    }
+
+    if (typeof window.settingsMapping === 'undefined') {
+        window.settingsMapping = [];
+    }
+    window.playlistMapping['7d2b52d0-811f-11e7-9c20-2b07b1390e51'] = playlistJson;
+    window.settingsMapping['7d2b52d0-811f-11e7-9c20-2b07b1390e51'] = settingsJson;
+
+    function selectPlaylistItem(componentId, index, videoSource) {
+        var currentPlaylist = playlistMapping[componentId];
+        var currentSettings = settingsMapping[componentId];
+        switch(videoSource) {
+            case 'cove':
+                loadCoveVideo(componentId, index, currentPlaylist, currentSettings);
+                break;
+            case 'youtube':
+                loadYoutubeVideo(componentId, index, currentPlaylist, currentSettings);
+                break;
+            default:
+                loadDefault(componentId, index, currentPlaylist, currentSettings);
+                break;
+        }
+
+    }
+
+    function loadDefault(componentId, index, currentPlaylist, currentSettings) {
+        var youtubeWrapper = '#youtube-wrapper_' + componentId;
+        var videoContainer = '#video-container_' + componentId;
+        var videoComponent = '#video-component_' + componentId;
+
+        $(youtubeWrapper).remove();
+        $(videoContainer).remove();
+
+        var videoContainerEl = document.createElement('div');
+        videoContainerEl.id = 'video-container_' + componentId;
+        videoContainerEl.className = 'video-container';
+        $(videoComponent + ' .video-container__wrapper').prepend(videoContainerEl);
+
+        var defaultImg = document.createElement('img');
+        defaultImg.alt = currentPlaylist[index].title||currentPlaylist[index].titlePlaceholder;
+        defaultImg.src = currentPlaylist[index].img.url;
+        $(videoContainerEl).prepend(defaultImg);
+
+        currentSettings.showTitle &&
+            $(videoComponent + ' .title').html(currentPlaylist[index].title||currentPlaylist[index].titlePlaceholder);
+
+        currentSettings.showContentChannel &&
+            $(videoComponent + ' .channel').html(currentPlaylist[index].channel||currentPlaylist[index].channelPlaceholder);
+
+        currentSettings.showDescription &&
+            $(videoComponent + ' .description').html(currentPlaylist[index].description||currentPlaylist[index].descriptionPlaceholder);
+
+        $(videoComponent + ' .additional-cove-info').remove();
+    }
+
+    function showCurrentIndex(index, componentId) {
+        var itemsCount = $('#playlist-items-count_' + componentId);
+        var currentItem = itemsCount.children('span');
+        currentItem.text(index + '/');
+    }
+
+    function togglePlaylist(componentId) {
+        var playlistHeader = $('#playlist-header_' + componentId);
+        var playlistBody = $('#playlist-body_' + componentId);
+        playlistBody.slideToggle('slow');
+        playlistHeader.children('i').toggleClass('fa-caret-up fa-caret-down');
+    }
+
+</script>
+<script>
+    $(document).ready(function() {
+        var currentPlaylist = playlistMapping['86976ed0-811f-11e7-9c20-2b07b1390e51'];
+        var currentSettings = settingsMapping['86976ed0-811f-11e7-9c20-2b07b1390e51'];
+
+        $('.playlist-item').on('click', function () {
+            $(this).addClass('selected-item').siblings().removeClass('selected-item');
+        });
+        if(currentPlaylist[0].videoSource === 'cove') {
+            loadCoveVideo('86976ed0-811f-11e7-9c20-2b07b1390e51', 0, currentPlaylist, currentSettings);
+        }
+    });
+
+    function displayCoveInfoItem(type, item, metadataSection) {
+        var tag = '';
+
+        var label = type && (type[0].toUpperCase() + type.slice(1));
+        var tag = type !== 'runtime' ? label : '';
+
+        if (item){
+            $('<div class="additional-cove-info '+ type + '"></div>').appendTo(metadataSection);
+            var coveInfoItem = $(metadataSection + ' .' + type);
+            tag && coveInfoItem.html(label + ': ');
+            coveInfoItem.append(item);
+        }
+    }
+
+    function loadVideoIframe(response, playerObject) {
+        template = response.player_code.template;
+        var iframe = jQuery(template);
+        playerObject.html(iframe);
+        fitCoveVideo(iframe);
+        iframe.load(function(){
+            fitCoveVideo(jQuery(this));
+        });
+    }
+
+    function loadVideoMetadata(currentSettings, item, metadataSection) {
+        currentSettings.showTitle &&
+            $(metadataSection + ' .title').html(item.title);
+
+        currentSettings.showContentChannel &&
+            $(metadataSection + ' .channel').html(item.channel);
+
+        $(metadataSection + ' .additional-cove-info').remove();
+        if(currentSettings.showAdditionalCoveInfo) {
+            var coveInfoTypes = ['runtime', 'published', 'expires', 'rating'];
+            var coveInfoTypesLength = coveInfoTypes.length;
+            for(var i = 0; i <=  coveInfoTypesLength; i++) {
+                displayCoveInfoItem(coveInfoTypes[i], item[coveInfoTypes[i]], metadataSection);
+            }
+        }
+
+        if (currentSettings.showDescription) {
+            $(metadataSection + ' .description').remove();
+            $('<p class="description"></p>').appendTo(metadataSection);
+            $(metadataSection + ' .description').html(item.description);
+        }
+    }
+
+    function loadCoveVideo(componentId, index, currentPlaylist, currentSettings) {
+        var youtubeWrapper = '#youtube-wrapper_' + componentId;
+        var videoContainer = '#video-container_' + componentId;
+        var videoComponent = '#video-component_' + componentId;
+        var videoContainerWrapper = videoComponent + ' .video-container__wrapper';
+        var metadataSection = videoComponent + ' section';
+
+        $(youtubeWrapper).remove();
+        $(videoContainer).remove();
+
+        var videoContainerEl = document.createElement('div');
+        videoContainerEl.id = 'video-container_' + componentId;
+        videoContainerEl.className = 'video-container';
+        $(videoContainerWrapper).prepend(videoContainerEl);
+
+        var videoId = currentPlaylist[index].videoId;
+        var APIBaseURL = PBS.BentoConfig.APIBaseURL || '/';
+
+        $.ajax({
+            url: APIBaseURL + 'merlin_plugin/video_frame/' + videoId + '/',
+            dataType: 'json',
+            success: function (response) {
+                var template, notAvailableImg;
+                var playerObject = $('#video-container_' + componentId);
+                var imgUrl = currentPlaylist[index].img.url;
+
+                if (response.player_code) {
+                    loadVideoIframe(response, playerObject);
+                }
+                else {
+                    var notAvailableVideo = $('<img />');
+                    notAvailableVideo.attr('src', imgUrl);
+                    playerObject.html($(notAvailableVideo));
+                }
+
+                loadVideoMetadata(currentSettings, currentPlaylist[index], metadataSection);
+
+            },
+            error: (xhr, status, err) => {
+                console.error(xhr, status, err.toString());
+            }
+        });
+    }
+</script>
+<script>
+    // This code loads the IFrame Player API code asynchronously.
+    var scriptTag = document.createElement('script');
+
+    scriptTag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(scriptTag, firstScriptTag);
+
+    $(document).ready(function() {
+        var currentPlaylist = playlistMapping['86976ed0-811f-11e7-9c20-2b07b1390e51'];
+        var currentSettings = settingsMapping['86976ed0-811f-11e7-9c20-2b07b1390e51'];
+
+        window.youtubeIframeList = window.youtubeIframeList || [];
+        if(currentPlaylist[0].videoSource === 'youtube') {
+            if (typeof window.youtubeIframeList === 'undefined') {
+                window.youtubeIframeList = [];
+            }
+            window.youtubeIframeList['86976ed0-811f-11e7-9c20-2b07b1390e51'] = {
+                                                                'playlist': currentPlaylist,
+                                                                'settings': currentSettings,
+                                                            };
+        }
+
+        //check if single video & no metadata
+        if ((currentPlaylist.length === 1 || !currentSettings.showPlaylist) &&
+            !currentSettings.showTitle &&
+            !currentSettings.showContentChannel &&
+            !currentSettings.showDescription &&
+            !currentSettings.showAdditionalCoveInfo){
+            $('#video-component_' + '86976ed0-811f-11e7-9c20-2b07b1390e51').css({border: 'none'});
+        }
+    })
+
+    // This function creates an <iframe> (and YouTube player) after the API code downloads.
+    function onYouTubeIframeAPIReady() {
+        for (var componentId in youtubeIframeList) {
+             var currentPlaylist = youtubeIframeList[componentId]['playlist'];
+             var currentSettings = youtubeIframeList[componentId]['settings'];
+             loadYoutubeVideo(componentId, 0, currentPlaylist, currentSettings);
+        }
+    }
+
+    function loadYoutubeVideo(componentId, index, currentPlaylist, currentSettings) {
+        var player;
+        var videoComponent = '#video-component_' + componentId;
+        var youtubeWrapper = document.createElement('div');
+        youtubeWrapper.id = 'youtube-wrapper_' + componentId;
+        youtubeWrapper.className = 'youtube-wrapper video-container';
+
+        $('#video-container_' + componentId).remove();
+        $('#youtube-wrapper_' + componentId).remove();
+        var videoContainerEl = document.createElement('div');
+        videoContainerEl.id = 'video-container_' + componentId;
+
+        $(videoComponent + ' .video-container__wrapper').prepend(youtubeWrapper);
+
+        $(videoComponent + ' .youtube-wrapper').prepend(videoContainerEl);
+
+        player = new YT.Player('video-container_' + componentId, {
+            videoId: currentPlaylist[index].videoId
+        });
+
+        currentSettings.showTitle &&
+            $(videoComponent + ' .title').html(currentPlaylist[index].title);
+
+        currentSettings.showContentChannel &&
+            $(videoComponent + ' .channel').html(currentPlaylist[index].channel);
+
+        currentSettings.showDescription &&
+            $(videoComponent + ' .description').html(currentPlaylist[index].description);
+
+        $(videoComponent + ' .additional-cove-info').remove();
+    }
+</script>
+<script>
+    
+        var playlistJson = [
+    {
+        "description": "In this Classic Reading Rainbow segment, LeVar discusses how important changes affected him as a child like being separated from his favorite blanket to welcoming a new baby sister. What is one difficult change you remember making as a child?", 
+        "img": {
+            "url": "https://i.ytimg.com/vi/mYoTiBf3ubw/hqdefault.jpg", 
+            "isDefault": false
+        }, 
+        "title": "Changes - Classic Reading Rainbow", 
+        "url": "https://www.youtube.com/watch?v=mYoTiBf3ubw", 
+        "videoSource": "youtube", 
+        "videoId": "mYoTiBf3ubw", 
+        "published": "", 
+        "channel": "Reading Rainbow"
+    }
+];
+        var settingsJson = {
+    "showDescription": true, 
+    "showContentChannel": true, 
+    "showAdditionalCoveInfo": true, 
+    "showTitle": true, 
+    "showPlaylist": false
+}
+    
+    if (typeof window.playlistMapping === 'undefined') {
+        window.playlistMapping = [];
+    }
+
+    if (typeof window.settingsMapping === 'undefined') {
+        window.settingsMapping = [];
+    }
+    window.playlistMapping['86976ed0-811f-11e7-9c20-2b07b1390e51'] = playlistJson;
+    window.settingsMapping['86976ed0-811f-11e7-9c20-2b07b1390e51'] = settingsJson;
+
+    function selectPlaylistItem(componentId, index, videoSource) {
+        var currentPlaylist = playlistMapping[componentId];
+        var currentSettings = settingsMapping[componentId];
+        switch(videoSource) {
+            case 'cove':
+                loadCoveVideo(componentId, index, currentPlaylist, currentSettings);
+                break;
+            case 'youtube':
+                loadYoutubeVideo(componentId, index, currentPlaylist, currentSettings);
+                break;
+            default:
+                loadDefault(componentId, index, currentPlaylist, currentSettings);
+                break;
+        }
+
+    }
+
+    function loadDefault(componentId, index, currentPlaylist, currentSettings) {
+        var youtubeWrapper = '#youtube-wrapper_' + componentId;
+        var videoContainer = '#video-container_' + componentId;
+        var videoComponent = '#video-component_' + componentId;
+
+        $(youtubeWrapper).remove();
+        $(videoContainer).remove();
+
+        var videoContainerEl = document.createElement('div');
+        videoContainerEl.id = 'video-container_' + componentId;
+        videoContainerEl.className = 'video-container';
+        $(videoComponent + ' .video-container__wrapper').prepend(videoContainerEl);
+
+        var defaultImg = document.createElement('img');
+        defaultImg.alt = currentPlaylist[index].title||currentPlaylist[index].titlePlaceholder;
+        defaultImg.src = currentPlaylist[index].img.url;
+        $(videoContainerEl).prepend(defaultImg);
+
+        currentSettings.showTitle &&
+            $(videoComponent + ' .title').html(currentPlaylist[index].title||currentPlaylist[index].titlePlaceholder);
+
+        currentSettings.showContentChannel &&
+            $(videoComponent + ' .channel').html(currentPlaylist[index].channel||currentPlaylist[index].channelPlaceholder);
+
+        currentSettings.showDescription &&
+            $(videoComponent + ' .description').html(currentPlaylist[index].description||currentPlaylist[index].descriptionPlaceholder);
+
+        $(videoComponent + ' .additional-cove-info').remove();
+    }
+
+    function showCurrentIndex(index, componentId) {
+        var itemsCount = $('#playlist-items-count_' + componentId);
+        var currentItem = itemsCount.children('span');
+        currentItem.text(index + '/');
+    }
+
+    function togglePlaylist(componentId) {
+        var playlistHeader = $('#playlist-header_' + componentId);
+        var playlistBody = $('#playlist-body_' + componentId);
+        playlistBody.slideToggle('slow');
+        playlistHeader.children('i').toggleClass('fa-caret-up fa-caret-down');
+    }
+
+</script>
+
+    </body>
+</html>

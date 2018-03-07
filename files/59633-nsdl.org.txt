@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8"/><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"e226d3b87c","agent":"","transactionName":"b1YGbEADVhAHUBBfC1YcIk1cAUwKCV1LWBdcX0pOWwdPEEhdF1IIAn03fH4kSgwIRxRXA10dA11G","applicationID":"51934178","errorBeacon":"bam.nr-data.net","applicationTime":128}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="1JGS_D8Mwwo6m_mGm5XzCdDSiRvc1NpoTTZ8X0PWd-w" />
+    
+    <title>NSDL | NSDL</title>
+    
+    
+      
+  <meta property="og:site_name" content="NSDL" />
+
+
+  <meta property="og:title" content="NSDL">
+
+
+  <meta property="og:image" content="https://nsdl.oercommons.org/static/newdesign/images/logo-hidpi-square.png">
+
+
+
+    
+    <link rel="shortcut icon" href="/static/images/favicon.ico"/>
+
+    
+      
+
+
+
+
+<link rel="stylesheet" href="/static/CACHE/css/0da0e57d87d3.css" type="text/css" charset="utf-8" />
+
+
+    
+
+    <link rel="stylesheet" href="/static/CACHE/css/4575cdc2cc90.css" type="text/css" charset="utf-8" />
+
+    
+
+<script>
+  var dataLayer = window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    "user" : {"hubMembership": "", "abtesting": "", "userGroups": ""},
+    "page" : {},
+    "fireGtm": true
+  });
+</script>
+<script src="/static/core/googleanalytics/data-layer-utils.js"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NT9GH9');</script>
+<!-- End Google Tag Manager -->
+
+
+    
+
+<script type="text/javascript" src="/static/javascripts/lib/modernizr.custom.js"></script>
+
+
+    
+  <script type="text/javascript" src="//cdn.transifex.com/live.js"></script>
+  <script type="text/javascript">
+    window.liveSettings={
+      api_key:"acf957e1d7874a7c842f5958e376e00d",
+      picker: false,
+      detectlang: function() {
+        //return language code
+        return "en";
+      },
+      ignore_class: ["js-transifex-ignore"]
+    };
+  </script>
+
+
+
+    
+  </head>
+  <body class=" microsite-nsdl
+                                                  
+                                                   _be
+                                                  ">
+  
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT9GH9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+  <div class="global-wrapper">
+
+      
+
+      
+
+      
+        <div class="js-learner-options">
+          
+
+<div class="flc-uiOptions fl-uiOptions-fatPanel fl-uiOptions-iframe">
+    <div class="flc-slidingPanel-panel flc-uiOptions-iframe"></div>
+    <div class="fl-panelBar">
+        <button class="flc-slidingPanel-toggleButton fl-toggleButton">Show/Hide</button>
+    </div>
+
+    <input type="hidden" name="static_url" value="/static/" />
+</div>
+
+          <div class="fl-clearfix">
+  <div class="flc-toc-tocContainer fl-toc-tocContainer"> </div>
+</div>
+
+        </div>
+      
+
+      
+  <header class="header container-fluid js-header">
+    <a class="logo" href="/"></a>
+    <nav class="top-links js-top-links">
+      <ul><li class="anon no-separator top-links-register"><span><a rel="nofollow" href="/registration">Register Now!</a></span></li><li class="anon top-links-login"><span><a rel="nofollow" class="login js-login" href="/login">Log In</a></span><a class="login-form-url hide" href="/login/form"></a></li><li class="auth user js-collapsible-menu user-menu top-links-user"><a href="/my"><span class="user-name"></span></a></li><li class="auth top-links-logout"><span><a rel="nofollow" href="/logout">Logout</a></span></li></ul>
+    </nav>
+    <div class="container-fluid nav-wrapper text-right">
+      <div class="navbar-collapse" id="mobile-menu-collapse">
+  <ul class="nav navbar-nav navbar-right">
+    
+      
+        <li>
+          <a class="navigation-link" href="/oer/providers">Browse Providers</a>
+      
+      </li>
+    
+      
+        <li class="dropdown">
+          <a href="#" class="navigation-link dropdown-toggle" data-toggle="dropdown">
+            Education Level
+            <i class="icon-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="/browse?f.sublevel=preschool">Preschool</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.sublevel=lower-primary">Lower Primary</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.sublevel=upper-primary">Upper Primary</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.sublevel=middle-school">Middle School</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.sublevel=high-school">High School</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.sublevel=community-college-lower-division">Community College / Lower Division</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.sublevel=college-upper-division">College / Upper Division</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.sublevel=graduate-professional">Graduate / Professional</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.sublevel=career-technical">Career / Technical</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.sublevel=adult-education">Adult Education</a>
+              </li>
+            
+          </ul>
+      
+      </li>
+    
+      
+        <li class="dropdown">
+          <a href="#" class="navigation-link dropdown-toggle" data-toggle="dropdown">
+            Resource Type
+            <i class="icon-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="/browse?f.material_types=activity-lab">Activity/Lab</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=assessment">Assessment</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=case-study">Case Study</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=data-set">Data Set</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=diagram-illustration">Diagram/Illustration</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=full-course">Full Course</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=game">Game</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=homework-assignment">Homework/Assignment</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=interactive">Interactive</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=lecture">Lecture</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=lecture-notes">Lecture Notes</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=lesson">Lesson</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=lesson-plan">Lesson Plan</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=module">Module</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=primary-source">Primary Source</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=reading">Reading</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=simulation">Simulation</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=student-guide">Student Guide</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=syllabus">Syllabus</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=teaching-learning-strategy">Teaching/Learning Strategy</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=textbook">Textbook</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.material_types=unit-of-study">Unit of Study</a>
+              </li>
+            
+          </ul>
+      
+      </li>
+    
+      
+        <li class="dropdown">
+          <a href="#" class="navigation-link dropdown-toggle" data-toggle="dropdown">
+            Subject
+            <i class="icon-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="/browse?f.general_subject=applied-science">Applied Science</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=computing-and-information">Computing and Information</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=engineering">Engineering</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=technology">Technology</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=education">Education</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=history">History</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=history-law-politics">History, Law, Politics</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=life-science">Life Science</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=ecology">Ecology</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=forestry-and-agriculture">Forestry and Agriculture</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=mathematics">Mathematics</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=algebra">Algebra</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=calculus">Calculus</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=functions">Functions</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=geometry">Geometry</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=measurement-and-data">Measurement and Data</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=numbers-and-operations">Numbers and Operations</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=ratios-and-proportions">Ratios and Proportions</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=statistics-and-probability">Statistics and Probability</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=trigonometry">Trigonometry</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=physical-science">Physical Science</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=chemistry">Chemistry</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=geoscience">Geoscience</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=physics">Physics</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.general_subject=space-science">Space Science</a>
+              </li>
+            
+          </ul>
+      
+      </li>
+    
+      
+        <li class="dropdown">
+          <a href="#" class="navigation-link dropdown-toggle" data-toggle="dropdown">
+            Standards
+            <i class="icon-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="/browse?f.ngss_alignment_standard=1">Next Generation Science Standards</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.alignment_standard=2">Common Core State Standards Math</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.alignment_standard=3">Common Core State Standards English Language Arts</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.nd_alignment_standard=19">North Dakota English Language Arts &amp; Literacy Content Standards</a>
+              </li>
+            
+              <li>
+                <a href="/browse?f.nd_alignment_standard=20">North Dakota Mathematics Content Standards</a>
+              </li>
+            
+          </ul>
+      
+      </li>
+    
+      
+        <li class="dropdown">
+          <a href="#" class="navigation-link dropdown-toggle" data-toggle="dropdown">
+            About
+            <i class="icon-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="https://nsdl.oercommons.org/nsdl-overview">Overview</a>
+              </li>
+            
+              <li>
+                <a href="https://nsdl.oercommons.org/nsdl-contacts-page">Contacts</a>
+              </li>
+            
+              <li>
+                <a href="https://nsdl.oercommons.org/nsdl-network-partners">Network Partners</a>
+              </li>
+            
+          </ul>
+      
+      </li>
+    
+  </ul>
+</div>
+
+    </div>
+    <div class="search-block">
+      <h1 class="header-title">National Science Digital Library</h1>
+      <div class="header-description">
+        Serving science, technology, engineering, and mathematics education
+      </div>
+      <form action="/search" method="GET" name="advanced-search" class="search-form js-search-form">
+        <div class="search-field">
+          <input type="text" name="f.search" class="search-input form-control" title="Search keywords" placeholder="What are you looking for?" />
+          <i class="fa fa-search "></i>
+        </div>
+        
+        <select name="f.general_subject" class="search-select form-control">
+          <option value="">Subject</option>
+          
+            <option value="applied-science">Applied Science</option>
+          
+            <option value="education">Education</option>
+          
+            <option value="life-science">Life Science</option>
+          
+            <option value="mathematics">Mathematics</option>
+          
+            <option value="physical-science">Physical Science</option>
+          
+        </select>
+        
+        <select name="f.sublevel" class="search-select form-control">
+          <option value="">Education Level</option>
+          
+            <option value="preschool">Preschool</option>
+          
+            <option value="lower-primary">Lower Primary</option>
+          
+            <option value="upper-primary">Upper Primary</option>
+          
+            <option value="middle-school">Middle School</option>
+          
+            <option value="high-school">High School</option>
+          
+            <option value="community-college-lower-division">Community College / Lower Division</option>
+          
+            <option value="college-upper-division">College / Upper Division</option>
+          
+            <option value="graduate-professional">Graduate / Professional</option>
+          
+            <option value="career-technical">Career / Technical</option>
+          
+            <option value="adult-education">Adult Education</option>
+          
+        </select>
+        <select name="f.alignment_standard" id="id_curriculum_standard"
+                class="search-select form-control js-standards-select"
+                data-source="/curriculum/list_standards/existing"
+                data-field-name="standard">
+        </select>
+        <button class="btn btn-big-link btn-search">Search</button>
+      </form>
+      <div class="advanced-search-call-out">
+        Fine tune your search with our <a href="/advanced-search/">advanced search</a>.
+      </div>
+    </div>
+  </header>
+
+
+      
+
+      <div id="content" class="content">
+
+        
+          <div class="container-status-messages hidden">
+  <div id="status-messages">
+    
+  </div>
+</div>
+
+        
+
+        
+  <section class="library">
+    <h1 class="frontpage-section-title">Extensive Library, Powerful Findability</h1>
+    <div class="library-items row">
+      <div class="col-md-4 library-item">
+        <img src="/static/nsdl/images/collections.png" class="library-icon" alt="Collections">
+        <div class="library-description">
+          Search through collections curated by our digital librarians
+        </div>
+        <a href="/oer/providers/sets" class="btn btn-big-link mod-library">Collections</a>
+      </div>
+      <div class="col-md-4 library-item">
+        <img src="/static/nsdl/images/providers.png" class="library-icon" alt="Providers">
+        <div class="library-description">
+          Browse an alphabetical list of all participating providers
+        </div>
+        <a href="/oer/providers" class="btn btn-big-link mod-library">Providers</a>
+      </div>
+      <div class="col-md-4 library-item">
+        <img src="/static/nsdl/images/advanced-search.png" class="library-icon" alt="Advanced Search">
+        <div class="library-description">
+          Search our extensive library and find exactly what you need
+        </div>
+        <a href="/advanced-search/" class="btn btn-big-link mod-library">Advanced Search</a>
+      </div>
+    </div>
+  </section>
+  <section class="share container-fluid">
+    <div class="share-row row">
+      <div class="share-col share-recommend share-ct col-sm-6">
+        <h1 class="frontpage-section-title">Recommend a Resource</h1>
+        <p class="share-description">
+          Suggest Educational Materials
+        </p>
+        <a href="/courses/add" class="btn btn-big-link btn-transparent btn-share">Suggest</a>
+      </div>
+      <div class="share-col share-partners share-ct col-sm-6">
+        <h1 class="frontpage-section-title">Partners with NSDL</h1>
+        <p class="share-description">
+          Become a member of the NSDL community
+        </p>
+        <a href="https://nsdl.oercommons.org/partner-with-nsdl" class="btn btn-big-link btn-transparent btn-share">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+
+      </div>
+
+      <form name="next-url" action="/" method="get">
+        <input type="hidden" name="next" value="/" />
+      </form>
+
+      
+
+      
+   
+
+
+
+
+<footer class="global-footer footer global js-sticky-footer container-fluid mod-frontpage">
+  
+    
+    <div class="footer-action row">
+      <div class="col-md-6">
+        
+        <span class="footer-item-title">Discover</span>
+        <div class="row">
+          
+          
+            <div class="col-sm-4">
+              <ul class="footer-item-links list-unstyled">
+                <li class="footer-item"><a href="/curated-collections" class="footer-item-link">Collections</a></li>
+                <li class="footer-item"><a href="/oer/providers" class="footer-item-link">Providers</a></li>
+                <li class="footer-item mod-with-border"><a href="/advanced-search/" class="footer-item-link">Advanced Search</a></li>
+                
+                  <li class="footer-item"><a href="/browse/general_subject/applied-science" class="footer-item-link">Applied Science</a></li>
+                
+                  <li class="footer-item"><a href="/browse/general_subject/education" class="footer-item-link">Education</a></li>
+                
+              </ul>
+            </div>
+            <div class="col-sm-4">
+              <ul class="footer-item-links list-unstyled">
+                
+                  <li class="footer-item"><a href="/browse/general_subject/life-science" class="footer-item-link">Life Science</a></li>
+                
+                  <li class="footer-item"><a href="/browse/general_subject/mathematics" class="footer-item-link">Mathematics</a></li>
+                
+                  <li class="footer-item"><a href="/browse/general_subject/physical-science" class="footer-item-link">Physical Science</a></li>
+                
+              </ul>
+            </div>
+            <div class="col-sm-4">
+              <ul class="footer-item-links list-unstyled">
+                
+              </ul>
+            </div>
+          
+          
+        </div>
+      </div>
+      <div class="footer-column col-md-2 col-sm-4">
+        
+  <span class="footer-item-title">Create</span>
+  <ul class="footer-item-links list-unstyled">
+    <li class="footer-item"><a href="/courses/add" class="footer-item-link">Submit a Resource</a></li>
+  </ul>
+
+      </div>
+      
+      <div class="footer-column col-md-2 col-sm-4">
+        
+      </div>
+    </div>
+    
+    <div class="footer-help-info row">
+      <div class="col-sm-8 col-md-9">
+        <div class="row">
+          <div class="col-md-6">
+            <span class="footer-info-title">OER Newsletter</span>
+            
+<form action="/subscribe" method="get" id="newsletter-subscribe">
+  
+  <div class="field">
+    <div class="errors"></div>
+    <input class="form-control footer-subscribe-input" id="subscribe_email" name="email" placeholder="Your email address" size="40" title="Newsletter sign-up" type="email" />
+    <button class="btn footer-subscribe-submit" title="Subscribe to OER Newsletter">
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      <i class="fa fa-chevron-left" aria-hidden="true"></i>
+    </button>
+  </div>
+  
+</form>
+
+          </div>
+          <div class="col-md-6">
+            <span class="footer-info-title">Connect with OER Commons</span>
+              <a href="https://www.facebook.com/pages/OER-Commons/197344756972678" class="footer-social-link" target="_blank"><i class="fa fa-facebook"></i>Become a Fan on Facebook</a>
+              <a href="https://twitter.com/oercommons" class="footer-social-link" target="_blank"><i class="fa fa-twitter"></i>Follow on Twitter</a>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          A project created by ISKME.
+          Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.
+          <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" class="footer-copyright-img" target="_blank" aria-hidden="true"></a>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-3">
+        <span class="footer-info-title">Powered By</span>
+        <a href="http://iskme.org/" class="footer-iskme-logo" target="_blank" title="ISKME"></a>
+      </div>
+    </div>
+  
+  
+    <div class="footer-copyright-bar">© 2007 - 2017, NSDL</div>
+  
+</footer>
+
+
+
+    </div>
+
+    
+
+
+
+
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.20.0/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.1.1/fetch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.41/system.js"></script>
+<script>
+  System.config({
+    map: {
+      "react": "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.min.js",
+      "react-dom": "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react-dom.min.js",
+      "react-bootstrap": "https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.30.7/react-bootstrap.min.js",
+      "classnames": "https://cdnjs.cloudflare.com/ajax/libs/classnames/2.2.5/index.min.js",
+      "redux": "https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.min.js",
+      "react-redux": "https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.4.6/react-redux.min.js",
+      "react-router": "https://cdnjs.cloudflare.com/ajax/libs/react-router/3.0.0/ReactRouter.min.js",
+      "react-router-redux": "https://cdnjs.cloudflare.com/ajax/libs/react-router-redux/4.0.7/ReactRouterRedux.min.js",
+    },
+    baseURL: "/static/COMPILED"
+  });
+  System.defaultJSExtensions = true;
+
+  // https://github.com/systemjs/systemjs/issues/172
+  var systemLocate = System.locate;
+  System.locate = function (load) {
+      var System = this;
+      return Promise.resolve(systemLocate.call(this, load)).then(function (address) {
+          return address + System.cacheBust;
+      });
+  };
+  System.cacheBust = "?ddb9d798c44c0047fc55224585bb5d1adf030a55";
+</script>
+
+<script type="text/javascript" src="/jsi18n"></script>
+
+<script type="text/javascript" src="/static/CACHE/js/19b8962c9586.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="/static/CACHE/js/f09ffb8439fb.js" charset="utf-8"></script>
+
+    
+      
+
+
+<script type="text/javascript" src="/static/CACHE/js/2eeb3b8f3133.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="/uioptions.js"></script>
+
+
+    
+    
+
+
+
+
+<script type="text/javascript" src="/static/CACHE/js/e9b75e3288e6.js" charset="utf-8"></script>
+
+    
+    <script>
+      $(function() {
+        new StickyFooter();
+        $('.dropdown-toggle').dropdown();
+      });
+    </script>
+    
+  <script src="/static/COMPILED/newdesign/javascripts/frontpage/frontpage.js"></script>
+  <script>
+    $(function() {
+      new Frontpage();
+    });
+  </script>
+
+
+    
+      
+
+
+
+
+    
+
+    
+    
+
+    
+      
+        
+          <div class="login-popup js-login-popup is-hidden" role="dialog" tabindex="-1">
+  
+
+
+
+<form method="post" class="formatted login-form" name="login" action="https://nsdl.oercommons.org/login">
+
+
+
+  
+
+  
+
+  <div class="errors global" aria-live="polite">
+    
+  </div>
+
+  
+    
+
+<div class="field required" id="div_id_login-username" aria-live="polite">
+  
+    <div class="label">
+      <label for="id_login-username">Your email or username:</label>
+       <span class="required-asterisk">*</span>
+    </div>
+  
+  
+    
+  
+  <div class="errors">
+    
+  </div>
+  <input class="text" id="id_login-username" name="login-username" size="25" type="text" />
+  
+</div>
+
+  
+
+  
+    <div class="mailcheck-message" style="display: none;">
+      Did you mean <a href="#"></a>?
+    </div>
+  
+
+  
+    
+
+<div class="field required" id="div_id_login-password" aria-live="polite">
+  
+    <div class="label">
+      <label for="id_login-password">Password:</label>
+       <span class="required-asterisk">*</span>
+    </div>
+  
+  
+    
+  
+  <div class="errors">
+    
+  </div>
+  <input class="text" id="id_login-password" name="login-password" size="25" type="password" />
+  
+</div>
+
+  
+
+  <div class="login-form-extra">
+    <a href="/reset-password-init" class="forgot-password">Forgot your password?</a>
+    <label class="toggle-show-password"><input type="checkbox" name="password-toggle" class="password-toggle"> Show password</label>
+  </div>
+
+  <div class="buttons">
+    
+      <a href="#" class="cancel dashed">Cancel</a>
+    
+    <input type="submit" class="btn btn-success btn-green-plain" value="Log in" />
+  </div>
+
+  
+    
+    <p class="login-form-registration-link">Don't have an account? <a href="/registration">Register</a></p>
+  
+
+  <div class="login-form-divider">
+    <span class="login-form-divider-text">or</span>
+  </div>
+
+  <div class="custom-login-buttons">
+    
+
+  </div>
+
+</form>
+
+</div>
+
+        
+      
+    
+
+  </body>
+</html>

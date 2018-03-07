@@ -1,0 +1,1344 @@
+
+
+<!DOCTYPE html>
+<html lang="de">
+<head><meta charset="UTF-8" /><meta name="robots" content="index,follow" /><meta name="google-site-verification" content="XtgOXndu0xOgf-OFjX4Up_AZRXYZb7OIm8kUUS_XqWo" /><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /><title>
+	Ferienwohnungen mieten, Ferienhäuser mieten - Ferienwohnung inserieren, Ferienhaus inserieren
+</title><meta name="description" content="Über 200&#39;000 Ferienhäuser und Ferienwohnungen weltweit mieten. Sommerferien, Strandurlaub, Winterferien, Skiurlaub. Ferienhaus Ferienwohnung inserieren." /><meta name="robots" content="noodp" /><link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" /><link rel="stylesheet" href="/css/jquery-ui.custom.css" type="text/css" /> <!-- jquery-ui-1.9.0 -->
+	<link rel="stylesheet" href="/css/jquery.ui.selectmenu.css" type="text/css" /><link rel="stylesheet" href="/css/uniform.default.css" type="text/css" media="screen" />   
+    
+  <script type="text/javascript" src="/js/jquery.min.js"></script> <!-- jquery-1.8.2 -->
+  <script type="text/javascript" src="/js/jquery-ui.custom.min.js"></script> <!-- jquery-ui-1.9.0 -->
+  <script type="text/javascript" src="/js/bowser.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.uniform.min.js"></script>  
+  <script type="text/javascript" src="/js/jquery.ui.selectmenu.js"></script>
+  <script type="text/javascript" src="/js/jquery.ui.datepicker-de.js"></script>
+  <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="/js/json2.js"></script>
+  <script type="text/javascript" src="/js/google_analytics.js"></script>  
+  
+	<style type="text/css">
+
+	</style>  
+  
+  <script type="text/javascript">
+			// $(function(){
+			$(document).ready(function() {
+      
+ 			  // Form Elemente formatieren
+        $("input, textarea, select, button").not(".skipThese").uniform();
+        
+        // Browser-Version ausgeben (https://github.com/ded/bowser)
+        // alert(JSON.stringify(bowser, null, '    '));
+        // alert(bowser.name);
+        // alert(bowser.version);
+        // alert(parseInt(bowser.version));
+        // alert(bowser.mobile);        
+                   
+        // Selects je nach Browser aufbereiten (Grund: ältere Browser-Versionen können auf Touch-Screen-Devices nicht in div's scrollen)
+        var v_selectswitch = true;
+        if (bowser.name == 'Chrome')
+        {
+          if (parseInt(bowser.version) < 18)
+          {
+            v_selectswitch = false;
+          }
+        }
+        else if (bowser.name == 'Android')
+        {
+          if (parseInt(bowser.version) < 3)
+          {
+            v_selectswitch = false;
+          }
+        }
+        else if (bowser.name == 'Firefox')
+        {
+          if (parseInt(bowser.version) < 16)
+          {
+            v_selectswitch = false;
+          }
+        }
+        else if (bowser.name == 'Internet Explorer')
+        {
+          if (parseInt(bowser.version) < 9)
+          {
+            v_selectswitch = false;
+          }
+        }   
+        else if (bowser.name == 'Safari')
+        {
+          if (parseInt(bowser.version) < 5)
+          {
+            v_selectswitch = false;
+          }
+        }                     
+        else if (bowser.name == 'Opera')
+        {
+          if (parseInt(bowser.version) < 12)
+          {
+            v_selectswitch = false;
+          }
+        }        
+        else
+        {
+          v_selectswitch = true;
+        } 
+
+        if (v_selectswitch == true) 
+        {
+  			  $('select#DropDownList_Laender').selectmenu({
+	  			  width: 152,
+            menuWidth: 180,
+            maxHeight: 250          
+			    });
+    
+		  	  $('select#DropDownList_Objekttyp').selectmenu({
+			  	  width: 152,
+            menuWidth: 180          
+			    });
+        
+			    $('select#DropDownList_Personen').selectmenu({
+				    width: 152,
+            menuWidth: 180          
+			    });
+        
+			    $('select#DropDownList_Reisedauer').selectmenu({
+				    width: 152,
+            menuWidth: 180          
+			    });
+        
+			    $('select#DropDownList_Meer').selectmenu({
+				    width: 152,
+            menuWidth: 180          
+			    });                        
+        
+			    $('select#DropDownList_See').selectmenu({
+				    width: 152,
+            menuWidth: 180          
+			    });                       
+        
+			    $('select#DropDownList_Wintersport').selectmenu({
+				    width: 152,
+            menuWidth: 180          
+			    });         
+        
+			    $('select#DropDownList_Tennis').selectmenu({
+				    width: 152,
+            menuWidth: 180          
+			    });        
+        
+			    $('select#DropDownList_Golf').selectmenu({
+				    width: 152,
+            menuWidth: 180          
+			    });        
+        
+			    $('select#DropDownList_Reiten').selectmenu({
+  				  width: 152,
+            menuWidth: 180          
+		  	  });        
+        
+			    $('select#DropDownList_Angeln').selectmenu({
+				    width: 152,
+            menuWidth: 180          
+			    });
+          
+          // hover triangle-Input_Region
+	        $("#triangle-Input_Region")
+		      .hover(
+			      function(){ 
+              $(this).css("cursor","pointer");
+              $("#Input_Region").removeClass("text");
+              $("#Input_Region").addClass("triangle");
+			      },
+			      function(){ 
+              $(this).css("cursor",""); 
+              $("#Input_Region").removeClass("triangle");
+              $("#Input_Region").addClass("text");
+			      }
+		      );     
+        
+          // hover triangle-Input_Ort
+	        $("#triangle-Input_Ort")
+		      .hover(
+			      function(){ 
+              $(this).css("cursor","pointer");
+              $("#Input_Ort").removeClass("text");
+              $("#Input_Ort").addClass("triangle");
+  			    },
+  			    function(){ 
+              $(this).css("cursor",""); 
+              $("#Input_Ort").removeClass("triangle");
+              $("#Input_Ort").addClass("text");
+  			    }
+  		    );  
+        
+          // hover triangle-Input_Anreisetermin
+  	      $("#triangle-Input_Anreisetermin")
+  		    .hover(
+  			    function(){ 
+              $(this).css("cursor","pointer");
+              $("#Input_Anreisetermin").removeClass("text");
+              $("#Input_Anreisetermin").addClass("triangle");
+  			    },
+  			    function(){ 
+              $(this).css("cursor",""); 
+              $("#Input_Anreisetermin").removeClass("triangle");
+              $("#Input_Anreisetermin").addClass("text");
+  			    }
+  		    );
+        }
+        else
+        {
+          // Triangle-Bilder entfernen
+          $("#triangle-Input_Region").remove();
+          $("#triangle-Input_Ort").remove();
+          $("#triangle-Input_Anreisetermin").remove();                    
+        }                  
+        
+        // Auswählbares Anreise-Datum auf min:aktuelles Datum/max:aktuelles Datum plus 17 Monate setzen
+        $('#Input_Anreisetermin').datepicker("destroy");
+        // $('#Input_Anreisetermin').datepicker({ minDate: "0" });
+        // $('#Input_Anreisetermin').datepicker( "option", "maxDate", '+17m +0w' );
+        $('#Input_Anreisetermin').datepicker( {
+          minDate: '0',
+          maxDate: '+17m +0w',
+          onClose: function(dateText, inst) { 
+            if (bowser.mobile)
+            {
+              $('html, body').animate({
+                scrollTop: $("#Input_Anreisetermin").offset().top
+              });            
+            }
+            else
+            {
+              $(window).scrollTop(0);
+            }
+          }
+        });
+        
+        // alert($('#Input_Anreisetermin').val());
+        if ($('#Input_Anreisetermin').val() == '')
+        {
+          $('#Input_Anreisetermin').val(' - nicht wichtig - ');
+        }
+        
+        $('#triangle-Input_Anreisetermin').click(function(){
+          $('#Input_Anreisetermin').datepicker("show");
+				});     
+        
+        $('#cleardate').click(function(){
+          $('#Input_Anreisetermin').val(' - nicht wichtig - ');
+          $('#Input_Anreisetermin').change();
+				}); 
+        
+        // hover cleardate
+	      $("#cleardate")
+		    .hover(
+			    function(){ 
+            $(this).css("cursor","pointer");            
+			    },
+			    function(){ 
+            $(this).css("cursor","");            
+			    }
+		    );                 
+			  			  
+        // Dialog	dialog_Regionenauswahl		
+				$('#dialog_Regionenauswahl').dialog({
+				  autoOpen: false,
+					resizable: false,
+					draggable: false,
+          modal: true,
+          width: 'auto',
+          height: 'auto',
+          position: { 
+            my: 'left bottom',
+            at: 'left top',
+            of: $('#Input_Region'),
+            collision: 'flip flip'            
+          },
+          open: function(event, ui) {
+            if (bowser.mobile)
+            {
+              $('html, body').animate({
+                scrollTop: $("#Input_Region").offset().top
+              });
+            }
+          },          
+          close: function(event, ui) {
+            if (bowser.mobile)
+            {
+              $('html, body').animate({
+                scrollTop: $("#Input_Region").offset().top
+              });
+            }
+            else
+            {
+              $(window, document).scrollLeft(0).scrollTop(0);
+            }
+          }                   
+				});
+        
+        // Dialog	dialog_Orteauswahl		
+				$('#dialog_Orteauswahl').dialog({
+				  autoOpen: false,
+					resizable: false,
+					draggable: false,
+          modal: true,
+					width: 600,
+					height: 600,
+          position: { 
+            my: 'left bottom',
+            at: 'left top',
+            of: $('#Input_Ort'),
+            collision: 'flip flip'            
+          },
+          open: function(event, ui) {
+            if (bowser.mobile)
+            {
+              $('html, body').animate({
+                scrollTop: $("#Input_Ort").offset().top
+              });
+            }
+          },           
+          close: function(event, ui) {
+            if (bowser.mobile)
+            {
+              $('html, body').animate({
+                scrollTop: $("#Input_Ort").offset().top
+              });
+            }
+            else
+            {
+              $(window, document).scrollLeft(0).scrollTop(0);                         
+            }              
+          }           
+				});
+        
+				// Dialog Auswahl Regionen mittels AJAX abfüllen und anzeigen, wenn Klick auf Eingabefeld
+				$('#Input_Region, #triangle-Input_Region').click(function(){
+				  var v_value = $('#DropDownList_Laender').val();
+				  if (v_value.indexOf('bitte auswählen') > 0)
+				  {
+            if (v_selectswitch == true)
+            {
+              $('#DropDownList_Laender-button').addClass('redborder');            
+            }
+            else
+            {
+              $('#DropDownList_Laender').addClass('redborder');            
+            }
+          }
+          else
+          {
+           $('#dialog_Regionenauswahl').html('Regionenliste wird geladen, bitte warten ... <img src="/bilder/loading.gif" alt="loading..." />');          
+           $('#dialog_Orteauswahl').dialog('close');            
+           $('#dialog_Regionenauswahl').dialog('open');          
+          
+           $('#dialog_Regionenauswahl').load('/regionen_nachladen_d.aspx?Land=' + encodeURIComponent($('#DropDownList_Laender').val()), function(response, status, xhr) {
+             if (status == "error")
+             {
+               alert(xhr.status + " " + xhr.statusText);
+             }
+           });
+          }
+				});
+        
+				// Dialog Auswahl Orte mittels AJAX abfüllen und anzeigen, wenn Klick auf Eingabefeld
+				$('#Input_Ort,  #triangle-Input_Ort').click(function(){
+				  var v_value = $('#DropDownList_Laender').val();
+				  if (v_value.indexOf('bitte auswählen') > 0)
+				  {
+            if (v_selectswitch == true)
+            {
+              $('#DropDownList_Laender-button').addClass('redborder');            
+            }
+            else
+            {
+              $('#DropDownList_Laender').addClass('redborder');            
+            }          
+          }
+          else
+          {
+            $('#dialog_Orteauswahl').html('Orteliste wird geladen, bitte warten ... <img src="/bilder/loading.gif" alt="loading..." />');
+            $('#dialog_Regionenauswahl').dialog('close');
+            $('#dialog_Orteauswahl').dialog('open');          
+          
+            var v_region = $('#Input_Region').val();;
+            if (v_region.indexOf('nicht wichtig') > 0)
+            {
+              v_region = '';
+            }
+            else
+            {
+              v_region = '&Region=' + encodeURIComponent($('#Input_Region').val());
+            } 
+            
+            $('#dialog_Orteauswahl').load('/orte_nachladen_d.aspx?Land=' + encodeURIComponent($('#DropDownList_Laender').val()) + v_region, function(response, status, xhr) {
+            if (status == "error")
+            {
+              alert(xhr.status + " " + xhr.statusText);
+            }
+           });
+          }
+				});        
+
+				// Mehr Suchoptionen je nach Cookie-Wert verbergen oder anzeigen
+				if ($.cookie('mehr_optionen'))
+        {
+          if ($.cookie('mehr_optionen') == 'true')
+          {
+            $('#effect').show();
+            $('#Optionen_Icon').removeClass('ui-icon-circle-plus');
+            $('#Optionen_Icon').addClass('ui-icon-circle-minus');         
+            $('#Optionen_Text').text('weniger Suchoptionen zeigen');            
+          }
+          else
+          {
+            $('#effect').hide();
+            $('#Optionen_Icon').removeClass('ui-icon-circle-minus');
+            $('#Optionen_Icon').addClass('ui-icon-circle-plus');         
+            $('#Optionen_Text').text('mehr Suchoptionen zeigen');            
+          }
+        }
+        else
+        {
+          $('#effect').hide();
+          $('#Optionen_Icon').removeClass('ui-icon-circle-minus');
+          $('#Optionen_Icon').addClass('ui-icon-circle-plus');         
+          $('#Optionen_Text').text('mehr Suchoptionen zeigen');          
+        }
+				
+		    // Bei Klick auf mehr/weniger Suchoptionen-Link Toggle-Funktion aufrufen
+		    $('#Optionen').click(function() {
+			    $('#effect').toggle('blind', 500);
+			    
+			    if ($('#Optionen_Icon').hasClass('ui-icon-circle-plus'))
+          {
+            $('#Optionen_Icon').removeClass('ui-icon-circle-plus');
+            $('#Optionen_Icon').addClass('ui-icon-circle-minus');         
+            $('#Optionen_Text').text('weniger Suchoptionen zeigen');
+            // Cookie setzen
+            $.cookie('mehr_optionen', 'true', { expires: 8 });
+          }
+          else
+          {
+            $('#Optionen_Icon').removeClass('ui-icon-circle-minus');
+            $('#Optionen_Icon').addClass('ui-icon-circle-plus');         
+            $('#Optionen_Text').text('mehr Suchoptionen zeigen');
+            // Cookie löschen
+            //$.cookie('mehr_optionen', null );
+            $.cookie('mehr_optionen', 'false', { expires: 8 });
+          }
+
+			    return false;
+		    });
+		    
+        // Autocomplete Schnellsuche via Webservice
+        // http://jquery-with-asp.net/
+        $("#schnellsuche_input").autocomplete({
+	        source: function (request, response) {
+	            $.ajax({
+	                type: "POST",
+	                contentType: "application/json; charset=utf-8",
+	                url: "/webservice_schnellsuche_d.asmx/GetSchnellsuche",
+	                // data: "{ 'prefixText': '" + request.term + "' }",
+	                data: '{\'prefixText\':' + JSON.stringify(request.term) + '}',
+	                dataType: "json",
+	                success: function (data) {
+	                    // here I will store list of all results which
+	                    // will be passed to autocomplete widget
+	                    var autocompleteOutput = [];
+	 
+	                    // looping to get all the results out of the list of
+	                    // addresses returned by the webservice
+	                    $.each(data.d, function (index, AutocompleteItem) {
+	                        autocompleteOutput[index] = AutocompleteItem.value;
+	                    });
+ 
+	                    // passing all the available options to autocomplete widget
+	                    response(autocompleteOutput);
+	 
+	                    // store results in global variable, it will be needed
+	                    // later to get the rest of details for selected option
+	                    autocompleteData_1 = data.d;  // alle Daten -> value, suchtyp und objektnr
+                      autocompleteData_2 = autocompleteOutput;  // nur value -> mit Hilfe dieses Arrays wird dann für das select-Event der Index des ausgewählten Objekts für den Zugriff auf die weiteren Daten (suchtyp und objektnr) bestimmt
+	                },
+	                error: function (result) {
+	                    alert("wegen unerwarteter Fehler können die Daten nicht geladen werden");
+	                }
+	            });
+	        },
+	        minLength: 1,
+	        select: function(event, ui) {
+            // Index des ausgewählten Objekts bestimmen
+            var v_index = jQuery.inArray(ui.item.value, autocompleteData_2);
+            // alert('Index: ' + v_index);
+            // alert(autocompleteData_1[v_index].suchtyp);
+
+            // mit Hilfe des Index den Suchtyp bestimmen und je nach Suchtyp auf die Zielseite verzweigen
+	          switch (autocompleteData_1[v_index].suchtyp) {
+              case "Land":
+                window.location = '/auswobj_d.aspx?typ=schnellsuche&land=' + autocompleteData_1[v_index].suchwert + '&seitennr=1';
+                break;
+              case "Region":
+                window.location = '/auswobj_d.aspx?typ=schnellsuche&region=' + autocompleteData_1[v_index].suchwert + '&seitennr=1';
+                break;
+              case "Unterregion":
+                window.location = '/auswobj_d.aspx?typ=schnellsuche&unterregion=' + autocompleteData_1[v_index].suchwert + '&seitennr=1';
+                break;
+              case "Ort":
+                window.location = '/auswobj_d.aspx?typ=schnellsuche&ort=' + autocompleteData_1[v_index].suchwert + '&seitennr=1';
+                break;
+              case "Objektnummer":
+                window.location = '/objekt_d.aspx?objnr=' + autocompleteData_1[v_index].suchwert;
+                break;                
+              default: ;
+                break;               
+            }
+          }
+	      });
+	    
+	    	// Alternative: Autocomplete Schnellsuche via ASPX-Seite
+        // http://www.jensbits.com/2010/04/14/jquery-ui-autocomplete-widget-with-asp-net/       
+        
+         // Menu-Buttons
+	      $("#vermieter_button, #kontakt_button")
+		    .hover(
+			    function(){ 
+			      $(this).removeClass("ui-state-disabled");
+				    $(this).addClass("ui-state-active");
+			    },
+			    function(){ 
+			      $(this).addClass("ui-state-disabled");			
+				    $(this).removeClass("ui-state-active"); 
+			    }
+		    )
+        ;
+        
+        // Form Validation:
+        // Feld DropDownList_Laender
+        $('#DropDownList_Laender').change(function(event) {
+          // Beim Länderwechsel das Regionenfeld und das Ortfeld auf den Initialwert setzen 
+          $('#dialog_Regionenauswahl').dialog('close');
+          $('#dialog_Orteauswahl').dialog('close');                    
+				  $('#Input_Region').val(' - nicht wichtig - ');
+          $('#Input_Ort').val(' - nicht wichtig - ');        
+        
+          var v_value = $(this).val();
+          if (v_value==null)
+          {
+            $('#DropDownList_Laender-button').addClass('redborder');
+          }
+          else
+          {
+            var v_pos = v_value.indexOf('bitte auswählen');
+            if (v_pos >= 0)
+            {
+              if (v_selectswitch == true)
+              {
+                $('#DropDownList_Laender-button').addClass('redborder');                
+              }
+              else
+              {
+                $('#DropDownList_Laender').addClass('redborder');
+              }
+            }
+            else
+            {
+              $('#DropDownList_Laender-button').removeClass('redborder');
+              $('#DropDownList_Laender').removeClass('redborder');
+            }
+          }                               
+        });  
+        
+        // Anzahl Treffer aufbereiten
+        get_Anzahl_Treffer();
+        $('#DropDownList_Laender, #Input_Region, #Input_Ort, #DropDownList_Objekttyp, #DropDownList_Personen, #Input_Anreisetermin, #DropDownList_Reisedauer, #DropDownList_Meer, #DropDownList_See, #DropDownList_Wintersport, #DropDownList_Tennis, #DropDownList_Golf, #DropDownList_Reiten, #DropDownList_Angeln, #Pool, #Haustiere, #Cheminee, #Rollstuhlgaengig, #Boot, #Sauna, #Internetzugang').change(function(){
+          get_Anzahl_Treffer();
+				});                 
+        
+        // Submit:
+        // Prüfen ob mindestens 1 Treffer vorhanden ist, sonst nichts machen
+        // Prüfen ob mindestens        
+        // - DropDownList_Laender
+        // ausgewählt wurden, sonst roter Rand um Eingabefelder zeichnen.
+        // Prüfen ob Cookies zugelassen sind, sonst Alert-Meldung anzeigen.
+	      $("#Button_Submit").click(function(event) {
+        
+          if ($('#Treffer').text() == 0)
+          {
+            event.preventDefault();
+            alert('Keine Objekte zu Ihren Suchparametern vorhanden.');
+          }
+          else
+          {        
+        
+          // Feld DropDownList_Laender
+          var v_value = $('#DropDownList_Laender').val();
+          if (v_value==null)
+          {
+            event.preventDefault();
+            if (v_selectswitch == true)
+            {
+              $('#DropDownList_Laender-button').addClass('redborder');            
+            }
+            else
+            {
+              $('#DropDownList_Laender').addClass('redborder');
+            }
+          }
+          else
+          {
+            var v_pos = v_value.indexOf('bitte auswählen');
+            if (v_pos >= 0)
+            {
+              event.preventDefault();
+              if (v_selectswitch == true)
+              {
+                $('#DropDownList_Laender-button').addClass('redborder');            
+              }
+              else
+              {
+                $('#DropDownList_Laender').addClass('redborder');
+              }              
+            }
+          }          
+
+          var TEST_COOKIE = 'test_cookie';
+          jQuery.cookie( TEST_COOKIE, true );
+          if ( jQuery.cookie ( TEST_COOKIE ) )
+          {
+            jQuery.cookie( TEST_COOKIE, null );  // delete the cookie
+            // alert( 'Good news, cookies are enabled.' );
+          }
+          else
+          {
+            event.preventDefault();
+            //evtl. anstelle Alert unterhalb Submit-Button eine Fehlermeldung mit Link auf Sitemap ausgeben
+            alert( 'Damit Sie diese Aktion ausführen können, muss Ihr Browser Cookies von unserer Site akzeptieren.' );
+          } 
+          
+          } // Ende von kein Treffer          
+                     
+        });
+        
+        // Tooltips
+        $(".tooltip").tooltip();
+        
+        // hover Submit-Button
+	      $("#Button_Submit")
+		    .hover(
+			    function(){ 
+            $(this).addClass("ui-state-hover");
+            $(this).css("cursor","pointer");            
+			    },
+			    function(){ 
+            $(this).removeClass("ui-state-hover");
+            $(this).css("cursor","");            
+			    }
+		    );
+        
+        // Dialog	dialog_Newsletter_Anmeldung		
+				$('#dialog_Newsletter_Anmeldung').dialog({
+				  autoOpen: false,
+					resizable: false,
+					draggable: false,
+					// width: 'auto',
+					width: 600,
+          height: 180,
+          modal: true
+				});
+        
+				// Dialog dialog_Newsletter_Anmeldung
+				$('#Newsletter_Abonnieren').click(function(e){
+          e.preventDefault();        
+          $('#dialog_Newsletter_Anmeldung').html('<iframe src="/newsletter_anmeldung_d.aspx" width="560" height="130" scrolling="no" frameborder="0" style="overflow: hidden; border: 0px none transparent; padding: 0px;"></iframe>');
+          $('#dialog_Newsletter_Anmeldung').dialog('open');
+				});                                
+        
+      });	// Ende des JQuery Function-Blocks
+      
+      // Ausgewählter Wert aus der Regionenauswahl in das Feld schreiben
+      function set_Region_value(Region) {
+          $('#Input_Region').val(Region);
+          $('#dialog_Regionenauswahl').dialog('close');
+          // $('#Input_Region').toggleClass('ui-state-focus');
+          $('#Input_Ort').val(' - nicht wichtig - ');
+          $('#Input_Region').trigger('change');
+          return false;
+      }
+      
+      // Wenn in der Karte auf eine Region geklickt wird, in der es keine Objekte gibt, dann Alert-Meldung ausgeben
+      function alert_keine_Objekte() {
+          alert('In dieser Region sind keine Objekte vorhanden.');
+          return false;
+      }      
+     
+      // Ausgewählter Wert aus der Orteauswahl in das Feld schreiben
+      function set_Ort_value(Ort) {
+          $('#Input_Ort').val(Ort);
+          $('#dialog_Orteauswahl').dialog('close');
+          // $('#Input_Ort').toggleClass('ui-state-focus');
+          $('#Input_Ort').trigger('change');          
+          return false;
+      } 
+     
+      // Anzahl Treffer berechnen
+      function get_Anzahl_Treffer() {     
+          // Querystring aufbereiten
+          var v_querystring = '';
+          
+          if ($('#DropDownList_Laender').val().length > 0 && $('#DropDownList_Laender').val().indexOf('bitte auswählen') == -1)
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&'; 
+            v_querystring = v_querystring + 'DropDownList_Laender=' + encodeURIComponent($('#DropDownList_Laender').val());          
+          }
+          
+          if ($('#Input_Region').val().length > 0 && $('#Input_Region').val().indexOf('nicht wichtig') == -1)
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'Input_Region=' + encodeURIComponent($('#Input_Region').val());          
+          }
+ 
+          if ($('#Input_Ort').val().length > 0 && $('#Input_Ort').val().indexOf('nicht wichtig') == -1)
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'Input_Ort=' + encodeURIComponent($('#Input_Ort').val());          
+          }
+          
+          if ($('#DropDownList_Objekttyp').val().length > 0 && $('#DropDownList_Objekttyp').val().indexOf('nicht wichtig') == -1)
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'DropDownList_Objekttyp=' + encodeURIComponent($('#DropDownList_Objekttyp').val());          
+          } 
+          
+          if ($('#DropDownList_Personen').val().length > 0 && $('#DropDownList_Personen').val().indexOf('nicht wichtig') == -1)
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'DropDownList_Personen=' + encodeURIComponent($('#DropDownList_Personen').val());          
+          }           
+          
+          // if ($('#Input_Anreisetermin').val().length > 0 && $('#Input_Anreisetermin').val().indexOf('nicht wichtig') == -1)
+          if ($('#Input_Anreisetermin').val().length > 0 && $('#Input_Anreisetermin').val().indexOf('nicht wichtig') == -1 && $('#DropDownList_Reisedauer').val().length > 0 && $('#DropDownList_Reisedauer').val().indexOf('nicht wichtig') == -1)
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'Input_Anreisetermin=' + encodeURIComponent($('#Input_Anreisetermin').val());
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';          
+            v_querystring = v_querystring + 'DropDownList_Reisedauer=' + encodeURIComponent($('#DropDownList_Reisedauer').val());
+          } 
+          
+          // if ($('#DropDownList_Reisedauer').val().length > 0 && $('#DropDownList_Reisedauer').val().indexOf('nicht wichtig') == -1)
+          // {
+          //   v_querystring = v_querystring + '&DropDownList_Reisedauer=' + encodeURIComponent($('#DropDownList_Reisedauer').val());          
+          // }          
+          
+          if ($('#DropDownList_Meer').val().length > 0 && $('#DropDownList_Meer').val().indexOf('nicht wichtig') == -1)
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'DropDownList_Meer=' + encodeURIComponent($('#DropDownList_Meer').val());          
+          }    
+          
+          if ($('#DropDownList_See').val().length > 0 && $('#DropDownList_See').val().indexOf('nicht wichtig') == -1)
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'DropDownList_See=' + encodeURIComponent($('#DropDownList_See').val());          
+          } 
+          
+          if ($('#DropDownList_Wintersport').val().length > 0 && $('#DropDownList_Wintersport').val().indexOf('nicht wichtig') == -1)
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'DropDownList_Wintersport=' + encodeURIComponent($('#DropDownList_Wintersport').val());          
+          } 
+          
+          if ($('#DropDownList_Tennis').val().length > 0 && $('#DropDownList_Tennis').val().indexOf('nicht wichtig') == -1)
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'DropDownList_Tennis=' + encodeURIComponent($('#DropDownList_Tennis').val());          
+          } 
+          
+          if ($('#DropDownList_Golf').val().length > 0 && $('#DropDownList_Golf').val().indexOf('nicht wichtig') == -1)
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'DropDownList_Golf=' + encodeURIComponent($('#DropDownList_Golf').val());          
+          }
+          
+          if ($('#DropDownList_Reiten').val().length > 0 && $('#DropDownList_Reiten').val().indexOf('nicht wichtig') == -1)
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'DropDownList_Reiten=' + encodeURIComponent($('#DropDownList_Reiten').val());          
+          }
+          
+          if ($('#DropDownList_Angeln').val().length > 0 && $('#DropDownList_Angeln').val().indexOf('nicht wichtig') == -1)
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'DropDownList_Angeln=' + encodeURIComponent($('#DropDownList_Angeln').val());          
+          }
+          
+          if ($('#Pool').is(':checked'))
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'Pool=True';
+          }
+          
+          if ($('#Haustiere').is(':checked'))
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'Haustiere=True';
+          }          
+
+          if ($('#Cheminee').is(':checked'))
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'Cheminee=True';
+          }
+          
+          if ($('#Rollstuhlgaengig').is(':checked'))
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'Rollstuhlgaengig=True';
+          }
+          
+          if ($('#Boot').is(':checked'))
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'Boot=True';
+          }
+          
+          if ($('#Sauna').is(':checked'))
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'Sauna=True';
+          } 
+          
+          if ($('#Internetzugang').is(':checked'))
+          {
+            v_querystring == '' ? v_querystring = v_querystring + '?' : v_querystring = v_querystring + '&';
+            v_querystring = v_querystring + 'Internetzugang=True';
+          }                                        
+
+          // alert(v_querystring);
+          
+          if (v_querystring != '')
+          {
+            $('#Treffer').load('/treffer_d.aspx' + v_querystring, function(response, status, xhr) {
+              if (status == "error")
+              {
+                alert(xhr.status + " " + xhr.statusText);
+              }
+            });
+          } 
+          else
+          {
+            $('#Treffer').text('0');
+          }
+     } 
+     
+     function fenster(url,titel){
+       ok = window.open(url,titel,'toolbar=no,directories=no,menubar=no,scrollbars=yes,width=600,height=450,top=150,left=200');
+       if (ok) return false;
+       else return true;        
+     }                       
+        			  
+	</script>
+	
+<meta property="og:image" content="http://www.holiday-home.com/bilder/hh_facebook_logo.jpg" /></head>
+<body>
+
+<noscript>
+    <div id='noscript-overlay-bg'></div>
+    <div id='noscript-overlay'>
+        <div id='noscript-overlay-inner'>
+            <div id='noscript-overlay-close'>
+            </div>
+            <div class="dialog">
+                <div class="content">
+                    <div class="t"></div>
+                    <div id='noscript-overlay-content' style="width: 600px; margin-left: auto; margin-right: auto;">
+                      <p><strong>In Ihrem Browser ist JavaScript nicht aktiviert.</strong></p>
+                      <p>Unsere Seite besitzt eine Vielzahl von Funktionen, die in Javascript programmiert wurden.</p>
+                      <p>Bitte <a href="http://www.google.com/support/bin/answer.py?hl=de&amp;answer=23852" target="_blank">aktivieren Sie JavaScript</a> in Ihrem Browser und versuchen Sie dann erneut <a href='http://www.holiday-home.com/'>www.holiday-home.com</a> aufzurufen.</p>
+                      <p>Falls Sie JavaScript nicht aktiveren wollen/können, dann haben Sie noch die Möglichkeit ein Ferienhaus oder eine Ferienwohnung auf unseren JavaScript-freien Seiten (mit beschränkter Funktionalität) zu finden:</p>
+                      <div id="laenderlinks_js_frei"><a href="/ferienhaus-ferienwohnung/argentinien.htm">Argentinien</a>, <a href="/ferienhaus-ferienwohnung/australien.htm">Australien</a>, <a href="/ferienhaus-ferienwohnung/belgien.htm">Belgien</a>, <a href="/ferienhaus-ferienwohnung/daenemark.htm">D&#228;nemark</a>, <a href="/ferienhaus-ferienwohnung/deutschland.htm">Deutschland</a>, <a href="/ferienhaus-ferienwohnung/finnland.htm">Finnland</a>, <a href="/ferienhaus-ferienwohnung/frankreich.htm">Frankreich</a>, <a href="/ferienhaus-ferienwohnung/griechenland.htm">Griechenland</a>, <a href="/ferienhaus-ferienwohnung/grossbritannien.htm">Grossbritannien</a>, <a href="/ferienhaus-ferienwohnung/italien.htm">Italien</a>, <a href="/ferienhaus-ferienwohnung/karibische-inseln.htm">Karibische Inseln</a>, <a href="/ferienhaus-ferienwohnung/kroatien.htm">Kroatien</a>, <a href="/ferienhaus-ferienwohnung/niederlande.htm">Niederlande</a>, <a href="/ferienhaus-ferienwohnung/norwegen.htm">Norwegen</a>, <a href="/ferienhaus-ferienwohnung/oesterreich.htm">&#214;sterreich</a>, <a href="/ferienhaus-ferienwohnung/portugal.htm">Portugal</a>, <a href="/ferienhaus-ferienwohnung/schweden.htm">Schweden</a>, <a href="/ferienhaus-ferienwohnung/schweiz.htm">Schweiz</a>, <a href="/ferienhaus-ferienwohnung/spanien.htm">Spanien</a>, <a href="/ferienhaus-ferienwohnung/sri-lanka.htm">Sri Lanka</a>, <a href="/ferienhaus-ferienwohnung/tuerkei.htm">T&#252;rkei</a>, <a href="/ferienhaus-ferienwohnung/usa.htm">USA</a>, <a href="/ferienhaus-ferienwohnung/zypern.htm">Zypern</a></div>
+                      <p><br />&nbsp;<br />Für Fragen erreichen Sie uns unter <a href="mailto:info@holiday-home.com">info@holiday-home.com</a>
+                    </div>
+                </div>
+                <div class="b"><div></div></div>
+            </div>
+        </div>
+    </div>
+</noscript>
+
+<div id="pagewidth">
+
+	<div id="header">
+	
+		<div id="logo">
+		  <a href="/"><img src="/bilder/logo_k.gif" width="236" height="67" alt="Holiday-Home Logo" /></a>
+		</div>
+		
+		<div id="logotext">
+		  <h1 style="font-size: 10px; color: #1C94C4;">Ferienhäuser und Ferienwohnungen weltweit</h1>
+		</div>
+    
+    <div id="favoriten_zuletztangesehen">
+      <div id="favoriten_zuletzt_angesehen_links"><a href="/auswobj_d.aspx?typ=favoriten&amp;seitennr=1" class="sprache_farbe"><img src="/bilder/favoriten.png" alt="Ihre Favoriten" width="18" height="18" />&nbsp;Ihre Favoriten (<span id="v_anz_favoriten">0</span>)</a> | <a href="/auswobj_d.aspx?typ=zuletzt_angesehen&amp;seitennr=1" class="sprache_farbe"><img src="/bilder/zuletzt_angesehen.png" alt="Zuletzt angesehen" width="18" height="13" />&nbsp;Zuletzt angesehen (<span id="v_anz_zuletzt_angesehen">0</span>)</a></div>
+	  </div>
+		
+    <div id="sprache">
+		  <a href="/" class="sprache_farbe">de</a> | 
+ 		  <a href="/default_e.aspx" class="sprache_farbe">en</a> |
+		  <a href="/default_f.aspx" class="sprache_farbe">fr</a>	
+	  </div>		
+		
+		<div id="hauptmenu">
+		  <span id="subu_button" class="ui-widget ui-button ui-state-default ui-button-text-only ui-corner-top" style="float: left; font-size: 16px; padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px; cursor: default;">Feriendomizile suchen & buchen</span>
+      <a href="/vermieter_d.aspx" id="vermieter_button" class="ui-widget ui-button ui-state-default ui-button-text-only ui-corner-top ui-state-disabled" style="float: left; margin-top: 4px; font-size: 12px; height: 14px; padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px; zoom: 1;	filter: alpha(opacity=60); opacity: 0.6; cursor: pointer !important;">Vermieter</a>
+      <a href="/hilfe_faq_kontakt_ueberuns_d.aspx" id="kontakt_button" class="ui-widget ui-button ui-state-default ui-button-text-only ui-corner-top ui-state-disabled" style="float: left; margin-top: 4px; font-size: 12px; height: 14px; padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px; zoom: 1;	filter: alpha(opacity=60); opacity: 0.6; cursor: pointer !important;">Hilfe</a>
+		</div>
+    
+		<div id="startseitenbild_text" class="ui-corner-all" style="top: 290px;	right: 5px; padding: 3px; position: absolute; background-color: white; z-index: 99; opacity: 0.5;">
+      Über 200'000 Ferienhäuser und Ferienwohnungen weltweit
+		</div>    
+    			
+	</div><!-- #header-->
+
+	<div id="wrapper" class="clearfix">
+	
+	  <div id="leftcol">
+    
+		  <div id="feriendomizil_suchen" class="ui-corner-bottom" style="margin-top:0px; width:227px;">
+      
+      <!-- action muss gesetzt werden, damit Seite HTML5 konform ist -->
+      <form method="post" action="/" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTg5NjU0MTE3Ng9kFhwCAw8WAh4JaW5uZXJodG1sBecLPGEgaHJlZj0iL2ZlcmllbmhhdXMtZmVyaWVud29obnVuZy9hcmdlbnRpbmllbi5odG0iPkFyZ2VudGluaWVuPC9hPiwgPGEgaHJlZj0iL2ZlcmllbmhhdXMtZmVyaWVud29obnVuZy9hdXN0cmFsaWVuLmh0bSI+QXVzdHJhbGllbjwvYT4sIDxhIGhyZWY9Ii9mZXJpZW5oYXVzLWZlcmllbndvaG51bmcvYmVsZ2llbi5odG0iPkJlbGdpZW48L2E+LCA8YSBocmVmPSIvZmVyaWVuaGF1cy1mZXJpZW53b2hudW5nL2RhZW5lbWFyay5odG0iPkQmIzIyODtuZW1hcms8L2E+LCA8YSBocmVmPSIvZmVyaWVuaGF1cy1mZXJpZW53b2hudW5nL2RldXRzY2hsYW5kLmh0bSI+RGV1dHNjaGxhbmQ8L2E+LCA8YSBocmVmPSIvZmVyaWVuaGF1cy1mZXJpZW53b2hudW5nL2Zpbm5sYW5kLmh0bSI+RmlubmxhbmQ8L2E+LCA8YSBocmVmPSIvZmVyaWVuaGF1cy1mZXJpZW53b2hudW5nL2ZyYW5rcmVpY2guaHRtIj5GcmFua3JlaWNoPC9hPiwgPGEgaHJlZj0iL2ZlcmllbmhhdXMtZmVyaWVud29obnVuZy9ncmllY2hlbmxhbmQuaHRtIj5HcmllY2hlbmxhbmQ8L2E+LCA8YSBocmVmPSIvZmVyaWVuaGF1cy1mZXJpZW53b2hudW5nL2dyb3NzYnJpdGFubmllbi5odG0iPkdyb3NzYnJpdGFubmllbjwvYT4sIDxhIGhyZWY9Ii9mZXJpZW5oYXVzLWZlcmllbndvaG51bmcvaXRhbGllbi5odG0iPkl0YWxpZW48L2E+LCA8YSBocmVmPSIvZmVyaWVuaGF1cy1mZXJpZW53b2hudW5nL2thcmliaXNjaGUtaW5zZWxuLmh0bSI+S2FyaWJpc2NoZSBJbnNlbG48L2E+LCA8YSBocmVmPSIvZmVyaWVuaGF1cy1mZXJpZW53b2hudW5nL2tyb2F0aWVuLmh0bSI+S3JvYXRpZW48L2E+LCA8YSBocmVmPSIvZmVyaWVuaGF1cy1mZXJpZW53b2hudW5nL25pZWRlcmxhbmRlLmh0bSI+TmllZGVybGFuZGU8L2E+LCA8YSBocmVmPSIvZmVyaWVuaGF1cy1mZXJpZW53b2hudW5nL25vcndlZ2VuLmh0bSI+Tm9yd2VnZW48L2E+LCA8YSBocmVmPSIvZmVyaWVuaGF1cy1mZXJpZW53b2hudW5nL29lc3RlcnJlaWNoLmh0bSI+JiMyMTQ7c3RlcnJlaWNoPC9hPiwgPGEgaHJlZj0iL2ZlcmllbmhhdXMtZmVyaWVud29obnVuZy9wb3J0dWdhbC5odG0iPlBvcnR1Z2FsPC9hPiwgPGEgaHJlZj0iL2ZlcmllbmhhdXMtZmVyaWVud29obnVuZy9zY2h3ZWRlbi5odG0iPlNjaHdlZGVuPC9hPiwgPGEgaHJlZj0iL2ZlcmllbmhhdXMtZmVyaWVud29obnVuZy9zY2h3ZWl6Lmh0bSI+U2Nod2VpejwvYT4sIDxhIGhyZWY9Ii9mZXJpZW5oYXVzLWZlcmllbndvaG51bmcvc3Bhbmllbi5odG0iPlNwYW5pZW48L2E+LCA8YSBocmVmPSIvZmVyaWVuaGF1cy1mZXJpZW53b2hudW5nL3NyaS1sYW5rYS5odG0iPlNyaSBMYW5rYTwvYT4sIDxhIGhyZWY9Ii9mZXJpZW5oYXVzLWZlcmllbndvaG51bmcvdHVlcmtlaS5odG0iPlQmIzI1Mjtya2VpPC9hPiwgPGEgaHJlZj0iL2ZlcmllbmhhdXMtZmVyaWVud29obnVuZy91c2EuaHRtIj5VU0E8L2E+LCA8YSBocmVmPSIvZmVyaWVuaGF1cy1mZXJpZW53b2hudW5nL3p5cGVybi5odG0iPlp5cGVybjwvYT5kAgUPFgIfAAXVAzxhIGhyZWY9Ii9hdXN3b2JqX2QuYXNweD90eXA9ZmF2b3JpdGVuJmFtcDtzZWl0ZW5ucj0xIiBjbGFzcz0ic3ByYWNoZV9mYXJiZSI+PGltZyBzcmM9Ii9iaWxkZXIvZmF2b3JpdGVuLnBuZyIgYWx0PSJJaHJlIEZhdm9yaXRlbiIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiAvPiZuYnNwO0locmUgRmF2b3JpdGVuICg8c3BhbiBpZD0idl9hbnpfZmF2b3JpdGVuIj4wPC9zcGFuPik8L2E+IHwgPGEgaHJlZj0iL2F1c3dvYmpfZC5hc3B4P3R5cD16dWxldHp0X2FuZ2VzZWhlbiZhbXA7c2VpdGVubnI9MSIgY2xhc3M9InNwcmFjaGVfZmFyYmUiPjxpbWcgc3JjPSIvYmlsZGVyL3p1bGV0enRfYW5nZXNlaGVuLnBuZyIgYWx0PSJadWxldHp0IGFuZ2VzZWhlbiIgd2lkdGg9IjE4IiBoZWlnaHQ9IjEzIiAvPiZuYnNwO1p1bGV0enQgYW5nZXNlaGVuICg8c3BhbiBpZD0idl9hbnpfenVsZXR6dF9hbmdlc2VoZW4iPjA8L3NwYW4+KTwvYT5kAgcPZBYIAgEPEA8WBB4NRGF0YVRleHRGaWVsZAUGTGFuZF9kHgtfIURhdGFCb3VuZGdkDxYXAgECAgIDAgQCBQIGAgcCCAIJAgoCCwIMAg0CDgIPAhACEQISAhMCFAIVAhYCFxYXEAULQXJnZW50aW5pZW4FC0FyZ2VudGluaWVuZxAFCkF1c3RyYWxpZW4FCkF1c3RyYWxpZW5nEAUHQmVsZ2llbgUHQmVsZ2llbmcQBQlEw6RuZW1hcmsFCUTDpG5lbWFya2cQBQtEZXV0c2NobGFuZAULRGV1dHNjaGxhbmRnEAUIRmlubmxhbmQFCEZpbm5sYW5kZxAFCkZyYW5rcmVpY2gFCkZyYW5rcmVpY2hnEAUMR3JpZWNoZW5sYW5kBQxHcmllY2hlbmxhbmRnEAUPR3Jvc3Nicml0YW5uaWVuBQ9Hcm9zc2JyaXRhbm5pZW5nEAUHSXRhbGllbgUHSXRhbGllbmcQBRFLYXJpYmlzY2hlIEluc2VsbgURS2FyaWJpc2NoZSBJbnNlbG5nEAUIS3JvYXRpZW4FCEtyb2F0aWVuZxAFC05pZWRlcmxhbmRlBQtOaWVkZXJsYW5kZWcQBQhOb3J3ZWdlbgUITm9yd2VnZW5nEAULw5ZzdGVycmVpY2gFC8OWc3RlcnJlaWNoZxAFCFBvcnR1Z2FsBQhQb3J0dWdhbGcQBQhTY2h3ZWRlbgUIU2Nod2VkZW5nEAUHU2Nod2VpegUHU2Nod2VpemcQBQdTcGFuaWVuBQdTcGFuaWVuZxAFCVNyaSBMYW5rYQUJU3JpIExhbmthZxAFB1TDvHJrZWkFB1TDvHJrZWlnEAUDVVNBBQNVU0FnEAUGWnlwZXJuBQZaeXBlcm5nZGQCAw8PFgIeBFRleHQFEyAtIG5pY2h0IHdpY2h0aWcgLSBkZAIFDw8WAh8DBRMgLSBuaWNodCB3aWNodGlnIC0gZGQCCw8PFgIfAwUTIC0gbmljaHQgd2ljaHRpZyAtIGRkAgkPFgIfAAXOBTxkaXYgaWQ9InNvbmRlcmFuZ2Vib3RlX2JveCIgY2xhc3M9InVpLWNvcm5lci1ib3R0b20iIHN0eWxlPSJtYXJnaW4tdG9wOjEwcHg7IHdpZHRoOjIyN3B4OyI+ICA8ZGl2IGNsYXNzPSJ1aS13aWRnZXQgdWktd2lkZ2V0LWhlYWRlciB1aS1jb3JuZXItdG9wIiBzdHlsZT0iaGVpZ2h0OiAyMHB4OyBmb250LXNpemU6IDEuM2VtOyBwYWRkaW5nLWxlZnQ6IDNweDsgYm9yZGVyLXRvcC13aWR0aDogMnB4OyBib3JkZXItbGVmdC13aWR0aDogMnB4OyBib3JkZXItcmlnaHQtd2lkdGg6IDJweDsgYm9yZGVyLWJvdHRvbS13aWR0aDogMHB4OyI+ICAgIFNvbmRlcmFuZ2Vib3RlICA8L2Rpdj4gIDxkaXYgY2xhc3M9InVpLXdpZGdldCB1aS13aWRnZXQtY29udGVudCB1aS1jb3JuZXItYm90dG9tIHJhZF9ncmFkIiBzdHlsZT0icG9zaXRpb246IHJlbGF0aXZlOyBoZWlnaHQ6IDIycHg7IGZvbnQtc2l6ZTogMTJweDsgYm9yZGVyLXRvcC13aWR0aDogMHB4OyBib3JkZXItbGVmdC13aWR0aDogMnB4OyBib3JkZXItcmlnaHQtd2lkdGg6IDJweDsgYm9yZGVyLWJvdHRvbS13aWR0aDogMnB4OyI+ICAgIDxzcGFuIHN0eWxlPSJwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMnB4OyBsZWZ0OiA1cHg7Ij48YSBocmVmPSJzb25kZXJhbmdlYm90ZV9kLmFzcHg/U2VpdGU9MSI+Jmd0OyZuYnNwO1NvbmRlcmFuZ2Vib3RlIGFuemVpZ2VuICgzKTwvYT48L3NwYW4+ICA8L2Rpdj48L2Rpdj5kAgsPFgIfAAXhCFNlaXRlIHRlaWxlbiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOzxhIGhyZWY9Imh0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9zaGFyZXIucGhwP3U9aHR0cDovL3d3dy5ob2xpZGF5LWhvbWUuY29tLyIgdGFyZ2V0PSJfYmxhbmsiIG9uQ2xpY2s9InJldHVybiBmZW5zdGVyKCdodHRwczovL3d3dy5mYWNlYm9vay5jb20vc2hhcmVyLnBocD91PWh0dHA6Ly93d3cuaG9saWRheS1ob21lLmNvbS8nLCdGYWNlYm9vaycpIj48aW1nIHNyYz0iL2JpbGRlci9mYWNlYm9va18xNi5wbmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgYWx0PSJEaWVzZSBTZWl0ZSBhdWYgRmFjZWJvb2sgdGVpbGVuIiAvPjwvYT4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDs8YSBocmVmPSJodHRwczovL3BsdXMuZ29vZ2xlLmNvbS9zaGFyZT91cmw9aHR0cDovL3d3dy5ob2xpZGF5LWhvbWUuY29tLyIgdGFyZ2V0PSJfYmxhbmsiIG9uQ2xpY2s9InJldHVybiBmZW5zdGVyKCdodHRwczovL3BsdXMuZ29vZ2xlLmNvbS9zaGFyZT91cmw9aHR0cDovL3d3dy5ob2xpZGF5LWhvbWUuY29tLycsJ0dvb2dsZSsnKSI+PGltZyBzcmM9Ii9iaWxkZXIvZ3BsdXMtMzIucG5nIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGFsdD0iRGllc2UgU2VpdGUgYXVmIEdvb2dsZSsgdGVpbGVuIiAvPjwvYT4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDs8YSBocmVmPSJodHRwczovL3R3aXR0ZXIuY29tL2hvbWU/c3RhdHVzPUJlc3VjaGUlMjBnZXJhZGUlMjBkaWUlMjBTZWl0ZSUyMGh0dHA6Ly93d3cuaG9saWRheS1ob21lLmNvbS8lMjAoRmVyaWVuaGFldXNlciUyMHVuZCUyMEZlcmllbndvaG51bmdlbiUyMHdlbHR3ZWl0KSIgdGFyZ2V0PSJfYmxhbmsiIG9uQ2xpY2s9InJldHVybiBmZW5zdGVyKCdodHRwczovL3R3aXR0ZXIuY29tL2hvbWU/c3RhdHVzPUJlc3VjaGUlMjBnZXJhZGUlMjBkaWUlMjBTZWl0ZSUyMGh0dHA6Ly93d3cuaG9saWRheS1ob21lLmNvbS8lMjAoRmVyaWVuaGFldXNlciUyMHVuZCUyMEZlcmllbndvaG51bmdlbiUyMHdlbHR3ZWl0KScsJ1R3aXR0ZXInKSI+PGltZyBzcmM9Ii9iaWxkZXIvdHdpdHRlcl8xNi5wbmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgYWx0PSJEaWVzZSBTZWl0ZSB0d2l0dGVybiIgLz48L2E+ZAINDw8WAh8DBYICJmd0OyZuYnNwOzxzcGFuIGNsYXNzPSJsYWdlbGluazIiPjxhIGhyZWY9Ii9mZXJpZW5oYXVzLWZlcmllbndvaG51bmcvc2Nod2Vpei5odG0iPlNjaHdlaXo8L2E+Jm5ic3A7Jmd0OyZuYnNwOzxhIGhyZWY9Ii9mZXJpZW5oYXVzLWZlcmllbndvaG51bmcvc2Nod2Vpei10ZXNzaW4tMS5odG0iPlRlc3NpbjwvYT4mbmJzcDsmZ3Q7Jm5ic3A7PGEgaHJlZj0iL2ZlcmllbmhhdXMtZmVyaWVud29obnVuZy9jb250cmEtMS5odG0iPkNvbnRyYTwvYT48L3NwYW4+ZGQCDw8PFgIeC05hdmlnYXRlVXJsBQwyMDM2Nl9kLmFzcHhkFgJmDw8WBB4ISW1hZ2VVcmwFGVxvYmpla3RiaWxkZXJcMjAzNjZfMi5qcGceDUFsdGVybmF0ZVRleHQFeEZlcmllbndvaG51bmcgUiYjMjMzO3NpZGVuY2UtQ2x1YiBMZXMgVmlsbGFzIEJlbCBHb2QmIzIzMjtyZSAoMjI1NDMxNiksIEZyYW5rcmVpY2gsIEtvcnNpa2EsIE5vcmRrb3JzaWthLCBCZWxnb2QmIzIzMjtyZWRkAhEPDxYCHwMFxQJGZXJpZW53b2hudW5nICZxdW90O01haXNvbiBQYXJ0aWN1bGkmIzIzMjtyZSZxdW90OzogIEtMQVNTSUZJWklFUlVORyA0IFNURVJORSBTVVBFUklPUiBGU1QgIERhcyBIYXVzIGJlZmluZGV0IHNpY2ggcyYjMjUyO2RzZWl0aWcsIHRvdGFsIGluIGRlciBOYXR1ciwgb2JlcmhhbGIgdm9uIFRlbmVybywgNSBrbSB2b24gTG9jYXJubyBlbnRmZXJudCwgNTQwbSAmIzI1MjtNLiBTZWhyIHNjaCYjMjQ2O25lIFNpY2h0IGF1ZiBkZW4gU2VlIHVuZCBkaWUgQmVyZ2UsIGd1dGUgWnUgLi4uJm5ic3A7Jmd0OyZuYnNwOzxhIGhyZWY9Ii8yMDM2Nl9kLmFzcHgiPkRldGFpbHM8L2E+ZGQCEw8PFgIfAwX0AiZndDsmbmJzcDs8c3BhbiBjbGFzcz0ibGFnZWxpbmsyIj48YSBocmVmPSIvZmVyaWVuaGF1cy1mZXJpZW53b2hudW5nL3NjaHdlaXouaHRtIj5TY2h3ZWl6PC9hPiZuYnNwOyZndDsmbmJzcDs8YSBocmVmPSIvZmVyaWVuaGF1cy1mZXJpZW53b2hudW5nL3NjaHdlaXotdGVzc2luLTEuaHRtIj5UZXNzaW48L2E+Jm5ic3A7Jmd0OyZuYnNwOzxhIGhyZWY9Ii9mZXJpZW5oYXVzLWZlcmllbndvaG51bmcvc2Nod2Vpei10ZXNzaW4tbGFnby1tYWdnaW9yZS0tY2gtLTEuaHRtIj5MYWdvIE1hZ2dpb3JlIChDSCk8L2E+Jm5ic3A7Jmd0OyZuYnNwOzxhIGhyZWY9Ii9mZXJpZW5oYXVzLWZlcmllbndvaG51bmcvY29udHJhLTEuaHRtIj5Db250cmE8L2E+PC9zcGFuPmRkAhUPDxYCHwQFDDIwMzY1X2QuYXNweGQWAmYPDxYCHwUFGVxvYmpla3RiaWxkZXJcMjAzNjVfNC5qcGdkZAIXDw8WAh8DBcUCRmVyaWVuaGF1cyAmcXVvdDtNYWlzb24gZGUgdmFjYW5jZXMgLyAyIGFwcGFydGVtZW50cyBzJiMyMzM7cGFyJiMyMzM7cyZxdW90OzogIEtMQVNTSUZJWklFUlVORyA0IFNURVJORSBTVVBFUklPUiBGU1QgIExhZ2U6IGFtIFMmIzI1MjtkaGFuZyAgICwgc2VociBydWhpZ2UgTGFnZSwgb2JlcmhhbGIgVGVuZXJvLCA1IGttIHZvbiBMb2Nhcm5vLCA1ODAgbSAmIzI1MjsuTS4sIGhlcnJsaWNoZSBBdXNzaWNodCBhdWYgZGVuIExhZ28gTWFnZ2lvcmUgdW5kIGRpZSBCZXJnZS4gIC4uLiZuYnNwOyZndDsmbmJzcDs8YSBocmVmPSIvMjAzNjVfZC5hc3B4Ij5EZXRhaWxzPC9hPmRkAhkPDxYCHwMFgAMmZ3Q7Jm5ic3A7PHNwYW4gY2xhc3M9ImxhZ2VsaW5rMiI+PGEgaHJlZj0iL2ZlcmllbmhhdXMtZmVyaWVud29obnVuZy9mcmFua3JlaWNoLmh0bSI+RnJhbmtyZWljaDwvYT4mbmJzcDsmZ3Q7Jm5ic3A7PGEgaHJlZj0iL2ZlcmllbmhhdXMtZmVyaWVud29obnVuZy9mcmFua3JlaWNoLWtvcnNpa2EtMS5odG0iPktvcnNpa2E8L2E+Jm5ic3A7Jmd0OyZuYnNwOzxhIGhyZWY9Ii9mZXJpZW5oYXVzLWZlcmllbndvaG51bmcvZnJhbmtyZWljaC1rb3JzaWthLW5vcmRrb3JzaWthLTEuaHRtIj5Ob3Jka29yc2lrYTwvYT4mbmJzcDsmZ3Q7Jm5ic3A7PGEgaHJlZj0iL2ZlcmllbmhhdXMtZmVyaWVud29obnVuZy9iZWxnb2RlcmUtMS5odG0iPkJlbGdvZCYjMjMyO3JlPC9hPjwvc3Bhbj5kZAIbDw8WAh8EBQ01NTU2MjRfZC5hc3B4ZBYCZg8PFgIfBQUyaHR0cHM6Ly9zdGF0aWMubG9jYXN1bi5jb20vcGhvdG8vMS8wLzUvMTA1NTkzaC5qcGdkZAIdDw8WAh8DBdYCRmVyaWVud29obnVuZyAiUsOpc2lkZW5jZS1DbHViIExlcyBWaWxsYXMgQmVsIEdvZMOocmUgKDIyNTQzMTYpIjogIERpZXNlIFVudGVya3VuZnQgd2lyZCBJaG5lbiB2b3IgYWxsZW0gd2VnZW4gZGllc2VyIHBvc2l0aXZlbiBQdW5rdGUgZ2VmYWxsZW46ID4gR2VtZWluc2NoYWZ0c3Bvb2wgPiBUZXJyYXNzZSA+IEdlc2NoaXJyc3DDvGxtYXNjaGluZSA+IEJhYnliZXR0ICAgIEFua3VuZnRzemVpdCA6MTdIICBBYmZhaHJ0c3plaXQgOjEwSCAgIE5lYmVua29zdGVuICAgS2F1dGlvIC4uLiZuYnNwOyZndDsmbmJzcDs8YSBocmVmPSIvNTU1NjI0X2QuYXNweD9wcmVmPTIyNTQzMTYiPkRldGFpbHM8L2E+ZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgcFBFBvb2wFDkludGVybmV0enVnYW5nBQhDaGVtaW5lZQUQUm9sbHN0dWhsZ2FlbmdpZwUEQm9vdAUFU2F1bmEFCUhhdXN0aWVyZRDmNBEytHz9/7RUg9LLbLUXLftEh1Sa3i/o7FZV4Am2" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="39F20657" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAHGlcM/GxmgCYF1gC5hPGFaJ/6wxzPVim61NnnbleaKne8FzVooQASX+OslZApqstNTacpgYeFjRLnMAwXjqO3bbDo4+VZwQ70dTfQ9jMmJ6dSj/Lau4xFU6XZq0rK48qFVJqizobT6PtxK6AFi0CNxlAoIKNSxBmUb6zupAXWrYiFeUgKP7QElpTnfwleRQrhf/IQJgLQfhiu13d5ZJua2di5R3i92v3eWYwbI6IkL0z/VdixVO5SpcUHWBzrFMXqmYtMkR6ojxtlC7/rRlJbXq2oBbOcjiwNg7NmlbcqUCKMP4xlBAcr0YtAlw5znHFU3lCfrkxxmBRnA/sAMGm0FlQoUapOEwPLfaHA52peocVcH42c5VBTRMhV27ckjbprF8VwGGt8f1tHNAncsP8s/vs4opzKfeb5Oksay+PUfSU/Wgryt7NMyadrsisXBkcJF8gHcoD+4ZWBjrbU/70kbSDVsF2HzzrEr+13XvRG02BN92C8qcGIkl7p/tGmFoAteoESmOuIKLvxXqmDp/hi9Qp0xx80a8XljsXvkgLeTEa1abdvYoCcfGOg1d79Ob6SmH0ndW/FA0pLaXcT3/Su+QmJ9UxUxLW42na01YYw5xopplX1PT5nxLB2GzKX6HrOpz9cXtIelHg5L5n2k2bjW5LkdZLQ4RZ4Jsp8iR9PW8/s1xC7ci3jxJzWjuF0zxRsJfL+A0W3N+bMgWmxc3ySz8s9KQ5wtMv2EPfgHAYgwOeSFDPRkS+rX0ziqecKfMtixY79IZuoV5lrAkD/ttN9KL1OSASJJoWNmqV57KHT4PShgoep2RlQwSn6KPsPU03aKZKNdGfNDzroY3lOxa6O6LvBilwBPSTudy3/DgVk19x0tQSA29okYHSWSu3/Cn0BGfBldsmH57llO8eeKWo7GpChtT/+kXNIpZ5Ym+nhF8zx7uvYxqtOACxIEyTlM9EPuiyxkbcnL3RkY7JVVNwq2LLNF7XWBYBrorbsJNCB3R8xkGQo6AIPuAqfZmRPXldL9kYhKhtUmWlMJwsJCSFP66NwfcavLextk6I2jEahkKo4fRUdZtvpRVeEHNl2JPmSL+THpWxaAFKiW/XEIp/XOtnq7DLTFD7YSHZ0wuTNKpFBWm3SQMufRUKTPAsLiHjN0zCumy8yL5jq6tmyrBq4bTvDcCDyNmk1vXDocH7NTEMjBHo4LVaJW4AiBSSJ5ImV5pUKRQl0eXHJnar369n2VA2B5qFHgTBAqcskBuPuJyM+mXEbCHSoNSMStbgOM0TwX+Eoz5Vwib6uKsrMFWPD9hDebbid5EF12csa0l2nkcBM+AHiNl8gwnkCMUpRiJdlk2H3p2ExSY4fYKRLKtmNg8d77ALfwjElJS0uJISgj4wm9YOTe6A52tC8WFIM1Nus8JvNJeO98yjBuIQ++ij4v3qNH2sgS1u9z9f1ZmRczGGOcTBR2jgkPOUmIxquQoWw2J70evrw0sQJT2wNOJgzmVSPgDg5bx/MIqrjINcP5vFKDwBGNENrIzhu+HMFjoZkXjnvIlejB5SfcvsEoiJoye73XYbFa81Vo6OvODI5sNGOSzIF86j98fqOUTIKaZE1jdC9zPlc+KAvNKppH3Z8RcqwC+UN1bP32j1juZ6QQC3RSyQIeHQQJcGQ46WNcwXila2+PjUj7G3/NeDTbC6NfPmuyA4lTDLR1o8BaO82+qSbHhmYpHOSVxzTZTCE20546a4VkovkafSfquK0stz3H9ea6UUJrNmuRSCS1Krbg1Wq17/FSPNmdTkGS3tm88DVWFDQb8WK4fXu9OE+On38CeLYDj7aiaA0TxZ8v+NRZUwbLf8NHMmnOlweVwAGYm1fbjYwO02uk/x8zVyUkjzDrz4+iWMxRb/Mh6jktcGafk5AFCGRMyLrLhs3yh21p8SIDLXWcAYOTAxmUdlq7ozdLX1qZoUp0jq9/msvSNGXd4DkKxyM56pMI8jmc4WDZAY+MxNrK1wbZhm5HWWEJLpnSeTTBSDaqt3Wy9TpmmM5AzVYaO6c0jXbiKWel6iBbLI/F5tupnesVYQt+IZ1MQOqmeXXRwbKHD7sozja+I5D7bsoRRTPgToqKUCNQY5AmcuQZJDee10TCa65j0ogEnbcFtBJjCShSIxoO80GsSB1+gbOapGQxaDcp+zpQ+ILgkssAQAc4u00g+ihXjbsAdPGgLKwb3b3SOxJEX9nS//aXFb40tJiPLqhdIouufXKjkG9bwnANRGt+xt6Xvlk4l9J1tMSnkQZUIq+LBQc23YAdu2Se1OzxM6aAWd7Ao88x0kL+jQvJ/ekU+Cdr1w+aqHhEDJJXbk6VfEnpqPEVVPxZCOPe7T0yDHeoMXR+7eyMzZNil10OFgw/XBJKSYj0h5ABjpwTM8hk/Nn3Lox3hcQE5h/evrGZSdm9yzflhe9aDawrFVTrX3l8eF9CKItWJIfQC" />
+  
+		  <div class="ui-widget ui-widget-header ui-corner-top" style="height: 20px; font-size: 1.3em; padding-left: 3px; border-top-width: 2px; border-left-width: 2px; border-right-width: 2px; border-bottom-width: 0px;">
+        Feriendomizil suchen
+      </div>  
+		
+		  <div class="ui-widget ui-widget-content ui-corner-bottom rad_grad" style="font-size: 12px; border-top-width: 1px; border-left-width: 2px; border-right-width: 2px; border-bottom-width: 2px;">
+      
+      <div class="formLayout">      
+      
+        <div style="margin-top: 2px;">
+		      <label for="DropDownList_Laender">Land</label>
+          <select name="DropDownList_Laender" id="DropDownList_Laender" Class="ui-selectmenu ui-widget ui-state-default ui-corner-all ui-selectmenu-dropdown skipThese" style="width:154px; height:22px;">
+	<option value=" - bitte auswählen - ">&#160;- bitte ausw&#228;hlen -&#160;</option>
+	<option value="Argentinien">Argentinien</option>
+	<option value="Australien">Australien</option>
+	<option value="Belgien">Belgien</option>
+	<option value="Dänemark">D&#228;nemark</option>
+	<option value="Deutschland">Deutschland</option>
+	<option value="Finnland">Finnland</option>
+	<option value="Frankreich">Frankreich</option>
+	<option value="Griechenland">Griechenland</option>
+	<option value="Grossbritannien">Grossbritannien</option>
+	<option value="Italien">Italien</option>
+	<option value="Karibische Inseln">Karibische Inseln</option>
+	<option value="Kroatien">Kroatien</option>
+	<option value="Niederlande">Niederlande</option>
+	<option value="Norwegen">Norwegen</option>
+	<option value="Österreich">&#214;sterreich</option>
+	<option value="Portugal">Portugal</option>
+	<option value="Schweden">Schweden</option>
+	<option value="Schweiz">Schweiz</option>
+	<option value="Spanien">Spanien</option>
+	<option value="Sri Lanka">Sri Lanka</option>
+	<option value="Türkei">T&#252;rkei</option>
+	<option value="USA">USA</option>
+	<option value="Zypern">Zypern</option>
+
+</select>
+        </div>
+		
+        <div class="clearfix" style="margin-top: 2px;">
+          <div style="position: relative;">
+		        <label for="Input_Region">Region</label>
+		        <input name="Input_Region" type="text" value=" - nicht wichtig - " readonly="readonly" id="Input_Region" style="width:144px; height:14px;" />
+            <img id="triangle-Input_Region" src="/bilder/select-pfeil.png" style="top: 12px; left: 206px; position: absolute;" alt="">
+          </div>
+        </div>
+        
+        <div class="clearfix" style="margin-top: 2px;">
+          <div style="position: relative;">        
+		        <label for="Input_Ort">Ort</label>
+	          <input name="Input_Ort" type="text" value=" - nicht wichtig - " readonly="readonly" id="Input_Ort" style="width:144px; height:14px;" />
+            <img id="triangle-Input_Ort" src="/bilder/select-pfeil.png" style="top: 12px; left: 206px; position: absolute;" alt="">           
+          </div>  
+        </div>        
+        
+        <div style="margin-top: 2px;">        
+		      <label for="DropDownList_Objekttyp">Typ</label>
+		      <select name="DropDownList_Objekttyp" id="DropDownList_Objekttyp" Class="ui-selectmenu ui-widget ui-state-default ui-corner-all ui-selectmenu-dropdown skipThese" style="width:154px; height:22px;">
+	<option value=" - nicht wichtig - ">&#160;- nicht wichtig - </option>
+	<option value="Ferienhaus">Ferienhaus</option>
+	<option value="Ferienwohnung">Ferienwohnung</option>
+
+</select>
+        </div>          
+
+        <div style="margin-top: 2px;">
+	        <label class="tooltip" for="DropDownList_Personen" title="Bitte beachten Sie bei der Auswahl der Personenzahl, dass auch Jugendliche und Kinder als volle Personen gelten.">Personen<img src="/bilder/info_12x12.png" width="12" height="12" alt="Info" /></label>
+          <select name="DropDownList_Personen" id="DropDownList_Personen" Class="ui-selectmenu ui-widget ui-state-default ui-corner-all ui-selectmenu-dropdown skipThese" style="width:154px; height:22px;">
+	<option value=" - nicht wichtig - ">&#160;- nicht wichtig - </option>
+	<option value="1 Person">1 Person</option>
+	<option value="2 Personen">2 Personen</option>
+	<option value="3 Personen">3 Personen</option>
+	<option value="4 Personen">4 Personen</option>
+	<option value="5 Personen">5 Personen</option>
+	<option value="6 Personen">6 Personen</option>
+	<option value="7 Personen">7 Personen</option>
+	<option value="8 Personen">8 Personen</option>
+	<option value="9 Personen">9 Personen</option>
+	<option value="10 Personen">10 Personen</option>
+	<option value="mehr als 10 Personen">mehr als 10 Personen</option>
+
+</select>
+        </div>          
+        
+        <div class="clearfix" style="margin-top: 2px;">        
+          <div style="position: relative;">        
+		        <label for="Input_Anreisetermin">Anreise</label>
+            <input name="Input_Anreisetermin" type="text" value=" - nicht wichtig - " readonly="readonly" id="Input_Anreisetermin" style="width:125px; height:14px;" />
+            <div id="triangle-Input_Anreisetermin" class="ui-icon ui-icon-triangle-1-s" style="top: 6px; left: 182px; position: absolute;"></div>
+            <div id="cleardate" class="tooltip" title="Anreisedatum auf - nicht wichtig - zurücksetzen" style="top: 7px; left: 208px; position: absolute;"><img src="/bilder/clear.png" alt="löschen" style="float: left; margin-right: 3px; width:12px; height:12px;" /></div>
+          </div>          
+        </div>        
+		
+        <div style="margin-top: 2px;">    
+		      <label for="DropDownList_Reisedauer">Dauer</label>
+          <select name="DropDownList_Reisedauer" id="DropDownList_Reisedauer" Class="ui-selectmenu ui-widget ui-state-default ui-corner-all ui-selectmenu-dropdown skipThese" style="width:154px; height:22px;">
+	<option value=" - nicht wichtig - ">&#160;- nicht wichtig - </option>
+	<option value="1 Woche">1 Woche</option>
+	<option value="2 Wochen">2 Wochen</option>
+	<option value="3 Wochen">3 Wochen</option>
+	<option value="4 Wochen">4 Wochen</option>
+	<option value="1 Tag">1 Tag</option>
+	<option value="2 Tage">2 Tage</option>
+	<option value="3 Tage">3 Tage</option>
+	<option value="4 Tage">4 Tage</option>
+	<option value="5 Tage">5 Tage</option>
+	<option value="6 Tage">6 Tage</option>
+	<option value="7 Tage">7 Tage</option>
+	<option value="8 Tage">8 Tage</option>
+	<option value="9 Tage">9 Tage</option>
+	<option value="10 Tage">10 Tage</option>
+	<option value="11 Tage">11 Tage</option>
+	<option value="12 Tage">12 Tage</option>
+	<option value="13 Tage">13 Tage</option>
+	<option value="14 Tage">14 Tage</option>
+	<option value="15 Tage">15 Tage</option>
+	<option value="16 Tage">16 Tage</option>
+	<option value="17 Tage">17 Tage</option>
+	<option value="18 Tage">18 Tage</option>
+	<option value="19 Tage">19 Tage</option>
+	<option value="20 Tage">20 Tage</option>
+	<option value="21 Tage">21 Tage</option>
+	<option value="22 Tage">22 Tage</option>
+	<option value="23 Tage">23 Tage</option>
+	<option value="24 Tage">24 Tage</option>
+	<option value="25 Tage">25 Tage</option>
+	<option value="26 Tage">26 Tage</option>
+	<option value="27 Tage">27 Tage</option>
+	<option value="28 Tage">28 Tage</option>
+
+</select>
+        </div>          
+          
+      </div>      
+		  
+      <div class="toggler">
+        <div id="effect">
+        
+          <div class="formLayout">        
+         
+          <div style="margin-top: 2px;"> 
+		        <label for="DropDownList_Meer">Meer</label>
+            <select name="DropDownList_Meer" id="DropDownList_Meer" Class="ui-selectmenu ui-widget ui-state-default ui-corner-all ui-selectmenu-dropdown skipThese" style="width:154px; height:22px;">
+	<option value=" - nicht wichtig - ">&#160;- nicht wichtig - </option>
+	<option value="näher als 1.5 km">n&#228;her als 1.5 km</option>
+	<option value="näher als 10 km">n&#228;her als 10 km</option>
+	<option value="näher als 30 km">n&#228;her als 30 km</option>
+
+</select>
+          </div>  
+
+ 		      <div style="margin-top: 2px;">
+		        <label for="DropDownList_See">See</label>
+		        <select name="DropDownList_See" id="DropDownList_See" Class="ui-selectmenu ui-widget ui-state-default ui-corner-all ui-selectmenu-dropdown skipThese" style="width:154px; height:22px;">
+	<option value=" - nicht wichtig - ">&#160;- nicht wichtig - </option>
+	<option value="näher als 1.5 km">n&#228;her als 1.5 km</option>
+	<option value="näher als 10 km">n&#228;her als 10 km</option>
+	<option value="näher als 30 km">n&#228;her als 30 km</option>
+
+</select>
+		      </div>
+                     
+ 		      <div style="margin-top: 2px;">
+		        <label for="DropDownList_Tennis">Tennis</label>
+		        <select name="DropDownList_Tennis" id="DropDownList_Tennis" Class="ui-selectmenu ui-widget ui-state-default ui-corner-all ui-selectmenu-dropdown skipThese" style="width:154px; height:22px;">
+	<option value=" - nicht wichtig - ">&#160;- nicht wichtig - </option>
+	<option value="näher als 1.5 km">n&#228;her als 1.5 km</option>
+	<option value="näher als 10 km">n&#228;her als 10 km</option>
+	<option value="näher als 30 km">n&#228;her als 30 km</option>
+
+</select>
+		      </div>
+                      
+ 		      <div style="margin-top: 2px;">
+		        <label for="DropDownList_Golf">Golf</label>
+		        <select name="DropDownList_Golf" id="DropDownList_Golf" Class="ui-selectmenu ui-widget ui-state-default ui-corner-all ui-selectmenu-dropdown skipThese" style="width:154px; height:22px;">
+	<option value=" - nicht wichtig - ">&#160;- nicht wichtig - </option>
+	<option value="näher als 1.5 km">n&#228;her als 1.5 km</option>
+	<option value="näher als 10 km">n&#228;her als 10 km</option>
+	<option value="näher als 30 km">n&#228;her als 30 km</option>
+
+</select>
+		      </div>
+                      
+ 		      <div style="margin-top: 2px;">
+		        <label for="DropDownList_Reiten">Reiten</label>
+		        <select name="DropDownList_Reiten" id="DropDownList_Reiten" Class="ui-selectmenu ui-widget ui-state-default ui-corner-all ui-selectmenu-dropdown skipThese" style="width:154px; height:22px;">
+	<option value=" - nicht wichtig - ">&#160;- nicht wichtig - </option>
+	<option value="näher als 1.5 km">n&#228;her als 1.5 km</option>
+	<option value="näher als 10 km">n&#228;her als 10 km</option>
+	<option value="näher als 30 km">n&#228;her als 30 km</option>
+
+</select>
+		      </div>
+                      
+ 		      <div style="margin-top: 2px;">
+		        <label for="DropDownList_Angeln">Angeln</label>
+		        <select name="DropDownList_Angeln" id="DropDownList_Angeln" Class="ui-selectmenu ui-widget ui-state-default ui-corner-all ui-selectmenu-dropdown skipThese" style="width:154px; height:22px;">
+	<option value=" - nicht wichtig - ">&#160;- nicht wichtig - </option>
+	<option value="näher als 1.5 km">n&#228;her als 1.5 km</option>
+	<option value="näher als 10 km">n&#228;her als 10 km</option>
+	<option value="näher als 30 km">n&#228;her als 30 km</option>
+
+</select>
+		      </div>
+          
+ 		      <div style="margin-top: 2px;">
+		        <label for="DropDownList_Wintersport">Wintersport</label>
+		        <select name="DropDownList_Wintersport" id="DropDownList_Wintersport" Class="ui-selectmenu ui-widget ui-state-default ui-corner-all ui-selectmenu-dropdown skipThese" style="width:154px; height:22px;">
+	<option value=" - nicht wichtig - ">&#160;- nicht wichtig - </option>
+	<option value="näher als 1.5 km">n&#228;her als 1.5 km</option>
+	<option value="näher als 10 km">n&#228;her als 10 km</option>
+	<option value="näher als 30 km">n&#228;her als 30 km</option>
+
+</select>
+		      </div>            
+          
+          </div>
+                    
+          <table style="width:100%; margin-top: 5px;">          
+ 		        <tr>
+		          <td style="width:45%;">
+		            <input id="Pool" type="checkbox" name="Pool" /><label for="Pool">Pool</label>	
+		          </td>
+		          <td style="width:55%;">
+                <input id="Internetzugang" type="checkbox" name="Internetzugang" /><label for="Internetzugang">Internet</label>
+              </td>
+		        </tr>          
+		        <tr>
+    		      <td style="width:45%;">
+                <input id="Cheminee" type="checkbox" name="Cheminee" /><label for="Cheminee">Kamin/Ofen</label>	
+		          </td>
+		          <td style="width:55%;">
+		            <input id="Rollstuhlgaengig" type="checkbox" name="Rollstuhlgaengig" /><label for="Rollstuhlgaengig">Rollstuhlgängig</label>	
+              </td>
+		        </tr>
+		        <tr>
+    		      <td style="width:45%;">
+                <input id="Boot" type="checkbox" name="Boot" /><label for="Boot">Boot</label>	
+		          </td>
+		          <td style="width:55%;">
+		            <input id="Sauna" type="checkbox" name="Sauna" /><label for="Sauna">Sauna</label>	
+              </td>
+		        </tr>
+		        <tr>
+    		      <td style="width:45%;">
+                <input id="Haustiere" type="checkbox" name="Haustiere" /><label for="Haustiere">Haustier</label>	
+		          </td>
+		          <td style="width:55%;">
+		            &nbsp;	
+              </td>
+		        </tr>
+		      </table>
+          
+		    </div>
+      </div>
+		    
+      <table style="width:100%; margin-bottom: 2px;">		    
+		    <tr>
+		      <td style="vertical-align: text-top;">
+		        <a id="Optionen" href="javascript:void(0)"><span id="Optionen_Icon" class="ui-icon ui-icon-circle-plus left" style="margin-right:2px;"></span><span id="Optionen_Text" style="font-weight: bold;">mehr Suchoptionen zeigen</span></a>
+          </td>
+		    </tr>
+		    
+		    <tr>
+		      <td style="text-align:right;">
+            Anzahl Treffer: <span id="Treffer"></span>  
+          </td>
+		    </tr>        
+        
+		    <tr>
+		      <td style="text-align:right;">
+            <input type="submit" name="Button_Submit" value="Domizile zeigen" id="Button_Submit" Class="skipThese ui-state-default ui-corner-all ui-priority-primary" style="height:25px; width: 120px;" />
+            <!-- scharzen Rand um Default-Submit-Button entfernen, resp. auf den folgenden nicht sichtbaren Button legen -->
+            <!-- <input type="submit" name="Button_Submit_Nothing" value="" id="Button_Submit_Nothing" style="height:0;overflow:auto;position:absolute;left:-9999px;" /> -->            
+          </td>
+		    </tr>
+		    
+      </table>
+      </div>
+    
+      </form>
+      
+      </div><!-- #feriendomizil_suchen -->
+  
+      <div id="schnellsuche" class="ui-corner-bottom" style="margin-top:10px; width:227px;">
+        <div class="ui-widget ui-widget-header ui-corner-top" style="height: 20px; font-size: 1.3em; padding-left: 3px; border-top-width: 2px; border-left-width: 2px; border-right-width: 2px; border-bottom-width: 0px;">
+          Schnellsuche <img src="/bilder/info_12x12.png" class="tooltip" title="Land, Region, Ort, Objekt-Nr oder Objekt-Name eingeben und gewünschten Treffer auswählen." width="12" height="12" alt="Info" />
+        </div>
+        <div class="ui-widget ui-widget-content ui-corner-bottom rad_grad" style="font-size: 12px; border-top-width: 0px; border-left-width: 2px; border-right-width: 2px; border-bottom-width: 2px;">
+          <table style="width:100%;">
+            <tr>
+              <td><input type="text" maxlength="30" id="schnellsuche_input" class="left ui-corner-all ui-state-default" style="width:209px; height: 14px;" /></td>
+            </tr>                                 
+           </table>
+	      </div>
+      </div>
+      
+      <div id="sonderangebote"><div id="sonderangebote_box" class="ui-corner-bottom" style="margin-top:10px; width:227px;">  <div class="ui-widget ui-widget-header ui-corner-top" style="height: 20px; font-size: 1.3em; padding-left: 3px; border-top-width: 2px; border-left-width: 2px; border-right-width: 2px; border-bottom-width: 0px;">    Sonderangebote  </div>  <div class="ui-widget ui-widget-content ui-corner-bottom rad_grad" style="position: relative; height: 22px; font-size: 12px; border-top-width: 0px; border-left-width: 2px; border-right-width: 2px; border-bottom-width: 2px;">    <span style="position: absolute; top: 2px; left: 5px;"><a href="sonderangebote_d.aspx?Seite=1">&gt;&nbsp;Sonderangebote anzeigen (3)</a></span>  </div></div></div>      
+      
+      <div id="teilen" style="margin-top:15px;">
+        <div id="seite_teilen">Seite teilen&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.facebook.com/sharer.php?u=http://www.holiday-home.com/" target="_blank" onClick="return fenster('https://www.facebook.com/sharer.php?u=http://www.holiday-home.com/','Facebook')"><img src="/bilder/facebook_16.png" width="16" height="16" alt="Diese Seite auf Facebook teilen" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://plus.google.com/share?url=http://www.holiday-home.com/" target="_blank" onClick="return fenster('https://plus.google.com/share?url=http://www.holiday-home.com/','Google+')"><img src="/bilder/gplus-32.png" width="16" height="16" alt="Diese Seite auf Google+ teilen" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/home?status=Besuche%20gerade%20die%20Seite%20http://www.holiday-home.com/%20(Ferienhaeuser%20und%20Ferienwohnungen%20weltweit)" target="_blank" onClick="return fenster('https://twitter.com/home?status=Besuche%20gerade%20die%20Seite%20http://www.holiday-home.com/%20(Ferienhaeuser%20und%20Ferienwohnungen%20weltweit)','Twitter')"><img src="/bilder/twitter_16.png" width="16" height="16" alt="Diese Seite twittern" /></a></div>
+      </div>          
+  
+	  </div><!-- #leftcol -->	
+	
+    <div id="rightcol">
+      
+      <div id="ShadowBox1" class="right ui-corner-bottom" style="width: 560px;">
+			  <div class="ui-corner-top ui-corner-bottom" style="position:relative; width:560px;height:230px;background-image:url(/bilder/Startseitenbild_Terrasse_Meer_Sommer_560_230.jpg);">
+			  </div>
+      </div>   
+      
+      <div class="ui-widget ui-widget-header ui-corner-top right" style="background-image: linear-gradient(bottom, rgb(226,232,235) 0%, rgb(255,255,255) 50%, rgb(255,255,255) 100%) !important; background-image: -o-linear-gradient(bottom, rgb(226,232,235) 0%, rgb(255,255,255) 50%, rgb(255,255,255) 100%) !important; background-image: -moz-linear-gradient(bottom, rgb(226,232,235) 0%, rgb(255,255,255) 50%, rgb(255,255,255) 100%) !important; background-image: -webkit-linear-gradient(bottom, rgb(226,232,235) 0%, rgb(255,255,255) 50%, rgb(255,255,255) 100%) !important; background-image: -ms-linear-gradient(bottom, rgb(226,232,235) 0%, rgb(255,255,255) 50%, rgb(255,255,255) 100%) !important; background-image: -webkit-gradient(linear, left bottom,	left top,	color-stop(0, rgb(226,232,235)), color-stop(0.5, rgb(255,255,255)),	color-stop(1, rgb(255,255,255))) !important; border-color: gainsboro !important; color: #000000; margin-top:10px; width:556px; height: 20px; font-size: 1.3em; padding-left: 2px; border-top-width: 2px; border-left-width: 2px; border-right-width: 2px; border-bottom-width: 0px;">
+        Ferienwohnungen - Ferienhäuser der Woche
+      </div>
+      <div id="tippderwoche" class="ui-widget right ui-corner-bottom" style="font-size: 12px; margin-top:0px; width:558px; border-top-width:1px; border-left-width:2px; border-right-width:2px; border-bottom-width:2px; border-style:solid; border-color:gainsboro; background: #FFFFFF;">
+        <table style="width:100%;">
+          <tr>
+            <td style="text-align:left; vertical-align:text-top;" colspan="2">
+              <span id="asp_lagelinks">&gt;&nbsp;<span class="lagelink2"><a href="/ferienhaus-ferienwohnung/schweiz.htm">Schweiz</a>&nbsp;&gt;&nbsp;<a href="/ferienhaus-ferienwohnung/schweiz-tessin-1.htm">Tessin</a>&nbsp;&gt;&nbsp;<a href="/ferienhaus-ferienwohnung/contra-1.htm">Contra</a></span></span>
+            </td>  
+          </tr>
+          <tr>
+            <td style="text-align:left; vertical-align:top; width:105px;">
+              <a id="asp_tdw_piclink" href="20366_d.aspx"><img id="asp_tdw_image" class="ui-corner-all" src="\objektbilder\20366_2.jpg" alt="Ferienwohnung R&amp;#233;sidence-Club Les Villas Bel God&amp;#232;re (2254316), Frankreich, Korsika, Nordkorsika, Belgod&amp;#232;re" style="width:100px; height:75px; vertical-align:top;" /></a>
+            </td>
+            <td class="rad_grad" style="text-align:left; vertical-align:top;">
+              <span id="asp_tippderwochebeschrieb">Ferienwohnung &quot;Maison Particuli&#232;re&quot;:  KLASSIFIZIERUNG 4 STERNE SUPERIOR FST  Das Haus befindet sich s&#252;dseitig, total in der Natur, oberhalb von Tenero, 5 km von Locarno entfernt, 540m &#252;M. Sehr sch&#246;ne Sicht auf den See und die Berge, gute Zu ...&nbsp;&gt;&nbsp;<a href="/20366_d.aspx">Details</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:left; vertical-align:text-top;" colspan="2">
+              <span id="asp_lagelinks2">&gt;&nbsp;<span class="lagelink2"><a href="/ferienhaus-ferienwohnung/schweiz.htm">Schweiz</a>&nbsp;&gt;&nbsp;<a href="/ferienhaus-ferienwohnung/schweiz-tessin-1.htm">Tessin</a>&nbsp;&gt;&nbsp;<a href="/ferienhaus-ferienwohnung/schweiz-tessin-lago-maggiore--ch--1.htm">Lago Maggiore (CH)</a>&nbsp;&gt;&nbsp;<a href="/ferienhaus-ferienwohnung/contra-1.htm">Contra</a></span></span>
+            </td>  
+          </tr>          
+          <tr>
+            <td style="text-align:left; vertical-align:top; width:105px;">
+              <a id="asp_tdw_piclink2" href="20365_d.aspx"><img id="asp_tdw_image2" class="ui-corner-all" src="\objektbilder\20365_4.jpg" style="width:100px; height:75px; vertical-align:top;" /></a>
+            </td>
+            <td class="rad_grad" style="text-align:left; vertical-align:top;">
+              <span id="asp_tippderwochebeschrieb2">Ferienhaus &quot;Maison de vacances / 2 appartements s&#233;par&#233;s&quot;:  KLASSIFIZIERUNG 4 STERNE SUPERIOR FST  Lage: am S&#252;dhang   , sehr ruhige Lage, oberhalb Tenero, 5 km von Locarno, 580 m &#252;.M., herrliche Aussicht auf den Lago Maggiore und die Berge.  ...&nbsp;&gt;&nbsp;<a href="/20365_d.aspx">Details</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:left; vertical-align:text-top;" colspan="2">
+              <span id="asp_lagelinks3">&gt;&nbsp;<span class="lagelink2"><a href="/ferienhaus-ferienwohnung/frankreich.htm">Frankreich</a>&nbsp;&gt;&nbsp;<a href="/ferienhaus-ferienwohnung/frankreich-korsika-1.htm">Korsika</a>&nbsp;&gt;&nbsp;<a href="/ferienhaus-ferienwohnung/frankreich-korsika-nordkorsika-1.htm">Nordkorsika</a>&nbsp;&gt;&nbsp;<a href="/ferienhaus-ferienwohnung/belgodere-1.htm">Belgod&#232;re</a></span></span>
+            </td>  
+          </tr>          
+          <tr>
+            <td style="text-align:left; vertical-align:top; width:105px;">
+              <a id="asp_tdw_piclink3" href="555624_d.aspx"><img id="asp_tdw_image3" class="ui-corner-all" src="https://static.locasun.com/photo/1/0/5/105593h.jpg" style="width:100px; height:75px; vertical-align:top;" /></a>
+            </td>
+            <td class="rad_grad" style="text-align:left; vertical-align:top;">
+              <span id="asp_tippderwochebeschrieb3">Ferienwohnung "Résidence-Club Les Villas Bel Godère (2254316)":  Diese Unterkunft wird Ihnen vor allem wegen dieser positiven Punkte gefallen: > Gemeinschaftspool > Terrasse > Geschirrspülmaschine > Babybett    Ankunftszeit :17H  Abfahrtszeit :10H   Nebenkosten   Kautio ...&nbsp;&gt;&nbsp;<a href="/555624_d.aspx?pref=2254316">Details</a></span>
+            </td>
+          </tr>                    
+        </table>
+      </div>
+
+		</div><!-- #rightcol-->
+		
+	</div><!-- #wrapper-->
+
+	<div id="footer_box" class="ui-corner-all rad_grad">
+   
+    
+
+<div class="footer" style="width: 100px;">
+<ul>
+  <li>Hilfe</li>
+  <li><a href="/hilfe_faq_kontakt_ueberuns_d.aspx#kontaktadresse">Kontakt</a></li>
+  <li><a href="/hilfe_faq_kontakt_ueberuns_d.aspx#faq_hilfe">FAQ</a></li>
+  <li><a href="/hilfe_faq_kontakt_ueberuns_d.aspx#ueberuns">Über uns</a></li>
+</ul>
+</div>
+
+<div class="footer" style="width: 100px; margin-left: 50px;">
+<ul>
+  <li>Vermieter</li>
+  <li><a href="/vermieter_d.aspx">Inserieren</a></li>
+  <li><a href="/admin/singlelogin_d.aspx">Login</a></li>
+</ul>
+</div>
+
+<div class="footer" style="width: 180px; margin-left: 50px; position: relative;">
+<div id="ctl01_facebook_like" style="position: absolute; top: 25px; left: 105px;"></div>
+<ul>
+  <li>Folgen Sie uns</li>
+  <li><a href="https://facebook.com/holidayhome.rentals" target="_blank">Facebook</a></li>
+  <li><a href="https://plus.google.com/+Holidayhomevacationrentals" rel="publisher" target="_blank">Google+</a></li>
+  <li><a href="/newsletter_anmeldung_d.aspx" id="Newsletter_Abonnieren" target="_blank">Newsletter abonnieren</a></li>
+</ul>
+</div>
+
+<div class="footer" style="width: 250px; margin-left: 50px;">
+<ul>
+  <li>Sicher bezahlen</li>
+  <li style="color: #70747C;">- Kreditkarte (<img src="/bilder/visa-3dk.gif" alt="VISA-Logo" style="width:36px; height:22px; border:none; vertical-align:middle;"><img src="/bilder/mastercard-3dk.gif" alt="MasterCard-Logo" style="width:36px; height:22px; border:none; vertical-align:middle;"><img src="/bilder/amex-3dk.gif" alt="AmericanExpress-Logo" style="width:36px; height:22px; border:none; vertical-align:middle;">)</li>
+  <div id="ctl01_postfinance"></div>
+  <li style="color: #70747C;">- Banküberweisung</li>
+</ul>
+</div>
+
+<div id="ctl01_laenderliste" class="laenderliste"><ul><li>Über 200'000 Ferienhäuser und Ferienwohnungen in folgenden Ländern:</li><li><a href="/ferienhaus-ferienwohnung/argentinien.htm">Argentinien</a>, <a href="/ferienhaus-ferienwohnung/australien.htm">Australien</a>, <a href="/ferienhaus-ferienwohnung/belgien.htm">Belgien</a>, <a href="/ferienhaus-ferienwohnung/daenemark.htm">D&#228;nemark</a>, <a href="/ferienhaus-ferienwohnung/deutschland.htm">Deutschland</a>, <a href="/ferienhaus-ferienwohnung/finnland.htm">Finnland</a>, <a href="/ferienhaus-ferienwohnung/frankreich.htm">Frankreich</a>, <a href="/ferienhaus-ferienwohnung/griechenland.htm">Griechenland</a>, <a href="/ferienhaus-ferienwohnung/grossbritannien.htm">Grossbritannien</a>, <a href="/ferienhaus-ferienwohnung/italien.htm">Italien</a>, <a href="/ferienhaus-ferienwohnung/karibische-inseln.htm">Karibische Inseln</a>, <a href="/ferienhaus-ferienwohnung/kroatien.htm">Kroatien</a>, <a href="/ferienhaus-ferienwohnung/niederlande.htm">Niederlande</a>, <a href="/ferienhaus-ferienwohnung/norwegen.htm">Norwegen</a>, <a href="/ferienhaus-ferienwohnung/oesterreich.htm">&#214;sterreich</a>, <a href="/ferienhaus-ferienwohnung/portugal.htm">Portugal</a>, <a href="/ferienhaus-ferienwohnung/schweden.htm">Schweden</a>, <a href="/ferienhaus-ferienwohnung/schweiz.htm">Schweiz</a>, <a href="/ferienhaus-ferienwohnung/spanien.htm">Spanien</a>, <a href="/ferienhaus-ferienwohnung/sri-lanka.htm">Sri Lanka</a>, <a href="/ferienhaus-ferienwohnung/tuerkei.htm">T&#252;rkei</a>, <a href="/ferienhaus-ferienwohnung/usa.htm">USA</a>, <a href="/ferienhaus-ferienwohnung/zypern.htm">Zypern</a></li></ul></div>
+
+<span id="ctl01_test"></span>
+<span id="ctl01_test2"></span>
+
+<!-- ui-dialog -->
+<div id="dialog_Newsletter_Anmeldung" title="Newsletter abonnieren">
+</div>  
+    
+	  <span id="test"></span>                
+    
+	</div><!-- #footer_box -->
+  
+</div><!-- #pagewidth -->
+
+<!-- ui-dialog -->
+<div id="dialog_Regionenauswahl" title="Regionen -> Klicken Sie bitte auf die gewünschte Region (Text oder Karte)"></div>
+      
+<!-- ui-dialog -->
+<div id="dialog_Orteauswahl" title="Orte -> Klicken Sie bitte auf den gewünschten Ort"></div>
+
+</body>
+</html>

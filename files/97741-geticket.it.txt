@@ -1,0 +1,848 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="it">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta http-equiv="content-language" content="it" />
+<title>Home page</title>
+<meta name="description" content="Benvenuti su Geticket, il sistema di biglietteria online di Unicredit. Welcome to Geticket, ticketing seller." />
+<meta name="keywords" content="Geticket, biglietteria, Unicredit, tickets, Arena, Teatro filarmonico, Teatro San Carlo, Verona, Napoli" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="icon" href="http://www.geticket.it/media/favicon/default/favicon_6.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="http://www.geticket.it/media/favicon/default/favicon_6.ico" type="image/x-icon" />
+<meta name="google-site-verification" content="HIdWAcGXWNGqDZExF3frHIwAiTXeY0DoOwasg9Qz_OU" />
+<meta name="msvalidate.01" content="20724397C94A57E12081E37E77662D42" />
+<link rel="stylesheet" type="text/css" href="http://www.geticket.it/skin/frontend/geticket/default/css/styles.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.geticket.it/skin/frontend/geticket/default/css/styles_dario.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.geticket.it/skin/frontend/base/default/css/widgets.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.geticket.it/skin/frontend/geticket/default/css/jquery_ui.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.geticket.it/skin/frontend/geticket/default/css/print.css" media="print" />
+<script type="text/javascript" src="http://www.geticket.it/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/jquery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/jquery/jquery.cycle.all.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/jquery/slideshow.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/jquery/jquery_highlight.min.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/jquery/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/jquery/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/jquery/jquery.json-2.3.min.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/jquery/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/jquery/functionMobile.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/lib/ccard.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/prototype/validation.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/scriptaculous/builder.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/scriptaculous/effects.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/scriptaculous/dragdrop.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/scriptaculous/controls.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/scriptaculous/slider.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/varien/js.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/varien/form.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/varien/menu.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/mage/translate.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/js/mage/cookies.js"></script>
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="http://www.geticket.it/skin/frontend/geticket/default/css/styles-ie.css" media="all" />
+<![endif]-->
+<!--[if lt IE 7]>
+<script type="text/javascript" src="http://www.geticket.it/js/lib/ds-sleight.js"></script>
+<script type="text/javascript" src="http://www.geticket.it/skin/frontend/geticket/default/js/ie6.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.www.geticket.it';
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = [];
+//]]>
+</script>
+<script type="application/ld+json">[{"@context":"http:\/\/schema.org","@type":"Organization","url":"http:\/\/www.geticket.it\/","logo":"http:\/\/www.geticket.it\/skin\/frontend\/geticket\/default\/images\/logo_geticket.png","contactPoint":[{"@type":"ContactPoint","telephone":"+39 848 002008","contactType":"customer service"}]},{"@context":"http:\/\/schema.org","@type":"Website","name":"Geticket","copyrightHolder":"Unicredit S.p.A.","url":"http:\/\/www.geticket.it\/","alternateName":"Geticket - biglietteria on-line","potentialAction":{"@type":"SearchAction","target":"http:\/\/www.geticket.it\/default\/catalogsearch\/result\/?p_ricercafree=All&q={search_term_string}","query-input":"required name=search_term_string"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22","endDate":"2018-08-31","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/carmen-arena-di-verona-opera-festival-2018-arena-verona-2018-06-22-21-00.html","price":"23.00","priceCurrency":"EUR"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Aida","startDate":"2018-06-23Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/a\/i\/aida-270-arena-2018-verona.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Aida","startDate":"2018-06-23","endDate":"2018-07-22","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Aida-arena-verona-94427.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/a\/i\/aida-270-arena-2018-verona.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Aida-arena-verona-94427.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/aida-arena-di-verona-opera-festival-2018-arena-verona-2018-06-23-21-00.html","price":"22.00","priceCurrency":"EUR"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-29Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_1.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22","endDate":"2018-08-31","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_1.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/carmen-arena-di-verona-opera-festival-2018-arena-verona-2018-06-29-21-00.html","price":"22.00","priceCurrency":"EUR"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-07-06Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_2.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22","endDate":"2018-08-31","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_2.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/carmen-arena-di-verona-opera-festival-2018-arena-verona-2018-07-06-21-00.html","price":"22.00","priceCurrency":"EUR"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-07-11Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_3.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22","endDate":"2018-08-31","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_3.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/carmen-arena-di-verona-opera-festival-2018-arena-verona-2018-07-11-21-00.html","price":"20.00","priceCurrency":"EUR"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-07-15Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_4.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22","endDate":"2018-08-31","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_4.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/carmen-arena-di-verona-opera-festival-2018-arena-verona-2018-07-15-21-00.html","price":"false","priceCurrency":"EUR"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-07-17Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_5.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22","endDate":"2018-08-31","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_5.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/carmen-arena-di-verona-opera-festival-2018-arena-verona-2018-07-17-21-00.html","price":"20.00","priceCurrency":"EUR"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-07-21Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_6.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22","endDate":"2018-08-31","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_6.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/carmen-arena-di-verona-opera-festival-2018-arena-verona-2018-07-21-21-00.html","price":"22.00","priceCurrency":"EUR"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-08-03Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_7.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22","endDate":"2018-08-31","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_7.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/carmen-arena-di-verona-opera-festival-2018-arena-verona-2018-08-03-20-45.html","price":"22.00","priceCurrency":"EUR"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-08-09Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_8.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22","endDate":"2018-08-31","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_8.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/carmen-arena-di-verona-opera-festival-2018-arena-verona-2018-08-09-20-45.html","price":"20.00","priceCurrency":"EUR"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-08-12Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_9.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22","endDate":"2018-08-31","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_9.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/carmen-arena-di-verona-opera-festival-2018-arena-verona-2018-08-12-20-45.html","price":"20.00","priceCurrency":"EUR"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-08-16Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_10.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22","endDate":"2018-08-31","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_10.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/carmen-arena-di-verona-opera-festival-2018-arena-verona-2018-08-16-20-45.html","price":"false","priceCurrency":"EUR"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-08-22Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_11.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22","endDate":"2018-08-31","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_11.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/carmen-arena-di-verona-opera-festival-2018-arena-verona-2018-08-22-20-45.html","price":"20.00","priceCurrency":"EUR"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-08-25Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_12.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22","endDate":"2018-08-31","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/c\/a\/carmen-270-arena-2018-verona_12.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/carmen-arena-di-verona-opera-festival-2018-arena-verona-2018-08-25-20-45.html","price":"22.00","priceCurrency":"EUR"}},{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-08-31Tverona:opera","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/images\/catalog\/product\/placeholder\/small_image.jpg","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"superEvent":{"@context":"http:\/\/schema.org","@type":"TheaterEvent","name":"Carmen","startDate":"2018-06-22","endDate":"2018-08-31","description":"Arena di Verona Opera Festival 2018","location":{"@type":"EventVenue","name":"Arena","address":"Piazza Br\u00e0 1 - Verona"},"url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html","image":"http:\/\/www.geticket.it\/media\/catalog\/product\/cache\/1\/small_image\/137x\/9df78eab33525d08d6e5fb8d27136e95\/images\/catalog\/product\/placeholder\/small_image.jpg","offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/show\/Carmen-arena-verona-94113.html"}},"offers":{"@type":"Offer","url":"http:\/\/www.geticket.it\/default\/carmen-arena-di-verona-opera-festival-2018-arena-verona-2018-08-31-20-45.html","price":"22.00","priceCurrency":"EUR"}}]</script><script type="text/javascript">var Translator = new Translate({"Please use only letters (a-z or A-Z), numbers (0-9) or underscore(_) in this field, first character should be a letter.":"Please use only letters (a-z or A-Z), numbers (0-9) or underscores (_) in this field, first character must be a letter."});</script>
+    </head>
+    <body class=" cms-index-index cms-home">
+        <a href="https://plus.google.com/+GeticketIt_biglietteria_online" rel="publisher"></a>
+        
+<!-- BEGIN GOOGLE ANALYTICS CODE -->
+<script type="text/javascript">
+//<![CDATA[
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+    })();
+
+    var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-5799706-2']);
+_gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['_trackPageview']);
+
+
+//]]>
+</script>
+<!-- END GOOGLE ANALYTICS CODE -->        <script src="https://www.geticket.it/default/skin/frontend/geticket/default/js/cookiechoices.js"></script>
+<script>
+    var lingua = "it_IT";
+    var label = "Chiudi";
+    var cookieString = 'Questo sito utilizza cookie di profilazione, eventualmente anche di terze parti. Se vuoi saperne di più o negare il consenso clicca' +
+            ' <a href="http://www.geticket.it/default/cookies" target="_blank">qui</a><br />' +
+            'Proseguendo la navigazione acconsenti all’uso di tutti i cookie.';
+    var engString = 'This website uses profiling cookies, possibly also those of third parties. If you want to know more or refuse consent click' +
+            ' <a href="http://www.geticket.it/default/cookies" target="_blank">here</a><br />' +
+            'Continuing browsing you consent to the use of all cookies.';
+    var deString = 'This website uses profiling cookies, possibly also those of third parties. If you want to know more or refuse consent click' +
+            ' <a href="http://www.geticket.it/default/cookies" target="_blank">here</a><br />' +
+            'Continuing browsing you consent to the use of all cookies.';
+    if (lingua == "en_US") {
+        cookieString = engString;
+        label = "Close";
+    } else if (lingua == "de_DE") {
+        cookieString = deString;
+        label = "Close";
+    }
+    jQuery(document).ready(function () {
+        jQuery("body").click(function (e) {
+            cookieChoices.dismissLinkClick();
+        });
+    });
+</script>
+<script>
+    //<![CDATA[
+    document.addEventListener('DOMContentLoaded', function (event) {
+        cookieChoices.showCookieConsentBar(cookieString, label, false, false);
+    });
+    //]]>
+</script>
+
+<div id="upper_links" alt="">
+    <div class='header_links'><ul class="links_header">
+<li><a href="http://www.geticket.it/default/">Home</a></li>
+<li><a href="http://www.geticket.it/default/contatti">Contatti</a></li>
+<li><a href="http://www.geticket.it/default/faq">FAQ</a></li>
+<li><a href="http://www.geticket.it/default/mappasito">Mappa del sito</a></li>
+<li><a href="http://www.geticket.it/default/customer/account/">Area personale</a></li>
+</ul><script>
+jQuery.noConflict();
+jQuery(document).ready(function(){
+
+	jQuery("#lingua-label").hide();
+        
+        
+        jQuery("#lingua_2").text("English");
+        jQuery("#lingua_1").text("Deutsch");
+
+jQuery("#styled_lingua").change(function(){
+	if(jQuery(this).val() != "-")
+	{
+		jQuery(window.location).attr("href", jQuery(this).val());
+	}
+});
+	jQuery('select.styled').customSelect();
+});
+</script>
+
+    <!--<div class="styled-select_language" style=" font-size: 11px; width: 100px; height: 15px; overflow: hidden; background: url(arrow_select.png) no-repeat right #000; color: #fff; -webkit-appearance: none;">-->
+	&nbsp
+	<select class="styled" id ="styled_lingua" title="Lingua">
+	<option value="-" selected="selected" id="lingua-label">Lingua</option>
+                    <option id="lingua_0"   style="background: transparent; color: black;" value="http://www.geticket.it/default/?___from_store=default">Italiano</option>
+                    <option id="lingua_1"   style="background: transparent; color: black;" value="http://www.geticket.it/de_de/?___from_store=default">Tedesco</option>
+                    <option id="lingua_2"   style="background: transparent; color: black;" value="http://www.geticket.it/en_us/?___from_store=default">Inglese</option>
+        </select>
+	<!--</div>-->
+
+
+</div>
+</div>
+</div>
+
+<div id="personale_carrello" alt="http://www.geticket.it/skin/frontend/geticket/default/">
+    <div class='header_pc'>
+        <div class='personale'>
+
+<div class="account_login">
+
+<ul>
+    <li><img id='immaginepersonale' src="http://www.geticket.it/skin/frontend/geticket/default/images/geticket/iconaareapersonale_s1.png" alt='logopersonale'></img></li>
+    <div id='area_personale'><b>AREA PERSONALE</b> 
+	<li class="perpulsanteformcustomer" style="display: inline-block;">
+			<a href='http://www.geticket.it/default/customer/account/login'>ACCEDI</a>
+	</li>
+	<li class="perpulsanteformcustomer" style="display: inline-block;">
+		<a href="http://www.geticket.it/default/customer/account/create">REGISTRATI</a>
+	</li>
+	</div>
+</ul>
+</div>
+</div>
+        <div class='carrello'><div class="block-cart-mini">
+        <div class="block-content">
+    	
+            <div class="summary">
+        	
+                            <span class='carrello_titolo'>CARRELLO:</span><div class='itemsincart'>0 items</div><span class='cartcheckout'><a><img src="http://www.geticket.it/skin/frontend/geticket/default/images/geticket/checkout.jpg"></img></a></span>
+                        
+        </div>
+        
+        
+    </div>
+</div>
+</div>
+    </div>
+</div>
+
+<div class="header-container">
+    <div class="header">
+
+        <div class='logoepersonal' style="margin-top: -7px; margin-bottom: -7px;">
+            <div class='logo_header'>
+                                    <h1 class="logo"><strong>GeTicket</strong><a href="http://www.geticket.it/default/" title="GeTicket" class="logo"><img height='96' src="http://www.geticket.it/skin/frontend/geticket/default/images/logo_geticket.png" alt="GeTicket" /></a></h1>
+                            </div>
+            
+        </div>
+        <script>
+            jQuery.noConflict();
+            jQuery(document).ready(function () {
+                var controllo_carrello = 'YES';
+                if (controllo_carrello == "YES")
+                    jQuery.cookie("fatto2", "");
+            });
+        </script>
+
+        <div class="quick-access"
+                     >
+
+             
+<div id='menu_navigazione'>
+    <ul class="dropdown dropdown-horizontal">
+        <li><a class="dir-tickets munich">Tickets</a>
+            <ul class="cascade soloperticket">
+                
+                <li>
+                    <div id='tipo_tickets'><ol><li class='dir'><p><a style='border: none;' href='http://www.geticket.it/default/spettacoli-teatro-geticket.html'>Teatro</a></p><ol><li><div class='trotta'><a href='http://www.geticket.it/default/spettacoli-teatro-geticket/prosa.html'>Prosa</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/spettacoli-teatro-geticket/geticket-spettacoli-cabaret.html'>Cabaret</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/spettacoli-teatro-geticket/musical.html'>Musical</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/spettacoli-teatro-geticket/danza-moderna-geticket.html'>Danza</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/spettacoli-teatro-geticket/proiezione-live-in-diretta.html'>Proiezione</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/spettacoli-teatro-geticket/geticket-spettacolo-teatrale.html'>Spettacolo teatrale</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/spettacoli-teatro-geticket/teatro-ragazzi.html'>Teatro ragazzi</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/spettacoli-teatro-geticket/operetta.html'>Operetta</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/spettacoli-teatro-geticket/spettacoli-geticket-circo.html'>Circo</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/spettacoli-teatro-geticket/recitals-letterari.html'>Recitals letterari</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/spettacoli-teatro-geticket/visita-guidata.html'>visita guidata </a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/spettacoli-teatro-geticket/lezione-con-musica.html'>lezione con musica</a></div></li></ol></li><li class='dir'><p><a style='border: none;' href='http://www.geticket.it/default/concerti.html'>concerti</a></p><ol><li><div class='trotta'><a href='http://www.geticket.it/default/concerti/italiana.html'>Musica italiana</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/concerti/concerti-musica-internazionale-geticket-1.html'>Musica internazionale</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/concerti/concerti-musica-jazz-geticket.html'>Jazz</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/concerti/concerti-musica-leggera-geticket.html'>musica leggera</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/concerti/concerto-evening.html'>concerto/reading</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/concerti/tango.html'>Tango</a></div></li></ol></li><li class='dir'><p><a style='border: none;' href='http://www.geticket.it/default/classica-opera-html.html'>classica/opera</a></p><ol><li><div class='trotta'><a href='http://www.geticket.it/default/classica-opera-html/concerti-di-musica-classica.html'>Concerti classici</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/classica-opera-html/balletto-classico-e-moderno.html'>Balletto</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/classica-opera-html/opera-lirica.html'>Opera</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/classica-opera-html/operetta.html'>Operetta</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/classica-opera-html/musica-barocca.html'>Musica Barocca</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/classica-opera-html/recital-e-musica-da-camera.html'>Recital e musica da Camera</a></div></li></ol></li><li class='dir'><p><a style='border: none;' href='http://www.geticket.it/default/altro-html.html'>Altro</a></p><ol><li><div class='trotta'><a href='http://www.geticket.it/default/altro-html/parcheggi.html'>Parcheggi</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/altro-html/museo.html'>Museo</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/altro-html/eventi-sportivi.html'>Eventi sportivi</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/altro-html/mostra.html'>Mostra</a></div></li><li><div class='trotta'><a href='http://www.geticket.it/default/altro-html/cinema.html'>Cinema</a></div></li></ol></li></ol>
+                    </div>
+                </li>                <li>
+                    <div class="container_proxecom">
+                        <div class='prossimamente' >
+                            <h2>Novità</h2>
+                            
+                                <div style="margin-left: 10px;"><pre class="com_hp_cascade_data">30/08/2017</pre>
+                                        <div height = "10px" onclick = "location.href = 'http://www.geticket.it/default/show/Roberto-Bolle-and-Friends-arena-verona-99727.html'" style="cursor: pointer">
+                                        <div class = "com_hp_cascade_title" style = "width: 180px; padding-right: 10px;">Roberto Bolle and Friends</div>
+                                </div><pre class="com_hp_cascade_data">29/08/2017</pre>
+                                        <div height = "10px" onclick = "location.href = 'http://www.geticket.it/default/show/4-Miles-More-Plays-the-music-of-Miles-Davis-palazzo-grimani-venezia-99676.html'" style="cursor: pointer">
+                                        <div class = "com_hp_cascade_title" style = "width: 180px; padding-right: 10px;">4 Miles More! Plays the...</div>
+                                </div><br>
+                                <p style="margin-left: 1px;"><span id="novita" style="border: none; padding-bottom: 0; cursor: pointer; padding-top: 9px;">VISUALIZZA TUTTE</span></p>
+                                <script>
+                                    jQuery.noConflict();
+                                    jQuery(document).ready(function() {
+                                        jQuery("#novita").click(function(e) {
+                                            e.preventDefault();
+                                            if ((jQuery("#description").val() == "") || (jQuery("#description").val() == " "))
+                                            {
+                                                jQuery("#description").val(" ");
+                                            }
+                                            jQuery("#ricercaavanzat").submit();
+                                        })
+                                    })
+                                </script>
+                                <form id='ricercaavanzat' name="ricercaavanzata" action="http://www.geticket.it/default/catalogsearch/advanced/result/">
+                                    <input type="hidden" name='p_ricercafree' value="All"/>
+                                    <input type="hidden" name='description' value=" "/>
+                                    <input type="hidden" name='novita' value="Novita"/>
+                                </form>
+                            </div>
+                        </div>                            <hr>
+                            <div class="comunicazioni">
+                                <h2>Comunicazioni</h2>
+                                <div style="margin-left: 10px;">
+                                                                        <p style="color: red;"><a style="border: none; padding-bottom: 0; padding-top: 5px;" href="http://www.geticket.it/default/sintax">VISUALIZZA TUTTE</a></p>
+                                </div>
+                            </div>
+                        </div>
+                </li>
+            </ul>
+        </li>
+        <li><a class="dir-localita munich">Località</a>
+               
+            <ul class="cascade" style="min-width: 300px; width: auto !important; min-height: 80px !important">
+                <li>
+                    <div>
+                        <ol>
+                            <li>
+                                <table width='100%' style="margin-top: 10px !important; background: #f1f1f1;">
+                                    <tr></tr><tr><td width='90px' style='height: 10px;' height='10px'>
+				<a style='background: none; box-shadow: none; border: none;' href='http://www.geticket.it/default/locations/index/search/provincia/AN'> Ancona</a>
+			</td><td style='height: 10px;' width='90px' height='10px'>
+				<a style='background: none; box-shadow: none; border: none;' href='http://www.geticket.it/default/locations/index/search/provincia/BL'> Belluno</a>
+			</td><td style='height: 10px;' width='90px' height='10px'>
+				<a style='background: none; box-shadow: none; border: none;' href='http://www.geticket.it/default/locations/index/search/provincia/BS'> Brescia</a>
+			</td><td style='height: 10px;' width='90px' height='10px'>
+				<a style='background: none; box-shadow: none; border: none;' href='http://www.geticket.it/default/locations/index/search/provincia/BZ'> Bolzano / Bozen</a>
+			</td><td style='height: 10px;' width='90px' height='10px'>
+				<a style='background: none; box-shadow: none; border: none;' href='http://www.geticket.it/default/locations/index/search/provincia/CN'> Cuneo</a>
+			</td></tr><tr><td width='90px' style='height: 10px;' height='10px'>
+				<a style='background: none; box-shadow: none; border: none;' href='http://www.geticket.it/default/locations/index/search/provincia/MI'> Milano</a>
+			</td><td style='height: 10px;' width='90px' height='10px'>
+				<a style='background: none; box-shadow: none; border: none;' href='http://www.geticket.it/default/locations/index/search/provincia/MN'> Mantova</a>
+			</td><td style='height: 10px;' width='90px' height='10px'>
+				<a style='background: none; box-shadow: none; border: none;' href='http://www.geticket.it/default/locations/index/search/provincia/NA'> Napoli</a>
+			</td><td style='height: 10px;' width='90px' height='10px'>
+				<a style='background: none; box-shadow: none; border: none;' href='http://www.geticket.it/default/locations/index/search/provincia/PD'> Padova</a>
+			</td><td style='height: 10px;' width='90px' height='10px'>
+				<a style='background: none; box-shadow: none; border: none;' href='http://www.geticket.it/default/locations/index/search/provincia/VE'> Venezia</a>
+			</td></tr><tr><td width='90px' style='height: 10px;' height='10px'>
+				<a style='background: none; box-shadow: none; border: none;' href='http://www.geticket.it/default/locations/index/search/provincia/VR'> Verona</a>
+			</td></tr></table>
+                   </li>
+                   </ol>
+                   </div>
+                   </li>
+                   </ul>        </li>
+        <li><a class="dir-getservice munich"  href='http://www.geticket.it/default/getservice'>Getservice</a>
+            <ul class="cascade" style='width: 300px !important; min-height: 140px !important'>
+                <li>
+                    <div>
+                        <ol>
+                            <li>
+                                <table width='100%' style="margin-top: 10px!important;
+                                       background: #f1f1f1;">
+                                    <tr>
+                                        <td style = 'height: 10px;' width = '90px' height = '10px'>
+                                            <a style = 'background: none; box-shadow: none; border: none;' href = 'http://www.geticket.it/default/getservice/getphone'>Getphone</a>
+                                        </td>
+                                    </tr>
+                                </table>				
+                            </li>
+                            <li>
+                                <table width='100%' style="margin-top: 10px !important; background: #f1f1f1;">
+                                    <tr>
+                                        <td style='height: 10px;' width='90px' height='10px'>
+                                            <a style='background: none; box-shadow: none; border: none;' href='http://www.geticket.it/default/getservice/getgift'>Getgift</a>
+                                        </td>
+                                    </tr>
+                                </table>				
+                            </li>
+                            <li>
+                                <table width='100%' style="margin-top: 10px !important; background: #f1f1f1;">
+                                    <tr>
+                                        <td style='height: 10px;' width='90px' height='10px'>
+                                            <a style='background: none; box-shadow: none; border: none;' href='http://www.geticket.it/default/getservice/getnews'>Getnews</a>
+                                        </td>
+                                    </tr>
+                                </table>				
+                            </li>
+                            <li>
+                                <table width='100%' style="margin-top: 10px !important; background: #f1f1f1;">
+                                    <tr>
+                                        <td style='height: 10px;' width='90px' height='10px'>
+                                            <a style='background: none; box-shadow: none; border: none;' href='http://www.geticket.it/default/getservice/getexpress'>Getexpress</a>
+                                        </td>
+                                    </tr>
+                                </table>				
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li><a class="dir-puntivendita munich" href='http://www.geticket.it/default/pvendita'>Punti vendita</a></li>
+    </ul>
+</div>
+            <form id="search_mini_form" action="http://www.geticket.it/default/catalogsearch/result/" method="get">
+    <div class="form-search" >
+        <input style="border: none; padding-left: 5px !important; height: 27px; width: 225px; color: #000;" id="search" type="text" name="q" value="" class="input-text" />
+        <select class="styled" id='p_ricercafree' type='select' name='p_ricercafree' alt="selectricerca" style="width: 105px; color: #000 !important; margin-left: 0px;">
+            <option value='All'>All</option>
+            <option value='4'>Concerti</option><option value='7'>Classica/opera</option><option value='8'>Altro</option><option value='31'>Teatro</option>        </select>
+            <button type="submit" title="Search" class="button"><img 
+            src='http://www.geticket.it/skin/frontend/geticket/default/images/geticket/iconaricerca.jpg' id="perpaolomanina"></img></button>
+            <div class='goto_avanzata' 
+            ><a style="text-decoration: none !Important" href="http://www.geticket.it/default/catalogsearch/advanced">RICERCA AVANZATA</a></div>
+            <div id="search_autocomplete" class="search-autocomplete"></div>
+            <script type="text/javascript">
+                //<![CDATA[
+                var searchForm = new Varien.searchForm('search_mini_form', 'search', 'Cerca per artista, località, evento...');
+                searchForm.initAutocomplete('http://www.geticket.it/default/catalogsearch/ajax/suggest/', 'search_autocomplete');
+                //]]>
+            </script>
+    </div>
+</form>
+<script>
+    jQuery(document).ready(function(){
+        jQuery(document).on("click", ".autocomplete-result", function(e){
+            e.preventDefault();
+            window.location.href = jQuery(this).data("url");
+        });
+        
+    });
+</script>        </div>
+
+    </div>
+</div>
+<script>
+    if (jQuery.browser.msie) {
+        if (jQuery.browser.version == '7.0') {
+            jQuery('html').addClass('ie7');
+
+            jQuery(document).ready(function () {
+                jQuery('#personale_carrello .header_pc').append(jQuery('#personale_carrello > .carrello'));
+            });
+        }
+    }
+
+    jQuery(document).ready(function () {
+        var lang = "it_IT";
+        var img3 = jQuery(".block-content.img3 img");
+        var img1 = jQuery(".block-content.img1 img");
+        if (typeof (img3) != "undefined")
+            var src_booking = jQuery(".block-content.img3 img").attr("src");
+        if (typeof (img1) != "undefined")
+            var src_phone = jQuery(".block-content.img1 img").attr("src");
+
+        if (lang == "de_DE") {
+            if (typeof (src_phone) != "undefined")
+                jQuery(".block-content.img1 img").attr("src", src_phone.replace("bannergetphone.png", "bannergetphone_de.png"));
+            if (typeof (src_booking) != "undefined")
+                jQuery(".block-content.img3 img").attr("src", src_booking.replace("booking.png", "booking_de.png"));
+            //jQuery(".block-content.img1 img").attr("src", src_phone.replace("bannergetphone.png", "bannergetphone_de.png"));
+        }
+        if (lang == "en_US") {
+            if (typeof (src_phone) != "undefined")
+                jQuery(".block-content.img1 img").attr("src", src_phone.replace("bannergetphone.png", "bannergetphone_en.png"));
+            if (typeof (src_booking) != "undefined")
+                jQuery(".block-content.img3 img").attr("src", src_booking.replace("booking.png", "booking_en.png"));
+            //jQuery(".block-content.img1 img").attr("src", src_phone.replace("bannergetphone.png", "bannergetphone_en.png"));
+        }
+    });
+</script>                               <div class="wrapper">
+                <noscript>
+        <div class="noscript">
+            <div class="noscript-inner">
+                <p><strong>JavaScript seem to be disabled in your browser.</strong></p>
+                <p>You must have JavaScript enabled in your browser to utilize the functionality of this website.</p>
+            </div>
+        </div>
+    </noscript>
+            <div class="page">
+
+                <div class="main-container col2-right-layout">
+                    <div class="main">
+                                                <div class="col-main">
+                                                        <script>
+    jQuery.noConflict();
+    jQuery.cookie("refre", "");
+    jQuery("#cat_all").attr('class', "pressed");
+    jQuery.ajax({type: "POST", url: "http://www.geticket.it/default/cms/index/post/", beforeSend: function () {
+            jQuery("#griglia_spettacoli").html("<div id='loader' style='position: relative; left: 270px; top: 90px;'><img src='http://www.geticket.it/skin/frontend/geticket/default/images/geticket/loader.gif' width='150px' height='120px'></div>");
+        }, data: {controllo_giunzione: "ON", category: "ALL"}}).done(function (msg) {
+        jQuery("#griglia_spettacoli").html(msg);
+    });
+    jQuery(document).ready(function () {
+
+        jQuery("#cat_all").attr('class', "pressed");
+        jQuery("#cat_all").click(function () {
+            jQuery.ajax({type: "POST", url: "http://www.geticket.it/default/cms/index/post/", beforeSend: function () {
+                    jQuery("#griglia_spettacoli").html("<div id='loader' style='position: relative; left: 270px; top: 90px;'><img src='http://www.geticket.it/skin/frontend/geticket/default/images/geticket/loader.gif' width='150px' height='120px'></div>");
+                }, data: {controllo_giunzione: "ON", category: "ALL"}}).done(function (msg) {
+                jQuery("#griglia_spettacoli").html(msg);
+                jQuery("#css3menu1 > li > a").removeAttr("class");
+                jQuery("#cat_all").attr("class", 'pressed');
+            });
+        });
+        jQuery("#css3menu1 > li > a").click(function () {
+            if (jQuery(this).attr('id') != "cat_all") {
+                jQuery("#css3menu1 > li > a").removeAttr("class");
+                jQuery(this).attr("class", 'pressed');
+                jQuery.ajax({type: "POST", url: "http://www.geticket.it/default/cms/index/post/", beforeSend: function () {
+                        jQuery("#griglia_spettacoli").html("<div id='loader' style='position: relative; left: 270px; top: 90px;'><img src='http://www.geticket.it/skin/frontend/geticket/default/images/geticket/loader.gif' width='150px' height='120px'></div>");
+                    }, data: {controllo_giunzione: "ON", category: "Categoria", categoria: jQuery(this).attr("alt")}}).done(function (msg) {
+                    jQuery("#griglia_spettacoli").html(msg);
+                });
+            }
+        });
+        var isLanding = false;
+        if (isLanding) {
+            jQuery('body').css('overflow', 'hidden');
+            jQuery("#landing_popup").css('width', jQuery('body').width() + 'px').css('height', jQuery('body').height() + 'px');
+            var h = jQuery(window).height() - jQuery("#content_landing").height();
+            var w = jQuery("body").width() - jQuery("#content_landing").width();
+            jQuery("#content_landing").css('top', h / 2 + 'px').css('left', w / 2 + 'px');
+            jQuery(window).resize(function () {
+                jQuery("#landing_popup").css('width', jQuery('body').width() + 'px').css('height', jQuery('body').height() + 'px');
+                var h = jQuery(window).height() - jQuery("#content_landing").height();
+                var w = jQuery("body").width() - jQuery("#content_landing").width();
+                jQuery("#content_landing").css('top', h / 2 + 'px').css('left', w / 2 + 'px');
+            });
+            jQuery("#close_landing, #annulla_landing").click(function () {
+                jQuery("#content_landing, #landing_popup").animate({
+                    opacity: 0,
+                }, 1000);
+                setTimeout(function () {
+                    jQuery("#landing_popup").hide();
+                }, 1000);
+                jQuery('body').css('overflow', 'auto');
+            });
+        }
+    });
+    // ATTENZIONE, IMPLEMENTARE MECCANISMO DI RATING e DI FIXED INTERVALLO TEMPORALE
+</script>
+
+<script>jQuery.noConflict(); jQuery(document).ready(function(){jQuery('body').css('overflow', 'auto');});</script><div id="point">
+    <ul></ul>
+</div>
+<div id="description_hp" style="display: none;"></div>
+<script>
+    function onBefore() {
+        jQuery("#description_hp").css("top", (jQuery("#photos > img").height() - 120));
+        jQuery('#description_hp div').fadeOut('1000');
+        jQuery('#description_hp h1').fadeOut('1000');
+        jQuery('#description_hp h3').fadeOut('1000');
+    }
+    function onAfter() {
+        jQuery("#description_hp").css("top", (jQuery("#photos > img").height() - 120)).css("padding-left", 15).css("z-index", 2);
+        jQuery('#description_hp').html('<div id="more_slideshow" style="margin-left: 4px;"><a href="' + this.url + '">MORE</a></div><h1 style="font-size: 18px; margin-left: 4px; color: #FFFFFF; font-style: bold; font-family: arial black; text-transform: capitalize">' + this.titolo + '</h1><h3 style="margin-left: 4px; padding-top: 0; margin-top: 0; color: #999; font-size: 14px; font-weight: normal; font-family: Trebuchet MS;">' + this.location + '</h3>');
+        jQuery('#divcliccabile').attr("href", this.url);
+    }
+    window.onload = function () {
+        setTimeout(function () {
+            var images = [];
+images[0] = new Image();images[0].src = 'http://www.geticket.it/media/import/960_carosello_2018.jpg';images[0].alt = '96° Festival Lirico 2018';images[0].titolo = '96° festival...';images[0].location = 'Arena';images[0].url = 'http://www.geticket.it/default/season/96-Festival-Lirico-2018-arena-di-verona-arena-verona-285.html';images[1] = new Image();images[1].src = 'http://www.geticket.it/media/import/carosello-san-carlo-2017.jpg';images[1].alt = 'Teatro di San Carlo Stagione 2016 - 2017';images[1].titolo = 'teatro di san carlo...';images[1].location = 'Teatro San Carlo';images[1].url = 'http://www.geticket.it/default/season/Teatro-di-San-Carlo-Stagione-2016-2017-stagione-2016---2017-teatro-san-carlo-napoli-237.html';images[2] = new Image();images[2].src = 'http://www.geticket.it/media/import/filarmonica-2016-generale-carousel.jpg';images[2].alt = 'Filarmonica della Scala';images[2].titolo = 'filarmonica della...';images[2].location = 'Teatro alla Scala';images[2].url = 'http://www.geticket.it/default/season/Filarmonica-della-Scala-concerti-stagione-della-filarmonica-della-scala-teatro-alla-scala-milano-260.html';images[3] = new Image();images[3].src = 'http://www.geticket.it/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/9/6/960x355_V2_1.jpg';images[3].alt = 'Intimissimi on Ice 2017';images[3].titolo = 'intimissimi on ice...';images[3].location = 'Arena';images[3].url = 'http://www.geticket.it/default/show/Intimissimi-on-Ice-2017-arena-verona-95159.html';images[4] = new Image();images[4].src = 'http://www.geticket.it/media/import/carousel_Festivaletteratura_2017.jpg';images[4].alt = 'Festivaletteratura 2017';images[4].titolo = 'festivaletteratura...';images[4].location = 'Varie Location';images[4].url = 'http://www.geticket.it/default/season/Festivaletteratura-2017--varie-location-mantova-293.html';images[5] = new Image();images[5].src = 'http://www.geticket.it/media/import/HP-carousel-2017-saslong.jpg';images[5].alt = '50 Saslong Classic Gardena Groeden';images[5].titolo = '50 saslong classic...';images[5].location = 'Pista Saslong';images[5].url = 'http://www.geticket.it/default/season/50-Saslong-Classic-Gardena-Groeden-pista-saslong---selva-gardena-(bz)-pista-saslong-selva-gardena-(bz)-292.html';images[6] = new Image();images[6].src = 'http://www.geticket.it/media/import/Carousel-etv-2017.jpg';images[6].alt = 'Estate Teatrale Veronese 2017';images[6].titolo = 'estate teatrale...';images[6].location = 'Teatro Romano';images[6].url = 'http://www.geticket.it/default/season/Estate-Teatrale-Veronese-2017-teatro-romano---verona-teatro-romano-verona-284.html';            var divContainer = document.getElementById('photos');
+            var length = images.length;
+            for (var i = 0; i < length; i++) {
+                divContainer.appendChild(images[i]);
+            }
+            jQuery('#photos').cycle({
+                fx: 'uncover',
+                speed: 800,
+                timeout: 5000,
+                pager: '#point ul',
+                before: onBefore,
+                after: onAfter,
+                pagerAnchorBuilder: function (idx, slide) {
+                    return '<li class="paginatore"><a href="' + slide.src + '" title="point">O</a></li>';
+                }
+
+            });
+            jQuery("#point").css("top", (jQuery("#photos > img").height() - 125)).css("left", 0);
+
+
+            if (jQuery(window).width() > jQuery("#contenitore").width())
+            {
+
+                jQuery("#description_hp").css("margin-top", 210).css("margin-left", ((jQuery(window).width() - jQuery("#contenitore").width()) / 2) + 6);
+                jQuery("#point").css("margin-top", 208).css("margin-left", ((jQuery(window).width() - jQuery("#contenitore").width()) / 2) + 16);
+            }
+            else
+            {
+                jQuery("#description_hp").css("margin-top", 210).css("margin-left", 6);
+                jQuery("#point").css("margin-top", 208).css("margin-left", 16);
+            }
+
+            jQuery("#contenitore").css("z-index", -1);
+            jQuery("#photos > img").click(function (e) {
+                window.location.href = this.url;
+            });
+            jQuery("#description_hp, #point").show();
+        }, 1000);
+    };
+
+</script>
+<div id="contenitore" style="z-index: 0; background-image: url(http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif); background-size: 60px; background-repeat: no-repeat; background-position: center center;">
+    <div id="photos"></div>
+</div>
+<div style="height: 5px; background: none;">&nbsp;</div>
+<div style="margin-left: 0px">
+    <ul id="css3menu1">
+        <li><a id='cat_all'>All</a></li>
+        <li><a alt='31'>Teatro</a></li><li><a alt='4'>Concerti</a></li><li><a alt='7'>Classica/opera</a></li><li><a alt='8'>Altro</a></li>    </ul>
+
+</div>
+<div id="griglia_spettacoli" class="drop-shadow curved curved-hz-1">
+    <div id='loader' style='position: relative; left: 270px; top: 90px;'><img
+            src='http://www.geticket.it/skin/frontend/geticket/default/images/geticket/loader.gif' width='150px' height='120px'></div>
+</div>
+                        </div>
+                        <div class="col-right sidebar"><a id='divcliccabile'><div id='Gandalf' style='cursor: pointer; width: 700px; height: 352px; margin-left: -720px; position: absolute;'></div></a><div id='block-banner-dome' class='block block-banner'><div class='block-content img1' style='height: 70px !important'>&nbsp;</div></div>
+<div class="block-homepage" id="block-topseller" style="border: none; z-index: 10"></div>
+    <ul class="tags-list">
+    	 <div class="titolo_cercate"><b>Più cercate</b></div> 
+    	 <div id="linea_tags"></div>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=teatro+romano+verona" style="font-size:145%;">teatro romano verona</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=verona" style="font-size:143.140625%;">verona</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=aida" style="font-size:105.625%;">aida</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=arena+di+verona" style="font-size:96.517857142857%;">arena di verona</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=ancona" style="font-size:91.011160714286%;">ancona</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=momix" style="font-size:87.607142857143%;">momix</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=paolini" style="font-size:86.573660714286%;">paolini</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=carmen" style="font-size:86.189732142857%;">carmen</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=estate+teatrale+veronese" style="font-size:84.229910714286%;">estate teatrale veronese</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=morricone" style="font-size:84.151785714286%;">morricone</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=arena" style="font-size:84.089285714286%;">arena</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=bolle" style="font-size:83.962053571429%;">bolle</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=teatro+romano" style="font-size:83.491071428571%;">teatro romano</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=Turandot" style="font-size:83.441964285714%;">Turandot</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=tosca" style="font-size:82.729910714286%;">tosca</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=ennio+morricone" style="font-size:81.459821428571%;">ennio morricone</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=marco+mengoni" style="font-size:81.377232142857%;">marco mengoni</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=don+giovanni" style="font-size:80.841517857143%;">don giovanni</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=opera+on+ice" style="font-size:80.832589285714%;">opera on ice</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=muse" style="font-size:80.825892857143%;">muse</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=mod%C3%A0" style="font-size:80.716517857143%;">modà</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=la+traviata" style="font-size:80.703125%;">la traviata</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=sigur+ros" style="font-size:80.613839285714%;">sigur ros</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=mengoni" style="font-size:80.363839285714%;">mengoni</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=traviata" style="font-size:80.205357142857%;">traviata</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=venezia" style="font-size:80.189732142857%;">venezia</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=giacobazzi" style="font-size:79.995535714286%;">giacobazzi</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=filarmonica+della+scala" style="font-size:79.975446428571%;">filarmonica della scala</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=pooh" style="font-size:79.919642857143%;">pooh</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=rigoletto" style="font-size:79.917410714286%;">rigoletto</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=fenice" style="font-size:79.752232142857%;">fenice</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=momix+verona+TEATRO+ROMANO+2013" style="font-size:79.642857142857%;">momix verona TEATRO ROMANO 2013</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=aida+arena" style="font-size:79.524553571429%;">aida arena</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=roma" style="font-size:79.515625%;">roma</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=pino+daniele" style="font-size:79.4375%;">pino daniele</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=mario+biondi" style="font-size:79.352678571429%;">mario biondi</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=romeo" style="font-size:79.334821428571%;">romeo</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=a+perfect+day+festival" style="font-size:79.305803571429%;">a perfect day festival</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=florence+and+the+machine" style="font-size:79.287946428571%;">florence and the machine</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=pintus" style="font-size:79.214285714286%;">pintus</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=capodanno" style="font-size:79.165178571429%;">capodanno</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=mannoia" style="font-size:79.09375%;">mannoia</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=alessandra+amoroso" style="font-size:79.008928571429%;">alessandra amoroso</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=parcheggio" style="font-size:78.941964285714%;">parcheggio</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=la+fenice" style="font-size:78.805803571429%;">la fenice</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=green+day" style="font-size:78.729910714286%;">green day</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=emma" style="font-size:78.6875%;">emma</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=Otello" style="font-size:78.658482142857%;">Otello</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=notre+dame" style="font-size:78.65625%;">notre dame</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=mannarino" style="font-size:78.620535714286%;">mannarino</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=nabucco" style="font-size:78.4375%;">nabucco</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=fenice+venezia" style="font-size:78.272321428571%;">fenice venezia</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=SHAKESPEARE" style="font-size:78.241071428571%;">SHAKESPEARE</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=brignano" style="font-size:78.225446428571%;">brignano</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=teatro" style="font-size:78.207589285714%;">teatro</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=argentina+baila" style="font-size:78.198660714286%;">argentina baila</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=a+perfect+day" style="font-size:78.194196428571%;">a perfect day</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=allevi" style="font-size:78.118303571429%;">allevi</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=Notre+dame+de+paris" style="font-size:78.107142857143%;">Notre dame de paris</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=omaggio+a+nino+rota" style="font-size:78.044642857143%;">omaggio a nino rota</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=nina+zilli" style="font-size:78.026785714286%;">nina zilli</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=festival" style="font-size:78.022321428571%;">festival</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=placebo" style="font-size:78.020089285714%;">placebo</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=amo+la+mole" style="font-size:78.002232142857%;">amo la mole</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=bennato" style="font-size:77.975446428571%;">bennato</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=perfect+day" style="font-size:77.973214285714%;">perfect day</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=nomadi" style="font-size:77.946428571429%;">nomadi</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=Bailando+mi+Tierra" style="font-size:77.944196428571%;">Bailando mi Tierra</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=re+lear" style="font-size:77.924107142857%;">re lear</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=perfect+day+festival" style="font-size:77.90625%;">perfect day festival</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=amo" style="font-size:77.866071428571%;">amo</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=peter+pan" style="font-size:77.859375%;">peter pan</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=DAMIEN+RICE" style="font-size:77.832589285714%;">DAMIEN RICE</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=ennio" style="font-size:77.790178571429%;">ennio</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=gilberto+gil" style="font-size:77.787946428571%;">gilberto gil</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=gino+paoli" style="font-size:77.754464285714%;">gino paoli</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=2012" style="font-size:77.691964285714%;">2012</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=parking" style="font-size:77.676339285714%;">parking</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=estate" style="font-size:77.636160714286%;">estate</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=cocciante" style="font-size:77.631696428571%;">cocciante</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=la+tosca" style="font-size:77.542410714286%;">la tosca</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=battista" style="font-size:77.517857142857%;">battista</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=Rice" style="font-size:77.497767857143%;">Rice</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=kostner" style="font-size:77.473214285714%;">kostner</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=maurizio" style="font-size:77.46875%;">maurizio</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=bartoli" style="font-size:77.386160714286%;">bartoli</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=milione" style="font-size:77.379464285714%;">milione</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=wiz" style="font-size:77.341517857143%;">wiz</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=malandain" style="font-size:77.325892857143%;">malandain</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=sloan" style="font-size:77.25%;">sloan</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=solo" style="font-size:77.247767857143%;">solo</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=dogo" style="font-size:77.225446428571%;">dogo</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=cornell" style="font-size:77.149553571429%;">cornell</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=Scala" style="font-size:77.122767857143%;">Scala</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=prefestival" style="font-size:77.053571428571%;">prefestival</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=giorgia" style="font-size:75.359375%;">giorgia</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=caparezza" style="font-size:75.328125%;">caparezza</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=europa" style="font-size:75.227678571429%;">europa</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=gil" style="font-size:75.013392857143%;">gil</a></li>
+                    <li><a href="http://www.geticket.it/default/catalogsearch/result/?q=jesus+christ+12+ottobre+arena+verona" style="font-size:75%;">jesus christ 12 ottobre arena verona</a></li>
+            </ul>
+
+
+
+
+
+
+
+<div class="comunicazioni_right_col">
+        <h1>Comunicazioni</h1>
+        <div id="linea_tags"></div>
+        
+            <div id='titoletto'>
+                <a href='http://www.geticket.it/default/sintax/?id='>
+                     
+                </a>
+            </div>
+            <p> &nbsp; 
+                <a class='visu detail' href='http://www.geticket.it/default/sintax/'>... ></a>
+            </p> 
+            <a class='visu' href='http://www.geticket.it/default/sintax/'>VISUALIZZA TUTTE</a>
+   </div><div id="block-banner-dome" class="block block-banner">
+    <div 
+        class = 'block-content img1'>
+    
+    
+                                    <a href="http://www.geticket.it/default/getservice/getphone/"  title="Getphone">
+                                <img src="http://www.geticket.it/default/media/banner/bannergetphone_ita.gif"alt="Getphone" />
+                                </a>
+                </div>
+                </div>
+                <br /> 
+<div id='unicredit'>
+    <img src="http://www.geticket.it/skin/frontend/geticket/default/images/geticket/BannerUnicredit.png" alt="banner_Unicredit" style="margin-left: 4px; background: #fff; box-shadow: 0 32px 20px -32px #333333;" width="248" border="0" usemap="#MapCarte" />
+    <map name="MapCarte" id="MapCarte">
+        <area shape="rect" coords="6,7,51,35" href="http://www.visaeurope.com/en/visa_europe.aspx" />
+        <area shape="rect" coords="56,7,97,33" href="https://www.americanexpress.com/?inav=NavLogo" />
+        <area shape="rect" coords="102,8,145,33" href="http://www.mastercard.com/us/business/en/corporate/securecode/sc_popup.html?language=it" />
+        <area shape="rect" coords="149,5,184,36" href="http://www.dinersclub.com/" />
+        <area shape="rect" coords="192,5,246,36" href="https://www.unicredit.it/it/privati.html" />
+        <area shape="rect" coords="5,48,244,83" href="https://www.unicredit.it/it/privati.html" />
+    </map>
+</div>
+                        </div>
+                    </div>
+                </div>
+                            <script>
+    jQuery.noConflict();
+    jQuery(document).ready(function() {
+
+
+        var hash = window.location.hash;
+        if (hash.length != 0) {
+            jQuery.ajax({type: "POST", url: "http://www.geticket.it/default/linkautenticati/index/dropcookiefromhashtag", data: {hashtag: hash}}).done(function(msg) {
+            });
+        }
+
+
+
+
+
+
+
+        var controllo_pagina_voucher = 'Y';
+        var campagnaAttivaVoucher = jQuery('.page').data('mostraReminder');
+        var reminderGiaMostrato = jQuery('.page').data("giapresenteilbagaglio");
+        if (controllo_pagina_voucher !== "N" && campagnaAttivaVoucher === "Y" && reminderGiaMostrato !== "Y")
+            jQuery("#reminderVoucher").css("display", "block");
+    });
+</script>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div id="strisciabluhome">
+        <div class="div-table">
+            <div class="div-table-row">
+                                        <div class="divisorio_strisciablu"></div>
+                                                <div class="div-table-col div-table-col-first"><h1>Teatro</h1><font size="1.2em">Prendi posto a teatro: in questa sezione dedicata agli amanti del teatro imperdibili appuntamenti.</font>
+                            <a href="http://www.geticket.it/default/spettacoli-teatro-geticket.html" style="text-decoration: none;">
+                                <div class="strisciabluhome_more">MORE</div>
+                            </a>
+                        </div>
+                                                <div class="divisorio_strisciablu"></div>
+                                                <div class="div-table-col div-table-col-first"><h1>Altro</h1><font size="1.2em">Consulta il catalogo dei prodotti correlati. Abbiamo pensato davvero a tutto per rendere la tua serata speciale!</font>
+                            <a href="http://www.geticket.it/default/altro-html.html" style="text-decoration: none;">
+                                <div class="strisciabluhome_more">MORE</div>
+                            </a>
+                        </div>
+                                                <div class="divisorio_strisciablu"></div>
+                                                <div class="div-table-col div-table-col-first"><h1>Classica/opera</h1><font size="1.2em">Opera lirica... che passione!&nbsp;La magia e l'emozione della lirica e dei concerti sinfonici e non solo...</font>
+                            <a href="http://www.geticket.it/default/classica-opera-html.html" style="text-decoration: none;">
+                                <div class="strisciabluhome_more">MORE</div>
+                            </a>
+                        </div>
+                                                <div class="divisorio_strisciablu"></div>
+                                                <div class="div-table-col div-table-col-first"><h1>Concerti</h1><font size="1.2em">I pi&ugrave; grandi concerti della scena italiana e internazionale:scopri date e orari di tutti i tuoi concerti preferiti</font>
+                            <a href="http://www.geticket.it/default/concerti.html" style="text-decoration: none;">
+                                <div class="strisciabluhome_more">MORE</div>
+                            </a>
+                        </div>
+                                        <div class="divisorio_strisciablu"></div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="footer-container">
+            <div class="container_home_semifooter">
+                <div class='semifooter_prossimamente'>
+                    <h1>Novità</h1>
+                    
+                    <div class="spettacoli_novita"><div id="paragrafi">
+                                <div class="container_img">
+                                    <img onclick="location.href = 'http://www.geticket.it/default/show/Roberto-Bolle-and-Friends-arena-verona-99727.html'" src="http://www.geticket.it/media/catalog/product/cache/1/small_image/102x/9df78eab33525d08d6e5fb8d27136e95/2/7/270_BOLLE2018.jpg" alt="Roberto Bolle and Friends<br />" width="102px" height="102px" style='cursor: pointer;'/>
+                                </div>
+                                <p>
+                                <pre class="cubodirubik">30.08.2017</pre><h2>Roberto Bolle and Friends</h2>
+                <div style="height: 42px;">Roberto Bolle and Friends, la serata evento dedicata al mondo della Danza internazionale, torna a far sognare l&rsquo;Arena di...<p></p>
+            </div>
+            <div id="button_more" onclick="location.href = 'http://www.geticket.it/default/show/Roberto-Bolle-and-Friends-arena-verona-99727.html'">MORE</div>
+                </div><hr /><div id="paragrafi">
+                                <div class="container_img">
+                                    <img onclick="location.href = 'http://www.geticket.it/default/show/4-Miles-More-Plays-the-music-of-Miles-Davis-palazzo-grimani-venezia-99676.html'" src="http://www.geticket.it/media/catalog/product/cache/1/small_image/102x/9df78eab33525d08d6e5fb8d27136e95/4/-/4-miles-more-270_2.jpg" alt="4 Miles More! Plays the music of Miles Davis<br />" width="102px" height="102px" style='cursor: pointer;'/>
+                                </div>
+                                <p>
+                                <pre class="cubodirubik">29.08.2017</pre><h2>4 Miles More! Plays the music of Miles Davis</h2>
+                <div style="height: 42px;">&nbsp;
+MusicAmuseo&rdquo;4 MILES MORE!&rdquo; Plays the music of Miles Davis
+David Boato, trombaDario Carnovale, pianoLorenzo...<p></p>
+            </div>
+            <div id="button_more" onclick="location.href = 'http://www.geticket.it/default/show/4-Miles-More-Plays-the-music-of-Miles-Davis-palazzo-grimani-venezia-99676.html'">MORE</div>
+                </div><hr /><div id="paragrafi">
+                                <div class="container_img">
+                                    <img onclick="location.href = 'http://www.geticket.it/default/show/Turkish-National-Youth-Orchestra-teatro-filarmonico-verona-99634.html'" src="http://www.geticket.it/media/catalog/product/cache/1/small_image/102x/9df78eab33525d08d6e5fb8d27136e95/2/7/270_settembre-dell-accademia-2017-verona_1.jpg" alt="Turkish National Youth Orchestra<br />" width="102px" height="102px" style='cursor: pointer;'/>
+                                </div>
+                                <p>
+                                <pre class="cubodirubik">28.08.2017</pre><h2>Turkish National Youth Orchestra</h2>
+                <div style="height: 42px;">Domenica 3 settembreAnteprimaTURKISH NATIONAL YOUTH ORCHESTRACem Mansur direttoreCostanza Principe pianoforteA.P. Borodin, S.V....<p></p>
+            </div>
+            <div id="button_more" onclick="location.href = 'http://www.geticket.it/default/show/Turkish-National-Youth-Orchestra-teatro-filarmonico-verona-99634.html'">MORE</div>
+                </div> 
+                </div>
+
+            </div>
+            <div class='semifooter_banner_3i'>
+                  <a target="_blank" class='logo' href="http://www.geticket.it/default/season/94-Festival-lirico-2016-arena-di-verona-arena-verona-183.html" title="Tickets Arena Festival lirico 2015"><div class='banner_footer2'>                                     <img src="http://www.geticket.it/default/media/banner/banner_6_it.jpeg" alt="Tickets Arena Festival lirico 2015" /></div></a>
+
+                            
+                        </div>
+                        <div class='semifooter_clear'></div>
+                        </div>
+                                        </div>
+                    </div>
+                    </div>
+                    <div id='container_footer' align='center'>
+                        <div id="footer" style="text-align: left;">
+                            <ul class="header_links">
+<li><a href="http://www.geticket.it/default/">Home</a></li>
+<li><a href="http://www.geticket.it/default/mappasito">Mappa del sito</a></li>
+<li><a href="http://www.geticket.it/default/faq">FAQ</a></li>
+<li><a href="http://www.geticket.it/default/terminiecondizioni">Termini e condizioni</a></li>
+<li><a href="http://www.geticket.it/default/privacy">Privacy</a></li>
+<li><a href="http://www.geticket.it/default/cookies">Informativa cookies</a></li>
+<li><a href="http://www.geticket.it/default/contatti">Contatti</a></li>
+<li class="last"><a href="http://www.geticket.it/default/copyright">Copyright</a></li>
+</ul>                        </div>
+                        <div id="final_footer">
+                            <div id="inner">Copyright © 2012 UniCredit S.p.A. - P.IVA 00348170101 - Tutti i diritti riservati</div>
+                        </div>
+                    </div>
+                                        </div>
+        </div>
+                    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9128d69803","applicationID":"4978626","transactionName":"YwBaYhRSW0oCVkBZDFpKeVUSWlpXTFZZQ0xdC1xTHhxcVwdQTA==","queueTime":0,"applicationTime":164,"atts":"T0dZFFxISEQ=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

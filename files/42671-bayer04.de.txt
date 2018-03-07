@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head class="b04-social-meta" ng-controller="HeadController as vm">
+    <meta charset="utf-8">
+    <meta name="fragment" content="!" />
+    <meta name="prerender-status-code" content="404" ng-if="vm.isNotFound">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <title ng-if="vm.common.getPageTitle()" ng-bind="vm.common.getPageTitle()"></title>
+
+    <meta ng-if="vm.common.getPageDescription()" name="description" content="{{ vm.common.getPageDescription() }}" />
+    <meta name="robots" content="{{ vm.common.getIndexing() }}" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ vm.common.getSiteName() }}" />
+    <meta property="og:title" content="{{ vm.common.getPageTitle() }}" />
+    <meta ng-if="vm.common.getOpenGraphDescription()" property="og:description" content="{{ vm.common.getOpenGraphDescription() }}" />
+
+    <link rel="canonical" ng-if="vm.common.getSiteCanonicalTag()" href="{{ vm.common.getSiteCanonicalTag() }}" />
+
+    <link rel="alternate" ng-if="vm.languages.length" ng-repeat="l in vm.languages" hreflang="{{ l.hreflang }}" href="{{ l.url }}" />
+    
+    <link href="https://b04-prod-ep-webapp.azureedge.net/cdn/styles/b04StyleVendors.css" rel="stylesheet"/>
+<script>(function() {
+                var loadFallback,
+                    len = document.styleSheets.length;
+                for (var i = 0; i < len; i++) {
+                    var sheet = document.styleSheets[i];
+                    if (sheet.href.indexOf('https://b04-prod-ep-webapp.azureedge.net/cdn/styles/b04StyleVendors.css') !== -1) {
+                        var meta = document.createElement('meta');
+                        meta.className = 'sr-only';
+                        document.head.appendChild(meta);
+                        var value = window.getComputedStyle(meta).getPropertyValue('width');
+                        document.head.removeChild(meta);
+                        if (value !== '1px') {
+                            document.write('<link href="/Content/Content/b04StyleVendors" rel="stylesheet" type="text/css" />');
+                        }
+                    }
+                }
+                return true;
+            }())||document.write('<script src="/Content/Content/b04StyleVendors"><\/script>');</script>
+
+    <link href="https://b04-prod-ep-webapp.azureedge.net/cdn/styles/b04Styles.css" rel="stylesheet"/>
+<script>(function() {
+                var loadFallback,
+                    len = document.styleSheets.length;
+                for (var i = 0; i < len; i++) {
+                    var sheet = document.styleSheets[i];
+                    if (sheet.href.indexOf('https://b04-prod-ep-webapp.azureedge.net/cdn/styles/b04Styles.css') !== -1) {
+                        var meta = document.createElement('meta');
+                        meta.className = 'navbar-default ';
+                        document.head.appendChild(meta);
+                        var value = window.getComputedStyle(meta).getPropertyValue('height');
+                        document.head.removeChild(meta);
+                        if (value !== '69px') {
+                            document.write('<link href="/Content/Content/b04Styles" rel="stylesheet" type="text/css" />');
+                        }
+                    }
+                }
+                return true;
+            }())||document.write('<script src="/Content/Content/b04Styles"><\/script>');</script>
+
+
+    <script src="https://b04-prod-ep-webapp.azureedge.net/cdn/scripts/webtrekk.js" async defer></script>
+<script>(window.wts)||document.write('<script src="/bundles/scripts/webtrekk"><\/script>');</script>
+   
+
+    <script type="text/javascript" defer>
+        var appInsights = window.appInsights || function (config) {
+            function i(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = "AuthenticatedUserContext", h = "start", c = "stop", l = "Track", a = l + "Event", v = l + "Page", y = u.createElement(o), r, f; y.src = config.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js"; u.getElementsByTagName(o)[0].parentNode.appendChild(y); try { t.cookie = u.cookie } catch (p) { } for (t.queue = [], t.version = "1.0", r = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; r.length;) i("track" + r.pop()); return i("set" + s), i("clear" + s), i(h + a), i(c + a), i(h + v), i(c + v), i("flush"), config.disableExceptionTracking || (r = "onerror", i("_" + r), f = e[r], e[r] = function (config, i, u, e, o) { var s = f && f(config, i, u, e, o); return s !== !0 && t["_" + r](config, i, u, e, o), s }), t
+        };
+
+        window.appInsights = appInsights;
+    </script>
+    <script src="https://embed-cdn.flockler.com/embed-v2.js" async defer></script>
+    <script src="https://secure.widget.cloud.opta.net/v3/v3.opta-widgets.js" async defer></script>
+    <script defer>
+      window.optaSetup = {};
+
+      window.optaSetup["localeMatcher"] = window.location.pathname.match(/\/[a-z]{2}-[a-z]{2}\/?/);
+      window.optaSetup["urlLocale"] = window.optaSetup.localeMatcher && window.optaSetup.localeMatcher[0] ? window.optaSetup.localeMatcher[0] : '/de-de/';
+      window.optaSetup["localeItems"] = window.optaSetup.urlLocale.substr(1, 5).split('-');
+      window.optaSetup["lang"] = window.optaSetup.localeItems[0] + '-' + window.optaSetup.localeItems[1].toUpperCase();
+
+      window.optaSetup["optaLang"] = window.optaSetup.lang.replace('-', '_');
+
+      var opta_settings = {
+        subscription_id: 'b38e7c312f1e16873be4165c09180eea',
+        language: window.optaSetup.optaLang,
+        timezone: 'user'
+      };
+    </script>   
+
+</head>
+<body>
+    <link rel="stylesheet" href="https://secure.widget.cloud.opta.net/v3/css/v3.football.opta-widgets.css">
+    <b04-preloader></b04-preloader>
+    <b04-notification></b04-notification>
+    <site-header ng-hide="isMobile"></site-header>
+    <a id="anchor-nav"></a>
+    <main id="main-container">
+        
+<div class="main-container-offset" ng-class="{ 'no-top-margin': isMobile }" ui-view autoscroll="false"></div>
+    </main>
+    <div id="web-trekk-pageupdate"></div>
+
+    <site-footer ng-hide="isMobile"></site-footer>
+
+    
+    <script defer type="text/ng-template" id="typical-error-messages">
+        <div ng-message="required">{{ 'VALIDATION_REQUIRED' | translate }}</div>
+        <div ng-message="minlength">{{ 'VALIDATION_MIN_LENGTH' | translate }}</div>
+        <div ng-message="maxlength">{{ 'VALIDATION_MAX_LENGTH' | translate }}</div>
+    </script>
+
+    
+    <script defer type="text/ng-template" id="email-error-messages">
+        <div ng-message="pattern">{{ 'VALIDATION_INVALID_EMAIL' | translate }}</div>
+    </script>
+
+    
+    <script defer type="text/ng-template" id="phone-number-error-messages">
+        <div ng-message="pattern">{{ 'VALIDATION_INVALID_PHONE_NUMBER' | translate }}</div>
+    </script>
+
+    <script src="https://b04-prod-ep-webapp.azureedge.net/cdn/scripts/b04VendorScripts.js"></script>
+<script>(window.jQuery)||document.write('<script src="/bundles/scripts/b04VendorScripts"><\/script>');</script>
+
+    
+    <script src="/signalr/hubs"></script>
+    <script src="https://b04-prod-ep-webapp.azureedge.net/cdn/scripts/b04Scripts.js"></script>
+<script>(window.cdnFallback)||document.write('<script src="/bundles/scripts/b04Scripts"><\/script>');</script>
+
+    <script> window.prerenderReady = false; </script>
+</body>
+</html>

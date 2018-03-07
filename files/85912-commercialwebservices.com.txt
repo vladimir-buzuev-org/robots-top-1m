@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Equipment, Agricultural & Heavy Duty Truck Dealer Websites & Online Marketing Services | Material Handling, Ag, Construction & Truck Industries</title>
+	<title>Commercial Web Services</title>
+                        <script>
+                            /* You can add more configuration options to webfontloader by previously defining the WebFontConfig with your options */
+                            if ( typeof WebFontConfig === "undefined" ) {
+                                WebFontConfig = new Object();
+                            }
+                            WebFontConfig['google'] = {families: ['Open+Sans:400', 'Raleway:700,400', 'Montserrat:400', 'Lato:400,900', 'Hind:600,400', 'Crimson+Text:400italic&amp;subset=latin']};
+
+                            (function() {
+                                var wf = document.createElement( 'script' );
+                                wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.3/webfont.js';
+                                wf.type = 'text/javascript';
+                                wf.async = 'true';
+                                var s = document.getElementsByTagName( 'script' )[0];
+                                s.parentNode.insertBefore( wf, s );
+                            })();
+                        </script>
+                        
+<!-- All in One SEO Pack 2.3.12.5 by Michael Torbert of Semper Fi Web Design[196,226] -->
+<meta name="description"  content="Commercial Web Services is the #1 Website Provider for Equipment Dealers. Specializing in Lead Generation, Inventory Management, Search Engine Services, Custom" />
+
+<link rel="canonical" href="http://www.commercialwebservices.com/" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//s.gravatar.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//code.ionicframework.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Commercial Web Services &raquo; Feed" href="http://www.commercialwebservices.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Commercial Web Services &raquo; Comments Feed" href="http://www.commercialwebservices.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.commercialwebservices.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='pafl-hugeinc-css'  href='http://www.commercialwebservices.com/wp-content/plugins/bears-fullscreen-login/public/css/effects/hugeinc.css?ver=1.0.0' type='text/css' media='all' />
+<style id='pafl-hugeinc-inline-css' type='text/css'>
+.pafl-modal-wrap{ animation-duration: 500ms !important;-webkit-animation-duration: 500ms !important; }.pafl-overlay{ background:  #03a9f4; }#pafl-slider{ background:  #03a9f4; }.pafl-overlay .pafl-social-login:before {margin-right: 0;}.pafl-overlay *:not(input){ color: #ffffff; }.pafl-overlay .pafl-message-result{ color: #111111; }#pafl-form .pafl-input { color: #333333; }#pafl-form .pafl-input { border-radius: 1px; -webkit-border-radius: 1px; }#pafl-form .pafl-submit { border-radius: 1px; -webkit-border-radius: 1px; }.pafl-overlay .pafl-message { border-radius: 1px; -webkit-border-radius: 1px; }#pafl-form .pafl-allow-login { border-radius: 1px; -webkit-border-radius: 1px; }#pafl-form .pafl-forgot-left { border-radius: 1px; -webkit-border-radius: 1px; }#pafl-form .pafl-forgot-right { border-radius: 1px; -webkit-border-radius: 1px; }#pafl-form .pafl-create-account { border-radius: 1px; -webkit-border-radius: 1px; }#pafl-form .pafl-submit { background-color: #001017;}#pafl-form .pafl-submit:hover { background-color: #01579b;}#pafl-form .pafl-submit { color: #ffffff; }
+</style>
+<link rel='stylesheet' id='bears-fullscreen-login-css'  href='http://www.commercialwebservices.com/wp-content/plugins/bears-fullscreen-login/public/css/bears-fullscreen-login-public.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://www.commercialwebservices.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='gridstack-css'  href='http://www.commercialwebservices.com/wp-content/plugins/lemongrid/assets/css/gridstack.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='http://www.commercialwebservices.com/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min.css?ver=5.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='ionicon-css'  href='http://www.commercialwebservices.com/wp-content/plugins/lemongrid/assets/css/ionicons.min.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='tb-lemongrid-script-css'  href='http://www.commercialwebservices.com/wp-content/plugins/lemongrid/assets/css/lemongrid.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css'  href='http://www.commercialwebservices.com/wp-content/plugins/revslider/public/assets/css/settings.css?ver=5.3.0.2' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+#rs-demo-id {}
+</style>
+<link rel='stylesheet' id='woocommerce-layout-css'  href='//www.commercialwebservices.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=3.0.5' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='//www.commercialwebservices.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=3.0.5' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css'  href='//www.commercialwebservices.com/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=3.0.5' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='http://www.commercialwebservices.com/wp-content/themes/beoreo/style.css?ver=4.7.5' type='text/css' media='all' />
+<link rel='stylesheet' id='wp_custom_style-css'  href='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/css/wp_custom_style.css?ver=4.7.5' type='text/css' media='all' />
+<style id='wp_custom_style-inline-css' type='text/css'>
+body{ background-color: ;}.page .bt-title-bar-wrap { background-color: #222222;}.page .bt-title-bar-wrap { background: url('http://www.commercialwebservices.com/wp-content/uploads/2017/05/bg-cws-titlebar-1.jpg') no-repeat  center center;background-size: cover;}
+</style>
+<link rel='stylesheet' id='bearstheme-fonts-css'  href='//fonts.googleapis.com/css?family=Montserrat%7CPoppins%7CHind%7CCrimson%2BText%7COpen%2BSans%7CLato%3A400%2C400Italic%2C600%2C700%2C700Italic%2C800%2C900%26subset%3Dlatin%2Clatin-ext&#038;ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap.min-css'  href='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/css/bootstrap.min.css?ver=4.7.5' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-carousel-css'  href='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/vendors/owl-carousel/owl.carousel.css?ver=4.7.5' type='text/css' media='all' />
+<link rel='stylesheet' id='slick-css'  href='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/vendors/slick/slick.css?ver=4.7.5' type='text/css' media='all' />
+<link rel='stylesheet' id='pe-icon-7-stroke-css'  href='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/css/pe-icon-7-stroke.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='pe-icon-7-helper-css'  href='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/css/pe-icon-7-helper.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='hover-min-css'  href='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/css/hover-min.css?ver=2.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tb.core.min-css'  href='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/css/core.min.css?ver=4.7.5' type='text/css' media='all' />
+<link rel='stylesheet' id='beoreo_preset-css'  href='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/css/presets/default.css?ver=4.7.5' type='text/css' media='all' />
+<link rel='stylesheet' id='ionicons-css'  href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css?ver=2.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='owlcarousel-css'  href='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_carousel/assets/css/owl.carousel.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='shortcode-bears-doc-css'  href='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_doc/assets/css/bears-doc.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='rainbow-theme-monokai-css'  href='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_doc/assets/rainbow-master/themes/monokai.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='linea-ecommerce-css'  href='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_iconfont/assets/fonts/linea_ecommerce/font.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='textillate-css'  href='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_textillate/assets/css/animate.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='tbbs-script-css'  href='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/assets/css/bears-shortcodes.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='newsletter-subscription-css'  href='http://www.commercialwebservices.com/wp-content/plugins/newsletter/subscription/style.css?ver=5.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_front-css'  href='http://www.commercialwebservices.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=5.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_custom_css-css'  href='//www.commercialwebservices.com/wp-content/uploads/js_composer/custom.css?ver=5.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='http://www.commercialwebservices.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.9' type='text/css' media='all' />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v6.2.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	var disableStr = 'ga-disable-UA-81204905-1';
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+	__gaTracker('create', 'UA-81204905-1', 'auto');
+	__gaTracker('set', 'forceSSL', true);
+	__gaTracker('require', 'displayfeatures');
+	__gaTracker('require', 'linkid', 'linkid.js');
+	__gaTracker('send','pageview');
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+<script type='text/javascript'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"","home_url":"http:\/\/www.commercialwebservices.com","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min.js?ver=6.2.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears-fullscreen-login/public/js/background.cycle.min.js?ver=1.0.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var PAFL = {"ajax_url":"http:\/\/www.commercialwebservices.com\/wp-admin\/admin-ajax.php","auto_popup":"","scroll_top":"800","user_id":"0","images":[false],"fadespeed":"1500","duration":"4000"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears-fullscreen-login/public/js/bears-fullscreen-login-public.js?ver=1.0.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js?ver=5.3.0.2'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js?ver=5.3.0.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"http:\/\/www.commercialwebservices.com","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//www.commercialwebservices.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=3.0.5'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/js_composer/assets/js/vendors/woocommerce-add-to-cart.js?ver=5.0.1'></script>
+<link rel='https://api.w.org/' href='http://www.commercialwebservices.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.commercialwebservices.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.commercialwebservices.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.7.5" />
+<meta name="generator" content="WooCommerce 3.0.5" />
+<link rel='shortlink' href='http://wp.me/P8RQWD-XP' />
+<link rel="alternate" type="application/json+oembed" href="http://www.commercialwebservices.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.commercialwebservices.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.commercialwebservices.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.commercialwebservices.com%2F&#038;format=xml" />
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.commercialwebservices.com/?wordfence_logHuman=1&hid=6D3953B3EC0957651DEA8017B5C48D46');
+</script>
+<link rel='dns-prefetch' href='//v0.wordpress.com'>
+<style type='text/css'>img#wpstats{display:none}</style><script type="text/javascript">
+	function bs_shareSocial( el ) {
+		var $ = jQuery;
+		var $this = $( el ),
+			link = $this.attr( 'href' ),
+			type = $this.data( 'stype' ),
+			extraData = $this.data( 'extradata' );
+		// console.log(extraData);
+		switch( type ) {
+			case 'facebook': 
+				var share_link = 'http://www.facebook.com/sharer.php?u=[post-url]';
+				break;
+
+			case 'google': 
+				var share_link = 'https://plus.google.com/share?url=[post-url]';
+				break;
+
+			case 'twitter': 
+				var share_link = 'https://twitter.com/share?url=[post-url]&text=[post-title]';
+				break;
+
+			case 'pinterest': 
+				var share_link = 'https://pinterest.com/pin/create/bookmarklet/?media=[post-img]&url=[post-url]&description=[post-description]';
+				break;
+		}
+
+		var mapObj = { 
+			'[post-url]'		: link, 
+			'[post-title]'	: ( extraData.title ) ? extraData.title : '', 
+			'[post-img]'		: ( extraData.thumbnail ) ? extraData.thumbnail : '', 
+			'[post-description]': ( extraData.description ) ? extraData.description : '', 
+			// '[via]'		: via, 
+			// '[hashtags]'	: hashtags, 
+			// '[is_video]'	: is_video 
+			};
+
+		for (var val in mapObj ) { share_link = share_link.split( val ).join( mapObj[val] ); }
+		window.open( share_link, 'share on ' + type, 'width=450,height=300,top=150,left='+ (($( window ).width() / 2) - (450 / 2)) );
+	}
+</script>
+<meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."/>
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="http://www.commercialwebservices.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><meta name="generator" content="Powered by Slider Revolution 5.3.0.2 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Commercial Web Services" />
+<meta property="og:url" content="http://www.commercialwebservices.com/" />
+<meta property="og:site_name" content="Commercial Web Services" />
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Visit the post for more." />
+			<style type="text/css" id="wp-custom-css">
+				/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+.recaptcha-margin {
+  margin-bottom: 5px;
+}			</style>
+		<style type="text/css" title="dynamic-css" class="options-output">body{background-color:#ffffff;}.bt-main-color{color:#087ca7;}body{font-family:"Open Sans";line-height:24px;letter-spacing:0.48px;font-weight:400;font-style:normal;color:#5e5e5e;font-size:16px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading body,{opacity: 0;}.ie.wf-loading body,{visibility: hidden;}body h1, .bt-font-size-1{font-family:Raleway;line-height:42px;letter-spacing:0.64px;font-weight:700;font-style:normal;color:#404041;font-size:35px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading body h1, .bt-font-size-1,{opacity: 0;}.ie.wf-loading body h1, .bt-font-size-1,{visibility: hidden;}body h2, .bt-font-size-2{font-family:Raleway;line-height:36px;letter-spacing:0.64px;font-weight:700;font-style:normal;color:#404041;font-size:28px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading body h2, .bt-font-size-2,{opacity: 0;}.ie.wf-loading body h2, .bt-font-size-2,{visibility: hidden;}body h3, .bt-font-size-3{font-family:Raleway;line-height:36px;letter-spacing:0.64px;font-weight:700;font-style:normal;color:#404041;font-size:24px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading body h3, .bt-font-size-3,{opacity: 0;}.ie.wf-loading body h3, .bt-font-size-3,{visibility: hidden;}body h4, .bt-font-size-4{font-family:Raleway;line-height:26px;letter-spacing:0.64px;font-weight:700;font-style:normal;color:#404041;font-size:18px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading body h4, .bt-font-size-4,{opacity: 0;}.ie.wf-loading body h4, .bt-font-size-4,{visibility: hidden;}body h5, .bt-font-size-5{font-family:Raleway;line-height:24px;letter-spacing:0.64px;font-weight:700;font-style:normal;color:#404041;font-size:16px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading body h5, .bt-font-size-5,{opacity: 0;}.ie.wf-loading body h5, .bt-font-size-5,{visibility: hidden;}body h6, .bt-font-size-6{font-family:Raleway;line-height:20px;letter-spacing:0.64px;font-weight:700;font-style:normal;color:#404041;font-size:14px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading body h6, .bt-font-size-6,{opacity: 0;}.ie.wf-loading body h6, .bt-font-size-6,{visibility: hidden;}.bt-header-v1 .bt-menu-list > ul > li > a{font-family:Raleway;text-align:center;line-height:95px;letter-spacing:0.2px;font-weight:700;font-style:normal;color:#ffffff;font-size:11px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading .bt-header-v1 .bt-menu-list > ul > li > a,{opacity: 0;}.ie.wf-loading .bt-header-v1 .bt-menu-list > ul > li > a,{visibility: hidden;}.bt-stick-active .bt-header-v1 .bt-menu-list > ul > li > a{font-family:Raleway;text-align:center;line-height:95px;letter-spacing:0.2px;font-weight:700;font-style:normal;color:#333333;font-size:11px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading .bt-stick-active .bt-header-v1 .bt-menu-list > ul > li > a,{opacity: 0;}.ie.wf-loading .bt-stick-active .bt-header-v1 .bt-menu-list > ul > li > a,{visibility: hidden;}
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										{font-family:Raleway;line-height:14px;letter-spacing:0.2px;font-weight:400;font-style:normal;color:#b5b5b5;font-size:11px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										,{opacity: 0;}.ie.wf-loading 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										,{visibility: hidden;}.bt-header-v1 .bt-header-menu{background-color:transparent;}
+									.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul,
+									.bt-header-v1 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul
+									{background-color:#252525;}.bt-stick-active .bt-header-v1.bt-header-stick .bt-header-menu{background-color:#ffffff;}.bt-header-v2 .bt-menu-list > ul > li > a, .bt-header-v2 .bt-header-menu .bt_widget_mini_cart .bt-cart-header > a, .bt-header-v2 .bt-search-sidebar > a{font-family:Montserrat;line-height:71px;letter-spacing:1.6px;font-weight:400;font-style:normal;color:#ffffff;font-size:13px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading .bt-header-v2 .bt-menu-list > ul > li > a, .bt-header-v2 .bt-header-menu .bt_widget_mini_cart .bt-cart-header > a, .bt-header-v2 .bt-search-sidebar > a,{opacity: 0;}.ie.wf-loading .bt-header-v2 .bt-menu-list > ul > li > a, .bt-header-v2 .bt-header-menu .bt_widget_mini_cart .bt-cart-header > a, .bt-header-v2 .bt-search-sidebar > a,{visibility: hidden;}
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										{font-family:Lato;line-height:14px;letter-spacing:0.96px;font-weight:400;font-style:normal;color:#b5b5b5;font-size:13px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										,{opacity: 0;}.ie.wf-loading 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										,{visibility: hidden;}.bt-header-v2 .bt-header-menu{background-color:transparent;}
+									.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul,
+									.bt-header-v2 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul
+									{background-color:#252525;}.bt-header-v3 .bt-menu-list > ul > li > a, .bt-header-v3 .bt-header-menu .bt_widget_mini_cart .bt-cart-header > a, .bt-header-v3 .bt-search-sidebar > a{font-family:Montserrat;line-height:71px;letter-spacing:1.6px;font-weight:normal;font-style:400;color:#333333;font-size:13px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading .bt-header-v3 .bt-menu-list > ul > li > a, .bt-header-v3 .bt-header-menu .bt_widget_mini_cart .bt-cart-header > a, .bt-header-v3 .bt-search-sidebar > a,{opacity: 0;}.ie.wf-loading .bt-header-v3 .bt-menu-list > ul > li > a, .bt-header-v3 .bt-header-menu .bt_widget_mini_cart .bt-cart-header > a, .bt-header-v3 .bt-search-sidebar > a,{visibility: hidden;}
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										{font-family:Lato;line-height:14px;letter-spacing:0.96px;font-weight:normal;font-style:400;color:#b5b5b5;font-size:13px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										,{opacity: 0;}.ie.wf-loading 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										,{visibility: hidden;}.bt-header-v3 .bt-header-menu{background-color:transparent;}
+									.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul,
+									.bt-header-v3 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul
+									{background-color:#252525;}.bt-header-v4 .bt-menu-list > ul > li > a{font-family:Montserrat;line-height:71px;letter-spacing:1.6px;font-weight:normal;font-style:400;color:#333333;font-size:13px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading .bt-header-v4 .bt-menu-list > ul > li > a,{opacity: 0;}.ie.wf-loading .bt-header-v4 .bt-menu-list > ul > li > a,{visibility: hidden;}
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										{font-family:Lato;line-height:14px;letter-spacing:0.96px;font-weight:normal;font-style:400;color:#b5b5b5;font-size:13px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										,{opacity: 0;}.ie.wf-loading 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										,{visibility: hidden;}.bt-header-v4 .bt-header-menu{background-color:transparent;}
+									.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul,
+									.bt-header-v4 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul
+									{background-color:#252525;}.bt-header-v5 .bt-menu-list > ul > li > a{font-family:Montserrat;line-height:71px;letter-spacing:1.6px;font-weight:normal;font-style:400;color:#333333;font-size:13px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading .bt-header-v5 .bt-menu-list > ul > li > a,{opacity: 0;}.ie.wf-loading .bt-header-v5 .bt-menu-list > ul > li > a,{visibility: hidden;}
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										{font-family:Lato;line-height:14px;letter-spacing:0.96px;font-weight:normal;font-style:400;color:#b5b5b5;font-size:13px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										,{opacity: 0;}.ie.wf-loading 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										,{visibility: hidden;}.bt-header-v5 .bt-header-top.t_bears{background-color:#2A2F35;}
+									.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul,
+									.bt-header-v5 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul
+									{background-color:#252525;}.bt-header-v5 .bt-menu-list > ul > li > a{font-family:Montserrat;line-height:71px;letter-spacing:1.6px;font-weight:normal;font-style:400;color:#333333;font-size:13px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading .bt-header-v5 .bt-menu-list > ul > li > a,{opacity: 0;}.ie.wf-loading .bt-header-v5 .bt-menu-list > ul > li > a,{visibility: hidden;}
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										{font-family:Lato;line-height:14px;letter-spacing:0.96px;font-weight:normal;font-style:400;color:#b5b5b5;font-size:13px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										,{opacity: 0;}.ie.wf-loading 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns2 > li > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns3 > li > ul > li > a, 
+										.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.mega-menu-item > ul.columns4 > li > ul > li > a 
+										,{visibility: hidden;}.bt-header-v6 .bt-header-menu{background-color:#fff;}
+									.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul,
+									.bt-header-v6 .bt-menu-list > ul > li.menu-item-has-children.nomega-menu-item > ul > li > ul
+									{background-color:#252525;}.bt-header-canvas .bt-header-menu .bt-menu-list > ul > li > a, .bt-header-canvas-border .bt-header-menu .bt-menu-list > ul > li > a{font-family:Hind;line-height:34px;letter-spacing:1.28px;font-weight:600;font-style:normal;color:#ffffff;font-size:14px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading .bt-header-canvas .bt-header-menu .bt-menu-list > ul > li > a, .bt-header-canvas-border .bt-header-menu .bt-menu-list > ul > li > a,{opacity: 0;}.ie.wf-loading .bt-header-canvas .bt-header-menu .bt-menu-list > ul > li > a, .bt-header-canvas-border .bt-header-menu .bt-menu-list > ul > li > a,{visibility: hidden;}.bt-header-canvas .bt-header-menu .bt-menu-list > ul > li.menu-item-has-children > ul > li > a, .bt-header-canvas-border .bt-header-menu .bt-menu-list > ul > li.menu-item-has-children > ul > li > a{font-family:Hind;line-height:24px;letter-spacing:0.64px;font-weight:400;font-style:normal;color:#bfbebe;font-size:13px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading .bt-header-canvas .bt-header-menu .bt-menu-list > ul > li.menu-item-has-children > ul > li > a, .bt-header-canvas-border .bt-header-menu .bt-menu-list > ul > li.menu-item-has-children > ul > li > a,{opacity: 0;}.ie.wf-loading .bt-header-canvas .bt-header-menu .bt-menu-list > ul > li.menu-item-has-children > ul > li > a, .bt-header-canvas-border .bt-header-menu .bt-menu-list > ul > li.menu-item-has-children > ul > li > a,{visibility: hidden;}.bt-header-canvas .bt-header-menu .bt-menu-list > ul > li.menu-item-has-children > ul > li.menu-item-has-children > ul > li > a, .bt-header-canvas-border .bt-header-menu .bt-menu-list > ul > li.menu-item-has-children > ul > li.menu-item-has-children > ul > li > a{font-family:Hind;line-height:24px;letter-spacing:0.64px;font-weight:400;font-style:normal;color:#aaaaaa;font-size:12px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading .bt-header-canvas .bt-header-menu .bt-menu-list > ul > li.menu-item-has-children > ul > li.menu-item-has-children > ul > li > a, .bt-header-canvas-border .bt-header-menu .bt-menu-list > ul > li.menu-item-has-children > ul > li.menu-item-has-children > ul > li > a,{opacity: 0;}.ie.wf-loading .bt-header-canvas .bt-header-menu .bt-menu-list > ul > li.menu-item-has-children > ul > li.menu-item-has-children > ul > li > a, .bt-header-canvas-border .bt-header-menu .bt-menu-list > ul > li.menu-item-has-children > ul > li.menu-item-has-children > ul > li > a,{visibility: hidden;}.bt-header-canvas{background-color:#000000;}.bt-footer .bt-footer-top{margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;}.bt-footer .bt-footer-top{padding-top:70px;padding-right:0;padding-bottom:70px;padding-left:0;}.bt-footer .bt-footer-top{background-color:#282828;}.bt-footer .bt-footer-bottom{padding-top:15px;padding-right:0;padding-bottom:15px;padding-left:0;}.bt-footer .bt-footer-bottom{background-color:#1c1c1c;}.bt-footer-v2 .bt-footer-top{margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;}.bt-footer-v2 .bt-footer-top .bt-col{padding-top:70px;padding-right:40px;padding-bottom:70px;padding-left:40px;}.bt-footer-v2 .bt-footer-top{background-color:#282828;}.bt-footer-v2 .bt-footer-bottom{padding-top:16px;padding-right:0;padding-bottom:16px;padding-left:0;}.bt-footer-v2 .bt-footer-bottom{background-color:#2c2c2c;}.bt-title-bar-wrap, .bt-page-title-shop{margin-top:0;margin-right:0;margin-bottom:100px;margin-left:0;}.bt-title-bar-wrap .bt-title-bar, .bt-page-title-shop{padding-top:50px;padding-right:0;padding-bottom:200px;padding-left:0;}.bt-title-bar-wrap .bt-title-bar h2{font-family:Lato;line-height:65px;letter-spacing:4.6px;font-weight:900;font-style:normal;color:#ffffff;font-size:.001px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading .bt-title-bar-wrap .bt-title-bar h2,{opacity: 0;}.ie.wf-loading .bt-title-bar-wrap .bt-title-bar h2,{visibility: hidden;}.bt-title-bar-wrap .bt-title-bar .bt-path, .bt-title-bar-wrap .bt-title-bar .bt-path a, .woocommerce .bt-page-title-shop, .woocommerce .bt-page-title-shop a{font-family:"Crimson Text";line-height:24px;letter-spacing:0.64px;font-weight:400;font-style:italic;color:#ffffff;font-size:.001px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading .bt-title-bar-wrap .bt-title-bar .bt-path, .bt-title-bar-wrap .bt-title-bar .bt-path a, .woocommerce .bt-page-title-shop, .woocommerce .bt-page-title-shop a,{opacity: 0;}.ie.wf-loading .bt-title-bar-wrap .bt-title-bar .bt-path, .bt-title-bar-wrap .bt-title-bar .bt-path a, .woocommerce .bt-page-title-shop, .woocommerce .bt-page-title-shop a,{visibility: hidden;}.bt-title-bar-wrap .bt-title-bar h6{font-family:Hind;line-height:24px;letter-spacing:0.64px;font-weight:400;font-style:normal;color:#ffffff;font-size:.001px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading .bt-title-bar-wrap .bt-title-bar h6,{opacity: 0;}.ie.wf-loading .bt-title-bar-wrap .bt-title-bar h6,{visibility: hidden;}.archive .bt-title-bar-wrap{background-color:#222222;background-repeat:no-repeat;background-size:cover;background-position:center center;background-image:url('http://www.commercialwebservices.com/wp-content/uploads/2017/05/bg-cws-titlebar-1.jpg');}.single .bt-title-bar-wrap{background-color:#222222;background-repeat:no-repeat;background-size:cover;background-position:center center;background-image:url('http://www.commercialwebservices.com/wp-content/uploads/2017/05/bg-cws-titlebar-1.jpg');}.archive.woocommerce-page .bt-title-bar-wrap{background-color:#222222;background-repeat:no-repeat;background-size:cover;background-position:center center;background-image:url('http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/images/bg-titlebar.jpg');}.single-product .bt-title-bar-wrap{background-color:#222222;background-repeat:no-repeat;background-size:cover;background-position:center center;background-image:url('http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/images/bg-titlebar.jpg');}</style><style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1492453091945{padding-top: 40px !important;padding-bottom: 40px !important;}.vc_custom_1462526914098{padding-top: 60px !important;padding-bottom: 60px !important;background-color: #f8f8f8 !important;}.vc_custom_1493831882195{padding-top: 50px !important;padding-bottom: 40px !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1495549059238{margin-bottom: 0px !important;}.vc_custom_1494530496550{margin-bottom: 15px !important;}.vc_custom_1495582858511{padding-top: 20px !important;}.vc_custom_1495582779521{padding-top: 20px !important;}.vc_custom_1495582909582{padding-top: 20px !important;}.vc_custom_1495582819689{padding-top: 20px !important;}.vc_custom_1494260334099{margin-bottom: 0px !important;}.vc_custom_1495720192943{margin-bottom: 0px !important;}.vc_custom_1494260351636{margin-bottom: 0px !important;}.vc_custom_1495720227340{margin-bottom: 0px !important;}.vc_custom_1494260362725{margin-bottom: 0px !important;}.vc_custom_1495720245042{margin-bottom: 0px !important;}.vc_custom_1494260376262{margin-bottom: 0px !important;}.vc_custom_1495720262673{margin-bottom: 0px !important;}.vc_custom_1495673617643{padding-bottom: 25px !important;}.vc_custom_1496862374042{padding-bottom: 25px !important;}.vc_custom_1495575696925{padding-top: 15px !important;}</style><noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript></head>
+<body class="home page-template page-template-page-NoTitleBar page-template-page-NoTitleBar-php page page-id-3709 wide wpb-js-composer js-comp-ver-5.0.1 vc_responsive">
+		<div id="bt-main">
+		<!-- Start Header -->
+<header>
+	<div id="bt_header" class="bt-header-v1 line bt-header-fixed bt-header-stick"><!-- bt-header-stick/bt-header-fixed -->
+		<!-- Start Header Top -->
+		<div class="bt-header-top">
+			<div class="row">
+				<div class="container">
+					<!-- Start Header Sidebar Top Left -->
+											<div class="col-sm-5 col-md-5">
+							<div id="social_widget-2" class=" widget widget_social_widget">        <div class='social-wrap'>
+            				<a class="bt-facebook" href="https://www.facebook.com/commercialwebservices/">
+					<i class="fa fa-facebook"></i>
+				</a>
+			        				<a class="bt-twitter" href="https://twitter.com/ComWebServices">
+					<i class="fa fa-twitter"></i>
+				</a>
+			        				<a class="bt-google-plus" href="https://plus.google.com/+Commercialwebservices">
+					<i class="fa fa-google-plus"></i>
+				</a>
+			        				<a class="bt-linkedin" href="https://www.linkedin.com/company-beta/1835709/">
+					<i class="fa fa-linkedin"></i>
+				</a>
+			                                                                                </div>
+        <div style="clear:both;"></div></div>						</div>
+										<!-- End Header Sidebar Top Left -->
+					<!-- Start Header Sidebar Top Right -->
+										<!-- End Header Sidebar Top Right -->
+				</div>
+			</div>
+		</div>
+		<!-- End Header Top -->
+		<!-- Start Header Menu -->
+		<div class="bt-header-menu">
+			<div class="row">
+				<div class="container">
+					<div class="col-md-2 bt-col-logo">
+						<div class="bt-logo">
+							<a href="http://www.commercialwebservices.com">
+								<img class="logo" src="http://www.commercialwebservices.com/wp-content/uploads/2017/05/CWS-logo-white-150x45.png" alt="Logo"/><img class="logo-stick" src="http://www.commercialwebservices.com/wp-content/uploads/2017/05/CWS-logo-dark-150x45-1.png" alt="Logo Stick"/>							</a>
+						</div>
+						<div id="bt-hamburger" class="bt-hamburger"><span></span></div>
+					</div>
+					<div class="col-md-10 bt-col-menu has-menu-right-sidebar">
+						<div class="bt-menu-list"><ul id="menu-main" class="text-left"><li id="menu-item-3991" class="menu-item menu-item-type-custom menu-item-object-custom nomega-menu-item algleft menu-item-3991"><a href="http://commercialwebservices.com/">HOME</a></li>
+<li id="menu-item-4324" class="menu-item menu-item-type-custom menu-item-object-custom nomega-menu-item algleft menu-item-4324"><a href="http://www.commercialwebservices.com/about/">ABOUT US</a></li>
+<li id="menu-item-6416" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nomega-menu-item algleft menu-item-6416"><a href="http://www.commercialwebservices.com/services/">SERVICES</a>
+<ul class='depth0 standard sub-menu' style="">
+	<li id="menu-item-4016" class="menu-item menu-item-type-post_type menu-item-object-page nomega-menu-item algleft menu-item-4016"><a href="http://www.commercialwebservices.com/services/website-solutions/">Website Solutions</a></li>
+	<li id="menu-item-4015" class="menu-item menu-item-type-post_type menu-item-object-page nomega-menu-item algleft menu-item-4015"><a href="http://www.commercialwebservices.com/services/search-engine-services/">Search Engine Services</a></li>
+	<li id="menu-item-4014" class="menu-item menu-item-type-post_type menu-item-object-page nomega-menu-item algleft menu-item-4014"><a href="http://www.commercialwebservices.com/services/social-media-management/">Social Media Management</a></li>
+	<li id="menu-item-4013" class="menu-item menu-item-type-post_type menu-item-object-page nomega-menu-item algleft menu-item-4013"><a href="http://www.commercialwebservices.com/services/inventory-exposure/">Inventory Exposure</a></li>
+</ul>
+</li>
+<li id="menu-item-6383" class="menu-item menu-item-type-custom menu-item-object-custom nomega-menu-item algleft menu-item-6383"><a href="http://www.commercialwebservices.com/industries/">INDUSTRIES</a></li>
+<li id="menu-item-6372" class="menu-item menu-item-type-custom menu-item-object-custom nomega-menu-item algleft menu-item-6372"><a href="http://www.commercialwebservices.com/our-work/">OUR WORK</a></li>
+<li id="menu-item-4325" class="menu-item menu-item-type-custom menu-item-object-custom nomega-menu-item algleft menu-item-4325"><a href="http://www.commercialwebservices.com/blog/">BLOG</a></li>
+<li id="menu-item-6346" class="menu-item menu-item-type-custom menu-item-object-custom nomega-menu-item algleft menu-item-6346"><a href="http://www.commercialwebservices.com/contact/">CONTACT US</a></li>
+</ul></div>													<div id="text-9" class="widget widget_text">			<div class="textwidget"><div class="bt-search-sidebar">
+<a href="javascript:void(0)"><i class="fa fa-search"></i></a>
+</div></div>
+		<div style="clear:both;"></div></div><div id="search-3" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://www.commercialwebservices.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form><div style="clear:both;"></div></div>											</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Header Menu -->
+	</div>
+</header>
+<div class="bt-menu-canvas-overlay"></div>
+<div class="bt-menu-canvas">
+	</div>
+<!-- End Header -->
+	<div class="main-content">
+		
+			<div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding">
+				<div class="bt-vc-row-ovelay" style=""></div>
+				<div class="no-container"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="wpb_revslider_element wpb_content_element"><link href="http://fonts.googleapis.com/css?family=Open+Sans%3A600%2C800%2C400" rel="stylesheet" property="stylesheet" type="text/css" media="all" /><link href="http://fonts.googleapis.com/css?family=Raleway%3A400" rel="stylesheet" property="stylesheet" type="text/css" media="all" />
+<div id="rev_slider_24_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+<!-- START REVOLUTION SLIDER 5.3.0.2 fullwidth mode -->
+	<div id="rev_slider_24_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.3.0.2">
+<ul>	<!-- SLIDE  -->
+	<li data-index="rs-25" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="540"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img src="http://www.commercialwebservices.com/wp-content/uploads/2017/05/hm_bg_slider-01.jpg"  alt="commercial truck" title="hm_bg_slider-01"  width="1920" height="783" data-bgposition="center center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="115" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-25-layer-1" 
+			 data-x="center" data-hoffset="" 
+			 data-y="center" data-voffset="-70" 
+						data-width="['auto']"
+			data-height="['auto']"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":540,"speed":1500,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 5; white-space: nowrap; font-size: 50px; line-height: 60px; font-weight: 600; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;">WE ARE </div>
+
+		<!-- LAYER NR. 2 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-25-layer-2" 
+			 data-x="center" data-hoffset="" 
+			 data-y="center" data-voffset="" 
+						data-width="['auto']"
+			data-height="['auto']"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":2060,"split":"chars","splitdelay":0.05,"speed":2000,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"nothing"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 6; white-space: nowrap; font-size: 80px; line-height: 80px; font-weight: 800; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;">REVOLUTIONIZING </div>
+
+		<!-- LAYER NR. 3 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-25-layer-3" 
+			 data-x="center" data-hoffset="" 
+			 data-y="center" data-voffset="80" 
+						data-width="['auto']"
+			data-height="['auto']"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":4550,"speed":2010,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[10,10,10,10]"
+			data-paddingright="[20,20,20,20]"
+			data-paddingbottom="[10,10,10,10]"
+			data-paddingleft="[20,20,20,20]"
+
+			style="z-index: 7; white-space: nowrap; font-size: 25px; line-height: 20px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;background-color:rgba(8, 124, 167, 1.00);">THE WAY DEALERSHIPS DO BUSINESS </div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-index="rs-26" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="540"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img src="http://www.commercialwebservices.com/wp-content/uploads/2017/05/hm_bg_slider-02.jpg"  alt="commercial equipment" title="hm_bg_slider-02"  width="1920" height="783" data-bgposition="center center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="115" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 4 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-26-layer-1" 
+			 data-x="center" data-hoffset="" 
+			 data-y="center" data-voffset="-70" 
+						data-width="['auto']"
+			data-height="['auto']"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":540,"speed":1500,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 5; white-space: nowrap; font-size: 50px; line-height: 60px; font-weight: 600; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;">WE ARE </div>
+
+		<!-- LAYER NR. 5 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-26-layer-2" 
+			 data-x="center" data-hoffset="" 
+			 data-y="center" data-voffset="" 
+						data-width="['auto']"
+			data-height="['auto']"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":2060,"split":"chars","splitdelay":0.05,"speed":2000,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"nothing"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 6; white-space: nowrap; font-size: 70px; line-height: 80px; font-weight: 800; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;">THE #1 WEBSITE PROVIDER </div>
+
+		<!-- LAYER NR. 6 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-26-layer-3" 
+			 data-x="center" data-hoffset="" 
+			 data-y="center" data-voffset="67" 
+						data-width="['auto']"
+			data-height="['auto']"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":4550,"speed":2010,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[10,10,10,10]"
+			data-paddingright="[20,20,20,20]"
+			data-paddingbottom="[10,10,10,10]"
+			data-paddingleft="[20,20,20,20]"
+
+			style="z-index: 7; white-space: nowrap; font-size: 25px; line-height: 20px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Raleway;background-color:rgba(8, 124, 167, 1.00);">FOR EQUIPMENT DEALERS </div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-index="rs-27" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="540"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img src="http://www.commercialwebservices.com/wp-content/uploads/2017/05/hm_bg_slider-03.jpg"  alt="commercial equipment" title="hm_bg_slider-03"  width="1920" height="783" data-bgposition="center center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="115" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 7 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-27-layer-1" 
+			 data-x="center" data-hoffset="" 
+			 data-y="center" data-voffset="-70" 
+						data-width="['auto']"
+			data-height="['auto']"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":540,"speed":1500,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 5; white-space: nowrap; font-size: 50px; line-height: 60px; font-weight: 600; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;">WE ARE </div>
+
+		<!-- LAYER NR. 8 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-27-layer-2" 
+			 data-x="center" data-hoffset="" 
+			 data-y="center" data-voffset="" 
+						data-width="['auto']"
+			data-height="['auto']"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":2060,"split":"chars","splitdelay":0.05,"speed":2000,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"nothing"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 6; white-space: nowrap; font-size: 70px; line-height: 80px; font-weight: 800; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;">YOUR INDUSTRY DEDICATED </div>
+
+		<!-- LAYER NR. 9 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-27-layer-3" 
+			 data-x="center" data-hoffset="" 
+			 data-y="center" data-voffset="67" 
+						data-width="['auto']"
+			data-height="['auto']"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":4550,"speed":2010,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[10,10,10,10]"
+			data-paddingright="[20,20,20,20]"
+			data-paddingbottom="[10,10,10,10]"
+			data-paddingleft="[20,20,20,20]"
+
+			style="z-index: 7; white-space: nowrap; font-size: 25px; line-height: 20px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Raleway;background-color:rgba(8, 124, 167, 1.00);">ONLINE MARKETING PROVIDER </div>
+	</li>
+</ul>
+<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	</div>
+<script>var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss="";
+				if(htmlDiv) {
+					htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+				}else{
+					var htmlDiv = document.createElement("div");
+					htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+					document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+				}
+			</script>
+		<script type="text/javascript">
+						/******************************************
+				-	PREPARE PLACEHOLDER FOR SLIDER	-
+			******************************************/
+
+			var setREVStartSize=function(){
+				try{var e=new Object,i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
+					e.c = jQuery('#rev_slider_24_1');
+					e.gridwidth = [1240];
+					e.gridheight = [700];
+							
+					e.sliderLayout = "fullwidth";
+					if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})
+					
+				}catch(d){console.log("Failure at Presize of Slider:"+d)}
+			};
+			
+			setREVStartSize();
+			
+						var tpj=jQuery;
+			
+			var revapi24;
+			tpj(document).ready(function() {
+				if(tpj("#rev_slider_24_1").revolution == undefined){
+					revslider_showDoubleJqueryError("#rev_slider_24_1");
+				}else{
+					revapi24 = tpj("#rev_slider_24_1").show().revolution({
+						sliderType:"standard",
+jsFileLocation:"//www.commercialwebservices.com/wp-content/plugins/revslider/public/assets/js/",
+						sliderLayout:"fullwidth",
+						dottedOverlay:"none",
+						delay:9000,
+						navigation: {
+							onHoverStop:"off",
+						},
+						visibilityLevels:[1240,1024,778,480],
+						gridwidth:1240,
+						gridheight:700,
+						lazyType:"none",
+						shadow:0,
+						spinner:"spinner0",
+						stopLoop:"off",
+						stopAfterLoops:-1,
+						stopAtSlide:-1,
+						shuffle:"off",
+						autoHeight:"off",
+						disableProgressBar:"on",
+						hideThumbsOnMobile:"off",
+						hideSliderAtLimit:0,
+						hideCaptionAtLimit:0,
+						hideAllCaptionAtLilmit:0,
+						debugMode:false,
+						fallbacks: {
+							simplifyAll:"off",
+							nextSlideOnWindowFocus:"off",
+							disableFocusListener:false,
+						}
+					});
+				}
+			});	/*ready*/
+		</script>
+		</div><!-- END REVOLUTION SLIDER --></div></div></div></div>	</div>
+			</div><div class="vc_row-full-width"></div><div class="vc_row wpb_row vc_row-fluid vc_custom_1492453091945">
+				<div class="bt-vc-row-ovelay" style=""></div>
+				<div class="container"><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner "><div class="wpb_wrapper"><h3 style="font-size: 30px;color: #404041;line-height: 36px;text-align: left;font-family:Raleway;font-weight:800;font-style:normal;letter-spacing: 0.08em;" class="vc_custom_heading bt-poppins-font vc_custom_1495549059238">WHAT WE DO</h3><div style="font-size: 13px;line-height: 24px;text-align: left;font-family:Raleway;font-weight:500;font-style:normal;letter-spacing: 0.4em;" class="vc_custom_heading bt-color-main vc_custom_1494530496550">AT COMMERCIAL WEB SERVICES</div>
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<p>Commercial Web Services is an innovative website and online marketing services provider exclusively for dealers in the Equipment, Commercial Truck, and Agricultural industries. We work with you to understand your business needs and goals, deliver the best products and services to help meet these needs and goals, then monitor your success and change with you as your business grows. Your success is our success, and we strive to make you successful!</p>
+
+		</div>
+	</div>
+<div class="vc_btn3-container vc_btn3-inline">
+	<a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-grey" href="http://www.commercialwebservices.com/services/" title="">LEARN MORE</a></div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner "><div class="wpb_wrapper"><div
+	class="vc_icon_element vc_icon_element-outer vc_custom_1495582858511 vc_icon_element-align-center vc_icon_element-have-style">
+	<div class="vc_icon_element-inner vc_icon_element-color-custom vc_icon_element-have-style-inner vc_icon_element-size-md vc_icon_element-style-rounded-less vc_icon_element-background vc_icon_element-background-color-grey">
+		<span class="vc_icon_element-icon fa fa-desktop" style="color:#087ca7 !important"></span></div>
+</div>
+<h2 style="font-size: 20px;color: #404041;line-height: 24px;text-align: center;font-family:Raleway;font-weight:700;font-style:normal" class="vc_custom_heading">Build</h2><div
+	class="vc_icon_element vc_icon_element-outer vc_custom_1495582779521 vc_icon_element-align-center vc_icon_element-have-style">
+	<div class="vc_icon_element-inner vc_icon_element-color-custom vc_icon_element-have-style-inner vc_icon_element-size-md vc_icon_element-style-rounded-less vc_icon_element-background vc_icon_element-background-color-grey">
+		<span class="vc_icon_element-icon fa fa-comments" style="color:#087ca7 !important"></span></div>
+</div>
+<h2 style="font-size: 20px;color: #404041;line-height: 24px;text-align: center;font-family:Raleway;font-weight:700;font-style:normal" class="vc_custom_heading">Engage</h2></div></div></div><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner "><div class="wpb_wrapper"><div
+	class="vc_icon_element vc_icon_element-outer vc_custom_1495582909582 vc_icon_element-align-center vc_icon_element-have-style">
+	<div class="vc_icon_element-inner vc_icon_element-color-custom vc_icon_element-have-style-inner vc_icon_element-size-md vc_icon_element-style-rounded-less vc_icon_element-background vc_icon_element-background-color-grey">
+		<span class="vc_icon_element-icon fa fa-search" style="color:#087ca7 !important"></span></div>
+</div>
+<h2 style="font-size: 20px;color: #404041;line-height: 24px;text-align: center;font-family:Raleway;font-weight:700;font-style:normal" class="vc_custom_heading">Attract</h2><div
+	class="vc_icon_element vc_icon_element-outer vc_custom_1495582819689 vc_icon_element-align-center vc_icon_element-have-style">
+	<div class="vc_icon_element-inner vc_icon_element-color-custom vc_icon_element-have-style-inner vc_icon_element-size-md vc_icon_element-style-rounded-less vc_icon_element-background vc_icon_element-background-color-grey">
+		<span class="vc_icon_element-icon fa fa-users" style="color:#087ca7 !important"></span></div>
+</div>
+<h2 style="font-size: 20px;color: #404041;line-height: 24px;text-align: center;font-family:Raleway;font-weight:700;font-style:normal" class="vc_custom_heading">Develop</h2></div></div></div>	</div>
+			</div><div id="our_categories_section" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid bt-categories-section vc_row-no-padding">
+				<div class="bt-vc-row-ovelay" style=""></div>
+				<div class="no-container"><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner "><div class="wpb_wrapper">
+	<div class="wpb_single_image wpb_content_element vc_align_center  vc_custom_1494260334099">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="300" height="227" src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/cta-equipment-300x227.jpg" class="vc_single_image-img attachment-full" alt="equipment" /></div>
+		</figure>
+	</div>
+
+	<div class="wpb_text_column wpb_content_element  vc_custom_1495720192943">
+		<div class="wpb_wrapper">
+			<div class="bt-categories-inner"><a class="bt-btn-categories hvr-bounce-to-right" href="http://www.commercialwebservices.com/industries/">EQUIPMENT</a></div>
+
+		</div>
+	</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner "><div class="wpb_wrapper">
+	<div class="wpb_single_image wpb_content_element vc_align_center  vc_custom_1494260351636">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="300" height="227" src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/cta-material-300x227.jpg" class="vc_single_image-img attachment-full" alt="Material handling equipment" /></div>
+		</figure>
+	</div>
+
+	<div class="wpb_text_column wpb_content_element  vc_custom_1495720227340">
+		<div class="wpb_wrapper">
+			<div class="bt-categories-inner"><a class="bt-btn-categories hvr-bounce-to-right" href="http://www.commercialwebservices.com/industries/">MATERIAL HANDLING</a></div>
+
+		</div>
+	</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner "><div class="wpb_wrapper">
+	<div class="wpb_single_image wpb_content_element vc_align_center  vc_custom_1494260362725">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="300" height="227" src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/cta-truck-300x227.jpg" class="vc_single_image-img attachment-full" alt="Commercial Truck" /></div>
+		</figure>
+	</div>
+
+	<div class="wpb_text_column wpb_content_element  vc_custom_1495720245042">
+		<div class="wpb_wrapper">
+			<div class="bt-categories-inner"><a class="bt-btn-categories hvr-bounce-to-right" href="http://www.commercialwebservices.com/industries/">TRUCK</a></div>
+
+		</div>
+	</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner "><div class="wpb_wrapper">
+	<div class="wpb_single_image wpb_content_element vc_align_center  vc_custom_1494260376262">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="300" height="227" src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/cta-agriculture-300x227.jpg" class="vc_single_image-img attachment-full" alt="agriculture agricultural equipment" /></div>
+		</figure>
+	</div>
+
+	<div class="wpb_text_column wpb_content_element  vc_custom_1495720262673">
+		<div class="wpb_wrapper">
+			<div class="bt-categories-inner"><a class="bt-btn-categories hvr-bounce-to-right" href="http://www.commercialwebservices.com/industries/">AGRICULTURE</a></div>
+
+		</div>
+	</div>
+</div></div></div>	</div>
+			</div><div class="vc_row-full-width"></div><div class="vc_row wpb_row vc_row-fluid vc_custom_1462526914098 vc_row-has-fill">
+				<div class="bt-vc-row-ovelay" style=""></div>
+				<div class="container"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><h3 style="font-size: 28px;color: #393838;line-height: 34px;text-align: center;font-family:Raleway;font-weight:700;font-style:normal" class="vc_custom_heading bt-poppins-font vc_custom_1495673617643">OUR PARTNERS</h3>		<div class="bt-image-carousel-wrap ">
+			<div class="owl-carousel" data-col_lg="6" data-col_md="5" data-col_sm="4" data-col_xs="2" data-item_space="30" data-loop="true" data-autoplay="true" data-smartspeed="1200" data-nav="true" data-dots="false">
+				<img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client7.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client1.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client8.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client5.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client9.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client11.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client10.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client2.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client4.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client3.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client16.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client15.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client14.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client13.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client12.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client17.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client18.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client19.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client20.png" alt=""/><img src="http://www.commercialwebservices.com/wp-content/uploads/2017/04/client21.png" alt=""/>			</div>
+		</div>
+    </div></div></div>	</div>
+			</div><div id="about_us_section" class="vc_row wpb_row vc_row-fluid bt-slogan-section text-center vc_custom_1493831882195 vc_row-has-fill">
+				<div class="bt-vc-row-ovelay" style="background: #087ca7;"></div>
+				<div class="container"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1495575696925"><div class="wpb_wrapper"><div class="vc_btn3-container  bt-purchases hvr-float-shadow vc_btn3-inline">
+	<a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-grey" href="http://www.commercialwebservices.com/contact/" title="">CONTACT US</a></div>
+</div></div></div>	</div>
+			</div>
+			
+							<div class="container">
+									</div>
+						
+			</div>
+		<footer id="bt_footer" class="bt-footer">
+	<!-- Start Footer Top -->
+			<div class="bt-footer-top">
+			<div class="row">
+				<div class="container">
+					<!-- Start Footer Sidebar Top 1 -->
+											<div class="col-sm-6 col-md-6 col-lg-3">
+							<div id="text-7" class="widget widget_text">			<div class="textwidget"><a href="http://www.commercialwebservices.com/" class="bt-logo"><img alt="Footer Logo" src="/wp-content/uploads/2017/05/CWS-logo-white-150x45.png"></a>
+<div class="bt-desc">
+Commercial Web Services is an innovative website and online marketing services provider exclusively for dealers in the Equipment, Commercial Truck, and Agricultural industries.
+</div>
+<ul class="bt-info">
+<li><i class="fa fa-phone"></i><a href="tel:8665296008">(866) 529-6008</a></li>
+<li><i class="fa fa-envelope"></i><a href="mailto:marketing@commercialwebservices.com">marketing@commercialwebservices.com</a></li>
+<li><i class="fa fa-map-marker"></i> <a href="http://www.commercialwebservices.com/contact/">150 Granby St. Norfolk, VA 23510</a></li>
+</ul></div>
+		<div style="clear:both;"></div></div><div id="social_widget-3" class=" widget widget_social_widget">        <div class='social-wrap'>
+            				<a class="bt-facebook" href="https://www.facebook.com/commercialwebservices/">
+					<i class="fa fa-facebook"></i>
+				</a>
+			        				<a class="bt-twitter" href="https://twitter.com/ComWebServices">
+					<i class="fa fa-twitter"></i>
+				</a>
+			        				<a class="bt-google-plus" href="https://plus.google.com/+Commercialwebservices">
+					<i class="fa fa-google-plus"></i>
+				</a>
+			        				<a class="bt-linkedin" href="https://www.linkedin.com/company-beta/1835709/">
+					<i class="fa fa-linkedin"></i>
+				</a>
+			                                                                                </div>
+        <div style="clear:both;"></div></div>						</div>
+										<!-- End Footer Sidebar Top 1 -->
+					<!-- Start Footer Sidebar Top 2 -->
+											<div class="col-sm-6 col-md-6 col-lg-3">
+							<div id="text-4" class="widget widget_text">			<div class="textwidget"></div>
+		<div style="clear:both;"></div></div>						</div>
+										<!-- End Footer Sidebar Top 2 -->
+					<!-- Start Footer Sidebar Top 3 -->
+										<div class="col-sm-6 col-md-6 col-lg-3">
+						<div id="text-3" class="widget widget_text">			<div class="textwidget"></div>
+		<div style="clear:both;"></div></div>					</div>
+										<!-- End Footer Sidebar Top 3 -->
+					<!-- Start Footer Sidebar Top 4 -->
+										<div class="col-sm-6 col-md-6 col-lg-3">
+						<div id="text-2" class="widget widget_text">			<div class="textwidget"><div role="form" class="wpcf7" id="wpcf7-f1342-o1" lang="en-US" dir="ltr">
+<div class="screen-reader-response"></div>
+<form action="/#wpcf7-f1342-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="1342" />
+<input type="hidden" name="_wpcf7_version" value="4.7" />
+<input type="hidden" name="_wpcf7_locale" value="en_US" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f1342-o1" />
+<input type="hidden" name="_wpnonce" value="fc1c832ce7" />
+</div>
+<p><span class="wpcf7-form-control-wrap text-410"><input type="text" name="text-410" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name" /></span><br />
+<span class="wpcf7-form-control-wrap email-331"><input type="email" name="email-331" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email Address" /></span><br />
+<span class="wpcf7-form-control-wrap text-87"><input type="text" name="text-87" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Subject" /></span><br />
+<span class="wpcf7-form-control-wrap textarea-44"><textarea name="textarea-44" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Content"></textarea></span></p>
+<div class="wpcf7-form-control-wrap"><div data-sitekey="6LfQPyQUAAAAAPN2MryV6VZ10mum4UxKg8GGrbGE" data-theme="dark" class="wpcf7-form-control g-recaptcha wpcf7-recaptcha recaptcha-margin"></div>
+<noscript>
+	<div style="width: 302px; height: 422px;">
+		<div style="width: 302px; height: 422px; position: relative;">
+			<div style="width: 302px; height: 422px; position: absolute;">
+				<iframe src="https://www.google.com/recaptcha/api/fallback?k=6LfQPyQUAAAAAPN2MryV6VZ10mum4UxKg8GGrbGE" frameborder="0" scrolling="no" style="width: 302px; height:422px; border-style: none;">
+				</iframe>
+			</div>
+			<div style="width: 300px; height: 60px; border-style: none; bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px; background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+				<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;">
+				</textarea>
+			</div>
+		</div>
+	</div>
+</noscript>
+</div>
+<p><input type="submit" value="SEND" class="wpcf7-form-control wpcf7-submit" /></p>
+<div class="wpcf7-response-output wpcf7-display-none"></div></form></div></div>
+		<div style="clear:both;"></div></div>					</div>
+										<!-- End Footer Sidebar Top 4 -->
+				</div>
+			</div>
+		</div>
+		<!-- End Footer Top -->
+	<!-- Start Footer Bottom -->
+			<div class="bt-footer-bottom">
+			<div class="container">
+				<div class="row">
+					<!-- Start Footer Sidebar Bottom 1 -->
+										<div class="col-sm-4 col-md-4 col-lg-6">
+						<div id="text-11" class="widget widget_text">			<div class="textwidget"><div class="bt-coppyright">© 2017 Commercial Web Services</div></div>
+		<div style="clear:both;"></div></div>					</div>
+										<!-- End Footer Sidebar Bottom 1 -->
+					<!-- Start Footer Sidebar Bottom 2 -->
+										<div class="col-sm-8 col-md-8 col-lg-6">
+						<div id="text-12" class="widget widget_text">			<div class="textwidget"><ul class="bt-bottom-bar">
+<li><a href="http://www.commercialwebservices.com/">Home</a></li>
+<li><a href="http://www.commercialwebservices.com/about/">About</a></li>
+<li><a href="http://www.commercialwebservices.com/services/">Services</a></li>
+<li><a href="http://www.commercialwebservices.com/industries/">Industries</a></li>
+<li><a href="http://www.commercialwebservices.com/our-work/">Our Work</a></li>
+<li><a href="http://www.commercialwebservices.com/blog/">Blog</a></li>
+<li><a href="http://www.commercialwebservices.com/contact/">Contact</a></li>
+</ul></div>
+		<div style="clear:both;"></div></div>					</div>
+										<!-- End Footer Sidebar Bottom 2 -->
+				</div>
+			</div>
+		</div>
+		<!-- End Footer Bottom -->
+</footer>
+	</div><!-- #wrap -->
+	<div class="bs-woofavorite">
+	<a href="#" class="show-hide-wishlist" title="My wishlist">
+		<span class="num">0</span>
+		<i class="ion-ios-heart"></i>
+	</a>
+	<div class="container-fluid">
+		<h4 class='heading'>My wishlist</h4>		<div id="bs-woofavorite-items" data-owl-options='{&quot;loop&quot;:true,&quot;margin&quot;:20,&quot;nav&quot;:true,&quot;responsive&quot;:{&quot;0&quot;:{&quot;items&quot;:1},&quot;600&quot;:{&quot;items&quot;:2},&quot;1000&quot;:{&quot;items&quot;:5}},&quot;navText&quot;:[&quot;&lt;i class=\&quot;ion-ios-arrow-thin-left\&quot;&gt;&lt;\/i&gt;&quot;,&quot;&lt;i class=\&quot;ion-ios-arrow-thin-right\&quot;&gt;&lt;\/i&gt;&quot;]}' class="owl-carousel">	
+		</div>
+	</div>
+</div>		<div id="bt-backtop"><i class="fa fa-arrow-up"></i></div>
+		<div data-type='normal' class="pafl-overlay pafl-overlay-hugeinc">
+<svg width='120px' height='120px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="display:none"class="pafl-loader"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#ffffff' transform='rotate(0 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#ffffff' transform='rotate(30 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.08333333333333333s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#ffffff' transform='rotate(60 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.16666666666666666s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#ffffff' transform='rotate(90 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.25s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#ffffff' transform='rotate(120 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.3333333333333333s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#ffffff' transform='rotate(150 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.4166666666666667s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#ffffff' transform='rotate(180 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.5s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#ffffff' transform='rotate(210 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.5833333333333334s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#ffffff' transform='rotate(240 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.6666666666666666s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#ffffff' transform='rotate(270 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.75s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#ffffff' transform='rotate(300 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.8333333333333334s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#ffffff' transform='rotate(330 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.9166666666666666s' repeatCount='indefinite'/></rect></svg><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 100 100" version="1.1" viewBox="0 0 100 100" xml:space="preserve" class="pafl-overlay-close" ><polygon fill="#ffffff" points="77.6 21.1 49.6 49.2 21.5 21.1 19.6 23 47.6 51.1 19.6 79.2 21.5 81.1 49.6 53 77.6 81.1 79.6 79.2 51.5 51.1 79.6 23 "/></svg><nav>
+<ul>
+<li>
+
+					<div class="pafl-section-container">
+
+						<div id="pafl-login" class="pafl-modal-wrap pafl-modal-content" data-response="false">
+
+				<h2 class="pafl-title">WELCOME BACK</h2>
+
+				<p class="pafl-subtitle">Already a member? Sign in with your username.</p>
+				<div class="pafl-message-result"><span class="pafl-message-content"></span><span class="pafl-btn-close">x</span></div>
+				
+				<form action="login" method="post" id="pafl-form" class="pafl-form-login">
+
+					
+					<input type="text" name="log" id="login_user" class="pafl-input"
+					       placeholder="Username"
+					       value="" size="20"/>
+
+					<input type="password" name="pwd" id="login_pass" class="pafl-input"
+					       placeholder="Password" value=""
+					       size="20"/>
+
+										
+											<input name="rememberme" type="checkbox"
+						       placeholder="Remember Me"
+						       id="pafl-rememberme" value="forever"/>
+						<label class="pafl-rememberme-label" for="pafl-rememberme"><span></span></label>
+						<p>Remember Me</p>
+					
+					
+					
+					<input type="submit" name="pafl-submit" id="pafl-login" class="pafl-login-button pafl-submit"
+					       value="SIGN IN"/>
+										<div class="pafl-social-wrap">
+					
+															</div>
+					<input type="hidden" name="login" value="true"/>
+
+					<input type="hidden" id="security" name="security" value="320f1d9da1" /><input type="hidden" name="_wp_http_referer" value="/" />
+					<p class="pafl-form-links">
+																														<a href="#" data-form="forgot" class="pafl-forgot-left pafl-full-width">I FORGOT MY PASSWORD</a>
+											</p><!--[END .form-links]-->
+
+					
+				</form>
+				<!--[END #loginform]-->
+			</div><!--[END #pafl-login]-->
+												<div id="pafl-forgot" class="pafl-modal-wrap pafl-modal-content" style="display:none;" data-response="false">
+
+				<h2 class="pafl-title">FORGOT PASSWORD</h2>
+
+				<p class="pafl-subtitle">Enter your username or email to reset your password.</p>
+				<div class="pafl-message-result"><span class="pafl-message-content"></span><span class="pafl-btn-close">x</span></div>
+
+
+				
+				<form action="forgotten" method="post" id="pafl-form" class="pafl-form-forgotten">
+
+					
+					<input type="text" name="forgot_login" id="forgot_login" class="pafl-input"
+					       placeholder="Username or Email"
+					       value=""
+					       size="20"/>
+
+															
+					<input type="submit" name="pafl-submit" id="pafl-forgot" class="pafl-forgotte-button pafl-submit"
+					       value="SEND RESET EMAIL">
+					<input type="hidden" name="forgotten" value="true"/>
+
+					<input type="hidden" id="security" name="security" value="320f1d9da1" /><input type="hidden" name="_wp_http_referer" value="/" />
+					<p class="pafl-form-links">
+																		<a href="#" data-form="login" class="pafl-allow-login pafl-full-width">SIGN IN</a>
+					</p><!--[END .form-links]-->
+
+					
+				</form>
+			</div><!--[END #forgotten]-->
+
+		
+		</div><!--[END .pafl-section-container]-->
+
+		
+		</li>
+</ul>
+</nav>
+</div>
+<script type="text/javascript">
+var recaptchaWidgets = [];
+var recaptchaCallback = function() {
+	var forms = document.getElementsByTagName('form');
+	var pattern = /(^|\s)g-recaptcha(\s|$)/;
+
+	for (var i = 0; i < forms.length; i++) {
+		var divs = forms[i].getElementsByTagName('div');
+
+		for (var j = 0; j < divs.length; j++) {
+			var sitekey = divs[j].getAttribute('data-sitekey');
+
+			if (divs[j].className && divs[j].className.match(pattern) && sitekey) {
+				var params = {
+					'sitekey': sitekey,
+					'theme': divs[j].getAttribute('data-theme'),
+					'type': divs[j].getAttribute('data-type'),
+					'size': divs[j].getAttribute('data-size'),
+					'tabindex': divs[j].getAttribute('data-tabindex')
+				};
+
+				var callback = divs[j].getAttribute('data-callback');
+
+				if (callback && 'function' == typeof window[callback]) {
+					params['callback'] = window[callback];
+				}
+
+				var expired_callback = divs[j].getAttribute('data-expired-callback');
+
+				if (expired_callback && 'function' == typeof window[expired_callback]) {
+					params['expired-callback'] = window[expired_callback];
+				}
+
+				var widget_id = grecaptcha.render(divs[j], params);
+				recaptchaWidgets.push(widget_id);
+				break;
+			}
+		}
+	}
+}
+</script>
+	<div style="display:none">
+	</div>
+<!-- Google Code for Remarketing Tag -->
+<!--------------------------------------------------
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+--------------------------------------------------->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 987679476;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/987679476/?guid=ON&amp;script=0"/>
+</div>
+</noscript>
+		<script type="text/javascript">
+			function revslider_showDoubleJqueryError(sliderID) {
+				var errorMessage = "Revolution Slider Error: You have some jquery.js library include that comes after the revolution files js include.";
+				errorMessage += "<br> This includes make eliminates the revolution slider libraries, and make it not work.";
+				errorMessage += "<br><br> To fix it you can:<br>&nbsp;&nbsp;&nbsp; 1. In the Slider Settings -> Troubleshooting set option:  <strong><b>Put JS Includes To Body</b></strong> option to true.";
+				errorMessage += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jquery.js include and remove it.";
+				errorMessage = "<span style='font-size:16px;color:#BC0C06;'>" + errorMessage + "</span>";
+					jQuery(sliderID).show().html(errorMessage);
+			}
+		</script>
+		<link rel='stylesheet' id='vc_google_fonts_raleway100200300regular500600700800900-css'  href='//fonts.googleapis.com/css?family=Raleway%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900&#038;ver=4.7.5' type='text/css' media='all' />
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201736'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.7'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-includes/js/jquery/ui/resizable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/lemongrid/assets/js/lodash.min.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/lemongrid/assets/js/gridstack.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/lemongrid/assets/js/dynamics.min.js?ver=1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var lemongridObj = {"ajaxurl":"http:\/\/www.commercialwebservices.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/lemongrid/assets/js/lemongrid.js?ver=1.0'></script>
+<script type='text/javascript' src='//www.commercialwebservices.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'></script>
+<script type='text/javascript' src='//www.commercialwebservices.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//www.commercialwebservices.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=3.0.5'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","fragment_name":"wc_fragments"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//www.commercialwebservices.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=3.0.5'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2017Sepaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.7.5'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var nectarLove = {"ajaxurl":"http:\/\/www.commercialwebservices.com\/wp-admin\/admin-ajax.php","postID":"3709","rooturl":"http:\/\/www.commercialwebservices.com"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/js/post-favorite.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/js/bootstrap.min.js?ver=4.7.5'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/js/dynamics.min.js?ver=4.7.5'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/js/datepicker.min.js?ver=4.7.5'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/vendors/owl-carousel/owl.carousel.min.js?ver=4.7.5'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/vendors/slick/slick.min.js?ver=4.7.5'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/vendors/html5lightbox/html5lightbox.js?ver=4.7.5'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/js/main.js?ver=4.7.5'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/themes/beoreo/assets/js/ga-goals.js'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_carousel/assets/js/owl.carousel.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_doc/assets/js/jquery.bears-doc.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_doc/assets/rainbow-master/js/rainbow.min.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_doc/assets/rainbow-master/js/language/generic.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_doc/assets/rainbow-master/js/language/php.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min.js?ver=5.0.1'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_masonry/assets/js/imagelightbox.min.js?ver=1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tbbsMasonryObj = {"ajax_url":"http:\/\/www.commercialwebservices.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_masonry/assets/js/jquery.tbbs-masonry.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_qrcodejs/assets/js/jquery.qrcode-0.12.0.min.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_single_product_slider/assets/js/slick.min.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_skrollr/assets/js/skrollr.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_textillate/assets/js/jquery.lettering.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/shortcodes/bears_textillate/assets/js/jquery.textillate.js?ver=1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var bsObj = {"ajaxurl":"http:\/\/www.commercialwebservices.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/bears_shortcodes/assets/js/jquery.bears-shortcodes.js?ver=1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var newsletter = {"messages":{"email_error":"The email is not correct","name_error":"The name is not correct","surname_error":"The last name is not correct","privacy_error":"You must accept the privacy statement"},"profile_max":"20"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/newsletter/subscription/validate.js?ver=5.0.1'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-includes/js/wp-embed.min.js?ver=4.7.5'></script>
+<script type='text/javascript' src='http://www.commercialwebservices.com/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=5.0.1'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&#038;render=explicit&#038;ver=2.0'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201736.js' async defer></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:4.9',blog:'131045595',post:'3709',tz:'-4',srv:'www.commercialwebservices.com'} ]);
+	_stq.push([ 'clickTrackerInit', '131045595', '3709' ]);
+</script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b118e78813","applicationID":"57595329","transactionName":"blJTYRFVV0FYBxVZC1cYcFYXXVZcFhQAVwEUeV5hCkBVV3sFEw==","queueTime":0,"applicationTime":804,"atts":"QhVQF1lPRE8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>

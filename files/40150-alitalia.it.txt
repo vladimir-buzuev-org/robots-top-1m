@@ -1,0 +1,4214 @@
+<!DOCTYPE HTML>
+
+<html dir="ltr" lang="nl-nl" class="no-js">
+	<head>
+
+<meta charset="UTF-8">
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+	
+    
+<link rel="stylesheet" href="/etc/designs/alitalia/clientlibs-ltr.min.css" type="text/css">
+
+
+
+
+
+    
+<link rel="stylesheet" href="/etc/designs/alitalia/clientlibs.min.css" type="text/css">
+
+
+
+
+
+
+	
+    
+<link rel="stylesheet" href="/etc/clientlibs/foundation/main.min.css" type="text/css">
+<script type="text/javascript" src="/etc/clientlibs/granite/jquery.min.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/granite/utils.min.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/granite/jquery/granite.min.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/foundation/jquery.min.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/foundation/main.min.js"></script>
+
+
+
+	
+	<link href="/etc/designs/alitalia.css" rel="stylesheet" type="text/css"/>
+
+
+
+
+
+
+
+
+
+
+
+<!-- incluso css richtext custom  -->
+
+	
+    
+<link rel="stylesheet" href="/etc/designs/alitalia/clientlibs-richtext-custom-embed.min.css" type="text/css">
+
+
+
+
+<!-- incluso css header  -->
+
+
+		
+    
+<link rel="stylesheet" href="/etc/designs/alitalia/clientlibs-header-embed.min.css" type="text/css">
+
+
+
+	
+
+
+
+
+
+	<link type="image/x-icon" href="/etc/designs/alitalia/favicon.ico" rel="icon">
+
+
+	<link type="image/x-icon" href="/etc/designs/alitalia/favicon.ico" rel="shortcut icon">
+
+<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet" type="text/css">
+
+<meta name="format-detection" content="telephone=no">
+
+<link rel="stylesheet" href="/etc/designs/alitalia/clientlibs/css/print.css" media="print">
+
+<script src="/etc/designs/alitalia/clientlibs/js/modernizr.custom.js" type="text/javascript"></script>
+
+<!--[if lt IE 9]>
+	<script src="/etc/designs/alitalia/clientlibs-ie8/js/browser-polyfill.js" type="text/javascript"></script>
+	<script src="/etc/designs/alitalia/clientlibs-ie8/js/selectivizr-min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="/etc/designs/alitalia/clientlibs-ie8/css/ie8.css">
+<![endif]-->
+
+<title>HP Alitalia</title>
+
+<script type="text/javascript">
+	var internalUrl = "/nl_nl/home-page";
+	var jsonProtocol = true;
+	
+	if (location.protocol !== 'https:') {
+		$.ajaxSetup({ xhrFields: { withCredentials: true } });
+	}
+
+	var translatedMessagesContext = {
+		ready: false,
+		messages : [],
+		keys : []
+	};
+	
+	var pageSettings = {
+		fullMonths:[
+			"Januari", 
+			"Februari", 
+			"Maart", 
+			"April", 
+			"Mei", 
+			"Juni", 
+			"Juli", 
+			"Augustus", 
+			"September", 
+			"Oktober", 
+			"November", 
+			"December"
+		],
+		monthAbbrs:[
+			"jan", 
+			"feb", 
+			"Maart", 
+			"apr", 
+			"Mei", 
+			"jun", 
+			"jul", 
+			"aug", 
+			"sep", 
+			"okt", 
+			"nov", 
+			"dec"
+		],
+		fullDays:[
+			"Maandag", 
+			"Dinsdag", 
+			"Woensdag", 
+			"Donderdag", 
+			"Vrijdag", 
+			"Zaterdag", 
+			"Zondag"
+		],
+		dayAbbrs:[
+			"Ma", 
+			"Di", 
+			"Woe", 
+			"Do", 
+			"Vr", 
+			"Zat", 
+			"Zon"
+		],
+		dayAbbrsSunday:[
+			"Zon",
+			"Ma", 
+			"Di", 
+			"Woe", 
+			"Do", 
+			"Vr", 
+			"Zat" 
+		],
+		titles:[
+			"Vorige maand", 
+			"Volgende maand", 
+			"Vorig jaar", 
+			"Volgend jaar", 
+			"Vandaag", 
+			"Kalender tonen", 
+			"Week",
+			"Week [[%0%]] van [[%1%]]",
+			"Week",
+			"Selecteer een datum", 
+			"Klik op & en sleep om te verplaatsen", 
+			"Toon eerste \u201C[[%0%]]\u201D", 
+			"Ga naar vandaag", 
+			"Datum uitgeschakeld"
+		],
+		labels:{
+			"cercaVolo.label.andataritorno" : "Retourvlucht",
+			"cercaVolo.label.soloandata" : "Enkele reis",
+			"cercaVolo.label.economy" : "Economy",
+			"cercaVolo.label.business" : "Business",
+			"cercaVolo.label.passeggeri.single" : "Passagier",
+			"cercaVolo.label.passeggeri" : "Passagiers"
+		},
+		dateFormat : "%d/%m/%Y",
+		overlayClose : "Sluiten", 
+		gbAirports : [],
+		dataRecaptchaSiteKey: "6LcochIUAAAAAAelHcLMVs_TQCfUEMaTfu7Bp5Rn"
+	};
+	
+	try { 
+		if("datePickerController" in window) { 
+			datePickerController.loadLanguage(); 
+		};
+	} catch(err) {};
+	
+	function getI18nTranslate(key, unchanged) {
+		return (!key || !translatedMessagesContext.ready)
+			? (unchanged ? key : '') :
+			translatedMessagesContext.messages[key] || (unchanged ? key : '');
+	}
+	function setI18nTranslate(key) {
+		return translatedMessagesContext.keys.push(key); 
+	}
+	
+	function wcagExternalLinkChecker(){
+		var message = "Warning: you are about to leave the present website and be redirected to an external site";
+		console.log("message: " + message);
+		var externalLinkConfig = "desktop:on, mobile:off";
+		console.log("externalLinkConfig: " + externalLinkConfig);
+		var externalLinkMarkets = "us";
+		console.log("externalLinkMarkets: " + externalLinkMarkets);
+		var deviceConfig = window["mobileCheck"] && window["mobileCheck"]()  
+						? "mobile:on" : "desktop:on"; 
+		console.log("deviceConfig: " + deviceConfig);
+		var currentLang = $("html").attr("lang").split("-")[1];
+		console.log("currentLang: " + currentLang);
+		if(searchStringInArray(currentLang, externalLinkMarkets.split(",")) >= 0
+				&& externalLinkConfig.replace(/ /g, "").indexOf(deviceConfig) >= 0){
+			$('a').click(function(e) {
+				 e.preventDefault();
+				 var url = $(this).attr("href");
+				 if(isExternal(url)){
+					 if (confirm(message)){
+						 window.open(url);
+					 }
+				 }else if(url && url.indexOf("javascript") < 0){
+					 if($(this).attr("target") == "_blank"){
+						 window.open(url);
+					 }
+					 else{
+					 	location.href = url;
+					 }
+				 }
+			});
+			$( "#ssoGatewayBuy" ).submit(function( event ) {
+			  if (!confirm(message))
+			  {event.preventDefault();}
+			});
+
+			$( "#ssoGatewayTransfer" ).submit(function( event ) {
+			  if (!confirm(message))
+			  {event.preventDefault();}
+			});
+
+			$( "#ssoGatewayDonate" ).submit(function( event ) {
+			  if (!confirm(message))
+			  {event.preventDefault();}
+			});
+
+			$( "#ssoGatewayClaim" ).submit(function( event ) {
+			  if (!confirm(message))
+			  {event.preventDefault();}
+			});
+		}
+		
+	}
+	
+	function searchStringInArray (str, strArray) {
+	    for (var j=0; j<strArray.length; j++) {
+	        if (strArray[j].match(str)) return j;
+	    }
+	    return -1;
+	}
+	
+	function isExternal(url) {
+		if(!url || url.indexOf("javascript") >= 0){
+			return false;
+		}
+		if (url.replace('http://','').replace('https://','').split('/')[0].indexOf("alitalia.com") >= 0){
+			return false;
+		}
+	    var match = url.match(/^([^:\/?#]+:)?(?:\/\/([^\/?#]*))?([^?#]+)?(\?[^#]*)?(#.*)?/);
+	    if (typeof match[1] === "string" && match[1].length > 0 && match[1].toLowerCase() !== location.protocol) return true;
+	    if (typeof match[2] === "string" && match[2].length > 0 && match[2].replace(new RegExp(":("+{"http:":80,"https:":443}[location.protocol]+")?$"), "") !== location.host) return true;
+	    return false;
+	}
+	
+	$(document).ready(function() {
+		wcagExternalLinkChecker();
+		return populateTranslatedMessages();
+	});
+</script>
+<script type="text/javascript">
+	/*! grunt-grunticon Stylesheet Loader - v2.1.6 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
+	!function(){function e(e,n,t,o){"use strict";var a=window.document.createElement("link"),i=n||window.document.getElementsByTagName("script")[0],d=window.document.styleSheets;return a.rel="stylesheet",a.href=e,a.media="only x",o&&(a.onload=o),i.parentNode.insertBefore(a,i),a.onloadcssdefined=function(n){for(var t,o=0;o<d.length;o++)d[o].href&&d[o].href.indexOf(e)>-1&&(t=!0);t?n():setTimeout(function(){a.onloadcssdefined(n)})},a.onloadcssdefined(function(){a.media=t||"all"}),a}function n(e,n){e.onload=function(){e.onload=null,n&&n.call(e)},"isApplicationInstalled"in navigator&&"onloadcssdefined"in e&&e.onloadcssdefined(n)}!function(t){var o=function(a,i){"use strict";if(a&&3===a.length){var d=t.navigator,r=t.document,l=t.Image,s=!(!r.createElementNS||!r.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!r.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||t.opera&&-1===d.userAgent.indexOf("Chrome")||-1!==d.userAgent.indexOf("Series40")),c=new l;c.onerror=function(){o.method="png",o.href=a[2],e(a[2])},c.onload=function(){var t=1===c.width&&1===c.height,d=a[t&&s?0:t?1:2];t&&s?o.method="svg":t?o.method="datapng":o.method="png",o.href=d,n(e(d),i)},c.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",r.documentElement.className+=" grunticon"}};o.loadCSS=e,o.onloadCSS=n,t.grunticon=o}(this)}();
+	grunticon(["/etc/designs/alitalia/clientlibs/css/icons.data.svg.css", "/etc/designs/alitalia/clientlibs/css/icons.data.png.css", "/etc/designs/alitalia/clientlibs/css/icons.fallback.css"], function() {document.querySelector('link[href*="icons"]').setAttribute('media', 'all')}); // https://github.com/filamentgroup/grunticon/issues/234
+</script>
+<noscript><link href="/etc/designs/alitalia/clientlibs/css/icons.fallback.css" rel="stylesheet"></noscript>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:700,300,400,600" rel="stylesheet" type="text/css">
+
+
+<!-- <meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" /> -->
+
+
+
+
+<!-- Cloud Services inclusion START -->
+<script type="text/javascript">
+	var isPublishEnvironment = "true";
+	var currency = "&#8364;";
+	var pageTitle = "HP Alitalia";
+	var now = new Date();
+	var hh = now.getHours() < 10 ? "0" + now.getHours() : now.getHours();
+	var mm = now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes();
+	var ss = now.getSeconds() <10 ? "0" + now.getSeconds() : now.getSeconds();
+	var timestamp = hh + ":" + mm + ":" + ss;
+	var dcsid = "dcspwrci4100004j9zt6dw4gq_9q1z"
+	var countryCode = "nl";
+	var languageCode = "nl";
+	
+	function is3PartyCookieAccepted(){
+		no3party = getCookie("no3rdparty");
+		return no3party != "1";
+	}
+	function isMarketingCookieAccepted(){
+		noMarketing = getCookie("nomarketing");
+		return noMarketing != "1";
+	}
+
+	function getCookie(cname) {
+	    var name = cname + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i=0; i<ca.length; i++) {
+	        var c = ca[i];
+	        while (c.charAt(0)==' ') c = c.substring(1);
+	        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+	    }
+	    return "";
+	}
+</script>
+
+<script type="text/javascript">
+	var activateWebtrends = false;
+	
+	/*GTM*/
+	dataLayer = [{}];
+	
+	/*To insert data BEFORE GTM is started*/
+	function addAnalyticsData(obj){
+		for (var attrname in obj) { dataLayer[0][attrname] = obj[attrname]; }
+	}
+	
+	/*To insert data AFTER GTM is started*/
+	function pushAnalyticsData(obj){
+		var dlObj = {};
+		for(var elem in dataLayer){
+			/*skip copy of events*/
+			if(typeof dataLayer[elem]["event"] == "undefined"){
+				for (var attrname in dataLayer[elem]) { dlObj[attrname] = dataLayer[elem][attrname]; }			
+			}
+		}
+		for (var attrname in obj) { dlObj[attrname] = obj[attrname]; }
+		dataLayer.push(dlObj);
+	}
+	
+	function getDataLayerData(key){
+		var result = "";
+		for(var i = dataLayer.length -1 ; i >= 0 && !result; i--){
+			result = dataLayer[i][key];
+		}
+		return result;
+	}
+	
+	function pushAnalyticsEvent(key, value){
+		var obj = {};
+		obj[key] = value;
+		dataLayer.push(obj);
+	}
+	
+	function pushAnalyticsIncrementalEvent(key, value){
+		/*searching last event for incrementing index*/
+		var i = dataLayer.length-1;
+		var index = 0;
+		for(i = dataLayer.length-1; i >= 0 && index == 0; i--){
+			if(dataLayer[i][key] && dataLayer[i][key].indexOf(value) == 0){
+				index = parseInt(dataLayer[i][key].replace(value, ""));
+				
+			}
+		}
+		pushAnalyticsEvent(key, value + (index + 1));
+	}
+	
+	function pushFanplayrEvent(){
+		pushAnalyticsIncrementalEvent("event", "SelectFlight");
+	}
+	
+	function pushAnalyticsEcouponEvent(){
+		pushAnalyticsEvent("event", "eCouponFanPlayr");
+	}
+	
+	function activateGTMOnce(section){
+		if(isPublishEnvironment === "true"
+				&& section == analytics_pageMacroSection){
+			activateGTM();
+		}
+	}
+
+	
+	function activateWebtrendsOnce(section){}
+	
+	function activateDTMRule(DTMRule){
+		if(isPublishEnvironment === "true"
+				&& DTMRule){
+			if(typeof window["_satellite"] !== "undefined"){
+				_satellite.track(DTMRule);
+			}
+			else{
+				console.error("Cannot activate DTM rule " + DTMRule 
+						+ ". _satellite object not found");
+			}
+			
+		}
+	}
+	
+	var obj = {};
+	obj['Country'] = countryCode + '_' + languageCode;
+	obj['Timestamp'] = timestamp;
+	obj['language'] = languageCode;
+	obj['currency'] = currency;
+	obj['page'] = pageTitle;
+	obj['3PartyCookieAccepted'] = is3PartyCookieAccepted() ? "true" : "false";
+	obj['marketingCookieAccepted'] = isMarketingCookieAccepted() ? "true" : "false";
+	addAnalyticsData(obj);
+	
+	
+	function onLoginClientContextProfileInitialized_millemiglialogin(){
+		var profileStore = CQ_Analytics.ClientContextMgr.getRegisteredStore('profile');
+		/* MMLogin e MMcode*/
+		var obj = {};
+		if (isLoginContextAuthenticated()) {
+			var customerNumber = profileStore.getInitProperty('customerNumber', false);
+			obj["MMLogin"] = "1";
+			obj["MMcode"] = customerNumber;			
+		}
+		else{
+			obj["MMLogin"] = "0";
+		}
+		addAnalyticsData(obj);
+		
+		activateGTMOnce("base");
+	}
+	
+	/*inserisce le variabili non disponibili prima del document.ready nel dataLayer*/
+	jQuery(document).ready(function(){
+		if(is3PartyCookieAccepted()){
+			if (window['registerLoginContextProfileCallback']) {
+				window['registerLoginContextProfileCallback'](onLoginClientContextProfileInitialized_millemiglialogin);
+			}
+		}
+		
+		activateWebtrendsOnce("base");
+	});
+	
+	
+</script>
+
+<script type="text/javascript">
+	var analytics_pageMacroSection = "base";
+</script>
+
+
+	
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-timeTable-dataLayerAddition-embed.min.js"></script>
+
+
+
+
+<script src="//assets.adobedtm.com/2eed2bf00c8bca0c98d97ffee50a306922bc8c98/satelliteLib-27b81756e778cc85cc1a2f067764cd3abf072aa9.js"></script>
+
+<!-- Cloud Services inclusion END -->
+ 
+	
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-recaptcha.min.js"></script>
+
+
+ 
+
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0014/3166.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script></head>
+	<body>
+	
+
+
+
+<script type="text/javascript" src="https://cdns.gigya.com/JS/socialize.js?apikey=3_4r6kgvXIafmrDHkQtQJthcXZh05rY0cHRSfg-H9pz-mK8v-zpaCDn6XnsuXPPqJ_">
+	{
+		enabledProviders: 'facebook,googleplus,linkedin'
+	}
+</script>
+
+
+
+
+    
+<script type="text/javascript" src="/etc/clientlibs/foundation/shared.min.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/granite/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/foundation/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/foundation/personalization/jcarousel.min.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/granite/lodash/modern.min.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/foundation/personalization/kernel.min.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/foundation/personalization/select2.min.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/foundation/personalization/ui.min.js"></script>
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-login.min.js"></script>
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-login-context.min.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+	function loadCQAnalytics(handler) {
+		var baseUrl = "https://" + location.hostname + (location.port ? ':' + location.port : '');
+        CQ_Analytics.ClientContextMgr.PATH = baseUrl + "/etc/clientcontext/alitalia";
+        CQ_Analytics.ClientContextMgr.loadConfig(null, true);
+        var a=CQ.shared.HTTP.externalize(baseUrl + "/etc/clientcontext/alitalia" + "/content/jcr:content/stores.init.js");
+        a=CQ.shared.HTTP.addParameter(a, "path", "/content/alitalia/alitalia-nl/nl/home-page");
+        a=CQ.shared.HTTP.noCaching(a);
+        var c=CQ.shared.HTTP.get(a, handler || function() { });
+        
+	}
+
+    $CQ(function() {
+    	loadCQAnalytics();
+    });
+</script>
+
+
+<form id="form-check-millemiglia-login" method="POST" style="display:none">
+	<input type="hidden" name="mmCode" value=""/>
+	<input type="hidden" name="mmPin" value=""/>
+	<input type="submit" value=""/>
+</form>
+<form id="form-check-social-login" method="POST" style="display:none">
+	<input type="hidden" name="gigyaId" value=""/>
+	<input type="hidden" name="gigyaSignature" value=""/>
+	<input type="hidden" name="gigyaProvider" value=""/>
+	<input type="hidden" name="gigyaUserFirstName" value=""/>
+	<input type="hidden" name="gigyaUserLastName" value=""/>
+	<input type="hidden" name="gigyaUserThumbnailURL" value=""/>
+	<input type="submit" value=""/>
+</form>
+<form id="form-set-social-account" method="POST" style="display:none">
+	<input type="hidden" name="gigyaId" value=""/>
+	<input type="hidden" name="gigyaSignature" value=""/>
+	<input type="hidden" name="mmCode" value=""/>
+	<input type="hidden" name="mmPin" value=""/>
+	<input type="submit" value=""/>
+</form>
+<form id="form-perform-login" action="https://www.alitalia.com/nl_nl/j_security_check" method="POST" style="display:none">
+	<input type="hidden" name="j_username" value=""/>
+	<input type="hidden" name="j_password" value=""/>
+	<input type="hidden" name="j_validate" value=""/>
+	<input type="hidden" name="mm_remember_me" value=""/>
+	<input type="hidden" name="resource"/>
+	<input type="hidden" name="default_resource" value="/nl_nl"/>
+	<input type="submit" value=""/>
+</form>
+<form id="form-perform-logout" action="https://www.alitalia.com/nl_nl/home-page.millemiglialogout.html" method="GET" style="display:none">
+<input type="submit" value=""/>
+</form>
+	
+
+
+
+
+	
+	
+	
+		
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-login-legacy.min.js"></script>
+
+
+
+	
+	
+	
+	<script type="text/javascript">
+	 	initLegacyLogin(
+	 			'https://beta.alitalia.com/PersonalArea/it_it',
+	 			'https://mm.alitalia.com/IT_IT/MM'
+	 	);
+	</script>
+	
+
+
+	
+
+
+
+
+	
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-socialshare.min.js"></script>
+
+
+
+
+
+
+<script type="text/javascript"> 
+	initSocialShare(
+			true,
+			'facebook,googleplus,linkedin',
+			'facebook,googleplus,linkedin',
+			'multiSelect',
+			true,
+			true,
+			'Lees de');
+</script>
+	<!-- Google Tag Manager -->
+ <noscript> 
+	<iframe title="google tag manager" src="//www.googletagmanager.com/ns.html?id=GTM-H2KN" style="display: none; visibility: hidden"></iframe>
+</noscript>
+<script type="text/javascript">
+	function activateGTM() {
+		console.log("activating GTM");
+		var w = window;
+		var d = document;
+		var s = 'script';
+		var l = 'dataLayer';
+		var i = 'GTM-H2KN';
+		w[l] = w[l] || [];
+		w[l].push({
+			'gtm.start' : new Date().getTime(),
+			event : 'gtm.js'
+		});
+		var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+		j.async = true;
+		j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+		f.parentNode.insertBefore(j, f);
+	}	
+	
+</script>
+
+<!-- End Google Tag Manager -->
+<div class="mainWrapper">
+	
+	<h1 class="isVisuallyHidden">ALITALIA</h1> 
+	<h2 class="isVisuallyHidden">Alitalia</h2>
+    
+	
+
+
+	
+
+<nav class="skiplink" id="skiplink" role="navigation">
+
+	<p class="isVisuallyHidden">Skiplinks</p>
+	<ul>
+		<li class="skiplink__item">
+            <a class="skiplink__link" accesskey="0" href="/nl_nl/home-page.html" title="[ALT + 0]" target="_self">Start page</a>
+		</li>
+		<li class="skiplink__item">
+			<a class="skiplink__link" accesskey="1" href="#site-navigation" title="[ALT + 1]" target="_self">Skip to site navigation</a>
+		</li>
+		<li class="skiplink__item">
+			<a class="skiplink__link" accesskey="2" href="#main-content" title="[ALT + 2]" target="_self">Skip to content</a>
+		</li>
+		<li class="skiplink__item">
+			<a class="skiplink__link" accesskey="3" href="/nl_nl/support/contact-assistance/customer-center.html" title="[ALT + 3]" target="_self">Contact</a>
+		</li>
+		<li class="skiplink__item">
+			<a class="skiplink__link" accesskey="4" href="/nl_nl/special-pages/site-map.html" title="[ALT + 4]" target="_self">Sitemap</a>
+		</li>
+		<li class="skiplink__item">
+			<a class="skiplink__link" accesskey="5" href="#mainMenu__search" title="[ALT + 5]" target="_self">Skip to Search</a>
+		</li>
+	</ul>
+
+</nav>
+
+
+<header class="header">
+
+	
+	<div class="cookieBar j-cookieBar" style="display: none;">
+		<div class="mod">
+	<div class="cookieBar__text editorialArea">
+		
+	
+	
+<p>Door de site te bezoeken, gaat u er automatisch mee akkoord dat Alitalia cookies op uw toestel opslaat. <a href="/nl_nl/special-pages/cookies.html" target="_blank">Meer informatie over cookies</a></p>
+
+
+
+	
+
+
+
+	
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-richtext-custom-embed.min.js"></script>
+
+
+
+				
+	</div>
+	<a href="#" class="cookieBar__link fifthButton--small j-closeCookie"><span>AKKOORD</span></a>
+</div>
+
+	</div>
+	
+		
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-header-embed.min.js"></script>
+
+
+
+	
+
+    <section class="userMenu">
+		<div class="mod">
+			<div class="userMenu__groupLeft">
+			<a class="userMenu__language j-userMenuLink" href="#languageMenu" data-group="languageGroup">
+					<span class="i-world"></span>			
+							<span class="userMenu__text">Country - Language  </span>
+			</a>
+			
+			
+	
+	
+				<a class="userMenu__support j-userMenuLink" href="#supportMenu" data-group="supportGroup">
+					<span class="i-question"></span>			
+						<span class="userMenu__text">Ondersteuning</span>	
+				</a>
+				
+				
+				
+			</div>
+			
+			<div class="userMenu__groupRight">
+				<a class="userMenu__recent j-userMenuLink" href="#recentMenu" data-group="recentGroup">		
+				<span class="i-recentViews"></span>			
+					<span class="userMenu__text">Recent bekeken</span>						
+				</a>
+				
+				
+				
+				<a class="userMenu__notifications j-userMenuLink" href="#notificationMenu" data-group="notificationGroup">
+					<span class="i-bell">
+						<span class="userMenu__notificationsCount"></span>
+					</span>	
+						<span class="userMenu__text">Meldingen</span>							
+				</a>
+				
+				
+					
+				<a id="headLoginLink" class="userMenu__login j-userMenuLink" href="#loginMenu" data-group="loginGroup">
+					<!-- /* elements visibility driven by clientlib script */-->
+					<div class="login-included-if-anonymous hidden">
+						<span class="i-user"></span>
+						<span class="userMenu__text">Inloggen</span>		
+					</div>
+					<div class="login-included-if-authenticated hidden">
+						<span class="i-user binding-mm-thumbnail-generic"></span>
+						<img class="binding-mm-thumbnail-image" src="/etc/designs/alitalia/clientlibs/images/empty.gif" alt="user profile image" style="width:30px; height:30px; vertical-align:middle;"/>
+						<span class="binding-mm-full-name userMenu__text"></span>
+						<span class="userMenu__icon"></span>
+						<span class="binding-mm-tier"></span>
+					</div>
+				</a>
+				
+				
+			</div>
+		</div>
+	</section>
+	
+	
+
+
+<script type="text/javascript">var countries = {countrySelected: 38, languageSelected: 0, countries: [{name: "Albanië", link: "/content/alitalia/alitalia-al.html", code: "al", languages: [{name: "Italiaans", link: "/it_al/", code: "it"}]},{name: "Algerije", link: "/content/alitalia/alitalia-dz.html", code: "dz", languages: [{name: "Engels", link: "/en_dz/", code: "en"}]},{name: "Argentinië", link: "/content/alitalia/alitalia-ar.html", code: "ar", languages: [{name: "Spaans", link: "/es_ar/", code: "es"}]},{name: " Armenia", link: "/content/alitalia/alitalia-am.html", code: "am", languages: [{name: "Engels", link: "/en_am/", code: "en"}]},{name: "Australië", link: "/content/alitalia/alitalia-au.html", code: "au", languages: [{name: "Engels", link: "/en_au/", code: "en"}]},{name: "Oostenrijk", link: "/content/alitalia/alitalia-at.html", code: "at", languages: [{name: "Duits", link: "/de_at/", code: "de"}]},{name: "België", link: "/content/alitalia/alitalia-be.html", code: "be", languages: [{name: "Italiaans", link: "/it_be/", code: "it"},{name: "Frans", link: "/fr_be/", code: "fr"},{name: "Nederlands", link: "/nl_be/", code: "nl"}]},{name: "Brazilië", link: "/content/alitalia/alitalia-br.html", code: "br", languages: [{name: "Portugees", link: "/pt_br/", code: "pt"}]},{name: "Bulgarije", link: "/content/alitalia/alitalia-bg.html", code: "bg", languages: [{name: "Bulgaars", link: "/bg_bg/", code: "bg"}]},{name: "Canada", link: "/content/alitalia/alitalia-ca.html", code: "ca", languages: [{name: "Engels", link: "/en_ca/", code: "en"}]},{name: "China", link: "/content/alitalia/alitalia-cn.html", code: "cn", languages: [{name: "Chinees", link: "/zh_cn/", code: "zh"}]},{name: "Chile", link: "/content/alitalia/alitalia-cl.html", code: "cl", languages: [{name: "Spaans", link: "/es_cl/", code: "es"}]},{name: "Cyprus", link: "/content/alitalia/alitalia-cy.html", code: "cy", languages: [{name: "Engels", link: "/en_cy/", code: "en"}]},{name: "Tsjechië", link: "/content/alitalia/alitalia-cz.html", code: "cz", languages: [{name: "Engels", link: "/en_cz/", code: "en"}]},{name: "Denemarken", link: "/content/alitalia/alitalia-dk.html", code: "dk", languages: [{name: "Engels", link: "/en_dk/", code: "en"}]},{name: "Egypte", link: "/content/alitalia/alitalia-eg.html", code: "eg", languages: [{name: "Engels", link: "/en_eg/", code: "en"}]},{name: "Frankrijk", link: "/content/alitalia/alitalia-fr.html", code: "fr", languages: [{name: "Frans", link: "/fr_fr/", code: "fr"}]},{name: "Duitsland", link: "/content/alitalia/alitalia-de.html", code: "de", languages: [{name: "Duits", link: "/de_de/", code: "de"}]},{name: "Great Britain", link: "/content/alitalia/alitalia-gb.html", code: "gb", languages: [{name: "Engels", link: "/en_gb/", code: "en"}]},{name: "Griekenland", link: "/content/alitalia/alitalia-gr.html", code: "gr", languages: [{name: "Grieks", link: "/el_gr/", code: "el"}]},{name: "Hongarije", link: "/content/alitalia/alitalia-hu.html", code: "hu", languages: [{name: "Hongaars", link: "/hu_hu/", code: "hu"}]},{name: "Internationaal", link: "/content/alitalia/alitalia-en.html", code: "en", languages: [{name: "Engels", link: "/en_en/", code: "en"}]},{name: "Iran", link: "/content/alitalia/alitalia-ir.html", code: "ir", languages: [{name: "Engels", link: "/en_ir/", code: "en"}]},{name: "Israël", link: "/content/alitalia/alitalia-il.html", code: "il", languages: [{name: "Engels", link: "/en_il/", code: "en"},{name: "Hebreeuws", link: "/he_il/", code: "he"}]},{name: "Italië", link: "/content/alitalia/alitalia-it.html", code: "it", languages: [{name: "Italiaans", link: "/it_it/", code: "it"},{name: "Engels", link: "/en_it/", code: "en"}]},{name: "Japan", link: "/content/alitalia/alitalia-jp.html", code: "jp", languages: [{name: "Japans", link: "/ja_jp/", code: "ja"}]},{name: "Jordanië", link: "/content/alitalia/alitalia-jo.html", code: "jo", languages: [{name: "Engels", link: "/en_jo/", code: "en"}]},{name: "Korea", link: "/content/alitalia/alitalia-kr.html", code: "kr", languages: [{name: "Koreaans", link: "/ko_kr/", code: "ko"}]},{name: "Libanon", link: "/content/alitalia/alitalia-lb.html", code: "lb", languages: [{name: "Engels", link: "/en_lb/", code: "en"}]},{name: "Macedonië/VJRM", link: "/content/alitalia/alitalia-mk.html", code: "mk", languages: [{name: "Engels", link: "/en_mk/", code: "en"}]},{name: "Mexico", link: "/content/alitalia/alitalia-mx.html", code: "mx", languages: [{name: "Spaans", link: "/es_mx/", code: "es"}]},{name: "Montenegro", link: "/content/alitalia/alitalia-me.html", code: "me", languages: [{name: "Engels", link: "/en_me/", code: "en"}]},{name: "Marokko", link: "/content/alitalia/alitalia-ma.html", code: "ma", languages: [{name: "Frans", link: "/fr_ma/", code: "fr"}]},{name: "Polen", link: "/content/alitalia/alitalia-pl.html", code: "pl", languages: [{name: "Pools", link: "/pl_pl/", code: "pl"}]},{name: "Rusland", link: "/content/alitalia/alitalia-ru.html", code: "ru", languages: [{name: "Russisch", link: "/ru_ru/", code: "ru"}]},{name: "Servië", link: "/content/alitalia/alitalia-rs.html", code: "rs", languages: [{name: "Engels", link: "/en_rs/", code: "en"}]},{name: "Spanje", link: "/content/alitalia/alitalia-es.html", code: "es", languages: [{name: "Spaans", link: "/es_es/", code: "es"}]},{name: "Zwitserland", link: "/content/alitalia/alitalia-ch.html", code: "ch", languages: [{name: "Italiaans", link: "/it_ch/", code: "it"},{name: "Duits", link: "/de_ch/", code: "de"},{name: "Frans", link: "/fr_ch/", code: "fr"}]},{name: "Nederland", link: "/content/alitalia/alitalia-nl.html", code: "nl", languages: [{name: "Nederlands", link: "/nl_nl/", code: "nl"}]},{name: "Tunesië", link: "/content/alitalia/alitalia-tn.html", code: "tn", languages: [{name: "Frans", link: "/fr_tn/", code: "fr"}]},{name: "Oekraïne", link: "/content/alitalia/alitalia-ua.html", code: "ua", languages: [{name: "Engels", link: "/en_ua/", code: "en"}]},{name: "Verenigde Arabische Emiraten", link: "/content/alitalia/alitalia-ae.html", code: "ae", languages: [{name: "Engels", link: "/en_ae/", code: "en"}]},{name: "Verenigde Staten", link: "/content/alitalia/alitalia-us.html", code: "us", languages: [{name: "Engels", link: "/en_us/", code: "en"}]}]}; var urls = {it_al: '/it_al/',en_dz: '/en_dz/',es_ar: '/es_ar/',en_am: '/en_am/',en_au: '/en_au/',de_at: '/de_at/',it_be: '/it_be/',fr_be: '/fr_be/',nl_be: '/nl_be/',pt_br: '/pt_br/',bg_bg: '/bg_bg/',en_ca: '/en_ca/',zh_cn: '/zh_cn/',es_cl: '/es_cl/',en_cy: '/en_cy/',en_cz: '/en_cz/',en_dk: '/en_dk/',en_eg: '/en_eg/',fr_fr: '/fr_fr/',de_de: '/de_de/',en_gb: '/en_gb/',el_gr: '/el_gr/',hu_hu: '/hu_hu/',en_en: '/en_en/',en_ir: '/en_ir/',en_il: '/en_il/',he_il: '/he_il/',it_it: '/it_it/',en_it: '/en_it/',ja_jp: '/ja_jp/',en_jo: '/en_jo/',ko_kr: '/ko_kr/',en_lb: '/en_lb/',en_mk: '/en_mk/',es_mx: '/es_mx/',en_me: '/en_me/',fr_ma: '/fr_ma/',pl_pl: '/pl_pl/',ru_ru: '/ru_ru/',en_rs: '/en_rs/',es_es: '/es_es/',it_ch: '/it_ch/',de_ch: '/de_ch/',fr_ch: '/fr_ch/',nl_nl: '/nl_nl/',fr_tn: '/fr_tn/',en_ua: '/en_ua/',en_ae: '/en_ae/',en_us: '/en_us/'}</script>
+<div class="languageMenu j-groupContainer" data-group="languageGroup" id="languageMenu">
+	<input type="hidden" name="languageCode" id="languageCode" value="nl">
+	<div class="mod">
+		<div class="languageMenu__group first">
+			<div class="languageMenu__groupRow">
+				<div class="customSelect">
+					<label class="isVisuallyHidden" for="languageMenu-country">
+						select country </label>
+				
+					<select name="" id="languageMenu-country" tabindex="-1">
+						<option value="ITALIA">ITALIA</option>
+					</select> 
+
+					 
+					
+				</div>
+				<div class="customSelect">
+					<label class="isVisuallyHidden" for="languageMenu-language">
+						select language </label>
+					<select name="" id="languageMenu-language" tabindex="-1">
+						<option value="ITALIANO">ITALIANO</option>
+					</select> 
+
+					 
+				</div>
+			</div>
+			<div class="languageMenu__groupRow">
+				<div class="checkbox languageMenu__checkbox">
+					<input class="" id="rememberMeLang" name="rememberMeLang" type="checkbox"/>
+					
+
+					
+					
+
+					<label class="" for="rememberMeLang">
+						Selectie opslaan</label>
+				</div>
+				<a tabindex="-1" href="#" id="confirmButton" class="secondButton">
+					<span>Bevestigen</span>
+				</a>
+			</div>
+		</div>
+	
+		<div class="languageMenu__group second"><p>Of selecteer een land</p>
+<a tabindex="-1" class="it" href="/it_it/home-page.html" target="_self">
+	IT
+</a>
+
+<a tabindex="-1" class="us" href="/en_us/home-page.html" target="_self">
+	US
+</a>
+
+<a tabindex="-1" class="uk" href="/en_gb/home-page.html" target="_self">
+	UK
+</a>
+
+<a tabindex="-1" class="fr" href="/fr_fr/home-page.html" target="_self">
+	FR
+</a>
+
+<a tabindex="-1" class="es" href="/es_es/home-page.html" target="_self">
+	ES
+</a></div>
+
+		
+	</div>
+</div>
+
+
+    
+
+
+ 
+	<div class="supportMenu j-groupContainer" id="supportMenu" data-group="supportGroup">
+    <div class="mod">
+        <div class="supportMenu__container">
+        <div class="supportMenu__group">
+
+
+
+
+<div class="supportMenu__groupTitle" id="supportMenu__title--1">Handige links</div>
+
+
+
+	<ul role="menu" aria-labelledby="supportMenu__title--1">
+		<li role="menuitem"> 
+			
+			<a tabindex="-1" href="/nl_nl/fly-alitalia/organize-your-trip/special-assistance.html" target="_self">
+				Speciale assistentie
+			</a>
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--1">
+		<li role="menuitem"> 
+			
+			<a tabindex="-1" href="/nl_nl/support/utilities/buy-online.html" target="_self">
+				Koop online
+			</a>
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--1">
+		<li role="menuitem"> 
+			
+			<a tabindex="-1" href="/nl_nl/fly-alitalia/alitalia-world/passenger-rights.html" target="_self">
+				Rechten van passagiers
+			</a>
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--1">
+		<li role="menuitem"> 
+			
+			<a tabindex="-1" href="/nl_nl/support/utilities/e-coupon.html" target="_self">
+				E-coupon
+			</a>
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--1">
+		<li role="menuitem"> 
+			
+			<a tabindex="-1" href="/nl_nl/support/utilities/online-security.html" target="_self">
+				Online beveiliging
+			</a>
+		</li>
+	</ul>
+</div>
+		<div class="supportMenu__group">
+
+
+
+
+<div class="supportMenu__groupTitle" id="supportMenu__title--2">Assistentie bagage</div>
+
+
+
+	<ul role="menu" aria-labelledby="supportMenu__title--2">
+		<li role="menuitem"> 
+			
+			<a tabindex="-1" href="/nl_nl/support/baggage-assistance.html" target="_self">
+				Vertraagde bagage
+			</a>
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--2">
+		<li role="menuitem"> 
+			
+			<a tabindex="-1" href="/nl_nl/support/baggage-assistance/lost-baggage.html" target="_self">
+				Zoekgeraakte bagage
+			</a>
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--2">
+		<li role="menuitem"> 
+			
+			<a tabindex="-1" href="/nl_nl/support/baggage-assistance/damaged-baggage.html" target="_self">
+				Beschadigde bagage
+			</a>
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--2">
+		<li role="menuitem"> 
+			
+			<a tabindex="-1" href="/nl_nl/support/baggage-assistance/missing-items.html" target="_self">
+				Zoekgeraakte voorwerpen
+			</a>
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--2">
+		<li role="menuitem"> 
+			
+			
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--2">
+		<li role="menuitem"> 
+			
+			
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--2">
+		<li role="menuitem"> 
+			
+			
+		</li>
+	</ul>
+</div>
+		<div class="supportMenu__group">
+
+
+
+
+<div class="supportMenu__groupTitle" id="supportMenu__title--3">Contactgegevens en assistentie</div>
+
+
+
+	<ul role="menu" aria-labelledby="supportMenu__title--3">
+		<li role="menuitem"> 
+			
+			<a tabindex="-1" href="/nl_nl/support/contact-assistance/customer-center.html" target="_self">
+				Klantenservice
+			</a>
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--3">
+		<li role="menuitem"> 
+			
+			<a tabindex="-1" href="/nl_nl/support/contact-assistance/millemiglia-service.html" target="_self">
+				Service voor MilleMiglia-leden
+			</a>
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--3">
+		<li role="menuitem"> 
+			
+			<a tabindex="-1" href="/nl_nl/support/contact-assistance/alitalia-worldwide-contacts.html" target="_self">
+				Wereldwijde contactnummers van Alitalia
+			</a>
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--3">
+		<li role="menuitem"> 
+			
+			<a tabindex="-1" href="/nl_nl/special-pages/my-experience.html" target="_self">
+				My Experience (Uw suggesties)
+			</a>
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--3">
+		<li role="menuitem"> 
+			
+			
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--3">
+		<li role="menuitem"> 
+			
+			
+		</li>
+	</ul>
+
+	<ul role="menu" aria-labelledby="supportMenu__title--3">
+		<li role="menuitem"> 
+			
+			
+		</li>
+	</ul>
+</div>
+        <div class="supportMenu__group"><div class="supportMenu__groupTitle withPhoneIcon">HULP NODIG</div>
+
+<ul>
+	
+	<li>
+		
+		
+		Vanuit Italië: 89 20 10  
+	</li>
+	
+	<li>
+		
+		
+		Vanuit Nederland: 020 676 4479 
+	</li>
+	
+</ul>
+
+</div>
+
+        </div>
+    </div>
+</div>
+    <div class="loginMenu j-groupContainer" id="loginMenu" data-group="loginGroup">
+	<div class="mod">
+		<div class="loginMenu__container">
+			
+	
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-header-utente-embed.min.js"></script>
+
+
+
+
+<!-- /* elements visibility driven by clientlib script */-->
+<div class="login-included-if-anonymous hidden">
+	
+
+<div class="loginMenu__title deviceOnly">Inloggen</div>
+
+<div class="loginMenu__containerPart login">
+	<form method="POST" id="form-millemiglia-header-login">
+		
+		<div class="errorOverlay j-loginError j-hideOnCLick">
+			<span class="close">&times;</span>
+			<p class="errorOverlay__text">
+				Ongeldige aanmeldgegevens
+			</p>
+		</div>
+		<div class="errorOverlay j-captchaUserLocked j-hideOnCLick">
+			<span class="close">&times;</span>
+			<p class="errorOverlay__text">
+				Je account is tijdelijk opgeschort. Probeer het opnieuw in 15 minuten.
+			</p>
+		</div>
+	
+		<div class="loginMenu__block">
+			
+			<input type="hidden" name="fieldprefix" value="header_"/>
+			
+			<label id="loginId--label" class="login__name" for="header_code">MilleMiglia-code</label>
+			
+			
+			<div class="form__inputCover ">
+			
+				<input class="login__name" type="text" aria-labelledby="loginId--label" id="header_code" name="header_code" required aria-required="true" placeholder="MilleMiglia-code" tabindex="-1"/>
+			
+			</div>
+			
+			<div class="checkbox login__rememberMe">
+			
+					<input class="" id="header_rememberme" name="header_rememberme" type="checkbox"/>
+					
+					
+						
+				
+				<label class="" for="header_rememberme">
+					<span>
+						Gegevens opslaan
+					</span>
+				</label>
+			</div>
+			
+		</div>
+		
+		<div class="loginMenu__block">
+			
+			<label class="login__pin" for="header_pin" id="loginPin--label">PIN</label>
+			
+			
+			<div class="form__inputCover ">			
+		
+				<input class="login__pin" type="password" id="header_pin" name="header_pin" placeholder="PIN" required aria-required="true" aria-labelledby="loginPin--label" tabindex="-1"/>
+						
+			</div>
+			
+			<a class="login__recoverPin" tabindex="-1" href="/nl_nl/special-pages/recupera-pin.html" target="_self">
+				<span>PIN opvragen</span>
+			</a>
+			
+		</div>
+		
+	
+		<div class="loginMenu__block">
+        	<div class="captcha__container form__inputCover">
+				<input class="j-recaptchaLoginResponseHeader" type="hidden" id="header_recaptchaResponse" name="header_recaptchaResponse">
+				<div id="captcha_header" class="loginMenu__block captcha j-showCaptcha ">
+					<!-- LOADED via AJAX -->
+				</div>
+			</div>
+		</div>
+		<div class="loginMenu__block">
+			
+			<button type="submit" id="headerButtonLogin" class="thirdButton" tabindex="-1"><span>INLOGGEN</span></button>
+		</div>
+
+		
+	</form>
+	
+</div>
+
+<div class="loginMenu__containerPart social">
+	<div class="loginMenu__containerPartTitle">Of gebruik de sociale aanmeld-service</div>
+	<div class="loginMenu__social">
+		<div id="headerLoginDiv"></div>
+	</div>
+</div>
+
+<div class="loginMenu__containerPart newUser">
+	<div class="loginMenu__containerPartTitle">Ben je al lid?</div>
+	
+	
+	
+
+	<a class="thirdButton" tabindex="-1" href="/nl_nl/special-pages/subscribe_mm_program.html?cod=03.html" target="_self">
+		<span>AANMELDEN</span>
+	</a>
+	
+</div>
+
+</div>
+<div class="login-included-if-authenticated hidden">
+	<div class="milleMiglaMenu__cover">
+	<div class="milleMiglaMenu__nav">
+		<nav class="milleMiglaMenu__list" id="millemigliaMenu"></nav>
+		<div class="milleMiglaMenu__logoutCover">
+			<a tabindex="1" class="thirdButton" id="headerButtonLogout" href="#">
+				<span>Uitloggen</span>
+			</a>
+		</div>
+	</div>
+	<div class="milleMiglaMenu__box">
+		<div class="milleMiglaMenu__logo">
+			<span class="title">UW MILLEMIGLIA ACCOUNT</span>
+			<span class="binding-mm-tier"></span>
+		</div>
+		<dl class="milleMiglaMenu__values">
+			<dt>Milessaldo</dt>
+			<dd class="binding-mm-remaining-miles">-</dd>
+		</dl>
+		<dl class="milleMiglaMenu__values">
+			<dt>KWALIFICATIEMILES</dt>
+			<dd class="binding-mm-total-qualified-miles">-</dd>
+		</dl>
+	</div>
+</div>
+
+</div>
+		</div>
+	</div>
+</div>
+
+    <div class="notificationMenu j-groupContainer" data-group="notificationGroup" id="notificationMenu">
+	<div class="notificationMenu__container">
+			<ul class="notificationMenu__list">
+	
+
+	
+		<li class="notificationMenu__item" style="display: none">
+			<a tabindex="-1" class="notificationMenu__itemLink" href="https://www.alitalia.com/nl_nl/offers.html#point" target="_blank">
+				
+				<span> ZUID-AMERIKA vanaf €528 retour. Boek nu! </span>
+				
+
+			</a>
+			<a href="#" class="notificationMenu__itemClose j-readNotification">&times;</a>
+		</li>
+		
+	
+		<li class="notificationMenu__item" style="display: none">
+			<a tabindex="-1" class="notificationMenu__itemLink" href="https://www.alitalia.com/nl_nl/offers.html#point" target="_blank">
+				
+				<span> MEXICO vanaf €636 retour. Boek nu! </span>
+				
+
+			</a>
+			<a href="#" class="notificationMenu__itemClose j-readNotification">&times;</a>
+		</li>
+		
+	
+	
+	<li id="message-empty" class="notificationMenu__item isRead">
+		<a tabindex="-1" class="notificationMenu__itemLink">
+			Geen nieuwe meldingen
+		</a>
+	</li>
+	
+</ul>
+
+            
+				
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-header-notifiche-embed.min.js"></script>
+
+
+
+			
+	</div> 
+</div>
+
+    <div class="recentMenu j-groupContainer" data-group="recentGroup" id="recentMenu">
+	<div class="recentMenu__container"><ul class="recentMenu__list">
+
+	<li id="messaggioCortesia" style="display: none;"><div></div></li>
+</ul>
+
+
+	
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-header-ricercherecenti-embed.min.js"></script>
+
+
+
+</div>
+	
+</div>
+
+   
+    
+
+	
+
+
+
+
+
+
+
+<section class="menu mainMenu">
+	<div class="mod">
+		<div class="mainMenu__bar">
+			<div class="mainMenu__logoCover">
+				
+	
+	
+
+     
+        
+        <a class="etihad" href="https://www.alitalia.com/nl_nl">
+			<img src="/content/alitalia/alitalia-nl/nl/alitalia-config/header-footer/header/header/_jcr_content/header/logo3.img.png/1486717478283.png" alt="Etihad Airways Partner" title="Etihad Airways Partner"/>
+		</a>
+    
+
+				
+	
+	
+
+     
+        
+        <a class="alitalia" href="https://www.alitalia.com/nl_nl">
+			<img src="/content/alitalia/alitalia-nl/nl/alitalia-config/header-footer/header/header/_jcr_content/header/logo1.img.png/1477410547352.png" alt="Alitalia Home Page" title="Alitalia Home Page"/>
+		</a>
+    
+
+				
+	
+	
+
+     
+        
+        <a class="skyteam" href="http://www.skyteam.com/nl" rel="nofollow">
+			<img src="/content/alitalia/alitalia-nl/nl/alitalia-config/header-footer/header/header/_jcr_content/header/logo2.img.png/1493193144106.png" alt="SkyTeam Home Page" title="SkyTeam Home Page"/>
+		</a>
+    
+
+				
+			</div>
+			<div class="mainMenu__mobileNav">
+				<a class="mainMenu__search j-openSearch" href="javascript:;">
+					<em class="isVisuallyHidden">Search</em>
+					<span class="i-lens"></span>
+				</a>
+				<a class="mainMenu__hamburger j-openMobileMenu" href="#" title="Menu">
+					<span class="line line-1"><em class="isVisuallyHidden">-</em></span>
+					<span class="line line-2"><em class="isVisuallyHidden">-</em></span>
+					<span class="line line-3"><em class="isVisuallyHidden">-</em></span>
+				</a>
+			</div>
+			
+<nav id="site-navigation" class="mainMenu__nav" role="navigation">
+	<div class="mainMenu__firstLevel">
+		<div class="mainMenu__mobileHeader">Menu</div>
+		<ul class="mainMenu__firstLevelList">
+			<li class="mainMenu__firstLevelItem">
+				<a class="mainMenu__firstLevelLink" href="/nl_nl/offers.html" data-href="/nl_nl/offers.html" target="_self">Aanbod</a>
+				<div class="mainMenu__secondLevelCover">
+					<div class="mainMenu__secondLevel">
+						<div class="mainMenu__mobileHeader j-goBackSecond">Aanbod</div>
+						<ul class="mainMenu__secondLevelList">
+							<li class="mainMenu__secondLevelItem j-colType1">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/offers.html" data-href="/nl_nl/offers.html" target="_self">Alle aanbiedingen</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Alle aanbiedingen</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/offers.html" target="_self">Light Tarief</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType2">
+								<a class="mainMenu__secondLevelLink noThirdLevel" href="/nl_nl/offers/all-offers/summer-destinations-2017.html" data-href="/nl_nl/offers/all-offers/summer-destinations-2017.html" target="_self">ZOMERBESTEMMINGEN</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">ZOMERBESTEMMINGEN</div>
+										
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType3">
+								<a class="mainMenu__secondLevelLink noThirdLevel" href="/nl_nl/offers/young-offers.html" data-href="/nl_nl/offers/young-offers.html" target="_self">Jongeren tarieven</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Jongeren tarieven</div>
+										
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType4">
+								<a class="mainMenu__secondLevelLink noThirdLevel" href="http://alitalia.city-discovery.com/it/" data-href="http://alitalia.city-discovery.com/it/" target="_blank">Tours en activiteten</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Tours en activiteten</div>
+										
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType5">
+								<a class="mainMenu__secondLevelLink noThirdLevel" href="http://alitalia.maggiore.it/az/en/ota_index.html?tp_userid=web_az" data-href="http://alitalia.maggiore.it/az/en/ota_index.html?tp_userid=web_az" target="_blank">Rent a car</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Rent a car</div>
+										
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType1">
+								<a class="mainMenu__secondLevelLink noThirdLevel" href="/nl_nl/offers/group-reservation.html" data-href="/nl_nl/offers/group-reservation.html" target="_self">Groepsaanvragen</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Groepsaanvragen</div>
+										
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType2">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/offers/experience-italy.html" data-href="/nl_nl/offers/experience-italy.html" target="_self">Ervaar Italië</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Ervaar Italië</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/offers/experience-italy/promotional-events.html" target="_self">Evenementen</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+		
+			<li class="mainMenu__firstLevelItem">
+				<a class="mainMenu__firstLevelLink" href="http://flights.alitalia.com/nl_nl/" data-href="http://flights.alitalia.com/nl_nl/" target="_blank">Bestemmingen</a>
+				<div class="mainMenu__secondLevelCover">
+					<div class="mainMenu__secondLevel">
+						<div class="mainMenu__mobileHeader j-goBackSecond">Bestemmingen</div>
+						<ul class="mainMenu__secondLevelList">
+							<li class="mainMenu__secondLevelItem j-colType1">
+								<a class="mainMenu__secondLevelLink noThirdLevel" href="http://flights.alitalia.com/nl_nl/vluchten-naar-itali%C3%AB#.html" data-href="http://flights.alitalia.com/nl_nl/vluchten-naar-itali%25C3%25AB#.html" target="_blank">Vluchten naar Italie</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Vluchten naar Italie</div>
+										
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType2">
+								<a class="mainMenu__secondLevelLink noThirdLevel" href="http://flights.alitalia.com/nl_nl/vluchten-naar-athene#.html" data-href="http://flights.alitalia.com/nl_nl/vluchten-naar-athene#.html" target="_blank">Vluchten naar Athene</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Vluchten naar Athene</div>
+										
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType3">
+								<a class="mainMenu__secondLevelLink noThirdLevel" href="http://flights.alitalia.com/nl_nl/vluchten-naar-tirana#.html" data-href="http://flights.alitalia.com/nl_nl/vluchten-naar-tirana#.html" target="_blank">Vluchten naar Tirana</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Vluchten naar Tirana</div>
+										
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType4">
+								<a class="mainMenu__secondLevelLink noThirdLevel" href="http://flights.alitalia.com/nl_nl/vluchten-naar-beijing#.html" data-href="http://flights.alitalia.com/nl_nl/vluchten-naar-beijing#.html" target="_blank">Vluchten naar Beijing</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Vluchten naar Beijing</div>
+										
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType5">
+								<a class="mainMenu__secondLevelLink noThirdLevel" href="http://flights.alitalia.com/nl_nl/vluchten-naar-japan#.html" data-href="http://flights.alitalia.com/nl_nl/vluchten-naar-japan#.html" target="_blank">Vluchten naar Japan</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Vluchten naar Japan</div>
+										
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType1">
+								<a class="mainMenu__secondLevelLink noThirdLevel" href="http://flights.alitalia.com/nl_nl/vluchten-naar-buenos-aires#.html" data-href="http://flights.alitalia.com/nl_nl/vluchten-naar-buenos-aires#.html" target="_blank">Vluchten naar Buenos Aires</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Vluchten naar Buenos Aires</div>
+										
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType2">
+								<a class="mainMenu__secondLevelLink noThirdLevel" href="http://flights.alitalia.com/nl_nl/vluchten-naar-larnaca#.html" data-href="http://flights.alitalia.com/nl_nl/vluchten-naar-larnaca#.html" target="_blank">Vluchten naar Larnaca</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Vluchten naar Larnaca</div>
+										
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+		
+			<li class="mainMenu__firstLevelItem">
+				<a class="mainMenu__firstLevelLink" href="/nl_nl/fly-alitalia.html" data-href="/nl_nl/fly-alitalia.html" target="_self">Vlucht</a>
+				<div class="mainMenu__secondLevelCover">
+					<div class="mainMenu__secondLevel">
+						<div class="mainMenu__mobileHeader j-goBackSecond">Vlucht</div>
+						<ul class="mainMenu__secondLevelList">
+							<li class="mainMenu__secondLevelItem j-colType1">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/fly-alitalia/alitalia-world.html" data-href="/nl_nl/fly-alitalia/alitalia-world.html" target="_self">Alitalia Wereld</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Alitalia Wereld</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/alitalia-world/our-values.html" target="_self">Onze waarden</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/alitalia-world/eap-partners.html" target="_self">Partners Etihad Airways</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/alitalia-world/special-event-2.html" target="_self">Made of Italy</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/alitalia-world/fleet.html" target="_self">De vloot</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/alitalia-world/network.html" target="_self">Het netwerk</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/alitalia-world/passenger-rights.html" target="_self">Rechten van passagiers</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType2">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/fly-alitalia/news-and-activities.html" data-href="/nl_nl/fly-alitalia/news-and-activities.html" target="_self">Nieuws en artikelen</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Nieuws en artikelen</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/news-and-activities/news.html" target="_self">Nieuws</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/news-and-activities/newsletter.html" target="_self">Nieuwsbrief</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/news-and-activities/new-flights.html" target="_self">Nieuwe vluchten</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType3">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/fly-alitalia/organize-your-trip.html" data-href="/nl_nl/fly-alitalia/organize-your-trip.html" target="_self">Uw reis organiseren</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Uw reis organiseren</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/organize-your-trip/my-flights.html" target="_self">Mijn boeking</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/organize-your-trip/travel-documents.html" target="_self">Reisdocumenten</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/organize-your-trip/special-assistance.html" target="_self">Speciale assistentie</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/organize-your-trip/moms-to-be.html" target="_self">Zwangere vrouwen</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/organize-your-trip/children.html" target="_self">Kinderen</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/organize-your-trip/pets.html" target="_self">Dieren</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType4">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/fly-alitalia/baggage.html" data-href="/nl_nl/fly-alitalia/baggage.html" target="_self">Bagage</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Bagage</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/baggage/hand-baggage.html" target="_self">Handbagage</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/baggage/checked-baggage.html" target="_self">Ruimbagage</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/baggage/special-baggage.html" target="_self">Bijzondere bagage</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType5">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/fly-alitalia/check-in.html" data-href="/nl_nl/fly-alitalia/check-in.html" target="_self">Inchecken</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Inchecken</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/check-in/online-check-in.html" target="_self">Online inchecken</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/check-in/mobile-check-in.html" target="_self">Mobiel inchecken</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/check-in/fast-check-in.html" target="_self">Incheckautomaten</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/check-in/tele-check-in.html" target="_self">Tele Check-in</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/check-in/check-in-time-limits.html" target="_self">Tijdslimieten voor inchecken</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType1">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/fly-alitalia/at-the-airport.html" data-href="/nl_nl/fly-alitalia/at-the-airport.html" target="_self">Op de luchthaven</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Op de luchthaven</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/at-the-airport/priority-gates.html" target="_self">Priority gates</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/at-the-airport/lounges.html" target="_self">Lounges</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/at-the-airport/skyteam-services.html" target="_self">Services van SkyTeam</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType2">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/fly-alitalia/travel-classes.html" data-href="/nl_nl/fly-alitalia/travel-classes.html" target="_self">Travel Classes</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Travel Classes</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/travel-classes/business-long-haul.html" target="_self">Business Class Long Haul </a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/travel-classes/business-medium-haul.html" target="_self">Business Class Medium Haul</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/travel-classes/premium-economy.html" target="_self">Premium Economy</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/travel-classes/economy.html" target="_self">Economy</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/travel-classes/get-an-upgrade.html" target="_self">Ontvang een Upgrade</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType3">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/fly-alitalia/in-flight.html" data-href="/nl_nl/fly-alitalia/in-flight.html" target="_self">Aan boord</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Aan boord</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/in-flight/connectivity-on-board.html" target="_self">Wifi verbinding aan boord</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/in-flight/wellbeing-on-board.html" target="_self">Welzijn aan boord</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/in-flight/electronic-devices.html" target="_self">Elektronische apparaten</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/in-flight/special-meals.html" target="_self">Speciale maaltijden</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/in-flight/alitalia-store.html" target="_self">On-board Boutique</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/in-flight/entertainment.html" target="_self">Entertainment</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/in-flight/ulisse-magazine.html" target="_self">Het Magazine Ulisse</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType4">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/fly-alitalia/additional-services.html" data-href="/nl_nl/fly-alitalia/additional-services.html" target="_self">Extra Services</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Extra Services</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/additional-services/extra-comfort-seats.html" target="_self">Comfort stoelen</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/additional-services/extra-baggage.html" target="_self">Extra bagage</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType5">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/fly-alitalia/from-to-the-airport.html" data-href="/nl_nl/fly-alitalia/from-to-the-airport.html" target="_self">Van en naar de luchthaven</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Van en naar de luchthaven</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/from-to-the-airport/car-rental.html" target="_self">Autoverhuur</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/from-to-the-airport/parking.html" target="_self">Parkeren</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType1">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/fly-alitalia/alitalia-for-companies.html" data-href="/nl_nl/fly-alitalia/alitalia-for-companies.html" target="_self">Alitalia voor bedrijven</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Alitalia voor bedrijven</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/alitalia-for-companies/commercial-agreements.html" target="_self">Commerciële overeenkomsten</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/alitalia-for-companies/business-connect.html" target="_self">Alitalia BusinessConnect</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/alitalia-for-companies/corporate-cards.html" target="_self">Corporate cards</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/fly-alitalia/alitalia-for-companies/global-meetings.html" target="_self">Global Meetings</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+		
+			<li class="mainMenu__firstLevelItem">
+				<a class="mainMenu__firstLevelLink" href="/nl_nl/millemiglia.html" data-href="/nl_nl/millemiglia.html" target="_self">Millemiglia</a>
+				<div class="mainMenu__secondLevelCover">
+					<div class="mainMenu__secondLevel">
+						<div class="mainMenu__mobileHeader j-goBackSecond">Millemiglia</div>
+						<ul class="mainMenu__secondLevelList">
+							<li class="mainMenu__secondLevelItem j-colType1">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/millemiglia/theprogram.html" data-href="/nl_nl/millemiglia/theprogram.html" target="_self">Het programma</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Het programma</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/theprogram/whyjoin.html" target="_self">Waarom lid worden?</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/theprogram/online-service-social.html" target="_self">Online services en sociaal inloggen</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/theprogram/rules.html" target="_self">Voorwaarden</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/theprogram/program-news.html" target="_self">Programmanieuws</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/theprogram/millemiglia-young.html" target="_self">MilleMiglia Young</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/theprogram/millemiglia-kids.html" target="_self">MilleMiglia Kids</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/theprogram/expiration-miles.html" target="_self">Het vervallen van miles</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/theprogram/millemiglia-members-services.html" target="_self">Service voor Millemiglia-leden</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType2">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/millemiglia/exclusive-club.html" data-href="/nl_nl/millemiglia/exclusive-club.html" target="_self">Exclusive Clubs</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Exclusive Clubs</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/exclusive-club/advantages.html" target="_self">Voordelen</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/exclusive-club/ulisse-club.html" target="_self">Ulisse</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/exclusive-club/freccia-alata-club.html" target="_self">Freccia Alata Club</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/exclusive-club/freccia-alata-plus.html" target="_self">Freccia Alata Plus Club</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/exclusive-club/freccia-alata-plus-per-sempre.html" target="_self">Freccia Alata Plus Per Sempre-kaart</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType3">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/millemiglia/alitalia-miles.html" data-href="/nl_nl/millemiglia/alitalia-miles.html" target="_self">Miles met Alitalia</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Miles met Alitalia</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/alitalia-miles/earn-miles.html" target="_self">Verdien miles</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/alitalia-miles/spend-miles.html" target="_self">Uw miles besteden</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/alitalia-miles/millemiglia-gallery.html" target="_self">MilleMiglia Gallery</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/alitalia-miles/missed-credits.html" target="_self">Ontbrekende miles</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType4">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/millemiglia/partners-airlines.html" data-href="/nl_nl/millemiglia/partners-airlines.html" target="_self">Miles met Partner maatschappijen</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Miles met Partner maatschappijen</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/partners-airlines/skyteam.html" target="_self">SkyTeam-partners</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/partners-airlines/etihad-airways-partners.html" target="_self">Partner Etihad Airways</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/partners-airlines/other-partners-airlines.html" target="_self">Overige partnermaatschappijen</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType5">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/millemiglia/financial-partners.html" data-href="/nl_nl/millemiglia/financial-partners.html" target="_self">Miles met financiële Partners</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Miles met financiële Partners</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/financial-partners/american-express.html" target="_self">American Express</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType2">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/millemiglia/other-partners.html" data-href="/nl_nl/millemiglia/other-partners.html" target="_self">Miles met onze Partners</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Miles met onze Partners</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/other-partners/car-rental.html" target="_self">Autoverhuur</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/other-partners/hotel.html" target="_self">Hotels</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/other-partners/oil-companies.html" target="_self">Oliemaatschappijen</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/other-partners/luxury.html" target="_self">Luxury</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/other-partners/shopping.html" target="_self">Shopping </a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/other-partners/others.html" target="_self">Overige partners</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/other-partners/grande-distribuzione.html" target="_self">Supermarkets </a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/other-partners/culture_and_entertainment.html" target="_self">Cultuur en entertainment</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType3">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/millemiglia/buy-miles.html" data-href="/nl_nl/millemiglia/buy-miles.html" target="_self">Miles kopen</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Miles kopen</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/buy-miles/by-or-gift-miles.html" target="_self">Miles kopen of cadeau geven</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/buy-miles/transfer-miles.html" target="_self">Miles overdragen</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/buy-miles/award-with-purchased-transferred-miles.html" target="_self">Awards met aangekochte of overgedragen miles</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						
+							<li class="mainMenu__secondLevelItem j-colType4">
+								<a class="mainMenu__secondLevelLink" href="/nl_nl/millemiglia/news-and-promotions.html" data-href="/nl_nl/millemiglia/news-and-promotions.html" target="_self">Nieuws en aanbiedingen</a>
+								<div class="mainMenu__thirdLevelCover">
+									<div class="mainMenu__thirdLevel">
+										<div class="mainMenu__mobileHeader j-goBackThird">Nieuws en aanbiedingen</div>
+										<ul class="mainMenu__thirdLevelList">
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/news-and-promotions/kiev.html" target="_self">Nieuwe vluchten van Rome Fiumicino naar Kiev en heel veel extra miles!</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/news-and-promotions/etihad-services-and-benefits.html" target="_self">Nieuwe voordelen als u met Etihad Airways Partners reist</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/news-and-promotions/accor.html" target="_self">AccorHotels</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/news-and-promotions/duetorrihotels.html" target="_self">Duetorrihotels </a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/news-and-promotions/millemiglia-gallery.html" target="_self">MilleMiglia Gallery</a>
+											</li>								
+										
+											<li class="mainMenu__thirdLevelItem">
+												<a class="mainMenu__thirdLevelLink" href="/nl_nl/millemiglia/news-and-promotions/expired-promotions.html" target="_self">Verlopen promoties</a>
+											</li>								
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+			<form id="suggestion_form" class="mainMenu__navigationSearch" action="/content/alitalia/alitalia-nl/nl/home-page.searchsubmit" method="get">
+				<label class="mainMenu__navigationSearchIcon" for="mainMenu__search" id="mainMenu__search--label">Search</label>
+				
+				
+				<input class="mainMenu__navigationSearchIcon q" type="text" id="mainMenu__search" aria-labelledby="mainMenu__search--label" name="mainMenu__search" placeholder="Zoeken" autocomplete="off"/>
+
+				
+				<button type="submit" class="mainMenu__navigationSearchSubmit">Search</button>
+				<div style="right: 0px; top: 40px; display: none; opacity: 0;" id=":0" role="listbox" class="ac-renderer ss-gac-m">
+					<div style="-webkit-user-select: none;" role="option" id=":l" class="ss-gac-a ss-gac-b active">
+						<div id="suggestion_data" style="-webkit-user-select: none;">
+
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>	
+	</div>
+</section>
+
+<script type="text/javascript">
+$(window).ready(function() {
+	bindAutocompleteGSA('https://gsa.alitalia.com', 'www','www', 'nl', 'nl');
+});
+</script>
+</header>
+
+
+    
+
+
+<section class="hero">
+	
+
+			<div class="flightFinder ff-stager ff-stage1">
+				
+
+
+
+    <form action="/content/alitalia/alitalia-nl/nl/home-page.flightsearchconsumer.json" method="POST" id="cercaVoliForm">
+        <div class="flightFinder__container">
+    
+            <fieldset class="itinerary itinerary--flightFinder">
+                
+                
+                
+                <div class="itinerary__inputCover">
+                    
+    				<label class="departure" for="departureInput" id="departureInput--label">Vertrek</label>
+    				
+                    <div class="customInput--flightFinder departure">
+                    	<!-- Campi utili per il salvataggio delle chiavi per l'internazionalizzazione -->
+                        <div class="hidden" id="originKeyCityCode"></div>
+                        <div class="hidden" id="originKeyCountryCode"></div>
+                        <div class="hidden" id="originKeyAirportName"></div>
+                        <span class="apt"></span>
+                        <span class="city"></span>
+                        <input type="hidden" class="j-countryCode" name="Origin" id="Origin" value="">
+                        <input class="departure j-autoCompleteInput" type="text" id="departureInput" aria-labelledby="departureInput--label" name="departureInput" placeholder="UW VERTREK" value="" required aria-required="true"/>
+                        <div class="flightFinder__suggest">
+                            <div class="autocomplete-suggestions">
+                                <!-- Eliminata in seguito ad aggiornamenti grafica 
+                                <li>
+                                    <h4>Uw laatste zoekopdrachten</h4>
+                                </li>
+                                -->
+		                        
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                <input id="CUG" type="hidden" name="CUG" value="ADT">
+                <div class="itinerary__inputCoverIcon j-switchDestination">
+                    <span class="i-doubleArrow"></span>
+                </div>
+                
+                <div class="itinerary__inputCover">
+                    
+    				<label class="arrival" for="arrivalInput" id="arrivalInput--label">Bestemming</label>
+    				
+                    <div class="customInput--flightFinder arrival">
+                    	<!-- Campi utili per il salvataggio delle chiavi per l'internazionalizzazione -->
+                        <div class="hidden" id="destinationKeyCityCode"></div>
+                        <div class="hidden" id="destinationKeyCountryCode"></div>
+                        <div class="hidden" id="destinationKeyAirportName"></div>
+                        <span class="apt"></span>
+                        <span class="city"></span>
+                        <input type="hidden" class="j-countryCode" name="Destination" id="Destination" value="">
+                        <input class="arrival j-autoCompleteInput" type="text" id="arrivalInput" aria-labelledby="arrivalInput--label" name="arrivalInput" placeholder="UW BESTEMMING" value="" required aria-required="true"/>
+                        <div class="flightFinder__suggest">
+                            <div class="autocomplete-suggestions">
+                                <!-- Eliminata in seguito ad aggiornamenti grafica 
+                                <li>
+                                    <h4>Uw laatste zoekopdrachten</h4>
+                                </li>
+                                -->
+		                        
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </fieldset>
+    
+            <fieldset class="typeOfFlight">
+                <legend>Wanneer wilt u vertrekken?</legend>
+    <!-- 			<input type="hidden" name="SearchType" id="SearchType" value="BrandSearch"> -->
+                <ol class="left">
+                    <li>
+                        <div class="radioButton j-typeOfFlight">
+                            
+                            <input class="j-typeOfFlight" type="radio" name="SearchType" value="a+r" id="andataeritorno" checked/>
+                            
+                            <label class="j-typeOfFlight" for="andataeritorno">Retourvlucht</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radioButton j-typeOfFlight">
+                            
+                            <input class="j-typeOfFlight" type="radio" name="SearchType" value="a" id="soloandata"/>
+                            
+                            <label class="j-typeOfFlight" for="soloandata">Enkele reis</label>
+                        </div>
+                    </li>
+                </ol>
+                
+                <ol sly class="right">
+                   
+                        <li class="multitratta">
+                        	
+                        	<a href="/nl_nl/booking/homepage-multitratta.html" target="_self">
+                            	Meerdere stopovers
+                            	<span class="i-arrowRight"></span>
+                        	</a>
+                    	</li>
+                    
+                    
+                    
+                    	<li class="bigliettiPremio">
+                        	
+                        	<a href="https://award.alitalia.com/SSW2010/AZBZ/webqtrip.html?lang=nl_NL&amp;pointOfSale=NL" target="_blank">
+                            	Award Ticket
+                            	<span class="i-arrowRight"></span>
+                        	</a>
+                    	</li>
+                    
+                    
+                </ol>
+            </fieldset>
+    
+            <fieldset class="dateOfFlight dateOfFlight--flightFinder">
+                <ol>
+                    <li>
+                        
+                        <label class="" for="andata" id="andata--label">Uitgaand</label>
+                        
+                       	<input class="" type="text" id="andata" aria-labelledby="andata--label" name="DepartureDate" placeholder="Uitgaand" required="" aria-required="true"/>
+                       	
+                    </li>
+                    <li>
+                       
+                       <label class="" for="ritorno" id="ritorno--label">Inkomend</label>
+                       	
+                        <input class="" type="text" id="ritorno" aria-labelledby="ritorno--label" name="ReturnDate" placeholder="Inkomend" required="" aria-required="true">
+                       
+                    </li>
+                </ol>
+            </fieldset>
+    
+            <fieldset class="passengers passengers--flightFinder">
+                <ol>
+                    <li class="lineLabel adulti">
+                        <label class="" for="adult" id="adult--label">Volwassenen</label>
+    						
+                        <div class="numberSelector  j-numberSelector">
+                            <input class="numberSelector__container j-numberSelector-input" type="text" id="adult" aria-labelledby="adult--label" name="Adults" value="1" required aria-required="true" readonly/>
+                            
+                            
+                            <span class="hidden" id="wcag-addAdults">Click to add adults</span>
+                            
+                            <a class="numberSelector__sign--plus j-numberSelector-plus" href="javascript:;" title="Voeg één passagier toe">&plus;</a>
+                            
+                            
+                        	<span class="hidden" id="wcag-removeAdults">Click to remove adults</span>
+                        	
+                        	<a class="numberSelector__sign--minus j-numberSelector-minus" href="javascript:;" title="Verwijder 1 passagier">&minus;</a>
+                        	
+                        </div>
+                    </li><li class="lineLabel bambini">
+                        <label class="" for="kids" id="kids--label">
+	                        <a class="j-qtool" data-tooltiptitle="" data-tooltip="Elk kind jonger dan 2 jaar (baby) moet worden vergezeld door ten minste één ouder of een verantwoordelijke volwassene. Minderjarigen van 2 tot en met 14 jaar op binnenlandse vluchten en minderjarigen van 2 tot en met 15 jaar op internationale en intercontinentale vluchten moeten onder begeleiding van een volwassene reizen.">
+								<span class="i-infoCircle"></span>
+								<span class="tooltip__text"></span>
+							</a>
+							Kind van 2-11 jaar
+						</label>
+    
+                        <div class="numberSelector  j-numberSelector">
+                            <input class="numberSelector__container j-numberSelector-input" type="text" id="kids" aria-labelledby="kids--label" name="Children" value="0" required aria-required="true" readonly/>
+							
+                            
+                            <span class="hidden" id="wcag-addChildren">Click to add children</span>
+                            
+                            <a class="numberSelector__sign--plus j-numberSelector-plus" href="javascript:;" title="Voeg één passagier toe">&plus;</a>
+                 
+                            
+                       		 <span class="hidden" id="wcag-removeChildren">Click to remove children</span>
+                       		<a class="numberSelector__sign--minus j-numberSelector-minus" href="javascript:;" title="Verwijder 1 passagier">&minus;</a>
+                       		
+                        </div>
+                    </li><li class="lineLabel neonati">
+                        <label class="" for="newborn" id="newborn--label">
+                        	<a class="j-qtool" data-tooltiptitle="" data-tooltip="Elk kind jonger dan 2 jaar (baby) moet worden vergezeld door ten minste één ouder of een verantwoordelijke volwassene. Minderjarigen van 2 tot en met 14 jaar op binnenlandse vluchten en minderjarigen van 2 tot en met 15 jaar op internationale en intercontinentale vluchten moeten onder begeleiding van een volwassene reizen.">
+								<span class="i-infoCircle"></span>
+								<span class="tooltip__text"></span>
+							</a>
+							Baby 0-23 maanden
+						</label>
+    
+                        <div class="numberSelector  j-numberSelector">
+                            <input class="numberSelector__container j-numberSelector-input" type="text" id="newborn" aria-labelledby="newborn--label" name="Infants" value="0" required aria-required="true" readonly>
+                            
+                           	 <span class="hidden" id="wcag-addInfants">Click to add infants</span>
+                           	
+                           	<a class="numberSelector__sign--plus j-numberSelector-plus" href="javascript:;" title="Voeg één passagier toe">&plus;</a>
+                            
+                            
+                        	   <span class="hidden" id="wcag-removeInfants">Click to remove infants</span>
+                        	
+                        	<a class="numberSelector__sign--minus j-numberSelector-minus" href="javascript:;" title="Verwijder 1 passagier">&minus;</a>
+                        	
+                        </div>
+                    </li>					
+                </ol>
+            </fieldset>
+    
+            <fieldset class="cabinClass cabinClass--flightFinder">
+                
+                    <ol>
+                        <li>
+                            <div class="radioButton ">
+                                
+                                <input class="" type="radio" name="classOfFlight" value="economy" id="economy" checked/>
+                                
+                                <label class="" for="economy">Economy</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="radioButton ">
+                                
+    							<input class="" type="radio" name="classOfFlight" value="business" id="business"/>
+    							
+                                <label class="" for="business">Business</label>
+                            </div>
+                        </li>
+                    </ol>
+                
+                    
+                <button type="submit" id="cercaVoliSubmit" class="firstButton flightFinder__button">
+                
+				<span>Toon vluchten</span>
+				
+				
+                </button>
+            </fieldset>
+            <div class="flightFinder__tools">
+			     
+                <a href="javascript:;" class="flightFinder__containerClose j-flightFinder__containerClose">&times;</a>
+            </div>
+        </div>
+    </form>
+    <div>
+        
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-cercavoloAll-embed.min.js"></script>
+
+
+
+    </div>
+    
+			</div>
+
+
+	
+		
+		
+		
+			<div class="heroCarousel ">
+				<ul class="heroCarousel__list">
+					
+<!-- 						<li class="heroCarousel__item"> -->
+							<li class="heroCarousel__item">
+
+<a class="heroCarousel__itemContainer" href="/nl_nl/offers.html#point" target="_self">
+
+	
+	
+	
+	
+		
+
+
+
+<div class="respond-image heroCarousel__image" data-small="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/zuid-amerika/jcr:content/banner/2.transform/heroCarousel-small/image.jpg?imagets=/1504015736751.png" data-medium="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/zuid-amerika/jcr:content/banner/1.transform/heroCarousel-medium/image.jpg?imagets=/1504015736751.png" data-large="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/zuid-amerika/jcr:content/banner/0.transform/heroCarousel-large/image.jpg?imagets=/1504015736751.png">
+	<noscript>
+		<img src="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/zuid-amerika/_jcr_content/banner/0.img.png/1504015736751.png"/>
+	</noscript>
+	<div class="loader"></div>
+</div>
+		
+		<div class="heroCarousel__textContainer">
+			
+			
+			
+			
+				
+				<h2 class="heroCarousel__textContainerTitle" style="color: rgba(255,255,255,1.00);">ZUID-AMERIKA</h2>
+				
+				<p class="heroCarousel__textContainerOffer" style="color: rgba(255,255,255,1.00);">
+					<span class="from" style="color: rgba(255,255,255,1.00);">VANAF</span>
+					<span class="price">
+						<strong>€528 RETOUR</strong>
+					</span>
+				</p>
+				
+				
+				<div class="heroCarousel__textContainerButton" style="color: rgba(255,255,255,1.00);">
+					<span>BOEKEN TOT EN MET 12 SEPTEMBER</span>
+				</div>
+			
+		</div>
+		
+	
+</a>
+</li>
+
+							
+<!-- 						</li> -->
+					
+<!-- 						<li class="heroCarousel__item"> -->
+							<li class="heroCarousel__item">
+
+<a class="heroCarousel__itemContainer" href="/nl_nl/offers.html#point" target="_self">
+
+	
+	
+	
+	
+		
+
+
+
+<div class="respond-image heroCarousel__image" data-small="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/tokyo/jcr:content/banner/2.transform/heroCarousel-small/image.jpg?imagets=/1504015746566.png" data-medium="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/tokyo/jcr:content/banner/1.transform/heroCarousel-medium/image.jpg?imagets=/1504015746566.png" data-large="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/tokyo/jcr:content/banner/0.transform/heroCarousel-large/image.jpg?imagets=/1504015746566.png">
+	<noscript>
+		<img src="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/tokyo/_jcr_content/banner/0.img.png/1504015746566.png"/>
+	</noscript>
+	<div class="loader"></div>
+</div>
+		
+		<div class="heroCarousel__textContainer">
+			
+			
+			
+			
+				
+				<h2 class="heroCarousel__textContainerTitle" style="color: rgba(255,255,255,1.00);">TOKYO</h2>
+				
+				<p class="heroCarousel__textContainerOffer" style="color: rgba(255,255,255,1.00);">
+					<span class="from" style="color: rgba(255,255,255,1.00);">VANAF</span>
+					<span class="price">
+						<strong>€533 RETOUR</strong>
+					</span>
+				</p>
+				
+				
+				<div class="heroCarousel__textContainerButton" style="color: ;">
+					<span>BOEKEN TOT EN MET 12 SEPTEMBER</span>
+				</div>
+			
+		</div>
+		
+	
+</a>
+</li>
+
+							
+<!-- 						</li> -->
+					
+<!-- 						<li class="heroCarousel__item"> -->
+							
+							<li class="heroCarousel__item">
+
+
+<a class="heroCarousel__itemContainer" href="/nl_nl/offers.html#point" target="_self">
+
+	
+
+
+	
+
+		
+
+
+
+<div class="respond-image heroCarousel__image" data-small="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/tunisi-cairo-teran/jcr:content/banner/2.transform/heroCarousel-small/image.jpg?imagets=/1503572671236.png" data-medium="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/tunisi-cairo-teran/jcr:content/banner/1.transform/heroCarousel-medium/image.jpg?imagets=/1503572671236.png" data-large="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/tunisi-cairo-teran/jcr:content/banner/0.transform/heroCarousel-large/image.jpg?imagets=/1503572671236.png">
+	<noscript>
+		<img src="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/tunisi-cairo-teran/_jcr_content/banner/0.img.png/1503572671236.png"/>
+	</noscript>
+	<div class="loader"></div>
+</div>
+	
+		<div class="heroCarousel__textContainer--text">
+	
+			
+				<h2 class="heroCarousel__textContainerTitle line1" style="text-shadow: 1.7px 3.0px 1.7px rgb(0,0,0);">TUNIS VANAF €218 RETOUR</h2>
+
+<h2 class="heroCarousel__textContainerTitle line1" style="text-shadow: 1.7px 3.0px 1.7px rgb(0,0,0);">CAÏRO VANAF €247 RETOUR</h2>
+
+<h2 class="heroCarousel__textContainerTitle line3"
+    style="text-shadow: 2.0px 1.0px 1.0px rgb(0,0,0);"><span
+    class="heroCarousel__textContainerTitle line1" style="text-shadow: 1.7px 3.0px 1.7px rgb(0,0,0);">TEHERAN VANAF €366 RETOUR</span></h2>
+
+<div class="heroCarousel__textContainerButton" style="">　BOEK NU　</div>
+			
+		
+			
+		</div>		
+	
+</a>
+</li>
+
+<!-- 						</li> -->
+					
+<!-- 						<li class="heroCarousel__item"> -->
+							
+							<li class="heroCarousel__item">
+
+
+<a class="heroCarousel__itemContainer" href="/nl_nl/offers.html" target="_self">
+
+	
+
+
+	
+
+		
+
+
+
+<div class="respond-image heroCarousel__image" data-small="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/sud-italia/jcr:content/banner/2.transform/heroCarousel-small/image.jpg?imagets=/1495794075956.png" data-medium="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/sud-italia/jcr:content/banner/1.transform/heroCarousel-medium/image.jpg?imagets=/1495794075956.png" data-large="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/sud-italia/jcr:content/banner/0.transform/heroCarousel-large/image.jpg?imagets=/1495794075956.png">
+	<noscript>
+		<img src="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/banner/banner-offerte/destinazioni/sud-italia/_jcr_content/banner/0.img.png/1495794075956.png"/>
+	</noscript>
+	<div class="loader"></div>
+</div>
+	
+		<div class="heroCarousel__textContainer--text">
+	
+			
+				<h2 class="heroCarousel__textContainerTitle line1" style="text-shadow: 1.7px 3.0px 1.7px rgb(0,0,0);">ZUID-ITALIË</h2>
+
+                                               
+<h2
+  class="heroCarousel__textContainerTitle line1" style="text-shadow: 1.7px 3.0px 1.7px rgb(0,0,0);"></h2>
+
+                                               
+<h2
+  class="heroCarousel__textContainerTitle line3"
+    style="text-shadow: 2.0px 1.0px 1.0px rgb(0,0,0);"> VANAF<span
+    class="heroCarousel__textContainerTitle line1" style="text-shadow: 1.7px 3.0px 1.7px rgb(0,0,0);"> €114</span> RETOUR</h2>
+
+
+                                                               
+                                                               
+<div
+  class="heroCarousel__textContainerButton" style="text-shadow: 2.0px 1.0px 1.0px rgb(0,0,0);">　BOEK NU　</div>
+			
+		
+			
+		</div>		
+	
+</a>
+</li>
+
+<!-- 						</li> -->
+					
+				</ul>
+					
+				<div class="heroCarousel__next"></div>
+				<div class="heroCarousel__prev"></div>
+			</div>	
+		
+		
+</section>
+
+
+
+
+<section id="main-content" class="mod goUp">
+    
+	
+	<div class="destinationCarousel">
+
+
+<div class="destinationCarousel__header">
+	<article id="editorialAreaOffersNote" class="editorialArea">
+		<p class="cq-text-placeholder-ipe" data-emptytext="Doppio click per editare">
+	
+	
+	
+</p>
+
+
+	
+    
+
+
+
+
+	</article>
+	<article id="editorialAreaOffers" class="specialOffers__notify editorialArea">
+		<p class="cq-text-placeholder-ipe" data-emptytext="Doppio click per editare">
+	
+	
+	
+</p>
+
+
+	
+    
+
+
+
+
+	</article>
+	<div class="destinationCarousel__headerLeft">
+		<h3 class="destinationCarousel__title">SPECIALE AANBIEDINGEN VAN:</h3>
+		<div id="partialListCities" class="destinationCarousel__select customSelect">
+			
+		</div>
+	</div>
+	<div class="destinationCarousel__headerRight">
+		
+		<a class="destinationCarousel__link" href="/nl_nl/offers.html" target="_self">BESTEMMINGEN EN AANBIEDINGEN &gt;</a>
+		
+		
+		<span class="hidden" id="wcag-allDestination">Click here to see all destinations </span>
+		
+		
+	</div> 
+</div>
+<div id="partialContentListOfferte" style="position:relative;" class="destinationCarousel__listContainer">	
+	<!-- Partial Content -->
+    <div class="overlayLoading" style="display:none"> </div>
+</div>
+<div>
+	
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-lista-offerte-embed.min.js"></script>
+
+
+
+</div>
+
+
+<div class="destinationCarousel__next"></div>
+<div class="destinationCarousel__prev"></div></div>
+
+	<div class="tabsInfo j-infowidget">
+
+
+<script type="text/javascript">
+	var webCheckinBaseUrlCheckin = "https://check-in.alitalia.com/webcheckin";
+	var webCheckinBaseUrlCheckinRedirectHandler = "/NewCheckin/NewAjaxSearchRedirect";
+	var webCheckinBaseUrlCheckinSearchHandler = "/NewCheckin/NewAjaxSearch";
+	var webCheckinBaseUrlMyFlight = "https://booking.alitalia.com/mmb";
+	var webCheckinBaseUrlMyFlightSearchHandler = "/Flight/AjaxSearchReplyView";
+	var webCheckinBaseUrlMyFlightRedirectHandler = "/Flight/AjaxSearchReplyView";
+	var boxLoginRedirect = "/content/alitalia/alitalia-nl/nl/manage-my-booking/my-flights.html";
+</script>
+<h2 class="bigtitle">Bereid uw reis voor</h2>
+
+<ul class="tabsInfo__nav" role="tablist">
+	<li class="tabsInfo__navItem j-infowidget-tab" role="tab" id="tabInfo__tab--1">
+		
+		<a href="javascript:;">Inchecken</a>
+		
+	</li><!--			
+	--><li role="tab" id="tabInfo__tab--2" class="tabsInfo__navItem j-infowidget-tab">
+		
+		<a href="javascript:;">Mijn boeking</a>
+		
+	</li><!--			
+	--><li role="tab" id="tabInfo__tab--3" class="tabsInfo__navItem j-infowidget-tab">
+		
+		<a href="javascript:;">Vluchtinfo</a>
+		
+	</li>
+</ul>
+
+
+<div class="tabsInfo__content">
+	<ul class="tabsInfo__navSmart">
+	
+		<!-- CHECK-IN -->
+		
+		<!-- CHECK-IN -->
+		
+		<li class="j-infowidget-accordion tabsInfo__paneWrapper" data-href="">
+			<div class="tabsInfo__navItem tab1 j-infowidget-header">
+				<a href="#tabInfo__tabPanel--1" data-tab="0">Inchecken</a>
+			</div>
+			
+			<div class="tabsInfo__pane" role="tabpanel" id="tabInfo__tabPanel--1" data-tab="0">
+				 
+<div class="j-accordions" role="tablist" id="accordion1" data-atleast="true" data-sync="true">
+	<div id="checkin_search" class="j-accordion tabsInfoAccordion active">
+		<h2 class="tabsInfoAccordion__header j-accordion-header" id="accordion1_tab1" aria-selected="false">
+			<a href="#accordion1_panel1">Zoeken met boekings- of ticketcode</a>
+		</h2>
+		<div class="tabsInfoAccordion__body j-accordion-body" role="tabpanel" id="accordion1_panel1" aria-labelledby="accordion1_tab1" aria-hidden="true">
+			<form action="/content/alitalia/alitalia-nl/nl/home-page.preparaviaggiosubmit" method="POST" id="checkInSearch">
+			<input type="hidden" name="formType" value="CHECK_IN">
+			<div class="tabsInfo__accordionPanel">
+				<div class="tabsInfo__inputRow halfOnTablet">
+					<label class="fullBlock" for="checkin__code" id="checkin__code--label">preparaViaggio.code.label</label>
+					
+					<input class="fullBlock " type="text" id="checkin__code" aria-labelledby="checkin__code--label" name="code" placeholder="bijv. ECJ670 of 07654378900" required aria-required="true"/>
+					
+				</div><!--						    	
+				--><div class="tabsInfo__inputRow halfOnTablet">
+					<div class="tabsInfo__inputBlock">
+						<label class="fullBlock" for="checkin__name" id="checkin__name--label">Voornaam</label>
+						
+						
+						<input class="fullBlock " type="text" id="checkin__name" aria-labelledby="checkin__name--label" name="name" placeholder="Voornaam" required aria-required="true"/>
+						
+					</div><!--									
+					--><div class="tabsInfo__inputBlock">
+						
+						<label class="fullBlock" for="checkin__surname" id="checkin__surname--label">Achternaam</label>
+						
+						<input class="fullBlock " type="text" id="checkin__surname" aria-labelledby="checkin__surname--label" name="surname" placeholder="Achternaam" required aria-required="true"/>
+						
+					</div>
+				</div>
+			</div>
+			<input type="submit" value="" class="hidden">
+			</form>
+			<!-- ERRORE -->
+			<a class="form__errorIcon" href="#errorField_ins" aria-describedby="errorField_ins"><span class="hidden">Er is helaas een fout opgetreden tijdens het zoeken. Probeer het nogmaals.</span></a>
+			<div class="form__errorField" id="errorField_ins" style="display:none">
+					Er is helaas een fout opgetreden tijdens het zoeken. Probeer het nogmaals.			
+			</div>
+			<div class="tabsInfo__wrapperSubmit">
+				<div class="tabsInfo__buttonCover">					
+					
+					<a class="fifthButton checkInHomePageButton" href="#" id="checkInSubmit">
+						<span>Zoeken</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<hr class="tabsInfoAccordion__hr"/>
+	<div id="checkin_login" class="j-accordion tabsInfoAccordion">
+		<h2 class="tabsInfoAccordion__header j-accordion-header" id="accordion1_tab2">
+			<a href="#accordion1_panel2">Zoeken met MilleMiglia-code</a>
+		</h2>
+		<div class="tabsInfoAccordion__body j-accordion-body" role="tabpanel" id="accordion1_panel2" aria-labelledby="accordion1_tab2" aria-hidden="true" aria-selected="false">
+			<form action="/content/alitalia/alitalia-nl/nl/home-page.preparaviaggiosubmit" method="POST" id="checkInLogInSearch">
+			<input type="hidden" name="formType" value="CHECK_IN_LOGIN">
+			<div class="tabsInfo__inputRow halfOnTablet">
+				<div class="tabsInfo__inputBlock">
+					<label class="fullBlock" for="checkin_code" id="checkin__name__login--label">MilleMiglia-code</label>
+					<input class="fullBlock " type="text" id="checkin_login_code" aria-labelledby="checkin__name__login--label" name="code" placeholder="MilleMiglia-code" required aria-required="true">
+				</div><!--									
+				--><div class="tabsInfo__inputBlock">
+					<label class="fullBlock" for="checkin_login_surname" id="checkin__surname__login--label">Achternaam</label>
+					<input class="fullBlock " type="text" id="checkin_login_surname" aria-labelledby="checkin__surname__login--label" name="surname" placeholder="Achternaam" required aria-required="true">
+				</div>
+			</div><div id="captcha_checkin" class="tabsInfo__inputRow halfOnTablet j-showCaptcha" style="dispaly:none">
+				<!-- LOADED via AJAX -->
+			</div>
+			<input type="submit" value="" class="hidden">
+			
+			</form>
+			<div class="tabsInfo__wrapperSubmit">
+				<div class="tabsInfo__buttonCover">
+					<a class="fifthButton" id="checkInLoginSubmit" href="javascript:void(0);">
+						<span>Zoeken</span>
+					</a>
+				</div>
+			</div>
+			<div class="errorOverlay j-loginError j-hideOnCLick">
+				<span class="close">&times;</span>
+				<p class="errorOverlay__text">
+					Ongeldige aanmeldgegevens
+				</p>
+			</div>
+			<div class="errorOverlay j-captchaUserLocked j-hideOnCLick">
+				<span class="close">&times;</span>
+				<p class="errorOverlay__text">
+					Je account is tijdelijk opgeschort. Probeer het opnieuw in 15 minuten.
+				</p>
+		</div>
+	</div>
+	</div>
+	<div id="checkin_user" class="j-accordion tabsInfoAccordion" style="display:none;">
+		<h3 class="tabsInfoAccordion__header j-accordion-header" id="accordion1_tab3">
+			<a href="#accordion1_panel3">WELKOM
+				<span id="checkin_username"></span>
+			</a>
+		</h3>
+		<div class="tabsInfoAccordion__body j-accordion-body" role="tabpanel" id="accordion1_panel3" aria-labelledby="accordion1_tab3" aria-hidden="true">
+			<div class="tabsInfo__inputRow halfOnTablet">
+				<div class="editorialArea">
+					<div class="tabsInfo__title">
+						<span class="i-plane"></span>
+						<span class="checkin_empty">
+							ER ZIJN GEEN VLUCHTEN GEVONDEN DIE GEKOPPELD ZIJN AAN UW MILLEMIGLIA CODE
+							<br/><br/>
+							ZOEK OP PNR- OF TICKETNUMMER NAAR DE VLUCHT
+						</span>
+						<span style="display:none" class="checkin_full">
+							ER ZIJN VLUCHTEN BESCHIKBAAR VOOR INCHECKEN
+						</span>
+					</div>
+					<div class="checkin_list"></div>
+				</div>
+				<div class="tabsInfo__buttonCover checkin_full">
+					<a id="checkin_submit" class="fifthButton" href="#" style="display:none">
+						<span>Invoeren</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+			</div>
+		</li>
+
+		<!-- I MIEI VOLI -->
+		<li class="j-infowidget-accordion tabsInfo__paneWrapper">
+			<div class="tabsInfo__navItem tab2 j-infowidget-header">
+				<a href="#tabInfo__tabPanel--2" data-tab="1">Mijn boeking</a>
+			</div>
+			<div class="tabsInfo__pane" role="tabpanel" id="tabInfo__tabPanel--2" data-tab="1">
+				<div class="j-accordions" role="tablist" id="accordion2" data-atleast="true" data-sync="true">
+	<div id="myflight_search" class="j-accordion tabsInfoAccordion active">
+		<div class="tabsInfoAccordion__header j-accordion-header" id="accordion2_tab1">
+			<a href="#accordion1_panel1">Zoeken met boekingscode</a>
+		</div>
+		<div class="tabsInfoAccordion__body j-accordion-body" role="tabpanel" id="accordion4_panel1" aria-labelledby="accordion2_tab1" aria-hidden="true">
+		<form action="/content/alitalia/alitalia-nl/nl/home-page.preparaviaggiosubmit" method="POST" id="myFlightSearch">
+		<input type="hidden" name="formType" value="MIEI_VOLI">
+			<div class="tabsInfo__accordionPanel">
+				<div class="tabsInfo__inputRow halfOnTablet">
+					<label class="fullBlock" for="mieivoli__code" id="mieivoli__code--label">preparaViaggio.code.label</label>
+					
+					
+					<input class="fullBlock " type="text" id="mieivoli__code" aria-labelledby="mieivoli__code--label" name="code" placeholder="Bijv. ECJGHA" required aria-required="true"/>
+					
+				</div><!--						    	
+				--><div class="tabsInfo__inputRow halfOnTablet">
+					<div class="tabsInfo__inputBlock">
+						
+						<label class="fullBlock" for="mieivoli__name" id="mieivoli__name--label">Voornaam</label>
+																
+							<input class="fullBlock " type="text" id="mieivoli__name" aria-labelledby="mieivoli__name--label" name="name" placeholder="Voornaam" required aria-required="true"/>
+					
+					</div><!--									
+					--><div class="tabsInfo__inputBlock">
+						<label class="fullBlock" for="mieivoli__surname" id="mieivoli__surname--label">Achternaam</label>
+						
+						
+						<input class="fullBlock " type="text" id="mieivoli__surname" aria-labelledby="mieivoli__surname--label" name="surname" placeholder="Achternaam" required aria-required="true"/>
+						
+					</div>
+				</div>
+			</div>
+			<input type="submit" value="" class="hidden">
+			</form>
+			<!-- ERRORE -->
+			<a class="form__errorIcon" href="#errorField_ins" aria-describedby="errorField_ins"><span class="hidden">Er is geen vlucht gevonden met de gegevens die u hebt ingevoerd. Probeer het opnieuw</span></a>
+			<div class="form__errorField" id="errorField_ins" style="display:none">
+					Er is geen vlucht gevonden met de gegevens die u hebt ingevoerd. Probeer het opnieuw			
+			</div>
+			<div class="tabsInfo__wrapperSubmit">
+				<div class="tabsInfo__buttonCover">
+					
+					<a class="fifthButton" href="#" id="myFlightSubmit">
+						<span>Zoeken</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+			</div>
+		</li>
+		
+		<!-- INFO VOLI -->
+		<li class="j-infowidget-accordion tabsInfo__paneWrapper">
+			<div class="tabsInfo__navItem tab3 j-infowidget-header">
+				<a href="#tabInfo__tabPanel--3" data-tab="2">Vluchtinfo</a>
+				
+			</div>
+			<div class="tabsInfo__pane" role="tabpanel" id="tabInfo__tabPanel--3" data-tab="2">
+				<div class="j-accordions" role="tablist" id="accordion3" data-atleast="true" data-sync="true">
+					<div class="j-accordion tabsInfoAccordion active">
+						<div class="tabsInfoAccordion__header j-accordion-header" id="accordion3_tab1">
+							<a href="#accordion1_panel1">Vluchtstatus</a>
+						</div>
+						<div class="tabsInfoAccordion__body j-accordion-body" role="tabpanel" id="accordion3_panel1" aria-labelledby="accordion3_tab1" aria-hidden="true">
+							<form action="/content/alitalia/alitalia-nl/nl/home-page.preparaviaggiosubmit" method="POST" id="flight-info-submit">
+								<div class="tabsInfo__accordionPanel">
+									<div class="tabsInfo__inputRow tabInfo__inputRow inputIcon">
+										<label class="fullBlock visibleLabel" for="infovoli__numero" id="AZ--label">AZ</label>
+									 	<input type="hidden" id="formType" name="formType" value="STATO_VOLO"/>
+										<input class="fullBlock visibleLabel " type="text" id="infovoli__numero" aria-labelledby="AZ--label" name="numeroVolo" placeholder="Vluchtnummer" required aria-required="true" data-validation="isNumeroVolo#;#isNotEmpty" data-messages="Ongeldige vluchtnummer ingevoerd#;#Het veld vluchtnummer is verplicht"/>
+										
+									
+									</div><div class="tabsInfo__inputRow">
+										<div class="tabsInfo__inputBlock inputIcon">
+											
+											<label class="fullBlock" for="flightStatusDatePicker" id="flightStatusDatePicker--label">Vertrekdatum</label>
+										
+											<input class="fullBlock" type="text" id="flightStatusDatePicker" aria-labelledby="flightStatusDatePicker--label" name="dataPartenza" placeholder="Vertrekdatum" required aria-required="true"/>
+										
+										</div>
+									</div>
+								</div>
+								<div class="tabsInfo__wrapperSubmit">
+									<div class="tabsInfo__buttonCover">
+										<a class="fifthButton j-ajaxLoad-withCallback" data-overlayclass="flyoutAirportDetail customOverlay" data-callback="onTTFSTrackingViewEvent" href="https://www.alitalia.com/nl_nl/special-pages/flight-info.html" id="infoVoliStatoLoad" style="display:none">&nbsp;</a> 
+										
+										<input class="fifthButton" id="infoVoliStatoButton" type="submit" value="Zoeken"/>
+							
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<hr class="tabsInfoAccordion__hr"/>
+					<div class="j-accordion tabsInfoAccordion">
+						<div class="tabsInfoAccordion__header j-accordion-header" id="accordion3_tab2">
+							<a href="#accordion1_panel2">Dienstregeling</a>
+						</div>
+						<div class="tabsInfoAccordion__body j-accordion-body" role="tabpanel" id="accordion3_panel2" aria-labelledby="accordion3_tab2" aria-hidden="true">
+							<form action="/nl_nl/booking/flight-info-list.html" method="GET" id="flight-info-list-submit">
+								<input type="hidden" id="formTypeList" name="formType" value="ORARI"/>
+								<div class="tabsInfo__inputRow">
+									<div class="tabsInfo__inputBlock">
+										<label class="fullBlock" for="infovoli_departures" id="infovoli_departures--label">Luchthaven van vertrek</label>
+										<input class="fullBlock " type="text" id="infovoli_departures" aria-labelledby="infovoli_departures--label" name="infovoli_departures" placeholder="Luchthaven van vertrek" required aria-required="true">
+									</div><div class="tabsInfo__inputBlock">
+										<label class="fullBlock" for="infovoli_arrival" id="infovoli_arrival--label">Aankomst luchthaven</label>
+										<input class="fullBlock " type="text" id="infovoli_arrival" aria-labelledby="infovoli_arrival--label" name="infovoli_arrival" placeholder="Aankomst luchthaven" required aria-required="true">
+									</div>
+								</div>
+								<div class="tabsInfo__inputRow">
+									<div class="tabsInfo__inputBlock inputIcon">
+										<label class="fullBlock" for="flightStatusDatePicker2" id="flightStatusDatePicker2--label">Vertrekdatum</label>
+										<input class="fullBlock " type="text" id="flightStatusDatePicker2" aria-labelledby="flightStatusDatePicker2--label" name="dataPartenza" placeholder="Vertrekdatum" required aria-required="true">
+									</div>
+								</div>
+								<div class="tabsInfo__wrapperSubmit">
+									<div class="tabsInfo__buttonCover">
+										<input type="submit" class="fifthButton" id="infoVoliOrariButton" value="Zoeken"/>
+									</div>
+								</div>
+								<input type="hidden" id="infovoli_origin" name="origin"/>
+								<input type="hidden" id="infovoli_destination" name="destination"/> 
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+		<div id="widgetOverlay" class="overlayLoading" style="display: none"> </div>
+	</ul>
+</div>
+
+<div class="waitingPage j-waitingPage" data-waitingTime="1000" data-pageUrl="#">
+	<div class="waitingPageWrapper waitingPagePagamento">
+		<p class="waitingPageWrapper__introPagamento">
+			De weergegeven PNR kan afwijken van de PNR die u hebt.
+		</p>
+		<div class="waitingPage__loaderMobile">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+
+	</div>
+</div>
+
+<div>
+	
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-homepage-preparaviaggio-embed.min.js"></script>
+
+
+
+</div>
+
+<div>
+	
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-homepage-preparaviaggio-ssw-embed.min.js"></script>
+
+
+
+</div>
+</div>
+
+</section>
+
+
+
+
+    
+    
+    
+    <div class="ghost">
+
+</div>
+
+
+    
+    
+    
+    <div class="ghost">
+
+</div>
+
+
+    
+    
+    
+    <div class="boxNewsOffer gridA">
+<div class="mod">
+	<div><body>
+	<div class="brick--allnews">
+
+
+<div class="box__content--news">
+	<div class="box__news">
+		<div class="newsBox__listNewsHeader">
+			
+			<div class="bigtitle">NIEUWS</div>
+			
+			
+			<a class="newsBox__listNewsHeaderLink" href="#"></a>
+			
+		</div>
+		<ul class="newsBox__listNewsBody">
+			<li class="newsBox__listNewsItem">
+				<a class="newsBox__listNewsItemLink" href="/nl_nl/fly-alitalia/news-and-activities/news/puntualita-alitalia.html" target="_self">
+					
+					<h2 class="newsBox__listNewsItemTitle">ALITALIA DE DERDE MEEST PUNCTUELE AIRLINE VAN EUROPA</h2>
+					
+					<p class="newsBox__listNewsItemText">Meer</p>
+				</a>
+			</li>
+			<li class="newsBox__listNewsItem">
+				<a class="newsBox__listNewsItemLink" href="/nl_nl/fly-alitalia/news-and-activities/news/flight-schedule-info.html" target="_self">
+					
+					<h2 class="newsBox__listNewsItemTitle">VLUCHT SCHEMA EN INFORMATIE</h2>
+					
+					<p class="newsBox__listNewsItemText">Meer</p>
+				</a>
+			</li>
+			<li class="newsBox__listNewsItem">
+				<a class="newsBox__listNewsItemLink" href="/nl_nl/fly-alitalia/news-and-activities/news/check-in-terminal-1.html" target="_self">
+					
+					<h2 class="newsBox__listNewsItemTitle">CHECK-IN OPERATIONS MOVING TO TERMINAL 1</h2>
+					
+					<p class="newsBox__listNewsItemText">Rome Fiumicino luchthaven</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+</div>		
+	
+</body></div>		
+	<div class="brick box--modOne">
+    
+
+
+	
+	<a class="box__content" href="/nl_nl/fly-alitalia/news-and-activities/new-flights/rome-delhi.html" target="_self">
+		<div class="verticalAlignMiddle">
+			<div class="box__textContainer">
+			
+				
+				
+				
+					
+					<p class="box__type big" style="color: rgba(255,255,255,1.00);">NIEUWE VLUCHTEN</p>
+					
+					<h2 class="box__title" style="color: rgba(255,255,255,1.00);">
+						<span class="line2">
+							NEW DELHI
+						</span>
+					</h2>
+					<h2 class="box__description">
+						<span class="box__description-text" style="color: rgba(255,255,255,1.00);">
+							VANAF
+						</span>
+						<span class="box__description-price" style="color: rgba(255,255,255,1.00);">
+							€395
+						</span>
+						<span class="box__description-subtitle" style="color: rgba(255,255,255,1.00);">
+							RETOUR
+						</span>
+					</h2>
+					
+				
+			</div>
+		</div>
+	</a> 
+	
+	
+	
+		<div class="binding-social-share-ui hidden">
+			<input type="hidden" class="socialShare_title" value="NIEUWE VLUCHTEN  NEW DELHI VANAF €395"/>
+			<input type="hidden" class="socialShare_description" value="RETOUR"/>
+			<input type="hidden" class="socialShare_linkBack" value="/content/alitalia/alitalia-nl/nl/fly-alitalia/news-and-activities/new-flights/rome-delhi"/>
+			
+<input type="hidden" name="socialShare_imageUrl" class="socialShare_imageUrl" value="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/destinazioni/delhi/jcr:content/box.img.jpg/1503498577208.jpg"/>
+			<a class="shareButton social-share-button" style="z-index: 100;" href="#" onclick="return onSocialShareButtonClick(event);"><span class="i-share">
+				<em class="isVisuallyHidden">Social Share</em>
+				</span></a>
+		</div>
+	
+
+	
+	<img class="box__image" src="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/destinazioni/delhi/_jcr_content/box.img.jpg/1503498577208.jpg" alt="Offer Image">
+
+
+    
+    
+</div>
+    <div class="brick box--modOne">
+    
+
+
+	
+	<a class="box__content" href="/nl_nl/fly-alitalia/news-and-activities/new-flights/rome-male.html" target="_self">
+		<div class="verticalAlignMiddle">
+			<div class="box__textContainer">
+			
+				
+				
+				
+					
+					<p class="box__type big" style="color: rgba(255,255,255,1.00);">NIEUWE VLUCHTEN</p>
+					
+					<h2 class="box__title" style="color: rgba(255,255,255,1.00);">
+						<span class="line2">
+							MALÉ
+						</span>
+					</h2>
+					<h2 class="box__description">
+						<span class="box__description-text" style="color: rgba(255,255,255,1.00);">
+							VANAF
+						</span>
+						<span class="box__description-price" style="color: rgba(255,255,255,1.00);">
+							€617
+						</span>
+						<span class="box__description-subtitle" style="color: rgba(255,255,255,1.00);">
+							RETOUR
+						</span>
+					</h2>
+					
+				
+			</div>
+		</div>
+	</a> 
+	
+	
+	
+		<div class="binding-social-share-ui hidden">
+			<input type="hidden" class="socialShare_title" value="NIEUWE VLUCHTEN  MALÉ VANAF €617"/>
+			<input type="hidden" class="socialShare_description" value="RETOUR"/>
+			<input type="hidden" class="socialShare_linkBack" value="/content/alitalia/alitalia-nl/nl/fly-alitalia/news-and-activities/new-flights/rome-male"/>
+			
+<input type="hidden" name="socialShare_imageUrl" class="socialShare_imageUrl" value="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/destinazioni/male/jcr:content/box.img.jpg/1501833251969.jpg"/>
+			<a class="shareButton social-share-button" style="z-index: 100;" href="#" onclick="return onSocialShareButtonClick(event);"><span class="i-share">
+				<em class="isVisuallyHidden">Social Share</em>
+				</span></a>
+		</div>
+	
+
+	
+	<img class="box__image" src="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/destinazioni/male/_jcr_content/box.img.jpg/1501833251969.jpg" alt="Offer Image">
+
+
+    
+    
+</div>
+    <div class="brick box--modOne">
+    
+
+
+	
+	<a class="box__content" href="/nl_nl/offers/young-offers.html" target="_self">
+		<div class="verticalAlignMiddle">
+			<div class="box__textContainer">
+			
+				
+				
+				
+					
+					
+					<h2 class="box__title big" style="color: rgba(255,255,255,1.00);">
+						<span class="line1">
+							JEUGDTARIEVEN
+						</span>
+					</h2>
+					
+					
+					
+				
+			</div>
+		</div>
+	</a> 
+	
+	
+	
+		<div class="binding-social-share-ui hidden">
+			<input type="hidden" class="socialShare_title" value=" JEUGDTARIEVEN   "/>
+			<input type="hidden" class="socialShare_description"/>
+			<input type="hidden" class="socialShare_linkBack" value="/content/alitalia/alitalia-nl/nl/offers/young-offers"/>
+			
+<input type="hidden" name="socialShare_imageUrl" class="socialShare_imageUrl" value="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/promo-young/jcr:content/box.img.jpg/1502205542410.jpg"/>
+			<a class="shareButton social-share-button" style="z-index: 100;" href="#" onclick="return onSocialShareButtonClick(event);"><span class="i-share">
+				<em class="isVisuallyHidden">Social Share</em>
+				</span></a>
+		</div>
+	
+
+	
+	<img class="box__image" src="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/promo-young/_jcr_content/box.img.jpg/1502205542410.jpg" alt="JEUGDTARIEVEN">
+
+
+    
+    
+</div>
+    <div class="brick box--modOne">
+    
+
+
+	
+	<a class="box__content" href="https://www.alitalia.com/nl_nl/offers.html#point" target="_blank">
+		<div class="verticalAlignMiddle">
+			<div class="box__textContainer">
+			
+				
+				
+				
+					
+					
+					
+					<h2 class="box__title" style="color: rgba(255,255,255,1.00);">
+						<span class="line2">
+							MEXICO
+						</span>
+					</h2>
+					<h2 class="box__description">
+						<span class="box__description-text" style="color: rgba(255,255,255,1.00);">
+							VANAF
+						</span>
+						<span class="box__description-price" style="color: rgba(255,255,255,1.00);">
+							€636
+						</span>
+						<span class="box__description-subtitle" style="color: rgba(255,255,255,1.00);">
+							RETOUR
+						</span>
+					</h2>
+					
+				
+			</div>
+		</div>
+	</a> 
+	
+	
+	
+		<div class="binding-social-share-ui hidden">
+			<input type="hidden" class="socialShare_title" value="  MEXICO VANAF €636"/>
+			<input type="hidden" class="socialShare_description" value="RETOUR"/>
+			<input type="hidden" class="socialShare_linkBack" value="https://www.alitalia.com/nl_nl/offers.html#point"/>
+			
+<input type="hidden" name="socialShare_imageUrl" class="socialShare_imageUrl" value="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/destinazioni/Messico/jcr:content/box.img.jpg/1503325715479.jpg"/>
+			<a class="shareButton social-share-button" style="z-index: 100;" href="#" onclick="return onSocialShareButtonClick(event);"><span class="i-share">
+				<em class="isVisuallyHidden">Social Share</em>
+				</span></a>
+		</div>
+	
+
+	
+	<img class="box__image" src="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/destinazioni/Messico/_jcr_content/box.img.jpg/1503325715479.jpg" alt="Offer Image">
+
+
+    
+    
+</div>
+    <div class="brick box--modOne">
+    
+
+
+	
+	<a class="box__content" href="/nl_nl/offers.html#point" target="_self">
+		<div class="verticalAlignMiddle">
+			<div class="box__textContainer">
+			
+				
+				
+				
+					
+					
+					<h2 class="box__title" style="color: rgba(255,255,255,1.00);">
+						<span class="line1">
+							SANTIAGO
+						</span>
+					</h2>
+					
+					<h2 class="box__description">
+						<span class="box__description-text" style="color: rgba(255,255,255,1.00);">
+							VANAF
+						</span>
+						<span class="box__description-price" style="color: rgba(255,255,255,1.00);">
+							€696
+						</span>
+						<span class="box__description-subtitle" style="color: rgba(255,255,255,1.00);">
+							RETOUR
+						</span>
+					</h2>
+					
+				
+			</div>
+		</div>
+	</a> 
+	
+	
+	
+		<div class="binding-social-share-ui hidden">
+			<input type="hidden" class="socialShare_title" value=" SANTIAGO  VANAF €696"/>
+			<input type="hidden" class="socialShare_description" value="RETOUR"/>
+			<input type="hidden" class="socialShare_linkBack" value="/content/alitalia/alitalia-nl/nl/offers.html#point"/>
+			
+<input type="hidden" name="socialShare_imageUrl" class="socialShare_imageUrl" value="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/destinazioni/santiago-del-cile/jcr:content/box.img.jpg/1503325325331.jpg"/>
+			<a class="shareButton social-share-button" style="z-index: 100;" href="#" onclick="return onSocialShareButtonClick(event);"><span class="i-share">
+				<em class="isVisuallyHidden">Social Share</em>
+				</span></a>
+		</div>
+	
+
+	
+	<img class="box__image" src="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/destinazioni/santiago-del-cile/_jcr_content/box.img.jpg/1503325325331.jpg" alt="SANTIAGO">
+
+
+    
+    
+</div>
+</div>
+</div>
+
+
+    
+    
+    
+    <div class="boxNews"><div class="mod">
+	<div class="brick box--news">
+    
+    
+    
+
+
+
+
+
+	
+	<a class="box__content--below" href="/nl_nl/fly-alitalia/alitalia-for-companies/business-connect.html" target="_self">
+
+		<div class="verticalAlignMiddle">
+          <div class="box__textContainer">
+
+
+									
+				
+				
+				 
+
+				
+                <h2 class="box__title" style="color: ;">BUSINESSCONNECT</h2>
+					
+					<h3 class="box__description"><span class="box__description-text" style="color: ;">Hoe meer uw medewerkers vliegen, hoe meer uw bedrijf verdient.</span></h3>
+                
+					
+				
+				
+			</div>
+		</div>
+
+	</a>
+	
+	
+	
+		<div class="binding-social-share-ui hidden">
+			<input type="hidden" class="socialShare_title" value="BUSINESSCONNECT"/>
+			<input type="hidden" class="socialShare_description" value="Hoe meer uw medewerkers vliegen, hoe meer uw bedrijf verdient."/>
+			<input type="hidden" class="socialShare_linkBack" value="/content/alitalia/alitalia-nl/nl/fly-alitalia/alitalia-for-companies/business-connect"/>
+			
+<input type="hidden" name="socialShare_imageUrl" class="socialShare_imageUrl" value="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/businessconnect-redaz/jcr:content/box.img.jpg/1491376971581.jpg"/>
+			<a class="shareButton social-share-button" style="z-index: 100;" href="#" onclick="return onSocialShareButtonClick(event);"><span class="i-share">
+				<em class="isVisuallyHidden">Social Share</em>
+				</span></a>
+		</div>
+	
+
+	
+	<img class="box__image" src="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/businessconnect-redaz/_jcr_content/box.img.jpg/1491376971581.jpg" alt="BUSINESSCONNECT">
+
+</div>
+    <div class="brick box--news">
+    
+    
+    
+
+
+
+
+
+	
+	<a class="box__content--below" href="/nl_nl/fly-alitalia/check-in/online-check-in.html" target="_self">
+
+		<div class="verticalAlignMiddle">
+          <div class="box__textContainer">
+
+
+									
+				
+				
+				 
+
+				
+                <h2 class="box__title" style="color: ;">ONLINE INCHECKEN</h2>
+					
+					<h3 class="box__description"><span class="box__description-text" style="color: ;">Check in, kies uw stoel, koop een extra comfort stoel, comfortabel vanuit uw eigen huis.</span></h3>
+                
+					
+				
+				
+			</div>
+		</div>
+
+	</a>
+	
+	
+	
+		<div class="binding-social-share-ui hidden">
+			<input type="hidden" class="socialShare_title" value="ONLINE INCHECKEN"/>
+			<input type="hidden" class="socialShare_description" value="Check in, kies uw stoel, koop een extra comfort stoel, comfortabel vanuit uw eigen huis."/>
+			<input type="hidden" class="socialShare_linkBack" value="/content/alitalia/alitalia-nl/nl/fly-alitalia/check-in/online-check-in"/>
+			
+<input type="hidden" name="socialShare_imageUrl" class="socialShare_imageUrl" value="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/online-checkin/jcr:content/box.img.jpg/1485432515026.jpg"/>
+			<a class="shareButton social-share-button" style="z-index: 100;" href="#" onclick="return onSocialShareButtonClick(event);"><span class="i-share">
+				<em class="isVisuallyHidden">Social Share</em>
+				</span></a>
+		</div>
+	
+
+	
+	<img class="box__image" src="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/online-checkin/_jcr_content/box.img.jpg/1485432515026.jpg" alt="ONLINE INCHECKEN">
+
+</div>
+    <div class="brick box--news">
+    
+    
+    
+
+
+
+
+
+	
+	<a class="box__content--below" href="/nl_nl/special-pages/subscribe_mm_program.html?cod=32#" target="_self">
+
+		<div class="verticalAlignMiddle">
+          <div class="box__textContainer">
+
+
+									
+				
+				
+				 
+
+				
+                <h2 class="box__title" style="color: ;">Met mille miglia bevindt u zich al op grote hoogte </h2>
+					
+					<h3 class="box__description"><span class="box__description-text" style="color: ;">2000 bonus miles voor u  nu aanmelden online inschrijven</span></h3>
+                
+					
+				
+				
+			</div>
+		</div>
+
+	</a>
+	
+	
+	
+		<div class="binding-social-share-ui hidden">
+			<input type="hidden" class="socialShare_title" value="Met mille miglia bevindt u zich al op grote hoogte "/>
+			<input type="hidden" class="socialShare_description" value="2000 bonus miles voor u  nu aanmelden online inschrijven"/>
+			<input type="hidden" class="socialShare_linkBack" value="/content/alitalia/alitalia-nl/nl/special-pages/subscribe_mm_program.html?cod=32#"/>
+			
+<input type="hidden" name="socialShare_imageUrl" class="socialShare_imageUrl" value="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/mm-joinus/jcr:content/box.img.jpg/1487602378617.jpg"/>
+			<a class="shareButton social-share-button" style="z-index: 100;" href="#" onclick="return onSocialShareButtonClick(event);"><span class="i-share">
+				<em class="isVisuallyHidden">Social Share</em>
+				</span></a>
+		</div>
+	
+
+	
+	<img class="box__image" src="/content/alitalia/alitalia-nl/nl/alitalia-config/content-blocks/box/dimensione-1/mm-joinus/_jcr_content/box.img.jpg/1487602378617.jpg" alt="Met mille miglia bevindt u zich al op grote hoogte ">
+
+</div>
+</div>
+
+</div>
+
+
+
+
+
+    
+<footer class="footer">
+	<section class="prefooter">
+	<div class="mod"><div class="prefooter__box">
+	<div class="prefooter__title">
+		<span class="line1">NEEM CONTACT OP</span>
+		<span class="line2"></span>
+	</div>
+	<div class="prefooter__textContainer">
+		<div class="prefooter__textContainer">
+			<span class="text">Vanuit Italië:</span>
+			<span class="number">89 20 10</span>
+
+
+
+		  <a class="j-qtool prefooter__info" data-tooltiptitle="" data-tooltip="Via een vaste lijn, incl. btw: 64 cent/min, geen verbindingskosten.  Via mobiel, incl. btw: TIM, Vodafone en Tre (16 cent verbindingskosten + 95 cent/min); Wind (15 cent verbindingskosten + 98 cent/min)">
+				<span class="i-information"></span>
+				<span class="tooltip__text">Tol nummer</span>
+			</a>
+
+		</div>
+		<div class="prefooter__textContainer">
+			<span class="text">Vanuit Nederland:</span>
+			<span class="number"> 020 676 4479</span>
+		</div>
+	</div>
+</div>
+<div class="prefooter__box">
+	<div class="prefooter__title">NIEUWSBRIEF</div>
+	<p class="prefooter__subTitle--newsletter">Schrijf u in voor onze nieuwsbrief en blijf op de hoogte van het laatste nieuws over Alitalia.</p>
+	<a href="/nl_nl/special-pages/newsletter-subscribe.html" class="fourthButton--small prefooter__submit" target="_self"><span>AANMELDEN</span></a>
+</div>
+<div class="prefooter__box">
+	<div class="prefooter__textContainerBig">
+		<div class="prefooter__textContainerBig--block">
+			<div class="prefooter__title">SOCIAL MEDIA</div>
+			<div class="prefooter__subTitle">
+				<p>Volg ons op</p>
+			</div>
+			
+			<div class="prefooter__socialCover">
+                
+                
+				
+				
+					<a class="prefooter__social" href="https://www.facebook.com/Alitalia-159072176449/?fref=ts" style="background-image: url(/content/dam/alitalia/facebook.PNG);" target="_blank"><em class="isVisuallyHidden">contatto</em></a>
+				
+					<a class="prefooter__social" href="https://www.twitter.com/Alitalia?lang=it" style="background-image: url(/content/dam/alitalia/twitter.PNG);" target="_blank"><em class="isVisuallyHidden">contatto</em></a>
+				
+					<a class="prefooter__social" href="https://www.instagram.com/alitaliaofficial/" style="background-image: url(/content/dam/alitalia/00_tagliate_nuovo_sito/instagram_icon.png);" target="_blank"><em class="isVisuallyHidden">contatto</em></a>
+				
+					<a class="prefooter__social" href="https://www.linkedin.com/company/alitalia-compagnia-aerea-italiana-spa?trk=top_nav_home" style="background-image: url(/content/dam/alitalia/linkedin.png);" target="_blank"><em class="isVisuallyHidden">contatto</em></a>
+				
+					<a class="prefooter__social" href="https://www.youtube.com/user/AlitaliaOfficial" style="background-image: url(/content/dam/alitalia/youtube.png);" target="_blank"><em class="isVisuallyHidden">contatto</em></a>
+				
+			</div>
+			
+		</div>
+		<div class="prefooter__textContainerBig--block">
+			<div class="prefooter__title">MOBIELE APP</div>
+			<div class="prefooter__subTitle">Probeer nu de nieuwe mobiele app</div>
+			<div class="prefooter__phone">
+				<a class="prefooter__phoneIos" href="https://itunes.apple.com/us/app/alitalia/id377912556?l=it&ls=1&mt=8" target="_blank">
+					<span class="icon-appStore"><em class="isVisuallyHidden">Apple Store</em></span>
+				</a>
+				<a class="prefooter__phoneAndroid" href="https://play.google.com/store/apps/details?id=com.alitalia.mobile" target="_blank">
+					<span class="icon-googlePlay"><em class="isVisuallyHidden">Google Play Store</em></span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</section>
+<div class="footerSiteMap">
+	<div class="mod">
+		<div class="footer__openerBar j-openFooter">
+			clicca su <span class="open">apri</span><span class="close">chiudi</span> footer
+		</div>
+		<div class="footer__openerBar j-openFooter">
+	clicca su <span class="open">apri</span><span class="close">chiudi</span> footer
+</div>
+<div class="footer__row first">
+    	
+
+
+
+
+<nav class="footer__nav ">
+	<div class="footer__navTitle mobileExpendable">
+		<div class="verticalAlignBottom">
+			<a class="j-openFooterSections" href="javascript:;">
+            	<em>DE MEEST BEZOCHTE</em>
+            </a>
+            
+		</div>
+	</div>
+    <ul class="footer__navList">
+		<li class="footer__navListItem">
+			<a class="footer__navListLink" href="/nl_nl/offers/experience-italy/promotional-events.html" target="_self">Italië</a>
+			
+			
+		</li>
+	
+		<li class="footer__navListItem">
+			<a class="footer__navListLink" href="/nl_nl/offers.html#point" target="_self">Europa</a>
+			
+			
+		</li>
+	</ul>
+</nav>
+    	
+
+
+
+
+<nav class="footer__nav ">
+	<div class="footer__navTitle mobileExpendable">
+		<div class="verticalAlignBottom">
+			<a class="j-openFooterSections" href="javascript:;">
+            	<em>ASSISTENTIE</em>
+            </a>
+            
+		</div>
+	</div>
+    <ul class="footer__navList">
+		<li class="footer__navListItem">
+			<a class="footer__navListLink" href="/nl_nl/support/utilities.html" target="_self">Handige links</a>
+			
+			
+		</li>
+	
+		<li class="footer__navListItem">
+			<a class="footer__navListLink" href="/nl_nl/support/utilities/buy-online.html" target="_self">Koop Online</a>
+			
+			
+		</li>
+	
+		<li class="footer__navListItem">
+			<a class="footer__navListLink" href="/nl_nl/support/baggage-assistance.html" target="_self">Assistentie bagage</a>
+			
+			
+		</li>
+	
+		<li class="footer__navListItem">
+			<a class="footer__navListLink" href="/nl_nl/support/contact-assistance.html" target="_self">Contactgegevens en assistentie</a>
+			
+			
+		</li>
+	
+		<li class="footer__navListItem">
+			<a class="footer__navListLink" href="/nl_nl/info-voli.html" target="_self">Vluchtinfo</a>
+			
+			
+		</li>
+	
+		<li class="footer__navListItem">
+			<a class="footer__navListLink" href="https://www.alitalia.com/content/alitaliacareers/en/homepage.html" target="_blank">Alitalia Careers</a>
+			
+			
+		</li>
+	</ul>
+</nav>
+	
+
+
+	
+	
+		<nav class="footer__nav">
+			<div class="footer__navTitle mobileExpendable">
+				<div class="verticalAlignBottom">
+					
+					<a class="j-openFooterSections" href="javascript:;">
+						<em>Aanbod</em>
+					</a>
+				</div>
+			</div>
+			<ul class="footer__navList">
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/offers.html" target="_self">
+							Alle aanbiedingen
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/offers/all-offers/summer-destinations-2017.html" target="_self">
+							ZOMERBESTEMMINGEN
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/offers/young-offers.html" target="_self">
+							Jongeren tarieven
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="http://alitalia.city-discovery.com/it/" target="_blank">
+							Tours en activiteten
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="http://alitalia.maggiore.it/az/en/ota_index.html?tp_userid=web_az" target="_blank">
+							Rent a car
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/offers/group-reservation.html" target="_self">
+							Groepsaanvragen
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/offers/experience-italy.html" target="_self">
+							Ervaar Italië
+						</a>
+						
+					</li>
+					
+				
+			</ul>
+		
+		</nav>
+		
+	
+	
+		<nav class="footer__nav">
+			<div class="footer__navTitle mobileExpendable">
+				<div class="verticalAlignBottom">
+					
+					<a class="j-openFooterSections" href="javascript:;">
+						<em>Bestemmingen</em>
+					</a>
+				</div>
+			</div>
+			<ul class="footer__navList">
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="http://flights.alitalia.com/nl_nl/vluchten-naar-itali%C3%AB#.html" target="_blank">
+							Vluchten naar Italie
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="http://flights.alitalia.com/nl_nl/vluchten-naar-athene#.html" target="_blank">
+							Vluchten naar Athene
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="http://flights.alitalia.com/nl_nl/vluchten-naar-tirana#.html" target="_blank">
+							Vluchten naar Tirana
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="http://flights.alitalia.com/nl_nl/vluchten-naar-beijing#.html" target="_blank">
+							Vluchten naar Beijing
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="http://flights.alitalia.com/nl_nl/vluchten-naar-japan#.html" target="_blank">
+							Vluchten naar Japan
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="http://flights.alitalia.com/nl_nl/vluchten-naar-buenos-aires#.html" target="_blank">
+							Vluchten naar Buenos Aires
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="http://flights.alitalia.com/nl_nl/vluchten-naar-larnaca#.html" target="_blank">
+							Vluchten naar Larnaca
+						</a>
+						
+					</li>
+					
+				
+			</ul>
+		
+		</nav>
+		
+	
+	
+		<nav class="footer__nav">
+			<div class="footer__navTitle mobileExpendable">
+				<div class="verticalAlignBottom">
+					
+					<a class="j-openFooterSections" href="javascript:;">
+						<em>Vlucht</em>
+					</a>
+				</div>
+			</div>
+			<ul class="footer__navList">
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/fly-alitalia/alitalia-world.html" target="_self">
+							Alitalia Wereld
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/fly-alitalia/news-and-activities.html" target="_self">
+							Nieuws en artikelen
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/fly-alitalia/organize-your-trip.html" target="_self">
+							Uw reis organiseren
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/fly-alitalia/baggage.html" target="_self">
+							Bagage
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/fly-alitalia/check-in.html" target="_self">
+							Inchecken
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/fly-alitalia/at-the-airport.html" target="_self">
+							Op de luchthaven
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/fly-alitalia/travel-classes.html" target="_self">
+							Travel Classes
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/fly-alitalia/in-flight.html" target="_self">
+							Aan boord
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/fly-alitalia/additional-services.html" target="_self">
+							Extra Services
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/fly-alitalia/from-to-the-airport.html" target="_self">
+							Van en naar de luchthaven
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/fly-alitalia/alitalia-for-companies.html" target="_self">
+							Alitalia voor bedrijven
+						</a>
+						
+					</li>
+					
+				
+			</ul>
+		
+		</nav>
+		
+	
+	
+		<nav class="footer__nav">
+			<div class="footer__navTitle mobileExpendable">
+				<div class="verticalAlignBottom">
+					
+					<a class="j-openFooterSections" href="javascript:;">
+						<em>Millemiglia</em>
+					</a>
+				</div>
+			</div>
+			<ul class="footer__navList">
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/millemiglia/theprogram.html" target="_self">
+							Het programma
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/millemiglia/exclusive-club.html" target="_self">
+							Exclusive Clubs
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/millemiglia/alitalia-miles.html" target="_self">
+							Miles met Alitalia
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/millemiglia/partners-airlines.html" target="_self">
+							Miles met Partner maatschappijen
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/millemiglia/financial-partners.html" target="_self">
+							Miles met financiële Partners
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/millemiglia/other-partners.html" target="_self">
+							Miles met onze Partners
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/millemiglia/buy-miles.html" target="_self">
+							Miles kopen
+						</a>
+						
+					</li>
+					
+				
+				
+					<li class="footer__navListItem">
+						<a class="footer__navListLink" href="/nl_nl/millemiglia/news-and-promotions.html" target="_self">
+							Nieuws en aanbiedingen
+						</a>
+						
+					</li>
+					
+				
+			</ul>
+		
+		</nav>
+		
+	
+	
+	
+</div>
+		<div class="footer__row">
+
+
+
+
+
+	<nav class="footer__nav ">
+		<div class="footer__navTitle justLink">
+			<div class="verticalAlignBottom">
+				
+				<a href="http://corporate.alitalia.it/it/index.html" target="_blank"><em>ALITALIA CORPORATE</em></a>
+				
+			</div>
+		</div>
+	</nav>
+
+	<nav class="footer__nav ">
+		<div class="footer__navTitle justLink">
+			<div class="verticalAlignBottom">
+				
+				<a href="/nl_nl/fly-alitalia/alitalia-world/passenger-rights.html" target="_self"><em>PASSAGIERSRECHTEN</em></a>
+				
+			</div>
+		</div>
+	</nav>
+
+	<nav class="footer__nav ">
+		<div class="footer__navTitle justLink">
+			<div class="verticalAlignBottom">
+				
+				<a href="http://www.alitaliacargo.com/" target="_blank"><em>ALITALIA CARGO</em></a>
+				
+			</div>
+		</div>
+	</nav>
+
+	<nav class="footer__nav ">
+		<div class="footer__navTitle justLink">
+			<div class="verticalAlignBottom">
+				
+				<a href="/nl_nl/fly-alitalia/alitalia-for-companies.html" target="_self"><em>MAATSCHAPPIJEN</em></a>
+				
+			</div>
+		</div>
+	</nav>
+
+	</div>
+
+
+	</div>
+</div>
+<div class="footerLogoList">
+	<div class="mod">
+		
+
+
+	
+
+        
+
+
+	
+
+        
+
+
+	
+
+        
+
+
+	
+
+        
+
+
+	
+
+        
+
+
+	
+
+    </div>
+</div>
+
+
+<div class="footerLegal">
+	<div class="mod">
+
+
+	<a href="/nl_nl/special-pages/site-map.html" target="_self">Sitemap </a> | 
+
+	<a href="/nl_nl/special-pages/alitalia-privacy.html" target="_self">Privacybeleid </a> | 
+
+	<a href="/nl_nl/special-pages/accessibility.html" target="_self">Toegankelijkheid </a> | 
+
+	<a href="/nl_nl/special-pages/security.html" target="_self">Veiligheid </a> | 
+
+©2015 Alitalia P.IVA 13029381004 - Via A.Nassetti Pal.ALFA 00054 Fiumicino(RM)
+</div>
+
+</div>
+
+</footer>
+
+<div>
+	
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs.min.js"></script>
+
+
+
+</div>
+
+ 
+	
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-validation.min.js"></script>
+
+
+ 
+
+    
+    
+
+
+
+</div>
+<div class="pageLoaderWrapper j-pageLoader">
+	<div class="bigLoader">
+		<svg class="circular">
+			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+		</svg>
+	</div>
+</div>
+<!--  <sly data-sly-test="true"> <script src="https://alitalianps20.24survey.it/feedback24alitalia/js/initFeedback24.js"></script> </sly>  -->
+
+
+    
+<script type="text/javascript" src="/etc/designs/alitalia/clientlibs-analytics-thirdparty-embed.min.js"></script>
+
+
+ 
+
+<!-- Inclusione parte footer analytics -->
+<div><script type="text/javascript">_satellite.pageBottom();</script>
+</div>
+</body>
+</html>

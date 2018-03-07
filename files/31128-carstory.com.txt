@@ -1,0 +1,110 @@
+User-agent: *
+# The following disallows requests for data URIs and URLs not intended for indexing.
+Disallow: /clientSideError
+Disallow: /similarVehicles
+Disallow: /cache/
+Disallow: /listings/*
+
+# The following disallows new VDPs
+Disallow: /detail/new/*
+
+# This disallows concatenated strings, such as year or details.
+Disallow: /*,*
+
+# The following disallows most combinations of parameters. 
+Disallow: /*consumer-sort=
+Disallow: /*expired=
+Disallow: /*zip=
+Disallow: /*range=
+Disallow: /*multimake
+Disallow: /*transmission=
+Disallow: /*fuel=
+Disallow: /*exterior-color=
+Disallow: /*engine=
+Disallow: /*drivetype=
+Disallow: /*details=
+Disallow: /*&body-style=
+Disallow: /*badge_labels=
+Disallow: /*mileage=
+Disallow: /*mpg=
+Disallow: /*&price=
+Disallow: /*derived_attributes=
+Disallow: /*condition=
+Disallow: /cars/new/*year=*
+
+# The following allows body type combined with hybrid and diesel fuels.
+Allow: /*?body-style=sedan&fuel=hybrid$
+Allow: /*?body-style=wagon&fuel=hybrid$
+Allow: /*?body-style=hatchback&fuel=hybrid$
+Allow: /*?body-style=coupe&fuel=hybrid$
+Allow: /*?body-style=convertible&fuel=hybrid$
+Allow: /*?body-style=pickup&fuel=hybrid$
+Allow: /*?body-style=suv&fuel=hybrid$
+Allow: /*?body-style=minivan&fuel=hybrid$
+Allow: /*?body-style=sedan&fuel=diesel$
+Allow: /*?body-style=wagon&fuel=diesel$
+Allow: /*?body-style=pickup&fuel=diesel$
+Allow: /*?body-style=suv&fuel=diesel$
+Allow: /*?body-style=van&fuel=diesel$
+
+# The following allows body type combined with all wheel drive or four wheel drive.
+Allow: /*?body-style=sedan&drivetype=awd$
+Allow: /*?body-style=wagon&drivetype=awd$
+Allow: /*?body-style=hatchback&drivetype=awd$
+Allow: /*?body-style=coupe&drivetype=awd$
+Allow: /*?body-style=convertible&drivetype=awd$
+Allow: /*?body-style=pickup&drivetype=awd$
+Allow: /*?body-style=suv&drivetype=awd$
+Allow: /*?body-style=minivan&drivetype=awd$
+Allow: /*?body-style=van&drivetype=awd$
+Allow: /*?body-style=sedan&drivetype=4wd$
+Allow: /*?body-style=wagon&drivetype=4wd$
+Allow: /*?body-style=hatchback&drivetype=4wd$
+Allow: /*?body-style=pickup&drivetype=4wd$
+Allow: /*?body-style=suv&drivetype=4wd$
+Allow: /*?body-style=minivan&drivetype=4wd$
+
+# The following allows body type combined with price.
+Allow: /*?body-style=sedan&price=*000$
+Allow: /*?body-style=wagon&price=*000$
+Allow: /*?body-style=hatchback&price=*000$
+Allow: /*?body-style=coupe&price=*000$
+Allow: /*?body-style=convertible&price=*000$
+Allow: /*?body-style=pickup&price=*000$
+Allow: /*?body-style=suv&price=*000$
+Allow: /*?body-style=minivan&price=*000$
+Allow: /*?body-style=van&price=*000$
+Allow: /*?fuel=hybrid&price=*000$
+Allow: /*?fuel=diesel&price=*000$
+Allow: /*?drivetype=awd&price=*000$
+Allow: /*?drivetype=4wd&price=*000$
+
+# This section allows certain single-parameter URLs
+Allow: /*?badge_labels=certified_pre_owned$
+Allow: /*?fuel=diesel$
+
+Allow: /*.js
+Allow: /*.css
+Disallow: /*.php
+Disallow: /*location-super_duty
+
+User-agent: Yandex
+Crawl-delay: 2
+Clean-param: consumer-sort /*
+Clean-param: range /*
+Clean-param: condition /*
+Clean-param: features /*
+Clean-param: expired /*
+Disallow: /*.php
+Disallow: /*price=
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: IA_Archiver
+Disallow: /
+
+Sitemap: https://www.carstory.com/sitemap_index.xml.gz

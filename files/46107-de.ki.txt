@@ -1,0 +1,542 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de">
+<head>
+<title>de.ki - Herzlich Willkommen</title>
+<meta name="description" content="de.ki - Deine de Domain" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="Author" content="QE GmbH & Co. KG" />
+<link rel="icon" href="/static/images/icons/favicon.ico" type="image/icon" />
+<link rel="Stylesheet" type="text/css" href="/static/css/smoothness/jquery-ui-1.8.4.custom.css" media="screen" />
+<link rel="Stylesheet" type="text/css" href="/static/css/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/static/css/magnific-popup.css" />
+<script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery-ui-1.8.4.custom.min.js"></script>
+<script type="text/javascript" src="/static/js/plugins/jquery.cookies.js"></script>
+<script type="text/javascript" src="/static/js/plugins/jquery.equalheights.js"></script>
+<script type="text/javascript" src="/static/js/plugins/jquery.json-2.2.js"></script>
+<script type="text/javascript" src="/static/js/jquery.magnific-popup.js"></script>
+
+<script type="text/javascript">
+//<!--
+function reload_captcha(captcha_image) {
+    captcha_image.src = 'http://www.de.ki/captcha?q=' + Math.round(Math.random()*999999999);
+}
+
+function toggleDisplay(element, display_type) {
+    if(element.style.display == 'none') {
+        element.style.display = display_type || 'block';
+    }
+    else {
+        element.style.display = 'none';
+    }
+}
+
+function click_replace() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i=0; i<inputs.length; i++) {
+        var inpt = inputs[i];
+        if(inpt.className == 'click_replace' && inpt.title) {
+            inpt.value = inpt.title;
+            inpt.onfocus = function () {
+                if(this.value == this.title) {
+                    this.value = '';
+                }
+            };
+            inpt.onblur = function () {
+                if(this.value == '') {
+                    this.value = this.title;
+                }
+            };
+        }
+    }
+}
+
+function show_hide_password(asterisk, plain) {
+    toggleDisplay(asterisk, 'inline');
+    toggleDisplay(plain, 'inline');
+}
+
+$(document).ready(function () {
+    $('.lang-select-other', $('.lang-select')).hide();
+    $('.lang-select-current', $('.lang-select')).toggle(
+        function () {
+            $('.lang-select-current', $('.lang-select')).addClass('lang-select-current-down');
+            $('.lang-select-other', $('.lang-select')).show();
+        },
+        function () {
+            $('.lang-select-other', $('.lang-select')).hide();
+            $('.lang-select-current', $('.lang-select')).removeClass('lang-select-current-down');
+        }
+    );
+
+    if( typeof jscheck == 'function' ) { 
+        $('input[name=JSCheck]').val('js_ok');
+        $('input[name=JSCheckTest]').val('js_ok');
+        $('input[name=JSCheck]').val(jscheck());
+        $('input[name=JSCheckTest]').val(jschecktest());
+    }
+
+    // Alternate Table
+    $("table.striped tr:odd").addClass("alternate");
+    
+    // Alternate SelectBox
+    //$("option.selectbox_ref-object_element_project:odd").addClass("alternate");
+    //$("option.selectbox_ref-object_element_project:odd").nextUntil('option').addClass("alternate");
+    //var $children = $("option.selectbox_ref-object_element_project:odd").nextUntil('option').children();
+    //$children.addClass("alternate");
+});
+
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if(typeof window.onload != 'function') {
+        window.onload = func;
+    }
+    else {
+        window.onload = function() {
+            oldonload();
+            func();
+        }
+    }
+}
+
+addLoadEvent(click_replace);
+
+function writeEmail(user, host, tld, write) {
+    var elem = document.getElementById('email');
+
+    if(elem) {
+        elem.innerHTML = user + '@' + host + '.' + tld;
+    }
+    else {
+        if(write) {
+            document.write(user + '@' + host + '.' + tld);
+        }
+    }
+}
+
+//-->
+</script>
+</head>
+
+    <body style="overflow-y: scroll;">
+        <div id="wrapper">
+            <div class="slogan">
+                Deine de Domain
+            </div>
+
+            <div id="imprint_line">
+
+                
+
+                <div class="lang-select" style="display:inline; float: none; text-align: left; position:relative;">
+                    <span class="lang-select-current">
+                        <a href="">
+                            <img src="/static/images/icons/flags/de.gif" class="inline_icon" alt="flag"/>
+                            Deutsch
+                        </a>
+                    </span>
+                    <div class="lang-select-other">
+                        
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <a href="http://www.de.ki/language/de"><img src="/static/images/icons/flags/de.gif" width="16px" height="11px" class="inline_icon" alt="flag"/>&nbsp;Deutsch</a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="http://www.de.ki/language/en"><img src="/static/images/icons/flags/en.gif" width="16px" height="11px" class="inline_icon" alt="flag"/>&nbsp;English</a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    </div>
+                </div>
+&nbsp;&nbsp;
+                <div id="google_translate_element"></div>
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({pageLanguage: 'de', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                    }
+                </script>
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            &nbsp;&nbsp; 
+            <a href="http://www.de.ki/contact/abuse">Seite melden</a>
+            &nbsp;&nbsp;
+            <a href="http://www.de.ki/contact">KONTAKT</a>
+            &nbsp;&nbsp; 
+            <a href="http://www.de.ki/tos">AGB</a>
+            &nbsp;&nbsp;
+            <a href="http://www.de.ki/revoke">WIDERRUF</a>
+            &nbsp;&nbsp;
+            <a href="http://www.de.ki/tos#privacy_terms">DATENSCHUTZ</a>
+            &nbsp;&nbsp;
+            <a href="http://www.de.ki/imprint">IMPRESSUM</a>
+        </div>
+        <div id="main"><div id="headers">
+    <div id="header1">
+        <div id="logo">
+            <a href="http://www.de.ki/">
+                
+                <img src="/static/images/logo.gif" alt="de.ki - Deine de Domain" />
+            </a>
+        </div>
+        <div id="login_form">
+            
+                <form 
+                    action="http://www.de.ki/login" 
+                    method="post" 
+                    name="header_login_form"
+                >
+                    <input 
+                        type="text" 
+                        name="email" 
+                        title="E-Mail-Adresse" 
+                        alt="E-Mail-Adresse" 
+                        class="click_replace"
+                    />
+                    <input 
+                        type="password" 
+                        name="password" 
+                        title="Passwort" 
+                        alt="Passwort" 
+                        class="click_replace"
+                    />
+                    <input 
+                        type="image" 
+                        src="/static/images/icons/door_in.png" 
+                        title="Einloggen" 
+                        alt="Einloggen" 
+                        style="border:0px;vertical-align:bottom;"
+                    />
+                </form>
+            
+        </div><ul id="tabs">        <li
+            
+        >
+            <a href="http://www.de.ki/news">
+                <img src="/static/images/icons/exclamation.png" width="16px" height="16px" alt="" class="inline_icon">Neuigkeiten
+            </a>
+        </li>        <li
+            
+        >
+            <a href="http://www.de.ki/domains">
+                Domains
+            </a>
+        </li>        <li
+            
+        >
+            <a href="http://www.de.ki/hosting">
+                Hosting
+            </a>
+        </li>        <li
+            
+        >
+            <a href="http://www.de.ki/whois">
+                Whois
+            </a>
+        </li>        <li
+            
+        >
+            <a href="http://www.de.ki/faq">
+                Hilfe
+            </a>
+        </li></ul>
+    </div>
+    <div id="header2">
+        <h1>Herzlich Willkommen</h1>
+    </div>
+    <div id='mytooltip'></div>
+</div>
+            <div id="body">
+<div id="sidebar">
+
+<div id="menu">
+    <ul>
+        <li class="depth_0">de.ki Navigation</li>
+        
+            
+            <li class="depth_1 current">
+                <a href="http://www.de.ki/">
+                    <img src="/static/images/icons/house.png" width="16px" height="16px" alt="menuitem"/>
+                    Startseite
+                </a>
+            </li>
+        
+            
+            <li class="depth_1">
+                <a href="http://www.de.ki/features">
+                    <img src="/static/images/icons/star.png" width="16px" height="16px" alt="menuitem"/>
+                    Features
+                </a>
+            </li>
+        
+            
+            <li class="depth_1">
+                <a href="http://www.de.ki/register">
+                    <img src="/static/images/icons/user_add.png" width="16px" height="16px" alt="menuitem"/>
+                    Jetzt anmelden
+                </a>
+            </li>
+        
+            
+            <li class="depth_1">
+                <a href="http://www.de.ki/login">
+                    <img src="/static/images/icons/door_in.png" width="16px" height="16px" alt="menuitem"/>
+                    Login
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+
+
+    <br />
+    <div>
+        <ul>
+            <li class="depth_0">Top de.ki Weiterleitungen</li>
+            
+            <li class="depth_1"><a href="http://gaestehaus-gertraud.de.ki/" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />gaestehaus-gertraud.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://ruhrtreff.de.ki/" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />ruhrtreff.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://job.de.ki/robots.txt" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />job.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://1.de.ki/" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />1.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://medibrett.de.ki/" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />medibrett.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://davesworld.de.ki/" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />davesworld.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://kita-flohkiste-hepberg.de.ki/" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />kita-flohkiste-hepberg.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://ekert.de.ki/" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />ekert.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://natur-obst.de.ki/" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />natur-obst.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://ancientblood-forum.de.ki/" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />ancientblood-forum.de.ki</a></li>
+            
+        </ul>
+    </div>
+
+
+    <br />
+    <div id="menu">
+        <ul>
+            <li class="depth_0">Neue de.ki Domains</li>
+            
+            <li class="depth_1"><a href="http://www.missessweetiie.de.ki" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />missessweetiie.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://www.testtest.de.ki" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />testtest.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://www.kl-feier.de.ki" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />kl-feier.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://www.saphir.de.ki" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />saphir.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://www.findus.de.ki" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />findus.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://www.broesel.de.ki" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />broesel.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://www.politreform.de.ki" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />politreform.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://www.hba.de.ki" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />hba.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://www.dart-bgl.de.ki" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />dart-bgl.de.ki</a></li>
+            
+            <li class="depth_1"><a href="http://www.hundekleidung.de.ki" target="_blank"><img src="/static/images/icons/bullet_go.png" width="16px" height="16px" />hundekleidung.de.ki</a></li>
+            
+        </ul>
+    </div>
+
+
+
+</div>
+                <div id="content" style='min-height: 400px;'>                    
+
+
+
+
+<div class="box">
+    <h3>Willkommen bei de.ki Webhosting!</h3>
+    <div class="block info_block">  
+        <p>Hier bei unserer großen Online-Community können Sie ganz einfach Ihre eigene Homepage erstellen. Nutzen Sie die kostenlosen Visitenkarten und Weiterleitungen, oder buchen Sie Ihr ganz eigenes Webpaket.</p>
+    </div>                     
+
+    <div class="blockwrapper blockwrapper_51">
+        <div class="block">    
+            <p><b>Visitenkarten / Weiterleitungen</b></p>
+            <ul>               
+                <li>Auswahl aus knapp 500 Domains</li>
+                <li>komplett kostenloser Dienst </li>
+                <li>eigene Visitenkarte mit Bild, Social Media Links, u. v. m.</li>
+                <li>Kostenlose Weiterleitungen zu Ihrer bestehenden Domain</li>
+            </ul>              
+        </div>
+    </div>
+    <div class="blockwrapper blockwrapper_49">
+        <div class="block">    
+            <p><b>Webpakete</b></p>
+            <ul>
+                <li>Auswahl aus knapp 500 Domains</li>
+                <li>bereits <b>ab 0,99 €</b> pro Monat</li>
+                <li>schnelle SSD Festplatten</li>
+                <li>Dynamische Inhalte (MySQL und PHP)</li>
+                <li>mehrere Email Postfächer möglich</li>
+                <li>werbefrei</li>
+                <li>keine Einrichtungsgebühr</li>
+                <li><a href="http://www.de.ki/hosting">u. v. m.</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="blockwrapper blockwrapper_51">
+        <div class="block" style="text-align: center;">
+            
+                <a href='http://www.de.ki/register' class='gfx_btn' style="padding-right:15px; padding-left:15px; color:#FFF;">Hier registrieren</a>
+            
+        </div>
+    </div>
+    <div class="blockwrapper blockwrapper_49">
+        <div class="block" style="text-align: center;">
+            
+                <a href='http://www.de.ki/register' class='gfx_btn' style="padding-right:15px; padding-left:15px; color:#FFF;">Hier registrieren</a>
+            
+        </div>
+    </div>
+    <div class="clearer"></div>
+</div>
+
+
+<div class="box">
+    <div class="block">
+        de.ki Webhosting ist stets schnell und zuverlässig. Gratis Visitenkarten und Weiterleitungen – Webspace bereits ab 0,99 € pro Monat. 
+    </div>
+</div>
+
+<div class="box">
+    <h3><img src="/static/images/icons/world.png" width="16px" height="16px" alt="world" />Verfügbarkeit Ihrer de.ki Domain prüfen</h3>
+    <div class="block">
+        <form action="http://www.de.ki/domains" method="post">
+
+        www. <input name="label" type="text" />
+        . <select name="domain_id">
+<option value="2006">co.de</option>
+<option value="10107">co.nu</option>
+<option value="10008">1x.biz</option>
+<option value="10007">1x.de</option>
+<option value="4">1x.net</option>
+<option value="10009">24.eu</option>
+<option value="5">24.gg</option>
+<option value="6">24.gp</option>
+<option value="7">24.je</option>
+<option value="8">24.lc</option>
+<option value="9">24.mu</option>
+<option value="11">24.nl</option>
+<option value="12">24.tl</option>
+<option value="74">co.gp</option>
+<option value="88">de.gd</option>
+<option value="89">de.gp</option>
+<option value="91">de.ht</option>
+<option value="92">de.im</option>
+<option value="10091">de.mg</option>
+<option value="94">de.pl</option>
+</select>
+        <div class="form_submit">
+
+
+<input name="submit_domains" type="submit" value="Prüfen" />
+</div>
+        </form>
+
+    </div>
+</div>
+
+                    <div class="clearer"></div>
+                    
+                </div>
+                <div class="clearer"></div>
+            </div>
+<div id="footer">&copy; 2017 de.ki - Deine de Domain</div>
+        </div>
+    </div>
+<!-- Google Analytics -->
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35990445-1']);
+    _gaq.push(['_setDomainName', 'de.ki']);
+    _gaq.push(['_setCustomVar', 1, 'Domain', 'de.ki', 3]);
+    _gaq.push(['_setCustomVar', 2, 'Language', 'de', 3]);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+    _gaq.push(['_gat._anonymizeIp']);
+    _gaq.push(['_trackPageLoadTime']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+<!-- /Google Analytics -->
+
+</body>
+</html>

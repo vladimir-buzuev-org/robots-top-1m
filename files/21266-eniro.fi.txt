@@ -1,0 +1,1081 @@
+
+
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+    
+            <meta charset="utf-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="referrer" content="origin">
+            <title>Fonecta.fi</title>
+                <meta name="description" content="fonecta.fistä löydät yritystiedot, henkilöiden yhteystiedot sekä kartat ja reitit Suomesta nopeasti ja helposti!">
+
+
+<script type="text/javascript">
+window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);
+;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"33d96c363e",applicationID:"1366415",sa:1}
+</script>
+
+                <link rel="canonical" href="https://www.fonecta.fi/">
+
+            <link href="/favicon.ico" rel="shortcut icon">
+            <link href="/favicon.png" rel="icon">
+            <link rel="apple-touch-icon-precomposed" href="/favicon.png">
+
+                <link href="https://d8h27luzpddqp.cloudfront.net/css/front-d2c1dd7de0.css" rel="stylesheet">
+
+    
+
+            <link href="https://d8h27luzpddqp.cloudfront.net/vendor/vendor-styles-f6ecbe337d.css" rel="stylesheet">
+                <link rel="stylesheet" media="screen" href="https://d2dc15dcgalemf.cloudfront.net/assets/build/css/tili-embed-1.0.15.min.css">
+
+            <!-- OYM map config -->
+            <script>
+                var mapConfig = {
+                    oymApiKey: "FO1349G5NGDTJ52H913SFRK63928",
+                    oymUrl: "kartta.fonecta.fi/oym",
+                    oymApiUrl: "stage-kartta.fonecta.fi/oym2"
+                };
+            </script>
+
+        </head>
+        <body class='frontpage'>
+            <div class="container-fluid">
+
+    <nav class="fofi-navbar" role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="fofi-navbar-section fofi-navbar-menu col-lg-4 hidden-md hidden-sm hidden-xs">
+                    <a href="/kartat" class="search-nav-maps"><span>Kartat</span></a>
+                    <a href="/kartat?from=+&amp;to=+" class="search-nav-routes"><span>Reitit</span></a>
+                    <a href="/rekisterinumerohaku" class="search-nav-vehicles"><span>Rekisterinumerot</span></a>
+                    <a data-track-link="trackHeaderYrityksilleLink" href="/yrityksille?edsacid=ofs-fofi-header"><span>Palvelut yrityksille</span></a>
+                </div>
+                <div class="fofi-navbar-section col-xs-3 visible-md visible-sm visible-xs">
+                    <span class="fofi-navbar-section-mobile-menu dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bars"></i> <span>Valikko</span>
+                        </a>
+                        <ul class="dropdown-menu pull-left">
+                            <li><a href="/kartat" class="search-nav-maps"><i class="fa fa-fw fa-map-marker"></i> <span>Kartat</span></a></li>
+                            <li><a href="/kartat?from=+&amp;to=+" class="search-nav-routes"><i class="fa fa-fw fa-road"></i> <span>Reitit</span></a></li>
+                            <li><a href="/rekisterinumerohaku" class="search-nav-vehicles"><i class="fa fa-fw fa-car"></i> <span>Rekisterinumerot</span></a></li>
+                            <li><a data-track-link="trackHeaderYrityksilleLink" href="/yrityksille?edsacid=ofs-fofi-header"><i class="fa fa-fw fa-briefcase"></i> <span>Palvelut yrityksille</span></a></li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="fofi-navbar-section col-xs-6 col-lg-4">
+                    <a class="fofi-navbar-brand" href="/"></a>
+                </div>
+                <div class="fofi-navbar-section col-xs-3 col-lg-4">
+                        <div class="fofi-navbar-section-user">
+                            <a id="login-button" href="#">
+                                <span>Kirjaudu<span class="hidden-xs hidden-sm"> sisään</span></span>
+                                <i class="fa fa-user"></i>
+                            </a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+            </div>
+
+                <div class="container-fluid">
+                     <div class="tili-loginframe collapse" id="tili-loginframe" data-toggle="false">
+                     </div>
+                </div>
+            
+            <div class="container-fluid">
+
+    <div class="container-fluid front-background">
+
+        <div class="container">
+            <h1 class="front-heading">Henkilöt ja yritykset yhdestä hausta</h1>
+        </div>
+
+        <div class="container-fluid front-background-stripe">
+            <div class="container">
+
+                <div class="front-search-suggestions">
+                    <div class="front-search-suggestions-box">
+                        <span class="front-search-suggestions-box-title">
+                            Haussa <span class="hidden-xs">juuri </span>nyt
+                        </span>
+                    </div>
+                            <a class="front-search-suggestions-box"
+                               href="/haku/autokorjaamo"
+                               data-track-link="trackFrontpageClick"
+                               data-source="homepage|click|searched-just-now">
+                                autokorjaamo
+                            </a>
+                            <a class="front-search-suggestions-box"
+                               href="/haku/hammasl%C3%A4%C3%A4k%C3%A4ri"
+                               data-track-link="trackFrontpageClick"
+                               data-source="homepage|click|searched-just-now">
+                                hammaslääkäri
+                            </a>
+                            <a class="front-search-suggestions-box"
+                               href="/haku/kukkakauppa"
+                               data-track-link="trackFrontpageClick"
+                               data-source="homepage|click|searched-just-now">
+                                kukkakauppa
+                            </a>
+                            <a class="front-search-suggestions-box"
+                               href="/haku/kampaamo"
+                               data-track-link="trackFrontpageClick"
+                               data-source="homepage|click|searched-just-now">
+                                kampaamo
+                            </a>
+                            <a class="front-search-suggestions-box"
+                               href="/haku/ravintola"
+                               data-track-link="trackFrontpageClick"
+                               data-source="homepage|click|searched-just-now">
+                                ravintola
+                            </a>
+                            <a class="front-search-suggestions-box"
+                               href="/haku/apteekki"
+                               data-track-link="trackFrontpageClick"
+                               data-source="homepage|click|searched-just-now">
+                                apteekki
+                            </a>
+                </div>
+
+    <div class="front-search-input">
+        <form id="search" class="search-form" action="/haku" method="GET">
+            <div class="search-inputs">
+                <div class="search-singlefield-input-wrapper">
+                    <i class="search-icon fa fa-search hidden-xs"></i>
+                    <input id="search-what" class="search-singlefield-input form-control"
+                           name="what" type="text" value=""
+                           
+                           placeholder="Henkilöt, yritykset, palvelut ja puhelinnumerot  -  kirjoita hakusana tähän">
+                    <a href="#" class="search-clear"><i class="fa fa-times"></i></a>
+                </div>
+                <input class="sort" type="hidden" name="sort" value="RELEVANCE" />
+                <input class="mode" type="hidden" name="mode" value="list" />
+                <input class="latitude" type="hidden" name="latitude" value="" />
+                <input class="longitude" type="hidden" name="longitude" value="" />
+                <input id="autosuggested" type="hidden" name="autosuggested" value="false" />
+                <button class="search-submit">
+                    <i class="fa fa-search visible-xs"></i>
+                    <h5 class="fo-h5 hidden-xs">Hae</h5>
+                </button>
+            </div>
+        </form>
+    </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="front-highlights">
+                <div class="front-highlights-box">
+                    <div class="shadow-helper"></div>
+                    <h3 class="front-highlights-box-heading">Esittelyssä</h3>
+                    <div class="front-highlights-box-list">
+                            <div class="front-highlights-box-list-item">
+                                <i class="fa fa-angle-right"></i>
+                                <a href="/profiili/1887872"
+                                   data-track-link="trackFrontpageClick"
+                                   data-source="homepage|click|showcase-city">
+                                    FinnFlorist Oy Ltd
+                                </a>
+                                <span class="subtext">Helsinki</span>
+                            </div>
+                            <div class="front-highlights-box-list-item">
+                                <i class="fa fa-angle-right"></i>
+                                <a href="/profiili/1587293"
+                                   data-track-link="trackFrontpageClick"
+                                   data-source="homepage|click|showcase-city">
+                                    Hairlekiini Helsinki Kamppi
+                                </a>
+                                <span class="subtext">Helsinki</span>
+                            </div>
+                            <div class="front-highlights-box-list-item">
+                                <i class="fa fa-angle-right"></i>
+                                <a href="/profiili/167616"
+                                   data-track-link="trackFrontpageClick"
+                                   data-source="homepage|click|showcase-city">
+                                    Pirkanmaan Osuuskauppa
+                                </a>
+                                <span class="subtext">Tampere</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="front-highlights-box">
+                    <div class="shadow-helper"></div>
+                    <h3 class="front-highlights-box-heading">Suosittuja toimialoja</h3>
+                    <div class="front-highlights-box-list subjects">
+                            <div class="front-highlights-box-list-item">
+                                <i class="fa fa-angle-right"></i>
+                                <a href="/haku/psykiatreja"
+                                   data-track-link="trackFrontpageClick"
+                                   data-source="homepage|click|popular-industry">
+                                    Psykiatreja
+                                </a>
+                            </div>
+                            <div class="front-highlights-box-list-item">
+                                <i class="fa fa-angle-right"></i>
+                                <a href="/haku/automaalaamoja"
+                                   data-track-link="trackFrontpageClick"
+                                   data-source="homepage|click|popular-industry">
+                                    Automaalaamoja
+                                </a>
+                            </div>
+                            <div class="front-highlights-box-list-item">
+                                <i class="fa fa-angle-right"></i>
+                                <a href="/haku/painotaloja"
+                                   data-track-link="trackFrontpageClick"
+                                   data-source="homepage|click|popular-industry">
+                                    Painotaloja
+                                </a>
+                            </div>
+                        <div class="front-highlights-box-list-action">
+                            <a href="/toimialat">Lisää suosittuja toimialoja&nbsp;&raquo;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="front-highlights-box">
+                    <div class="shadow-helper"></div>
+                    <h3 class="front-highlights-box-heading">Suosittuja hakuja</h3>
+                    <div class="front-highlights-box-list">
+                            <div class="front-highlights-box-list-item">
+                                <i class="fa fa-angle-right"></i>
+                                <a href="/haku/s-market"
+                                   data-track-link="trackFrontpageClick"
+                                   data-source="homepage|click|popular-search">
+                                    s-market
+                                </a>
+                            </div>
+                            <div class="front-highlights-box-list-item">
+                                <i class="fa fa-angle-right"></i>
+                                <a href="/haku/hinauspalvelu"
+                                   data-track-link="trackFrontpageClick"
+                                   data-source="homepage|click|popular-search">
+                                    hinauspalvelu
+                                </a>
+                            </div>
+                            <div class="front-highlights-box-list-item">
+                                <i class="fa fa-angle-right"></i>
+                                <a href="/haku/taksi"
+                                   data-track-link="trackFrontpageClick"
+                                   data-source="homepage|click|popular-search">
+                                    taksi
+                                </a>
+                            </div>
+                        <div class="front-highlights-box-list-action">
+                            <a href="/hakusanat">Lisää suosittuja hakusanoja&nbsp;&raquo;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <div class="container">
+
+            <div class="front-apps">
+
+                    <div class="front-apps-spot" style="background-color: #022E61; color: #FFFFFF; background-image: url(//images.contentful.com/h756krsu19ds/6BW0INwCGISa8YqQqW2uAm/d09489c282ecce3cb1b4cfb657f28a85/Backgroundcolor.png)">
+                        <h5 class="fo-h5">Yrittäjä</h5>
+                        <p>Selvitä maksutta asiakaspotentiaalisi ja ohjaa asiakkaat yrityksesi luokse verkosta!</p>
+                        <a href="/yrityksille/hanki-asiakkaita?cmp=MONI_T+Profiili_A+HankiAsiakkaitaFoFi_R+OTHER&amp;edsacid=ofs-fofi-hankiasiakkaita"
+                           class="action-link button"
+                           data-track-link="trackClickFrontBox"
+                           data-box="Yrittäjä">
+                        Selvitä maksutta&nbsp;&raquo;
+                        </a>
+                    </div>
+                    <div class="front-apps-spot" style="background-color: #022E61; color: ; background-image: url(//images.contentful.com/h756krsu19ds/1nCLiJId52QYSwIuyCaISe/427bfe90bdc9266bc6131cd09605759a/fonecta-kontakti-tausta.png)">
+                        <h5 class="fo-h5">Testaa näkyvyytesi</h5>
+                        <p>Selvitä maksuttomalla testillä, miten yrityksesi tiedot esitetään 14 eri verkkopalvelussa!</p>
+                        <a href="/yrityksille/testaa-nakyvyytesi?cmp=MONI_T+Verkkonakyvyys_A+TestaaNakyvyytesiFoFi_R+OTHER&amp;edsacid=ofs-fofi-etusivu-yrityksille"
+                           class="action-link button"
+                           data-track-link="trackClickFrontBox"
+                           data-box="Testaa näkyvyytesi">
+                        Siirry testiin&nbsp;&raquo;
+                        </a>
+                    </div>
+                    <div class="front-apps-spot" style="background-color: #022E61; color: ; background-image: url(//images.contentful.com/h756krsu19ds/1DcHrNAijmcIK0SKkwsmgQ/7f1f52369b2e5579e95f47c9920869da/Backgroundcolor002.png)">
+                        <h5 class="fo-h5">Töihin Fonectalle</h5>
+                        <p>Tule mukaan digitaalisen myynnin ja markkinoinnin näköalapaikalle!</p>
+                        <a href="https://www.fonecta.fi/info/fonecta-yrityksena/toihin-fonectalle/?edsacid=ofs-fofi-etusivu"
+                           class="action-link button"
+                           data-track-link="trackClickFrontBox"
+                           data-box="Töihin Fonectalle">
+                        Katso avoimet työpaikat&nbsp;&raquo;
+                        </a>
+                    </div>
+
+                <div class="front-apps-spot">
+                    <h5 class="fo-h5">Esittelyssä</h5>
+                    <p>
+                        <a href="/kategoria/ravintola" class="fonecta-bold">Ravintola&nbsp;&raquo;</a>
+                    
+                        <a href="/kategoria/sosiaalipalvelut" class="fonecta-bold">Sosiaalipalvelut&nbsp;&raquo;</a>
+                    
+                        <a href="/kategoria/koulutuspalvelut" class="fonecta-bold">Koulutuspalvelut&nbsp;&raquo;</a>
+                    </p>
+                    <a href="/kategoriat"
+                       class="action-link link"
+                       data-track-link="trackClickFrontBox"
+                       data-box="categories">
+                        Katso kaikki aihesivut&nbsp;&raquo;
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    <!-- For detecting bootstrap breakpoints with js -->
+    <div class="device-xs visible-xs"></div>
+    <div class="device-sm visible-sm"></div>
+
+        <section class="cookie-info row-fluid">
+            <div class="row">
+                <div class="col-xs-9 col-sm-11">
+                    Verkkosivustollamme käytetään evästeitä käyttäjäkokemuksen parantamiseksi sekä mainosten näyttämiseksi.
+                    Käyttämällä sivustoamme hyväksyt evästeiden käytön.
+                    <a href="https://www.fonecta.fi/info/hyodyllista-tietoa/tietoa-evasteista">Lisätietoa evästeistä</a>
+                </div>
+                <div class="col-xs-3 col-sm-1">
+                    <span class='btn btn-primary accept-cookie-policy'>OK</span>
+                </div>
+            </div>
+        </section>
+            </div>
+            
+            <div class="container-fluid">
+    <footer class="fo-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 fo-footer-section">
+                    <div class="fofi-logo-footer"></div>
+    <div class="fb-like footer-fb-button" data-href="https://www.facebook.com/fonecta" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <a href="/hakemisto/toimialat/A">Toimialat A-Ö</a>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="/hakemisto/kaupunginosat/A">Paikat A-Ö</a>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="/hakemisto/yritykset/A">Yritykset A-Ö</a>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="/hakemisto/hakusanat/A">Hakusanat A-Ö</a>
+                        </div>
+                    </div>
+                    <div class="row" style="border-top: 1px solid #004988; margin-top: 16px; padding-top: 16px;">
+                        <div class="col-md-3 col-sm-3 fo-footer-section">
+                            <ul>
+                                <li>
+                                    <a href="/feedback">Fonecta.fi palaute</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.fonecta.fi/info/hyodyllista-tietoa/kayttoehdot/">Käyttöehdot</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.fonecta.fi/info/hyodyllista-tietoa/tietosuoja/">Tietosuoja</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.fonecta.fi/info/hyodyllista-tietoa/tietoa-evasteista/">Tietoa evästeistä</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-sm-3 fo-footer-section">
+                            <ul>
+                                <li>
+                                    <a href="https://www.fonecta.fi/info/fonecta-yrityksena/">Tietoa Fonectasta</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.fonecta.fi/info/fonecta-yrityksena/fonecta-tyonantajana/">Töihin Fonectalle</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.fonecta.fi/info/ajankohtaista/yhteystiedot-medialle/">Medialle</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.fonecta.fi/info/fonecta-yrityksena/yhteystiedot/">Yhteystiedot</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-sm-3 fo-footer-section">
+                            <ul>
+                                <li>
+                                    <a href="https://www.fonecta.fi/info/palvelut-kuluttajille/fonecta-caller/">Fonecta Caller</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.finder.fi">Finder.fi</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.fonecta.fi">Fonecta.fi</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.020202.fi">020202</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-sm-3 fo-footer-section">
+                            <ul>
+                                <li>
+                                    <a href="https://www.fonecta.fi/yrityksille/?edsacid=ofs-fofi-footer">Fonecta.fi/yrityksille</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.varaaverkossa.fi?edsacid=ofs-fofi-footer">Varaaverkossa.fi</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.fonecta.fi/info/palvelut-kuluttajille/tekstiviestipalvelut/">Tekstiviestipalvelut</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+            </div>
+
+    <div style="visibility: hidden; display: none;">
+<script type="text/javascript" src="https://d32xv3o2dxur42.cloudfront.net/stat/dist/fonecta_s_code.7680e0c06ed6b8ae91ec1efae50f577c.js"></script>
+<script>
+    var _comscore = _comscore || [];
+    _comscore.push({ c1: "2", c2: "14023575" });
+    (function() {
+        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+        el.parentNode.insertBefore(s, el);
+    })();
+</script>
+<noscript><img src="http://b.scorecardresearch.com/p?c1=2&c2=14023575&cv=2.0&cj=1" /></noscript>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="https://d8h27luzpddqp.cloudfront.net/js/common-7950cad81f.js"></script>
+
+                <script src="https://d2dc15dcgalemf.cloudfront.net/assets/build/js/tili-embed-1.0.15.min.js"></script>
+                <script type="text/javascript">
+                        fonectaTili.init({appId:'fonecta.fi',tiliBaseUrl:'https://tili.fonecta.fi',rememberMe:'true', loadtemplate:'false'});
+                        $('#login-button').click(function() {
+                            $("#tl-caret").toggleClass('fa-caret-up fa-caret-down');
+                            fonectaTili.toggleLogin();
+                            return false;
+                        });
+                </script>
+                
+
+        <script type="text/javascript" data-ajaxeval>
+            if(window.s && typeof(fonTrackPage) === 'function') {
+                        s.eVar30 = "no";
+        s.eVar46="uusi etusivu";
+    s.pageName="homepage";
+    s.prop25="homepage";
+    s.channel="home";
+    s.eVar30 = "no";
+
+                fonTrackPage();
+            }
+        </script>
+    <script type="text/javascript">
+        trackFrontpageClick = function(href, data) {
+            if(window.s) {
+                    s.eVar23=data.source;
+    s.events='event16';
+    s.linkTrackVars='eVar23,events';
+    s.linkTrackEvents='event16';
+    fonTrackLink(this, 'o', 'click_homepage_action');
+
+            }
+        };
+        trackOpenContactCompanyProfile = function(href, data) {
+            if(window.s) {
+                    s.eVar24 = 'click person company profile link';
+    s.events='event103';
+    s.linkTrackVars='eVar24,events';
+    s.linkTrackEvents='event103';
+    fonTrackLink(this, 'o', 'click_person_company_profile_link');
+
+            }
+        };
+        trackSearchFilter = function(href, data) {
+            if(window.s) {
+                    s.eVar43 = data.title;
+    s.events = "event77";
+    s.linkTrackVars = "eVar43,events";
+    s.linkTrackEvents = "event77";
+    fonTrackLink(true, "o", "click_to_search_filter");
+
+            }
+        };
+        trackProfileClick = function(href, data) {
+            if(window.s) {
+                    if(data.productId) {
+    s.products = ";" + data.productId;
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.linkTrackVars = "products,events";
+
+    if(data.productIndexCode === 'T') {
+    s.events = "event56";
+    s.linkTrackEvents = "event56";
+    fonTrackLink(true, "o", "click_sf_top");
+    } else if(data.productIndexCode === 'G') {
+    s.events = "event52";
+    s.linkTrackEvents = "event52";
+    fonTrackLink(true, "o", "click_sf_grid");
+    } else {
+    s.events = "event54";
+    s.linkTrackEvents = "event54";
+    fonTrackLink(this, "o", "click_sf_result");
+    }
+
+            }
+        };
+        trackProfileWebsiteClick = function(href, data) {
+            if(window.s) {
+                    if(data.productId) {
+    s.products = ";" + data.productId;
+    } else {
+    s.products = "";
+    }
+    s.eVar27 = href;
+    s.eVar47 = "click website";
+    s.products = ";" + data.productId + ";;;event13=1";
+    s.FonectaProducts = data.fonectaProduct;
+    s.events = "event5,event13";
+    s.linkTrackVars = "eVar27,eVar47,products,events";
+    s.linkTrackEvents = "event5,event13";
+    fonTrackLink(true, "o", href);
+
+            }
+        };
+        trackProfilePhoneClick = function(href, data) {
+            if(window.s) {
+                    s.eVar24 = data.clickSource;
+    s.eVar33 = href;
+    s.eVar47 = "click to call";
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events = "event13,event41";
+    s.linkTrackVars = "eVar24,eVar33,eVar47,products,events";
+    s.linkTrackEvents = "event13,event41";
+    fonTrackLink(true, "o", href);
+
+            }
+        };
+        trackProfilePhoneShowClick = function(href, data) {
+            if(window.s) {
+                    s.eVar47='view phone number';
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events='event13,event107';
+    s.linkTrackVars='eVar47,products,events';
+    s.linkTrackEvents='event13,event107';
+    fonTrackLink(true, "o", 'view_phone_number');
+
+            }
+        };
+        trackProfileOpeningHoursShowClick = function(href, data) {
+            if(window.s) {
+                    s.eVar47='click to opening hours';
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events='event13,event84';
+    s.linkTrackVars='eVar47,products,events';
+    s.linkTrackEvents='event13,event84';
+    fonTrackLink(true,'o','click_to_opening_hours');
+
+            }
+        };
+        trackProfileOpeningHoursShowAllClick = function(href, data) {
+            if(window.s) {
+                    s.eVar24='action|sf_result|view-all-opening-hours';
+    s.events='event103';
+    s.linkTrackVars='eVar24,events';
+    s.linkTrackEvents='event103';
+    fonTrackLink(this, "o", 'action|sf_result|view-all-opening-hours');
+
+            }
+        };
+        trackProfileEmailClick = function(href, data) {
+            if(window.s) {
+                    s.eVar29 = href;
+    s.eVar47 = "click email";
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events = "event13,event29";
+    s.linkTrackVars = "eVar29,eVar47,products,events";
+    s.linkTrackEvents = "event13,event29";
+    fonTrackLink(true, "o", href);
+
+            }
+        };
+        trackProfileLinkedInClick = function(href, data) {
+            if(window.s) {
+                    s.eVar47 = "click linkedin";
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events = "event13";
+    s.linkTrackVars = "eVar47,products,events";
+    s.linkTrackEvents = "event13";
+    fonTrackLink(true, "o", href);
+
+            }
+        };
+        trackProfileTwitterClick = function(href, data) {
+            if(window.s) {
+                    s.eVar47 = "click twitter";
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events = "event13";
+    s.linkTrackVars = "eVar47,products,events";
+    s.linkTrackEvents = "event13";
+    fonTrackLink(true, "o", href);
+
+            }
+        };
+        trackProfileYoutubeClick = function(href, data) {
+            if(window.s) {
+                    s.eVar47 = "click youtube";
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events = "event13";
+    s.linkTrackVars = "eVar47,products,events";
+    s.linkTrackEvents = "event13";
+    fonTrackLink(true, "o", href);
+
+            }
+        };
+        trackProfileInstagramClick = function(href, data) {
+            if(window.s) {
+                    s.eVar47 = "click instagram";
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events = "event13";
+    s.linkTrackVars = "eVar47,products,events";
+    s.linkTrackEvents = "event13";
+    fonTrackLink(true, "o", href);
+
+            }
+        };
+        trackProfileSkypeClick = function(href, data) {
+            if(window.s) {
+                    s.eVar47 = "click skype";
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events = "event13";
+    s.linkTrackVars = "eVar47,products,events";
+    s.linkTrackEvents = "event13";
+    fonTrackLink(true, "o", href);
+
+            }
+        };
+        trackProfileFacebookClick = function(href, data) {
+            if(window.s) {
+                    s.eVar47 = "click facebook";
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events = "event13";
+    s.linkTrackVars = "eVar47,products,events";
+    s.linkTrackEvents = "event13";
+    fonTrackLink(true, "o", href);
+
+            }
+        };
+        trackGooglePlusClick = function(href, data) {
+            if(window.s) {
+                    s.eVar47 = "click googleplus";
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events = "event13";
+    s.linkTrackVars = "eVar47,products,events";
+    s.linkTrackEvents = "event13";
+    fonTrackLink(true, "o", href);
+
+            }
+        };
+        trackProfileAdditionalContactClick = function(href, data) {
+            if(window.s) {
+                    s.eVar47 = "click additional contact information";
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.events = "event13,event96";
+    s.linkTrackVars = "eVar47,products,events";
+    s.linkTrackEvents = "event13,event96";
+    fonTrackLink(true, "o", 'click_additional_contact_information');
+
+            }
+        };
+        trackProfileOpeningHoursClick = function(href, data) {
+            if(window.s) {
+                    s.eVar47 = "click to opening hours";
+    s.eVar24 = data.source;
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.events = "event13,event84";
+    s.linkTrackVars = "eVar24,eVar47,products,events";
+    s.linkTrackEvents = "event13,event84";
+    fonTrackLink(true, "o", 'click_to_opening_hours');
+
+            }
+        };
+        trackProfileAdditionalWwwClick = function(href, data) {
+            if(window.s) {
+                    s.eVar27 = href;
+    s.eVar47 = 'click company info website';
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events = 'event83,event13';
+    s.linkTrackVars = 'eVar47,eVar27,products,events';
+    s.linkTrackEvents = 'event83,event13';
+    fonTrackLink(true, 'o', href);
+
+            }
+        };
+        trackProfileAdditionalWwwInternalLinkClick = function(href, data) {
+            if(window.s) {
+                    s.eVar24 = 'click|profile|otherlinks';
+    s.events='event103';
+    s.linkTrackVars='eVar24,events';
+    s.linkTrackEvents='event103';
+    fonTrackLink(true,'o','common_click');
+
+            }
+        };
+        trackProfileLocationClick = function(href, data) {
+            if(window.s) {
+                    s.eVar47 = "click location";
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.events = "event69,event13";
+    s.linkTrackVars = "eVar47,products,events";
+    s.linkTrackEvents = "event69,event13";
+    fonTrackLink(this, "o", href);
+
+            }
+        };
+        trackBookingLinkInternal = function(href, data) {
+            if(window.s) {
+                    s.eVar47="click to bookings";
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events="event13,event99";
+    s.linkTrackVars="eVar47,products,events";
+    s.linkTrackEvents="event13,event99";
+    fonTrackLink(true,"o","click_fonecta_bookings");
+
+            }
+        };
+        trackBookingLinkExternal = function(href, data) {
+            if(window.s) {
+                    s.eVar47="click to bookings";
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events="event13,event101";
+    s.linkTrackVars="eVar47,products,events";
+    s.linkTrackEvents="event13,event101";
+    fonTrackLink(true,"o","click_other_bookings");
+
+            }
+        };
+        trackProfileBookingLinksShowClick = function(href, data) {
+            if(window.s) {
+                    s.eVar47='click to booking links';
+    if(data.productId) {
+    s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+    s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events='event13';
+    s.linkTrackVars='eVar47,products,events';
+    s.linkTrackEvents='event13';
+    fonTrackLink(true,'o','click_to_booking_links');
+
+            }
+        };
+        trackClickOtherCompanies = function(href, data) {
+            if(window.s) {
+                    s.events="event42";
+    s.linkTrackVars="events";
+    s.linkTrackEvents="event42";
+    fonTrackLink(this, "o", "yp_profile_click_others");
+
+            }
+        };
+        trackClickFrontBox = function(href, data) {
+            if(window.s) {
+                    s.eVar23=data.box;
+    s.events="event16";
+    s.linkTrackVars="eVar23,events";
+    s.linkTrackEvents="event16";
+    fonTrackLink(this, "o", "click_homepage_"+data.box);
+
+            }
+        };
+        trackCallerAppLink = function(href, data) {
+            if(window.s) {
+                    s.eVar76=data.app;
+    s.events="event103";
+    s.linkTrackVars="events,eVar76";
+    s.linkTrackEvents="event103";
+    fonTrackLink(true,"o","common_action");
+
+            }
+        };
+        mobileSuperCategorySearch = function(href, data) {
+            if(window.s) {
+                    s.eVar24='mobile_breadcrumb_search';
+    s.events='event103';
+    s.linkTrackVars='eVar24,events';
+    s.linkTrackEvents='event103';
+    fonTrackLink(this, 'o', 'mobile_breadcrumb_click');
+
+            }
+        };
+        trackProfileBreadcrumbCategoryArea = function(href, data) {
+            if(window.s) {
+                    s.eVar24='Profile_breadcrumb_click_category+area';
+    s.events='event103';
+    s.linkTrackVars='eVar24,events';
+    s.linkTrackEvents='event103';
+    fonTrackLink(this, 'o', 'Profile_breadcrumb_click_category+area');
+
+            }
+        };
+        trackSearchSuggestionsLink = function(href, data) {
+            if(window.s) {
+                    s.eVar24='specify search term';
+    s.events='event103';
+    s.linkTrackVars='eVar24,events';
+    s.linkTrackEvents='event103';
+    fonTrackLink(this, 'o', 'specify_search_term');
+
+            }
+        };
+        trackNoResultsSuggestionsLink = function(href, data) {
+            if(window.s) {
+                    s.eVar24='no result search - click - specify search term';
+    s.events='event103';
+    s.linkTrackVars='eVar24,events';
+    s.linkTrackEvents='event103';
+    fonTrackLink(this, 'o', 'no result search - click - specify search term');
+
+            }
+        };
+        trackOmaFonectaAdClick = function(href, data) {
+            if(window.s) {
+                    s.eVar24='click|sf_result|omafonecta';
+    s.events='event103';
+    s.linkTrackVars='eVar24,events';
+    s.linkTrackEvents='event103';
+    fonTrackLink(this,'o','click|sf_result|omafonecta');
+
+            }
+        };
+        trackExpandMap = function(href, data) {
+            if(window.s) {
+                    s.eVar24='action|sf_result|map-expand';
+    s.events='event103';
+    s.linkTrackVars='eVar24,events';
+    s.linkTrackEvents='event103';
+    fonTrackLink(true,'o','action|sf_result|map-expand');
+
+            }
+        };
+        trackMinimizeMap = function(href, data) {
+            if(window.s) {
+                    s.eVar24='action|sf_result|map-minimize';
+    s.events='event103';
+    s.linkTrackVars='eVar24,events';
+    s.linkTrackEvents='event103';
+    fonTrackLink(true,'o','action|sf_result|map-minimize');
+
+            }
+        };
+        trackOpenCompanyPopupOnMap = function(href, data) {
+            if(window.s) {
+                    s.eVar24='action|sf_result|map-click-company';
+    s.events='event103';
+    s.linkTrackVars='eVar24,events';
+    s.linkTrackEvents='event103';
+    fonTrackLink(true,'o','action|sf_result|map-click-company');
+
+            }
+        };
+        trackShowMobileMap = function(href, data) {
+            if(window.s) {
+                    s.eVar24='click|sf_result|map-view-mobile';
+    s.events='event103';
+    s.linkTrackVars='eVar24,events';
+    s.linkTrackEvents='event103';
+    fonTrackLink(true,'o','click|sf_result|map-view-mobile');
+
+            }
+        };
+        trackMapClickToProfile = function(href, data) {
+            if(window.s) {
+                    s.eVar24='action|sf_result|map-click-to-profile';
+    s.events='event103';
+    s.linkTrackVars='eVar24,events';
+    s.linkTrackEvents='event103';
+    fonTrackLink(this, 'o', 'action|sf_result|map-click-to-profile');
+
+            }
+        };
+        trackShowAddressOnMap = function(href, data) {
+            if(window.s) {
+                    s.eVar47 = 'click location';
+    if(data.productId) {
+        s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+        s.products = "";
+    }
+    s.FonectaProducts = data.fonectaProduct;
+    s.events ='event69,event13';
+    s.linkTrackVars ='eVar47,products,events';
+    s.linkTrackEvents ='event69,event13';
+    fonTrackLink(true, 'o', href);
+
+            }
+        };
+        trackPersonShowAddressOnMap = function(href, data) {
+            if(window.s) {
+                    s.eVar24='click|sf_result|click location';
+    s.events='event103';
+    s.linkTrackVars='eVar24,events';
+    s.linkTrackEvents='event103';
+    fonTrackLink(this, 'o', 'click|sf_result|click location');
+
+            }
+        };
+        trackProfileSendToMobileClick = function(href, data) {
+            if(window.s) {
+                    s.eVar47 = 'contact click to mobile'
+    if(data.productId) {
+        s.products = ";" + data.productId + ";;;event13=1";
+    } else {
+        s.products = "";
+    }
+    s.linkTrackVars = 'eVar47,products';
+    s.linkTrackEvents='event103';
+    fonTrackLink(true, 'o', 'contact_click_to_mobile');
+
+            }
+        };
+        trackHeaderYrityksilleLink = function(href, data) {
+            if(window.s) {
+                    s.events='event102';
+    s.linkTrackVars='events';
+    s.linkTrackEvents='event102';
+    fonTrackLink(this, 'o', 'click_header_yrityksille');
+
+            }
+        };
+        trPayVerkkomaksuVahvistettu = function(href, data) {
+            if(window.s) {
+                    s.pageName = "tr_pay";
+    s.channel = "tr";
+    s.eVar2 = "tr";
+    var purchaseID = "";
+    s.prop25="tr_pay_verkkomaksu_vahvistettu";
+    s.products=';na;1;2.99';
+    s.eVar61='tr';
+    s.prop61='tr';
+    s.events='purchase';
+    s.linkTrackVars='pageName,products,prop25,channel,eVar30,events,eVar2,eVar61,prop61,eVar74';
+    s.linkTrackEvents='purchase';
+    if(purchaseID) {
+    s.purchaseID='point-'+purchaseID;
+    s.linkTrackVars += ',purchaseID';
+    }
+    fonTrackLink(true,'o','tr_pay_verkkomaksu_vahvistettu');
+
+            }
+        };
+    </script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/fi_FI/sdk.js#xfbml=1&version=v2.3";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script type="application/javascript" src="https://script.advertiserreports.com/redirector/ard?client_id=1040"></script>
+
+        </body>
+    </html>

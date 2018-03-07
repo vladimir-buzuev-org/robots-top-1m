@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Stib.be</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/irj/go/km/docs/WEBSITE_RES/Webresources/Frontend/build/css/main.css">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PX9MTR');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+<body class="page-language">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PX9MTR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  
+  <div id="language_choice_container" class="site-wrapper" style="display:none">
+    <header class="header header--no-boxes">
+      <div class="header__navigation">
+        <nav class="navigation container">
+          <a class="navigation__logo" href="/index.html">
+            <img src="/irj/go/km/docs/WEBSITE_RES/Webresources/Frontend/build/images/logo--mobile.svg" alt="Homepage">
+          </a>
+        </nav>
+      </div>
+      <div class="page-language__visual">
+        <img src="/irj/go/km/docs/WEBSITE_RES/Webresources/Frontend/build/images/language-head.jpg">
+      </div>
+    </header>
+
+<!-- BEGIN_RESPONSIVE_CONTENT -->
+    <div class="container main page-language__options">      
+      <div class="col--12 col--4@full">
+        <div class="box box--shadowed box--spacious page-language__option">
+          <div class="box__content">
+            <h2 class="text--color-primary">Faisons bouger Bruxelles !</h2>
+            <a href="?l=fr" data-lang="fr" class="btn btn--secondary btn--fill-width btn--icon-right">
+              Bienvenue<span class="icon-arrow" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col--12 col--4@full">
+        <div class="box box--shadowed box--spacious page-language__option">
+          <div class="box__content">
+            <h2 class="text--color-primary">Laten we Brussel doen bewegen!</h2>
+            <a href="?l=nl" data-lang="nl" class="btn btn--secondary btn--fill-width btn--icon-right">
+              Welkom<span class="icon-arrow" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col--12 col--4@full">
+        <div class="box box--shadowed box--spacious page-language__option">
+          <div class="box__content">
+            <h2 class="text--color-primary">Let's get Brussels moving!</h2>
+            <a href="?l=en" data-lang="en" class="btn btn--secondary btn--fill-width btn--icon-right">
+              Welcome<span class="icon-arrow" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+<!-- END_RESPONSIVE_CONTENT -->
+
+  <script type="text/javascript" src="/irj/go/km/docs/STIB-MIVB/INTERNET/Frontend/js/stib-utils.js"></script>
+  <script type="text/javascript" src="/irj/go/km/docs/STIB-MIVB/INTERNET/Scripts/jquery/js/URI.js/src/URI.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript">
+	  (function(){
+		  'use strict';
+
+		  var cookieLanguage = "cookie_language";
+		  var cookieLanguageValidity = 200;
+		  var language_param_name = "l";
+		
+		  $(document).ready(function() {
+
+			  _checkForLanguageURLParameter();
+			  _setupOnLanguageButtonClicked();
+		  	
+		  	
+		  });
+
+		  function _checkForLanguageURLParameter(){
+
+			  var languageVal = getURLParameterValueByParamName(language_param_name);
+
+		  	  if((languageVal == undefined)||(languageVal.length==0)){
+		  		languageVal = readACookie(cookieLanguage);
+		  		if(languageVal == undefined){
+		  			$("#language_choice_container").show();
+		  		}else{	
+		  			forwardToLanguage(languageVal);			
+		  		}		
+		  	  }
+
+		  }
+
+		  function _setupOnLanguageButtonClicked(){
+
+			  $(".page-language__option a").click(function(e){
+				  e.preventDefault();
+				  var lang = $(this).data("lang");
+				  
+				  //Create cookie
+				  createACookie(cookieLanguage,  lang, cookieLanguageValidity);
+
+				  //Clean url and open website in certain language
+				  forwardToLanguage(lang);
+			  });
+		  }
+
+
+		  function forwardToLanguage(languageToForwardTo){
+			  	
+		  	if(languageToForwardTo){
+		  		var uri = new URI(window.location);	
+		  		uri.removeSearch(["l"]);	
+		  		uri.addSearch({"l":languageToForwardTo});	
+		  		window.location.href = uri.toString(); 
+		  	}
+		  	
+		  }
+
+		  
+  		}());
+  </script>
+
+
+</body>
+</html>
+
+
+
+
+<script type="text/javascript">if(!self.containers){containers=[]}var column1 = {numOfIViews:1};containers['column1'] = column1;</script>
+
+                        
+
+
+

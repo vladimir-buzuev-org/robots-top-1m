@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>404</title>
+
+<script>
+	
+var loc = window.location.pathname;
+var dir = loc.substring(1, loc.length).toLowerCase();
+		
+dir = dir.replace(/\/$/, '');
+				
+var redirection = findSite(dir);
+		
+if(redirection!='') {	
+	window.location = redirection;
+	}
+	
+	function findSite(s) 
+	{
+		var ret = '';
+		var sites = 
+		[
+		{key:"test.account", value:"https://www.google.com"},
+		{key:"tester", value:"https://www.cnn.com"},
+		{key:"john.schram", value:"http://www.JohnSchram.com"}
+		];
+  
+		for(var i = 0; i < sites.length; i++)
+		{
+			if (sites[i].key == s) {
+				ret = sites[i].value;
+			} 
+		}	
+		return ret;
+	}
+
+</script>
+<noscript>
+You must have javascript enabled.
+</noscript>
+</head>
+<body>
+<div style="font-family:calibri, san-serif">
+This website is no longer active.</div>
+<div style="font-family:calibri, san-serif">
+Please contact your financial advisor for updated information.<br/><br/>
+</div>
+<div style="font-family:calibri, san-serif">
+If you need access to LPL Financial Account View, please visit <a href="https://myaccountviewonline.com">https://myaccountviewonline.com</a> and enter your login information.
+</div>
+
+
+</body>
+</html>

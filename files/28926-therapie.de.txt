@@ -1,0 +1,27 @@
+User-agent: *
+Disallow: /psychotherapie/-ergebnisse-/     # wechselnde Inhalte
+Disallow: /*?
+Disallow: /colorbox/                        # ticket:1424:comment:8
+# 27.4.2016 Problem blocked resources;
+# - Ressourcen-Ordner erlauben (früher min, un auto)
+# - piwik erlauben
+# - ajax sachen erlauben
+Allow: */min/?                              # still some stuff
+Allow: */auto/*?                            # ticket 1424: css + js mit versionierung im "auto" folder
+Allow: */fonts/*?                           # iconfont
+Allow: */piwik.php?
+Allow: */ajax/misc/?
+Allow: */ajax/hitcounter/?
+# 7.8.2014 Problem falsch zusammengesetzte Suchseiten
+# vermutlich aufgrund von wie-auch-immer falsch indizierter / auf webseiten dargestellter Links (irgendwie automatische geschichten)
+# den meisten gemein ist, dass direkt auf einen suchparameter im nächsten Abschnitt eine (Seiten-Ergebnis-)Zahl folgt
+# nachdem robots.txt leider kein regex kann, brauchen wir neun zeilen
+Disallow: /*-/1
+Disallow: /*-/2
+Disallow: /*-/3
+Disallow: /*-/4
+Disallow: /*-/5
+Disallow: /*-/6
+Disallow: /*-/7
+Disallow: /*-/8
+Disallow: /*-/9

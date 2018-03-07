@@ -1,0 +1,23 @@
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<div align="center">
+<p><img src="logo.png"></p>
+<h1>Domain Changed</h1>
+<p>iwcoffice.org has now been replaced with iwc.int</p>
+<p>Redirecting to: <a href="http://iwc.int/robots.txt">http://iwc.int/robots.txt</a></p>
+<p><strong><span id="sec">10</span> seconds</strong></p>
+</div>
+
+<script>
+$(function () {
+ var count = 10;
+  var countdown = setInterval(function(){
+    $("#sec").html(count);
+    if (count == 0) {
+      clearInterval(countdown);
+      window.open("http://iwc.int/robots.txt", "_self");
+
+    }
+    count--;
+  }, 1000);
+});
+</script>

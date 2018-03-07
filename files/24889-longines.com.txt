@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html class="" lang="en-us">
+
+    <head>        
+        <base href="//www.longines.com/" />
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQOVlFWDhABU1VWDwUBUA=="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+
+        <link href="./skins/desktop/css/style.css" media="all" rel="stylesheet" type="text/css" ><script type="text/javascript" src="js/minify.js"></script><link href="./skins/desktop/css/style-nomagento.css" media="all" rel="stylesheet" type="text/css" ><script type="text/javascript" src="js/widget/footer.js"></script>        <script src="js/libs/library-watch.min.js"></script>
+        
+        <title>Official Longines® Website : Swiss Watchmaking since 1832</title>
+                    <meta property="og:title" content="Official Longines® Website : Swiss Watchmaking since 1832" />
+                            <meta name="description" content="Since 1832, the Swiss Watchmaking company Longines has been providing you with its expertise, built on tradition, elegance and performance" />
+            <meta property="og:description" content="Since 1832, the Swiss Watchmaking company Longines has been providing you with its expertise, built on tradition, elegance and performance" />
+                
+                            <meta property="og:image" content="//www.longines.com/share.jpg"/>
+                <meta property="og:type" content="website" /> 
+        
+        <meta name="robots" content="index,follow">
+        
+            
+        <meta name="referrer" content="always" />
+        <link rel="icon" type="image/png" href="favicon.png" />
+        <meta property="og:type"   content="website" /> 
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+
+        <script type="text/javascript">var crossTrad = {"rg-news":"news","newsletter":"e-newsletter","rg-semi":"semi-final","partnership":"universe\/events-sports\/partnerships","elegantcircleapp":"user-policy","rg-aces":"future-tennis-aces","terms":"terms-of-use","rg-final":"final","bico":"valentines-2017","rg-players":"players","sitemap":"sitemap","ranking":"universe\/events-sports\/rankings","rg-first":"first-round","wishes2017":"longines-wishes-2017","rg-photos":"gallery","pdd-online":"jeu-concours-2015","rg-videos":"video","search":"search","rg-smashbus":"smashbus","newsgallery":"gallery","rg-previous":"previous","watchzoom":"zoom","ambassador":"universe\/ambassadors","landing-prixdediane":"prixdediane","rg-rdv":"rendez-vous","landing-prixdediane-popin":"about","warning":"warning-shop","rg-time":"roland-garros-times-figures","calendar":"universe\/events-sports\/calendar","pdd-instagram":"instagram","retailerlist":"retailers\/list","history":"company\/history","rg-contest":"contest","film":"universe\/films","suggestions":"watches\/suggestions","rg-tournament":"tournament","watchselector":"watches\/selector","cookies":"privacy-policy","eventsportequestrian":"universe\/events-sports\/equestrian-sports","humanresource":"company\/human-resources","rg-quarter":"quarter-final","news":"universe\/news","rg-smashcorner":"smashcorner","partnerships":"universe\/events-sports\/partnerships","rankings":"universe\/events-sports\/rankings","museum":"company\/museum","eventsport":"universe\/events-sports","eventssportsequestrian":"universe\/events-sports\/equestrian-sports","cs-userguide-manual":"user-manual","eventssports":"universe\/events-sports","cs-technical-partial":"partial-maintenance-service","cs-userguide-technical":"technical-information","cs-technical-battery":"battery-change","cs-userguide-faq":"frequently-asked-questions","cs-technical-restore":"watch-restoration","cs-maintenance-recommendation":"recommandations","cs-technical-price":"maintenance-prices","cs-maintenance-frequency":"frequency","cs-technical-service":"service-guarantee","cs-services-center":"service-center","ambassadors":"universe\/ambassadors","cs-services-pickhome":"send-and-service-my-watch","cs-services-information":"customer-information-system","cs-services-save":"register-your-watch","films":"universe\/films","cs-services-certificat":"certificate-of-authenticity","cs-technical-full":"complete-maintenance-service","cs-landing-maintenance":"watch-care-tipes","cs-landing-userguide":"user-guide","cs-landing-services":"services","cs-landing-catalog":"catalog-request","cs-landing-technical":"technical-intervention","cs-landing-contact":"contact-us","cs-landing-warranty":"international-warranty","customerservice":"customer-service","retailers":"retailers","storelocator":"retailers","watch":"watches","universe":"universe\/universe","companyprofile":"company\/presentation","landing-company":"company","landing-rolandgarros":"roland-garros","landing-universe":"universe","landing-watch":"watches","watches":"watches","universes":"universes","home":"","kentucky":"derby"};</script>
+        
+                    <script>dataLayer = [{'pageCategory': 'Homepage'}];</script>
+         
+        
+        	    	<script type="text/javascript">            
+	          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	          ga('create', 'UA-3053210-1', 'auto', {'allowLinker': true});
+	          ga('require', 'linker');
+	          var linkers = ['novelties.longines.com', 'countdowns.longines.com', 'imagebank.longines.com', 'mediacenter.longines.com', 'www.longines.com','www.longines.cn', 'www.longines.de', 'www.longines.es', 'www.longines.fr', 'www.longines.hk', 'www.longines.it', 'www.longines.jp', 'www.longines.ru', 'www.longines.co.kr'];
+	          var linkersFilter = [];
+	          for(var i = 0; i < linkers.length; i++) {
+	              if (linkers[i] != 'www.longines.com') {
+	                  linkersFilter.push(linkers[i]);
+	              }
+	          }
+	          ga('linker:autoLink', linkersFilter);
+	          ga('require', 'displayfeatures'); 
+	          ga('send', 'pageview');
+	        </script>
+                        
+        
+        <script type="text/javascript">
+		  var gmapStyle = [
+    {
+    "featureType": "poi",
+    "elementType": "labels",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },
+    
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      { "color": "#d6dde3" }
+    ]
+  },{
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#8e979c" }
+    ]
+  },{
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      { "color": "#e6ecec" }
+    ]
+  },{
+    "featureType": "landscape.man_made",
+    "elementType": "geometry",
+    "stylers": [
+      { "visibility": "on" },
+      { "color": "#e0e5e9" }
+    ]
+  },{
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      { "color": "#c2cbd2" }
+    ]
+  },{
+    "featureType": "road.highway",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#b0bbc1" }
+    ]
+  },{
+    "featureType": "road.highway",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      { "color": "#9ea7ac" }
+    ]
+  },{
+    "featureType": "transit.line",
+    "elementType": "geometry",
+    "stylers": [
+      { "color": "#c6cfd6" }
+    ]
+  },{
+    "featureType": "landscape.natural",
+    "stylers": [
+      { "color": "#d0d9de" }
+    ]
+  },{
+    "featureType": "poi.business",
+    "elementType": "geometry",
+    "stylers": [
+      { "color": "#d7dee4" }
+    ]
+  },{
+    "featureType": "poi.government",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#d6dde3" }
+    ]
+  },{
+    "featureType": "road",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      { "color": "#d3dae0" }
+    ]
+  },{
+    "featureType": "poi.medical",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#d9e1e4" }
+    ]
+  },{
+    "featureType": "poi.school",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#cdd6dd" }
+    ]
+  },{
+    "featureType": "poi.sports_complex",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#dae2e5" }
+    ]
+  },{
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      { "hue": "#758086" }
+    ]
+  },{
+    "featureType": "transit.station",
+    "elementType": "labels.icon",
+    "stylers": [
+      { "hue": "#758086" }
+    ]
+  },{
+    "featureType": "transit.station",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "hue": "#0091ff" }
+    ]
+  },{
+    "featureType": "poi",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "poi.attraction",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "visibility": "on" }
+    ]
+  },{
+    "featureType": "poi.business",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "visibility": "on" }
+    ]
+  },{
+    "featureType": "poi.government",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "visibility": "on" }
+    ]
+  },{
+    "featureType": "poi.medical",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "visibility": "on" }
+    ]
+  },{
+    "featureType": "poi.park",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "visibility": "on" }
+    ]
+  },{
+    "featureType": "poi.place_of_worship",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "visibility": "on" }
+    ]
+  },{
+    "featureType": "poi.school",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "visibility": "on" }
+    ]
+  },{
+    "featureType": "poi.sports_complex",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "visibility": "on" }
+    ]
+  },{
+  }
+];
+		  var redirections = null;
+		</script>
+        
+        <!-- Facebook Pixel Code -->
+        <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '706618789470689', {
+        em: 'alin@heralddigital.in'
+        });
+        fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=706618789470689&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Facebook Pixel Code -->
+        
+                        <link rel="alternate" hreflang="en" href="https://www.longines.com"/>
+                            <link rel="alternate" hreflang="en-AU" href="https://www.longines.com.au"/>
+                            <link rel="alternate" hreflang="en-GB" href="https://www.longines.co.uk"/>
+                            <link rel="alternate" hreflang="fr" href="https://www.longines.fr"/>
+                            <link rel="alternate" hreflang="fr-CH" href="https://www.longines.ch/fr"/>
+                            <link rel="alternate" hreflang="de" href="https://www.longines.de"/>
+                            <link rel="alternate" hreflang="de-CH" href="https://www.longines.ch/de"/>
+                            <link rel="alternate" hreflang="es" href="https://www.longines.es"/>
+                            <link rel="alternate" hreflang="it" href="https://www.longines.it"/>
+                            <link rel="alternate" hreflang="it-CH" href="https://www.longines.ch/it"/>
+                            <link rel="alternate" hreflang="ko" href="https://www.longines.co.kr"/>
+                            <link rel="alternate" hreflang="pl" href="https://www.longines.pl"/>
+                            <link rel="alternate" hreflang="zh-Hans" href="https://www.longines.cn"/>
+                            <link rel="alternate" hreflang="zh-Hant" href="https://www.longines.hk"/>
+                            <link rel="alternate" hreflang="ja" href="https://www.longines.jp"/>
+                            <link rel="alternate" hreflang="ru" href="https://www.longines.ru"/>
+                    
+        
+    </head>
+
+
+    <body data-magentotemplate="" ondragstart="return false;" ondrop="return false;" data-lang="en-us" data-ishttps="true" data-marketcountrycached="RU" data-marketcountry="">
+                
+        <a id="skip-to-content" tabindex="1" class="accessible trigger-tabindex" href="#widget-ariane">[Skip to content]</a>
+        
+        <div id="cdn-headers" style="display:none;">{"Accept":"*\/*","User-Agent":"Mozilla\/5.0 (Windows NT 6.0; rv:34.0) Gecko\/20100101 Firefox\/34.0","X-Akamai-Edgescape":"georegion=181,country_code=RU,city=SVERDLOVSK,lat=56.85,long=60.60,timezone=GMT+5,continent=EU,throughput=vhigh,bw=5000,asnum=48524,location_id=0","X-Akamai-CONFIG-LOG-DETAIL":"true","TE":"chunked;q=1.0","Connection":"TE, keep-alive","Accept-Encoding":"gzip","Akamai-Origin-Hop":"3","Via":"1.1 v1-akamaitech.net(ghost) (AkamaiGHost), 1.1 v1-akamaitech.net(ghost) (AkamaiGHost), 1.1 akamai.net(ghost) (AkamaiGHost)","X-Forwarded-For":"31.28.113.97, 31.28.113.97, 10.212.224.175, 217.212.224.189, 95.101.2.211","Host":"www.longines.com","Cache-Control":"max-age=1800","X-Forwarded-Proto":"https"}</div>
+        
+                
+        <div id="body-content" data-getparams="" data-altlang="" data-lang="en-us" data-selectdefaultvalue="Please select">
+            <div id="widget-menu" class="hide-onmobile">
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="menu-item" data-menu="watch">
+            <section data-params='{"lang":"en-us","menu":true,"altlang":""}' data-jsfile="landing" data-pagetitle="Official Longines® Website : Swiss Watchmaking since 1832"  class="landing">
+   
+   <div class="landing-container">
+   
+            <div class="close-wrapper">
+            <span>close</span>
+            <div class="sprite icon-general-close-gray"></div>
+        </div>    
+    
+         
+       
+                    <div class="landing-submenu">
+                                <a tabindex="601" class="anchor trigger-tabindex" data-anchor="anchor1">Choose your collection</a>
+                                <a tabindex="602" class="anchor trigger-tabindex" data-anchor="anchor2">Suggestions</a>
+                                        <div class="hide-ondesktop hide-ontablet"></div>
+                                    <a tabindex="603" href="https://www.longines.com/novelties" >Novelties</a>
+                                <a tabindex="604" href="watches/selector" class="watchselector">Watch selector</a>
+                                <a tabindex="605" href="https://account.longines.com/en/contact/catalog-request" >Catalog Request</a>
+                                        <div class="hide-ondesktop hide-ontablet"></div>
+                                    <a tabindex="606" href="customer-service" class="customerservice">Customer Service</a>
+                                <div class="cursor"></div>
+            </div>
+        
+        <div class="items-wrapper size5 anchor-item" data-anchor="anchor1">
+
+                            <div class="item watch">
+
+                    <a tabindex="-1" href="watches/dolcevita" class="item-picture">
+
+                        <img alt="Collection Elegance - Longines" class="background-resize" src="uploads/landing/watch/mobile/elegance-mobile.jpg"
+                            data-srcmobile="uploads/landing/watch/mobile/elegance-mobile.jpg"
+                            data-width="640" data-height="320"/>
+                        watch Elegance    <!--                    <div class="overlay"></div>-->
+                    </a>
+                    <div class="item-title">Elegance</div>
+                    <ul>
+                                                                            <li>
+                                                                <a class="visibility-collection1" tabindex="607" data-type="other" href="watches/dolcevita">
+                                                                 Longines DolceVita                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="visibility-collection2" tabindex="608" data-type="other" href="watches/primaluna">
+                                                                 Longines PrimaLuna                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="visibility-collection14" tabindex="609" data-type="other" href="watches/longines-symphonette">
+                                                                 Longines Symphonette                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="visibility-collection3" tabindex="610" data-type="other" href="watches/grande-classique">
+                                                                 La Grande Classique de Longines                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="visibility-collection16" tabindex="611" data-type="other" href="watches/presence">
+                                                                 Présence                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="visibility-collection17" tabindex="612" data-type="other" href="watches/flagship">
+                                                                 Flagship                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="visibility-collection18" tabindex="613" data-type="other" href="watches/longines-lyre">
+                                                                 Longines Lyre                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="visibility-collection19" tabindex="614" data-type="other" href="watches/agassiz">
+                                                                 Agassiz                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="visibility-collection13" tabindex="615" data-type="other" href="watches/longines-mini">
+                                                                 Longines Mini                               </a>
+                            </li>
+                                                                    </ul>
+                </div>
+                <div class="clear hide-ondesktop hide-ontablet"></div>
+                            <div class="item watch">
+
+                    <a tabindex="-1" href="watches/master-collection" class="item-picture">
+
+                        <img alt="Collection Watchmaking Tradition - Longines" class="background-resize" src="uploads/landing/watch/mobile/watchmaking-mobile.jpg"
+                            data-srcmobile="uploads/landing/watch/mobile/watchmaking-mobile.jpg"
+                            data-width="640" data-height="320"/>
+                        watch Watchmaking Tradition    <!--                    <div class="overlay"></div>-->
+                    </a>
+                    <div class="item-title">Watchmaking Tradition</div>
+                    <ul>
+                                                                            <li>
+                                                                <a class="visibility-collection4" tabindex="616" data-type="other" href="watches/master-collection">
+                                                                 The Longines Master Collection                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="visibility-collection7" tabindex="617" data-type="other" href="watches/conquest-classic">
+                                                                 Conquest Classic                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="visibility-collection6" tabindex="618" data-type="other" href="watches/st-imier-collection">
+                                                                 The Longines Saint-Imier Collection                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="visibility-collection8" tabindex="619" data-type="other" href="watches/elegant-collection">
+                                                                 The Longines Elegant Collection                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="visibility-collection5" tabindex="620" data-type="other" href="watches/evidenza">
+                                                                 Longines evidenza                               </a>
+                            </li>
+                                                                    </ul>
+                </div>
+                <div class="clear hide-ondesktop hide-ontablet"></div>
+                            <div class="item watch">
+
+                    <a tabindex="-1" href="watches/the-longines-equestrian-collection" class="item-picture">
+
+                        <img alt="Collection Equestrian - Longines" class="background-resize" src="uploads/landing/watch/mobile/equestrian-mobile.jpg"
+                            data-srcmobile="uploads/landing/watch/mobile/equestrian-mobile.jpg"
+                            data-width="640" data-height="320"/>
+                        watch Equestrian    <!--                    <div class="overlay"></div>-->
+                    </a>
+                    <div class="item-title">Equestrian</div>
+                    <ul>
+                                                                            <li>
+                                                                <a class="visibility-collection15" tabindex="621" data-type="other" href="watches/the-longines-equestrian-collection">
+                                                                 Equestrian                               </a>
+                            </li>
+                                                                    </ul>
+                </div>
+                <div class="clear hide-ondesktop hide-ontablet"></div>
+                            <div class="item watch">
+
+                    <a tabindex="-1" href="watches/hydroconquest" class="item-picture">
+
+                        <img alt="Collection Sport - Longines" class="background-resize" src="uploads/landing/watch/mobile/sport-mobile.jpg"
+                            data-srcmobile="uploads/landing/watch/mobile/sport-mobile.jpg"
+                            data-width="640" data-height="320"/>
+                        watch Sport    <!--                    <div class="overlay"></div>-->
+                    </a>
+                    <div class="item-title">Sport</div>
+                    <ul>
+                                                                            <li>
+                                                                <a class="visibility-collection10" tabindex="622" data-type="other" href="watches/hydroconquest">
+                                                                 HydroConquest                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="visibility-collection11" tabindex="623" data-type="other" href="watches/conquest">
+                                                                 Conquest                               </a>
+                            </li>
+                                                                    </ul>
+                </div>
+                <div class="clear hide-ondesktop hide-ontablet"></div>
+                            <div class="item watch">
+
+                    <a tabindex="-1" href="watches/heritage-collection" class="item-picture">
+
+                        <img alt="Collection Heritage - Longines" class="background-resize" src="uploads/landing/watch/mobile/heritage-mobile.jpg"
+                            data-srcmobile="uploads/landing/watch/mobile/heritage-mobile.jpg"
+                            data-width="640" data-height="320"/>
+                        watch Heritage    <!--                    <div class="overlay"></div>-->
+                    </a>
+                    <div class="item-title">Heritage</div>
+                    <ul>
+                                                                            <li>
+                                                                <a class="visibility-collection12" tabindex="624" data-type="other" href="watches/heritage-collection">
+                                                                 Heritage                               </a>
+                            </li>
+                                                                    </ul>
+                </div>
+                <div class="clear hide-ondesktop hide-ontablet"></div>
+                        <div class="clear"></div>
+        </div>
+
+                    <div class="items-wrapper anchor-item" data-anchor="anchor2">
+                                    <div class="item">                    
+                        <div class="item-title">Gift</div>
+                        <ul>
+                                                            <li>
+                                   <a tabindex="625" href="watches/suggestions/gift-watches">Gift Watches</a>
+                                </li>
+                                                            <li>
+                                   <a tabindex="626" href="watches/suggestions/gift-women-watches">Gift Women Watches</a>
+                                </li>
+                                                            <li>
+                                   <a tabindex="627" href="watches/suggestions/gift-men-watches">Gift Men Watches</a>
+                                </li>
+                                                            <li>
+                                   <a tabindex="628" href="watches/suggestions/dive-watches">Dive Watches</a>
+                                </li>
+                                                    </ul>
+                    </div>
+                                    <div class="item">                    
+                        <div class="item-title">Men's Watches</div>
+                        <ul>
+                                                            <li>
+                                   <a tabindex="629" href="watches/suggestions/mens-watches">Men's Watches</a>
+                                </li>
+                                                            <li>
+                                   <a tabindex="630" href="watches/suggestions/men-quartz-watches">Men's Quartz Watches</a>
+                                </li>
+                                                            <li>
+                                   <a tabindex="631" href="watches/suggestions/men-automatic-watches">Men's Automatic Watches</a>
+                                </li>
+                                                    </ul>
+                    </div>
+                                    <div class="item">                    
+                        <div class="item-title">Women's Watches</div>
+                        <ul>
+                                                            <li>
+                                   <a tabindex="632" href="watches/suggestions/womens-watches">Women's Watches</a>
+                                </li>
+                                                            <li>
+                                   <a tabindex="633" href="watches/suggestions/women-quartz-watches">Women's Quartz Watches</a>
+                                </li>
+                                                            <li>
+                                   <a tabindex="634" href="watches/suggestions/women-automatic-watches">Women's Automatic Watches</a>
+                                </li>
+                                                    </ul>
+                    </div>
+                                    <div class="item">                    
+                        <div class="item-title">Movement</div>
+                        <ul>
+                                                            <li>
+                                   <a tabindex="635" href="watches/suggestions/automatic-watches">Automatic Watches</a>
+                                </li>
+                                                            <li>
+                                   <a tabindex="636" href="watches/suggestions/chronograph-watches">Chronograph Watches</a>
+                                </li>
+                                                            <li>
+                                   <a tabindex="637" href="watches/suggestions/quartz-watches">Quartz Watches</a>
+                                </li>
+                                                            <li>
+                                   <a tabindex="638" href="watches/suggestions/moonphase-watches">Moonphase Watches</a>
+                                </li>
+                                                            <li>
+                                   <a tabindex="639" href="watches/suggestions/retrograde-watches">Retrograde Watches</a>
+                                </li>
+                                                    </ul>
+                    </div>
+                                    <div class="item">                    
+                        <div class="item-title">Watches</div>
+                        <ul>
+                                                            <li>
+                                   <a tabindex="640" href="watches/suggestions/sports-watches">Sports Watches</a>
+                                </li>
+                                                            <li>
+                                   <a tabindex="641" href="watches/suggestions/gold-watches">Gold Watches</a>
+                                </li>
+                                                            <li>
+                                   <a tabindex="642" href="watches/suggestions/steel-watches">Steel Watches</a>
+                                </li>
+                                                            <li>
+                                   <a tabindex="643" href="watches/suggestions/classic-watches">Classic Watches</a>
+                                </li>
+                                                    </ul>
+                    </div>
+                                <div class="clear"></div>
+            </div>    
+                
+        
+    </div>
+    
+</section>
+        </div>
+
+        <div class="menu-item" data-menu="universe">
+            <section data-params='{"lang":"en-us","menu":true,"altlang":""}' data-jsfile="landing" data-pagetitle="Official Longines® Website : Swiss Watchmaking since 1832"  class="landing">
+   
+   <div class="landing-container">
+   
+            <div class="close-wrapper">
+            <span>close</span>
+            <div class="sprite icon-general-close-gray"></div>
+        </div>    
+    
+         
+       
+        
+        <div class="items-wrapper size4 anchor-item" data-anchor="anchor1">
+
+                            <div class="item universe">
+
+                    <a tabindex="-1" href="universe/ambassadors" class="item-picture">
+
+                        <img alt="Collection Ambassadors - Longines" class="background-resize" src="uploads/landing/universe/mobile/01mobile.jpg"
+                            data-srcmobile="uploads/landing/universe/mobile/01mobile.jpg"
+                            data-widthdesktop="640" data-heightdesktop="320" data-widthmobile="640" data-heightmobile="320"/>
+                        watch Ambassadors    <!--                    <div class="overlay"></div>-->
+                    </a>
+                    <div class="item-title">ambassadors</div>
+                    <ul>
+                                                                            <li>
+                                                                <a class="" tabindex="601" data-type="other" href="universe/ambassadors/aaron-kwok-fu-shin">
+                                                                 Aaron Kwok Fu Shing                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="602" data-type="other" href="universe/ambassadors/aishwarya-rai-bachchan">
+                                                                 Aishwarya Rai Bachchan                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="603" data-type="other" href="universe/ambassadors/aksel-lund-svindal">
+                                                                 Aksel Lund Svindal                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="604" data-type="other" href="universe/ambassadors/andre-agassi">
+                                                                 Andre Agassi                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="605" data-type="other" href="universe/ambassadors/chi-ling-lin">
+                                                                 Chi Ling Lin                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="606" data-type="other" href="universe/ambassadors/eddie-peng">
+                                                                 Eddie Peng                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="607" data-type="other" href="universe/ambassadors/giulia-steingruber">
+                                                                 Giulia Steingruber                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="608" data-type="other" href="universe/ambassadors/ingeborga-dapkunaite">
+                                                                 Ingeborga Dapkunaite                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="609" data-type="other" href="universe/ambassadors/jane-richard">
+                                                                 Jane Richard                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="610" data-type="other" href="universe/ambassadors/kate-winslet">
+                                                                 Kate Winslet                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="611" data-type="other" href="universe/ambassadors/mikaela-shiffrin">
+                                                                 Mikaela Shiffrin                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="612" data-type="other" href="universe/ambassadors/simon-baker">
+                                                                 Simon Baker                               </a>
+                            </li>
+                                                        <li><a>...</a></li>
+                                <li></li>
+                                <li><a tabindex="613" class="button naked small see-all-ambassadors" href="universe/ambassadors">
+                                        <span>See all ambassadors</span>
+                                        <span class="icon-wrapper">
+                                            <i class="sprite icon-general-arrow-right-blue"></i>
+                                        </span>
+                                    </a>
+                                </li>                            
+                                                                            </ul>
+                </div>
+                <div class="clear hide-ondesktop hide-ontablet"></div>
+                            <div class="item universe">
+
+                    <a tabindex="-1" href="universe/events-sports" class="item-picture">
+
+                        <img alt="Collection Longines events & sports - Longines" class="background-resize" src="uploads/landing/universe/mobile/02mobile.jpg"
+                            data-srcmobile="uploads/landing/universe/mobile/02mobile.jpg"
+                            data-widthdesktop="640" data-heightdesktop="320" data-widthmobile="640" data-heightmobile="320"/>
+                        watch Longines events & sports    <!--                    <div class="overlay"></div>-->
+                    </a>
+                    <div class="item-title">LONGINES EVENTS & SPORTS</div>
+                    <ul>
+                                                    <li><a tabindex="614" href="universe/events-sports/calendar">Calendar</a></li>
+                                                                            <li>
+                                                                <a tabindex="615" data-type="crosstrad" href="universe/events-sports/equestrian-sports">
+                                                                 Equestrian sports                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="616" data-type="other" href="rolandgarros">
+                                                                 Roland Garros                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="617" data-type="other" href="universe/events-sports/gymnastics">
+                                                                 Gymnastics                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="618" data-type="other" href="universe/events-sports/alpine-skiing">
+                                                                 Alpine Skiing                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="619" data-type="other" href="universe/events-sports/archery">
+                                                                 Archery                               </a>
+                            </li>
+                                                    <li>
+                                                                <a tabindex="620" data-type="crosstrad" href="/commonwealth-games-2018">
+                                                                 Commonwealth Games                               </a>
+                            </li>
+                                                                            <li><a tabindex="621" href="universe/events-sports/partnerships">Partnerships</a></li>
+                                            </ul>
+                </div>
+                <div class="clear hide-ondesktop hide-ontablet"></div>
+                            <div class="item universe">
+
+                    <a tabindex="-1" href="universe/news" class="item-picture">
+
+                        <img alt="Collection News - Longines" class="background-resize" src="uploads/landing/universe/mobile/03mobile.jpg"
+                            data-srcmobile="uploads/landing/universe/mobile/03mobile.jpg"
+                            data-widthdesktop="640" data-heightdesktop="320" data-widthmobile="640" data-heightmobile="320"/>
+                        watch News    <!--                    <div class="overlay"></div>-->
+                    </a>
+                    <div class="item-title">News</div>
+                    <ul>
+                                                                            <li>
+                                                                <a class="" tabindex="622" data-type="other" href="universe/news">
+                                                                 Browse through our latest news                               </a>
+                            </li>
+                                                                    </ul>
+                </div>
+                <div class="clear hide-ondesktop hide-ontablet"></div>
+                            <div class="item universe">
+
+                    <a tabindex="-1" href="universe/films" class="item-picture">
+
+                        <img alt="Collection Films - Longines" class="background-resize" src="uploads/landing/universe/mobile/04mobile.jpg"
+                            data-srcmobile="uploads/landing/universe/mobile/04mobile.jpg"
+                            data-widthdesktop="640" data-heightdesktop="320" data-widthmobile="640" data-heightmobile="320"/>
+                        watch Films    <!--                    <div class="overlay"></div>-->
+                    </a>
+                    <div class="item-title">Films</div>
+                    <ul>
+                                                                            <li>
+                                                                <a class="" tabindex="623" data-type="other" href="universe/films">
+                                                                 Discover our films                               </a>
+                            </li>
+                                                                    </ul>
+                </div>
+                <div class="clear hide-ondesktop hide-ontablet"></div>
+                        <div class="clear"></div>
+        </div>
+
+                
+        
+    </div>
+    
+</section>
+        </div>
+
+        <div class="menu-item" data-menu="company">
+            <section data-params='{"lang":"en-us","menu":true,"altlang":""}' data-jsfile="landing" data-pagetitle="Official Longines® Website : Swiss Watchmaking since 1832"  class="landing">
+   
+   <div class="landing-container">
+   
+            <div class="close-wrapper">
+            <span>close</span>
+            <div class="sprite icon-general-close-gray"></div>
+        </div>    
+    
+         
+       
+        
+        <div class="items-wrapper size4 anchor-item" data-anchor="anchor1">
+
+                            <div class="item company">
+
+                    <a tabindex="-1" href="company/presentation/longines" class="item-picture">
+
+                        <img alt="Collection Company profile - Longines" class="background-resize" src="uploads/landing/company/mobile/Longines-company-profile-mobile-640x320.jpg"
+                            data-srcmobile="uploads/landing/company/mobile/Longines-company-profile-mobile-640x320.jpg"
+                            data-widthdesktop="640" data-heightdesktop="320" data-widthmobile="640" data-heightmobile="320"/>
+                        watch Company profile    <!--                    <div class="overlay"></div>-->
+                    </a>
+                    <div class="item-title">Company profile</div>
+                    <ul>
+                                                                            <li>
+                                                                <a class="" tabindex="601" data-type="other" href="company/presentation/longines">
+                                                                 Portrait of Longines                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="602" data-type="other" href="company/presentation/walter-von-kanel">
+                                                                 Walter von Känel                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="603" data-type="other" href="company/presentation/swatch-group">
+                                                                 Portrait of Swatch Group                               </a>
+                            </li>
+                                                                    </ul>
+                </div>
+                <div class="clear hide-ondesktop hide-ontablet"></div>
+                            <div class="item company">
+
+                    <a tabindex="-1" href="company/history/19th/1832" class="item-picture">
+
+                        <img alt="Collection History - Longines" class="background-resize" src="uploads/landing/company/mobile/Longines-history-desktop-575x384.jpg"
+                            data-srcmobile="uploads/landing/company/mobile/Longines-history-desktop-575x384.jpg"
+                            data-widthdesktop="640" data-heightdesktop="320" data-widthmobile="640" data-heightmobile="320"/>
+                        watch History    <!--                    <div class="overlay"></div>-->
+                    </a>
+                    <div class="item-title">History</div>
+                    <ul>
+                                                                            <li>
+                                                                <a class="" tabindex="604" data-type="other" href="company/history">
+                                                                 History of the company                               </a>
+                            </li>
+                                                    <li>
+                                                                <a tabindex="605" data-type="crosstradhistory" href="customer-service/services/certificate-of-authenticity">
+                                                                 History of my watch                               </a>
+                            </li>
+                                                                    </ul>
+                </div>
+                <div class="clear hide-ondesktop hide-ontablet"></div>
+                            <div class="item company">
+
+                    <a tabindex="-1" href="company/museum/longines-museum" class="item-picture">
+
+                        <img alt="Collection Museum - Longines" class="background-resize" src="uploads/landing/company/mobile/Longines-museum-mobile-640x320.jpg"
+                            data-srcmobile="uploads/landing/company/mobile/Longines-museum-mobile-640x320.jpg"
+                            data-widthdesktop="640" data-heightdesktop="320" data-widthmobile="640" data-heightmobile="320"/>
+                        watch Museum    <!--                    <div class="overlay"></div>-->
+                    </a>
+                    <div class="item-title">Museum</div>
+                    <ul>
+                                                                            <li>
+                                                                <a class="" tabindex="606" data-type="other" href="company/museum/longines-museum">
+                                                                 The Longines Museum                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="607" data-type="other" href="company/museum/virtual-visit">
+                                                                 Virtual Tour                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="608" data-type="other" href="company/museum/book-a-visit">
+                                                                 Book a visit of the museum                               </a>
+                            </li>
+                                                    <li>
+                                                                <a class="" tabindex="609" data-type="other" href="company/museum/how-to-find-us">
+                                                                 How to find us / Opening hours                               </a>
+                            </li>
+                                                                    </ul>
+                </div>
+                <div class="clear hide-ondesktop hide-ontablet"></div>
+                            <div class="item company">
+
+                    <a tabindex="-1" href="company/human-resources/who-are-we" class="item-picture">
+
+                        <img alt="Collection Human Resources - Longines" class="background-resize" src="uploads/landing/company/mobile/Longines-human-ressources-mobile-640x320.jpg"
+                            data-srcmobile="uploads/landing/company/mobile/Longines-human-ressources-mobile-640x320.jpg"
+                            data-widthdesktop="640" data-heightdesktop="320" data-widthmobile="640" data-heightmobile="320"/>
+                        watch Human Resources    <!--                    <div class="overlay"></div>-->
+                    </a>
+                    <div class="item-title">Human resources</div>
+                    <ul>
+                                                                            <li>
+                                                                <a class="" tabindex="610" data-type="other" href="company/human-resources/who-are-we">
+                                                                 Who are we?                               </a>
+                            </li>
+                                                    <li>
+                                                                <a tabindex="611" data-type="externallink" href="http://www.swatchgroup.com/en/human_resources/job_offers">
+                                                                 Careers WorldWide                               </a>
+                            </li>
+                                                    <li>
+                                                                <a tabindex="612" data-type="externallink" href="https://webcandidate.longines.com/?page=&lng=en">
+                                                                 Careers in Switzerland                               </a>
+                            </li>
+                                                                    </ul>
+                </div>
+                <div class="clear hide-ondesktop hide-ontablet"></div>
+                        <div class="clear"></div>
+        </div>
+
+                
+        
+    </div>
+    
+</section>
+        </div>
+        
+                    <div class="menu-item menu-special-otd" data-menu="otd">
+            	
+            	<div id="otd-wrapper" data-lang="en-us">
+    
+				    <div class="close-wrapper">
+				        <div class="sprite icon-general-close-gray"></div>
+				    </div>
+				    
+				    <div class="otd-title">
+				        In honour of the <b>185th anniversary of Longines</b>,  
+				    </div>
+    			
+	                       
+<div class="otd-columns-wrapper">
+    <div class="otd-line-wrapper"><div class="otd-line"></div></div>
+    <div class="otd-left">
+    	<div class="otd-title">DISCOVER AN ANECDOTE ABOUT THE BRAND'S HISTORY EVERY DAY</div>
+        <div class="otd-picture">
+        	
+        	<div class="otd-anecdote otd-item">
+        		<a href="185years/on-this-day" class="no-history">
+        			<img alt="Anecdote of the Month" src="uploads/otd/08/17/1.gif" />
+        			<span>ANECDOTE OF THE MONTH</span>
+        			<div class="otd-description"><b>1960-08-17</b> - As part of the brand&rsquo;s new communication strategy, on 17 ...</div>
+        		</a>
+        	</div>
+        	
+        	<div class="otd-current otd-item">
+        		<a href="185years/on-this-day" class="no-history">
+        			<img alt="On This Day" src="uploads/otd/09/01/1.gif" />
+        			<div class="otd-description otd-margin"><b></b> - On 1 September 1937, Sir Malcolm Campbell set ...</div>
+        		</a>
+        	</div>
+            
+        </div>
+        
+        <a href="185years/on-this-day" class="otd-button no-history">
+            <span class="otd-button-top">See Longines</span>
+            <span class="otd-button-bottom">On this day</span>
+        </a>
+    </div>
+    
+    <div class="otd-line"></div>
+    
+    <div class="otd-right">
+    	<div class="otd-title">Discover Longines watches between 1832 and 2017</div>
+        <a class="otd-picture no-history" href="185years/in-this-year">
+        	            <img alt="In This Year" src="skins/desktop/images/header/ity.jpg" />
+                    </a> 
+
+        <a href="185years/in-this-year" class="otd-button no-history">
+            <span class="otd-button-top">See Longines</span>
+            <span class="otd-button-bottom">In this year</span>
+        </a>
+    </div>
+    <div class="otd-clear"></div>
+</div>
+                
+                </div>
+            </div>
+            </div>    
+</div>
+
+<div id="widget-menu-mobile" class="hide-ondesktop hide-ontablet">
+    <div>
+        <div class="menu-item menu-otd">
+            <div>185<sup>th</sup> Anniversary</div>
+            <img data-srcmobile="uploads/menu/0.png" alt="picture 185th Anniversary" width="125"/>
+            <div class="clear"></div>        
+        </div>
+        
+               
+<div class="otd-columns-wrapper">
+    <div class="otd-line-wrapper"><div class="otd-line"></div></div>
+    <div class="otd-left">
+    	<div class="otd-title">DISCOVER AN ANECDOTE ABOUT THE BRAND'S HISTORY EVERY DAY</div>
+        <div class="otd-picture">
+        	
+        	<div class="otd-anecdote otd-item">
+        		<a href="185years/on-this-day" class="no-history">
+        			<img alt="Anecdote of the Month" src="uploads/otd/08/17/1.gif" />
+        			<span>ANECDOTE OF THE MONTH</span>
+        			<div class="otd-description"><b>1960-08-17</b> - As part of the brand&rsquo;s new communication strategy, on 17 ...</div>
+        		</a>
+        	</div>
+        	
+        	<div class="otd-current otd-item">
+        		<a href="185years/on-this-day" class="no-history">
+        			<img alt="On This Day" src="uploads/otd/09/01/1.gif" />
+        			<div class="otd-description otd-margin"><b></b> - On 1 September 1937, Sir Malcolm Campbell set ...</div>
+        		</a>
+        	</div>
+            
+        </div>
+        
+        <a href="185years/on-this-day" class="otd-button no-history">
+            <span class="otd-button-top">See Longines</span>
+            <span class="otd-button-bottom">On this day</span>
+        </a>
+    </div>
+    
+    <div class="otd-line"></div>
+    
+    <div class="otd-right">
+    	<div class="otd-title">Discover Longines watches between 1832 and 2017</div>
+        <a class="otd-picture no-history" href="185years/in-this-year">
+        	            <img alt="In This Year" src="skins/desktop/images/header/ity-mobile.jpg" />
+                    </a> 
+
+        <a href="185years/in-this-year" class="otd-button no-history">
+            <span class="otd-button-top">See Longines</span>
+            <span class="otd-button-bottom">In this year</span>
+        </a>
+    </div>
+    <div class="otd-clear"></div>
+</div>
+                
+        
+        <a href="watches" class="menu-item">
+            <div>Watches</div>
+            <img data-srcmobile="uploads/menu/1.jpg" alt="picture Watches" width="125"/>
+            <div class="clear"></div>        
+            <div class="horizontal-separator"></div>
+        </a>
+        <a href="retailers" class="menu-item">
+            <div>Store Locator</div>
+            <img data-srcmobile="uploads/menu/4.jpg" alt="picture Store Locator" width="125"/>
+            <div class="clear"></div>
+        </a>
+        <a href="universe" class="menu-item">
+            <div>The Longines universe</div>
+            <img data-srcmobile="uploads/menu/2.jpg" alt="picture The Longines universe" width="125"/>
+            <div class="clear"></div>
+            <div class="horizontal-separator"></div>
+        </a>
+        <a href="company" class="menu-item">
+            <div>The company</div>
+            <img data-srcmobile="uploads/menu/3.jpg" alt="picture The company" width="125"/>
+            <div class="clear"></div>
+            <div class="horizontal-separator"></div>
+        </a>
+
+        <div class="submenu-mobile">
+            <a href="https://account.longines.com/en/contact">Contact Us</a>
+            <span class="vertical-separator"></span>
+            <a href="customer-service">Customer service</a>
+            <span class="vertical-separator middle"></span>
+            <a href="https://account.longines.com/en/faq">FAQ</a>
+            <span class="vertical-separator"></span>
+            <a class="language">Language</a>
+        </div>
+
+        <div class="hide-ondesktop hide-ontablet padding-menu"></div>
+    </div>
+</div>
+                <div class="widget-cookie v-align">
+        <span class="v-align-before"></span>
+
+        <div class="v-align-div">
+                            <div class="text">This website uses cookies. By continuing to browse it, you agree to their use. To find out more about cookies and how to manage them, please click here.</div>
+            
+            <a href="privacy-policy">Find out more and configure cookies</a>
+
+                            <div class="allow implicit button-close"><i class="sprite icon-general-close-blue"></i></div>
+                    </div>
+    </div>
+
+            <header>
+    <div class="content">
+        <div id="header-button-menu" style="display: none;">
+            <div class="first"></div><div class="second"></div><div class="third"></div>
+        </div>
+
+        <div class="left hide-onmobile">
+            <a tabindex="10" class="menu-open" data-menu="watch" href="watches">Watches</a>
+            <a tabindex="20" class="menu-open" data-menu="universe" href="universe">The Longines universe</a>
+        </div>
+
+        <a tabindex="30" href="//www.longines.com/" alt="homepage" style="font-size: 0px;" class="no-history">homepage
+            <img src="skins/desktop/images/header/longines.png" class="logo-longines" width="163" alt="Longines"/>
+        </a>
+
+        <div class="right hide-onmobile" data-countrycode="" data-ip="">
+            <a tabindex="40" class="menu-open" data-menu="company" href="company">The company</a>
+            <a tabindex="50" href="retailers">Store Locator</a>
+                
+        </div>
+
+        <div id="header-otd" class="hide-onmobile">
+            <a tabindex="56" class="menu-open no-history" data-menu="otd" href="185years/on-this-day">
+                <img src="skins/desktop/images/header/otd.png" height="48" alt="185years" style="margin-top:5px;" />
+            </a>
+        </div>
+
+        <div id="header-language">
+            <span tabindex="60" class="hide-onmobile trigger-tabindex">Language</span>
+            <div tabindex="70" class="sprite icon-general-search trigger-tabindex"></div>
+        </div>
+
+        <div id="general-loader">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+</header>            <div id="language">
+
+	<div class="wrapper">
+		<div class="head">
+			<span>&nbsp;</span>
+			<i class="logo sprite icon-logo-longines-white"></i>
+
+			<div class="right">
+				<div tabindex="100" class="close trigger-tabindex">
+					<span>&nbsp;</span>
+					<i class="sprite icon-general-close-white"></i>
+				</div>
+				<div tabindex="110" class="search trigger-tabindex">
+					<span>&nbsp;</span>
+					<i class="sprite icon-general-search-white"></i>
+				</div>
+				
+			</div>
+
+			<div class="separator"></div>
+		</div>
+
+		<div class="content">
+			
+			<div class="center">
+				<div class="left">
+					<span class="title">CHOOSE YOUR LANGUAGE</span>
+				</div>
+                
+                                    <a style="display: none;" href="https://www.longines.com">en</a>
+                                    <a style="display: none;" href="https://www.longines.com.au">en-AU</a>
+                                    <a style="display: none;" href="https://www.longines.co.uk">en-GB</a>
+                                    <a style="display: none;" href="https://www.longines.fr">fr</a>
+                                    <a style="display: none;" href="https://www.longines.ch/fr">fr-CH</a>
+                                    <a style="display: none;" href="https://www.longines.de">de</a>
+                                    <a style="display: none;" href="https://www.longines.ch/de">de-CH</a>
+                                    <a style="display: none;" href="https://www.longines.es">es</a>
+                                    <a style="display: none;" href="https://www.longines.it">it</a>
+                                    <a style="display: none;" href="https://www.longines.ch/it">it-CH</a>
+                                    <a style="display: none;" href="https://www.longines.co.kr">ko</a>
+                                    <a style="display: none;" href="https://www.longines.pl">pl</a>
+                                    <a style="display: none;" href="https://www.longines.cn">zh-Hans</a>
+                                    <a style="display: none;" href="https://www.longines.hk">zh-Hant</a>
+                                    <a style="display: none;" href="https://www.longines.jp">ja</a>
+                                    <a style="display: none;" href="https://www.longines.ru">ru</a>
+                                
+                    <div class="right">
+                        <div class="separator"></div>
+                        <ul>
+                            <li class="jap"><a tabindex="120" href="https://www.longines.jp" data-lang="ja-jp">日本語.</a></li>
+                            <li class="china_traditional"><a tabindex="130" href="https://www.longines.cn" data-lang="zh-cn">中文网站</a></li>
+                            <li class="china_simplified"><a tabindex="140" href="https://www.longines.hk" data-lang="zh-hk">中文網站</a></li>
+                            <li class="korean"><a tabindex="150" href="https://www.longines.co.kr" data-lang="ko-kr">한국어</a></li>
+                            <li class="russian"><a tabindex="160" href="https://www.longines.ru" data-lang="ru-ru">Русский</a></li>
+                            <li class="french"><a tabindex="170" href="https://www.longines.fr" data-lang="fr-fr">Français</a></li>
+                            <li class="spanish"><a tabindex="180" href="https://www.longines.es" data-lang="es-es">Español</a></li>
+                        </ul>
+                        <ul>
+                            <li class="german"><a tabindex="190" href="https://www.longines.de" data-lang="de-de">Deutsch</a></li>
+                            <li class="italian"><a tabindex="200" href="https://www.longines.it" data-lang="it-it">Italiano</a></li>
+                            <li class="english"><a tabindex="210" href="https://www.longines.com" data-lang="en-us">English</a></li>                            
+                            <li class="polish"><a tabindex="211" href="https://www.longines.pl" data-lang="pl-pl">Polski</a></li>
+                            <li class="australian"><a tabindex="212" href="https://www.longines.com.au" data-lang="en-au">Australia</a></li>
+                            <li class="unitedkindom"><a tabindex="213" href="https://www.longines.co.uk" data-lang="en-gb">United Kingdom</a></li>
+                            
+                            <li class="suisse">Switzerland<br/> 
+                                (<a tabindex="220" href="https://www.longines.ch/it" data-altlang="it-it" data-lang="it-it">IT</a> / 
+                                <a tabindex="230" href="https://www.longines.ch/de" data-altlang="de-de" data-lang="de-de">DE</a> / 
+                                <a tabindex="240" href="https://www.longines.ch/fr" data-altlang="fr-fr"  data-lang="fr-fr">FR</a>)</li>
+                        </ul>
+                    </div>
+			</div>
+		</div>
+	</div>
+</div>
+            <div id="search">
+	<div class="wrapper">
+		<div class="head">
+			<span>&nbsp;</span>
+			<i class="logo sprite icon-logo-longines-white"></i>
+
+			<div class="right">
+				<div class="language hide-onmobile">
+					Language				</div>
+				<div class="close">
+					<span>&nbsp;</span>
+					<i class="sprite icon-general-close-white"></i>
+				</div>
+				
+			</div>
+
+			<div class="separator"></div>
+		</div>
+
+		<div class="content">
+
+			<div class="header-search">
+				
+				<div class="input-container">
+					<form name="search-form">
+                        <label for="header-input-autoselect">Search here...</label>
+						<input type="text" id="header-input-autoselect" class="placeholder header-input" data-placeholder="Search here..." /><input type="image" src="skins/desktop/images/retailers/search.png" class="header-submit" alt="Store Locator" />
+					</form>
+				</div>
+			
+			</div>
+			<div class="header-search-result">
+
+				<div class="suggestion-search-category watches">
+					
+					<div class="suggestion-block">
+						<span>Watches</span>
+						<ul>
+							
+						</ul>
+					</div>
+					
+					<div class="clear"></div>
+					
+				</div>
+				
+				<div class="suggestion-search-category universe">
+					
+					<div class="suggestion-block">
+						<span>Longines universe</span>
+						<ul>
+							
+						</ul>
+					</div>
+					
+					<div class="clear"></div>
+					
+				</div>
+				
+				<div class="suggestion-search-category customerservice">
+					
+					<div class="suggestion-block">
+						<span>Customer service</span>
+						<ul>
+							
+						</ul>
+					</div>
+					
+					<div class="clear"></div>
+					
+				</div>
+				
+				<div class="suggestion-search-category company">
+					
+					<div class="suggestion-block">
+						<span>The company</span>
+						<ul>
+							
+						</ul>
+					</div>
+					
+					<div class="clear"></div>
+					
+				</div>
+				
+				<div class="suggestion-search-category retailers">
+					
+					<div class="suggestion-block">
+						<span>Store Locator</span>
+						<ul>
+							
+						</ul>
+					</div>
+					
+					<div class="clear"></div>
+					
+				</div>
+				
+				<div class="no-result">No result for your search.</div>
+				
+			</div>
+				
+		</div>
+	</div>
+</div>
+
+
+            <div id="root-content">
+                <section data-params='{"lang":"en-us","crosstrads":"home","module":"default","controller":"index","action":"index"}' data-jsfile="home" data-pagetitle="Official Longines® Website : Swiss Watchmaking since 1832"  id="section-home">
+    <h1 class="display-none">Longines Homepage</h1>
+    <div id="widget-ariane" style="display: none;">Homepage</div>
+
+    <div id="home-slideshow-wrapper" data-loopvideo="0" 
+         data-autoplayslideshow="1" 
+         data-autoplayvideo="1">
+        <div class="slideshow-content">
+                                <div class="slideshow-item   picture-item position0 positionmobile0" 
+                       data-arrowcolor="002744" data-slideduration="5" style="background-color: #; color: #002744">
+                                                    <img class="" alt="" src="uploads/home/FIG_Pesaro_desktop_V2.jpg" 
+                                data-srcmobile="uploads/home/mobile/FIG_Pesaro_mobile.jpg" 
+                                data-widthdesktop="1600" data-heightdesktop="1060" data-widthmobile="640" data-heightmobile="880">                           
+                                                <div class="title nottitle-canvas" data-fontsizemobile="20" data-fontsizedesktop="40"></div>
+                                                                            <a class="button naked small link no-history fullpage" style="color: #002744;" href="universe/events-sports/gymnastics">Explore <span class="icon-wrapper">
+                                <div class="arrow">
+                                    <svg version="1.0" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                         viewBox="0 0 960 560" enable-background="new 0 0 960 560" xml:space="preserve">
+                                    <polygon fill="#002744;" style="fill : #002744;" points="463.4,154.8 448.4,169.2 524.3,247.2 193,247.3 193,267.6 523.9,267.7 446.8,345.8 462.9,360.1 
+                                        557,267.7 557,247.2 "/>
+                                    </svg>
+                                </div>
+                            </span></a>
+                                                                            <img  class="logo-aftervideo no-resize position2 positionmobile5 " 
+                                 alt="" src="uploads/home/logo/logo_desktop_FIG_35th_RGWC_V3.png" 
+                                  data-srcmobile="uploads/home/logo/mobile/logo_mobile_FIG_35th_RGWC.png" />
+                                            </div>
+                                    <div class="slideshow-item   picture-item position0 positionmobile0" 
+                       data-arrowcolor="ffffff" data-slideduration="5" style="background-color: #; color: #ffffff">
+                                                    <img class="" alt="" src="uploads/home/L6.141.4.77_desktop.jpg" 
+                                data-srcmobile="uploads/home/mobile/L6.141.4.77_mobile.jpg" 
+                                data-widthdesktop="1600" data-heightdesktop="1060" data-widthmobile="640" data-heightmobile="880">                           
+                                                <div class="title nottitle-canvas" data-fontsizemobile="20" data-fontsizedesktop="40"></div>
+                                                                            <a class="button naked small link no-history fullpage" style="color: #ffffff;" href="watches/the-longines-equestrian-collection/l6-143-0-77-6">Explore <span class="icon-wrapper">
+                                <div class="arrow">
+                                    <svg version="1.0" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                         viewBox="0 0 960 560" enable-background="new 0 0 960 560" xml:space="preserve">
+                                    <polygon fill="#ffffff;" style="fill : #ffffff;" points="463.4,154.8 448.4,169.2 524.3,247.2 193,247.3 193,267.6 523.9,267.7 446.8,345.8 462.9,360.1 
+                                        557,267.7 557,247.2 "/>
+                                    </svg>
+                                </div>
+                            </span></a>
+                                                                            <img  class="logo-aftervideo no-resize position6 positionmobile5 " 
+                                 alt="" src="uploads/home/logo/Hampton_Classic_logo_desktop.png" 
+                                  data-srcmobile="uploads/home/logo/mobile/Hampton_Classic_logo_mobile.png" />
+                                            </div>
+                        </div>
+                    <div class="arrow-left-wrapper">
+                <span></span>
+            </div>
+            <div class="arrow-right-wrapper">
+                <span></span>
+            </div>
+            </div>
+    
+            <div id="home-news-preview" class="width-breakpoint">
+            <a href="universe/news" class="title">
+                <div class="sprite icon-general-arrow-right "></div>
+                <span>Longines News</span>
+            </a>
+
+            <div class="news-wrapper clearfix">
+                                    <a href="universe/news/longines-signs-long-term-title-partnership-of-fei-nations-cup-jumping" class="news-item">
+                        <div class="news-picture">
+                            <img alt="New partnership, Longines and FEI Nations Cup, 2017, long-term partnership" src="uploads/news/thumb/news-longines-signs-long-term-title-partnership-of-fei-nations-cup-jumping-800x500.jpg" data-srcmobile="uploads/news/thumb/mobile/news-longines-signs-long-term-title-partnership-of-fei-nations-cup-jumping-640x400.jpg" width="100%" height="100%" />
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="news-text">
+                            <div class="news-category">Jumping</div>
+                            <div class="news-title">Longines signs long-term title partnership of FEI Nations Cup™ Jumping</div>
+                            <div class="news-date">August 27, 2017</div>
+                        </div>
+                    </a>
+                                    <a href="universe/news/the-longines-fei-european-championships-performance-at-its-peak-" class="news-item">
+                        <div class="news-picture">
+                            <img alt="SHow Jumping 2017, European Championships" src="uploads/news/thumb/news-the-longines-fei-european-championships-performance-at-its-peak--800x500.jpg" data-srcmobile="uploads/news/thumb/mobile/news-the-longines-fei-european-championships-performance-at-its-peak--640x400.jpg" width="100%" height="100%" />
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="news-text">
+                            <div class="news-category">Jumping</div>
+                            <div class="news-title">The Longines FEI European Championships: performance at its peak </div>
+                            <div class="news-date">August 27, 2017</div>
+                        </div>
+                    </a>
+                                    <a href="universe/news/travers-stake---saratoga-2017" class="news-item">
+                        <div class="news-picture">
+                            <img alt="Travers Stake; Saratoga; Horse Racing; 2017" src="uploads/news/thumb/news-travers-stake---saratoga-2017-800x500.jpg" data-srcmobile="uploads/news/thumb/mobile/news-travers-stake---saratoga-2017-640x400.jpg" width="100%" height="100%" />
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="news-text">
+                            <div class="news-category">Horse Racing</div>
+                            <div class="news-title">Travers Stake - Saratoga </div>
+                            <div class="news-date">August 26, 2017</div>
+                        </div>
+                    </a>
+                                <a href="universe/news" class="news-item hide-ondesktop see-allnews hide-onmobile">
+                    <span>See all news</span>
+                    <div class="icon-general-arrow-right-hq"></div>
+                </a>
+                <div class="clear"></div>
+            </div>
+
+            <div class="news-seeall hide-ontablet">
+                <a class="button naked gray small " href="universe/news">
+                    <span>See all news</span>
+                    <span class="icon-wrapper">
+                        <i class="icon-general-arrow-right-hq"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+        
+        <div id="home-instagram" class="width-breakpoint 
+                 hide-ondesktop hide-ontablet">
+        <div class="instragram-content">
+                                        <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYc9Bf6AjUT/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21149302_167096003855918_2607021406092787712_n.jpg" data-widthdesktop="640" data-heightdesktop="359"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e15/21149302_167096003855918_2607021406092787712_n.jpg" data-widthmobile="320" data-heightmobile="179"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYbB8TngTMK/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21149696_1494347373979365_4310384738238988288_n.jpg" data-widthdesktop="640" data-heightdesktop="640"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/21149696_1494347373979365_4310384738238988288_n.jpg" data-widthmobile="320" data-heightmobile="320"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYa7b6KALFy/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21224773_464043027292611_7818961625628540928_n.jpg" data-widthdesktop="640" data-heightdesktop="640"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/21224773_464043027292611_7818961625628540928_n.jpg" data-widthmobile="320" data-heightmobile="320"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYa0GYggeHI/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21147539_1421988021251961_4569714202146504704_n.jpg" data-widthdesktop="640" data-heightdesktop="640"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/21147539_1421988021251961_4569714202146504704_n.jpg" data-widthmobile="320" data-heightmobile="320"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYYagdKg3Di/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21108051_305619736568745_7620898517283766272_n.jpg" data-widthdesktop="640" data-heightdesktop="359"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e15/21108051_305619736568745_7620898517283766272_n.jpg" data-widthmobile="320" data-heightmobile="179"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYVJ3kDghzC/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21107725_119225315402688_7850456156953640960_n.jpg" data-widthdesktop="640" data-heightdesktop="425"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/21107725_119225315402688_7850456156953640960_n.jpg" data-widthmobile="320" data-heightmobile="212"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYTq_o9A8IO/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21042581_150439725539362_5068905314519089152_n.jpg" data-widthdesktop="640" data-heightdesktop="359"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e15/21042581_150439725539362_5068905314519089152_n.jpg" data-widthmobile="320" data-heightmobile="179"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYTMIe5gfyR/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21107206_282683188878010_5101240044526501888_n.jpg" data-widthdesktop="640" data-heightdesktop="359"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e15/21107206_282683188878010_5101240044526501888_n.jpg" data-widthmobile="320" data-heightmobile="179"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYS8uHWACAH/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21107144_112933339440256_5819439016860188672_n.jpg" data-widthdesktop="640" data-heightdesktop="640"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/21107144_112933339440256_5819439016860188672_n.jpg" data-widthmobile="320" data-heightmobile="320"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYSrPBDAhap/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21041589_1985742635038946_6926819492873895936_n.jpg" data-widthdesktop="640" data-heightdesktop="359"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e15/21041589_1985742635038946_6926819492873895936_n.jpg" data-widthmobile="320" data-heightmobile="179"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                    </div>
+        <a href="https://instagram.com/longines/" target="_blank">
+            <img src="skins/desktop/images/home/instragram.png" alt="Instagram logo"/>
+
+            <div>Follow longines <br/>on instagram</div>
+        </a>
+    </div>
+
+        
+    <div id="home-watchandstore" class="width-breakpoint">
+        <a href="watches/selector" class="left">
+            <img alt="watchselector background" src="skins/desktop/images/home/watchselector-background.jpg" width="705" height="500" />
+            <div class="title"><span class="icon"></span> Find your perfect longines watch</div>
+        </a>
+        <a href="retailers" class="right track-retailer">
+            <img alt="background retailer" src="skins/desktop/images/home/retailer-background.jpg" width="705" height="500" />
+            <div class="text-wrapper">
+                <div class="title">
+                    Find a retailer                </div>
+                <span class="subtitle">Find your nearest official Longines retailer</span>
+                 
+                    <div class="input-geolocate-button"><i class="sprite icon-retailers-location"></i>Geolocate me</div>
+                            </div>
+        </a>
+    </div>
+    
+        
+    
+    
+            <div id="home-ambassador" class="width-breakpoint">
+            <div class="left">               
+                <div class="ambassador-title">Kate Winslet, the magnificent Oscar-winning actress, joined the Longines family in 2010.</div>
+
+                <a href="universe/ambassadors/kate-winslet" class="button naked">
+                    <span>See the ambassador</span>
+                    <span class="icon-wrapper">
+                        <i class="sprite icon-general-arrow-right-gray"></i>                            
+                    </span>
+                </a>
+            </div>
+
+            <a class="right" href="universe/ambassadors/kate-winslet">
+                <img class="ambassador-image" alt="Kate Winslet Longines ambassador" src="uploads/ambassador/thumb/ambassador-kate-winslet-800x500.jpg" data-width="800" data-height="500" />
+            </a>
+        </div>
+        
+        <div id="home-instagram" class="width-breakpoint 
+                 hide-onmobile">
+        <div class="instragram-content">
+                                        <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYc9Bf6AjUT/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21149302_167096003855918_2607021406092787712_n.jpg" data-widthdesktop="640" data-heightdesktop="359"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e15/21149302_167096003855918_2607021406092787712_n.jpg" data-widthmobile="320" data-heightmobile="179"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYbB8TngTMK/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21149696_1494347373979365_4310384738238988288_n.jpg" data-widthdesktop="640" data-heightdesktop="640"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/21149696_1494347373979365_4310384738238988288_n.jpg" data-widthmobile="320" data-heightmobile="320"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYa7b6KALFy/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21224773_464043027292611_7818961625628540928_n.jpg" data-widthdesktop="640" data-heightdesktop="640"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/21224773_464043027292611_7818961625628540928_n.jpg" data-widthmobile="320" data-heightmobile="320"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYa0GYggeHI/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21147539_1421988021251961_4569714202146504704_n.jpg" data-widthdesktop="640" data-heightdesktop="640"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/21147539_1421988021251961_4569714202146504704_n.jpg" data-widthmobile="320" data-heightmobile="320"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYYagdKg3Di/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21108051_305619736568745_7620898517283766272_n.jpg" data-widthdesktop="640" data-heightdesktop="359"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e15/21108051_305619736568745_7620898517283766272_n.jpg" data-widthmobile="320" data-heightmobile="179"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYVJ3kDghzC/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21107725_119225315402688_7850456156953640960_n.jpg" data-widthdesktop="640" data-heightdesktop="425"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/21107725_119225315402688_7850456156953640960_n.jpg" data-widthmobile="320" data-heightmobile="212"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYTq_o9A8IO/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21042581_150439725539362_5068905314519089152_n.jpg" data-widthdesktop="640" data-heightdesktop="359"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e15/21042581_150439725539362_5068905314519089152_n.jpg" data-widthmobile="320" data-heightmobile="179"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYTMIe5gfyR/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21107206_282683188878010_5101240044526501888_n.jpg" data-widthdesktop="640" data-heightdesktop="359"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e15/21107206_282683188878010_5101240044526501888_n.jpg" data-widthmobile="320" data-heightmobile="179"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYS8uHWACAH/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21107144_112933339440256_5819439016860188672_n.jpg" data-widthdesktop="640" data-heightdesktop="640"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/21107144_112933339440256_5819439016860188672_n.jpg" data-widthmobile="320" data-heightmobile="320"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                            <a class="" target="_blank" href="https://www.instagram.com/longines/" data-href="https://www.instagram.com/p/BYSrPBDAhap/">
+                    <div class="flipper">
+                        <div class="face"></div>
+                        
+                        <div class="face backface">
+
+                        <img alt="Longines Instagram"
+                         src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21041589_1985742635038946_6926819492873895936_n.jpg" data-widthdesktop="640" data-heightdesktop="359"
+                         data-srcmobile="https://scontent.cdninstagram.com/t51.2885-15/s320x320/e15/21041589_1985742635038946_6926819492873895936_n.jpg" data-widthmobile="320" data-heightmobile="179"/>   
+
+                        </div>
+                    </div>
+                   
+                </a>
+                    </div>
+        <a href="https://instagram.com/longines/" target="_blank">
+            <img src="skins/desktop/images/home/instragram.png" alt="Instagram logo"/>
+
+            <div>Follow longines <br/>on instagram</div>
+        </a>
+    </div>
+
+</section>
+            </div>
+
+            <div id="footer-wrapper">
+                
+<footer aria-hidden="true">
+    <div id="footer-gray">
+        <div class="width-breakpoint clearfix">
+            <a href="//www.longines.com/" class="logo-longines hide-ondesktop hide-ontablet no-history">
+                <img src="skins/desktop/images/header/longines.png" width="163" alt="Longines"/>
+            </a>
+            <div class="copyright"><span>© 2017 Longines Watch Co. Francillon Ltd., All rights reserved</span></div>
+            <div class="items-wrapper">
+                <a href="https://account.longines.com/en/contact">Contact Us</a>
+                <div class="vertical-separator hide-ondesktop hide-ontablet"></div>
+                <a href="customer-service">Customer service</a>
+                <a href="https://account.longines.com/en/faq">FAQ</a>
+                <div class="vertical-separator hide-ondesktop hide-ontablet"></div>
+                
+                                <a href="https://account.longines.com/en/account/newsletter/subscribe" class="last">E-Newsletter</a>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer-share" class="width-breakpoint">
+        <div id="footer-share-left">
+                            <a class="share-hover" href="https://twitter.com/longineseq" target="_blank">
+                    <div class="sprite icon-share-twitter-black"></div>
+                    <span>Follow the official Longines Equestrian account <b>@LonginesEq</b></span>
+                </a>
+                    </div>
+
+        <span>Join US</span>
+                    <a href="https://www.facebook.com/Longines" target="_blank" class="first">facebook
+                <div class="sprite icon-share-facebook-black"></div>
+            </a>
+            <a href="https://twitter.com/longines" target="_blank">twitter
+                <div class="sprite icon-share-twitter-black"></div>
+            </a>
+            <a href="https://plus.google.com/+longines/" target="_blank">google
+                <div class="sprite icon-share-google-black"></div>
+            </a>
+            <a href="https://www.youtube.com/user/longineswatches" target="_blank">youtube
+                <div class="sprite icon-share-youtube-black"></div>
+            </a>
+                <a href="http://www.weibo.com/longineschina" target="_blank">weibo
+            <div class="sprite icon-share-weibo-black"></div>
+        </a>
+                    <a href="https://instagram.com/longines/" target="_blank">instagram
+                <div class="sprite icon-share-instagram-black"></div>
+            </a>
+            <a href="https://www.pinterest.com/longineswatches/" target="_blank" class="last">pinterest
+                <div class="sprite icon-share-pinterest-black"></div>
+            </a>        
+                    </div>
+
+    <div class="horizontal-separator width-breakpoint"></div>
+
+    <div id="footer-links" class="width-breakpoint ">
+        <a class="logo-longines hide-onmobile" href=""  style="font-size: 0px;">homepage
+            <img src="skins/desktop/images/header/longines.png" width="163" alt="Longines"/>
+        </a>
+
+        <div class="slideshow-content">
+            <div class="footer-links-item two-columns clearfix">
+                               <div class="links-title">Watches</div>
+                <div class="left">
+                                            <a href="watches/dolcevita">Longines DolceVita</a><br/>
+                                            <a href="watches/primaluna">Longines PrimaLuna</a><br/>
+                                            <a href="watches/longines-symphonette">Longines Symphonette</a><br/>
+                                            <a href="watches/grande-classique">La Grande Classique de Longines</a><br/>
+                                            <a href="watches/presence">Présence</a><br/>
+                                            <a href="watches/flagship">Flagship</a><br/>
+                                            <a href="watches/longines-lyre">Longines Lyre</a><br/>
+                                            <a href="watches/master-collection">The Longines Master Collection</a><br/>
+                                            <a href="watches/conquest-classic">Conquest Classic</a><br/>
+                                    </div>
+                                    <div class="right hide-onmobile">
+                                                    <a class="visibility-collection19" href="watches/agassiz">Agassiz</a><br/>
+                                                    <a class="visibility-collection6" href="watches/st-imier-collection">The Longines Saint-Imier Collection</a><br/>
+                                                    <a class="visibility-collection8" href="watches/elegant-collection">The Longines Elegant Collection</a><br/>
+                                                    <a class="visibility-collection5" href="watches/evidenza">Longines evidenza</a><br/>
+                                                    <a class="visibility-collection15" href="watches/the-longines-equestrian-collection">Equestrian</a><br/>
+                                                    <a class="visibility-collection10" href="watches/hydroconquest">HydroConquest</a><br/>
+                                                    <a class="visibility-collection11" href="watches/conquest">Conquest</a><br/>
+                                                    <a class="visibility-collection12" href="watches/heritage-collection">Heritage</a><br/>
+                                                    <a class="visibility-collection13" href="watches/longines-mini">Longines Mini</a><br/>
+                                            </div>
+                            </div>
+                            <div class="footer-links-item hide-ondesktop hide-ontablet">
+                    <div class="links-title">Watches</div>
+                                            <a class="visibility-collection19" href="watches/agassiz">Agassiz</a><br/>
+                                            <a class="visibility-collection6" href="watches/st-imier-collection">The Longines Saint-Imier Collection</a><br/>
+                                            <a class="visibility-collection8" href="watches/elegant-collection">The Longines Elegant Collection</a><br/>
+                                            <a class="visibility-collection5" href="watches/evidenza">Longines evidenza</a><br/>
+                                            <a class="visibility-collection15" href="watches/the-longines-equestrian-collection">Equestrian</a><br/>
+                                            <a class="visibility-collection10" href="watches/hydroconquest">HydroConquest</a><br/>
+                                            <a class="visibility-collection11" href="watches/conquest">Conquest</a><br/>
+                                            <a class="visibility-collection12" href="watches/heritage-collection">Heritage</a><br/>
+                                            <a class="visibility-collection13" href="watches/longines-mini">Longines Mini</a><br/>
+                                    </div>
+                        <div class="footer-links-item">
+                <div class="links-title">THE LONGINES UNIVERSE</div>
+                <a href="universe/events-sports/calendar">Calendar</a><br/>
+                <a href="universe/ambassadors">Ambassadors</a><br/>
+                <a href="universe/events-sports">Longines events & sports</a><br/>
+                <a href="universe/events-sports/partnerships">Partnerships</a><br/>
+                <a href="universe/news">News</a><br/>
+                <a href="universe/films">Films</a><br/>
+            </div>
+            <div class="footer-links-item">
+                <div class="links-title">THE COMPANY</div>
+                <a href="company/presentation/longines">Company profile</a><br/>
+                <a href="company/history">History</a><br/>
+                <a href="company/museum/longines-museum">Museum</a><br/>
+                <a href="company/human-resources/who-are-we">Human Resources</a><br/>
+            </div>
+            <div class="footer-links-item">
+                <div class="links-title utilities">SITE UTILITIES</div>
+                <a href="retailers">Store Locator</a><br/>
+                <a href="search">Search Engine</a><br/>
+                <a href="https://account.longines.com/en/contact">Contact Us</a><br/>
+                <a href="https://account.longines.com/en/contact/catalog-request" >Order the catalog</a><br/>
+                <a href="http://mediacenter.longines.com/">MediaCenter</a><br/>
+                <a href="https://account.longines.com/en/faq">FAQ</a><br/>
+                <a href="customer-service">Customer service</a><br/>
+                <a href="https://account.longines.com/en/account/newsletter/subscribe" >E-Newsletter</a><br/>
+                <a href="terms-of-use">Legal</a><br/>
+                <a href="sitemap">Sitemap</a><br/>
+            </div>
+                        <div class="clear"></div>
+        </div>
+
+        <div class="navigation-slideshow-wrapper hide-ondesktop hide-ontablet">
+            <i class="sprite icon-general-left-gray"></i>
+            <div class="bullets-wrapper gray"></div>
+            <i class="sprite icon-general-right-gray"></i>
+        </div>
+    </div>
+</footer>
+            </div>
+
+            <div id="loader-transition-page"></div>
+            
+            <div id="templates">
+                <div class="share-widget">
+		
+	<span>SHARE</span>
+
+	<div class="icons">
+		            <div class="fb">
+                <span>&nbsp;</span>
+                <i class="sprite icon-share-facebook-white"></i>
+                <i class="sprite icon-share-facebook selected"></i>
+            </div>
+            <div class="tw">
+                <span>&nbsp;</span>
+                <i class="sprite icon-share-twitter-white"></i>
+                <i class="sprite icon-share-twitter selected"></i>
+            </div>
+            <div class="gp">
+                <span>&nbsp;</span>
+                <i class="sprite icon-share-google-white"></i>
+                <i class="sprite icon-share-google selected"></i>
+            </div>
+				<div class="wb">
+			<span>&nbsp;</span>
+			<i class="sprite icon-share-weibo-white"></i>
+			<i class="sprite icon-share-weibo selected"></i>
+		</div>
+                    <div class="pt">
+                <span>&nbsp;</span>
+                <i class="sprite icon-share-pinterest-white"></i>
+                <i class="sprite icon-share-pinterest selected"></i>
+            </div>
+        	</div>
+
+	<div class="arrow"></div>
+</div>            </div>
+       </div>
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f3125599f9","applicationID":"17448466","transactionName":"MgNaZkNVCkBVBkdbCQtJeVFFXQtdGwFWVAcQCkwdWFoAVkxKWlwCAB4=","queueTime":0,"applicationTime":2738,"atts":"HkRZEAtPGU4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

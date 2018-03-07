@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html ng-app="StarlineApp">
+
+<!--
+-->
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <base href="/" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/third_party/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/third_party/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/third_party/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="/assets/web_fonts/helvetica_neue.css">
+    <link rel="stylesheet" type="text/css" href="/assets/web_fonts/roboto.css">
+    <link rel="stylesheet" type="text/css" href="/assets/third_party/flags/flags.css">
+    <link rel="stylesheet" type="text/css" href="/assets/icon_font/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/starline.css?v=abe9e8ac6c8514b0055d3bfdc6915e52f42ef9cd
+">
+    <link rel="stylesheet" type="text/css" href="/css/side_navigation.css?v=abe9e8ac6c8514b0055d3bfdc6915e52f42ef9cd
+">
+    <link rel="stylesheet" type="text/css" href="/css/product_badges.css">
+
+    <script src="/assets/third_party/jquery-1.11.3.js"></script>
+    <script src="/assets/third_party/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script src="/assets/third_party/jquery.flagstrap.js"></script>
+    <script src="/assets/third_party/underscore-min.js"></script>
+    <script src="/assets/third_party/slick/slick.min.js"></script>
+    <script src="/assets/third_party/moment.min.js"></script>
+
+    <script type="text/javascript" src="/assets/third_party/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/third_party/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+    <script src="/assets/third_party/angular_1.5.9/angular.min.js"></script>
+    <script src="/assets/third_party/ui-bootstrap-tpls-1.3.3.min.js"></script>
+    <script src="/assets/third_party/contextMenu.js"></script>
+    <script src="/assets/third_party/angular_1.5.9/angular-ui-router.min.js"></script>
+    <script src="/assets/third_party/angular_1.5.9/angular-route.min.js"></script>
+    <script src="/assets/third_party/angular_1.5.9/angular-cookies.min.js"></script>
+    <script src="/assets/third_party/angular_1.5.9/angular-sanitize.min.js"></script>
+
+    <script src="/assets/third_party/angular-loading-bar/loading-bar.min.js"></script>
+
+    <script src="/js/config.js?v=abe9e8ac6c8514b0055d3bfdc6915e52f42ef9cd
+"></script>
+
+    <script src="/js/controllers_directives.js?v=abe9e8ac6c8514b0055d3bfdc6915e52f42ef9cd
+"></script>
+
+    <script>
+    app.service('TitleService', ['$q', function($q) {
+
+var _cachedTitle = null;
+this.cacheTitle = function(title) {_cachedTitle = title;};
+this.resolveTitle = function(inp) {
+var deferred = $q.defer();
+var m;
+m = /^\/products\/new$/.exec(inp);if (m !== null){ deferred.resolve('Starline - New Products'); }
+m = /^\/products\/closeout$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Closeout Products'); }
+m = /^\/brands$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Our Brands'); }
+m = /^\/products\/brands\/(.+)$/.exec(inp);if (m !== null){ var checkInterval = setInterval(function() { if (_cachedTitle !== null) {  clearInterval(checkInterval); deferred.resolve(_cachedTitle); _cachedTitle = null;  }}, 500); return deferred.promise; ; }
+m = /^\/product\/(.+)$/.exec(inp);if (m !== null){ var checkInterval = setInterval(function() { if (_cachedTitle !== null) {  clearInterval(checkInterval); deferred.resolve(_cachedTitle); _cachedTitle = null;  }}, 500); return deferred.promise; ; }
+m = /^\/products\/Drinkware\/(.*)$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Drinkware'); }
+m = /^\/products\/Homestyles\/(.*)$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Homestyles'); }
+m = /^\/products\/Electronics\/(.*)$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Electronics'); }
+m = /^\/products\/Bags\/(.*)$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Bags'); }
+m = /^\/products\/Tools\/(.*)$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Tools'); }
+m = /^\/products\/Flashlights\/(.*)$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Flashlights'); }
+m = /^\/products\/Safety\/(.*)$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Safety'); }
+m = /^\/products\/Business_Essentials\/(.*)$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Business Essentials'); }
+m = /^\/products\/Lifestyles_and_Golf\/(.*)$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Lifestyles and Golf'); }
+m = /^\/idea_board\/(.+)$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Shared Idea Board'); }
+m = /^\/resources\/tools\/art-express$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Art Express'); }
+m = /^\/resources\/tools\/catalogs$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Catalogs'); }
+m = /^\/resources\/tools\/downloads$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Downloads'); }
+m = /^\/resources\/tools\/eflyers-and-specials$/.exec(inp);if (m !== null){ deferred.resolve('Starline - E-Flyers and Specials'); }
+m = /^\/resources\/tools\/integrations$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Integrations'); }
+m = /^\/resources\/services\/starmail$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Starline E-Newsletter'); }
+m = /^\/resources\/education-tools\/deep-draw$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Deep Draw Liner'); }
+m = /^\/resources\/education-tools\/flashlight-lumens$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Flashlight Lumens'); }
+m = /^\/resources\/education-tools\/xfactor$/.exec(inp);if (m !== null){ deferred.resolve('Starline - XFactor™'); }
+m = /^\/resources\/warranty$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Warranty'); }
+m = /^\/general-information\/general-info$/.exec(inp);if (m !== null){ deferred.resolve('Starline - General Info'); }
+m = /^\/general-information\/production-lead-time$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Production Lead Time'); }
+m = /^\/general-information\/sample-policy$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Sample Policy'); }
+m = /^\/general-information\/artwork-requirements$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Artwork Requirements'); }
+m = /^\/general-information\/standard-ink-colors$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Standard Ink Colors'); }
+m = /^\/general-information\/decoration-methods$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Decoration Methods'); }
+m = /^\/general-information\/production-safety-and-compliance$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Production Safety & Compliance'); }
+m = /^\/general-information\/legal-information$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Legal Information'); }
+m = /^\/general-information\/shipping$/.exec(inp);if (m !== null){ deferred.resolve('Starline - Shipping'); }
+deferred.resolve('Starline - Building Your Brand');
+return deferred.promise;
+};
+}]);    </script>
+
+    <script src="/js/templates.js?v=abe9e8ac6c8514b0055d3bfdc6915e52f42ef9cd
+"></script>
+
+    <!-- this must come after controllers_directives.js -->
+    <link rel="stylesheet" type="text/css" href="/assets/third_party/magiczoom.css">
+    <script src="/assets/third_party/magiczoom_sizemod.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/assets/third_party/magnific-popup.css">
+    <script src="/assets/third_party/jquery.magnific-popup.min.js"></script>
+
+    <script src="/assets/third_party/threesixty.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/third_party/threesixty.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/third_party/tooltipster/css/tooltipster.bundle.min.css" />
+    <script type="text/javascript" src="/assets/third_party/tooltipster/js/tooltipster.bundle.min.js"></script>
+
+    <!-- Google Recaptcha -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <title>Starline - Building Your Brand</title>
+
+    <!-- Open Graph Tags for Sharing -->
+    <meta property="og:title" content="Starline - Building Your Brand" />
+    <meta property="og:description" content="Starline is committed to new product development with multiple new product launches throughout the year." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.starline.com/robots.txt" />
+    <meta property="og:image" content="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/logo_en.png" />
+
+    <meta property="og:image:width" content="" />
+    <meta property="og:image:height" content="" />
+
+    <!-- Twitter Tags For Sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@StarlineTalks">
+    <meta name="twitter:creator" content="@StarlineTalks">
+    <meta name="twitter:title" content="Starline - Building Your Brand">
+    <meta name="twitter:description" content="Starline is committed to new product development with multiple new product launches throughout the year.">
+    <meta name="twitter:image" content="//starlinewebsitestorage.blob.core.windows.net/cdn/site_assets/images/logo_en.png">
+
+    <!-- Facebook Pixel Code -->
+
+    <script>
+
+       !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window,document,'script',
+
+          'https://connect.facebook.net/en_US/fbevents.js');
+
+          fbq('init', '1794514900576903');
+          fbq('track', 'PageView');
+
+    </script>
+
+    <noscript>
+        <img height="1" width="1" src="https://www.facebook.com/tr?id=1794514900576903&ev=PageView&noscript=1"/>
+    </noscript>
+
+    <!-- End Facebook Pixel Code -->
+
+  </head>
+
+  <body>
+
+    <script language="JavaScript">
+
+       
+    </script>
+
+    <div class="container">
+        <site-header></site-header>
+        <site-nav></site-nav>
+        <div ui-view class="main"></div>
+        <site-footer></site-footer>
+    </div>
+
+    <!-- Start of Rocket.Chat Livechat Script -->
+    <script type="text/javascript">
+    (function(w, d, s, u) {
+    	w.RocketChat = function(c) { w.RocketChat._.push(c) }; w.RocketChat._ = []; w.RocketChat.url = u;
+    	var h = d.getElementsByTagName(s)[0], j = d.createElement(s);
+    	j.async = true; j.src = deployConfig.CHAT_SERVER + '/packages/rocketchat_livechat/assets/rocket-livechat.js';
+    	h.parentNode.insertBefore(j, h);
+    })(window, document, 'script', deployConfig.CHAT_SERVER + '/livechat');
+    </script>
+    <!-- End of Rocket.Chat Livechat Script -->
+
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
+    { (i[r].q=i[r].q||[]).push(arguments)}
+    ,i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    </script>
+
+  </body>
+
+</html>

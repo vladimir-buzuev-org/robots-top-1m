@@ -1,0 +1,67 @@
+User-Agent: *   
+Allow: /wp-content/uploads/
+Allow: /wp-content/plugins/   
+Allow: /wp-content/themes/  
+Disallow: /author/ 
+Disallow: /wp-includes/   
+Disallow: /wp-admin/
+
+# Desindexar carpetas que empiecen por wp-
+
+Disallow: /wp-
+
+# Permitir sitemap pero no las búsquedas.
+
+Sitemap: https://solucionas.es/sitemap_index.xml   
+Disallow: /?s=   
+Disallow: /search
+
+# Permitir Feed general para Google Blogsearch.   
+# Impedir que /permalink/feed/ sea indexado pues el feed de comentarios suele posicionarse antes de los post.
+# Impedir URLs terminadas en /trackback/ que sirven como Trackback URI (contenido duplicado).   
+
+Allow: /feed/$
+Disallow: /feed   
+Disallow: /comments/feed   
+Disallow: /*/feed/$   
+Disallow: /*/feed/rss/$   
+Disallow: /*/trackback/$   
+Disallow: /*/*/feed/$   
+Disallow: /*/*/feed/rss/$   
+Disallow: /*/*/trackback/$   
+Disallow: /*/*/*/feed/$   
+Disallow: /*/*/*/feed/rss/$   
+Disallow: /*/*/*/trackback/$
+
+# Evita bloqueos de CSS y JS.
+
+Allow: /*.js$
+Allow: /*.css$
+
+# Lista de bots que deberías permitir.
+
+User-agent: Googlebot-Image
+Allow: /wp-content/uploads/
+
+User-agent: Adsbot-Google
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Lista de bots que generan consultas abusivas aunque siguen las pautas del archivo robots.txt
+
+User-agent: MSIECrawler
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: HTTrack
+Disallow: /
+
+User-agent: Microsoft.URL.Control
+Disallow: /
+
+User-agent: libwww
+Disallow: /

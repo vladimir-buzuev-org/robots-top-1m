@@ -1,0 +1,187 @@
+
+
+<html xmlns:og="http://opengraphprotocol.org/schema/"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <title>amazlet (jp)</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="http://static.amazlet.com/css/styles.20130128.css" />
+  
+    <!-- Facebook Open Graph Protocol -->
+    <meta property="og:title" content="Amazlet Tool"/>
+    <meta property="og:url" content="http://app.bloghackers.net/amazlet/"/>
+    <meta property="og:image" content="http://static.amazlet.com/images/amazlet.gif"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Amazlet"/>
+    <meta property="fb:admins" content="585258893"/>
+    <meta property="og:description"
+        content="amazlet - the best bookmarklet tool for amazon affiliates, which makes easier to build a link to specific product detail page from Amazon." />
+    <!-- end FB -->
+
+    <script type="text/javascript">
+    function clip_copy(id) {
+      var area = document.getElementById(id);
+      if (document.all && navigator.userAgent.match(/windows/i) && area.value) {
+        copy_obj = area.createTextRange();
+        copy_obj.execCommand("Copy");
+        alert("クリップボードにコピーしました。");
+      }
+    }
+
+    function selectAll(textarea) {
+      textarea.selectionStart = 0;
+      textarea.selectionEnd = textarea.value.length;
+    }
+
+    function validate (obj) {
+      if (obj.value == "") {
+        window.alert("値を入力してください。")
+        return false;
+      }
+      return true;
+    }
+    function key_validate (obj) {
+       if (event.keyCode == 13) {
+         return validate(obj);
+       }
+    }
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+      $('#region').on('change', function(){
+        var l = $(this).val();
+        var redirect_to = '?locale=' + l;
+                        location.href = redirect_to;
+      });
+    });
+    </script>
+  </head>
+  <body>
+        <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+      FB.init({appId: '133426853369361', status: true, cookie: true,
+               xfbml: true});
+    };
+    (function() {
+      var e = document.createElement('script'); e.async = true;
+      e.src = document.location.protocol +
+        '//connect.facebook.net/ja_JP/all.js';
+      document.getElementById('fb-root').appendChild(e);
+    }());
+    </script>
+    
+    <div id="head"></div>
+    <div id="container">
+        <div id="main">
+      <p class="region">for
+      
+        <select name="locale" id="region">
+          <option value="ca">Amazon.ca</option>
+          <option value="jp" selected="selected">Amazon.co.jp</option>
+          <option value="us">Amazon.com</option>
+          <option value="uk">Amazon.co.uk</option>
+        </select>
+      
+      </p>
+
+      <div class="home">
+        <div class="logo">
+          <h1>amazlet</h1>
+          <p class="logo">one click associate helper</p>
+        </div>
+
+        <div class="search-form">
+          <!-- https://images-na.ssl-images-amazon.com/images/G/09/associates/paapi/dg/index.html -->
+<form method="get">
+<select name="type" class="select">
+  <option value="all">すべてから</option>
+  <option value="books">本</option>
+  <option value="foreignbooks">洋書</option>
+  <option value="dvd">DVD</option>
+  <option value="music">ミュージック</option>
+  <option value="classical">クラシック</option>
+  <option value="videogames">TVゲーム</option>
+  <option value="electronics">家電・カメラ</option>
+  <option value="software">PCソフト</option>
+  <option value="kitchen">ホーム&amp;キッチン</option>
+  <option value="grocery">食料・飲料</option>
+  <option value="healthpersonalcare">ヘルス&amp;ビューティ</option>
+  <option value="beauty">コスメ</option>
+  <option value="baby">ベビー&amp;マタニティ</option>
+  <option value="toys">おもちゃ</option>
+  <option value="hobbies">ホビー</option>
+  <option value="apparel">服&amp;ファッション</option>
+  <option value="shoes">シューズ&amp;バッグ</option>
+  <option value="jewelry">ジュエリー</option>
+  <option value="watches">腕時計</option>
+  <option value="sportinggoods">スポーツ&amp;アウトドア</option>
+</select>
+<input type="text" name="keyword" size="12" class="query" />
+<input type="submit" value="検索" class="submit" />
+<input type="hidden" name="__mode" value="keywordsearch" />
+<input type="hidden" name="locale" value="jp" />
+</form>
+
+        </div>
+        
+        
+        <p class="guide">こんにちは<span class="guest">ゲスト</span>さん<br />amazletを<a href="?__mode=setup&amp;locale=jp">セットアップ</a>しましょう</p>
+        
+
+                <p class="note"><a href="?__mode=help&amp;section=multiregion">複数リージョンで利用時の注意</a></p>
+      </div><!-- home -->
+      
+      <div class="hint">
+        ヒント: 使い方は2つあります。
+        <ol>
+          <li>Amazon.co.jpの商品ページで<strong>ブックマークからワンクリック</strong>でアソシエイト・リンクを作成</li>
+          <li>ブックマークから起動して<strong>商品名で検索</strong>しアソシエイト・リンクを作成</li>
+        </ol>
+      </div><!-- hint -->
+      
+      
+      <p class="tips">「セットアップしたのにゲストになる･･･」<br /> ブックマークから起動していますか?</p>
+      
+      
+      <!-- Facebook like -->
+      <div class="facebook-footer">
+        <p><fb:like layout="standard" action="recommend" width="300px" href="http://app.bloghackers.net/amazlet/"></fb:like></p>
+      </div><!-- facebook-footer -->
+    </div><!-- #main -->
+
+    <div id="footer">
+      <ul>
+                <li><strong>amazlet for each region: </strong></li>
+        
+        <li><a href="?locale=jp">日本</a></li>
+        <li><a href="?locale=ca">Canada</a></li>
+        <li><a href="?locale=uk">United Kingdom</a></li>
+        <li><a href="?locale=us">United States</a></li>      </ul>
+
+      <ul>
+                <li><a href="http://d.hatena.ne.jp/naoya+amazlet/" target="_blank">サポートブログ</a></li>
+        <li><a href="http://twitter.com/naoya_ito" target="_blank">&copy; 2004-2017, Naoya Ito</a></li>
+      </ul>
+    </div><!-- #footer -->
+
+    </div><!-- container -->
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-11614462-3");
+      pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+
+    <!-- locale: jp -->
+    <!-- remote_addr: 194.247.31.31 -->
+  </body>
+</html>

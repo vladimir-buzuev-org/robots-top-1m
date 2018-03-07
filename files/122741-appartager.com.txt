@@ -1,0 +1,2280 @@
+
+<!DOCTYPE html>
+
+<html class="no-js">
+<head>
+    <meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"0995df106e","applicationID":"4072902","transactionName":"MVVVZkoFVkFQUUNbWggfemR7S3BdXFdnU1IDc1hcTBZXXl1XRR18CFRSSg==","queueTime":0,"applicationTime":65,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwAFUl9aGwcAU1NbBwM="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(12),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,s.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,s.now()])}var i=t("handle"),a=t(13),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(5),t(4),"addEventListener"in window&&t(3),s.xhrWrappable&&t(6),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(15)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],4:[function(t,e,n){var r=t("ee").get("raf"),o=t(15)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],5:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(15)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],6:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){g.push(t),h&&(b?b.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(3);var f=t("ee"),u=f.get("xhr"),d=t(15)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,y="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(y,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===y||a()})},{}],7:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=a.now()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(8),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(11),h=t(10),m=window.XMLHttpRequest;a.features.xhr=!0,t(6),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<d;c++)e.addEventListener(u[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)})}},{}],8:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],9:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(12),c=t(13),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=o(l+e,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(p+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],10:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],11:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],12:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],13:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],14:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],15:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(13),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o,e)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o,i){if(!l.aborted||i){t&&t(n,r,o);for(var a=e(o),c=h(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[w[n]];return d&&d.push([g,n,r,a]),a}}function p(t,e){y[t]=h(t).concat(e)}function h(t){return y[t]||[]}function m(t){return d[t]=d[t]||o(n)}function v(t,e){f(t,function(t,n){e=e||"feature",w[n]=e,e in u||(u[e]=[])})}var y={},w={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:v,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(12),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(w,function(e,n){t[e]||(t[e]=n)}),s("mark",["onload",a()+x.offset],null,"api");var n=l.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===l.readyState&&i()}function i(){s("mark",["domContent",a()+x.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-x.offset}var c=(new Date).getTime(),s=t("handle"),f=t(12),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,v=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},g=m&&v&&v[p]&&!/CriOS/.test(navigator.userAgent),x=e.exports={offset:c,now:a,origin:y,features:{},xhrWrappable:g};t(9),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),s("mark",["firstbyte",c],null,"api");var b=0,E=t(14)},{}]},{},["loader",2,7]);</script>
+    <title>Colocation, Colocataire &amp; Chambre &#224; Louer | Appartager</title>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+        <meta property="erm:version" content="1.76.0.11">
+
+    <meta id="e_metaDescription" name="DESCRIPTION" content="Le N&#176;1 de la Colocation &#224; France. D&#233;couvrez les profils de colocataires &#224; France et les offres de colocation &#224; France, c&#39;est simple et gratuit !" />
+<meta id="e_metaKeywords" name="KEYWORDS" content="Colocation, Chambre &#224; louer, Sous-location, Colocataire"/>
+
+    <meta name="robots" content="index, follow" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="canonical" href="https://www.appartager.com">
+
+    <link rel="next" href="https://www.appartager.com/?page=2">
+
+
+
+<link href="https://uk.easyroommate.com" hreflang="en-gb" rel="alternate">
+<link href="https://www.easyroommate.co.nz" hreflang="en-nz" rel="alternate" >
+<link href="https://ie.easyroommate.com" hreflang="en-ie" rel="alternate">
+<link href="https://www.easyroommate.com" hreflang="en" rel="alternate">
+<link href="https://www.easyroommate.com.hk" hreflang="en-hk" rel="alternate">
+<link href="https://ca.easyroommate.com" hreflang="en-ca" rel="alternate">
+<link href="https://au.easyroommate.com" hreflang="en-au" rel="alternate">
+<link href="https://www.easyroommate.com.sg" hreflang="en-sg" rel="alternate">
+<link href="https://www.compartodepto.com" hreflang="es-ar" rel="alternate">
+<link href="https://www.appartager.be" hreflang="fr-be" rel="alternate">
+<link href="https://www.easywg.ch" hreflang="fr-ch" rel="alternate">
+<link href="https://www.easywg.de" hreflang="de" rel="alternate">
+<link href="https://www.appartager.com" hreflang="fr" rel="alternate">
+<link href="https://www.easystanza.it" hreflang="it" rel="alternate">
+<link href="https://www.easykamer.nl" hreflang="dk-nl" rel="alternate">
+<link href="https://www.compartoapto.com.ve" hreflang="es-ve" rel="alternate">
+<link href="https://www.easywg.at" hreflang="de-at" rel="alternate">
+<link href="https://www.easyquarto.com.br" hreflang="pt-br" rel="alternate">
+<link href="https://www.compartodepto.cl" hreflang="es-cl" rel="alternate">
+<link href="https://www.easykot.be" hreflang="dk-be" rel="alternate">
+<link href="https://www.appartager.lu" hreflang="fr-lu" rel="alternate">
+<link href="https://www.compartoapto.com" hreflang="es-co" rel="alternate">
+<link href="https://www.easypiso.com" hreflang="es" rel="alternate">
+<link href="https://www.compartodepa.com.mx" hreflang="es-mx" rel="alternate">
+<link href="https://www.easyquarto.com.pt" hreflang="pt" rel="alternate">
+    
+    <link async="async" defer="defer" href="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/css/min/ErmCss.Homepage.min.css" rel="stylesheet" type="text/css" />
+
+
+
+    
+<google-maps-properties data-api-key="AIzaSyAwLMXjsYXYHSsBS5NGGzUI8Ao1FpxQY0s"
+                        data-country-code="FR"
+                        data-language-code="fr">
+</google-maps-properties>
+
+    
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NCFNM8');
+    </script>
+
+</head>
+
+<body>
+    <div id="lightbox-bkg" class="lightbox-fade ease-out"></div>
+
+<!-- SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="ico-sidemenu-open" viewBox="0 0 25 25">
+        <path d="M0,2 L25,2 L25,6 L0,6 L0,2 Z M0,10 L25,10 L25,14 L0,14 L0,10 Z M0,18 L25,18 L25,22 L0,22 L0,18 Z"></path>
+    </symbol>
+    <symbol id="ico-sidemenu-close" viewBox="0 0 512 512">
+        <polygon points="445.2,109.2 402.8,66.8 256,213.6 109.2,66.8 66.8,109.2 213.6,256 66.8,402.8 109.2,445.2 256,298.4 402.8,445.2   445.2,402.8 298.4,256 " />
+    </symbol>
+</svg>
+<!-- END SVG -->
+
+<!-- HEADER -->
+<div class="header" id="header">
+    <div class="header-content">
+        <div class="icon_sidemenu_open" id="icon_sidemenu_open">
+            <svg class="header_icon_svg">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-sidemenu-open"></use>
+            </svg>
+        </div>
+        <div class="icon_sidemenu_close" id="icon_sidemenu_close">
+            <svg class="header_icon_svg">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-sidemenu-close"></use>
+            </svg>
+        </div>
+        <div class="header-logo">
+            <a href="https://www.appartager.com">
+                <img src="https://secure.erm-assets.com/r1-76-0-11/images/FR/r_logo.png" alt="Colocation et Chambres &#224; louer | Appartager" data-test="hp-logo">
+            </a>
+        </div>
+
+        <ul class="header-links-area">
+            <li class="fright">
+                <div class="header-button-container">
+                    <a class="header-button header-button-green post_ad_link" href="/content/have/profilehave.aspx?id=1&amp;opt=H" rel="nofollow" data-test="hp-post-room">Publiez votre annonce</a>
+                </div>
+            </li>
+
+                <li class="fright">
+                    <a href="/login" data-test="hp-login" class="header-link ease-out" rel="nofollow">Connectez-vous</a>
+                </li>
+
+            <li class="fright">
+                <a href="/misc/faq.aspx" class="header-link ease-out"  data-test="hp-help-link">Aide</a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+<!-- END HEADER -->
+
+<!-- SIDE MENU -->
+<div class="side_menu" id="side_menu">
+    <ul class="side_menu_nav" id="side_menu_nav">
+        <li class="side_menu_item">
+            <a href="/login" class="side_menu_link" rel="nofollow">Connectez-vous</a>
+        </li>
+        <li class="side_menu_item">
+            <a href="/misc/faq.aspx" class="side_menu_link" rel="nofollow" data-test="hp-side-help-link">Aide</a>
+        </li>
+        <li class="side_menu_item">
+            <a href="/content/have/profilehave.aspx?id=1&amp;opt=H" class="side_menu_link" rel="nofollow">Publiez votre annonce</a>
+        </li>
+        <li class="side_menu_item">
+            <a href="/m/misc?view=contact" class="side_menu_link" rel="nofollow">Nous contacter</a>
+        </li>
+        <li class="side_menu_item">
+            <a href="/privacy" class="side_menu_link" rel="nofollow">Politique de confidentialit&#233;</a>
+        </li>
+    </ul>
+</div>
+<!-- END SIDE MENU -->
+
+    
+
+
+
+<!-- SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="ico-arrow-down" viewBox="0 0 10 6">
+        <path d="M426.01,127l5-5.452L430.3,121l-4.288,4.675L421.724,121l-0.712.541,5,5.452h0Z" transform="translate(-421 -121)"></path>
+    </symbol>
+    <symbol id="ico-map-place" viewBox="0 0 477 477">
+        <path d="M238.4,0C133,0,47.2,85.8,47.2,191.2c0,12,1.1,24.1,3.4,35.9c0.1,0.7,0.5,2.8,1.3,6.4c2.9,12.9,7.2,25.6,12.8,37.7
+			c20.6,48.5,65.9,123,165.3,202.8c2.5,2,5.5,3,8.5,3s6-1,8.5-3c99.3-79.8,144.7-154.3,165.3-202.8c5.6-12.1,9.9-24.7,12.8-37.7
+			c0.8-3.6,1.2-5.7,1.3-6.4c2.2-11.8,3.4-23.9,3.4-35.9C429.6,85.8,343.8,0,238.4,0z M399.6,222.4c0,0.2-0.1,0.4-0.1,0.6
+			c-0.1,0.5-0.4,2-0.9,4.3c0,0.1,0,0.1,0,0.2c-2.5,11.2-6.2,22.1-11.1,32.6c-0.1,0.1-0.1,0.3-0.2,0.4
+			c-18.7,44.3-59.7,111.9-148.9,185.6c-89.2-73.7-130.2-141.3-148.9-185.6c-0.1-0.1-0.1-0.3-0.2-0.4c-4.8-10.4-8.5-21.4-11.1-32.6
+			c0-0.1,0-0.1,0-0.2c-0.6-2.3-0.8-3.8-0.9-4.3c0-0.2-0.1-0.4-0.1-0.7c-2-10.3-3-20.7-3-31.2c0-90.5,73.7-164.2,164.2-164.2
+			s164.2,73.7,164.2,164.2C402.6,201.7,401.6,212.2,399.6,222.4z" />
+        <path d="M238.4,71.9c-66.9,0-121.4,54.5-121.4,121.4s54.5,121.4,121.4,121.4s121.4-54.5,121.4-121.4S305.3,71.9,238.4,71.9z
+			 M238.4,287.7c-52.1,0-94.4-42.4-94.4-94.4s42.4-94.4,94.4-94.4s94.4,42.4,94.4,94.4S290.5,287.7,238.4,287.7z" />
+    </symbol>
+</svg>
+<!-- END SVG -->
+
+<!-- call to action area & form area -->
+<div class="calltoaction_area"
+     style="background-image: url('https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/FR/hp-main-img.jpg');"
+     id="calltoaction_area">
+
+    <div class="inner_overlay" id="inner_overlay"></div>
+
+    <!-- call to action area -->
+    <div class="calltoaction_area_content" id="calltoaction_area_content">
+    <h1 class="calltoaction_area_title" data-test="sb-header">
+        Trouvez votre colocation idéale.
+    </h1>
+    <div class="calltoaction_area_label" data-test="sb-header1">Des milliers de chambres &#224; louer en France</div>
+
+    <div class="location_field_div" id="location_field_div">
+    <location-search-properties data-api-key="AIzaSyAwLMXjsYXYHSsBS5NGGzUI8Ao1FpxQY0s"
+                                data-country-code="FR"
+                                data-language-code="fr"
+                                data-default-location-name=""
+                                data-default-location-latitude="0"
+                                data-default-location-longitude="0">
+    </location-search-properties>
+
+    <div class="left location_field_area">
+
+        <input type="text" id="search-location" class="location_field_input" data-test="pf-searchtext"
+               placeholder="O&#249; souhaitez-vous vivre ?" value="" />
+
+        <!-- error location field -->
+        <div class="location_field_error location-not-found" data-test="pf-invalid-location">Lieux introuvable. Merci de r&#233;essayer.</div>
+
+        <div class="location_field_error location-not-selected" data-test="pf-blank-location">Entrez une ville ou un lieu</div>
+        <!-- end error location field -->
+
+        <!-- google map api location results -->
+        <div class="location_field_results_area">
+            <div class="location_field_results_title">
+                Plus d&#39;un lieux correspond &#224; votre recherche:
+            </div>
+            <div class="location_field_results">
+            </div>
+        </div>
+        <!-- end google map api location results -->
+
+    </div>
+    <div class="right location_field_submit_area">
+        <div class="location_field_submit_button" id="location_field_submit_button" data-test="hp-ineedaroom">RECHERCHE</div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+    <span class="calltoaction_area_label calltoaction-post-room-label">
+        Vous recherchez un locataire ? <a href="/content/have/profilehave.aspx?id=1&amp;opt=H" data-test="hp-ihavearoom-1" rel="nofollow">Publiez votre annonce</a>
+    </span>
+</div>
+
+    <!-- end call to action area -->
+
+    <!-- form area -->
+    <div class="form_area_content" id="form_area_content">
+
+    <div class="form_area_info plain-form">
+        <div class="form_area_back_to_location" id="form_area_back_to_location">&lt; Changer le lieux</div>
+        <div class="form_area_info_title start-search-title"
+             data-caption="Commencez votre recherche sur #LocationName#"
+             data-market-caption="D&#233;marrez votre recherche"></div>
+        <div class="facebook_connect_button">
+            <a href="/Account/Login/FacebookExternalSignUp" rel="nofollow" data-test="sb-fb">
+                Enregistrez-vous avec Facebook
+            </a>
+            <div class="form_field_error" data-test="pf-invalidfacebook">Nous n&#39;avons pas pu vous authentifier avec Facebook, merci de vous inscrire avec votre adresse e-mail</div>
+        </div>
+        <div class="ui-loader-wrapper facebook-signup-progress-wrapper">
+            <div class="ui-loader_wht visible" data-test="fb-ds-loader">
+                <span class="loader-1"></span><span class="loader-2"></span><span class="loader-3"></span><span class="loader-4"></span>
+            </div>
+        </div>
+
+        <div class="form_or_separator lines_around" id="or_separator">
+            <span>OU</span>
+        </div>
+    </div>
+
+    <div class="form_area_info facebook-form">
+        <div class="form_area_info_title facebook-return-title" data-caption="Bonjour #Name#!"></div>
+        <div class="font_area_info_label facebook-return-label"
+             data-caption="Compl&#233;tez votre profile et commencez &#224; chercher des chambres &#224; #LocationName#"
+             data-market-caption="Pour contacter toutes les colocations, cr&#233;ez votre profil de recherche sur Appartager."></div>
+    </div>
+
+    <div class="form_area_info facebook-account-exists">
+        <div class="form_area_info_title form_area_info_error facebook-error-message">Le compte existe d&#233;j&#224;, veuillez vous connecter</div>
+    </div>
+
+    <div class="form_area_info facebook-incorrect-age">
+        <div class="form_area_info_title form_area_info_error facebook-error-message">Vous n&#39;avez pas &#233;t&#233; authentifi&#233;</div>
+    </div>
+
+<div class="form_area_form">
+        <form method="POST" action="" id="homepage-profile-signup" class="homepage-profile-signup">
+
+            <div class="form_field max_rent_field">
+                <div>
+                    <input type="text" name="MaxRent" placeholder="Loyer max par mois (€)" data-test="pf-maxrent"
+                           maxlength="4" class="input_field" />
+                </div>
+                <div class="form_field_error" data-test="pf-invalidmaxrent">Indiquez un montant de loyer valide (sans €)</div>
+            </div>
+
+            <div class="form_field name_field">
+                <div>
+                    <input type="text" name="FirstName" placeholder="Pr&#233;nom" data-test="pf-name" class="input_field" />
+                </div>
+                <div class="form_field_error" data-test="pf-invalidname">Indiquez votre pr&#233;nom</div>
+            </div>
+
+            <div class="form_field user_type_fields">
+                <div class="form_field_select_wrapper form-grid">
+                    <select name="UserType" class="form_field_select" data-test="pf-usertype">
+                        <option value="0" disabled selected>Je suis/Nous sommes</option>
+                            <option value="1">Homme</option>
+                            <option value="2">Femme</option>
+                            <option value="3">Couple </option>
+                            <option value="4">Groupe</option>
+                    </select>
+                </div>
+                <div class="form_field_error" data-test="pf-invalidusertype">Indiquez ce que vous &#234;tes</div>
+            </div>
+
+            <div class="form_field facebook_user_type_fields">
+                <div class="form-grid form-grid--3">
+                    <button type="button" class="form-button form-button--multi form-button--selected"
+                            data-test="fi-just-me" value="0">
+                        Juste moi
+                    </button>
+                    <button type="button"
+                            value="3"
+                            class=" form-button form-button--multi" data-test="fi-couple">
+                        Couple 
+                    </button>
+                    <button type="button"
+                            value="4"
+                            class=" form-button form-button--multi" data-test="fi-group">
+                        Groupe
+                    </button>
+                </div>
+            </div>
+
+            <div class="form_field ind_age_field">
+                <div class="form_field_select_wrapper">
+                    <select name="Age" class="form_field_select" data-test="pf-age">
+                        <option value="" disabled selected>Age</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            <option value="51">51</option>
+                            <option value="52">52</option>
+                            <option value="53">53</option>
+                            <option value="54">54</option>
+                            <option value="55">55</option>
+                            <option value="56">56</option>
+                            <option value="57">57</option>
+                            <option value="58">58</option>
+                            <option value="59">59</option>
+                            <option value="60">60</option>
+                            <option value="61">61</option>
+                            <option value="62">62</option>
+                            <option value="63">63</option>
+                            <option value="64">64</option>
+                            <option value="65">65</option>
+                            <option value="66">66</option>
+                            <option value="67">67</option>
+                            <option value="68">68</option>
+                            <option value="69">69</option>
+                            <option value="70">70</option>
+                            <option value="71">71</option>
+                            <option value="72">72</option>
+                            <option value="73">73</option>
+                            <option value="74">74</option>
+                            <option value="75">75</option>
+                            <option value="76">76</option>
+                            <option value="77">77</option>
+                            <option value="78">78</option>
+                            <option value="79">79</option>
+                            <option value="80">80</option>
+                            <option value="81">81</option>
+                            <option value="82">82</option>
+                            <option value="83">83</option>
+                            <option value="84">84</option>
+                            <option value="85">85</option>
+                            <option value="86">86</option>
+                            <option value="87">87</option>
+                            <option value="88">88</option>
+                            <option value="89">89</option>
+                            <option value="90">90</option>
+                            <option value="91">91</option>
+                            <option value="92">92</option>
+                            <option value="93">93</option>
+                            <option value="94">94</option>
+                            <option value="95">95</option>
+                            <option value="96">96</option>
+                            <option value="97">97</option>
+                            <option value="98">98</option>
+                            <option value="99">99</option>
+                    </select>
+                </div>
+                <div class="form_field_error" data-test="pf-invalidage">Merci d&#39;entrer un age valide</div>
+            </div>
+
+            <div class="form_field group_number_fields">
+                <div class="form_field_left form_field_half group_number_men_field">
+                    <div class="form_field_select_wrapper">
+                        <select name="NumMen" class="form_field_select" data-test="pf-nummen">
+                            <option value="0" disabled selected>Hommes</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form_field_error" data-test="pf-invalidnummen">Nombre d&#39;hommes dans le groupe</div>
+                </div>
+                <div class="form_field_right form_field_half group_number_women_field">
+                    <div class="form_field_select_wrapper">
+                        <select name="NumWoman" class="form_field_select" data-test="pf-numwomen">
+                            <option value="0" disabled selected>Femmes</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form_field_error">Nombre de femmes dans le groupe</div>
+                </div>
+                <div class="clear"></div>
+                <div class="form_field_error" data-test="pf-invalidnumwomen">Choisissez un nombre plus grand que 1</div>
+            </div>
+
+            <div class="form_field group_age_fields">
+                <div class="form_field_left form_field_half group_min_age_field">
+                    <div class="form_field_select_wrapper">
+                        <select name="MinAge" class="form_field_select" data-test="pf-minage">
+                            <option value="0" disabled selected>Age min</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                                <option value="51">51</option>
+                                <option value="52">52</option>
+                                <option value="53">53</option>
+                                <option value="54">54</option>
+                                <option value="55">55</option>
+                                <option value="56">56</option>
+                                <option value="57">57</option>
+                                <option value="58">58</option>
+                                <option value="59">59</option>
+                                <option value="60">60</option>
+                                <option value="61">61</option>
+                                <option value="62">62</option>
+                                <option value="63">63</option>
+                                <option value="64">64</option>
+                                <option value="65">65</option>
+                                <option value="66">66</option>
+                                <option value="67">67</option>
+                                <option value="68">68</option>
+                                <option value="69">69</option>
+                                <option value="70">70</option>
+                                <option value="71">71</option>
+                                <option value="72">72</option>
+                                <option value="73">73</option>
+                                <option value="74">74</option>
+                                <option value="75">75</option>
+                                <option value="76">76</option>
+                                <option value="77">77</option>
+                                <option value="78">78</option>
+                                <option value="79">79</option>
+                                <option value="80">80</option>
+                                <option value="81">81</option>
+                                <option value="82">82</option>
+                                <option value="83">83</option>
+                                <option value="84">84</option>
+                                <option value="85">85</option>
+                                <option value="86">86</option>
+                                <option value="87">87</option>
+                                <option value="88">88</option>
+                                <option value="89">89</option>
+                                <option value="90">90</option>
+                                <option value="91">91</option>
+                                <option value="92">92</option>
+                                <option value="93">93</option>
+                                <option value="94">94</option>
+                                <option value="95">95</option>
+                                <option value="96">96</option>
+                                <option value="97">97</option>
+                                <option value="98">98</option>
+                                <option value="99">99</option>
+                        </select>
+                    </div>
+                    <div class="form_field_error">Merci d&#39;entrer un age valide</div>
+                </div>
+                <div class="form_field_right form_field_half group_max_age_field">
+                    <div class="form_field_select_wrapper">
+                        <select name="MaxAge" class="form_field_select" data-test="pf-maxage">
+                            <option value="0" disabled selected>Age max</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                                <option value="51">51</option>
+                                <option value="52">52</option>
+                                <option value="53">53</option>
+                                <option value="54">54</option>
+                                <option value="55">55</option>
+                                <option value="56">56</option>
+                                <option value="57">57</option>
+                                <option value="58">58</option>
+                                <option value="59">59</option>
+                                <option value="60">60</option>
+                                <option value="61">61</option>
+                                <option value="62">62</option>
+                                <option value="63">63</option>
+                                <option value="64">64</option>
+                                <option value="65">65</option>
+                                <option value="66">66</option>
+                                <option value="67">67</option>
+                                <option value="68">68</option>
+                                <option value="69">69</option>
+                                <option value="70">70</option>
+                                <option value="71">71</option>
+                                <option value="72">72</option>
+                                <option value="73">73</option>
+                                <option value="74">74</option>
+                                <option value="75">75</option>
+                                <option value="76">76</option>
+                                <option value="77">77</option>
+                                <option value="78">78</option>
+                                <option value="79">79</option>
+                                <option value="80">80</option>
+                                <option value="81">81</option>
+                                <option value="82">82</option>
+                                <option value="83">83</option>
+                                <option value="84">84</option>
+                                <option value="85">85</option>
+                                <option value="86">86</option>
+                                <option value="87">87</option>
+                                <option value="88">88</option>
+                                <option value="89">89</option>
+                                <option value="90">90</option>
+                                <option value="91">91</option>
+                                <option value="92">92</option>
+                                <option value="93">93</option>
+                                <option value="94">94</option>
+                                <option value="95">95</option>
+                                <option value="96">96</option>
+                                <option value="97">97</option>
+                                <option value="98">98</option>
+                                <option value="99">99</option>
+                        </select>
+                    </div>
+                    <div class="form_field_error">Merci d&#39;entrer un age valide</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="form_field occupation_field">
+                <div class="form_field_select_wrapper">
+                    <select name="Occupation" class="form_field_select" data-test="pf-occupation">
+                        <option value="0" disabled selected>Situation/Profession</option>
+                            <option value="1">Etudiant</option>
+                            <option value="2">Salari&#233;</option>
+                            <option value="4">Retrait&#233;(e)(s)</option>
+                            <option value="8">APL</option>
+                            <option value="3">Autre</option>
+                    </select>
+                </div>
+                <div class="form_field_error" data-test="pf-invalidoccupation">S&#233;lectionnez votre situation</div>
+            </div>
+
+            <div class="form_field email_field">
+                <div>
+                    <input type="text" data-validation-url="/Account/ManageAccount/CheckEmail"
+                           data-test="pf-email"
+                           name="Email" placeholder="Adresse email" class="input_field" />
+                </div>
+                <div class="form_field_error no-email" data-test="pf-invalidemail">Indiquez une adresse mail valide</div>
+                <div class="form_field_error form_field_error--2 email-exists" data-test="pf-invalidemailhard">Vous &#234;tes d&#233;j&#224; enregistr&#233; avec cette adresse email. Pour faire une recherche, merci de vous connecter.</div>
+            </div>
+
+            <div class="form_field password_field">
+                <div>
+                    <input type="password" name="Password" placeholder="Mot de passe" class="input_field" data-test="pf-password" />
+                </div>
+                <div class="form_field_error" data-test="pf-invalidpassword">Veuillez indiquer un mot de passe</div>
+            </div>
+
+            <div class="form_field terms_conditions_fields">
+                <input type="checkbox" name="" value="value" class="input_checkbox" id="checkbox_acknowledgement" data-test="pf-acknowledgement" />
+                <label for="checkbox_acknowledgement">J&#39;ai lu, compris et accepte les</label>
+                <a rel="nofollow" href="/terms-and-conditions" target="_blank" data-test="pf-termsAndConditionsLink">Conditions d&#39;utilisation d&#39;Appartager.com</a>
+                <label for="checkbox_acknowledgement">et ai pris connaissance de la</label>
+                <a href="/privacy" rel="nofollow" target="_blank" data-test="pf-privacyPolicyLink">Politique de Confidentialit&#233;</a>
+            </div>
+            <div class="form_field terms_conditions_error_fields">
+                <div class="form_field_error" data-test="pf-acknowledgementError">Merci de confirmer l&#39;acceptation de nos Conditions d&#39;utilisation et de prendre connaissance de notre Politique de Confidentialit&#233;</div>
+            </div>
+
+            <div class="form_field create-profile-button-field">
+                <div class="form_submit_button" id="hp-create-profile-btn" data-test="pf-postad">CR&#201;ER PROFIL</div>
+
+                <div class="ui-loader-wrapper">
+                    <div class="ui-loader_wht visible" data-test="ds-loader">
+                        <span class="loader-1"></span><span class="loader-2"></span><span class="loader-3"></span><span class="loader-4"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form_field marketing_email_fields">
+                <input type="checkbox" name="ReceiveMarketingEmail" value="value" class="input_checkbox" id="checkbox_marketing_email" data-test="pf-marketing-email" />
+                <label for="checkbox_marketing_email">Je souhaite recevoir des offres exclusives et des mises &#224; jour de compte par e-mail</label>
+            </div>
+
+            <input class="location-name" name="SearchLocationName" value="" type="hidden" />
+            <input class="latitude" name="Latitude" value="0" type="hidden" />
+            <input class="longitude" name="Longitude" value="0" type="hidden" />
+            <input class="last-name" name="LastName" value="" type="hidden" data-test="pf-lastname" />
+            <input class="moving-date" name="MovingDate" value="" type="hidden" />
+            <input class="social-user-id" name="SocialNetworkUserId" type="hidden" value="" />
+            <input class="social-network-photo-path" name="LookProfileUrl" type="hidden" value="">
+        </form>
+
+    </div>
+
+    <div class="clear"></div>
+</div>
+<script type="text/javascript">
+    var socialSignUpData = null;
+</script>
+    <!-- end form area -->
+
+</div>
+<!-- end call to action area & form area -->
+
+<!-- SEO H2 Title -->
+<h2 class="h2_style">
+    Colocations , Colocataires  &amp; chambres &#224; louer
+</h2>
+<!-- end SEO H2 Title -->
+
+<!-- Breadcrumbs -->
+
+
+<!--Top Seo Content-->
+
+
+<!-- Profile ads -->
+    <div class="carousel_area">
+        <div class="carousel_title" data-test="hp-lookposttitle">40,363 colocataires recherchant une colocation - France</div>
+        <div class="carousel_content" id="carousel_content">
+
+            <div id="carousel" class="hp-carousel">
+                <span class="buttons prev">
+                    <img src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/Global/arrow-left.svg" data-test="hp_carousel_arrow_left" class="hp_carousel_arrow" />
+                </span>
+                <div class="viewport">
+                    <ul class="overview" data-test="hp-profilecarousellist">
+                            <li data-url="/colocation-saint-germain-en-laye/ghislain-saint-germain-en-laye/L170906154734925" data-test="hp-profilecarousellistitem-0">
+                                <a href="/colocation-saint-germain-en-laye/ghislain-saint-germain-en-laye/L170906154734925" title="Appartager FR - Ghislain - 22 - Saint-Germain-en-Laye">
+                                    <div class="look_profiles_box">
+                                        <div class="look_profiles_image">
+                                            <img src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/L170906154734925/1/350.jpg" alt="Appartager FR - Ghislain - 22 - Saint-Germain-en-Laye" />
+                                        </div>
+                                        <div class="look_profiles_details">
+                                            <div class="look_profiles_title">Ghislain</div>
+                                            <div class="look_profiles_age">22 ans</div>
+                                            <div class="clear"></div>
+                                            <div class="look_profiles_description">
+                                                Bonjour, Je m&#39;appelle Ghislain, je cherche une chambre dans une colocation avec un loyer de 1&#160;000 €. Si mon profil vous int&#233;resse, envoyez moi un Message Flash ou un email. Merci, ...
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-url="/colocation-noisy-le-grand/romane-noisy-le-grand/L170906154030806" data-test="hp-profilecarousellistitem-1">
+                                <a href="/colocation-noisy-le-grand/romane-noisy-le-grand/L170906154030806" title="Appartager FR - Romane - 18 - Noisy-le-Grand">
+                                    <div class="look_profiles_box">
+                                        <div class="look_profiles_image">
+                                            <img src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/L170906154030806/1/350.jpg" alt="Appartager FR - Romane - 18 - Noisy-le-Grand" />
+                                        </div>
+                                        <div class="look_profiles_details">
+                                            <div class="look_profiles_title">Romane</div>
+                                            <div class="look_profiles_age">18 ans</div>
+                                            <div class="clear"></div>
+                                            <div class="look_profiles_description">
+                                                Bonjour, Je m&#39;appelle Romane, je cherche une chambre dans une colocation avec un loyer de 400 €. Si mon profil vous int&#233;resse, envoyez moi un Message Flash ou un email. Merci, Roma...
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-url="/colocation-paris-ile-de-france/jocelyn-francis-paris-ile-de-france/L17090615401282" data-test="hp-profilecarousellistitem-2">
+                                <a href="/colocation-paris-ile-de-france/jocelyn-francis-paris-ile-de-france/L17090615401282" title="Appartager FR - Jocelyn Francis - 22 - Paris - Ile De France">
+                                    <div class="look_profiles_box">
+                                        <div class="look_profiles_image">
+                                            <img src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/L17090615401282/1/350.jpg" alt="Appartager FR - Jocelyn Francis - 22 - Paris - Ile De France" />
+                                        </div>
+                                        <div class="look_profiles_details">
+                                            <div class="look_profiles_title">Jocelyn Francis</div>
+                                            <div class="look_profiles_age">22 ans</div>
+                                            <div class="clear"></div>
+                                            <div class="look_profiles_description">
+                                                Bonjour, Je m&#39;appelle Jocelyn Francis, je cherche une chambre dans une colocation avec un loyer de 300 €. Si mon profil vous int&#233;resse, envoyez moi un Message Flash ou un email. Me...
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-url="/colocation-toulouse/ella-toulouse/L17090615379828" data-test="hp-profilecarousellistitem-3">
+                                <a href="/colocation-toulouse/ella-toulouse/L17090615379828" title="Appartager FR - Ella - 25 - Toulouse">
+                                    <div class="look_profiles_box">
+                                        <div class="look_profiles_image">
+                                            <img src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/L17090615379828/1/350.jpg" alt="Appartager FR - Ella - 25 - Toulouse" />
+                                        </div>
+                                        <div class="look_profiles_details">
+                                            <div class="look_profiles_title">Ella</div>
+                                            <div class="look_profiles_age">25 ans</div>
+                                            <div class="clear"></div>
+                                            <div class="look_profiles_description">
+                                                Recherche chambre dans une colocation dans le centre de toulouse proche m&#233;tro ligne A :)...
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-url="/colocation-chambery/nathalie-chambery/L170906153357276" data-test="hp-profilecarousellistitem-4">
+                                <a href="/colocation-chambery/nathalie-chambery/L170906153357276" title="Appartager FR - Nathalie  - 42 - Chamb&#233;ry">
+                                    <div class="look_profiles_box">
+                                        <div class="look_profiles_image">
+                                            <img src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/L170906153357276/1/350.jpg" alt="Appartager FR - Nathalie  - 42 - Chamb&#233;ry" />
+                                        </div>
+                                        <div class="look_profiles_details">
+                                            <div class="look_profiles_title">Nathalie </div>
+                                            <div class="look_profiles_age">42 ans</div>
+                                            <div class="clear"></div>
+                                            <div class="look_profiles_description">
+                                                Urgent, je recherche une colocation ou un studio meubl&#233; pr&#232;s de La Ravoire. Merci de votre aide ...
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-url="/colocation-paris-ile-de-france/frine-paris-ile-de-france/L170906153334835" data-test="hp-profilecarousellistitem-5">
+                                <a href="/colocation-paris-ile-de-france/frine-paris-ile-de-france/L170906153334835" title="Appartager FR - Frine - 19 - Paris - Ile De France">
+                                    <div class="look_profiles_box">
+                                        <div class="look_profiles_image">
+                                            <img src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/L170906153334835/1/350.jpg" alt="Appartager FR - Frine - 19 - Paris - Ile De France" />
+                                        </div>
+                                        <div class="look_profiles_details">
+                                            <div class="look_profiles_title">Frine</div>
+                                            <div class="look_profiles_age">19 ans</div>
+                                            <div class="clear"></div>
+                                            <div class="look_profiles_description">
+                                                Bonjour je m&#39;apelle Frine J&#39;ai 18 ans, j&#39;habite &#224; Cusco , j&#39;&#233;tutie gastronomie, je parle anglais et un peu de Quechua , je voudrais travellier &#224; fran&#231;e  et &#234;tre un chef de cuisine...
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-url="/colocation-courbevoie/marc-courbevoie/L170906153223785" data-test="hp-profilecarousellistitem-6">
+                                <a href="/colocation-courbevoie/marc-courbevoie/L170906153223785" title="Appartager FR - Marc - 58 - Courbevoie">
+                                    <div class="look_profiles_box">
+                                        <div class="look_profiles_image">
+                                            <img src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/L170906153223785/1/350.jpg" alt="Appartager FR - Marc - 58 - Courbevoie" />
+                                        </div>
+                                        <div class="look_profiles_details">
+                                            <div class="look_profiles_title">Marc</div>
+                                            <div class="look_profiles_age">58 ans</div>
+                                            <div class="clear"></div>
+                                            <div class="look_profiles_description">
+                                                Bonjour, Je m&#39;appelle Marc, je cherche une chambre dans une colocation avec un loyer de 600 €. Si mon profil vous int&#233;resse, envoyez moi un Message Flash ou un email. Merci, Marc...
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-url="/colocation-11eme-arrondissement/neha-11eme-arrondissement/L170906153118817" data-test="hp-profilecarousellistitem-7">
+                                <a href="/colocation-11eme-arrondissement/neha-11eme-arrondissement/L170906153118817" title="Appartager FR - Neha - 24 - 11&#232;me Arrondissement">
+                                    <div class="look_profiles_box">
+                                        <div class="look_profiles_image">
+                                            <img src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/L170906153118817/1/350.jpg" alt="Appartager FR - Neha - 24 - 11&#232;me Arrondissement" />
+                                        </div>
+                                        <div class="look_profiles_details">
+                                            <div class="look_profiles_title">Neha</div>
+                                            <div class="look_profiles_age">24 ans</div>
+                                            <div class="clear"></div>
+                                            <div class="look_profiles_description">
+                                                Bonjour! Je vais d&#233;m&#233;nager &#224; Paris. Je recherche un chambre ou appartement de septembre &#224; mai.
+
+Je travaillerai &#224; Paris comme professeur. J&#39;aime lire, cuisiner, voyager et faire ...
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+
+                <span class="buttons next"><img src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/Global/arrow-right.svg" data-test="hp_carousel_arrow_right" class="hp_carousel_arrow" /></span>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Room ads -->
+    <div class="listing_area" id="room-ads-area" data-test="rs-list">
+        <div class="listing_area_content">
+            <div class="listing_area_title">6,870 colocations en France</div>
+
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-laragne-monteglin/chambre-a-louer-pour-colocation/H170906155247490"
+                     data-test="rs-item-0">
+                    <a href="/colocation-laragne-monteglin/chambre-a-louer-pour-colocation/H170906155247490" title="Appartager FR - Chambre &#224; louer pour colocation, Laragne-Mont&#233;glin - 300 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/H170906155247490/1/350.jpg" alt="Appartager FR - Chambre &#224; louer pour colocation, Laragne-Mont&#233;glin - 300 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-0">
+                                300 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                Chambre &#224; louer pour colocation
+                            </div>
+                            <div class="listing_item_ad_description">CO LOCATION
+Le Poet, Les Fourniers
+Recherche 1 colocataire
+1 chambre &#224; meubler dans un 4P tout &#233;quip&#233; WIFI
+Espace verts, terrasse
+Calme et ensoill&#233;
+A part...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-0">Disponible le 16 sept.</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-0">Non sp&#233;cifi&#233;</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-0">
+                                        Les Fourniers, Le Poet
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-0"
+                                     class="listing_item_membership_type listing_basic_member">
+                                    Membre basique
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-venette/chambre-lit-double-colocation-utc/H170906154951978"
+                     data-test="rs-item-1">
+                    <a href="/colocation-venette/chambre-lit-double-colocation-utc/H170906154951978" title="Appartager FR - chambre lit double colocation UTC , Venette - 410 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/H170906154951978/1/350.jpg" alt="Appartager FR - chambre lit double colocation UTC , Venette - 410 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-1">
+                                410 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                chambre lit double colocation UTC 
+                            </div>
+                            <div class="listing_item_ad_description">2 chambres se lib&#232;rent dans ce grand appartement meuble proche de l&#39;UTC BF .
+Il dispose :
+-d&#39;un grand salon avec canap&#233;s, TV, table repas
+- cuisine toute &amp;#233...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-1">Disponible maintenant</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-1">2 Colocataire(s) - Mixte</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-1">
+                                        Square Du Colonel Sutterlin, Compi&#232;gne
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-1"
+                                     class="listing_item_membership_type listing_premium_member">
+                                    Membre Premium
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-la-frette-sur-seine/colocation-grande-maison-avec-jardin-a-15-mn-de-paris/H170906154440459"
+                     data-test="rs-item-2">
+                    <a href="/colocation-la-frette-sur-seine/colocation-grande-maison-avec-jardin-a-15-mn-de-paris/H170906154440459" title="Appartager FR - colocation grande maison avec jardin &#224; 15 mn de paris, La Frette-sur-Seine - 650 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/H170906154440459/1/350.jpg" alt="Appartager FR - colocation grande maison avec jardin &#224; 15 mn de paris, La Frette-sur-Seine - 650 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-2">
+                                650 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                colocation grande maison avec jardin &#224; 15 mn de paris
+                            </div>
+                            <div class="listing_item_ad_description">Situ&#233;e dans une petite ville calme, je dispose de 2 chambres dans grande maison.
+Belle cuisine, grand salon lumineux, grande salle de bain, chambres confortables avec bureau ...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-2">Disponible le 8 sept.</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-2">Non sp&#233;cifi&#233;</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-2">
+                                        Rue D&#39;argenteuil, La Frette-sur-Seine
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-2"
+                                     class="listing_item_membership_type listing_premium_member">
+                                    Membre Premium
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-verrieres-le-buisson/antony-colocation-meublee-a-200m-du-rer-b/H170906151419164"
+                     data-test="rs-item-3">
+                    <a href="/colocation-verrieres-le-buisson/antony-colocation-meublee-a-200m-du-rer-b/H170906151419164" title="Appartager FR - Antony: colocation meublee a 200m du RER B, Verri&#232;res-le-Buisson - 550 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/H170906151419164/1/350.jpg" alt="Appartager FR - Antony: colocation meublee a 200m du RER B, Verri&#232;res-le-Buisson - 550 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-3">
+                                550 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                Antony: colocation meublee a 200m du RER B
+                            </div>
+                            <div class="listing_item_ad_description">Maison meubl&#233;e enti&#232;rement r&#233;nov&#233;e &#224; louer en colocation dans un quartier calme et pavillonnaire &#224; 200m du RER B. 
+
+4 belles chambres meubl&#233;es ...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-3">Disponible maintenant</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-3">3 Colocataire(s) - Mixte</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-3">
+                                        Rue Du Docteur Schweitzer, Antony
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-3"
+                                     class="listing_item_membership_type listing_basic_member">
+                                    Membre basique
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-albens/recherche-un-e-colocataire-cavalier-ere-avec-chevaux/H170906144239716"
+                     data-test="rs-item-4">
+                    <a href="/colocation-albens/recherche-un-e-colocataire-cavalier-ere-avec-chevaux/H170906144239716" title="Appartager FR - recherche un (e) colocataire cavalier (&#232;re) avec chevaux, Albens - 500 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/H170906144239716/1/350.jpg" alt="Appartager FR - recherche un (e) colocataire cavalier (&#232;re) avec chevaux, Albens - 500 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-4">
+                                500 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                recherche un (e) colocataire cavalier (&#232;re) avec chevaux
+                            </div>
+                            <div class="listing_item_ad_description">Nous sommes un couple mari&#233; avec deux enfants, et nous d&#233;m&#233;nageons dans le sud de la France, mon mari va garder son travail ici en Savoie et donc il fera du t&#233;l...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-4">Disponible le 28 oct.</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-4">1 Colocataire(s) - Femme</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-4">
+                                        Route De Braille, Albens
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-4"
+                                     class="listing_item_membership_type listing_basic_member">
+                                    Membre basique
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-pruille-le-chetif/chambre-tout-confort/H170906142423869"
+                     data-test="rs-item-5">
+                    <a href="/colocation-pruille-le-chetif/chambre-tout-confort/H170906142423869" title="Appartager FR - chambre tout confort, Pruill&#233;-le-Ch&#233;tif - 250 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/H170906142423869/1/350.jpg" alt="Appartager FR - chambre tout confort, Pruill&#233;-le-Ch&#233;tif - 250 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-5">
+                                250 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                chambre tout confort
+                            </div>
+                            <div class="listing_item_ad_description">Loue chambre meubl&#233;e de 15m2 tr&#232;s  lumineuse et agr&#233;able, id&#233;ale pour &#233;tudiant
+Tout confort : wifi, tv, meubl&#233;e, acc&#232;s cuisine tout &#233;quip&amp;#...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-5">Disponible maintenant</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-5">1 Colocataire(s) - Femme</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-5">
+                                        Route Nationale, Chaufour-Notre-Dame
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-5"
+                                     class="listing_item_membership_type listing_basic_member">
+                                    Membre basique
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-robion/colocation-mas-vaucluse/H17090614235101"
+                     data-test="rs-item-6">
+                    <a href="/colocation-robion/colocation-mas-vaucluse/H17090614235101" title="Appartager FR - colocation mas vaucluse, Robion - 540 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/H17090614235101/1/350.jpg" alt="Appartager FR - colocation mas vaucluse, Robion - 540 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-6">
+                                540 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                colocation mas vaucluse
+                            </div>
+                            <div class="listing_item_ad_description">Une place se lib&#232;re dans notre colocation de 4 personnes. L&#39;ambiance est joyeuse et amicale.
+Nous habitons dans  un mas de 220m&#178; en campagne &#224; Lagnes avec un gr...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-6">Disponible le 1 oct.</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-6">4 Colocataire(s) - Femme</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-6">
+                                        Chemin De La Bastide Vieille, Lagnes
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-6"
+                                     class="listing_item_membership_type listing_basic_member">
+                                    Membre basique
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-villeneuve-la-garenne/cherche-colocataire-sympas/H150414112815179"
+                     data-test="rs-item-7">
+                    <a href="/colocation-villeneuve-la-garenne/cherche-colocataire-sympas/H150414112815179" title="Appartager FR - cherche colocataire sympas, Villeneuve-la-Garenne - 400 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/H150414112815179/1/350.jpg" alt="Appartager FR - cherche colocataire sympas, Villeneuve-la-Garenne - 400 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-7">
+                                400 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                cherche colocataire sympas
+                            </div>
+                            <div class="listing_item_ad_description">Cherche coloc sympa dans un F3  d&#39;une r&#233;sidence  s&#233;curis&#233;e et tranquille. Le colocataire a sa chambre individuelle. Situ&#233; &#224; Villeneuve La Garenne (92) ...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-7">Disponible maintenant</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-7">2 Colocataire(s) - Homme</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-7">
+                                        Rue Chaillon, Villeneuve-la-Garenne
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-7"
+                                     class="listing_item_membership_type listing_premium_member">
+                                    Membre Premium
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-argenteuil/location-par-nuit-50enuit/H151101183125948"
+                     data-test="rs-item-8">
+                    <a href="/colocation-argenteuil/location-par-nuit-50enuit/H151101183125948" title="Appartager FR - LOCATION PAR NUIT 50E/NUIT, Argenteuil - 1&#160;500 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="" alt="Appartager FR - LOCATION PAR NUIT 50E/NUIT, Argenteuil - 1&#160;500 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-8">
+                                1&#160;500 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                LOCATION PAR NUIT 50E/NUIT
+                            </div>
+                            <div class="listing_item_ad_description">Une chambre est disponible dans un appartement spacieux et confortable pour une location de courte dur&#233;e : 
+50 Euros/nuit et par personne. 
+20 euros par personne suppl&#233;...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-8">Disponible maintenant</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-8">1 Colocataire(s) - Homme</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-8">
+                                        Rue Jean Lur&#231;at, Argenteuil
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-8"
+                                     class="listing_item_membership_type listing_basic_member">
+                                    Membre basique
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-biot/maison-ideale-pour-colocation-etudiante-proche-sophia-antipolis/H170906134658510"
+                     data-test="rs-item-9">
+                    <a href="/colocation-biot/maison-ideale-pour-colocation-etudiante-proche-sophia-antipolis/H170906134658510" title="Appartager FR - Maison id&#233;ale pour colocation &#233;tudiante proche Sophia Antipolis, Biot - 1&#160;100 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/H170906134658510/1/350.jpg" alt="Appartager FR - Maison id&#233;ale pour colocation &#233;tudiante proche Sophia Antipolis, Biot - 1&#160;100 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-9">
+                                1&#160;100 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                Maison id&#233;ale pour colocation &#233;tudiante proche Sophia Antipolis
+                            </div>
+                            <div class="listing_item_ad_description">Jolie maison &#224; 5 minutes en voiture de Sophia Antipolis et &#224; 5 minutes de la mer sur la commune de Biot. Calme absolu.
+Maison compos&#233;e d’un grand s&#233;jour climat...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-9">Disponible maintenant</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-9">Non sp&#233;cifi&#233;</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-9">
+                                        Chemin Des Vignasses, Biot
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-9"
+                                     class="listing_item_membership_type listing_basic_member">
+                                    Membre basique
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-fontenay-aux-roses/chambres-colocation/H16092010105452"
+                     data-test="rs-item-10">
+                    <a href="/colocation-fontenay-aux-roses/chambres-colocation/H16092010105452" title="Appartager FR - chambres colocation, Fontenay-aux-Roses - 400 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/H16092010105452/1/350.jpg" alt="Appartager FR - chambres colocation, Fontenay-aux-Roses - 400 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-10">
+                                400 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                chambres colocation
+                            </div>
+                            <div class="listing_item_ad_description">-1 chambre 11m2
+SDB avec baignoire, balcon, 1 placard, lit 2 places, &#224; 2 minutes de la gares (rer B) et 5 minutes du centre-ville de Fontenay Aux Roses. (wifi, netflix)...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-10">Disponible le 1 oct.</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-10">1 Colocataire(s) - Homme</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-10">
+                                        Rue Des Saints-sauveurs, Fontenay-aux-Roses
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-10"
+                                     class="listing_item_membership_type listing_basic_member">
+                                    Membre basique
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-palaiseau/chambre-dans-une-residence-calme-proche-bus-polytechniqueiogsorsay-et-rer-palaiseau/H16032120151699"
+                     data-test="rs-item-11">
+                    <a href="/colocation-palaiseau/chambre-dans-une-residence-calme-proche-bus-polytechniqueiogsorsay-et-rer-palaiseau/H16032120151699" title="Appartager FR - Chambre dans une r&#233;sidence calme, proche bus Polytechnique/IOGS/Orsay et RER Palaiseau, Palaiseau - 450 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/H16032120151699/1/350.jpg" alt="Appartager FR - Chambre dans une r&#233;sidence calme, proche bus Polytechnique/IOGS/Orsay et RER Palaiseau, Palaiseau - 450 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-11">
+                                450 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                Chambre dans une r&#233;sidence calme, proche bus Polytechnique/IOGS/Orsay et RER Palaiseau
+                            </div>
+                            <div class="listing_item_ad_description">We are a young multicultural and multilingual couple looking for a nice housemate to rent our spare room. We already have one quiet part-time housemate.
+
+The room is 10m2 and the...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-11">Disponible le 7 sept.</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-11">2 Colocataire(s) - Mixte</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-11">
+                                        Rue Louise Bruneau, Palaiseau
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-11"
+                                     class="listing_item_membership_type listing_premium_member">
+                                    Membre Premium
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-strasbourg/colocation-strasbourg-80m-proche-gare/H170906132158929"
+                     data-test="rs-item-12">
+                    <a href="/colocation-strasbourg/colocation-strasbourg-80m-proche-gare/H170906132158929" title="Appartager FR - Colocation strasbourg 80m&#178; proche gare, Strasbourg - 490 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/H170906132158929/1/350.jpg" alt="Appartager FR - Colocation strasbourg 80m&#178; proche gare, Strasbourg - 490 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-12">
+                                490 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                Colocation strasbourg 80m&#178; proche gare
+                            </div>
+                            <div class="listing_item_ad_description">Je recherche 3 colocataires pour un appartement meubl&#233; de 80m&#178; compos&#233; de 4 chambre d&#39;environ 13 m&#178;
+Situ&#233; &#224; 10 minutes de la gare &#224; pied, 2 ...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-12">Disponible le 1 oct.</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-12">Non sp&#233;cifi&#233;</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-12">
+                                        Rue De Barr, Strasbourg
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-12"
+                                     class="listing_item_membership_type listing_basic_member">
+                                    Membre basique
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-dijon/libre-des-a-present/H121013105559301"
+                     data-test="rs-item-13">
+                    <a href="/colocation-dijon/libre-des-a-present/H121013105559301" title="Appartager FR - LIBRE d&#232;s &#224; pr&#233;sent, Dijon - 300 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/H121013105559301/1/350.jpg" alt="Appartager FR - LIBRE d&#232;s &#224; pr&#233;sent, Dijon - 300 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-13">
+                                300 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                LIBRE d&#232;s &#224; pr&#233;sent
+                            </div>
+                            <div class="listing_item_ad_description">pour jeune fille, &#233;tudiante 
+
+En plein cœur de Dijon, &#224; la limite de l&#39;ancien castrum romain, je mets &#224; la disposition d&#39;une jeune fille  une petite chambr...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-13">Disponible le 7 sept.</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-13">3 Colocataire(s) - Femme</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-13">
+                                        Rue Pasteur, Dijon
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-13"
+                                     class="listing_item_membership_type listing_premium_member">
+                                    Membre Premium
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <!-- item -->
+                <div class="listing_item"
+                     data-url="/colocation-tarbes/colocation-maison-tarbes/H170906131643330"
+                     data-test="rs-item-14">
+                    <a href="/colocation-tarbes/colocation-maison-tarbes/H170906131643330" title="Appartager FR - Colocation Maison Tarbes, Tarbes - 245 € /Mois">
+                        <div class="listing_item_image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://secure.erm-assets.com/r1-76-0-11/dynamicimages/thumbnails/fr-erm/H170906131643330/1/350.jpg" alt="Appartager FR - Colocation Maison Tarbes, Tarbes - 245 € /Mois" />
+                            <div class="listing_item_price" data-test="rs-price-14">
+                                245 € /Mois
+                            </div>
+                        </div>
+                        <div class="listing_item_details">
+                            <div class="listing_item_ad_title">
+                                Colocation Maison Tarbes
+                            </div>
+                            <div class="listing_item_ad_description">Grande maison avec jardin, potager,1 poule, 1 chat... Garage et caves
+Grand salon, cuisine s&#233;parer, salle de bain, wc s&#233;par&#233;.
+Quartier calme &#224; 15 minutes &amp;#22...</div>
+                            <div class="listing_item_available_flatmates">
+                                <span class="listing_item_when_available" data-test="rs-availability-14">Disponible le 10 sept.</span>
+                                <span class="listing_item_nb_flatmates" data-test="rs-flatmategender-14">4 Colocataire(s) - Mixte</span>
+                            </div>
+                            <div class="listing_item_location_membership">
+                                <div class="listing_item_location">
+                                    <span style="position: absolute;">
+                                        <svg class="listing-ico-map-place">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-map-place"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="listing_item_address" data-test="rs-loc-14">
+                                        Rue Victor Cl&#233;ment, Tarbes
+                                    </span>
+                                </div>
+                                <div data-test="rs-contacttype-14"
+                                     class="listing_item_membership_type listing_basic_member">
+                                    Membre basique
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+            <!-- end item -->
+        </div>
+
+            <div class="listing_pagination" data-test="hp-rooms-pgn">
+            <div class="listing_pagination_page current_page ">
+                <a href="/" data-test="hp-rooms-pgn-page-1">1</a>
+            </div>
+            <div class="listing_pagination_page  ">
+                <a href="?page=2#room-ads-area" data-test="hp-rooms-pgn-page-2">2</a>
+            </div>
+            <div class="listing_pagination_page  ">
+                <a href="?page=3#room-ads-area" data-test="hp-rooms-pgn-page-3">3</a>
+            </div>
+            <div class="listing_pagination_page  ">
+                <a href="?page=4#room-ads-area" data-test="hp-rooms-pgn-page-4">4</a>
+            </div>
+            <div class="listing_pagination_page  ">
+                <a href="?page=5#room-ads-area" data-test="hp-rooms-pgn-page-5">5</a>
+            </div>
+            <div class="listing_pagination_page  no_border">
+                <a href="?page=6#room-ads-area" data-test="hp-rooms-pgn-page-6">6</a>
+            </div>
+
+        <div class="clear"></div>
+    </div>
+
+    </div>
+
+
+<!--Bottom Seo Content-->
+
+
+<!-- Stats -->
+    <div class="stats_area">
+        <div class="stats_area_content">
+            <div class="stats_boxes">
+
+                    <div class="stats_box left">
+                        <div class="stats-margin-bottom">
+                            <img src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/Global/promo-people.png" />
+                        </div>
+                        <div class="stats_box_title">Statistiques sur les colocataires - France</div>
+
+                            <div class="left">Colocataires hommes</div>
+                            <div class="right">47%</div>
+                            <div class="clear stats-margin-bottom-small"></div>
+                            <div class="left">Colocataires femmes</div>
+                            <div class="right">53%</div>
+                            <div class="clear stats-margin-bottom-small"></div>
+                            <div class="left">Professionnels recherchant une chambre &#224; louer</div>
+                            <div class="right">32%</div>
+                            <div class="clear stats-margin-bottom-small"></div>
+                            <div class="left">&#201;tudiants recherchant une chambre &#224; louer</div>
+                            <div class="right">59%</div>
+                            <div class="clear "></div>
+                    </div>
+
+                    <div class="stats_box left">
+                        <div class="stats-margin-bottom">
+                            <img src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/Global/promo-face.png" />
+                        </div>
+                        <div class="stats_box_title">Statistiques sur la colocation - France</div>
+
+                            <div class="left">Annonces de location avec photos</div>
+                            <div class="right">86%</div>
+                            <div class="clear stats-margin-bottom-small"></div>
+                            <div class="left">Dispos&#233; &#224; vivre dans une colocation mixte</div>
+                            <div class="right">74%</div>
+                            <div class="clear stats-margin-bottom-small"></div>
+                            <div class="left">Budget moyen colocataire</div>
+                            <div class="right">481 €</div>
+                            <div class="clear stats-margin-bottom-small"></div>
+                            <div class="left">Prix moyen d&#39;une colocation</div>
+                            <div class="right">464 €</div>
+                            <div class="clear "></div>
+                    </div>
+
+                    <div class="stats_box left">
+                        <div class="stats-margin-bottom">
+                            <img src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/Global/promo-zoom.png" />
+                        </div>
+                        <div class="stats_box_title">Que recherchent les colocataires - France</div>
+
+                            <div class="left">Chambres doubles</div>
+                            <div class="right">1%</div>
+                            <div class="clear stats-margin-bottom-small"></div>
+                            <div class="left">Chambres meubl&#233;es</div>
+                            <div class="right">3%</div>
+                            <div class="clear stats-margin-bottom-small"></div>
+                            <div class="left">Locations court terme</div>
+                            <div class="right">0%</div>
+                            <div class="clear "></div>
+                    </div>
+
+                    <div class="stats_box left">
+                        <div class="stats-margin-bottom">
+                            <img src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/Global/promo-money.png" />
+                        </div>
+                        <div class="stats_box_title">Prix mensuel par type de location - France</div>
+
+                            <div class="left">Chambre double &#224; louer - France</div>
+                            <div class="right">197 €</div>
+                            <div class="clear stats-margin-bottom-small"></div>
+                            <div class="left">Chambre &#224; louer meubl&#233;e - France</div>
+                            <div class="right">299 €</div>
+                            <div class="clear stats-margin-bottom-small"></div>
+                            <div class="left">Chambre &#224; louer court terme - France</div>
+                            <div class="right">110 €</div>
+                            <div class="clear "></div>
+                    </div>
+
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Top Locations -->
+
+
+<!-- Nearby Locations -->
+
+
+<!-- Top 9 Cities -->
+<div class="top-locations-grid_area">
+    <div class="top-locations-grid_area_content">
+        <div class="top-locations-grid_title">Recherchez des chambres &#224; louer et des colocataires dans d&#39;autres villes</div>
+        <div class="top-locations-grid_boxes">
+
+
+                <div class="top-location-item-box  with-price"
+                     style="background-image: url('https://secure.erm-assets.com/r1-76-0-11/assets/img/location-seo-content/FR/top_aix_provence.jpg');"
+                     data-test="hp-top-city-grid-0">
+                    <a href="/provence-alpes-cote-d-azur/bouches-du-rhone/colocation-aix-en-provence" rel="follow" class="top-location-item-link">
+                        <div class="top-location-item-box_content">
+                            <div class="top-location-item-title">
+                                Aix-en-Provence
+                            </div>
+                            <div class="top-location-item-label">Prix moyen d&#39;une colocation</div>
+                            <span class="top-location-item-price">470 €</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="top-location-item-box  with-price"
+                     style="background-image: url('https://secure.erm-assets.com/r1-76-0-11/assets/img/location-seo-content/FR/top_avignon.jpg');"
+                     data-test="hp-top-city-grid-1">
+                    <a href="/provence-alpes-cote-d-azur/vaucluse/colocation-avignon" rel="follow" class="top-location-item-link">
+                        <div class="top-location-item-box_content">
+                            <div class="top-location-item-title">
+                                Avignon
+                            </div>
+                            <div class="top-location-item-label">Prix moyen d&#39;une colocation</div>
+                            <span class="top-location-item-price">407 €</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="top-location-item-box top-location-item-box--no-margin-right with-price"
+                     style="background-image: url('https://secure.erm-assets.com/r1-76-0-11/assets/img/location-seo-content/FR/top_lyon.jpg');"
+                     data-test="hp-top-city-grid-2">
+                    <a href="/rhone-alpes/rhone/colocation-lyon" rel="follow" class="top-location-item-link">
+                        <div class="top-location-item-box_content">
+                            <div class="top-location-item-title">
+                                Lyon
+                            </div>
+                            <div class="top-location-item-label">Prix moyen d&#39;une colocation</div>
+                            <span class="top-location-item-price">501 €</span>
+                        </div>
+                    </a>
+                </div>
+                    <div class="clear top-locations-grid_margin_bottom"></div>
+                <div class="top-location-item-box  with-price"
+                     style="background-image: url('https://secure.erm-assets.com/r1-76-0-11/assets/img/location-seo-content/FR/top_marseille.jpg');"
+                     data-test="hp-top-city-grid-3">
+                    <a href="/provence-alpes-cote-d-azur/bouches-du-rhone/colocation-marseille" rel="follow" class="top-location-item-link">
+                        <div class="top-location-item-box_content">
+                            <div class="top-location-item-title">
+                                Marseille
+                            </div>
+                            <div class="top-location-item-label">Prix moyen d&#39;une colocation</div>
+                            <span class="top-location-item-price">452 €</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="top-location-item-box  with-price"
+                     style="background-image: url('https://secure.erm-assets.com/r1-76-0-11/assets/img/location-seo-content/FR/top_montpellier.jpg');"
+                     data-test="hp-top-city-grid-4">
+                    <a href="/languedoc-roussillon/herault/colocation-montpellier" rel="follow" class="top-location-item-link">
+                        <div class="top-location-item-box_content">
+                            <div class="top-location-item-title">
+                                Montpellier
+                            </div>
+                            <div class="top-location-item-label">Prix moyen d&#39;une colocation</div>
+                            <span class="top-location-item-price">432 €</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="top-location-item-box top-location-item-box--no-margin-right with-price"
+                     style="background-image: url('https://secure.erm-assets.com/r1-76-0-11/assets/img/location-seo-content/FR/top_nice.jpg');"
+                     data-test="hp-top-city-grid-5">
+                    <a href="/provence-alpes-cote-d-azur/alpes-maritimes/colocation-nice" rel="follow" class="top-location-item-link">
+                        <div class="top-location-item-box_content">
+                            <div class="top-location-item-title">
+                                Nice
+                            </div>
+                            <div class="top-location-item-label">Prix moyen d&#39;une colocation</div>
+                            <span class="top-location-item-price">497 €</span>
+                        </div>
+                    </a>
+                </div>
+                    <div class="clear top-locations-grid_margin_bottom"></div>
+                <div class="top-location-item-box  with-price"
+                     style="background-image: url('https://secure.erm-assets.com/r1-76-0-11/assets/img/location-seo-content/FR/top_paris.jpg');"
+                     data-test="hp-top-city-grid-6">
+                    <a href="/ile-de-france/colocation-paris-ile-de-france" rel="follow" class="top-location-item-link">
+                        <div class="top-location-item-box_content">
+                            <div class="top-location-item-title">
+                                Paris - Ile De France
+                            </div>
+                            <div class="top-location-item-label">Prix moyen d&#39;une colocation</div>
+                            <span class="top-location-item-price">589 €</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="top-location-item-box  with-price"
+                     style="background-image: url('https://secure.erm-assets.com/r1-76-0-11/assets/img/location-seo-content/FR/top_saint_etienne.jpg');"
+                     data-test="hp-top-city-grid-7">
+                    <a href="/rhone-alpes/loire/colocation-saint-etienne" rel="follow" class="top-location-item-link">
+                        <div class="top-location-item-box_content">
+                            <div class="top-location-item-title">
+                                Saint-Etienne
+                            </div>
+                            <div class="top-location-item-label">Prix moyen d&#39;une colocation</div>
+                            <span class="top-location-item-price">305 €</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="top-location-item-box top-location-item-box--no-margin-right with-price"
+                     style="background-image: url('https://secure.erm-assets.com/r1-76-0-11/assets/img/location-seo-content/FR/top_toulouse.jpg');"
+                     data-test="hp-top-city-grid-8">
+                    <a href="/midi-pyrenees/haute-garonne/colocation-toulouse" rel="follow" class="top-location-item-link">
+                        <div class="top-location-item-box_content">
+                            <div class="top-location-item-title">
+                                Toulouse
+                            </div>
+                            <div class="top-location-item-label">Prix moyen d&#39;une colocation</div>
+                            <span class="top-location-item-price">398 €</span>
+                        </div>
+                    </a>
+                </div>
+                    <div class="clear top-locations-grid_margin_bottom"></div>
+        </div>
+
+        <div class="top-locations-bottom-link">
+            <a href="/villes" rel="follow" data-test="hp-allcities">Toutes les villes</a>
+        </div>
+    </div>
+</div>
+
+<div class="promo_area">
+    <div class="promo_area_content">
+        <h3 class="promo_title">Plus de 50 000 propri&#233;taires font confiance &#224; Appartager</h3>
+        <div class="promo_text">Appartager est une communaut&#233; de colocataires en ligne parfaite pour les propri&#233;taires proposant une chambre &#224; louer, un studio ou une maison en colocation. Nous les aidons &#224; trouver de mani&#232;re simple et efficace des locataires de confiance. Depuis 1999, notre service a permis de cr&#233;er plus de 5 millions de colocations.</div>
+        <div class="promo_boxes">
+            <div class="promo_box promo-margin-right">
+                <div>
+                    <img src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/Global/promo-globe.png" />
+                </div>
+                <div>Le plus grand r&#233;seau de colocation au monde.</div>
+            </div>
+            <div class="promo_box promo-margin-right">
+                <div>
+                    <img src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/Global/promo-face.png" />
+                </div>
+                <div>60 000 nouveaux colocataires par mois</div>
+            </div>
+            <div class="promo_box">
+                <div>
+                    <img src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/Global/promo-phone.png" />
+                </div>
+                <div>Recevez des appels de locataires s&#233;rieux</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="promo_area">
+        <div class="promo_area_content">
+            <div class="promo_text promo-margin-bottom">Ils parlent de nous!</div>
+            <div class="promo_images">
+                <img src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/FR/press-logo-1.gif" alt="Le Monde" class="promo_image"/>
+                <img src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/FR/press-logo-2.gif" alt="Le Parisien" class="promo_image" />
+                <img src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/FR/press-logo-3.gif" alt="TF1" class="promo_image" />
+                <img src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/FR/press-logo-4.gif" alt="Le Figaro" class="promo_image" />
+                <img src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/img/FR/press-logo-5.gif" alt="M6" class="promo_image" />
+            </div>
+        </div>
+    </div>
+
+
+<div class="bottom_bar conversion_banner_bar" id="conversion_banner_bar">
+    <div class="bottom_bar_title">Lancez-vous !</div>
+    <div class="bottom_bar_label">Inscrivez-vous sur Appartager aujourd&#39;hui pour rejoindre la plus grande communaut&#233; de colocataires</div>
+    <div class="bottom_bar_call_to_action">
+        <a href="#calltoaction_area" rel="nofollow" id="conversion-banner-profile-signup-btn" class="bottom_bar_button bottom_look_button">JE CHERCHE UNE COLOCATION</a>
+        <a href="/content/have/profilehave.aspx?id=1&amp;opt=H" data-test="hp-ihavearoom-2" rel="nofollow" class="bottom_bar_button bottom_have_button">PUBLIEZ VOTRE ANNONCE</a>
+    </div>
+</div>
+
+
+<tracking-page-properties data-page-name="Homepage">
+</tracking-page-properties>
+
+<tracking-location-properties data-location-name="France"
+                              data-location-latitude="46.8001"
+                              data-location-longitude="2.0215"
+                              data-location-level="Country">
+</tracking-location-properties>
+
+
+
+
+    
+<!-- SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="ico-arrow-down" viewBox="0 0 10 6">
+        <path d="M426.01,127l5-5.452L430.3,121l-4.288,4.675L421.724,121l-0.712.541,5,5.452h0Z" transform="translate(-421 -121)"></path>
+    </symbol>
+</svg>
+<!-- END SVG -->
+
+<div class="footer">
+    <div class="footer_content">
+        <ul class="footer-links">
+            <li>
+                <b>A propos de nous</b>
+            </li>
+            <li>
+                <a href="/misc/help.aspx" rel="nofollow" class="footer-link">
+                    Besoin d&#39;aide?
+                </a>
+            </li>
+
+                <li>
+                    <a href="/RC/accordvisiteurs" rel="nofollow" class="footer-link">
+                        Accord des visiteurs
+                    </a>
+                </li>
+                            <li>
+                    <a href="/s/affiliate/" rel="nofollow" class="footer-link">
+                        Devenez affili&#233;
+                    </a>
+                </li>
+
+            <li>
+                <a href="/privacy" rel="nofollow" class="footer-link">
+                    Politique de confidentialit&#233;
+                </a>
+            </li>
+        </ul>
+
+            <ul class="footer-links">
+                <li class="border-right">
+                    <b>D&#233;couvrir</b>
+                </li>
+                    <li>
+                        <a href="/misc/LandlordZone.aspx" rel="nofollow" class="footer-link">
+                            Infos Propri&#233;taires
+                        </a>
+                    </li>
+                                    <li class="border-right">
+                        <a href="http://blog.appartager.com" class="footer-link">
+                            Visitez le blog des colocataires!
+                        </a>
+                    </li>
+
+                                    <li>
+                        <a href="http://www.appartager.com/s/barometre-colocation/" rel="nofollow" class="footer-link">Index de la Colocation</a>
+                    </li>
+            </ul>
+
+        <div class="country_language_area">
+            <div class="country_box dropdown" id="country_box">
+                <div>
+                    Pays
+                    <svg class="arrow_down_ico">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-arrow-down"></use>
+                    </svg>
+                </div>
+                <div class="country_box_country_name" id="country_name">
+                    <span class="flag-ico FR"></span>France
+                </div>
+
+                <ul id="countrySelector" class="dropdown-menu head-country-selection pull-top" data-test="hp-countrylist">
+
+                        <li class="" data-test="hp-country-0">
+                            <a href="https://www.compartodepto.com" id="id-AR" rel="follow">
+                                <span class="flag-ico AR"></span>Argentine
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-1">
+                            <a href="https://www.easywg.at" id="id-AT" rel="follow">
+                                <span class="flag-ico AT"></span>Autriche
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-2">
+                            <a href="https://au.easyroommate.com" id="id-AU" rel="follow">
+                                <span class="flag-ico AU"></span>Australie
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-3">
+                            <a href="https://www.appartager.be" id="id-BE" rel="follow">
+                                <span class="flag-ico BE"></span>Belgique
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-4">
+                            <a href="https://www.easyquarto.com.br" id="id-BR" rel="follow">
+                                <span class="flag-ico BR"></span>Br&#233;sil
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-5">
+                            <a href="https://ca.easyroommate.com" id="id-CA" rel="follow">
+                                <span class="flag-ico CA"></span>Canada
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-6">
+                            <a href="https://www.easywg.ch" id="id-CH" rel="follow">
+                                <span class="flag-ico CH"></span>Suisse
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-7">
+                            <a href="https://www.compartodepto.cl" id="id-CL" rel="follow">
+                                <span class="flag-ico CL"></span>Chili
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-8">
+                            <a href="https://www.compartoapto.com" id="id-CO" rel="follow">
+                                <span class="flag-ico CO"></span>Colombie
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-9">
+                            <a href="https://www.easywg.de" id="id-DE" rel="follow">
+                                <span class="flag-ico DE"></span>Allemagne
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-10">
+                            <a href="https://www.easykot.be" id="id-BE" rel="follow">
+                                <span class="flag-ico EK"></span>Belgique (Flamande)
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-11">
+                            <a href="https://www.easypiso.com" id="id-ES" rel="follow">
+                                <span class="flag-ico ES"></span>Espagne
+                            </a>
+                        </li>
+                        <li class="active" data-test="hp-country-12">
+                            <a href="https://www.appartager.com" id="id-FR" rel="follow">
+                                <span class="flag-ico FR"></span>France
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-13">
+                            <a href="https://www.easyroommate.com.hk" id="id-HK" rel="follow">
+                                <span class="flag-ico HK"></span>Hong-Kong
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-14">
+                            <a href="https://ie.easyroommate.com" id="id-IE" rel="follow">
+                                <span class="flag-ico IE"></span>Irlande
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-15">
+                            <a href="https://www.easystanza.it" id="id-IT" rel="follow">
+                                <span class="flag-ico IT"></span>Italie
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-16">
+                            <a href="https://www.appartager.lu" id="id-LU" rel="follow">
+                                <span class="flag-ico LU"></span>Luxembourg
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-17">
+                            <a href="https://www.compartodepa.com.mx" id="id-MX" rel="follow">
+                                <span class="flag-ico MX"></span>Mexique
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-18">
+                            <a href="https://www.easykamer.nl" id="id-NL" rel="follow">
+                                <span class="flag-ico NL"></span>Pays-Bas
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-19">
+                            <a href="https://www.easyroommate.co.nz" id="id-NZ" rel="follow">
+                                <span class="flag-ico NZ"></span>Nouvelle-Z&#233;lande
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-20">
+                            <a href="https://www.easyquarto.com.pt" id="id-PT" rel="follow">
+                                <span class="flag-ico PT"></span>Portugal
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-21">
+                            <a href="https://www.easyroommate.com.sg" id="id-SG" rel="follow">
+                                <span class="flag-ico SG"></span>Singapour
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-22">
+                            <a href="https://uk.easyroommate.com" id="id-GB" rel="follow">
+                                <span class="flag-ico UK"></span>Royaume-Uni
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-23">
+                            <a href="https://www.easyroommate.com" id="id-US" rel="follow">
+                                <span class="flag-ico US"></span>Etats-Unis
+                            </a>
+                        </li>
+                        <li class="" data-test="hp-country-24">
+                            <a href="https://www.compartoapto.com.ve" id="id-VE" rel="follow">
+                                <span class="flag-ico VE"></span>Venezuela
+                            </a>
+                        </li>
+
+                </ul>
+            </div>
+            <div class="language_box dropdown" id="language_box">
+                <div>
+                    Langue
+                    <svg class="arrow_down_ico">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-arrow-down"></use>
+                    </svg>
+                </div>
+                <div class="language_box_language_name" id="language_name">
+                    Fran&#231;ais
+                </div>
+                <ul id="languageSelector" class="dropdown-menu head-lang-selection pull-top" data-test="hp-languagelist">
+                        <li data-id="5" id="5"
+                            class="" data-test="hp-language-0">
+                            <a rel="follow" href="/redirects/language/5">Dutch</a>
+                        </li>
+                        <li data-id="1" id="1"
+                            class="" data-test="hp-language-1">
+                            <a rel="follow" href="/redirects/language/1">English</a>
+                        </li>
+                        <li data-id="3" id="3"
+                            class="" data-test="hp-language-2">
+                            <a rel="follow" href="/redirects/language/3">Espa&#241;ol</a>
+                        </li>
+                        <li data-id="2" id="2"
+                            class="active" data-test="hp-language-3">
+                            <a rel="follow" href="/redirects/language/2">Fran&#231;ais</a>
+                        </li>
+                        <li data-id="7" id="7"
+                            class="" data-test="hp-language-4">
+                            <a rel="follow" href="/redirects/language/7">German</a>
+                        </li>
+                        <li data-id="6" id="6"
+                            class="" data-test="hp-language-5">
+                            <a rel="follow" href="/redirects/language/6">Italiano</a>
+                        </li>
+                        <li data-id="14" id="14"
+                            class="" data-test="hp-language-6">
+                            <a rel="follow" href="/redirects/language/14">Portuguese</a>
+                        </li>
+                </ul>
+            </div>
+            <div class="dropdown_slim" id="country_box_slim">
+                <select >
+                    <option value="">
+                        Pays
+                    </option>
+                        <option id="id-slim-AR" value="https://www.compartodepto.com"
+                                
+                                data-test="hp-country-slim-0">
+                            Argentine
+                        </option>
+                        <option id="id-slim-AT" value="https://www.easywg.at"
+                                
+                                data-test="hp-country-slim-1">
+                            Autriche
+                        </option>
+                        <option id="id-slim-AU" value="https://au.easyroommate.com"
+                                
+                                data-test="hp-country-slim-2">
+                            Australie
+                        </option>
+                        <option id="id-slim-BE" value="https://www.appartager.be"
+                                
+                                data-test="hp-country-slim-3">
+                            Belgique
+                        </option>
+                        <option id="id-slim-BR" value="https://www.easyquarto.com.br"
+                                
+                                data-test="hp-country-slim-4">
+                            Br&#233;sil
+                        </option>
+                        <option id="id-slim-CA" value="https://ca.easyroommate.com"
+                                
+                                data-test="hp-country-slim-5">
+                            Canada
+                        </option>
+                        <option id="id-slim-CH" value="https://www.easywg.ch"
+                                
+                                data-test="hp-country-slim-6">
+                            Suisse
+                        </option>
+                        <option id="id-slim-CL" value="https://www.compartodepto.cl"
+                                
+                                data-test="hp-country-slim-7">
+                            Chili
+                        </option>
+                        <option id="id-slim-CO" value="https://www.compartoapto.com"
+                                
+                                data-test="hp-country-slim-8">
+                            Colombie
+                        </option>
+                        <option id="id-slim-DE" value="https://www.easywg.de"
+                                
+                                data-test="hp-country-slim-9">
+                            Allemagne
+                        </option>
+                        <option id="id-slim-BE" value="https://www.easykot.be"
+                                
+                                data-test="hp-country-slim-10">
+                            Belgique (Flamande)
+                        </option>
+                        <option id="id-slim-ES" value="https://www.easypiso.com"
+                                
+                                data-test="hp-country-slim-11">
+                            Espagne
+                        </option>
+                        <option id="id-slim-FR" value="https://www.appartager.com"
+                                selected
+                                data-test="hp-country-slim-12">
+                            France
+                        </option>
+                        <option id="id-slim-HK" value="https://www.easyroommate.com.hk"
+                                
+                                data-test="hp-country-slim-13">
+                            Hong-Kong
+                        </option>
+                        <option id="id-slim-IE" value="https://ie.easyroommate.com"
+                                
+                                data-test="hp-country-slim-14">
+                            Irlande
+                        </option>
+                        <option id="id-slim-IT" value="https://www.easystanza.it"
+                                
+                                data-test="hp-country-slim-15">
+                            Italie
+                        </option>
+                        <option id="id-slim-LU" value="https://www.appartager.lu"
+                                
+                                data-test="hp-country-slim-16">
+                            Luxembourg
+                        </option>
+                        <option id="id-slim-MX" value="https://www.compartodepa.com.mx"
+                                
+                                data-test="hp-country-slim-17">
+                            Mexique
+                        </option>
+                        <option id="id-slim-NL" value="https://www.easykamer.nl"
+                                
+                                data-test="hp-country-slim-18">
+                            Pays-Bas
+                        </option>
+                        <option id="id-slim-NZ" value="https://www.easyroommate.co.nz"
+                                
+                                data-test="hp-country-slim-19">
+                            Nouvelle-Z&#233;lande
+                        </option>
+                        <option id="id-slim-PT" value="https://www.easyquarto.com.pt"
+                                
+                                data-test="hp-country-slim-20">
+                            Portugal
+                        </option>
+                        <option id="id-slim-SG" value="https://www.easyroommate.com.sg"
+                                
+                                data-test="hp-country-slim-21">
+                            Singapour
+                        </option>
+                        <option id="id-slim-GB" value="https://uk.easyroommate.com"
+                                
+                                data-test="hp-country-slim-22">
+                            Royaume-Uni
+                        </option>
+                        <option id="id-slim-US" value="https://www.easyroommate.com"
+                                
+                                data-test="hp-country-slim-23">
+                            Etats-Unis
+                        </option>
+                        <option id="id-slim-VE" value="https://www.compartoapto.com.ve"
+                                
+                                data-test="hp-country-slim-24">
+                            Venezuela
+                        </option>
+                </select>
+            </div>
+            <div class="dropdown_slim" id="language_box_slim">
+                <select>
+                        <option data-id="slim-5" data-test="hp-language-slim-0"
+                                value="/redirects/language/5"
+                                >
+                            Dutch
+                        </option>
+                        <option data-id="slim-1" data-test="hp-language-slim-1"
+                                value="/redirects/language/1"
+                                >
+                            English
+                        </option>
+                        <option data-id="slim-3" data-test="hp-language-slim-2"
+                                value="/redirects/language/3"
+                                >
+                            Espa&#241;ol
+                        </option>
+                        <option data-id="slim-2" data-test="hp-language-slim-3"
+                                value="/redirects/language/2"
+                                selected>
+                            Fran&#231;ais
+                        </option>
+                        <option data-id="slim-7" data-test="hp-language-slim-4"
+                                value="/redirects/language/7"
+                                >
+                            German
+                        </option>
+                        <option data-id="slim-6" data-test="hp-language-slim-5"
+                                value="/redirects/language/6"
+                                >
+                            Italiano
+                        </option>
+                        <option data-id="slim-14" data-test="hp-language-slim-6"
+                                value="/redirects/language/14"
+                                >
+                            Portuguese
+                        </option>
+                </select>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="footer_copyright">
+            &#169; EasyRoommate 1999-2017
+        </div>
+    </div>
+</div>
+
+
+    
+
+    <script src="https://secure.erm-assets.com/r1-76-0-11/assets/Responsive/js/min/Erm.Homepage.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">window.GTO = {"page":{"pageName":"","pageTargetUserType":"None","pageLocation":"None","pageLocationLat":0.0,"pageLocationLong":0.0}};</script><script src="/user/context.js" type="text/javascript"></script>
+</body>
+</html>

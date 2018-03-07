@@ -1,0 +1,319 @@
+<!doctype html>
+<html class=no-js >
+      <head>
+      <style type="text/css">
+      		footer .footer-bottom-extras{
+      			border-top: 0px !important;
+      		}
+      		/*
+      		#iframe_loader {
+			    width: 200px;
+			    height: 200px;
+			    position: fixed;
+			    left: 50%;
+			    top: 50%;
+			    background-image: url(/static/wcs/lfg/images/ajax-loader.gif);
+			    background-repeat: no-repeat;
+			    background-position: center;
+			    margin: -100px 0 0 -100px;
+			    z-index: 1018;
+			}
+			*/
+			[ng\:cloak], [ng-cloak], .ng-cloak {
+			  display: none !important;
+			}
+			table.TBLSimple tr th{
+				font-size:0.813rem
+			}
+			.currentlevel4 ul{
+				display:block;
+			}
+			.currentlevel4 a{
+				color : #37424a !important;
+				border-left:0px !important;
+			}
+			.currentlevel4 ul a{
+				color: #0D5D8E !important;
+			}
+			.currentlevel5 a{
+				border-left:3px solid #7f2634 !important;
+			}
+			.login-topnav{
+				width:335px;
+				border:0;
+				height:85px
+			}
+			.login-rightrail{
+				/*float:left;*/
+				margin-left: -8px;
+				/*margin-bottom: 10px;*/
+				border: 0px; 
+				width: 107%; 
+				height: 85px
+			}
+				 
+			input[type="text"]:focus{
+				font-size: 16px  !important; 
+			}
+			textarea:focus{
+				font-size: 16px !important; 
+			}
+		
+				input[type="email"]:focus { 
+						  font-size: 16px !important;
+				}
+		
+			@media only screen and (max-width: 750px){
+				.login-rightrail {
+					width: 107%;
+					margin-left:0px
+				}
+				.login-topnav{
+					width:100%
+				}
+				.loggedin{
+					display: none !important
+				}
+				
+			}
+			@media only screen and (max-width: 999px) and (min-width: 751px){
+				.login-rightrail {
+					margin-left: -10px;
+				}
+			}
+			.login-rightrail-hr{
+				-webkit-margin-after: 1px;
+				border-style: solid;
+				color: #e5eaed;
+				border-bottom-width: 0px
+			}
+
+			footer {
+			    bottom: 0;
+			    position: fixed;
+			    width: 100%;
+			    overflow: hidden;
+			}
+
+			@media only screen and (max-width: 750px){
+				footer {
+					position: relative;
+				}
+			}
+
+      </style>
+      <script src='/hub/framework/skeletons/lui/js/jquery/jquery.min.js'></script>
+      <script src='/hub/framework/skeletons/lui/js/tealeaf.v5.2.0.lincoln.test.V1.js'></script> 
+      <script type="text/javascript">
+      //convert Webcenter Sites links to proper environment domain
+		function setWCSDomain() {
+		    domain = location.hostname;
+		    wcsSubdomain = "www";
+		    
+		    if (domain.indexOf("localhost") > -1) {
+		        wcsSubdomain = "ca-dev";
+		    }
+		    if (domain.indexOf("-dev") > -1) {
+		        wcsSubdomain = "ca-dev";
+		    }
+		    if (domain.indexOf("-test") > -1) {
+		        wcsSubdomain = "ca";
+		    }
+		    if (domain.indexOf("-uat") > -1) {
+		        wcsSubdomain = "ca";
+		    }
+		    if (domain.indexOf("-preprod") > -1) {
+		        wcsSubdomain = "wcs-preprod-rss";
+		    }
+		    return wcsSubdomain;
+		}
+
+		function wcsLink() {
+		    $(".wcsLink").each(function () {
+		    	if ($(this)[0].nodeName == "A" || $(this)[0].nodeName == "LINK") {
+		    		pathAttr = "href";
+		    	}
+		    	if ($(this)[0].nodeName == "IMG" || $(this)[0].nodeName == "SCRIPT") {
+		    		pathAttr = "src";
+		    	}
+
+	            wcsURL = "https://" + setWCSDomain() + ".lfg.com" + $(this).attr(pathAttr);
+	            $(this).attr(pathAttr, wcsURL);
+	            $(this).removeClass("wcsLink");
+	            $(this).addClass("wcsLinkReady");
+
+		        if ($(this)[0].nodeName == "A") {
+		            if ($(this).attr("target") == null || $(this).attr("target") == "") {
+		                $(this).attr("target","_blank");
+		           	}
+		         }
+
+		    	if ($(this)[0].nodeName == "IMG") {
+					if ($(this).attr("srcset")) {
+						wcsArray = [];
+						srcset = $(this).attr("srcset");
+						srcArray = srcset.split(",");
+						for(i=0;i<srcArray.length;i++) {
+							wcsURLSrcset = "https://" + setWCSDomain() + ".lfg.com" + srcArray[i].trim();
+							wcsArray.push(wcsURLSrcset);
+						}
+						$(this).attr("srcset", wcsArray.toString());
+					}
+				}
+		    });
+		}
+	   </script>
+<!-- Enter Page title Here --><title></title>
+        <meta name="Description" content='null' />
+        <meta name="Keywords" content='null'/>
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <link class="wcsLink" rel="icon" href="/favicon.ico" />
+        <meta name="format-detection" content="telephone=no">
+        
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@lincolnfingroup">
+        <meta name="twitter:creator" content="@lincolnfingroup">
+<!-- Add Page title Here -->        <meta name="twitter:title" content="Lincoln Financial Group Page Title">
+        <meta name="twitter:description" content="null">
+        <meta name="twitter:image" content="">
+        
+        
+        <meta property="og:site_name" content="lfg" />
+        <meta property="og:site" content="lfg.com" />
+<!-- Add Page title Here -->        <meta property="og:title" content="Lincoln Financial Group Page Title Here " />
+        <meta property="og:description" content="null" />
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:type" content="article" />
+<!--Place favicon.ico and apple-touch-icon.png in the root directory--> 
+<!--[if IE 8 ]> <body class="ie8"><![endif]-->
+<!-- for less than IE 9 -->
+<!--[if lte IE 9]>
+	  <link class="wcsLink" rel="stylesheet" href="/wcs-static/css/style-ie-1.css">
+          <link class="wcsLink" rel="stylesheet" href="/wcs-static/css/style-ie-2.css">
+          <link class="wcsLink" rel="stylesheet" href="/wcs-static/css/style-ie-3.css">
+<![endif]-->
+<!-- for greater than IE 9 -->
+<!--[if gte IE 9]> 
+      <link class="wcsLink" rel="stylesheet" href="/wcs-static/css/style.css" >
+<![endif]-->
+<!-- for all non IE  -->
+<!--[if !IE]> -->
+      <link class="wcsLink" rel="stylesheet" href="/wcs-static/css/style.css" >
+<!-- <![endif]-->
+
+ <!--[if lt IE 9]>
+    <script class="wcsLink" src='/wcs-static/js/html5shiv.min.js'></script>
+    <script class="wcsLink" src='/wcs-static/js/respond.min.js'></script>
+<![endif]-->
+
+<script class="wcsLink" src='/wcs-static/js/modernizr.custom.js'></script> 
+
+
+</head>
+<!--[if IE 8]> <body class="ie8" ng-app="lfgapp"><![endif]-->
+<!--[if gt IE 8]> <body class="ie" ng-app="lfgapp"><![endif]-->
+<!--[if !IE]>--><body ng-app="lfgapp"> <!--<![endif]-->
+<!-- adding class='landing' will auto-pulldown infobar from the top -->
+	      	
+            
+    <header class="Topheader" role="banner">            
+		<nav role="navigation" class="Topheader-navigation">
+			<div class="u-global-container">
+				<script type="text/javascript">
+					
+				</script>
+			</div>
+		</nav>
+            
+<!-- .Topheader-navigation -->
+	
+		<div class="Topheader-logoarea">
+			<div class="u-global-container">
+				<a href='/public/individual' class="wcsLink Topheader-logo">
+				    <img
+				        class="wcsLink u-image-responsive"
+				        src="/static/wcs/lfg/images/shared/lfg-logo.png"
+				        srcset="/static/wcs/lfg/images/shared/lfg-logo.png 165w, /static/wcs/lfg/images/shared/lfg-logo-2x.png 330w"
+				        alt="Lincoln Financial Group Logo (click to navigate to top page)"
+                    />
+				</a>
+			</div>
+		</div>
+	</header>
+	<div class="u-global-container">
+        <main role="main">
+            <section class="content-wrapper content-wrapper--no-hero">
+                <article tabindex="0" id="main-content" class="MainContent">
+	              	<section class="ArticleContent noRightRail">
+	                    <h1>The page could not be found</h1>
+	                    <p>The page you have requested has been moved or does not exist. Please refer to <a href="http://www.LincolnFinancial.com">LincolnFinancial.com</a></p>
+						<!--<ul class="UIList UIList--dotted">
+							<li><a class="wcsLink" href="/public/privacy/privacypracticesnotice">Lincoln Financial Group<sup>&reg;</sup></a></li>
+							<li><a class="wcsLink" href="/public/privacy/privacypracticesnoticeLFN">Lincoln Financial Network<sup>&reg;</sup></a></li>
+						</ul>-->
+					</section>
+				</article>
+			</section>
+		</main>
+	</div>
+
+	<footer role="contentinfo">	    	
+		<div class="footer-bottom-area">
+       		<div class="u-global-container">
+       			
+       			<div class="footer-bottom-extras">
+					<div class="footer-logo-holder">
+						<img alt="" srcset="/static/wcs/lfg/images/shared/lfg-logo-footer.png 165w, /static/wcs/lfg/images/shared/lfg-logo-footer-2x.png 330w" src="/static/wcs/lfg/images/shared/lfg-logo-footer.png" class="wcsLink u-image-responsive">
+					</div>
+			
+					<div class="footer-copy-holder">
+						<section class="footer-copy">
+							<nav>
+								<ul>
+									<li><a class="wcsLink" target="_blank" href="/privacy">Privacy</a></li>
+									<li><a class="wcsLink" target="_blank" href="/legal">Legal</a></li>
+								</ul>
+							</nav>
+							<span class="copyright">&copy; <script type = "text/javascript">var date = new Date(); document.write(date.getFullYear())</script> Lincoln National Corporation. All rights reserved.</span>
+						</section>
+			
+						<section class="footer-disclaimer">Lincoln Financial Group is the marketing name for Lincoln National Corporation and insurance company affiliates, including The Lincoln National Life Insurance Company, Fort Wayne, IN, and in New York, Lincoln Life &amp; Annuity Company of New York, Syracuse, NY. Variable products distributed by broker-dealer/affiliate Lincoln Financial Distributors, Inc., Radnor, PA. Securities and investment advisory services offered through other affiliates.</section>
+					</div>
+
+				</div>
+				<div class="footer-lcn-number">LCN 1661021-120916</div>
+       		</div>
+       	</div>
+	</footer>
+
+	<script type="text/javascript">
+		wcsLink();
+		function setUtagDir() {
+			host = location.hostname;
+			if (host.indexOf('hub2.lfg.com') > -1) {
+				utagDir = 'prod';
+			} else {
+				utagDir = 'dev';
+			}
+			return utagDir;
+		}
+	</script>
+	<script type="text/javascript">
+		var utag_data = {
+		  page_l1 : "LFG", // Site Identifier 
+		  page_l2 : "Error", // Identifier
+		  page_l3 : "404" // Identifier
+		}
+	</script>
+
+	<!-- Loading script asynchronously -->
+	<script type="text/javascript">
+		(function(a,b,c,d){
+		a='//tags.tiqcdn.com/utag/lfg/lfgsites/'+setUtagDir()+'/utag.js';
+		b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+		a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+		})();
+	</script>
+</body>
+</html>

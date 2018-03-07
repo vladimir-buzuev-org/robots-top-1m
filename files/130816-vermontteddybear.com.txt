@@ -1,0 +1,990 @@
+
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]> <html lang="en" id="top" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" id="top" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" id="top" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" id="top" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" id="top" class="no-js"> <!--<![endif]-->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<title>American Made Personalized Teddy Bears, Birthday Gifts, Get Well Gift Ideas | Vermont Teddy Bear Company</title>
+<meta name="description" content="A Vermont Teddy Bear Company&amp;reg; Bear-Gram&amp;reg; is the creative alternative gift to flowers. It's a fun, unique gift idea that is guaranteed to last forever." />
+<meta name="keywords" content="" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="icon" href="http://www.vermontteddybear.com/media/favicon/websites/1/vtbfavicon.png" type="image/x-icon" />
+<link rel="shortcut icon" href="http://www.vermontteddybear.com/media/favicon/websites/1/vtbfavicon.png" type="image/x-icon" />
+<!-- Begin Monetate ExpressTag Sync v8. Place at start of document head. DO NOT ALTER. -->
+<script type="text/javascript">
+var monetateT = new Date().getTime();
+(function() {
+    var p = document.location.protocol;
+    if (p == "http:" || p == "https:") {
+        var m = document.createElement("script"); m.type = "text/javascript"; m.src = (p == "https:" ? "https://s" : "http://") + "e.monetate.net/js/2/a-ffdf4bdf/p/vermontteddybear.com/entry.js";
+        var e = document.createElement("div"); e.appendChild(m); document.write(e.innerHTML);
+    }
+})();
+</script>
+<!-- End Monetate tag. --><!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = 'http://www.vermontteddybear.com/js/blank.html';
+    var BLANK_IMG = 'http://www.vermontteddybear.com/js/spacer.gif';
+//]]>
+</script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="http://www.vermontteddybear.com/media/css/ae182d5ead9fc535cae031a69f4a8377.css" media="all" />
+<script type="text/javascript" src="http://www.vermontteddybear.com/media/js/695204147ac2a28ac145a37e4cb7e15f.js"></script>
+<script type="text/javascript" src="http://www.vermontteddybear.com/media/js/547d1ed856de597939cae86a19f2c788.js" name="quicktap"></script>
+<!--[if  (lte IE 8) & (!IEMobile)]>
+<link rel="stylesheet" type="text/css" href="http://www.vermontteddybear.com/media/css/4a280a10d995bac9d5c0410c95adc538.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.vermontteddybear.com/media/css/8e1dbd399c37a14b381f56c3fccfcd3f.css" name="css002_second" />
+<![endif]-->
+<!--[if (gte IE 9) | (IEMobile)]><!-->
+<link rel="stylesheet" type="text/css" href="http://www.vermontteddybear.com/media/css/da4172e7af7c801d914462c1615b4cee.css" media="all" />
+<!--<![endif]-->
+<!--[if  (lt IE 10) & (gt IE 8)]>
+<link rel="stylesheet" type="text/css" href="http://www.vermontteddybear.com/media/css/7e9318a8a91c58ad85b40b0f72e06257.css" media="all" />
+<![endif]-->
+
+<script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.www.vermontteddybear.com';
+//]]>
+</script>
+<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = ["HK","IE","MO","PA"];
+//]]>
+</script>
+
+<!-- Begin Monetate ExpressTag - Init -->
+<script type="text/javascript">
+//<![CDATA[
+    window.monetateQ = window.monetateQ || [];
+    window.monetateData = window.monetateData || {};
+    window.monetateData.pageType = "main";
+//]]>
+</script>
+<!-- End Monetate ExpressTag -->
+
+	<script type="text/javascript">
+		//<![CDATA[
+		var AN = AN || {};
+
+		/**
+		 * @param cname name of the cookie
+		 * @param cvalue value assigned to cookie
+		 * @param exdays duration of the cookie in days
+		 */
+		AN.setCookie = function(cname, cvalue, exdays)
+		{
+			console.log(cname);
+
+			var milliseconds_in_days = 1000 * 60 * 60 * 24;
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays * milliseconds_in_days));
+			var expires = "expires="+d.toUTCString();
+			document.cookie = cname + "=" + cvalue + "; " + expires + "; path=/";
+		}
+
+		/**
+		 * @param cname name of the cookie
+		 * @returns object | null object with the field and value or null if not found
+		 */
+		AN.getCookie = function(cname)
+		{
+			var cookies = document.cookie.split(';');
+			for (var i = 0; i < cookies.length; i++) {
+				var keyPair = cookies[i].split('=');
+				if (keyPair.length < 2)
+					continue;
+				var field = keyPair[0].trim();
+				var value = keyPair[1].trim();
+
+				if (field === cname) {
+					return {field: value};
+				}
+			}
+
+			return null;
+		}
+
+		/**
+		 * @param query query string  minus the '?'
+		 * @param field query string field to search for
+		 * @returns string | null value of the query string field or null if the field isn't there
+		 */
+		AN.findAffiliateField = function(query, field)
+		{
+			if (!query) {
+				return null;
+			}
+
+			var fields = query.split("&");
+			for (var i = 0; i < fields.length; i++) {
+				var keyPair = fields[i].split("=");
+				if (
+					keyPair.length == 2 &&
+					keyPair[0] === field
+				) {
+					return keyPair[1];
+				}
+			}
+
+			return null;
+		}
+
+		AN.manageCookie = function (window, document, duration_in_days, key_name, cookie_name) {
+			var query = location.search.substring(1);
+			var source = AN.findAffiliateField(query, key_name);
+			var cookie = AN.getCookie(cookie_name);
+
+			if (source) {
+				// set or update the cookie with the value from the current query string
+				AN.setCookie(cookie_name, source, duration_in_days);
+			}
+		}
+
+		AN.manageCookie(window, document, 365, "source", "pepperjam_network_source");
+		AN.manageCookie(window, document, 365, "click", "pepperjam_network_click");
+		AN.manageCookie(window, document, 365, "publisher", "pepperjam_network_publisher");
+		//]]>
+	</script>
+
+<script type="text/javascript">
+var slibaseurlsearch = 'http://';
+var slibaseurl = 'http://';
+</script>
+<link rel="stylesheet" type="text/css" href="//vermontteddybear.resultspage.com/autocomplete/sli-rac.css" ><script type="text/javascript">
+(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/SoYsz0o1wGQIqhkGYQtMrxbNLgzXS8tWaiKjnvIJ/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+</script><script type="text/javascript">//<![CDATA[
+        var Translator = new Translate([]);
+        //]]></script><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-31143-6']);
+_gaq.push(['_trackPageview']);
+</script></head>
+<body class=" cms-index-index cms-homepage">
+                <!-- GOOGLE TAG MANAGER -->
+        <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPWXC6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <script type="text/javascript">
+            //<![CDATA[
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+                j.src= '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PPWXC6');
+
+            var dlCurrencyCode = 'USD';
+            
+            /* Makes sure that UA Enhanced Ecommerce always gets the purchase action on successful orders. */
+            Array.prototype.forEach.call(dataLayer, function(dlObject, idx){
+                if(dlObject.ecommerce !== undefined && dlObject.ecommerce.purchase && dlObject.ecommerce.purchase.actionField) {
+                    dlObject.ecommerce.purchase.actionField.action = 'purchase';
+                }
+            });
+            //]]>
+        </script>
+        <!-- END GOOGLE TAG MANAGER -->
+        
+<div class="wrapper">
+        <noscript>
+        <div class="global-site-notice noscript">
+            <div class="notice-inner">
+                <p>
+                    <strong>JavaScript seems to be disabled in your browser.</strong><br />
+                    You must have JavaScript enabled in your browser to utilize the functionality of this website.                </p>
+            </div>
+        </div>
+    </noscript>
+    <div class="page">
+        
+<div id="top-header" >
+	<div class="top-header-content">
+		<!-- Search -->
+		<div id="header-search" class="skip-content">
+			<script type="text/javascript">  
+    function ajaxsearchsubmit(form){  
+        var search = encodeURIComponent(form.w.value);  
+        document.activeElement.blur();  
+        window.location="http://great-gifts.vermontteddybear.com/search?w="   +search;  
+        return false;  
+    }  
+</script>  
+ 
+<form id="search_mini_form" action="//great-gifts.vermontteddybear.com/search"  method="get" onsubmit="return ajaxsearchsubmit(this);"> 
+    <div class="input-box"> 
+        <label for="search">Search</label> 
+        <input id="search" type="search" name="w" onfocus="this.value=''" class="input-text required-entry" maxlength="128" placeholder="Enter Your Search" autocomplete="off" data-provide="rac" /> 
+        <button type="submit" title="Search" class="button search-button"><span><span>Search</span></span></button> 
+    </div> 
+</form> 		</div>
+
+		<!-- Number -->
+		<div id="header-number" class="desktop">
+			<a href="tel:+18008292327">1-800-829-BEAR</a>
+
+		</div>
+
+		<!-- Logo -->
+		<a class="logo desktop" href="http://www.vermontteddybear.com/">
+			<img src="http://www.vermontteddybear.com/skin/frontend/blueacorn/vtb/images/blueacorn/logo.png" alt="Magento Commerce" class="large" />
+			<img src="http://www.vermontteddybear.com/skin/frontend/blueacorn/vtb/images/blueacorn/logo-small.png" alt="Magento Commerce" class="small" />
+		</a>
+
+		<!-- Skip Links -->
+		<div class="skip-links">
+			<a href="#header-nav" class="skip-link skip-nav">
+				<span class="icon"></span>
+				<span class="label">Menu</span>
+			</a>
+
+			<!-- Number -->
+			<div id="header-number" class="mobile">
+				<a href="tel:+18008292327">1-800-829-BEAR</a>
+
+			</div>
+
+			<!-- Logo -->
+			<a class="logo mobile" href="http://www.vermontteddybear.com/">
+				<img src="http://www.vermontteddybear.com/skin/frontend/blueacorn/vtb/images/blueacorn/logo-small.png" alt="Magento Commerce" alt="Magento Commerce" />
+			</a>
+
+			<div class="account-cart-wrapper">
+				<a href="https://www.vermontteddybear.com/customer/account/" data-target-element="#header-account" class="skip-link skip-account">
+					<span class="icon"></span>
+					<span class="label">My Account</span>
+				</a>
+
+				<!-- Cart -->
+				<div class="header-minicart">
+					
+
+<a href="http://www.vermontteddybear.com/checkout/cart/" data-target-element="#header-cart" class="skip-link skip-cart  no-count">
+    <span class="icon"></span>
+    <span class="label">Bag</span>
+    <span class="count">0</span>
+</a>
+
+<div id="header-cart" class="block block-cart skip-content">
+    <!--{CART_SIDEBAR_8590e0e1ddb9794f43ddde7f88e8b4de}-->
+
+<div id="form_key" class="hidden">TWxOCCO8G7sW0myU</div>
+<div id="minicart-error-message" class="minicart-message"></div>
+<div id="minicart-success-message" class="minicart-message"></div>
+
+<div class="minicart-wrapper">
+
+	<p class="block-title">Shopping Bag</p>
+
+    <p class="block-subtitle">
+        Recently added items        <a class="close skip-link-close" href="#" title="Close">&times;</a>
+    </p>
+
+                    <p class="empty">You have no items in your shopping bag.</p>
+
+    </div>
+<script type="text/javascript">
+    var googleAnalyticsUniversalData = googleAnalyticsUniversalData || {};
+    googleAnalyticsUniversalData['shoppingCartContent'] = [];
+</script>
+<!--/{CART_SIDEBAR_8590e0e1ddb9794f43ddde7f88e8b4de}--></div>
+				</div>
+			</div>
+
+			<a href="#header-search" class="skip-link skip-search">
+				<span class="icon"></span>
+				<span class="label">Search</span>
+			</a>
+
+		</div>
+
+		<!-- Chat Link -->
+		<div id="header-chat-link">
+			<a href="https://home-c12.incontact.com/inContact/ChatClient/ChatClient.aspx?poc=bfe6ae1b-8ed1-4725-839d-8870feb3ed7d&bu=4594489" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Chat</a>
+		</div>
+
+		<!-- Account -->
+		<div id="header-account" class="skip-content">
+			<div class="links">
+<ul>
+<li class="first"><a title="My Account" href="https://www.vermontteddybear.com/customer/account/">My Account</a></li>
+<li><a class="top-link-cart" title="My Cart" href="http://www.vermontteddybear.com/checkout/cart/">My Bag</a></li>
+<li><a class="top-link-checkout" title="Checkout" href="http://www.vermontteddybear.com/checkout/">Checkout</a></li>
+<li class="last"><a title="Log Out" href="https://www.vermontteddybear.com/customer/account/logout/">Log Out</a></li>
+</ul>
+</div>		</div>
+
+
+	</div>
+</div>
+
+<header id="header" class="page-header ">
+    <div class="page-header-container">
+
+        <!-- Navigation -->
+        <div id="header-nav" class="skip-content">
+			<span class="close"></span>
+			<nav id="nav">
+				<ol class="nav-primary">
+
+<li class="level0 nav-1 parent"><a class="level0 has-children" href="/about-vermont-teddy-bear">Inside the Den</a>
+<div class="mm-wrapper">
+<h1>Inside the Den</h1>
+<ul class="level0 first">
+<li class="level1 nav-1-1 first"><a class="level1 " href="/bears-that-care">Bears That Care</a></li>
+<li class="level1 nav-1-2"><a class="level1 " href="/cub-project">The VT Cub Project</a></li>
+<li class="level1 nav-1-3"><a class="level1 " href="/share?tracking=PTRSYSTOR&utm_source=facebook&utm_medium=social&utm_content=PTRSYSTOR&utm_campaign=campaign">#LoveIsInTheBEAR</a></li>
+<li class="level1 nav-1-4"><a class="level1 " href="/visit-vermont-teddy-bear">Come Visit Us!</a></li>
+</ul>
+
+<img src="http://www.vermontteddybear.com/media/wysiwyg/vtb-static-content/main-nav-stories.jpg" alt="" />
+</div>
+</li>
+
+<li class="level0 nav-2"><a class="level0" href="/big-bears">Big Bears</a></li>
+
+<li class="level0 nav-3 parent"><a class="level0 has-children" href="/holidays">Holidays</a>
+<div class="mm-wrapper">
+<h1>Holidays</h1>
+<ul class="level0 first">
+<li class="level1 nav-1-1 first"><a class="level1 " href="/holidays/christmas">Christmas</a></li>
+<li class="level1 nav-1-2"><a class="level1 " href="/holidays/chanukah">Chanukah</a></li>
+<li class="level1 nav-1-3"><a class="level1 " href="/holidays/easter">Easter</a></li>
+<li class="level1 nav-1-4"><a class="level1 " href="/holidays/valentines-day">Valentine's Day</a></li>
+</ul>
+<ul class="level0 second">
+<li class="level1 nav-1-1 first"><a class="level1 " href="/holidays/mothers-day">Mother's Day</a></li>
+<li class="level1 nav-1-2"><a class="level1 " href="/holidays/fathers-day">Father's Day</a></li>
+<li class="level1 nav-1-3"><a class="level1 " href="/holidays/fall">Fall</a></li>
+<li class="level1 nav-1-4"><a class="level1 mobile-shop-all" href="/holidays/view-all-holiday-bears">View All</a></li>
+</ul>
+<img alt="" src="https://www.vermontteddybear.com/media/wysiwyg/VTB-CMS-Content/BearWear_Navigation.jpg" /></div>
+</li>
+<li class="level0 nav-4 parent"><a class="level0 has-children" href="/occasion">Occasions</a>
+<div class="mm-wrapper">
+<h1>Occasions</h1>
+<ul class="level0 first">
+<li class="level1 nav-1-1 first"><a class="level1 " href="/occasion/birthday">Birthday</a></li>
+<li class="level1 nav-1-2"><a class="level1 " href="/occasion/get-well">Get Well</a></li>
+<li class="level1 nav-1-3"><a class="level1 " href="/occasion/graduation">Graduation</a></li>
+<li class="level1 nav-1-4"><a class="level1 " href="/occasion/sympathy">Sympathy</a></li>
+</ul>
+<ul class="level0 second">
+<li class="level1 nav-1-1 first"><a class="level1 " href="/occasion/new-baby">New Baby</a></li>
+<li class="level1 nav-1-2"><a class="level1 " href="/occasion/wedding-anniversary">Wedding&nbsp;&amp;&nbsp;Anniversary</a></li>
+<li class="level1 nav-1-3"><a class="level1 " href="/occasion/just-because">Just Because</a></li>
+<li class="level1 nav-1-4"><a class="level1 mobile-shop-all" href="/occasion/view-all-occasion-bears">View All</a></li>
+</ul>
+<img alt="" src="https://www.vermontteddybear.com/media/wysiwyg/VTB-CMS-Content/Baby_Boy_Navigation.jpg" /></div>
+</li>
+
+<li class="level0 nav-5 parent"><a class="level0 has-children" href="/themes">Themes</a>
+<div class="mm-wrapper">
+<h1>Themes</h1>
+<ul class="level0 first">
+<li class="level1 nav-1-1 first"><a class="level1 " href="/themes/occupations">Occupations</a></li>
+<li class="level1 nav-1-2"><a class="level1 " href="/themes/quirky">Quirky</a></li>
+<li class="level1 nav-1-3"><a class="level1 " href="/themes/bears-for-a-cause">Bears That Care</a></li>
+<li class="level1 nav-1-4"><a class="level1 " href="/themes/cant-be-tamed">Can't Be Tamed</a></li>
+<li class="level1 nav-1-5"><a class="level1 " href="/themes/sport">Sports</a></li>
+<li class="level1 nav-1-6"><a class="level1 " href="/themes/political-bears">Political Bears</a></li>
+<li class="level1 nav-1-7"><a class="level1 " href="/themes/love">Love</a></li>
+<li class="level1 nav-1-8"><a class="level1 " href="/custom-made-vermont-teddy-bears">Custom</a></li>
+</ul>
+<ul class="level0 second">
+<li class="level1 nav-1-1 first"><a class="level1 " href="/themes/vermont">Vermont</a></li>
+<li class="level1 nav-1-2"><a class="level1 mobile-shop-all" href="/themes/hobby">Hobby</a></li>
+<li class="level1 nav-1-3"><a class="level1 mobile-shop-all" href="/themes/kid-favorites">Kid Favorites</a></li>
+<!--li class="level1 nav-1-4"><a class="level1 mobile-shop-all" href="themes/year-of-outfits">Year of Outfits</a></li-->
+<li class="level1 nav-1-5"><a class="level1 mobile-shop-all" href="/themes/service-bears">Service Bears</a></li>
+<li class="level1 nav-1-6"><a class="level1 mobile-shop-all" href="/themes/animals">Animals</a></li>
+<li class="level1 nav-1-7"><a class="level1 mobile-shop-all" href="/themes/view-all-theme-bears">View All</a></li>
+</ul>
+<img alt=""  src="https://www.vermontteddybear.com/media/wysiwyg/VTB-CMS-Content/Snowboarder_Navigation.jpg" /></div>
+</li>
+<li class="level0 nav-6 parent"><a class="level0 has-children" href="/bear-wear">Teddy Bear Necessities </a>
+<div class="mm-wrapper">
+<h1>Bear Wear</h1>
+<ul class="level0 first">
+<li class="level1 nav-1-1 first"><a class="level1 " href="/bear-wear/hunka-love-outfits">Hunka Love Outfits</a></li>
+<li class="level1 nav-1-2"><a class="level1 " href="/bear-wear/hunka-love-accessories">Hunka Love Accessories</a></li>
+<li class="level1 nav-1-3"><a class="level1 " href="/bear-wear/15-inch-bear-accessories">15&quot; Bear Accessories</a></li>
+<li class="level1 nav-1-4"><a class="level1 " href="/bear-wear/gift-tags">Gift Tags</a></li>
+</ul>
+<ul class="level0 second">
+<li class="level1 nav-1-1 first"><a class="level1 mobile-shop-all" href="/bear-wear/bear-pj-gift-sets">Bear & PJ Combos</a></li>
+<li class="level1 nav-1-2"><a class="level1 " href="/bear-wear/bear-food">Bear Food</a></li>
+<!--<li class="level1 nav-1-2"><a class="level1 mobile-shop-all" href="/bear-wear/vermont-teddy-bear-logo-wear">VTB Logo Wear</a></li>-->
+<!--<li class="level1 nav-1-3"><a class="level1 mobile-shop-all" href="/bear-wear/gift-certificates">Gift Certificates</a></li>-->
+<li class="level1 nav-1-3"><a class="level1 mobile-shop-all" href="/bear-wear">View All</a></li>
+</ul>
+<img alt="" src="http://www.vermontteddybear.com/media/wysiwyg/VTB-CMS-Content/BearWear_Navigation.jpg" /></div>
+</li>
+
+<li class="mobile level0 nav-7"><a class="level0" href="https://www.vermontteddybear.com/customer/account/">My Account</a></li>
+<li class="mobile level0 nav-8 acct-logout"><a class="level0" href="https://www.vermontteddybear.com/customer/account/logout/">Logout</a></li>
+</ol>
+
+
+			</nav>
+        </div>
+    </div>
+</header>
+
+
+<div class="top-container"><div class="widget widget-banner">
+        <ul>
+            <li><p id="header-notice" class="global-notice" style="background-color: #ADBA38;"></p>
+<p id="header-notice-content" style="display: none;">
+    <!-- Put Content Here -->
+    FREE With Purchase: Candy Treat & Personalized Gift Card
+    <span class="close"></span>
+</p>
+<script type="text/javascript">
+    jQuery(function($) {
+        if( Mage.Cookies.get('closed-global-notice') === null ) {
+            $('#header-notice')
+                .on('click touchstart', function() {
+                    $(this).slideUp();
+                    Mage.Cookies.set('closed-global-notice', true);
+                 })
+		.html( $('#header-notice-content').html() )
+		.slideDown();
+        }
+    });
+</script></li>
+        </ul>
+</div>
+</div>        <div class="main-container col1-layout">
+                        <div class="main">
+                
+
+                <div class="col-main">
+                                        <div class="std"><div style="display: none;">Empty, hidden div, for the CMS page to appear, even though it's blank. All content inserted through template files</div></div>
+
+<div class="homepage-grid">
+    <div class="grid-item one">
+        <div class="item-background" style="background-color: #fad5e1;">
+
+    <div class="grid-image"><img src="http://www.vermontteddybear.com/media/wysiwyg/vtb-hero-images/ABFP20001-homepage-hero.png" alt="20" World's Softest Bear" /></div>
+    <div class="grid-copy">
+        <h3>20" World's Softest Bear</h3>
+        <div class="subtext"> The Name Says It All</div>
+        <p> Baby-bunny softness makes this floppy Golden Bear extremely easy to hug and nearly impossible to put down. <br />
+        - Stuffed with Love<br />
+        - Guaranteed For Life
+
+</p>
+        <a href="/20-worlds-softest-bear-kit" class="button">Learn More</a>
+        <div class="view-more"></div>
+    </div>
+</div>    </div>
+    <div class="grid-item two">
+        <div class="item-background" style="background-color: #f5821f;">
+
+    <div class="grid-image"><img src="http://www.vermontteddybear.com/media/wysiwyg/vtb-hero-images/homepage-hero-kk0000182.png" alt="" /></div>
+    <div class="grid-copy">
+        <h3>Our Bears That Care</h3>
+        <div class="subtext">NEW 15" Limb Loss & Limb Difference Bear</div>
+        <p>Working closely with the Amputee Coalition, we designed this collection for every body. This Bear brings with it comfort, joy and love, but just as importantly, it offers true support: 20% of every sale is donated directly to the Amputee Coalition to support their mission.</p>
+        <a href="/15-limb-difference-bear" class="button">Learn More</a>
+        <div class="view-more"></div>
+    </div>
+</div>    </div>
+    <div class="grid-item three">
+        <div class="item-background" style="background-color: #61a644;">
+    <div class="grid-image"><img src="http://www.vermontteddybear.com/media/wysiwyg/vtb-hero-images/vtb-homepage-hero-cubproject.jpg" alt="The Vermont Cub Project" /></div>
+    <div class="grid-copy">
+        <h3>The Vermont Cub Project</h3>
+        <div class="subtext">A Bear for Every Vermonter</div>
+        <p>We know it can be tough out there- making new friends, starting school and riding the bus so we wanted to give children a friend to explore this new world with. Now, we are making meeting a new best friend a little easier-we are gifting every Vermonter four years of age a Teddy Bear. 
+          </p>
+        <a href="/cub-project" class="button">Learn More</a>
+        <div class="view-more"></div>
+    </div>
+</div>    </div>
+    <div class="grid-item four">
+        <div class="item-background" style="background-color: #7ca2d5;">
+    <div class="grid-image"><img src="http://www.vermontteddybear.com/media/wysiwyg/vtb-hero-images/vtb-homepage-hero-comevisitus-e.jpg" alt="Come Visit Us!" /></div>
+    <div class="grid-copy">
+        <h3>Come Visit Us!</h3>
+        <div class="subtext">Looking for fun things to do in Vermont?</div>
+        <p>Our Bear Shop and Factory Tour is fun for the whole Family! Summer hours are 9am-6pm, 7 days a week. For tour times and more information about group tours and birthday parties, click ‘learn more’ below. See you soon! </p>
+        <a href="/visit-vermont-teddy-bear" class="button">Learn More</a>
+        <div class="view-more"></div>
+    </div>
+</div>    </div>
+</div>
+<div class="section featured-products">
+    <h2 class="section-title">Featured Categories</h2>
+<ul class="products-grid products-grid--max-3-col">
+       <li class="item first">
+        <a href="/occasion/new-baby" class="product-image" title="New Baby Bears">
+            <img src="http://www.vermontteddybear.com/media/wysiwyg/vtb-featuredcategories/featuredcat-KK0015905H.jpg" alt="New Baby Bears" />
+        </a>
+        <div class="product-info">
+            <h2 class="product-name"><a href="/occasion/new-baby">New Baby</a></h2>
+        </div>
+    </li>   
+
+ <li class="item">
+        <a href="/big-bears" class="product-image" title="Big Bears">
+            <img src="http://www.vermontteddybear.com/media/wysiwyg/vtb-featuredcategories/featuredcat-kbkf48001-b.jpg" alt="Big Bears" />
+        </a>
+        <div class="product-info">
+            <h2 class="product-name"><a href="/big-bears">Big Bears</a></h2>
+        </div>
+    </li>
+    <li class="item last">
+        <a href="/themes/sport" class="product-image" title="Sports Bears">
+            <img src="http://www.vermontteddybear.com/media/wysiwyg/vtb-featuredcategories/featuredcat-KK0015384H-b.jpg" alt="Sports" /></a>
+            <div class="product-info">
+            <h2 class="product-name"><a href="/themes/sport">Sports</a></h2>
+        </div>
+    </li>
+
+</ul></div>
+
+<div class="section bestsellers">
+        <h3 class="section-title"><span>Best Sellers</span></h3>
+    <ul class="products-grid products-grid--max-4-col">
+                    <li class="item">
+                <a href="http://www.vermontteddybear.com/15-design-your-own-outfit-bear" title="15&quot; Design Your Own Outfit Bear" class="product-image">
+                                        
+                                        <img id="product-collection-image-26975"
+                         src="http://www.vermontteddybear.com/media/catalog/product/cache/1/image/250x/9df78eab33525d08d6e5fb8d27136e95/K/K/KK0000183_Keyword_20170322_1504.jpg"
+                         alt="15&quot; Design Your Own Outfit Bear" />
+                </a>
+                <div class="product-info">
+                    <h2 class="product-name">
+                        <a href="http://www.vermontteddybear.com/15-design-your-own-outfit-bear" title="15&quot; Design Your Own Outfit Bear">
+                            15&quot; Design Your Own Outfit Bear                        </a>
+                    </h2>
+                </div>
+            </li>
+                    <li class="item">
+                <a href="http://www.vermontteddybear.com/15-baby-boy-bear" title="Maple" class="product-image">
+                                        
+                                        <img id="product-collection-image-18965"
+                         src="http://www.vermontteddybear.com/media/catalog/product/cache/1/image/250x/9df78eab33525d08d6e5fb8d27136e95/K/K/KK0015906M_Keyword_20150804_1440.jpg"
+                         alt="Maple" />
+                </a>
+                <div class="product-info">
+                    <h2 class="product-name">
+                        <a href="http://www.vermontteddybear.com/15-baby-boy-bear" title="15&quot; Baby Boy Bear">
+                            15&quot; Baby Boy Bear                        </a>
+                    </h2>
+                </div>
+            </li>
+                    <li class="item">
+                <a href="http://www.vermontteddybear.com/15-get-well-bowtie-bear" title="Honey" class="product-image">
+                                        
+                                        <img id="product-collection-image-18951"
+                         src="http://www.vermontteddybear.com/media/catalog/product/cache/1/image/250x/9df78eab33525d08d6e5fb8d27136e95/K/K/KK0000057H_Keyword_20150804_1456.jpg"
+                         alt="Honey" />
+                </a>
+                <div class="product-info">
+                    <h2 class="product-name">
+                        <a href="http://www.vermontteddybear.com/15-get-well-bowtie-bear" title="15&quot; &quot;Get Well&quot; Bow Tie Bear">
+                            15&quot; &quot;Get Well&quot; Bow Tie Bear                        </a>
+                    </h2>
+                </div>
+            </li>
+                    <li class="item">
+                <a href="http://www.vermontteddybear.com/15-classic-bowtie-bear" title="Honey" class="product-image">
+                                        
+                                        <img id="product-collection-image-18998"
+                         src="http://www.vermontteddybear.com/media/catalog/product/cache/1/image/250x/9df78eab33525d08d6e5fb8d27136e95/K/K/KK0015054H_Keyword_20150804_1456.jpg"
+                         alt="Honey" />
+                </a>
+                <div class="product-info">
+                    <h2 class="product-name">
+                        <a href="http://www.vermontteddybear.com/15-classic-bowtie-bear" title="15&quot; Classic Bow Tie Bear">
+                            15&quot; Classic Bow Tie Bear                        </a>
+                    </h2>
+                </div>
+            </li>
+                    <li class="item">
+                <a href="http://www.vermontteddybear.com/cuddle-buddies-gift-set" title="Buttercream" class="product-image">
+                                        
+                                        <img id="product-collection-image-19144"
+                         src="http://www.vermontteddybear.com/media/catalog/product/cache/1/image/250x/9df78eab33525d08d6e5fb8d27136e95/K/A/KA0150043B_Keyword_20150804_1456.jpg"
+                         alt="Buttercream" />
+                </a>
+                <div class="product-info">
+                    <h2 class="product-name">
+                        <a href="http://www.vermontteddybear.com/cuddle-buddies-gift-set" title="15'' Cuddle Buddies Gift Set">
+                            15'' Cuddle Buddies Gift Set                        </a>
+                    </h2>
+                </div>
+            </li>
+                    <li class="item">
+                <a href="http://www.vermontteddybear.com/15-holstein-bear" title="Holstein Bear - Main Image" class="product-image">
+                                        
+                                        <img id="product-collection-image-19036"
+                         src="http://www.vermontteddybear.com/media/catalog/product/cache/1/image/250x/9df78eab33525d08d6e5fb8d27136e95/k/k/kk0015336_keyword_20160825_0851_1.jpg"
+                         alt="Holstein Bear - Main Image" />
+                </a>
+                <div class="product-info">
+                    <h2 class="product-name">
+                        <a href="http://www.vermontteddybear.com/15-holstein-bear" title="15&quot; Holstein Bear">
+                            15&quot; Holstein Bear                        </a>
+                    </h2>
+                </div>
+            </li>
+                    <li class="item">
+                <a href="http://www.vermontteddybear.com/15-trump-bear" title="15'' Trump Bear" class="product-image">
+                                        
+                                        <img id="product-collection-image-19631"
+                         src="http://www.vermontteddybear.com/media/catalog/product/cache/1/image/250x/9df78eab33525d08d6e5fb8d27136e95/k/k/kk0015996_keyword_20170130_1609.jpg"
+                         alt="15'' Trump Bear" />
+                </a>
+                <div class="product-info">
+                    <h2 class="product-name">
+                        <a href="http://www.vermontteddybear.com/15-trump-bear" title="15'' Trump Bear">
+                            15'' Trump Bear                        </a>
+                    </h2>
+                </div>
+            </li>
+            </ul>
+</div>
+
+
+<!--<div class="animated-map-container">-->
+    <div class="animated-map-content">
+        <div class="clouds">
+            <div class="cloud one"></div>
+            <div class="cloud two"></div>
+        </div>
+        <div class="mountains"></div>
+        <div class="animated-map">
+            <div class="hotspot-container">
+                <div class="hotspot-content one">
+                    <div class="drawing"></div>
+                    <div class="hotspot"></div>
+                    <div class="tooltip">
+                        <p>&nbsp;<br /><a href="/come-visit-us" target="_self" style="color: #FFF;!important"><i>Visiting Vermont?</i> Add our history-rich, entertaining factory tour to your itinerary. Fun for all ages, with special events posted on Facebook! Open Mon.-Sun.</a><br/><br /></p>                    </div>
+                </div>
+                <div class="hotspot-content two">
+                    <div class="drawing"></div>
+                    <div class="hotspot"></div>
+                    <div class="tooltip">
+                        <p><br /><a href="/custom-made-vermont-teddy-bears" style="color: #FFF!important" target="_self">Every 15" Bear is handmade in Vermont, U.S.A., using 100% recycled stuffing, the silkiest fur we can get our paws on and "Born in Vermont" eyes. We even make custom Bears!</a></p>                    </div>
+                </div>
+                <div class="hotspot-content three">
+                    <div class="drawing"></div>
+                    <div class="hotspot"></div>
+                    <div class="tooltip">
+                        <p><br /><a href="/bear-gram" style="color: #FFF!important" target="_self">Each Bear arrives ready-to-open in an exclusive Vermont-themed gift box specially designed with an air hole, Bear food (gourmet candy) and personalized greeting card.</a></p>                    </div>
+                </div>
+                <div class="hotspot-content four active">
+                    <div class="drawing"></div>
+                    <div class="hotspot"></div>
+                    <div class="tooltip">
+                        <p><!--<span class="twitter-name">@emilybolinger:</span> &quot;Adventure awaits!&quot;--> <img alt="Vermont Teddy Bear Social Media" src="http://www.vermontteddybear.com/media/wysiwyg/VTB-CMS-Content/Aviator-Bear.jpg" /><br /><a style="color: #fff!important;" href="/share?tracking=PTRSYSTOR&utm_source=facebook&utm_medium=social&utm_content=PTRSYSTOR&utm_campaign=campaign">Share Your Story #LoveIsInTheBEAR</a><br /><br />@VTTeddyBear</p> 
+
+                    </div>
+                </div>
+                <div class="hotspot-content five">
+                    <div class="drawing"></div>
+                    <div class="hotspot"></div>
+                    <div class="tooltip">
+                        <p><br /><a href="/lifetime-guarantee" style="color: #FFF!important" target="_self">All Vermont Teddy Bears are guaranteed for life! If anything ever happens to one of our Bears, he or she can be sent to our Bear Hospital in Shelburne, VT, where we’ll nurse him or her back to perfect health.</a></p>                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--</div>-->                </div>
+            </div>
+        </div>
+                <div class="footer-container">
+    <div class="footer">
+        <div class="footer-top clear">
+            <div class="footer-subscribe">
+                <div class="footer-subscribe-form">
+                    <div class="block block-subscribe">
+    <div class="block-title">
+        <strong><span>Sign Up for the PreFur’d Member Email Program</span></strong>
+    </div>
+
+	<div class="footer-subscribe-text">
+		<p>Receive exclusive offers, sneak peeks & more!</p>	</div>
+    <form action="http://www.vermontteddybear.com/newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
+        <div class="block-content">
+            <div class="form-subscribe-header">
+                <label for="newsletter">Sign Up for Our Newsletter:</label>
+            </div>
+            <div class="input-box">
+               <input type="text" autocapitalize="off" autocorrect="off" placeholder="Email Address" spellcheck="false" name="email" id="newsletter" title="Sign up for our newsletter" class="input-text required-entry validate-email" />
+            </div>
+            <div class="actions">
+                <button type="submit" title="Subscribe" class="button"><span><span>Sign Up</span></span></button>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript">
+    //<![CDATA[
+        var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+    //]]>
+    </script>
+</div>
+                </div>
+            </div>
+            <div class="footer-social">
+                <h4>Connect With Us</h4>
+<ul>
+    <li><a href="https://www.facebook.com/VTTeddyBear/" class="facebook"></a></li>
+    <li><a href="https://twitter.com/vtteddybear" class="twitter"></a></li>
+    <li><a href="https://www.pinterest.com/vtteddybear/" class="pinterest"></a></li>
+    <li><a href="https://www.youtube.com/user/vtteddybear" class="youtube"></a></li>
+    <li><a href="https://instagram.com/vtteddybear/" class="instagram"></a></li>
+</ul>            </div>
+        </div>
+
+        <div class="footer-mid">
+            <!-- Block 1 -->
+            <div class="block">
+                <h4>About</h4>
+<ul>
+<li><a href="/about-vermont-teddy-bear">Who We Are</a></li>
+<li><a href="/visit-vermont-teddy-bear" target="_self">Come Visit Us!</a></li>
+<li><a href="/vermont-teddy-bear-stories">Stories</a></li>
+<li><a href="/vermont-teddy-bear-partnerships">Partnerships</a></li>
+<li><a href="/corporate-responsibility">Corporate Responsibility</a></li>
+<li><a href="/beyond-the-last-stitch">#BeyondTheLastStitch</a></li>
+<li><a href="/share?tracking=PTRSYSTOR&utm_source=facebook&utm_medium=social&utm_content=PTRSYSTOR&utm_campaign=campaign">#LoveIsInTheBEAR</a></li>
+<li><a href="/employment">Employment</a></li>
+</ul>            </div>
+            <!-- Block 2 -->
+            <div class="block">
+                <h4>Products</h4>
+<ul>
+<li><a href="/lifetime-guarantee">Lifetime Guarantee</a></li>
+<li><a href="/bear-gram">What's a Bear-Gram&reg;?</a></li>
+<li><a href="/how-personalized-products-make-gifting-personal">Why Personalize?</a></li>
+<li><a href="/where-its-made">Where It's Made</a></li>
+<li><a href="/webforms/index/index/id/10/?___store=1" target="_self">Suggest a Bear</a></li>
+<li><a href="/corporate-gifts">Corporate Gifts</a></li>
+<li><a href="http://www.vermontteddybear.com/media/wysiwyg/donation-request-form.pdf" alt="" target="_blank">Donations</a></li>
+</ul>
+            </div>
+            <!-- Block 3 -->
+            <div class="block">
+                <h4>Customer Care</h4>
+<ul class="first">
+<li><a href="/customer-service">Customer Service</a></li>
+<li><a href="/webforms/index/index/id/1/?___store=1">Contact Us</a></li>
+<li><a href="/privacy-policy">Privacy Policy</a></li>
+<li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+<li><a href="/coupon-policy">Coupon Policy</a></li>
+
+</ul>
+<ul>
+<li><a href="/shipping">Shipping Information</a></li>
+<li><a href="/sales-tax">Sales Tax Information</a></li>
+<li><a href="/customer-service">Track Your Order</a></li>
+<li><a href="/affiliate-program">Affiliate Program</a></li>
+<li><a href="/frequently-asked-questions">FAQs</a></li>
+</ul>            </div>
+            <!-- Block 6 -->
+            <div class="block">
+                <h4>Design Your Own Bear</h4>
+<!--p><a href="/custom-made-vermont-teddy-bears"><img alt="Suggest A Bear" src="http://www.vermontteddybear.com/skin/frontend/blueacorn/vtb/images/blueacorn/footer-suggest-bear.png" /></a></p-->
+<p><a href="/custom-made-vermont-teddy-bears"><img alt="Suggest A Bear" src="https://www.vermontteddybear.com/media/wysiwyg/vtb-static-content/footer-custom-made-bear.png" /></a></p>
+<p><a href="/custom-made-vermont-teddy-bears">Start Designing Now</a></p>            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <!-- Block 5 -->
+            <div class="block bottom-first">
+                <h4>Visit Our Sister Companies</h4>
+<ul>
+<li><a class="pajamagram" href="http://www.pajamagram.com"><img alt="Pajamagram" src="https://www.vermontteddybear.com/skin/frontend/blueacorn/vtb/images/blueacorn/sister-comp-pjg.png" /></a></li>
+<li><a class="pajamajeans" href="http://www.pajamajeans.com"><img alt="Pajamajeans" src="https://www.vermontteddybear.com/skin/frontend/blueacorn/vtb/images/blueacorn/sister-comp-pjj.png" /></a></li>
+<li><a href="http://www.vermontbrownie.com"><img src="https://www.vermontteddybear.com/media/wysiwyg/VTB-CMS-Content/vermontbrownie-logo-grayscale.jpg" alt="Vermont Brownie Company" height="75" /></a></li>
+</ul>
+                <div class="address-container">
+                    <address class="copyright">&copy;<script type="text/javascript">
+var theDate=new Date()
+document.write(theDate.getFullYear())
+</script> The Vermont Teddy Bear Company. All Rights Reserved.</address>
+                </div>
+            </div>
+            <div class="block custom-badges">
+                <h4>Made In USA</h4>
+<ul>
+<li><img src="https://www.vermontteddybear.com/skin/frontend/blueacorn/vtb/images/blueacorn/VTB-Custom-Badges_03.gif" alt="Made In USA"/></li>
+</ul>            </div>
+            <!-- Block 7 -->
+            <div class="block">
+                &nbsp;            </div>
+        </div>
+    </div>
+</div>
+
+                
+
+<script>
+    var mageConfig = $j.parseJSON('{"base_url":"http:\/\/www.vermontteddybear.com\/","blueacorn_bearbuilder\/display\/show_select_on_selection":"0","blueacorn_bearbuilder\/display\/options_animated":"1","blueacorn_bearbuilder\/display\/animations_delay":"150","blueacorn_ajaxminicart\/minicart\/showMinicart":"1","blueacorn_ajaxminicart\/minicart\/displayTime":"10","blueacorn_ajaxminicart\/minicart\/scroll":"1","blueacorn_ajaxminicart\/modalcart\/showModalCart":"0","blueacorn_giftmessaging\/general\/enabled":"1","blueacorn_giftmessaging\/general\/default_messages":"YTo3OntpOjA7YToxOntzOjc6Im1lc3NhZ2UiO3M6NDc6IldlIGNhbid0IEJlYXIgdG8gYmUgd2l0aG91dCB5b3UuIEdldCBXZWxsIFNvb24hIjt9aToxO2E6MTp7czo3OiJtZXNzYWdlIjtzOjgwOiJGb3IgYWxsIHlvdSd2ZSBkb25lLCBhbmQgYWxsIHlvdSBkbywgdGhpcyBCZWFyJ3MgaGVyZSB0byBzYXksIGEgYmlnICJUaGFuayB5b3UhIiI7fWk6MjthOjE6e3M6NzoibWVzc2FnZSI7czoxNzoiSGFwcHkgQmVhci10aGRheSEiO31pOjM7YToxOntzOjc6Im1lc3NhZ2UiO3M6ODc6IlJvc2VzIGFyZSByZWQuIFZpb2xldHMgYXJlIGJsdWUuIFlvdSdyZSBzbyBzcGVjaWFsIHRvIG1lLCBJIGhhdmUgdHdvIHN1cnByaXNlcyBmb3IgeW91LiI7fWk6NDthOjE6e3M6NzoibWVzc2FnZSI7czo0MDoiVG8gTWFtYSBhbmQgUGFwYSBCZWFyIC0gQ29uZ3JhdHVsYXRpb25zISI7fWk6NTthOjE6e3M6NzoibWVzc2FnZSI7czo1NToiT25seSB0aGUgYmlnZ2VzdCBCZWFyIGNhbiBzaG93IHlvdSBob3cgbXVjaCBJIGxvdmUgeW91ISI7fWk6NjthOjE6e3M6NzoibWVzc2FnZSI7czoyMzoiSSBsb3ZlIHlvdSBCRUFSLXkgbXVjaCEiO319","bestpractices\/checkout\/forcenameentry":"0","bestpractices\/stepone\/ajaxform":{"header":"Retrieve Your Password Here","description":"Please enter your email address below. You will receive a link to reset your password.","placeholder":"email@example.com","buttontext":"Submit","enable":"1"},"creditcardstyle\/configuration\/enable_credit_card_styles":"1","show_flags_in_cart":"0","productpage\/general\/enable_description_limit":"1","productpage\/general\/description_character_limit":"120","productpage\/multiline\/field1":null,"productpage\/multiline\/field2":null,"referral_param":"utm_content","referral_cookie_name":"referral","styleguide\/development\/enable_development":"0","blueacorn_analyticscustomization\/settings\/active":"1","blueacorn_bundleandsavelightbox\/general\/modal_title":"Give More &amp; Save","blueacorn_bundleandsavelightbox\/general\/modal_cta_text":"Save Now","blueacorn_bundleandsavelightbox\/general\/display_settings":"1","demo_message":"hello","ajax_spinner_url":"http:\/\/www.vermontteddybear.com\/skin\/frontend\/blueacorn\/master\/images\/blueacorn\/ajax-spinner.gif","store_code":"default"}');
+</script><script type="text/javascript">
+    if(typeof newsletterSubscriberFormDetail != 'undefined'){
+        var ajaxNewsletter = new AjaxNewsletter(newsletterSubscriberFormDetail, {
+            ajaxImage : 'http://www.vermontteddybear.com/skin/frontend/blueacorn/vtb/images/ajax-loader.gif'
+        });
+    }
+</script>
+<!-- Begin Monetate ExpressTag Sync v8. Place at start of document head. DO NOT ALTER. -->
+<script type="text/javascript">
+var monetateT = new Date().getTime();
+(function() {
+    var p = document.location.protocol;
+    if (p == "http:" || p == "https:") {
+        var m = document.createElement("script"); m.type = "text/javascript"; m.src = (p == "https:" ? "https://s" : "http://") + "e.monetate.net/js/2/a-ffdf4bdf/p/vermontteddybear.com/entry.js";
+        var e = document.createElement("div"); e.appendChild(m); document.write(e.innerHTML);
+    }
+})();
+</script>
+<!-- End Monetate tag. --><style type="text/css">
+</style>
+
+<script data-name="__br_tm" type="text/javascript">
+  var _bsw = _bsw || [];
+  _bsw.push(['_bswId', '1b02924ed10ee442b3f76e32783a546132d67c34a88dddfd1c90e50cad876403']);
+  (function() {
+    var bsw = document.createElement('script'); bsw.type = 'text/javascript'; bsw.async = true;
+    bsw.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'js.bronto.com/s/b.min.js';
+    var t = document.getElementsByTagName('script')[0]; t.parentNode.insertBefore(bsw, t);
+  })();
+</script>
+<script bronto-popup-id="66fb7943-c1f1-4020-a36b-2edd8cd94968" src="https://cdn.bronto.com/popup/delivery.js"></script>
+<script type="text/javascript">
+if (document.addEventListener) {
+  document.addEventListener('bronto:popup-submitted', function(e) {
+    new Ajax.Request('http://www.vermontteddybear.com/btnewsletter/index/submit/', {
+      method: 'post',
+      parameters: { emailAddress: e.detail.email }
+    });
+  }, false);
+}
+</script>
+
+
+<script type="text/javascript" src="//p.bm23.com/bta.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+    var bta = new __bta('8d34ffbcf26d02a6e88daf89e1313a77');
+    //]]>
+</script>
+
+
+
+
+<script type="text/javascript">
+var staticPromotions = staticPromotions || [];
+staticPromotions = [
+    {
+        'id': '1',
+        'name': 'VTB - Global Banner',
+        'creative': '',
+        'position': 'cms_index_index',
+        'activated': '0'
+    },
+
+];
+</script>
+
+
+    <script type="text/javascript">
+        if(typeof dataLayer != "undefined") {
+            dataLayer.push({
+                'event': 'blueacorn',
+                'blueacorn': {
+                    'detail': {
+                                                'timestamp': '2017-09-07T01:58:15.000000Z',
+                        'date': '09/07/2017'
+                    }
+                }
+            });
+        }
+    </script>
+<div id="wishlist_edit_action_container"></div>
+
+<!-- Begin Monetate ExpressTag - TrackData -->
+<script type="text/javascript">
+//<![CDATA[
+    window.monetateQ.push(["setPageType", window.monetateData.pageType]);
+    if(window.monetateData.cartRows) window.monetateQ.push(["addCartRows", window.monetateData.cartRows]);
+    window.monetateQ.push(["trackData"]);
+//]]>
+</script>
+<!-- End Monetate ExpressTag -->
+<script>
+var PayPalLightboxConfig = '{"isActive":false,"environment":"production","merchantid":"","setExpressCheckout":"http:\/\/www.vermontteddybear.com\/incontext\/express\/start\/","setExpressCheckoutUk":"http:\/\/www.vermontteddybear.com\/incontext\/expressuk\/start\/"}';
+    </script>
+<script type="text/javascript" src="//www.paypalobjects.com/api/checkout.js" async></script>
+<script type="text/javascript" src="//vermontteddybear.resultspage.com/autocomplete/sli-rac.config.js"></script><!-- Begin Monetate ExpressTag Sync v8. Place at start of document head. DO NOT ALTER. -->
+<script type="text/javascript">
+var monetateT = new Date().getTime();
+(function() {
+    var p = document.location.protocol;
+    if (p == "http:" || p == "https:") {
+        var m = document.createElement("script"); m.type = "text/javascript"; m.src = (p == "https:" ? "https://s" : "http://") + "e.monetate.net/js/2/a-ffdf4bdf/p/vermontteddybear.com/entry.js";
+        var e = document.createElement("div"); e.appendChild(m); document.write(e.innerHTML);
+    }
+})();
+</script>
+<!-- End Monetate tag. --><script type="text/javascript" src="http://www.vermontteddybear.com/media/js/5a9487b65ec5002c6999c6d78839815f.js"></script>
+    </div>
+</div>
+<style type="text/css">
+@font-face {
+	font-family: 'Lato';
+	src: url('//www.vermontteddybear.com/skin/frontend/blueacorn/vtb/fonts/lato/Lato-Regular.eot'); /* IE9 Compat Modes */
+	src: url('//www.vermontteddybear.com/skin/frontend/blueacorn/vtb/fonts/lato/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('//www.vermontteddybear.com/skin/frontend/blueacorn/vtb/fonts/lato/Lato-Regular.woff') format('woff'), /* Modern Browsers */
+	url('//www.vermontteddybear.com/skin/frontend/blueacorn/vtb/fonts/lato/Lato-Regular.ttf') format('truetype');
+	font-style: normal;
+	font-weight: normal;
+	text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'LatoSemibold';
+    src: url('//www.vermontteddybear.com/skin/frontend/blueacorn/vtb/fonts/lato/Lato-Semibold.eot'); /* IE9 Compat Modes */
+    src: url('//www.vermontteddybear.com/skin/frontend/blueacorn/vtb/fonts/lato/Lato-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//www.vermontteddybear.com/skin/frontend/blueacorn/vtb/fonts/lato/Lato-Semibold.woff') format('woff'), /* Modern Browsers */
+    url('//www.vermontteddybear.com/skin/frontend/blueacorn/vtb/fonts/lato/Lato-Semibold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'Aleo';
+    src: url('//www.vermontteddybear.com/skin/frontend/blueacorn/vtb/fonts/aleo/aleo-regular-webfont.eot'); /* IE9 Compat Modes */
+    src: url('//www.vermontteddybear.com/skin/frontend/blueacorn/vtb/fonts/aleo/aleo-regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//www.vermontteddybear.com/skin/frontend/blueacorn/vtb/fonts/aleo/aleo-regular-webfont.woff') format('woff'), /* Modern Browsers */
+    url('//www.vermontteddybear.com/skin/frontend/blueacorn/vtb/fonts/aleo/aleo-regular-webfont.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal; 
+}
+</style><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"7fb93488a6","applicationID":"8107563,8107559","transactionName":"bwFVYxdSCxEDVEBRCVZLYkUMHAwMBlJMFhZQFA==","queueTime":0,"applicationTime":33,"atts":"Q0ZWFV9IGB8=","errorBeacon":"bam.nr-data.net","agent":""}</script><script type="text/javascript">
+//<![CDATA[
+(function() {
+var _analytics_scr = document.createElement('script');
+_analytics_scr.type = 'text/javascript'; _analytics_scr.async = true; _analytics_scr.src = '/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1199785251';
+var _analytics_elem = document.getElementsByTagName('script')[0]; _analytics_elem.parentNode.insertBefore(_analytics_scr, _analytics_elem);
+})();
+// ]]>
+</script></body>
+</html>
+

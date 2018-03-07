@@ -1,0 +1,60 @@
+# These people are fetching individual posts' comment feeds instead of the sitewide ones
+User-Agent: jyte_finder
+Disallow: /journal/archives
+
+User-Agent: lmspider
+Disallow: /
+
+# It's a shopping search engine.  Nothing's relevant except maybe the comics list
+User-Agent: BecomeBot
+Disallow: /
+
+User-agent: *
+Disallow: /temp/
+Disallow: /stuff/
+Disallow: /utils/
+Disallow: /usage/
+Disallow: /cgi-bin/
+Disallow: /selling/
+Disallow: /ebay/
+Disallow: /flash/bigimage.php
+Disallow: /flash/image.php
+Disallow: /flash/drzoom.cgi
+Disallow: /flash/drzoom.php
+Disallow: /journal/wp-comments-popup.php
+Disallow: /journal/wp-commentsrss2.php
+Disallow: /journal/wp-trackback.php
+Disallow: /journal/wp-login.php
+Disallow: /journal/wp-mobile.php
+Disallow: /mirror/
+# URLs that keep getting requested despite being invalid.  Causes include:
+#  - Broken spiders that don't handle links/image maps/scripts/base correctly
+#  - Typos in links on other sites
+#  - Old removed files that don't need redirects
+#  - Typos and bugs on this site that have since been corrected
+#  - Most importantly, crawlers that won't remove bad URLs from their database.
+#    (Slurp, this means you!)
+# Years of 404s haven't cleared these out; maybe excluding them will help.
+#Disallow: /journal/archives/p
+Disallow: /journal/b2login
+Disallow: /journal/b2comments
+Disallow: /flash/(
+Disallow: /flash/%28
+Disallow: /flash/0
+Disallow: /flash/1
+Disallow: /flash/2
+Disallow: /flash/3
+Disallow: /flash/4
+Disallow: /flash/5
+Disallow: /flash/6
+Disallow: /flash/7
+Disallow: /flash/8
+Disallow: /flash/9
+# Google has picked up a strange typo... and Apache just serves up the file,
+# relative links and all.
+Disallow: /humor/comiccon2004.phtml/
+# MSNbot is repeatedly grabbing post feeds.  This syntax should work for
+# that bot only, but I don't want to duplicate everything above for MSNbot
+Disallow: /journal/archive/20*/feed/$
+# Googlebot is trying to load the Social login buttons. This should take care of it.
+Disallow: /journal/index.php?social_controller

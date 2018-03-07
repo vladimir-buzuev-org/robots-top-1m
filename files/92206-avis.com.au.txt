@@ -1,0 +1,3194 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="author" content="ABG"/>
+    <link rel="canonical" href="https://www.avis.com.au/en/home">
+    
+    <link rel="icon" href="/etc/designs/avis/clientlib/images/favicon.png">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+	
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta property="og:title" content="Car Rentals from Avis, Book Online Now &amp; Save" id="ogTitle">
+	<meta property="og:description" content="Reserve your next car rental online with Avis save. A large selection of vehicles available &amp; with the Avis Signature Series you can travel in style." id="ogDescription">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.avis.com.au/en/home" id="ogUrl">
+	<meta property="og:image" content="https://www.avis.com.au/content/dam/avis/na/us/common/offers/road-2440x1600.jpg">
+   
+	
+	<meta name="twitter:card" content="summary_large_image">
+	
+	
+		
+	
+	<meta name="twitter:title" content="Car Rentals from Avis, Book Online Now &amp; Save" id="twitterTitle">
+	<meta name="twitter:description" content="Reserve your next car rental online with Avis save. A large selection of vehicles available &amp; with the Avis Signature Series you can travel in style." id="twitterDescription">
+	<meta name="deviceGroup" content="undefined">
+	<meta name="title" content="Car Rentals from Avis, Book Online Now &amp; Save | Avis Australia Car Hire">
+    <meta name="keywords">
+    <meta name="description" content="Reserve your next car rental online with Avis save. A large selection of vehicles available &amp; with the Avis Signature Series you can travel in style.">
+	<meta name="twitter:image" content="https://www.avis.com.au/content/dam/avis/na/us/common/offers/road-2440x1600.jpg">
+	<title>Car Rentals from Avis, Book Online Now &amp; Save | Avis Australia Car Hire</title>
+	
+    
+<link rel="stylesheet" href="/etc/designs/platform/clientlib.min.2.2.5.css" type="text/css">
+
+
+
+
+	
+    
+<link rel="stylesheet" href="/etc/designs/avis/home/clientlib.min.2.2.5.css" type="text/css">
+
+
+		
+
+	
+		
+  
+    
+<script type="text/javascript" src="/etc/designs/avis/kernel.min.js"></script>
+
+
+	
+		
+
+
+  	
+	<style>
+		<!--[if lte IE 9]>
+			.ie-class .res-hideSelect select{
+				width: 135%;
+			}
+			.ie-class .res-selectFld .residencyClass select{
+				width: 135%;
+			}
+			.ie-class .res-selectFld .ageDrop select{
+				width: 180%;
+			}
+			.ie-class .res-inputFld .res-inputTime{
+				width: 135%;
+			}
+		<![endif]-->
+	</style>
+    </head>
+<body><script type="text/javascript">
+    $CQ(function() {
+        CQ_Analytics.SegmentMgr.loadSegments("/etc/segmentation");
+        CQ_Analytics.ClientContextUtils.init("/etc/clientcontext/abg", "/content/avis/oc/au/en_AU/home");
+
+        
+    });
+</script>
+
+<div class="mainContainer onlyHome" ng-controller="MainController as vm">
+	
+	
+	<div ng-controller="DashboardController as vm">
+
+    
+	 
+	
+		<script type="text/javascript">
+var isSiteloginPage = "";
+</script>
+ 
+
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-popup login-popup">
+	<div class="modal-content loginpopup">
+		<div class="modal-header hide-on-load">
+			<span class="close-icon-black pull-right gap-btwn-two-close" ng-if="vm.loginModel.displayControl.closeBtn" aria-label="Close" data-dismiss="modal"></span>
+			
+			<h3 class="text-center h1-substitute" ng-if="vm.loginModel.displayControl.variation == carRentalConstant.displayControlBig">Login into your Avis Account</h3>
+			<h3 class="text-center h1-substitute" ng-if="vm.loginModel.displayControl.variation != carRentalConstant.displayControlBig">Sign In to your Avis Account</h3>
+		</div>
+		<div class="modal-body">
+			<div class="form-inner-wrap">
+				<form name="loginForm" novalidate class="hide-on-load">
+					
+					<div ng-if="vm.prod.errorList.length">
+						<div ng-repeat="error in vm.prod.errorList">
+							<div class="col-lg-12 mainErrorMsg login error res-PageError">
+								<span class="mainErrorImage info-error-war-msg-image"><span></span></span>
+								<span class="mainErrorText ng-binding" ng-bind-html="error.message | htmlFilter"></span>
+							</div>
+						</div>
+					</div>
+					<div class="">
+						<p class="" ng-if="vm.loginModel.displayControl.variation != carRentalConstant.displayControlBig">Please enter your My Avis password to login</p>
+					</div>
+					<div class="form-group form-bg-color" ng-if="!isRecognized">
+						<input type="text" class="form-control radius-non" id="username" name="username" placeholder="Username/Wizard Number " ng-model="vm.loginModel.uName" validator="required" valid-method="blur" required-error-message="Username / Wizard Number is a required field.">
+					</div>
+					<div class="form-group form-bg-color" ng-if="isRecognized">
+						<input value="{{customer.userName}}" ng-model="customer.userName" name="username" class="form-control radius-non" id="username" placeholder="Username/Fastbreak or RapidRez # " type="hidden"/> <input type="text" class="form-control radius-non" value="{{customer.userName}}" disabled>
+					</div>
+					<div class="form-group form-bg-color">
+						<input type="password" autocomplete="new-password" class="form-control radius-non" id="password" name="password" ng-model="vm.loginModel.password" placeholder="Password (Case Sensitive)" validator="required" ng-blur="vm.checkEmpty();" valid-method="blur" required-error-message="<strong>Password </strong>
+
+is a required field">
+					</div>
+					<p class="" ng-if="vm.loginModel.displayControl.variation != carRentalConstant.displayControlBig">Login is not required to complete your reservation</p>
+					<div class="rememberMe-btn">
+						<label class="checkbox rem pull-left" aria-label="Remember Me" for="rememberme" ng-if="vm.loginModel.displayControl.variation == carRentalConstant.displayControlBig">
+							Remember Me </label>
+						<div class="toggle-check pull-right" ng-show="vm.loginModel.displayControl.variation == carRentalConstant.displayControlBig">
+							<input type="checkbox" class="checkbox" name="rememberme" id="rememberme" ng-model="vm.loginModel.rememberMe">
+							<div class="toggle-slide">
+								<div class="indicator"></div>
+								<div class="toggle-on">YES</div>
+								<div class="toggle-off">NO</div>
+							</div>
+						</div>
+					</div>
+					<div ng-if="vm.enableCaptcha == 'true'">
+					<re-captcha></re-captcha>
+					</div>
+					<button class="btn btn-lg btn-primary btn-block radius-non btn-submit btn-continue" id="res-login-profile" aria-label="Continue" ng-click="vm.getLogin.submit(loginForm, vm)" name="button" ng-if="vm.loginModel.displayControl.variation == carRentalConstant.displayControlBig">Log In</button>
+					<button class="btn btn-lg btn-primary btn-block radius-non btn-submit btn-continue" id="res-login-profile" aria-label="Continue" ng-click="vm.getLogin.submit(loginForm, vm)" name="button" ng-if="vm.loginModel.displayControl.variation != carRentalConstant.displayControlBig">Log In</button>
+				</form>
+			</div>
+			<div class="spinnerLoader-small" ng-class="{'hidden':!vm.loginInProgress}">
+				<svg viewBox="0 0 100 100">
+						<circle cx="50" cy="50" r="40" stroke="#d4002a" stroke-width="8" fill="none" stroke-dasharray="1,150"></circle></svg>
+			</div>
+		</div>
+		<div class="modal-footer login-popup-footer hide-on-load" ng-class="{'recognized-user-login':isRecognized}" ng-if="vm.loginModel.displayControl.variation == carRentalConstant.displayControlBig">
+			<ul class="list-inline form-inner-wrap btns-login">
+				<li class="col-xs-6 text-center forgot-username" ng-if="!isRecognized && !isRememberME"><a id="res-login-forgot-user" href="/en/loyalty-profile/avis-preferred/forgot-username">Forgot username?
+				</a></li>
+				<!-- <li data-sly-test=""
+					class="col-xs-12 text-center forgot-username" ng-if="!isRecognized"><a
+					id="res-login-forgot-user" href="/car-rental/profile/wizard-lookup.ac">Forgot Online ID?</a></li> -->
+				<li class="col-xs-6 text-center"><a id="res-login-forgot-password" href="/en/loyalty-profile/avis-preferred/forgot-password">Forgot password?</a></li>
+				<li class="col-xs-6 text-center not-you" ng-if="isRecognized || isRememberME"><a href="javascript:void(0)" ng-click="vm.getLogout()">Not You?</a></li>
+				<li class="col-xs-12 text-center create-account">
+					 <span class="text-color-black"> Need an account? </span> <a class="createLink" id="res-home-creAccount" href="/en/loyalty-profile/avis-preferred/enrollment">Create one now</a>
+				</li>
+			</ul>
+		</div>
+		<div class="modal-footer login-popup-footer hide-on-load" ng-if="vm.loginModel.displayControl.variation != carRentalConstant.displayControlBig">
+			<div class="step4-loginoverlay">
+				<div class="pull-left">
+					<a href="javascript:void()" title="Cancel" data-dismiss="modal">Cancel</a>
+				</div>
+				<div class="pull-right">
+					<a href="javascript:void()" ng-click="vm.getForgotpassword()" title="{'msg.res.checkout.forgotPassword' @ i18n}"></a>
+				</div>
+				<div class="pull-right">
+					<a href="javascript:void()" data-dismiss="modal"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	</div>
+
+		
+	
+	
+	
+	<nav class="auth-spmenu hedwelcomeMenu" id="menu-Welcome">
+       <div class="auth-welcome">
+              <div class="visible-xs glyphicon-custom-circle">
+                     <a href="javascript:void(0)" class="auth-user nav-header"><span class="s-icon backBtn dropdown-close dropdown-close"></span>{{vm.customer.firstName}}</a>
+              </div>
+              <div class="auth-member" ng-if="isAuthenticated && vm.customer.membershipStatus">
+                     <p><span ng-if="vm.customer.membershipStatus != carRentalConstant.myAvisUser">Avis </span>{{vm.customer.membershipStatus}}</p>
+                     <p>
+                           <span ng-if="vm.loyaltyDetails && vm.loyaltyDetails.points && vm.loyaltyDetails.loyaltyElgibile">{{vm.loyaltyDetails.points | number}}
+                                  Available Points</span>
+                     </p>
+              </div>
+              <div class="slickslider slide">
+                     <div class="spinnerLoader-small" ng-class="{'hidden':!vm.upcomingInProgress}">
+                           <svg viewBox="0 0 100 100">
+                                  <circle cx="50" cy="50" r="40" stroke="#d4002a" stroke-width="8" fill="none" stroke-dasharray="1,150"></circle></svg>
+                     </div>
+                     <div ng-if="vm.upcomingReservations.length > 0">
+                           <slick class="authslick authslick-reservation slider one-time" dots="true" infinite="false" speed="300" centerMode="true" slides-to-show="1" touch-move="true" slides-to-scroll="1" init-onload="true" data="vm.upcomingReservations">
+                           <div ng-repeat="reservation in vm.upcomingReservations" class="slid-container">
+                                  <div class="auth-reservation">
+                                         <!-- TODO Link to next reservation needs to be added back properly -->
+                                         <p class="new-city">{{reservation.pickLoc.name+',
+                                                '+reservation.pickLoc.locationCode}}</p>
+                                         <p class="date-time" ng-bind-html="reservation.pickDateTime | ModifiedDateAtTime"></p>
+                                         <button type="button" class="btn btn-default my-profile" ng-click="vm.viewReservationDetails(reservation)">View Details</button>
+                                  </div>
+                           </div>
+                           </slick>
+                     </div>
+                     <div class="col-xs-12" ng-if="vm.upcomingReservations == null && (vm.customer.webCustomer.activationStatus==1 || vm.customer.activationStatus==1)">
+                           <hr>
+                           <p class="text-center">No Upcoming Reservations.</p>
+                           <hr>
+                     </div>
+                     <div class="col-xs-12" ng-if="vm.customer.webCustomer.activationStatus==0 || vm.customer.activationStatus==0">
+                           <hr>
+                           <p class="text-center">Please activate your profile to view upcoming reservations.</p>
+                           <hr>
+                     </div>
+                     <div class="col-xs-12" ng-if="vm.upcomingReservations.errorList">
+                           <br>
+                           <div class="info-error-msg">
+                                  <div class="info-error-war-msg-image">
+                                         <span class=""></span>
+                                  </div>
+                                  <div class="info-error-msg-text">
+                                         <p>
+We are sorry, we are unable to retrieve your Upcoming Reservations currently. Please try again later or contact <a href="/en/customer-service/worldwide-telephone-numbers">Customer Care</a>
+ for further assistance.</p>
+                                  </div>
+                           </div>
+                     </div>
+                     
+                     
+                     <!-- Concur Trips -->
+                     <div ng-if="vm.concurTrips && vm.concurTrips.itineraryList && vm.concurTrips.itineraryList.length>0">
+            <div class="auth-upcoming">
+                <div class="concur-trips">Upcoming Concur Trips</div>
+                <p>
+                    Click to add a car to your Trip.
+                    </p>
+            </div>
+            <div class="slickslider panel slide">
+                  <slick class="authslick  slider one-time " dots="true" infinite="false" speed="300" centerMode="true" slides-to-show="1" touch-move="true" slides-to-scroll="1">
+                     <div class="slid-container" ng-repeat="trips in vm.concurTrips.itineraryList">
+                        <p> <a ng-click="vm.concurBooking(trips.id)" href="javascript:void(0)"> 
+                           {{trips.fromCode}} <span>-</span><span class="concur-trip-arrow s-icon arrow-right"></span> {{trips.toCode}}&nbsp;
+                           <span class="date-time" ng-bind-html="trips.date | ModifiedDate"></span>
+                                                <!-- <span class="date-time" ng-bind-html="trips.date | ModifiedDateAtTime"></span> -->
+                        </a></p>
+                     </div>
+                  </slick>
+               </div>
+            
+        </div>
+              </div>
+                     
+              <div class="panel clearfix button-panel">
+                     <div ng-if="vm.customer.webCustomer.activationStatus==1 || vm.customer.activationStatus==1" class="col-xs-12">
+                    
+                          <a href="/en/loyalty-profile/avis-preferred/dashboard/my-activity"><button type="button" class="btn btn-block btn-red my-activity">My Activity</button></a> 
+                     </div>
+                     <div ng-if="vm.customer.webCustomer.activationStatus==1 || vm.customer.activationStatus==1" class="col-xs-6">
+                          <a href="/en/loyalty-profile/avis-preferred/dashboard/profile"> <button type="button" class="btn btn-block btn-default-avis my-profile">My Profile</button></a>
+                     </div>
+
+                     <div ng-if="vm.customer.webCustomer.activationStatus==0 || vm.customer.activationStatus==0" class="col-xs-12">
+                    
+                          <a href="/en/loyalty-profile/avis-preferred/dashboard/my-activity"><button type="button" class="btn btn-block btn-red my-activity" disabled>My Activity</button></a> 
+                     </div>
+
+
+ <div ng-if="vm.customer.webCustomer.activationStatus==0 || vm.customer.activationStatus==0" class="col-xs-6">
+                          
+                          <a ng-href="{{contextPath}}/{{locale}}/loyalty-profile/avis-preferred/activation"> <button type="button" class="btn btn-block btn-default-avis my-profile">My Profile</button></a>
+                           
+                     </div> 
+
+                           <div class="col-xs-6">
+                           <button type="button" class="btn btn-block btn-default-avis my-logout pull-right" ng-if="isAuthenticated" ng-click="vm.getLogout()">Log Out</button>
+                           <button type="button" class="btn btn-block btn-default-avis my-logout pull-right" ng-if="isRememberME || isRecognized " ng-click="vm.getLogout()">Not You</button>
+                     </div>
+              </div>
+       </div>
+</nav>
+
+	
+
+	
+	<!-- Header for non-corporate flow starts here -->
+<div ng-if="!isCorporateFlow">
+	
+		
+			<div id="nav-wrapper">
+				<nav class="navbar navbar-default navbar-fixed-top bg-header">
+					<div class="container-fluid headerdsk">
+						<div class="row">
+							<div class="navbar-header col-sm-12">
+								<button type="button" class="navbar-toggle " aria-expanded="false">
+									<span class="sr-only">Toggle navigation</span> Menu
+								</button>
+								<a class="navbar-brand" ng-click="vm.logoClick()" href="/en/home" target="_self"> 
+									<span>
+								  		<img src="/content/dam/avis/oc/au/common/pagetitle/avis_logo_australia.png" alt="Avis Australia Logo"/>
+									</span> 
+									
+								</a>
+                              
+								<ul class="main-header nav nav-pills pull-right visible-sm header-left right-separator">
+									<li class=" visible-sm"><a href="/en/loyalty-profile/avis-preferred" target="_self">Avis Preferred</a></li>
+									<!--<li>
+                                        <div class="spinnerLoader-small"
+                                            ng-class="{'hidden':vm.isAnonymous || isAuthenticated || isRememberME}">
+                                            <svg viewBox="0 0 100 100">
+                                            <circle cx="50" cy="50" r="40" stroke="#ffffff"
+                                                    stroke-width="10" fill="none" stroke-dasharray="1,150"></circle></svg>
+                                        </div>
+                                    </li>-->
+									<li class="hide-on-load" ng-show="vm.isAnonymous"><a id="signUpLink" href="/en/loyalty-profile/avis-preferred/enrollment">Sign Up</a></li>
+                                    	<li class="" ng-show="vm.isAnonymous"><a id="res-login-profile" href="javascript:void(0)" ng-click="vm.loginModel.displayControl.variation=carRentalConstant.displayControlBig;vm.getLoginModalWindow();">Log In</a></li>
+									<!-- ECOM-516(DESKTOP STARTS) -->
+									<li class="dropdown welcome-menu-notification hide-on-load" ng-if="vm.customer.userState=='AUTHENTICATED' &&  vm.isCCExpired">
+										<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="s-icon error-white"></span><em class="sr-only">Update-close</em></a>
+										<ul class="dropdown-menu" style="display: none;">
+											<li>Please update your credit card information.<a href="/en/loyalty-profile/avis-preferred/dashboard/profile">Update</a>
+												<a href="javascript:void(0)"><span class="s-icon close-icon-black-light"></span><em class="sr-only">Update-close</em></a></li>
+										</ul>
+									</li>
+									<!-- Ecom-516(Desktop Ends) -->
+									<li class="hide-on-load" ng-show="isAuthenticated || isRememberME"><a href="javascript:void(0)" class="welcome-menu-trigger welcome">Welcome, {{vm.customer.firstName}} </a></li>
+								</ul>
+                                
+                                
+								<div id="nav-groupMenu" class="nav navbar-nav navbar-right navbar-collapse navbar-wrapper">
+									<ul id="nav-offcanvas" class="header-primary">
+										
+											
+												
+													
+														
+															<li class="dropdown">
+														
+														
+													
+													
+													<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reservations</a>
+												
+												
+
+												<ul class="dropdown-menu">
+                                                  
+													
+														
+															
+																
+																	<li class="visible-sm visible-xs glyphicon-custom-circle">
+																
+																
+															
+															
+															<a class="nav-header"><span class="s-icon backBtn dropdown-close"></span>Reservations</a>
+															</li>
+														
+														
+                                                        
+													
+													
+													
+														
+															
+																
+																	<li>
+																
+																
+															
+															
+															<a href="/en/reservation/make-reservation">Make a Reservation</a>
+															</li>
+														
+														
+													
+												
+                                                  
+													
+													
+													
+													
+														
+															
+																
+																	<li>
+																
+																
+															
+															
+															<a href="/en/reservation/view-modify-cancel">View / Modify / Cancel</a>
+															</li>
+														
+														
+													
+												
+                                                  
+													
+													
+													
+													
+														
+															
+																
+																	<li>
+																
+																
+															
+															
+															<a href="/en/reservation/get-e-receipt">Get e-Receipt</a>
+															</li>
+														
+														
+													
+												</ul>
+                                                
+											
+											
+										
+											
+											
+												
+													
+														
+															<li>
+														
+														
+													
+													
+													<a href="/en/deals/au-offers" target="_self">Deals</a>
+													</li>
+												
+												
+											
+										
+											
+												
+													
+														
+															<li class="dropdown">
+														
+														
+													
+													
+													<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Locations</a>
+												
+												
+
+												<ul class="dropdown-menu">
+                                                  
+													
+														
+															
+																
+																	<li class="visible-sm visible-xs glyphicon-custom-circle">
+																
+																
+															
+															
+															<a class="nav-header"><span class="s-icon backBtn dropdown-close"></span>Locations</a>
+															</li>
+														
+														
+                                                        
+													
+													
+													
+														
+															
+																
+																	<li>
+																
+																
+															
+															
+															<a href="/en/locations/find-a-location">Find a Location</a>
+															</li>
+														
+														
+													
+												
+                                                  
+													
+													
+													
+													
+														
+															
+																
+																	<li>
+																
+																
+															
+															
+															<a href="/en/locations/au">All Australia Locations</a>
+															</li>
+														
+														
+													
+												
+                                                  
+													
+													
+													
+													
+														
+															
+																
+																	<li>
+																
+																
+															
+															
+															<a href="/en/locations/avisworldwide">All Global Locations</a>
+															</li>
+														
+														
+													
+												</ul>
+                                                
+											
+											
+										
+											
+												
+													
+														
+															<li class="dropdown">
+														
+														
+													
+													
+													<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cars &amp; Services</a>
+												
+												
+
+												<ul class="dropdown-menu">
+                                                  
+													
+														
+															
+																
+																	<li class="visible-sm visible-xs glyphicon-custom-circle">
+																
+																
+															
+															
+															<a class="nav-header"><span class="s-icon backBtn dropdown-close"></span>Cars &amp; Services</a>
+															</li>
+														
+														
+                                                        
+													
+													
+													
+														
+															
+																
+																	<li>
+																
+																
+															
+															
+															<a href="/en/cars/vehicles/au">Car Guide</a>
+															</li>
+														
+														
+													
+												
+                                                  
+													
+													
+													
+													
+														
+															
+																
+																	<li>
+																
+																
+															
+															
+															<a href="/en/trucks/vehicles/au">Commercial Vehicles</a>
+															</li>
+														
+														
+													
+												
+                                                  
+													
+													
+													
+													
+														
+															
+																
+																	<li>
+																
+																
+															
+															
+															<a href="/en/cars/avis-signature-series">Avis Signature Series</a>
+															</li>
+														
+														
+													
+												
+                                                  
+													
+													
+													
+													
+														
+															
+																
+																	<li>
+																
+																
+															
+															
+															<a href="/en/business-programs">Business Programs</a>
+															</li>
+														
+														
+													
+												
+                                                  
+													
+													
+													
+													
+														
+															
+																
+																	<li>
+																
+																
+															
+															
+															<a href="/en/business-programs/miles-points-partners">Rewards Partners</a>
+															</li>
+														
+														
+													
+												
+                                                  
+													
+													
+													
+													
+														
+															
+																
+																	<li>
+																
+																
+															
+															
+															<a href="/en/products-and-services">Products &amp; Services</a>
+															</li>
+														
+														
+													
+												</ul>
+                                                
+											
+											
+										
+											
+											
+												
+													
+														
+															<li>
+														
+														
+													
+													
+													<a href="/en/customer-service/faqs/au/reservations" target="_self">FAQs</a>
+													</li>
+												
+												
+											
+										
+										
+											
+										
+											
+										
+											
+										
+											
+										
+											
+										
+                                      </ul>
+             						 <ul class="header-secondary">
+                                      										<li role="separator" class="divider visible-xs"></li>
+										<li class="mob-nav-menu tab-nav-menu"><a href="/en/loyalty-profile/avis-preferred">Avis Preferred</a></li>
+										<li class="mob-nav-menu tab-nav-menu" ng-if="!(isAuthenticated || isRememberME)"><a href="/en/loyalty-profile/avis-preferred/enrollment">Sign Up</a></li>
+										<!-- Todo : Need to remove this li when site-login co-existence issue is resolved -->
+										<li class="mob-nav-menu" ng-if="(!(isAuthenticated || isRememberME) && 'Car Rentals from Avis, Book Online Now &amp; Save'=='Enrollment')">
+											<a href="/en/loyalty-profile/avis-preferred/login">Log In</a></li>
+										<li class="hide-on-load mob-nav-menu" ng-if="(!(isAuthenticated || isRememberME) && 'Car Rentals from Avis, Book Online Now &amp; Save'!='Enrollment')"><a id="res-login-profile" href="javascript:void(0)" ng-click="vm.loginModel.displayControl.variation=carRentalConstant.displayControlBig;
+                                            vm.getLoginModalWindow();">Log In</a></li>
+										<!-- ECOM-516(FOR Mobile starts here) -->
+										<li class="hide-on-load mob-nav-menu welcome-menu-notification-mob" ng-if="isAuthenticated || isRememberME"><a href="javascript:void(0)" class="welcome-menu-trigger wxelcome">Welcome, {{vm.customer.firstName | uppercase}} </a>
+											<p class="visible-xs" ng-if="vm.customer.userState=='AUTHENTICATED' &&  vm.isCCExpired">
+												<span class="s-icon error-red"></span>
+												Please update your credit card information. <a href="/en/loyalty-profile/avis-preferred/dashboard/profile">Update</a>
+											</p></li>
+										<!-- ECOM-516(FOR Mobile ends here) -->
+										<li class="visible-xs visible-sm  mob-nav-menu" ng-if="isAuthenticated"><a href="javascript:void(0)" ng-click="vm.getLogout()">Log Out</a></li>
+										<li class="visible-xs visible-sm  mob-nav-menu" ng-if="isRememberME || isRecognized"><a href="javascript:void(0)" ng-click="vm.getLogout()">Not You</a></li>
+										<li class="visible-xs hidden-sm mob-nav-menu"><a href="javascript:void(0)" ng-click="vm.getFeedBack()" ng-if="!(vm.domain == 'au' || vm.domain == 'nz')">Feedback</a></li>
+										<li role="separator" class="divider visible-xs"></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+		
+	
+	
+</div>
+<!-- Header for non-corporate flow ends here -->
+<!-- Header for corporate flow starts here -->
+<div ng-if="isCorporateFlow">
+	
+		<!-- If short URL is not enabled, header URL would be complete URL with html extension -->
+		
+		<!-- If short URL is enabled, header URL would be short without html extension -->
+		<div>
+			<div ng-include src="'/en/home.corp-header'"></div>
+		</div>
+	
+</div>
+<!-- Header for corporate flow ends here -->
+    
+
+</div>
+
+	
+
+
+
+
+
+<script type="text/javascript">
+	var preferredCarClass = "";
+</script>
+	
+<section ng-controller="ResWidgetController as vm" class="reswidget-wrapper container-fluid cf-pad-0">
+  <div class="cityWise-title" ng-class="{'modifyFlow':reservation==carRentalConstant.resFlowModify}">
+    <h1 class="h1-title white" ng-class="{'hidden-xs stepOneHeader':(vm.getPageURL === carRentalConstant.step1aErrorPageName || vm.getURLMtd())}">
+    		  <!-- This is added to get the location page res widget title from design dialogue to ease translation process. If the normal dialogue is authored
+    		  then the title is picked from dialogue, else title will be pickup up from design dialogue - Onkar -->
+    		  
+              
+              	For the Best Rates – Design your Drive with Avis
+              
+               
+          	  
+          	  
+              
+              
+     </h1>
+     <h2 class="h2-title white" ng-class="{'hidden-xs stepOneHeader':(vm.getPageURL === carRentalConstant.step1aErrorPageName || vm.getURLMtd())}">
+			<div>
+				<div ng-if="!vm.isModal()" class="subTitleText">
+					<p class="subTitle white"></p>
+				</div>
+			</div>
+			
+		</h2>      
+  </div>
+
+  <div id="resWidgetContainer" res-widget-container-wrap class="resWidget-container-wrap" data-mmddyyyy="mm/dd/yyyy" data-ddmmyyyy="dd/mm/yyyy">
+    
+    
+    <div>
+      <div>
+      <form class="res-css-form" id="selectCar" name="resForm" novalidate>
+        
+        <div class="res-mainContent resDesktopView" ng-class="{'modifyResFlow':(reservation==carRentalConstant.resFlowModify || (vm.getPageURL === carRentalConstant.step1aErrorPageName || vm.getURLMtd()))}">
+          
+            
+<div class="res-heroBanner" ng-show="!vm.isModal()">
+  
+	
+
+
+
+<div>
+
+
+
+
+
+
+
+
+</div>
+<div class="heroBan" hero-banner-image-cover>
+<picture>
+    <source data-media="(max-width: 767px)" data-dpr="1" data-src="/content/dam/avis/oc/au/common/offers/home-page-hero-au.jpg/jcr:content/renditions/cq5dam.web.375.375.jpg"/>
+    <source data-media="(max-width: 991px)" data-dpr="1" data-src="/content/dam/avis/oc/au/common/offers/home-page-hero-au.jpg/jcr:content/renditions/cq5dam.web.768.504.jpg"/>
+    <source data-media="(min-width: 992px)" data-dpr="1" data-src="/content/dam/avis/oc/au/common/offers/home-page-hero-au.jpg/jcr:content/renditions/cq5dam.web.1220.800.jpg"/>
+
+    <source data-media="(max-width: 767px)" data-dpr="2" data-src="/content/dam/avis/oc/au/common/offers/home-page-hero-au.jpg/jcr:content/renditions/cq5dam.web.750.750.jpg"/>
+    <source data-media="(max-width: 991px)" data-dpr="2" data-src="/content/dam/avis/oc/au/common/offers/home-page-hero-au.jpg/jcr:content/renditions/cq5dam.web.1536.1008.jpg"/>
+    <source data-media="(min-width: 992px)" data-dpr="2" data-src="/content/dam/avis/oc/au/common/offers/home-page-hero-au.jpg/jcr:content/renditions/cq5dam.web.2440.1600.jpg"/>
+</picture>
+</div>
+
+	<!-- Moved call-to-action component out of dynamic-promo component as it is required
+		 for other pages as well like partner pages -->
+	
+</div>
+
+			
+          <div class="res-inputFldCnt datepicker-ref">
+            <div class="hide-on-load">
+              <p class="h1-substitute invisible white" ng-if="!vm.isModal()">
+                 
+              		<span>For the Best Rates – Design your Drive with Avis</span>
+              	 
+              	 
+          	  
+                
+                
+              </p>
+            </div>
+            <div class="hide-on-load">
+              <div ng-if="vm.prod.errorList.length">
+                <div ng-repeat="error in vm.prod.errorList">
+                  <div class="col-lg-12 res-PageError">
+                    <span class="mainErrorImage info-error-war-msg-image"><span></span></span>
+                    <span class="mainErrorText info-error-msg-text" ng-bind-html="error.message | htmlFilter"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="hide-on-load">
+                <div ng-if="vm.prod.warningList.length">
+                  <div ng-repeat="warning in vm.prod.warningList">
+                    <div class="col-lg-12 res-PageError noPad bud-messageinfo">
+                      <div class="infoImage">
+                        <span class="spanImg"></span>
+                      </div>
+                      <span class="info-error-msg-text" id="warning-msg-err"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hide-on-load">
+              <div ng-show="vm.getVehicles.validated" class="col-lg-12 res-PageError">
+                <span class="mainErrorImage info-error-war-msg-image"><span></span></span>
+                <span class="mainErrorText info-error-msg-text" ng-bind-html="vm.pageContent.resFormPageError"></span>
+              </div>
+              <div ng-show="vm.showLearnWhyError" class="col-lg-12 res-PageError">
+                <span class="mainErrorImage info-error-war-msg-image"><span></span></span>
+                <span class="mainErrorText learnwhy-error-msg-text"></span>
+              </div>
+              <div ng-show="vm.code" class="col-lg-12 res-PageError">
+                <span class="mainErrorImage info-error-war-msg-image"><span></span></span>
+                <span class="mainErrorText info-error-msg-text">We are sorry, the site has not properly responded to your request. If the problem persists, please contact 1300-137-498 and provide PROBLEM CODE &lt;{{vm.code}}&gt; Reference Number &lt;{{vm.referenceNumber}}&gt; </span>
+              </div>
+              
+              <div class="info-error-messages" id="loginAuthenticate" ng-if="vm.pageContent.loginAuthenticate">
+                <div class="infoMsg">
+                  <div class="infoImage">
+                    <span class="spanImg"></span>
+                  </div>
+                  <div class="infoText">
+                    <span class="mainErrorText">You are successfully logged in. We have re-started your reservation to ensure your profile preferences are included.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="info-error-messages" ng-if="vm.error">
+                <div class="infoMsg">
+                  <div class="infoImage">
+                    <span class="spanImg"></span>
+                  </div>
+                  <div class="infoText">
+                    <span class="mainErrorText">{{vm.errMsgPast}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div set-class-when-at-top="fix-to-top" padding-when-at-top="200" ng-class="{showError: vm.getVehicles.validated}">
+            <div class="row res-inputFldPrt hide-on-load " ng-class="{'res-inputFldBack': vm.bgHighlighter}" style="position: relative; z-index: 1;">
+                <div class="col-lg-12 res-inputFldFst " ng-click="vm.showAlert(true)">
+                  <div class="col-xs-6 res-inputFld">
+                    <angucomplete-alt ng-class="{'showLocError': validateInput1}" outside-click="closeMyDropdown(this)" id="PicLoc" placeholder="Enter your pick-up location" pause="500" selected-object="vm.suggestionValue.getPickUpLocation" initial-value="vm.suggestionValue.pickUpLocInitialValue" remote-api-handler="vm.getSuggestions" title-field="suggDescription" description-field="suggDescription" minlength="3" input-name="pickupLocation" input-class="form-control form-control-small" match-class="highlight" valid-method="blur" validation-list="required" suggestion-list-response-error-message="Please revise your search or &lt;a href='/en/locations/find-a-location'&gt;click here&lt;/a&gt; to browse for a location" validation-error-display-location-id="pickupError" validation-error-message="Please enter a <b>Pick-up Location</b>" validation-invalid-message="Please enter a valid <b>Pick-up Location</b>"/>
+                  </div>
+                  <div class="col-xs-3 res-inputFld dateImg">
+                    <input type="text" autocomplete="off" class="date-form-field start-date-input res-inputMonth form-control" name="reservationModel.pickUpDateDisplay" maxlength="10" id="from" placeholder="{{vm.dateFormatPalceholder}}" aria-label="{{vm.dateFormatPalceholder}}" click-outside-calender="closeCalender()" ng-model="vm.reservationModel.pickUpDateDisplay" ng-minlength="0" validator="required,platformdate" message-id="fDate" valid-method="blur" ng-change="vm.getVehicles.change(carRentalConstant.pickUpClassName,resForm)" dateLesser-error-message="You selected a date/time prior to the current time" required-error-message="Please enter a valid  <b> Pick-up Date</b>" data-dpheaderlabel="Select Pick-up date" data-selecteddate="">
+                  </div>
+                  <div class="col-xs-3 res-inputFld res-hideSelect ">
+                    <select name="reservationModel.pickUpTime" ng-if="vm.isModal()" ng-model="vm.reservationModel.pickUpTime" ng-options="time.value as time.minits for time in vm.times" required-error-message="err.global.requiredPickUpTime" class="form-control res-inputTime" aria-label="Pick Up Time">
+                    </select>
+                    <select name="reservationModel.pickUpTime" ng-if="!vm.isModal()" ng-model="vm.reservationModel.pickUpTime" ng-options="time.value as time.minits for time in vm.times" required-error-message="err.global.requiredPickUpTime" class="form-control res-inputTime" aria-label="Pick Up Time">
+                    </select>
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <span id="pickupError" class="error"></span>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-3 noPad">
+                  <span id="fDate" class="error"></span>
+                </div>
+                
+
+                <div class="hideInputFld" ng-show="vm.expandState || '' || reservation===carRentalConstant.resFlowModify">
+                  <div class="col-xs-12 res-inputFldFst">
+                    <div class="col-xs-6 res-inputFld ">
+                      <angucomplete-alt outside-click="closeMyDropdown()" id="DropLoc" placeholder="Return to same location" pause="500" selected-object="vm.suggestionValue.getDropLocation" remote-api-handler="vm.getSuggestions" title-field="suggDescription" description-field="suggDescription" minlength="3" input-name="returnLocation" initial-value="vm.suggestionValue.dropLocInitialValue" input-class="form-control form-control-small" match-class="highlight" valid-method="blur" validation-list="optional" suggestion-list-response-error-message="Please revise your search or &lt;a href='/en/locations/find-a-location'&gt;click here&lt;/a&gt; to browse for a location" validation-error-display-location-id="dropLocationError" validation-error-message="Please enter valid <b>Drop Location</b>" validation-invalid-message="Please enter valid <b>Drop Location</b>"/>
+                    </div>
+                    <div class="col-xs-3 res-inputFld dateImg">
+                      <input type="text" maxlength="10" autocomplete="off" name="reservationModel.dropDateDisplay" placeholder="{{vm.dateFormatPalceholder}}" id="to" aria-label="{{vm.dateFormatPalceholder}}" class="date-form-field end-date-input date-to form-control res-inputMonth" click-outside-calender="closeCalender()" ng-model="vm.reservationModel.dropDateDisplay" validator="required,platformdate" message-id="returnDate" ng-change="vm.getVehicles.change(carRentalConstant.dropOffClassName,resForm)" valid-method="blur" service-error-message="Return Date cannot be prior to the Pick-Up Date" compareDateEqual-error-message="Invalid Drop-off/Pick-up date combination" compareDateLesser-error-message="Return Date cannot be prior to the Pick-Up Date" required-error-message="Please enter a valid  <b>Return Date</b>" data-dpheaderlabel="Select Return date" data-selecteddate="">
+                    </div>
+                    <div class="col-xs-3 res-inputFld res-hideSelect">
+                      <select name="reservationModel.dropTime" ng-model="vm.reservationModel.dropTime" ng-options="time.value as time.minits for time in vm.times" required-error-message="err.global.requiredDropOffTime" class="form-control res-inputTime" aria-label="Return Time">
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-xs-6">
+                    <span id="dropLocationError" class="error"></span>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 col-xs-3 noPad">
+                    <span id="returnDate" class="error"></span>
+                  </div>
+                  <div class="col-xs-12 res-inputFldFst" ng-if="!vm.isModal()">
+                    <div class="res-selectFld ageField form-group">
+                      <div ng-class="{'ageError':vm.reservationModel.displayControls.ageErrorState ,'expand-status': (vm.reservationModel.displayControls.additionalInfo==='ageDropDownActive')}">
+                        <a tabindex="0" id="agePopup" data-placement="top" data-html="true" class="btn popOver" role="button" data-toggle="popover" data-trigger="focus" title="Age" data-content="<p>Providing your age allows us to give you a more accurate rental estimate. Restrictions and fees may apply for drivers under 25.</p><a href='javascript:void(null);' class='btn close-button closePopover'></a>" ng-click="openTooltip('age')"> <span class="s-icon res-helpIcon"></span>
+                        </a>
+                        <div class="res-ageFld" openDropdown ng-class="{'disabled': !isAnonymous || vm.reservationModel.displayControls.fieldDisable }">                          
+                          <label for="reservationModel.personalInfoRQ.age" class="ageTxt">Age:</label>
+                          <div class="ageDrop">
+                            <select id="reservationModel.personalInfoRQ.age" name="reservationModel.personalInfoRQ.age" class="form-controlD" ng-disabled="vm.reservationModel.displayControls.fieldDisable ||  (!isAnonymous)" ng-focus="vm.reservationModel.displayControls.additionalInfo='ageDropDownActive'" ng-blur="vm.reservationModel.displayControls.additionalInfo=''" ng-model="vm.reservationModel.personalInfoRQ.age" ng-options="age.agsID as age.ageName for age in vm.ages" ng-change="vm.reservationModel.displayControls.additionalInfo=''" validator="selectrequired" valid-method="change" message-id="ageerror" required-error-message="Please select your age
+" selectrequired-error-message="Please select your age
+">
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 noPad ageErrorFld">
+                        <span id="ageerror" class="error"></span>
+                      </div>
+                    </div>
+                    <div class="res-selectFld countryField form-group" ng-class="{'expand-status': (vm.reservationModel.displayControls.additionalInfo==='countryDropDownActive') }">
+                      <a tabindex="0" id="countryPopup" data-placement="top" data-html="true" class="btn popOver" role="button" data-toggle="popover" data-trigger="focus" title="Country of Residence" data-content="<p>Providing your country of residence allows us to give you a more accurate rental estimate.</p><a href='javascript:void(null);' class='btn close-button closePopover'></a>" ng-click="openTooltip('country')"> <span class="s-icon res-helpIcon"></span>
+                      </a>
+                      <div class="res-ageFld" openDropdown ng-class="{'disabled': (!isAnonymous || vm.reservationModel.displayControls.fieldDisable) }">
+                     	 <label for="reservationModel.personalInfoRQ.residency" class="ageTxt residencyPlaceholder">Residency:</label>
+                       
+                        <!-- <div class="ageTxt residencyPlaceholder"  open-dropdown ng-if="vm.reservationModel.personalInfoRQ.residency==='US'"> Residency:</div> -->
+                        <div class="residencyClass">
+                          <select id="reservationModel.personalInfoRQ.residency" class="form-controlD" ng-disabled="vm.reservationModel.displayControls.countryFieldDisable || (!isAnonymous)" ng-focus="vm.reservationModel.displayControls.additionalInfo='countryDropDownActive'" ng-blur="vm.reservationModel.displayControls.additionalInfo=''" ng-change="vm.reservationModel.displayControls.additionalInfo='';" name="reservationModel.personalInfoRQ.residency" ng-model="vm.reservationModel.personalInfoRQ.residency" required-error-message="Country of residence is required." ng-options="residence.code as residence.name for residence in vm.pageContent.countryList " aria-label="Select Residency">
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div ng-class="{'expand-status': (vm.additionalInfo.wizard), 'ifError': wizErrMsgGl}" class="wizardField res-selectFld form-group" ng-if="isAnonymous || vm.reservationModel.personalInfoRQ.gebUser">
+                      <a tabindex="0" id="wizardPopup" data-placement="top" data-html="true" class="btn popOver" role="button" data-toggle="popover" data-trigger="focus" title="Do you have an Avis Wizard Number?" data-content="<p>Enter your Avis Wizard/Preferred profile number to enjoy faster reservations and rentals.</p><a href='javascript:void(null);' class='btn close-button closePopover'></a>" ng-click="openTooltip('wizard')"> <span class="s-icon res-helpIcon"></span>
+                      </a>
+                      <div ng-if="reservation!=carRentalConstant.resFlowModify" class="res-wizardFld form-controlD" title="Avis Wizard Number *" ng-click="vm.toggleSection('wizard')">Avis Wizard Number *</div>
+                      <div ng-if="reservation===carRentalConstant.resFlowModify" class="res-wizardNoarr form-controlD" title="First Name Last Name">{{vm.reservationModel.personalInfoRQ.firstName}} {{vm.reservationModel.personalInfoRQ.lastName}}
+                      </div>
+                    </div>
+                   <!-- <div ng-class="{'expand-status': (vm.additionalInfo.wizard), 'ifError': wizErrMsgGl}" class="wizardField res-selectFld form-group" ng-if="vm.reservationModel.personalInfoRQ.gebUser">
+                      <a tabindex="0" id="wizardPopup" data-placement="top" data-html="true" class="btn btn-default popOver" role="button" data-toggle="popover" data-trigger="focus" title="Do you have an Avis Wizard Number?" data-content="<p>Enter your Avis Wizard/Preferred profile number to enjoy faster reservations and rentals.</p><p data-sly-test='false'>&lt;b&gt;Note:&lt;/b&gt; Some of profile information may not be changed. If required, please call at 1800 150 278.</p><a href='javascript:void(null);' class='btn close-button closePopover'></a>"
+                      ng-click="openTooltip('wizard')"> <span class="s-icon res-helpIcon"></span>
+                      </a>                      
+                      <div class="res-wizardFld form-controlD" title="First Name Last Name">{{vm.reservationModel.personalInfoRQ.firstName}} {{vm.reservationModel.personalInfoRQ.lastName}}
+                      </div>                      
+                    </div>  --> 
+                    <div ng-class="{'expand-status': (vm.additionalInfo.wizard), 'ifError': wizErrMsgGl}" class="wizardField res-selectFld form-group" ng-if="!isAnonymous && !vm.reservationModel.personalInfoRQ.gebUser">
+                      <a tabindex="0" ng-if="vm.customer.firstName" id="wizardPopup" data-placement="top" data-html="true" class="btn popOver" role="button" data-toggle="popover" data-trigger="focus" title="Wizard" data-content="<p>You are logged in as {{vm.customer.firstName}} {{vm.customer.lastName}}. Want to Logout?</p><a href='javascript:void(null);' class='btn close-button closePopover'></a>" ng-click="openTooltip('wizard')"> <span class="s-icon res-helpIcon"></span>
+                      </a>
+                      <a tabindex="0" ng-if="!vm.customer.firstName" id="wizardPopup" data-placement="top" data-html="true" class="btn popOver" role="button" data-toggle="popover" data-trigger="focus" title="Wizard" data-content="<p>You are logged in as {{vm.reservationModel.personalInfoRQ.firstName}} {{vm.reservationModel.personalInfoRQ.lastName}}. Want to Logout?</p><a href='javascript:void(null);' class='btn close-button closePopover'></a>" ng-click="openTooltip('wizard')"> <span class="s-icon res-helpIcon"></span>
+                      </a>
+                      <div class="res-wizardFld form-controlD" ng-if="vm.customer.firstName && vm.customer.onlineID === false" ng-click="vm.toggleSection('wizard');">{{vm.customer.firstName}} {{vm.customer.lastName}}
+                      </div>
+                      <div class="res-wizardFld form-controlD" ng-if="!vm.customer.firstName && vm.customer.onlineID === false" ng-click="vm.toggleSection('wizard');">{{vm.reservationModel.personalInfoRQ.firstName}} {{vm.reservationModel.personalInfoRQ.lastName}}
+                      </div>
+                      <div class="res-wizardFld form-controlD" ng-if="vm.customer.onlineID === true" title="{{vm.customer.wizardNumberMasked}}" ng-click="vm.toggleSection('wizard');">{{vm.customer.wizardNumberMasked}} </div>
+                    </div>
+                    <div class="mblClearLeft"></div>
+                    <div ng-class="{'expand-status': (vm.additionalInfo.discount), 'ifError': vm.reservationModel.displayControls.discountErrorState}" class="res-selectFld discountField res-selectDC form-group">
+                      <a ng-if="!vm.pageContent.couponCodeDisabled" tabindex="0" id="discountPopup" data-placement="top" data-html="true" class="btn popOver" role="button" data-toggle="popover" data-trigger="focus" title="Do you have a Discount Code?" data-content="<p>Select the Discount Code option to enter an AWD (Avis Worldwide Discount), Coupon Code or Rate Code.</p><a href='javascript:void(null);' class='btn close-button closePopover'></a>" ng-click="openTooltip('discount')"> <span class="s-icon res-helpIcon"></span>
+                      </a>
+                      <a ng-if="vm.pageContent.couponCodeDisabled" tabindex="0" id="discountPopup" data-placement="top" data-html="true" class="btn popOver" role="button" data-toggle="popover" data-trigger="focus" data-content="<p>We are sorry, Avis Preferred Points cannot be combined with additional offers and discounts. Only one offer can be applied per reservation. If you wish to use your Preferred Points for this reservation, please remove coupon code.</p><a href='javascript:void(null);' class='btn close-button closePopover'></a>" ng-click="openTooltip('discount')"> <span class="s-icon res-helpIcon"></span>
+                      </a>
+                      <div class="res-discFld form-controlD" title="Discount Codes" ng-click="vm.toggleSection('discount')">
+                        Discount Codes <span ng-if="couponCount != 0">{{couponCount}}</span>*
+                      </div>
+                    </div>
+                    <div ng-class="{'expand-status': (vm.additionalInfo.vehicle)}" class="res-selectFld vehicleField res-selectDC form-group">
+                      <div ng-class="{'disabled': (vm.suggestionValue.getPickUpLocation == undefined || vm.vehicleList == undefined)}" class="res-vcleFld form-controlD" id="res-home-vehicle-type" title="{{vm.vehicleTypeValue}}" ng-bind="vm.vehicleTypeValue" ng-click="vm.toggleSection('vehicle')">Select Vehicle Type *</div>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <div class="col-sm-12 res-wizard" ng-show="vm.additionalInfo.wizard">
+                  <div class="res-dropWizDiv">
+                    <div class="centerSixty">
+                  
+						<div class="res-dropWizInputDiv" ng-if="isAnonymous">
+                      
+                        <label>Enter Wizard Number and Last Name</label>
+                        <div class="res-wizVal">
+                          <input aria-label="Res-wizard Number" id="res-home-wizNum" ng-model="vm.reservationModel.wizardNumber" name="reservationModel.wizardNumber" class="res-dropWizNum" focus-me="displayWizard" type="text" placeholder="Wizard Number" validator="optional,platformwizard" autocomplete="off" valid-method="blur" recognized-error-message="Enter your Wizard Number" invalid-error-message="Wizard Number entered is invalid." optional-error-message="Enter your Wizard Number" platformwizard-error-message="Wizard Number entered is invalid.">
+                        </div>
+                        <div class="res-wizVal">
+                          <input ng-model="vm.reservationModel.personalInfoRQ.lastName" id="res-home-lastName" aria-label="Last Name " name="DiscLN" class="res-dropWizNum" type="text" placeholder="Last Name " validator="optional,alphaone" valid-method="blur" autocomplete="off" recognized-error-message="Enter your Last Name" optional-error-message="Enter your Last Name" alphaone-error-message="Last Name should contain alphabets only.">
+                        </div>
+                        </div>
+                      
+                      <div class="res-dropWizInputDiv" ng-if="(!isAnonymous)">
+                        <label><span ng-if="vm.customer.firstName && vm.customer.onlineID === false">You are logged in as {{vm.customer.firstName}} {{vm.customer.lastName}}.</span><span ng-if="!vm.customer.firstName && vm.customer.onlineID === false">You are logged in as {{vm.reservationModel.personalInfoRQ.firstName}} {{vm.reservationModel.personalInfoRQ.lastName}}.</span>
+                            <span ng-if="vm.customer.onlineID === true">You are logged in as {{vm.customer.wizardNumberMasked}}.</span> <span class="avisText" ng-if="isAuthenticated"> <a href="javascript:void(0)" ng-click="vm.getLogout()">Log Out?</a>
+                            </span> <span class="avisText" ng-if="isRecognized || isRememberME ">
+														<a href="javascript:void(0)" ng-click="vm.getLogout()">Not You?</a>
+												</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <div class="col-sm-12 res-discount" ng-show="(vm.additionalInfo.discount) && !vm.isModal()">
+                  <div class="res-dropWizDiv">
+                    <div class="centerSixty">
+                      <div class="res-dropWizInputDiv">
+                        <label>Enter a Discount Code</label>
+                        <div class="res-ccVal">
+                          <input id="awd" ng-model="vm.reservationModel.coupon.discountNumber" name="res.coupon.discountNumber" class="res-dropDiscAWD" type="text" ng-init="vm.getDefaultAwd('')" placeholder="AWD #" focus-me="displayDiscount" maxlength="8" aria-label="AWD #" ng-disabled="vm.pageContent.awdDisabled" validator="optional,platformawd" valid-method="blur" ng-blur="vm.getMultiCoupon();" ng-keyup="vm.getMultiCoupon()" compile-request="true" invalid-error-message="Your discount code is invalid &lt;a href=&#34;javascript:void(null);&#34; class=&#34;learnWhyTxt ng-scope&#34; learn-why=&#34;DiscAWD&#34; call-from=&#34;Home&#34;>Learn why.&lt;/a>" platformawd-error-message="Your discount code is invalid &lt;a href=&#34;javascript:void(null);&#34; class=&#34;learnWhyTxt ng-scope&#34; learn-why=&#34;DiscAWD&#34; call-from=&#34;Home&#34;>Learn why.&lt;/a>">
+                        	<span ng-if="vm.prod.bcdErrorList.length>0" class="error">
+                        		 <a href="javascript:void(0)" class="learnWhyTxt" data-toggle="modal" data-target=".bcdMsg">Learn Why?</a>
+							</span>
+                        </div>						
+                        <div class="res-ccVal">
+                          <input id="coupon" ng-model="vm.reservationModel.coupon.couponNumber" maxlength="8" name="res.coupon.couponNumber" class="res-dropDiscAWD" type="text" placeholder="vm.couponNumberPlaceholder" ng-init="vm.getDefaultCouponCode('')" aria-label="Coupon Code" ng-disabled="vm.pageContent.couponCodeDisabled" validator="optional,platformcoupon" valid-method="blur" ng-blur="vm.getMultiCoupon()" ng-keyup="vm.getMultiCoupon()" compile-request="true" invalid-error-message="Your discount code is invalid &lt;a href=&#34;javascript:void(null);&#34; class=&#34;learnWhyTxt ng-scope&#34; data-toggle=&#34;modal&#34; data-target=&#34;.couponMsg&#34; learn-why=&#34;DiscCoupon&#34; call-from=&#34;Other&#34;>Learn why.&lt;/a>" platformcoupon-error-message="Your discount code is invalid &lt;a href=&#34;javascript:void(null);&#34; class=&#34;learnWhyTxt ng-scope&#34; data-toggle=&#34;modal&#34; data-target=&#34;.couponMsg&#34; learn-why=&#34;DiscCoupon&#34; call-from=&#34;Other&#34;>Learn why.&lt;/a>">
+                          <span ng-if="vm.prod.couponErrorList.length>0" class="error">
+                          		Your coupon can&#39;t be used for this reservation. <a href="javascript:void(0)" class="learnWhyTxt" data-toggle="modal" data-target=".couponMsg">Learn Why?</a>
+							</span>
+                        </div>
+                        <div ng-show="vm.reservationModel.coupon.isMultiCoupon" class="res-inputFldFst">
+                          <div class="res-ccVal marGnTop">
+                            <div>
+                              <label class="res-dropWizText">Quantity
+                                <a tabindex="0" id="couponPopup" data-placement="top" data-html="true" class="popOver" role="button" data-toggle="popover" data-trigger="focus" title="Quantity" data-content="<p>These are the available options that may be redeemed.</p><a href='javascript:void(null);' class='btn close-button closePopover'></a>" ng-click="openTooltip('couponCount')"> <span class="s-icon res-helpIcon"></span>
+                                </a>
+                              </label>
+                            </div>
+                            <span class="s-dropdown">
+                            <select class="res-dropDiscAWD" aria-label="Number Of Coupon" ng-model="vm.reservationModel.coupon.couponQuantity" ng-options="cupon.key as cupon.value for cupon in vm.pageContent.couponList">
+                            </select>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="res-ccVal">
+                        <input ng-model="vm.reservationModel.coupon.couponRateCode" id="res-home-rateCode" maxlength="4" name="reservationModel.coupon.couponRateCode" class="res-dropDiscAWD" type="text" placeholder="Rate Code" aria-label="Rate Code" required-error-message="err.global.invalidRateCode" validator="optional" valid-method="blur">
+                        <!--platformcoupon-error-message= "The Rate Code entered is invalid. <a class='learnWhyTxt' href='javascript:void(0)'>Learn Why?</a>">-->
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="col-sm-12 res-vehicle" ng-if="vm.additionalInfo.vehicle">
+                  <div class="res-dropVehicleDiv">
+                    <div class="row">
+                      <div class="col-sm-6" ng-repeat="item in vm.vehicleList">
+                        <div class="col-sm-12 res-carBlock carBlockAll" ng-click="vm.selectVehicleType(item)">
+                          <div class="col-sm-6 col-lg-3">
+                            <img ng-src="{{item.image}}" alt="{{item.description}}">
+                          </div>
+                          <p class="col-lg-3 col-sm-2 allVehicle" ng-bind="item.description"></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div ng-if="!(vm.isModal() || optionalVisible)" class="hintOpt">
+                  <sup>*</sup> Optional
+                </div>
+                
+                <section ng-if="vm.isModal()">
+                  <input type="hidden" id="datetext1">
+                  <p class="note-text-reservation clear padlt10">Note: Rates are calculated based on details you provide. Modifications may change your rate, and if so, the Car Selection page will redisplay.
+                  </p>
+                  <div class="modal-footer offers-landing-selbtn">
+                    <div class="step2-renter-summary-detail-btn hidden-xs">
+                      <button class="btn btn-primary " aria-label="Update" type="submit" ng-click="vm.getVehicles.submit(resForm);">Update</button>
+                    </div>
+                    <div class="step2-renter-summary-detail-btn visible-xs">
+                      <button class="btn btn-primary " aria-label="Update" type="submit" ng-click="vm.getVehicles.submit(resForm);">Update
+                      </button>
+                    </div>
+                  </div>
+                </section>
+                
+              </div>  
+                
+              <div class="offers-landing-selbtn btnSpacing" ng-if="!vm.isModal()">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <button name="button" id="res-home-select-car" ng-class="{'margin-top-90':false}" class="btn btn-red selectMyCar hideMeFix btn-primary-avis" ng-if="!vm.isOneClick" ng-click="vm.getVehicles.submit(resForm)">Select My Vehicle</button>
+                  <button name="button" id="res-home-select-car" ng-class="{'margin-top-90':false}" class="btn btn-red selectMyCar hideMeFix btn-primary-avis" ng-if="vm.isOneClick" ng-click="vm.getVehicles.submit(resForm)">Continue to Confirmation</button>
+                  <a ui-sref="step1" href="javascript:void(null);" class="btn btn-red selectMyCar showMeFix" ng-click="vm.getVehicles.submit(resForm);">Continue</a>
+                </div>
+              </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+
+        
+      </form>
+    </div>
+    <div>
+      <div>
+      <form class="res-css-form" id="res-mobile-selectCarForm" name="resFormMob" novalidate>
+        
+        <div class="row resMobileView" ng-class="{'home-container':!vm.isModal(), 'stepOneModel':(vm.getPageURL === carRentalConstant.step1aErrorPageName || vm.getURLMtd())}">
+          <div ng-if="!(vm.isModal() || (vm.getPageURL === carRentalConstant.step1aErrorPageName || vm.getURLMtd()))">
+            
+            
+<div class="res-heroBanner" ng-show="!vm.isModal()">
+  
+	
+
+
+
+<div>
+
+
+
+
+
+
+
+
+</div>
+<div class="heroBan" hero-banner-image-cover>
+<picture>
+    <source data-media="(max-width: 767px)" data-dpr="1" data-src="/content/dam/avis/oc/au/common/offers/home-page-hero-au.jpg/jcr:content/renditions/cq5dam.web.375.375.jpg"/>
+    <source data-media="(max-width: 991px)" data-dpr="1" data-src="/content/dam/avis/oc/au/common/offers/home-page-hero-au.jpg/jcr:content/renditions/cq5dam.web.768.504.jpg"/>
+    <source data-media="(min-width: 992px)" data-dpr="1" data-src="/content/dam/avis/oc/au/common/offers/home-page-hero-au.jpg/jcr:content/renditions/cq5dam.web.1220.800.jpg"/>
+
+    <source data-media="(max-width: 767px)" data-dpr="2" data-src="/content/dam/avis/oc/au/common/offers/home-page-hero-au.jpg/jcr:content/renditions/cq5dam.web.750.750.jpg"/>
+    <source data-media="(max-width: 991px)" data-dpr="2" data-src="/content/dam/avis/oc/au/common/offers/home-page-hero-au.jpg/jcr:content/renditions/cq5dam.web.1536.1008.jpg"/>
+    <source data-media="(min-width: 992px)" data-dpr="2" data-src="/content/dam/avis/oc/au/common/offers/home-page-hero-au.jpg/jcr:content/renditions/cq5dam.web.2440.1600.jpg"/>
+</picture>
+</div>
+
+	<!-- Moved call-to-action component out of dynamic-promo component as it is required
+		 for other pages as well like partner pages -->
+	
+</div>
+
+          	
+            <div class="top-section" ng-if="vm.invisible">
+              <div class="invisible" ng-if="vm.hideInlocations">
+                <p class="resTitle">For the Best Rates – Design your Drive with Avis</p>
+                <h3></h3>
+              </div>
+              
+              <h3 class="invisible"></h3>
+              
+            </div>
+            <div set-class-when-at-top="fix-to-top" padding-when-at-top="115">
+              <div class="hide-on-load  res-section res-section-no-subtitle">
+                <div class="row res-inputFldPrt">
+                  <div class="col-xs-12 res-inputFldFst">
+                    <input type="text" id="triggerRes" data-target=".resModal" data-toggle="modal" ng-model="vm.suggestionValue.pickUpLocInitialValue" class="form-control mobile-home-input " placeholder="Enter your pick-up location" aria-label="Enter your pick-up location">
+                  </div>
+                </div>
+                <div class="offers-landing-selbtn">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <a class="btn btn-red selectMyCar mobile-home-button hideMeFix btn-primary-avis" data-target=".resModal" data-toggle="modal">Select My Vehicle</a> <a data-target=".resModal" data-toggle="modal" href="javascript:void(null);" id="res-mobile-SelectContinue" class="btn btn-red selectMyCar mobile-home-button showMeFix">Continue</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal resModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false" ng-class="{'removeModel': (vm.getPageURL === '/time-and-place' || vm.getURLMtd())}">
+            <div class="modal-dialog">
+              
+              <div class="modal-content">
+                <div class="modal-header" ng-if="!(vm.isModal() || (vm.getPageURL === carRentalConstant.step1aErrorPageName || vm.getURLMtd()))">
+                  <a type="button" class="close-button TextbuttonColor" data-dismiss="modal" onclick="jQuery('body').scrollTop(0);">Close</a>
+                  <h4 class="modal-title">Rent a car</h4>
+                </div>
+                
+                <div class="modal-header vehRedBg-for-mob res-popup " ng-if="vm.isModal()">
+                  <span data-dismiss="modal" aria-label="Close" class="close-icon-black pull-right gap-btwn-two-close" ng-click="vm.resFormpopupCancelClick()"></span> <span class="pull-right cancel-text-down-in-mob" aria-hidden="true" aria-label="Close" data-dismiss="modal" ng-click="vm.resFormpopupCancelClick()">Cancel</span>
+                  <h3 class="modal-title">Modify Rental Details</h3>
+                </div>
+                
+                <div ng-if="vm.prod.warningList.length">
+                  <div ng-repeat="warning in vm.prod.warningList">
+                    <div class="infoMsg">
+                      <div class="infoImage">
+                        <span class="spanImg"></span>
+                      </div>
+                      <div class="infoText">
+                        <span id="warning-msg-err-mob"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div ng-if="vm.prod.errorList.length" ng-repeat="error in vm.prod.errorList">
+                  <div class="mainErrorMsg">
+                    <div class="mainErrorImage pull-left">
+                      <span></span>
+                    </div>
+                    <div class="mainErrorText">
+                      <p ng-bind-html="error.message | htmlFilter"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-body mobile datepicker-ref" ng-class="{showError: vm.getVehicles.validated}">
+                  <div ng-show="vm.getVehicles.validated" class="col-xs-12 mainErrorMsg">
+                    <div class="col-sm-1 col-xs-2 mainErrorImage">
+                      <span></span>
+                    </div>
+                    <div class="col-xs-10 noPad" ng-if="!(vm.prod.couponErrorList.length>0)">
+                      <p class="info-error-msg-text" ng-bind-html="vm.pageContent.resFormPageError"></p>
+                    </div>
+                  </div>
+                  <div ng-show="vm.showLearnWhyError" class="col-xs-12 mainErrorMsg">
+                    <div class="col-sm-1 col-xs-2 mainErrorImage">
+                      <span></span>
+                    </div>
+                    <div class="col-xs-10 noPad" ng-if="!(vm.prod.couponErrorList.length>0)">
+                      <p class="learnwhy-error-msg-text"></p>
+                    </div>
+                  </div>
+                  <div class="info-error-messages" id="loginAuthenticate" ng-if="vm.pageContent.loginAuthenticate">
+	                <div class="infoMsg">
+	                  <div class="infoImage">
+	                    <span class="spanImg"></span>
+	                  </div>
+	                  <div class="infoText">
+	                    <span class="mainErrorText">You are successfully logged in. We have re-started your reservation to ensure your profile preferences are included.</span>
+	                  </div>
+	                </div>
+	              </div>
+                  <div class="clearfix"></div>
+                  <div class="res-inputFld">
+                    
+                    <angucomplete-alt ng-class="{'showLocError': validateInput2}" outside-click="closeMyDropdown(this)" id="PicLoc" placeholder="Enter your pick-up location" pause="500" selected-object="vm.suggestionValue.getPickUpLocation" remote-api-handler="vm.getSuggestions" title-field="suggDescription" description-field="suggDescription" minlength="3" input-name="pickupLocation" initial-value="vm.suggestionValue.pickUpLocInitialValue" input-class="form-control form-control-cal" match-class="highlight" suggestion-list-response-error-message="Please revise your search or &lt;a href='/en/locations/find-a-location'&gt;click here&lt;/a&gt; to browse for a location" validation-list="required" validation-error-display-location-id="pickupErrorMob" validation-error-message="Please enter a <b>Pick-up Location</b>" validation-invalid-message="Please enter a valid <b>Pick-up Location</b>"/>
+                  </div>
+                  <div>
+                    <span id="pickupErrorMob" class="error"></span>
+                  </div>
+                  
+                  <div class="clearfix"></div>
+                  
+                  <div class="res-inputFld borderBot">
+                    <div class="col-lg-3 col-xs-7 res-inputFld dateImg">
+                      <input type="text" autocomplete="off" class="date-form-field start-date-input res-inputMonth date-from form-control-cal inputMonth" name="reservationModel.pickUpDateDisplay" maxlength="10" placeholder="mm/dd/yyyy" aria-label="mm/dd/yyyy" readonly="true" click-outside-calender="closeCalender()" ng-model="vm.reservationModel.pickUpDateDisplay" id="fromMob" ng-change="vm.getVehicles.change(carRentalConstant.pickUpClassName,resFormMob)" valid-method="blur" validator="required,platformdate" message-id="fDateMob" dateLesser-error-message="You selected a date/time prior to the current time" required-error-message="Please enter a valid <b> Pick-up Date</b>" data-dpheaderlabel="Select Pick-up date" data-selecteddate="">
+                    </div>
+                    <div class="col-lg-3 col-xs-5 inputFld s-timer select-mob">
+                      <select name="reservationModel.pickUpTime" ng-model="vm.reservationModel.pickUpTime" ng-options="time.value as time.minits for time in vm.times" class="form-control-cal inputTime" required-error-message="err.global.requiredPickUpTime" aria-label="Pick Up Time">
+                      </select>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                  <div class="marB7">
+                    <span id="fDateMob" class="error"></span>
+                  </div>
+                  
+                  <div class="clearfix"></div>
+                  <div class="res-inputFld">
+                    
+                    <angucomplete-alt outside-click="closeMyDropdown()" id="DropLoc" placeholder="Return to same location" pause="500" selected-object="vm.suggestionValue.getDropLocation" remote-api-handler="vm.getSuggestions" title-field="suggDescription" description-field="suggDescription" minlength="3" input-name="returnLocation" initial-value="vm.suggestionValue.dropLocInitialValue" input-class="form-control form-control-cal" match-class="highlight" suggestion-list-response-error-message="Please revise your search or &lt;a href='/en/locations/find-a-location'&gt;click here&lt;/a&gt; to browse for a location" validation-list="optional" validation-error-display-location-id="dropLocationMobError" validation-error-message="Please enter valid <b>Drop Location</b>" validation-invalid-message="Please enter valid valid <b>Drop Location</b>"/>
+                  </div>
+                  <div>
+                    <span id="dropLocationMobError" class="error"></span>
+                  </div>
+                  
+                  <div class="clearfix"></div>
+                  
+                  <div class="res-inputFld borderBot">
+                    <div class="col-lg-3 col-xs-7 res-inputFld dateImg">
+                      <input type="text" maxlength="10" autocomplete="off" name="reservationModel.dropDateDisplay" placeholder="mm/dd/yyyy" aria-label="mm/dd/yyyy" readonly="true" class="date-form-field end-date-input date-to form-control-cal res-inputMonth inputMonth" click-outside-calender="closeCalender()" ng-model="vm.reservationModel.dropDateDisplay" id="toMob" ng-change="vm.getVehicles.change(carRentalConstant.dropOffClassName,resFormMob)" valid-method="blur" validator="required,platformdate" message-id="returnDateMob" compareDate-error-message="Invalid Drop-off/Pick-up date combination" required-error-message="Please enter a valid  <b>Return Date</b>" data-dpheaderlabel="Select Return date" data-selecteddate="">
+                    </div>
+                    <div class="col-lg-3 col-xs-5 inputFld s-timer select-mob">
+                      <select name="reservationModel.dropTime" ng-model="vm.reservationModel.dropTime" ng-options="time.value as time.minits for time in vm.times" class="form-control-cal inputTime" required-error-message="err.global.requiredDropOffTime" aria-label="Return Time">
+                      </select>
+                    </div>
+                    
+                    <input type="hidden" id="datetextMob1">
+                    <input type="hidden" id="datetextMob2">
+                    <input type="hidden" id="datetextstartMob">
+                    <input type="hidden" id="datetextendMob">
+                    <input type="hidden" id="checkerMob" value="0">
+                    
+                  </div>
+                  <div class="clearfix"></div>
+                  <div class="marB2">
+                    <span id="returnDateMob" class="error"></span>
+                  </div>
+                  <div class="clearfix"></div>
+                  
+                  <div ng-if="!vm.isModal()">
+                    <div class="age col-xs-4 res-inputFldFst noPad mobile-popover">
+                      Age
+                      <a tabindex="0" id="agePopupMob" data-toggle="modal" data-target=".ageModal"> <span class="s-icon res-helpIcon"></span>
+                      </a>
+                    </div>
+                    <div class="residency col-xs-8 res-inputFldFst mobile-popover">
+                      Residency
+                      <a tabindex="0" id="countryPopupMob" data-toggle="modal" data-target=".residenceModal"> <span class="s-icon res-helpIcon"></span>
+                      </a>
+                    </div>
+                    <div ng-class="{'disabled': (!isAnonymous || vm.reservationModel.displayControls.fieldDisable) }" class="selectAgee s-dropdown col-sm-4 col-xs-4">
+                      <select name="AgeFld" class="ageSelection col-sm-3 col-xs-3 selectDropdown" ng-disabled="vm.reservationModel.displayControls.fieldDisable  || (!isAnonymous)" ng-change="changeAgeHig()" ng-model="vm.reservationModel.personalInfoRQ.age" ng-options="age.agsID as age.ageName for age in vm.ages" validator="selectrequired" valid-method="change" message-id="ageerrorMob" required-error-message="Please select your age
+" selectrequired-error-message="Please select your age
+">
+                      </select>
+                    </div>
+                    <div ng-class="{'disabled': (!isAnonymous || vm.reservationModel.displayControls.fieldDisable) }" class="selectCountry s-dropdown col-sm-8 col-xs-8">
+                      <select id="reservationModel.personalInfoRQ.residency" class="countrySelection col-xs-8 selectDropdown" ng-disabled="vm.reservationModel.displayControls.countryFieldDisable  || (!isAnonymous)" trim-label ng-change="trimLabelLength('reservationModel.personalInfoRQ.residency', 18)" name="reservationModel.personalInfoRQ.residency" ng-model="vm.reservationModel.personalInfoRQ.residency" required-error-message="Country of residence is required." ng-options="residence.code as residence.name for residence in vm.pageContent.countryList  " aria-label="Select Residency">
+                      </select>
+                    </div>
+                    <span id="ageerrorMob" class="error"></span>
+                    <div class="fullSection col-xs-12">
+                      <span class="advancedSearch">
+                        <strong>Optional:</strong>
+                      </span>
+                      <span class="advancedSearch">
+                        <strong><i>Sort by Vehicle Type; Add Offer Code</i></strong>
+                      </span>
+                      <div ng-class="{'ifError': wizErrMsgGlMob || couponErrMsgGlMob}" class="sortFilter col-sm-12" ng-click="vm.IsVisibleOffer = !vm.IsVisibleOffer">Refine &amp; Sort</div>
+                    </div>
+                    <div ng-show="vm.IsVisibleOffer" ng-class="{'ifError': wizErrMsgGlMob || couponErrMsgGlMob}" class="filterCon">
+                      <div class="age col-xs-6 noPad mobile-popover" ng-if="isAnonymous && !(reservation==carRentalConstant.resFlowModify)">
+                        Avis Wizard #
+                        <a id="	" data-toggle="modal" data-target=".wizModal"> <span class="s-icon res-helpIcon"></span>
+                        </a>
+                      </div>
+                      <div class="age col-sm-6 col-xs-12 noPad mobile-popover" ng-if="!isAnonymous">
+                        <div>
+                          <span ng-if="vm.customer.firstName && vm.customer.onlineID === false"> {{vm.customer.firstName}} {{vm.customer.lastName}} </span>
+                          <span ng-if="!vm.customer.firstName && vm.customer.onlineID === false"> {{vm.reservationModel.personalInfoRQ.firstName}} {{vm.reservationModel.personalInfoRQ.lastName}} </span>
+                          <span ng-if="vm.customer.onlineID === true"> {{vm.customer.wizardNumberMasked}} </span>
+                          <a tabindex="0" id="wizardPopupMob" data-placement="top" data-html="true" role="button" data-toggle="popover" data-trigger="focus" title="Log Out" data-content="<p>Click the Log Out link to Sign Off.</p><a href='javascript:void(null);' class='btn close-button closePopover'></a>" ng-click="openTooltip('wizard')"> <span class="s-icon res-helpIcon"></span>
+                          </a>
+                        </div>
+                      </div>
+                      <div ng-if="reservation===carRentalConstant.resFlowModify && isAnonymous" class="res-wizardNoarr form-controlD" title="First Name Last Name">{{vm.reservationModel.personalInfoRQ.firstName}} {{vm.reservationModel.personalInfoRQ.lastName}}
+                      </div>
+                      <div class="residency col-xs-6 noPad" ng-if="isAnonymous && !(reservation==carRentalConstant.resFlowModify)">
+                        Last Name </div>
+                      <label ng-if="!isAnonymous && vm.customer.firstName && vm.customer.onlineID === false">You are logged in as {{vm.customer.firstName}} {{customer.lastName}}. <span class="avisText" ng-if="isAuthenticated"><a href="javascript:void(0)" ng-click="vm.getLogout()"> Log Out?</a></span><span class="avisText" ng-if="isRecognized || isRememberME "><a href="javascript:void(0)" ng-click="vm.getLogout()"> Not You?</a></span>
+                      </label>
+                      <label ng-if="!isAnonymous && !vm.customer.firstName && vm.customer.onlineID === false">You are logged in as {{vm.reservationModel.personalInfoRQ.firstName}} {{vm.reservationModel.personalInfoRQ.lastName}}. <span class="avisText" ng-show="isAuthenticated"><a href="javascript:void(0)" ng-click="vm.getLogout()"> Log Out?</a></span><span class="avisText" ng-show="isRecognized || isRememberME "><a href="javascript:void(0)" ng-click="vm.getLogout()"> Not You?</a></span>
+                      </label>
+                      <label ng-if="!isAnonymous && vm.customer.onlineID === true">You are logged in as {{vm.customer.wizardNumberMasked}}. <span class="avisText" ng-if="isAuthenticated"><a href="javascript:void(0)" ng-click="vm.getLogout()"> Log Out?</a></span><span class="avisText" ng-if="isRecognized || isRememberME "><a href="javascript:void(0)" ng-click="vm.getLogout()"> Not You?</a></span>
+                      </label>
+                      <input aria-label="Display Wizard" name="DispWIZMob" type="text" class="ageSelectiona col-xs-3 selectDropdown" ng-model="vm.reservationModel.wizardNumber" ng-if="isAnonymous && !(reservation==carRentalConstant.resFlowModify)" validator="required,platformwizard" valid-method="blur" id="res-mobile-wizard" message-id="wizardErrMobile" recognized-error-message="Enter your Wizard Number" required-error-message="Enter your Wizard Number" invalid-error-message="Wizard Number entered is invalid." platformwizard-error-message="Wizard Number entered is invalid." ng-disabled="reservation===carRentalConstant.resFlowModify" no-validation-message="vm.reservationModel.personalInfoRQ.lastName==''">
+                      <input type="text" aria-label="Last Name " name="DispLNMob" class="countrySelectiona noMarRit col-xs-8 selectDropdown" ng-model="vm.reservationModel.personalInfoRQ.lastName" ng-if="isAnonymous && !(reservation ==carRentalConstant.resFlowModify)" validator="required,platformusername" ng-disabled="reservation===carRentalConstant.resFlowModify" valid-method="blur" message-id="wizardLastNameErrMobile" recognized-error-message="Enter your Last Name" required-error-message="Enter your Last Name" platformusername-error-message="Last Name should contain alphabets only." no-validation-message="vm.reservationModel.wizardNumber==''">
+                      
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <span class="error" id="wizardErrMobile"></span>
+                        </div>
+                        <div class="col-xs-6 noPad">
+                          <span class="error" id="wizardLastNameErrMobile"></span>
+                        </div>
+                      </div>
+                      <div class="age col-xs-12 noPad mobile-popover">
+                        Discount Codes
+                        <a id="discountPopupMob" data-toggle="modal" data-target=".disModal"> <span class="s-icon res-helpIcon"></span>
+                        </a>
+                      </div>
+                      <input type="text" id="AWD" ng-model="vm.reservationModel.coupon.discountNumber" aria-label="AWD #" maxlength="8" name="DiscAWDMob" placeholder="AWD #" class="ageSelectionb col-xs-4 selectDropdown" compile-request="true" validator="optional,platformawd" valid-method="blur" ng-keyup="vm.getMultiCoupon()" ng-blur="vm.getMultiCoupon();" ng-disabled="vm.pageContent.awdDisabled" message-id="discountAWDErrMob" inline-message="true">
+					  
+                      <input type="text" id="coupon" ng-model="vm.reservationModel.coupon.couponNumber" aria-label="Coupon" maxlength="8" name="DiscCouponMob" placeholder="Coupon" class="ageSelectionb col-xs-4 selectDropdown" compile-request="true" validator="optional,platformcoupon" valid-method="blur" ng-keyup="vm.getMultiCoupon()" ng-blur="vm.getMultiCoupon()" message-id="discountCouponMob" inline-message="true" ng-disabled="vm.pageContent.couponCodeDisabled">
+
+                      <div class="res-ccVal marGnTop forMob" ng-show="vm.reservationModel.coupon.isMultiCoupon">
+                        <div class="coupanCInfo" id="res-dropWizText">
+                          <label class="res-dropWizText">Quantity
+                            <a id="couponPopups" data-toggle="modal" data-target=".quaModal" ng-click="getLearnDetails('Quantity')"> <span class="s-icon res-helpIcon qty-icon"></span>
+                            </a>
+                          </label>
+                        </div>
+                        <span class="s-dropdown">
+                        <select class="res-dropDiscAWD" aria-label="Number Of Coupon" ng-model="vm.reservationModel.coupon.couponQuantity" ng-options="cupon.key as cupon.value for cupon in vm.pageContent.couponList">
+                        </select>
+                        </span>
+                      </div>
+                      
+                      	<input type="text" ng-model="vm.reservationModel.coupon.couponRateCode" id="res-home-rateCode" aria-label="Rate" maxlength="4" name="DiscRateMob" placeholder="Rate Code" class="ageSelectionb col-sm-4 noMarRit col-xs-4 selectDropdown" validator="optional" valid-method="blur" required-error-message="err.global.invalidRateCode" message-id="rateCodeInvalidMob" inline-message="false">
+                      
+                      
+                      <div class="clearfix"></div>
+                      <div class="col-xs-12 noPad">
+                        <div ng-show="vm.prod.errorList.length" ng-repeat="error in vm.prod.errorList">
+                          <div class="mainErrorText" ng-if="error.code !== carRentalConstant.insuraceReplacementCode">
+                            <p ng-bind-html="error.message | htmlFilter"></p>
+                          </div>
+                        </div>
+                        <span class="error col-xs-12 noPad" ng-hide="(vm.prod.couponErrorList.length>0)" id="discountAWDErrMob">
+                        	Your discount code is invalid, <a href="javascript:void(0)" class="learnWhyTxt link" learn-why="DiscAWD" call-from="Home"> Learn Why? </a>
+						</span>						
+                        <span class="error col-xs-12 noPad" ng-hide="(vm.prod.couponErrorList.length>0)" id="discountCouponMob">
+							Your discount code is invalid, <a href="javascript:void(0)" class="learnWhyTxt link" learn-why="DiscCoupon" call-from="Home">  Learn Why? </a>	
+						</span>
+                        <span ng-if="false" class="error col-xs-12 noPad" id="rateCodeInvalidMob">
+							Rate Code invalid <a href="javascript:void(null)" class="learnWhyTxt" data-toggle="modal" data-target=".rateCodeMsg">Learn Why?</a>
+						</span>
+                      </div>
+                      <div class="age col-xs-12 noPad">Select Vehicle Type</div>
+                      <div id="res-home-mobVehType" ng-class="{'disabled': (vm.suggestionValue.getPickUpLocation == undefined || vm.vehicleList == undefined)}" class="sortFilter col-sm-12" title="{{vm.vehicleTypeValue}}" ng-bind="vm.vehicleTypeValue" data-target=".vehicleModal" ng-click="vm.toggleSection('vehicle')" data-toggle="modal">All Vehicles</div>
+                    </div>
+                                        
+                    <div class="rowa">
+                      <div class="middleDiva">
+                        <button name="button" class="btn btn-lg btn-block btn-responsive btn-primary-avis col-sm-12 col-xs-4 selectCara res-selectCar btn-primary-avis" ng-if="!vm.isOneClick" id="res-mobile-selectCar" ng-click="vm.getVehicles.submit(resFormMob)">Select My Vehicle</button>
+                      	<button name="button" class="btn btn-lg btn-block btn-responsive btn-primary-avis col-sm-12 col-xs-4 selectCara res-selectCar btn-primary-avis" ng-if="vm.isOneClick" id="res-mobile-selectCar" ng-click="vm.getVehicles.submit(resFormMob)">Continue to Confirmation</button>
+                      </div>
+                    </div>
+                  </div>
+                  <section ng-if="vm.isModal()">
+                    <p class="note-text-reservation clear">Note: Rates are calculated based on details you provide. Modifications may change your rate, and if so, the Car Selection page will redisplay.
+                    </p>
+                    <div class="modal-footer offers-landing-selbtn">
+                      <div class="step2-renter-summary-detail-btn hidden-xs">
+                        <button class="btn btn-primary " aria-label="Update" type="submit" id="res-mobile-updateCar" ng-click="vm.getVehicles.submit(resFormMob);">Update
+                        </button>
+                      </div>
+                      <div class="step2-renter-summary-detail-btn visible-xs">
+                        <button class="btn btn-primary " aria-label="Update" type="submit" id="res-mobile-updateCar" ng-click="vm.getVehicles.submit(resFormMob);">Update
+                        </button>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="modal fade vehicleModal" ng-if="vm.additionalInfo.vehicle || vm.suggestionValue.getPickUpLocation != undefined" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog Vehicle-key">
+              
+              <div class="modal-content">
+                <div class="modal-header noPadB">
+                  <a type="button" data-dismiss="modal" class="cls-btn close-button TextbuttonColor" ng-click="vm.toggleSection('vehicle')">Close</a>
+                  <h4 class="modal-title leftalign">Select Vehicle Type</h4>
+                </div>
+                <div class="mobile">
+                  <div class="row noMar">
+                    <div class="col-xs-12 noPad" ng-repeat="item in vm.vehicleList">
+                      <div class="col-xs-12 vehicleDD" ng-click="vm.selectVehicleType(item)" data-dismiss="modal">
+                        <div class="col-xs-4 noPad">
+                          <img ng-src="{{item.image}}" class="width-100" alt="{{item.description}}">
+                        </div>
+                        <p class="col-xs-8">{{item.description}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </form>
+    </div>
+    <div class="modal generic-modal " role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close-icon-black pull-right gap-btwn-two-close" aria-label="Close" data-dismiss="modal"></span>
+            <!-- <a href='javascript:void(null);' type="button"
+							class="close modalClose" data-dismiss="modal">&times;</a> -->
+            <h4 class="modal-title">{{vm.title}}</h4>
+          </div>
+          <div class="modal-body">
+            <p class="couponP">{{vm.reason}}</p>
+            <ul ng-if="vm.errorMsg">
+              <li class="couponLi">{{vm.errorMsg}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="modal rateCodeMsg" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a href="javascript:void(null);" type="button" class="cls-btn close-button TextbuttonColor" data-dismiss="modal">Close</a>
+            <h4 class="modal-title">msg.res.rateinfo</h4>
+          </div>
+          <div class="modal-body">
+            <p class="couponP">Your Rate Code cannot be used for this reservation due to following reason(s):</p>
+            <ul>
+              <li class="couponLi">Rate Code requires minimum length of 5 days
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal ageModal" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a href="javascript:void(null);" type="button" class="cls-btn close-button TextbuttonColor" data-dismiss="modal">Close</a>
+            <h4 class="modal-title">Age</h4>
+          </div>
+          <div class="modal-body">
+            <p class="couponP">Providing your age allows us to give you a more accurate rental estimate. Restrictions and fees may apply for drivers under 25.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal residenceModal" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a href="javascript:void(null);" type="button" class="cls-btn close-button TextbuttonColor" data-dismiss="modal">Close</a>
+            <h4 class="modal-title">Country of Residence</h4>
+          </div>
+          <div class="modal-body">
+            <p class="couponP">Providing your country of residence allows us to give you a more accurate rental estimate.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal wizModal" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a href="javascript:void(null);" type="button" class="cls-btn close-button TextbuttonColor" data-dismiss="modal">Close</a>
+            <h4 class="modal-title">Do you have an Avis Wizard Number?</h4>
+          </div>
+          <div class="modal-body">
+            <p class="couponP">Enter your Avis Wizard/Preferred profile number to enjoy faster reservations and rentals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal disModal" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a href="javascript:void(null);" type="button" class="cls-btn close-button TextbuttonColor" data-dismiss="modal">Close</a>
+            <h4 class="modal-title">Do you have a Discount Code?</h4>
+          </div>
+          <div class="modal-body">
+            <p class="couponP" ng-if="!vm.pageContent.couponCodeDisabled">Select the Discount Code option to enter an AWD (Avis Worldwide Discount), Coupon Code or Rate Code.</p>
+            <p class="couponP" ng-if="vm.pageContent.couponCodeDisabled">We are sorry, Avis Preferred Points cannot be combined with additional offers and discounts. Only one offer can be applied per reservation. If you wish to use your Preferred Points for this reservation, please remove coupon code.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal quaModal" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a href="javascript:void(null);" type="button" class="cls-btn close-button TextbuttonColor" data-dismiss="modal">Close</a>
+            <h4 class="modal-title">Coupon Count</h4>
+          </div>
+          <div class="modal-body">
+            <p class="couponP">These are the available options that may be redeemed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal oneclickModal" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a href="javascript:void(null);" type="button" class="cls-btn close-button TextbuttonColor" data-dismiss="modal">Close</a>
+            <h4 class="modal-title">Reserve</h4>
+          </div>
+          <div class="modal-body">
+            <p class="couponP">Reserve your bookings in One Click.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="modal couponMsg" role="dialog" style="display: none;" ng-if="!vm.isModal()">
+      <div class="modal-dialog modal-sm" style="margin-top: 40.5px;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span data-dismiss="modal" aria-label="Close" class="close-icon-black pull-right gap-btwn-two-close"></span>
+            <h4 class="modal-title">COUPON INFO</h4>
+          </div>
+          <div class="modal-body">
+            <p class="couponP">Your coupon number cannot be used for this reservation due to following reason(s):</p>
+            <ul>
+              <li class="couponLi" ng-if="!vm.prod.couponErrorList.length>0">The coupon code entered is not valid. Coupon codes are seven characters, four letters followed by three numbers.</li>
+              <li class="couponLi" ng-repeat="error in vm.prod.couponErrorList" ng-bind-html="error.message" ng-if="(vm.prod.couponErrorList.length > 0)"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal bcdMsg" role="dialog" style="display: none;" ng-if="!vm.isModal()">
+      <div class="modal-dialog modal-sm" style="margin-top: 40.5px;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span data-dismiss="modal" aria-label="Close" class="close-icon-black pull-right gap-btwn-two-close"></span>
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body">
+            <p class="couponP"></p>
+            <ul>
+              <li class="couponLi" ng-if="!vm.prod.bcdErrorList.length>0">err.bcd.bcdFormat</li>
+              <li class="couponLi" ng-repeat="error in vm.prod.bcdErrorList" ng-bind-html="error.message" ng-if="(vm.prod.bcdErrorList.length > 0)"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      
+
+      
+
+      <!-- TIG-322: Modal popup to give user option to navigate to avis.co.uk -->
+      <div class="modal redirect-modal fade popup-fix" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog reservation-modal width-500" role="document">
+          <div class="modal-content">
+            <div class="modal-body ">
+              <div class="session-inner-wrap clearfix">
+                <div class="marbot20">
+                  <div class="text-center">
+                    <h3>
+		                             <b>Are you located in UK?</b>
+		                             <span data-dismiss="modal" aria-label="Close" class="close-icon-black pull-right gap-btwn-two-close"></span>
+	                             </h3>
+                    <p>You may be interested in visiting the Avis UK website to make your booking.</p>
+                  </div>
+                </div>
+                <div class="col-xs-12 noPad">
+                  <div class="col-sm-6 col-xs-12 text-center mar-bottom-30">
+                    <button type="button" ng-click="vm.redirectToUk();" class="btn btn-primary-avis" data-dismiss="modal">Go to Avis.co.uk</button>
+                  </div>
+                  <div class="col-sm-6 col-xs-12 text-center">
+                    <button type="button" ng-click="vm.stayOnCom();" class="btn btn-primary-avis" data-dismiss="modal">Stay on Avis.com</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- TIG-322: Modal popup ends -->
+    </div>
+  </div>
+</section>
+<div>
+<section class="container-fluid custom-teaser-wrapper">
+	
+	
+
+
+
+
+
+</section>
+</div>
+<script type="text/javascript">
+  var prepopulateCity = "";
+  var geoType = "";
+  var picLoc = "";
+  var countryList = "[{\"code\":\"AF\",\"name\":\"Afghanistan\",\"stateList\":[]},{\"code\":\"AL\",\"name\":\"Albania\",\"stateList\":[]},{\"code\":\"DZ\",\"name\":\"Algeria\",\"stateList\":[]},{\"code\":\"AD\",\"name\":\"Andorra\",\"stateList\":[]},{\"code\":\"AO\",\"name\":\"Angola\",\"stateList\":[]},{\"code\":\"AI\",\"name\":\"Anguilla\",\"stateList\":[]},{\"code\":\"AG\",\"name\":\"Antigua\",\"stateList\":[]},{\"code\":\"AR\",\"name\":\"Argentina\",\"stateList\":[]},{\"code\":\"AM\",\"name\":\"Armenia\",\"stateList\":[]},{\"code\":\"AB\",\"name\":\"Aruba\",\"stateList\":[]},{\"code\":\"AU\",\"name\":\"Australia\",\"stateList\":[{\"stateCode\":\"ACT\",\"stateName\":\"Australian Capital Territory\"},{\"stateCode\":\"NSW\",\"stateName\":\"New South Wales\"},{\"stateCode\":\"NT\",\"stateName\":\"Northern Territory\"},{\"stateCode\":\"QLD\",\"stateName\":\"Queensland\"},{\"stateCode\":\"SA\",\"stateName\":\"South Australia\"},{\"stateCode\":\"TAS\",\"stateName\":\"Tasmania\"},{\"stateCode\":\"VIC\",\"stateName\":\"Victoria\"},{\"stateCode\":\"WA\",\"stateName\":\"Western Australia\"}]},{\"code\":\"AT\",\"name\":\"Austria\",\"stateList\":[]},{\"code\":\"AZ\",\"name\":\"Azerbaijan\",\"stateList\":[]},{\"code\":\"BS\",\"name\":\"Bahamas\",\"stateList\":[]},{\"code\":\"BH\",\"name\":\"Bahrain\",\"stateList\":[]},{\"code\":\"BL\",\"name\":\"Bangladesh\",\"stateList\":[]},{\"code\":\"BB\",\"name\":\"Barbados\",\"stateList\":[]},{\"code\":\"BA\",\"name\":\"Belarus\",\"stateList\":[]},{\"code\":\"BE\",\"name\":\"Belgium\",\"stateList\":[]},{\"code\":\"BZ\",\"name\":\"Belize\",\"stateList\":[]},{\"code\":\"BP\",\"name\":\"Benin (Peoples Republic of)\",\"stateList\":[]},{\"code\":\"BM\",\"name\":\"Bermuda\",\"stateList\":[]},{\"code\":\"BT\",\"name\":\"Bhutan\",\"stateList\":[]},{\"code\":\"BO\",\"name\":\"Bolivia\",\"stateList\":[]},{\"code\":\"YE\",\"name\":\"Bonaire\",\"stateList\":[]},{\"code\":\"QB\",\"name\":\"Bosnia\",\"stateList\":[]},{\"code\":\"BW\",\"name\":\"Botswana\",\"stateList\":[]},{\"code\":\"BR\",\"name\":\"Brazil\",\"stateList\":[]},{\"code\":\"BN\",\"name\":\"Brunei\",\"stateList\":[]},{\"code\":\"BG\",\"name\":\"Bulgaria\",\"stateList\":[]},{\"code\":\"UV\",\"name\":\"Burkina Faso\",\"stateList\":[]},{\"code\":\"BU\",\"name\":\"Burma\",\"stateList\":[]},{\"code\":\"BI\",\"name\":\"Burundi\",\"stateList\":[]},{\"code\":\"CM\",\"name\":\"Cameroon\",\"stateList\":[]},{\"code\":\"CA\",\"name\":\"Canada\",\"stateList\":[{\"stateCode\":\"AB\",\"stateName\":\"Alberta\"},{\"stateCode\":\"BC\",\"stateName\":\"British Columbia\"},{\"stateCode\":\"MB\",\"stateName\":\"Manitoba\"},{\"stateCode\":\"NB\",\"stateName\":\"New Brunswick\"},{\"stateCode\":\"NL\",\"stateName\":\"Newfoundland\"},{\"stateCode\":\"NT\",\"stateName\":\"Northwest Territories\"},{\"stateCode\":\"NS\",\"stateName\":\"Nova Scotia\"},{\"stateCode\":\"ON\",\"stateName\":\"Ontario\"},{\"stateCode\":\"PE\",\"stateName\":\"Prince Edward Island\"},{\"stateCode\":\"QC\",\"stateName\":\"Quebec\"},{\"stateCode\":\"SK\",\"stateName\":\"Saskatchewan\"},{\"stateCode\":\"YT\",\"stateName\":\"Yukon Territory / Nunavut\"}]},{\"code\":\"CB\",\"name\":\"Cape Verdi Is.\",\"stateList\":[]},{\"code\":\"CE\",\"name\":\"Caroline Islands\",\"stateList\":[]},{\"code\":\"CT\",\"name\":\"Cayman Islands\",\"stateList\":[]},{\"code\":\"CF\",\"name\":\"Central African Republic\",\"stateList\":[]},{\"code\":\"CD\",\"name\":\"Chad\",\"stateList\":[]},{\"code\":\"CL\",\"name\":\"Chile\",\"stateList\":[]},{\"code\":\"CN\",\"name\":\"China\",\"stateList\":[]},{\"code\":\"CO\",\"name\":\"Colombia\",\"stateList\":[]},{\"code\":\"CJ\",\"name\":\"Comores\",\"stateList\":[]},{\"code\":\"CG\",\"name\":\"Congo\",\"stateList\":[]},{\"code\":\"ZM\",\"name\":\"Congo (Dem. Rep. of the)\",\"stateList\":[]},{\"code\":\"CK\",\"name\":\"Cook Islands (Rarotonga)\",\"stateList\":[]},{\"code\":\"CR\",\"name\":\"Costa Rica\",\"stateList\":[]},{\"code\":\"HR\",\"name\":\"Croatia\",\"stateList\":[]},{\"code\":\"CU\",\"name\":\"Cuba\",\"stateList\":[]},{\"code\":\"AN\",\"name\":\"Curacao (Netherland Antilles)\",\"stateList\":[]},{\"code\":\"CY\",\"name\":\"Cyprus\",\"stateList\":[]},{\"code\":\"CS\",\"name\":\"Czech Republic\",\"stateList\":[]},{\"code\":\"DK\",\"name\":\"Denmark\",\"stateList\":[]},{\"code\":\"DR\",\"name\":\"Djibouti Rep\",\"stateList\":[]},{\"code\":\"DM\",\"name\":\"Dominica\",\"stateList\":[]},{\"code\":\"DO\",\"name\":\"Dominican Republic\",\"stateList\":[]},{\"code\":\"EC\",\"name\":\"Ecuador\",\"stateList\":[]},{\"code\":\"EG\",\"name\":\"Egypt\",\"stateList\":[]},{\"code\":\"EI\",\"name\":\"Ellice Islands\",\"stateList\":[]},{\"code\":\"EL\",\"name\":\"El Salvador\",\"stateList\":[]},{\"code\":\"EQ\",\"name\":\"Equatorial Guinea\",\"stateList\":[]},{\"code\":\"EE\",\"name\":\"Estonia\",\"stateList\":[]},{\"code\":\"ET\",\"name\":\"Ethiopia\",\"stateList\":[]},{\"code\":\"FA\",\"name\":\"Falkland Islands\",\"stateList\":[]},{\"code\":\"FO\",\"name\":\"Faroe Islands\",\"stateList\":[]},{\"code\":\"FJ\",\"name\":\"Fiji Islands\",\"stateList\":[]},{\"code\":\"FI\",\"name\":\"Finland\",\"stateList\":[]},{\"code\":\"FR\",\"name\":\"France\",\"stateList\":[]},{\"code\":\"FG\",\"name\":\"French Guiana\",\"stateList\":[]},{\"code\":\"GA\",\"name\":\"Gabon\",\"stateList\":[]},{\"code\":\"GM\",\"name\":\"Gambia\",\"stateList\":[]},{\"code\":\"GE\",\"name\":\"Georgia\",\"stateList\":[]},{\"code\":\"DE\",\"name\":\"Germany\",\"stateList\":[]},{\"code\":\"GH\",\"name\":\"Ghana\",\"stateList\":[]},{\"code\":\"GI\",\"name\":\"Gibraltar\",\"stateList\":[]},{\"code\":\"GL\",\"name\":\"Gilbert Islands\",\"stateList\":[]},{\"code\":\"GR\",\"name\":\"Greece\",\"stateList\":[]},{\"code\":\"GG\",\"name\":\"Greenland\",\"stateList\":[]},{\"code\":\"GD\",\"name\":\"Grenada\",\"stateList\":[]},{\"code\":\"GP\",\"name\":\"Guadeloupe(French West Indies)\",\"stateList\":[]},{\"code\":\"GU\",\"name\":\"Guam\",\"stateList\":[]},{\"code\":\"GT\",\"name\":\"Guatemala\",\"stateList\":[]},{\"code\":\"GN\",\"name\":\"Guinea\",\"stateList\":[]},{\"code\":\"GS\",\"name\":\"Guinea-Bissau\",\"stateList\":[]},{\"code\":\"GY\",\"name\":\"Guyana\",\"stateList\":[]},{\"code\":\"HT\",\"name\":\"Haiti\",\"stateList\":[]},{\"code\":\"HD\",\"name\":\"Honduras\",\"stateList\":[]},{\"code\":\"HK\",\"name\":\"Hong Kong\",\"stateList\":[]},{\"code\":\"HU\",\"name\":\"Hungary\",\"stateList\":[]},{\"code\":\"IS\",\"name\":\"Iceland\",\"stateList\":[]},{\"code\":\"IN\",\"name\":\"India\",\"stateList\":[]},{\"code\":\"ID\",\"name\":\"Indonesia\",\"stateList\":[]},{\"code\":\"IR\",\"name\":\"Iran\",\"stateList\":[]},{\"code\":\"IQ\",\"name\":\"Iraq\",\"stateList\":[]},{\"code\":\"IE\",\"name\":\"Ireland (Republic)\",\"stateList\":[]},{\"code\":\"IL\",\"name\":\"Israel\",\"stateList\":[]},{\"code\":\"IT\",\"name\":\"Italy\",\"stateList\":[]},{\"code\":\"CI\",\"name\":\"Ivory Coast\",\"stateList\":[]},{\"code\":\"JM\",\"name\":\"Jamaica\",\"stateList\":[]},{\"code\":\"JP\",\"name\":\"Japan\",\"stateList\":[]},{\"code\":\"JO\",\"name\":\"Jordan\",\"stateList\":[]},{\"code\":\"KZ\",\"name\":\"Kazakhstan\",\"stateList\":[]},{\"code\":\"KE\",\"name\":\"Kenya\",\"stateList\":[]},{\"code\":\"KH\",\"name\":\"Khmer Republic\",\"stateList\":[]},{\"code\":\"KI\",\"name\":\"Kiribati\",\"stateList\":[]},{\"code\":\"KW\",\"name\":\"Kuwait\",\"stateList\":[]},{\"code\":\"LA\",\"name\":\"Laos\",\"stateList\":[]},{\"code\":\"LV\",\"name\":\"Latvia\",\"stateList\":[]},{\"code\":\"LB\",\"name\":\"Lebanon\",\"stateList\":[]},{\"code\":\"LI\",\"name\":\"Leichtenstein\",\"stateList\":[]},{\"code\":\"LS\",\"name\":\"Lesotho\",\"stateList\":[]},{\"code\":\"LR\",\"name\":\"Liberia\",\"stateList\":[]},{\"code\":\"LY\",\"name\":\"Libya\",\"stateList\":[]},{\"code\":\"LE\",\"name\":\"Line Islands\",\"stateList\":[]},{\"code\":\"LT\",\"name\":\"Lithuania\",\"stateList\":[]},{\"code\":\"LU\",\"name\":\"Luxembourg\",\"stateList\":[]},{\"code\":\"MK\",\"name\":\"Macau\",\"stateList\":[]},{\"code\":\"QM\",\"name\":\"Macedonia (Fyrom)\",\"stateList\":[]},{\"code\":\"MG\",\"name\":\"Madagascar\",\"stateList\":[]},{\"code\":\"MW\",\"name\":\"Malawi\",\"stateList\":[]},{\"code\":\"MY\",\"name\":\"Malaysia\",\"stateList\":[]},{\"code\":\"MI\",\"name\":\"Maldive Islands\",\"stateList\":[]},{\"code\":\"ML\",\"name\":\"Mali\",\"stateList\":[]},{\"code\":\"MT\",\"name\":\"Malta\",\"stateList\":[]},{\"code\":\"MR\",\"name\":\"Mariana Islands\",\"stateList\":[]},{\"code\":\"MS\",\"name\":\"Marshall Islands\",\"stateList\":[]},{\"code\":\"MQ\",\"name\":\"Martinique\",\"stateList\":[]},{\"code\":\"MM\",\"name\":\"Mauritania\",\"stateList\":[]},{\"code\":\"MU\",\"name\":\"Mauritius\",\"stateList\":[]},{\"code\":\"MX\",\"name\":\"Mexico\",\"stateList\":[]},{\"code\":\"MD\",\"name\":\"Moldova\",\"stateList\":[]},{\"code\":\"MO\",\"name\":\"Mongolia\",\"stateList\":[]},{\"code\":\"MA\",\"name\":\"Morocco\",\"stateList\":[]},{\"code\":\"MZ\",\"name\":\"Mozambique\",\"stateList\":[]},{\"code\":\"SW\",\"name\":\"Namibia\",\"stateList\":[]},{\"code\":\"NA\",\"name\":\"Nauru\",\"stateList\":[]},{\"code\":\"NE\",\"name\":\"Nepal\",\"stateList\":[]},{\"code\":\"NC\",\"name\":\"New Caledonia\",\"stateList\":[]},{\"code\":\"NZ\",\"name\":\"New Zealand\",\"stateList\":[]},{\"code\":\"NI\",\"name\":\"Nicaragua\",\"stateList\":[]},{\"code\":\"NR\",\"name\":\"Niger\",\"stateList\":[]},{\"code\":\"NG\",\"name\":\"Nigeria\",\"stateList\":[]},{\"code\":\"NS\",\"name\":\"Norfolk Islands\",\"stateList\":[]},{\"code\":\"KD\",\"name\":\"North Korea\",\"stateList\":[]},{\"code\":\"NO\",\"name\":\"Norway\",\"stateList\":[]},{\"code\":\"OM\",\"name\":\"Oman (Sultanate of)\",\"stateList\":[]},{\"code\":\"PK\",\"name\":\"Pakistan\",\"stateList\":[]},{\"code\":\"PA\",\"name\":\"Panama\",\"stateList\":[]},{\"code\":\"NU\",\"name\":\"Papua New Guinea\",\"stateList\":[]},{\"code\":\"PY\",\"name\":\"Paraguay\",\"stateList\":[]},{\"code\":\"PE\",\"name\":\"Peru\",\"stateList\":[]},{\"code\":\"PH\",\"name\":\"Philippines\",\"stateList\":[]},{\"code\":\"PI\",\"name\":\"Phoenix Islands\",\"stateList\":[]},{\"code\":\"PL\",\"name\":\"Poland\",\"stateList\":[]},{\"code\":\"PT\",\"name\":\"Portugal\",\"stateList\":[]},{\"code\":\"PR\",\"name\":\"Puerto Rico\",\"stateList\":[]},{\"code\":\"QA\",\"name\":\"Qatar\",\"stateList\":[]},{\"code\":\"RI\",\"name\":\"Reunion Islands\",\"stateList\":[]},{\"code\":\"RO\",\"name\":\"Romania\",\"stateList\":[]},{\"code\":\"QC\",\"name\":\"Russian Federation\",\"stateList\":[]},{\"code\":\"RW\",\"name\":\"Rwanda\",\"stateList\":[]},{\"code\":\"SB\",\"name\":\"Sabah\",\"stateList\":[]},{\"code\":\"SP\",\"name\":\"Saipan\",\"stateList\":[]},{\"code\":\"AS\",\"name\":\"Samoa (American)\",\"stateList\":[]},{\"code\":\"WS\",\"name\":\"Samoa (Western)\",\"stateList\":[]},{\"code\":\"SM\",\"name\":\"San Marino\",\"stateList\":[]},{\"code\":\"SA\",\"name\":\"Saudi Arabia\",\"stateList\":[]},{\"code\":\"SN\",\"name\":\"Senegal\",\"stateList\":[]},{\"code\":\"YU\",\"name\":\"Serbia \\u0026 Montenegro\",\"stateList\":[]},{\"code\":\"SC\",\"name\":\"Seychelles\",\"stateList\":[]},{\"code\":\"SL\",\"name\":\"Sierra Leona\",\"stateList\":[]},{\"code\":\"SG\",\"name\":\"Singapore\",\"stateList\":[]},{\"code\":\"QV\",\"name\":\"Slovak Republic\",\"stateList\":[]},{\"code\":\"QS\",\"name\":\"Slovenia\",\"stateList\":[]},{\"code\":\"ST\",\"name\":\"Soa Tome\",\"stateList\":[]},{\"code\":\"SO\",\"name\":\"Society Islands\",\"stateList\":[]},{\"code\":\"SI\",\"name\":\"Solomon Islands\",\"stateList\":[]},{\"code\":\"SQ\",\"name\":\"Somali Dem Rep\",\"stateList\":[]},{\"code\":\"ZA\",\"name\":\"South Africa\",\"stateList\":[]},{\"code\":\"KP\",\"name\":\"South Korea\",\"stateList\":[]},{\"code\":\"ES\",\"name\":\"Spain\",\"stateList\":[]},{\"code\":\"LK\",\"name\":\"Sri Lanka\",\"stateList\":[]},{\"code\":\"BY\",\"name\":\"St Barthelemy\",\"stateList\":[]},{\"code\":\"EU\",\"name\":\"St Eustatius\",\"stateList\":[]},{\"code\":\"JN\",\"name\":\"St John\",\"stateList\":[]},{\"code\":\"SK\",\"name\":\"St Kitts, Nevis\",\"stateList\":[]},{\"code\":\"LC\",\"name\":\"St Lucia\",\"stateList\":[]},{\"code\":\"ZY\",\"name\":\"St Martin /St Maarten\",\"stateList\":[]},{\"code\":\"VC\",\"name\":\"St Vincent\",\"stateList\":[]},{\"code\":\"SD\",\"name\":\"Sudan\",\"stateList\":[]},{\"code\":\"SR\",\"name\":\"Suriname\",\"stateList\":[]},{\"code\":\"SZ\",\"name\":\"Swaziland\",\"stateList\":[]},{\"code\":\"SE\",\"name\":\"Sweden\",\"stateList\":[]},{\"code\":\"CH\",\"name\":\"Switzerland\",\"stateList\":[]},{\"code\":\"SY\",\"name\":\"Syria\",\"stateList\":[]},{\"code\":\"TA\",\"name\":\"Tahiti (French Polynesia)\",\"stateList\":[]},{\"code\":\"TB\",\"name\":\"Taiwan\",\"stateList\":[]},{\"code\":\"TZ\",\"name\":\"Tanzania\",\"stateList\":[]},{\"code\":\"TH\",\"name\":\"Thailand\",\"stateList\":[]},{\"code\":\"NL\",\"name\":\"The Netherlands\",\"stateList\":[]},{\"code\":\"TP\",\"name\":\"Timor\",\"stateList\":[]},{\"code\":\"TG\",\"name\":\"Togo\",\"stateList\":[]},{\"code\":\"TO\",\"name\":\"Tonga\",\"stateList\":[]},{\"code\":\"TL\",\"name\":\"Tortola (British Virgin Isl)\",\"stateList\":[]},{\"code\":\"TT\",\"name\":\"Trinidad \\u0026 Tobago\",\"stateList\":[]},{\"code\":\"TN\",\"name\":\"Tunisia\",\"stateList\":[]},{\"code\":\"TR\",\"name\":\"Turkey\",\"stateList\":[]},{\"code\":\"TC\",\"name\":\"Turks and Caicos\",\"stateList\":[]},{\"code\":\"UG\",\"name\":\"Uganda\",\"stateList\":[]},{\"code\":\"UA\",\"name\":\"Ukraine\",\"stateList\":[]},{\"code\":\"UE\",\"name\":\"United Arab Emirates\",\"stateList\":[]},{\"code\":\"GB\",\"name\":\"United Kingdom\",\"stateList\":[]},{\"code\":\"UY\",\"name\":\"Uruguay\",\"stateList\":[]},{\"code\":\"US\",\"name\":\"U S A\",\"stateList\":[{\"stateCode\":\"AL\",\"stateName\":\"Alabama\"},{\"stateCode\":\"AK\",\"stateName\":\"Alaska\"},{\"stateCode\":\"AZ\",\"stateName\":\"Arizona\"},{\"stateCode\":\"AR\",\"stateName\":\"Arkansas\"},{\"stateCode\":\"CA\",\"stateName\":\"California\"},{\"stateCode\":\"CO\",\"stateName\":\"Colorado\"},{\"stateCode\":\"CT\",\"stateName\":\"Connecticut\"},{\"stateCode\":\"DE\",\"stateName\":\"Delaware\"},{\"stateCode\":\"DC\",\"stateName\":\"District Of Columbia\"},{\"stateCode\":\"FL\",\"stateName\":\"Florida\"},{\"stateCode\":\"GA\",\"stateName\":\"Georgia\"},{\"stateCode\":\"HI\",\"stateName\":\"Hawaii\"},{\"stateCode\":\"ID\",\"stateName\":\"Idaho\"},{\"stateCode\":\"IL\",\"stateName\":\"Illinois\"},{\"stateCode\":\"IN\",\"stateName\":\"Indiana\"},{\"stateCode\":\"IA\",\"stateName\":\"Iowa\"},{\"stateCode\":\"KS\",\"stateName\":\"Kansas\"},{\"stateCode\":\"KY\",\"stateName\":\"Kentucky\"},{\"stateCode\":\"LA\",\"stateName\":\"Louisiana\"},{\"stateCode\":\"ME\",\"stateName\":\"Maine\"},{\"stateCode\":\"MD\",\"stateName\":\"Maryland\"},{\"stateCode\":\"MA\",\"stateName\":\"Massachusetts\"},{\"stateCode\":\"MI\",\"stateName\":\"Michigan\"},{\"stateCode\":\"MN\",\"stateName\":\"Minnesota\"},{\"stateCode\":\"MS\",\"stateName\":\"Mississippi\"},{\"stateCode\":\"MO\",\"stateName\":\"Missouri\"},{\"stateCode\":\"MT\",\"stateName\":\"Montana\"},{\"stateCode\":\"NE\",\"stateName\":\"Nebraska\"},{\"stateCode\":\"NV\",\"stateName\":\"Nevada\"},{\"stateCode\":\"NH\",\"stateName\":\"New Hampshire\"},{\"stateCode\":\"NJ\",\"stateName\":\"New Jersey\"},{\"stateCode\":\"NM\",\"stateName\":\"New Mexico\"},{\"stateCode\":\"NY\",\"stateName\":\"New York\"},{\"stateCode\":\"NC\",\"stateName\":\"North Carolina\"},{\"stateCode\":\"ND\",\"stateName\":\"North Dakota\"},{\"stateCode\":\"OH\",\"stateName\":\"Ohio\"},{\"stateCode\":\"OK\",\"stateName\":\"Oklahoma\"},{\"stateCode\":\"OR\",\"stateName\":\"Oregon\"},{\"stateCode\":\"PA\",\"stateName\":\"Pennsylvania\"},{\"stateCode\":\"RI\",\"stateName\":\"Rhode Island\"},{\"stateCode\":\"SC\",\"stateName\":\"South Carolina\"},{\"stateCode\":\"SD\",\"stateName\":\"South Dakota\"},{\"stateCode\":\"TN\",\"stateName\":\"Tennessee\"},{\"stateCode\":\"TX\",\"stateName\":\"Texas\"},{\"stateCode\":\"UT\",\"stateName\":\"Utah\"},{\"stateCode\":\"VT\",\"stateName\":\"Vermont\"},{\"stateCode\":\"VA\",\"stateName\":\"Virginia\"},{\"stateCode\":\"WA\",\"stateName\":\"Washington\"},{\"stateCode\":\"WV\",\"stateName\":\"West Virginia\"},{\"stateCode\":\"WI\",\"stateName\":\"Wisconsin\"},{\"stateCode\":\"WY\",\"stateName\":\"Wyoming\"}]},{\"code\":\"CX\",\"name\":\"US Virgin Islands (St Croix)\",\"stateList\":[]},{\"code\":\"CV\",\"name\":\"US Virgin Islands (St Thomas)\",\"stateList\":[]},{\"code\":\"NH\",\"name\":\"Vanuatu\",\"stateList\":[]},{\"code\":\"VE\",\"name\":\"Venezuela\",\"stateList\":[]},{\"code\":\"VN\",\"name\":\"Vietnam\",\"stateList\":[]},{\"code\":\"YD\",\"name\":\"Yemen\",\"stateList\":[]},{\"code\":\"ZB\",\"name\":\"Zambia\",\"stateList\":[]},{\"code\":\"KF\",\"name\":\"Zimbabwe\",\"stateList\":[]}]";
+  var counterProd = "";
+  var iata = "";
+  var promoCouponFlag = ''; 
+  var promoCoupon = ''; 
+  var protectionsAndCoverages =  "";
+  var discountNumber = "";
+  var couponCode  =""
+</script>
+
+<!-- GA Implemantation-->
+<script type="text/javascript">
+	window.globalErrorStatus = "default";
+</script>
+
+<!-- When in Authoring mode -->
+
+
+ <!-- When in publish mode -->
+<div>
+	<div ng-if="isAuthenticated" ng-controller="ProfileDashboardController as vm" class="hide-on-load">
+		<div class="home-profile-module container-fluid cf-pad-0">
+			<div ng-if="vm.isPoints" class="next-reservation noPad">
+				
+
+
+			</div>
+			<div ng-if="vm.isUpcoming" ng-class="{'col-sm-6 col-xs-12': vm.isPoints || vm.isPast ,'col-sm-12 col-xs-12': !vm.isPoints && !vm.isPast}" class="next-reservation noPad">			
+				
+
+    
+    
+    
+    <div class="ghost">
+
+</div>
+
+
+
+			</div>			
+			<div ng-if="vm.isPast" ng-class="{'col-sm-6 col-xs-12': vm.isPoints || vm.isUpcoming ,'col-sm-12 col-xs-12': !vm.isPoints && !vm.isUpcoming}" class="next-reservation noPad">
+				
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container-fluid promoSection" id="middle">
+	<div class="promoAreaHeader">
+		<p class="deservBrk">Wherever you’re heading, make Avis part of your design</p>
+		<p class=""> We&#39;ll help get you there with the offers below</p>                                                              
+	</div> 
+</div>
+<div>
+	<div class="grid-wrapper container-fluid ng-scope">
+	<div class="row">
+		<div class="cell col-xs-12 col-sm-6 col-md-8">
+			<div>
+
+    
+    
+    
+    <div class="parbase custom-teaser teaser">
+
+
+
+        <script type="text/javascript">$CQ(function() {
+            initializeTeaserLoader([{"path":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign1/new-suvs","name":"new-suvs","title":"default","campainName":"campaign1","campaignPath":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign1","thumbnail":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign1/new-suvs.thumb.png","id":"campaign1_new-suvs","segments":[],"tags":[]}], "first", "_content_avis_oc_au_en_AU_home_jcr_content_homeoffers_d1_custom_teaser_8a52", "false", "null", "/content/avis/oc/au/en_AU/home/jcr:content/homeoffers/d1/custom_teaser_8a52");
+        });</script>
+        <div ng-controller='TeaserController as tvm' delete-duplicate-campaign>
+	        <div id="_content_avis_oc_au_en_AU_home_jcr_content_homeoffers_d1_custom_teaser_8a52" class="campaign campaign-campaign1"><noscript><div class="par parsys"><div class="image parbase section home-offers">
+<div>
+	<div class="cell-content cell-ht-1x-sm  " style="background-image: url(/content/dam/avis/oc/au/common/offers/5th-day-free-1424x600-home.jpg);" title="5th Day Free on SUVs">
+		<div class="cell-content-wrapper">
+			<div class="cell-content-text ">
+				<h3 class="text-size-2x text-color-white"><span class="text-color-black"><b>5th Day Free</b></span></h3>
+				
+					<p class="text-size-1_5x text-color-white"><span class="text-color-black">Rent from our new range of SUV's.</span></p>
+				
+			</div>
+			
+				<a href="/en/deals/au-offers/5th-day-free" class="btn btn-primary btn-primary-avis" target="_self">Book Now</a>
+			
+		</div>
+	</div>
+</div>
+</div>
+
+</div>
+ </noscript>
+	
+	        </div>
+        </div> 
+</div>
+
+
+</div>
+		</div>
+		<div class="cell col-xs-12 col-sm-6 col-md-4">
+			<div>
+
+    
+    
+    
+    <div class="parbase custom-teaser teaser">
+
+
+
+        <script type="text/javascript">$CQ(function() {
+            initializeTeaserLoader([{"path":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign2/earn-points","name":"earn-points","title":"Qantas Points","campainName":"campaign2","campaignPath":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign2","thumbnail":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign2/earn-points.thumb.png","id":"campaign2_earn-points","segments":[],"tags":[]}], "first", "_content_avis_oc_au_en_AU_home_jcr_content_homeoffers_d2_custom_teaser_8e58", "false", "null", "/content/avis/oc/au/en_AU/home/jcr:content/homeoffers/d2/custom_teaser_8e58");
+        });</script>
+        <div ng-controller='TeaserController as tvm' delete-duplicate-campaign>
+	        <div id="_content_avis_oc_au_en_AU_home_jcr_content_homeoffers_d2_custom_teaser_8e58" class="campaign campaign-campaign2"><noscript><div class="par parsys"><div class="image parbase section home-offers">
+<div>
+	<div class="cell-content cell-ht-1x-sm  " style="background-image: url(/content/dam/avis/oc/au/common/offers/1000-points-850x765-home.jpg);" title="Bonus Qantas Points">
+		<div class="cell-content-wrapper">
+			<div class="cell-content-text ">
+				<h3 class="text-size-2x text-color-white"><span class="text-color-black"><b>1000 Points</b></span></h3>
+				
+					<p class="text-size-1_5x text-color-white"><span class="text-color-black">Boost your Qantas Points</span></p>
+				
+			</div>
+			
+				<a href="/en/deals/au-offers/1000-qantas-points" class="btn btn-primary btn-primary-avis" target="_self">Find out more</a>
+			
+		</div>
+	</div>
+</div>
+</div>
+
+</div>
+ </noscript>
+	
+	        </div>
+        </div> 
+</div>
+
+
+</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="cell col-xs-12 col-md-8">
+		    <div class="row">
+		        <div class="cell col-xs-12 col-sm-6 col-md-12">
+		            <div class="row">
+		               <div class="cell col-xs-12 col-md-6">
+			              <div>
+
+    
+    
+    
+    <div class="parbase custom-teaser teaser">
+
+
+
+        <script type="text/javascript">$CQ(function() {
+            initializeTeaserLoader([{"path":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign3/app","name":"app","title":"Avis App","campainName":"campaign3","campaignPath":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign3","thumbnail":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign3/app.thumb.png","id":"campaign3_app","segments":[],"tags":[]}], "first", "_content_avis_oc_au_en_AU_home_jcr_content_homeoffers_d3_custom_teaser_4a58", "false", "null", "/content/avis/oc/au/en_AU/home/jcr:content/homeoffers/d3/custom_teaser_4a58");
+        });</script>
+        <div ng-controller='TeaserController as tvm' delete-duplicate-campaign>
+	        <div id="_content_avis_oc_au_en_AU_home_jcr_content_homeoffers_d3_custom_teaser_4a58" class="campaign campaign-campaign3"><noscript><div class="par parsys"><div class="image parbase section home-offers">
+<div>
+	<div class="cell-content cell-ht-1x-sm  " style="background-image: url(/content/dam/avis/oc/au/common/offers/app-home-850x765.jpg);">
+		<div class="cell-content-wrapper">
+			<div class="cell-content-text ">
+				<h3 class="text-size-2x text-color-white"><span class="text-color-black"><b>Avis App</b></span></h3>
+				
+					<p class="text-size-1_5x text-color-white"><span class="text-color-black">Rent on the go</span>
+<br />
+
+
+</p>
+				
+			</div>
+			
+				<a href="/en/deals/au-offers/avis-app" class="btn btn-primary btn-primary-avis" target="_self">Download Now</a>
+			
+		</div>
+	</div>
+</div>
+</div>
+
+</div>
+ </noscript>
+	
+	        </div>
+        </div> 
+</div>
+
+
+</div>
+		               </div>
+		                <div class="cell col-xs-12 col-md-6">
+		                   <div>
+
+    
+    
+    
+    <div class="parbase custom-teaser teaser">
+
+
+
+        <script type="text/javascript">$CQ(function() {
+            initializeTeaserLoader([{"path":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign4/supercars","name":"supercars","title":"Anonymous","campainName":"campaign4","campaignPath":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign4","thumbnail":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign4/supercars.thumb.png","id":"campaign4_supercars","segments":[],"tags":[]}], "first", "_content_avis_oc_au_en_AU_home_jcr_content_homeoffers_d4_custom_teaser_8887", "false", "null", "/content/avis/oc/au/en_AU/home/jcr:content/homeoffers/d4/custom_teaser_8887");
+        });</script>
+        <div ng-controller='TeaserController as tvm' delete-duplicate-campaign>
+	        <div id="_content_avis_oc_au_en_AU_home_jcr_content_homeoffers_d4_custom_teaser_8887" class="campaign campaign-campaign4"><noscript><div class="par parsys"><div class="image parbase section home-offers">
+<div>
+	<div class="cell-content cell-ht-1x-sm  " style="background-image: url(/content/dam/avis/oc/au/common/offers/supercars-homepage-850x709.jpg);">
+		<div class="cell-content-wrapper">
+			<div class="cell-content-text ">
+				<h3 class="text-size-2x text-color-white"><span class="text-color-white text-color-black"><b>Experience Supercars</b></span></h3>
+				
+					<p class="text-size-1_5x text-color-white"><span class="text-color-white text-color-black">Get your 4th Day Free</span></p>
+				
+			</div>
+			
+				<a href="/en/deals/au-offers/experience-supercars" class="btn btn-primary btn-primary-avis" target="_self">Find out more</a>
+			
+		</div>
+	</div>
+</div>
+</div>
+
+</div>
+ </noscript>
+	
+	        </div>
+        </div> 
+</div>
+
+
+</div>
+		                </div>
+		             </div>
+		         </div>
+		         <div class="cell col-xs-12 col-sm-6 col-md-12">
+		             <div class="row">
+		                 <div class="cell col-xs-12">
+		                 <div>
+
+    
+    
+    
+    <div class="parbase custom-teaser teaser">
+
+
+
+        <script type="text/javascript">$CQ(function() {
+            initializeTeaserLoader([{"path":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign6/corporate-rewards","name":"corporate-rewards","title":"Corporate Rewards","campainName":"campaign6","campaignPath":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign6","thumbnail":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign6/corporate-rewards.thumb.png","id":"campaign6_corporate-rewards","segments":[],"tags":[]}], "first", "_content_avis_oc_au_en_AU_home_jcr_content_homeoffers_d5_custom_teaser_fb09", "false", "null", "/content/avis/oc/au/en_AU/home/jcr:content/homeoffers/d5/custom_teaser_fb09");
+        });</script>
+        <div ng-controller='TeaserController as tvm' delete-duplicate-campaign>
+	        <div id="_content_avis_oc_au_en_AU_home_jcr_content_homeoffers_d5_custom_teaser_fb09" class="campaign campaign-campaign6"><noscript><div class="par parsys"><div class="image parbase section home-offers">
+<div>
+	<div class="cell-content cell-ht-1x-sm cell-ht-2x-md " style="background-image: url(/content/dam/avis/oc/au/common/offers/corporate-rewards-v2-1424x600-home.jpg);" title="business programs">
+		<div class="cell-content-wrapper">
+			<div class="cell-content-text text-align-top-center-md top-140">
+				<h3 class="text-size-2x text-color-white"><span class="text-color-black"><b>Avis Corporate Rewards</b></span></h3>
+				
+					<p class="text-size-1_5x text-color-white"><span class="text-color-black">For small to medium size business</span></p>
+				
+			</div>
+			
+				<a href="/en/business-programs/join-avis-corporate-awards" class="btn btn-primary btn-primary-avis" target="_self">Learn More</a>
+			
+		</div>
+	</div>
+</div>
+</div>
+
+</div>
+ </noscript>
+	
+	        </div>
+        </div> 
+</div>
+
+
+</div>
+		                 </div>
+		              </div>    
+		         </div>     
+		    </div>
+		</div>
+		<div class="cell col-xs-12 col-md-4">
+			<div>
+
+    
+    
+    
+    <div class="parbase custom-teaser teaser">
+
+
+
+        <script type="text/javascript">$CQ(function() {
+            initializeTeaserLoader([{"path":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign5/signature-series","name":"signature-series","title":"Signature Series","campainName":"campaign5","campaignPath":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign5","thumbnail":"/content/campaigns/avis/oc/au/en_AU/HomeOfferGrid/campaign5/signature-series.thumb.png","id":"campaign5_signature-series","segments":[],"tags":[]}], "first", "_content_avis_oc_au_en_AU_home_jcr_content_homeoffers_d6_custom_teaser_78bb", "false", "null", "/content/avis/oc/au/en_AU/home/jcr:content/homeoffers/d6/custom_teaser_78bb");
+        });</script>
+        <div ng-controller='TeaserController as tvm' delete-duplicate-campaign>
+	        <div id="_content_avis_oc_au_en_AU_home_jcr_content_homeoffers_d6_custom_teaser_78bb" class="campaign campaign-campaign5"><noscript><div class="par parsys"><div class="image parbase section home-offers">
+<div>
+	<div class="cell-content cell-ht-1x-sm cell-ht-1x-md cell-ht-2x-lg bg-pos-center-bottom " style="background-image: url(/content/dam/avis/oc/au/common/offers/signature-series-home-850x1531V3.jpg);" title="Avis Signature Series $50 Off">
+		<div class="cell-content-wrapper">
+			<div class="cell-content-text text-align-top-center-md top-140">
+				<h3 class="text-size-2x text-color-white"><b><span class="text-color-black">Avis Signature Series</span></b></h3>
+				
+					<p class="text-size-1_5x text-color-white"><span class="text-color-black">Introducing BMW Avis Signature Series</span></p>
+				
+			</div>
+			
+				<a href="/en/deals/au-offers/avis-signature-series" class="btn btn-primary btn-primary-avis" target="_self">Get $50 off</a>
+			
+		</div>
+	</div>
+</div>
+</div>
+
+</div>
+ </noscript>
+	
+	        </div>
+        </div> 
+</div>
+
+
+</div>
+		</div>
+	</div>
+	<div>
+
+</div>
+</div>
+</div>
+
+	<!-- Footer in author instance. Non-corporate flow starts here -->
+
+<!-- Footer in author instance. Non-corporate flow ends here -->
+
+<!-- Footer in publish instance. Non-corporate flow starts here -->
+<div>
+	<div ng-if="!isCorporateFlow">
+		<div class="clear"></div>	
+
+<footer class="footer">
+	<div class="spinnerLoader" ng-class="{'hidden':!requestInProgress}">
+  		<svg viewBox="0 0 100 100">
+			<circle cx="50" cy="50" r="40" stroke="#d4002a" stroke-width="3" fill="none" stroke-dasharray="1,150"></circle>
+		</svg>
+  	</div>
+  <div id="footer" class="container-fluid cf-pad-0" ng-controller="FooterController as vm">
+  <div class="footer-nav row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+         
+			<div><div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="parsys column iparsys"><div class="column-control section"><section class=" container-fluid cf-pad-0 three-colSec row  "> 
+
+
+
+
+	
+		<div class="cc-columns col-lg-2 col-md-2 col-sm-3">
+				
+
+			
+            
+			    
+      <div>
+			
+            <a onclick="return showOrHide('menulink1');" class="footer-header arrow-down-grey-mob">
+				Popular Locations</a>
+				<ul id="menulink1">
+					<div><div class="footer-list section">
+
+	<div>
+		
+
+			
+				<li class="hide-mobile">
+			
+			
+
+			
+			
+
+			<a href="/en/locations/au/ns/mascot/syd" target="_self">Sydney Car Rental</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/locations/au/vi/melbourne/mel" target="_self">Melbourne Car Rental</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/locations/au/ql/coolangatta/ool" target="_self">Gold Coast Car Rental</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/locations/au/ql/brisbane/bne" target="_self">Brisbane Car Rental</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/locations/au/wa/perth/per" target="_self">Perth Car Rental</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/locations/au/sa/adelaide/adl" target="_self">Adelaide Car Rental</a>
+			</li>
+		
+		
+
+	</div>
+</div>
+
+</div>
+				</ul>
+				     
+			    </div>
+
+
+            <div>
+			
+		</div>
+	</div>
+
+		<div class="cc-columns col-lg-2 col-md-2 col-sm-3">
+				
+
+			
+            
+			    
+      <div>
+			
+            <a onclick="return showOrHide('menulink2');" class="footer-header arrow-down-grey-mob">
+				Rental Information</a>
+				<ul id="menulink2">
+					<div><div class="footer-list section">
+
+	<div>
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/customer-service/faqs" target="_self">FAQs</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/cars/vehicles/au" target="_self">Car Guide</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/trucks/vehicles/au" target="_self">Utes, Vans, Trucks &amp; Buses</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/reservation/get-e-receipt" target="_self">Request a Tax Invoice</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/loyalty-profile/avis-preferred/login" target="_self">Review My Activity</a>
+			</li>
+		
+		
+
+	
+		
+		
+			
+			
+
+			
+				<li>
+			
+			
+			<a href="/content/dam/avis/oc/au/common/files/AvisAU-StdTsCs_F132CORP_TCs_0711_LR.pdf" target="_blank">Rental Terms and Conditions</a>
+			</li>
+		
+
+	</div>
+</div>
+
+</div>
+				</ul>
+				     
+			    </div>
+
+
+            <div>
+			
+		</div>
+	</div>
+
+		<div class="cc-columns col-lg-2 col-md-2 col-sm-3">
+				
+
+			
+            
+			    
+      <div>
+			
+            <a onclick="return showOrHide('menulink3');" class="footer-header arrow-down-grey-mob">
+				Services</a>
+				<ul id="menulink3">
+					<div><div class="footer-list section">
+
+	<div>
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/loyalty-profile/avis-preferred" target="_self">Sign Up for Avis Preferred</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/products-and-services/services/mini-lease" target="_self">Mini Lease Program</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/business-programs/miles-points-partners" target="_self">Points Partners</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/business-programs/miles-points-partners/airlines/qantas-airlines" target="_self">Earn Qantas Points</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/products-and-services/protections" target="_self">Protections &amp; Coverages</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/products-and-services/services/avis-app" target="_self">Mobile App</a>
+			</li>
+		
+		
+
+	</div>
+</div>
+
+</div>
+				</ul>
+				     
+			    </div>
+
+
+            <div>
+			
+		</div>
+	</div>
+
+		<div class="cc-columns col-lg-2 col-md-2 col-sm-3">
+				
+
+			
+            
+			    
+      <div>
+			
+            <a onclick="return showOrHide('menulink4');" class="footer-header arrow-down-grey-mob">
+				Deals</a>
+				<ul id="menulink4">
+					<div><div class="footer-list section">
+
+	<div>
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/deals/au-offers" target="_self">Australia Car Deals</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/deals/truck-offers" target="_self">Australia Truck Deals</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/deals/oneway-offers" target="_self">One Way Deals</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/deals/international/new-zealand" target="_self">New Zealand Deals</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/deals/international" target="_self">International Travel Deals</a>
+			</li>
+		
+		
+
+	
+		
+		
+			
+			
+
+			
+				<li>
+			
+			
+			<a href="https://pages.e.avis.com.au/signup" target="_blank">Sign Up e-Newsletter</a>
+			</li>
+		
+
+	</div>
+</div>
+
+</div>
+				</ul>
+				     
+			    </div>
+
+
+            <div>
+			
+		</div>
+	</div>
+
+		<div class="cc-columns col-lg-2 col-md-2 col-sm-3">
+				
+
+			
+            
+			    
+      <div>
+			
+            <a onclick="return showOrHide('menulink5');" class="footer-header arrow-down-grey-mob">
+				Company Information</a>
+				<ul id="menulink5">
+					<div><div class="footer-list section">
+
+	<div>
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/about-avis" target="_self">About Avis</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/about-avis/company-information" target="_self">Corporate Information</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/about-avis/company-information/awards-and-recognition" target="_self">Awards and Recognition</a>
+			</li>
+		
+		
+
+	
+		
+		
+			
+			
+
+			
+				<li>
+			
+			
+			<a href="http://ir.avisbudgetgroup.com/releases.cfm?ReleasesType=Avis+News&Year" target="_blank">Press Room</a>
+			</li>
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/terms-of-use" target="_self">Terms of Use</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/privacy/au" target="_self">Privacy Policy</a>
+			</li>
+		
+		
+
+	</div>
+</div>
+
+</div>
+				</ul>
+				     
+			    </div>
+
+
+            <div>
+			
+		</div>
+	</div>
+
+		<div class="cc-columns col-lg-2 col-md-2 col-sm-3">
+				
+
+			
+      <div>
+			
+			    </div>
+
+
+            <div>
+			
+				<div class="custom-Partners">
+					<a onclick="return showOrHide('menulink6');" class="footer-header arrow-down-grey-mob">Avis Support</a>
+					<ul id="menulink6">
+						<div><div class="footer-list section">
+
+	<div>
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/customer-service/worldwide-telephone-numbers" target="_self">Reservations 136 333</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/customer-service" target="_self">Customer Service 1800 141 000</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/customer-service/comments-and-feedback/avis-website-assistance-feedback" target="_self">Avis.com.au Assistance</a>
+			</li>
+		
+		
+
+	
+		
+		
+			
+			
+
+			
+				<li>
+			
+			
+			<a href="http://www.avistravelagents.com.au/" target="_blank">Travel Agents</a>
+			</li>
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/business-programs/join-avis-corporate-awards" target="_self">Small Business Program</a>
+			</li>
+		
+		
+
+	
+		
+
+			
+			
+
+			
+				<li>
+			
+			
+
+			<a href="/en/sitemap" target="_self">Sitemap</a>
+			</li>
+		
+		
+
+	</div>
+</div>
+
+</div>
+					</ul>
+				</div>
+			
+		</div>
+	</div>
+
+
+</section>
+</div>
+</div>
+</div>
+</div>	
+         
+            </div> 
+    </div><hr/> 
+         
+    		<div class="social-part row">
+			
+<form name="myForm">
+	<div class="col-xs-12 col-sm-6 col-lg-7 forpadleftzero">
+		<script type="text/javascript">
+			var countryLanguage = "{\"locales\":[{\"country\":\"US\",\"displaycountry\":\"US/Global\",\"languages\":[{\"language\":\"English\",\"url\":\"www.avis.com/en/home\"},{\"language\":\" Français\",\"url\":\"www.avis.com/fr/home\"},{\"language\":\" Español\",\"url\":\"www.avis.com/es/home\"},{\"language\":\" Português\",\"url\":\"www.avis.com/pt/home\"}]},{\"country\":\"Canada\",\"displaycountry\":\"Canada\",\"languages\":[{\"language\":\"English\",\"url\":\"www.avis.ca\"},{\"language\":\"Français\",\"url\":\"www.avis.ca\"}]},{\"country\":\"Australia\",\"displaycountry\":\"Australia\",\"languages\":[{\"language\":\"English\",\"url\":\"www.avis.com.au/en/home\\n\"}]},{\"country\":\"NewZealand\",\"displaycountry\":\"New Zealand\",\"languages\":[{\"language\":\"English\",\"url\":\" https://www.avis.co.nz\"}]},{\"country\":\"-------------------\",\"displaycountry\":\"------------------------\",\"languages\":[{\"language\":\"English\",\"url\":\"https://www.avis.com/car-rental/avisHome/home.ac?COUNTRY=US&LANGUAGE=en\"},{\"language\":\" Français\",\"url\":\"https://www.avis.com/car-rental/avisHome/redirectURL.ac\"},{\"language\":\" Español\",\"url\":\"https://www.avis.com/car-rental/avisHome/redirectURL.ac\"}]},{\"country\":\"Argentina\",\"displaycountry\":\"Argentina\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.ar\"}]},{\"country\":\"Armenia\",\"displaycountry\":\"Armenia\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.am\"}]},{\"country\":\"Austria\",\"displaycountry\":\"Austria\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.at\"}]},{\"country\":\"Belgium\",\"displaycountry\":\"Belgium\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.be\"}]},{\"country\":\"Bosnia\",\"displaycountry\":\"Bosnia\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.ba\"}]},{\"country\":\"Brazil\",\"displaycountry\":\"Brazil\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.br\"}]},{\"country\":\"Bulgaria\",\"displaycountry\":\"Bulgaria\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.bg\"}]},{\"country\":\"China\",\"displaycountry\":\"China\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avischina.com\"}]},{\"country\":\"Chile\",\"displaycountry\":\"Chile\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.cl\"}]},{\"country\":\"Colombia\",\"displaycountry\":\"Colombia\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.co\"}]},{\"country\":\"Croatia\",\"displaycountry\":\"Croatia\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.hr\"}]},{\"country\":\"Denmark\",\"displaycountry\":\"Denmark\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.dk\"}]},{\"country\":\"Dominican_Republic\",\"displaycountry\":\"Dominican Republic\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.do\"}]},{\"country\":\"Ecuador\",\"displaycountry\":\"Ecuador\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.ec\"}]},{\"country\":\"ElSalvador\",\"displaycountry\":\"El Salvador\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.sv\"}]},{\"country\":\"FaroeIslands\",\"displaycountry\":\"Faroe Islands\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.fo\"}]},{\"country\":\"Fiji\",\"displaycountry\":\"Fiji\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.fj\"}]},{\"country\":\"Finland\",\"displaycountry\":\"Finland\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.fi\"}]},{\"country\":\"France\",\"displaycountry\":\"France\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.fr\"}]},{\"country\":\"Germany\",\"displaycountry\":\"Germany\",\"languages\":[{\"language\":\"NA\",\"url\":\"http://www.avis.de/\"}]},{\"country\":\"Guadeloupe\",\"displaycountry\":\"Guadeloupe\",\"languages\":[{\"language\":\"NA\",\"url\":\"us.avis-antilles.fr\"}]},{\"country\":\"Guatemala\",\"displaycountry\":\"Guatemala\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.gt\"}]},{\"country\":\"Guam\",\"displaycountry\":\"Guam\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avisworld.com\"}]},{\"country\":\"Honduras\",\"displaycountry\":\"Honduras\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.hn\"}]},{\"country\":\"Hongkong\",\"displaycountry\":\"Hongkong\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.hk\"}]},{\"country\":\"Hungary\",\"displaycountry\":\"Hungary\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.hu\"}]},{\"country\":\"India\",\"displaycountry\":\"India\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avisworld.com\"}]},{\"country\":\"Indonesia\",\"displaycountry\":\"Indonesia\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avisworld.com\"}]},{\"country\":\"Ireland\",\"displaycountry\":\"Ireland\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.ie\"}]},{\"country\":\"Israel\",\"displaycountry\":\"Israel\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.co.il\"}]},{\"country\":\"Italy\",\"displaycountry\":\"Italy\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avisautonoleggio.it\"}]},{\"country\":\"Jamaica\",\"displaycountry\":\"Jamaica\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.jm\"}]},{\"country\":\"Japan\",\"displaycountry\":\"Japan\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis-japan.com\"}]},{\"country\":\"Korea\",\"displaycountry\":\"Korea\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.co.kr\"}]},{\"country\":\"Kuwait\",\"displaycountry\":\"Kuwait\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.kw\"}]},{\"country\":\"Lebanon\",\"displaycountry\":\"Lebanon\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.lb\"}]},{\"country\":\"Macedonia\",\"displaycountry\":\"Macedonia\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.mk\"}]},{\"country\":\"Malaysia\",\"displaycountry\":\"Malaysia\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.my\"}]},{\"country\":\"Martinique\",\"displaycountry\":\"Martinique\",\"languages\":[{\"language\":\"NA\",\"url\":\"us.avis-antilles.fr\"}]},{\"country\":\"Mexico\",\"displaycountry\":\"Mexico\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.mx\"}]},{\"country\":\"Morocco\",\"displaycountry\":\"Morocco\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.ma\"}]},{\"country\":\"Netherland\",\"displaycountry\":\"Netherland\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.nl\"}]},{\"country\":\"Nicaragua\",\"displaycountry\":\"Nicaragua\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.ni\"}]},{\"country\":\"Norway\",\"displaycountry\":\"Norway\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.no\"}]},{\"country\":\"Pakistan\",\"displaycountry\":\"Pakistan\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.pk\"}]},{\"country\":\"Panama\",\"displaycountry\":\"Panama\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.pa\"}]},{\"country\":\"Peru\",\"displaycountry\":\"Peru\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.pe\"}]},{\"country\":\"Philippines\",\"displaycountry\":\"Philippines\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.ph\"}]},{\"country\":\"Poland\",\"displaycountry\":\"Poland\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.pl\"}]},{\"country\":\"Portugal\",\"displaycountry\":\"Portugal\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.pt\"}]},{\"country\":\"PuertoRico\",\"displaycountry\":\"Puerto Rico\",\"languages\":[{\"language\":\"English\",\"url\":\"https://www.avis.com/car-rental/avisHome/home.ac?COUNTRY=US&LANGUAGE=en\"},{\"language\":\" Español\",\"url\":\"https://www.avis.com/car-rental/avisHome/home.ac\"}]},{\"country\":\"Romania\",\"displaycountry\":\"Romania\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.ro\"}]},{\"country\":\"Russia\",\"displaycountry\":\"Russia\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avisrussia.ru\"}]},{\"country\":\"SaudiArabia\",\"displaycountry\":\"Saudi Arabia\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.sa\"}]},{\"country\":\"Singapore\",\"displaycountry\":\"Singapore\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.sg\"}]},{\"country\":\"South_Africa\",\"displaycountry\":\"South Africa\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.co.za\"}]},{\"country\":\"Spain\",\"displaycountry\":\"Spain\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.es\"}]},{\"country\":\"St_Maarten_Or_St_Martin\",\"displaycountry\":\"St Maarten/St Martin\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis-sxm.com\"}]},{\"country\":\"Suriname\",\"displaycountry\":\"Suriname\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avissuriname.com\"}]},{\"country\":\"Sweden\",\"displaycountry\":\"Sweden\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.se\"}]},{\"country\":\"Switzerland\",\"displaycountry\":\"Switzerland\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.ch\"}]},{\"country\":\"Tahiti\",\"displaycountry\":\"Tahiti\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis-tahiti.com\"}]},{\"country\":\"Taiwan\",\"displaycountry\":\"Taiwan\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis-taiwan.com/en/home.html\"}]},{\"country\":\"Thailand\",\"displaycountry\":\"Thailand\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avisthailand.com\"}]},{\"country\":\"Turkey\",\"displaycountry\":\"Turkey\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.tr\"}]},{\"country\":\"Turks_And_Caicos\",\"displaycountry\":\"Turks and Caicos\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.tc\"}]},{\"country\":\"Ukraine\",\"displaycountry\":\"Ukraine\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.com.ua\"}]},{\"country\":\"UnitedArabEmirates\",\"displaycountry\":\"United Arab Emirates\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avisuae.ae\"}]},{\"country\":\"UnitedKingdom\",\"displaycountry\":\"United Kingdom\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.co.uk\"}]},{\"country\":\"Vanuatu\",\"displaycountry\":\"Vanuatu\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avisvanuatu.com\"}]},{\"country\":\"VirginIslands\",\"displaycountry\":\"Virgin Islands\",\"languages\":[{\"language\":\"English\",\"url\":\"https://www.avis.com/car-rental/avisHome/home.ac?COUNTRY=US&LANGUAGE=en\"}]},{\"country\":\"Yugoslavia\",\"displaycountry\":\"Yugoslavia\",\"languages\":[{\"language\":\"NA\",\"url\":\"www.avis.co.yu\"}]}]}";
+		</script>
+		<div class="removeienineEffects arrow-down-grey bgcolor-black" ng-if="!(vm.sitePreference!=carRentalConstant.localeEnUS && isAuthenticated)">
+			<select class="country custom form-control1" ng-model="vm.selectedContry" ng-options="y.displaycountry  for (x, y) in vm.CountryData" name="country" id="coun" ng-change="vm.update()">
+			</select>
+		</div>
+		<div class="removeienineEffects arrow-down-grey bgcolor-black" ng-if="!(vm.sitePreference!=carRentalConstant.localeEnUS && isAuthenticated)">
+			<select class="language custom form-control2" ng-model="vm.selectedLang.url" ng-change="vm.updateNav()">
+		        <option ng-repeat="lang in vm.defaultLang" href="{{lang.url}}" value="{{lang.url}}">
+		        	{{lang.language}}
+		        </option>
+		    </select>
+		</div>
+		<div></div>
+	</div>
+</form>
+        	<div class="col-xs-12 col-sm-6 col-lg-5 ftMrTop">
+				<div><div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="parsys iparsys Link"><div class="social-link section">
+
+	<div class="fltRight forbackgroundg">
+		
+			
+				<a class="socialIcons-img icon-facebook" href="https://www.facebook.com/avisaustralia" title="Follow us on Facebook" alt="Follow us on Facebook" target="_blank"></a>
+			
+		
+			
+				<a class="socialIcons-img icon-instagram" href="https://www.instagram.com/avisaustralia" title="Follow us on Instagram" alt="Follow us on Instagram" target="_blank"></a>
+			
+		
+	</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+			</div><hr/>  
+   		
+   			<div class="lastColumn">
+    		<div><div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="parsys Icons iparsys"><div class="security-icons section">
+<div class="row">
+	
+	<div class="securityIcon col-sm-6 col-xs-12 pull-right">
+		<div class="checkedg">
+			
+				
+					<span class="icon-img"><a href="https://privacy.truste.com/privacy-seal/Avis-Budget-Group,-Inc-/validation?rid=4083f3d3-a86c-45ed-b0ad-09c7b1fabfea" target="_blank"><img class="secIcon" src="/etc/designs/platform/clientlib/images/icon-truste.png" alt="TRUSTe online privacy certification" title="TRUSTe online privacy certification"></a></span>
+				
+			
+				
+					<span class="icon-img"><a href="/en/deals/au-offers/avis-app" target="_blank"><img class="secIcon" src="/etc/designs/platform/clientlib/images/icon-avis.png" alt="Avis App Icon" title="Avis App Icon"></a></span>
+				
+			
+				
+					<span class="icon-img"><a href="https://sealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=www.avis.com.au&lang=en&lang=en%20" target="_blank"><img class="secIcon" src="/etc/designs/platform/clientlib/images/icon-norton.png" alt="norton" title="norton"></a></span>
+				
+			
+		</div>
+	</div>
+	
+	
+	<div class="col-sm-6 col-xs-12">
+		<div class="copyRightPart ">
+			<div class="copyrights checkedg">Copyright © 2017 Avis Rent A Car System, LLC</div>
+		</div>
+		
+	</div>
+</div></div>
+<div class="call-to-action section"></div>
+</div>
+</div>
+</div>
+			</div>
+  </div> 
+  <div ng-include src="mapModalPath"></div>
+ <div ng-include src="keyDropPath"></div>
+  
+   <!-- Session timeout properties -->
+   
+  <div type="hidden" session-timeout-properties>
+  	<div ng-init="redirectLocation = '/en/home'"></div>
+  	<div ng-init="warningModal = ''"></div>
+  	<div ng-init="overrideRedirect = 'true'"></div>
+  	<div>
+  		<div ng-init="idleThreshold = '27'"></div>
+  		<div ng-init="warningThreshold = '2'"></div>
+  		<div ng-init="authenticatedLocation = '/en/loyalty-profile/avis-preferred/login'"></div>
+  		<div ng-init="recognizedLocation = '/en/home'"></div>
+  	</div>
+  </div>
+
+</footer>
+
+	</div>
+</div>
+<!-- Footer in publish instance. Non-corporate flow ends here -->
+
+
+	<!-- Footer in author instance. Corporate flow starts here -->
+	
+	<!-- Footer in author instance. Corporate flow ends here -->
+	
+	<!-- Footer in publish instance. Corporate flow starts here -->
+	<div>
+		<div ng-if="isCorporateFlow">
+			<!-- If short URL is not enabled, footer URL would be complete URL with html extension -->
+			
+			<!-- If short URL is enabled, footer URL would be short without html extension -->
+			<div>
+				<div id="corp-footer-publish" ng-include src="'/en/footer.corporate'"></div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer in publish instance. Corporate flow ends here -->
+
+	
+</div>
+
+
+   
+	<script type="text/javascript">
+		var apiurl = "/webapi/v1";
+		var rootpath = "/en";
+		var imageBasePath = "/content/dam/cars/";
+		var cbpLandingPageURL = "/car-rental/profile/go.ac";
+		var locale = "en";
+		var domain = "au";
+		var brand = "avis";
+		var countrySelect = "Australia";
+		var contextPath = "";
+		var build = "";
+		var serviceUserName = "AVISCOM";
+		var servicePassword = "AVISCOM";
+		var revision = "1212121312";
+		var buildDate = "6/8/2016";
+		var httpTimeout = "20000";
+		var serviceTimeoutList = "[{\"url\":\"/profile/activate\",\"timeOut\":\"20000\"},{\"url\":\"/profile/cbpsegment\",\"timeOut\":\"20000\"},{\"url\":\"/profile/concurtrips\",\"timeOut\":\"90000\"},{\"url\":\"/profile/create\",\"timeOut\":\"20000\"},{\"url\":\" /profile/forget-password\",\"timeOut\":\"20000\"},{\"url\":\"/profile/init\",\"timeOut\":\"20000\"},{\"url\":\"/profile/login\",\"timeOut\":\"20000\"},{\"url\":\"/profile/logout\",\"timeOut\":\"20000\"},{\"url\":\" /profile/loyalty-details\",\"timeOut\":\"80000\"},{\"url\":\"/profile/membercard\",\"timeOut\":\"20000\"},{\"url\":\"/profile/noshow-cancelreservation\",\"timeOut\":\"80000\"},{\"url\":\" /profile/past-rentals\",\"timeOut\":\"80000\"},{\"url\":\"/profile/reset-password\",\"timeOut\":\"20000\"},{\"url\":\"/profile/send-activationemail\",\"timeOut\":\"20000\"},{\"url\":\" /profile/unlock\",\"timeOut\":\"20000\"},{\"url\":\"/profile/upcoming-reservations\",\"timeOut\":\"80000\"},{\"url\":\"/profile/update\",\"timeOut\":\"20000\"},{\"url\":\"/profile/update-password\",\"timeOut\":\"20000\"},{\"url\":\" /profile/validate-offlineProfile\",\"timeOut\":\"20000\"},{\"url\":\"/profile/validate-resetpassword\",\"timeOut\":\"20000\"},{\"url\":\"/profile/validate\",\"timeOut\":\"20000\"},{\"url\":\" /profile/wizard-lookup\",\"timeOut\":\"20000\"}]";
+		var shortURL =  "true";
+		var internalLocale = "en_AU";
+		var visaApi = "";
+		var visaSrc = "";
+		var visaImage = "";
+		var country = "AU";
+		var htmlExtension='';
+		var gtmid = "GTM-WPPFKZX";
+		var enableGTM = "true";
+		var enableCaptcha = false;
+		var captchaSiteKey = "6Lf45BUUAAAAABIGvVfcpKyTYtNSMy7nLF-3QM-V";
+		enableCaptcha = "true";
+		var contentRoot="/loyalty-profile/avis-preferred";
+		var isSecured = "";
+		var summaryEndPointUrl = "";
+        if(isSecured == "" || isSecured == null || isSecured == "false"){
+        	isSecured = false;
+        }
+        else{
+        	isSecured = true;
+        }        
+		//var gtmid = "GTM-MZCMW7";
+		//Enabling Google TAG Manager & Google Analytics. TO enable, enableGTM will be true else false
+		//var enableGTM = true;
+		if(shortURL=="false"){
+			htmlExtension = '.html';
+		}
+		/* Opinion lab variable Dont remove it */
+		var custom_var=",COR:"+"au".toUpperCase();
+		var resWidget_i18n = {
+				textsearching :  "Searching...",
+				textnoresults :  "No results found",
+				keeptrying :  "Keep typing to refine search",
+				time_noon : "noon",
+				time_midnight : "midnight",
+				country : "United States",
+				pickupLocation: "Enter your pick-up location",
+				returnLocation: "Return to same location",
+				city: "City Suggestions", 
+				poi : "Points of Interest",
+				pickupDateMsg : "Select Pick-up Date",
+				returnDateMsg : "Select Return Date"
+			} 
+	</script>
+	
+		<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=explicit" defer async></script>
+	
+
+
+
+
+
+
+	
+    
+<script type="text/javascript" src="/etc/designs/platform/clientlib.min.2.2.5.js"></script>
+
+
+
+
+	
+    
+<script type="text/javascript" src="/etc/designs/avis/home/clientlib.min.2.2.5.js"></script>
+
+
+
+
+	
+
+
+	<script>
+		angular.bootstrap(document, [ 'carRental' ], {
+			strictDi : true
+		});
+		jQuery('.hide-on-load').removeClass('hide-on-load');
+	</script>
+	
+	
+     
+
+
+<div id="buildInfo" class="hidden">
+  <p>
+    <strong>Build #</strong>: <span class="build"></span>
+  </p>
+  <p>
+    <strong>Revision #</strong>: <span class="revision"></span>
+  </p>
+  <p>
+    <strong>Build Date</strong>: <span class="buildDate"></span>
+  </p>
+   
+</div>
+
+  <div class="modal fade popup-fix" id="http-timeout-modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header hidden">
+                <h3 class="modal-title"><span class="mainErrorImage info-error-war-msg-image"><span></span></span></h3>
+            </div>
+            <div class="modal-body">
+                <h3 class="modal-title text-center">
+                                <span class="mainErrorImage info-error-war-msg-image"><span></span></span>
+                </h3>
+                <div class="session-inner-wrap clearfix">
+                    <div class="session-hdr-info clearfix">
+                        <div class="clearfix">
+                            <h4></h4>
+                            <!-- TODO : i18 msg -->
+                            <!-- <p>Connection failed or Some error occurred. Please try again.</p> -->
+                            <p>Connection Failed or Some Error occurred.</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                      <!-- TODO : i18 msg -->
+                       <button id="res-keepSession" type="button" class="btn btn-primary-avis" data-dismiss="modal">OK</button>
+                    </div>  
+                </div>
+            </div>  
+        </div>
+   </div>
+</div>
+
+   
+<script>
+/*
+OnlineOpinion v5.9.6
+Released: 04/1/2016. Compiled 04/01/2016 01:12:40 PM -0500
+Branch: master 55a7c9eebccc366cf17fe05f616a8a7c64457a6f
+Components: Full
+UMD: disabled The following code is Copyright 1998-2016 Opinionlab, Inc. All rights reserved. Unauthorized use is prohibited. This product and other products of OpinionLab, Inc. are protected by U.S. Patent No. 6606581, 6421724, 6785717 B1 and other patents pending. http://www.opinionlab.com
+*/
+//This Opinion Lab is for only US and CA domains.
+if(domain == 'us' || domain == 'ca') {
+	/* global window, OOo */
+	function OpinionLab() {
+	    /* Opinion lab variable Dont remove it */
+	    this.getParameters = function() {
+	        var cv = {};
+	        if (!!window.sessionStorage.getItem('ngStorage-reservationModel')) {
+	            var resModel = JSON.parse(window.sessionStorage.getItem('ngStorage-reservationModel'));
+	            cv = {
+	                clickTaleReplayLink: '',
+	                pickCountry: resModel.pickCountry,
+	                pickUpLocation: resModel.pickInfo,
+	                pickUpDateDisplay: resModel.pickUpDateDisplay,
+	                pickUpTime: resModel.pickUpTime,
+	                dropDateDisplay: resModel.dropDateDisplay,
+	                dropOffLocation: resModel.dropInfo,
+	                dropTime: resModel.dropTime,
+	                userSelectedCar: resModel.userSelectedCar,
+	                userSelectedCurrency: resModel.userSelectedCurrency,
+	                rateCode: resModel.rateCode,
+	                couponNumber: resModel.coupon.couponNumber,
+	                ftpNumber: resModel.ftpDetails.ftpNumber,
+	                flow: resModel.displayControls.reservation
+	            };
+	        } else {
+	            cv = {
+	                clickTaleReplayLink: '',
+	                COR: 'au'.toUpperCase()
+	            };
+	        }
+	        return cv;
+	    };
+	
+	    this.init = function() {
+	        var ctPid = /avis/i.test(window.location.hostname) ? 16646 : 16707;
+	        /* Desktop Feedback Object */
+	        OOo.oo_float = new OOo.Ocode({
+	            floating: {},
+	            disappearOnClick: true,
+	            customVariables: this.getParameters(),
+	            clickTalePID: typeof ClickTaleGetPID === 'function' ? ClickTaleGetPID() : ctPid
+	        });
+	        /* Mobile Feedback Object */
+	        OOo.oo_mobile = new OOo.Ocode({
+	            customVariables: this.getParameters(),
+	            clickTalePID: typeof ClickTaleGetPID === 'function' ? ClickTaleGetPID() : ctPid
+	        });
+	        /* Mobile Launch Function */
+	        OOo.oo_launch = function(e, feedback) {
+	            var evt = e || window.event;
+	            OOo[feedback].show(evt);
+	        };
+	        /* ClickTale Message Listener */
+	        var receiveMessage = function (e) {
+	            var evt = e || window.event;
+	            if (evt.origin === 'https://secure.opinionlab.com') {
+	                if (typeof CTintegrationTrigger === 'function' && evt.data === 'OpinionLab Submission') {
+	                    CTintegrationTrigger('OL');
+	                }
+	            }
+	        };
+	
+	        OOo.addEventListener(window, 'message', receiveMessage, false);
+	
+	        /* ClickTale Session Capture */
+	        if (typeof ClickTaleIsRecording === 'function' && ClickTaleIsRecording()) { // Already recording, assign the link value
+	            if (typeof CTintegrationTrigger === 'function') {
+	                OOo.oo_float.options.customVariables.clickTaleReplayLink = CTintegrationTrigger();
+	                OOo.oo_mobile.options.customVariables.clickTaleReplayLink = CTintegrationTrigger();
+	            }
+	        } else { // not recording yet, pass a callback
+	            window.ClickTaleOnReady = function() {
+	                if (typeof CTintegrationTrigger === 'function') {
+	                    OOo.oo_float.options.customVariables.clickTaleReplayLink = CTintegrationTrigger();
+	                    OOo.oo_mobile.options.customVariables.clickTaleReplayLink = CTintegrationTrigger();
+	                }
+	            };
+	        }
+	    };
+	}
+	
+	
+	var Feedback = new OpinionLab();
+
+	jQuery(document).ready(function() {
+	    if (window.location.pathname.indexOf('print-confirmation') === -1) {
+	        Feedback.init();
+	    }
+	});
+}
+</script> 
+
+
+
+<!-- Header for corporate flow ends here -->
+
+
+</body>
+</html>

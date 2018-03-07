@@ -1,0 +1,1332 @@
+    
+    <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+                    <meta http-equiv="content-language" content="eng-GB" />
+        
+                                                                                    
+                                                            <title>Trustech : Evènement International du paiement et de l&#039;identification - Cartes Trustech</title>
+
+
+                                            <link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.trustech-event.com/">
+                            <link rel="alternate" hreflang="en" href="https://www.trustech-event.com/">
+                    <link rel="alternate" hreflang="fr" href="https://www.trustech-event.fr/">
+    
+
+                                                        <meta name="description" content="Salon Trustech/Cartes 2016 à Cannes : venez découvrir toutes les nouveautés du marché du paiement et de l&#039;identification" />
+                                                        <meta name="keywords" content="salon international trustech, salon trustech, salon trustech France, salon trustech paris, salon trustech villepinte, trustech événement paiement, trustech salon paiement, salon cartes cannes, salon cartes paris, conférence trustech " />
+                
+                                                                    <meta name="twitter:card" content="summary">
+                                <meta name="twitter:site" content="">
+                                <meta name="twitter:title" content="Trustech : Evènement International du paiement et de l&#039;identification">
+                                <meta name="twitter:description" content="">
+                                                                                                    <meta name="twitter:url" content="https://www.trustech-event.com/">
+                                                                    <meta name="twitter:image" content="https://www.trustech-event.com/">
+                
+                                <meta property="og:title" content="Trustech : Evènement International du paiement et de l&#039;identification">
+                                                                                    <meta property="og:url" content="https://www.trustech-event.com/">
+                                                                    <meta property="og:locale" content="en_GB">
+                                                <meta property="og:site_name" content="Cartes Trustech">
+                                                <meta property="og:description" content="">
+                                                <meta property="og:image" content="https://www.trustech-event.com/"> 
+                                                <meta name="apple-itunes-app" content="app-id=, affiliate-data=, app-argument=">
+                                                <meta name="google-play-app" content="app-id=">
+                                                <meta name="msApplication-ID" content="">
+                                        <meta property="og:type" content="website">
+        
+        <link rel="stylesheet" type="text/css" href="/theme/cartes/css.css" />
+
+                                                <link rel="icon" href="/theme/cartes/favicon.ico" />
+                                    <link rel="manifest" href="/manifest.json">
+                                <meta name="msapplication-config" content="/browserconfig.xml" />
+
+                <script>window.comexposium = {}</script>
+
+                <script src="/js/614cd8e.js"></script>
+        
+                    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,300italic,300,400italic,700,700italic,900" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet" type="text/css" />
+<meta name="google-site-verification" content="_Hp1eBlufkQvMvv10FDGbosEFGDzs8sERDt3CzZb5Qk" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79223256-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+_linkedin_data_partner_id = "30436";
+</script><script type="text/javascript">
+(function(){var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})();
+</script>
+
+        
+                            
+                <link rel="stylesheet" href="/css/f1407bb.css">
+        
+        
+    </head>
+
+                    
+    <body class="body-corpo front" itemscope itemtype="http://schema.org/WebSite" data-location-path="28534">
+        <span class="cookies" data-cookiesmsg="By pursuing your navigation, you agree to the setting-up of cookies on your terminal for statistical and advertising purposes, and of for improvement of the functioning of the site and the social networks. " data-cookiesbtn="Accept" data-cookieswhat="click here" data-cookieslink="/Footer/Information-on-the-use-of-cookies"><!-- must be empty (just for cookies)!--></span>
+    
+        <div class="global-wrapper">
+                                                                    <header class="site-banner" role="banner">
+            <div class="inside">
+                                                                                                                                                            
+<!-- HTML Header GB -->
+<div class="block block-date">
+<strong class="date"><span class="day">28</span> <span class="month">novem</span></strong>
+<span class="to">></span>
+<strong class="date"><span class="day">30</span> <span class="month">ber</span></strong>
+<span class="year">2017</span>
+<div class="place">
+<span class="street">Palais des Festivals</span>
+<span class="city">Cannes</span>
+<span class="region">French Riviera</span>
+</div>
+</div>
+
+<style type="text/css">
+.catal-ex-item.is-premium .catal-ex-item-title a {
+    color: #ff0000 !important;
+}</style>
+
+                                                                                                        
+
+    <nav class="main-navigation navigation" role="navigation">
+        <div class="mn-menu-line">
+        <ul class="mn-menu mn-menu-lvl1 unstyled">
+                                                                        <li class="mn-menu-item mn-item-lvl-1  mn-menu-item-28802 mn-menu-item-avecpicto">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/" target="_self">
+                                                                <i class="icon icon-home" aria-hidden="true"></i>
+                                    
+                                                                <span class="mn-link-text" data-location-id="28534">
+                                    accueil
+                            </span>
+        </a>
+            </li>
+                                                                                                                                                                                                                                                <li class="mn-menu-item mn-item-lvl-1 mn-item-has-submenu mn-menu-item-28982">
+                        
+                                <a class="mn-link" href="#" >
+                                                        
+                                    <span class="mn-link-text" data-location-id="28809">
+                                    Event
+                            </span>
+        </a>
+                    <ul class="mn-menu-submenu mn-menu-lvl2 unstyled">
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-163495">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Cartes-trade-show-became-Trustech-discover-what-s-new" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="222278">
+                                    TRUSTECH News
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-46829">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Follow-the-market-Trustech-brings-you-the-latest-news" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="49850">
+                                    Market Trends
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-47334">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/2016-Pictures-Trustech-payment-identification" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="50367">
+                                    2016 Gallery 
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-47608">
+                        
+                                                                                                                        <a class="mn-link" href="/Trustech-exhibition-discover-the-International-event-of-payment/2017-Partners" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="50663">
+                                    2017 Partners
+                            </span>
+        </a>
+            </li>
+                            </ul>
+            </li>
+                                                                                                                                                                                                                                                                                                                <li class="mn-menu-item mn-item-lvl-1 mn-item-has-submenu mn-menu-item-29095">
+                        
+                                <a class="mn-link" href="#" >
+                                                        
+                                    <span class="mn-link-text" data-location-id="28988">
+                                    Exhibit & Sponsor
+                            </span>
+        </a>
+                    <ul class="mn-menu-submenu mn-menu-lvl2 unstyled">
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-46801">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Exhibit-and-sponsor-at-Trustech-event-2016-the-payment-event/Estimate-your-participation-Trustech-payment-identification" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="49825">
+                                    Estimate your participation 2017
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-82502">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Exhibit-and-sponsor-at-Trustech-event-2016-the-payment-event/sponsorship-opportunities-trustech-2017" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="101352">
+                                    Sponsorship Opportunities
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-46909">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Exhibit-and-sponsor-at-Trustech-event-2016-the-payment-event/Exhibitor-area-Trustech-payment-identification-2017" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="49926">
+                                    Exhibitor area
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-63541">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Exhibit-and-sponsor-at-Trustech-event-2016-the-payment-event/Who-are-our-attendees" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="71659">
+                                    Who are our attendees?
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-57535">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Catalogue2/2017-exhibitors" target="_self">
+                                                                        
+                                                                <span class="mn-link-text" data-location-id="361297">
+                                    2017 Exhibitors
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-166103">
+                        
+                                                                                                                        <a class="mn-link" href="/Exhibit-and-sponsor-at-Trustech-event-2016-the-payment-event/2016-Sponsors" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="226249">
+                                    2016 Sponsors
+                            </span>
+        </a>
+            </li>
+                            </ul>
+            </li>
+                                                                                                                                                                                                                <li class="mn-menu-item mn-item-lvl-1 mn-item-has-submenu mn-menu-item-29096">
+                        
+                                <a class="mn-link" href="#" >
+                                                        
+                                    <span class="mn-link-text" data-location-id="28989">
+                                    Register
+                            </span>
+        </a>
+                    <ul class="mn-menu-submenu mn-menu-lvl2 unstyled">
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-214902">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Attend/Attendee-Packages-Pricing" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="302400">
+                                    Attendee Packages & Pricing 
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-214970">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Attend/free-visitor-registration-trustech-2017" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="302407">
+                                    Free visitor registration
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-214981">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Attend/Attend-conference-delegate" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="302420">
+                                    Attend as a Conference Delegate
+                            </span>
+        </a>
+            </li>
+                            </ul>
+            </li>
+                                                                                                                                                                                                                                                                                                                                                <li class="mn-menu-item mn-item-lvl-1 mn-item-has-submenu mn-menu-item-29097">
+                        
+                                <a class="mn-link" href="#" >
+                                                        
+                                    <span class="mn-link-text" data-location-id="28990">
+                                    Agenda & Speakers
+                            </span>
+        </a>
+                    <ul class="mn-menu-submenu mn-menu-lvl2 unstyled">
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-260177">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/agenda-speakers-trustech-2017/The-Nordics-Tour" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="373211">
+                                    The Nordics Tour
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-248708">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/agenda-speakers-trustech-2017/2017-Conference-Programme" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="354329">
+                                    2017 Conference Programme
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-47309">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/agenda-speakers-trustech-2017/Program-Event-Trustech-payment-identification" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="50359">
+                                    Keynote Stage
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-254108">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/agenda-speakers-trustech-2017/2017-Speakers" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="362972">
+                                    2017 Speakers
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-242062">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/agenda-speakers-trustech-2017/One-to-one-Meetings" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="344588">
+                                    One-to-One Meetings
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-244582">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/agenda-speakers-trustech-2017/SESAMES-Awards" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="347907">
+                                    SESAMES Awards
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-243901">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/agenda-speakers-trustech-2017/Innovation-Stage" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="346928">
+                                    Innovation Stage
+                            </span>
+        </a>
+            </li>
+                            </ul>
+            </li>
+                                                                                                                                                                                                                                                                                                                                                <li class="mn-menu-item mn-item-lvl-1 mn-item-has-submenu mn-menu-item-29098">
+                        
+                                <a class="mn-link" href="#" >
+                                                        
+                                    <span class="mn-link-text" data-location-id="28991">
+                                    Useful info
+                            </span>
+        </a>
+                    <ul class="mn-menu-submenu mn-menu-lvl2 unstyled">
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-47308">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Useful-info/Contact-our-team-Trustech-payment-identification" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="50341">
+                                    Your contacts
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-47329">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Useful-info/Get-to-the-show-Trustech-payment-identification" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="50361">
+                                    Get to the event
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-47330">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Useful-info/Book-your-accommodation-Trustech-payment-identification" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="50363">
+                                    Accommodation
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-47331">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Useful-info/A-Question-FAQ-Trustech-payment-identification" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="50364">
+                                    FAQ
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-47654">
+                        
+                                                                                                                        <a class="mn-link" href="/Useful-info/Newsletter" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="50709">
+                                    Newsletter
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-93147">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Useful-info/Mobile-Application" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="115802">
+                                    Mobile Application
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-95725">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Useful-info/Social-media" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="119397">
+                                    Social media
+                            </span>
+        </a>
+            </li>
+                            </ul>
+            </li>
+                                                                                                                                                                                                                <li class="mn-menu-item mn-item-lvl-1 mn-item-has-submenu mn-menu-item-29099">
+                        
+                                <a class="mn-link" href="#" >
+                                                        
+                                    <span class="mn-link-text" data-location-id="28992">
+                                    Press
+                            </span>
+        </a>
+                    <ul class="mn-menu-submenu mn-menu-lvl2 unstyled">
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-166226">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Press/2017-Virtual-Press-Room" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="226367">
+                                    2017 Virtual Press Room 
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-47336">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Press/Press-Contacts-Trustech-payment-identification" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="50369">
+                                    Press Accreditation
+                            </span>
+        </a>
+            </li>
+                                                                                                                    <li class="mn-menu-item mn-item-lvl-2  mn-menu-item-47388">
+                        
+                                                                                                                        <a class="mn-link" href="https://www.trustech-event.com/Press/Press-Releases" target="_self">
+                                                                        
+                                    <span class="mn-link-text" data-location-id="50423">
+                                    Press Releases
+                            </span>
+        </a>
+            </li>
+                            </ul>
+            </li>
+                </ul>
+    </div>
+</nav>
+                                                                                                                                                                                                                                
+
+<div class="lang-switcher js-lang-switcher  langues" data-title="Sélectionnez votre langue">
+    <ul class="ls-lang-list unstyled js-toggle-target" style="display: none;">
+                                                                                                                    <li class="ls-lang-item ls-lang-en is-active">
+            <a class="ls-lang-link" href="#" rel="nofollow">
+                                <abbr title="English (United Kingdom)">
+                                    en
+                                </abbr>
+                            </a>
+        </li>
+                                                                                                                                <li class="ls-lang-item ls-lang-fr">
+            <a class="ls-lang-link" href="https://www.trustech-event.fr/" rel="nofollow">
+                                <abbr title="Français (France)">
+                                    fr
+                                </abbr>
+                            </a>
+        </li>
+            </ul>
+</div>
+
+                                                                                                                                                                                                                    
+<div class="menu-droite">
+    <ul class="md-list unstyled">
+       <!-- <li class="md-item">
+            <a class="md-link" href=https://badge.trustech-event.fr/home.htm"target="_blank">
+                <span class="md-text"><i class="icon icon-inscrire"></i>Become Participant</span>
+            </a>
+        </li>-->
+        <li class="md-item">
+            <a class="md-link" href=https://badge.trustech-event.fr/home.htm"target="_blank">
+                <span class="md-text"><i class="icon icon-espace-visit"></i>Register now</span>
+            </a>
+        </li>
+        <li class="md-item">
+            <a class="md-link" href="/Exhibit-and-sponsor-at-Trustech-event-2016-the-payment-event/Estimate-your-participation-Trustech-payment-identification">
+                <span class="md-text"><i class="icon icon-devenir-expo"></i>Become Exhibitor, Sponsor</span>
+            </a>
+        </li>
+    <li class="md-item">
+            <a class="md-link" href="https://trustech.hubj2c.com/conference/" target="_blank">
+                <span class="md-text"><i class="icon icon-devenir-inter"></i>Become Speaker</span>
+            </a>
+        </li>
+        <li class="md-item">
+            <a class="md-link" href="/Useful-info/Get-to-the-show-Trustech-payment-identification">
+                <span class="md-text"><i class="icon icon-venir-trustech"></i>Get to The Event</span>
+            </a>
+        </li>
+        <li class="md-item">
+            <a class="md-link" href="/Exhibit-and-sponsor-at-Trustech-event-2016-the-payment-event/Exhibitor-area-Trustech-payment-identification">
+                <span class="md-text"><i class="icon icon-espace-expo"></i>Exhibitor Area</span>
+            </a>
+        </li>
+
+
+        <li class="md-item">
+            <div class="md-submenu">
+                <ul class="mds-list unstyled">
+                    <li class="mds-item">
+                        <a href="https://www.facebook.com/Trustech-Event-267742266693662/?fref=nf" target="_blank" class="mds-link">
+                            <span class="mds-text"><i class="icon icon-facebook"></i></span>
+                        </a>
+                    </li>
+                    <li class="mds-item">
+                        <a href="https://twitter.com/TRUSTECH_Event" target="_blank" class="mds-link">
+                            <span class="mds-text"><i class="icon icon-twitter"></i></span>
+                        </a>
+                    </li>
+                    <li class="mds-item">
+                        <a href="https://www.youtube.com/user/CARTESChannel" target="_blank" class="mds-link">
+                            <span class="mds-text"><i class="icon icon-youtube"></i></span>
+                        </a>
+                    </li>
+                    <li class="mds-item">
+                        <a href="https://www.linkedin.com/groups/4266291" target="_blank" class="mds-link">
+                            <span class="mds-text"><i class="icon icon-linkedin"></i></span>
+                        </a>
+                    </li>
+                    <li class="mds-item">
+                        <a href="http://www.scoop.it/u/cartes-secure-connexions" target="_blank" class="mds-link">
+                            <span class="mds-text"><i class="icon icon-scoopit"></i></span>
+                        </a>
+                    </li>
+                    <li class="mds-item">
+                        <a href="/Useful-info/Newsletter" class="mds-link">
+                            <span class="mds-text"><i class="icon icon-mail"></i></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="md-item">
+            <a class="md-link">
+                <span class="md-text">#Trustech2017</span>
+            </a>
+        </li>
+    </ul>
+</div><!-- /.menu-droite -->
+
+                                                </div>
+        </header>
+            
+                            
+            <main id="main" >                <div class="site-wrapper wrapper">
+
+                                                                        
+                                            
+                    <div class="layout-2-col">                                                    
+                                                                                                                        <div id="zone2" class="zone">
+                                                                                        
+    
+<div class="block block-page list-articles slider_home">
+
+
+
+            
+                            
+                    
+                    
+                    
+                    
+
+    <div class="la-slider slider cxp-swiper"
+         data-speed="3000"
+        data-auto-delay="4000"
+        data-paginate-by-bullets="true"
+        data-items-per-slide="1"
+        data-loop="true">
+        <div class="slider-content swiper-wrapper">
+                                                
+<article class="la-item slider-item  ">
+                    
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/programme/the-nordics-tour/3961094-4-eng-GB/the-nordics-tour_article_list_slider_cartes_eng.png" alt="" class="la-item-img"/>
+                    <div class="la-item-content">
+                <div class="la-item-title">
+            TRUSTECH is going to the North !         </div>
+                                                    <p class="la-item-desc">
+                            It's time for Amy to meet the great players from the Nordics !
+            </p>
+                    </div>
+</article>
+                                                                
+<article class="la-item slider-item  ">
+                    
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/infos-pratiques/cannes-hebergement-trustech/2944753-3-eng-GB/Cannes-hebergement_article_list_slider_cartes_eng.jpg" alt="" class="la-item-img"/>
+                    <div class="la-item-content">
+                <div class="la-item-title">
+            Book your room now !        </div>
+                                                    <p class="la-item-desc">
+                            Cannes at the best price !
+            </p>
+                    </div>
+</article>
+                                                                
+<article class="la-item slider-item  ">
+                    
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/evenement/bloc-des-vacances-2017/conference-programme-now-available/3828494-2-eng-GB/Conference-Programme-Now-Available_article_list_slider_cartes_eng.jpg" alt="" class="la-item-img"/>
+                    <div class="la-item-content">
+                <div class="la-item-title">
+            Conference Programme Now Available        </div>
+                                                    <p class="la-item-desc">
+                            Check out what we've got for you this year
+            </p>
+                    </div>
+</article>
+                                                                
+<article class="la-item slider-item  ">
+                    
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/evenement/keynote-stage-au-17.08/3908872-2-eng-GB/Keynote-stage-au-17.08_article_list_slider_cartes_eng.jpg" alt="" class="la-item-img"/>
+                    <div class="la-item-content">
+                <div class="la-item-title">
+            Fresh Voices on the Keynote Stage !        </div>
+                                                    <p class="la-item-desc">
+                            The best and disruptive speaker line-up in one event 
+            </p>
+                    </div>
+</article>
+                                                                
+<article class="la-item slider-item  ">
+                    
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/evenement/bloc-des-vacances-2017/summer-checklist/3828412-2-eng-GB/Summer-checklist_article_list_slider_cartes_eng.png" alt="" class="la-item-img"/>
+                    <div class="la-item-content">
+                <div class="la-item-title">
+            Summer Check-list        </div>
+                                                    <p class="la-item-desc">
+                            Sea, Sun and TRUSTECH
+            </p>
+                    </div>
+</article>
+                                    </div>
+
+            </div>
+
+
+</div>
+
+
+                                                                                                        
+    
+<div class="block block-page list-articles petit_slider_home">
+
+
+
+            
+                            
+                    
+        
+                    
+                    
+
+    <div class="la-slider slider cxp-swiper"
+         data-speed="3000"
+        data-auto-delay="4000"
+        data-paginate-by-bullets="false"
+        data-items-per-slide="5"
+        data-loop="true">
+        <div class="slider-content swiper-wrapper">
+                                                
+<article class="la-item slider-item  ">
+                    
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/programme/the-nordics-tour/3961094-4-eng-GB/the-nordics-tour_article_list_slider_small_cartes_eng.png" alt="" class="la-item-img"/>
+                    <div class="la-item-content">
+                <div class="la-item-title">
+                        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Cartes-trade-show-became-Trustech-discover-what-s-new/TRUSTECH-is-going-to-the-North-!"
+                 onclick="return xt_click(this,'C','27','TRUSTECH_is_going_to_the_North_!_::TRUSTECH_News::Event','N')">
+            TRUSTECH is going to the North !             </a>
+                    </div>
+                                                    <p class="la-item-desc">
+                            It's time for Amy to meet the great players from the Nordics !
+            </p>
+                            <p class="la-item-btn">
+                                                <a class="btn-primary" rel="nofollow" href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Cartes-trade-show-became-Trustech-discover-what-s-new/TRUSTECH-is-going-to-the-North-!" target="_self"
+                     onclick="return xt_click(this,'C','27','TRUSTECH_is_going_to_the_North_!_::TRUSTECH_News::Event','N')">
+                    <i class="icon icon-arrow-alt-right"></i>
+                                            Read more                                    </a>
+            </p>
+            </div>
+</article>
+                                                                
+<article class="la-item slider-item  ">
+                    
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/infos-pratiques/cannes-hebergement-trustech/2944753-3-eng-GB/Cannes-hebergement_article_list_slider_small_cartes_eng.jpg" alt="" class="la-item-img"/>
+                    <div class="la-item-content">
+                <div class="la-item-title">
+                        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Cartes-trade-show-became-Trustech-discover-what-s-new/Book-your-room-now"
+                 onclick="return xt_click(this,'C','27','Book_your_room_now_!::TRUSTECH_News::Event','N')">
+            Book your room now !            </a>
+                    </div>
+                                                    <p class="la-item-desc">
+                            Cannes at the best price !
+            </p>
+                            <p class="la-item-btn">
+                                                <a class="btn-primary" rel="nofollow" href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Cartes-trade-show-became-Trustech-discover-what-s-new/Book-your-room-now" target="_self"
+                     onclick="return xt_click(this,'C','27','Book_your_room_now_!::TRUSTECH_News::Event','N')">
+                    <i class="icon icon-arrow-alt-right"></i>
+                                            Read more                                    </a>
+            </p>
+            </div>
+</article>
+                                                                
+<article class="la-item slider-item  ">
+                    
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/evenement/bloc-des-vacances-2017/conference-programme-now-available/3828494-2-eng-GB/Conference-Programme-Now-Available_article_list_slider_small_cartes_eng.jpg" alt="" class="la-item-img"/>
+                    <div class="la-item-content">
+                <div class="la-item-title">
+                        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Cartes-trade-show-became-Trustech-discover-what-s-new/Conference-Programme-Now-Available"
+                 onclick="return xt_click(this,'C','27','Conference_Programme_Now_Available::TRUSTECH_News::Event','N')">
+            Conference Programme Now Available            </a>
+                    </div>
+                                                    <p class="la-item-desc">
+                            Check out what we've got for you this year
+            </p>
+                            <p class="la-item-btn">
+                                                <a class="btn-primary" rel="nofollow" href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Cartes-trade-show-became-Trustech-discover-what-s-new/Conference-Programme-Now-Available" target="_self"
+                     onclick="return xt_click(this,'C','27','Conference_Programme_Now_Available::TRUSTECH_News::Event','N')">
+                    <i class="icon icon-arrow-alt-right"></i>
+                                            Read more                                    </a>
+            </p>
+            </div>
+</article>
+                                                                
+<article class="la-item slider-item  ">
+                    
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/evenement/keynote-stage-au-17.08/3908872-2-eng-GB/Keynote-stage-au-17.08_article_list_slider_small_cartes_eng.jpg" alt="" class="la-item-img"/>
+                    <div class="la-item-content">
+                <div class="la-item-title">
+                        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Cartes-trade-show-became-Trustech-discover-what-s-new/Fresh-Voices-on-the-Keynote-Stage"
+                 onclick="return xt_click(this,'C','27','Fresh_Voices_on_the_Keynote_Stage_!::TRUSTECH_News::Event','N')">
+            Fresh Voices on the Keynote Stage !            </a>
+                    </div>
+                                                    <p class="la-item-desc">
+                            The best and disruptive speaker line-up in one event 
+            </p>
+                            <p class="la-item-btn">
+                                                <a class="btn-primary" rel="nofollow" href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Cartes-trade-show-became-Trustech-discover-what-s-new/Fresh-Voices-on-the-Keynote-Stage" target="_self"
+                     onclick="return xt_click(this,'C','27','Fresh_Voices_on_the_Keynote_Stage_!::TRUSTECH_News::Event','N')">
+                    <i class="icon icon-arrow-alt-right"></i>
+                                            Read more                                    </a>
+            </p>
+            </div>
+</article>
+                                                                
+<article class="la-item slider-item  ">
+                    
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/evenement/bloc-des-vacances-2017/summer-checklist/3828412-2-eng-GB/Summer-checklist_article_list_slider_small_cartes_eng.png" alt="" class="la-item-img"/>
+                    <div class="la-item-content">
+                <div class="la-item-title">
+                        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Cartes-trade-show-became-Trustech-discover-what-s-new/Summer-Check-list"
+                 onclick="return xt_click(this,'C','27','Summer_Check-list::TRUSTECH_News::Event','N')">
+            Summer Check-list            </a>
+                    </div>
+                                                    <p class="la-item-desc">
+                            Sea, Sun and TRUSTECH
+            </p>
+                            <p class="la-item-btn">
+                                                <a class="btn-primary" rel="nofollow" href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Cartes-trade-show-became-Trustech-discover-what-s-new/Summer-Check-list" target="_self"
+                     onclick="return xt_click(this,'C','27','Summer_Check-list::TRUSTECH_News::Event','N')">
+                    <i class="icon icon-arrow-alt-right"></i>
+                                            Read more                                    </a>
+            </p>
+            </div>
+</article>
+                                    </div>
+
+                <div class="slider-pagin">
+            <div class="slider-pagin-btn">
+                <button class="btn btn-small slider-btn-prev"><i class="icon icon-short-arrow-left"></i><span class="visually-hidden">Previous item</span></button>
+                <button class="btn btn-small slider-btn-next"><i class="icon icon-short-arrow-right"></i><span class="visually-hidden">Next item</span></button>
+            </div>
+            <button class="btn btn-small slider-play-btn">
+                <i class="icon icon-pause"></i><span class="visually-hidden">Play/Pause</span>
+            </button>
+            <div class="slider-pagin-nb">
+            </div>
+        </div><!-- /.slider-pagin -->
+            </div>
+
+
+</div>
+
+
+                                                                                                                                                                    
+<div class="block-custom block-page inscription-news">
+    <div class="inside">
+        <p>Join our newsletter to stay informed <a href="/Useful-info/Newsletter" class="button">subscribe</a></p>
+    </div>
+</div>
+
+                                                                                                                                                                    
+<div class="block block-page pns-panel-slider chiffre-cle">
+        <div class="pns-container">
+            <h2 class="pns-main-title">Key figures 2016</h2>
+            <div class="pns-content">
+                <div class="chiffre">13 000</div>
+                <p>participants<br> from 125 countries</p>
+            </div>
+            <div class="pns-content">
+                <div class="chiffre">43</div>
+                <p>startups and FinTech</p>
+            </div>
+            <div class="pns-content">
+                <div class="chiffre">3500</div>
+                <p>minutes of<br> Excellent Content</p>
+            </div>
+            <div class="pns-content">
+                <div class="chiffre">350</div>
+                <p>exhibitors and sponsors<br> (with 130 new ones)</p>
+            </div>
+        </div>
+</div><!-- /.block-page.chiffre-clé -->
+
+                                                                                                                                                                    
+<div class="block block-page quicklinks menu-exposant">
+    <ul class="ql-list unstyled">
+        <li class="ql-item"><a href="/Exhibit-and-sponsor-at-Trustech-event-2016-the-payment-event/Exhibitor-area-Trustech-payment-identification" class="ql-item-link btn-exhibitor"><span>Exhibitor</span></a></li>
+        <li class="ql-item"><a href="/Exhibit-and-sponsor-at-Trustech-event-2016-the-payment-event/Exhibitor-area-Trustech-payment-identification" class="ql-item-link btn-sponsor"><span>Sponsor</span></a></li>
+        <li class="ql-item"><a href="/Attend/Why-attend-Trustech-payment-identification" class="ql-item-link btn-visitor"><span>Visitor</span></a></li>
+        <li class="ql-item"><a href="/Trustech-exhibition-discover-the-International-event-of-payment/Cartes-trade-show-became-Trustech-discover-what-s-new/TRUSTECH-Confex-Payment-and-identification-industry-conferences" class="ql-item-link btn-congress"><span>Delegate</span></a></li>
+        <li class="ql-item"><a href="/Programme/Conferences-programme-Trustech-payment-identification" class="ql-item-link btn-speaker"><span>Speaker</span></a></li>
+    </ul>
+</div><!-- /.menu-exposant -->
+
+                                                                                                        
+    
+<div class="block block-page list-articles event-highlights">
+    <div class="inside">
+
+        <div class="main-title-with-link">
+
+                                                                                            <h1 class="la-main-title">Highlights</h1>
+            
+                    </div>
+
+
+            
+            
+                
+                    
+    <div class="cxp-pagination" data-container="paginate_b4876fe694bc0ca542ef2791ab18ea75" data-page-max="4" data-url="/ajax/article/list/block/b4876fe694bc0ca542ef2791ab18ea75/grid">
+        <div class="list-grids-with-pagin">
+            <div class="grid-la-list" data-container-id="paginate_b4876fe694bc0ca542ef2791ab18ea75">
+                                                            
+<article class="gla-item  ">
+        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Bloc-Event/Highlights/SESAMES-Jury"
+         onclick="return xt_click(this,'C','27','SESAMES_Jury::Highlights::Bloc_Event_::Event','N')">
+                        
+            
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/evenement/jury-sesames/3952951-2-eng-GB/SESAMES-Jury_article_list_2col_cartes_eng.jpg" alt="" class="gla-item-img"/>
+                    
+        <div class="gla-item-content">
+            
+                            <p class="gla-item-btn">
+                    <span class="gla-btn-read-more">
+                                                    Read more                                                <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </p>
+                        <h2 class="gla-item-title">SESAMES Jury</h2>
+                                                                            <p class="gla-item-desc">
+                                
+                </p>
+                    </div>
+        </a>
+    </article>
+                                                                                
+<article class="gla-item  ">
+        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Bloc-Event/Highlights/2017-KEYNOTE-PAYPAL"
+         onclick="return xt_click(this,'C','27','2017_KEYNOTE_-_PAYPAL::Highlights::Bloc_Event_::Event','N')">
+                        
+            
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/agenda-speakers/paypal-logo/3768124-2-eng-GB/Paypal-logo_article_list_2col_cartes_eng.png" alt="" class="gla-item-img"/>
+                    
+        <div class="gla-item-content">
+            
+                            <p class="gla-item-btn">
+                    <span class="gla-btn-read-more">
+                                                    Read more                                                <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </p>
+                        <h2 class="gla-item-title">2017 KEYNOTE - PAYPAL</h2>
+                                                                            <p class="gla-item-desc">
+                                
+                </p>
+                    </div>
+        </a>
+    </article>
+                                                                                
+<article class="gla-item  ">
+        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Bloc-Event/Highlights/2017-KEYNOTE-EUROSMART"
+         onclick="return xt_click(this,'C','27','2017_KEYNOTE_-_EUROSMART::Highlights::Bloc_Event_::Event','N')">
+                        
+            
+
+    
+            
+        <div class="gla-item-content">
+            
+                            <p class="gla-item-btn">
+                    <span class="gla-btn-read-more">
+                                                    Read more                                                <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </p>
+                        <h2 class="gla-item-title">2017 KEYNOTE - EUROSMART</h2>
+                                                                            <p class="gla-item-desc">
+                                
+                </p>
+                    </div>
+        </a>
+    </article>
+                                                                                
+<article class="gla-item  ">
+        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Bloc-Event/Highlights/One-to-One-Meetings"
+         onclick="return xt_click(this,'C','27','One-to-One_Meetings::Highlights::Bloc_Event_::Event','N')">
+                        
+            
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/evenement/temps-forts/bbb/3642552-2-eng-GB/BBB_article_list_2col_cartes_eng.png" alt="" class="gla-item-img"/>
+                    
+        <div class="gla-item-content">
+            
+                            <p class="gla-item-btn">
+                    <span class="gla-btn-read-more">
+                                                    Read more                                                <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </p>
+                        <h2 class="gla-item-title">One-to-One Meetings</h2>
+                                                                            <p class="gla-item-desc">
+                                
+                </p>
+                    </div>
+        </a>
+    </article>
+                                                                                
+<article class="gla-item  ">
+        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Bloc-Event/Highlights/2017-KEYNOTE-UBER"
+         onclick="return xt_click(this,'C','27','2017_KEYNOTE_-_UBER_::Highlights::Bloc_Event_::Event','N')">
+                        
+            
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/evenement/temps-forts/keynote-chris-valasek/3640506-2-eng-GB/keynote-chris-valasek_article_list_2col_cartes_eng.png" alt="" class="gla-item-img"/>
+                    
+        <div class="gla-item-content">
+            
+                            <p class="gla-item-btn">
+                    <span class="gla-btn-read-more">
+                                                    Read more                                                <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </p>
+                        <h2 class="gla-item-title">2017 KEYNOTE - UBER </h2>
+                                                                            <p class="gla-item-desc">
+                                
+                </p>
+                    </div>
+        </a>
+    </article>
+                                                                                
+<article class="gla-item  ">
+        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Bloc-Event/Highlights/NETWORKING-LUNCH-IBM"
+         onclick="return xt_click(this,'C','27','NETWORKING_LUNCH_-_IBM::Highlights::Bloc_Event_::Event','N')">
+                        
+            
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/evenement/temps-forts/ibm-dejeuner-debat/3078807-2-eng-GB/Networking-Lunch-IBM_article_list_2col_cartes_eng.jpg" alt="" class="gla-item-img"/>
+                    
+        <div class="gla-item-content">
+            
+                            <p class="gla-item-btn">
+                    <span class="gla-btn-read-more">
+                                                    Read more                                                <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </p>
+                        <h2 class="gla-item-title">NETWORKING LUNCH - IBM</h2>
+                                                                            <p class="gla-item-desc">
+                                
+                </p>
+                    </div>
+        </a>
+    </article>
+                                                </div>
+            
+        </div>
+
+                                    
+            </div>
+
+
+    </div>
+</div>
+
+
+                                                                                                        
+    
+<div class="block block-page list-articles ">
+    <div class="inside">
+
+        <div class="main-title-with-link">
+
+                                                                                            <h1 class="la-main-title">Market Innovations</h1>
+            
+                                                                                                <a href="/Trustech-exhibition-discover-the-International-event-of-payment/Follow-the-market-Trustech-brings-you-the-latest-news" class="link-view-all"
+                         onclick="return xt_click(this,'C','27','Market_Trends::Event::All_the_news','N')">
+                    All the news<i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                </a>
+                    </div>
+
+
+            
+            
+                
+                    
+    <div class="cxp-pagination" data-container="paginate_11b94066338a1eb4183b6ffc61422d57" data-page-max="4" data-url="/ajax/article/list/block/11b94066338a1eb4183b6ffc61422d57/grid">
+        <div class="list-grids-with-pagin">
+            <div class="grid-la-list" data-container-id="paginate_11b94066338a1eb4183b6ffc61422d57">
+                                                            
+<article class="gla-item  ">
+        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Follow-the-market-Trustech-brings-you-the-latest-news/Security-the-key-for-IoT-success"
+         onclick="return xt_click(this,'C','27','Security:_the_key_for_IoT_success::Market_Trends::Event','N')">
+                        
+            
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/evenement/security-the-key-for-iot-success/3821352-3-eng-GB/Security-the-key-for-IoT-success_article_list_grid_cartes_eng.png" alt="" class="gla-item-img"/>
+                    
+        <div class="gla-item-content">
+            
+                            <p class="gla-item-btn">
+                    <span class="gla-btn-read-more">
+                                                    Read more                                                <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </p>
+                        <h2 class="gla-item-title">Security: the key for IoT success</h2>
+                                                                            <p class="gla-item-desc">
+                                Smart Insight, in partnership with TRUSTECH ,proposes a new White Paper
+                </p>
+                    </div>
+        </a>
+    </article>
+                                                                                
+<article class="gla-item  ">
+        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Follow-the-market-Trustech-brings-you-the-latest-news/2017-Future-of-payments"
+         onclick="return xt_click(this,'C','27','2017_Future_of_payments::Market_Trends::Event','N')">
+                        
+            
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/evenement/market-trends/general-view/3567782-4-eng-GB/General-view_article_list_grid_cartes_eng.png" alt="" class="gla-item-img"/>
+                    
+        <div class="gla-item-content">
+            
+                            <p class="gla-item-btn">
+                    <span class="gla-btn-read-more">
+                                                    Read more                                                <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </p>
+                        <h2 class="gla-item-title">2017 Future of payments</h2>
+                                                                            <p class="gla-item-desc">
+                                In this issue of <em>Business Reporter, they</em> explore how payment technologies are helping Comic Relief fight poverty across the globe.
+                </p>
+                    </div>
+        </a>
+    </article>
+                                                                                
+<article class="gla-item  ">
+        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Follow-the-market-Trustech-brings-you-the-latest-news/Artificial-Intelligence-to-intensify-IoT-momentum"
+         onclick="return xt_click(this,'C','27','Artificial_Intelligence_to_intensify_IoT_momentum::Market_Trends::Event','N')">
+                        
+            
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/presse/caroussel/2550161-2-eng-GB/caroussel_article_list_grid_cartes_eng.png" alt="" class="gla-item-img"/>
+                    
+        <div class="gla-item-content">
+            
+                            <p class="gla-item-btn">
+                    <span class="gla-btn-read-more">
+                                                    Read more                                                <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </p>
+                        <h2 class="gla-item-title">Artificial Intelligence to intensify IoT momentum</h2>
+                                                                            <p class="gla-item-desc">
+                                Smart Insight, in partnership with TRUSTECH ,proposes "Artificial Intelligence to intensify IoT momentum"
+                </p>
+                    </div>
+        </a>
+    </article>
+                                                                                
+<article class="gla-item  ">
+        <a href="https://www.trustech-event.com/Trustech-exhibition-discover-the-International-event-of-payment/Follow-the-market-Trustech-brings-you-the-latest-news/Future-of-Payments"
+         onclick="return xt_click(this,'C','27','Future_of_Payments::Market_Trends::Event','N')">
+                        
+            
+
+                        
+                                            <img src="/var/comexposium/storage/images/media/cartes-media/images/evenement/market-trends/business-reporter-future-of-payment/2542735-1-fre-FR/Business-Reporter-Future-of-payment_article_list_grid_cartes_eng.png" alt="" class="gla-item-img"/>
+                    
+        <div class="gla-item-content">
+            
+                            <p class="gla-item-btn">
+                    <span class="gla-btn-read-more">
+                                                    Read more                                                <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </p>
+                        <h2 class="gla-item-title">Future of Payments</h2>
+                                                                            <p class="gla-item-desc">
+                                Business Reporter in partnership with Trustech , investigate the future of payments. 
+                </p>
+                    </div>
+        </a>
+    </article>
+                                                </div>
+            
+        </div>
+
+                                    
+            </div>
+
+
+    </div>
+</div>
+
+
+                                                                                                                                                                    
+<div id="block-video" class="block block-video">
+    <div class="inside"></div>
+</div><!-- /.block-video -->
+<!--<script src="https://apis.google.com/js/client.js?onload=youtubeLoadCallback"></script>-->
+<script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
+<script type="text/javascript">var playlistId = 'PLW0vTo-gs9sfXKZRUhhiZ90fAhHxE9GmH';</script>
+
+                                                                                                                                                                    
+<!-- HTML Bloc Réseaux sociaux -->
+<div class="block block-page social-sharing">
+    <div class="inside">
+        <h2>#Trustech2017</h2>
+        <h3>Follow us on...</h3>
+        <div class="grid-3 ss-list">
+            <a href="https://www.facebook.com/Trustech-Event-267742266693662/?fref=nf" target="_blank" class="ss-link sl-link-facebook"><span class="ss-link-text"><i class="icon icon-facebook"></i></span></a>
+            <a href="https://twitter.com/TRUSTECH_Event" target="_blank" class="ss-link sl-link-twitter"><span class="ss-link-text"><i class="icon icon-twitter"></i></span></a>
+            <a href="https://www.youtube.com/user/CARTESChannel" target="_blank" class="ss-link sl-link-youtube"><span class="ss-link-text"><i class="icon icon-youtube"></i></span></a>
+            <a href="https://www.linkedin.com/groups/4266291" target="_blank" class="ss-link sl-link-linkedin"><span class="ss-link-text"><i class="icon icon-linkedin"></i></span></a>
+            <a href="http://www.scoop.it/u/cartes-secure-connexions" target="_blank" class="ss-link sl-link-scoopit"><span class="ss-link-text"><i class="icon icon-scoopit"></i></span></a>
+            <a href="/Visit/Newsletter" class="ss-link sl-link-mail"><span class="ss-link-text"><i class="icon icon-mail"></i></span></a>
+        </div>
+    </div>
+</div>
+<!-- [FIN] HTML Bloc Réseaux sociaux -->
+
+                                                                                                                                                                                                            
+<!-- HTML Pub -->
+
+                                                                                                                                                                    
+<!-- HTML Bloc Twitter -->
+<div class="block block-page widget-twitter">
+    <div class="inside">
+        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/TRUSTECH_Event" data-widget-id="704273954245111809">Tweets de @TRUSTECH_Event</a>
+        <script>!function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + "://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, "script", "twitter-wjs");</script>
+    </div>
+</div>
+<!-- [FIN] HTML Bloc Twitter -->
+
+                                    </div>
+    
+                                                            
+                                                    
+
+                        
+                                                        
+
+                                                            
+                            
+
+                                                    
+                    </div>
+                                                                        
+                                                            </div>
+
+                    </main>
+                </div>
+
+                                    <footer class="site-footer" role="contentinfo">
+            <div class="inside">
+                                                                                                                                                                                                    <div class="block block-small quicklinks footer">
+    
+    <ul class="ql-list unstyled">
+                            
+
+    <li class="ql-item linkid45419">
+                                <a href="/Footer/Sitemap" class="btn-primary" target="_self"
+                 onclick="return xt_click(this,'C','','::Sitemap','N')">
+            
+            <span class="txt-btn">Sitemap</span>
+        </a>
+    </li>
+                            
+
+    <li class="ql-item linkid45420">
+                                <a href="/Old/Old-Pages-2016/Contact-our-team-Trustech-payment-identification" class="btn-primary" target="_self"
+                 onclick="return xt_click(this,'C','','::Contact','N')">
+            
+            <span class="txt-btn">Contact</span>
+        </a>
+    </li>
+                            
+
+    <li class="ql-item linkid45421">
+                                <a href="/content/location/52755" class="btn-primary" target="_self"
+                 onclick="return xt_click(this,'C','','::Legal_terms','N')">
+            
+            <span class="txt-btn">Legal terms</span>
+        </a>
+    </li>
+            </ul>
+</div>
+
+
+
+
+
+
+
+
+                                                </div>
+        </footer>
+            
+    
+
+
+            <script src="/js/93779bc.js"></script>
+
+<script src="/theme/cartes/js.js"></script>
+
+<script src="/js/d228ec7.js"></script>
+
+        <script src="/js/93f3a29.js"></script>
+    
+                                        <script type="text/javascript">
+
+        function xitiAction(xiti)
+        {
+            if (typeof xiti.tags != "undefined") {
+                window.xt_tags = xiti.tags;
+                //do not modify below
+                if (window.xtparam!=null){window.xtparam+="&tag="+window.xt_tags;}
+                else{window.xtparam="&tag="+window.xt_tags;}
+            }
+
+            window.xtnv = document; //parent.document or top.document or document
+            window.xtsd = xiti.xtsd;
+            if (typeof xiti.xtsds != "undefined" && xiti.xtsds != '') {
+                window.xtsds = xiti.xtsds;
+            }
+            window.xtsite = xiti.xtsite;
+            window.xtn2 = xiti.xtn2; // level 2 site ID
+            window.xtpage = xiti.xtpage; //page name (with the use of :: to create chapters)
+            window.xtdi = ""; //implication degree
+            window.xt_multc = xiti.xt_multc; //all the xi indicators (like "&x1=...&x2=....&x3=...")
+            window.xt_an = ""; //user ID
+            window.xt_ac = ""; //category ID
+
+            window.xtergo = '1';
+            if (typeof xiti.xtidmod != "undefined") {
+                window.xtidmod = xiti.xtidmod;
+            }
+            //do not modify below
+            if (window.xtparam!=null){window.xtparam+=window.xt_multc+"&ac="+window.xt_ac+"&an="+window.xt_an;}
+            else{window.xtparam=window.xt_multc+"&ac="+window.xt_ac+"&an="+window.xt_an;}
+
+                        $.getScript('/js/a035fa1.js');
+                    }
+
+        $.ajaxSetup({
+            cache: true
+        });
+        $.ajax("/ajax/xiti/28534").done(xitiAction);
+
+    </script>
+                
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2716c20c2a","applicationID":"24579857","transactionName":"ZQQBbUVXWEZRAkQMWVxOIlpDX1lbHwJfCFNKEQxKXkNbakoOXgBpWw8AVUJSUw==","queueTime":0,"applicationTime":582,"atts":"SUMCGw1NS0g=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

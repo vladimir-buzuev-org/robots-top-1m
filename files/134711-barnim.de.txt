@@ -1,0 +1,44 @@
+###Grunsätzliche Erlaubnis für alle Verzeichnisse/Ordner/Pfade
+# beinhaltet auch Seitenstruktur im Frontend
+User-agent: *
+Allow: /
+
+# TYPO3-Pfade ausschließen
+Disallow: /typo3_src/
+Disallow: /typo3/
+Disallow: /t3lib/
+Disallow: /typo3conf/
+
+# Speicher und Uploadpfade ausschließen
+Disallow: /typo3temp/
+Disallow: /uploads/
+
+# HTML, CSS, JS, Images im Templatesordner ausschließen
+Disallow: /fileadmin/templates/
+
+# Dateien nach Endung ausschließen (php, Typoscript, ...)
+Disallow: /*.php
+Disallow: /*.ts
+Disallow: /*.tss
+Disallow: /*.tsc
+Disallow: /*.tsconfig
+Disallow: /*.csv
+Disallow: /*.xls
+Disallow: /*.xlsx
+
+# Ausschließen, dass Seiten ohne realurl indiziert werden (duplicate content!)
+Disallow: /*?id=*
+
+# Zugriff auf die Extension und TMPFiles, welche die CSS und JS Dateien beinhalten, erlauben
+#(Google MobileFriendlyTest - Sichtbarkeit Styles + Scripts: https://www.google.com/webmasters/tools/mobile-friendly/).
+Allow: /typo3conf/ext/*/Resources/Public/
+Allow: /*.js
+Allow: /*.js.*
+Allow: /*.css
+Allow: /*.css.*
+#Optional Images unter TMP freigeben
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.svg
+Allow: /*.gif
+Allow: /*.png

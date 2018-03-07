@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="unsupported-ie ie" lang="fr_FR"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="fr_FR"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="fr_FR"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="Atlantic.fr"/>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+            <meta name="author" content="Atlantic"/>
+                    <meta name="generator" content="eZ Platform"/>
+                <meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+    
+        
+                                                            <meta name="description" content="Solutions de confort thermique pour le chauffage, l&#039;eau chaude sanitaire, la ventilation, la climatisation ... Tout en limitant vos dépenses énergétiques."/>
+                                                                        <meta property="og:description" content="Solutions de confort thermique pour le chauffage, l&#039;eau chaude sanitaire, la ventilation, la climatisation ... Tout en limitant vos dépenses énergétiques."/>
+                                                                        <meta property="og:title" content="Fabricant confort thermique chauffage, ECS, ventilation et climatisation - Atlantic"/>
+                                                            <title>Fabricant confort thermique chauffage, ECS, ventilation et climatisation - Atlantic</title>
+                                                                            <meta name="twitter:description" content="Solutions de confort thermique pour le chauffage, l&#039;eau chaude sanitaire, la ventilation, la climatisation ... Tout en limitant vos dépenses énergétiques."/>
+                                                                        <meta name="twitter:title" content="Fabricant confort thermique chauffage, ECS, ventilation et climatisation - Atlantic"/>
+                                    <link rel="canonical" href="http://www.atlantic.fr/" />
+        
+                            <link rel="Shortcut icon" type="image/x-icon" href="/bundles/gaatlanticmarque/images/favicon.ico" />
+        
+
+    
+                
+    <meta name="page-type" content="home" />
+
+        
+                <link rel="apple-touch-icon" sizes="57x57" href="/bundles/gaatlanticmarque/images/favicon/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/bundles/gaatlanticmarque/images/favicon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/bundles/gaatlanticmarque/images/favicon/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/bundles/gaatlanticmarque/images/favicon/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/bundles/gaatlanticmarque/images/favicon/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/bundles/gaatlanticmarque/images/favicon/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/bundles/gaatlanticmarque/images/favicon/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/bundles/gaatlanticmarque/images/favicon/favicon-32x32.png" sizes='32x32'>
+<link rel="icon" type="image/png" href="/bundles/gaatlanticmarque/images/favicon/android-chrome-192x192.png" sizes='192x192'>
+<link rel="icon" type="image/png" href="/bundles/gaatlanticmarque/images/favicon/favicon-96x96.png" sizes='96x96'>
+<link rel="icon" type="image/png" href="/bundles/gaatlanticmarque/images/favicon/favicon-16x16.png" sizes='16x16'>
+<link rel="manifest" href="/bundles/gaatlanticmarque/images/favicon/manifest.json">
+<link rel="mask-icon" href="/bundles/gaatlanticmarque/images/favicon/safari-pinned-tab.svg">
+
+<!-- Script Kameleoon -->
+<script type="text/javascript">
+    var kameleoonURL = "https://dlxo0flt7n.kameleoon.eu";
+    var kameleoonStartLoadTime = new Date().getTime();
+    var kameleoonLoadingTimeout = 1000;
+    var kameleoonProcessMessageEvent = function(event){if (kameleoonURL == event.origin){window.removeEventListener("message", kameleoonProcessMessageEvent);window.kameleoonExternalIFrameLoaded = true;eval(event.data);Kameleoon.Analyst.load();}};
+    if (window.addEventListener){window.addEventListener("message", kameleoonProcessMessageEvent, false);}
+    if (! document.getElementById("kameleoonLoadingStyleSheet") && ! window.kameleoonDisplayPageTimeOut){
+        var kameleoonS = document.getElementsByTagName("script")[0];var kameleoonCc = "* { visibility: hidden !important; background-image: none !important; }";
+        var kameleoonStn = document.createElement("style");kameleoonStn.type = "text/css";kameleoonStn.id = "kameleoonLoadingStyleSheet";
+        if (kameleoonStn.styleSheet){kameleoonStn.styleSheet.cssText = kameleoonCc;}else{kameleoonStn.appendChild(document.createTextNode(kameleoonCc));}kameleoonS.parentNode.insertBefore(kameleoonStn, kameleoonS);
+        window.kameleoonDisplayPage = function(){if (kameleoonStn.parentNode){kameleoonStn.parentNode.removeChild(kameleoonStn);}};
+        window.setTimeout(function(){}, 25);
+        window.kameleoonDisplayPageTimeOut = window.setTimeout(window.kameleoonDisplayPage, kameleoonLoadingTimeout);}
+    var iframeNode = document.createElement("iframe");
+    iframeNode.src = kameleoonURL;
+    iframeNode.id = "kameleoonExternalIframe";
+    iframeNode.style = "float: left !important; opacity: 0.0 !important; width: 0px !important; height: 0px !important;";
+    document.head.appendChild(iframeNode);
+</script>
+<!-- End Script Kameleoon -->
+
+<script>
+    WebFontConfig = {
+        google: {
+            families: [
+                'Lato:400,100,300,300italic,100italic,400italic,700,700italic,900,900italic',
+                'Open+Sans:400,300italic,300,400italic,600,600italic,700,700italic,800italic,800'
+            ]
+        }
+    };
+    (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })();
+</script>
+
+        <link rel="stylesheet" type="text/css" href="/css/6961000-ff2138b.css">
+            <link rel="stylesheet" type="text/css" href="/css/7a2e824-5f195ca.css">
+    
+        <link rel="stylesheet" type="text/css" href="/css/1fb0678-a35e447.css">
+    
+
+    
+    <!--[if lt IE 9]>
+<script type="text/javascript" src="/js/003321d-f4690c9.js"></script>
+<![endif]-->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "url": "http://www.atlantic.fr/",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "http://www.atlantic.fr/Search?keyword={search_term}",
+                "query-input": "required name=search_term"
+            }
+        }
+    </script>
+    </head>
+<body itemscope itemtype="http://schema.org/webpage" class="" >
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5JZR8N"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5JZR8N');</script>
+<!-- End Google Tag Manager -->
+
+
+<!--#loading-->
+<div class="loader-page">
+    <div class="loading">
+        <div class="logo">
+            <img src="/bundles/gaatlanticmarque/images/logo.png" about="ATLANTIC">
+        </div>
+        <div class="text-chargement">
+            Chargement...
+        </div>
+
+        <div class="loading-line"></div>
+        <div class="loading-break loading-dot-1"></div>
+    </div>
+</div>
+<!--#loading-->
+
+<div class="wrapper ">
+    <div class="full-page">
+                    <header id="header">
+        <nav class="navbar">
+        <div class="top-header hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <span class="active top-link">Bienvenue sur l'espace particulier</span>
+                        <a class="top-link" href="http://www.atlantic-pros.fr" target="_blank">Vous êtes un professionnel ?</a>
+                    </div>
+                    <div class="col-sm-6">
+                        <ul class="style-list right-block-header">
+                            <li>
+                                <span id="label-lang" class="lang-active" data-target="#" href="#"
+                                      data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                                            <img src="/images/73f2b85-f34d21b.png" alt="" width="18" height="14"/>
+                                                                    </span>
+                            </li>
+                        </ul>
+                        <ul class="style-list right-block-header" id="user-block-container">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-2 visible-sm visible-xs">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle">
+                                <span class="sr-only"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-8">
+
+                        <div class="logo">
+                                                                <a data-toggle="tooltip" data-placement="bottom" title="Retour Accueil" href="/">
+                                                                                <img class="img-responsive" src="/images/756baa9-4bf7548.png" alt="Atlantic"/>
+                                                                            </a>
+                                                    </div>
+
+                    </div>
+                    <div class="col-xs-2 visible-xs">
+                                                        <li class="selection-block hidden-xs">
+        <a href="/login">Mon compte</a>
+    </li>
+    <a class="user-mobile log-in visible-xs" href="/login"></a>
+
+                                            </div>
+                    <div class="col-md-9 col-sm-6 col-xs-12">
+                        <div class="search-block">
+                            <form class="form-inline" action="/Search" method="get">
+                                <div class="form-group">
+                                    <label class="hidden" for="search">Rechercher</label>
+                                    <input type="search" class="form-control" id="keyword" name="keyword" placeholder="">
+                                </div>
+                                <button type="submit" class="btn-search">
+                                    <span class="icon-loupe"></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                                            <div id="navbar">
+                            <ul class="nav navbar-nav"  id="accordion">
+    <!--nav-item-->
+    <!--/nav-item-->
+            <!--nav-item-->
+                                                            <li class="rubrique-1 theme_color_1">
+                        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse1"><span>Chauffer</span>le logement</a>
+            <div id="collapse1" class="mega-menu">
+                <div class="container">
+                    <div class="row">
+                                                                                                                <div class="col-md-9 col-sm-9">
+                                    <span class="menu-block-title">    Chauffez votre logement selon vos besoins</span>
+                                    <div class="row">
+                                                                                                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <span class="menu-block-item"><a href="/Chauffer-le-logement/Chauffage-electrique"> Chauffage électrique</a></span>
+                                                    <ul class="liste-lien">
+                                                                                                                                                                                <li><span class="menu-block-subitem"><a href="/Chauffer-le-logement/Chauffage-electrique/Radiateur-connecte">Radiateur connecté</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-le-logement/Chauffage-electrique/Radiateur-a-chaleur-douce">Radiateur à chaleur douce</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-le-logement/Chauffage-electrique/Panneau-rayonnant">Panneau rayonnant</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-le-logement/Chauffage-electrique/Convecteur">Convecteur</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-le-logement/Chauffage-electrique/Pour-une-piece-a-vivre">&gt; Pour une pièce à vivre</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-le-logement/Chauffage-electrique/Pour-une-piece-de-nuit">&gt; Pour une pièce de nuit</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-le-logement/Chauffage-electrique/Pour-une-salle-de-bains">&gt; Pour une salle de bains</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-le-logement/Chauffage-electrique/Autres-emetteurs-de-chauffage">Autres émetteurs de chauffage</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+                                                </div>
+                                                                                                                                                                                <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <span class="menu-block-item"><a href="/Chauffer-le-logement/Chaudiere"> Chaudière</a></span>
+                                                    <ul class="liste-lien">
+                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a href="/Chauffer-le-logement/Chaudiere/Chaudiere-murale-gaz">Chaudière murale gaz</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-le-logement/Chaudiere/Chaudiere-sol-gaz">Chaudière sol gaz</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-le-logement/Chaudiere/Chaudiere-sol-fioul">Chaudière sol fioul</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-le-logement/Chaudiere/Chaudiere-sol-bois">Chaudière sol bois</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                </div>
+                                                                                                                                                                                <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <span class="menu-block-item"><a href="/Chauffer-le-logement/Pompe-a-chaleur"> Pompe à chaleur</a></span>
+                                                    <ul class="liste-lien">
+                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a href="/Chauffer-le-logement/Pompe-a-chaleur/Aerothermie">Aérothermie</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-le-logement/Pompe-a-chaleur/Geothermie">Géothermie</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <span class="menu-block-item" style=""><a href="/Chauffer-le-logement/Poele-a-granules">Poêle à granulés</a></span>
+                                                                                                                                                                                                                                                                <span class="menu-block-item" style=""><a href="/Chauffer-le-logement/Climatisation-reversible-pour-une-seule-piece">Climatisation réversible pour une seule pièce</a></span>
+                                                                                                                                                                                                                                                                <span class="menu-block-item" style=""><a href="/Chauffer-le-logement/Climatisation-reversible-pour-plusieurs-pieces">Climatisation réversible pour plusieurs pièces</a></span>
+                                                                                                                                                                                                                                        </ul>
+                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                </div>
+                                                                                                        </div>
+                </div>
+            </div>
+        </li>
+        <!--/nav-item-->
+                <!--nav-item-->
+                                                            <li class="rubrique-2 theme_color_2">
+                        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse2"><span>Chauffer</span>la salle de bains</a>
+            <div id="collapse2" class="mega-menu">
+                <div class="container">
+                    <div class="row">
+                                                                                                                <div class="col-md-9 col-sm-9">
+                                    <span class="menu-block-title">    Chauffez votre salle de bains et séchez vos serviettes</span>
+                                    <div class="row">
+                                                                                                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <span class="menu-block-item"><a href="/Chauffer-la-salle-de-bains/Seche-serviettes-electrique"> Sèche-serviettes électrique</a></span>
+                                                    <ul class="liste-lien">
+                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a href="/Chauffer-la-salle-de-bains/Seche-serviettes-electrique/Radiateur-seche-serviettes-electrique">Radiateur sèche-serviettes électrique</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                </div>
+                                                                                                                                                                                <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <span class="menu-block-item"><a href="/Chauffer-la-salle-de-bains/Seche-serviettes-sur-chaudiere"> Sèche-serviettes sur chaudière</a></span>
+                                                    <ul class="liste-lien">
+                                                                                                                                                                                <li><span class="menu-block-subitem"><a href="/Chauffer-la-salle-de-bains/Seche-serviettes-sur-chaudiere/Seche-serviettes-mixte">Sèche-serviettes mixte</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-la-salle-de-bains/Seche-serviettes-sur-chaudiere/Seche-serviettes-eau-chaude">Sèche-serviettes eau chaude</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                </div>
+                                                                                                                        </div>
+                                </div>
+                                                                                                        </div>
+                </div>
+            </div>
+        </li>
+        <!--/nav-item-->
+                <!--nav-item-->
+                                                            <li class="rubrique-3 theme_color_3">
+                        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse3"><span>Chauffer</span>l’eau</a>
+            <div id="collapse3" class="mega-menu">
+                <div class="container">
+                    <div class="row">
+                                                                                                                <div class="col-md-9 col-sm-9">
+                                    <span class="menu-block-title">    Chauffez votre eau selon vos besoins</span>
+                                    <div class="row">
+                                                                                                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <span class="menu-block-item"><a href="/Chauffer-l-eau/Chauffe-eau"> Chauffe-eau</a></span>
+                                                    <ul class="liste-lien">
+                                                                                                                                                                                <li><span class="menu-block-subitem"><a href="/Chauffer-l-eau/Chauffe-eau/Chauffe-eau-electrique">Chauffe-eau électrique</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-l-eau/Chauffe-eau/Chauffe-eau-thermodynamique">Chauffe-eau thermodynamique</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-l-eau/Chauffe-eau/Chauffe-eau-solaire">Chauffe-eau solaire</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-l-eau/Chauffe-eau/Preparateur-d-eau-chaude-sanitaire">Préparateur d&#039;eau chaude sanitaire</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+                                                </div>
+                                                                                                                                                                                <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <span class="menu-block-item"><a href="/Chauffer-l-eau/Chaudiere"> Chaudière</a></span>
+                                                    <ul class="liste-lien">
+                                                                                                                                                                                <li><span class="menu-block-subitem"><a href="/Chauffer-l-eau/Chaudiere/Chaudiere-sol-gaz">Chaudière sol gaz</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-l-eau/Chaudiere/Chaudiere-sol-fioul">Chaudière sol fioul</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-l-eau/Chaudiere/Chaudiere-sol-bois">Chaudière sol bois</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-l-eau/Chaudiere/Chaudiere-murale-gaz">Chaudière murale gaz</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                </div>
+                                                                                                                                                                                <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <span class="menu-block-item"><a href="/Chauffer-l-eau/Pompe-a-chaleur"> Pompe à chaleur</a></span>
+                                                    <ul class="liste-lien">
+                                                                                                                                                                                <li><span class="menu-block-subitem"><a href="/Chauffer-l-eau/Pompe-a-chaleur/Aerothermie">Aérothermie</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Chauffer-l-eau/Pompe-a-chaleur/Geothermie">Géothermie</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+                                                </div>
+                                                                                                                        </div>
+                                </div>
+                                                                    <div class="clearfix visible-sm-block"></div>
+                                    
+                                    
+
+<div class="col-md-3 col-sm-5 hide_mobile">
+    <div class="cozytouch-header">
+        <figure>
+            <a href="http://www.atlantic.fr/Chauffer-l-eau/Chauffe-eau/Chauffe-eau-thermodynamique" class="titre-cozytouch">
+                                  
+         <img src="/var/atlantic/storage/images/_aliases/bloc_cozytouch_menu/media/images/push-chauffe-eau/76651-4-fre-FR/push-chauffe-eau.jpg" alt="push-chauffe-eau" class="img-responsive">
+          
+            </a>
+        </figure>
+    </div>
+</div>
+
+                                                                                                        </div>
+                </div>
+            </div>
+        </li>
+        <!--/nav-item-->
+                <!--nav-item-->
+                                                            <li class="rubrique-4 theme_color_4">
+                        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse4"><span>Climatiser</span>le logement</a>
+            <div id="collapse4" class="mega-menu">
+                <div class="container">
+                    <div class="row">
+                                                                                                                <div class="col-md-9 col-sm-9">
+                                    <span class="menu-block-title">    rafraîchir et chauffer votre logement</span>
+                                    <div class="row">
+                                                                                                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <span class="menu-block-item"><a href="/Climatiser-le-logement/Climatisation-reversible-pour-une-seule-piece"> Climatisation réversible pour une seule pièce</a></span>
+                                                    <ul class="liste-lien">
+                                                                                                                                                                                <li><span class="menu-block-subitem"><a href="/Climatiser-le-logement/Climatisation-reversible-pour-une-seule-piece/Les-climatiseurs-muraux">Les climatiseurs muraux</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Climatiser-le-logement/Climatisation-reversible-pour-une-seule-piece/Les-climatiseurs-consoles">Les climatiseurs consoles</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                </div>
+                                                                                                                                                                                <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <span class="menu-block-item"><a href="/Climatiser-le-logement/Climatisation-reversible-pour-plusieurs-pieces"> Climatisation réversible pour plusieurs pièces</a></span>
+                                                    <ul class="liste-lien">
+                                                                                                                                                                                <li><span class="menu-block-subitem"><a href="/Climatiser-le-logement/Climatisation-reversible-pour-plusieurs-pieces/Les-climatiseurs-multi-splits">Les climatiseurs multi-splits</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Climatiser-le-logement/Climatisation-reversible-pour-plusieurs-pieces/Les-climatiseurs-gainables">Les climatiseurs gainables</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Climatiser-le-logement/Climatisation-reversible-pour-plusieurs-pieces/Les-climatiseurs-VRF">Les climatiseurs VRF</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                </div>
+                                                                                                                        </div>
+                                </div>
+                                                                    <div class="clearfix visible-sm-block"></div>
+                                    
+                                    
+
+<div class="col-md-3 col-sm-5 hide_mobile">
+    <div class="cozytouch-header">
+        <figure>
+            <a href="/Climatiser-le-logement/Climatisation-reversible-pour-une-seule-piece" class="titre-cozytouch">
+                                  
+         <img src="/var/atlantic/storage/images/_aliases/bloc_cozytouch_menu/media/images/push-climatiseur/76707-4-fre-FR/push-climatiseur.jpg" alt="push-climatiseur" class="img-responsive">
+          
+            </a>
+        </figure>
+    </div>
+</div>
+
+                                                                                                        </div>
+                </div>
+            </div>
+        </li>
+        <!--/nav-item-->
+                <!--nav-item-->
+                                                            <li class="rubrique-5 theme_color_5">
+                        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse5"><span>Ventiler</span>le logement</a>
+            <div id="collapse5" class="mega-menu">
+                <div class="container">
+                    <div class="row">
+                                                                                                                <div class="col-md-9 col-sm-9">
+                                    <span class="menu-block-title">    Ventiler et améliorer la qualité d&#039;air intérieur</span>
+                                    <div class="row">
+                                                                                                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <span class="menu-block-item"><a href="/Ventiler-le-logement/Ventilation-d-une-piece"> Ventilation d&#039;une pièce</a></span>
+                                                    <ul class="liste-lien">
+                                                                                                                                                                                <li><span class="menu-block-subitem"><a href="/Ventiler-le-logement/Ventilation-d-une-piece/Extraction-intermittente">Extraction intermittente</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Ventiler-le-logement/Ventilation-d-une-piece/Extraction-permanente">Extraction permanente</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Ventiler-le-logement/Ventilation-d-une-piece/Double-flux-piece-par-piece">Double flux pièce par pièce</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+                                                </div>
+                                                                                                                                                                                <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <span class="menu-block-item"><a href="/Ventiler-le-logement/Ventilation-de-tout-le-logement"> Ventilation de tout le logement</a></span>
+                                                    <ul class="liste-lien">
+                                                                                                                                                                                <li><span class="menu-block-subitem"><a href="/Ventiler-le-logement/Ventilation-de-tout-le-logement/Ventilation-double-flux">Ventilation double flux</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Ventiler-le-logement/Ventilation-de-tout-le-logement/Ventilation-simple-flux">Ventilation simple flux</a></span></li>
+                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Ventiler-le-logement/Ventilation-de-tout-le-logement/Bouches-d-extraction-et-entrees-d-air">Bouches d&#039;extraction et entrées d&#039;air</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+                                                </div>
+                                                                                                                        </div>
+                                </div>
+                                                                    <div class="clearfix visible-sm-block"></div>
+                                    
+                                    
+
+<div class="col-md-3 col-sm-5 hide_mobile">
+    <div class="cozytouch-header">
+        <figure>
+            <a href="/Ventiler-le-logement/Ventilation-de-tout-le-logement/Ventilation-double-flux/OPTIMOCOSY-HR" class="titre-cozytouch">
+                                  
+         <img src="/var/atlantic/storage/images/_aliases/bloc_cozytouch_menu/media/images/push-layer-optimocosy/76676-4-fre-FR/push-layer-optimocosy.jpg" alt="push-layer-optimocosy" class="img-responsive">
+          
+            </a>
+        </figure>
+    </div>
+</div>
+
+                                                                                                        </div>
+                </div>
+            </div>
+        </li>
+        <!--/nav-item-->
+                <!--nav-item-->
+                                                            <li class="rubrique-6 theme_color_6">
+                        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse6"><span>Piloter</span>les appareils</a>
+            <div id="collapse6" class="mega-menu">
+                <div class="container">
+                    <div class="row">
+                                                                                                                <div class="col-md-9 col-sm-9">
+                                    <span class="menu-block-title">    Piloter le confort thermique à votre convenance</span>
+                                    <div class="row">
+                                                                                                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <span class="menu-block-item"><a href="/Piloter-les-appareils/Via-smartphone"> Via smartphone</a></span>
+                                                    <ul class="liste-lien">
+                                                                                                                                                                                <li><span class="menu-block-subitem"><a href="/Piloter-les-appareils/Via-smartphone/Solutions-connectees">Solutions connectées</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                </div>
+                                                                                                                                                                                <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <span class="menu-block-item"><a href="/Piloter-les-appareils/Via-commande-murale"> Via commande murale</a></span>
+                                                    <ul class="liste-lien">
+                                                                                                                                                                                <li><span class="menu-block-subitem"><a href="/Piloter-les-appareils/Via-commande-murale/Commande-d-ambiance-murale">Commande d&#039;ambiance murale</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                </div>
+                                                                                                                        </div>
+                                </div>
+                                                                    <div class="clearfix visible-sm-block"></div>
+                                    
+                                    
+
+<div class="col-md-3 col-sm-5 hide_mobile">
+    <div class="cozytouch-header">
+        <figure>
+            <a href="http://www.atlantic.fr/Piloter-les-appareils/Via-smartphone/Solutions-connectees/Cozytouch" class="titre-cozytouch">
+                                  
+         <img src="/var/atlantic/storage/images/_aliases/bloc_cozytouch_menu/media/images/cozytouch-layer/37393-4-fre-FR/cozytouch-layer.jpg" alt="cozytouch-layer" class="img-responsive">
+          
+            </a>
+        </figure>
+    </div>
+</div>
+
+                                                                                                        </div>
+                </div>
+            </div>
+        </li>
+        <!--/nav-item-->
+                <!--nav-item-->
+                                                            <li class="rubrique-7 theme_color_1">
+                        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse7"><span>Nos</span>conseils</a>
+            <div id="collapse7" class="mega-menu">
+                <div class="container">
+                    <div class="row">
+                                                                                                                <div class="col-md-12 col-sm-9">
+                                    <span class="menu-block-title">    Des informations, dossiers et documents pour répondre à toutes vos questions</span>
+                                    <div class="row">
+                                                                                    
+                                            <div class="col-md-2 hide_mobile">
+                <p><span id="" class="menu-block-item"><a href="/Lexique" target="_self">Lexique du confort thermique</a></span><br><span id="" class="menu-block-item"><a href="/Nos-conseils/Documentation" target="_self">Documentation</a></span></p>
+    </div>
+
+
+                                                                                                                                                                                                                                                                                                                                        <div class="col-xs-12 col-sm-2 col-lg-2">
+                                            
+                                                    <span class="menu-block-item"><a href="/Nos-conseils/Aides-et-financement">Aides et financement</a></span>
+                                                                                                            <ul class="liste-lien">
+                                                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a href="/Nos-conseils/Aides-et-financement/Aides-et-credits-d-impot">Aides et crédits d&#039;impôt</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Nos-conseils/Aides-et-financement/Les-prets-Atlantissimo">Les prêts Atlantissimo</a></span></li>
+                                                                                                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                </div>
+                                                      
+                                        
+                                                                                                                                                                                                                                                                                                                                                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                    
+                                                    <span class="menu-block-item"><a href="/Nos-conseils/Confort-et-economie-d-energie">Confort et économie d&#039;énergie</a></span>
+                                                                                                        
+                                        
+                                                                                                                                                                                                                                                                                                
+                                                    <span class="menu-block-item"><a href="/Nos-conseils/Assistance">Assistance</a></span>
+                                                                                                            <ul class="liste-lien">
+                                                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a href="/Nos-conseils/Assistance/Assistance-SAV">Assistance SAV</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Nos-conseils/Assistance/FAQ">FAQ</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/Nos-conseils/Assistance/SOS-chauffe-eau">SOS chauffe-eau</a></span></li>
+                                                                                                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                </div>
+                                                      
+                                        
+                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                        </div>
+                </div>
+            </div>
+        </li>
+        <!--/nav-item-->
+                <!--nav-item-->
+                                                            <li class="rubrique-8 theme_color_1">
+                        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse8"><span>La</span>marque</a>
+            <div id="collapse8" class="mega-menu">
+                <div class="container">
+                    <div class="row">
+                                                                                                                <div class="col-md-12 col-sm-9">
+                                    <span class="menu-block-title">    Présentation, actualités et espace presse, pour tout savoir sur Atlantic</span>
+                                    <div class="row">
+                                                                                    
+                                            <div class="col-md-3 hide_mobile">
+        <div class="bloc-maruque">
+        <span>Atlantic est une marque française...</span>
+            <ul class="liste-marque"><li>Des produits multi-fonctions et multi-énergies</li><li>Un réseau d'installateurs Partenaires Confiance</li><li>Une démarche environnementale forte</li></ul>
+    </div>
+    </div>
+
+
+                                                                                                                            <div class="col-xs-12 col-sm-4 col-lg-3">
+                                                <span class="menu-block-item"><a href="/La-marque/Qui-sommes-nous">Qui sommes-nous?</a></span>
+                                                <ul class="liste-lien">
+                                                                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/La-marque/Qui-sommes-nous/La-marque-Atlantic">La marque Atlantic</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a href="/La-marque/Qui-sommes-nous/Atlantic-Fabricant-Francais">Atlantic Fabricant Français</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a href="/La-marque/Qui-sommes-nous/Une-marque-multi-specialiste">Une marque multi-spécialiste</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a href="/La-marque/Qui-sommes-nous/Notre-demarche-Environnement">Notre démarche Environnement</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a href="/La-marque/Qui-sommes-nous/Nos-installateurs">Nos installateurs</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a class="menu-block-view-more" href="/La-marque/Qui-sommes-nous">Voir plus ></a></span></li>
+                                                                                                                                                                                                                    </ul>
+                                            </div>
+                                                                                    <div class="col-xs-12 col-sm-4 col-lg-3">
+                                                <span class="menu-block-item"><a href="/La-marque/Nos-Actualites">Nos Actualités</a></span>
+                                                <ul class="liste-lien">
+                                                                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/La-marque/Nos-Actualites/La-climatisation-reversible-passe-a-la-radio">La climatisation réversible passe à la radio</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a href="/La-marque/Nos-Actualites/Decouvrez-la-web-serie-qui-va-rechauffer-votre-hiver">Découvrez la web série qui va réchauffer votre hiver !</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a href="/La-marque/Nos-Actualites/Beneficiez-d-un-an-de-garantie-supplementaire">Bénéficiez d&#039;un an de garantie supplémentaire !</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a href="/La-marque/Nos-Actualites/Prenez-le-bon-air-restez-chez-vous">Prenez le bon air, restez chez vous !</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a href="/La-marque/Nos-Actualites/Nos-clients-temoignent">Nos clients témoignent</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a class="menu-block-view-more" href="/La-marque/Nos-Actualites">Voir plus ></a></span></li>
+                                                                                                                                                                                                                    </ul>
+                                            </div>
+                                                                                    <div class="col-xs-12 col-sm-4 col-lg-3">
+                                                <span class="menu-block-item"><a href="/La-marque/Recrutement-Presse">Recrutement - Presse</a></span>
+                                                <ul class="liste-lien">
+                                                                                                                                                                                                                                                                                            <li><span class="menu-block-subitem"><a href="/La-marque/Recrutement-Presse/Contacts-Presse">Contacts Presse</a></span></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li><span class="menu-block-subitem"><a href="http://www.groupe-atlantic.fr/emploi" target="_blank">Recrutement</a></span></li>
+                                                                                                                                                                                                                                                                                </ul>
+                                            </div>
+                                                                                                                    </div>
+                                </div>
+
+                                                                        </div>
+                </div>
+            </div>
+        </li>
+        <!--/nav-item-->
+        </ul>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+    </nav>
+</header>
+                <main itemscope="mainContentOfPage" id="main-content" class="">
+
+            
+            
+    
+    <div id="carousel-home" class="carousel slide" data-ride="carousel" data-interval="">
+
+        <input id="carrousel_time" type="hidden" value="4">
+
+        <div class="carousel-inner" role="listbox">
+                                                                                            <div class="item  active ">
+    
+    
+                    
+
+    <section class="head-page"  style="background-image: url(/var/atlantic/storage/images/_aliases/background_category/media/images/images-home/radiateur-irisium-405x1400/41444-6-fre-FR/radiateur-irisium-405x1400.jpg)" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-ms-6">
+                    <div class="lead-box">
+                        <div class="citation-1">
+                            <blockquote>
+                                    Bonjour Atlantic, <br />
+je souhaiterais un chauffage qui réchauffe aussi ma déco.
+                            </blockquote>
+                        </div>
+                        <a  href="/Chauffer-le-logement/Chauffage-electrique/Radiateur-connecte/Radiateurs-Design" id="slider-1" class="btn btn-dark">Découvrez nos radiateurs Design</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </section>
+</div>
+                                                            <div class="item ">
+    
+    
+                    
+
+    <section class="head-page"  style="background-image: url(/var/atlantic/storage/images/_aliases/background_category/media/images/images-home/connectivite-home-filtres4-405x1400/41328-2-fre-FR/connectivite-home-filtres4-405x1400.jpg)" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-ms-6">
+                    <div class="lead-box">
+                        <div class="citation-1">
+                            <blockquote>
+                                    Je peux piloter mes appareils depuis mon smartphone, où je veux, quand je veux.
+                            </blockquote>
+                        </div>
+                        <a  href="/Piloter-les-appareils/Via-smartphone/Solutions-connectees/Cozytouch" id="slider-2" class="btn btn-dark">Découvrir nos solutions connectées</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </section>
+</div>
+                                                            <div class="item ">
+    
+    
+                    
+
+    <section class="head-page"  style="background-image: url(/var/atlantic/storage/images/_aliases/background_category/media/images/images-home/chaudiere-murale-gaz-atlantic-405x1400/39695-2-fre-FR/chaudiere-murale-gaz-atlantic-405x1400.jpg)" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-ms-6">
+                    <div class="lead-box">
+                        <div class="citation-1">
+                            <blockquote>
+                                    Je souhaiterais une chaudière murale gaz, connectée à mes envies !
+                            </blockquote>
+                        </div>
+                        <a  href="/Chauffer-le-logement/Chaudiere/Chaudiere-murale-gaz" id="slider-3" class="btn btn-dark">Découvrir nos chaudières murales gaz</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </section>
+</div>
+                                                            <div class="item ">
+    
+    
+                    
+
+    <section class="head-page"  style="background-image: url(/var/atlantic/storage/images/_aliases/background_category/media/images/images-produit-carrousel-632x400/visuel_ambiance_lmce_10-05-2017/192394-1-fre-FR/visuel_ambiance_LMCE_10-05-2017.jpg)" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-ms-6">
+                    <div class="lead-box">
+                        <div class="citation-1">
+                            <blockquote>
+                                    Le bien-être, c&#039;est aussi une histoire de beauté intérieure
+                            </blockquote>
+                        </div>
+                        <a  href="http://www.atlantic.fr/Climatiser-le-logement/Climatisation-reversible-pour-une-seule-piece/Les-climatiseurs-muraux" id="slider-4" class="btn btn-dark">Découvrez nos climatiseurs muraux design</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </section>
+</div>
+                            
+            <!-- Indicators -->
+            <div class="nav-carousel">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ol class="carousel-indicators">
+                                                                    <li data-target="#carousel-home"
+                                        data-slide-to="0"  class="active" >
+                                        Radiateur Design
+                                    </li>
+                                                                    <li data-target="#carousel-home"
+                                        data-slide-to="1" >
+                                        Connectivité
+                                    </li>
+                                                                    <li data-target="#carousel-home"
+                                        data-slide-to="2" >
+                                        chaudière murale gaz
+                                    </li>
+                                                                    <li data-target="#carousel-home"
+                                        data-slide-to="3" >
+                                        CLIMATISEUR MURAL
+                                    </li>
+                                                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <main itemscope="mainContentOfPage" id="main-content">
+
+        <section class="section-cozytouch ">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-8 col-sm-12">
+                        <div class="block-cozytouch">
+                                                                                        
+<div class="row">
+    <div class="col-md-6">
+        <div class="image">
+            <figure class="figure-article">
+                              
+         <img src="/var/atlantic/storage/images/_aliases/block_cozytouch/media/images/images-home/image-du-bloc-cozytouch-de-la-home/37414-4-fre-FR/Image-du-bloc-Cozytouch-de-la-Home.jpg" alt="Image du bloc Cozytouch de la Home">
+          
+                        </figure>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="push-cozytouch">
+            <a href="#" class="titre-cozytouch">Cozytouch</a>
+            <p>    <p>Grâce à Cozytouch contrôlez à distance votre confort thermique.</p></p>
+                        <a href="/Piloter-les-appareils/Via-smartphone/Solutions-connectees/Cozytouch" class="btn btn-dark">En savoir plus</a>
+                    </div>
+    </div>
+</div>
+                                                    </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div id="carousel-pub" class="carousel slide" data-ride="carousel">
+
+                            <input id="promo_time" type="hidden" value="5">
+                            
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                                                    <li data-target="#carousel-pub" data-slide-to="0"
+                                        class=" active  "></li>
+                                
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                                                    <div class="item  active  ">
+                                        
+    <a href="/Ventiler-le-logement/Ventilation-de-tout-le-logement/Ventilation-double-flux/OPTIMOCOSY-HR">
+                          
+         <img src="/var/atlantic/storage/images/_aliases/promo/media/images/images-home/actu-optimocosy/75578-4-fre-FR/ACTU-optimocosy.jpg" alt="ACTU-optimocosy">
+          </a>
+
+                                    </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Début block-Actualité -->
+
+        
+        <!-- Fin block-Actualité -->
+
+                        <!-- Début block-installateur -->
+        <section class="block-installateur">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 img-installateur first-row" >
+                                                                            <div class="image">
+                                              
+         <img src="/var/atlantic/storage/images/_aliases/visuel_bloc_contact/media/images/images-home/installateur/21896-3-fre-FR/Installateur.png" alt="Installateur" class="img-responsive">
+          
+
+                        </div>
+                        
+                    </div>
+
+
+                        <div class="col-md-4 col-sm-6 second-row" >
+                            <div class="txt-installateur">
+                                <div class="push-heading">
+                                        <p>Vous avez un projet ? <span id="" class="">Atlantic vous accompagne !</span></p>
+                                </div>
+                                <div class="push-text">
+                                        <ul class="list-theme-a"><li>Conseils</li><li>Mise en relation avec un installateur</li><li>Devis gratuit</li></ul>
+                                    <a href="/Realiser-un-projet-avec-un-professionnel" class="link-more">    Réalisez un projet avec un professionnel<span class="at-btn"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <div class="col-md-5 col-md-offset-0  col-sm-offset-2 col-sm-8 col-xs-12 third-row" >
+                                                    
+                                                        
+                            <div class="img-urgence mrgb-10" style="background-image:  url(/var/atlantic/storage/images/_aliases/urgence/media/multimedia/blocs-de-contenus/boutons-urgence-sos/bouton-urgence-hp/166810-3-fre-FR/Bouton-urgence-HP.jpg); height:151px;">
+                                <p class="title">J&#039;ai une urgence,</p>
+                                                                    <p class="sub-title">vous pouvez m&#039;aider?</p>
+                                                                                                    <p class="description">Vous avez un équipement Atlantic et vous souhaitez le faire dépanner?</p>
+                                                                                                    <a href="/nos-conseils/assistance/assistance-sav" class="link-more">
+                                        Contactez le SAV
+                                        <span class="at-btn"></span>
+                                    </a>
+                                                            </div>
+                        
+                                                    
+                                                        
+                            <div class="sos-bloc marg" style="background-image:  url(/var/atlantic/storage/images/_aliases/urgence/media/multimedia/blocs-de-contenus/boutons-urgence-sos/bouton-sos-hp/166826-3-fre-FR/Bouton-SOS-HP.jpg); height:105px;">
+                                <p class="title">SOS Chauffe-eau</p>
+                                                                                                                                    <a href="/Nos-conseils/Assistance/SOS-chauffe-eau" class="btn btn-dark">Contactez-nous</a>
+                                                            </div>
+                                            </div>
+
+                </div>
+            </div>
+
+        </section>
+        <!-- Fin block-installateur -->
+
+        <!-- Début block-Maison Confort -->
+                    
+            <!-- Début block-Maison Confort -->
+<section class="maison-confort">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="link-conseils">
+                    <a target="_blank" href="http://ma-maison-eco-confort.atlantic.fr/">Plus de conseils et d’idées <span> avec le blog Ma Maison Éco Confort</span></a>
+                                    </div>
+            </div>
+        </div>
+        <div class="row">
+                    <div class="adjust-height element-list col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1">
+            <a href="http://ma-maison-eco-confort.atlantic.fr/la-pointe-du-confort-avec-une-pompe-a-chaleur-connectee/" class="link" target="_blank">La pointe du confort avec une pompe à chaleur [...]</a>
+            <time datetime="27.08.2017">27.08.2017</time>
+            <figure>
+                <a href="http://ma-maison-eco-confort.atlantic.fr/la-pointe-du-confort-avec-une-pompe-a-chaleur-connectee/" class="link" target="_blank">
+                <img class="img-responsive" src="http://ma-maison-eco-confort.atlantic.fr/wp-content/uploads/2017/07/le-magazine-atlantic-La-pointe-du-confort-avec-une-pompe-a-chaleur-connectee_2.jpg" alt="">
+                </a>
+            </figure>
+            <div class="link-more style-3">
+                <a href="http://ma-maison-eco-confort.atlantic.fr/la-pointe-du-confort-avec-une-pompe-a-chaleur-connectee/" class="link" target="_blank">
+                <span class="at-btn"></span>
+                </a>
+            </div>
+        </div>
+        <div class="adjust-height element-list col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1">
+            <a href="http://ma-maison-eco-confort.atlantic.fr/pics-de-pollution-en-ete-linteret-de-posseder-une-vmc/" class="link" target="_blank">Pics de pollution en été, l’intérêt de posséder [...]</a>
+            <time datetime="21.08.2017">21.08.2017</time>
+            <figure>
+                <a href="http://ma-maison-eco-confort.atlantic.fr/pics-de-pollution-en-ete-linteret-de-posseder-une-vmc/" class="link" target="_blank">
+                <img class="img-responsive" src="http://ma-maison-eco-confort.atlantic.fr/wp-content/uploads/2017/07/le-magazine-atlantic-Pics-de-pollution-en-été-l-intérêt-de-posséder-une-VMC-1.jpg" alt="">
+                </a>
+            </figure>
+            <div class="link-more style-3">
+                <a href="http://ma-maison-eco-confort.atlantic.fr/pics-de-pollution-en-ete-linteret-de-posseder-une-vmc/" class="link" target="_blank">
+                <span class="at-btn"></span>
+                </a>
+            </div>
+        </div>
+        <div class="adjust-height element-list col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1">
+            <a href="http://ma-maison-eco-confort.atlantic.fr/quest-ce-que-le-coefficient-de-performance-cop-pour-une-pac/" class="link" target="_blank">Qu’est-ce que le coefficient de performance [...]</a>
+            <time datetime="18.08.2017">18.08.2017</time>
+            <figure>
+                <a href="http://ma-maison-eco-confort.atlantic.fr/quest-ce-que-le-coefficient-de-performance-cop-pour-une-pac/" class="link" target="_blank">
+                <img class="img-responsive" src="http://ma-maison-eco-confort.atlantic.fr/wp-content/uploads/2017/07/le-magazine-atlantic-lcali-Qu-est-ce-que-le-coefficient-de-performance-pour-une-PAC.jpg" alt="">
+                </a>
+            </figure>
+            <div class="link-more style-3">
+                <a href="http://ma-maison-eco-confort.atlantic.fr/quest-ce-que-le-coefficient-de-performance-cop-pour-une-pac/" class="link" target="_blank">
+                <span class="at-btn"></span>
+                </a>
+            </div>
+        </div>
+        <div class="adjust-height element-list col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1">
+            <a href="http://ma-maison-eco-confort.atlantic.fr/roman-pin-vainqueur-du-concours-design-atlantic/" class="link" target="_blank">Roman Pin, vainqueur du Concours Design Atlantic [...]</a>
+            <time datetime="12.08.2017">12.08.2017</time>
+            <figure>
+                <a href="http://ma-maison-eco-confort.atlantic.fr/roman-pin-vainqueur-du-concours-design-atlantic/" class="link" target="_blank">
+                <img class="img-responsive" src="http://ma-maison-eco-confort.atlantic.fr/wp-content/uploads/2017/07/le-magazine-atlantic-Roman-Pin-vainqueur-du-Concours-Design-Atlantic-.jpg" alt="">
+                </a>
+            </figure>
+            <div class="link-more style-3">
+                <a href="http://ma-maison-eco-confort.atlantic.fr/roman-pin-vainqueur-du-concours-design-atlantic/" class="link" target="_blank">
+                <span class="at-btn"></span>
+                </a>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</section>
+<!-- Fin block-Maison Confort -->
+
+
+
+                <!-- Fin block-Maison Confort -->
+
+
+        <!-- Début block-service -->
+                                    <section class="block-service">
+        <div class="container">
+            <span class="titre-service text-center">À votre service</span>
+            <div class="row">
+                                                                                                                                                        <article class="col-md-3 col-sm-4 col-md-offset-0 col-sm-offset-1">
+                        <a href="http://www.atlantic.fr/Nos-conseils/Aide-et-financement/Aides-et-credits-d-impot">
+                            <span class="sub-titre theme-1">Découvrir les aides et subventions</span>
+                            <div class="btn-service">
+                                <span class="at-btn"></span>
+                            </div>
+                        </a>
+                    </article>
+                                                                                                                        <article class="col-md-3 col-sm-4 col-md-offset-0 col-sm-offset-1">
+                        <a href="/Realiser-un-projet-avec-un-professionnel">
+                            <span class="sub-titre theme-2">Trouver la solution pour votre projet</span>
+                            <div class="btn-service">
+                                <span class="at-btn"></span>
+                            </div>
+                        </a>
+                    </article>
+                                                                                                                        <article class="col-md-3 col-sm-4 col-md-offset-0 col-sm-offset-1">
+                        <a href="http://www.atlantic.fr/Nos-conseils/Documentation">
+                            <span class="sub-titre theme-3">Retrouver les documents utiles</span>
+                            <div class="btn-service">
+                                <span class="at-btn"></span>
+                            </div>
+                        </a>
+                    </article>
+                                                                                                                        <article class="col-md-3 col-sm-4 col-md-offset-0 col-sm-offset-1">
+                        <a href="http://www.atlantic.fr/nos-conseils/assistance/assistance-sav">
+                            <span class="sub-titre theme-4">Accéder à l&#039;assistance sav</span>
+                            <div class="btn-service">
+                                <span class="at-btn"></span>
+                            </div>
+                        </a>
+                    </article>
+                            </div>
+        </div>
+    </section>
+                <!-- Fin block-service -->
+
+
+                                <section class="mises-avant">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="detaile-servive mises-avant--block-title">Atlantic en fait plus pour votre confort</h1>
+                    </div>
+                    <div class="row">
+                                                                                <article class="col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1">
+                                <a href="/La-marque/Qui-sommes-nous/Atlantic-Fabricant-Francais">
+                                    <figure>
+                                                          
+         <img src="/var/atlantic/storage/images/_aliases/image_corporate2/media/images/images-home/reassurance-francais3/37251-4-fre-FR/reassurance-francais3.jpg" alt="reassurance-francais3" class="img-responsive">
+          
+                                    </figure>
+                                    <div class="mises-avant--title">    <p>Marque française fabriquée à 93% en France depuis 1968</p></div>
+                                    <div class="link-more style-3">
+                                        <span class="at-btn"></span>
+                                    </div>
+                                </a>
+                            </article>
+                                                                                <article class="col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1">
+                                <a href="/La-marque/Qui-sommes-nous/Une-marque-multi-specialiste">
+                                    <figure>
+                                                          
+         <img src="/var/atlantic/storage/images/_aliases/image_corporate2/media/images/images-home/reassurance-multispecialiste3/37245-4-fre-FR/reassurance-multispecialiste3.jpg" alt="reassurance-multispecialiste3" class="img-responsive">
+          
+                                    </figure>
+                                    <div class="mises-avant--title">    <p>Gamme de produits et de services la plus vaste du marché</p></div>
+                                    <div class="link-more style-3">
+                                        <span class="at-btn"></span>
+                                    </div>
+                                </a>
+                            </article>
+                                                                                <article class="col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1">
+                                <a href="/La-marque/Qui-sommes-nous/Notre-demarche-Environnement">
+                                    <figure>
+                                                          
+         <img src="/var/atlantic/storage/images/_aliases/image_corporate2/media/images/images-home/reassurance-dev-durable3/37242-4-fre-FR/reassurance-dev-durable3.jpg" alt="reassurance-dev-durable3" class="img-responsive">
+          
+                                    </figure>
+                                    <div class="mises-avant--title">    <p>Démarche environnementale</p></div>
+                                    <div class="link-more style-3">
+                                        <span class="at-btn"></span>
+                                    </div>
+                                </a>
+                            </article>
+                                                                                <article class="col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1">
+                                <a href="/La-marque/Qui-sommes-nous/Nos-installateurs">
+                                    <figure>
+                                                          
+         <img src="/var/atlantic/storage/images/_aliases/image_corporate2/media/images/images-home/reassurance-partenaire-confiance3/37248-4-fre-FR/reassurance-partenaire-confiance3.jpg" alt="reassurance-partenaire-confiance3" class="img-responsive">
+          
+                                    </figure>
+                                    <div class="mises-avant--title">    <p>Réseau de professionnels soigneusement sélectionnés</p></div>
+                                    <div class="link-more style-3">
+                                        <span class="at-btn"></span>
+                                    </div>
+                                </a>
+                            </article>
+                                            </div>
+                </div>
+            </section>
+            </main>
+        </main>
+            <div class="back-up">
+    <span class="icon-arrow-up"> </span>
+</div>
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div id="first-row" class="col-md-2 col-sm-3 col-xs-6">
+                <span>Atlantic</span>
+                                <ul class="style-list lien-footer">
+                                                                        <li>
+                                <a href="/La-marque/Qui-sommes-nous/La-marque-Atlantic">La marque Atlantic</a>
+                            </li>
+                                                                                                <li>
+                                <a href="/La-marque/Qui-sommes-nous/Atlantic-Fabricant-Francais">Atlantic Fabricant Français</a>
+                            </li>
+                                                                                                <li>
+                                <a href="/La-marque/Qui-sommes-nous/Une-marque-multi-specialiste">Une marque multi-spécialiste</a>
+                            </li>
+                                                                                                <li>
+                                <a href="/La-marque/Qui-sommes-nous/Notre-demarche-Environnement">Notre démarche Environnement</a>
+                            </li>
+                                                                                                <li>
+                                <a href="/La-marque/Qui-sommes-nous/Nos-installateurs">Nos installateurs</a>
+                            </li>
+                                                                                                <li>
+                                <a href="/La-marque/Qui-sommes-nous/La-ville-Atlantic">La ville Atlantic</a>
+                            </li>
+                                                                                                                                                                                                <li>
+                                <a href="/La-marque/Qui-sommes-nous/Devenez-Ambassadeur-Atlantic">Devenez Ambassadeur Atlantic</a>
+                            </li>
+                                                                <li>
+                        <a href="/sitemap">Plan du site</a>
+                    </li>
+                </ul>
+                                        <ul class="style-list lien-footer"><li><a href="http://www.atlantic.fr/aide/" target="_blank">FAQ</a></li></ul>
+                                                    <ul class="style-list lien-footer legal-notice-ul" >
+                        <li>
+                            <a href="/La-marque/Qui-sommes-nous/Mentions-legales">Mentions légales</a>
+                        </li>
+                    </ul>
+                
+            </div>
+            <div id="second-row" class="col-md-2 col-sm-3 col-xs-6">
+                <span>Nos Produits</span>
+                <ul class="style-list lien-footer">
+                                                                                                                        <li>
+                                <a href="/Chauffer-le-logement/Chauffage-electrique">Chauffage électrique</a>
+                            </li>
+                                                                                                                                                                                    <li>
+                                <a href="/Chauffer-le-logement/Chaudiere">Chaudière</a>
+                            </li>
+                                                                                                                                                                                    <li>
+                                <a href="/Chauffer-le-logement/Pompe-a-chaleur">Pompe à chaleur</a>
+                            </li>
+                                                                                                                                                                                    <li>
+                                <a href="/Chauffer-le-logement/Poele-a-granules">Poêle à granulés</a>
+                            </li>
+                                                                                                                                                                                    <li>
+                                <a href="/Chauffer-le-logement/Climatisation-reversible-pour-une-seule-piece">Climatisation réversible pour une seule pièce</a>
+                            </li>
+                                                                                                                                                                                    <li>
+                                <a href="/Chauffer-le-logement/Climatisation-reversible-pour-plusieurs-pieces">Climatisation réversible pour plusieurs pièces</a>
+                            </li>
+                                                                                                                                                                                    <li>
+                                <a href="/Piloter-les-appareils/Via-smartphone">Via smartphone</a>
+                            </li>
+                                                                                                                                                                                    <li>
+                                <a href="/Piloter-les-appareils/Via-commande-murale">Via commande murale</a>
+                            </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                            <li>
+                                <a href="/Chauffer-la-salle-de-bains/Seche-serviettes-electrique">Sèche-serviettes électrique</a>
+                            </li>
+                                                                                                                                                                                    <li>
+                                <a href="/Chauffer-la-salle-de-bains/Seche-serviettes-sur-chaudiere">Sèche-serviettes sur chaudière</a>
+                            </li>
+                                                                                                                                                                                    <li>
+                                <a href="/Ventiler-le-logement/Ventilation-d-une-piece">Ventilation d&#039;une pièce</a>
+                            </li>
+                                                                                                                                                                                    <li>
+                                <a href="/Ventiler-le-logement/Ventilation-de-tout-le-logement">Ventilation de tout le logement</a>
+                            </li>
+                                                                                                                                                                                    <li>
+                                <a href="/Chauffer-l-eau/Chauffe-eau">Chauffe-eau</a>
+                            </li>
+                                                                                                                                                                                                                                                                                                                                                            
+                </ul>
+            </div>
+
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <span>Sites par pays</span>
+                    <ul class="style-list lien-footer"><li><a href="http://www.atlantic.fr/" target="_self" title="Atlantic France">France</a></li><li><a href="http://www.atlantic-comfort.com/" target="_blank">International</a></li><li><a href="http://www.atlantics.com.au/" target="_blank" title="Australia">Australia</a></li><li><a href="http://www.atlantic-belgium.be" target="_blank">Belgium</a></li><li><a href="http://www.atlantic-comfort.bg/" target="_blank">Bulgaria</a></li><li><a href="http://www.atlantic-comfort.cl/" target="_blank">Chili</a></li><li><a href="http://www.atlantic-eesti.com/" target="_blank">Estonia</a></li><li><a href="http://www.atlanticcomfort.it/" target="_blank">Italy</a></li><li><a href="http://www.atlantic-polska.pl/" target="_blank">Poland</a></li><li><a href="http://www.atlantic-conforto.pt/" target="_blank">Portugal</a></li><li><a href="http://www.atlantic-niemen.ru/" target="_blank">Russia</a></li></ul>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <span>Médias et réseaux sociaux</span>
+                    <ul class="style-list lien-footer"><li><a href="http://ma-maison-eco-confort.atlantic.fr/" target="_blank">Le Blog</a></li><li><a href="http://webtv.atlantic.fr/" target="_blank">La webTV</a></li></ul><ul class="footer-partage"><li class="youtube"><a href="https://www.youtube.com/user/VideosAtlantic" target="_blank">youtube</a></li><li class="facebook"><a href="https://www.facebook.com/Confort.Thermique.Atlantic" target="_blank">facebook</a></li><li class="tweeter"><a href="https://twitter.com/atlanticfrance" target="_blank">tweeter</a></li><li class="google-plus"><a href="https://plus.google.com/+AtlanticFrConfortThermique/posts" target="_blank">google+</a></li></ul>
+            </div>
+            <div class="col-sm-4 visible-lg">
+                <div class="image-footer">
+                                        <img src="/images/47752db-5712299.png" alt=""/>
+                                    </div>
+            </div>
+        </div>
+
+
+        <div class="container_fixed_footer">
+
+                                                                <span class="copyright"><a href="http://www.atlantic.fr/multi-energies/index.html">
+
+                    
+                    © 2017 ATLANTIC - Atlantic est une marque française.
+
+                    
+                </a>
+            </span>
+            <div class="main-footer">
+
+
+                            
+
+
+
+                <div class="row">
+                    <div class="fixed-block sav hidden-xs">
+                        <a class="btn-fixed" href="/Nos-conseils/Assistance/Assistance-SAV"><span class="icon icon-sav"><img src="/bundles/gaatlanticmarque/images/sav.png" /> </span> Le SAV</a>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="fixed-block contact hidden-xs">
+                        <a class="btn-fixed close-title" href="/Realiser-un-projet-avec-un-professionnel"><span class="icon icon-checkpoint"></span>Contacter un installateur</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="fixed-block comparateur hidden-xs">
+    <a class="btn-fixed comparator-footer" style="display: none" id="comparator-button" href="javascript:void(0);">
+        <span class="icon icon-comparer"></span>Comparer les produits sélectionnés
+        <span id="total-comparator" class="badge"></span>
+    </a>
+
+    <div class="dropup col-sm-12" id="container-comparator">
+        <div id="comparatorIntro" class="col-sm-9" style="float: right">
+            <p class="notif">Sélectionnez jusqu’à 3 produits de la gamme <em id="parentName" style="font-style: normal"></em> pour les comparer</p>
+        </div>
+        <div id="control-comparator" class="col-sm-3">
+            <a id="link_page_comparator" href="/comparateur" class="btn btn-dark">Comparer</a>
+            <a href="#" class="btn-vider deleteallproduct">Vider le comparateur</a>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<a href="#popin-status" class="hidden">popin</a>
+<div id="popin-status">
+    <div class="popin-status pdb-40">
+
+        <div id="txt-status-4" class="hidden">
+            <p class="sub-head-1">Vous ne pouvez pas comparer des produits de gamme ou de technologie différente. Souhaitez-vous vider le comparateur afin d’y ajouter ce nouveau produit ?</p>
+
+            <div class="b-bottom center">
+                <a id="confirm-empty-comparator" href="#" class="btn btn-dark deleteallproduct close-popin" data-id-to-add="">Confirmer</a>
+                <a href="#" class="btn btn-dark btn-annuler close-popin">Annuler</a>
+            </div>
+
+        </div>
+
+        <div id="txt-status-5" class="hidden">
+            <div class="sub-head-1"> Vous ne pouvez comparer que 3 produits à la fois. Souhaitez-vous supprimer le premier produit ajouté pour ajouter ce produit ?</div>
+
+            <div class="b-bottom center">
+
+                <a href="#" id="confirm-replace-products" data-id-to-remove="" data-id-to-add="" class="btn btn-dark replace-product close-popin">Confirmer</a>
+
+                <a href="#" class="btn btn-dark btn-annuler close-popin">Annuler</a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div id="alert-cookie" class="cookie-bloc">
+    <p>       En naviguant sur le site atlantic.fr, vous acceptez qu&#039;Atlantic et ses partenaires installent des cookies à des fins de personnalisation de contenu ou de publicité
+        <a href="http://www.atlantic.fr/Charte-Cookies">En SAVOIR PLUS / PARAMETRES</a>
+    </p>
+        <a href="#" data-cookie-expire="395" id ="close-headband-cookie" class="btn-dark btn pull-right">j'accepte</a>
+</div>
+
+    </div>
+</div>
+            <script type="text/javascript" src="/js/50a6082-d50bace.js"></script>
+                    <script type="text/javascript" src="/js/941f66a-29aeb8c.js"></script>
+    
+
+    
+    
+
+<script type="application/javascript">
+    var ezSessIdCookieName='eZSESSID58a0c4cc6163c90bdfb3285e90c2d0cd';
+</script>
+
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#async=1"></script>
+<script type="text/javascript">
+    var addthis_config = addthis_config||{};
+    addthis_config.pubid = 'ra-56fe41207ad1a413';
+</script>
+
+<!-- Inbenta -->
+<script type="text/javascript" async src="//atlantic-web.inbenta.com/atlantic-inbenta.js"></script>
+
+
+<!--
+Start of DoubleClick Floodlight Tag: Please do not remove
+Activity name of this tag: Visiteurs
+URL of the webpage where the tag is expected to be placed: http://www.atlantic.fr
+This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
+Creation Date: 10/05/2016
+-->
+<script type="text/javascript">
+    var axel = Math.random() + "";
+    var a = axel * 10000000000000;
+    document.write('<iframe src="https://5392333.fls.doubleclick.net/activityi;src=5392333;type=invmedia;cat=yqnsqzun;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+</script>
+<noscript>
+    <iframe src="https://5392333.fls.doubleclick.net/activityi;src=5392333;type=invmedia;cat=yqnsqzun;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+</noscript>
+<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+
+
+<!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+            document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1677203329161399');
+    fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+               src="https://www.facebook.com/tr?id=1677203329161399&ev=PageView&noscript=1"
+            /></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+
+<!-- Code Google de la balise de remarketing -->
+<!--------------------------------------------------
+Les balises de remarketing ne peuvent pas être associées aux informations personnelles ou placées sur des pages liées aux catégories à caractère sensible. Pour comprendre et savoir comment configurer la balise, rendez-vous sur la page http://google.com/ads/remarketingsetup.
+--------------------------------------------------->
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js" charset="utf-8"></script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/937602131/?guid=ON&script=0"/>
+    </div>
+</noscript>
+
+
+<!-- Eperflex / E-mail RTG -->
+<img src="http://email-reflex.com/tags/target.php?source=1223" alt="" width="0" height="0" style="display: none;" />
+        <script type="text/javascript">
+    var device = 'desktop';
+    var regex = new RegExp("(android|iphone|ipad|blackberry|symbian|symbianos|" +
+    "symbos|netfront|model-orange|javaplatform|iemobile|windows phone|samsung|htc|" +
+    "opera mobile|opera mobi|opera mini|presto|huawei|blazer|bolt|doris|fennec|" +
+    "gobrowser|iris|maemo browser|mib|cldc|minimo|semc-browser|skyfire|teashark|" +
+    "teleca|uzard|uzardweb|meego|nokia|bb10|playbook)","gi");
+    if (navigator.userAgent.match(regex)){
+        if (((screen.width >= 480) && (screen.height >= 800)) || ((screen.width >= 800) &&
+                (screen.height >= 480)) || navigator.userAgent.match(/ipad/gi)){
+            device = 'tablet';
+        } else {
+            device = 'mobile';
+        }
+    } else {
+        device = 'desktop';
+    }
+    var idzCustomData = {
+        "device": device,
+        "page_type": '',
+        "page_category1": "Atlantic",
+                                                                                                        "page_category2": "Atlantic : plus de confort thermique, moins de dépenses énergétiques",
+                                                                            "cust_type": "Particulier"
+        //"cust_phonenumber":"Value",
+    };
+</script>
+
+<!-- START IADVIZE LIVECHAT -->
+<script type='text/javascript'>
+    (function() {
+        var idz = document.createElement('script'); idz.type = 'text/javascript'; idz.async = true;
+        idz.src = document.location.protocol + "//lc.iadvize.com/iadvize.js?sid=13813";
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(idz, s);
+    })();
+</script>
+<!-- END IADVIZE LIVECHAT -->
+
+    <script>
+	var cookie_prefix = "atlanticMarque";
+</script>
+
+        <script type="text/javascript" src="/js/de70cea-76f6c2e.js"></script>
+        <script>var $j = jQuery.noConflict(true);</script>
+
+	    <script type="text/javascript" src="/js/9c446a9-4592a0f.js"></script>
+    
+
+
+        <link rel="stylesheet" type="text/css" media="all" href="/css/9e17a19-baa6365.css" />
+    
+    
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"571b49ad4e","applicationID":"52035458","transactionName":"ZFFbNUBZD0pZBUcLXl0beAJGUQ5XFyFyI0VfVVcVW1ssWEoXRgdzRlpdDVcCMVZID11YQVxEUA8=","queueTime":0,"applicationTime":1655,"atts":"SBZYQwhDHEQ=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

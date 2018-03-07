@@ -1,0 +1,284 @@
+#Bing
+User-agent: bingbot
+crawl-delay: 1
+#Account pages and legacy no crawl directories
+Disallow: /*/*/*/*/ViewUserAccount-*
+Disallow: /*/*/*/*/*/*/*/ViewUserAccount-*
+Disallow: /*/*/*/*/ViewCart-*
+Disallow: /*/*/*/*/*/*/*/ViewCart-*
+Disallow: /is-bin/
+Disallow: /test/
+Disallow: /mcsearch/
+Disallow: /mmsearch/
+Disallow: /chemdat/
+Disallow: /DISTR/
+Disallow: /INTERSHOP/
+Disallow: /Web-*-Site/
+Disallow: */search/-
+Disallow: */page.contact.customer.services.pdp
+Disallow: */systempage.contactus.pagelet2-systempage.contactus
+Disallow: */systempage.country.selection.pagelet2-systempage.country.selection
+
+#bing logos images video sitemap files other media files in intershop or web-XX-site
+Allow: /********.png$
+Allow: /********.jpg$
+Allow: /********.gif$
+Allow: /********.PNG$
+Allow: /********.JPG$
+Allow: /********.GIF$
+Allow: /********.SWF$
+Allow: /********.swf$
+Allow: /********.ico$
+Allow: /********.ICO$
+Allow: /********.css
+Allow: /********.CSS
+Allow: /********.js
+
+#bing sitemaps
+Allow: /INTERSHOP/static/WFS/*/*/*/*/sitemaps/
+
+#document allows for Bing
+Allow: */ShowDocument-Pronet?
+Allow: */ShowDocument-File?
+Allow: */ViewProductDocument-ReachUsesForSUBID?
+
+#Baidu
+User-agent: Baiduspider
+Crawl-delay: 1
+Disallow: /
+Disallow: */search/-
+Disallow: */page.contact.customer.services.pdp
+Disallow: */systempage.contactus.pagelet2-systempage.contactus
+Disallow: */systempage.country.selection.pagelet2-systempage.country.selection
+
+#Allow only baidu country directories
+Allow: /CN/
+Allow: /HK/
+Allow: /ID/
+Allow: /IN/
+Allow: /INTL/
+
+#baidu sitemaps
+Allow: /INTERSHOP/static/WFS/*/*/*/*/sitemaps/
+
+#Yandex crawl delay
+User-agent: Yandex
+Crawl-delay: 1
+Disallow: /
+Disallow: */search/-
+Disallow: */page.contact.customer.services.pdp
+Disallow: */systempage.contactus.pagelet2-systempage.contactus
+Disallow: */systempage.country.selection.pagelet2-systempage.country.selection
+
+# yandex countries
+Allow: /RU/
+Allow: /INTL/
+Allow: /TR/
+Allow: /yandex
+
+#yandex sitemaps
+Allow: /INTERSHOP/static/WFS/*/*/*/*/sitemaps/
+
+#yandex parameter clean
+Clean-param: sid
+Clean-param: pgid
+Clean-param: bd
+
+#Google
+User-agent: Googlebot
+
+#documents msds reach and others
+
+Allow: */ShowDocument-Pronet?
+Allow: */ShowDocument-File?
+Allow: */ViewProductDocument-ReachUsesForSUBID?
+
+#Images css files resources
+
+Allow: /INTERSHOP/static/WFS/*/Mega-Nav/
+Allow: /INTERSHOP/static/WFS/*/images/
+Allow: /INTERSHOP/static/WFS/*/js/
+Allow: /INTERSHOP/static/WFS/*/bundles/
+Allow: /INTERSHOP/static/WFS/*/Homepage
+Allow: /INTERSHOP/static/WFS/*/Target-Banner
+Allow: /INTERSHOP/static/WFS/*/Freestyle/
+Allow: /INTERSHOP/static/WFS/*/Right-Nav-Banner
+Allow: /INTERSHOP/static/WFS/*/Hub-Banner-940x200/
+Allow: /INTERSHOP/static/WFS/*/Thumbs-100x100/
+Allow: /INTERSHOP/static/WFS/*/css
+Allow: /INTERSHOP/static/WFS/*/JP_FreeStyle/
+Allow: /INTERSHOP/static/WFS/*/Certipur
+Allow: /INTERSHOP/static/WFS/*/01_JP_Image/
+Allow: /INTERSHOP/static/WFS/*/JP_Common/
+Allow: /INTERSHOP/static/WFS/*/system/
+Allow: /INTERSHOP/static/WFS/*/homepage*/
+Allow: /INTERSHOP/static/WFS/*/icon
+Allow: */Textbox-*-188x120/
+Allow: */BI-Bioscience/
+Allow: */BM-BioMonitoring/
+Allow: */LE-Lab-Essentials/
+Allow: */ViewGdsImage-Start?
+
+# logos images video sitemap files other media files in intershop or web-XX-site
+Allow: /********.png$
+Allow: /********.jpg$
+Allow: /********.gif$
+Allow: /********.PNG$
+Allow: /********.JPG$
+Allow: /********.GIF$
+Allow: /********.SWF$
+Allow: /********.swf$
+Allow: /********.ico$
+Allow: /********.ICO$
+Allow: /********.css
+Allow: /********.CSS
+Allow: /********.js
+
+# 11-20-2015 from gwmt blocked resources pdps
+Allow: */productlistpage/sid/
+Allow: */productpage/sid/
+Allow: */video-js.css
+Allow: */Info-Ticker-188x120
+Allow: */NewsletterLink-Show
+
+# video sitemap blocked resource 02102016
+Allow: /INTERSHOP/static/WFS/*/*/*/*/SWF/BI-Bioscience/
+
+# 5-9-2016
+Allow: /INTERSHOP/static/WFS/*/*/*/*/homepage*/
+Allow: /INTERSHOP/static/WFS/*/*/*/*/system/
+
+#brand defense and channel redirects
+Allow: */ViewIntermediatePage-ViewContentCatalog?
+Allow: */ViewIntermediatePage-ViewContentPage?
+Allow: */ViewCountrySelection-RedirectToCountry
+Allow: */ViewCountrySelection-BrandDefenseRedirect?
+Allow: */systempage.country.selection.pagelet?
+
+# 8-10-2016 emerging biotech
+Allow: */EmergingBiotech/
+
+#MSDS 08-22-2016
+Allow: */ProcessMSDS-Start
+
+#PS webinar forms
+Allow: */forms/**/
+
+#sitemap allow 3.23
+Allow: /INTERSHOP/static/WFS/*/sitemaps/
+
+Disallow: /Web-*-Site/
+Disallow: /INTERSHOP/
+Disallow: /is-bin/
+Disallow: /test/
+Disallow: /mcsearch/
+Disallow: /mmsearch/
+Disallow: /chemdat/
+Disallow: /DISTR/
+Disallow: /PrudsysServer/
+Disallow: */flashmediaelement.swf
+Disallow: */search/-
+Disallow: */page.contact.customer.services.pdp
+Disallow: */systempage.contactus.pagelet2-systempage.contactus
+
+#ALL Global bot directives
+
+User-agent: *
+Disallow: /Web-*-Site/
+Disallow: /INTERSHOP/
+Disallow: /is-bin/
+Disallow: /test/
+Disallow: /mcsearch/
+Disallow: /mmsearch/
+Disallow: /chemdat/
+Disallow: /DISTR/
+Disallow: /PrudsysServer/
+Disallow: */flashmediaelement.swf
+Disallow: */search/-
+Disallow: */page.contact.customer.services.pdp
+Disallow: */systempage.contactus.pagelet2-systempage.contactus
+Disallow: */systempage.country.selection.pagelet2-systempage.country.selection
+
+#Global bot sitemaps
+Allow: /INTERSHOP/static/WFS/*/*/*/*/sitemaps/
+
+#ahrefs block
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: ConveraCrawler
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: ingenieur
+Disallow: /
+
+User-agent: Mail.Ru
+Disallow: /
+
+User-agent: JikeSpider
+Disallow: /
+
+User-agent: EasouSpider
+Disallow: /
+
+#added for crawl budgeting 06272017
+User-agent: Exabot 
+Disallow: /
+
+#cliqzbot
+User-agent: Cliqzbot
+Disallow: /
+Disallow: */page.contact.customer.services.pdp
+Disallow: */systempage.contactus.pagelet2-systempage.contactus
+Disallow: */systempage.country.selection.pagelet2-systempage.country.selection
+Allow: /DE/
+Allow: /INTL/
+
+#added for crawl budgeting 07272017
+User-agent: Seznambot
+Disallow: /
+Disallow: */page.contact.customer.services.pdp
+Disallow: */systempage.contactus.pagelet2-systempage.contactus
+Disallow: */systempage.country.selection.pagelet2-systempage.country.selection
+Allow: /CZ/
+Allow: /INTL/
+
+User-agent: Yeti/Naverbot
+Disallow: /
+Disallow: */page.contact.customer.services.pdp
+Disallow: */systempage.contactus.pagelet2-systempage.contactus
+Disallow: */systempage.country.selection.pagelet2-systempage.country.selection
+Allow: /KR/
+Allow: /INTL/
+
+User-agent: Daumoa
+Disallow: /
+
+User-agent: Docomo
+Disallow: /
+
+User-agent: Rakuten
+Disallow: /
+
+# sitemaps
+# sitemap index
+
+sitemap: https://www.merckmillipore.com/INTERSHOP/static/WFS/Merck-Site/-/Merck/en_US/sitemaps/sitemap.xml
+
+# home page sitemap all hreflang tags
+sitemap: https://www.merckmillipore.com/INTERSHOP/static/WFS/Merck-Site/-/Merck/en_US/sitemaps/home_sitemap.xml
+
+# forms sitemap for PS
+sitemap: https://www.merckmillipore.com/INTERSHOP/static/WFS/Merck-Site/-/Merck/en_US/sitemaps/sitemap_1.xml
+
+# video sitemap manual
+sitemap: https://www.merckmillipore.com/INTL/en/sitemap/video_sitemap.xml
+
+# AS test sitemap
+sitemap: https://www.merckmillipore.com/INTERSHOP/static/WFS/Merck-Site/-/Merck/en_US/sitemaps/sitemap_as_05112017.xml.gz
+
+#labwater test sitemap
+sitemap: https://www.merckmillipore.com/INTERSHOP/static/WFS/Merck-Site/-/Merck/en_US/sitemaps/as-ls-labwater-sitemap.xml.gz

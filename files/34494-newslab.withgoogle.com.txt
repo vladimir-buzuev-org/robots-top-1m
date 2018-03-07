@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="ua5App" ng-cloak app>
+    <head ng-controller="MetaCtrl">
+        <meta charset="utf-8">
+        <base href="/">
+        <link
+            href="/_build/app.css"
+            rel="stylesheet"
+            type="text/css">
+        <link
+            href='https://fonts.googleapis.com/css?family=Roboto:500,400,300,100'
+            rel='stylesheet'
+            type='text/css'>
+
+        <title ng-bind="meta.title">
+            Google News Lab
+        </title>
+        <meta
+            property="og:title"
+            ng-attr-content="{{ meta.ogTitle }}"
+            content="Google News lab">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta
+            name="description"
+            ng-attr-content="{{ meta.description }}"
+            content="We collaborate with journalists and entrepreneurs to help build the future of media.">
+        <meta
+            property="og:description"
+            ng-attr-content="{{ meta.ogDescription }}"
+            content="We collaborate with journalists and entrepreneurs to help build the future of media.">
+        <meta
+            property="og:image"
+            ng-attr-content="{{ meta.ogImage }}"
+            content="http://newslab.withgoogle.com/assets/img/share.jpg">
+        <meta
+            property="og:site_name"
+            content="Google News Lab">
+        <meta
+            property="og:url"
+            content="https://newslab.withgoogle.com">
+        <meta
+            property="og:type"
+            content="website">
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="favicon.ico">
+        <meta
+            name="twitter:widgets:csp"
+            content="on">
+    </head>
+    <body class="appstate-{{ appState }} {{ language }}">
+        <global-header></global-header>
+        <mobile-header></mobile-header>
+        <div ui-view></div>
+        <global-footer></global-footer>
+        <script src="assets/js/livereload.js"></script>
+        <script src="_build/vendor.js"></script>
+        <script src="_build/app.js"></script>
+    </body>
+</html>

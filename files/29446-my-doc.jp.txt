@@ -1,0 +1,440 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+    <!-- ここに共通で読み込むcss、jsの読み込みを記述 -->
+        <title>かかりつけ医・病院検索とクリニック受付予約のマイ＠ドクター ： 医院検索</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="content-style-type" CONTENT="text/css">
+        <link href="//www.my-doc.jp/img/favicon.ico" type="image/x-icon" rel="shortcut icon">
+        <link href="../../css/front/base.css" rel="stylesheet" type="text/css" />
+        <link href="../../css/front/style.css" rel="stylesheet" type="text/css" />
+        <link href="../../css/front/resetting.css" rel="stylesheet" type="text/css" />
+        <link href="../../css/front/head.css" rel="stylesheet" type="text/css" />
+        <link href="../../css/front/foot.css" rel="stylesheet" type="text/css" />
+        <link href="../../css/front/member.css" rel="stylesheet" type="text/css" />
+        <script src="../../js/jquery.min.js" type="text/javascript"></script>
+        <script src="../../js/front/rollover.js" type="text/javascript"></script>
+        <script src="../../js/front/setting.js" type="text/javascript"></script>
+            <link href="../../css/front/reserve.css" rel="stylesheet" type="text/css" />
+            <link href="../../css/front/mypage_style.css" rel="stylesheet" type="text/css" />
+                <script src="../../js/front/top.js" type="text/javascript"></script>
+            <script src="https://apis.google.com/js/platform.js" async defer>
+            {lang: 'ja'}
+        </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-29849707-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+    </head>
+    <body>
+    <!-- ▼ 共通ヘッダー開始 ▼ -->
+    <div id="css_headArea">
+    <p id="css_logo">
+        <a href="../../front/top/index.php"><img src="//www.my-doc.jp/img/front/common/myd_logo_pc.png" alt="マイドクター" width="206" height="30"></a>	</p>
+    <div id="css_headNavi">
+        <ul>
+            <li class="hnavHome"><a href="../../front/top/index.php">ホーム</a></li>
+            <li class="hnavGuide"><a href="../../front/pages/guide.php">ご利用ガイド</a></li>
+            <li class="hnavContact"><a href="../../front/inquiry/index.php">お問い合わせ</a></li>
+            <li class="hnavClinic"><a href="../../front/pages/concern.php">医療関係の方はこちら</a></li>
+        </ul>
+    </div>
+    <div id="css_login">
+                <a href="../../front/mypage/index.php"><img src="//www.my-doc.jp/img/front/common/bt_mypage_off.gif" width="142" height="24" alt="ログイン"></a>
+        <a href="../../front/account/index.php"><img src="//www.my-doc.jp/img/front/common/bt_newcontact_off.gif" width="110" height="24" alt="会員登録"></a>
+            </div>
+</div>    <!-- ▲ 共通ヘッダー終了 ▲ -->
+
+        <div id="css_main">
+        <!-- ▼ メインコンテンツ ▼ -->
+        <form action="?Action=search" name="search" method="post" accept-charset="utf-8">
+    <div id="css_pan">
+        <p class="pan"></p>
+    </div>
+    <div id="css_LeftArea">
+        <div id="css_topsearch">
+            <img src="//www.my-doc.jp/img/front/top/img_cara.gif" alt="マイ看護師" width="186" height="88" class="cara">
+            <div id="css_search">
+            </div>
+        </div>
+        <img src="//www.my-doc.jp/img/front/contents/bg_contents_wh_top.jpg">
+<div id="css_SearchArea">
+    <h4>病院を検索</h4>
+    <input type="text" name="keyword" class="clinicname" value="" placeholder="病院名　最寄り駅　診療科目" />
+    <input type="image" src="//www.my-doc.jp/img/front/common/bt_search.gif" name="search" value="検索" style="margin-top: 20px;" />
+    <hr class="end">
+    <!-- <input type="hidden" name="prefecture_id" value="" /> -->
+
+                <a href="javascript:void(0);">
+        <img src="//www.my-doc.jp/img/front/contents/bt_browse_feature_plus.png" alt="特徴" name="feature">
+    </a>
+    <div id="css_Browse" style="display: none; text-align: initial;">
+        <div class="columnDetail">
+            <img src="//www.my-doc.jp/img/front/contents/ttl_browse_feature.jpg" alt="特徴から絞り込む" width="600" height="30" class="ttl">
+            <ul class="btnPlasmacluster clearfix">
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="1"  />土日診察</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="15"  />土曜日午後診察</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="24"  />日曜日診察</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="20"  />19時以降診察</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="30"  />予約診有り</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="31"  />予約診のみ</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="32"  />予約優先</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="18"  />日帰り手術</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="21"  />レーザー治療</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="7"  />花粉症治療</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="4"  />無痛治療</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="9"  />補聴器相談</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="27"  />認知症外来</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="28"  />児童・思春期外来</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="33"  />理学療法</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="41"  />禁煙外来</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="19"  />予防接種</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="8"  />インフルエンザ予防接種</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="34"  />CT有り</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="35"  />MRI有り</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="5"  />個室診療</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="6"  />訪問診療</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="22"  />健康診断</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="23"  />健康相談</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="29"  />乳児検診</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="36"  />在宅療養支援</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="37"  />往診</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="38"  />セカンドオピニオン</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="42"  />特定健診</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="3"  />女性医師</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="12"  />英語</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="13"  />中国語</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="14"  />韓国語</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="11"  />駐車場完備</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="10"  />大型駐車場(100台以上)</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="16"  />提携駐車場</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="25"  />キッズルーム</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="26"  />キッズスペース</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="2"  />バリアフリー</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="39"  />幹線道路沿い</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="40"  />駅から5分以内</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="17"  />院内処方</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="43"  />ED治療</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="44"  />AGA</label>
+                </li>
+                                <li>
+                                                            <label><input type="checkbox" name="feature_id[]" value="45"  />プラセンタ注射</label>
+                </li>
+                            </ul>
+        </div>
+    </div>
+    <hr class="end">
+</div>
+<img src="//www.my-doc.jp/img/front/contents/bg_contents_wh_bottom.jpg">                <div id="css_NewsArea">
+    <div id="css_titleblue" class="newinfomation">
+        <p>新着情報</p>
+    </div>
+    <ul>
+                <li>
+            <small>
+                2017年05月22日　<img src="//www.my-doc.jp/img/front/top/bg_ttopic_arrow.gif" width="9" height="9" alt="→"></small>
+            <span class="info_ttl"><a href="javascript:void(0);">【重要】スマートフォンで広告ブロックアプリをお使いの方へ</a></span>
+            <span class="info_txt" style="display: none;">お使いのスマートフォンに広告ブロックアプリ（コンテンツブロッカー）をインストールされている場合、予約の操作中に途中から先に進めなく可能性があります。<br />
+<br />
+お使いのアプリごとに方法が異なりますが、一部の広告ブロックアプリでは登録したホームページでは広告ブロックを行わない設定を行えます。<br />
+<br />
+広告にも使用されている表示方法は、通常のホームページでも多く使われています。<br />
+広告ブロックアプリをインストールされることで、通常のホームページで本来表示されるべき内容も表示方法が同じという理由でアプリが表示させなくなりますので、ご利用の際にはくれぐれもご注意下さい。<br />
+<br />
+なお、広告ブロックアプリの設定方法につきましては、それぞれのアプリのヘルプや公式ホームページ、App Store、Google Playストアなどをご覧下さい。</span>
+        </li>
+                <li>
+            <small>
+                2017年05月01日　<img src="//www.my-doc.jp/img/front/top/bg_ttopic_arrow.gif" width="9" height="9" alt="→"></small>
+            <span class="info_ttl"><a href="javascript:void(0);">【重要】マイ＠ドクターからのメールが受信できない場合につきまして</a></span>
+            <span class="info_txt" style="display: none;">マイ＠ドクターからの予約確認メールや、パスワード確認メールなどが受信できない場合は、次の内容をご確認下さい。<br />
+<br />
+■パソコン、スマートフォン<br />
+　メールが迷惑メールフォルダに振り分けられていませんか？<br />
+　もし、迷惑メールフォルダに振り分けられていましたら、安全なメールに設定を変更して下さい。<br />
+<br />
+■スマートフォン<br />
+　ガラケー時代の設定が各キャリアの設定項目に残っている場合があります。<br />
+　「ドメイン指定解除」や「URLの記載されたメールを受け取る」などの設定が正しく行われているかご確認下さい。<br />
+<br />
+<br />
+■フィーチャーフォン(ガラケー)<br />
+　ドメイン指定解除は正しくされていますか？<br />
+　「mail.my-doc.jp」が解除設定されているか再度ご確認下さい。<br />
+<br />
+<br />
+「メールが届かない」というお問い合わせに関しましては、回答のメールもお手元に届かない可能性がございます。予めご了承下さい。</span>
+        </li>
+                <li>
+            <small>
+                2017年05月01日　<img src="//www.my-doc.jp/img/front/top/bg_ttopic_arrow.gif" width="9" height="9" alt="→"></small>
+            <span class="info_ttl"><a href="javascript:void(0);">ログインが出来ないユーザー様へ</a></span>
+            <span class="info_txt" style="display: none;">ログインが出来ないというお問い合わせが増えております。<br />
+ご登録いただいた、メールアドレス・パスワードいずれも半角で入力いただけてますでしょうか。<br />
+全角で入力された場合は認識されませんのでご注意下さい。<br />
+<br />
+また、パスワードなどをお忘れの場合はログイン画面下のリンク先からお問い合わせ下さい。</span>
+        </li>
+                <li>
+            <small>
+                2017年05月01日　<img src="//www.my-doc.jp/img/front/top/bg_ttopic_arrow.gif" width="9" height="9" alt="→"></small>
+            <span class="info_ttl"><a href="javascript:void(0);">ご家族の登録について</a></span>
+            <span class="info_txt" style="display: none;">ご家族の登録をご希望の場合は、<br />
+ログイン後にマイページから「家族登録」をお選びいただき、必要な情報を登録して下さい。</span>
+        </li>
+                <li>
+            <small>
+                2017年05月01日　<img src="//www.my-doc.jp/img/front/top/bg_ttopic_arrow.gif" width="9" height="9" alt="→"></small>
+            <span class="info_ttl"><a href="javascript:void(0);">【重要】Yahoo!アプリをご利用の方へ</a></span>
+            <span class="info_txt" style="display: none;">スマートフォンをお使いで、Yahoo!アプリからマイ＠ドクターへアクセスされている場合、ログインやご予約が正しく動作しないことが判明しました。<br />
+<br />
+お手数ですが、ChromeやSafariなどからご利用下さい。</span>
+        </li>
+            </ul>
+</div>        <div id="css_TopicsArea">
+    <div id="css_titleblue" class="newclinic">
+        <p>新しく登録された医院</p>
+    </div>
+    <ul>
+                <li>
+                        <a href="../clinic/index.php?id=257204"><img src="//www.my-doc.jp/img/clinics/27m00267/add_image1_20170801152836.jpg" alt="医院外観写真" width="106" height="75"></a>
+                        <div class="TopicsAreaTX">
+                <a href="../clinic/index.php?id=257204" class="clinicname">岸本クリニック</a>
+                <p>大阪府豊中市曽根西町1-8-14</p>
+                <p class="service">皮膚科</p>
+            </div>
+            <hr class="end">
+        </li>
+                <li>
+                        <a href="../clinic/index.php?id=257186"><img src="//www.my-doc.jp/img/clinics/28m00090/add_image1_20170601093954.jpg" alt="医院外観写真" width="106" height="75"></a>
+                        <div class="TopicsAreaTX">
+                <a href="../clinic/index.php?id=257186" class="clinicname">やすもと内科クリニック</a>
+                <p>兵庫県宝塚市旭町1丁目18-23-2</p>
+                <p class="service">内科・糖尿病内科・消化器内科</p>
+            </div>
+            <hr class="end">
+        </li>
+                <li>
+                        <a href="../clinic/index.php?id=257198"><img src="//www.my-doc.jp/img/clinics/29m00023/add_image1_20170711095613.jpg" alt="医院外観写真" width="106" height="75"></a>
+                        <div class="TopicsAreaTX">
+                <a href="../clinic/index.php?id=257198" class="clinicname">阿部眼科</a>
+                <p>奈良県生駒市辻町397-8東生駒8番館1F</p>
+                <p class="service">眼科</p>
+            </div>
+            <hr class="end">
+        </li>
+            </ul>
+    <hr class="end">
+</div>        <div style="margin: 15px 0px; text-align: center;">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- my-doc ボトム -->
+            <ins class="adsbygoogle"
+                style="display:inline-block;width:468px;height:60px"
+                data-ad-client="ca-pub-5142983743462624"
+                data-ad-slot="3363955835"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</form>
+<div id="css_SideArea">
+    <hr class="end">
+    <div id="css_SideAdd" class="mb10" style="padding: 15px; margin-top: 50px; border-radius: 5px;">
+                <div class="member_area">
+            <img src="//www.my-doc.jp/img/front/common/front_member_ttl.png" alt="マイページ" width="232" height="59" class="mb10" style="float: left;">
+            <a href="../../front/mypage/index.php">
+                <img src="//www.my-doc.jp/img/front/common/front_btn_login_off.png" alt="ログイン" width="240" height="62" class="mb10">
+            </a>
+        </div>
+        <a href="../../front/account/index.php">
+            <img src="//www.my-doc.jp/img/front/common/front_btn_memberregist_off.png" alt="会員登録" width="270" height="52" class="">
+        </a>
+            </div>
+    <div style="text-align: center;">
+        <a href="../../front/pages/concern.php">
+            <img src="//www.my-doc.jp/img/front/common/front_btn_forclinic_off.png" alt="医療関係の方" width="270" height="50" class="mb10">
+        </a>
+        <a href="../../front/inquiry/clinic.php">
+            <img src="//www.my-doc.jp/img/front/common/front_btn_clregist_off.png" alt="クリニック無料登録" width="270" height="37" class="mb10">
+        </a>
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- mydocTOPサイド -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:250px"
+         data-ad-client="ca-pub-5142983743462624"
+         data-ad-slot="9627855605"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <div id="css_SideAdd" class="mb10">
+        <div style="width:298px">
+            <div class="gnewsttl">医療関係NEWS</div>
+            <script type="text/javascript" src="http://tanganrss.com/rsstxt/rsstxt.php?key=c68333d5c9df5b9a5d4895266d0bb349"></script>
+        </div>
+    </div>
+    <div id="css_SideAdd" style="background: none;">
+        <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Ffacebook.com%2Fmy.doc.page&amp;width=300&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:220px;" allowtransparency="true"></iframe>
+    </div>
+    <div style="text-align: center;">
+        <table width="135" border="0" cellpadding="2" cellspacing="0" title="このマークは、SSL/TLSで通信を保護している証です。" style="margin: 0 auto;">
+            <tr>
+                <td width="135" align="center" valign="top">
+                    <!-- GeoTrust QuickSSL [tm] Smart  Icon tag. Do not edit. -->
+                    <SCRIPT LANGUAGE="JavaScript"  TYPE="text/javascript" SRC="//smarticon.geotrust.com/si.js"></SCRIPT>
+                    <!-- end  GeoTrust Smart Icon tag -->
+                    <a href="https://www.geotrust.co.jp/ssl-certificate/" target="_blank"  style="color:#000000; text-decoration:none; font:bold 12px 'ＭＳ ゴシック',sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;">SSLとは？</a>
+                </td>
+            </tr>
+        </table>
+        <ul class="so">
+            <li>
+                <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fmy.doc.page&amp;send=false&amp;layout=box_count&amp;width=70&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:70px; height:80px;" allowTransparency="true"></iframe>
+            </li>
+            <li>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="mydoctor489" data-lang="ja" data-count="vertical">ツイート</a>
+                <script>
+                    !function(d,s,id){
+                        var js,
+                        fjs=d.getElementsByTagName(s)[0];
+                        if(!d.getElementById(id)){
+                            js=d.createElement(s);
+                            js.id=id;
+                            js.src="//platform.twitter.com/widgets.js";
+                            fjs.parentNode.insertBefore(js,fjs);
+                        }
+                    }(document,"script","twitter-wjs");
+                </script>
+            </li>
+            <li>
+                <div class="g-plusone" data-size="tall"></div>
+            </li>
+        </ul>
+    </div>
+</div><hr class="end">        <!-- ▲ メインコンテンツ ▲ -->
+        </div>
+
+    <!-- ▼ 共通フッター開始 ▼ -->
+    <div id="css_footline">
+    <div class="pagetop">
+        <a href="#"><img src="//www.my-doc.jp/img/front/common/bt_pagetop.gif" width="149" height="32" alt="ページトップ"></a>
+    </div>
+</div>
+<div id="css_FootArea">
+    <p class="searchlink">
+        <!-- <a href="#">地域から病院を検索する</a>
+        <a href="#">診療科目から病院を検索する</a>
+        <a href="#">特徴から病院を検索する</a> -->
+        <a href="../../front/top/index.php">病院を検索する</a>
+    </p>
+    <p class="otlink">
+        <a href="../../front/top/index.php">ホーム</a>
+        <a href="../../front/pages/guide.php">ご利用ガイド</a>
+        <a href="../../front/inquiry/index.php">お問い合わせ</a>
+        <a href="../../front/pages/concern.php">医療関係の方</a>
+        <a href="../../front/pages/privacy.php">プライバシーポリシー</a>
+                <a href="../../front/mypage/index.php?Action=login">ログイン</a>
+                <a href="../../front/inquiry/clinic.php">医院基本情報を無料登録する</a>
+    </p>
+</div>
+<div id="css_Footcopy">
+    <div class="copy">
+        <p>Copyright (C) 2012 my doctor. All Rights Reserved.</p>
+    </div>
+</div>    <!-- ▲ 共通フッター終了 ▲ -->
+    </body>
+</html>

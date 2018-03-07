@@ -1,0 +1,769 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 	<title>DNBi</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta http-equiv="imagetoolbar" content="no"/>
+	<link href="/common/us/assets/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+	<link rel="stylesheet" type="text/css" href="/cas/bundles/6.0-b-1/css/common.css" />
+
+	<link rel="stylesheet" type="text/css" href="/cas/bundles/6.0-b-1/css/cas.css" />
+
+
+
+
+<style type="text/css">
+	body {
+		background: #B6C8DE;
+	}
+	input {
+		font-family: calibri;
+	}
+	#parentDiv {
+		background: none !important;
+	}
+	#LoginpageWrapper {
+		margin: 10px auto 0;
+		padding: 0 3px;
+		width: 978px;
+		font-family: calibri;
+	}
+	#loginBodyWrapper {
+		margin: 0 0 5px;
+	}
+	#login_form {
+		background: url("/cas/us/includes/assets/images/login_form_bg_new.png") no-repeat;
+		width: 400px;
+		height: 67px;
+		float: right;
+		margin: 12px 20px 0 0;
+		padding: 8px 0 0 20px;
+		color: #fff;
+		position: relative;
+	}
+	#loginheader {
+		height: 100px;
+		margin: 0 0 2px;
+		background: url("/cas/us/includes/assets/images/login_header.png") no-repeat;
+		width: 978px;
+	}
+	#login_left_content {
+		float: left;
+		width: 715px;
+		margin-left: 2px;
+	}
+	#login_right_content {
+		float: left;
+		width: 258px;
+	}
+	.clear {
+		clear: both;
+	}
+	.marketingBanner {
+		float: none !important;
+		margin: 0 !important;
+	}
+	#remUserName {
+		vertical-align: middle;
+	}
+	.login_submit_btn {
+		height: 30px;
+		font-size: 14px;
+		font-weight: bold;
+		width: 60px;
+		background: url("/cas/us/includes/assets/images/login_btn_new.png") no-repeat;
+		color: #fff;
+		margin-right: 5px;
+	}
+	.login_input_div {
+		height: 30px;
+		display: inline-block;
+		width: 150px;
+		background: url("/cas/us/includes/assets/images/login_input_bg_new.png") no-repeat;
+		margin-right: 5px;
+		padding-left: 5px;
+	}
+	.login_input {
+		height: 30px;
+		background: none;
+		border: none;
+		margin-right: 5px;
+		line-height: 30px;
+		width: 130px;
+		padding: 0 5px;
+		outline: none;
+	}
+	.remUserName_lbl {
+		display: inline-block;
+		font-size: 12px;
+		font-weight: bold;
+		margin-left: 5px;
+		vertical-align: middle;
+		width: 110px;
+	}
+	.left_bot_bg {
+		background: url("/cas/us/includes/assets/images/left_bot_bg.png") no-repeat;
+		height: 20px;
+	}
+	.left_top_bg {
+		background: url("/cas/us/includes/assets/images/left_top_bg.png") no-repeat;
+		height: 20px;
+	}
+	.left_mid_bg {
+		background: url("/cas/us/includes/assets/images/left_mid_bg.png") 2px 0px repeat-y;
+		overflow: hidden;
+	}
+	.rit_bot_bg {
+		background: url("/cas/us/includes/assets/images/right_bot_bg.png") no-repeat;
+		height: 20px;
+	}
+	.rit_top_bg {
+		background: url("/cas/us/includes/assets/images/right_top_bg.png") no-repeat;
+		height: 20px;
+	}
+	.rit_mid_bg {
+		background: url("/cas/us/includes/assets/images/right_mid_bg.png") repeat-y;
+	}
+	#twitter-widget-0 .timeline {
+		background: none !important;
+	}
+	#loginError {
+		color: red;
+		font-size: 12px;
+		font-weight: bold;
+		height: auto;
+		left: 40px;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		top: 43px;
+		z-index: 999999999;
+		background: none;
+	}
+	.login_error_top_bg {
+		background: url("/cas/us/includes/assets/images/error_bg_top.png") no-repeat;
+		width: 256px;
+		height: 21px;
+	}
+	.login_error_bott_bg {
+		background: url("/cas/us/includes/assets/images/error_bg_bott.png") no-repeat;
+		width: 256px;
+		height: 9px;
+	}
+	.login_error_mid_bg {
+		background: url("/cas/us/includes/assets/images/error_bg_midd.png") repeat-y;
+		width: 243px;
+		padding: 0px 10px 0 3px;
+		font-style: italic;
+	}
+	.close_error_btn {
+		float: right !important;
+		position: absolute;
+		right: 4px;
+		top: 14px;
+		cursor: pointer;
+	}
+	.loginBlockHighlightText {
+		color: #000;
+		display: inline-block;
+	}
+	#marketingBanner1 {
+		height: auto !important;
+		background: none;
+		border: none;
+		position: static !important;
+	}
+	#marketingBanner2 {
+		background: none !important;
+		width: 295px;
+		border: none;
+	}
+	.marketingBannerContent {
+		padding: 0 15px;
+	}
+	#flashMarketing {
+		border: none;
+		height: auto;
+	}
+	.loginInnerContainer1 {
+		margin: 0 6px 0 12px;
+	}
+
+
+</style>
+
+<!-- Unable to load bundle omniture-js -->
+
+
+
+
+
+
+</head>
+<!-- End of Head -->
+
+<body>
+	<div id="parentDiv">
+		<div id="LoginpageWrapper">
+			<div id="loginheader">
+				<div id="login_form">
+					<form method="post" action="" name='loginForm' id='loginForm'>
+						<input type='hidden' name="afterPath" value="" />
+						
+						<input type='hidden' name="fwd" value="lc" />
+						<input type='hidden' name="INPUT_MAP_STR" value="/jsp/lc/login.jsp" />
+						<input type="hidden" name="lt" value="_c3461D1B7-3813-F064-1DBC-114E48135B26_kF926A861-FF97-F9B4-7EAA-7B4E86379013" />
+						<input type="hidden" name="_eventId" value="submit" />
+						
+						
+
+						
+
+					
+					<!-- LoginError Ends -->
+
+						<!-- Login Form Items -->
+						<p>
+							<span class="login_input_div">
+								<input class="login_input" autocomplete="off"  type="text" id="username" name="username" tabindex="1" accesskey="d	  " />
+							</span>
+							<span class="login_input_div">
+								<input type="password"  class="login_input" autocomplete="off" id="password"  name="password" tabindex="2" accesskey="p  " /> 
+							</span>
+							<input id="LoginBtn" class="login_submit_btn" type="submit" tabindex="4" value="Login" accesskey="l"  onclick="return pleaseWait();"/>
+						</p>
+						<p style="padding: 10px 15px 0pt 0pt;font-size:12px;">
+							<input name="remUserName"  style="margin:0 2px 0 0;" id="remUserName" value="checkbox" tabindex="3" type="checkbox"/>
+							<label for="remUserName" style="padding:0 10px 0 0;" class="remUserName_lbl">Remember DNBi ID</label>
+							<a onClick="javascript:showForgotPasswordLink('https://sso.dnbi.com/cas/checkforgotpassword');" style="font-size: 12px; cursor:pointer;font-weight:normal;">Forgot Password ?</a>  
+							<select name="select" id="multy_countries" onChange="countryChange(this);" style="width: 120px; margin-left:10px;height: 22px; vertical-align:middle; border:none; padding:3px;">						
+								<option value="1" >Belgium</option>
+								<option value="2"  >Canada</option>
+								<option value="3" >Ireland</option>
+								<option value="4" >Netherlands</option>
+								<option value="5" >United Kingdom</option>
+								<option value="6"  selected   >United States</option>
+							</select>
+						</p>
+					</form>
+				</div> <!-- Div login_form Ends -->
+			</div> <!-- Div loginheader Ends -->
+			
+			<div id="loginBodyWrapper">
+				<div id="login_left_content"> <!-- MarketingBanner-->
+	 				<div style="margin-right:5px;">
+        				<div class="left_top_bg"></div>
+        				<div class="left_mid_bg">
+		  					<div class="marketingBanner" id="marketingBanner1" style="">
+								<style>
+#marketingBanner1{height:290px !important;border:none !important;padding:10px 10px 5px 15px;width:670px; background:url("/cas/us/includes/assets/images/heroimg.png") no-repeat right  ;font-family:calibri;}
+.DnBi_Login{position:relative;color:#17375E; width:675px;}
+.loginInnerContainer1,#flashMarketing{float:none !important;}
+.loginInnerContainer2 {display: none;float:none !important;}
+div.cursor {cursor: pointer;width:100px;}
+#flashMarketing{margin: 0 !important; width: 685px  !important;}
+#flashMarketing img{ height:75px;margin:10px 0;}
+.DnBi_Login_p1{color:#17375E; font-size:22px;font-weight:bold;padding:5px  0 5px; border-bottom:2px solid #768193;width:430px;text-align:left;}
+.DnBi_Login ul li sup{font-size:6px;}
+.DnBi_Login p{margin:10px 0 15px; padding:0; font-size:16px; color:#17375E;line-height:22px;text-align:justify;}
+
+</style>
+<div class="marketingBannerContent" id="MarketingContainer" style="padding:0px; padding-top:0px">
+
+	<p class="DnBi_Login_p1">Shorten The Sales Cycle to More Business! </p>
+	<div class="DnBi_Login">
+<p style="color:#17375E; font-size:16px;font-weight:bold;width:416px;padding:5px 0 0;">You have among the most important jobs in the company&#8212; you keep the cash flowing&#8212;contributing to revenue growth, as well as defending it!</p>
+
+<p style="width:415px;">But enabling sales while protecting the business is not easy or without challenges. Automated credit decisioning solutions from D&#38;B can help you shorten the sales cycle to tackle the revenue growth responsibilities and demands of your job.</p>
+
+<p style="width:400px;">Let us show you how we can help, call your D&#38;B Relationship Manager or visit <a  href="http://www.dnb.com/dnbi-solutions" target="_blank" style="color:#0000FF;font-weight:normal;text-decoration:underline;">www.dnb.com/dnbi-solutions</a>. </p>
+
+
+</div>
+	<!--<a href="http://survey.walkerinfo.com/AP64TESTN" target="_blank"><img src="/cas/images/DNB-16018_DC_VOCSurveyBanner_693x140_v3.jpg" align=center title="Your Needs Drive Our Change: Our customer survey is now open - January 3-23, 2012"/></a>-->
+</div>
+
+
+<script type="text/javascript">
+		var dnb_insights_url = "http://www.dnb.com/our-data-insights";
+		var por_ris_url = "http://www.dnb.com/business-credit/data-subscriptions/dnbi-risk-management/portfolio-risk-manager.html";
+		var acc_man_url = "http://www.dnb.com/business-credit/data-subscriptions/dnbi-risk-management/account-manager.html";
+		var dec_mak_url = "http://www.dnb.com/business-credit/data-subscriptions/dnbi-risk-management/decision-maker-for-dnbi.html";
+		var dnb_tra_url = "https://training.dnb.com/?prod=DNBi";
+
+
+
+		window.onload = function(){
+			//setTimeout(function() {
+				document.getElementById("flashMarketing").innerHTML = '';
+				var htmlDiv = '<div class="marketingBannerContent" id="MarketingContainer" style="padding:0px; text-align:center; padding-top:5px"><div style="display:none;"><h2 class="MarketingHeadingText">Welcome to DNBi</h2></div><h2 class="MarketingHeadingText">How much risk is in your portfolio?</h2><p class="MarketingContentText">Get insights faster&mdash;see the &ldquo;big picture&rdquo; view of your company&#39;s business risk and opportunity with <a href="?">Portfolio Risk Manager</a> for DNBi.</p ><p class="MarketingContentText"><a href="?">Contact us now</a> about how DNBi can help you manage risk and opportunity more strategically across your portfolio.</p ></div>';
+
+				htmlDiv = '<div style="background: #209584; height: 25px; position: relative;"><p style="font-weight: bold; color: #FFF; font-size: 14px; margin-left:15px; padding:2px;">Learn more...</p></div>';
+
+				htmlDiv += '<div style="top: 32px; left:45px; position: absolute;" class="cursor" onClick="openUrlLogin(\''+dnb_insights_url+'\');"><img src = "/cas/us/includes/assets/images/DnB_Insight.gif"/></div>';
+
+				htmlDiv += '<div style="top: 32px; left:155px;  position: absolute;" class="cursor" onClick="openUrlLogin(\''+dnb_tra_url+'\');"><img src = "/cas/us/includes/assets/images/training.gif"/></div>';
+
+				htmlDiv += '<div style="top: 32px;  left:285px;position: absolute; " class="cursor" onClick="openUrlLogin(\''+dec_mak_url+'\');"><img src = "/cas/us/includes/assets/images/decisionmaker.gif"/></div>';
+
+				htmlDiv += '<div style="top: 32px; left:415px; position: absolute; " class="cursor" onClick="openUrlLogin(\''+acc_man_url+'\');"><img src = "/cas/us/includes/assets/images/credtrrisk.gif"/></div>';
+
+				htmlDiv += '<div style="top: 32px; left:540px;position: absolute; " class="cursor" onClick="openUrlLogin(\''+por_ris_url+'\');"><img src = "/cas/us/includes/assets/images/portfoliorisk.gif"/></div>';
+
+				document.getElementById("flashMarketing").innerHTML = htmlDiv;
+				//document.getElementById("loginBlock").style.minHeight = "442px";
+			//}, 1000);
+		}
+
+		function openUrlLogin(url){
+			window.open(url);
+		}
+	</script>
+		  					</div>
+		  				</div>
+        				<div class="left_bot_bg"></div>
+        			</div>
+		  			<!-- MarketingBanner Ends-->
+		  			
+		   			<div style="margin:5px 5px 0 0;">
+        				<div class="left_top_bg"></div>
+       					<div class="left_mid_bg">
+		  					<div class="loginInnerContainer1"  >
+								<div id="flashMarketing" >
+								
+										<script type="text/javascript">
+											var dnbi_insights_url = "http://www.dnb.com/our-data-insights";
+											var por_ris_url = "http://www.dnb.com/business-credit/data-subscriptions/dnbi-risk-management/portfolio-risk-manager.html";
+											var acc_man_url = "http://www.dnb.com/business-credit/data-subscriptions/dnbi-risk-management/account-manager.html";
+											var decision_mak_url = "http://www.dnb.com/business-credit/data-subscriptions/dnbi-risk-management/decision-maker-for-dnbi.html";
+											var dnbi_tra_url = "http://www.clicktools.com/survey?iv=lgry5ault860r&q9=DNBi%20RM%20101|DNBi%20103%20DM%20User|DNBi%20104%20AM%20User|DNBi%20105%20Importing|Data%20%26%20Scores%20101|Data%20%26%20Scores%20102|Data%20%26%20Scores%20103|Data%20%26%20Scores%20104|Credit%20Evaluation%20101|DNBi%20PRM%20101|";
+											var htmlDiv = '<div class="marketingBannerContent" id="MarketingContainer" style="padding:0px; text-align:center; padding-top:5px"><div style="display:none;"><h2 class="MarketingHeadingText">Welcome to DNBi</h2></div><h2 class="MarketingHeadingText">How much risk is in your portfolio?</h2><p class="MarketingContentText">Get insights faster&mdash;see the &ldquo;big picture&rdquo; view of your company&#39;s business risk and opportunity with <a href="?">Portfolio Risk Manager</a> for DNBi.</p ><p class="MarketingContentText"><a href="?">Contact us now</a> about how DNBi can help you manage risk and opportunity more strategically across your portfolio.</p ></div>';
+											htmlDiv = '<div style="background: #08a9b1; height: 25px; position: relative;"><p style="font-weight: bold; color: #FFF; font-size: 14px; margin-left:15px; padding:2px;">Learn more...</p></div>';
+											htmlDiv += '<div style="top: 32px; left:45px; position: absolute;" class="cursor" onClick="openUrlLogin(\''+dnbi_insights_url+'\');"><img src = "/cas/us/includes/assets/images/DnB_Insight.gif"/></div>';
+											htmlDiv += '<div style="top: 32px; left:155px;  position: absolute;" class="cursor" onClick="openUrlLogin(\''+dnbi_tra_url+'\');"><img src = "/cas/us/includes/assets/images/training.gif"/></div>';
+											htmlDiv += '<div style="top: 32px; left:285px;position: absolute; " class="cursor" onClick="openUrlLogin(\''+decision_mak_url+'\');"><img src = "/cas/us/includes/assets/images/decisionmaker.gif"/></div>';
+											htmlDiv += '<div style="top: 32px; left:415px; position: absolute; " class="cursor" onClick="openUrlLogin(\''+acc_man_url+'\');"><img src = "/cas/us/includes/assets/images/credtrrisk.gif"/></div>';
+											htmlDiv += '<div style="top: 32px; left:540px;position: absolute; " class="cursor" onClick="openUrlLogin(\''+por_ris_url+'\');"><img src = "/cas/us/includes/assets/images/portfoliorisk.gif"/></div>';
+											document.getElementById("flashMarketing").innerHTML = htmlDiv;
+										</script>
+				
+			  					
+								</div>
+		  					</div> <!-- loginInnerContainer1 end -->
+		  					<div class="loginInnerContainer2">
+								<div class="marketingBanner" id="marketingBanner2">
+			 						
+<style>
+#flashMarketing{
+	background:#e0e8f5;
+    height: 129px;
+    overflow: hidden;
+    width: 700px;
+	margin-bottom:10px;
+	position: relative;
+	}
+	#flashMarketing a, #marketingBanner2 a  {color:#0000ff;}
+#flashMarketing h2{font-size:18px;}
+#flashMarketing p, #marketingBanner2 p {font-size:13px;line-height:18px;padding:5px 0 0;}
+
+
+#marketingBanner2{height:70px;width:260px;padding:25px 0;text-align:center; margin-bottom:10px\9;}
+#marketingBanner2 h2 {text-align:center;font-size:18px;line-height:20px;}
+#marketingBanner2 p{text-align:center;}
+</style>
+	<div class="marketingBannerContent" id = "makeCalender" >
+	<h2 class="MarketingHeadingText">Get the most out of what DNBi can do for you...</h2>
+	<p><a href="?">Register for DNBi Training</a></P>
+	<!--<script>
+/*var x=new Date();
+x.setFullYear(2011,4,26);
+var today = new Date();
+
+if (x>today)
+  {
+ document.write('<li style="margin-top:10px;"> The <a href="http://creditcongress.nacm.org/" target="_blank">2011 NACM Conference</a> is right around the corner - May 22-25.</li>');
+ }
+*/
+</script>-->
+	
+	</ul>
+	</div>
+
+	
+
+								</div>
+		  					</div> <!-- marketingBanner Ends-->
+		  					<div class="clear"></div>
+		   				</div>
+        				<div class="left_bot_bg"></div>
+       				</div> <!-- loginInnerContainer2 end -->
+				</div> <!-- loginColumn1 - Div login_left_content Ends-->
+
+				<!-- Twitter & Right Column -->
+				<div id="login_right_content">
+					<div class="rit_top_bg"></div>
+					<div class="rit_mid_bg" style="padding : 0 10px; min-height : 454px ;">
+ 						<div style="margin:0px 0 8px;" class="hidden_twitter_cnt">
+   						
+   								<div class="twitter-feed-containter"  style="height : 448px;">
+									<a height = "450" class="twitter-timeline" href="https://twitter.com/DnBUS" data-widget-id="446919566447222784">Tweets by @DnBUS</a>
+									<script type="text/javascript">
+									window.twttr = (function (d, s, id) {
+									  var t, js, fjs = d.getElementsByTagName(s)[0];
+									  if (d.getElementById(id)) return;
+									  js = d.createElement(s); js.id = id;
+									  js.src= "https://platform.twitter.com/widgets.js";
+									  fjs.parentNode.insertBefore(js, fjs);
+									  return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
+									}(document, "script", "twitter-wjs"));
+									</script>
+								</div>
+						
+						</div>
+						
+						<div>
+		  				
+		  						<span class="loginBlockHighlightText" style="font-size:12px;">	  Questions? Call our DNBi experts at 1-800-234-3867.</span>
+						
+						
+						
+            			</div>
+					</div>
+					<!--  Supported Configuration -->
+					<div class="displayHide" id="page_modal">
+						<div class="modal_inner_content">
+							<span class="boldText">
+								Windows 2000 SP4
+							</span>
+							<ul class="bulletList">
+		  						<li>
+		  							IE 6.x, Firefox 3.0x
+		  						</li>
+							</ul>
+							<span class="boldText">
+								Windows XP SP2
+							</span>
+							<ul class="bulletList">
+			  					<li>
+			  						IE 6.x, Firefox 3.0x
+			  					</li>
+							</ul>
+							<ul class="bulletList">
+								<span class="boldText">
+									Windows 2003 Server SP 1
+								</span>
+							</ul>
+							<ul class="bulletList">
+								<li>
+									IE 6.x, Firefox 3.0x
+								</li>
+							</ul>
+							<span class="boldText">
+								Windows XP SP2
+								</span>
+							<ul class="bulletList">
+							  <li>
+							  	IE 6.x, IE 7.x, Firefox 3.0x
+							  </li>
+							</ul>
+							<span class="boldText">
+								Windows Vista
+							</span>
+							<ul class="bulletList">
+								<li>
+									IE 6.x, IE 7.x, Firefox 3.0x
+								</li>
+							</ul>
+							<span class="boldText">
+								Apple OSX
+							</span>
+							<ul class="bulletList">
+								<li>
+									Safari 2.0.x, Firefox 3.0x
+								</li>
+							</ul>
+							<br/>
+							<span class="boldText">
+								Java 1.4.2 or above 
+							</span> 
+							<br />
+							<br/>
+							<span class="boldText">
+								Hardware &#45; PC Specification
+							</span>
+							<br/>
+							Pentium Processor &#45; 500 MHz (min) /1.0 GHz & above (recommended)
+							<br/>
+							Main Memory (RAM) &#45; 256 Mb (min) /512 Mb & above (recommended)
+						</div>
+						<div class="buttonSecondary floatRight">
+							<div class="buttonSprite buttonSecondaryLeft"></div>
+							<input class="buttonSprite buttonSecondaryMiddle" type="button" onClick="UI.Modal.close()" value='Close'/>
+							<div class="buttonSprite buttonSecondaryRight"></div>
+						</div>
+					</div>
+					<!-- Supported Configuration Ends -->
+        			<div class="rit_bot_bg"></div>        
+				</div> <!-- Twitter & Right Column  - Div login_right_content Ends -->
+				<div class="clear"></div>
+			</div> <!-- loginBodyWrapper Ends -->
+			<div> </div>
+			
+			<!--  Footer -->	
+			
+					
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+#footer{width:970px; margin:0px auto; color:#fff;}
+#footer_top{ background:url("/cas/us/includes/assets/images/footer_top_bg.png") no-repeat; height:12px; }
+#footer_bot{ background:url("/cas/us/includes/assets/images/footer_bottom_bg.png") no-repeat; height:12px;}
+#footer_mid_c{ background:url("/cas/us/includes/assets/images/footer_mid_bg.png") repeat-y;  padding:0 15px;overflow:hidden; }
+.clr{clear:both;}
+.social_nw_link img {cursor: pointer;}
+</style>
+
+<div id="footer">
+<div id="footer_top"></div>
+<div id="footer_mid_c">
+   <span class="boldText" style="float:left;padding-top: 13px;">
+       &copy; 2005-2017 Dun & Bradstreet, Inc.
+   </span>
+   <span class="social_nw_link" style="float:right;">
+   	<img onclick="openUrlLogin('http://www.facebook.com/DunBradstreet');" class="cursor" src="/cas/us/includes/assets/images/facebook_logo.png" title="Facebook">
+   	<img onclick="openUrlLogin('http://www.linkedin.com/company/dun-&-bradstreet');" src="/cas/us/includes/assets/images/linkedin_logo.png" title="LinkedIn">
+    <img onclick="openUrlLogin('https://www.youtube.com/user/DunandBrad');" class="cursor" src="/cas/us/includes/assets/images/YouTube_logo.png" title="YouTube"> 
+    <img onclick="openUrlLogin('https://twitter.com/#!/DnBUS');" class="cursor" src="/cas/us/includes/assets/images/twitter_logo.png" title="Twitter">
+    </span>
+   <div class="clr"></div>
+</div>
+   <div id="footer_bot"></div>
+</div>
+
+<script type="text/javascript" src="/cas/bundles/6.0-b-1/js/cas.js"></script>
+
+<script type="text/javascript" src="/cas/bundles/6.0-b-1/js/header.js"></script>
+
+<script type="text/javascript" src="/cas/bundles/6.0-b-1/js/primary.js"></script>
+
+<script type="text/javascript" src="/cas/bundles/6.0-b-1/js/coreMetrics.js"></script>
+
+			
+			<!--  Footer Ends-->
+		</div> <!-- LoginpageWrapper Ends-->
+	</div> <!-- parentDiv Ends -->
+	
+	
+<!--  Scripts -->	
+<form id="tempForm" name="tempForm">
+	<input id="locale" type="hidden" value="en_US" name="locale"/>
+</form>
+
+<form name="timerform">
+	<input type="hidden" name="clock" value="14:00" />
+</form>
+
+<div id='widget_container1'></div>
+
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+	function readCookie(cookieName) {
+		 var theCookie=""+document.cookie;
+		 var ind=theCookie.indexOf(cookieName);
+		 if (ind==-1 || cookieName=="") {return ""; }
+		 var ind1=theCookie.indexOf(';',ind);
+		 if (ind1==-1){ ind1=theCookie.length; }
+		 return unescape(theCookie.substring(ind+cookieName.length+1,ind1));
+	}
+
+	function populateLoginInfo(){
+		var username = readCookie("USER_NAME");
+		if(username!=';'){
+			document.loginForm.username.value=username;
+			document.loginForm.remUserName.checked=true;
+		}
+		var rememberId = readCookie("REMEMBER_ID");
+		if(rememberId=="true"){
+			document.loginForm.remUserName.checked=true
+		}else{
+			document.loginForm.remUserName.checked=false
+		}
+		login();
+	}
+
+populateLoginInfo();
+
+	error=false;
+		
+
+	function countryChange(selectObj){ 
+		 var idx = selectObj.selectedIndex; 
+		 var cnt = selectObj.options[idx].value;
+		 if (false==true) {
+			if(cnt!=null && cnt!=0) {
+				url = "login;jsessionid=d9aIgKgjG1ZOjllk-WdOfIE+.app2?null";			
+				url = url.substring(0,url.length-1);
+				url = url + cnt;
+				window.location = url;
+			}
+		 }
+		 else {
+			if(cnt!=null && cnt!=0) {
+			url = "login;jsessionid=d9aIgKgjG1ZOjllk-WdOfIE+.app2?null"+"&cnt="+cnt;
+			 window.location = url;
+			}
+		 }	
+	}
+
+	try{
+		document.getElementById("multy_countries").disabled = false;
+		document.getElementById("multy_countries").removeAttribute("disabled")
+	}catch(e){ }
+
+	function pleaseWait() {
+		var pullAppIndSSO='false';
+		var pullAccIndSSO='false';
+		var pullCompIndSSO='false';
+		var pullHomeIndSSO='false';
+		document.getElementById('LoginBtn').value = "Please Wait ...";
+		document.getElementById('LoginBtn').disabled = true;
+		document.getElementById('LoginBtn').style.width = "65px";
+		document.getElementById('LoginBtn').style.fontSize = "12px";
+		document.getElementById('LoginBtn').style.background = "none";
+		if (document.getElementById('errorArea')) {
+			document.getElementById('errorArea').innerHTML = "<br>";
+		}
+		
+		writeCookies();
+	    murl  = window.location +" ";
+		isTestNodeRequest = false;
+		if(murl.indexOf("testNodeRequest")>1){
+			var tmpUrl = murl.split("testNodeRequest");
+			if(tmpUrl[1].indexOf("true") > 1) {
+				isTestNodeRequest = true;
+				var splitUrl = murl.split("service=");
+				var finalUrl = unescape(splitUrl[1]);
+			}
+		}
+		if (isTestNodeRequest) {
+			url = "login;jsessionid=d9aIgKgjG1ZOjllk-WdOfIE+.app2?service=" + finalUrl;
+		} else {
+			if(pullAppIndSSO == "true"){
+				url = "login;jsessionid=d9aIgKgjG1ZOjllk-WdOfIE+.app2?service=null";
+			} else if(pullAccIndSSO  == "true"){
+				url = "login;jsessionid=d9aIgKgjG1ZOjllk-WdOfIE+.app2?service=null";
+			} else if(pullCompIndSSO  == "true"){
+				url = "login;jsessionid=d9aIgKgjG1ZOjllk-WdOfIE+.app2?service=null";
+			} else if(pullHomeIndSSO  == "true"){
+				url = "login;jsessionid=d9aIgKgjG1ZOjllk-WdOfIE+.app2?service=null";
+			} else{
+				url = "login;jsessionid=d9aIgKgjG1ZOjllk-WdOfIE+.app2?service=https://sso.dnbi.com/common/dispatch";
+			}
+		}
+		document.loginForm.action = url;
+		document.loginForm.submit();
+	}
+	
+	bodyloader();
+	
+	function login() {
+		var username ='';
+		var password ='';
+		var bypassLogin='null';
+		if ('true'==bypassLogin) {
+				document.loginForm.username.value=username;
+				document.loginForm.password.value=password;
+			pleaseWait();
+		}
+	}
+	//getHTML_Marketing("MarketingContainer","https://sso.dnbi.com/cas/LoginMarketingService?targetId=LOGIN_WHATS_NEW_MKT_MSG&userCountry=US&language=en");   
+</script>
+
+<SCRIPT LANGUAGE="JavaScript">
+	function Down() { 
+		sec--;
+		if (sec == -1) { sec = 59; min--; }
+		if (min == 0 && sec == 0) {
+			writeCookies();
+			window.location.reload(true);
+		} else 
+			down = setTimeout("Down()", 1000);
+	}
+
+	function timeIt() {
+		min = 1 * Minutes(document.timerform.clock.value);
+		sec = 0 + Seconds(document.timerform.clock.value);
+		Down();
+	}
+
+	function getHTML() {
+		
+		var url = 'https://sso.dnbi.com/cas/login';
+		new Ajax.Updater('',url, {method:'get',onComplete:timeIt, evalScripts: true});
+	}
+	
+	timeIt();
+</script>
+
+<!--  Omniture Tracking -->
+<script language="JavaScript" type="text/javascript">
+	/* <![CDATA[ */
+	if(jQuery("#loginError").text() !=null && jQuery.trim(jQuery("#loginError").text()).length != 0){
+		try{	
+			DNBiOmniture.init();
+			var data ={
+				pageName: "Unsuccessful DNBi Login",
+				events : "event2",
+				channel : "Login",
+				reportName : "Unsuccessful DNBi Login",
+				section : "Login"
+			};
+			DNBiOmniture.setPageData(data);
+			DNBiOmniture.pageExecute();
+		}catch(e){
+			console.debug("Error in omniture code execution!"+e.message);
+		}		
+	}
+	 /* ]]> */
+</script>
+
+<script type="text/javascript">
+	jQuery(".close_error_btn").click(function(){
+		jQuery("#loginError").hide();
+	});
+</script>
+
+</body>
+
+</html>

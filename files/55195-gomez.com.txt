@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" data-dtconfig="rid=RID_-1470967508|rpid=-1446516883|domain=dynatrace.com|reportUrl=/rb_dwypuwjjgx|featureHash=237SVfqrtx|lastModification=1504271381241|useNewCookies=1|dtVersion=10125170809091310|tp=500,50,0,1">(function(){function u(){var a=0;try{a=n.performance.timing.navigationStart+Math.floor(n.performance.now())}catch(b){}return 0>=a||isNaN(a)?(new Date).getTime():a}function E(a,b){return sf(a,b)}function r(a,b){for(var c=1;c<arguments.length;c++)a.push(arguments[c])}function Ia(a){r(qd,a)}function z(a,b){return parseInt(a,b||10)}function xb(a){try{if(Ja)return Ja[a]}catch(b){}return null}function yb(a,b){try{window.sessionStorage.setItem(a,b)}catch(c){}}function t(a,b){var c=-1;b&&a&&a.indexOf&&(c=
+a.indexOf(b));return c}function rd(a){document.cookie=a+'="";path=/'+(l.domain?";domain="+l.domain:"")+"; expires=Thu, 01 Jan 1970 00:00:01 GMT;"}function ia(a){a=encodeURIComponent(a);var b=[];if(a)for(var c=0;c<a.length;c++){var d=a.charAt(c);r(b,tf[d]||d)}return b.join("")}function O(a,b,c,d){b||0==b?(b=(""+b).replace(/[;\n\r]/g,"_"),b="DTSA"===a.toUpperCase()?ia(b):b,a=a+"="+b+";path=/"+(l.domain?";domain="+l.domain:""),c&&(a+=";expires="+c.toUTCString()),d&&(a+=";Secure"),document.cookie=a):
+rd(a)}function J(a){var b,c,d,f=document.cookie.split(";");for(b=0;b<f.length;b++)if(c=t(f[b],"="),d=f[b].substring(0,c),c=f[b].substring(c+1),d=d.replace(/^\s+|\s+$/g,""),d===a)return"DTSA"===a.toUpperCase()?decodeURIComponent(c):c;return""}function bb(a){var b=/^[0-9A-Za-z_\$\+\/\.\-\*%\|]*$/.test(a);return 0>=t(a,"$")||a&&2<a.split("$").length?!1:b}function ja(){var a=J(P);return a&&bb(a)?a:""}function Ka(a){O(P,a,void 0,m.bcv("ssc"))}function sd(a){a=a||ja();var b={sessionId:null,ba:null};if(a){var c=
+t(a,"|"),d=a;-1!==c&&(d=a.substring(0,c));c=t(d,"$");-1!==c?(b.sessionId=d.substring(c+1),b.ba=d.substring(0,c)):b.sessionId=d}return b}function cb(a){return sd(a).ba}function zb(a){if(a)return sd(a).sessionId;if(a=ja()){var b=t(a,"|");-1!=b&&(a=a.substring(0,b))}return a}function ka(a,b){return Math.floor(Math.random()*(b-a+1))+a}function Ab(a){var b=window.crypto||window.msCrypto,c;if(b)c=new Int8Array(a),b.getRandomValues(c);else for(c=[],b=0;b<a;b++)c.push(ka(0,ec));a=[];for(b=0;b<c.length;b++){var d=
+Math.abs(c[b]%ec);a.push(String.fromCharCode(d+(9>=d?48:55)))}return a.join("")}function Z(a){return document.getElementsByTagName(a)}function aa(a){var b=a.length;if("number"===typeof b)a=b;else{for(var b=0,c=2048;a[c-1];)b=c,c+=c;for(var d=7;1<c-b;)d=(c+b)/2,a[d-1]?b=d:c=d;a=a[d]?c:b}return a}function db(a){var b={};a=a.split("|");for(var c=0;c<a.length;c++){var d=a[c].split("=");2==d.length&&(b[d[0]]=decodeURIComponent(d[1].replace(/\+/g," ")))}return b}function la(a,b,c){b=b||{};a=a.split("|");
+for(var d=0;d<a.length;d++){var f=t(a[d],"="),e;-1===f?(e=a[d],b[e]="1"):(e=a[d].substring(0,f),b[e]=a[d].substring(f+1,a[d].length))}c||fc(b);return b}function gc(a){return a in l?l[a]:hc[a]}function ra(a){a=gc(a);return"false"===a||"0"===a?!1:!!a}function M(a){var b=z(gc(a));isNaN(b)&&(b=z(hc[a]));return b}function sa(a){return String(gc(a))}function td(a,b){l[a]=b}function ic(a){return l=a}function ud(a){var b=location.hostname;return b&&a?b==a||-1!==b.indexOf("."+a,b.length-("."+a).length):!0}
+function jc(a){l[a]=0>t(l[a],"#"+a.toUpperCase())?l[a]:""}function uf(a,b){var c={};l.legacy="1";if(a){var d=/([a-zA-Z]*)[0-9]{0,4}_([a-zA-Z_0-9]*)_([0-9]+)/g.exec(a);d&&d.length&&(c.csu=d[1],c.featureHash=d[2],c.agentLocation=a.substr(0,t(a,d[1])-1),c.buildNumber=d[3])}b&&la(b,c,!0);ud(c.domain)||(delete c.domain,c.domainOverride=location.hostname+","+c.domain);return c}function fc(a){var b=a.spc;if(b){var c=document.createElement("textarea");c.innerHTML=b;a.spc=c.value}}function Bb(a){var b=a.agentUri;
+b&&-1<t(b,"_")&&(b=/([a-zA-Z]*)[0-9]{0,4}_([a-zA-Z_0-9]*)_[0-9]+/g.exec(b),a.csu=b[1],a.featureHash=b[2])}function Cb(a){a.bp=a.bp||hc.bp;a.bp2&&(a.bp=2);ud(l.domain)||(l.domainOverride=location.hostname+","+l.domain,delete l.domain)}function Db(a){var b=document.cookie?document.cookie.split(a).length-1:0;if(1<b){var c=l.domain||window.location.hostname,d=window.location.hostname,f=window.location.pathname,e=0,h=0;La.push(a);do{var g=d.substr(e);if(g!=c||"/"!==f){var p=a,y=g==c?null:g,q=f,A=1,m=0;
+do document.cookie=p+'=""'+(y?";domain="+y:"")+";path="+q.substr(0,A)+"; expires=Thu, 01 Jan 1970 00:00:01 GMT;",A=q.indexOf("/",A),m++;while(-1!=A&&5>m);p=document.cookie?document.cookie.split(a).length-1:0;p<b&&(La.push(g),b=p)}e=d.indexOf(".",e)+1;h++}while(0!=e&&10>h&&1<b)}}function vd(a,b){var c=document.createElement("script");c.setAttribute("src",a);b&&c.setAttribute("defer","true");c.setAttribute("crossorigin","anonymous");var d=document.getElementsByTagName("script")[0];d.parentElement.insertBefore(c,
+d)}function wd(a){return Eb+"/"+Ma+"_"+a+"_"+(l.buildNumber||m.version)+".js"}function wf(){if(document.currentScript){var a=document.currentScript.src;if(a)for(var b=a.lastIndexOf("/"),c=0;2>c&&-1!=b;c++)a=a.substr(0,b),b=a.lastIndexOf("/");return a}return null}function xd(){var a=J("rxVisitor");if(!a||""==a||a.length&&45!=a.length)a=xb("rxVisitor"),a&&45==a.length||(yd=!0,a=u()+"",a+=Ab(45-a.length));var b=a,c=new Date;c.setFullYear(c.getFullYear()+2);O("rxVisitor",b,c);yb("rxVisitor",b);return a}
+function ta(a){var b=zd(a);b||(b=Na(a,!0));kc=!1;return b}function zd(a){return!kc&&a||null==(lc()||window.rx_visitID)?(a=Oa(!0))&&1<=a.length&&!(mc()<=u())?(Pa(!1),"sessionIDorRunIDMissing"==a[0].visitId?null:a[0].visitId):null:null}function Pa(a){var b=u(),c=Ad().U;a&&(c=b);O("rxvt",b+Bd+"|"+c);Cd()}function Dd(a){a||(a=ka(1,1E6));var b=zb();b||(b=-1*ka(2,21)+"$"+Ab(32),Ka(b),b=zb(b));a=""+a;for(var c=a.length,d=[],f=0;f<b.length;f++)d[f]=String.fromCharCode(65+Math.abs((b.charCodeAt(f)^a.charCodeAt(f%
+c))%26));return d.join("")}function nc(a){var b=Oa(!1);eb(b,a);Pa(!0)}function Na(a,b){b&&(oc=!0);var c;a:{if(kc||!a||lc())if(c=lc()||window.rx_visitID){window.rx_visitID=null;break a}c=null}var d=u();c||(c=Dd(d));nc(c);return c}function lc(){return m.rx_visitID||l.rx_visitID}function Cd(){pc&&clearTimeout(pc);pc=E(fb,mc()-u())}function fb(){if(mc()<=u()){var a=u(),a=Dd(a);nc(a);return!0}Cd();return!1}function Ad(){var a={Z:0,U:0},b=J("rxvt");if(b)try{var c=b.split("|");2==c.length&&(a.Z=parseInt(c[0],
+10),a.U=parseInt(c[1],10))}catch(d){}return a}function mc(){var a=Ad();return Math.min(a.Z,a.U+Ed)}function Fb(a,b){for(var c=Oa(b),d=!1,f=0;f<c.length;f++)c[f].frameId===I&&(c[f].H=a,d=!0);d||r(c,{frameId:I,H:a});eb(c)}function eb(a,b){var c="",d=!1;if(a){for(var c=[],f=0;f<a.length;f++)"-"!=a[f].H&&(d=!0,0<f&&0<c.length&&r(c,"p"),r(c,Qa),r(c,"$"),r(c,a[f].frameId),r(c,"h"),r(c,a[f].H));c.length||(gb&&(Na(!1,!0),gb=!1),Qa=cb(),r(c,Qa),r(c,"$"),r(c,I),r(c,"h-"));r(c,"v");r(c,b||ta(d));c=c.join("")}c||
+(gb&&(Na(!1,!0),gb=!1),Qa=cb(),c=Qa+"$"+I+"h-v"+(b||ta(!1)));O(ua,c)}function Oa(a){var b=J(ua),c=[];if(b&&"-"!==b)for(var b=b.split("p"),d=0;d<b.length;d++){var f=b[d].split("h");if(2===f.length&&f[0]&&f[1]){var e=f[0],h;e&&0<=t(e,"$")&&(e=e.split("$")[1]);if(0<=t(f[1],"v")){var g=f[1].split("v");2==g.length&&(h=g[1],f[1]=g[0])}if(!(g=a)){var g=z(e.split("_")[0]),p=u()%6E8;p<g&&(p+=6E8);g=g+9E5>p}g&&r(c,{frameId:e,H:f[1]})}}for(d=0;d<c.length;d++)c[d].visitId=h;return c}function ba(){if("string"!==
+typeof document.title){var a=Z("title")[0];return a.innerText||a.textContent}return document.title}function qc(){return rc?new rc:sc?new sc("MSXML2.XMLHTTP.3.0"):n.XMLHttpRequest?new n.XMLHttpRequest:new n.ActiveXObject("MSXML2.XMLHTTP.3.0")}function Fd(){var a=sa("csu");return(a.indexOf("dbg")==a.length-3?a.substr(0,a.length-3):a)+"_"+sa("app")+"_Store"}function xf(){return w}function Gd(){var a=document.location;return a?0===t(a.href,"file"):!1}function yf(a){return l[a]}function Hd(a){if(a.xb){var b=
+Id(a.xb);try{a.xbp=new RegExp(b)}catch(c){}}}function Gb(a){return a?String.trim?a.trim():a.replace(/^\s+|\s+$/g,""):null}function Hb(a,b){if(a.indexOf)return a.indexOf(b);for(var c=a.length;c--;)if(a[c]===b)return c;return-1}function va(a,b,c){a==n?Jd?Jd(b,c,!0):tc&&tc("on"+b,c):a.addEventListener?a.addEventListener(b,c,!0):a.attachEvent&&a.attachEvent("on"+b,c);for(var d=!1,f=ma.length;0<=--f;){var e=ma[f];if(e.object===a&&e.event===b&&e.T===c){d=!0;break}}d||r(ma,{object:a,event:b,T:c})}function Kd(a,
+b,c){for(var d=ma.length;0<=--d;){var f=ma[d];if(f.object===a&&f.event===b&&f.T===c){ma.splice(d,1);break}}a==n?Ld?Ld(b,c,!0):zf&&tc("on"+b,c):a.removeEventListener?a.removeEventListener(b,c,!0):a.detachEvent&&a.detachEvent("on"+b,c)}function uc(a){try{var b=a.tagUrn;return b&&-1!==t(b,"schemas-microsoft-com:vml")}catch(c){return!0}}function Md(a){if(!a||-1===a.indexOf("://"))return null;a=a.split("/")[2].split(":")[0].toLowerCase();return/^[^<>%/\\\(\)\{\}\[\] ]+$/.test(a)?a:null}function Af(a){var b=
+a?a:n.location.pathname;(a=n.location.search)&&a.length&&"?"===a.charAt(0)&&(a=a.substring(1));b=31+Nd(b);b=31*b+Nd(a);return"RID_"+(b&b)}function Nd(a){var b=0;if(a)for(var c=a.length,d=0;d<c;d++)b=31*b+a.charCodeAt(d),b&=b;return b}function vc(a,b){try{n.sessionStorage[a]=b}catch(c){O(a,b)}}function Od(a){try{return n.sessionStorage[a]}catch(b){}return J(a)}function G(a){var b=[];if(a)for(var c=0;c<a.length;c++){var d=a.charAt(c),f=Ib[d];f?r(b,f):r(b,d)}return b.join("")}function wc(a){a=a.replace(/_/g,
+"_5F").replace(/%/g,"_25").replace(/\|/g,"_7C");return G(a)}function Q(a){if(a){for(var b=[],c=(l.spc||"")+"\t\n\r",d=0;d<a.length;d++){var f=a.charAt(d);-1===t(c,f)&&r(b,f)}a=b.join("")}return a||""}function Pd(){var a=document.location;if(a){var a=a.href,b=t(a,"#");0<=b&&(a=a.substr(0,b));return a}return"-"}function Qd(){var a=document.location;if(a){var a=a.href,b=t(a,"#");if(0<=b)return a=a.substr(b+1)}return""}function Jb(a,b){a=Math.floor(a);(b||V)&&0<a&&O(W,a);return a}function ca(){!xc&&n.performance&&
+n.performance.timing&&(!w.ff||9<w.ff)&&(xc=n.performance);return xc}function Rd(a,b,c,d,f){if(Object.defineProperty&&(!w.ie||8<w.ie)){Ra[b]=a[b];var e=function(c){if(c||f)return Ra[b]=c,d&&d.apply(a,[c]),Ra[b]};try{Object.defineProperty(a,b,{get:function(){return c?c.apply(a,null):Ra[b]},set:e,configurable:!0})}catch(h){}}}function yc(a){return(0==t(a,"http")||0==t(a,"//"))&&t(location.href,location.host)!=t(a,location.host)}function Kb(a){if(yc(a))return a;var b=document.createElement("a");b.href=
+a;return b.cloneNode(!0).href}function wa(){try{return n.location.href}catch(a){}return""}function Sd(a,b){a&&a.length>b&&a.substr&&(a=a.substr(0,b)+"...");return a}function Lb(a){return Sd(a,l.sl||100)}function hb(a,b,c,d){c&&(a[d].set?a[d].set(b,c):a[d][b]=c)}function Id(a){-1<t(a,"^")&&(a=a.split("^^").join("^"),a=a.split("^dq").join('"'),a=a.split("^rb").join(">"),a=a.split("^lb").join("<"),a=a.split("^p").join("|"),a=a.split("^e").join("="),a=a.split("^s").join(";"),a=a.split("^c").join(","),
+a=a.split("^bs").join("\\"));return a}function Td(a){if(!a||!Mb())return a;try{for(var b={},c=(a+"").split(""),d=[],f,e=c[0],h=256,g=1;g<c.length;g++)f=c[g],null!=b[e+f]?e+=f:(d.push(1<e.length?b[e]:e.charCodeAt(0)),b[e+f]=h,h++,e=f);d.push(1<e.length?b[e]:e.charCodeAt(0));return new Uint16Array(d)}catch(p){return a}}function Mb(){return!!l.lzwe}function zc(){var a=Oa(!0);if(0<a.length){for(var b=[],c=0;c<a.length;c++)a[c].frameId!==I&&r(b,a[c]);eb(b)}}function Ud(a){a=I+"h"+e.esc(a);var b=J(ua);
+return b&&0<=t(b,a)&&!e.hyb()?null:a}function Bf(a,b){if("string"===typeof a)return a===b;for(var c=0;c<a.length;c++)if(a[c]!==b[c])return!1;return!0}function xa(){var a=e;try{for(var b=na;b&&b!==self;){if(b.dT_)return b.dT_.tdto();b=b!==b.parent?b.parent:!1}}catch(c){}return a}function Vd(a,b,c,d,f){for(var k=3,h=0,g=!1;0<k;)try{var p,y=l.cors,q;if(y){var A=qc();"withCredentials"in A||(A=n.XDomainRequest?new XDomainRequest:null);q=A}else q=qc();p=q;if(!p)return!1;h=u();"onreadystatechange"in p?p.open("POST",
+b,c):p.open("POST",b);"setRequestHeader"in p&&(p.setRequestHeader("Content-Type",e.lzwe()?"application/octet-stream":"text/plain;charset=UTF-8"),f&&!y&&p.setRequestHeader(e.gRHN(),f));a&&a(p,b,d,h,c);p.send(d);k=0;g=!0}catch(vf){k--}return g}function Wd(a,b){var c;try{c=navigator.sendBeacon(a,b||"")}catch(d){c="Error sending signal via sendBeacon: "+d+": "+a}return c}function Xd(){var a=this;a.F=[];a.a=function(b,c,d){r(a.F,[b,c,d])};a.an=function(b,c,d){c&&a.a(b,c,d)};a.g=function(b){for(var c=0;c<
+a.F.length;c++)if(a.F[c][0]===b)return a.F[c][1]};a.s=function(){for(var b=0,c=0;c<a.F.length;c++)b+=(""+a.F[c][0]).length+(""+a.F[c][1]).length+1;return b};a.sts=function(){for(var b=0;b<a.F.length;b++)if(a.F[b][2])return!0;return!1}}function Ac(a,b,c,d,f,k){a.domNodes||(a.domNodes=aa(Z("*")));var h=[];if(a.next&&0<a.next.length){for(var g=0;g<a.next.length;g++){var p=a.next[g],p=Ac(p,b+1,c,d,f),y=p.result;if(y)h.push(y);else if(!p.qa)return{}}if(c)for(g=0;g<a.next.length;g++)if(p=a.next[g],p.stop)a.stop&&
+p.stop>a.stop&&(Nb("l",a.id,p.stop),a.stop=p.stop);else{a.stop=!1;break}}if(!d&&!f&&!a.stop||!f&&ib&&a.J)return a.J&&Yd(a),{};k&&(Bc=a.stop-a.start);c=[];c[0]=b.toString();c[1]=a.id;c[2]=G(a.ga||a.name);c[3]=G(a.type);c[4]=a.info?G(a.info):"-";c[5]=a.start;c[6]=a.stop||0;c[7]=a.domNodes;c[8]="-";c[9]="-";c[10]="-";c[11]="-";c[12]="-";c[13]="-";c[14]="-";c[15]="-";c[16]="-";f=8;1==b&&a.childFrameActions&&(c[8]=a.childFrameActions,f=9);a.P&&(c[9]=a.P,f=10);a.xhrUrl&&(c[10]=G(a.xhrUrl),f=11);a.aa&&(c[11]=
+"1",f=12);if(a.xhrUrl){a:{if(b=Cc(a.xhrUrl,a.start))if(g=b.startTime,0<g){b=Ob(b,["b",ca().timing.navigationStart+Math.round(g)],!0).join("");break a}b=null}b&&!l.ntd&&(c[12]=b,f=13)}b=document.referrer;"_load_"===a.name&&b&&(c[13]=G(b),f=14);a.L&&a.R&&(c[14]=a.L-a.start,c[15]=a.R-a.start,f=16);a.visuallyComplete&&0<a.visuallyComplete&&(c[16]=a.visuallyComplete-a.start,f=17);c.splice(f,c.length-f);!k&&e.irtx&&e.irtx(a.id,a.start,a.stop);k=!1;a.stop||d||a.next&&a.next.length||!Dc(a)?(h.unshift(c.join("|")),
+Ec++):Dc(a)&&(k=!0);a={qa:k};1<h.length?a.result=h.join(","):h[0]&&(a.result=h[0]);return a}function Zd(a,b,c,d){var f="_load_"==a.type;if(a.parentFrameActionName){var e=[],h=["0"];h[1]=a.parentActionId;h[2]=G(a.parentFrameActionName);h[3]=a.parentActionLinkType;e[0]=h.join("|");e[1]=Ac(a,1,b,c,d,f).result;return e[1]?e.join(","):null}return Ac(a,1,b,c,d,f).result||null}function Cf(a){for(var b in a)if(a.hasOwnProperty(b))return!1;return!0}function Fc(a,b){var c=[],d=[],f=0,e;for(e in a)if(a.hasOwnProperty(e)){f++;
+var h=a[e];h?"object"==typeof h&&(Cf(h)||"number"==typeof h.length&&!h.length?r(c,e):r(d,function(b){return function(){return Fc(b,a)}}(h))):r(c,e)}for(e=0;e<c.length;e++)delete a[c[e]];c.length==f&&r(d,function(){return Fc(b,b)});return d}function Gc(a,b,c,d){if(a.next&&a.next.length&&b)for(h=0;h<a.next.length;h++){var f=a.next[h];if(f.stop)a.stop&&f.stop>a.stop&&(Nb("l",a.id,f.stop),a.stop=f.stop);else{a.stop=null;break}}if(!c&&!d&&!a.stop||!d&&ib&&a.J)return a.J&&Yd(a),null;f={id:a.id,type:a.type,
+name:a.ga||a.name,timing:{start:a.start,stop:a.stop},domNodes:a.domNodes||aa(Z("*")),info:a.info,xhrUrl:a.xhrUrl,loadActionReferrer:"_load_"==a.name?document.referrer:"",source:{title:a.N(),url:a.I()},childFrameActions:a.childFrameActions,webSocketRequestId:a.P,isCustomAction:a.aa,xhrCallbackTiming:{stop:a.R,start:a.L},visuallyComplete:a.visuallyComplete-a.start,parentActionId:a.parentActionId,parentFrameActionName:a.parentFrameActionName,parentActionLinkType:a.parentActionLinkType,errors:a.errors};
+"_load_"==a.type&&(Bc=a.stop-a.start);h=null;if(a.xhrUrl)a:{if(h=Cc(a.xhrUrl,a.start)){var e=h.startTime;if(0<e){h=Ob(h,["b",ca().timing.navigationStart+Math.round(e)],!0);h=$d(h);break a}}h=null}f.resourceTiming=h;for(var e=[],h=0;h<a.next.length;h++)if(!ae(e,Gc(a.next[h],b,c,d)))return null;f.subActions=0<e.length?e:null;return f}function ae(a,b){return b?(r(a,b),!0):!1}function Sa(a,b,c,d){jb=!1;a=oa.prepareBeacon(a,b,c);return oa.C?be(!!c,!!d,a):0}function Pb(a,b,c){for(var d=ce(),f=0;f<d.length;f++)try{d[f](c,
+a,b)}catch(k){}}function be(a,b,c){if(e.disabled)return 0;c=c.referer||wa();c!=wa()||l.cors||1!=M("bp")||(c="");var d=u();oa.setTimestamp(d);l.app&&oa.setApplication(sa("app"));var f=!0;(d=a&&de&&!l.dsndb||l.svNB)||(b?f=!1:a&&(w.ie||w.edge?ya&&(f=!1):w.sf||w.msf?f=!1:l.lab&&(f=!1)));a=f;var k,h=c,g=l.cors;b=l.reportUrl?l.reportUrl:"dynaTraceMonitor";var f=[],p=1<M("bp"),y=g?"cors":"post",q=[],A={};l.app&&(A.app=l.app);Mb()&&(A.format="lzw");var m=P,n=W,t=Hc;p&&(m="session",n="latency");ja()&&p?A[m]=
+encodeURIComponent(ja()):p||(A[m]=encodeURIComponent(ja())||"null");A[n]=encodeURIComponent(J(W));A.referer=encodeURIComponent(h||"");A.flavor=y;A.type="js";A.svrid=e.gcSId();A.visitID=encodeURIComponent(ta(!0));if(p)q=["type",m,"svrid","flavor","referer","visitID"];else if(g||d&&h)q=[m,W,"referer"],r(q,"visitID");g&&(h=J(t))&&(A.dtAdk=encodeURIComponent(h),r(q,"dtAdk"));l.app&&r(q,"app");Mb()&&r(q,"format");for(k in q)q.hasOwnProperty(k)&&(h=q[k],A[h]&&r(f,h+"="+A[h]));k=f.join(";");p&&(k=f.join("&"));
+k&&(b+="?"+k);k=b;b=oa.getBeaconAsString();f=[];p=ee();p=0===b.length%p?z(b.length/p):z(b.length/p)+1;if(l.spl||1<p)if(q=ee(),h=u(),g=0,1<p){if(100>p)for(y=0;y<p;y++)m="sid="+h+"&p"+(y+1)+"_"+p+"=",1==M("bp")&&(m="svrid="+e.gcSId()+"&"+m,l.app&&(m="app="+l.app+"&"+m)),g+q<=b.length?(A=b.slice(g,g+q),"%"==A.charAt(A.length-1)&&b.length>=g+q+1&&(A+=b.charAt(g+q),A+=b.charAt(g+q+1),g+=2),"%"==A.charAt(A.length-2)&&b.length>=g+q+2&&(A+=b.charAt(g+q),g+=1)):A=b.slice(g),r(f,m+A),g+=q}else f=[b];else f=
+[b];b=f;f=!0;for(p=0;p<b.length;p++)q=b[p],q=Td(q),f=d?f&Wd(k,q):f&Vd(Df,k,a,q,c),Ta=u();return f?2:1}function ee(){var a=e.syn?145E4:3E4;l.msl&&(a=Math.min(a,z(l.msl)));return a}function fe(){var a=ca(),b=a?a.timing:!1;return a&&b&&(a=b.domComplete,b=b.domContentLoaded,a||b)?a?a:b:Ic}function pa(a){if(jb){var b=!1;a?u()+a<ge&&(b=!0):b=!0;b&&(clearTimeout(he),jb=!1)}jb||(ge=u()+(a||0),a?(he=E(Sa,a||0),jb=!0):Sa())}function S(){for(var a=0;a<Jc.length;a++)Jc[a]()}function ie(){return x}function za(a,
+b,c,d,f,k,h,g,p,m,q){q=q||{};var y={id:Ef++,start:c,stop:d,type:a,name:b,info:h,domNodes:f,next:[],K:null,W:null,parentActionId:null,parentActionLinkType:null,parentFrameActionName:null,ga:null,P:k?ka(1,2147483647):0,parent:null,wa:q.url||location.href,title:q.title||ba(),xhrUrl:g,aa:p,Y:m,errors:[],X:-1,da:!1,I:function(){return y.parent?y.parent.I():y.wa},N:function(){return y.parent?y.parent.N():y.title},add:function(a){a&&a.name&&r(y.next,a)}};y.X=E(function(){if(y&&(y.da=!0,!y.stop&&!Kc(y))){var a=
+"Action with id "+y.id+" '"+y.name+"' timed out! Check full visit for related action. Recorded with version "+e.version;y.Y&&(a+=". Readystate: "+y.Y.readyState+", xhr url: "+y.xhrUrl+", status: "+y.Y.status);Ua(a,-1);da(y.id)}},1E3*z(l.oat||180));return y}function Kc(a){for(var b=0;b<a.next.length;b++)if(!a.next[b].stop||Kc(a.next[b]))return!0;return!1}function je(){var a=!1,b=[],c;for(c in x)if(x.hasOwnProperty(c)){var d=x[c];0<d.W&&(u()>d.K&&(d.K+=6E4,r(b,d)),a=!0)}0<b.length&&Sa(!0,!0);for(c=
+0;c<b.length;c++)b[c].W--;a&&E(je,1E3)}function ke(a,b){if(a&&0<b)for(var c,d=0;d<a.length;d++){c=a[d];if(c.id==b)return c;if(c.next&&(c=ke(c.next,b),null!==c))return c}return null}function kb(a){var b=null;B&&(b=ke(B,a));return b}function Nb(a,b,c){for(var d=0;d<Qb[a].length;d++)Qb[a][d](b,c)}function Va(a,b,c,d,f,e,h,g,p,l){c||(c=u());a=za(b,a,c,null,null,f,e,h,g,p,l);Nb("e",a.id,c);"boolean"==typeof d&&d&&(d=F);if(d){if(c="number"==typeof d?kb(d):"object"==typeof d?d:F){c.add(a);a.parent=c;Lc(a);
+for(var k in x)x.hasOwnProperty(k)&&x[k]&&x[k].K>a.start+1E4&&(x[k].K=a.start+1E4)}}else{Lc(a);le(a);r(x,a);F=a;r(B,a);for(k=0;k<Mc.length;k++)Mc[k](a);a.K=a.start+1E4;a.W=100;E(je,5E3)}return a}function Lc(a,b){F!=a&&(F&&(Rb=F),(F=a)?Fb(a.id,b):zc())}function da(a,b,c){!b&&1==a&&e.gVCP&&(b=e.gVCP());b||(b=u());var d=R[a];d&&!d.J&&Nc(a);Nb("l",a,b);d=[];if(B)for(var f=0;f<B.length;f++){var k=me(B[f],a,b,c);"string"!==typeof k&&(d[f]=k)}a=!1;c=[];for(b=0;b<B.length;b++)d[b]?a=d[b]:Kc(B[b])||r(c,B[b].id);
+d=[];for(b in x)x.hasOwnProperty(b)&&(f=x[b],0<=Hb(c,f.id)?r(d,b):X&&(k=Wa.gca(),f.parentActionLinkType=na&&k[k.length-1]==X?"S":"A",X=null));for(b=0;b<d.length;b++)c=d[b],x.splice(c,c-(c||NaN)+1||x.length);d=a;pa();Lc(d,!0)}function me(a,b,c,d){var f,e,h=a.id==b;if(h){a.stop=c;d&&(a.start=d);a.domNodes=aa(Z("*"));a.X&&window.clearTimeout&&window.clearTimeout(a.X);var g=a.parent;if(g&&!g.stop&&g.da){var p=!1;for(e=0;e<g.next.length;e++)if(!g.next[e].stop&&g.next[e].id!=b){p=!0;break}p||E(function(){g.stop||
+da(g.id,c)},0)}}else a.stop||(f=a);p=!1;if(a.next&&a.next.length)for(e=1;e<=a.next.length;e++){var l=me(a.next[a.next.length-e],b,c,d),q="string"===typeof l,p=p||q||l&&l.sa===b;q||(f=l||f);if((p||h)&&f)break}if(h||p)"object"===typeof f?f.sa=b:f="found";return f}function Ff(a,b){function c(a){if(a&&a.length)for(var b=0;b<a.length;b++)g|=d(a[b],"IMG")}function d(b,c){var d=b.src||b.href,e;!(e=!d||"IMG"===c&&b.naturalWidth)&&(e="LINK"===c)&&(e=(e=ca())&&e.getEntriesByName?!!e.getEntriesByName(d).length:
+!0);if(e)return!1;if(!T[a])T[a]=[];else if(-1!=t(T[a],d))return!1;T[a].push(d);b.addEventListener("load",f);b.addEventListener("error",f);return!0}function f(b){b=b.target;var c=b.src||b.href,d=b.tagName||b.nodeName;c&&T[a]&&(c=t(T[a],c),-1!=c&&(T[a].splice(c,1),c=null,n[a]||(n[a]=[]),!h||"IMG"!==d&&"IFRAME"!==d||(c=u(),n[a].push({e:b,t:c})),T[a].length||(k.stop=c||u(),h&&(k.visuallyComplete=e.xVC(n[a]),n[a]=null),ne(a))))}var k=R[a>>0];if(k){var h=e.xVC;try{var g=!1;if(b)for(var p=b.nodes,l=0;l<
+p.length;l++){var q=p[l],m=q.tagName||q.nodeName;"IMG"===m||"IFRAME"===m||"LINK"===m&&q.rel&&"stylesheet"===q.rel?g|=d(q,m):q.nodeType===Node.ELEMENT_NODE&&(c(q.getElementsByTagName("IMG")),c(q.getElementsByTagName("IFRAME")))}}catch(kg){}var n={}}}function ne(a){var b=ea[a];b&&(delete ea[a],delete T[a],b.visuallyComplete&&-1!=b.visuallyComplete||(b.visuallyComplete=b.stop),b.J=!1,pa())}function Yd(a){var b=a.id;a.J&&!T[b]&&E(function(){T[b]||ne(b);Nc(b)},50)}function Dc(a){var b=z(l.moa)||30,c=["_warning_",
+"_error_","_log_","_rv_","_rs_"];return Ec+1>b&&-1==Hb(c,a.type)}function Sb(a){if(0<Tb||a&&0<fa.length)if(a=fa.length,0<a)return fa[a-1];return null}function Oc(a){var b=l.xbp;return!!(b&&b.exec&&a&&b.exec(a))}function oe(a,b,c,d,f,k,h){if(d&&Oc(d))return null;Aa&&(ya=!0);var g=null;b||(b=3);var p=qa(),m=a||"-";p&&(p.info=m);var q=Sb(!1);!q&&p&&p.H&&(q=p.H);Ba[Kb(d)]=!0;var r;if(d)a:{var t;try{if(!n.location){r=d;break a}var v=n.location,w=v.origin;if(!w){if(!v.protocol||!v.host){r=d;break a}w=v.protocol+
+"//"+v.host}var x=Kb(d);t=x.substr(0,w.length+1).toLowerCase()===(w+"/").toLowerCase()?x.substr(w.length):x}catch(lg){t=d}r=Sd(t,500)}else r=null;d=r;q?h||(g=pe(q,a,u(),c,m,d,f,k)):p?3<=b&&(g={url:p.url,title:p.title},g=Pc(p.getName(),p.type,p.start,null,c,m,d,f,k,g),p.H=g,c=e.xVC,1>=Tb&&ra("xmut")&&c&&qe(g,{childList:!0,subtree:!0},Ff)):F?1<=b&&!h&&(g=pe(F.id,a,u(),c,m,d,f,k)):l.cux&&(g=Pc("Unlinked XHR","xhr",u(),null,c,m,d,f,k));return g}function Pc(a,b,c,d,f,k,h,g,l,m){if(l&&e.M)return e.M;a=
+Va(a,b,c,d,f,k,h,g,l,m);a.L=null;a.R=null;R[a.id]=a;return a.id}function pe(a,b,c,d,f,e,h,g){a=R[a];var k=-1;a&&(!e||a.xhrUrl&&0!==a.xhrUrl.indexOf("http")||0===e.indexOf("http")||(a.xhrUrl=e),k=a.id);return k=Pc(b,"xhr",c,-1==k&&F?F.id:k,d,f,e,h,g)}function Qc(a){try{var b=Cc(a);if(b){var c=(b.requestStart-(b.redirectEnd||b.startTime))/2;0<c&&Jb(c);return!0}}catch(d){}return!1}function Cc(a,b){try{if(a&&U&&U.getEntriesByName){var c=Kb(a);0==t(c,"/")?c=location.protocol+"//"+location.host+c:0!=t(c,
+"http")&&(c=location.href.substr(0,location.href.lastIndexOf("/")+1)+c);var d=U.getEntriesByName(c),f=null,e=Number.MAX_VALUE;if(d.length){if(b){for(var h=0;h<d.length;h++){var g=re(b,d[h]);if(!f||g<e)f=d[h],e=g}return f}return d[d.length-1]}d=U.getEntriesByType("resource");f=null;e=Number.MAX_VALUE;-1===c.indexOf("?")&&(c+="?");for(h=d.length-1;0<=h;h--)if(0===d[h].name.lastIndexOf(c,0))if(b){if(g=re(b,d[h]),null==f||g<e)f=d[h],e=g}else return d[h];return f}}catch(p){}return null}function re(a,b){return Math.abs(a-
+(window.performance.timing.navigationStart+Math.round(b.startTime)))}function le(a){X=null;if(Wa){var b=Wa.gca();if(X=b[b.length-1])a.parentActionId=X.id,a.parentFrameActionName=X.name,X.childFrameActions?X.childFrameActions++:X.childFrameActions=1}}function lb(a,b,c){var d=u();a=Q(a);b=za(b,a,d,d,-1);c=Xa(b,c);fb()||Pa(!1);c&&pa();return c}function Xa(a,b){var c;if(c="undefined"==typeof b||null===b?F:kb(b))return c.add(a),!1;le(a);r(B,a);return!0}function Ua(a,b){lb(a,"_warning_",b)}function se(a){isNaN(a)||
+(a=R[a]);return a?a.I():null}function te(){return F?F.name:null}function ue(a){var b=a==te();if(!Rb)return!b;a=a===Rb.name&&3E3>=u()-Rb.start;return!b&&!a}function Gf(a){return R[a]}function Hf(){return V}function Ca(a,b,c,d){if(isNaN(a)||100>a||1E3<a)return!1;b&&(b+="");c=c?kb(c):F;if(!c||c.va||!d&&!c.xhrUrl)return!1;a=Va(a+"","_rC_",u(),c.id);da(a.id);b&&0<b.length&&(a=Va(b,"_rM_",u(),c.id),da(a.id));return c.va=!0}function mb(a,b,c,d){a[b]&&Rc("_"+c+"_",""+a[b],d)}function If(){var a=w,b=a.ie,
+c=document.documentMode,d=a.trident+4;if(a.ie){if(b!=d)return d+"_as_"+b;if(c&&c!=b)return d+"_as_"+c}return!1}function ve(a,b,c,d,f,k,h){if((a||f)&&Ya+1<=Jf){Ya++;"string"==typeof f||f instanceof String?(a||(a=f),f={}):f=f||n.event||{};var g=qa();g&&(g={name:g.getName(),type:g.type});g={message:f.message||f.name||f.Ha||f.description||a||f.Da||f.ya||f.data||f.Aa||"Indeterminable error name",file:f.fileName||f.filename||f.sourceURL||f.Ea||f.file||b||"",line:f.lineNumber||f.lineno||f.line||f.Ca||c||
+-1,column:(f.columnNumber?f.columnNumber+1:void 0)||f.Ba||f.colno||f.column||d||-1,stack:we(f)||Kf(),userInput:g||!1,code:f.Ia||f.code||f.errorCode||f.status,timestamp:n.performance&&n.performance.now?Math.round(n.performance.now()):e.nw()-nb,emulationMode:If()};"Indeterminable error name"==g.message&&(a=ob("msg",a),a+=ob("file",b),a+=ob("line",c),a+=ob("column",d),a+=ob("error",f),g.debugInfo=a);g.stack&&h&&(g.stack="<wrapper>"+g.stack);if(g.stack){if(1200<g.stack.length){b=g.stack.split(/(\r\n|\n|\r)/gm);
+c="";for(d=0;d<b.length&&!(h=b[d].trim(),0<h.length&&(c=250<h.length?c+(h.substring(0,150)+"[...]"+h.substring(h.length-100)+"\n"):c+(h+"\n")),1200<c.length);d++);g.stack=c}g.stack=g.stack.replace("|","^p").replace(/(\r\n|\n|\r)/gm,"|")}5011!=g.code&&(300<g.message.length&&(g.message=g.message.substring(0,300)),3==M("bp")?(b=u(),k=kb(k)||F,(c=!k)&&(k=za("_error_",Q(g.message),b,b,-1)),r(k.errors,g),c&&(Xa(k),pa())):(b=u(),b=za("_error_",Q(g.message),b,b,-1),k=Xa(b,k),b&&(fb()||Pa(!1),g.file&&(c=g.file,
+0<=g.line&&(c+="|"+g.line),0<=g.column&&(c+="|"+g.column),Rc("_location_",c,b)),g.userInput&&Rc("_useraction_",g.userInput.type+"|"+g.userInput.name,b),mb(g,"stack","stack",b),mb(g,"code","code",b),mb(g,"debugInfo","debug",b),mb(g,"timestamp","ts",b),mb(g,"emulationMode","emu",b),k&&pa())))}}function Kf(){try{throw Error("");}catch(f){var a=we(f);if(a&&4<a.split(/\r\n|\r|\n/).length)return"<generated>\n"+a}if((a=w.ie)&&9>a){var a=[],b=0;try{for(var c=arguments.callee.caller.caller;c&&10>a.length;){var d=
+Lf.exec(c.toString());a.push(d?d[1]||"[a]":"[a]");c=c.caller;b++}}catch(f){}if(3<b)return"<generated-ie>\n"+a.join("\n")}return null}function we(a){a=a||{};var b=a.stack||a.za||a.Ja||!1;return!b&&a.error?a.error.stack:b}function Rc(a,b,c){var d=u();a=za(a,Q(b),d,d,-1);Xa(a,c.id)}function ob(a,b){var c,d=typeof b;c=""+(a+"|")+(d+"|");if(null===b)c+="null|";else if("object"===d)for(var f in b)b.hasOwnProperty(f)&&"stack"!=f&&"error"!=f&&(c+=f+"|",d=typeof b[f],c+=d+"|","object"!==d&&"function"!==d&&
+(c+=b[f]+"|"));else c+=b+"|";return c}function Sc(a){if(a)for(var b=Z("LABEL"),c=aa(b),d=0;d<c;d++)if(b[d].htmlFor==a)return a=b[d],N(a.innerText,a.textContent);return null}function N(a){for(var b=0;b<arguments.length;b++){var c=arguments[b];if(c&&"string"==typeof c&&Gb(c))return Gb(c)}return null}function xe(a){if(a){if(0===t(a,"data:"))return null;a=a.split("/");if(0<a.length)return a[a.length-1].split(".")[0]}return null}function ye(a){if(a&&a.split){var b=a.split("/");if(0<b.length&&(b=Gb(b[b.length-
+1]),null!==b))return b}return a}function ze(a,b){var c=b.nodeName?b.nodeName.toUpperCase():"unknown",d=b.type&&"string"===typeof b.type?b.type.toUpperCase():null,f=null;switch(a){case Za.ma:"INPUT"==c&&"HIDDEN"!=d&&(c=!d||"BUTTON"!=d&&"SUBMIT"!=d&&"RESET"!=d&&"IMAGE"!=d?null:b.value,f=Sc(b.id),f=!d||"BUTTON"!=d&&"SUBMIT"!=d&&"RESET"!=d?N(f,c):N(c,f));f||(f=N(b.textContent,b.innerText));break;case Za.na:if("INPUT"==c&&"HIDDEN"!=d||"BUTTON"==c)f=N(b.name,b.title,d&&"IMAGE"==d?b.alt:null);break;case Za.oa:"INPUT"==
+c&&"IMAGE"==d?f=xe(b.src):"A"==c?f=N(b.title,ye(b.href)):"IMG"==c?f=N(b.name,b.title,b.alt,xe(b.src)):"FORM"==c&&(f=N(b.name,b.id,b.action));f||(f=N(b.title,b.data,b.wholeText,b.id));break;case Za.ka:f="object"==typeof b.className?b.baseVal||b.animVal:b.className;break;case Za.pa:"INPUT"==c&&"HIDDEN"!=d?f="INPUT: "+d:"A"==c?f="LINK":pb||(pb=f=c)}return f}function Ae(a){if(!a)return null;try{if(w.ie&&uc(a))return"VML Node";var b=a.nodeName?a.nodeName.toUpperCase():"unknown";if("HTML"==b||"BODY"==b||
+"HEAD"==b||"#DOCUMENT"==b)return pb;for(b=0;4>=b;b++){var c=ze(b,a);if(c&&c!==pb)return c}return Ae(a.parentNode)}catch(d){}return null}function Be(a,b){if(!b)return null;var c=aa(b);if(0>=c||20<Ub)return null;for(var d=0;d<c;d++){var f=b[d];if(w.ie&&uc(f))return"VML Node";var e;Ub++;if(e=Be(a,f.childNodes))return e;Ub--;if(e=ze(a,f))return e}return null}function Mf(a){pb=null;try{if(w.ie&&uc(a))return"VML Node";if("string"==typeof a)return a;if(a.attributes){var b=a.attributes["data-dtname"];b||
+(b=a.attributes["data-dtName"]);if(b&&b.value)return b.value}var c=a.nodeName?a.nodeName.toUpperCase():"unknown";if("HTML"==c||"BODY"==c||"HEAD"==c||"#DOCUMENT"==c)return"Page: "+Nf;if("SELECT"==c){var d;if(a){var f=a.nodeName?a.nodeName.toUpperCase():null;if("SELECT"!=f)d=null;else{var e=Sc(a.id),h=N(e,a.name,f),b=null;if(!a.multiple){var g=a.options&&-1<a.selectedIndex?a.options[a.selectedIndex]:null;g&&(b=N(g.label,g.innerText,g.textContent))}d=b?"["+h+"] to value ["+b+"]":h}}else d=null;return d}if("TEXTAREA"==
+c){var l;if(a){var m=a.nodeName?a.nodeName.toUpperCase():null;if("TEXTAREA"!=m)l=null;else{var q=Sc(a.id);l=N(q,a.name,m)||a.nodeName}}else l=null;return l}var n=Gb(N(a.innerText,a.textContent));if(n)return n;Ub=0;if(a.childNodes&&0<aa(a.childNodes))return Za.ra(Be,[a])}catch(vf){}return Ae(a)}function Ce(a,b,c,d){if(e!=H)return H.bi(a,b,c,d);try{d||(d=30);var f={id:Of++,G:a,name:null,type:b,info:c?c:"-",start:u(),ia:!1,ja:u()+d,url:location.href,title:ba(),getName:function(){if(!f.name){var a;(a=
+l.uam?"dTMasked_"+f.G.nodeName:Q(Mf(f.G)))||(a="-");a=Lb(a);f.name=a}return f.name},ua:function(){return f.ia},xa:function(){var a=f;do a.ia=!0,a=a.next;while(a)}};De&&(f.next=K,f.next&&(f.next.O=f),K=f);return f}finally{f&&(a=f.ja-u(),0>=a?Tc(f):E(function(){Tc(f)},a))}}function qa(){if(e!=H)return H.gci();try{if(K){for(var a=K,b=K.next;b;){var c;if(c=b.G!=a.G)a:{try{for(var d=b.G.parentNode;d;){if(d==a.G){c=!0;break a}d=d.parentNode}}catch(f){}c=!1}c&&(a=b);b=b.next}return a}return null}catch(f){return null}}
+function Ee(){return e!=H?H.ci():qa()?K.getName():null}function qb(){return e!=H?H.gpi():rb}function Fe(){return e!=H?H.pi():qb()?rb.getName():null}function Ge(){return e!=H?H.piv():qb()?rb.ja:null}function He(){for(var a=K;a;)a.G=null,a=a.next;K=null}function Tc(a){if(e!=H)return H.ei(a);if(K){for(var b=K;b.next&&b!==a;)b=b.next;b===a&&(Ee()&&(rb=K),b.G=null,b.O?b.O.next=b.next:K=b.next,b.next&&(b.next.O=b.O))}}function Y(a,b,c){var d=!1,f=l.doNotDetect?l.doNotDetect.split(","):null;if(c&&f)for(var e=
+0;e<f.length;e++)f[e]==c&&(d=!0);d||(b||(b=a),va(document,a,function(a){if("boolean"!=typeof a.isTrusted||!ra("ote")||a.isTrusted){var c=a.target||a.currentTarget||a.srcElement||null,d=b;if(("KD"==d||"KU"==d)&&"password"!==c.type&&(a=a.keyCode||a.charCode))if(l.uam){var e=String.fromCharCode(a);"a"<=e&&"z">=e||"A"<=e&&"Z">=e||"0"<=e&&"9">=e||(d+=a)}else d+=a;Ce(c,d,null,30)}}))}function Uc(){var a=nb;if(L){var b=L.domLoading;if(!e.syn&&5E3<Math.abs(b-nb))return nb;var b=L.redirectStart,c=L.navigationStart,
+d=L.fetchStart,f=c+6E4;c&&(b?a=f>b?c:b:d&&(a=f>d?c:d))}return Math.floor(a)}function Pf(){var a=L?L.loadEventStart:0;return a<Uc()?0:a}function Vc(){return L?L.loadEventEnd:0}function Ie(a){Da--;if(!Da&&Ea)for(var b=0;b<Wc.length;b++)try{Wc[b]()}catch(c){}0>=Da&&Qf(a);a=xa();a!=e&&a.sole()}function Xc(a,b){if(Fa){var c=0;U&&!a&&(c=b||Vc());c||(c=u());da(Fa.id,c);Je=c;Fa=null;S()}}function Rf(){Da++}function Ke(){Fa&&!Ea&&(Ea=Va("_onload_","_load_",null,Fa))}function Le(a){r(Wc,a)}function Qf(a){a=
+a?Math.max(Vc(),a):Vc();var b=Pf();if(Ea){if(a&&b&&a>b){var c=u()-a;5E3<(0>c?-1*c:c)&&(a+=c);da(Ea.id,a,b)}else da(Ea.id);Ea=!1}Me||(ra("lmut")&&e.aVCL&&Fa?e.aVCL(function(){!Fa||Aa||e.sUA||V||Xc(0,e.gVCP())}):Xc())}function Sf(){if(!Ne||0<Da)Ne=!0,S(),Ie()}function Oe(){S();if(!Yc){var a=xa();a!=e&&a.iolm();Ke();Yc=!0;E(Sf,0)}}function Pe(){"loaded"==document.readyState&&S();"complete"==document.readyState&&Oe()}function Zc(){S();Yc||("complete"==document.readyState?Qe?Sa(!1,!0):(Qe=!0,E(Zc,3E3)):
+E(Zc,3E3))}function Vb(a){l.dsss?vc("dtSa",a):O("dtSa",a)}function $c(a,b,c,d){var e=Sb(!0);c=c||u();var k=[];!e&&a&&b&&c?k=["true",G(b),"-1",G(a),G(d||"-"),c,I,G(wc(Pd())),G(Q(ba()).substring(0,100)),Ta,G(Qd())]:F&&(k=["false",G(F.type),F.id,G(F.name),G(F.info||"-"),c,I,G(wc(Pd())),G(Q(ba()).substring(0,100)),Ta,G(Qd())]);return k}function Tf(){var a=null,b=!1;try{var c=function(a){return a?d(a)||c(a.parentNode):!1},d=function(a){if(a&&a.href)a:{a=a.href.replace(" ","").toLowerCase();for(var b=["javascript:",
+"mailto:"],c=0;c<b.length;c++)if(-1<t(a,b[c])){a=!0;break a}a=a.split("://");a=!("http"===a[0]||"https"===a[0]||"file"===a[0])}else a=!1;return a};if((a=qa())&&a.G&&!ad){var e=a.G;if(b=d(e)||c(e.parentNode))ad=!0,E(function(){ad=!1},1)}return b}catch(k){return b}}function Re(){Tf()||bd(!1,!0)}function Uf(a,b,c){var d=!1;try{d=xa().iSAC()}catch(h){}if(!Wb&&!d){a&&(Vb("-"),cd=[]);d=qa();if(!d){var e=qb();e&&ue(Fe())&&3E3>=u()-Ge()&&(d=e)}var e=[],k=cd;d&&!d.ua()?(d.xa(),e=$c(d.getName(),d.type,d.start,
+d.info)):b?e=$c(null,null,b.start,null):a&&(e=$c(null,null,c,null));1<k.length&&1<e.length&&k[3]==e[3]&&(k[2]=e[2],k[0]=e[0],e=k);e.length&&(Vb(e.join("|")),cd=e,(a=xa().sSAC)&&a(!0,!0))}}function bd(a,b){var c=u();if(!Aa||ya){a||(Aa=!0,E(function(){E(function(){Aa=!1;Se(!1);Sa(!1,!0,!0);ya=!1},2E3)},1));for(var d=0;d<dd.length;d++)dd[d](Aa);var e=null;ya&&B.length&&(e=B[0]);d=oa.prepareBeacon(!1,!0,!0);Uf(b,e,c);if(w.sf&&n.frames)for(c=0;c<n.frames.length;c++)try{n.frames[c].dT_&&n.frames[c].dT_.obc()}catch(k){}oa.C&&
+be(!0,!1,d);ya=!1}}function Se(a,b){Wb=a;clearTimeout(Te);b&&(Te=E(function(){Wb=!1},2E3))}function Vf(a){Ue?a(e.bwsW,e.bwsH):r(ed,a)}function Ve(){var a=document,b=a.documentElement,c=0,d=0,f=a.body;"number"===typeof self.innerWidth?(c=self.innerWidth,d=self.innerHeight):a&&(b.clientWidth||b.clientHeight)?(c=b.clientWidth,d=b.clientHeight):f&&(f.clientWidth||f.clientHeight)&&(c=f.clientWidth,d=f.clientHeight);if(0>c||0>d)c=Math.max(c,w.Ga?140:10),d=Math.max(d,10);a=c;e.bwsW=a;e.bwsH=d;Ue=!0;for(b=
+0;b<ed.length;b++)ed[b](a,d)}function We(a,b){if(!b){var c=e.iNV(),d=e.gVID();a.a("vID","visitorId",d,d);c&&a.a("nV","isNewVisitor","1",c)}}function Wf(){if(!U)return[];var a=U.timing||{},b=U.navigation||{},c=a.navigationStart;return!e.googleBot&&0<c?(b=["a",b.type,"b",c],b=Ob(a,b)):[]}function Ob(a,b,c){c=c?a.startTime:a.navigationStart;fd=e.gFU?e.gFU():{};for(var d in Xe){var f=Xe[d],k=a[f],h=k&&k>=c;if("u"==d||"v"==d||"w"==d||"x"==d||"y"==d||"A"==d)h="undefined"!=typeof a[f];h&&(b.push(d),"u"!=
+d&&"v"!=d&&"w"!=d&&"x"!=d&&"y"!=d&&"A"!=d?b.push(Math.round(k-c)):b.push(k))}a.initiatorType?("xmlhttprequest"==a.initiatorType?(b.push("z"),Ba[a.name]?(b.push("11"),delete Ba[a.name]):b.push("1")):Ba[a.name]&&(b.push("z"),b.push("01"),delete Ba[a.name]),"frame"==a.initiatorType?(b.push("B"),b.push("f")):"iframe"==a.initiatorType||"subdocument"==a.initiatorType?(b.push("B"),"undefined"!=typeof fd[a.name]?b.push("i"+fd[a.name]):b.push("i")):a.frameId&&(b.push("B"),b.push("r"+a.frameId))):Ba[a.name]&&
+(b.push("z"),b.push("01"),delete Ba[a.name]);return b}function $d(a){for(var b={},c=0;c<a.length;c+=2){var d=a[c],e=a[c+1];a.hasOwnProperty(c)&&(d=Xf[d])&&(b[d]=z(e)||e)}return b}function Yf(a){ib&&!$a&&($a=new MutationObserver(function(a){for(var b=window.performance.now(),d=0;d<a.length;d++)Zf(a[d],b)}),Xb&&(a=Xb.conf||a),$a.observe(document,a))}function $f(a,b){if("childList"==a.type){for(var c=a.removedNodes,d,e=[],k=0;k<c.length;k++)d=c[k],e.push({n:d});Ye(b,a.addedNodes,e,a.target)}else"attributes"==
+a.type&&gd.push({time:sb,target:a.target,name:a.attributeName,oldValue:a.oldValue})}function ag(a,b){"childList"==a.type&&Ye(b,a.addedNodes)}function Ye(a,b,c,d){if(b&&b.length||c&&c.length){var e=!1;b&&b.length&&(sb=a,e=!0);for(var k=0;k<tb.length;k++){var h=tb[k];a={time:sb,nodes:b};if(e&&Yb[h])Yb[h](h,a);c&&c.length&&(a.rNodes=c,a.target=d);ga[h].push(a)}}}function qe(a,b,c){ib&&(Yf(b),ga[a]||(ga[a]=[],tb=Object.keys(ga),Yb[a]=c))}function Nc(a){ib&&(ga[a]&&(delete ga[a],delete Yb[a],gd=[],Ze[a]=
+sb),tb=Object.keys(ga),0==tb.length&&$a&&($a.disconnect(),$a=null))}if(!(window.dT_&&"function"==typeof window.dT_.cfg||navigator.userAgent&&0<=navigator.userAgent.indexOf("RuxitSynthetic"))&&(navigator.cookieEnabled&&(window.dT_||(window.dT_={cfg:"#CONFIGSTRING#|auto=#AUTO#|domain=#DOMAIN#|rid=RID_#REQUEST_ID#|rpid=#RESPONSE_ID#|app=#APP#"})),navigator.cookieEnabled)){var sf=window.setTimeout,Ja=window.sessionStorage,ab,m={version:"10125170809091310",cfg:window.dT_&&window.dT_.cfg,ica:1};window.dT_=
+m;var n=window,qd=[];m.agentStartTime=u();m.nw=u;m.apush=r;m.st=E;m.aBPSL=Ia;m.gBPSL=function(){return qd};m.buildType="appmon";m.buildType="dynatrace";var ec=32,tf={"!":"%21","~":"%7E","*":"%2A","(":"%28",")":"%29","'":"%27",$:"%24",";":"%3B",",":"%2C"};m.gSSV=xb;m.sSSV=yb;m.pn=z;m.iVSC=bb;m.io=t;m.dC=rd;m.sC=O;m.esc=ia;m.gSId=cb;m.gDtc=zb;m.gSC=ja;m.sSC=Ka;m.gC=J;m.cRN=ka;m.cRS=Ab;m.gEL=aa;m.gEBTN=Z;var hc={ade:"",app:"",bandwidth:"300",bp1:!1,bp2:!1,bp:1,bs:!1,cors:!1,csu:"",cux:!1,disableCookieManager:!1,
+disableLogging:!1,disableXhrFailures:!1,domain:"",domainOverride:"",doNotDetect:"",dsndb:!1,dsss:!1,euf:!1,evl:"",extblacklist:"",exteventsoff:!1,fa:!1,featureHash:"",ffi:!1,hvt:216E5,ign:"",instr:"",lab:!1,legacy:!1,lmut:!0,md:"",mdn:5E3,mepp:10,moa:30,mrt:3,msl:3E4,ncw:!1,ntd:!1,oat:180,ote:!1,pui:!1,reportUrl:"",rid:"",ridPath:"",rpid:"",rt:1E4,rtl:0,rtp:2,rtt:1E3,rtu:200,sl:100,sosi:!1,spc:"",spl:!1,ssc:!1,st:3E3,svNB:!1,tp:"500,50,3",tvc:3E3,uam:!1,useNewCookies:!1,WST:!1,xb:"",xbp:null,xmut:!0,
+xt:0},l={reportUrl:"dynaTraceMonitor",initializedModules:"",csu:"dtagent",dataDtConfig:m.cfg},bg={childList:!0,subtree:!0,attributes:!0,attributeOldValue:!0},hd;try{hd=window.localStorage}catch(a){}(function(){var a=l.dataDtConfig;"string"==typeof a&&-1==t(a,"#CONFIGSTRING")&&(la(a,l),jc("domain"),jc("auto"),jc("app"),Bb(l))})();var $e=Z("script"),af=aa($e),Ga,Ha;if(0<af)for(var ub,bf=l.csu+"_bootstrap.js",id=0;id<af;id++)if(ub=$e[id],ub.attributes){var cf=ub.attributes.getNamedItem("data-dtconfig"),
+Zb=ub.src;if(cf)if(Ha=uf(ub.src,cf.value),!Ga)Ga=Ha;else if("1"!=Ha.syntheticConfig){Ga=Ha;break}var jd=Zb&&Zb.indexOf(bf);if(jd&&0<=jd){var df=jd+bf.length+5;Ha||(Ha=l);Ha.app=Zb.length>df?Zb.substr(df):"Default%20Application"}}if(Ga)for(var kd in Ga)Ga.hasOwnProperty(kd)&&(l[kd]=Ga[kd]);l.rx_visitID&&(m.rx_visitID=l.rx_visitID);(function(){var a=l.csu,a=(a.indexOf("dbg")==a.length-3?a.substr(0,a.length-3):a)+"_"+l.app+"_Store";try{var b=hd&&hd.getItem(a);if(b){var c=db(b),d=la(c.config,c).lastModification||
+"",e=l.lastModification||"",k=z(d.substr(0,13)),h=z(e.substr(0,13));if(!e||k>=h)for(var g in c)c.hasOwnProperty(g)&&("config"==g?la(c[g],l):l[g]=c[g])}}catch(p){}})();Cb(l);try{var ef=l.ign;if(ef&&(new RegExp(ef)).test(window.location.href)){document.dT_=window.dT_=null;return}}catch(a){}var ua="dtPC",P="dtCookie",ff="x-dtpc",vb="x-dtreferer",W="dtLatC",Hc="dtAdk";l.useNewCookies&&(ua="rxpc",P="rxsession",W="rxlatency",ff="x-rxpc",vb="x-rxreferer");m.gSCN=function(){return P};m.gPCHN=function(){return ff};
+m.gRHN=function(){return vb};m.pageContextCookieName=ua;m.latencyCookieName=W;m.mobileSessionIDCookieName=Hc;m.cfg=l;m.pCfg=db;m.pCSAA=la;m.cFHFAU=Bb;m.sCD=Cb;m.hDSC=fc;m.bcv=ra;m.ncv=M;m.scv=sa;m.stcv=td;m.rplC=ic;var La=[];Db(ua);Db(P);Db(W);Db("rxvt");Ia(function(a,b){0<La.length&&!b&&(a.a("dCN","duplicateCookieNames",function(){return La.join(",")},function(){return La.slice()}),La=[])});var I=m.agentStartTime%6E8+"_"+z(ka(0,1E3));m.gFId=function(){return I};m.frameId=I;var gf,Eb,Ma;try{gf=Ja.getItem("dtDisabled")}catch(a){}(Eb=
+l.agentLocation)||(Eb=wf());Ma=l.agentname||l.csu||"dtagent";Ma="ruxitagentjs";Ma=J("dtUseDebugAgent")?l.debugName||Ma+"dbg":l.name||Ma;if(!l.auto&&!l.legacy&&!gf){var hf=l.agentUri||wd(l.featureHash);l.async?vd(hf,l.async):document.write('<script type="text/javascript" src="'+hf+'">\x3c/script>')}if(-1!=t(window.location.href,"_DT_RENDERING_")){var Xb=m.RMOD={};Eb&&(Xb.conf=bg,vd(wd("R"),!0))}zb()||Ka(-1*ka(2,21)+"$"+Ab(32));var Qa=cb();m.gcSId=function(){return Qa};var yd=!1;xd();m.iNV=function(){return yd};
+m.gVID=xd;var pc,Bd=18E5,Ed=216E5,kc=!0,oc=!1,gb=!1;if(l.hvt)try{Ed=parseInt(l.hvt,10)}catch(a){}m.sVIdUP=function(){gb=!0};m.sVTT=function(a){Bd=a};m.sVIDP="rx_visitID";m.sVID=nc;m.rVID=zd;m.gVI=ta;m.uVT=Pa;m.gNVId=Na;m.pVTC=fb;m.gARnVF=function(){var a=oc;oc=!1;return a};Fb(1);m.gPC=Oa;m.cPC=Fb;m.sPC=eb;var n=window,e=n.dT_;"10125170809091310"!=e.version&&n.console&&n.console.log("WARNING: initCode ["+e.version+"] and asyncCore [10125170809091310] versions do not match! Please update your code snippet to ensure compatibility.");
+e.version="10125170809091310";var E=e.st,u=e.nw,z=e.pn,t=e.io,r=e.apush,O=e.sC,J=e.gC,ia=e.esc,Oa=e.gPC,eb=e.sPC,bb=e.iVSC,ja=e.gSC,Ka=e.sSC,ta=e.gVI,Fb=e.cPC,fb=e.pVTC,Pa=e.uVT,Na=e.gNVId,xb=e.gSSV,yb=e.sSSV,I=e.frameId,ka=e.cRN,Z=e.gEBTN,aa=e.gEL,ua=e.pageContextCookieName,W=e.latencyCookieName,Hc=e.mobileSessionIDCookieName,cb=e.gSId,db=e.pCfg,la=e.pCSAA,Bb=e.cFHFAU,Cb=e.sCD,fc=e.hDSC,ra=e.bcv,M=e.ncv,sa=e.scv,td=e.stcv,ic=e.rplC,Ia=e.aBPSL,ce=e.gBPSL,P=e.gSCN(),vb="x-dtreferer",nb=e.agentStartTime,
+Ta=nb,rc=n.XMLHttpRequest,sc=n.ActiveXObject,na=n.parent;if(navigator.cookieEnabled&&e&&!e.initialized){e.gx=qc;var w=[],v=navigator.userAgent,jf=!1,kf=!1;try{var lf=/Firefox[\/\s](\d+\.\d+)/,cg=/(iPod|iPhone|iPad)/,dg=/AppleWebKit/;if(0<=t(v,"MSIE"))w.ie=z(v.substr(v.lastIndexOf("MSIE")+5,3)),w.trident=z(v.substr(v.lastIndexOf("Trident")+8,1));else if(0<=t(v,"Trident"))w.trident=z(v.substr(v.lastIndexOf("Trident")+8,1)),0<=t(v,"rv:")?w.ie=z(v.substr(v.lastIndexOf("rv:")+3,2)):0<=t(v,"rv ")&&(w.ie=
+z(v.substr(v.lastIndexOf("rv ")+3,2)));else if(0<=t(v,"Edge"))w.edge=z(v.substr(v.lastIndexOf("Edge")+5,2));else if(0<=t(v,"Android"))w.ab=parseFloat(v.substr(t(v,"Android")+8,3));else if(v.match(cg)&&v.match(dg)){var ld=/Version\/([0-9]*\.[0-9]*)/;v.match(ld)||(ld=/OS ([0-9]*_[0-9]*)/);w.msf=parseFloat(v.match(ld)[1])}else if(("Safari"===navigator.appName||-1<t(v,"Safari"))&&-1===t(v,"Chrom")){var mf=v.substr(v.lastIndexOf("Version/")).match(/Version\/([0-9]+(\.[0-9]*)?)/);mf&&(w.sf=z(mf[1]))}else if(n.opera)w.op=
+z(n.opera.version().split(".")[0]);else if(0<=t(v,"OPR/"))w.op=z(v.match(/OPR\/([0-9]*\.[0-9]*)/)[1]);else if(lf.test(v)){var nf=z(v.match(lf)[1]);w.ff=-1===nf?0:nf}else{var md=t(v,"Chrom");-1<md&&(w.ch=z(v.substring(md+7,md+9)))}jf=0<t(v,"RuxitSynthetic");kf=0<=t(v,"Googlebot")}catch(a){}e.gBI=xf;e.hyb=Gd;e.syn=jf;e.googleBot=kf;l=e.cfg;Hd(l);e.acfgP=function(a,b){l[a]=b};e.gAN=function(){return l.csu};e.smbi=function(a){var b=n.dT_;if(b.ism(a)&&-1===t(b.iMod(),a))return b.iMod(a),!0;b.ism(a)&&n.console&&
+n.console.log("WARNING: "+('Module "'+a+'" already enabled!'));return!1};e.isc=function(a){return a&&384<=a};e.cfg=yf;e.ism=function(a){return a&&1===a.length&&"undefined"!==typeof l.featureHash?-1!==t(l.featureHash,a):!1};e.iMod=function(a){a&&(l.initializedModules+=a);return l.initializedModules};var ec=32,Ja=n.sessionStorage,Jd=n.addEventListener,tc=n.attachEvent,Ld=n.removeEventListener,zf=n.detachEvent,ma=[],Ib={"^":"^^","|":"^p",",":"^c",";":"^s"},xc=null,Ra={};e.tau=Kb;e.icr=yc;e.aIOf=Hb;e.ael=
+va;e.rel=Kd;e.lv=Od;e.sv=vc;e.lvl=function(a){try{return n.localStorage[a]}catch(b){}return J(a)};e.svl=function(a,b){try{n.localStorage[a]=b}catch(c){O(a,b)}};e.gh=Md;e.cvs=function(a,b,c,d){if(l.ffi)return!0;for(var e=!1,k=e,h=e,g=0;g<a.length&&(!e||!k);g++)a[g]=a[g].split("."),e=a[g][0]==b,k=a[g][1]==c,!h&&e&&c>a[g][1]&&(h=!0);a=e&&k||h;e&&k||(h?Ua(d+" version ("+b+"."+c+") officially not supported. Instrumentation active nonetheless, because major version is supported and minor is newer than supported versions."):
+Ua(d+" not instrumented because version ("+b+"."+c+") not supported."));return a};e.esc=ia;e.aesc=G;e.rsc=Q;e.tpesc=wc;e.ulc=Jb;e.gP=ca;e.afpl=function(a,b,c,d){Rd(a,b,c,d,!1)};e.apl=Rd;e.rpl=function(a,b){if(a[b]&&Object.defineProperty&&(!w.ie||8<w.ie)){var c=a[b];try{delete a[b],Ra[b]=null,a[b]=c}catch(d){Object.defineProperty(a,b,{get:function(){return Ra[b]},configurable:!0})}}};e.dbg=function(a){O("dtUseDebugAgent",a)};e.dbc=function(a){O("dt_dbg_console",a)};e.rxapply=function(a,b,c){return a.apply(b,
+c)};e.loc=wa;e.sch=function(a,b,c,d){a=a||{};d=d||"headers";a[d]=a[d]||{};b=b||a.url;if(!yc(b)){if(a&&(a.actionId||c)){c=c||a.actionId;var f=wa(),k=Ud(c);k&&(hb(a,e.gPCHN(),k,d),Gd()&&(hb(a,vb,f,d),hb(a,"x-host",Md(b),d)));(c=se(c))&&c!=f&&hb(a,vb,c,d)}Oc(b)&&hb(a,e.gPCHN(),"ignore",d)}return a};e.de=Id;e.gPO=function(a){return Object.getPrototypeOf?Object.getPrototypeOf(a):{}.__proto__===Object.prototype&&[].__proto__===Array.prototype?a.__proto__:a.constructor?a.constructor.prototype:void 0};e.lzw=
+Td;e.lzwe=Mb;e.gNV=function(a){return ca()&&ca().timing?ca().timing[a]:-1};e.gPAH=Ud;e.pageId=null;e.V=null;e.ta=0;ab=null;var $b,Wa,nd=[];try{na&&na!==self&&na.dT_&&Bf(na.dT_.version,e.version)&&(Wa=na.dT_,ab=na.dT_.tdto())}catch(a){}ab?(e.pageId=ab.pageId,e.V=ab.V,$b=Wa.frameId,Wa.ta++):(e.pageId=I,e.V=ba());e.tp=function(){return!ab};e.tdto=xa;e.aFU=function(a){a=G(a);nd[a]||(nd[a]="1")};e.iRO=function(a){return"1"===nd[a]};var Df=function(a,b,c,d,f){function k(a){var c=u()-d;Qc(b)||Jb(c/2);for(var c=
+a&&a.split("|"),f=1;f<c.length;f++){var g=c[f].split("=");if(g[0]==P||"session"==g[0]){if(g=decodeURIComponent(g[1]),bb(g)){Ka(g);try{Ja&&Ja.removeItem(P)}catch(eg){}}}else if("name"==g[0]){g=a;try{if(n.localStorage){var h=Fd(),k=n.localStorage.getItem(h),m=0;if(k)var r=db(k),t=la(r.config,r),m=z(t.lastModification||0);var v=la(db(g).config);if(z(v.lastModification||0)>m){n.localStorage.setItem(h,g);Bb(v);Cb(v);Hd(v);var g=v,w=sa("rid"),x=sa("rpid");w&&(g.rid=w);x&&(g.rpid=x);l=ic(v)}}}catch(eg){}}else"enabled"==
+g[0]&&"false"==g[1]&&(vc("dtDisabled",!0),e.disabled=!0)}}function h(){if(Aa&&w.sf)ac.push({path:b,data:c});else try{if(n.localStorage){var a=Fd();n.localStorage.removeItem(a)}}catch(p){}}"onreadystatechange"in a||(a.onload=function(){k(a.responseText)});a.onreadystatechange=function(){if(a&&4==a.readyState)try{200==a.status?k(a.responseText):h()}catch(g){h()}finally{E(function(){a=null},2)}};f&&"timeout"in a&&"ontimeout"in a&&(f=l.xt)&&(a.timeout=f,a.ontimeout=function(){try{a.abort()}catch(g){}})},
+de=navigator&&"sendBeacon"in navigator,fg={C:null,resetBeacon:function(){},prepareActionlessBeacon:function(a,b){!1===bc&&(this.C||(this.C=new Xd),1==M("bp")&&this.C.a("svrid",e.gcSId(),!1),l.bs&&this.C.a("bs","1",!1),Pb(a,b,this),this.C.sts()?this.addAlwaysRequiredParametersToSignal(a,!1):this.C=null)},addAlwaysRequiredParametersToSignal:function(a,b){this.C.a("fId",I,!1);this.C.a("v",e.version,!1);We(this,a);!a&&b&&e.gARnVF()&&this.C.a("nVAT","1",!1)},attachPageErrorInformation:function(){ha&&V&&
+(this.C.a("responseCode",ha.responseCode,!1),this.C.an("responseMessage",ia(ha.message),!1),ha=null)},prepareBeacon:function(a,b,c){var d;if(a){d="";Ec=0;var f=!1,k="",h="",g="",m;for(m in x)if(x.hasOwnProperty(m)){var n=x[m];if(Dc(n))f||(f=!0,Ua("Maximum open actions exceeded configured amount of "+M("moa")+", dropping action "+n));else{d=d?d+",":d;var q=Zd(x[m],!1,!1,!0);q&&!k&&(k=n.I());h=n.I();g=n.N();d+=q}}d={actions:d,referer:k,sourceUrl:h,sourceTitle:g}}else{g="";m=B.length;b&&(x=[]);q=n=f=
+"";if(0<m){for(k=0;k<m;k++)(h=Zd(B[k],!0,c,!1))&&0<h.length&&(f||(f=B[k].I()),n=B[k].I(),q=B[k].N(),"_load_"==B[k].type&&(V=!0,C&&(C.isDelayed?(g="",C.anchor&&(g="#"+C.anchor),g="d|"+C.id+"|"+C.name+"|"+C.type+"|"+C.info+"|"+C.frameId+"|"+C.startTime+"|"+C.location+g+"|"+C.title):g="s|"+C.id+"|"+C.name+"|"+C.type+"|"+C.info+"|"+C.frameId+"|"+C.startTime,n=C.location,q=C.title,C=null)),0<g.length&&(g+=","),g+=h);B=[];for(d in x)x.hasOwnProperty(d)&&r(B,x[d]);for(d in ea)ea.hasOwnProperty(d)&&r(B,ea[d])}d=
+{actions:g,referer:f,sourceUrl:n,sourceTitle:q}}k=d;d=k.actions;m=k.referer;f=k.sourceUrl;k=k.sourceTitle;this.C=null;0<d.length?(this.C=new Xd,this.C.a("a",ia(d),!0),1==M("bp")&&this.C.a("svrid",e.gcSId(),!1),l.domainOverride&&(this.C.a("dO",l.domainOverride,!1),delete l.domainOverride),l.bs&&this.C.a("bs","1",!1),a&&this.C.a("PV",1,!1),e.pageId!==I&&this.C.a("pId",e.pageId,!1),$b&&this.C.a("pFId",$b,!1),this.C.a("rId",l.rid,!1),this.C.a("rpId",l.rpid,!1),a||((h=fe())&&this.C.a("domR",h,!1),this.attachPageErrorInformation()),
+Sb(c)&&this.C.a("unload","xhr",!1),Pb(a,b,this),bc=!1):this.prepareActionlessBeacon(a,b);this.C&&(this.attachPageInfo(f,k),this.C.an("isUnload",c,!1),this.C.an("latC",J(W),!1),this.C.an("app",l.app,!1),this.C.a("visitID",ta(!0),!1),this.addAlwaysRequiredParametersToSignal(a,0<d.length));return{referer:m}},attachPageInfo:function(a,b){var c=wa();this.C.a("url",encodeURIComponent(c),!1);this.C.a("title",ia(Q(ba()).substring(0,100)),!1);var d=this.C.g("a"),e=d&&("s"===d.charAt(0)||"d"===d.charAt(0));
+(e||d&&-1===d.indexOf("_load_"))&&this.C.a("vd",u()-Ta,!1);a&&a!=c&&!e&&(this.C.a("sUrl",encodeURIComponent(a),!1),this.C.a("sTitle",b&&b!=ba()?ia(Q(b).substring(0,100)):"-",!1))},getBeaconAsString:function(){for(var a=[],b=0;b<this.C.F.length;b++)r(a,"$",this.C.F[b][0],"=",this.C.F[b][1]);return a.join("")},setTimestamp:function(a){this.C.a("time",a,!1)},setApplication:function(a){this.C.a("app",a,!1)},getCurrentBeacon:function(){return this.C},a:function(a,b,c,d,e){b="function"==typeof c?c():c;
+"undefined"!=typeof a&&"undefined"!=typeof b&&null!==b&&""!==b&&this.C.a(a,b,e)},ha:function(){return!!this.g("a")},g:function(a){return this.C.g(a)},hla:function(){return 0<=t(this.g,"_load_")}},gg=["_warning_","_error_","_log_","_rv_","_rs_"],od,hg={C:null,S:!1,resetBeacon:function(){this.S=!1;this.C=null},prepareActionlessBeacon:function(a,b){!1===bc&&(this.C||(this.C={}),l.bs&&(this.C.isBootstrapped=!0),Pb(a,b,this),this.S?this.addAlwaysRequiredParametersToSignal(a,!1):this.resetBeacon())},addAlwaysRequiredParametersToSignal:function(a,
+b){this.C.frameId=I;od||(od=z(e.version));this.C.version=od;We(this,a);!a&&b&&e.gARnVF()&&(this.C.isNewVisitAfterTimeout=!0)},attachPageErrorInformation:function(){ha&&V&&(this.C.responseCode=ha.responseCode,this.C.responseMessage=ha.message||"",ha=null)},prepareBeacon:function(a,b,c){var d;if(a){d=[];for(var f=0,k=!1,h=0;h<x.length;h++){var g=x[h],m=0<=Hb(gg,g.type);m||f<M("moa")?(m&&f++,ae(d,Gc(x[h],!1,!1,!0))):k||(k=!0,Ua("Maximum open actions exceeded configured amount of "+M("moa")+", dropping action "+
+g))}}else if(d=[],f=B.length,b&&(x=[]),0<f){for(k=0;k<f;k++)if(h=Gc(B[k],!0,c,!1))"_load_"==B[k].type&&(V=!0),r(d,h);B=[];for(g in x)x.hasOwnProperty(g)&&r(B,x[g]);for(g in ea)ea.hasOwnProperty(g)&&r(B,ea[g])}f="";k={};this.resetBeacon();if(0<d.length){var k=d[d.length-1].source||{},f=d[0].source&&d[0].source.url,n;C&&(n=C,n.source={url:n.location,title:n.title},delete n.location,delete n.title,n.isDelayed&&(n.source.url+=n.anchor||""),n=C,C=null);this.C={sourceAction:n,actions:d,domainOverride:l.domainOverride,
+isBootstrapped:ra("bs"),isPreview:a,parentFrameId:$b,requestId:l.rid,responseId:z(l.rpid),pageId:e.pageId!==I&&e.pageId,unloadTrigger:!!Sb(c)&&"xhr"};delete l.domainOverride;a||(this.C.domReadyTime=fe(),this.attachPageErrorInformation());Pb(a,b,this);bc=!1}else this.prepareActionlessBeacon(a,b);this.C&&(this.attachPageInfo(k),this.C.isUnload=c,this.C.latency=z(J(W)),this.C.application=l.app,this.C.visitId=ta(!0),this.addAlwaysRequiredParametersToSignal(a,0<d.length));return{referrer:f}},attachPageInfo:function(a){var b=
+wa();this.C.target={url:b,title:Q(ba().substring(0,100))};var c=this.C.actions&&this.C.actions[0],d=!!this.C.sourceAction;if(d||c&&"_load_"==c.type)this.C.viewDuration=u()-Ta;a.url&&a.url!=b&&!d&&(this.C.source={url:a.url,title:a.title&&a.title!=ba()?Q(a.title).substring(0,100):""})},getBeaconAsString:function(){for(var a=this.C,a=Fc(a,a),b=0;b<a.length;b++)a=a.concat(a[b]());return JSON.stringify(this.C)},setTimestamp:function(a){this.C.timestamp=a},setApplication:function(a){this.C.application=
+a},getCurrentBeacon:function(){return this.C},a:function(a,b,c,d,e){e&&(this.S=!0);a="function"==typeof d?d():d;"undefined"!=typeof b&&(this.C[b]=a)},ha:function(){return!!this.C.actions&&this.C.actions.length},g:function(a){return this.C[a]},hla:function(){for(var a=0;this.C.actions&&0<this.C.actions.length;a++)if("_load_"==this.C.actions[a].type)return!0;return!1}},jb=!1,Ic,bc=!0,wb=!1,he,ge,ac=[],oa;oa=3!=M("bp")?fg:hg;e.id=function(){return!!e.disabled};e.ss=function(a,b,c){return Sa(b,c,!1,a)};
+e.asl=function(a){r(ce(),function(b,c,d){a(b.C,c,d)})};e.sMPS=function(a){pa(a)};var F=null,Rb=null,B=[],x=[],ea=[],Ec=0,Tb=0,fa=[],R=[];e.M=null;var X,V=!1,Bc=-1,ya=!1,ig=w.msf?1E3:0,Ef=1,Qb={e:[],l:[]};e.Fa=ie;var Jc=[],Mc=[],T={};e.gid=function(a){return a.id};e.ea=function(a,b,c,d,e,k,h){if(4>arguments.length||"undefined"==typeof d)d=!0;return Va(Lb(a),b,c,d,null,e,k,h).id};e.la=function(a,b,c){S();da(a,b,c)};e.lx=function(a,b,c,d,f){var k=R[a];if(k&&(!f||k.info==f||k.name==f)&&(c?E(function(){Qc(b)},
+0):Qc(b),d=d||u(),E(function(){!ya&&R[a]&&(da(a,d),R[a]=null,delete R[a])},ig),S(),c=e.xVC,ra("xmut")&&c))for(var h in x)if(x.hasOwnProperty(h)&&(c=x[h],c.id==a)){c.J=!0;ea[c.id]=c;break}};e.ex=oe;e.ec=function(a,b){if(a){var c=R[a];c&&(c.L||b&&4!=b||(c.L=u()),r(fa,a),Tb++)}};e.lc=function(a){if(a){var b=R[a];b&&(b.R=u(),Tb--,E(function(){for(var b=-1,d=fa.length-1;-1==b&&0<=d;)fa[d]==a&&(b=d),d--; -1!=b&&(b==fa.length-1?fa.pop():fa.splice(b,1))},0))}};e.eV=function(){lb("visit end","_endVisit_",
+-1)?Na(!1,!1):e.sVIdUP()};e.pe=function(a,b){Ya<=e.ncv("mepp")&&(Ya++,lb(a,"_error_",b))};e.pw=Ua;e.pl=function(a,b){lb(a,"_log_",b)};e.rv=function(a,b){var c=u(),c=za("_rv_",Lb(a+"="+b),c,c,0);Xa(c);pa()};e.rs=function(a,b,c){var d=u();a=za("_rs_",Lb(a+"="+b),d,d,0);Xa(a,c);pa()};e.pcn=lb;e.rrl=function(a){Mc.push(a)};e.ewa=function(a){return(a=oe(a,3,!0))?kb(a):null};e.gWRI=function(a){return a.P};e.gAID=function(a){return a.id};e.ca=function(){return F};e.can=te;e.isci=ue;e.noa=function(){return!F||
+0<F.stop};e.ti=S;e.las=Hf;e.gca=ie;e.gAR=se;e.gAA=Gf;e.sxbe=Oc;e.aCF=function(a,b,c,d){return d?(e.M=d,a=a.apply(b,c),E(function(){e.M=null},0),a):a.apply(b,c)};e.mx=function(){return!e.bcv("disableXhrFailures")};e.mxf=Ca;e.mxg=function(a,b){return Ca(970,a||"XHR Error",b)};e.mxc=function(a){return Ca(971,"XHR Canceled",a)};e.mxt=function(a){return Ca(972,"XHR Timeout",a)};e.mxp=function(a,b){return Ca(973,a||"Parser Error",b)};e.mxs=function(a,b){return Ca(974,a||"Setup Error",b)};e.mxu=function(a,
+b){return Ca(979,a?a:"Unknown Error",b)};e.aeal=function(a){r(Qb.e,a)};e.alal=function(a){r(Qb.l,a)};e.gLAD=function(){return Bc};var Lf=/function\s*([\w\-$]+)?\s*\(/i,Ya=0;setInterval(function(){0<Ya&&Ya--},3E4);var Jf=e.ncv("mepp");e.re=ve;e.rex=function(a,b,c){ve(null,null,null,null,a,b,c||!1)};var Nf=ye(wa()),pb=null,Za={ma:0,na:1,oa:2,ka:3,pa:4,ra:function(a,b){for(var c=0;4>=c;c++){var d=a(c,b);if(d)return d}return null}},Ub=0,K,rb=null,Of=0,De=!0,H=e.tdto();Y("click","C","clk");Y("mousedown",
+"D","mdw");Y("mouseup","U","mup");Y("dblclick","CC","dcl");Y("keydown","KD","kyd");Y("keyup","KU","kyu");Y("scroll","S","scr");Y("touchstart","TS","tcs");Y("touchend","TE","tce");if(l.ade){var cc=l.ade.split(",");if(cc&&0<cc.length)for(var pd=0;pd<cc.length;pd++)Y(cc[pd])}e.bi=Ce;e.ei=Tc;e.gci=qa;e.ci=Ee;e.cit=function(){return e!=H?H.cit():qa()?K.type:null};e.cih=function(){return e!=H?H.cih():qa()?K.G:null};e.gpi=qb;e.pi=Fe;e.pit=function(){return e!=H?H.pit():qb()?rb.type:null};e.piv=Ge;e.aad=
+function(a){(De=a)||He()};var Yc=!1,Ne=!1,Qe=!1,Da=1,C=null,cd=[];(function(){var a=xa().sSAC;a&&a(!1);a=J("dtSa");l.dsss&&(a=Od("dtSa"));for(var b=Z("meta"),c,d=M("mrt"),f=0;f<b.length&&!c;f++){var k=b[f],h=k.getAttribute("http-equiv");h&&"refresh"==h.toLowerCase()&&(c=k.getAttribute("content"),c=z((c&&c.split(";"))[0])<=d)}c?Da++:Vb("-");if(a&&"-"!=a&&(c=a.split("|"),11==c.length)){var b="true"==c[0],d=c[1],f=c[2],k=c[3],h=c[4],g=c[5],m=c[6],n=c[7],q;for(q in Ib)if(Ib.hasOwnProperty(q))var r=new RegExp(Ib[q].replace(/\^/g,
+"\\^"),"g"),n=n.replace(r,q);q={isDelayed:b,type:d,id:f,name:k,info:h,startTime:g,frameId:m,location:n.replace(/_5F/g,"_").replace(/_25/g,"%").replace(/_7C/g,"|"),title:c[8],viewDurationStart:z(c[9]),anchor:c[10]};c=!1;e!=e.tdto()&&(c=e.tdto().iRO(q.location));!document.referrer||q.location==G(document.referrer)||q.location==G(document.location)||c?(C=q,Ta=q.viewDurationStart):Vb(a)}})();var Ea=null,dc=!1,Wc=[],dd=[],Aa=!1,of=!1,Je=0,ha=null,pf=document.location;pf&&e.tdto().aFU(pf.href);l.rid||(l.rid=
+Af(l.ridPath));var L=null,Me,Wb=!1,Te=-1,U=ca();U&&(L=U.timing)&&Jb((L.requestStart-(L.redirectEnd||L.navigationStart))/2,!0);e.sls=function(a){a||u()};e.sole=Ie;e.iolm=Rf;e.solb=Ke;e.slem=function(){Me=!0};e.lst=Uc;var ad=!1;va(n,"beforeunload",Re);va(n,"unload",function(){bd(!1);var a;if(0<ac.length){a=de&&!l.dsndb;for(var b=0;b<ac.length;b++)try{var c=ac[b];a?Wd(c.path,c.data):Vd(null,c.path,!1,c.data)}catch(k){}}if(!of)try{He();a=ma;for(var d=a.length;0<=--d;){var e=a[d];Kd(e.object,e.event,e.T)}ma=
+[];U=L=sc=rc=null;of=!0}catch(k){}dc||(dc=!0,zc())});va(n,"pagehide",function(){bd(!0);dc||(dc=!0,zc())});va(document,"readystatechange",Pe);E(Zc,3E3);va(n,"load",Oe);(function(){wb||(wb=document.createElement("doc:rdy"));if(wb.doScroll){var a=function(){try{wb.doScroll("left"),wb=null,Ic=u(),S()}catch(b){E(a,0)}};a()}else document.addEventListener("DOMContentLoaded",function(){Ic=u();S()},!1)})();if(!window.doNotCreateLoadAction){var Fa=Va("_load_","_load_",Uc(),null);S();Pe()}e.all=Le;e.ail=function(a){r(Jc,
+a)};e.apll=function(a){r(dd,a)};e.sle=function(){Xc(1)};e.obc=Re;e.ile=function(){return 0>=Da};e.gLAet=function(){return Je};e.maep=function(a,b){if(V||isNaN(a)||100>a||1E3<a)return!1;ha={responseCode:a,message:b+""};return!0};e.iSAC=function(){return Wb};e.sSAC=Se;var ed=[],Ue=!1;Le(Ve);e.abwsl||(e.abwsl=Vf);var qf=!1;Ia(function(a,b,c){if(!b&&!qf&&(V||c)){qf=!0;b=function(a){return 0>a||2147483647<=a||isNaN(a)?0:a};var d=xa();c=d.bwsW||e.bwsW;d=d.bwsH||e.bwsH;c||(Ve(),c=e.bwsW,d=e.bwsH);c={width:b(c),
+height:b(d)};a.a("w","window",c.width,c,!0);a.a("h","",c.height,void 0,!0);if(c=n.screen)b={width:b(c.width),height:b(c.height)},a.a("sw","screen",b.width,b,!0),a.a("sh","",b.height,void 0,!0)}});Ia(function(){if(!l.disableCookieManager){var a=ja();if(!a||a&&0!==t(a,"-"))try{if(n.sessionStorage){var b=xb(P)||"";bb(b)||(b="");if(b&&"null"!=b){a:{var c=a;if(c){var d=t(c,"$"),f=c.lastIndexOf("$");if(-1<d&&d!=f){a=c.substring(0,d)+c.substring(f);break a}}a=c}if(a!=b){var k;if(c=b){var h=t(c,"|");-1!=
+h&&(c=c.substring(0,h));h=c.lastIndexOf("$");-1!=h&&(c=c.substring(h+1))}k=c;var g;if("undefined"!=typeof a&&""!==a&&(b=a)&&k){var m=t(b,"|"),h=-1;-1!=m?(h=t(b,"$"),b=-1!=h?b.substring(0,h+1)+k+b.substring(m):k+b.substring(m)):(h=t(b,"$"),b=-1!=h?b.substring(0,h+1)+k:k)}a=g=b}}a&&(e.dC(P),Ka(a),yb(P,a))}}catch(y){}}});var Xe={c:"redirectStart",d:"redirectEnd",e:"fetchStart",f:"domainLookupStart",g:"domainLookupEnd",h:"connectStart",i:"connectEnd",j:"secureConnectionStart",k:"requestStart",l:"responseStart",
+m:"responseEnd",n:"domLoading",o:"domInteractive",p:"domContentLoadedEventStart",q:"domContentLoadedEventEnd",r:"domComplete",s:"loadEventStart",t:"loadEventEnd",u:"transferSize",v:"encodedBodySize",w:"decodedBodySize",x:"statuscode",y:"ip",A:"failedImage"},Ba={},fd=[],rf=!1,Xf={a:"n",b:"ns",c:"rs",d:"re",e:"fs",f:"ds",g:"de",h:"cs",i:"ce",j:"ss",k:"rqs",l:"rss",m:"rse",n:"dl",o:"di",p:"dcs",q:"dce",r:"dc",s:"ls",t:"le",u:"t",v:"ebs",w:"dbs",x:"s",y:"i",z:"it",A:"fi",B:"f"};l.ntd||Ia(function(a,b){if(!b&&
+!rf&&V){rf=!0;var c=Wf();a.a("nt","navigationTiming",function(){return c.join("")||"0"},c)}});e.mNTTO=$d;e.snt=Ob;var sb=-1,Ze={},$a,ib=!!n.MutationObserver,ga={},gd=[],Yb={},tb=[],Zf=(Xb=e.RMOD)?$f:ag;e.aMO=qe;e.rMO=Nc;e.gMN=function(a){return ga[a]?ga[a]:[]};e.gMA=function(){return gd};e.lAM=function(a){return a&&Ze[a]||sb};var jg={setAutomaticActionDetection:function(a){dT_.aad(a)},setLoadEndManually:function(){dT_.slem()},signalLoadStart:function(a){dT_.sls(a)},signalLoadEnd:function(){dT_.sle()},
+markAsErrorPage:function(a,b){return dT_.maep(a,b)},markXHRFailed:function(a,b,c){return dT_.mxf(a,b,c,!0)},sendSignal:function(a,b,c){dT_.ss(a,b,c)},enterAction:function(a,b,c,d){return dT_.ea(a,b,c,null,d,null,!0)},leaveAction:function(a,b,c){dT_.la(a,b,c)},reportError:function(a,b){dT_.rex(a,b)},identifyUser:function(a){dT_.rs("rx_visittag",a,-1)},startThirdParty:function(a,b){dT_.tpstr(a,b)},stopThirdParty:function(a,b,c,d){dT_.tpsto(a,b,c,d)},addPageLeavingListener:function(a){dT_.apll(a)},beginUserInput:function(a,
+b,c,d){return dT_.bi(a,b,c,d)},endUserInput:function(a){dT_.ei(a)},enterXhrAction:function(a,b,c){return dT_.ex(a,b,null,c,!0)},leaveXhrAction:function(a){dT_.lx(a)},enterXhrCallback:function(a){dT_.ec(a)},leaveXhrCallback:function(a){dT_.lc(a)},signalOnLoadStart:function(){dT_.solb()},incrementOnLoadEndMarkers:function(){dT_.iolm()},signalOnLoadEnd:function(){dT_.sole()},actionName:function(a){dT_.rs("an",a)},endSession:function(){dT_.eV()},now:function(){return dT_.nw()}},D={D:function(){window.console&&
+window.console.warn&&window.console.warn("You are still using window.ruxitApi which will be removed in the future. Please change your code to use window.dtrum instead.")},setAutomaticActionDetection:function(a){D.D();dT_.aad(a)},setLoadEndManually:function(){D.D();dT_.slem()},signalLoadStart:function(a){D.D();dT_.sls(a)},signalLoadEnd:function(){D.D();dT_.sle()},markAsErrorPage:function(a,b){D.D();return dT_.maep(a,b)},markXHRFailed:function(a,b,c){D.D();return dT_.mxf(a,b,c,!0)},sendSignal:function(a,
+b,c){D.D();dT_.ss(a,b,c)},enterAction:function(a,b,c,d){D.D();return dT_.ea(a,b,c,null,d,null,!0)},leaveAction:function(a,b,c){D.D();dT_.la(a,b,c)},reportError:function(a,b){D.D();dT_.rex(a,b)},tagSession:function(a){D.D();dT_.rs("rx_visittag",a,-1)},startThirdParty:function(a,b){D.D();dT_.tpstr(a,b)},stopThirdParty:function(a,b,c,d){D.D();dT_.tpsto(a,b,c,d)},addPageLeavingListener:function(a){dT_.apll(a)},beginUserInput:function(a,b,c,d){D.D();return dT_.bi(a,b,c,d)},endUserInput:function(a){D.D();
+dT_.ei(a)},enterXhrAction:function(a,b,c){D.D();return dT_.ex(a,b,null,c,!0)},leaveXhrAction:function(a){D.D();dT_.lx(a)},enterXhrCallback:function(a){D.D();dT_.ec(a)},leaveXhrCallback:function(a){D.D();dT_.lc(a)},signalOnLoadStart:function(){D.D();dT_.solb()},incrementOnLoadEndMarkers:function(){D.D();dT_.iolm()},signalOnLoadEnd:function(){D.D();dT_.sole()},actionName:function(a){D.D();dT_.rs("an",a)},endSession:function(){D.D();dT_.eV()},now:function(){D.D();return dT_.nw()}};"undefined"!=typeof dT_&&
+("undefined"==typeof window.ruxitApi&&(window.ruxitApi=D),"undefined"==typeof window.dtrum&&(window.dtrum=jg));e.initialized=!0;"function"==typeof e.initCallback&&e.initCallback()}}})();(function(){function p(a,d,c){for(var e=2;e<arguments.length;e++)a.push(arguments[e]),(e<arguments.length-1||d)&&a.push("|")}function S(a,d){return a.b.duration<d.b.duration?1:a.b.duration==d.b.duration?0:-1}function I(a,d){return a>d?a:d}function T(){this.head=null;this.add=function(a,d){if(!(a>d)){var c={start:a,stop:d},e=this.head,b=null;if(e){for(;e&&a>e.start;)b=e,e=e.next;b?(c.next=b.next,b.next=c):(c.next=this.head,this.head=c)}else this.head=c,c.next=null}};this.reduce=function(){for(var a=
+this.head;a&&a.next;){for(;a.next&&a.stop+1>=a.next.start;)a.stop<=a.next.stop&&(a.stop=a.next.stop),a.next=a.next.next;a=a.next}};this.F=function(){this.reduce();var a=[];if(this.head){var d=this.head;do 0<a.length&&p(a,!1,"_"),p(a,!1,d.start),p(a,!1,"_"),p(a,!1,d.stop);while(d=d.next)}return a.join("")};this.J=function(){this.reduce();var a=[];if(this.head){var d=this.head;do a.push([d.start,d.stop]);while(d=d.next)}return a}}function U(a,d){for(var c=e.nw(),h=0;h<n.length;h++)if(n[h].url==d)return;
+h=e.ca()||{};p(n,!1,{type:a,b:{timing:{start:c,stop:0},duration:0},j:{timing:{start:0,stop:0},duration:0},url:d,G:h.name||"-",H:!1,v:!1,A:!1,I:!1})}function V(a,d,c,h){for(var b=0;b<n.length;b++){var m=n[b];if(m.url==a){m.b.timing.start=c||m.b.timing.start;m.b.timing.stop=h||e.nw();m.v=d;d||(m.H=!1,m.I=!0);break}}}function W(a){if(e.re_t)for(var d=0;d<a.length;d++){var c=a[d],h=c.b;!h.timing.stop&&h.timing.start&&("i"===c.type?(c.A=!0,c.v=!1,h.timing.stop=e.nw()):(c.j.timing.start||(c.v=!0),h.timing.stop=
+h.timing.start));c=h.timing;h.duration=c.stop?c.stop-c.start:h.duration}}function L(a,d){a.c++;var c=a.l||Number.MAX_VALUE;a.l=c<d?c:d;a.h=I(a.h,d);a.a=e.pn((a.a*(a.c-1)+d)/a.c,10)}function M(a,d){a[d].d=a[d].m.J();delete a[d].m}function X(a,d,e,h){for(var b in a)if(a.hasOwnProperty(b)){var c=a[b];if(h){if(d[e].d=e,"i"==b||"c"==b||"s"==b||"o"==b||"y"==b)d[e][b]=c,M(c,"w"),M(c,"im")}else{var f=c.im,g=c.w;"i"==b||"s"==b?d[e][b]=[c.s,c.f,c.i,c.c,f.c,g.c,f.m.F(),f.a,f.c?f.l:"0",f.h,g.m.F(),g.a,g.c?g.l:
+"0",g.h].join("|"):"o"==b||"c"==b?d[e][b]=[c.s,c.f,c.i,c.c,g.m.F(),g.a,g.l,g.h].join("|"):"y"==b&&(d[e][b]=[c.s,f.m.F(),f.a,f.l,f.h].join("|"))}}}function Y(a,d,c,h){for(var b=[],m=0;m<a.length;m++){var f=a[m],g=d[f],l=c[f];0<b.length&&p(b,!1,";");p(b,!0,e.aesc(f),"featureHash");var f=0,k=b.length-2;l.i&&(p(b,!0,l.i),f+=2);l.s&&(p(b,!0,l.s),f+=4);l.c&&(p(b,!0,l.c),f+=8);l.o&&(p(b,!0,l.o),f+=16);l.y&&(p(b,!0,l.y),f+=32);b.pop();b[k]=f.toString(32);for(l=0;l<g.length&&l<z&&(g[l].b.duration>=x||g[l].j.duration>=
+x);l++)f=g[l],k=f.b.timing,p(b,!1,","),p(b,!1,f.type+(f.v?"":f.A?"i":"f"),k.start?k.start-h:0,k.stop?k.stop-h:0,e.aesc(f.G),e.tpesc(f.url)),f=f.j.timing,f.start&&p(b,!1,"",f.start,f.stop)}return b}function N(){var a={a:0,l:void 0,h:0,c:0,d:[]};a.m=new T;return a}function v(a,d,c){var h=e.lst(),b;W(a);if(0<a.length&&0<h){var m={},f,g;for(f=0;f<a.length;f++)if(b=a[f],g=e.gh(b.url))m[g]=m[g]||[],p(m[g],!1,b);var l={},k,t,u,n={},r={};for(g in m)if(m.hasOwnProperty(g)&&m[g].length){l[g]=l[g]||{D:0};a=
+m[g];a.sort(S);n.d=g;r.t="";r.i="";r.im={start:0,stop:0};r.w={start:0,stop:0};r.a="";r.u="";n.sl=r;for(f=0;f<a.length;f++){b=a[f];k=n[b.type];k||(k={s:0,i:0,f:0,c:0},k.w=N(),k.im=N(),n[b.type]=k);var q;t=b.b.timing;u=b.j.timing;t.start&&t.stop&&(q=t.stop-t.start,L(k.im,q),k.im.m.add(t.start-h,t.stop-h));if(u.start&&u.stop){q=b.j.duration;0>q&&(q=u.stop-u.start);if(0>q||3E5<q)q=0;L(k.w,q);k.w.m.add(b.j.timing.start,b.j.timing.stop)}k.s+=+b.v;k.c+=+b.H;b.v||(k.i+=+b.A,k.f+=+b.A);l[g].D=I(l[g].D,I(k.w.h,
+k.im.h))}X(n,l,g,c)}q=[];for(g in l)l.hasOwnProperty(g)&&p(q,!1,g);0<w&&q.length>w&&(q=q.sort(function(a,b){return l[b].D-l[a].D}).slice(0,w));k=[];if(c){for(c=0;c<q.length;c++)for(g=q[c],a=m[g],n=l[g],delete n.D,f=0;f<a.length&&f<z&&(a[f].b.duration>=x||a[f].j.duration>=x);f++)b=a[f],t=b.b.timing,u=b.j.timing,r={},r.u=b.url,r.a=b.G||"",r.w=u.stop?u:{},r.im=t.stop?t:{},r.i=b.v?"":b.A?"i":"f",r.t=b.type,n.sl=r;for(g in l)l.hasOwnProperty(g)&&k.push(l[g]);return k.length?(b={},b.r=k,b.n=h,d&&(b.i=d),
+b):null}k=Y(q,m,l,h);if(0>=k.length)return null;b=k.join("");d&&(b=d+"-"+h+";"+b);return e.esc(b)}return null}function O(a){if(!J||a.length>A&&2==J)a=a.split("?")[0];if(a.length>A){var d=e.gh(a);a=a.split("/");var c=a[a.length-1];a=d+"/../"+c;var h=a.length-A;0<h&&c.length>h&&(a=d+"/../.."+c.substring(h,c.length))}return e.tpesc(a)}function Z(a){for(var d=[],e=[],h=0;h<a.length;h++){var b=a[h];e[b.name]||(d.push(b),e[b.name]=!0)}return d}function aa(a,d,c){if(!d&&e.las()&&(!e.syn||c))if(e.re_t&&e.gIA&&
+!P)e.gIA()&&!c?e.sMPS(1E3):(P=!0,a.a("3p","tp",function(){return v(n,void 0,!1)},function(){return v(n,void 0,!0)},!0),n=[]);else if(e.re_r&&e.gSig&&(B=K(),!(0>=B)))if(d=dT_.gLAet(),!c&&(0>=d||3E3>e.nw()-d))e.sMPS(2E3);else{var h=ba();h&&(w=-1,z=0,C=1);c=e.gSig(c);var b={B:[],C:[]},m={B:[],C:[]};if(c&&0<c.length)for(d=0;d<c.length;d++){var f=c[d].actionId,g=c[d].resources;e.gBI().op&&(g=Z(g));e.aai&&e.aai(g);for(var l=[],k=0;k<g.length;k++)try{l.push(ca(g[k]))}catch(t){}l=l.concat(n);n=[];(function(){var a=
+g,d=f,c=l;h&&(b.B.push(function(){var b;b=K();if(!a.length||0>=b)b=null;else{for(var c=[],f=!0,g=0;g<a.length&&(g!=D||0===g);g++){var h=a[g],k=h.startTime;if(0<k||h.failedImage)k=e.snt(h,k?["b",Math.round(k)]:[],!0),f||p(c,!1,"|"),f=!1,p(c,!1,O(h.name),k.join(""))}c=c.join("");b=e.esc(d?d+"-"+b+";"+c:"-"+b+";"+c)}return b}),b.C.push(function(){var b;b=[];var c=K();if(!a.length||0>=c)b=null;else{for(var f=0;f<a.length&&(f!=D||0===f);f++){var g=a[f],h=g.startTime;if(0<h||g.failedImage){var h=e.snt(g,
+h?["b",Math.round(h)]:[],!0),h=e.mNTTO(h),k={};k.u=O(g.name);k.t=h;b.push(k)}}f={};f.n=c;f.r=b;d&&(f.i=d);b=f}return b}));m.B.push(function(){return v(c,d,!1)});m.C.push(function(){return v(c,d,!0)})})()}else 0<n.length&&(m.B.push(function(){return v(n,void 0,!1)}),m.C.push(function(){return v(n,void 0,!0)}));Q(a,m,"3p","resourceSummaries");Q(a,b,"rt","w3cResources")}}function Q(a,d,c,e){for(var b=0;b<d.B.length;b++)a.a(c+(0<b?b:""),void 0,function(a){return function(){return a()}}(d.B[b]),void 0,
+!0);a.a(void 0,e,void 0,function(){for(var a=[],b=0;b<d.C.length;b++)a.push(d.C[b]());return a},!0)}function ba(){if(1E4==E)return!0;var a;if(a=e.rVID()){for(var d=0,c=0;c+1<a.length;c+=2)d+=""+(a.charCodeAt(c)+a.charCodeAt(c+1));a=Math.floor(Math.abs(1E7*Math.sin(d)))%1E4<E}else a=!1;return a}function da(a){var d=e.gh(a),c=-1!=a.indexOf("chrome-extension://")||-1!==a.indexOf("chrome://")||-1!==a.indexOf("data:")||-1!==a.indexOf("javascript:")||-1!==a.indexOf("about:")||-1!==a.indexOf("res://");a=
+-1!==a.indexOf("://localhost/")||-1!==a.indexOf("://localhost:")||d&&-1!==d.indexOf(".local",d.length-6);return C?!c:!c&&!a&&d&&d!=F}function ca(a){var d=ea(a),c=a.duration?Math.round(a.duration):0,h=R(a),b;0<a.responseEnd?(b=B+a.responseEnd,b-=e.lst(),b=Math.round(b)):b=Math.round(e.nw()-e.lst());c={duration:c,timing:{start:h,stop:b}};h=a.name;b=R(a)<=dT_.gLAet()?"_load_":"-";var m=0===a.responseEnd,f;f=a.failedImage?!1:e.gh(a.name)==F&&e.gBI().ie?0!==a.requestStart:0<a.responseEnd;a=e.gBI().ch?
+0!==a.domainLookupStart&&0===a.requestStart:e.gh(a.name)!=F&&0===a.requestStart&&2>a.duration?!0:0>=a.responseEnd?!1:a.requestStart==a.fetchStart&&a.requestStart==a.responseStart&&a.responseStart!=a.responseEnd;return{type:d,j:c,b:{duration:0,timing:{start:0,stop:0}},url:h,G:b,A:m,v:f,H:a,I:!1}}function ea(a){a=a.name.toLowerCase();-1<a.indexOf("ScriptResource.axd")?a="js":(a=a.substr(1+a.lastIndexOf("/")),0<a.indexOf("?")&&(a=a.split("?")[0]),0<a.indexOf("#")&&(a=a.split("#")[0]),a=0<a.indexOf(".")?
+a.substring(a.lastIndexOf(".")+1):"-");switch(a){case "js":return"s";case "gif":case "png":case "jpg":case "jpeg":case "ico":case "tiff":case "bmp":case "xbm":case "svg":return"i";case "css":return"c";default:return"o"}}function K(){return G&&G.timing?G.timing.navigationStart:-1}function R(a){a=B+a.startTime;a-=e.lst();return Math.round(a)}var e=window.dT_,G,B=null,P=!1,x=500,z=3,C=!0,w=-1,E,D,A,J,F,n=[];if(e&&e.smbi&&(e.smbi("2")||e.syn&&!e.tpih)){G=e.gP();var y=e.scv("tp").split(","),H=y.length;
+if(!(3>H||5<H)){x=e.pn(y[0],10);z=e.pn(y[2],10);4<=H&&(C=e.pn(y[3],10));5<=H&&(w=e.pn(y[4],10));if(E=e.ncv("rt"))D=e.ncv("rtl"),A=e.ncv("rtu"),J=e.ncv("rtp");e.syn&&(E=1E4,D=0,w=-1,C=!0);F=e.gh(e.loc());e.tpih=da;e.tpstr=U;e.tpsto=V;e.aBPSL(aa)}}})();(function(){function t(b){a.tpsto(b.target.src,!0)}function u(){window&&window.event&&window.event.srcElement&&("loaded"==window.event.srcElement.readyState||"complete"==window.event.srcElement.readyState)&&a.tpsto(window.event.srcElement.src,!0)}function l(){for(var b=document.getElementsByTagName("script"),c=a.gEL(b),e=0;e<c;e++)try{var d=b[e];d.b||(d.b=a.nw(),""==d.src||!a.tpih(d.src)||d.attributes&&d.attributes["data-dtconfig"]||(a.tpstr("s",d.src),a.gBI().ie&&11>a.gBI().ie?a.ael(d,"readystatechange",
+u):a.ael(d,"load",t)))}catch(y){}}function v(b){var c=null;b?b.target?c=b.target:b.srcElement&&(c=b.srcElement):window&&window.event&&(c=window.event.srcElement);c&&a.tpsto(c.src,!0)}function w(b){var c=null;b?b.target?c=b.target:b.srcElement&&(c=b.srcElement):window&&window.event&&(c=window.event.srcElement);c&&c.src!=a.loc()&&a.tpsto(c.src,!1)}function m(b){if(!b.b){b.b=a.nw();try{""!=b.src&&a.tpih(b.src)&&(a.tpstr("i",b.src),!b.complete||"undefined"!=typeof b.naturalWidth&&0===b.naturalWidth?(a.ael(b,
+"load",v),a.ael(b,"error",w)):a.tpsto(b.src,!0))}catch(c){}}}function n(){var b=document.getElementsByTagName("img"),c=a.gEL(b),e,d;for(e=0;e<c;e++)d=b[e],m(d);b=document.getElementsByTagName("input");c=a.gEL(b);for(e=0;e<c;e++)d=b[e],d.type&&"SUBMIT"==d.type.toUpperCase()&&m(d)}function p(){0<g&&2E3<a.nw()-g?(h=!1,a.sMPS(5E3)):(a.re_t&&(n(),l()),a.st(p,q))}function r(){a.tpsto?(n(),l(),a.ca()&&!h&&(g=a.nw(),h=!0,p())):a.st(r,1)}function x(){return h}var a=window.dT_,q=30,g,h;if(a&&a.smbi&&a.smbi("3")){var f=
+a.scv("tp").split(","),k=f.length;3<=k&&5>=k&&(q=a.pn(f[1],10));a.re_t=!0;(f=a.gP())&&f.timing&&(k=f.getEntriesByName||f.webkitGetEntriesByName,(f.getEntriesByType||f.webkitGetEntriesByType)&&k&&(a.re_t=!1));a.re_t&&(a.gIA=x,a.all(function(){g=a.nw()}),a.aBPSL(function(){-1===g&&(g=a.nw())}),g=-1,r())}})();(function(){function g(a,b,d){function f(b){c||(c=!0,e.st(function(){e.lx(b,d)},0))}function h(a,d){var c=a.then;a.then=function(){var a=Array.prototype.slice.call(arguments);if(a.length){if("function"==typeof a[0]){var k=a[0];a[0]=function(a){e.ec(b);var c,g=!1;if(d&&a){if(a.body&&a.body.getReader){var p=a.body.getReader;a.body.getReader=function(){var a=p.apply(this,arguments);if(a.read&&a.closed){var c=a.read;a.read=function(){g=!0;return c.apply(this,arguments)};a.closed.then(function(){g=!1;
+f(b)})}return a}}for(var l=0;l<m.length;l++){var n=m[l];a[n]&&function(){var b=n,c=a[b];a[b]=function(){var a=c.apply(this,arguments);h(a,!1);return a}}()}}try{c=k.apply(this,arguments)}finally{e.lc(b),g||f(b)}return c}}if(1<a.length&&"function"==typeof a[1]){var g=a[1];a[1]=function(){e.ec(b);var a;try{a=g.apply(this,arguments)}finally{e.lc(b),f(b)}return a}}}a=c.apply(this,a);h(a,!1);return a}}var c=!1;h(a,!0)}function q(){if(!arguments.length)return c.apply(this,arguments);var a=Array.prototype.slice.call(arguments),
+b=a[0]instanceof d.Request,k=b?a[0].url:a[0],f=b?a[0]:a[1],h=e.ex("fetch",3,void 0,k);b||(b=d.Headers?new d.Headers:{},f?f.headers||(f.headers=b):f={headers:b},a[1]=f);e.sch(f,k,h);a=c.apply(this,a);g(a,h,k);a.then(function(){},function(){});return a}var d=window,e=d.dT_,c=null,m="arrayBuffer clone text json blob formData".split(" ");e&&e.smbi&&e.smbi("7")&&d.fetch&&(c=d.fetch,d.fetch=q,e.ael(d,"unload",function(){d.fetch=c;c=null}))})();(function(){function m(m,p){function q(b){for(var a,f,e,c=0;c<p.length;c++)a=p[c],e=(f=a.node)?f.tagName||f.nodeName:null,(a.i||e&&"BODY"!==e&&"IMG"!==e)&&b(a,f,e)}var c={},n=d.vWW()*d.vWH(),g,h,k=[],r=0,t={};(function(){q(function(b,a){t[a]=b})})();(function(){q(function(b,a){var f=t[a.parentNode];g=b.time;c[g]||(c[g]={b:0,nodes:[]});!b.v||!b.i&&f&&f.time==g||(h=b.area,c[g].b+=h);c[g].nodes.push(a)})})();(function(){for(var b in c)if(c.hasOwnProperty(b)){h=c[b].b;var a=h/n;k.push({time:parseInt(b,
+10),b:h,j:a,nodes:c[b].nodes});r+=a}k.sort(function(a,b){return a.time-b.time});d.tMA=k})();l=function(){for(var b=0,a=0,c=0,e,d=0;d<k.length;d++)e=k[d],a=e.time-a,0<a&&1>c&&(b+=(1-c)*a),c+=e.j/r,a=e.time;return b=parseInt(b,10)}();m.a("S","speedIndex",l,l,!0)}function n(){return l}var d=window.dT_,l=-1;d&&d.smbi&&d.smbi("S")&&(d.tdto(),d.cSI=m,d.gSI=n)})();(function(){function L(){var a=this,c=-1;a.C=null;a.j=!1;a.B=[];a.m=function(){return c};a.F=function(b){for(var e=0;e<b.length;e++){var d=b[e];50<d.area&&c<d.time&&d.v&&(c=parseInt(d.time,10));a.B.push(d)}};a.D=function(b){for(var d=0;d<b.length;d++){var g=b[d];50<g.area&&c<g.time&&g.v&&(c=g.time);a.B.push(g)}}}function B(a,c,b){function e(a,b,c,d){b&&(c=x(a,c,d,f.offset))&&(c.url=b,c.node=a,c.i=!0,f.b.push(c))}function g(a){return a&&""!=a&&0==a.indexOf("http")}var m=a.document,k=a.performance,
+f=this;f.b=[];f.A=null;f.offset=b;f.H=function(){if(null==f.A){f.A={};for(var a,c=k.getEntriesByType("resource"),b=0;b<c.length;b++)a=c[b],f.A[a.name]={responseEnd:a.responseEnd,requestStart:a.requestStart}}return f.A};f.I=function(){for(var a=f.H(),b=0;b<f.b.length;b++)if(!f.b[b].time){var c=a[f.b[b].url];f.b[b].time=c?parseInt(c.responseEnd,10):0}};f.G=function(){for(var b=m.images,c=0;c<b.length;c++)g(b[c].src)&&e(b[c],b[c].src);for(var b=m.getElementsByTagName("*"),h=/url\(['"]?([^"')]+)/gi,c=
+0;c<b.length;c++){var t=b[c];if(y(t)){var k=w(t);if(d.iVE&&d.iVE(k,t)){var n=a.getComputedStyle(t),l=t,p=n,u=h,r=k;p["background-image"]&&"none"!=p["background-image"]&&(u.lastIndex=0,u=u.exec(p["background-image"])||[],1<u.length&&g(u[1])&&e(l,u[1],p,r));if("IFRAME"==t.tagName)try{var q=x(t,n,k);if(q)for(var v=new B(t.contentWindow,!0,q.offset),k=0;k<v.b.length;k++)f.b.push(v.b[k])}catch(T){}}}}};f.G();f.I();c||h.F(f.b)}function x(a,c,b,e){if(!b&&(b=w(a,e),!d.iVE||!d.iVE(b,a)))return null;e={offset:{top:b.top,
+left:b.left}};C(e,b,a,c);return e}function y(a){return a&&50<a.offsetWidth*a.offsetHeight}function C(a,c,b,d){var e=D(c);a.v=e&&!E(b,d);e&&(b=n(),d=l(),b=c.left+c.width>b?b-c.left:c.width,c=c.top+c.height>d?d-c.top:c.height,a.area=b*c)}function M(){this.disconnect=function(a){if(!h.j){new B(m);for(var c=d.gMN("V"),b=[],e,g=0;g<c.length;g++){e=c[g];var k=b,n=e.nodes;e=e.time;for(var f=0;f<n.length;f++){var l=n[f];if(y(l)){var q=w(l);if(d.iVE&&d.iVE(q,l)){var r={node:l,time:parseInt(e,10)};C(r,q,l);
+k.push(r)}}}}h.D(b);h.C=a;h.j=!0;c=h.m();for(b=0;b<p.length;b++)p[b](a,c);p=[];F=!0;d.rMO("V")}};d.aMO("V",{childList:!0,subtree:!0});d.bcv("lmut")&&d.st(G,1E3)}function w(a,c){var b;a:{if("function"===typeof a.getBoundingClientRect)try{var d=a.getBoundingClientRect();b={top:d.top+m.pageYOffset-a.clientTop,left:d.left+m.pageXOffset-a.clientLeft};break a}catch(g){}b=null}if(!b)return null;c&&(b.top+=c.top,b.left+=c.left);return{width:a.offsetWidth,height:a.offsetHeight,top:b.top,left:b.left}}function D(a){return 0<
+a.left+a.width&&a.left<n()&&0<a.top+a.height&&a.top<l()}function N(a,c){var b=c.tagName||c.nodeName;return a&&0<a.width&&0<a.height&&D(a)&&"BODY"!==b}function l(){null==q&&(q=m.innerHeight||H.clientHeight);return r.bwsH||q}function n(){null==v&&(v=m.innerWidth||H.clientWidth);return r.bwsW||v}function E(a,c){return a instanceof HTMLElement?(c=c||window.getComputedStyle(a),"hidden"===c.visibility||"none"===c.display):!1}function O(a,c,b){if(n()&&l()&&d===r&&!z&&!c){c=d.las();var e;e=A();var g=d.nw();
+e=0<e&&g-e>I||h.j||J(g);b||e&&c?(h.j||(g="c",b&&!e&&(g=K?"l":"f"),k.disconnect(g)),b="function"===typeof d.cSI,e=h.m(),a.a("V","visuallyComplete",e+"|"+h.C,{time:e,trigger:h.C},!b),b&&d.cSI(a,h.B),h.B=[],z=!0):d.sMPS(2E3);K=c}}function G(){z||(J(d.nw())?k.disconnect("c"):d.st(G,1E3))}function J(a){var c=(d.lAM("V")>>0)+d.gNV("navigationStart"),b=A();return 0<b&&(-1!=c&&1E3<a-c||15E3<a-b)}function P(a){for(var c=-1,b,d,g=0;g<a.length;g++)b=a[g],(d=x(b.e))&&c<b.t&&(c=b.t);return c}function Q(a){F?a():
+p.push(a)}function A(){return d.gNV("loadEventEnd")}function R(){h.j||k.disconnect("f");var a=d.gNV("navigationStart"),c=A(),b=h.m(),a=b+a;return-1==b||c>a?c:a}function S(){var a=m.performance;return!!m.MutationObserver&&!!a&&!!a.getEntriesByType}var m=window,H=m.document.documentElement,d=m.dT_,r=null,I,q,v,K=!1,p=[],F=!1,h,k,z=!1;d&&d.smbi&&d.smbi("V")&&S()&&(r=d.tdto(),I=d.ncv("tvc"),k=new M,h=new L,d.rrl(function(){h.j||k.disconnect("u")}),d.aBPSL(O),d.gDE=w,d.xVC=P,d.vWW=n,d.vWH=l,d.gVCP=R,d.iEH=
+E,d.iVE=N,d.eVA=y,d.gVC=h.m,d.aVCL=Q)})();(function(){function n(){var c=[],a;for(a in f)if(f.hasOwnProperty(a))if(0===f[a].indexOf("url"))for(var d=f[a].replace("url:",""),b=document.getElementsByTagName("script"),e=0;e<b.length;e++)try{if(b[e].src&&-1!==b[e].src.indexOf(d)){c.push(a);break}}catch(t){}else"undefined"!==typeof window[f[a]]&&c.push(a);return c}function p(){var c=[],a;for(a in k)if(k.hasOwnProperty(a))try{var d=k[a];"object"!==typeof d&&(d=[],d[0]=k[a]);for(var b=window,e=0;e<d.length;e++){var g=d[e];if("function"==typeof g)b=
+g.apply(this);else{for(var f=g.split("."),b=window,h=0;h<f.length&&"undefined"!==typeof b&&null!=b;h++)b=-1===f[h].indexOf("()")?b[f[h]]:b[f[h].replace("()","")]();if("undefined"!=typeof b)break}}if("string"===typeof b||b instanceof String)c.push(a+b.split(/-|_| /)[0]);else if("object"===typeof b&&b.length)for(var e=0,l=b.length;e<l;e++)c.push(a+b[e]);else void 0!==b&&c.push(a+"x")}catch(u){}return c}function q(){for(var c=[].concat(p(),n()),a=[],d=0;d<c.length;d++)l[c[d]]||(a.push(c[d]),l[c[d]]=
+!0);return a}function r(c,a){if(!a&&20>m){m++;var d=q();d.length&&c.a("fd","detectedFrameworks",function(){return g.aesc(d.join(";"))},d,!0)}}var g=window.dT_,m=0,l=[],f={fueldeck:"FDUPA",soasta:"url:c.go-mpulse.net",monitis:"JSBenchmark",pingdom:"PRUM_EPISODES",newrelic:"NREUM",appdynamics:"ADRUM",appneta:"_tly"},k={j:"jQuery.fn.jquery",o:"Prototype.Version",g:["angular.version.full",function(){if(document.querySelectorAll){for(var c=Array.prototype.slice.call(document.querySelectorAll("[ng-version]")),
+a=[],d=0,b=c.length;d<b;d++)a.push(c[d].getAttribute("ng-version"));return a.length?a:void 0}}],m:"MooTools.version",d:"dojo.version.toString()",e:["Ext.versions.extjs.version","Ext.version.version","Ext.version"],s:["Ext.versions.touch.version"],i:["ice.icefaces","Ice"],f:function(){if(g.syn)for(var c,a=['object param[name="movie"][value*=".swf"]','object param[name="src"][value*=".swf"]','embed[src*=".swf"]','object[data*=".swf"]'];c=a.pop();)if(document.querySelectorAll(c).length)return"1"}};g&&
+g.smbi&&g.smbi("f")&&g.aBPSL(r)})();(function(){function h(a,e,c,d,q){var k=!1;if(!l&&!m){m=!0;try{try{f&&f!=h&&"function"==typeof f&&(k=f(a,e,c,d,q))}catch(r){b.rex(r,null,!0)}k||b.re(a,e,c,d,q)}catch(r){}m=!1}return k}function t(a,e,c){a[e]=c(a[e])}function n(a){try{if(!p(a))return a;a.b||(a.b=function(e){if(g)try{if(p(a))return u.errorCallback(a,this,arguments)}catch(c){throw b.rex(c,null,!0),v(),c;}finally{}else if(p(a))return u.errorCallback(a,this,arguments)},a.b.b=a.b);return a.b}catch(e){return a}}function v(){l+=1;b.st(function(){--l})}
+function p(a){return"[object Function]"==Object.prototype.toString.call(a)}function w(){d.onerror!=h&&(b.rxehandler=h,d.onerror&&(f=d.onerror),d.onerror=b.rxehandler);try{b.apl(window,"onerror",function(){return h},function(a){f=a})}catch(e){}b.ael(d,"unload",function(){b.rpl(window,"onerror");d.onerror=null});if(!window.atob)g=!1;else if(window.ErrorEvent)try{0===(new window.ErrorEvent("test")).colno&&(g=!1)}catch(e){}b.gBI().j&&(g=!0);if(g){var a=document.getElementsByTagName("html");(0==a.length||
+0<a.length&&!a[0].hasAttribute||0<a.length&&!a[0].hasAttribute("webdriver"))&&"EventTarget Window ModalWindow".replace(/\w+/g,function(a){(a=window[a]&&window[a].prototype)&&a.hasOwnProperty&&a.hasOwnProperty("addEventListener")&&(t(a,"addEventListener",function(a){return function(b,c,e,d){c&&c.handleEvent&&(c.handleEvent=n(c.handleEvent));return a.call(this,b,n(c),e,d)}}),t(a,"removeEventListener",function(a){return function(c,b,e,d){a.call(this,c,b,e,d);return a.call(this,c,n(b),e,d)}}))})}}var d=
+window,b=d.dT_,f,m=!1,l=0,g=!0,u={errorCallback:function(a,b,c){return a.apply(b,c)}};b&&b.smbi&&b.smbi("q")&&w()})();(function(){function E(c,d,b){for(var e=0;e<g.length;e++)if(g[e].j==c)return;g.push({type:"x",j:c,start:d,stop:b,b:[]});a.sMPS(5E3)}function K(){return I}function u(){var n=[],d;try{var b,e,f;if(b=document.getElementsByTagName("iframe"))for(e=0;e<b.length;e++)try{for(var k=b[e].contentWindow,v,z=b[e],l=!1,h=0;h<B.length;h++)z==B[h]&&(l=h);l||(B.push(z),l=B.length-1,"undefined"!=typeof z.src&&(I[z.src]=l));v=l;if("undefined"===typeof k.dT_||null===k.dT_){var p=k.performance.getEntriesByType("resource"),
+x=k.performance.timing.navigationStart-c.timing.navigationStart;if(p)for(f=0;f<p.length;++f){var C=p[f],l=x;if(0<l){var h={connectEnd:1,connectStart:1,domainLookupEnd:1,domainLookupStart:1,fetchStart:1,redirectEnd:1,redirectStart:1,requestStart:1,responseEnd:1,responseStart:1,secureConnectionStart:1,startTime:1,name:0,initiatorType:0,entryType:0,duration:0,v:0,m:0,B:0},q=void 0;for(q in h)h[q]=h[q]&&0<C[q]?C[q]+l:C[q];d=h}else d=C;w[d.name+d.startTime+d.responseEnd]||(d.frameId=v,n.push(d))}}}catch(F){}}catch(F){}try{var m=
+c.getEntriesByType("resource");for(b=0;b<m.length;++b)d=m[b],w[d.name+d.startTime+d.responseEnd]||n.push(d);for(m=0;m<n.length;m++)try{d=n[m];var t=d.name;b=a.res[t]=d;var G=b.name;if(!(a.gh(b.name)==a.gh(a.loc())&&a.gBI().ch&&b.domainLookupStart<b.fetchStart||-1<G.indexOf(a.gAN())||-1<G.indexOf(a.scv("reportUrl"))||-1<G.indexOf("js.ruxit.com")||b.startTime>b.responseEnd)&&a.tpih(t)){b=d;e=null;f=void 0;for(var u=a.gNV("navigationStart"),D=a.gLAet()||a.nw(),H=u+b.startTime,k=0;k<g.length;k++){var r=
+g[k],y="l"==r.type?u:r.start,E="l"==r.type?D:r.stop;v=H-y;if(y<=H&&H<=E+J&&(null==e||f>v))if(e=r,"l"==r.type)break;else f=v}e&&!w[b.name+b.startTime+b.responseEnd]&&(e.b.push(b),w[b.name+b.startTime+b.responseEnd]=!0)}}catch(F){}}catch(F){}finally{m=c.getEntriesByType("resource"),900<m.length&&(L(),w={})}}function L(){try{"function"===typeof p&&p.call(c),a.st(function(){x.call(c)},0)}catch(n){}}function M(c){u();for(var d=0,b=[],e=0;e<g.length;e++){var f=g[e],n=f.stop;a.nw()>n+12E4?d++:(N(f.b),c||
+a.nw()>(f.stop?f.stop:f.start)+2E3?(0>=f.b.length||b.push({actionId:f.j,resources:f.b}),d++):a.st(function(){a.sMPS(2E3)}))}g=g.slice(d);return b}function N(c){if(a.gFI){var d=a.gFI();Array.prototype.push.apply(c,d)}}function O(){function a(){}D=c.getEntriesByType;y=c.getEntriesByName;t=c.setResourceTimingBufferSize;(x=c.clearResourceTimings)&&(c.clearResourceTimings=a);c.webkitClearResourceTimings&&(c.webkitClearResourceTimings=a);return D&&y&&t&&x}function P(a){"function"===typeof c.addEventListener?
+c.addEventListener("resourcetimingbufferfull",a):"undefined"!==typeof c.onresourcetimingbufferfull&&(p=c.onresourcetimingbufferfull,c.onresourcetimingbufferfull=a)}var a=window.dT_,c,t,D,y,x,p,g=[],w={},B=[],I={},J=1E3;a&&a.smbi&&(a.smbi("r")||a.syn&&!a.re_r)&&(c=a.gP(),a.res={},window.A?a.re_r=!1:c&&c.timing&&O()?(a.re_r=!0,t.call(c,1E3),a.syn||(J=a.ncv("rtt")),a.irtx=E,a.gSig=M,a.gFU=K,P(u),g.push({type:"l",start:a.lst(),b:[]})):a.re_r=!1)})();(function(){var a=window.dT_;if(a&&a.smbi&&a.smbi("t")){var l=a.ncv("st"),n=a.bcv("pui"),m=window.setTimeout;window.setTimeout=function(){var b=a.gci(),d=a.gpi(),k="-",e=null,c=0;b?(k=a.cit(),c=b.timeout||0,e=a.ci()):n&&d&&300>=a.nw()-a.piv()&&(k=a.pit(),c=d.timeout||0,e=a.pi());b=arguments;if(0<b.length){var f=b[0],g=b[1]||0,c=c?c+g:g;b[1]=g;b[0]=function(){e&&a.isci(e)&&g<=l&&c<=l&&(a.bi(e,k,null).timeout=c);var b=typeof f;if("string"==b)try{a.evaluatedCodeWrapper(f,this)}catch(h){throw h.message=
+"Exception "+(h&&h.message)+" occurred in eval'd code: "+f,h;}else"function"==b&&("object"==typeof arguments?f.apply(window,arguments):f.apply(window))};try{return m.apply(this,b)}catch(p){return m(b[0],b[1])}}};a.evaluatedCodeWrapper=function(a,d){return function(){eval.call?eval.call(d,a):eval(a)}.call(d)}}})();(function(){function q(a){function c(a,c,d){a.v=f.ex("x",void 0,void 0,a.url,null,a);try{a.async&&(a.b.timeout=a.timeout)}catch(H){}try{a.async&&(a.b.responseType=a.responseType)}catch(H){}!d&&c&&c.nodeType&&(c=c.xml||(new window.XMLSerializer).serializeToString(c));u&&(window.clearTimeout(u),u=void 0);k||(C(b,b.b,z),k=!0);var p={},p=f.sch(p,a.url,a.v),e;for(e in p.headers)p.headers.hasOwnProperty(e)&&a.b.setRequestHeader(e,p.headers[e]);a.b.withCredentials!==a.withCredentials&&(a.b.withCredentials=
+a.withCredentials);var m,p=!0;11>f.gBI().ie&&!a.B&&F(a);try{if(d)m=a.b.sendAsBinary(c);else{var g=r(a,"send");m=g?h.sendCallback(g,a,[c]):a.b.send(c)}p=!1}finally{A(a),p&&f.lx(a.v,void 0,void 0,void 0,"x")}!a.async&&a.readyState&&"undefined"!==typeof a.v&&f.lx(a.v,void 0,void 0,void 0,"x");return m}function d(){b.readyState=b.b.readyState;if(b.readyState!=b.H||100<f.nw()-b.G){for(var a=0;a<b.D.length;a++)clearTimeout(b.D[a]);b.D=[];A(b);4==b.readyState&&e();F(b);b.G=f.nw()}else b.D.push(f.st(d,100));
+b.H=b.readyState}function e(){b.b.onreadystatechange=y;u||(u=f.st(g,0));b.headers={};m&&(f.rel(window,"unload",m),m=null)}function g(){if(u){u=void 0;k=!1;for(var a=b.b,c=z.length;0<=--c;)try{z[c]in a&&(a[z[c]]=y)}catch(L){}}}function w(){function a(){m&&(m=null,e(),b.abort())}m||(m=a,f.ael(window,"unload",m))}var b=this;b.constructor&&(b.constructor=q);b.C=!0;b.j={};for(var v=0;v<B.length;v++)b.j[B[v]]=void 0;var m=null,k=!1,u=void 0;b.B=!1;b.b=arguments.length?new n(a):new n;for(var l in b.b)if((!b.b.hasOwnProperty||
+b.b.hasOwnProperty(l))&&!b.hasOwnProperty(l))if(t())"upload"===l?Object.defineProperty(b,"upload",{enumerable:!0,get:function(){b.j.upload||(b.j.upload=new D(b.b.upload));return b.j.upload}}):function(a){Object.defineProperty(b,a,{enumerable:!0,get:function(){return this.j[a]},set:function(b){this.j[a]=b}})}(l);else try{b[l]=b.b[l]}catch(p){}b.m=[];b.headers={};b.url="";b.readyState=0;b.H=-1;b.G=f.nw();b.A=0;b.D=[];try{v={get:function(){return b.b.responseType},set:function(a){b.b.responseType=a}},
+Object.defineProperty(b,"responseType",v),Object.defineProperty(b.j,"responseType",v)}catch(p){}b.responseXML=null;A(b);b.onreadystatechange=null;"withCredentials"in b.b&&(b.withCredentials=b.b.withCredentials);b.timeout=0;b.open=function(a,c,e,m,f){function g(b,d,g){"apply"in b?h.callOpenCallback(b,g,d):4<d.length?b(a,c,e,m,f):3<d.length?b(a,c,e,m):b(a,c,e)}b.I=!1;3>arguments.length&&(e=!0);b.async=e;x&&e&&w();b.b.onreadystatechange=d;b.url=""+c;var p=r(b,"open");p?g(p,arguments,b):g(b.b.open,arguments,
+b.b);b.readyState=b.b.readyState};b.send=function(a){return c(b,a,!1)};"sendAsBinary"in b.b&&(b.sendAsBinary=function(a){return c(b,a,!0)});b.abort=function(){0<b.readyState&&(b.I=!0);var a=r(b,"abort");a?a.apply(b,arguments):b.b.abort();e();if(b.v){for(;0<b.A;)b.A--,f.lc(b.v);f.lx(b.v,void 0,void 0,void 0,"x");b.v=null}};b.getAllResponseHeaders=function(){var a=r(b,"getAllResponseHeaders");return a?h.getResponseHeadersCallback(a,b,arguments):b.b.getAllResponseHeaders()};b.getResponseHeader=function(a){var c=
+r(b,"getResponseHeader");return c?h.getResponseHeaderCallback(c,b,arguments):b.b.getResponseHeader(a)};b.setRequestHeader=function(a,c){var d=a.toLowerCase();if(d!==f.gPCHN()&&d!==f.gRHN()&&"X-Host"!==d)return b.headers[a]=c,(d=r(b,"setRequestHeader"))?h.setRequestHeaderCallback(d,b,arguments):b.b.setRequestHeader(a,c)};b.b.overrideMimeType&&(b.overrideMimeType=function(a){var c=r(b,"overrideMimeType");return c?h.overrideMimeTypeCallback(c,b,arguments):b.b.overrideMimeType(a)});window.EventTarget||
+(b.b.addEventListener&&(b.addEventListener=function(a,c,d){var e=r(b,"addEventListener");h.AELCallback(e,b,arguments)},b.removeEventListener=function(a,c,d){var e=r(b,"removeEventListener");h.RELCallback(e,b,arguments)}),b.dispatchEvent=function(a){var c=r(b,"dispatchEvent");if(c&&"readystatechange"!=a.type)return h.dispatchCallback(c,b,arguments);E(b,a)});b.toString=function(){return"[XMLHttpRequest]"}}function D(a){var c=this,d=!1,e="onloadstart onprogress onabort onerror onload ontimeout onloadend".split(" ");
+c.constructor&&(c.constructor=D);c.j={};c.m=[];c.addEventListener=function(f,b,g){if(b){for(var m,w=c.m,h=0;h<w.length;h++)if(m=w[h],m[0]===f&&m[1]===b&&m[2]===g)return;d||(d=!0,C(c,a,e));w.push([f,b,g])}};c.removeEventListener=function(a,b,d){for(var e,f=c.m,g=0;g<f.length;g++)if(e=f[g],e[0]===a&&e[1]===b&&e[2]===d){f.splice(g,1);break}};c.dispatchEvent=function(a){for(var b=c.m,d=0;d<b.length;d++){var e=b[d];e[0]!==a.type||e[2]||("object"===typeof e[1]&&e[1].handleEvent?h.dispatchEventCallback(e[1].handleEvent,
+e[1],[a]):h.dispatchEventCallback(e[1],c,[a]))}};for(var f=0;f<e.length;++f)(function(f){Object.defineProperty(c,f,{enumerable:!0,get:function(){return c.j[f]},set:function(b){d||(d=!0,C(c,a,e));c.j[f]=b}})})(e[f]);c.toString=function(){return"[XMLHttpRequestUpload]"}}function y(){}function t(){if(!t.K){t.K=!0;var a;if("defineProperty"in Object){var c={F:41};try{Object.defineProperty(c,"Z",{get:function(){return this.F},set:function(a){this.F=a}}),c.Z=42,a=42===c.F}catch(d){a=!1}}else a=!1;t.J=a}return t.J}
+function A(a){try{var c=a.b,d=c.responseXML;if(x){if(x&&d&&!d.documentElement&&c.getResponseHeader("Content-Type").match(/[^\/]+\/[^\+]+\+xml/)){var e=new window.ActiveXObject("Microsoft.XMLDOM");e.loadXML(c.responseText)}if(e)if(x&&e.parseError&&0!==e.parseError.errorCode||e.documentElement&&"parsererror"==e.documentElement.tagName){if(f.mx)try{f.mxp(e.parseError.reason)}catch(g){}}else d=e}a.responseXML=d}catch(g){}c="responseText response status statusText responseBody responseStream".split(" ");
+for(d=0;d<c.length;++d){e=c[d];try{e in a.b&&(a[e]=a.b[e])}catch(g){}}}function C(a,c,d){function e(d){function b(b,c){try{f.ec(a.v),a.A++,d in{onerror:0,onload:1,onprogress:2}&&A(a),"object"===typeof c&&c.handleEvent?h.handleEventCallback(c.handleEvent,c,b):h.handleEventCallback(c,a,b)}finally{a.A--,f.lc(a.v)}}try{c[d]=function(){var c=[];if(a.m)for(var e=d.substring(2),g=0;g<a.m.length;g++)a.m[g][0]===e&&c.push(a.m[g][1]);e={onerror:function(){f.mxf(a.b.status,a.b.statusText)},onabort:f.mxc,ontimeout:f.mxt};
+if(f.mx&&d in e)e[d]();a.j&&"undefined"!==typeof a.j[d]?a.j[d]&&b(arguments,a.j[d]):!t()&&a[d]&&b(arguments,a[d]);for(e=0;e<c.length;e++)b(arguments,c[e])}}catch(v){}}for(var g=0;g<d.length;g++)try{d[g]in c&&e(d[g])}catch(w){}}function F(a){var c=a.v;try{f.ec(c,a.readyState),a.A++,E(a,{type:"readystatechange",bubbles:!1,cancelable:!1,timeStamp:f.nw()})}finally{a.A--,f.lc(c),4==a.readyState&&c&&(f.lx(c,a.url,!0,void 0,"x"),a.v=null)}}function E(a,c){var d={type:c.type,target:a,currentTarget:a,eventPhase:2,
+bubbles:c.bubbles,cancelable:c.cancelable,timeStamp:c.timeStamp,stopPropagation:y,preventDefault:y,initEvent:y};"readystatechange"==d.type&&(!f.gBI().ie||10<f.gBI().ie||11>f.gBI().ie&&(!a.B||1!==a.readyState))&&(a.j&&"undefined"!==typeof a.j.onreadystatechange?a.j.onreadystatechange&&(a.B=!0,h.onreadystatechangeCallback(a.j.onreadystatechange,a,[d])):!t()&&a.onreadystatechange&&(a.B=!0,h.onreadystatechangeCallback(a.onreadystatechange,a,[d])));for(var e=0;e<a.m.length;e++){var g=a.m[e];g[0]!=d.type||
+g[2]||("object"===typeof g[1]&&g[1].handleEvent?h.dispatchXHRCallback(g[1].handleEvent,g[1],[d]):h.dispatchXHRCallback(g[1],a,[d]))}}function r(a,c){try{var d=f.gPO(a),e=f.gPO(a.b);e||(e=n.prototype);return!d||!e||"__dtProto"in d[c]?null:d[c]}catch(g){return null}}function G(a){a.UNSENT=0;a.OPENED=1;a.HEADERS_RECEIVED=2;a.LOADING=3;a.DONE=4}var f=window.dT_,n=window.XMLHttpRequest,x,z="onabort onerror onload onloadend onloadstart onprogress ontimeout".split(" "),h={handleEventCallback:function(a,
+c,d){return a.apply(c,d)},dispatchEventCallback:function(a,c,d){return a.apply(c,d)},callOpenCallback:function(a,c,d){return a.apply(c,d)},onopenCallback:function(a,c,d){return a.apply(c,d)},onsendCallback:function(a,c,d){return a.apply(c,d)},sendCallback:function(a,c,d){return a.apply(c,d)},getResponseHeadersCallback:function(a,c,d){return a.apply(c,d)},getResponseHeaderCallback:function(a,c,d){return a.apply(c,d)},setRequestHeaderCallback:function(a,c,d){return a.apply(c,d)},overrideMimeTypeCallback:function(a,
+c,d){return a.apply(c,d)},RELCallback:function(a,c,d){return a.apply(c,d)},AELCallback:function(a,c,d){return a.apply(c,d)},dispatchCallback:function(a,c,d){return a.apply(c,d)},onreadystatechangeCallback:function(a,c,d){return a.apply(c,d)},dispatchXHRCallback:function(a,c,d){return a.apply(c,d)},XMLHttpRequestCallback:function(a,c,d){return a.apply(c,d)}},B=[];if(f&&f.smbi&&f.smbi("x")){x=f.gBI().ie&&11>f.gBI().ie;if(window.XMLHttpRequest&&(window.XMLHttpRequest=q,n.prototype)){Object.create?q.prototype=
+Object.create(n.prototype):q.prototype.__proto__=f.gPO(n.prototype);q.prototype.C=!1;q.prototype.j={};G(q);G(q.prototype);var B=[],k=typeof n.prototype.send,l;for(l in n.prototype)if(!window.EventTarget||"addEventListener"!=l&&"removeEventListener"!=l&&"dispatchEvent"!=l)try{window.XMLHttpRequest.prototype[l]=k===typeof n.prototype[l]?function(a,c){function d(){return h.XMLHttpRequestCallback(c,this instanceof q?this.b:this,arguments)}d.__dtProto=!0;return d}(l,n.prototype[l]):n.prototype[l]}catch(a){B.push(l),
+t()?"upload"===l?function(){Object.defineProperty(window.XMLHttpRequest.prototype,"upload",{enumerable:!0,configurable:!0,get:function(){if(!this.C)return n.prototype.upload;this.j.upload||(this.j.upload=new D(this.b.upload));return this.j.upload}})}(l):function(a){Object.defineProperty(window.XMLHttpRequest.prototype,a,{enumerable:!0,configurable:!0,get:function(){return this.C?this.j[a]:n.prototype[a]},set:function(c){this.C?this.j[a]=c:n.prototype[a]=c}})}(l):window.XMLHttpRequest.prototype[l]=
+void 0}try{if(k=null,window.EventTarget&&(k=EventTarget.prototype),k&&k.addEventListener||!window.XMLHttpRequestEventTarget||(k=f.gPO(XMLHttpRequestEventTarget.prototype)),k&&k.addEventListener||(k=XMLHttpRequest.prototype),k&&k.addEventListener){var I=k.addEventListener;k.addEventListener=function(a,c,d){if(this instanceof q)a:{for(var e,f=0;f<this.m.length;f++)if(e=this.m[f],e[0]==a&&e[1]==c&&e[2]==d)break a;this.m.push([a,c,d])}else return h.AELCallback(I,this,arguments)};var J=k.removeEventListener;
+k.removeEventListener=function(a,c,d){if(this instanceof q)a:{for(var e=null,f=0;f<this.m.length;f++)if(e=this.m[f],e[0]==a&&e[1]==c&&e[2]==d)break a;e&&this.m.splice(f,1)}else return h.RELCallback(J,this,arguments)};var K=k.dispatchEvent;k.dispatchEvent=function(a){if(this instanceof q)E(this,a);else return h.dispatchCallback(K,this,arguments)}}}catch(a){}}f.ael(window,"unload",function(){window.XMLHttpRequest=n;x=n=null})}})();</script><link rel="preconnect" href="https://dt-cdn.net">
+
+  
+
+  
+
+<title>Synthetic monitoring | Dynatrace</title>
+
+
+<meta name="keywords" content="synthetic monitoring, synthetic testing, sla monitoring">
+
+
+<meta name="description" content="Learn how Dynatrace synthetic monitoring lets you simulate synthetic transactions &amp; testing scenarios for valuable insights on your applications and SLA monitoring.">
+
+
+<meta name="robots" content="index, follow">
+
+
+<link rel="canonical" href="https://www.dynatrace.com/capabilities/synthetic-monitoring/">
+
+
+  <link rel="apple-touch-icon" sizes="57x57" href="https://dt-cdn.net/assets/images/brand/apple-touch-icon-57x57-68b92abd04.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://dt-cdn.net/assets/images/brand/apple-touch-icon-60x60-954d672c14.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://dt-cdn.net/assets/images/brand/apple-touch-icon-72x72-31dd4b2bf2.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://dt-cdn.net/assets/images/brand/apple-touch-icon-76x76-2c19214104.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://dt-cdn.net/assets/images/brand/apple-touch-icon-114x114-1393688024.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://dt-cdn.net/assets/images/brand/apple-touch-icon-120x120-536723ff1e.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://dt-cdn.net/assets/images/brand/apple-touch-icon-144x144-456909be8c.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://dt-cdn.net/assets/images/brand/apple-touch-icon-152x152-bc254b50c7.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://dt-cdn.net/assets/images/brand/apple-touch-icon-180x180-a98bdd469b.png">
+<link rel="icon" href="https://dt-cdn.net/assets/images/brand/favicon-63e287af7c.ico">
+<meta name="apple-mobile-web-app-title" content="Dynatrace">
+<meta name="application-name" content="Dynatrace">
+<meta name="msapplication-TileColor" content="#454646">
+<meta name="msapplication-TileImage" content="https://dt-cdn.net/assets/images/brand/mstile-144x144-0a0e1e3650.png">
+<meta name="theme-color" content="#ffffff">
+
+  
+
+<link rel="alternate" href="https://www.dynatrace.com/capabilities/synthetic-monitoring/" hreflang="en"><link rel="alternate" href="https://www.dynatrace.de/kompetenzen/synthetic-monitoring/" hreflang="de"><link rel="alternate" href="https://www.dynatrace.es/capacidades/synthetic-monitoring/" hreflang="es"><link rel="alternate" href="https://www.dynatrace.fr/fonctionnalites/monitoring-synthetique/" hreflang="fr"><link rel="alternate" href="https://www.dynatrace.it/funzionalita/monitoraggio-sintetico/" hreflang="it"><link rel="alternate" href="https://www.dynatrace.com/zh/capabilities/synthetic-monitoring/" hreflang="zh"><link rel="alternate" href="https://www.dynatrace.com/capabilities/synthetic-monitoring/" hreflang="x-default">
+
+  <link rel="stylesheet" href="https://dt-cdn.net/assets/main-cd0160de01.css">
+
+  <script>
+function addStyles(s) {
+  var a = document.createElement('style');
+  a.innerHTML = s;
+  var sc = document.getElementsByTagName("script")[0];
+  sc.parentNode.insertBefore(a, sc);
+}
+try {
+  var s = window.localStorage.getItem('fcache');
+  if(s !== null) { addStyles(s); }
+} catch(e) {}
+</script>
+<noscript>
+  <link rel="stylesheet" href="https://dt-cdn.net/assets/fonts-f005f183d0.css">
+</noscript>
+
+  <script type="text/javascript">
+  window.ruxitreference = {
+    basweb: "https://account.dynatrace.com"
+  };
+</script>
+
+  
+<meta property="og:type" content="article">
+
+
+<meta property="og:title" content="Synthetic monitoring">
+
+
+<meta property="og:description" content="Learn how Dynatrace synthetic monitoring lets you simulate synthetic transactions &amp; testing scenarios for valuable insights on your applications and SLA monitoring.">
+
+
+<meta property="og:url" content="https://www.dynatrace.com/capabilities/synthetic-monitoring/">
+
+<meta property="og:site_name" content="Dynatrace">
+<meta property="og:image" content="https://dt-cdn.net/assets/images/social/dynatrace-social-preview-a5d204df7d.jpg">
+<meta property="article:publisher" content="https://www.facebook.com/Dynatrace/">
+<meta property="fb:app_id" content="1221150274658460">
+
+  
+<meta property="twitter:card" content="summary">
+
+
+<meta property="twitter:description" content="Learn how Dynatrace synthetic monitoring lets you simulate synthetic transactions &amp; testing scenarios for valuable insights on your applications and SLA monitoring.">
+
+
+<meta property="twitter:title" content="Synthetic monitoring">
+
+<meta property="twitter:site" content="@Dynatrace">
+<meta property="twitter:image" content="https://dt-cdn.net/assets/images/social/dynatrace-social-preview-a5d204df7d.jpg">
+<meta property="twitter:creator" content="@Dynatrace">
+
+  <meta property="modified_date" content="2017-07-28T15:03:40+00:00">
+</head>
+
+
+  <body class="theme--blue">
+    <div class="nav ">
+  
+  
+  
+  
+  <a class="nav__brand" href="/">
+    <img class="nav__logo" src="https://dt-cdn.net/assets/images/brand/dynatrace-logo-33a874730e.svg" alt="Digital &amp; Application performance management" width="146" height="26">
+  </a>
+  <div class="nav__buttongroup">
+    
+    
+    
+
+
+
+<form class="search" autocomplete="off" id="search" action="/search" method="GET">
+  <input id="search-input" class="inputfield inputfield--search nav__search search__input js-search" type="search" name="q" placeholder="Enter search term" value="">
+</form>
+<a href="/search/" class="nav__search__icon" aria-label="Search"></a>
+
+    
+    <a class="nav__btn nav__btn--cta" href="/trial/?vehicle_name=https://www.dynatrace.com/capabilities/synthetic-monitoring/">Free trial</a>
+    
+    
+    <button id="menu-toggle" class="nav__btn nav__btn--menutoggle">Menu</button>
+    
+
+
+  </div>
+
+  <nav class="nav__bar js-nav-toggle">
+    
+    <ul class="nav__list nav__list--primary">
+      
+      <li class="nav__item expandable expandable--nav  is-current">
+        <a class="nav__link nav__link--mobile expandable__trigger" href="/solutions/">Solution &amp; pricing</a>
+        <a class="nav__link nav__link--desktop" href="/solutions/">Solution &amp; pricing</a>
+        
+        <ul class="nav__list nav__list--secondary expandable__content">
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/solutions/">Overview</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/solutions/use-cases/">Use cases</a>
+          </li>
+          
+          <li class="nav__item is-current">
+            <a class="nav__link" href="/capabilities/">Capabilities</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/technologies/">Technologies</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/services/">Services</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/pricing/">Pricing</a>
+          </li>
+          
+        </ul>
+        
+      </li>
+      
+      <li class="nav__item expandable expandable--nav  ">
+        <a class="nav__link nav__link--mobile expandable__trigger" href="/platform/">Why Dynatrace</a>
+        <a class="nav__link nav__link--desktop" href="/platform/">Why Dynatrace</a>
+        
+        <ul class="nav__list nav__list--secondary expandable__content">
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/platform/">Overview</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/company/customers/">Customer stories</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/company/analyst-reports/">Industry leadership</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/platform/artificial-intelligence/">Artificial intelligence</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/capabilities/full-stack-monitoring/">Full stack</a>
+          </li>
+          
+        </ul>
+        
+      </li>
+      
+      <li class="nav__item expandable expandable--nav  ">
+        <a class="nav__link nav__link--mobile expandable__trigger" href="/company/">Company</a>
+        <a class="nav__link nav__link--desktop" href="/company/">Company</a>
+        
+        <ul class="nav__list nav__list--secondary expandable__content">
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/company/">Overview</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/company/careers/">Careers</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/community/partners/">Partners</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/company/events/">Events</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/company/webinars/">Webinars</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/company/leadership/">Leadership</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/company/locations/">Locations</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="https://info.dynatrace.com/contact_sales_ww_registration.html">Contact</a>
+          </li>
+          
+        </ul>
+        
+      </li>
+      
+      <li class="nav__item expandable expandable--nav  ">
+        <a class="nav__link nav__link--mobile expandable__trigger" href="/news/">News &amp; resources</a>
+        <a class="nav__link nav__link--desktop" href="/news/">News &amp; resources</a>
+        
+        <ul class="nav__list nav__list--secondary expandable__content">
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/news/">Overview</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/blog/">Blog</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/company/newsroom/">Newsroom</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/community/pureperformance/">Podcasts</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/blog/category/product-news/">Product news</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="https://resources.dynatrace.com/">Assets</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/topics/">APM glossary</a>
+          </li>
+          
+        </ul>
+        
+      </li>
+      
+      <li class="nav__item expandable expandable--nav  ">
+        <a class="nav__link nav__link--mobile expandable__trigger" href="/support/">Support</a>
+        <a class="nav__link nav__link--desktop" href="/support/">Support</a>
+        
+        <ul class="nav__list nav__list--secondary expandable__content">
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/support/">Overview</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/support/doc/">Documentation</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="https://answers.dynatrace.com">Forums</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="https://university.dynatrace.com">University</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/support/kb/">Knowledge base</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/support/downloads/">Downloads</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="/support/contact-support/">Contact</a>
+          </li>
+          
+          <li class="nav__item ">
+            <a class="nav__link" href="https://eservices.dynatrace.com/eservices/start.jsf">Account</a>
+          </li>
+          
+        </ul>
+        
+      </li>
+      
+      <li class="nav__item nav__item--right ">
+        <a class="nav__link nav__link--mobile " href="https://signin.dynatrace.com/">Dynatrace SaaS login</a>
+        <a class="nav__link nav__link--desktop" href="https://signin.dynatrace.com/">Dynatrace SaaS login</a>
+        
+      </li>
+      
+    </ul>
+    
+  </nav>
+</div>
+
+
+
+
+
+
+
+
+<div class="breadgrumpy">
+  <ul class="breadgrumpy__list">
+    
+    <li class="breadgrumpy__item breadgrumpy__item--current">
+      
+      <span class="breadgrumpy__text breadgrumpy__text--current">Synthetic monitoring</span>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+    <div class="section section--masthead">
+<h1 id="synthetic-monitoring">Synthetic monitoring</h1>
+
+<p>Dynatrace synthetic monitoring provides all the information you need to understand your service levels, system availability and the availability of key business transactions.</p>
+
+<p class="cta--row">
+<a href="/trial/?vehicle_name=https://www.dynatrace.com/capabilities/synthetic-monitoring/" class="btn btn--navigation">Try for free</a>
+<a href="https://info.dynatrace.com/contact_sales_ww_registration.html" class="btn btn--secondary">Contact us</a>
+</p>
+
+</div>
+
+<div class="section section--even section--2cols">
+<div class="column">
+<h2 id="simulate-business-critical-customer-journeys">Simulate business-critical customer journeys</h2>
+<p>Using our unique web-based recorder, easily click through and record the business-critical transactions most important to your business and customers.</p>
+
+<ul>
+  <li>Monitor critical workflows without scripting, using a simple web-based recorder.</li>
+  <li>Play back scripted transactions, including all the screen, keyboard, and mouse interactions that your real users perform.</li>
+  <li>Capture business transactions and run them from real browsers.</li>
+</ul>
+
+</div>
+<div class="column">
+<div class="slider has-thumbnails"><div class="slider__slides js-no-autoplay">
+<span class="zoomable" data-thumb="https://dt-cdn.net/assets/images/content/ruxit/screenshots/rum/worldmap-200-e769c685b7.png"><img src="https://dt-cdn.net/assets/images/content/ruxit/screenshots/rum/worldmap-1507c81d83.png" data-action="zoom" data-original="https://dt-cdn.net/assets/images/content/ruxit/screenshots/rum/worldmap-1507c81d83.png" alt="Protect customer experience proactively with simulated visits to your applications." srcset="https://dt-cdn.net/assets/images/content/ruxit/screenshots/rum/worldmap-200-e769c685b7.png 200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/rum/worldmap-400-fbcbf8e89d.png 400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/rum/worldmap-600-a8cb24f38e.png 600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/rum/worldmap-800-e954e5f559.png 800w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/rum/worldmap-1000-4fd780f7fd.png 1000w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/rum/worldmap-1200-ca03571660.png 1200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/rum/worldmap-1400-33a44e76df.png 1400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/rum/worldmap-1600-51c1201ea6.png 1600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/rum/worldmap-1507c81d83.png 1600w" sizes="(min-width: 992px) 50vw, 100vw" width="1600px"></span>
+
+<span class="zoomable" data-thumb="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/analysis-1-200-7de933b5aa.png"><img src="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/analysis-1-6ed078573a.png" data-action="zoom" data-original="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/analysis-1-6ed078573a.png" alt="Dynatrace analyzes web checks automatically and provides key findings." srcset="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/analysis-1-200-7de933b5aa.png 200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/analysis-1-400-3ae433cf98.png 400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/analysis-1-600-f0efb5a4f2.png 600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/analysis-1-800-267671e2f7.png 800w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/analysis-1-1000-3e2e2a034f.png 1000w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/analysis-1-1200-9e07d9fbb6.png 1200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/analysis-1-1400-f339f6b69a.png 1400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/analysis-1-1600-37905b9b2e.png 1600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/analysis-1-6ed078573a.png 1600w" sizes="(min-width: 992px) 50vw, 100vw" width="1600px"></span>
+<span class="zoomable" data-thumb="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/clickpath-recording-200-2e362f9168.png"><img src="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/clickpath-recording-6c1a19e23c.png" data-action="zoom" data-original="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/clickpath-recording-6c1a19e23c.png" alt="Simply record your clickpaths for business transactions, including login forms." srcset="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/clickpath-recording-200-2e362f9168.png 200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/clickpath-recording-400-f23ca813a1.png 400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/clickpath-recording-600-596f838100.png 600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/clickpath-recording-800-09fd6cbd40.png 800w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/clickpath-recording-1000-7071920ce0.png 1000w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/clickpath-recording-1200-b59125fb3c.png 1200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/clickpath-recording-1400-319a1502e9.png 1400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/clickpath-recording-1600-6c1a19e23c.png 1600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/clickpath-recording-6c1a19e23c.png 1600w" sizes="(min-width: 992px) 50vw, 100vw" width="1600px"></span>
+<span class="zoomable" data-thumb="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/waterfall-200-7e0cc1b5f8.png"><img src="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/waterfall-8cf89e0554.png" data-action="zoom" data-original="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/waterfall-8cf89e0554.png" alt="Dynatrace measures response times and breaks down results into JavaScript execution time, network time, and server time." srcset="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/waterfall-200-7e0cc1b5f8.png 200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/waterfall-400-7bde610fcf.png 400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/waterfall-600-c48df5ac99.png 600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/waterfall-800-61ce26bd08.png 800w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/waterfall-1000-b57933a734.png 1000w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/waterfall-1200-7e32a39d3f.png 1200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/waterfall-1400-35019d5342.png 1400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/waterfall-1600-8cf89e0554.png 1600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/waterfall-8cf89e0554.png 1600w" sizes="(min-width: 992px) 50vw, 100vw" width="1600px"></span>
+</div><p class="slider__captions caption"></p><div class="slider__thumbnails"></div></div>
+</div>
+</div>
+
+<div class="section section--odd section--2cols">
+<div class="column">
+<h2 id="stay-on-top-with-competitive-benchmarking">Stay on top with competitive benchmarking</h2>
+<p>Benchmark your site&#x2019;s performance directly against your competition to know exactly where you stand.</p>
+
+<ul>
+  <li>Optimize your performance with techniques used by industry leaders to achieve superior results.</li>
+  <li>Benchmark your site&#x2019;s performance against the competition&#x2019;s key pages and transactions in real time.</li>
+  <li>Compare application performance from the end-user perspective using last mile and mobile benchmarks.</li>
+</ul>
+
+</div>
+<div class="column">
+<p><span class="zoomable deviceframe deviceframe--desktop--b" data-thumb="https://dt-cdn.net/assets/images/content/synthetic/screenshots/performance-hosts-comparison-benchmark-200-d2c8bacdd1.png" data-caption-md="Benchmark your site&#x2019;s performance directly against your competition to know exactly where you stand."><img src="https://dt-cdn.net/assets/images/content/synthetic/screenshots/performance-hosts-comparison-benchmark-796f955a7f.png" data-action="zoom" data-original="https://dt-cdn.net/assets/images/content/synthetic/screenshots/performance-hosts-comparison-benchmark-796f955a7f.png" alt="Benchmark your site&#x2019;s performance directly against your competition to know exactly where you stand." srcset="https://dt-cdn.net/assets/images/content/synthetic/screenshots/performance-hosts-comparison-benchmark-200-d2c8bacdd1.png 200w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/performance-hosts-comparison-benchmark-400-d7a207f8d2.png 400w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/performance-hosts-comparison-benchmark-600-94455dade2.png 600w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/performance-hosts-comparison-benchmark-800-79ac477931.png 800w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/performance-hosts-comparison-benchmark-1000-f778d3191b.png 1000w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/performance-hosts-comparison-benchmark-1200-d96779b1ec.png 1200w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/performance-hosts-comparison-benchmark-1400-c7dda15a68.png 1400w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/performance-hosts-comparison-benchmark-1600-796f955a7f.png 1600w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/performance-hosts-comparison-benchmark-796f955a7f.png 1591w" sizes="(min-width: 992px) 50vw, 100vw" width="1591px"></span></p>
+
+</div>
+</div>
+
+<div class="section section--even section--2cols">
+<div class="column">
+<h2 id="sla-monitoringmonitor-your-application-247">SLA monitoring&#x2014;Monitor your application 24/7</h2>
+
+<p>Ensure that your web application is available and performs well from anywhere in the world to meet your SLAs.</p>
+
+<ul>
+  <li>Ensure that your key web, mobile, cloud, and streaming pages and transactions perform properly from all customer locations, all the time.</li>
+  <li>Dynatrace uses all major desktop and mobile browsers to comprehensively simulate customer journeys from thousands of locations around the world.</li>
+</ul>
+
+</div>
+
+<div class="column">
+<div class="slider has-thumbnails"><div class="slider__slides js-no-autoplay">
+<span class="zoomable" data-thumb="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-location-performance-200-544e2b5238.png"><img src="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-location-performance-4d5e8793f4.png" data-action="zoom" data-original="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-location-performance-4d5e8793f4.png" alt="Understand your availability and performance from a global perspective." srcset="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-location-performance-200-544e2b5238.png 200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-location-performance-400-b355420bc2.png 400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-location-performance-600-b4949e12e2.png 600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-location-performance-800-0e44e19dda.png 800w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-location-performance-1000-95784acab4.png 1000w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-location-performance-1200-6cf59cfad8.png 1200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-location-performance-1400-b3c05536bc.png 1400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-location-performance-1600-12090244c4.png 1600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-location-performance-4d5e8793f4.png 1920w" sizes="(min-width: 992px) 50vw, 100vw" width="1920px"></span>
+<span class="zoomable" data-thumb="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-performance-200-3a83757b97.png"><img src="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-performance-a563f724c4.png" data-action="zoom" data-original="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-performance-a563f724c4.png" alt="Ensure great performance from all user locations, all the time." srcset="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-performance-200-3a83757b97.png 200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-performance-400-2afc0d3714.png 400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-performance-600-a43dedb66d.png 600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-performance-800-a02bc1b5fb.png 800w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-performance-1000-624d03964a.png 1000w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-performance-1200-765f13ac6e.png 1200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-performance-1400-91f95e18f8.png 1400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-performance-1600-00447016b4.png 1600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/details-performance-a563f724c4.png 1600w" sizes="(min-width: 992px) 50vw, 100vw" width="1600px"></span>
+<span class="zoomable" data-thumb="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/availability-report-200-d2aa63502a.png"><img src="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/availability-report-70d038ac45.png" data-action="zoom" data-original="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/availability-report-70d038ac45.png" alt="Get meaningful SLA monitoring reports out of the box." srcset="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/availability-report-200-d2aa63502a.png 200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/availability-report-400-09e46ee19f.png 400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/availability-report-600-10317948de.png 600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/availability-report-800-cffe18de0b.png 800w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/availability-report-1000-42de1d4399.png 1000w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/availability-report-1200-5d98ed2e0e.png 1200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/availability-report-1400-10d3fd735c.png 1400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/availability-report-1600-7ba068410a.png 1600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/availability-report-70d038ac45.png 1600w" sizes="(min-width: 992px) 50vw, 100vw" width="1600px"></span>
+</div><p class="slider__captions caption"></p><div class="slider__thumbnails"></div></div>
+</div>
+</div>
+
+<div class="section section--odd">
+<h2 id="infrastructure-and-application-related-problems-resolved-fast">Infrastructure and application related problems resolved fast</h2>
+
+<div class="tile tile--half tile--customer ">
+<p><span class="zoomable" data-thumb="https://dt-cdn.net/assets/images/content/synthetic/screenshots/third-party-analytics-200-576be0a329.png"><img src="https://dt-cdn.net/assets/images/content/synthetic/screenshots/third-party-analytics-d80c1525fb.png" data-action="zoom" data-original="https://dt-cdn.net/assets/images/content/synthetic/screenshots/third-party-analytics-d80c1525fb.png" alt="Manage CDN and third party performance by drilling down into performance issues." srcset="https://dt-cdn.net/assets/images/content/synthetic/screenshots/third-party-analytics-200-576be0a329.png 200w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/third-party-analytics-400-cfa8969cd5.png 400w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/third-party-analytics-600-3d37652924.png 600w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/third-party-analytics-800-d85e62c9f5.png 800w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/third-party-analytics-1000-efa5fd1f2b.png 1000w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/third-party-analytics-1200-fbd1a56f9a.png 1200w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/third-party-analytics-1400-866b616c05.png 1400w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/third-party-analytics-1600-d80c1525fb.png 1600w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/third-party-analytics-d80c1525fb.png 1591w" sizes="(min-width: 767px) 50vw, (min-width: 992px) 33vw, 100vw" width="1591px"></span></p>
+
+<h3 id="manage-cdn-and-3rd-party-performance">Manage CDN and 3rd party performance</h3>
+
+<ul>
+  <li>Ensure SLA compliance between IT, business stakeholders, and third parties.</li>
+  <li>Gather response time and availability by third-party object or host.</li>
+  <li>Quantify the benefits that different CDNs provide in your key geographies.</li>
+</ul>
+
+</div>
+
+<div class="tile tile--half tile--customer ">
+<p><span class="zoomable" data-thumb="https://dt-cdn.net/assets/images/content/synthetic/screenshots/problem-analyzer-200-6caab04f60.png"><img src="https://dt-cdn.net/assets/images/content/synthetic/screenshots/problem-analyzer-f322d496e5.png" data-action="zoom" data-original="https://dt-cdn.net/assets/images/content/synthetic/screenshots/problem-analyzer-f322d496e5.png" alt="Reduce hours of manual troubleshooting down to seconds with our breakthrough analytics engine." srcset="https://dt-cdn.net/assets/images/content/synthetic/screenshots/problem-analyzer-200-6caab04f60.png 200w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/problem-analyzer-400-211f629c95.png 400w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/problem-analyzer-600-ba13cc1f3b.png 600w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/problem-analyzer-800-eca4bdd902.png 800w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/problem-analyzer-1000-85b6da0047.png 1000w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/problem-analyzer-1200-3e26299014.png 1200w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/problem-analyzer-1400-7b7d905850.png 1400w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/problem-analyzer-1600-f322d496e5.png 1600w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/problem-analyzer-f322d496e5.png 1591w" sizes="(min-width: 767px) 50vw, (min-width: 992px) 33vw, 100vw" width="1591px"></span></p>
+
+<h3 id="proactive-problem-analysis">Proactive problem analysis</h3>
+
+<ul>
+  <li>Reduce your hours of manual troubleshooting down to seconds by <a href="/capabilities/root-cause-analysis/">analyzing hundreds of test executions, thousands of objects, millions of dependencies, and billions of events in seconds</a>.</li>
+  <li>Rank problems by importance&#x2014;problems that impact service quality appear at the top of the list.</li>
+  <li>Integrate with Slack, VictorOps, OpsGenie, PagerDuty, ServiceNow, and more. Dynatrace is ChatOps and ITSM friendly!</li>
+</ul>
+
+</div>
+</div>
+
+<div class="section section--even section--2cols">
+<div class="column">
+<h2 id="light-the-way">Light the way</h2>
+
+<p>You need built-in expertise to lead the way&#x2014;and we&#x2019;ve got it. The Digital Experience Insights service is designed to drive an active performance optimization strategy and culture with Synthetic monitoring technology, even if you don&#x2019;t have a lot of time or resources in-house. Start today and unleash your maximum potential.</p>
+
+<p><a href="/capabilities/digital-experience-insights/">Learn more about Dynatrace Digital Experience Insights!</a></p>
+
+</div>
+<div class="column">
+<p><span class="zoomable deviceframe deviceframe--desktop--b" data-thumb="https://dt-cdn.net/assets/images/content/screenshots/digital-experience/insights-sample3-200-cfe5ed5671.png" data-caption-md="This chart shows the distribution of time across key performance metrics, contrasting front end and back end. It highlights the overall stability of each page experience."><img src="https://dt-cdn.net/assets/images/content/screenshots/digital-experience/insights-sample3-2ffe75aaae.png" data-action="zoom" data-original="https://dt-cdn.net/assets/images/content/screenshots/digital-experience/insights-sample3-2ffe75aaae.png" alt="This chart shows the distribution of time across key performance metrics, contrasting front end and back end. It highlights the overall stability of each page experience." srcset="https://dt-cdn.net/assets/images/content/screenshots/digital-experience/insights-sample3-200-cfe5ed5671.png 200w, https://dt-cdn.net/assets/images/content/screenshots/digital-experience/insights-sample3-400-553ade4cf2.png 400w, https://dt-cdn.net/assets/images/content/screenshots/digital-experience/insights-sample3-600-aac5c9b6ca.png 600w, https://dt-cdn.net/assets/images/content/screenshots/digital-experience/insights-sample3-800-2257470705.png 800w, https://dt-cdn.net/assets/images/content/screenshots/digital-experience/insights-sample3-1000-fa29539c71.png 1000w, https://dt-cdn.net/assets/images/content/screenshots/digital-experience/insights-sample3-1200-1f47613a94.png 1200w, https://dt-cdn.net/assets/images/content/screenshots/digital-experience/insights-sample3-1400-4b15f24092.png 1400w, https://dt-cdn.net/assets/images/content/screenshots/digital-experience/insights-sample3-1600-fcb5411fb4.png 1600w, https://dt-cdn.net/assets/images/content/screenshots/digital-experience/insights-sample3-2ffe75aaae.png 4000w" sizes="(min-width: 992px) 50vw, 100vw" width="4000px"></span></p>
+
+</div>
+
+</div>
+
+<div class="section section--odd">
+<div class="customerquote">
+  
+  <figure class="customerquote__media">
+    
+      <img class="customerquote__logo" src="https://dt-cdn.net/assets/images/customers/channeliq-82ac4f5f43.png" alt="channelIQ logo" srcset="https://dt-cdn.net/assets/images/customers/channeliq-200-5d2a62cb78.png 200w, https://dt-cdn.net/assets/images/customers/channeliq-82ac4f5f43.png 260w" sizes="100vw" width="260px">
+    
+  </figure>
+  
+  <div class="customerquote__quote">
+    <h2 class="customerquote__header">channelIQ</h2>
+    <blockquote class="customerquote__text">&#x201C;We want to have the right tool. Instead of using separate tools for web monitoring, application performance management and server monitoring we now have a single all-in-one solution, Dynatrace.&#x201D;</blockquote>
+    
+    
+    
+  </div>
+</div>
+
+</div>
+
+<div class="section section--even section--3cols" style="background-color: #f2f2f2;">
+<h2 class="u-text-left" id="dynatrace-synthetic-competitive-differentiation-all-the-pieces-you-need">Dynatrace synthetic competitive differentiation: all the pieces you need</h2>
+<div class="column">
+<ul>
+  <li>Portfolio breadth</li>
+  <li>Purpose built network</li>
+</ul>
+</div>
+<div class="column">
+<ul>
+  <li>Critical mass of data</li>
+  <li>Scripting ease, fidelity</li>
+</ul>
+</div>
+<div class="column">
+<ul>
+  <li>Expertise</li>
+  <li>Simulate tests and volume traffic</li>
+</ul>
+</div>
+</div>
+
+<div class="section section--odd">
+<h2 id="get-to-know-dynatrace-synthetic-monitoring">Get to know Dynatrace synthetic monitoring</h2>
+
+<div class="tile tile--half tile--customer ">
+<p><span class="zoomable" data-thumb="https://dt-cdn.net/assets/images/content/synthetic/screenshots/internet-health-map-200-2942587624.png"><img src="https://dt-cdn.net/assets/images/content/synthetic/screenshots/internet-health-map-ab55848d3b.png" data-action="zoom" data-original="https://dt-cdn.net/assets/images/content/synthetic/screenshots/internet-health-map-ab55848d3b.png" alt="Understand your availability and performance from a global perspective." srcset="https://dt-cdn.net/assets/images/content/synthetic/screenshots/internet-health-map-200-2942587624.png 200w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/internet-health-map-400-ebdf281d7f.png 400w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/internet-health-map-600-920c41d3c8.png 600w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/internet-health-map-800-af12c901b6.png 800w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/internet-health-map-1000-8581d61209.png 1000w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/internet-health-map-1200-69d3f458ee.png 1200w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/internet-health-map-1400-a28c9b37d9.png 1400w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/internet-health-map-1600-ab55848d3b.png 1600w, https://dt-cdn.net/assets/images/content/synthetic/screenshots/internet-health-map-ab55848d3b.png 1456w" sizes="(min-width: 767px) 50vw, (min-width: 992px) 33vw, 100vw" width="1456px"></span></p>
+
+<h3 id="leverage-the-largest-dedicated-global-testing-and-monitoring-network">Leverage the largest dedicated global testing and monitoring network</h3>
+
+<ul>
+  <li>150+ enterprise-grade, dedicated Internet service provider connections give you the most consistent and reliable measure of end-user experience.</li>
+  <li>Mobile perspective with synthetic checks from our 70+ 3G and 4G carrier network locations.</li>
+  <li>Measurements from a private software or private hardware agent installed in your environment.</li>
+</ul>
+
+</div>
+
+<div class="tile tile--half tile--customer ">
+<p><span class="zoomable" data-thumb="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/view-performance-analysis-200-535092e61d.png"><img src="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/view-performance-analysis-6151d2adaa.png" data-action="zoom" data-original="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/view-performance-analysis-6151d2adaa.png" alt="Detect availability and performance problems before your customers notice them!" srcset="https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/view-performance-analysis-200-535092e61d.png 200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/view-performance-analysis-400-807c6312b3.png 400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/view-performance-analysis-600-76995c4fa9.png 600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/view-performance-analysis-800-d217181fdb.png 800w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/view-performance-analysis-1000-d7087ce871.png 1000w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/view-performance-analysis-1200-7e9b1e0a01.png 1200w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/view-performance-analysis-1400-524c8b620a.png 1400w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/view-performance-analysis-1600-e2001ba42d.png 1600w, https://dt-cdn.net/assets/images/content/ruxit/screenshots/webchecks/view-performance-analysis-6151d2adaa.png 1920w" sizes="(min-width: 767px) 50vw, (min-width: 992px) 33vw, 100vw" width="1920px"></span></p>
+
+<h3 id="full-integration-with-dynatrace-unified-monitoring">Full integration with Dynatrace unified monitoring</h3>
+
+<ul>
+  <li>Only <a href="/solutions/application-monitoring/">end-to-end visibility of every digital interaction</a> can provide actionable customer and user insights for all stakeholders.</li>
+  <li>Drill into web monitoring anomalies, all the way down to back-end details, and vice-versa.</li>
+  <li>Leverage our <a href="/services/">managed analytics services</a> to get deep insights into web and mobile performance.</li>
+</ul>
+
+</div>
+</div>
+
+<div class="section section--bg" style="background-color:true;">
+<h2 id="sign-up-for-dynatrace-synthetic-monitoring-now">Sign up for Dynatrace synthetic monitoring now!</h2>
+
+<p class="cta--row">
+<a href="/trial/?vehicle_name=https://www.dynatrace.com/capabilities/synthetic-monitoring/" class="btn btn--navigation">Try for free</a>
+<a href="https://info.dynatrace.com/contact_sales_ww_registration.html" class="btn btn--secondary">Contact us</a>
+</p>
+
+</div>
+
+
+    
+
+    
+
+
+
+<div class="chat js--chatbubble js--chatlink" id="chatbubble">
+  <img style="width:2rem; height:2rem;" class="chat__icon" src="https://dt-cdn.net/assets/images/gfx/chat-5cc9355048.svg" alt="chat icon">
+  <button class="chat__bubble" type="button" name="chat">Let&apos;s chat!</button>
+</div>
+
+
+    <footer class="footer">
+  
+  <div class="footer__columns">
+    <div class="footer__column__group">
+      <div class="footer__column footer__column__separated">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>View this page in</h4>
+<ul class="footer__linklist">
+                        <li class="footer__linkitem">      <a class="footer__link" lang="fr" href="https://www.dynatrace.fr/fonctionnalites/monitoring-synthetique/">Fran&#xE7;ais</a>    </li>        <li class="footer__linkitem">      <a class="footer__link" lang="de" href="https://www.dynatrace.de/kompetenzen/synthetic-monitoring/">Deutsch</a>    </li>        <li class="footer__linkitem">      <a class="footer__link" lang="es" href="https://www.dynatrace.es/capacidades/synthetic-monitoring/">Espa&#xF1;ol</a>    </li>        <li class="footer__linkitem">      <a class="footer__link" lang="it" href="https://www.dynatrace.it/funzionalita/monitoraggio-sintetico/">Italiano</a>    </li>        <li class="footer__linkitem">      <a class="footer__link" lang="zh" href="https://www.dynatrace.com/zh/capabilities/synthetic-monitoring/">&#x4E2D;&#x6587;</a>    </li>    
+</ul>
+
+
+
+<h4>View site in</h4>
+<ul class="footer__linklist">
+            <li class="footer__linkitem">      <a class="footer__link" lang="ko" href="https://www.dynatrace.com/ko/index.html">&#xD55C;&#xAD6D;&#xC5B4;</a>    </li>        <li class="footer__linkitem">      <a class="footer__link" lang="ja" href="https://www.dynatrace.com/ja/index.html">&#x65E5;&#x672C;&#x8A9E;</a>    </li>    
+</ul>
+
+
+      </div>
+    </div>
+
+    <div class="footer__column__group footer__column__linklists">
+        <div class="footer__column">
+          <h4>Solutions</h4>
+          <ul class="footer__linklist">
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/solutions/customer-experience/">Digital customer experience</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/solutions/application-monitoring/">Application monitoring</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/solutions/cloud-native-application-monitoring/">Cloud native monitoring</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/solutions/devops/">DevOps tools</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/solutions/cloud-migration/">Cloud migration</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/solutions/digital-transformation/">Digital transformation</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/solutions/">View all solutions</a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4>Capabilities</h4>
+          <ul class="footer__linklist">
+            
+            
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/application-performance-management/">Application performance management (APM)</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/cloud-monitoring/">Cloud monitoring</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/continuous-delivery-analytics/">Continuous delivery analytics</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/database-monitoring/">Database monitoring</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/deep-dive-application-monitoring/">Deep-dive application monitoring</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/log-analytics/">Log analytics</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/technologies/mainframe-monitoring/">Mainframe monitoring</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/microservices-and-container-monitoring/">Microservices &amp; container</a>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="footer__column has-reduced-space">
+          <h4 class="footer__header footer__header--spacer">Capabilities</h4>
+          <ul class="footer__linklist has-reduced-space">
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/mobile-app-monitoring/">Mobile app monitoring</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/network-monitoring/">Network monitoring</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/real-user-monitoring/">Real user monitoring</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/server-monitoring/">Server monitoring</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/digital-experience-insights/">Digital experience insights</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/synthetic-monitoring/">Synthetic monitoring</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/user-monitoring-for-corporate-applications/">Real user monitoring for corporate applications</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/virtualization-monitoring/">Virtualization monitoring</a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4>Why Dynatrace?</h4>
+          <ul class="footer__linklist">
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/business-insights/">Business insights</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/platform/">Our platform</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/user-behavior-analytics/">User behavior analytics</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/business-transaction-monitoring/">Business transaction monitoring</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/full-stack-monitoring/">Full stack monitoring</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/application-topology-discovery/">Topology discovery &amp; mapping</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/capabilities/root-cause-analysis/">Root cause analysis</a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4>About us</h4>
+          <ul class="footer__linklist">
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/company/customers/">Customers</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/company/careers/">Careers</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/company/">Company</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/company/newsroom/">Newsroom</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/company/press-kit/">Press kit</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/company/locations/">Locations</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/company/leadership/">Leadership</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/company/stores/">Stores</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="https://info.dynatrace.com/contact_sales_ww_registration.html">Contact us</a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4>Expertise</h4>
+          <ul class="footer__linklist">
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/support/">Support</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/support/community/">Community</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/services/self-service/">Dynatrace University</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/perform/">Perform conference 2018</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/en/products/plugins.html">Technology partners</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/community/partners/partner-listing/">Implementation partners</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/benchmarks/">Performance benchmarks</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/topics/">APM glossary</a>
+            </li>
+            
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/blog/">Blog</a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4>Additional</h4>
+          <ul class="footer__linklist">
+            <li class="footer__linkitem">
+              <a class="footer__link" href="https://www.dynatrace.com/security/">Security</a>
+            </li>
+            <li class="footer__linkitem">
+              <a class="footer__link" href="https://www.dynatrace.com/company/privacy/">Privacy</a>
+            </li>
+            <li class="footer__linkitem">
+              <a class="footer__link" href="https://www.dynatrace.com/company/legal/">Legal</a>
+            </li>
+            <li class="footer__linkitem">
+              <a class="footer__link" href="/sitemap/">Sitemap</a>
+            </li>
+          </ul>
+        </div>
+
+        
+      </div>
+  </div>
+
+  <div class="footer__socials theme--dark">
+    
+    <a href="https://www.facebook.com/Dynatrace/" class="footer__sociallink">
+      <svg viewbox="0 1 23 23">
+        <title>Facebook</title>
+        <path d="M9.6,20.1v-7.3H7.2V9.6h2.4V8.4c0-2.2,1.6-4.1,3.6-4.1h2.6v3.2h-2.6c-0.3,0-0.6,0.3-0.6,0.9v1.3 h3.2v3.2h-3.2v7.3H9.6z"/>
+      </svg>
+    </a>
+    <a href="https://twitter.com/Dynatrace" class="footer__sociallink">
+      <svg viewbox="0 0 23 23">
+        <title>Twitter</title>
+        <path id="twitter" d="M14.4,5.6c1.3,0,2,0.4,2.6,1c0.6,0,1.3-0.4,1.7-0.6c0.1-0.1,0.3-0.2,0.4-0.2 C19,6.5,18.6,7,18.1,7.4c-0.1,0.1-0.2,0.2-0.4,0.3v0c0.7,0,1.3-0.3,1.9-0.5v0c-0.3,0.5-0.7,1-1.1,1.3c-0.2,0.1-0.3,0.3-0.5,0.4 c0,0.8,0,1.5-0.2,2.1c-0.8,3.8-3,6.3-6.5,7.4C10,18.8,8,19,6.6,18.6c-0.7-0.2-1.4-0.4-2-0.6c-0.3-0.1-0.6-0.3-0.9-0.5 c-0.1-0.1-0.2-0.1-0.3-0.2c0.3,0,0.7,0.1,1.1,0c0.3-0.1,0.7,0,1-0.1c0.8-0.2,1.4-0.4,2-0.7c0.3-0.2,0.7-0.4,0.9-0.6 c-0.4,0-0.7-0.1-1-0.2c-1.1-0.4-1.7-1.1-2.1-2.1c0.3,0,1.3,0.1,1.5-0.1c-0.4,0-0.8-0.3-1.1-0.4C4.7,12.6,4,11.7,4,10.2 c0.1,0.1,0.2,0.1,0.3,0.2c0.2,0.1,0.4,0.1,0.7,0.2c0.1,0,0.3,0.1,0.5,0c0,0,0,0,0,0c-0.2-0.2-0.4-0.3-0.6-0.5 c-0.6-0.7-1.1-1.8-0.7-3c0.1-0.3,0.2-0.6,0.4-0.9c0,0,0,0,0,0c0.1,0.1,0.2,0.2,0.3,0.3c0.3,0.4,0.6,0.7,1,1c1.2,1,2.3,1.5,4.1,2 c0.4,0.1,1,0.2,1.5,0.2c-0.2-0.4-0.1-1.1,0-1.6c0.3-1.1,0.9-1.8,1.9-2.2c0.2-0.1,0.5-0.2,0.7-0.2C14.2,5.6,14.3,5.6,14.4,5.6z"/>
+      </svg>
+    </a>
+    <a href="https://www.linkedin.com/company/dynatrace" class="footer__sociallink">
+      <svg viewbox="0 2 23 23">
+        <title>Linkedin</title>
+        <path d="M7.5,19.1V9.8H4.4v9.4H7.5z M6,8.5c1.1,0,1.8-0.7,1.8-1.6 C7.7,6,7.1,5.3,6,5.3C4.9,5.3,4.2,6,4.2,6.9C4.2,7.8,4.9,8.5,6,8.5L6,8.5L6,8.5z"/>
+        <path d="M9.3,19.1h3.1v-5.2c0-0.3,0-0.6,0.1-0.8 c0.2-0.6,0.7-1.1,1.6-1.1c1.1,0,1.6,0.9,1.6,2.1v5h3.1v-5.4c0-2.9-1.5-4.2-3.6-4.2c-1.7,0-2.4,0.9-2.8,1.6h0V9.8H9.3 C9.3,10.7,9.3,19.1,9.3,19.1L9.3,19.1z"/>
+      </svg>
+    </a>
+    <a href="https://plus.google.com/+dynatrace" class="footer__sociallink">
+      <svg viewbox="0 0 23 23">
+        <title>Google+</title>
+        <path d="M2.9,11.2c0-2.8,2.6-5.3,5.5-5.2C9.7,6,11,6.6,12,7.4c-0.4,0.5-0.9,1-1.4,1.4C9.4,8,7.6,7.7,6.4,8.7
+		c-1.8,1.2-1.9,4.1-0.1,5.5c1.7,1.5,4.8,0.8,5.3-1.6c-1,0-2.1,0-3.1,0c0-0.6,0-1.2,0-1.9c1.7,0,3.5,0,5.2,0c0.1,1.5-0.1,3-1,4.2
+		c-1.4,1.9-4.1,2.5-6.2,1.7C4.2,15.8,2.7,13.5,2.9,11.2z"/> <path d="M17,9.1c0.5,0,1,0,1.6,0c0,0.5,0,1,0,1.6c0.5,0,1,0,1.6,0c0,0.5,0,1,0,1.6c-0.5,0-1,0-1.6,0c0,0.5,0,1,0,1.6
+		c-0.5,0-1,0-1.6,0c0-0.5,0-1,0-1.6c-0.5,0-1,0-1.6,0c0-0.5,0-1,0-1.6c0.5,0,1,0,1.6,0C17,10.2,17,9.7,17,9.1z"/>
+      </svg>
+    </a>
+    <a href="https://www.youtube.com/c/dynatrace" class="footer__sociallink">
+      <svg viewbox="0 0 23 23">
+        <title>Youtube</title>
+        <path d="M16 11.503c0-.29-.117-.5-.352-.633l-6-3.752c-.242-.156-.495-.164-.76-.023-.26.14-.388.36-.388.656v7.504c0 .297.13.516.387.657.125.063.246.095.363.095.156 0 .29-.04.398-.118l6-3.75c.235-.134.352-.345.352-.634zm6 0c0 .75-.004 1.336-.012 1.758-.008.423-.04.957-.1 1.602-.058.644-.146 1.22-.263 1.73-.125.57-.395 1.05-.81 1.44-.412.39-.897.62-1.452.68-1.734.196-4.356.294-7.863.294-3.507 0-6.13-.098-7.863-.293-.555-.062-1.04-.29-1.46-.68-.418-.39-.688-.87-.814-1.442-.11-.507-.193-1.084-.252-1.728-.057-.645-.09-1.18-.098-1.6C1.004 12.838 1 12.25 1 11.5s.004-1.336.012-1.758c.008-.422.04-.955.1-1.6.058-.645.146-1.22.263-1.73.125-.57.395-1.05.81-1.44.412-.39.897-.62 1.452-.68C5.37 4.096 7.993 4 11.5 4c3.507 0 6.13.097 7.863.293.555.062 1.04.29 1.46.68.418.39.688.87.814 1.442.11.508.193 1.084.252 1.73.057.644.09 1.177.098 1.6.008.42.012 1.008.012 1.758z"/>
+      </svg>
+    </a>
+    <a href="https://www.glassdoor.com/Overview/Working-at-Dynatrace-EI_IE309684.11,20.htm" class="footer__sociallink">
+      <svg viewbox="0 0 509.3 506.3">
+        <title>Glassdoor</title>
+        <path d="M321.5,98.4c24.4,0,44.2,19.8,44.2,44.2v0H189V324c0,0.9-0.7,1.6-1.6,1.6h-41
+        	c-0.9,0-1.6-0.7-1.6-1.6V142.6v0c0-24.4,19.8-44.2,44.2-44.2h0H321.5z M321.5,363.4H144.9v0c0,24.4,19.8,44.2,44.2,44.2h132.5h0
+        	c24.4,0,44.2-19.8,44.2-44.2v0V182c0-0.9-0.7-1.6-1.6-1.6h-41c-0.9,0-1.6,0.7-1.6,1.6V363.4z"/>
+      </svg>
+    </a>
+    
+  </div>
+  
+  <div class="footer__legal">
+    
+    
+    
+    
+    <p class="">&#xA9; 2017 Dynatrace LLC. All Rights Reserved</p>
+  </div>
+</footer>
+<script>
+window.sessionStorage.setItem('playbutton','https://dt-cdn.net/assets/images/gfx/playbutton-2015f56fe7.svg');
+</script>
+
+<script src="https://dt-cdn.net/assets/main-051c4ec759.js"></script>
+<script type="text/javascript">
+  (function(ls, x) {
+    try {
+      if(ls.getItem('fcache') === null) {
+        var h = new x();
+        h.open('GET', 'https://dt-cdn.net/assets/fonts-f005f183d0.css');
+        h.send();
+        h.onload = function() {addStyles(this.responseText); try {ls.setItem('fcache', this.responseText);} catch (e) {} }
+      }
+    } catch(e) {}
+  })(window.localStorage, XMLHttpRequest);
+</script>
+
+
+
+    <!-- bottom scripts //-->
+    
+
+    <!-- Segment.io -->
+<script type="text/javascript">
+  window.analytics=window.analytics||[],window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(t){if(!document.getElementById("analytics-js")){var a=document.createElement("script");a.type="text/javascript",a.id="analytics-js",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.io/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)}},window.analytics.SNIPPET_VERSION="2.0.9",
+  window.analytics.load("u3yr6w1i5t");
+  window.analytics.page();
+</script>
+<!-- end segment.io -->
+
+
+
+    
+
+
+<script type="application/ld+json"> {  "@context": "http://schema.org",  "@type": "BreadcrumbList",  "itemListElement":  [        {     "@type": "ListItem",     "position": 1,     "item":     {      "@id": "/solutions/",      "name": "Solution & pricing",      "image": "https://assets.dynatrace.com/content/dam/dynatrace/misc/dynatrace_web.png"      }    },        {     "@type": "ListItem",     "position": 2,     "item":     {      "@id": "/capabilities/",      "name": "Capabilities",      "image": "https://assets.dynatrace.com/content/dam/dynatrace/misc/dynatrace_web.png"      }    },        {     "@type": "ListItem",     "position": 3,     "item":     {      "@id": "/capabilities/synthetic-monitoring/",      "name": "Synthetic monitoring",      "image": "https://assets.dynatrace.com/content/dam/dynatrace/misc/dynatrace_web.png"      }    }      ] }</script>
+
+
+    
+<script>  dataLayer = [ {                  'Topic': 'DX',                  'Category': 'Website',          }  ];  </script>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PMMFLL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PMMFLL');</script>
+<!-- End Google Tag Manager -->
+
+  </body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>Page not found | ACTi Corporation</title>
+    <link href="/corpweb/ErrorPages/CSS/error.css" rel="stylesheet" type="text/css"/>
+    <link href="/corpweb/ErrorPages/CSS/fonts.css" rel="stylesheet" type="text/css"/>
+
+    <script src="/corpweb/Public/Scripts/jquery-1.8.3.js" type="text/javascript"></script>
+
+    <link href="/corpweb/Public/Scripts/Autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css" />
+
+    <script src="/corpweb/Public/Scripts/Autocomplete/jquery.autocomplete.js" type="text/javascript"></script>
+
+    <script src="/corpweb/Public/Scripts/json2.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Search textbox's autocomplete
+            if (window.location.href.toLowerCase().indexOf('mountingselector') < 0) {
+                $('#GSearchBox').autocomplete('/corpweb/QuickSearch/Ajax/Autocomplete_TemplateTitle.ashx', {
+                    noCache: true,
+                    mustMatch: false,
+                    minChars: 2
+                });
+            }
+            $('#btnGSearch').click(function(e) {
+                searchKeyWords($('#GSearchBox').val());
+            });
+            $('#GSearchBox').on("keypress", function(e) {
+                if (e.keyCode == 13) {
+                    $("#btnGSearch").trigger("click");
+                    return false; // prevent the button click from happening
+                } else {
+                    return true;
+                }
+            });
+        });
+
+
+        //在 Search TextBox 填值 點擊觸發的Method 函式
+        function searchKeyWords(input) {
+            location.href = 'http://www.acti.com/search/' + (input ? input : " ");
+        };
+    </script>
+
+</head>
+<body>
+    <div class="CONTENT" style="padding-top: 100px;">
+        <img src="/corpweb/ErrorPages/images/ico_face.png" width="200" height="200" alt="" />
+        <div class="TEXT">
+            <h4>
+                Sorry!</h4>
+            <h5 style="padding-top: 10px;">
+                The page you tried cannot be found.</h5>
+            <p class="f16black">
+                You may have typed the address incorrectly or you may have used an outdated link.
+                If you found a broken link from another site or from our site, please <a href="http://www.acti.com/Corporate/Feedback"
+                    target="_self">Report it to us</a>.
+            </p>
+            <p class="f16black">
+                Try searching for the content you want here:</p>
+            <table border="0" cellpadding="0" cellspacing="0" style="margin-top: 5px; float: left;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="/corpweb/ErrorPages/Images/search_01.png" width="8" height="35" alt="">
+                        </td>
+                        <td height="35" valign="middle" background="/corpweb/ErrorPages/Images/search_02.png">
+                            <input type="text" style="width: 150px;" id="GSearchBox" placeholder="Quick Search">
+                        </td>
+                        <td>
+                            <img src="/corpweb/ErrorPages/Images/search_03.png" width="36" height="35" alt="" border="0" style="cursor: pointer;"
+                                id="btnGSearch">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul>
+                <li><a class="BTN" href="http://www.acti.com" target="_self">Return to Homepage</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

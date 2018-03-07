@@ -1,0 +1,1600 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
+ 
+
+
+
+
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="google-site-verification" content="ZnzWlrrAO7ARAp-Bv5ICG4xRq7AHkqFg-6NxlP4mHBc" />
+	<meta name="msvalidate.01" content="290473B9F017F2D8FEEC4F81EECFA076" />
+	
+		
+		
+		    <title>NewsWeb</title>
+		
+	
+    <link rel="stylesheet" type="text/css" href="/newsweb/css/newsweb.css" />
+
+    <script type="text/javascript" src="/newsweb/script/newsweb.js"> </script>
+
+    <link rel="stylesheet" href="/newsweb/script/jquery-ui-1.10.4.custom/css/obnt-theme/jquery-ui-1.10.4.custom.css" />
+    <script src="/newsweb/script/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"></script>
+    <script src="/newsweb/script/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
+
+</head>
+
+<body>
+<div class="content">  
+    <div class="header">
+        
+
+
+
+ 
+
+
+
+<div class="quickDiv">
+	<div class="fixedcenter">
+		<div class="jumpMenu">
+            
+                
+                
+					Du er på:&nbsp;newsweb.no
+                
+            
+			<select onchange="window.location=this.value">
+				<option selected disabled>Vis andre Oslo Børs websider</option>
+				<option value="http://www.osloborsvps.no/">Oslo B&oslash;rs VPS</option>
+				<option value="http://www.oslobors.no">Oslo B&oslash;rs</option>
+                <option value="http://www.vps.no">Oslo VPS</option> 
+			</select>
+		</div>
+		<div class="columnRight">
+			<ul class="quickMenu">
+				<li>
+				
+				
+                 
+                    <a href="http://www.oslobors.no/Oslo-Boers/Om-oss/Kontakt-oss">
+               
+                  
+				Kontakt</a></li>
+				
+				
+				
+					<li><a href="?siteLanguage=en"><img src="/newsweb/images/englishflag.gif" alt="English" ></a>&nbsp;<a href="?siteLanguage=en">English</a></li>
+				
+				
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="bannerDiv">
+	<div class="fixedcenter">
+        <a id="logo" href="search.do"><img src="/newsweb/images/logo_oslobors.png" alt="newsweb.no" ></a>
+            
+                
+                
+                    <a id="logoNewsWeb" href="search.do"><img src="/newsweb/images/NewsWeb_banner_neg.png" alt="newsweb.no"></a>
+                
+            
+		<div class="columnRight">
+		    
+			<div id="smallSearchArea">
+				
+
+
+
+<form name="newssearch" id="simplesearch" method="get" action="/newsweb/search.do" accept-charset="UTF-8">
+    <table style="padding-left:auto;margin-left:-20px;">
+    <tr>
+        <td><nobr>
+         
+		    
+		    <input type="text" name="headerSearch" id="searchCriteria.messageHeader" class="messageHeaderSearch"
+		            value="" onfocus="setFocusSimpleSearch()" 
+		            onblur="setBlurSimpleSearch('no')" > 
+		    
+		    <input type="submit" name="searchtype.simple" id="searchtype.simple" class="submitButton" value="Søk">
+		 
+		</nobr></td>
+	</tr>
+	</table>
+</form> 
+<script type="text/javascript">setBlurSimpleSearch('no');</script>
+			</div>
+			
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+
+        
+ 
+
+
+<script type="text/javascript">
+if (document.all && !window.opera)
+    document.onkeydown = KeyCheckIE;
+else
+	document.onkeydown = KeyCheckFF;
+function KeyCheckIE() {
+	if(event.keyCode == 116) {
+		document.newssearch.searchSubmitType.value='searchtype.full';
+        document.newssearch.submit();
+    }
+}
+function KeyCheckFF(e) {
+    if(e.keyCode == 116) {
+        if (!window.opera) {
+        	document.newssearch.searchSubmitType.value='searchtype.full';
+        	document.newssearch.submit();
+        } else {
+            document.getElementById('searchtype.full').click();
+        }
+    }
+}
+</script>
+<form name="newssearch" id="fullsearch" method="get" action="/newsweb/search.do" accept-charset="UTF-8">
+    <input type="hidden" value="" id="headerSearch" name="headerSearch"/>
+    <input type="hidden" value="" id="searchCriteria.categoryIds" name="searchCriteria.categoryIds"/>
+    <input type="hidden" value="1" id="selectedPagenumber" name="selectedPagenumber" />
+    <input type="hidden" value="searchtype" id="searchSubmitType" name="searchSubmitType" />
+    <div class="keywordDiv">
+    <div class="fixedcenter">
+        <input type="hidden" name="searchtype" value="full" />
+        <table class="topsearch" border="0" cellspacing="1" cellpadding="1" width="100%"> 
+        <tr>
+            <td valign="top" align="left" class="topsearch">
+                
+
+
+
+ 
+
+<input type="hidden" id="dateerror" value="Til-dato kan ikke være før Fra-dato."/>
+        <table cellspacing="3" cellpadding="1" border="0">
+          <tr>
+            <td class="topsearch" align="left">Utsteder</td>
+            <td valign="top" align="left">
+            
+                <select onchange="javascript:submitSearchFormByIssuer('searchtype.full',this.options[this.selectedIndex].value);" size="1" name="searchCriteria.issuerId" id="searchCriteria.issuerId" class="selection" style="width: 205px;">
+                <option value="-1">-- velg --</option>   
+                
+                    <option value="1272" >A/S Eidefoss</option>
+                
+                    <option value="8105" >Aasen Sparebank</option>
+                
+                    <option value="11262" >AB Stena Metall Finans</option>
+                
+                    <option value="2017" >ABG Sundal Collier Holding ASA</option>
+                
+                    <option value="12513" >Advanzia Bank S.A.</option>
+                
+                    <option value="11273" >Aega ASA</option>
+                
+                    <option value="6051" >AF Gruppen ASA</option>
+                
+                    <option value="12300" >African Petroleum Corporation Ltd</option>
+                
+                    <option value="6772" >Agder Energi AS</option>
+                
+                    <option value="7765" >Akastor ASA</option>
+                
+                    <option value="6047" >Aker ASA</option>
+                
+                    <option value="8376" >Aker BP ASA</option>
+                
+                    <option value="12353" >Aker Solutions ASA</option>
+                
+                    <option value="6093" >Akershus Energi AS</option>
+                
+                    <option value="1181" >Akershus fylkeskommune</option>
+                
+                    <option value="8194" >AKVA group ASA</option>
+                
+                    <option value="12529" >Ålesund kommune</option>
+                
+                    <option value="7954" >American Shipping Company ASA</option>
+                
+                    <option value="12560" >American Tanker, Inc.</option>
+                
+                    <option value="8055" >Andebu Sparebank</option>
+                
+                    <option value="7072" >Apptix ASA</option>
+                
+                    <option value="8465" >Aqua Bio Technology ASA</option>
+                
+                    <option value="12348" >Aqualis ASA</option>
+                
+                    <option value="11216" >Archer Limited</option>
+                
+                    <option value="12523" >Arcus ASA</option>
+                
+                    <option value="6052" >Arendal Kommune</option>
+                
+                    <option value="8036" >Arendal og Omegns Sparekasse</option>
+                
+                    <option value="1007" >Arendals Fossekompani ASA</option>
+                
+                    <option value="12229" >AS Tallink Grupp</option>
+                
+                    <option value="11324" >Asetek A/S</option>
+                
+                    <option value="1957" >Asker Kommune</option>
+                
+                    <option value="12525" >Askim kommune</option>
+                
+                    <option value="8069" >Askim og Spydeberg Sparebank</option>
+                
+                    <option value="6145" >Askøy Kommune</option>
+                
+                    <option value="2305" >Atea ASA</option>
+                
+                    <option value="12463" >Atlantic Lumpus AS</option>
+                
+                    <option value="11657" >Atlantic Petroleum P/F</option>
+                
+                    <option value="6131" >Aurskog Sparebank</option>
+                
+                    <option value="12512" >Aurskog-Høland kommune</option>
+                
+                    <option value="8163" >Austevoll Seafood ASA</option>
+                
+                    <option value="12290" >Avance Gas Holding Ltd</option>
+                
+                    <option value="8573" >Avinor AS</option>
+                
+                    <option value="11178" >Avocet Mining PLC</option>
+                
+                    <option value="11244" >Awilco Drilling Plc</option>
+                
+                    <option value="11268" >AWILCO LNG ASA</option>
+                
+                    <option value="6084" >Axactor AB (publ)</option>
+                
+                    <option value="12485" >B2Holding ASA</option>
+                
+                    <option value="1670" >Bærum Kommune</option>
+                
+                    <option value="8620" >Bakkafrost P/f</option>
+                
+                    <option value="11260" >Bank Norwegian AS</option>
+                
+                    <option value="12447" >Bank2 ASA</option>
+                
+                    <option value="12263" >BassDrill Alpha Ltd.</option>
+                
+                    <option value="12358" >Beerenberg Holdco II AS</option>
+                
+                    <option value="2221" >Belships ASA</option>
+                
+                    <option value="8495" >Bergen Group ASA</option>
+                
+                    <option value="1517" >Bergen Kommune</option>
+                
+                    <option value="12546" >Bergen-Os Bompengeselskap AS</option>
+                
+                    <option value="12550" >BerGenBio ASA</option>
+                
+                    <option value="8481" >Bien Sparebank ASA</option>
+                
+                    <option value="7963" >Biotec Pharmacon ASA</option>
+                
+                    <option value="12549" >Bjugn kommune</option>
+                
+                    <option value="12493" >Bjugn Sparebank</option>
+                
+                    <option value="6278" >BKK AS</option>
+                
+                    <option value="12461" >Black Sea Property AS</option>
+                
+                    <option value="11197" >Blaker Sparebank</option>
+                
+                    <option value="8529" >Bluewater Holding B.V</option>
+                
+                    <option value="1946" >BN Bank ASA</option>
+                
+                    <option value="11300" >BOA OCV AS</option>
+                
+                    <option value="11337" >Boa Offshore AS</option>
+                
+                    <option value="12201" >BOA SBL AS</option>
+                
+                    <option value="6159" >Bolig- og Næringskreditt AS</option>
+                
+                    <option value="2208" >Bonheur ASA</option>
+                
+                    <option value="2209" >Borgestad ASA</option>
+                
+                    <option value="12565" >Borr Drilling Limited</option>
+                
+                    <option value="11306" >Borregaard ASA</option>
+                
+                    <option value="8307" >Bouvet ASA</option>
+                
+                    <option value="12313" >Brage Finans AS</option>
+                
+                    <option value="8538" >Bud, Fræna og Hustad Sparebank</option>
+                
+                    <option value="12537" >Bulk Industrier AS</option>
+                
+                    <option value="1184" >Buskerud Fylkeskommune</option>
+                
+                    <option value="11182" >Bustadkreditt Sogn og Fjordane AS</option>
+                
+                    <option value="12241" >BW LPG Limited</option>
+                
+                    <option value="8108" >BW Offshore Limited</option>
+                
+                    <option value="6049" >Byggma ASA</option>
+                
+                    <option value="12458" >Citycon Treasury B.V.</option>
+                
+                    <option value="7766" >Color Group AS</option>
+                
+                    <option value="6006" >ContextVision AB</option>
+                
+                    <option value="12305" >Cxense ASA</option>
+                
+                    <option value="6254" >Danske Bank A/S</option>
+                
+                    <option value="6085" >Data Respons ASA</option>
+                
+                    <option value="11299" >Deep Drilling 1 PTE. LTD</option>
+                
+                    <option value="2098" >DEN NORSKE STAT</option>
+                
+                    <option value="11302" >DFDS A/S</option>
+                
+                    <option value="12395" >DigiPlex Fet AS</option>
+                
+                    <option value="12472" >DigiPlex Norway AS</option>
+                
+                    <option value="1772" >DNB ASA</option>
+                
+                    <option value="7834" >DNB Asset Management AS</option>
+                
+                    <option value="1827" >DNB BANK ASA</option>
+                
+                    <option value="11184" >DNB Boligkreditt AS</option>
+                
+                    <option value="12242" >DNB Næringskreditt AS</option>
+                
+                    <option value="1015" >DNO ASA</option>
+                
+                    <option value="6489" >DOF ASA</option>
+                
+                    <option value="7984" >DOF Subsea AS</option>
+                
+                    <option value="1923" >Drammen Kommune</option>
+                
+                    <option value="6748" >Drangedal Sparebank</option>
+                
+                    <option value="12228" >E Forland AS</option>
+                
+                    <option value="6137" >E-CO Energi Holding AS</option>
+                
+                    <option value="11296" >EAM Solar ASA</option>
+                
+                    <option value="12502" >Eide Kommune</option>
+                
+                    <option value="7942" >Eidesvik Offshore ASA</option>
+                
+                    <option value="12547" >Eidsberg kommune</option>
+                
+                    <option value="12307" >Eidsberg Sparebank</option>
+                
+                    <option value="8068" >Eidsiva Energi AS</option>
+                
+                    <option value="1675" >Eiendomskreditt AS</option>
+                
+                    <option value="8001" >Eika Boligkreditt AS</option>
+                
+                    <option value="12473" >Eika Forsikring AS</option>
+                
+                    <option value="11201" >Eika Gruppen AS</option>
+                
+                    <option value="2520" >Ekornes ASA</option>
+                
+                    <option value="1230" >Eksportfinans ASA</option>
+                
+                    <option value="101283667" >Eksportfinans ASA</option>
+                
+                    <option value="8264" >Electromagnetic Geoservices ASA</option>
+                
+                    <option value="8390" >EMAS Offshore Limited</option>
+                
+                    <option value="12366" >Entra ASA</option>
+                
+                    <option value="12533" >Epic Gas Ltd.</option>
+                
+                    <option value="11303" >ETNE SPAREBANK</option>
+                
+                    <option value="11266" >Etrion Corporation</option>
+                
+                    <option value="12441" >Europris ASA</option>
+                
+                    <option value="12559" >EVRY ASA</option>
+                
+                    <option value="12445" >EXMAR Netherlands BV</option>
+                
+                    <option value="6025" >Fana Sparebank</option>
+                
+                    <option value="8627" >Fana Sparebank Boligkreditt AS</option>
+                
+                    <option value="1268" >Felleskjøpet Agri SA</option>
+                
+                    <option value="100000103" >Finanstilsynet</option>
+                
+                    <option value="12542" >Finnmark fylkeskommune</option>
+                
+                    <option value="1673" >Fjell Kommune</option>
+                
+                    <option value="5181" >Fjellinjen AS</option>
+                
+                    <option value="11336" >Fjord Line AS</option>
+                
+                    <option value="12556" >Fjord1 ASA</option>
+                
+                    <option value="12374" >Flekkefjord Sparebank</option>
+                
+                    <option value="8594" >FLEX LNG LTD</option>
+                
+                    <option value="8399" >Fornebu Sparebank</option>
+                
+                    <option value="12524" >Fræna kommune</option>
+                
+                    <option value="6063" >Fred. Olsen Energy ASA</option>
+                
+                    <option value="7625" >Fredrikstad Energi AS</option>
+                
+                    <option value="5150" >Fredrikstad Kommune</option>
+                
+                    <option value="12486" >Frogn kommune</option>
+                
+                    <option value="6117" >Frontline Ltd.</option>
+                
+                    <option value="7997" >Funcom N.V.</option>
+                
+                    <option value="7829" >Gaming Innovation Group Inc</option>
+                
+                    <option value="12558" >Gaming Innovation Group Ltd.</option>
+                
+                    <option value="12342" >GasLog Ltd</option>
+                
+                    <option value="7837" >GC Rieber Shipping ASA</option>
+                
+                    <option value="12318" >Genel Energy Finance plc</option>
+                
+                    <option value="12304" >General Exploration Partners Inc</option>
+                
+                    <option value="12532" >Gentian Diagnostics AS</option>
+                
+                    <option value="12526" >Giske kommune</option>
+                
+                    <option value="8285" >Gjensidige Bank ASA</option>
+                
+                    <option value="11177" >Gjensidige Bank Boligkreditt AS</option>
+                
+                    <option value="11217" >Gjensidige Forsikring ASA</option>
+                
+                    <option value="12496" >Gjensidige Pensjonsforsikring AS</option>
+                
+                    <option value="12500" >Gjerdrum kommune</option>
+                
+                    <option value="6059" >Gjøvik Kommune</option>
+                
+                    <option value="7828" >Glitre Energi AS</option>
+                
+                    <option value="11319" >Golar LNG Partners L.P.</option>
+                
+                    <option value="12393" >Golden Close Maritime Corp. Ltd.</option>
+                
+                    <option value="12387" >Golden Energy Offshore Services AS</option>
+                
+                    <option value="12424" >Golden Ocean Group Limited</option>
+                
+                    <option value="2312" >Goodtech ASA</option>
+                
+                    <option value="12392" >Green Dragon Gas Ltd.</option>
+                
+                    <option value="8362" >Grieg Seafood ASA</option>
+                
+                    <option value="12489" >Gripship AS</option>
+                
+                    <option value="11318" >Grong Sparebank</option>
+                
+                    <option value="8255" >Grue Sparebank</option>
+                
+                    <option value="2269" >Gyldendal ASA</option>
+                
+                    <option value="12564" >Hafslund AS</option>
+                
+                    <option value="12316" >Haltdalen Sparebank</option>
+                
+                    <option value="7918" >Handelsbanken Kapitalforvaltn. AS</option>
+                
+                    <option value="11196" >Harstad Sparebank</option>
+                
+                    <option value="2499" >Haugesund Sparebank</option>
+                
+                    <option value="7928" >Havila Shipping ASA</option>
+                
+                    <option value="12289" >Havyard Group ASA</option>
+                
+                    <option value="11212" >Hegra Sparebank</option>
+                
+                    <option value="8616" >Helgeland Boligkreditt AS</option>
+                
+                    <option value="6053" >Helgeland Sparebank</option>
+                
+                    <option value="5067" >HelgelandsKraft AS</option>
+                
+                    <option value="11335" >Hemne Sparebank</option>
+                
+                    <option value="5203" >Hexagon Composites ASA</option>
+                
+                    <option value="6806" >Hiddn Solutions ASA</option>
+                
+                    <option value="6746" >Hjartdal og Gransherad Sparebank</option>
+                
+                    <option value="8054" >Hjelmeland Sparebank</option>
+                
+                    <option value="11251" >Höegh LNG Holdings Ltd</option>
+                
+                    <option value="11280" >Hofseth BioCare ASA</option>
+                
+                    <option value="6171" >Høland og Setskog Sparebank</option>
+                
+                    <option value="8089" >Hønefoss Sparebank</option>
+                
+                    <option value="1388" >Hordaland Fylkeskommune</option>
+                
+                    <option value="12349" >Hospitality Invest AS</option>
+                
+                    <option value="12440" >Hugo Games A/S</option>
+                
+                    <option value="8360" >Hunter Group ASA</option>
+                
+                    <option value="6002" >I.M. Skaugen SE</option>
+                
+                    <option value="8606" >IDEX ASA</option>
+                
+                    <option value="12218" >IGas Energy Plc</option>
+                
+                    <option value="5059" >Incus Investor ASA</option>
+                
+                    <option value="5202" >Indre Sogn Sparebank</option>
+                
+                    <option value="12460" >Induct AS</option>
+                
+                    <option value="12397" >Infratek Group AS</option>
+                
+                    <option value="12272" >Insr Insurance Group ASA</option>
+                
+                    <option value="8135" >InterOil Exploration and Prod. ASA</option>
+                
+                    <option value="8201" >Intex Resources ASA</option>
+                
+                    <option value="12281" >Iona Energy Company</option>
+                
+                    <option value="6153" >Itera ASA</option>
+                
+                    <option value="11192" >J. Lauritzen A/S</option>
+                
+                    <option value="12360" >Jacktel AS</option>
+                
+                    <option value="12365" >Jacob Holm &amp; Sønner Holding A/S</option>
+                
+                    <option value="6483" >Jæren Sparebank</option>
+                
+                    <option value="8096" >Jernbanepersonalets Sparebank</option>
+                
+                    <option value="2446" >Jinhui Shipping and Transport. Ltd</option>
+                
+                    <option value="6037" >Karmøy Kommune</option>
+                
+                    <option value="12451" >Kid ASA</option>
+                
+                    <option value="11317" >KISTEFOS AS</option>
+                
+                    <option value="6098" >Kitron ASA</option>
+                
+                    <option value="11339" >Klæbu Sparebank</option>
+                
+                    <option value="12197" >Klaveness Ship Holding AS</option>
+                
+                    <option value="11298" >KLP Banken AS</option>
+                
+                    <option value="12361" >KLP Boligkreditt AS</option>
+                
+                    <option value="11207" >KLP Kommunekreditt AS</option>
+                
+                    <option value="12538" >Kolibri Kapital ASA</option>
+                
+                    <option value="1172" >Kommunalbanken AS</option>
+                
+                    <option value="12484" >Komplett Bank ASA</option>
+                
+                    <option value="7941" >Kongsberg Automotive ASA</option>
+                
+                    <option value="2331" >Kongsberg Gruppen ASA</option>
+                
+                    <option value="1854" >Kongsberg Kommune</option>
+                
+                    <option value="7781" >Kredittforeningen for Sparebanker</option>
+                
+                    <option value="11252" >Kværner ASA</option>
+                
+                    <option value="8150" >Kvinesdal Sparebank</option>
+                
+                    <option value="7169" >Landkreditt Bank AS</option>
+                
+                    <option value="11228" >Landkreditt Boligkreditt AS</option>
+                
+                    <option value="12188" >Landkreditt Finans AS</option>
+                
+                    <option value="6148" >Larvik Kommune</option>
+                
+                    <option value="6045" >Larvikbanken Brunlanes Sparebank</option>
+                
+                    <option value="12539" >Leikanger kommune</option>
+                
+                    <option value="12459" >Lenvik Kommune</option>
+                
+                    <option value="7148" >Lerøy Seafood Group ASA</option>
+                
+                    <option value="12511" >Levanger kommune</option>
+                
+                    <option value="6026" >Lillehammer Kommune</option>
+                
+                    <option value="12540" >Lillesand kommune</option>
+                
+                    <option value="11210" >Lillesands Sparebank</option>
+                
+                    <option value="8090" >Lillestrøm Sparebank</option>
+                
+                    <option value="12232" >Link Mobility Group ASA</option>
+                
+                    <option value="8140" >Lom og Skjåk Sparebank</option>
+                
+                    <option value="11254" >Luster Sparebank</option>
+                
+                    <option value="7616" >Lyse AS</option>
+                
+                    <option value="12301" >Magseis ASA</option>
+                
+                    <option value="12505" >Mandal kommune</option>
+                
+                    <option value="5063" >Marine Harvest ASA</option>
+                
+                    <option value="7774" >Medistim ASA</option>
+                
+                    <option value="12516" >Meland kommune</option>
+                
+                    <option value="11231" >Meldal Sparebank</option>
+                
+                    <option value="6147" >Melhus Sparebank</option>
+                
+                    <option value="12536" >ML 33 Holding AS</option>
+                
+                    <option value="12506" >Molde Kommune</option>
+                
+                    <option value="12389" >MøllerGruppen AS</option>
+                
+                    <option value="12543" >Monobank ASA</option>
+                
+                    <option value="8628" >Møre Boligkreditt AS</option>
+                
+                    <option value="12557" >MPC Container Ships AS</option>
+                
+                    <option value="12437" >Multiconsult ASA</option>
+                
+                    <option value="12497" >Namsos kommune</option>
+                
+                    <option value="12233" >Napatech A/S</option>
+                
+                    <option value="8447" >NattoPharma ASA</option>
+                
+                    <option value="8063" >Navamedic ASA</option>
+                
+                    <option value="11331" >Navigator Holdings Ltd</option>
+                
+                    <option value="7795" >NEL ASA</option>
+                
+                    <option value="12457" >Nelja Energia AS</option>
+                
+                    <option value="12309" >NEXT Biometrics Group ASA</option>
+                
+                    <option value="8112" >NextGenTel Holding ASA</option>
+                
+                    <option value="6165" >Nittedal Kommune</option>
+                
+                    <option value="11261" >Njord Gas Infrastructure AS</option>
+                
+                    <option value="12205" >Nord-Salten Kraft AS</option>
+                
+                    <option value="8477" >Nord-Trøndelag Elektrisitetsverk</option>
+                
+                    <option value="1198" >Nord-Trøndelag fylkeskommune</option>
+                
+                    <option value="7149" >Nordea Bank AB (publ)</option>
+                
+                    <option value="1612" >Nordea Eiendomskreditt AS</option>
+                
+                    <option value="100000102" >Nordic ABM</option>
+                
+                    <option value="8123" >Nordic Mining ASA</option>
+                
+                    <option value="12412" >Nordic Nanovector ASA</option>
+                
+                    <option value="5117" >Nordic Semiconductor ASA</option>
+                
+                    <option value="12432" >Noreco Norway AS</option>
+                
+                    <option value="100000101" >Norges Bank</option>
+                
+                    <option value="7798" >NorgesGruppen ASA</option>
+                
+                    <option value="12562" >Norlandia Health &amp; Care Group AS</option>
+                
+                    <option value="1114" >Norsk Hydro ASA</option>
+                
+                    <option value="2498" >Norske Skogindustrier ASA</option>
+                
+                    <option value="12268" >North Atlantic Drilling Ltd.</option>
+                
+                    <option value="8605" >North Energy ASA</option>
+                
+                    <option value="7930" >Nortura SA</option>
+                
+                    <option value="11235" >Norway Royal Salmon ASA</option>
+                
+                    <option value="7628" >Norwegian Air Shuttle ASA</option>
+                
+                    <option value="8416" >Norwegian Energy Company ASA</option>
+                
+                    <option value="12494" >Norwegian Finans Holding ASA</option>
+                
+                    <option value="8191" >Norwegian Property ASA</option>
+                
+                    <option value="12501" >Notodden kommune</option>
+                
+                    <option value="2230" >NRC Group ASA</option>
+                
+                    <option value="2311" >NTS ASA</option>
+                
+                    <option value="6335" >OBOS BBL</option>
+                
+                    <option value="12515" >OBOS Boligkreditt AS</option>
+                
+                    <option value="8629" >OBOS Forretningsbygg AS</option>
+                
+                    <option value="12244" >OBOS-banken AS</option>
+                
+                    <option value="11316" >Ocean Yield ASA</option>
+                
+                    <option value="8229" >Oceanteam ASA</option>
+                
+                    <option value="11211" >Odal Sparebank</option>
+                
+                    <option value="12219" >Odfjell Drilling Ltd</option>
+                
+                    <option value="2366" >Odfjell SE</option>
+                
+                    <option value="11309" >Ofoten Sparebank</option>
+                
+                    <option value="1308" >Olav Thon Eiendomsselskap ASA</option>
+                
+                    <option value="12563" >Olympic Subsea ASA</option>
+                
+                    <option value="11198" >Opdals Sparebank</option>
+                
+                    <option value="7759" >Opera Software ASA</option>
+                
+                    <option value="8035" >Orkdal Sparebank</option>
+                
+                    <option value="1107" >Orkla ASA</option>
+                
+                    <option value="8197" >Ørland Sparebank</option>
+                
+                    <option value="8034" >Ørskog Sparebank</option>
+                
+                    <option value="12508" >Ørsta kommune</option>
+                
+                    <option value="12507" >Os kommune</option>
+                
+                    <option value="100000100" >Oslo Børs</option>
+                
+                    <option value="1205" >Oslo Kommune</option>
+                
+                    <option value="12510" >Osterøy Kommune</option>
+                
+                    <option value="8029" >Østfold Energi AS</option>
+                
+                    <option value="1223" >Østfold Fylkeskommune</option>
+                
+                    <option value="5124" >Østre Toten Kommune</option>
+                
+                    <option value="12446" >OTIGA Group AS</option>
+                
+                    <option value="8624" >Panoro Energy ASA</option>
+                
+                    <option value="8596" >Pareto Bank ASA</option>
+                
+                    <option value="8502" >PCI Biotech Holding ASA</option>
+                
+                    <option value="2342" >Petroleum Geo-Services ASA</option>
+                
+                    <option value="6018" >Petrolia SE</option>
+                
+                    <option value="8462" >Philly Shipyard ASA</option>
+                
+                    <option value="6357" >Photocure ASA</option>
+                
+                    <option value="12438" >Pioneer Property Group ASA</option>
+                
+                    <option value="12509" >Pioneer Public Properties AS</option>
+                
+                    <option value="8582" >Polarcus Limited</option>
+                
+                    <option value="8537" >Polaris Media ASA</option>
+                
+                    <option value="6011" >Porsgrunn Kommune</option>
+                
+                    <option value="8497" >Posten Norge AS</option>
+                
+                    <option value="6010" >Prosafe SE</option>
+                
+                    <option value="8322" >Protector Forsikring ASA</option>
+                
+                    <option value="7065" >Q-Free ASA</option>
+                
+                    <option value="7938" >Questerre Energy Corporation</option>
+                
+                    <option value="1701" >Rælingen Kommune</option>
+                
+                    <option value="12373" >RAK Petroleum plc</option>
+                
+                    <option value="6177" >Rana Kommune</option>
+                
+                    <option value="2319" >Reach Subsea ASA</option>
+                
+                    <option value="8080" >REC Silicon ASA</option>
+                
+                    <option value="12388" >RenoNorden ASA</option>
+                
+                    <option value="8058" >Rindal Sparebank</option>
+                
+                    <option value="5106" >Ringeriks-Kraft AS</option>
+                
+                    <option value="12530" >Rogaland Fylkeskommune</option>
+                
+                    <option value="8353" >RomReal Ltd.</option>
+                
+                    <option value="8057" >RørosBanken</option>
+                
+                    <option value="11233" >S.D. Standard Drilling Plc</option>
+                
+                    <option value="12555" >Saferoad Holding ASA</option>
+                
+                    <option value="11191" >Saga Tankers ASA</option>
+                
+                    <option value="12278" >Salamander Energy PLC</option>
+                
+                    <option value="8288" >SalMar ASA</option>
+                
+                    <option value="12528" >Sande kommune</option>
+                
+                    <option value="12471" >Sandnes kommune</option>
+                
+                    <option value="5024" >Sandnes Sparebank</option>
+                
+                    <option value="11208" >Santander Consumer Bank AS</option>
+                
+                    <option value="12410" >Sarpsborg Kommune</option>
+                
+                    <option value="1387" >SAS AB</option>
+                
+                    <option value="12294" >Scanship Holding ASA</option>
+                
+                    <option value="12354" >Scatec Solar ASA</option>
+                
+                    <option value="2354" >Schibsted ASA</option>
+                
+                    <option value="12443" >SeaBird Exploration Finance Ltd</option>
+                
+                    <option value="8025" >SeaBird Exploration PLC</option>
+                
+                    <option value="7968" >Seadrill Limited</option>
+                
+                    <option value="8046" >Selbu Sparebank</option>
+                
+                    <option value="11291" >Selvaag Bolig ASA</option>
+                
+                    <option value="12466" >Sequa Petroleum N.V.</option>
+                
+                    <option value="11243" >Sevan Drilling Limited</option>
+                
+                    <option value="7820" >Sevan Marine ASA</option>
+                
+                    <option value="11234" >SHB SICAV</option>
+                
+                    <option value="11225" >Ship Finance International Limited</option>
+                
+                    <option value="8392" >Siem Industries Inc.</option>
+                
+                    <option value="7956" >Siem Offshore Inc.</option>
+                
+                    <option value="12462" >Sino Agro Food Inc.</option>
+                
+                    <option value="8418" >Skagerrak Sparebank</option>
+                
+                    <option value="12452" >Skandiabanken ASA</option>
+                
+                    <option value="12450" >Skandiabanken Boligkreditt AS</option>
+                
+                    <option value="5194" >Skien Kommune</option>
+                
+                    <option value="11199" >Skudenes og Aakra Sparebank</option>
+                
+                    <option value="6143" >Skue Sparebank</option>
+                
+                    <option value="1638" >Sogn og Fjordane Energi AS</option>
+                
+                    <option value="12527" >Sogn og Fjordane Fylkeskommune</option>
+                
+                    <option value="11304" >SØGNE OG GREIPSTAD SPAREBANK</option>
+                
+                    <option value="1210" >Sognekraft AS</option>
+                
+                    <option value="12514" >Sokndal kommune</option>
+                
+                    <option value="12518" >Sola kommune</option>
+                
+                    <option value="6339" >Solon Eiendom ASA</option>
+                
+                    <option value="6066" >Solstad Farstad ASA</option>
+                
+                    <option value="2367" >Solvang ASA</option>
+                
+                    <option value="12534" >Songa Bulk ASA</option>
+                
+                    <option value="8022" >Songa Offshore SE</option>
+                
+                    <option value="1703" >Sør-Trøndelag Fylkeskommune</option>
+                
+                    <option value="12544" >Sørum kommune</option>
+                
+                    <option value="8379" >SpareBank 1 Boligkreditt</option>
+                
+                    <option value="2352" >SpareBank 1 BV</option>
+                
+                    <option value="8206" >SpareBank 1 Gudbrandsdal</option>
+                
+                    <option value="8245" >SpareBank 1 Hallingdal Valdres</option>
+                
+                    <option value="8100" >SpareBank 1 Modum</option>
+                
+                    <option value="11265" >SpareBank 1 Næringskreditt AS</option>
+                
+                    <option value="1972" >SpareBank 1 Nord-Norge</option>
+                
+                    <option value="1823" >SpareBank 1 Nordvest</option>
+                
+                    <option value="5195" >SpareBank 1 Østfold Akershus</option>
+                
+                    <option value="5204" >SpareBank 1 Østlandet</option>
+                
+                    <option value="5125" >SpareBank 1 Ringerike Hadeland</option>
+                
+                    <option value="1695" >SpareBank 1 SMN</option>
+                
+                    <option value="6007" >SpareBank 1 Søre Sunnmøre</option>
+                
+                    <option value="1797" >SpareBank 1 SR-Bank ASA</option>
+                
+                    <option value="6749" >Sparebanken Din</option>
+                
+                    <option value="1652" >Sparebanken Møre</option>
+                
+                    <option value="6484" >Sparebanken Narvik</option>
+                
+                    <option value="1636" >Sparebanken Øst</option>
+                
+                    <option value="11194" >Sparebanken Øst Boligkreditt AS</option>
+                
+                    <option value="6065" >Sparebanken Sogn og Fjordane</option>
+                
+                    <option value="1814" >Sparebanken Sør</option>
+                
+                    <option value="11183" >Sparebanken Sør Boligkreditt AS</option>
+                
+                    <option value="8332" >Sparebanken Telemark</option>
+                
+                    <option value="1642" >Sparebanken Vest</option>
+                
+                    <option value="8543" >Sparebanken Vest Boligkreditt AS</option>
+                
+                    <option value="11193" >Spareskillingsbanken</option>
+                
+                    <option value="8507" >Spectrum ASA</option>
+                
+                    <option value="5021" >Sporveien Oslo AS</option>
+                
+                    <option value="12442" >SR-Boligkreditt AS</option>
+                
+                    <option value="8634" >SSB Boligkreditt AS</option>
+                
+                    <option value="12377" >Stadsbygd Sparebank</option>
+                
+                    <option value="11284" >Stadshypotek AB (publ)</option>
+                
+                    <option value="7800" >Statkraft AS</option>
+                
+                    <option value="5009" >Statkraft SF</option>
+                
+                    <option value="5099" >Statnett SF</option>
+                
+                    <option value="1309" >Statoil ASA</option>
+                
+                    <option value="1621" >Stavanger Kommune</option>
+                
+                    <option value="2378" >Steen &amp; Strøm AS</option>
+                
+                    <option value="12553" >Steinkjer kommune</option>
+                
+                    <option value="5097" >Stolt-Nielsen Limited</option>
+                
+                    <option value="2022" >Stord Kommune</option>
+                
+                    <option value="1955" >Storebrand ASA</option>
+                
+                    <option value="1821" >Storebrand Bank ASA</option>
+                
+                    <option value="8509" >Storebrand Boligkreditt AS</option>
+                
+                    <option value="148" >Storebrand Livsforsikring AS</option>
+                
+                    <option value="11189" >Storm Real Estate ASA</option>
+                
+                    <option value="8257" >Strømmen Sparebank</option>
+                
+                    <option value="6793" >StrongPoint ASA</option>
+                
+                    <option value="6030" >Subsea 7 S.A.</option>
+                
+                    <option value="12491" >Sunndal Sparebank</option>
+                
+                    <option value="12409" >Sunnfjord Energi AS</option>
+                
+                    <option value="12269" >Sunnhordland Kraftlag AS</option>
+                
+                    <option value="11200" >Surnadal Sparebank</option>
+                
+                    <option value="5033" >SVENSKA HANDELSBANKEN AB</option>
+                
+                    <option value="7880" >Swedbank AB</option>
+                
+                    <option value="8602" >Swedbank Hypotek AB</option>
+                
+                    <option value="6111" >Tafjord Kraft AS</option>
+                
+                    <option value="12273" >Tanker Investments Ltd</option>
+                
+                    <option value="12499" >Targovax ASA</option>
+                
+                    <option value="12413" >Team Tankers International Ltd.</option>
+                
+                    <option value="7150" >Techstep ASA</option>
+                
+                    <option value="11307" >Teekay LNG Partners L.P.</option>
+                
+                    <option value="11227" >Teekay Offshore Partners L.P.</option>
+                
+                    <option value="12517" >Telemark fylkeskommune</option>
+                
+                    <option value="6233" >Telenor ASA</option>
+                
+                    <option value="6070" >TGS-NOPEC Geophysical Company ASA</option>
+                
+                    <option value="12406" >The North Alliance AS</option>
+                
+                    <option value="8623" >The Scottish Salmon Company PLC</option>
+                
+                    <option value="8458" >Thin Film Electronics ASA</option>
+                
+                    <option value="6774" >Thon Holding AS</option>
+                
+                    <option value="7959" >Tine SA</option>
+                
+                    <option value="6759" >Tinn Sparebank</option>
+                
+                    <option value="11323" >TiZir Limited</option>
+                
+                    <option value="12308" >Tolga-Os Sparebank</option>
+                
+                    <option value="2392" >Tomra Systems ASA</option>
+                
+                    <option value="1662" >Totens Sparebank</option>
+                
+                    <option value="11236" >Totens Sparebank Boligkreditt AS</option>
+                
+                    <option value="12519" >TRD Campus Holding AS</option>
+                
+                    <option value="12495" >Treasure ASA</option>
+                
+                    <option value="8070" >Trøgstad Sparebank</option>
+                
+                    <option value="1526" >Tromsø Kommune</option>
+                
+                    <option value="5010" >TrønderEnergi AS</option>
+                
+                    <option value="1214" >Trondheim Kommune</option>
+                
+                    <option value="11334" >Tryg Forsikring A/S</option>
+                
+                    <option value="2525" >TTS Group ASA</option>
+                
+                    <option value="1626" >Tussa Kraft AS</option>
+                
+                    <option value="12315" >Tysnes Sparebank</option>
+                
+                    <option value="6128" >Ullensaker kommune</option>
+                
+                    <option value="12531" >Unified Messaging Systems ASA</option>
+                
+                    <option value="8151" >Valle Sparebank</option>
+                
+                    <option value="7833" >Vardar AS</option>
+                
+                    <option value="11256" >Vasakronan AB</option>
+                
+                    <option value="1801" >Vegamot AS</option>
+                
+                    <option value="8539" >Vegårshei Sparebank</option>
+                
+                    <option value="2400" >Veidekke ASA</option>
+                
+                    <option value="11202" >Verd Boligkreditt AS</option>
+                
+                    <option value="12521" >Verdal kommune</option>
+                
+                    <option value="12416" >Veritas Petroleum Services B.V.</option>
+                
+                    <option value="1671" >Vest-Agder Fylkeskommune</option>
+                
+                    <option value="12436" >Vistin Pharma ASA</option>
+                
+                    <option value="12449" >Vizrt Group AS</option>
+                
+                    <option value="2403" >Voss Veksel- og Landmandsbank ASA</option>
+                
+                    <option value="12444" >VV Holding AS</option>
+                
+                    <option value="11186" >Wallenius Wilhelmsen Logistics ASA</option>
+                
+                    <option value="8109" >Weifa ASA</option>
+                
+                    <option value="12548" >Wenaas Plaza Hotel AS</option>
+                
+                    <option value="7953" >Wentworth Resources Limited</option>
+                
+                    <option value="12498" >Western Bulk Chartering AS</option>
+                
+                    <option value="2405" >Wilh. Wilhelmsen Holding ASA</option>
+                
+                    <option value="7915" >Wilson ASA</option>
+                
+                    <option value="12464" >WR Entertainment ASA</option>
+                
+                    <option value="12357" >XXL ASA</option>
+                
+                    <option value="12243" >yA Bank AS</option>
+                
+                    <option value="7760" >Yara International ASA</option>
+                
+                    <option value="12310" >Zalaris ASA</option>
+                
+                    <option value="12522" >Ziton A/S</option>
+                 
+                </select>
+            
+            </td>
+          </tr>
+          <tr>
+            <td class="topsearch" align="left">Utst.ID</td>
+            <td align="left">
+                
+               <script>
+                 var issuerTokens = [{ label: "EIDEF", value: "1272"},{ label: "AASB-ME", value: "8105"},{ label: "SMF", value: "11262"},{ label: "ASC", value: "2017"},{ label: "ADBA", value: "12513"},{ label: "AEGA", value: "11273"},{ label: "AFG", value: "6051"},{ label: "APCL", value: "12300"},{ label: "AEN", value: "6772"},{ label: "AKA", value: "7765"},{ label: "AKER", value: "6047"},{ label: "AKERBP", value: "8376"},{ label: "AKSO", value: "12353"},{ label: "NYSK", value: "6093"},{ label: "AKFY", value: "1181"},{ label: "AKVA", value: "8194"},{ label: "AAKO", value: "12529"},{ label: "AMSC", value: "7954"},{ label: "AMTI", value: "12560"},{ label: "ANSB", value: "8055"},{ label: "APP", value: "7072"},{ label: "ABT", value: "8465"},{ label: "AQUA", value: "12348"},{ label: "ARCHER", value: "11216"},{ label: "ARCUS", value: "12523"},{ label: "ARKO", value: "6052"},{ label: "ARSP", value: "8036"},{ label: "AFK", value: "1007"},{ label: "TLG", value: "12229"},{ label: "ASETEK", value: "11324"},{ label: "AKO", value: "1957"},{ label: "ASKIKO", value: "12525"},{ label: "ASKSB", value: "8069"},{ label: "AYKO", value: "6145"},{ label: "ATEA", value: "2305"},{ label: "ATLU-ME", value: "12463"},{ label: "ATLA NOK", value: "11657"},{ label: "AURG", value: "6131"},{ label: "AHKO", value: "12512"},{ label: "AUSS", value: "8163"},{ label: "AVANCE", value: "12290"},{ label: "AVINOR", value: "8573"},{ label: "AVM", value: "11178"},{ label: "AWDR", value: "11244"},{ label: "ALNG", value: "11268"},{ label: "AXA", value: "6084"},{ label: "B2H", value: "12485"},{ label: "BKO", value: "1670"},{ label: "BAKKA", value: "8620"},{ label: "BANKN", value: "11260"},{ label: "BANKTO", value: "12447"},{ label: "BDA", value: "12263"},{ label: "BBERG", value: "12358"},{ label: "BEL", value: "2221"},{ label: "BERGEN", value: "8495"},{ label: "BEKO", value: "1517"},{ label: "BEOBO", value: "12546"},{ label: "BGBIO", value: "12550"},{ label: "SBBIG", value: "8481"},{ label: "BIOTEC", value: "7963"},{ label: "BJKO", value: "12549"},{ label: "BJSP", value: "12493"},{ label: "BKK", value: "6278"},{ label: "BSP-ME", value: "12461"},{ label: "BLSB", value: "11197"},{ label: "BLH", value: "8529"},{ label: "BNB", value: "1946"},{ label: "BOA", value: "11300"},{ label: "BOAO", value: "11337"},{ label: "BOAS", value: "12201"},{ label: "BNKR", value: "6159"},{ label: "BON", value: "2208"},{ label: "BOR", value: "2209"},{ label: "BDRILL", value: "12565"},{ label: "BRG", value: "11306"},{ label: "BOUVET", value: "8307"},{ label: "BRFI", value: "12313"},{ label: "BFSBG", value: "8538"},{ label: "BUIN", value: "12537"},{ label: "BUFY", value: "1184"},{ label: "SSFBK", value: "11182"},{ label: "BWLPG", value: "12241"},{ label: "BWO", value: "8108"},{ label: "BMA", value: "6049"},{ label: "CITYT", value: "12458"},{ label: "COLG", value: "7766"},{ label: "COV", value: "6006"},{ label: "CXENSE", value: "12305"},{ label: "DDB", value: "6254"},{ label: "DAT", value: "6085"},{ label: "DEED", value: "11299"},{ label: "NST", value: "2098"},{ label: "DFDS", value: "11302"},{ label: "DIPL", value: "12395"},{ label: "DIPNO", value: "12472"},{ label: "DNB", value: "1772"},{ label: "DNBKAP", value: "7834"},{ label: "DNM", value: "1827"},{ label: "DNBNB", value: "11184"},{ label: "DNBNK", value: "12242"},{ label: "DNO", value: "1015"},{ label: "DOF", value: "6489"},{ label: "DOFSUB", value: "7984"},{ label: "DRKO", value: "1923"},{ label: "DTSB", value: "6748"},{ label: "EFOR", value: "12228"},{ label: "ECEN", value: "6137"},{ label: "EAM", value: "11296"},{ label: "EIKO", value: "12502"},{ label: "EIOF", value: "7942"},{ label: "EIDKO", value: "12547"},{ label: "EIDSB", value: "12307"},{ label: "EIEN", value: "8068"},{ label: "EIKR", value: "1675"},{ label: "EIKB", value: "8001"},{ label: "EIKF", value: "12473"},{ label: "EIKA", value: "11201"},{ label: "EKO", value: "2520"},{ label: "EKSPFI", value: "1230"},{ label: "EKSPFI", value: "101283667"},{ label: "EMGS", value: "8264"},{ label: "EMAS", value: "8390"},{ label: "ENTRA", value: "12366"},{ label: "EPIC-ME", value: "12533"},{ label: "ETNE", value: "11303"},{ label: "ETRION", value: "11266"},{ label: "EPR", value: "12441"},{ label: "EVRY", value: "12559"},{ label: "EXMAR", value: "12445"},{ label: "FSB", value: "6025"},{ label: "FSBKR", value: "8627"},{ label: "FKOV", value: "1268"},{ label: "FT", value: "100000103"},{ label: "FFKM", value: "12542"},{ label: "FJKO", value: "1673"},{ label: "FJELL", value: "5181"},{ label: "FJOL", value: "11336"},{ label: "FJORD", value: "12556"},{ label: "FFSB", value: "12374"},{ label: "FLNG", value: "8594"},{ label: "FOSB", value: "8399"},{ label: "FRAEKO", value: "12524"},{ label: "FOE", value: "6063"},{ label: "FEAS", value: "7625"},{ label: "FRKO", value: "5150"},{ label: "FROGKO", value: "12486"},{ label: "FRO", value: "6117"},{ label: "FUNCOM", value: "7997"},{ label: "GIG", value: "7829"},{ label: "GIGLTD", value: "12558"},{ label: "GLOG", value: "12342"},{ label: "RISH", value: "7837"},{ label: "GENEL", value: "12318"},{ label: "GEP", value: "12304"},{ label: "GENT-ME", value: "12532"},{ label: "GISKO", value: "12526"},{ label: "GJEB", value: "8285"},{ label: "GJBB", value: "11177"},{ label: "GJF", value: "11217"},{ label: "GJEPF", value: "12496"},{ label: "GJKO", value: "12500"},{ label: "GJOKO", value: "6059"},{ label: "GLITRE", value: "7828"},{ label: "GOLP", value: "11319"},{ label: "GCMC", value: "12393"},{ label: "GEOS", value: "12387"},{ label: "GOGL", value: "12424"},{ label: "GOD", value: "2312"},{ label: "GDG", value: "12392"},{ label: "GSF", value: "8362"},{ label: "GRSH", value: "12489"},{ label: "GRONG-ME", value: "11318"},{ label: "GRSB", value: "8255"},{ label: "GYL", value: "2269"},{ label: "HAFS", value: "12564"},{ label: "HDSB", value: "12316"},{ label: "XACT", value: "7918"},{ label: "HARSB", value: "11196"},{ label: "HGSB", value: "2499"},{ label: "HAVI", value: "7928"},{ label: "HYARD", value: "12289"},{ label: "HESB", value: "11212"},{ label: "HEBK", value: "8616"},{ label: "HELG", value: "6053"},{ label: "HELK", value: "5067"},{ label: "SBHEMN", value: "11335"},{ label: "HEX", value: "5203"},{ label: "HIDDN", value: "6806"},{ label: "HJGSB", value: "6746"},{ label: "HJSB", value: "8054"},{ label: "HLNG", value: "11251"},{ label: "HBC", value: "11280"},{ label: "HSPG", value: "6171"},{ label: "HOSP", value: "8089"},{ label: "HOFY", value: "1388"},{ label: "HOIN", value: "12349"},{ label: "HUGO", value: "12440"},{ label: "HUNT", value: "8360"},{ label: "IMSK", value: "6002"},{ label: "IDEX", value: "8606"},{ label: "IGAS", value: "12218"},{ label: "INC", value: "5059"},{ label: "ISSG", value: "5202"},{ label: "INDUCT-ME", value: "12460"},{ label: "INFRA", value: "12397"},{ label: "INSR", value: "12272"},{ label: "IOX", value: "8135"},{ label: "ITX", value: "8201"},{ label: "IEC", value: "12281"},{ label: "ITE", value: "6153"},{ label: "JLA", value: "11192"},{ label: "JACKT", value: "12360"},{ label: "JAHO", value: "12365"},{ label: "JAEREN", value: "6483"},{ label: "JESB", value: "8096"},{ label: "JIN", value: "2446"},{ label: "KAKO", value: "6037"},{ label: "KID", value: "12451"},{ label: "KIST", value: "11317"},{ label: "KIT", value: "6098"},{ label: "KBSB", value: "11339"},{ label: "KSH", value: "12197"},{ label: "KLPB", value: "11298"},{ label: "KLPBK", value: "12361"},{ label: "KLPKK", value: "11207"},{ label: "KOLKAP-ME", value: "12538"},{ label: "KOMB", value: "1172"},{ label: "KOBK", value: "12484"},{ label: "KOA", value: "7941"},{ label: "KOG", value: "2331"},{ label: "KOGKO", value: "1854"},{ label: "KFS", value: "7781"},{ label: "KVAER", value: "11252"},{ label: "KDSB", value: "8150"},{ label: "LAKRB", value: "7169"},{ label: "LANDKBK", value: "11228"},{ label: "LANDKF", value: "12188"},{ label: "LAKO", value: "6148"},{ label: "LBSB", value: "6045"},{ label: "LEIKO", value: "12539"},{ label: "LENKO", value: "12459"},{ label: "LSG", value: "7148"},{ label: "LEKO", value: "12511"},{ label: "LHMKO", value: "6026"},{ label: "LILLKO", value: "12540"},{ label: "LISB", value: "11210"},{ label: "LSTSB", value: "8090"},{ label: "LINK", value: "12232"},{ label: "LSSB", value: "8140"},{ label: "LUSB", value: "11254"},{ label: "LYSE", value: "7616"},{ label: "MSEIS", value: "12301"},{ label: "MAKO", value: "12505"},{ label: "MHG", value: "5063"},{ label: "MEDI", value: "7774"},{ label: "MELKO", value: "12516"},{ label: "MDSB", value: "11231"},{ label: "MELG", value: "6147"},{ label: "ML33H", value: "12536"},{ label: "MOLKO", value: "12506"},{ label: "MOLLG", value: "12389"},{ label: "MONO-ME", value: "12543"},{ label: "MOBK", value: "8628"},{ label: "MPCC-ME", value: "12557"},{ label: "MULTI", value: "12437"},{ label: "NAKO", value: "12497"},{ label: "NAPA", value: "12233"},{ label: "NATTO", value: "8447"},{ label: "NAVA", value: "8063"},{ label: "NAVIG", value: "11331"},{ label: "NEL", value: "7795"},{ label: "NELJA", value: "12457"},{ label: "NEXT", value: "12309"},{ label: "NGT", value: "8112"},{ label: "NIKO", value: "6165"},{ label: "NJGI", value: "11261"},{ label: "NOSAK", value: "12205"},{ label: "NTE", value: "8477"},{ label: "NTFK", value: "1198"},{ label: "NDA", value: "7149"},{ label: "NOKR", value: "1612"},{ label: "--", value: "100000102"},{ label: "NOM", value: "8123"},{ label: "NANO", value: "12412"},{ label: "NOD", value: "5117"},{ label: "NORNO", value: "12432"},{ label: "NB", value: "100000101"},{ label: "NORG", value: "7798"},{ label: "NHC", value: "12562"},{ label: "NHY", value: "1114"},{ label: "NSG", value: "2498"},{ label: "NADL", value: "12268"},{ label: "NORTH", value: "8605"},{ label: "NORT", value: "7930"},{ label: "NRS", value: "11235"},{ label: "NAS", value: "7628"},{ label: "NOR", value: "8416"},{ label: "NOFI", value: "12494"},{ label: "NPRO", value: "8191"},{ label: "NOKO", value: "12501"},{ label: "NRC", value: "2230"},{ label: "NTS", value: "2311"},{ label: "OBOS", value: "6335"},{ label: "OBBK", value: "12515"},{ label: "OBFB", value: "8629"},{ label: "OBOSBK", value: "12244"},{ label: "OCY", value: "11316"},{ label: "OTS", value: "8229"},{ label: "ODAL", value: "11211"},{ label: "ODL", value: "12219"},{ label: "ODF", value: "2366"},{ label: "OFSB", value: "11309"},{ label: "OLT", value: "1308"},{ label: "OLSU", value: "12563"},{ label: "OPSB", value: "11198"},{ label: "OPERA", value: "7759"},{ label: "OSPA", value: "8035"},{ label: "ORK", value: "1107"},{ label: "ORLSB", value: "8197"},{ label: "ORSP", value: "8034"},{ label: "OERKO", value: "12508"},{ label: "OSKO", value: "12507"},{ label: "-", value: "100000100"},{ label: "OSLKO", value: "1205"},{ label: "OSTKO", value: "12510"},{ label: "OSEN", value: "8029"},{ label: "OSFY", value: "1223"},{ label: "OTKO", value: "5124"},{ label: "PERH01", value: "12446"},{ label: "PEN", value: "8624"},{ label: "PARB", value: "8596"},{ label: "PCIB", value: "8502"},{ label: "PGS", value: "2342"},{ label: "PDR", value: "6018"},{ label: "PHLY", value: "8462"},{ label: "PHO", value: "6357"},{ label: "PPG PREF", value: "12438"},{ label: "PPU", value: "12509"},{ label: "PLCS", value: "8582"},{ label: "POL", value: "8537"},{ label: "POKO", value: "6011"},{ label: "POSTEN", value: "8497"},{ label: "PRS", value: "6010"},{ label: "PROTCT", value: "8322"},{ label: "QFR", value: "7065"},{ label: "QEC", value: "7938"},{ label: "RAEKO", value: "1701"},{ label: "RAKP", value: "12373"},{ label: "RAKO", value: "6177"},{ label: "REACH", value: "2319"},{ label: "REC", value: "8080"},{ label: "RENO", value: "12388"},{ label: "RISB", value: "8058"},{ label: "RNGK", value: "5106"},{ label: "ROFY", value: "12530"},{ label: "ROM", value: "8353"},{ label: "ROSB", value: "8057"},{ label: "SDSD", value: "11233"},{ label: "SAFE", value: "12555"},{ label: "SAGA", value: "11191"},{ label: "SMDR", value: "12278"},{ label: "SALM", value: "8288"},{ label: "SANDKO", value: "12528"},{ label: "SAKO", value: "12471"},{ label: "SADG", value: "5024"},{ label: "SANC", value: "11208"},{ label: "SARPK", value: "12410"},{ label: "SAS", value: "1387"},{ label: "SSHIP", value: "12294"},{ label: "SSO", value: "12354"},{ label: "SCHA", value: "2354"},{ label: "SBEF", value: "12443"},{ label: "SBX", value: "8025"},{ label: "SDRL", value: "7968"},{ label: "SELB", value: "8046"},{ label: "SBO", value: "11291"},{ label: "SEQ", value: "12466"},{ label: "SEVDR", value: "11243"},{ label: "SEVAN", value: "7820"},{ label: "XACT", value: "11234"},{ label: "SFLN", value: "11225"},{ label: "SIEIN", value: "8392"},{ label: "SIOFF", value: "7956"},{ label: "SIAF-ME", value: "12462"},{ label: "SRSB", value: "8418"},{ label: "SKBN", value: "12452"},{ label: "SKANBK", value: "12450"},{ label: "SKKO", value: "5194"},{ label: "SKASB", value: "11199"},{ label: "SKUE", value: "6143"},{ label: "SFEN", value: "1638"},{ label: "SFFY", value: "12527"},{ label: "SOGSB", value: "11304"},{ label: "SOKR", value: "1210"},{ label: "SOKO", value: "12514"},{ label: "SOLKO", value: "12518"},{ label: "SOLON", value: "6339"},{ label: "SOFF", value: "6066"},{ label: "SOLV", value: "2367"},{ label: "SBULK", value: "12534"},{ label: "SONG", value: "8022"},{ label: "STFY", value: "1703"},{ label: "SORKO", value: "12544"},{ label: "SPBKR", value: "8379"},{ label: "SBVG", value: "2352"},{ label: "SBGG", value: "8206"},{ label: "SBHA", value: "8245"},{ label: "MODSB", value: "8100"},{ label: "SBNK", value: "11265"},{ label: "NONG", value: "1972"},{ label: "SNOR", value: "1823"},{ label: "SOAG", value: "5195"},{ label: "SPOL", value: "5204"},{ label: "RING", value: "5125"},{ label: "MING", value: "1695"},{ label: "SBSS", value: "6007"},{ label: "SRBANK", value: "1797"},{ label: "SESB", value: "6749"},{ label: "MORG", value: "1652"},{ label: "NASB", value: "6484"},{ label: "SPOG", value: "1636"},{ label: "SPOBK", value: "11194"},{ label: "SFSB", value: "6065"},{ label: "SOR", value: "1814"},{ label: "SORB", value: "11183"},{ label: "SBTE", value: "8332"},{ label: "SVEG", value: "1642"},{ label: "SBVB", value: "8543"},{ label: "SPSK", value: "11193"},{ label: "SPU", value: "8507"},{ label: "SPOR", value: "5021"},{ label: "SRBOL", value: "12442"},{ label: "SSBB", value: "8634"},{ label: "SBSB", value: "12377"},{ label: "STHY", value: "11284"},{ label: "STAEN", value: "7800"},{ label: "STATKR", value: "5009"},{ label: "STANE", value: "5099"},{ label: "STL", value: "1309"},{ label: "STAVKO", value: "1621"},{ label: "SST", value: "2378"},{ label: "STKO", value: "12553"},{ label: "SNI", value: "5097"},{ label: "STDKO", value: "2022"},{ label: "STB", value: "1955"},{ label: "STORB", value: "1821"},{ label: "STORK", value: "8509"},{ label: "STORL", value: "148"},{ label: "STORM", value: "11189"},{ label: "STSB", value: "8257"},{ label: "STRONG", value: "6793"},{ label: "SUBC", value: "6030"},{ label: "SUNSB", value: "12491"},{ label: "SUNNF", value: "12409"},{ label: "SKL", value: "12269"},{ label: "SUSB", value: "11200"},{ label: "SHB", value: "5033"},{ label: "SWED", value: "7880"},{ label: "SWHO", value: "8602"},{ label: "TAK", value: "6111"},{ label: "TIL", value: "12273"},{ label: "TRVX", value: "12499"},{ label: "TEAM", value: "12413"},{ label: "TECH", value: "7150"},{ label: "TKLNG", value: "11307"},{ label: "TOP", value: "11227"},{ label: "TEFY01", value: "12517"},{ label: "TEL", value: "6233"},{ label: "TGS", value: "6070"},{ label: "NOA", value: "12406"},{ label: "SSC", value: "8623"},{ label: "THIN", value: "8458"},{ label: "THOL", value: "6774"},{ label: "TINE", value: "7959"},{ label: "TNSB", value: "6759"},{ label: "TIZ", value: "11323"},{ label: "TOSB", value: "12308"},{ label: "TOM", value: "2392"},{ label: "TOTG", value: "1662"},{ label: "TSBK", value: "11236"},{ label: "TCH", value: "12519"},{ label: "TRE", value: "12495"},{ label: "TRGSB", value: "8070"},{ label: "TRSKO", value: "1526"},{ label: "TROEN", value: "5010"},{ label: "TRKO", value: "1214"},{ label: "TRYG", value: "11334"},{ label: "TTS", value: "2525"},{ label: "TUSK", value: "1626"},{ label: "TYSB", value: "12315"},{ label: "ULKO", value: "6128"},{ label: "UMS", value: "12531"},{ label: "VASB", value: "8151"},{ label: "VARD", value: "7833"},{ label: "VASA", value: "11256"},{ label: "TRBO", value: "1801"},{ label: "VHSBG", value: "8539"},{ label: "VEI", value: "2400"},{ label: "VEBK", value: "11202"},{ label: "VERKO", value: "12521"},{ label: "VEPE", value: "12416"},{ label: "VAFY", value: "1671"},{ label: "VISTIN", value: "12436"},{ label: "VIZG", value: "12449"},{ label: "VVL", value: "2403"},{ label: "VVH", value: "12444"},{ label: "WWL", value: "11186"},{ label: "WEIFA", value: "8109"},{ label: "WPH", value: "12548"},{ label: "WRL", value: "7953"},{ label: "WBULK", value: "12498"},{ label: "WWI", value: "2405"},{ label: "WILS", value: "7915"},{ label: "WRE-ME", value: "12464"},{ label: "XXL", value: "12357"},{ label: "YBNK", value: "12243"},{ label: "YAR", value: "7760"},{ label: "ZAL", value: "12310"},{ label: "ZITON", value: "12522"}];
+                 $(function() {
+
+                   $( "#searchCriteria\\.issuerSign" ).autocomplete({
+                     source: issuerTokens,
+                     focus: function( event, ui ) {
+                        event.preventDefault()
+                     },
+                     select: function ( event, ui) {
+                             $(this).val(ui.item.label);
+                             $($(this).attr('hiddencontrolname')).val(ui.item.value);
+
+                             // $("input[id*=selectedValue]").val(ui.item.value);//Saving the selected value in hidden field
+                             selectIssuerDropdown(ui.item.value);
+                             return false;
+                         }
+                   });
+                 });
+                 </script>
+                
+                    <input type="text" size="8" name="searchCriteria.issuerSign" 
+                            id="searchCriteria.issuerSign" class="smalltext" value="">
+                
+                
+            </td>
+          </tr>
+          <tr>
+            <td class="topsearch" align="left">Instrument</td>
+            <td class="topsearch" valign="top" align="left">
+                
+                
+                    
+                    
+                        
+                        <input type="text" id="searchCriteria.instrumentShortName" 
+                            name="searchCriteria.instrumentShortName" class="smalltext" value="" size="8" />
+                        
+                    
+                
+            </td>
+          </tr>
+      </table>
+
+            </td>
+            <td valign="top" align="left" class="topsearch">
+                
+
+ 
+
+    <table border="0" cellspacing="3" cellpadding="1">
+	   <tr>
+            <td class="topsearch" align="left" style="width: 65px;">Kategori</td>
+            <td valign="top" align="left">
+            
+            <select class="selection" size="1" name="searchCriteria.categoryId" id="searchCriteria.categoryId" style="width: 225px;">
+            <option value="0">-- velg --</option>
+               	
+				
+				
+				    
+	                    <option 
+	                    	value="1010"  
+	                    	title="ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON">
+							ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON
+	                    </option>
+	                
+	                    <option 
+	                    	value="1203"  
+	                    	title="BØRSPAUSE / HANDELSPAUSE">
+							BØRSPAUSE / HANDELSPAUSE
+	                    </option>
+	                
+	                    <option 
+	                    	value="1206"  
+	                    	title="DERIVATMELDINGER">
+							DERIVATMELDINGER
+	                    </option>
+	                
+	                    <option 
+	                    	value="1101"  
+	                    	title="EKS.DATO">
+							EKS.DATO
+	                    </option>
+	                
+	                    <option 
+	                    	value="1009"  
+	                    	title="ENDRINGER I RETTIGHETENE TIL AKSJER / VERDIPAPIRER">
+							ENDRINGER I RETTIGHETENE TIL AKSJER / VERDIPAPIRER
+	                    </option>
+	                
+	                    <option 
+	                    	value="1006"  
+	                    	title="FLAGGING">
+							FLAGGING
+	                    </option>
+	                
+	                    <option 
+	                    	value="1002"  
+	                    	title="HALVÅRSRAPPORTER OG REVISJONSBERETNINGER / UTTALELSER OM FORENKLET REVISORKONTROLL">
+							HALVÅRSRAPPORTER OG REVISJONSBERETNINGER / UTTALELSER OM FORENKLET REVISORKONTROLL
+	                    </option>
+	                
+	                    <option 
+	                    	value="1104"  
+	                    	title="IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER">
+							IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER
+	                    </option>
+	                
+	                    <option 
+	                    	value="1005"  
+	                    	title="INNSIDEINFORMASJON">
+							INNSIDEINFORMASJON
+	                    </option>
+	                
+	                    <option 
+	                    	value="1008"  
+	                    	title="KAPITAL- OG STEMMERETTSENDRINGER">
+							KAPITAL- OG STEMMERETTSENDRINGER
+	                    </option>
+	                
+	                    <option 
+	                    	value="1102"  
+	                    	title="MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE">
+							MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE
+	                    </option>
+	                
+	                    <option 
+	                    	value="1208"  
+	                    	title="MELDING FRA ANDRE AKTØRER">
+							MELDING FRA ANDRE AKTØRER
+	                    </option>
+	                
+	                    <option 
+	                    	value="1301"  
+	                    	title="MELDING FRA FINANSTILSYNET">
+							MELDING FRA FINANSTILSYNET
+	                    </option>
+	                
+	                    <option 
+	                    	value="1302"  
+	                    	title="MELDING FRA NORGES BANK">
+							MELDING FRA NORGES BANK
+	                    </option>
+	                
+	                    <option 
+	                    	value="1207"  
+	                    	title="MELDING FRA OSLO BØRS">
+							MELDING FRA OSLO BØRS
+	                    </option>
+	                
+	                    <option 
+	                    	value="1201"  
+	                    	title="NOTERING / OPPTAK AV VERDIPAPIRER">
+							NOTERING / OPPTAK AV VERDIPAPIRER
+	                    </option>
+	                
+	                    <option 
+	                    	value="1103"  
+	                    	title="PROSPEKT / OPPTAKSDOKUMENT">
+							PROSPEKT / OPPTAKSDOKUMENT
+	                    </option>
+	                
+	                    <option 
+	                    	value="1003"  
+	                    	title="RAPPORTERING OM BETALING TIL MYNDIGHETER (LAND-FOR-LAND RAPPORTERING)">
+							RAPPORTERING OM BETALING TIL MYNDIGHETER (LAND-FOR-LAND RAPPORTERING)
+	                    </option>
+	                
+	                    <option 
+	                    	value="1105"  
+	                    	title="RENTEREGULERING">
+							RENTEREGULERING
+	                    </option>
+	                
+	                    <option 
+	                    	value="1205"  
+	                    	title="SLUTTKURSER DERIVATER">
+							SLUTTKURSER DERIVATER
+	                    </option>
+	                
+	                    <option 
+	                    	value="1202"  
+	                    	title="SUSPENSJONER">
+							SUSPENSJONER
+	                    </option>
+	                
+	                    <option 
+	                    	value="1204"  
+	                    	title="SÆRLIG OBSERVASJON">
+							SÆRLIG OBSERVASJON
+	                    </option>
+	                
+	                    <option 
+	                    	value="1007"  
+	                    	title="UTSTEDERS MELDEPLIKT VED HANDEL I EGNE AKSJER">
+							UTSTEDERS MELDEPLIKT VED HANDEL I EGNE AKSJER
+	                    </option>
+	                
+	                    <option 
+	                    	value="1004"  
+	                    	title="VALG AV HJEMSTAT">
+							VALG AV HJEMSTAT
+	                    </option>
+	                
+	                    <option 
+	                    	value="1001"  
+	                    	title="ÅRSRAPPORTER OG REVISJONSBERETNINGER">
+							ÅRSRAPPORTER OG REVISJONSBERETNINGER
+	                    </option>
+	                
+				
+				
+            </select>  
+            
+            </td>
+	   </tr>
+	   <tr>
+            <td class="topsearch" align="left">Fra dato</td>
+            <td valign="top" align="left">
+                
+                <input type="text" name="searchCriteria.fromDate" id="searchCriteria.fromDate" value="02.09.2017" size="12" class="smalltext" />
+                <script type="text/javascript">
+                    $(function() {
+                        $( "#searchCriteria\\.fromDate" ).datepicker({
+                            maxDate: "0",
+                            dayNamesMin: [ "Sø", "Ma", "Ti", "On", "To", "Fr", "Lø"],
+                            dayNamesShort: [ "Søn", "Man", "Tir", "Ons", "Tor", "Fre", "Lør"],
+                            dayNames: [ "Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"],
+                            monthNamesShort: [ "Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Des"],
+                            monthNames: [ "Januar", "Februar", "Mars", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Desember"],
+                            dateFormat: "dd.mm.yy",
+                            defaultDate: 0,
+                            onClose: function( selectedDate ) {
+                               $( "#searchCriteria\\.toDate" ).datepicker( "option", "minDate", selectedDate );
+                            },
+                            buttonImage: "images/calendar_month.png",
+                            showOn: "button",
+                            buttonImageOnly: true,
+                            changeMonth: true,
+                            changeYear: true
+                         });
+                         $('#ui-datepicker-div').css('clip', 'auto');
+                      });
+                </script>
+                
+            </td>
+	   </tr>
+	   <tr>
+            <td class="topsearch" align="left">Til dato</td>
+            <td valign="bottom" align="left">
+            
+                <input type="text" name="searchCriteria.toDate" id="searchCriteria.toDate" value="02.09.2017" size="12" class="smalltext" />
+                <script type="text/javascript">
+                    $(function() {
+                        $( "#searchCriteria\\.toDate" ).datepicker({
+                            maxDate: "0",
+                            dayNamesMin: [ "Sø", "Ma", "Ti", "On", "To", "Fr", "Lø"],
+                            dayNamesShort: [ "Søn", "Man", "Tir", "Ons", "Tor", "Fre", "Lør"],
+                            dayNames: [ "Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"],
+                            monthNamesShort: [ "Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Des"],
+                            monthNames: [ "Januar", "Februar", "Mars", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Desember"],
+                            dateFormat: "dd.mm.yy",
+                            defaultDate: 0,
+                            onClose: function( selectedDate ) {
+                               $( "#searchCriteria\\.fromDate" ).datepicker( "option", "maxDate", selectedDate );
+                            },
+                            buttonImage: "images/calendar_month.png",
+                            showOn: "button",
+                            buttonImageOnly: true,
+                            changeMonth: true,
+                            changeYear: true
+                         });
+                         $('#ui-datepicker-div').css('clip', 'auto');
+                      });
+                </script>
+            
+            </td>
+	   </tr>
+    </table>
+            </td>
+            <td align="left" class="topsearch">
+                
+
+
+ 
+   <table class="searchArea3" border="0px" cellspacing="0" cellpadding="1">
+         <tr>
+              <td class="topsearch" align="left">Velg marked
+              <td valign="top" align="right">
+                 
+                         <select class="selection" size="1" name="searchCriteria.exchangeCode" id="searchCriteria.exchangeCode" style="width: 150px;">
+                             <option value="">Alle markeder</option>
+                             <option value="XOSL"  >Oslo B&oslash;rs</option>
+                             <option value="XOAX"  >Oslo Axess</option>
+                             <option value="XOAM"  >Nordic ABM</option>
+                             <option value="MERK"  >Merkur Market</option>
+                         </select>
+                 
+              </td>
+        </tr>
+        <tr>
+            <td class="topsearch" align="left">Vis kun aktive utstedere</td>
+            <td>
+                
+                    <input type="hidden" name="_searchCriteria.activeIssuersOnly">
+                    <input type="checkbox" name="searchCriteria.activeIssuersOnly" id="searchCriteria.activeIssuersOnly" value="true" checked />
+                
+                <a href="javascript:infoPopup('active_issuers', 'no');"><img src="images/information.png" alt="Info..." /></a>
+            </td>
+        </tr>
+        <tr><td height="10px"></td></tr>
+                  <tr>
+                  	<td align="left" colspan="2">
+                  		<input type="submit" name="searchtype.full" id="searchtype.full" class="submitButton" value="Søk">
+                  		&nbsp;&nbsp;<a href="search.do">Nullstill...</a>
+                  	</td>
+                  </tr>
+	</table>
+
+
+
+            </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    
+        <div class="fixedcenter"> 
+        <table class="navigator" cellpadding="0" cellspacing="0"><tr>
+            <td style="width:15%"><div class="hits"><p>Antall treff:&nbsp;0</p></div></td>
+            <td></td>
+            <td style="width:15%"></td>
+        </tr></table>
+        </div>
+    
+</form>
+    </div>
+    <div class="space"></div>
+    <div class="fixedcenter">
+    
+        
+        
+             
+
+ 
+
+
+
+<script>
+    if (supports_history_api()) {
+        fixHistory();
+    }
+</script>
+
+    <table class="messageTable" cellspacing="0" cellpadding="1" style="width:100%">
+        <tr class="messageHeader"> 
+            <td class="tableTitle" style="width:125px; text-align:left;">Dato/tid</td>     
+            <td class="tableTitle" style="width:60px; text-align:center;">Marked</td>
+			<td class="tableTitle" style="width:60px; text-align:center;">Utst.ID</td>
+            <td class="tableTitle" style="width:50px; text-align:center;">Korr</td>
+            <td class="tableTitle" style="width:auto; text-align:left;">Melding</td>
+            <td class="tableTitle" style="width:80px; text-align:center;">Vedlegg</td>
+            <td class="tableTitle" style="width:180px; text-align:left;">Kategori</td>
+            <td class="tableTitle" style="width:50px; text-align:center;">Type</td>
+            
+        </tr>
+        
+        
+        
+    </table>
+
+        
+    
+    </div>
+    <div class="space"></div><div class="space"></div><div class="space"></div><div class="footer fixedcenter"><ul class="footerMenu">
+<li><a href="http://www.oslobors.no" target="_new">www.oslobors.no</a></li>
+</ul></div><div class="disclaimer fixedcenter"><p><a href="JavaScript:infoPopup('disclaimer', 'no');">Les om ansvar og rettigheter.</a></p></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+  <!--[if IEMobile 7]><html class="no-js ie iem7" lang="de" dir="ltr"><![endif]-->
+  <!--[if lte IE 6]><html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="de" dir="ltr"><![endif]-->
+  <!--[if (IE 7)&(!IEMobile)]><html class="no-js ie lt-ie9 lt-ie8" lang="de" dir="ltr"><![endif]-->
+  <!--[if IE 8]><html class="no-js ie lt-ie9" lang="de" dir="ltr"><![endif]-->
+  <!--[if (gte IE 9)|(gt IEMobile 7)]><html class="no-js ie" lang="de" dir="ltr"><![endif]-->
+  <!--[if !IE]><!--><html class="no-js" lang="de" dir="ltr"><!--<![endif]-->
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<link rel="apple-touch-icon-precomposed" href="https://www.bookatable.com/de/sites/mtpb2c_de/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed-72x72.png" sizes="72x72" />
+<meta http-equiv="cleartype" content="on" />
+<link rel="apple-touch-icon-precomposed" href="https://www.bookatable.com/de/sites/mtpb2c_de/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed-114x114.png" sizes="114x114" />
+<link rel="apple-touch-icon-precomposed" href="https://www.bookatable.com/de/sites/mtpb2c_de/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed.png" />
+<meta http_equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="alternate" hreflang="fr-fr" href="https://restaurant.michelin.fr" />
+<link rel="alternate" hreflang="de-de" href="https://www.bookatable.com/de" />
+<link rel="alternate" hreflang="es-es" href="https://guia.michelin.es" />
+<link rel="alternate" hreflang="it-it" href="https://guida.michelin.it" />
+<link rel="apple-touch-icon-precomposed" href="https://www.bookatable.com/de/sites/mtpb2c_de/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed-144x144.png" sizes="144x144" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<link rel="shortcut icon" href="https://www.bookatable.com/de/sites/mtpb2c_de/themes/mtpb2c/custom/bat/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+<meta name="description" content="Entdecke die besten Restaurants in Deutschland. Erkunde das Angebot, wähle ein Restaurant aus und reserviere gratis und in Echtzeit auf Bookatable by Michelin." />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://www.bookatable.com/de" />
+<link rel="shortlink" href="https://www.bookatable.com/de" />
+  <title>Restaurant Suche – Restaurant-Tischreservierung | Bookatable</title>
+  <link type="text/css" rel="stylesheet" href="https://www.bookatable.com/de/sites/mtpb2c_de/files/css/css_2TqJbZX4Bzd-kq4jm6zXkwrfabYmdYpzeSUXKsySkQU.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.bookatable.com/de/sites/mtpb2c_de/files/css/css_2WC25WBk0xCSo5m_7ke-lNC-yFxS685oebZ8F3Ah1UY.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.bookatable.com/de/sites/mtpb2c_de/files/css/css_vZ_wrMQ9Og-YPPxa1q4us3N7DsZMJa-14jShHgRoRNo.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://www.bookatable.com/de/sites/mtpb2c_de/files/css/css_npBHY6Ul3TtEBfrW8X_2ys1AAdZrKMMTdCu0zE8tzJ4.css" media="all" />
+<style>#sliding-popup.sliding-popup-bottom{background:#FFFFFF;}#sliding-popup .popup-content #popup-text h2,#sliding-popup .popup-content #popup-text p{color:#000000 !important;}
+</style>
+<link type="text/css" rel="stylesheet" href="https://www.bookatable.com/de/sites/mtpb2c_de/files/css/css_ef2mL8Qm8Dyg6dr3kNwxuwg5L1IfxOfTNgQ7CXkRlqc.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.bookatable.com/de/sites/mtpb2c_de/files/css/css_d1L1hMkCQhJ6IJBZp5OfHbjWMGa3SH0DsSgVyhD5IZ0.css" media="all" />
+  <script src="https://www.bookatable.com/de/sites/mtpb2c_de/files/js/js_jUGMAWXyVvwzUHrnLYAOC20Z5Zo2RFUW2xbLBM2kqrc.js"></script>
+<script src="//cdn.optimizely.com/js/7265160607.js"></script>
+<script src="https://www.bookatable.com/de/sites/mtpb2c_de/files/js/js_GqhINEI8d-WDmvJcq2YZDz2VAXDoPQO6eb8dwbPz53c.js"></script>
+<script src="https://www.bookatable.com/de/sites/mtpb2c_de/files/js/js_6uMVSUgDf9ldb_NCxvCamFQoenOq-XcovWYUCJT4HIU.js"></script>
+<script src="https://www.bookatable.com/de/sites/mtpb2c_de/files/js/js_Vk_taHMP86Cm2-2Ylxh9BExR8TJ1srt8ElU2AMRWxbM.js"></script>
+<script src="https://apijsv2.viamichelin.com/apijsv2/api/js?key=JSBS20160513115841247657803235$170883&amp;lang=deu&amp;protocol=https"></script>
+<script src="https://www.bookatable.com/de/sites/mtpb2c_de/files/js/js_wwTPHyf721Wl7_QP2x0qZGxAOvOTRTzw5lofZ0NBVF8.js"></script>
+<script src="https://www.bookatable.com/de/sites/mtpb2c_de/files/js/js_2ciTPq16fzgZbD14tKmuSyMkAHTkKiONPObTPwearHA.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/de\/","pathPrefix":"","autocomplete_limit":{"limit":2},"ajaxPageState":{"theme":"bat","theme_token":"t5DEg027-Y2xfIaouZ9dv2HYVaf36EKDLhMnyQ5R0Rk","jquery_version":"1.10","js":{"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/eu_cookie_compliance\/js\/eu_cookie_compliance.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/custom\/mr_b2c_popover\/js\/mr_b2c_popover.js":1,"0":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/clientside_validation\/clientside_validation.ie8.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/clientside_validation\/clientside_validation.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/mtpb2c_de\/themes\/mtpb2c\/contrib\/omega\/omega\/js\/no-js.js":1,"\/\/cdn.optimizely.com\/js\/7265160607.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.accordion.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/select2\/js\/Drupal.select2.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/lazyloader\/jquery.lazyloader.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/custom\/mr_b2c_booking\/js\/mr_b2c_booking_tracking.js":1,"public:\/\/languages\/de_2-7Qrsd64aSJmZoIRwUrGy4gCuBv2TN2u3JgNe-wGEk.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/accordion_blocks\/accordion_init.js":1,"sites\/all\/modules\/contrib\/ctools\/js\/ajax-responder.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/ctools\/js\/modal.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/clientside_validation\/jquery-validate\/jquery.validate.js":1,"misc\/autocomplete.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/autocomplete_limit\/js\/autocomplete.limit.js":1,"sites\/mtpb2c_de\/libraries\/select2\/select2.js":1,"sites\/mtpb2c_de\/libraries\/select2\/select2_locale_de.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi_search\/js\/ft_b2c_poi_search_form.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi_search\/js\/ft_b2c_poi_search.ajax.js":1,"sites\/mtpb2c_de\/libraries\/flexslider\/jquery.flexslider-min.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/flexslider_views_slideshow\/js\/flexslider_views_slideshow.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/custom\/features\/ft_b2c_footer_blocks\/js\/ft_b2c_footer_blocks.js":1,"https:\/\/apijsv2.viamichelin.com\/apijsv2\/api\/js?key=JSBS20160513115841247657803235$170883\u0026lang=deu\u0026protocol=https":1,"sites\/mtpb2c_de\/libraries\/slideout\/slideout.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/custom\/features\/ft_b2c_sliding_menu\/js\/ft_b2c_sliding_menu.js":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/custom\/mr_b2c_seo\/js\/mr_b2c_seo_gtm.js":1,"sites\/mtpb2c_de\/themes\/mtpb2c\/custom\/restaurant_base\/js\/jquery.sticky-kit.js":1,"sites\/mtpb2c_de\/themes\/mtpb2c\/custom\/restaurant_base\/js\/readmore.js":1,"sites\/mtpb2c_de\/themes\/mtpb2c\/custom\/restaurant_base\/js\/jquery.dotdotdot.js":1,"sites\/mtpb2c_de\/themes\/mtpb2c\/custom\/restaurant_base\/js\/script.js":1},"css":{"sites\/mtpb2c_de\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.base.css":1,"sites\/mtpb2c_de\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.menus.theme.css":1,"sites\/mtpb2c_de\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.messages.theme.css":1,"sites\/mtpb2c_de\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/office_hours\/office_hours.css":1,"sites\/mtpb2c_de\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/field\/field.theme.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/lazyloader\/lazyloader.css":1,"sites\/mtpb2c_de\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/user\/user.base.css":1,"sites\/mtpb2c_de\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/user\/user.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/accordion_blocks\/accordion_init.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/modal.css":1,"sites\/mtpb2c_de\/libraries\/select2\/select2.css":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/select2\/css\/select2_integration.css":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/flexslider\/assets\/css\/flexslider_img.css":1,"sites\/mtpb2c_de\/libraries\/flexslider\/flexslider.css":1,"0":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/eu_cookie_compliance\/css\/eu_cookie_compliance.css":1,"sites\/mtpb2c_de\/modules\/mtpb2c\/custom\/features\/ft_b2c_sliding_menu\/css\/ft_b2c_sliding_menu.css":1,"sites\/mtpb2c_de\/themes\/mtpb2c\/custom\/restaurant_base\/css\/restaurant.normalize.css":1,"sites\/mtpb2c_de\/themes\/mtpb2c\/custom\/bat\/css\/restaurant.styles.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg data-src=\u0022https:\/\/www.bookatable.com\/de\/sites\/all\/modules\/contrib\/ctools\/images\/icon-close-window.png\u0022 src=\u0022https:\/\/www.bookatable.com\/de\/sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/lazyloader\/image_placeholder.gif\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E\u003Cnoscript\u003E\u003Cimg src=\u0022https:\/\/www.bookatable.com\/de\/sites\/all\/modules\/contrib\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E\u003C\/noscript\u003E","throbber":"\u003Cimg data-src=\u0022https:\/\/www.bookatable.com\/de\/sites\/all\/modules\/contrib\/ctools\/images\/throbber.gif\u0022 src=\u0022https:\/\/www.bookatable.com\/de\/sites\/mtpb2c_de\/modules\/mtpb2c\/contrib\/lazyloader\/image_placeholder.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E\u003Cnoscript\u003E\u003Cimg src=\u0022https:\/\/www.bookatable.com\/de\/sites\/all\/modules\/contrib\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E\u003C\/noscript\u003E"},"select_2":{"elements":{"edit-cooking-type":{"placeholder":"Alle K\u00fcchen","allowClear":false}},"excludes":{"by_id":{"values":[],"reg_exs":[]},"by_class":[],"by_selectors":[]},"branch":3,"default_settings":{"separator":"\u00b6","jqui_sortable":false,"dropdownAutoWidth":true,"width":"element","containerCssClass":"","minimumResultsForSearch":15},"process_all_selects_on_page":true,"no_version_check":false,"settings_updated":true},"urlIsAjaxTrusted":{"\/de\/search-restaurants-quick":true,"\/de\/9d90wqa9\/mongos-restaurant-bochum-bochum?FromPoiList=\/restaurants\/deutschland\/44787-bochum\/gruppen-erlaubt\u0026page=123":true},"viewsSlideshow":{"carousel-carousel_pane":{"methods":{"goToSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter"],"nextSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","flexsliderViewsSlideshow"],"pause":["viewsSlideshowControls","flexsliderViewsSlideshow"],"play":["viewsSlideshowControls","flexsliderViewsSlideshow"],"previousSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","flexsliderViewsSlideshow"],"transitionBegin":["viewsSlideshowPager","viewsSlideshowSlideCounter"],"transitionEnd":[]},"paused":0}},"flexslider_views_slideshow":{"#flexslider_views_slideshow_main_carousel-carousel_pane":{"num_divs":1,"id_prefix":"#flexslider_views_slideshow_main_","vss_id":"carousel-carousel_pane","namespace":"flex-","selector":".slides \u003E li","easing":"swing","direction":"horizontal","reverse":false,"smoothHeight":false,"startAt":0,"animationSpeed":600,"initDelay":0,"useCSS":true,"touch":true,"video":false,"keyboard":true,"multipleKeyboard":false,"mousewheel":false,"controlsContainer":".flex-control-nav-container","sync":"","asNavFor":"","itemWidth":0,"itemMargin":0,"minItems":0,"maxItems":0,"move":0,"animation":"fade","slideshow":true,"slideshowSpeed":7000,"directionNav":true,"controlNav":true,"prevText":"Previous","nextText":"Next","pausePlay":false,"pauseText":"Pause","playText":"Play","randomize":false,"thumbCaptions":false,"thumbCaptionsBoth":false,"animationLoop":true,"pauseOnAction":true,"pauseOnHover":false,"manualControls":""}},"better_exposed_filters":{"views":{"carousel":{"displays":{"carousel_pane":{"filters":[]}}},"city_list":{"displays":{"homepage_city_block":{"filters":[]}}},"news":{"displays":{"latest_promoted_news_on_hp_block":{"filters":[]}}}}},"eu_cookie_compliance":{"popup_enabled":1,"popup_agreed_enabled":0,"popup_hide_agreed":1,"popup_clicking_confirmation":0,"popup_html_info":"\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cp\u003EIndem Sie fortfahren, unsere Website zu nutzen, erkl\u00e4ren Sie sich mit der Verwendung von Cookies einverstanden, mit denen wir die Nutzung unserer Website messen und Ihnen Inhalte anbieten k\u00f6nnen, die auf Ihre Interessen zugeschnitten sind. \u003Ca href=\u0022http:\/\/restaurant.michelin.de\u0022\u003EMehr dar\u00fcber erfahren und die Einstellungen bearbeiten\u003C\/a\u003E\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button\u0022\u003EJa\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button\u0022\u003ENicht\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","popup_html_agreed":"\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content agreed\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n          \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022hide-popup-button\u0022\u003E\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button\u0022 \u003E\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/restaurant.michelin.de","popup_link_new_window":1,"popup_position":null,"popup_language":"de","domain":"","cookie_expiration_period":15},"mr_b2c_popover":{"pop_over":"\n\u003Cdiv class=\u0022pop-over-overlay\u0022 style=\u0022display: none;\u0022\u003E\u003C\/div\u003E\n\u003Cdiv class=\u0022pop-over-wrapper\u0022 style=\u0022display: none;\u0022\u003E\n    \u003Cdiv class=\u0022pop-over-image\u0022\u003E\n    \u003Cimg src=\u0022https:\/\/www.bookatable.com\/de\/sites\/mtpb2c_de\/files\/pop-over\/chaikibrunchpwf0412.png\u0022 \/\u003E\n  \u003C\/div\u003E\n    \u003Cdiv class=\u0022pop-over-description\u0022\u003E\n      Unsere neu eingef\u00fchrte Bookatable by Michelin Webseite ersetzt ab sofort die bisherige Webseite von Michelin Restaurants. Hier pr\u00e4sentieren wir die Zusammenf\u00fchrung des globalen Restaurantf\u00fchrers Michelin und des europ\u00e4ischen Marktf\u00fchrers im Bereich Online-Reservierungen, Bookatable.  \u003C\/div\u003E\n\n  \u003Cdiv class=\u0022pop-over-actions\u0022\u003E\n    \u003Cdiv class=\u0022pop-over-link\u0022\u003E\n      \u003Ca href=\u0022https:\/\/www.bookatable.com\/de\/magazin\/michelin-restaurants-hat-sich-geaendert\u0022 target=\u0022_blank\u0022\u003E\n        Mehr herausfinden      \u003C\/a\u003E\n    \u003C\/div\u003E\n\n    \u003Cdiv class=\u0022pop-over-close-link\u0022\u003E\n      \u003Ca href=\u0022#\u0022\u003E\n        OK      \u003C\/a\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","snack_bar":"\n\u003Cdiv class=\u0022snack-bar-wrapper\u0022 style=\u0022display: none;\u0022\u003E\n  \u003Cdiv class=\u0022snack-bar-desc\u0022\u003E\n    \u003Cdiv class=\u0022snack-bar-title\u0022\u003E\n      MICHELIN Restaurants hat sich ge\u00e4ndert!      \u003Cdiv class=\u0022snack-bar-link\u0022\u003E\n        \u003Ca href=\u0022https:\/\/www.bookatable.com\/de\/magazin\/michelin-restaurants-hat-sich-geaendert\u0022 target=\u0022_blank\u0022\u003E\n          Mehr herausfinden        \u003C\/a\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\u0022snack-bar-close\u0022\u003E\n    \u003Ca href=\u0022#\u0022\u003EX\u003C\/a\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","is_front":true},"clientsideValidation":{"forms":{"ft-b2c-poi-search-block-form":{"errorPlacement":5,"general":{"errorClass":"error","wrapper":"li","validateTabs":"","scrollTo":1,"scrollSpeed":1000,"disableHtml5Validation":1,"validateOnBlur":1,"validateOnBlurAlways":0,"validateOnKeyUp":"0","validateBeforeAjax":"1","validateOnSubmit":1,"showMessages":0,"errorElement":"label"},"rules":{"text":{"maxlength":128,"messages":{"maxlength":"Wo? field has to have maximum 128 values."}}}}},"general":{"usexregxp":0,"months":{"Januar":1,"Jan":1,"Februar":2,"Feb":2,"M\u00e4rz":3,"Mar":3,"April":4,"Apr":4,"Mai":5,"Juni":6,"Jun":6,"Juli":7,"Jul":7,"August":8,"Aug":8,"September":9,"Sep":9,"Oktober":10,"Oct":10,"November":11,"Nov":11,"Dezember":12,"Dec":12}},"groups":{"ft-b2c-poi-search-block-form":{}}}});</script>
+</head>
+<body class="html front not-logged-in page-node mr-home-page-body i18n-de">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PFDRFR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PFDRFR');</script>
+<!-- End Google Tag Manager -->
+  <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    
+<div class="l-page">
+  <header class="l-header clearfix" role="banner">
+    <div class="l-header-inner">
+        <div class="l-region l-region--header">
+    <div id="block-ft-b2c-sliding-menu-ft-b2c-sliding-menu-sliding-menu" class="block block--ft-b2c-sliding-menu block--ft-b2c-sliding-menu-ft-b2c-sliding-menu-sliding-menu">
+        <div class="block__content">
+    <div class="header-menu-trigger-wrapper"><a href="#navbar" class="hamburger js-slideout-toggle"><span>Menu</span></a></div>  </div>
+</div>
+<div id="block-mr-b2c-header-blocks-mr-b2c-header-blocks-logo" class="block block--mr-b2c-header-blocks block--mr-b2c-header-blocks-mr-b2c-header-blocks-logo">
+        <div class="block__content">
+    <div class="site-logo"><a href="https://www.bookatable.com/de" title="Startseite" rel="Startseite" class="logo"><h1><img class="header-michelin-logo" data-src="https://www.bookatable.com/de/sites/mtpb2c_de/themes/mtpb2c/custom/bat/logo.png" src="https://www.bookatable.com/de/sites/mtpb2c_de/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" alt="Bookatable" title="Bookatable" /><noscript><img class="header-michelin-logo" src="https://www.bookatable.com/de/sites/mtpb2c_de/themes/mtpb2c/custom/bat/logo.png" alt="Bookatable" title="Bookatable" /></noscript></h1></a></div>  </div>
+</div>
+  </div>
+        <div class="l-region l-region--sub-header">
+    <nav id="block-system-main-menu" role="navigation" class="block block--system block--menu block--system-main-menu">
+      
+  <ul class="menu"><li class="first last leaf"><a href="/de/guide-michelin">GUIDE MICHELIN</a></li>
+</ul></nav>
+  </div>
+    </div>
+  </header>
+
+  <div class="l-content-wrapper">
+    <div class="l-overlay"></div>
+    <div class="l-main-prefix">
+          </div>
+
+    <div class="l-main" role="main">
+      <div class="l-content clearfix">
+        <div class="l-content-inner">
+          <div class="l-breadcrumbs">
+                      </div>
+                                                                                                        </div>
+        <div class="panel-display panels-michelin-content-layout panels-michelin-1col clearfix">
+
+      <div class="panels-content-banner">
+      <div class="panel-pane pane-block pane-ft-b2c-poi-search-ft-b2c-poi-search-form">
+  <div class="panel-pane-inside">
+                  <h2 class="pane-title">
+      Die besten Restaurants finden und reservieren    </h2>
+                <form class="mr-poi-search-form ft-b2c-poi-search-block-form" action="/de/search-restaurants-quick" method="get" id="ft-b2c-poi-search-block-form" accept-charset="UTF-8"><div><h3>Adressen in allen Preisklassen und in ganz Deutschland</h3><div class="ft-b2c-poi-search-form ft-b2c-poi-search-form-home form-wrapper" id="edit-content"><input attr-text="" type="hidden" name="localisation" value="" />
+<div class="form-item form-type-textfield form-item-text">
+  <label for="edit-text">Wo? </label>
+ <input data-limit="2" placeholder="Stadt /Name des Restaurants" type="text" id="edit-text" name="text" value="" size="60" maxlength="128" class="form-text form-autocomplete" /><input type="hidden" id="edit-text-autocomplete" value="https://www.bookatable.com/de/index.php?q=search/autocomplete" disabled="disabled" class="autocomplete" /> <span class="field-suffix"><span class="around-me-search" title="Search nearby restaurants"></span></span>
+</div>
+<div class="form-item form-type-select form-item-cooking-type">
+  <label for="edit-cooking-type">Was? </label>
+ <select class="use-select-2 form-select" id="edit-cooking-type" name="cooking_type"><option value="" selected="selected">Alle Küchen</option><option value="366">Afrikanisch</option><option value="401">Amerikanisch</option><option value="511">Asiatisch</option><option value="251">Bistro, Brasserie, Weinbar</option><option value="271">Burger</option><option value="531">Chinesisch</option><option value="786">Deutsch, regional</option><option value="316">Fisch und Meeresfrüchte</option><option value="926">Französisch</option><option value="1081">Griechisch</option><option value="561">Indisch</option><option value="1096">Italienisch</option><option value="591">Japanisch</option><option value="1171">Mediterran</option><option value="446">Mexikanisch</option><option value="311">Pizza</option><option value="1241">Portugiesisch</option><option value="1041">Spanisch</option><option value="361">Steak und Grillspezialitäten</option><option value="616">Sushi</option><option value="486">Südamerikanisch</option><option value="331">Tapas-Bar</option><option value="661">Thailändisch</option><option value="351">Vegan</option><option value="356">Vegetarisch</option></select>
+</div>
+<input class="use-ajax-submit form-submit" type="submit" id="edit-submit" name="op" value="Suchen" /><div class="form-item form-type-checkbox form-item-gm-selection">
+ <input type="checkbox" id="edit-gm-selection" name="gm_selection" value="1" class="form-checkbox" />  <label class="option" for="edit-gm-selection">Guide MICHELIN-Auswahl </label>
+
+</div>
+</div><input type="hidden" name="latitude" value="" />
+<input type="hidden" name="longitude" value="" />
+<input type="hidden" name="form_build_id" value="form-tHp9U8MFKh_x3JVPtpisiiFW9-KdGNvCriC-oBZs4us" />
+<input type="hidden" name="form_id" value="ft_b2c_poi_search_block_form" />
+</div></form>          </div>
+</div>
+<div class="panel-pane pane-block pane-bean-hp-carousel">
+    <div class="panel-pane-inside">
+                          <div class="entity entity-bean bean-carousel clearfix" class="entity entity-bean bean-carousel">
+
+  <div class="content">
+    <div class="pane-carousel-carousel-mobile-pane"><div class="field field--name-field-mobile-picture field--type-entityreference field--label-hidden"><div class="field__items"><div class="field__item even"><div  class="ds-1col node node--carousel-item view-mode-default node--default node--carousel-item--default clearfix">
+
+  
+  <div class="field field--name-field-image field--type-image field--label-hidden"><div class="field__items"><div class="field__item even"><div class="bg-banner-image" style="background-image: url(https://www.bookatable.com/de/sites/mtpb2c_de/files/de_mobile_header-rs.jpg)"></div></div></div></div></div>
+
+</div></div></div></div><div class="pane-carousel-carousel-desktop-pane"><div class="view view-carousel view-id-carousel view-display-id-carousel_pane view-dom-id-337c42dabc3366e3980118bf0add2501">
+        
+  
+  
+      <div class="view-content">
+      
+  <div class="skin-default">
+    
+    <div id="flexslider_views_slideshow_main_carousel-carousel_pane" class="flexslider_views_slideshow_main views_slideshow_main"><div class="flex-nav-container">
+  <div class="flexslider">
+    <ul id="flexslider_views_slideshow_carousel-carousel_pane" class="flexslider-views-slideshow-main-frame slides">
+        <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-1 views-row-odd">
+      
+  <div class="views-field views-field-field-image">        <div class="field-content"><div class="bg-banner-image" style="background-image: url(https://www.bookatable.com/de/sites/mtpb2c_de/files/de_dektop_header-rs.jpg)"></div></div>  </div>  </li>
+    </ul>
+  </div>
+</div></div>
+      </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div></div>  </div>
+</div>
+          </div>
+</div>
+    </div>
+    <!-- /.panels-content-banner-->
+
+      <div class="panels-content-main">
+      <div class="panel-pane pane-views pane-city-list">
+  <div class="panel-pane-inside">
+                  <h2 class="pane-title">
+      Finde ein Restaurant in Deiner Stadt:     </h2>
+                <div class="view view-city-list view-id-city_list view-display-id-homepage_city_block view-dom-id-eef63e4bbc298e1b09ce71f00212347a">
+        
+  
+      <div class="attachment attachment-before">
+      <a href="/de/restaurant-verzeichnis" class="restaurant-directory-link">Restaurantverzeichnis</a>    </div>
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+    
+<div  class="ds-1col node node--city view-mode-grid node--grid node--city--grid clearfix"  attr-gtm-jsevent="click" attr-gtm-event="wrapper.click" attr-gtm-type="city" attr-gtm-title="München">
+  <div class="city-grid-item-wrapper">
+        <a href="https://www.bookatable.com/de/restaurants/munchen">
+    
+    <div class="field field--name-field-image field--type-image field--label-hidden"><div class="field__items"><div class="field__item even"><img data-src="https://www.bookatable.com/de/sites/mtpb2c_de/files/styles/310x220/public/city_images/top_de_munchen.jpg?itok=YexseZ5T" src="https://www.bookatable.com/de/sites/mtpb2c_de/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="310" height="220" alt="" /><noscript><img src="https://www.bookatable.com/de/sites/mtpb2c_de/files/styles/310x220/public/city_images/top_de_munchen.jpg?itok=YexseZ5T" width="310" height="220" alt="" /></noscript></div></div></div>
+        </a>
+    
+    <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://www.bookatable.com/de/restaurants/munchen">München</a></div></div></div>  </div>
+</div>
+  </div>
+  <div class="views-row views-row-2 views-row-even">
+    
+<div  class="ds-1col node node--city view-mode-grid node--grid node--city--grid clearfix"  attr-gtm-jsevent="click" attr-gtm-event="wrapper.click" attr-gtm-type="city" attr-gtm-title="Hamburg">
+  <div class="city-grid-item-wrapper">
+        <a href="https://www.bookatable.com/de/restaurants/hamburg">
+    
+    <div class="field field--name-field-image field--type-image field--label-hidden"><div class="field__items"><div class="field__item even"><img data-src="https://www.bookatable.com/de/sites/mtpb2c_de/files/styles/310x220/public/city_images/top_de_hambourg.jpg?itok=L95WojPO" src="https://www.bookatable.com/de/sites/mtpb2c_de/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="310" height="220" alt="" /><noscript><img src="https://www.bookatable.com/de/sites/mtpb2c_de/files/styles/310x220/public/city_images/top_de_hambourg.jpg?itok=L95WojPO" width="310" height="220" alt="" /></noscript></div></div></div>
+        </a>
+    
+    <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://www.bookatable.com/de/restaurants/hamburg">Hamburg</a></div></div></div>  </div>
+</div>
+  </div>
+  <div class="views-row views-row-3 views-row-odd">
+    
+<div  class="ds-1col node node--city view-mode-grid node--grid node--city--grid clearfix"  attr-gtm-jsevent="click" attr-gtm-event="wrapper.click" attr-gtm-type="city" attr-gtm-title="Berlin">
+  <div class="city-grid-item-wrapper">
+        <a href="https://www.bookatable.com/de/restaurants/berlin">
+    
+    <div class="field field--name-field-image field--type-image field--label-hidden"><div class="field__items"><div class="field__item even"><img data-src="https://www.bookatable.com/de/sites/mtpb2c_de/files/styles/310x220/public/city_images/top_de_berlin.jpg?itok=4iIEnjof" src="https://www.bookatable.com/de/sites/mtpb2c_de/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="310" height="220" alt="" /><noscript><img src="https://www.bookatable.com/de/sites/mtpb2c_de/files/styles/310x220/public/city_images/top_de_berlin.jpg?itok=4iIEnjof" width="310" height="220" alt="" /></noscript></div></div></div>
+        </a>
+    
+    <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://www.bookatable.com/de/restaurants/berlin">Berlin</a></div></div></div>  </div>
+</div>
+  </div>
+  <div class="views-row views-row-4 views-row-even">
+    
+<div  class="ds-1col node node--city view-mode-grid node--grid node--city--grid clearfix"  attr-gtm-jsevent="click" attr-gtm-event="wrapper.click" attr-gtm-type="city" attr-gtm-title="Köln">
+  <div class="city-grid-item-wrapper">
+        <a href="https://www.bookatable.com/de/restaurants/koln">
+    
+    <div class="field field--name-field-image field--type-image field--label-hidden"><div class="field__items"><div class="field__item even"><img data-src="https://www.bookatable.com/de/sites/mtpb2c_de/files/styles/310x220/public/city_images/top_de_cologne_0.jpg?itok=O_c8DD0f" src="https://www.bookatable.com/de/sites/mtpb2c_de/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="310" height="220" alt="" /><noscript><img src="https://www.bookatable.com/de/sites/mtpb2c_de/files/styles/310x220/public/city_images/top_de_cologne_0.jpg?itok=O_c8DD0f" width="310" height="220" alt="" /></noscript></div></div></div>
+        </a>
+    
+    <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://www.bookatable.com/de/restaurants/koln">Köln</a></div></div></div>  </div>
+</div>
+  </div>
+  <div class="views-row views-row-5 views-row-odd">
+    
+<div  class="ds-1col node node--city view-mode-grid node--grid node--city--grid clearfix"  attr-gtm-jsevent="click" attr-gtm-event="wrapper.click" attr-gtm-type="city" attr-gtm-title="Frankfurt">
+  <div class="city-grid-item-wrapper">
+        <a href="https://www.bookatable.com/de/restaurants/frankfurt-am-main">
+    
+    <div class="field field--name-field-image field--type-image field--label-hidden"><div class="field__items"><div class="field__item even"><img data-src="https://www.bookatable.com/de/sites/mtpb2c_de/files/styles/310x220/public/city_images/top_de_frankfurt.jpg?itok=3FZm0iqr" src="https://www.bookatable.com/de/sites/mtpb2c_de/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="310" height="220" alt="" /><noscript><img src="https://www.bookatable.com/de/sites/mtpb2c_de/files/styles/310x220/public/city_images/top_de_frankfurt.jpg?itok=3FZm0iqr" width="310" height="220" alt="" /></noscript></div></div></div>
+        </a>
+    
+    <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://www.bookatable.com/de/restaurants/frankfurt-am-main">Frankfurt</a></div></div></div>  </div>
+</div>
+  </div>
+  <div class="views-row views-row-6 views-row-even views-row-last">
+    
+<div  class="ds-1col node node--city view-mode-grid node--grid node--city--grid clearfix"  attr-gtm-jsevent="click" attr-gtm-event="wrapper.click" attr-gtm-type="city" attr-gtm-title="Stuttgart">
+  <div class="city-grid-item-wrapper">
+        <a href="https://www.bookatable.com/de/restaurants/stuttgart">
+    
+    <div class="field field--name-field-image field--type-image field--label-hidden"><div class="field__items"><div class="field__item even"><img data-src="https://www.bookatable.com/de/sites/mtpb2c_de/files/styles/310x220/public/city_images/top_de_stuttgart.jpg?itok=WjOgKVmG" src="https://www.bookatable.com/de/sites/mtpb2c_de/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="310" height="220" alt="" /><noscript><img src="https://www.bookatable.com/de/sites/mtpb2c_de/files/styles/310x220/public/city_images/top_de_stuttgart.jpg?itok=WjOgKVmG" width="310" height="220" alt="" /></noscript></div></div></div>
+        </a>
+    
+    <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://www.bookatable.com/de/restaurants/stuttgart">Stuttgart</a></div></div></div>  </div>
+</div>
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>          </div>
+</div>
+    </div>
+    <!-- /.panels-content-main-->
+
+</div>
+      </div>
+    </div>
+
+    
+    <footer class="l-footer" role="contentinfo">
+      <div class="l-footer-inner">
+        <div class="l-footer-top">
+            <div class="l-region l-region--footer-top">
+    
+<div class="block--bean-type-product_benefits">
+  <div id="block-bean-hp-product-benefits" class="block block--bean block--bean-hp-product-benefits">
+                <div class="block__content">
+      <div class="entity entity-bean bean-product-benefits clearfix" class="entity entity-bean bean-product-benefits">
+
+  <div class="content">
+    <ul class="product-benefits"><li><span class="icon-mr icon-recherchez"></span><div class="benefit-description"><p>Restaurants in der Umgebung</p>
+</div></li>
+<li><span class="icon-mr icon-decouvrez"></span><div class="benefit-description"><p>Restaurants aus dem Guide MICHELIN</p>
+</div></li>
+<li><span class="icon-mr icon-reservez"></span><div class="benefit-description"><p>Eine kostenlose und schnelle Reservierung</p>
+</div></li>
+<li><span class="icon-mr icon-partagez"></span><div class="benefit-description"><p>Fotos und Bewertungen als Entscheidungshilfe</p>
+</div></li>
+</ul>  </div>
+</div>
+    </div>
+  </div>
+</div>
+<div id="block-block-1" class="block block--block block--block-1">
+        <h2  class="block__title">BOOKATABLE, ALLE RESTAURANTS PLUS DER GUIDE MICHELIN</h2>
+      <div class="block__content">
+    <p>Entdecke auf unserer Website die <a href="https://www.bookatable.com/de/restaurants/deutschland/restaurants-michelin">Restaurants des Guide MICHELIN</a>, <a href="https://www.bookatable.com/de/restaurants/deutschland/restaurants-1-stern-michelin/restaurants-2-sterne-michelin/restaurants-3-sterne-michelin">Sternerestaurants</a> und unsere <a href="https://www.bookatable.com/de/restaurants/deutschland/billig">Restauranttipps für das kleine Budget</a>. Auf MICHELIN Restaurants findest Du alle Restaurantempfehlungen des Guide MICHELIN wie auch andere <a href="https://www.bookatable.com/de/restaurants/deutschland">Restaurants in ganz Deutschland</a>.</p>
+<p>Finde <a href="https://www.bookatable.com/de/restaurants/deutschland/promotion">Restaurants mit Sonderaktionen</a> und <a href="https://www.bookatable.com/de/restaurants/deutschland/promotion">reserviere Deinen Tisch online</a>.</p>
+<p>Besuche auch unsere Rubriken <a href="https://www.bookatable.com/de/magazin">&bdquo;Magazin&ldquo;</a> und <a href="https://www.bookatable.com/de/guide-michelin">&bdquo;Guide MICHELIN&ldquo;</a>: Artikel, Porträts von Köchen, Rezepte und besondere Tipps des Guide MICHELIN.</p>
+  </div>
+</div>
+  </div>
+        </div>
+        <div class="l-footer-top-suffix">
+                  </div>
+        <div class="l-footer-middle">
+            <div class="l-region l-region--footer-middle">
+    <nav id="block-menu-menu-corporate-menu-1" role="navigation" class="block block--menu block--menu-menu-corporate-menu-1">
+      <div  class="block__title">Restaurantbesitzer</div>
+    
+  <ul class="menu"><li class="first leaf"><a href="http://gastronomen.bookatable.de/" target="_blank">Informationen</a></li>
+<li class="last leaf"><a href="https://login.bookatable.com/login?language=de-DE" target="_blank">Log-in</a></li>
+</ul></nav>
+<nav id="block-menu-menu-corporate-menu-2" role="navigation" class="block block--menu block--menu-menu-corporate-menu-2">
+      <div  class="block__title">Folge uns</div>
+    
+  <ul class="menu"><li class="first leaf"><a href="https://www.facebook.com/BookatableByMichelinDE/" target="_blank">Auf Facebook</a></li>
+<li class="last leaf"><a href="https://twitter.com/BookatableDE" target="_blank">Auf Twitter</a></li>
+</ul></nav>
+<nav id="block-menu-menu-corporate-menu-3" role="navigation" class="block block--menu block--menu-menu-corporate-menu-3">
+      <div  class="block__title">Zusätzliche Dienste</div>
+    
+  <ul class="menu"><li class="first leaf"><a href="https://bda.bookatable.com/Mobile/CancelBooking?inIframe=False&amp;cid=INTL-BOOKATABLEMASTER:76677&amp;lang=de-DE" target="_blank">Reservierung stornieren</a></li>
+<li class="leaf"><a href="http://www.bookatable.co.uk/" target="_blank">Reservieren in England</a></li>
+<li class="last leaf"><a href="https://restaurant.michelin.fr" target="_blank">Reservieren in Frankreich</a></li>
+</ul></nav>
+<nav id="block-menu-menu-corporate-menu-4" role="navigation" class="block block--menu block--menu-menu-corporate-menu-4">
+      <div  class="block__title">MICHELIN GRUPPE</div>
+    
+  <ul class="menu"><li class="first leaf"><a href="http://www.michelin.de/" target="_blank">Das Unternehmen Michelin</a></li>
+<li class="leaf"><a href="http://www.michelin.de/autoreifen/pkw-reifen#type=type_2" target="_blank">Michelin Reifen</a></li>
+<li class="leaf"><a href="http://www.viamichelin.de/" target="_blank">ViaMichelin</a></li>
+<li class="last leaf"><a href="http://www.michelin.de/mobility-apps" target="_blank">Michelin Mobility Apps</a></li>
+</ul></nav>
+<div id="block-ft-b2c-footer-blocks-footer-newsletter" class="block block--ft-b2c-footer-blocks block--ft-b2c-footer-blocks-footer-newsletter">
+        <div class="newsletter-primary-title">
+      <div  class="block__title">MELDE DICH FÜR UNSEREN NEWSLETTER AN UND PROFITIERE VON TOLLEN RESTAURANT-TIPPS</div>
+    </div>
+
+          <div class="newsletter-secondary-title">
+        <div  class="block__title">Melde Dich für unseren Newsletter an und profitiere von tollen Restaurant-Tipps</div>
+      </div>
+      
+  
+  <div class="block__content">
+    <form class="mr-b2c-footer-newsletter-form ft-b2c-footer-blocks-form" action="/de/9d90wqa9/mongos-restaurant-bochum-bochum?FromPoiList=/restaurants/deutschland/44787-bochum/gruppen-erlaubt&amp;page=123" method="post" id="ft-b2c-footer-blocks-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-email">
+ <input placeholder="E-Mail" type="text" id="edit-email" name="email" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<input type="submit" id="edit-submit--2" name="op" value="Ok" class="form-submit" /><input type="hidden" name="form_build_id" value="form-dFZuqwB4G7Ae0DwALS0XBoRB2rNyLMP3otlu75NfUK0" />
+<input type="hidden" name="form_id" value="ft_b2c_footer_blocks_form" />
+</div></form>  </div>
+</div>
+<div id="block-accordion-blocks-footer-menu-and-newsletter-1" class="block block--accordion-blocks block--accordion-blocks-footer-menu-and-newsletter-1">
+        <h2  class="block__title">Footer menu and newsletter</h2>
+      <div class="block__content">
+    <div class="accordion_blocks_container">
+        <h2><a href="#">
+          Restaurantbesitzer        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="http://gastronomen.bookatable.de/" target="_blank">Informationen</a></li>
+<li class="last leaf"><a href="https://login.bookatable.com/login?language=de-DE" target="_blank">Log-in</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          Folge uns        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="https://www.facebook.com/BookatableByMichelinDE/" target="_blank">Auf Facebook</a></li>
+<li class="last leaf"><a href="https://twitter.com/BookatableDE" target="_blank">Auf Twitter</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          Zusätzliche Dienste        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="https://bda.bookatable.com/Mobile/CancelBooking?inIframe=False&amp;cid=INTL-BOOKATABLEMASTER:76677&amp;lang=de-DE" target="_blank">Reservierung stornieren</a></li>
+<li class="leaf"><a href="http://www.bookatable.co.uk/" target="_blank">Reservieren in England</a></li>
+<li class="last leaf"><a href="https://restaurant.michelin.fr" target="_blank">Reservieren in Frankreich</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          MICHELIN GRUPPE        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="http://www.michelin.de/" target="_blank">Das Unternehmen Michelin</a></li>
+<li class="leaf"><a href="http://www.michelin.de/autoreifen/pkw-reifen#type=type_2" target="_blank">Michelin Reifen</a></li>
+<li class="leaf"><a href="http://www.viamichelin.de/" target="_blank">ViaMichelin</a></li>
+<li class="last leaf"><a href="http://www.michelin.de/mobility-apps" target="_blank">Michelin Mobility Apps</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          MELDE DICH FÜR UNSEREN NEWSLETTER AN UND PROFITIERE VON TOLLEN RESTAURANT-TIPPS        </a></h2>
+    <div>
+      <form class="mr-b2c-footer-newsletter-form ft-b2c-footer-blocks-form--2" action="/de/9d90wqa9/mongos-restaurant-bochum-bochum?FromPoiList=/restaurants/deutschland/44787-bochum/gruppen-erlaubt&amp;page=123" method="post" id="ft-b2c-footer-blocks-form--2" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-email">
+ <input placeholder="E-Mail" type="text" id="edit-email--2" name="email" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<input type="submit" id="edit-submit--3" name="op" value="Ok" class="form-submit" /><input type="hidden" name="form_build_id" value="form-ZNSFKesnOENUT4tqTHhUI7qpgc2u_Q1S4zqSj4P0TwA" />
+<input type="hidden" name="form_id" value="ft_b2c_footer_blocks_form" />
+</div></form>    </div>
+    </div>
+  </div>
+</div>
+  </div>
+        </div>
+        <div class="l-footer-sub-bottom">
+            <div class="l-region l-region--footer-sub-bottom">
+    <nav id="block-menu-menu-social-networks-left" role="navigation" class="block block--menu block--menu-menu-social-networks-left">
+      <div  class="block__title">iOS App herunterladen</div>
+    
+  <ul class="menu"><li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-social-networks-left clearfix" class="entity entity-menu-fields menu-fields-menu-social-networks-left">
+  <div class="content">
+    <a href="https://itunes.apple.com/de/app/michelin-restaurants-recherche/id523153222?mt=8" target="_blank" class="first last leaf icon-mr icon-apps"></a>  </div>
+</div>
+</li>
+</ul></nav>
+<nav id="block-menu-menu-social-networks-right" role="navigation" class="block block--menu block--menu-menu-social-networks-right">
+      <div  class="block__title">Android App herunterladen</div>
+    
+  <ul class="menu"><li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-social-networks-right clearfix" class="entity entity-menu-fields menu-fields-menu-social-networks-right">
+  <div class="content">
+    <a href="https://play.google.com/store/apps/details?id=com.viamichelin.android.gm21&amp;hl=de" target="_blank" class="first last leaf icon-mr icon-android"></a>  </div>
+</div>
+</li>
+</ul></nav>
+  </div>
+        </div>
+        <div class="l-footer-bottom">
+            <div class="l-region l-region--footer-bottom">
+    <div id="block-ft-b2c-footer-blocks-footer-copyright" class="block block--ft-b2c-footer-blocks block--ft-b2c-footer-blocks-footer-copyright">
+        <div class="block__content">
+    <div class="footer-copyright-wrapper">
+ <div class="copyright-text">
+   &copy; MICHELIN 2017 </div>
+ <div class="copyright-menu">
+        <ul class="menu"><li class="first leaf"><a href="/de/agb">AGB</a></li>
+<li class="leaf"><a href="/de/datenschutz">Datenschutzrichtlinie</a></li>
+<li class="leaf"><a href="/de/impressum">Impressum</a></li>
+<li class="last leaf"><a href="/de/kontakt">Kontaktiere uns </a></li>
+</ul>    </div>
+</div>
+<div class="footer-logo">
+  <img class="footer-logo" id="footer-copyright-logo" data-src="https://www.bookatable.com/de/sites/mtpb2c_de/themes/mtpb2c/custom/michelin/img/logo_michelin_fr.png" src="https://www.bookatable.com/de/sites/mtpb2c_de/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" alt="Michelin logo" title="Michelin" /><noscript><img class="footer-logo" id="footer-copyright-logo" src="https://www.bookatable.com/de/sites/mtpb2c_de/themes/mtpb2c/custom/michelin/img/logo_michelin_fr.png" alt="Michelin logo" title="Michelin" /></noscript></div>  </div>
+</div>
+  </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+        <noscript>
+        <style type="text/css" media="all">
+          img[data-src] { display: none !important; }
+        </style>
+      </noscript>
+<nav id="mr-b2c-sliding-menu">
+  <div class="menu-top-sliding-menu-one-wrapper">
+    <ul class="menu"><li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one clearfix" class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one">
+  <div class="content">
+    <a href="/de/magazin" class="first leaf icon-mr icon-partagez">Magazin</a>  </div>
+</div>
+</li>
+<li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one clearfix" class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one">
+  <div class="content">
+    <a href="/de/guide-michelin" class="last leaf icon-mr icon-decouvrez">Guide MICHELIN</a>  </div>
+</div>
+</li>
+</ul>  </div>
+
+  <div class="menu-top-sliding-menu-two-wrapper">
+    <ul class="menu"><li class="first leaf"><a href="http://gastronomen.bookatable.de/" target="_blank">Für Gastronomen</a></li>
+<li class="last leaf"><a href="https://login.bookatable.com/login?language=de-DE" target="_blank">Restaurantbesitzer log-in</a></li>
+</ul>  </div>
+</nav>
+<script src="https://www.bookatable.com/de/sites/mtpb2c_de/files/js/js_26Bzx3y0IseHYGqFrfmdaxevb4kH-AWCIfdIbijy3-E.js"></script>
+<script>      (function ($) {
+        Drupal.behaviors.lazyloader = {
+          attach: function (context, settings) {
+            $("img[data-src]").lazyloader({distance: 0, icon: "" });
+          }
+        };
+      }(jQuery));</script>
+
+<!--[if lt IE 9]>
+<script src="https://www.bookatable.com/de/sites/mtpb2c_de/files/js/js_q2d-qES5qoOARLZdLHKA3SOiGW20v1kS9ST2I3uipgc.js"></script>
+<![endif]-->
+<script src="https://www.bookatable.com/de/sites/mtpb2c_de/files/js/js_07j5zJCluA4uMWVWpNYSIuMyavDvmrARp9lYluJB8uU.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"778b962005","applicationID":"52774854","transactionName":"bwdRbBdUWUVRV0VaWVZNclsRXFhYH0RQVFNnD1JWBFJSRG9EUFRTZwdLXQZAQ1M=","queueTime":0,"applicationTime":498,"atts":"Q0BSGl9OSks=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

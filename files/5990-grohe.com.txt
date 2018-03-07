@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta name="date" content="2017-08-28T11:55:00+01:00" />
+        <link href="https://plus.google.com/117321420924018871086" rel="publisher" />
+
+        <title>GROHE - Grohe AG Company Page - Welcome to GROHE</title>
+<meta name="keywords" content="GROHE" />
+<meta name="description" content="GROHE" />
+<meta name="robots" content="noodp" />
+
+        <link href="//cdn12-grohe-com.cloud.grohe.com/application/resources/css/normalize.css" type="text/css" rel="stylesheet" />
+<link href="//cdn12-grohe-com.cloud.grohe.com/application/resources/css/screen.css" type="text/css" rel="stylesheet" />
+<link href="/application/resources/css/fonts.css" type="text/css" rel="stylesheet" />
+<!--[if IE 7]><link href="//cdn12-grohe-com.cloud.grohe.com/application/resources/css/ie7.css" type="text/css" rel="stylesheet" /><![endif]-->
+<link href="//cdn12-grohe-com.cloud.grohe.com/application/resources/css/fancybox.css" type="text/css" rel="stylesheet" />
+<link href="//cdn12-grohe-com.cloud.grohe.com/application/resources/css/print.css" type="text/css" rel="stylesheet" media="print" />
+
+        <script type="text/javascript">window.enxinia = {"uriprepath": "/", "queryprefix": "~"};</script>
+<script src="//cdn12-grohe-com.cloud.grohe.com/application/resources/javascript/libraries/jquery.min.js" type="text/javascript"> </script>
+<script src="//cdn12-grohe-com.cloud.grohe.com/application/resources/javascript/libraries/jquery.timers.js" type="text/javascript"> </script>
+<script src="//cdn12-grohe-com.cloud.grohe.com/application/resources/javascript/libraries/jquery.anchorScroll.js" type="text/javascript"> </script>
+<!--[if lt IE 9]><script src="//cdn12-grohe-com.cloud.grohe.com/application/resources/javascript/libraries/html5shiv.min.js" type="text/javascript"> </script><![endif]-->
+<script src="//cdn12-grohe-com.cloud.grohe.com/application/resources/javascript/libraries/fancybox.min.js" type="text/javascript"> </script>
+<script src="//cdn12-grohe-com.cloud.grohe.com/application/resources/javascript/scripts/cookie-layer.js" type="text/javascript"> </script>
+<script src="//cdn12-grohe-com.cloud.grohe.com/application/resources/javascript/scripts/common.js" type="text/javascript"> </script>
+<script type="text/javascript">data = [{'pageScope':'b2c','pageArea':'portal','pageCountry':'','pageLang':'eng','pageCategory':'home'}];(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = '/application/resources/javascript/libraries/tr.min.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+<script src="//cdn12-grohe-com.cloud.grohe.com/application/resources/javascript/scripts/notepad.js" type="text/javascript"> </script>
+<script type="text/javascript">$(document).ready(function() { if (!('application' in window)) { window.application = {}; } window.application.notepad = new Application_Notepad({"block":49521,"interface":"\/29819\/notepad\/?scope=interface","translation":{"product-add":"Add to my notepad","product-edit":"Edit notepad","error-product-not-added":"An error occured while adding the product to your notepad. Please try again.&nbsp;","error-product-not-removed":"An error occured while deleting the product to your notepad. Please try again.&nbsp;","error-product-not-sorted":"The products could not be sorted. Please try again."}}); });</script>
+
+
+            </head>
+    <body>
+        <div id="wrapper" class="clean">
+            <div id="sidebar-social"> </div><header id="header"><script type="text/javascript">
+/* <![CDATA[ */
+    $(document).ready(function() {
+        var required = new Array();
+
+                if ($('li.language', '#navigation-meta').length) {
+            required.push($('li.language', '#navigation-meta')[0]);
+        }
+        
+        var remainingWidth = $('#navigation-meta').parent().width();
+
+        for (var i = 0; i < required.length; i++) {
+        	remainingWidth -= ($(required[i]).outerWidth(true) + 1);
+        }
+
+        $('#navigation-meta > li').each(function (i, e) {
+            if ($.inArray(e, required) < 0) {
+            	if (remainingWidth - $(e).outerWidth(true) < 0) {
+                	$(e).hide();
+
+            	} else {
+            		remainingWidth -= $(e).outerWidth(true);
+            	}
+            }
+        });
+
+        if (remainingWidth > 0) {
+        	$('li.select-customer-type', '#navigation-meta').css('margin-right', parseInt($('li.select-customer-type', '#navigation-meta').css('margin-right'), 10) + remainingWidth);
+        	remainingWidth = 0;
+        }
+    });
+/* ]]> */
+</script>
+<div class="wrapper">
+    <div id="logo">
+    <a href="/" target="_self" title="Grohe AG Company Page - Welcome to GROHE"><img src="/application/resources/images/general/logo.png" alt="GROHE" height="79" width="220" /></a>    </div>
+    <div class="meta-box">
+                <ul class="clean" id="navigation-meta">
+                                <li class="conditionally">
+                        <a href="/29438/grohe-in-your-country/" target="_self" title="GROHE in your country">Visit local GROHE website |</a>                    </li>
+                                <li class="language more">
+                        <a href="/" target="_self" title="Grohe AG Company Page - Welcome to GROHE">Language</a>                                <div>
+                                    <ul>
+                                                                                            <li>
+                                                        <a href="/" target="_self" title="GROHE">English</a>                                                    </li>
+                                                                                            <li class="last">
+                                                        <a href="/com-de/" target="_self" title="GROHE">German</a>                                                    </li>
+                                                                            </ul>
+                                </div>
+                                            </li>
+                        </ul>
+        </div>
+
+	            <nav id="navigation-main" class="no-js">
+                <ul class="root">
+                                            <li data-node='{"id": 29386}' class="first">
+                            <a href="/29386/about-company/" target="_self"><span class="first">About Company</span></a>                                <div><ul class="w1">
+                                                                            <li data-node='{"id": 29398}' class="first">
+                                            <a href="/29398/about-company/about-grohe/" target="_self"><span>About GROHE</span></a>                                        </li>
+                                                                            <li data-node='{"id": 32238}'>
+                                            <a href="/32238/about-company/grohe-history/" target="_self"><span>GROHE History</span></a>                                        </li>
+                                                                            <li data-node='{"id": 29883}'>
+                                            <a href="/29883/about-company/grohe-live-center/" target="_self"><span>GROHE Live! Center</span></a>                                        </li>
+                                                                            <li data-node='{"id": 19490}'>
+                                            <a href="/19490/about-company/quality/" target="_self"><span>Quality</span></a>                                        </li>
+                                                                            <li data-node='{"id": 30789}'>
+                                            <a href="/30789/about-company/design/" target="_self"><span>Design</span></a>                                        </li>
+                                                                            <li data-node='{"id": 19690}'>
+                                            <a href="/19690/about-company/technology/" target="_self"><span>Technology</span></a>                                        </li>
+                                                                            <li data-node='{"id": 19481}'>
+                                            <a href="/19481/about-company/responsibility/" target="_self"><span>Responsibility</span></a>                                        </li>
+                                                                            <li data-node='{"id": 30695}'>
+                                            <a href="/30695/about-company/board-of-grohe-ag/" target="_self"><span>Board of GROHE AG</span></a>                                        </li>
+                                                                            <li data-node='{"id": 33654}' class="last">
+                                            <a href="/33654/about-company/code-of-conduct/" target="_self"><span>Code of Conduct</span></a>                                        </li>
+                                                                    </ul></div>
+                                                    </li>
+                                            <li data-node='{"id": 29438}'>
+                            <a href="/29438/grohe-in-your-country/" target="_self"><span>GROHE in your country</span></a>                                <div><ul class="w1">
+                                                                            <li data-node='{"id": 29397}' class="first">
+                                            <a href="/29397/grohe-in-your-country/usa-canada/" target="_self"><span>USA &amp; Canada</span></a>                                        </li>
+                                                                            <li data-node='{"id": 29894}'>
+                                            <a href="/29894/grohe-in-your-country/south-america/" target="_self"><span>South America</span></a>                                        </li>
+                                                                            <li data-node='{"id": 29443}'>
+                                            <a href="/29443/grohe-in-your-country/asia-australia-new-zealand/" target="_self"><span>Asia, Australia &amp; New Zealand</span></a>                                        </li>
+                                                                            <li data-node='{"id": 29440}'>
+                                            <a href="/29440/grohe-in-your-country/europe/" target="_self"><span>Europe</span></a>                                        </li>
+                                                                            <li data-node='{"id": 29895}'>
+                                            <a href="/29895/grohe-in-your-country/middle-east/" target="_self"><span>Middle East</span></a>                                        </li>
+                                                                            <li data-node='{"id": 29893}' class="last">
+                                            <a href="/29893/grohe-in-your-country/africa/" target="_self"><span>Africa</span></a>                                        </li>
+                                                                    </ul></div>
+                                                    </li>
+                                            <li data-node='{"id": 19499}' class="conditionally">
+                            <a href="/19499/career-at-grohe/" target="_self"><span>Career at GROHE</span></a>                                <div><ul class="w1">
+                                                                            <li data-node='{"id": 19501}' class="first">
+                                            <a href="/19501/career-at-grohe/job-offers/" target="_self"><span>Job Offers</span></a>                                        </li>
+                                                                            <li data-node='{"id": 19503}' class="last">
+                                            <a href="/19503/career-at-grohe/practical-training/" target="_self"><span>Practical Training</span></a>                                        </li>
+                                                                    </ul></div>
+                                                    </li>
+                                            <li data-node='{"id": 29387}' class="conditionally">
+                            <a href="/29387/press/" target="_self"><span>Press</span></a>                        </li>
+                                            <li data-node='{"id": 19505}' class="conditionally">
+                            <a href="/19505/for-suppliers/" target="_self"><span>For Suppliers</span></a>                                <div><ul class="w1">
+                                                                            <li data-node='{"id": 19506}' class="first">
+                                            <a href="/19506/for-suppliers/purchasing-range/" target="_self"><span>Purchasing Range</span></a>                                        </li>
+                                                                            <li data-node='{"id": 19507}'>
+                                            <a href="https://www.pool4tool.com/portal/grohe/register.php?l=eng" target="_blank"><span>Supplier Register</span></a>                                        </li>
+                                                                            <li data-node='{"id": 19508}'>
+                                            <a href="/19508/for-suppliers/download-procurement-documents/" target="_self"><span>Download Procurement Documents</span></a>                                        </li>
+                                                                            <li data-node='{"id": 19509}'>
+                                            <a href="https://www.pool4tool.com/portal/grohe/" target="_blank"><span>POOL4TOOL Supplier Portal also for RFQ</span></a>                                        </li>
+                                                                            <li data-node='{"id": 28032}' class="last">
+                                            <a href="/19508/for-suppliers/download-procurement-documents/#initialsampleinspectionseng" target="_self"><span>Initial sample inspections</span></a>                                        </li>
+                                                                    </ul></div>
+                                                    </li>
+                                            <li data-node='{"id": 29540}'>
+                            <a href="/29540/references/" target="_self"><span>References</span></a>                                <div><ul class="w1">
+                                                                            <li data-node='{"id": 29541}' class="first">
+                                            <a href="/29541/references/hotels/" target="_self"><span>Hotels</span></a>                                        </li>
+                                                                            <li data-node='{"id": 29542}'>
+                                            <a href="/29542/references/residential/" target="_self"><span>Residential</span></a>                                        </li>
+                                                                            <li data-node='{"id": 29543}'>
+                                            <a href="/29543/references/commercial/" target="_self"><span>Commercial</span></a>                                        </li>
+                                                                            <li data-node='{"id": 29544}'>
+                                            <a href="/29544/references/sports-leisure/" target="_self"><span>Sports &amp; Leisure</span></a>                                        </li>
+                                                                            <li data-node='{"id": 29545}'>
+                                            <a href="/29545/references/education/" target="_self"><span>Education</span></a>                                        </li>
+                                                                            <li data-node='{"id": 29546}'>
+                                            <a href="/29546/references/science/" target="_self"><span>Science</span></a>                                        </li>
+                                                                            <li data-node='{"id": 29547}'>
+                                            <a href="/29547/references/healthcare/" target="_self"><span>Healthcare</span></a>                                        </li>
+                                                                            <li data-node='{"id": 29548}' class="last">
+                                            <a href="/29548/references/transport/" target="_self"><span>Transport</span></a>                                        </li>
+                                                                    </ul></div>
+                                                    </li>
+                                            <li data-node='{"id": 29536}' class="last">
+                            <a href="/29536/download-center/" target="_self"><span>Download Center</span></a>                                <div><ul class="w1">
+                                                                            <li data-node='{"id": 29538}' class="first">
+                                            <a href="/29538/download-center/bim-data/" target="_self"><span>BIM Data</span></a>                                        </li>
+                                                                            <li data-node='{"id": 29537}' class="last">
+                                            <a href="/29537/download-center/brochures/" target="_self"><span>Brochures</span></a>                                        </li>
+                                                                    </ul></div>
+                                                    </li>
+                                    </ul>
+            </nav>
+    </div>
+<div class="headimage">    <div style="background: transparent url('//cdn12-grohe-com.cloud.grohe.com/~mi/8103/13433/grohe-ish-2017.jpg') no-repeat scroll top center; height: 540px;">
+                        <div class="container"><div class="teaser" style="top: 195px; bottom: auto; left: 385px; right: auto; text-align: left !important;">
+                    <h1 class="negative">WATER.<br />
+
+INTELLIGENCE.<br />
+
+ENJOYMENT.</h1><h2 class="negative"></h2><a class="clean" href="/34106/about-company/ish-2017/" target="_self" title="ISH 2017">                            <div class="left"></div>
+                            <div class="center"><span>
+                                Discover our new innovations 2017                            </div></span>
+                            <div class="right"></div>
+                        </a>
+                                    </div></div>
+                </div>
+</div><div id="teaser" class="clean"><div class="etb-180 float-box w4 mb">    <div class="gc pos-rel">
+        <div class="ml mr mb">
+            <div class="text positive">
+                <h3 class="ml mr">Looking for products?</h3><p class="ml mr">Please visit your local GROHE website.</p>            </div>
+            <div class="ml mr select" style="margin:0 7px;">
+                <select class="replacement"  data-replacement="{'width':'286px','direction':'bottom','height':'5'}">
+                    <option value="http://www.grohe.com/afr-en/">Africa (English)</option><option value="http://www.grohe.com/afr-fr/">Africa (French)</option><option value="http://www.grohe.com/afr-pt/">Africa (Portuguese)</option><option value="http://www.grohe.com/ar/">Argentina</option><option value="http://www.grohe.com.au">Australia</option><option value="http://www.grohe.com/at/">Austria</option><option value="http://www.grohe.com/ru/">Azerbaijan</option><option value="http://www.grohe.com/be-nl/">Belgium (Dutch)</option><option value="http://www.grohe.com/be-fr/">Belgium (French)</option><option value="http://www.grohe.com/br/">Brazil</option><option value="http://www.grohe.com/bg/">Bulgaria</option><option value="http://www.grohe.com/ca-en/">Canada (English)</option><option value="http://www.grohe.com/ca-fr/">Canada (French)</option><option value="http://www.grohe.com/cac/">Caucasus</option><option value="http://www.grohe.com/cn/">China (Chinese)</option><option value="http://www.grohe.com/cn-en/">China (English)</option><option value="http://www.grohe.com/co/">Colombia</option><option value="http://www.grohe.com/hr/">Croatia</option><option value="http://www.grohe.com/cy/">Cyprus</option><option value="http://www.grohe.com/cz/">Czech Republic</option><option value="http://www.grohe.com/dk/">Denmark</option><option value="http://www.grohe.com/ee/">Estonia</option><option value="http://www.grohe.com/fi/">Finland</option><option value="http://www.grohe.com/fr/">France</option><option value="http://www.grohe.com/de/">Germany</option><option value="http://www.grohe.com/gr/">Greece</option><option value="http://www.grohe-gcc.com">Gulf Region & Levant (Arabic)</option><option value="http://www.grohe.com/hk/">Hong Kong</option><option value="http://www.grohe.com/hu/">Hungary</option><option value="http://www.grohe.com/is/">Iceland</option><option value="http://www.grohe.com/in/">India</option><option value="http://www.grohe.com/id/">Indonesia</option><option value="http://www.grohe.com/ie/">Ireland</option><option value="http://www.grohe.co.il">Israel</option><option value="http://www.grohe.com/it/" selected="selected">Italy</option><option value="http://www.grohe.com/jp/">Japan</option><option value="http://www.grohe.com/la-en/">Latin & South America (English)</option><option value="http://www.grohe.com/la-pt/">Latin & South America (Portuguese)</option><option value="http://www.grohe.com/la-es/">Latin & South America (Spanish)</option><option value="http://www.grohe.com/lv/">Latvia</option><option value="http://www.grohe.com/lt/">Lithuania</option><option value="http://www.grohe.com/be-fr/">Luxembourg</option><option value="http://www.grohe.com/my/">Malaysia</option><option value="http://www.grohe.com/mt/">Malta</option><option value="http://www.grohe.com/mx/">Mexico</option><option value="http://www.grohe.com/mea/">Middle East Region (English)</option><option value="http://www.grohe.com/mea-fr/">Middle East Region (French)</option><option value="http://www.grohe.com/nl/">Netherlands</option><option value="http://www.grohe.com/29443/grohe-in-your-country/asia-australia-new-zealand/#newzealand">New Zealand</option><option value="http://www.grohe.com.eg/">North Africa</option><option value="http://www.grohe.com/no/">Norway</option><option value="http://www.grohe.com/sg/">Philippines</option><option value="http://www.grohe.com/pl/">Poland</option><option value="http://www.grohe.com/pt/">Portugal</option><option value="http://www.grohe.com/ro/">Romania</option><option value="http://www.grohe.com/ru/">Russia</option><option value="http://www.grohe.com/rs/">Serbia</option><option value="http://www.grohe.com/sg/">Singapore</option><option value="http://www.grohe.com/sk/">Slovakia</option><option value="http://www.grohe.com/si/">Slovenia</option><option value="http://www.grohe.com/za/">South Africa</option><option value="http://www.grohe.com/sg/">South East Asia & Pacific Region</option><option value="http://www.grohe.com/kr/">South Korea</option><option value="http://www.grohe.com/es/">Spain</option><option value="http://www.grohe.com/se/">Sweden</option><option value="http://www.grohe.com/ch-fr/">Switzerland (French)</option><option value="http://www.grohe.com/ch/">Switzerland (German)</option><option value="http://www.grohe.com/ch-it/" selected="selected">Switzerland (Italian)</option><option value="http://www.grohe.com/th/">Thailand</option><option value="http://www.grohe.com/tr/">Turkey</option><option value="http://www.grohe.com/us/">USA</option><option value="http://www.grohe.com/ua/">Ukraine</option><option value="http://www.grohe.com/uk/">United Kingdom</option><option value="http://www.grohe.com/ve/">Venezuela</option><option value="http://www.grohe.com/vn/">Vietnam</option>                </select>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+            $(document).ready(function() {
+                $( "#teaser .etb-180 .clip li" ).click(function(e) {
+                    window.location.href = $(this).data('value');
+                });
+
+                            });
+        /*]]>*/
+    </script>
+</div><div class="etb-2 float-box w4 mb ml"><a href="/29395/press/press-releases/" target="_self" title="Press releases">    <div class="gc pos-rel">
+        <div class="ml mr mb">
+            <div class="text positive">
+                <h3 class="ml mr">Press and News
+</h3><p class="mb ml mr">GROHE successful at the German Sustainability Award&nbsp;</p>            </div>
+            <div class="circle-button"> </div>
+        </div>
+    </div>
+</a></div><div class="etb-2 float-box w4 mb ml"><a href="http://projects.grohe.com/" target="_blank">    <div class="gc pos-rel">
+        <div class="ml mr mb">
+            <div class="text positive">
+                <h3 class="ml mr">Global Projects Support</h3><p class="mb ml mr">Specify your international projects with GROHE. Visit our Global
+Projects Website.</p>            </div>
+            <div class="circle-button"> </div>
+        </div>
+    </div>
+</a></div></div></header><div id="content" class="full clean"><div class="etb-1_1 w12 clean cleaner">    <div class="m">
+        <h2>Welcome to Grohe AG</h2>    </div>
+</div><div class="etb-3 w12 clean cleaner">    <div class="m">
+        <div class="copy">GROHE is the world’s leading provider of sanitary fittings under
+one brand.</div>    </div>
+</div><div class="etb-46 clean cleaner w12">
+    <div class="m box  clean">
+        <div class="float-box"><img src="//cdn12-grohe-com.cloud.grohe.com/~mi/1034/8109/grohe-headquarter-in-duesseldorf.jpg" alt="GROHE Headquarter in Düsseldorf" title="GROHE Headquarter in Düsseldorf" width="470" height="250"/></div>        <div class="float-box">
+            <div class="m clean">
+            	<h2 class="ml mt mb">Our Brand Values</h2><div class="copy ml mt mb">Quality, technology, design and sustainability. Four brand values
+that illustrate our commitment to creating exceptional experiences.
+We set our standards extremely high to ensure that every time you
+turn on a GROHE faucet or step into a GROHE shower you can feel the
+difference.<br />
+
+<br />
+
+The brand values constitute the driving force behind GROHE’s new
+slogan, “Pure Freude an Wasser”.</div><a class="flex-button-blue m" href="/29386/about-company/" target="_self" title="About Company">                            <span class="tl">
+                                <span class="br">
+                                    <span class="bl">
+                                        <span class="button-text">Read more</span>                                    </span>
+                                </span>
+                            </span>
+
+                            </a>            </div>
+        </div>
+    </div>
+</div><div class="etb-46 clean cleaner w12">
+    <div class="m box  clean">
+        <div class="float-box"><img src="//cdn12-grohe-com.cloud.grohe.com/~mi/8733/14479/grohe-spa-colours.jpg" alt="" title="Grohe SPA Colours" width="470" height="250"/></div>        <div class="float-box">
+            <div class="m clean">
+            	<h2 class="ml mt mb">GROHE SPA Colour collections</h2><div class="copy ml mt mb"><br />
+
+When it comes to perfect bathroom design, the ultimate guide should
+be your own personal style.<br />
+
+<br />
+
+At GROHE, we want to enable you to put your vision into reality.
+That’s why we developed the GROHE SPA Colours. The combination of
+our outstanding design lines and exclusive colours gives you the
+ultimate freedom of choice to perfectly express your individuality.</div><a class="flex-button-blue m" href="https://www.grohe.com/35158/planning-your-project/grohe-spa-colours/" target="_blank">                            <span class="tl">
+                                <span class="br">
+                                    <span class="bl">
+                                        <span class="button-text">Discover the SPA colours collections</span>                                    </span>
+                                </span>
+                            </span>
+
+                            </a>            </div>
+        </div>
+    </div>
+</div><div class="etb-45 clean cleaner w12">    <div class="m box  clean">
+        <div class="float-box">
+            <div class="m clean">
+            	<h2 class="ml mt mb">GROHE Product Range</h2><div class="copy ml mt mb"><strong>GROHE bathroom faucets</strong> unite award-winning design
+with the finest materials and the latest industry-leading
+technologies. Every collection offers a wide choice of faucet
+typologies to complement the latest bathroom ceramics and your
+personal styling preferences.<br />
+
+<br />
+
+Our collection of <strong>head showers</strong>, <strong>hand
+showers</strong> and <strong>side showers</strong> combine
+award-winning design with the latest technology and first-class
+materials. For performance and reliability choose a <strong>GROHE
+shower system</strong>.<br />
+
+<br />
+
+A broad range of designs, product features and installation choices
+for all styles of kitchen, ensures everybody can find their perfect
+<strong>kitchen mixer</strong>.<br />
+
+<br />
+
+We are constantly working on optimising our products and
+services.<strong>GROHE Professional</strong> therefore concentrates
+on every detail to further simplify and<br />
+
+improve your day-to-day work as an installer.</div><a class="flex-button-blue m" href="/29438/grohe-in-your-country/" target="_self" title="GROHE in your country">                            <span class="tl">
+                                <span class="br">
+                                    <span class="bl">
+                                        <span class="button-text">Discover all products on your local website</span>                                    </span>
+                                </span>
+                            </span>
+
+    	        </a>            </div>
+        </div>
+        <div class="float-box"><img src="//cdn12-grohe-com.cloud.grohe.com/~mi/8800/14480/kitchen-collections.jpg" alt="" title="Kitchen collections" width="470" height="310"/></div>    </div>
+</div><div class="etb-14 w12 mt cleaner clean">    <div class="m top-link">
+        <a href="#wrapper" class="anchor-scroll"><span>top</span></a>
+    </div>
+</div></div><footer id="footer" class="clean">
+        <div class="wrapper">
+            <div id="shadow">&nbsp;</div>
+                                <nav id="navigation-footer" class="clean">
+                        <div class="column">
+                            <div class="wrapper">
+                                                        </div>
+                        </div>
+
+                        <div class="column">
+                            <div class="wrapper">
+                                                            </div>
+                        </div>
+
+                        <div class="column last">
+                            <div class="wrapper">
+                                                            </div>
+                        </div>
+
+                        <div class="column dark">
+                            <div class="wrapper">
+                                                                <div class="clean">
+                                                                     </div>
+                            </div>
+                        </div>
+                    </nav>
+                        </div>
+            <nav id="navigation-additional">
+                <div class="wrapper clean">
+                    <ul>
+                                                    <li class="first">
+                                <a href="/" target="_self">© 2017 GROHE AG</a>                            </li>
+                                                    <li>
+                                <a href="/29388/imprint/" target="_self">Imprint</a>                            </li>
+                                                    <li>
+                                <a href="/29874/contact-form/" target="_self">Contact form</a>                            </li>
+                                                    <li>
+                                <a href="/29390/privacy/" target="_self">Privacy</a>                            </li>
+                                            </ul>
+                    <img src="/application/resources/images/lixil/part-of-lixil-logo-white-aw.png" alt="Part of LIXIL">
+                </div>
+            </nav>
+</footer>        </div>
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"eb68f0cb2a","applicationID":"39924774","transactionName":"Z1JVMRQAXhJVAUEIXV4YYhcPTlkPUAdNT0JYRw==","queueTime":0,"applicationTime":791,"atts":"SxVWR1waTRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

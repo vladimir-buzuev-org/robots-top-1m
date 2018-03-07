@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+  <html class="no-js" lang="en" dir="ltr" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile# video: http://ogp.me/ns/video# product: http://ogp.me/ns/product# content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+<link rel="shortcut icon" href="https://www.tes.com/sites/default/themes/custom/tickle/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="HandheldFriendly" content="true" />
+<meta http-equiv="cleartype" content="on" />
+<link rel="apple-touch-icon-precomposed" href="https://www.tes.com/sites/all/themes/contrib/omega/omega/apple-touch-icon-precomposed-144x144.png" sizes="144x144" />
+<link rel="apple-touch-icon-precomposed" href="https://www.tes.com/sites/all/themes/contrib/omega/omega/apple-touch-icon-precomposed-114x114.png" sizes="114x114" />
+<link rel="apple-touch-icon-precomposed" href="https://www.tes.com/sites/all/themes/contrib/omega/omega/apple-touch-icon-precomposed-72x72.png" sizes="72x72" />
+<link rel="apple-touch-icon-precomposed" href="https://www.tes.com/sites/all/themes/contrib/omega/omega/apple-touch-icon-precomposed.png" />
+<script async="true" src="https://www.tes.com/cdn/vendor/library/font-loader-1.4.js"></script><meta name="viewport" content="width=device-width, user-scalable=no" />
+<meta name="generator" content="Tes Global" />
+<link rel="canonical" href="https://www.tes.com/elements-welcome/robots.txt" />
+<link rel="shortlink" href="https://www.tes.com/elements-welcome/robots.txt" />
+<meta property="fb:admins" content="536250331" />
+<meta property="fb:pages" content="107509875938399" />
+<meta property="mz:id" content="tes-elements-welcome" />
+<meta property="og:site_name" content="Tes" />
+<meta property="mz:section" content="resources" />
+<meta property="mz:subsection" content="landing" />
+<meta property="mz:type" content="tes-elements-legacy" />
+<link rel="alternate" href="https://www.tes.com/teaching-resources/become-an-author" hreflang="x-default" />
+<link rel="alternate" href="https://www.tes.com/au/teaching-resources/become-an-author" hreflang="en-au" />
+<link rel="alternate" href="https://www.tes.com/us/teacher-lessons/become-an-author" hreflang="en-us" />
+<link rel="alternate" href="https://www.tes.com/us/teacher-lessons/become-an-author" hreflang="en-ca" />
+<link rel="alternate" href="https://www.tes.com/au/teaching-resources/become-an-author" hreflang="en-nz" />
+  <title>Tes elements | Tes</title>
+  <link type="text/css" rel="stylesheet" href="https://www.tes.com/sites/default/files/css/css_YjxKWlC0VIYiUSMml5QiG4tBGdFlROcYZ4dKiEUkbRg.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.tes.com/sites/default/files/css/css_IW_tEawL12D9zeK3jwOHdOelxCoiWNOo03iN13cqfDE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.tes.com/cdn/site-assets/2988/css/base.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.tes.com/sites/default/files/css/css_WiP77xuQYVO-47zt4LpUTN04bSoQrRUrhk5cMFXbuis.css" media="all" />
+  <script src="https://www.tes.com/sites/default/files/js/js_IWILWgVzLOgdi6h8ffAg2-vh--ZzpCVxivaura1aQIU.js"></script>
+<script src="https://www.tes.com/sites/default/files/js/js_H7q2xORKmR9AN8Qx5spKEIBp7R_wG2apAswJoCUZY7I.js"></script>
+<script src="https://www.tes.com/sites/default/files/js/js_hnrc7X-kEMlKjJrIEC9sJu6M31Ny2xvzbee9KYCQARQ.js"></script>
+<script src="https://www.tes.com/sites/default/files/js/js_xht8E4BLA53oTxrfnKlXrB1kiW1yjdvRUnS5OTDFd_A.js"></script>
+<script src="https://sadmin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script src="https://www.tes.com/sites/default/files/js/js_Zf4TC1IYNfQcbDAj58g6WPYQQeEXq2PBITvo7hd-rys.js"></script>
+<script src="https://www.tes.com/sites/default/files/js/js_PnnO4g6hnDyCqLYaWU9NdyvXbFh8htHfjVdm00noAPQ.js"></script>
+<script src="https://www.tes.com/cdn/vendor/library/tes-events.min.js"></script>
+<script src="https://www.tes.com/cdn/site-assets/2988/js/global.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","authcache":{"q":"elements-welcome\/robots.txt","cp":{"path":"\/","domain":".tes.com","secure":true},"cl":23.148148148148},"tes_page_builder_mz":{"mz_module_id":"tes-elements-welcome.resources.landing"},"authcacheDebug":{"url":"\/authcache-debug\/ajax\/req-yDHzkEKZSW_fCfjfl4JkqTYSOQCzkFOOZiY-ERMkoxg","all":false},"mz_variables":{"mz_script":"https:\/\/duqxiy1o2cbw6.cloudfront.net\/tes\/mz\/427\/js\/mz.js","user_variables":[],"mz_domain":"https:\/\/www.tes.com","version_number":1,"admin_tracking":0},"clientsideValidation":{"general":{"months":{"January":1,"Jan":1,"February":2,"Feb":2,"March":3,"Mar":3,"April":4,"Apr":4,"May":5,"June":6,"Jun":6,"July":7,"Jul":7,"August":8,"Aug":8,"September":9,"Sep":9,"October":10,"Oct":10,"November":11,"Nov":11,"December":12,"Dec":12}}}});</script>
+</head>
+<body class="html not-front not-logged-in page-elements-welcome page-elements-welcome-robotstxt section-elements-welcome">
+  <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    <div class="l-page">
+  <header class="l-header" role="banner">
+      <div class="l-region l-region--header">
+    <div id="block-tes-assets-service-tes-masthead" class="block block--tes-assets-service block--tes-assets-service-tes-masthead">
+        <div class="block__content">
+    <header class="masthead t-masthead" data-fragment-endpoint="/fragments/masthead-nav?logged-in&#x3D;true&amp;ajax&#x3D;true&amp;pageUrl&#x3D;https://www.tes.com/elements-welcome/robots.txt&amp;geo&#x3D;GB" data-fragment-status="loggedout">
+  <script cx-replace-outer="true" cx-server-push="" src="https://www.tes.com/cdn/vendor/library/tes-events-2.0.1.min.js"></script>
+  <script async="" cx-replace-outer="true" src="https://www.tes.com/cdn/vendor/library/async-define/react-15.3_reactdom-15.3_redux-3.6_reactredux-4.4_a.min.js"></script>
+  <script>
+    window.TES = window.TES || {};
+    TES.imageCDN = '';
+    TES.siteAssetsCDN = 'https://www.tes.com/cdn/site-assets/2988/';
+    TES.appAuthnApiUrl = '';
+    (function (html){
+      var classes = html.className.replace(/no-js/, '').replace(/noJs/, '');
+      html.className = classes + ' js tes-js';
+    }(document.documentElement));
+  </script>
+  <!-- Start Visual Website Optimizer Asynchronous Code -->
+  <script type="text/javascript">
+  var _vwo_code=(function(){
+  var account_id=265077,
+  settings_tolerance=2000,
+  library_tolerance=2500,
+  use_existing_jquery=false,
+  f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+  </script>
+  <!-- End Visual Website Optimizer Asynchronous Code -->  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '192781301158737',
+        xfbml      : true,
+        version    : 'v2.8'
+      });
+      FB.AppEvents.logPageView();
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <div class="masthead__inner">
+    <div class="masthead__logo">
+      <a href="https://www.tes.com/" data-mz="" data-module="primary-nav" data-id="logo" class="masthead__logo-link">
+        <img class="masthead__logo-marker" src="https://www.tes.com/logo.svg?variation=marker-white" width="25" height="24" alt="Tes. For teaching."/>
+        <img class="masthead__logo-text masthead__logo-text" src="https://www.tes.com/logo.svg?theme=text" width="39" height="24" alt="Tes. For teaching."/>
+      </a>
+      <button type="button" class="masthead__mobile-nav-logged-out-toggle tes-btn" data-toggle-class="fr-masthead-mobile-nav-logged-out-active" data-module="masthead" data-id="mobile-logged-out-menu-toggle" data-panel-class="masthead__mobile-nav-logged-out">
+        <img class="masthead__logo-marker" src="https://www.tes.com/logo.svg?variation=marker-white" width="25" height="24" alt="Tes. For teaching."/>
+        <img class="masthead__logo-text masthead__logo-text-dark" src="https://www.tes.com/logo.svg?theme=text" width="39" height="24" alt="Tes. For teaching."/>
+        <img class="masthead__logo-text masthead__logo-text-light" src="https://www.tes.com/logo.svg?theme=text&variation=black" width="39" height="24" alt="Tes. For teaching."/>
+        <i class="masthead__mobile-nav-toggle-icon icon-chevron-rounded-down icon-white"></i>
+        <i class="masthead__mobile-nav-toggle-icon masthead__mobile-nav-toggle-icon-dark icon-chevron-rounded-up"></i>
+      </button>
+      <button type="button" class="masthead__mobile-nav-logged-in-toggle tes-btn" data-toggle-class="fr-masthead-mobile-nav-logged-in-active" data-remove-class="fr-masthead-mobile-my-nav-logged-in-active" data-module="masthead" data-id="mobile-logged-in-menu-toggle" data-panel-class="masthead__mobile-nav-logged-in">
+        <img class="masthead__logo-marker" src="https://www.tes.com/logo.svg?variation=marker-white" width="25" height="24" alt="Tes. For teaching."/>
+        <img class="masthead__logo-text masthead__logo-text-dark" src="https://www.tes.com/logo.svg?theme=text" width="39" height="24" alt="Tes. For teaching."/>
+        <img class="masthead__logo-text masthead__logo-text-light" src="https://www.tes.com/logo.svg?theme=text&variation=black" width="39" height="24" alt="Tes. For teaching."/>
+        <i class="masthead__mobile-nav-toggle-icon icon-chevron-rounded-down icon-white"></i>
+        <i class="masthead__mobile-nav-toggle-icon masthead__mobile-nav-toggle-icon-dark icon-chevron-rounded-up"></i>
+      </button>
+    </div>
+    <ul class="masthead-nav">
+        <li class="masthead-nav__top-item">
+          <a href="/teaching-resources" class="masthead__primary-link" data-mz="" data-module="primary-nav" data-id="resources">Resources</a>
+        </li>
+        <li class="masthead-nav__top-item">
+          <a href="/jobs" class="masthead__primary-link" data-mz="" data-module="primary-nav" data-id="jobs">Jobs</a>
+        </li>
+        <li class="masthead-nav__top-item">
+          <a href="https://community.tes.com/" class="masthead__primary-link" data-mz="" data-module="primary-nav" data-id="community">Community</a>
+        </li>
+        <li class="masthead-nav__top-item">
+          <a href="/news/school-news" class="masthead__primary-link" data-mz="" data-module="primary-nav" data-id="news">News</a>
+        </li>
+        <li class="masthead-nav__top-item">
+          <a href="/institute" class="masthead__primary-link" data-mz="" data-module="primary-nav" data-id="courses">Courses</a>
+        </li>
+        <li class="masthead-nav__top-item">
+          <a href="/store" class="masthead__primary-link" data-mz="" data-module="primary-nav" data-id="store">Store</a>
+        </li>
+      <li style="display: none" class="js-tawkto-chat masthead-nav__top-item">
+          <a class="masthead__primary-link" href="javascript:void(Tawk_API.toggle())"><span style="color: #00c7b1">●</span> Help</a>
+      </li>
+      <li class="masthead-nav__top-item">
+        <div class="masthead__search">
+            <button type="button" class="tes-btn icon-search-rebrand icon-white masthead__search-off t-masthead-search-show" data-toggle-class="fr-masthead-search-active" data-module="masthead" data-id="search-toggle" data-focus-class="js-search-input"></button>
+            <button type="button" class="tes-btn icon-close-rebrand icon-white icon-sm masthead__search-on" data-toggle-class="fr-masthead-search-active" data-module="masthead" data-id="search-toggle"></button>
+            <form class="masthead__search-form" role="search" action="/search" novalidate="novalidate">
+                <select class="masthead__select" name="area">
+                            <option value="resources">Resources</option>
+                            <option value="jobs">Jobs</option>
+                            <option value="community">Community</option>
+                            <option value="news">News</option>
+                            <option value="courses">Courses</option>
+                            <option value="store">Store</option>
+                </select>
+                <input class="masthead__input js-search-input" type="search" placeholder="Search" name="keywords" id="keywords" required="required"/>
+                <button type="submit" class="tes-btn masthead__search-button"><span class="icon-search-rebrand icon-white">Search</span></button>
+            </form>
+        </div>
+        
+      </li>
+    </ul>
+    <div class="masthead__profile">
+      <div class="t-masthead-auth-links masthead__auth-links">
+        <script>
+  window.TES = window.TES || {};
+  window.TES.appAuthenticationCdnUrl = "https://www.tes.com/cdn/app-authentication/830/";
+</script>
+<script async src="https://www.tes.com/cdn/app-authentication/830/js/widget-loader.js"></script>
+<link rel="prefetch" href="https://www.tes.com/cdn/app-authentication/830/js/widget-authapp.js" />
+
+        <div class="profile_ctas">
+          <span class="profile__cta login"><a class="masthead__auth-link link link--unstyled" rel="nofollow" href="/authn/sign-in?select=true" data-load-auth="sign-in" data-load-auth-reload="reload" data-load-auth-omitname="true">Log
+          in</a></span><span class="masthead__profile-spacer"></span>
+          <span class="profile__cta register"><a class="masthead__auth-link link link--unstyled" rel="nofollow" href="/authn/select" data-load-auth="select" data-load-auth-reload="reload" data-load-auth-omitname="true">Register
+          <span class="hidden-sm hidden-xs">for free</span></a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="masthead__mobile-nav masthead__mobile-nav-logged-in">
+    <div class="mobile-nav mobile-nav--scaled">
+        <a class="mobile-nav__item js-link" href="/teaching-resources" data-mz="" data-module="logged-in-menu" data-id="resources">Resources</a>
+        <a class="mobile-nav__item js-link" href="/jobs" data-mz="" data-module="logged-in-menu" data-id="jobs">Jobs</a>
+        <a class="mobile-nav__item js-link" href="/news/school-news" data-mz="" data-module="logged-in-menu" data-id="news">News</a>
+        <a class="mobile-nav__item js-link" href="https://community.tes.com/" data-mz="" data-module="logged-in-menu" data-id="community">Community</a>
+        <a class="mobile-nav__item js-link" href="/institute" data-mz="" data-module="logged-in-menu" data-id="courses">Courses</a>
+      <a class="mobile-nav__item js-link mobile-nav__item-border" href="https://www.tes.com/api/authn/sign-out-redirect" rel="nofollow" data-mz="" data-module="logged-in-menu" data-id="log-out" data-load-auth-rtn="https://www.tes.com">Log out</a>
+      <a class="mobile-nav__item js-link mobile-nav__item-border" href="https://www.tes.com/articles/help-faqs" data-mz="" data-module="logged-in-menu" data-id="help">Help</a>
+    </div>
+  </div>
+  <div class="masthead__mobile-my-nav-logged-in">
+    <div class="mobile-nav mobile-nav--scrollable">
+      <a class="mobile-nav__item js-link mobile-nav__item-border" href="https://www.tes.com/" data-mz="" data-module="logged-in-my-nav" data-id="home-feed">Home feed <span class="margin-left-sm notification-bubble" data-template-render="notifications"></span></a>
+      <div class="mobile-nav__item mobile-nav__item-border">My list</div>
+      <a class="mobile-nav__item js-link mobile-nav__item-sub" href="https://www.tes.com/institute/access-my-courses" rel="nofollow" data-mz="" data-module="logged-in-my-nav" data-id="job-alerts">Courses <span data-template-render="courses"></span></a>
+      <a class="mobile-nav__item js-link mobile-nav__item-sub" href="https://www.tes.com/jobs/myjobs/savedjobs" rel="nofollow" data-mz="" data-module="logged-in-my-nav" data-id="jobs">Jobs <span data-template-render="savedJobs"></span></a>
+      <a class="mobile-nav__item js-link mobile-nav__item-sub" href="https://www.tes.com/my-resources/downloads" rel="nofollow" data-mz="" data-module="logged-in-my-nav" data-id="resources">Resources <span data-template-render="savedResources"></span></a>
+      <a class="mobile-nav__item js-link mobile-nav__item-sub" href="https://www.tes.com/teaching-resources/dashboard/overview" rel="nofollow" data-mz="" data-module="logged-in-my-nav" data-id="resources">Author dashboard</a>
+      <div class="mobile-nav__item mobile-nav__item-border">Settings</div>
+      <a href="https://www.tes.com/profile/edit" class="mobile-nav__item mobile-nav__item-sub" rel="nofollow" data-mz="" data-module="logged-in-my-nav" data-id="profile-edit">Edit your profile</a>
+      <a class="mobile-nav__item js-link mobile-nav__item-sub" href="https://www.tes.com/authn/preference-centre" rel="nofollow" data-mz="" data-module="logged-in-my-nav" data-id="email-preferences">Mailing preferences</a>
+      <a class="mobile-nav__item js-link mobile-nav__item-sub" href="https://www.tes.com/authn/account" rel="nofollow" data-mz="" data-module="logged-in-my-nav" data-id="account">Account</a>
+      <a class="mobile-nav__item js-link mobile-nav__item-sub" href="https://www.tes.com/api/authn/sign-out-redirect?returnUrl=https://www.tes.com/" rel="nofollow" data-mz="" data-module="logged-in-my-nav" data-id="log-out" data-load-auth-rtn="https://www.tes.com/">Log out</a>
+    </div>
+  </div>
+  <div class="masthead__mobile-nav masthead__mobile-nav-logged-out">
+    <div class="mobile-nav mobile-nav--scaled">
+        <a class="mobile-nav__item js-link" href="/" data-mz="" data-module="logged-out-menu" data-id="home">Home</a>
+        <a class="mobile-nav__item js-link mobile-nav__item-border" href="/teaching-resources" data-mz="" data-module="logged-out-menu" data-id="resources">Resources</a>
+        <a class="mobile-nav__item js-link" href="/jobs" data-mz="" data-module="logged-out-menu" data-id="jobs">Jobs</a>
+        <a class="mobile-nav__item js-link" href="/news/school-news" data-mz="" data-module="logged-out-menu" data-id="news">News</a>
+      <a class="mobile-nav__item js-link mobile-nav__item-border mobile-nav__item-highlight" rel="nofollow" href="https://www.tes.com/authn/select" data-mz="" data-module="logged-out-menu" data-id="register">Register for free</a>
+      <a class="mobile-nav__item js-link" rel="nofollow" href="https://www.tes.com/authn/sign-in?select=true" data-mz="" data-module="logged-out-menu" data-id="log-in">Log in</a>
+      <a class="mobile-nav__item js-link mobile-nav__item-border" href="https://www.tes.com/articles/help-faqs" data-mz="" data-module="logged-out-menu" data-id="help">Help</a>
+    </div>
+  </div>
+</header>
+
+<script cx-replace-outer="" cx-ignore-error="true" defer="" cx-bundles-raw="site-assets/fragment.js" src="https://www.tes.com/cdn/site-assets/2988/js/fragment.js"></script>
+  </div>
+</div>
+  </div>
+  </header>
+
+  <div class="l-main">
+    <div class="l-content" role="main">
+            <a id="main-content"></a>
+      <!--              -->
+             <div class="container__wrapper">
+          <div class="container-fluid-max">
+                                  </div>
+        </div>
+       
+            <div class="">
+
+  
+
+			<div class="shop-page__header img-bg-header">
+	  	<div class="container-fluid-max">
+        <div class="row">
+        <div class="col-lg-12">
+	       <div class="panel-pane pane-tes-page-builder-shop-header">
+            <div class="tes-page-builder-data-mz" data-component-name="tes_page_builder_shop_header"><div class="layout-shop-header layout-shop-header--elements clearfix">
+  <div class="layout-shop-header__first layout-shop-header__region">
+          <h1 class="shop-header__title margin-top-none">You now have access to even more content...</h1>
+                  <div class="shop-header__description"><p>... at no extra cost!</p>
+<p>Tes elements is your new home for accessing Tes Number, Phonics, SPaG and iBoard content, plus hundreds of other fun and innovative, curriculum-aligned games and activities.</p>
+<p>It has everything you need to create inspirational lessons across the primary curriculum and prepare your pupils for Sats success. Our easy-to-use resources will also save you planning time, and give you the space to do what you do best, teach.</p>
+<p>Best of all, you get full access to Tes elements – <strong>worth £50 </strong>– included in your current subscription price!</p>
+</div>
+       </div>
+  <figure class="shop-header__logo">
+          <img typeof="foaf:Image" src="https://www.tes.com/sites/default/files/styles/dimensions_530x72/public/tes_elements_5.png?itok=P2MxeAMQ" width="530" height="72" />      </figure>
+</div></div>    </div>
+         </div>
+        </div>
+	    </div>
+	  </div>
+	
+  
+
+<div class="shop-page__row-wrapper">
+
+  
+    	<div class="shop-page__row">
+    	<div class="container-fluid-max">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 layout-shop-page__first-half-row">
+            <div class="panel-pane pane-tes-page-builder-general-ticklist">
+            <div class="tes-page-builder-data-mz" data-component-name="tes_page_builder_general_ticklist"><div class="tes-page-builder-ticklist">
+          <h2 class="heading--xl text--bold panels-pane__heading">Why use Tes elements?</h2>
+              <ul class="features-list">
+                        <li class="features-list__item">
+            Hundreds of engaging, interactive tools, videos and games.
+Helps raise student engagement and attainment          </li>
+                                <li class="features-list__item">
+            Supports preparation for KS1+2 Sats and phonics screening. 
+Mapped to National Curriculum across eight topics          </li>
+                                <li class="features-list__item">
+            Allows teachers to tailor learning with levelled materials. 
+Supporting worksheets for classwork, homework and practise tests          </li>
+                                <li class="features-list__item">
+            Teachers and pupils can log in anytime, anywhere. Create and share bespoke lesson plans using drag and drop tool          </li>
+                    </ul>
+    
+</div></div>    </div>
+<div class="panel-pane pane-tes-page-builder-general-marketing-block-v2">
+            <div class="tes-page-builder-data-mz" data-component-name="tes_page_builder_general_marketing_block_v2"><div class="marketing-block marketing-block--vertical no-background ">
+          </div></div>    </div>
+<div class="panel-pane pane-tes-page-builder-general-image-card-link">
+            <div class="tes-page-builder-data-mz" data-component-name="tes_page_builder_general_image_card_link"><div class="image-cards-with-link__component">
+    
+    <div class="row">
+              <div class="col-sm-12">
+          <div class="image-card-with-link clearfix">
+            <div class="image-card-with-link__first">
+              <img typeof="foaf:Image" src="https://www.tes.com/sites/default/files/styles/dimensions_390x292/public/screen_shot_2017-06-22_at_14.59.38.png?itok=1YrMmSvZ" width="390" height="292" />      
+            </div>
+            <div class="image-card-with-link__second clearfix">
+              <h3 class="image-card-with-link__title heading--md heading--bold">
+                Interactive games & activities              </h3>
+              <div class="image-card-with-link__description">
+                <p>Once you click through to a specific pack you’ll land on a Tes resources page. Simply click on the <strong>links in the panel on the right of the page</strong> to launch the interactives in a new tab on your browser.</p>
+                                  <a href="https://www.tes.com/elements-subscriber" class="image-card-with-link__cta tes-btn tes-btn--secondary tes-btn--sm">
+                    Explore your content</a>
+                              
+              </div>
+              
+            </div>
+          </div>
+        </div>
+          </div>
+
+  </div></div>    </div>
+<div class="panel-pane pane-tes-page-builder-general-image-card-link">
+            <div class="tes-page-builder-data-mz" data-component-name="tes_page_builder_general_image_card_link"><div class="image-cards-with-link__component">
+    
+    <div class="row">
+              <div class="col-sm-12">
+          <div class="image-card-with-link clearfix">
+            <div class="image-card-with-link__first">
+              <img typeof="foaf:Image" src="https://www.tes.com/sites/default/files/styles/dimensions_390x292/public/screen_shot_2017-06-22_at_15.26.57.png?itok=2Tg062Zk" width="390" height="292" />      
+            </div>
+            <div class="image-card-with-link__second clearfix">
+              <h3 class="image-card-with-link__title heading--md heading--bold">
+                Create lessons with Tes Teach              </h3>
+              <div class="image-card-with-link__description">
+                <p>If you're looking for ways to <strong>combine your new Tes elements resources with your teaching materials, </strong>then Tes Teach is your answer! It’s <strong>free to use </strong>and helps you to <strong>quickly</strong> <strong>create digital lessons </strong>by combining resources.</p>
+                                  <a href="https://www.tes.com/lessons/dashboard" class="image-card-with-link__cta tes-btn tes-btn--secondary tes-btn--sm">
+                    Explore Tes Teach</a>
+                              
+              </div>
+              
+            </div>
+          </div>
+        </div>
+          </div>
+
+  </div></div>    </div>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <div class="panel-pane pane-tes-page-builder-general-marketing-block-v2">
+            <div class="tes-page-builder-data-mz" data-component-name="tes_page_builder_general_marketing_block_v2"><div class="marketing-block marketing-block--vertical no-background ">
+          </div></div>    </div>
+<div class="panel-pane pane-tes-page-builder-general-video-or-image">
+            <div class="tes-page-builder-data-mz" data-component-name="tes_page_builder_general_video_or_image"><div class="teaser-card">
+      <div class="teaser-card__group-content ">
+              <div class="video-responsive-16-9">
+                      <iframe src="https://player.vimeo.com/video/227263336" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>                  </div>
+      
+      
+    </div>
+    </div></div>    </div>
+<div class="panel-pane pane-tes-page-builder-general-marketing-block-v2">
+            <div class="tes-page-builder-data-mz" data-component-name="tes_page_builder_general_marketing_block_v2"><div class="marketing-block marketing-block--vertical no-background ">
+          </div></div>    </div>
+<div class="panel-pane pane-tes-page-builder-general-image-card-link">
+            <div class="tes-page-builder-data-mz" data-component-name="tes_page_builder_general_image_card_link"><div class="image-cards-with-link__component">
+    
+    <div class="row">
+              <div class="col-sm-12">
+          <div class="image-card-with-link clearfix">
+            <div class="image-card-with-link__first">
+              <img typeof="foaf:Image" src="https://www.tes.com/sites/default/files/styles/dimensions_390x292/public/screen_shot_2017-06-22_at_15.25.17.png?itok=EBlDQ1nn" width="390" height="292" />      
+            </div>
+            <div class="image-card-with-link__second clearfix">
+              <h3 class="image-card-with-link__title heading--md heading--bold">
+                Share activities              </h3>
+              <div class="image-card-with-link__description">
+                <p>After you launch an activity, copy its URL. You can then use this URL away from the Tes site, without logging in, for <strong>three months</strong>. So pupils can use the activity in school, at home (or even on the bus)! </p>
+                                  <a href="https://www.tes.com/elements-subscriber" class="image-card-with-link__cta tes-btn tes-btn--secondary tes-btn--sm">
+                    Explore your content</a>
+                              
+              </div>
+              
+            </div>
+          </div>
+        </div>
+          </div>
+
+  </div></div>    </div>
+<div class="panel-pane pane-tes-page-builder-general-image-card-link">
+            <div class="tes-page-builder-data-mz" data-component-name="tes_page_builder_general_image_card_link"><div class="image-cards-with-link__component">
+    
+    <div class="row">
+              <div class="col-sm-12">
+          <div class="image-card-with-link clearfix">
+            <div class="image-card-with-link__first">
+              <img typeof="foaf:Image" src="https://www.tes.com/sites/default/files/styles/dimensions_390x292/public/screen_shot_2017-06-22_at_15.27.43.png?itok=Sy4-Qr8L" width="390" height="292" />      
+            </div>
+            <div class="image-card-with-link__second clearfix">
+              <h3 class="image-card-with-link__title heading--md heading--bold">
+                Help is at hand              </h3>
+              <div class="image-card-with-link__description">
+                <p>We hope you enjoy using Tes elements – if you have any questions just contact us at <a href="mailto:help@tes.com"><strong>help@tes.com</strong></a>, or call us on 0203 194 3164.</p>
+<p>We’d also love to get your feedback, drop us a line at <a href="mailto:help@tes.com"><strong>help@tes.com.</strong></a></p>
+                                  <a href="https://www.tes.com/contact" class="image-card-with-link__cta tes-btn tes-btn--secondary tes-btn--sm">
+                    Contact us</a>
+                              
+              </div>
+              
+            </div>
+          </div>
+        </div>
+          </div>
+
+  </div></div>    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  
+  
+  </div>
+
+</div>
+
+
+          </div>
+
+          </div>
+
+  <footer class="l-footer" role="contentinfo">
+      <div class="l-region l-region--footer">
+    <div id="block-tes-assets-service-tes-footer" class="block block--tes-assets-service block--tes-assets-service-tes-footer">
+        <div class="block__content">
+    <footer class="footer-nav t-footer-nav">
+  <div class="footer-nav__inner">
+    <div class="footer-nav__links-container">
+        <div class="footer-nav__list-wrapper footer-nav__list-jobs">
+          <button class="tes-btn footer-nav__list-title nav-list__title"
+                  data-toggle-class="fr-footer-nav-jobs">Jobs
+            <i class="footer-nav__list-title-icon icon-plus-slim icon-white icon-xs"></i>
+            <i class="footer-nav__list-title-icon-active icon-close icon-white icon-xs"></i>
+          </button>
+        <nav class="footer-nav__list footer-nav__list-jobs">
+              <a href="/jobs" class="footer-nav__link footer-nav__list-item nav-list__item footer-nav__link-index js-link"
+                 data-mz data-module="footer-nav" data-id="jobs-home">Jobs home</a>
+
+              <a href="/jobs/browse/united-kingdom" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="jobs-uk">UK</a>
+
+              <a href="/jobs/browse/international" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="jobs-international">International</a>
+
+              <a href="/jobs/browse/australia" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="jobs-au">Australia</a>
+
+              <a href="/jobs/browse/primary-teaching-and-lecturing" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="jobs-primary">Primary / Elementary</a>
+
+              <a href="/jobs/browse/secondary" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="jobs-secondary">Secondary / High school</a>
+
+              <a href="/jobs/careers-advice" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="jobs-careers-advice">Careers advice</a>
+
+              <a href="/recruit" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="jobs-recruit">Recruit with Tes</a>
+
+        </nav>
+        </div>
+        <div class="footer-nav__list-wrapper footer-nav__list-courses">
+          <button class="tes-btn footer-nav__list-title nav-list__title"
+                  data-toggle-class="fr-footer-nav-courses">Courses
+            <i class="footer-nav__list-title-icon icon-plus-slim icon-white icon-xs"></i>
+            <i class="footer-nav__list-title-icon-active icon-close icon-white icon-xs"></i>
+          </button>
+        <nav class="footer-nav__list footer-nav__list-courses">
+              <a href="/institute" class="footer-nav__link footer-nav__list-item nav-list__item footer-nav__link-index js-link"
+                 data-mz data-module="footer-nav" data-id="courses-home">Courses home</a>
+
+              <a href="/institute/programmes-prospective-teachers" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="courses-prospective">For prospective teachers</a>
+
+              <a href="/institute/cpd-courses-teachers" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="courses-teachers">For teachers</a>
+
+              <a href="/institute/programmes-schools" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="courses-schools">For schools</a>
+
+              <a href="/institute/partner-with-tes" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="courses-partners">For partners</a>
+
+        </nav>
+        </div>
+        <div class="footer-nav__list-wrapper footer-nav__list-resources">
+          <button class="tes-btn footer-nav__list-title nav-list__title"
+                  data-toggle-class="fr-footer-nav-resources">Resources
+            <i class="footer-nav__list-title-icon icon-plus-slim icon-white icon-xs"></i>
+            <i class="footer-nav__list-title-icon-active icon-close icon-white icon-xs"></i>
+          </button>
+        <nav class="footer-nav__list footer-nav__list-resources">
+              <a href="/teaching-resources" class="footer-nav__link footer-nav__list-item nav-list__item footer-nav__link-index js-link"
+                 data-mz data-module="footer-nav" data-id="resources-home">Resources home</a>
+
+              <span class="footer-nav__list-item nav-list__item">
+                  <a class="footer-nav__link js-link" data-mz data-module="footer-nav" data-id="resources-earlyyears"
+                     href="/teaching-resources/hub/early-years">Early years</a> /                   <a class="footer-nav__link js-link" data-mz data-module="footer-nav" data-id="resources-prek"
+                     href=" /en-us/teaching-resources/hub/preschool">Pre-K and Kindergarten</a>
+              </span>
+
+              <span class="footer-nav__list-item nav-list__item">
+                  <a class="footer-nav__link js-link" data-mz data-module="footer-nav" data-id="resources-primary"
+                     href="/teaching-resources/hub/primary">Primary</a> /                   <a class="footer-nav__link js-link" data-mz data-module="footer-nav" data-id="resources-elementary"
+                     href="/en-us/teaching-resources/hub/elementary-school">Elementary</a>
+              </span>
+
+              <a href="/en-us/teaching-resources/hub/middle-school" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="resources-middleschool">Middle school</a>
+
+              <span class="footer-nav__list-item nav-list__item">
+                  <a class="footer-nav__link js-link" data-mz data-module="footer-nav" data-id="resources-secondary"
+                     href="/teaching-resources/hub/secondary">Secondary</a> /                   <a class="footer-nav__link js-link" data-mz data-module="footer-nav" data-id="resources-highschool"
+                     href="/en-us/teaching-resources/hub/high-school">High school</a>
+              </span>
+
+              <a href="/teaching-resources/hub/whole-school" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="resources-wholeschool">Whole school</a>
+
+              <a href="/teaching-resources/hub/whole-school/special-educational-needs" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="resources-specialneeds">Special Educational Needs</a>
+
+              <a href="/my-resources/lessons" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="resources-lessons">Tes Teach (NEW)</a>
+
+              <a href="/teaching-resources/blog" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="resources-blog">Blog</a>
+
+        </nav>
+        </div>
+        <div class="footer-nav__list-wrapper footer-nav__list-store">
+          <button class="tes-btn footer-nav__list-title nav-list__title"
+                  data-toggle-class="fr-footer-nav-store">Store
+            <i class="footer-nav__list-title-icon icon-plus-slim icon-white icon-xs"></i>
+            <i class="footer-nav__list-title-icon-active icon-close icon-white icon-xs"></i>
+          </button>
+        <nav class="footer-nav__list footer-nav__list-store">
+              <a href="/store" class="footer-nav__link footer-nav__list-item nav-list__item footer-nav__link-index js-link"
+                 data-mz data-module="footer-nav" data-id="store-home">Store home</a>
+
+              <a href="/store/elements" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="store-elements">Elements</a>
+
+              <a href="/store/magazine" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="store-magazine">Magazine</a>
+
+        </nav>
+        
+
+          <button class="tes-btn footer-nav__list-title nav-list__title"
+                  data-toggle-class="fr-footer-nav-community">Community
+            <i class="footer-nav__list-title-icon icon-plus-slim icon-white icon-xs"></i>
+            <i class="footer-nav__list-title-icon-active icon-close icon-white icon-xs"></i>
+          </button>
+        <nav class="footer-nav__list footer-nav__list-community">
+              <a href="https://community.tes.com" class="footer-nav__link footer-nav__list-item nav-list__item footer-nav__link-index js-link"
+                 data-mz data-module="footer-nav" data-id="community-home">Community home</a>
+
+              <a href="https://community.tes.com/find-new/posts" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="recent-posts">Latest posts</a>
+
+              <a href="https://community.tes.com/search/?type&#x3D;post" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="search-forums">Search forums</a>
+
+              <a href="https://community.tes.com/forums/education-news.2128/" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="education-news">Education news</a>
+
+              <a href="https://community.tes.com/forums/teaching-overseas.64/" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="teaching-overseas">Teaching overseas</a>
+
+              <a href="https://community.tes.com/forums/us-education-news.2550/" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="us-education-news">US education news</a>
+
+        </nav>
+        </div>
+        <div class="footer-nav__list-wrapper footer-nav__list-news">
+          <button class="tes-btn footer-nav__list-title nav-list__title"
+                  data-toggle-class="fr-footer-nav-news">News
+            <i class="footer-nav__list-title-icon icon-plus-slim icon-white icon-xs"></i>
+            <i class="footer-nav__list-title-icon-active icon-close icon-white icon-xs"></i>
+          </button>
+        <nav class="footer-nav__list footer-nav__list-news">
+              <a href="/news/school-news" class="footer-nav__link footer-nav__list-item nav-list__item footer-nav__link-index js-link"
+                 data-mz data-module="footer-nav" data-id="news-home">News home</a>
+
+              <a href="/news/school-news" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="news-school">School news (UK)</a>
+
+              <a href="/news/further-education" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="news-fe">FE news</a>
+
+              <a href="/news/school-news/international" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="news-international">International</a>
+
+              <a href="/magazine" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="news-magazine">Magazine</a>
+
+              <a href="/news/subject-genius" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="subject-genius">Subject genius</a>
+
+              <a href="/new-teachers" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="new-teachers">New teachers</a>
+
+              <a href="/leadership" class="footer-nav__link footer-nav__list-item nav-list__item js-link"
+                 data-mz data-module="footer-nav" data-id="news-leadership">Leadership</a>
+
+        </nav>
+        </div>
+    </div>
+    <div class="footer-nav__base">
+      <div class="footer-nav__country-wrapper">
+        <form class="js-country-selector-form"
+              action="/api/authn/change-site-country" method="post">
+          <select class="js-country-selector footer-nav__country-selector" data-country="gb" name="siteCountry"
+                  data-submit-form="js-country-selector-form">
+              <option value="GB" selected data-hreflang="en-gb">United Kingdom</option>
+              <option value="US"  data-hreflang="en-us">United States</option>
+              <option value="AU"  data-hreflang="en-au">Australia</option>
+              <option value="IE"  data-hreflang="en-ie">Ireland</option>
+              <option value="CA"  data-hreflang="en-ca">Canada</option>
+              <option value="NZ"  data-hreflang="en-nz">New Zealand</option>
+          </select>
+        </form>
+      </div>
+      <div class="footer-nav__base-links">
+        <div><img class="footer-nav__logo" src="/logo.svg?theme=text" width="26"
+                  height="16" alt="Tes. For teaching."/> Copyright © 2017</div>
+        <div>
+          <a style="display: none" class="js-tawkto-chat footer-nav__link footer-nav__link-inline js-link" href="javascript:void(Tawk_API.toggle())"><span style="color: #00c7b1">●</span> Online Help</a>
+            <a class="footer-nav__link footer-nav__link-inline js-link" data-mz
+               data-module="footer-nav" data-id="help-faqs" href="/help">Help &amp; FAQs</a>
+            <a class="footer-nav__link footer-nav__link-inline js-link" data-mz
+               data-module="footer-nav" data-id="contact" href="/contact">Contact us</a>
+            <a class="footer-nav__link footer-nav__link-inline js-link" data-mz
+               data-module="footer-nav" data-id="privacy" href="/privacy-policy">Privacy</a>
+            <a class="footer-nav__link footer-nav__link-inline js-link" data-mz
+               data-module="footer-nav" data-id="tcs" href="/terms-and-conditions">Terms of service</a>
+            <a class="footer-nav__link js-link" data-mz
+               data-module="footer-nav" data-id="takedown" href="/takedown-policy">Takedown</a>
+        </div>
+        <div class="footer-nav__copyright">This website and its content is subject to our Terms and
+          Conditions. Tes Global Ltd is
+          registered in England (Company No 02017289) with its registered office at 26 Red Lion
+          Square
+          London WC1R 4HQ.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Lazy load any images marked up by echo -->
+<script>
+  window.TES = window.TES || {};
+  window.TES.apiUrls = { profile: "/api/v1/member" };
+  if(typeof echo !== "undefined") {
+    echo.init({offset: 150, throttle: 150, unload: false});
+  }
+</script>
+<!-- Hotjar Tracking Code for http://www.tes.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:266940,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script><!-- Adform Tracking Code BEGIN -->
+<script type="text/javascript">
+    var divider = '|';
+    var sitename = 'tes.com';
+    var section = TES && TES.pageMetadata && TES.pageMetadata.section || 'unknown';
+    var subsection = TES && TES.pageMetadata && TES.pageMetadata.subsection || section;
+    var pagename = TES && TES.pageMetadata && TES.pageMetadata.type || 'unknown';
+    var adformPagename = [sitename, section, subsection, pagename].join(divider);
+    window._adftrack = Array.isArray(window._adftrack) ? window._adftrack : (window._adftrack ? [window._adftrack] : []);
+    window._adftrack.push({
+        pm: 776766,
+        divider: encodeURIComponent(divider),
+        pagename: encodeURIComponent(adformPagename)
+    });
+    (function () { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://track.adform.net/serving/scripts/trackpoint/async/'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); })();
+
+</script>
+<!-- Adform Tracking Code END --><!--Start of Tawk.to Script-->
+<script type="text/javascript">
+// Enable on uploader and RDP
+var urlRegex = /^\/(uploader|teaching\-resource\/)/;
+var toggleEnabled = window.location && window.location.search && window.location.search.indexOf('toggle=tawkto') >= 0;
+var urlEnabled = window.location && window.location.pathname &&  window.location.pathname.match(urlRegex);
+if (toggleEnabled || urlEnabled) {
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/596c9f1e1dc79b329518eb22/default';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  Tawk_API = Tawk_API || {};
+  Tawk_API.onStatusChange = function (status) {
+    var visibility = status === 'online' ? 'inline' : 'none';
+    [].forEach.call(document.querySelectorAll('.js-tawkto-chat'), function (el) {
+      console.log(el);
+      el.style.display = visibility;
+    });
+  }
+}
+</script>
+<!--End of Tawk.to Script-->
+<script cx-bundles="site-assets/fragment.js" cx-replace-outer cx-ignore-error="true" defer></script>
+  </div>
+</div>
+  </div>
+  </footer>
+</div>
+  <script src="https://www.tes.com/sites/default/files/js/js_0GLEj659P7LLJuzvg2FARFxeFkKB-C5zacfSYmlLBhw.js"></script>
+<script>
+      setTimeout(function(){var a=document.createElement("script");
+      var b=document.getElementsByTagName('script')[0];
+      a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0034/8524.js";
+      a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+      </script>
+<script src="https://www.tes.com/sites/default/files/js/js_UypA1WyUpBEzqaORTjkv8GlLKVN0VHix4rCS4zQ66Aw.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"55613def96","applicationID":"19752453","transactionName":"Ml1TZBNTCkcCAkFaWAsXZEIIHQ1aBwRNHUcNSA==","queueTime":0,"applicationTime":2,"atts":"HhpQEltJGUk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

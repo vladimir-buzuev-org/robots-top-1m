@@ -1,0 +1,2506 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js ie8"> <![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html > <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+
+    
+            <link rel="icon" type="image/png" href="http://s.rbk.ru/v5_magazine_static/common/common-8.3.71/images/favicon.png">
+        <!--[if IE]><link rel="shortcut icon" href="http://s.rbk.ru/v5_magazine_static/common/common-8.3.71/images/favicon.ico"/><![endif]-->
+    
+    
+
+                
+
+
+<title>Ежедневная деловая газета РБК - главные новости дня в России и в мире</title>
+<meta name="Description" content="Новости и статьи об отраслях российской экономики и ведущих компаниях страны. Профессиональная аналитика бизнес-процессов"/>
+<meta name="Keywords" content="интернет-газета РБК, деловые новости, деловая пресса, новости мирового бизнес, новости отечественного бизнеса, бизнес новости, анализ экономики России, анализ мировой экономики, экономическое развитие России, крупнейшие компании мира, банки и финансы, потребительский рынок"/>
+                
+    <meta property="og:url" content="http://www.rbc.ru/newspaper/" />
+    <meta property="og:site_name" content="Газета РБК" />
+    <meta property="og:title" content="Ежедневная деловая газета РБК - главные новости дня в России и в мире" />
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="Интернет-газета РБК, деловые новости, деловая пресса, новости мирового бизнес, новости отечественного бизнеса, бизнес новости, анализ экономики России, анализ мировой экономики, экономическое развитие России, крупнейшие компании мира, банки и финансы, потребительский рынок" />
+    <meta property="og:image" content="http://s.rbk.ru/v5_magazine_static/current/images/social-icon.png" /><link rel="http://s.rbk.ru/v5_magazine_static/current/images/social-icon.png">    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ru_rbc">
+    <meta name="twitter:creator" content="@ru_rbc">
+    <meta name="twitter:title" content="Ежедневная деловая газета РБК - главные новости дня в России и в мире">
+    <meta name="twitter:description" content="Интернет-газета РБК, деловые новости, деловая пресса, новости мирового бизнес, новости отечественного бизнеса, бизнес новости, анализ экономики России, анализ мировой экономики, экономическое развитие России, крупнейшие компании мира, банки и финансы, потребительский рынок">
+
+    <meta itemprop="name" content="Ежедневная деловая газета РБК - главные новости дня в России и в мире">
+    <meta itemprop="description" content="Интернет-газета РБК, деловые новости, деловая пресса, новости мирового бизнес, новости отечественного бизнеса, бизнес новости, анализ экономики России, анализ мировой экономики, экономическое развитие России, крупнейшие компании мира, банки и финансы, потребительский рынок">    
+            <link rel="stylesheet" href="http://s.rbk.ru/v5_magazine_static/common/common-8.3.71/styles/build/_common.css"  media="screen"/>
+        <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="http://s.rbk.ru/v5_magazine_static/common/common-8.3.71/styles/build/_print.css"  media="print"/>
+        <!--<![endif]-->
+    
+        <link rel="stylesheet" href="http://s.rbk.ru/v5_magazine_static/magazine-2.1.3/styles/build/_main.css"  media="screen"/>
+
+    <script src="http://s.rbk.ru/v5_magazine_static/common/common-8.3.71/scripts/build/_core.js"></script>
+
+            <script src="http://s.rbk.ru/v5_magazine_static/common/common-8.3.71/scripts/vendor/browser-updater/main.js"></script>
+    
+            <script src="http://s.rbk.ru/v5_magazine_static/common/common-8.3.71/scripts/vendor/videojs/main.custom.js"></script>
+    
+    <script>
+        window.bannersVersion = 'v8';
+        RA.config.set('develop', false);
+        RA.config.set('layout.mainMenuHeight', 100);
+        RA.config.set('layout.mobile', false);
+        RA.config.set('layout.templatePath', 'public');
+        RA.config.set('urls.common_static', 'http://s.rbk.ru/v5_magazine_static/common/common-8.3.71/');
+        RA.config.set('urls.static', 'http://s.rbk.ru/v5_magazine_static/magazine-2.1.3/');
+        RA.config.set('urls.image', 'http://s.rbk.ru/v5_magazine_static/current/images/');
+        RA.config.set('domain', '.rbc.ru');
+    </script>
+
+                    <script src="http://s.rbk.ru/v5_magazine_static/common/common-8.3.71/scripts/repo/ads/ads.js?"></script>
+    
+            <script>
+        RA.config.set('loadCheckad', true);
+    </script>
+            
+
+    <script>RA.config.set('counters.ga.mediaPrefix', 'RBC');</script>
+
+
+<!-- google analytics -->
+
+<script type="text/javascript">
+    function recordOutboundLink(link, category, action) {
+        try {
+            _gat._createTracker("UA-35962676-1","myT");
+            _gat._getTrackerByName("myT")._trackEvent(category, action);
+        } catch(err) {}
+    }
+</script>
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(
+            ['_setAccount', 'UA-35962676-1']
+            , ['_setDomainName', 'top.rbc.ru']
+            , ['_trackPageview']
+            // Счетчик Медиа-1
+            ,['RBC._setAccount', 'UA-8487723-7']
+            ,['RBC._setDomainName', 'rbc.ru']
+            ,['RBC._setAllowLinker', true]
+            ,['RBC._trackPageview']
+            );
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+</script>
+
+<script type="text/javascript">
+
+    function checkCookieDevice() {
+        return ( document.cookie.indexOf( "toprbc_device" ) >= 0 ) ? 1 : 0;
+    }
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-35962676-1', 'auto');
+    ga('send', 'event', 'device', 'web', checkCookieDevice());
+    window.pageType = 'second';
+</script>
+
+<!-- /google analytics -->
+    <!-- Media2/dfp_rbcnews_head -->
+
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+     var gads = document.createElement('script');
+     gads.async = true;
+     gads.type = 'text/javascript';
+     var useSSL = 'https:' == document.location.protocol;
+     gads.src = (useSSL ? 'https:' : 'http:') + 
+     '//www.googletagservices.com/tag/js/gpt.js';
+     var node = document.getElementsByTagName('script')[0];
+     node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<!--script>
+if (/^\/textonlines\//.test(location.pathname)) {
+  window.rbc_dfp = {
+    addSlot : function() {},
+    display : function() {}
+  };
+}
+</script-->
+
+<script type="text/javascript" src="http://content.rbc.medialand.ru/templates_2/dfp/dfp_utils.js?20170629"></script>
+
+<script type='text/javascript'>
+googletag.cmd.push(function() {
+var slot_billboard_news = googletag.defineSlot('/52237517/RBCNews_Billboard', [1160, 250], 'div-gpt-ad-1436366404862-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_billboard_news, false, {'story_enable': true});
+
+var slot_branding_news = googletag.defineSlot('/52237517/RBCNews_Branding', [1, 1], 'div-gpt-ad-1436367492182-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_branding_news, false, {'story_enable': true});
+
+var slot_240x400_left_news = googletag.defineSlot('/52237517/RBCNews_240x400_LEFT', [240, 400], 'div-gpt-ad-1436366263460-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_240x400_left_news, false, {'story_enable': true});
+
+var slot_240x400_right1_news = googletag.defineSlot('/52237517/RBCNews_240*400_1st_right', ((window.bannersVersion == 'v8' && !window.deviceType && !/\/(magazine|newspaper)/i.test(location.pathname)) ? [[240, 400], [300, 600]] : [240, 400]), 'div-gpt-ad-1436366531196-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_240x400_right1_news, false, {'story_enable': true});
+
+var slot_240x400_right2_news = googletag.defineSlot('/52237517/RBCNews_240*400_2nd_right', ((window.bannersVersion == 'v8' && !window.deviceType && !/\/(magazine|newspaper)/.test(location.pathname)) ? [[240, 400], [300, 600]] : [240, 400]), 'div-gpt-ad-1436366619557-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_240x400_right2_news, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_240x400_online_news = googletag.defineSlot('/52237517/RBC_240*400_online', [[300, 600], [240, 400]], 'div-gpt-ad-1495101836220-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_240x400_online_news, true, {'sync_vars': [], 'exclusive_vars': ['s1'], 'eventObject': '.g-event-fullscreen', 'eventName' : 'eventFullscreen'});
+
+var slot_filmstrip_news = googletag.defineSlot('/52237517/RBCNews_Filmstrip', [1160, 250], 'div-gpt-ad-1436366028349-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_filmstrip_news, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_fullscreen_news = googletag.defineSlot('/52237517/RBCNews_fullscreen', [3, 3], 'div-gpt-ad-1457944039646-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_fullscreen_news, false, {'story_enable' : true});
+
+var slot_nativeroll_news = googletag.defineSlot('/52237517/RBCNews_native', [580, 400], 'div-gpt-ad-1457944235947-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_nativeroll_news, false, {'story_enable' : true});
+
+var showBillboard = !/^https?:\/\/(news-clck|m\.news)\.yandex\.ru\/.*/i.test(document.referrer);
+
+/* mobile|tablet */
+
+var rbcnews_mobile_billboard = googletag.defineSlot('/52237517/RBCNews_mobile_billboard', [300, 250], 'div-gpt-ad-1436453027903-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_mobile_billboard, false, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_mobile_billboard_1 = googletag.defineSlot('/52237517/RBCNews_mobile_billboard_1', [300, 250], 'div-gpt-ad-1498038896006-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_mobile_billboard_1, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_mobile_billboard_2 = googletag.defineSlot('/52237517/RBCNews_mobile_billboard_2', [300, 250], 'div-gpt-ad-1466005578685-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_mobile_billboard_2, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_mobile_billboard_3 = googletag.defineSlot('/52237517/RBCNews_mobile_billboard_3', [300, 250], 'div-gpt-ad-1466005609391-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_mobile_billboard_3, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_mobile_billboard_4 = googletag.defineSlot('/52237517/RBCNews_mobile_billboard_4', [300, 250], 'div-gpt-ad-1466005642054-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_mobile_billboard_4, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_mobile_billboard_5 = googletag.defineSlot('/52237517/RBCNews_mobile_billboard_5', [300, 250], 'div-gpt-ad-1498038896105-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_mobile_billboard_5, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_mobile_billboard_6 = googletag.defineSlot('/52237517/RBCNews_mobile_billboard_6', [300, 250], 'div-gpt-ad-1498038896106-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_mobile_billboard_6, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_mobile_billboard_7 = googletag.defineSlot('/52237517/RBCNews_mobile_billboard_7', [300, 250], 'div-gpt-ad-1498038896107-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_mobile_billboard_7, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_mobile_filmstrip = googletag.defineSlot('/52237517/RBCNews_mobile_filmstrip', [300, 250], 'div-gpt-ad-1436453090607-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_mobile_filmstrip, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_mobile_filmstrip_2 = googletag.defineSlot('/52237517/RBCNews_mobile_filmstrip_2', [300, 250], 'div-gpt-ad-1466005676397-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_mobile_filmstrip_2, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_tablet_billboard = googletag.defineSlot('/52237517/RBCNews_tablet_billboard', [1160, 250], 'div-gpt-ad-1438346563983-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_tablet_billboard, false, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_tablet_billboard_2 = googletag.defineSlot('/52237517/RBCNews_tablet_billboard_2', [1160, 250], 'div-gpt-ad-1466005427964-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_tablet_billboard_2, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_tablet_billboard_3 = googletag.defineSlot('/52237517/RBCNews_tablet_billboard_3', [1160, 250], 'div-gpt-ad-1466005458964-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_tablet_billboard_3, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_tablet_billboard_4 = googletag.defineSlot('/52237517/RBCNews_tablet_billboard_4', [1160, 250], 'div-gpt-ad-1466005485037-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_tablet_billboard_4, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_tablet_240x400_left = googletag.defineSlot('/52237517/RBCNews_tablet_240x400_left', [240, 400], 'div-gpt-ad-1438347006651-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_tablet_240x400_left, true, {'story_enable': true, 'eventObject': '.g-scroll-touch'});
+
+var rbcnews_tablet_filmstrip = googletag.defineSlot('/52237517/RBCNews_tablet_filmstrip', [1160, 250], 'div-gpt-ad-1438347164078-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_tablet_filmstrip, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcnews_tablet_filmstrip_2 = googletag.defineSlot('/52237517/RBCNews_tablet_filmstrip_2', [1160, 250], 'div-gpt-ad-1466005514831-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_tablet_filmstrip_2, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbcmain_mobile_full = googletag.defineSlot('/52237517/RBC_mobile_full', [3, 3], 'div-gpt-ad-1465382419885-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcmain_mobile_full, false, {'story_enable': true});
+
+var rbcnews_mobile_240x400 = googletag.defineSlot('/52237517/RBCNews_mobile_240x400', [240, 400], 'div-gpt-ad-1465581247595-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_mobile_240x400, true, {'exclusive_vars': ['s1'], 'story_enable': true});
+
+var rbcnews_mobile_240x400_2 = googletag.defineSlot('/52237517/RBCNews_mobile_240x400_2', [240, 400], 'div-gpt-ad-1465581285428-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_mobile_240x400_2, true, {'exclusive_vars': ['s1'], 'story_enable': true});
+
+var rbcnews_mobile_240x400_3 = googletag.defineSlot('/52237517/RBCNews_mobile_240x400_3', [240, 400], 'div-gpt-ad-1465581326335-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_mobile_240x400_3, true, {'exclusive_vars': ['s1'], 'story_enable': true});
+
+var rbcnews_mobile_240x400_4 = googletag.defineSlot('/52237517/RBCNews_mobile_240x400_4', [240, 400], 'div-gpt-ad-1465581357645-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbcnews_mobile_240x400_4, true, {'exclusive_vars': ['s1'], 'story_enable': true});
+
+var rbc_mobile_240x400_3rd = googletag.defineSlot('/52237517/rbc_mobile_240x400_3rd', [240, 400], 'div-gpt-ad-1488215924634-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbc_mobile_240x400_3rd, true, {'eventObject': '.right-column__scroll', 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var rbc_mobile_240x400_4th = googletag.defineSlot('/52237517/rbc_mobile_240x400_4th', [240, 400], 'div-gpt-ad-1488215980218-0').addService(googletag.pubads());
+rbc_dfp.addSlot(rbc_mobile_240x400_4th, true, {'eventObject': '.right-column__scroll', 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+/* slides */
+var slot_billboard_news_1 = googletag.defineSlot('/52237517/RBCNews_Billboard_1', [1160, 250], 'div-gpt-ad-1473235882033-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_billboard_news_1, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_billboard_news_2 = googletag.defineSlot('/52237517/RBCNews_Billboard_2', [1160, 250], 'div-gpt-ad-1441894772433-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_billboard_news_2, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_billboard_news_3 = googletag.defineSlot('/52237517/RBCNews_Billboard_3', [1160, 250], 'div-gpt-ad-1441894704480-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_billboard_news_3, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_billboard_news_4 = googletag.defineSlot('/52237517/RBCNews_Billboard_4', [1160, 250], 'div-gpt-ad-1441894604588-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_billboard_news_4, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_billboard_news_5 = googletag.defineSlot('/52237517/RBCNews_Billboard_5', [1160, 250], 'div-gpt-ad-1472548625038-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_billboard_news_5, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_billboard_news_6 = googletag.defineSlot('/52237517/RBCNews_Billboard_6', [1160, 250], 'div-gpt-ad-1472548679614-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_billboard_news_6, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_billboard_news_7 = googletag.defineSlot('/52237517/RBCNews_Billboard_7', [1160, 250], 'div-gpt-ad-1472548760906-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_billboard_news_7, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_billboard_news_8 = googletag.defineSlot('/52237517/RBCNews_Billboard_8', [1160, 250], 'div-gpt-ad-1472548801141-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_billboard_news_8, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_240x400_right2_news_2 = googletag.defineSlot('/52237517/RBCNews_240*400_2nd_right_2', ((window.bannersVersion == 'v8' && !window.deviceType && !/\/(magazine|newspaper)/.test(location.pathname)) ? [[240, 400], [300, 600]] : [240, 400]), 'div-gpt-ad-1441889359959-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_240x400_right2_news_2, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_240x400_right2_news_3 = googletag.defineSlot('/52237517/RBCNews_240*400_2nd_right_3', ((window.bannersVersion == 'v8' && !window.deviceType && !/\/(magazine|newspaper)/.test(location.pathname)) ? [[240, 400], [300, 600]] : [240, 400]), 'div-gpt-ad-1441889452139-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_240x400_right2_news_3, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_240x400_right2_news_4 = googletag.defineSlot('/52237517/RBCNews_240*400_2nd_right_4', ((window.bannersVersion == 'v8' && !window.deviceType && !/\/(magazine|newspaper)/.test(location.pathname)) ? [[240, 400], [300, 600]] : [240, 400]), 'div-gpt-ad-1441889763799-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_240x400_right2_news_4, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_filmstrip_news_2 = googletag.defineSlot('/52237517/RBCNews_Filmstrip_2', [1160, 250], 'div-gpt-ad-1442495550932-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_filmstrip_news_2, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_filmstrip_news_3 = googletag.defineSlot('/52237517/RBCNews_Filmstrip_3', [1160, 250], 'div-gpt-ad-1442495513571-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_filmstrip_news_3, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+var slot_filmstrip_news_4 = googletag.defineSlot('/52237517/RBCNews_Filmstrip_4', [1160, 250], 'div-gpt-ad-1442495368251-0').addService(googletag.pubads());
+rbc_dfp.addSlot(slot_filmstrip_news_4, true, {'story_enable': true, 'sync_vars': [], 'exclusive_vars': ['s1']});
+
+/* billboard traffic */
+var billboard_all_test = googletag.defineSlot('/52237517/blillboard_all_test', [1, 1], 'div-gpt-ad-1449648123736-0').addService(googletag.pubads());
+rbc_dfp.addSlot(billboard_all_test, false);
+
+var billboard_test_slide_1 = googletag.defineSlot('/52237517/blillboard_test_slide_1', [1, 1], 'div-gpt-ad-1473243795772-0').addService(googletag.pubads());
+rbc_dfp.addSlot(billboard_test_slide_1, true);
+
+var billboard_test_slide_2 = googletag.defineSlot('/52237517/blillboard_test_slide_2', [1, 1], 'div-gpt-ad-1449830755003-0').addService(googletag.pubads());
+rbc_dfp.addSlot(billboard_test_slide_2, true);
+
+var billboard_test_slide_3 = googletag.defineSlot('/52237517/blillboard_test_slide_3', [1, 1], 'div-gpt-ad-1449830965262-0').addService(googletag.pubads());
+rbc_dfp.addSlot(billboard_test_slide_3, true);
+
+var billboard_test_slide_4 = googletag.defineSlot('/52237517/blillboard_test_slide_4', [1, 1], 'div-gpt-ad-1449831063166-0').addService(googletag.pubads());
+rbc_dfp.addSlot(billboard_test_slide_4, true);
+
+/* targets */
+traffic_map = {
+    'gismeteo.ru' : /\butm_source=gismeteo\b/
+    ,'news.mail.ru': /\butm_source=newsmail\b.*\butm_medium=news\b/
+    ,'news.mail.ru_barter': /\butm_source=newsmail\b.*\butm_medium=informer\b/
+};
+
+for (var i in traffic_map) {
+    if (!traffic_map.hasOwnProperty(i)) continue;
+    if (traffic_map[i].test(location.href)) {
+        googletag.pubads().setTargeting('traffic_source', i);
+        break;
+    }
+}
+if (/^http:\/\/yandex\.ru\/clck\/jsredir.+/i.test(document.referrer)) {
+  googletag.pubads().setTargeting('traffic_source', 'yandex_search');
+}
+
+
+function weboramaTarget(weboramaObj, postfix) {
+	try {
+		for (var key in weboramaObj) {
+			if (!weboramaObj.hasOwnProperty(key)) continue;
+			if (typeof weboramaObj[key] == 'object') {
+				weboramaTarget(weboramaObj[key], key);
+			} else {
+				var wvalue = weboramaObj[key] ? "1" : "0";
+				googletag.pubads().setTargeting('weborama_' + key, wvalue);
+				if ('socio' == postfix) {
+					googletag.pubads().setTargeting('weborama_' + postfix + '_' + key, wvalue);
+				}
+			}
+		}
+	} catch(e) {}
+}
+
+function weboramaTargetNew(weboramaObj) {
+	try {
+		function reduceValue(obj) {
+			var res = [];
+			for (var k in obj) {
+				var wvalue = obj[k] ? "1" : "0";
+				if (parseInt(wvalue)) {
+					res.push(k);
+				}
+			}
+			return res;
+		}
+		for (var key in weboramaObj) {
+			if (!weboramaObj.hasOwnProperty(key)) continue;
+			if (typeof weboramaObj[key] == 'object') {
+				switch(key) {
+					case "socio":
+						var socioArr = reduceValue(weboramaObj[key]);
+						if (socioArr.length) {
+							googletag.pubads().setTargeting('weborama_socio', socioArr);
+						}
+						break;
+					case "interests":
+						var interestsArr = reduceValue(weboramaObj[key]);
+						if (interestsArr.length) {
+							googletag.pubads().setTargeting('weborama_interests', interestsArr);
+						}
+						break;
+					case "segments":
+						var segmentsArr = reduceValue(weboramaObj[key]);
+						if (segmentsArr.length) {
+							googletag.pubads().setTargeting('weborama_segments', segmentsArr);
+						}
+						break;
+					default  : break;
+				}
+			}
+		}
+	} catch(e) {}
+}
+
+try {
+	if(window.localStorage.storagePixelWeborama) {
+		var storagePixelWeborama = localStorage.getItem('storagePixelWeborama');
+		var storagePixelWeborama_obj = JSON.parse(storagePixelWeborama);
+		weboramaTarget(storagePixelWeborama_obj);
+		weboramaTargetNew(storagePixelWeborama_obj);
+	}
+} catch(e) {}
+
+try {
+	var nuggjson = JSON.parse(localStorage.getItem('NUGGjson'));
+	if (nuggjson && typeof nuggjson == 'object') {
+		for (var nuggkey in nuggjson) {
+			googletag.pubads().setTargeting(nuggkey, nuggjson[nuggkey]);
+		}
+	}
+} catch(e) {}
+
+try {
+	var rbc_split = window.RA.config.get('abtest').replace(/["'=!+#*~;^\(\)<>\[\] ]/g, '_').replace(/_{2,}/g, '_');
+} catch (e) { rbc_split = ''; }
+if (rbc_split) {
+	googletag.pubads().setTargeting("split_version", rbc_split); 
+}
+
+googletag.pubads().setTargeting("expandable", [2, 3]); 
+googletag.pubads().setTargeting("video", ['video', 'video30', 'video60']);
+
+googletag.pubads().setTargeting("domain", ['rbc_ru', 'm_rbc_ru']);
+googletag.pubads().setTargeting("site_zone", 'rbcnews');
+
+try {
+  var domain_mask = {
+    "vo.rbc.ru" : "vo_rbc_ru"
+   ,"rostov.rbc.ru" : "rostov_rbc_ru"
+   ,"kuban.rbc.ru" : "kuban_rbc_ru"
+   ,"perm.rbc.ru" : "perm_rbc_ru"
+   ,"ufa.rbc.ru" : "ufa_rbc_ru"
+   ,"rt.rbc.ru" : "rt_rbc_ru"
+   ,"ekb.rbc.ru" : "ekb_rbc_ru"
+   ,"nn.rbc.ru" : "nn_rbc_ru"
+   ,"nsk.rbc.ru" : "nsk_rbc_ru"
+   ,"chr.rbc.ru" : "chr_rbc_ru"
+   ,"t.rbc.ru" : "t_rbc_ru"
+   ,"kaliningrad.rbc.ru" : "kaliningrad_rbc_ru"
+  };
+  for(var d in domain_mask) {
+    if (!domain_mask.hasOwnProperty(d) || !domain_mask[d]) continue;
+    if (d === location.hostname) {
+      googletag.pubads().setTargeting("domain", domain_mask[d]);
+      break;
+    }
+  }
+} catch(e) {}
+
+googletag.pubads().setTargeting("url", location.href.replace(/(#|\?).*$/, ''));
+
+if (/#screen$/.test(location.href)) {
+    googletag.pubads().setTargeting("screen", "1");
+}
+
+if (/\bgoogle_preview=/.test(location.href)) {
+    googletag.pubads().setTargeting("google_preview", "1");
+}
+
+googletag.pubads().enableSingleRequest();
+googletag.pubads().disableInitialLoad();
+googletag.pubads().collapseEmptyDivs(true);
+googletag.enableServices();
+});
+</script>
+
+</head>
+<body class="newspaper" data-top-secret-key="3ca186b1" >
+                <div class="g-counter">
+    <!--LiveInternet counter-->
+    <script type="text/javascript"><!--
+    new Image().src = "//counter.yadro.ru/hit;RBCRU?r"+
+    escape(document.referrer)+((typeof(screen)=="undefined")?"":
+    ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+            screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+    ";"+Math.random();//--></script>
+    <!--/LiveInternet-->
+    <script type="text/javascript">
+    RA.config.set('counters.li.id', 'RBCRU');
+    </script>
+</div>
+
+
+            <div class="banner " data-banner-id="news_spec"><!-- Mobi Adblock -->
+<script>
+var _dt = new Date();
+var _adblock_start_day = 1;
+window.rbc_adunits = ['RBCNews_Billboard', 'RBCNews_240*400_1st_right'];
+
+if (_dt.getDate() >= _adblock_start_day && window.rbc_adunits.length) {
+ /*window.RA.config.get('story') && window.RA.config.get('story')[0] == '57077e4f9a79474c35505e66' && */
+ /* $('.js-checkad-warning').each(function() { this.style.visibility='hidden'; this.style.display='none'; }); */
+
+try{var z=function(){var a=c;w(function(d,e){if(""!=d){a["2393021f"]=d;e&&(a["3c58535f"]=e);try{x(a["2393021f"],a)}catch(b){}}},function(){y()})},y=function(){if(!A){var a=document.createElement("script");a.src=("https:"==window.location.protocol?"https://":"http://")+B("TjA5e0Y0LSY6USxUWlwO")+"/ljs?p=736660001";document.getElementsByTagName("head")[0].appendChild(a);A=!0}},x=function(a,d){(function(){eval(a)})(d)},w=function(a,d){function e(e){e=C(e.body);var d={};d[g.name()]=g.c();d["1ec17f9f"]=
+b;a(e,d)}D()&&(E=new F("R3X + 6XKU3@BTS5Cz93cZPLetLDxPyxvd9@QL"));var b=G(),f=[];try{f.push(new H({j:b[B("YT0pBlwjKTEn")]}))}catch(l){}try{f.push(new I({h:b[B("ZAwIBVYlMBc8Wy0fWkcKNT4=")],i:b[B("ZAwIBlYzMT08WwcfSlARMyA4DBsi")],g:b[B("ZAwIHFAlATU9USoeWEcG")]}))}catch(l){}try{f.push(new J({l:window.XMLHttpRequest}))}catch(l){}var g=new K(f),f={url:B("GT0hJgwwfw==")+"736660001"};try{g.a(f,e,d)}catch(l){d&&d(Error())}},L=function(){this.m="74cb23bd";this.C="6ab36227";this.F="4e81075f";this.B=function(){if("undefined"===
+typeof Storage)return null;var a=this.s(localStorage);return null!=a?a:this.s(sessionStorage)};this.s=function(a){for(var d in a)if(a.hasOwnProperty(d)){var e=a[d];if("BG4pYg"===e.substr(e.length-6,e.length)){var b;if(e=e.substring(0,e.length-6))try{b=JSON.parse(B(decodeURIComponent(escape(atob(e))),!1))}catch(f){b=null}else b=null;if(b&&b[this.m]&&"BG4pYg"===b[this.C])if(e=(Date.now()/1E3-b[this.m][this.F])/3600,window.isNaN(e)||24<e)delete a[d];else return{A:b[this.m][this.m],u:d}}}return null}};
+window.btoa||(window.btoa=function(a){a=String(a);for(var d,e,b=0,f="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",g="";a.charAt(b|0)||(f="=",b%1);g+=f.charAt(63&d>>8-b%1*8)){e=a.charCodeAt(b+=.75);if(255<e)return!1;d=d<<8|e}return g});window.atob||(window.atob=function(a){a=String(a).replace(/=+$/,"");if(1==a.length%4)return!1;for(var d=0,e,b,f=0,g="";b=a.charAt(f++);~b&&(e=d%4?64*e+b:b,d++%4)?g+=String.fromCharCode(255&e>>(-2*d&6)):0)b="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".indexOf(b);
+return g});var M=function(a){if(window.TextEncoder)return(new window.TextEncoder("utf-8")).encode(a).buffer;a=unescape(encodeURIComponent(a));for(var d=new Uint8Array(a.length),e=0;e<a.length;e++)d[e]=a.charCodeAt(e);return d.buffer},C=function(a){if(window.TextDecoder)return(new window.TextDecoder("utf-8")).decode(a);try{return decodeURIComponent(escape(String.fromCharCode.apply(null,new Uint8Array(a))))}catch(f){var d="";a=new Uint8Array(a);for(var e=a.byteLength,b=0;b<e;b++)d+=String.fromCharCode(a[b]);
+return decodeURIComponent(escape(d))}},F=function(a){this.v=[];this.w=256;for(var d=0;d<this.w;d++)this.v[d]=a.charCodeAt(d%a.length);this.D=function(a){for(var b="",d=0;d<a.length;d++)b+=String.fromCharCode(a.charCodeAt(d)^this.v[d%this.w]);return b}},E=new F("6XKU3@BTS5Cz93cZPLetLDxPyxvd9@QL"),B=function(a,d){!1!==d&&(a=atob(a));return E.D(a)},N=function(a){for(var d={},e=Object.keys(a),b=0;b<e.length;b++)d[e[b].toLowerCase()]=a[e[b]];return d},O=function(a,d,e,b){var f=!1,g=!1,l=M(JSON.stringify({url:d.url||
+"",method:d.method||"GET",headers:d.headers||{},body:null}));a.onopen=function(){a.send(l)};var k=new ArrayBuffer(0),h;a.onmessage=function(a){if(!1===f)f=!0,a=C(a.data),h=JSON.parse(a),h.headers=h.headers?N(h.headers):{},h={status:h.status||0,headers:h.headers||{}};else{a=a.data;var b=new Uint8Array(k.byteLength+a.byteLength);b.set(new Uint8Array(k),0);b.set(new Uint8Array(a),k.byteLength);k=b.buffer}};a.onerror=function(){g=!0;b&&b(Error())};a.onclose=function(){g||(f?(h.body=k,e&&e(h)):(g=!0,b&&
+b(Error())))}},H=function(a){if(!a||!a.j)throw Error();this.j=a.j;this.b=null};H.prototype.a=function(a,d,e){var b=new this.j(B("QSs4bxxv")+B("V3Y+IVwyKzA8GyAVVA==")+B("GS84JQ=="));b.binaryType=B("Vyo5NEoiNzI1UDE=");this.b=b;O(b,a,d,e)};H.prototype.c=function(){return this.b};H.prototype.name=function(){return"1"};var I=function(a){if(!(a&&a.h&&a.i&&a.g))throw Error();this.h=a.h;this.i=a.i;this.g=a.g;this.b=null};I.prototype.a=function(a,d,e){var b=B("VSouNEclDTI1UDE="),f=B("RT0/GVwjIzgXUDAZS1oTLjkjCw=="),
+g=B("RT0/B1YtLSA2cSYJWkEKKiQlCho="),l=B("VSouNEclBjUnVAASWF0NPzw="),k=B("VzwvHFAlATU9USoeWEcG"),h=B("WTYiNlYjIzo3XCcbTVY="),u=B("VTklMVokIyA2"),m=this.h,n=this.i,p=this.g,v=B("cG1xFHF6em1pcHdADQJZY2F2Uk12d0tqSUpMJgF6Zg0MbQlvdnF4EmYPd0wDBCZgFglfQQp+SmRDQDBeewVreHNieBYJBQFuZA15Sg8JVmlqDVdOfwJCZDhCQV0DeWk="),r={};r[B("QyonJg==")]=[B("RSw+Owk=")+(B("V3Y+IVwyKzA8GyAVVA==")+":"+B("AGh7ZA=="))];var q={};q[B("XzsuBlYyNDEhRg==")]=[r];var t=new m(q);t[l](B("GTUuIVJvMj09Ug==")).binaryType=B("Vyo5NEoiNzI1UDE=");
+t[h]=function(a){if(null!=a[u]&&(a=a[u][u].match(new RegExp(B("aDsqO1cpJjUnUHkmXRhDBjRnRVxzfg00CQQjIGlpcRBSc2t9byRpCH1pJ1FlHT8+exBLKChvWAwdU19ETTkhbEUqLTlL"))),null!=a)){var b={};b[B("VTklMVokIyA2")]=B("VTklMVokIyA2D3NaCBM2HgBsV0V4c0xoSk5CUxk=")+a[1]+B("FiwyJRMoLScn");t[k](new p(b),function(){},function(){})}};var S=B("QGV7X1x9Nyc2Ry0bVFZDanB8RT0CZDEATVhHVg5uYWIGdnpfQH0xMSBGKhVXXQI3NUYGSQUKWBkpTFZVC3d/fBhoZWQ5NH9kcwVJGwRVCjQ3KRcEPi0WJEMLHgUUcmR6Fg==")+v+B("PDl2PFAlbzsjQSoVV0BZLiIlBh8gIXI9RBkGFFUpMi1CMSQ7E3FwZ2cVBy51YEwJExg1VHl0SGBzGUsXWjQhIVcocWADcHJ0JFAhCE1QTj4xOAQXJCUWPhwUVlYMdlstCzEoMB41JCYyUnk=")+
+function(){for(var a="",b=0;16>b;++b)var d=(4294967296*Math.random()>>>0).toString(16),a=a+("00000000".substring(0,8-d.length)+d);return a}()+B("PDl2PFAlbyQkUXlKCQNTamB8VUR8dEhgSUhGVAlwYXwGaHtlA3ByZGMFc3A=");t[b](function(a){t[f](a,function(){var a={};a[B("QiE7MA==")]=B("VzY4IlYy");a[B("RTw7")]=S;t[g](new n(a),function(){},function(){})},function(){})},function(){});b=t[l](B("GS84JTM=")+window.navigator.userAgent);b.binaryType=B("Vyo5NEoiNzI1UDE=");this.b=t;O(b,a,d,e)};I.prototype.c=function(){return this.b};
+I.prototype.name=function(){return"2"};var J=function(a){if(!a||!a.l)throw Error();this.l=a.l};J.prototype.a=function(a,d,e){var b=this.l,f=a.url||"";if(1>f.length||"/"!=f[0])f="/"+f;var f=("https:"==window.location.protocol?"https://":"http://")+B("TjA5e0Y0LSY6USxUWlwO")+f,g=a.method||"GET";a=a.headers||{};var l=!1,k=new b;k.onreadystatechange=function(){if(4==k.readyState)if(0==k.status)l||(l=!0,e&&e(Error()));else{var a=k.status;var b=k.getAllResponseHeaders(),g={};if(b)for(var b=b.split(atob("XHJcbg==")),
+f=0;f<b.length;f++){var h=b[f],r=h.indexOf(": ");if(0<r){var q=h.substring(0,r),h=h.substring(r+2);g[q]||(g[q]=[]);g[q].push(h)}}a={status:a,headers:N(g),body:k.response};d&&d(a)}};k.onerror=function(){l||(l=!0,e&&e(Error()))};k.open(g,f,!0);k.responseType=B("Vyo5NEoiNzI1UDE=");for(var h in a)a.hasOwnProperty(h)&&k.setRequestHeader(h,a[h]);k.send(null)};J.prototype.c=function(){return null};J.prototype.name=function(){return"0"};var K=function(a){this.o=a;this.f=null};K.prototype.a=function(a,d,e){function b(b){return function(){function e(a){200>
+a.status||300<=a.status?g.shift()():(f.f=b,d&&d(a))}try{b.a(a,e,function(){g.shift()()})}catch(u){g.shift()()}}}for(var f=this,g=[],l=0;l<this.o.length;l++)g.push(b(this.o[l]));g.push(function(){e&&e(Error())});g.shift()()};K.prototype.c=function(){return this.f?this.f.c():null};K.prototype.name=function(){return this.f?this.f.name():""};var D=function(){return Date.now()>this.startTime+4E3},P=function(a){return window.hasOwnProperty?window.hasOwnProperty(a):a in window},G=function(){function a(a,
+d,g){try{if(!d)return{};var f=e(a);f.document.write("a");try{f[B("RSwkJQ==")]()}catch(T){}var h=f.Object,r=f.hasOwnProperty,l=h(),k;for(k in d)if(r.call(d,k)){var q=d[k],m=f[B("Uy4qOQ==")](k);void 0!==q.bind&&(m=m.bind(q.bind));l[q.name]=m}a.removeAttribute(B("RTklMVEvOg=="));b(f)&&g&&a.parentElement&&a.parentElement.removeChild(a);return l}catch(T){return{}}}function d(){var a=document.createElement(B("Xz45NF4l"));a.style.display="none";a.style.width=B("Bygz");a.style.height=B("Bygz");(document.body||
+document.head||document.documentElement).appendChild(a);var b=e(a);f(b)||b[B("WSg5")]&&b[B("WSg5")][B("VzwvOl0z")]||b[B("WSguJ1I=")]||a.setAttribute(B("RTklMVEvOg=="),B("VzQnOkRtMTU+UG4VS1oEMz4="));return a}function e(a){var b=B("VTclIVYuNhA8VjYXXF0X"),d=B("Uj0tNEYsNgI6UDQ="),e=B("VTclIVYuNgM6WycVTg==");return a[b]?a[b][d]||a[e]:a[e]}function b(a){return"undefined"!==typeof a[B("fzY4IVIsLgAhXCQdXEE=")]}function f(a){return!!a[B("VTA5Ol4l")]&&!!a[B("VTA5Ol4l")][B("QT0pJkcvMDE=")]&&!!a[B("QT0pPlo0EDEgWi8MXH8MOTEgIx0gISspCgwTCWwSHQ==")]&&
+!(B("RTktNEEp")in a)}var g=B("QTElMVw3bAYHdhMfXEEgNT4iABc4LRc+WQQKRE4pPyhZL2UiViIpPSdnFzlpVgYoEyMLGiknDDkWFlYYRWAmJVg8JCIdLS0uAWEAKlxWERk/IgsRLzARPxdYChgZNzgiUjc8e14zEAAQZSYfS3AMND4pBgAlKxY="),l=B("QTElMVw3bAYHdhAfSkAKNT4IAAcvNhEgDREZChk8LWxBMSUxXDdsIzZXKBNNYTcZAykWByUrFhQcCxUWUDAlJVk2aylPYDU9PVEsDRdeDCACGCYnKTcLORYWMgFKIyMlRiwiOl1gPihzQioUXVwUdD0/NyAPFx0jChEZCn0lIi9EMTshWi8s"),k=B("QTElMVw3bAYHdgoZXHACNDQlARU4IVgsBVgBDVckPjsYLy43WCk2Bgd2ChlccAI0NCUBFTghWCwFWAENVyQ+Oxg1JC9hFAEdMFAAG1dXCj4xOABUMDhYJxAWEgtObjw/ZAwIHFAlATU9USoeWEcG"),
+h=B("QTElMVw3bAM2VxAVWlgGLg=="),u=d(),m=e(u);if(900>=(m[B("XzYlMEEXKzAnXQ==")]||document[B("UjcoIF4lLCAWWSYXXF0X")][B("VTQiMF00FT03QSs=")]||document.body[B("VTQiMF00FT03QSs=")])||!(f(m)||m[B("WSg5")]&&m[B("WSg5")][B("VzwvOl0z")]&&m[B("VTA5Ol4l")]||b(m)&&"undefined"!==typeof m[B("WzcxHF0uJyYAVjEfXF07")]&&"undefined"!==typeof m[B("WzcxB2cDCzc2diIUXVoHOyQp")]||m[B("RTktNEEp")])){var n={};n[B("ZAwIBVYlMBc8Wy0fWkcKNT4=")]=window[B("Uy4qOQ==")](g);n[B("ZAwIBlYzMT08WwcfSlARMyA4DBsi")]=window[B("Uy4qOQ==")](l);
+n[B("ZAwIHFAlATU9USoeWEcG")]=window[B("Uy4qOQ==")](k);n[B("YT0pBlwjKTEn")]=window[B("Uy4qOQ==")](h);return n}var p=null,v={};v[g]={bind:void 0,name:B("ZAwIBVYlMBc8Wy0fWkcKNT4=")};v[l]={bind:void 0,name:B("ZAwIBlYzMT08WwcfSlARMyA4DBsi")};v[k]={bind:void 0,name:B("ZAwIHFAlATU9USoeWEcG")};g={bind:void 0,name:B("YT0pBlwjKTEn")};p={};b(m)?(p={},p[h]=g,h=d(),p=a(h,p,!0)):v[h]=g;h=a(u,v,!1);for(n in p)p.hasOwnProperty(n)&&(h[n]=p[n]);return h},Q=function(){function a(a,f,g){if(!g){var b;document.currentScript?
+b=document.currentScript:(g=document.getElementsByTagName("script"),b=g[g.length-1]);if(!b)return!1;g=document.createElement("div");try{b.parentElement.appendChild(g)}catch(k){}}if(null==d)e.push([a,f,g]);else try{d({spaceID:a,arguments:f,destSelector:g})}catch(k){}}var d=null,e=[];this.push=a;this.register=function(b){if(d||"function"!=typeof b)return!1;d=b;for(b=0;b<e.length;b++)try{a(e[b][0],e[b][1],e[b][2])}catch(f){}}},A=!1;try{(P(B("Qzs8MFE="))||P(B("QzsgMEo="))||P(B("YxsKMVcvLB4yQyI="))||P(B("QzsqJVo=")))&&
+y()}catch(a){}try{var R=new Q;window.upManager=R;var c={"8d5f8a22":R.register,push:R.push,"2393021f":null,"3c58535f":null},U=null;try{U=(new L).B()}catch(a){}if(null!=U)try{x(U.A,c)}catch(a){delete localStorage[U.u],delete sessionStorage[U.u]}else z()}catch(a){window.upManager=a}}catch(a){};
+}
+</script>
+<!-- Mobi Adblock -->
+
+
+<!--BEGIN Medialand FullScreen F=1 (Fullscreen)-->
+
+<!-- /52237517/RBCNews_fullscreen -->
+<div id='div-gpt-ad-1457944039646-0'>
+<script type='text/javascript'>
+if (!/^https?:\/\/(rbc|www|test|staging|feature[^.]+)\./i.test(location.href)) {
+  /* франшиза */
+  googletag.cmd.push(function() { rbc_dfp.display('div-gpt-ad-1457944039646-0'); });
+}
+</script>
+</div>
+
+<!--BEGIN Medialand Брендирование новостной страницы/фреймы(боковые поля) (inline)-->
+<!-- /52237517/RBCNews_Branding -->
+<div class="banner">
+<div id='div-gpt-ad-1436367492182-0'>
+<script type='text/javascript'>
+if (!/^https?:\/\/(rbc|www|test|staging|feature[^.]+)\./i.test(location.href) && !/\?r=preview/.test(location.href)) {
+  /* франшиза */
+  var __width = 0;
+  try {
+    if (typeof window.innerWidth != 'undefined') {
+      __width = window.innerWidth;
+    } else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
+      // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
+      __width = document.documentElement.clientWidth;
+    } else {  // older versions of IE
+      __width = document.getElementsByTagName('body')[0].clientWidth;
+    }
+  } catch(e) {}
+  if (__width >= 1590) {
+    var random = Math.floor(Math.random() * 1000000000);
+    var dreferrer = document.referrer; try { dreferrer = window.parent.document.referrer } catch(e) {}
+    try { dreferrer = dreferrer.substr(0, 256) } catch(e) { dreferrer = "" }
+    document.write('<scr' + 'ipt language="JavaScript" src="//engine.rbc.medialand.ru/code?pid=1691&gid=2&oin=1&rid=' + random +'&dreferer='+escape(dreferrer)+'"></scr' + 'ipt>');
+  }
+} else {
+  /* disabled by synhron
+  googletag.cmd.push(function() { rbc_dfp.display('div-gpt-ad-1436367492182-0'); });
+  */
+}
+</script>
+</div>
+</div>
+
+
+<!--BEGIN Medialand backscreen 500x400 | 600x500 (Popunder & FlyMedia)-->
+<div id="medialand_adland_inline_div_1128" class="banner"></div>
+<script language="JavaScript">
+<!--
+(function() {
+  var random = Math.floor(Math.random() * 1000000000);
+  var dreferrer = document.referrer; try { dreferrer = window.parent.document.referrer } catch(e) {}
+  try { dreferrer = dreferrer.substr(0, 256) } catch(e) { dreferrer = "" }
+
+  var d = document.getElementById('medialand_adland_inline_div_1128');
+  if (d) {
+    (function(d, url) {
+      if (window.dfp_sync_var) return;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.src = url;
+      d.parentNode.insertBefore(s, d);
+    })(d, '//engine.rbc.medialand.ru/code?pid=1128&gid=4&oin=1&rid=' + random +'&dreferer='+escape(dreferrer))
+  }
+})();// -->
+</script>
+<!--END Medialand -->
+
+
+<!--BEGIN Medialand Все страницы нижний баннер floorAd (inline)-->
+<div id="medialand_adland_inline_div_2038" class="banner"></div>
+<script language="JavaScript">
+<!--
+(function() {
+  var random = Math.floor(Math.random() * 1000000000);
+  var dreferrer = document.referrer; try { dreferrer = window.parent.document.referrer } catch(e) {}
+  try { dreferrer = dreferrer.substr(0, 256) } catch(e) { dreferrer = "" }
+
+  var d = document.getElementById('medialand_adland_inline_div_2038');
+  if (d) {
+    (function(d, url) {
+      if (window.dfp_sync_var) return;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.src = url;
+      d.parentNode.insertBefore(s, d);
+    })(d, '//engine.rbc.medialand.ru/code?pid=2038&gid=2&oin=1&rid=' + random +'&dreferer='+escape(dreferrer))
+  }
+})();
+// -->
+</script>
+<!--END Medialand -->
+
+<!--BEGIN Medialand брэндирование плеера РБК ТВ на новостных страницах РБК (inline)-->
+<div id="medialand_adland_inline_div_2164" class="banner"></div>
+<script language="JavaScript">
+<!--
+(function() {
+  var random = Math.floor(Math.random() * 1000000000);
+  var dreferrer = document.referrer; try { dreferrer = window.parent.document.referrer } catch(e) {}
+  try { dreferrer = dreferrer.substr(0, 256) } catch(e) { dreferrer = "" }
+
+  var d = document.getElementById('medialand_adland_inline_div_2164');
+  if (d) {
+    (function(d, url) {
+      if (window.dfp_sync_var) return;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.src = url;
+      d.parentNode.insertBefore(s, d);
+    })(d, '//engine.rbc.medialand.ru/code?pid=2164&gid=2&oin=1&rid=' + random +'&dreferer='+escape(dreferrer))
+  }
+})();
+// -->
+</script>
+<!--END Medialand -->
+</div>
+    
+            <div class="live-tv">
+    <div class="live-tv__overlay js-live-tv-overlay g-event-fullscreen">
+                <div class="live-tv__overlay__navbar">
+            <div class="live-tv__overlay__navbar__close js-live-tv-close"></div>
+        </div>
+        <div class="live-tv__banner">
+            <div class="banner g-banner__bg live-tv__banner_width-300" data-banner-id="rbc_online_240"><!-- Media2/rbc_online_240 -->
+
+<!-- /52237517/RBC_240*400_online -->
+<div id='div-gpt-ad-1495101836220-0' style="display: none; position: relative; text-align: center;">
+<script>
+googletag.cmd.push(function() { rbc_dfp.display('div-gpt-ad-1495101836220-0'); });
+</script>
+</div>
+</div>
+        </div>
+    </div>
+</div>
+<div class="live-tv__overlay__big_close js-live-tv-close"></div>
+    
+            <div class="feedback__outer g-noprint">
+    <div class="feedback js-feedback-block" data-region="world">
+        <div class="feedback__title">Отправить редакции rbc.ru сообщение о тексте</div>
+        <form class="feedback__form">
+            <div class="feedback__form-group">
+                <div class="feedback__label">Текст</div>
+                <div class="feedback__text feedback__control js-feedback-text">Ничего не выделено</div>
+            </div>
+            <div class="feedback__form-group">
+                <div class="feedback__label">Сообщение <span class="feedback__limit"><span class="js-feedback-limit">300 символов</span></span></div>
+                <div class="feedback__comment-wrap feedback__control">
+                    <textarea class="feedback__comment js-feedback-comment"></textarea>
+                </div>
+            </div>
+            <div class="js-feedback-captcha-container">
+                <div class="feedback__form-group">
+                    <div class="feedback__label"></div>
+                    <div class="js-feedback-captcha-image"></div>
+                </div>
+                <div class="feedback__form-group">
+                    <div class="feedback__label">Введите текст с картинки <span class="feedback__error"><span class="js-feedback-captcha-error"></span></span></div>
+                    <div class="feedback__comment-wrap feedback__comment-wrap__captcha feedback__control">
+                        <input name="captcha" type="text"  class="feedback__comment feedback__comment-capcha js-feedback-captcha" maxlength="20">
+                    </div>
+                </div>
+            </div>
+            <div class="feedback__action-block">
+                <!--<div class="feedback__limit">Осталось символов: <span class="js-feedback-limit">300</span></div>-->
+                <input type="button" class="feedback__button js-feedback-submit" value="Отправить">
+                <input type="button" class="feedback__button feedback__button_cancel js-feedback-cancel" value="Отмена">
+            </div>
+        </form>
+    </div>
+    <div class="feedback__overlay js-feedback-block"></div>
+</div>    
+            <div class="checkad_info js-checkad-warning" data-name="adb_warn">
+    <div class="checkad_info__close js-checkad-warning-close"></div>
+    <div class="checkad_info__title">Пожалуйста, отключите AdBlock!</div>
+    <div class="checkad_info__text">
+            AdBlock мешает корректной работе нашего сайта.<br>
+        Выключите его для полного доступа ко всем материалам РБК
+        </div>
+</div>
+<div id="topadvert" class="advert__fullbanner advert google_ads topads banner teasers rbc_adv adbottom adbottom" style="display: block;"></div>    
+            <div class="l-window">
+            <div class="l-row">
+                <div class="topline__wrapper">
+                    <div class="topline fixed g-noprint js-filter-lock-block">
+                                                    <div class="topline__video-block">
+                                <div class="live-tv min js-live-tv-box">
+    <div class="live-tv__play js-live-tv-play"></div>
+    </div>
+                            </div>
+                                                <div class="topline__content">
+                                                            <div class="l-row topline__top js-topline"><div class="topline__items-container topline__items-container_one-anons js-topline-dropdown-container"><a class="topline__item topline__item_news-feed-handler js-news-feed-toggle__handler js-topline-dropdown-ignore js-topline-item"><span></span><span></span><span></span></a><a class="topline__item topline__item_logo js-topline-item" href="http://www.rbc.ru/"></a><a href="http://tv.rbc.ru/?utm_source=topline" class="topline__item topline__item_important js-topline-item">Телеканал</a><a href="http://www.rbc.ru/newspaper/?utm_source=topline" class="topline__item topline__item_important js-topline-item">Газета</a><a href="http://www.rbc.ru/magazine/?utm_source=topline" class="topline__item topline__item_important js-topline-item">Журнал</a><a href="http://www.rbcplus.ru/?utm_source=topline" class="topline__item js-topline-item">РБК+</a><a href="http://quote.rbc.ru/?utm_source=topline" class="topline__item js-topline-item">Quote</a><a href="https://www.autonews.ru/?utm_source=topline" class="topline__item js-topline-item">Авто</a><a href="http://sport.rbc.ru/?utm_source=topline" class="topline__item js-topline-item">Спорт</a><a href="https://realty.rbc.ru/?utm_source=topline" class="topline__item js-topline-item">Недвижимость</a><a href="http://style.rbc.ru/?utm_source=topline" class="topline__item js-topline-item">Стиль</a><a href="http://marketing.rbc.ru/?utm_source=topline" class="topline__item js-topline-item">Исследования</a><a href="http://biztorg.ru/offers/main?utm_source=topline" class="topline__item js-topline-item">Продажа бизнеса</a><a href="http://biztorg.ru/franchises/main?utm_source=topline" class="topline__item js-topline-item">Франшизы </a><a href="http://bc.rbc.ru/?utm_source=topline" class="topline__item js-topline-item">Конференции</a><a href="http://www.cnews.ru/?utm_source=topline" class="topline__item js-topline-item topline__item_cnews"><span>C</span><span class="topline__item_cnews__dot">&middot;</span><span>News</span></a></div><div class="topline__container"><div class="topline__item__wrap"></div><span class="topline__dropdown"><a href="" class="topline__dropdown__handle js-topline-dropdown">
+                    Еще<span class="topline__dropdown__triangle">&#9660;</span></a><span class="topline__dropdown__list js-topline-dropdown-list"></span></span></div><div class="js-search-block"><div class="topline__search__menu js-search-open"><span class="topline__search__menu__link"></span></div><div class="topline__search__body js-search-body"><a href="#" class="topline__search__close js-search-close">Закрыть</a><div class="topline__search__body__inner"><form  action="http://www.rbc.ru/search/" class="topline__search__form"><input type="hidden" name="project" value="rbcmagazine"/><input class="topline__search__button" type="submit" value="НАЙТИ" /><div class="topline__search__text"><div class="topline__search__input-wrap"><input class="topline__search__input js-search-input" type="text" name="query" autocomplete="off" value="" placeholder="Поиск по сайту" /></div></div></form><div class="topline__search__rubric"><div class="topline__search__rubric__name">Рубрики</div><div class="topline__search__rubric__block"><div class="topline__search__rubric__link-wrap"><a href="http://www.rbc.ru/politics/" class="topline__search__rubric__link">Политика</a></div><div class="topline__search__rubric__link-wrap"><a href="http://www.rbc.ru/economics/" class="topline__search__rubric__link">Экономика</a></div><div class="topline__search__rubric__link-wrap"><a href="http://www.rbc.ru/finances/" class="topline__search__rubric__link">Финансы</a></div><div class="topline__search__rubric__link-wrap"><a href="http://www.rbc.ru/business/" class="topline__search__rubric__link">Бизнес</a></div><div class="topline__search__rubric__link-wrap"><a href="http://www.rbc.ru/technology_and_media/" class="topline__search__rubric__link">Технологии и медиа</a></div><div class="topline__search__rubric__link-wrap"><a href="http://www.rbc.ru/own_business/" class="topline__search__rubric__link">Свое дело</a></div><div class="topline__search__rubric__link-wrap"><a href="http://www.rbc.ru/money/" class="topline__search__rubric__link">Деньги</a></div><div class="topline__search__rubric__link-wrap"><a href="http://www.rbc.ru/opinions" class="topline__search__rubric__link">Мнения</a></div></div></div></div></div></div></div>
+                                                            <div class="l-row header__project header_newspaper">
+    <div class="header__project__wrap">
+        <div class="header__project__right">
+            <div class="header__project__right__menu">
+                <div class="header__project__right__menu__item">
+                    <a href="http://subscribe.rbc.ru/" class="header__project__right__menu__link">Оформить подписку</a>
+                </div>
+            </div>
+        </div>
+        <a href="/newspaper/" class="header__project__title header__newspaper"></a>
+        <div class="header__project__menu">
+            <a href="http://www.rbc.ru/newspaper/2017/08/31" class="header__project__menu__link">Свежий номер</a>
+            <a href="/newspaper/about/" class="header__project__menu__link">О проекте</a>
+        </div>
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="l-window-body js-filter-lock-block">
+                        
+
+<div class="l-col-newsfeed g-noprint ">
+    <div class="news-feed__wrapper fixed js-news-feed-toggle js-news-feed-open js-sticky-block__news-feed js-filter-lock" data-cookie="rbc_newsfeed_toggle">
+        <div class="custom-scroll__wrapper js-scrollable">
+            <div class="custom-scroll__inner js-scrollable-content">
+                <div class="news-feed">
+                    <div class="news-feed__header">
+                        <span class="news-feed__header__text" data-pub="false">Лента новостей</span>
+                    </div>
+                                                            <div class="news-feed__inner">
+                                                                                <script>
+                                RA.config.set('newsfeed.dateRange', {
+                                    start: 1504168222,
+                                    end: 1504158642
+                                });
+                                RA.config.set('newsfeed.inDomItems', {
+                                                                                                                        "59a7c34f9a7947c6a7b4fefd": { modif_date: 1504168222, time_t: 1504168222 },
+                                                                                                                                                                "59a7c8829a7947c8eb03a012": { modif_date: 1504168087, time_t: 1504168087 },
+                                                                                                                                                                "59a7c7459a7947c928bb46d2": { modif_date: 1504168060, time_t: 1504168060 },
+                                                                                                                                                                "59a7c6989a7947c8e6b885c3": { modif_date: 1504168022, time_t: 1504168022 },
+                                                                                                                                                                "59a7c5ae9a7947c7bdbb6fd3": { modif_date: 1504167378, time_t: 1504167378 },
+                                                                                                                                                                "59a7c43e9a7947c70a71dd5a": { modif_date: 1504166978, time_t: 1504166978 },
+                                                                                                                                                                "59a7c1519a7947c60edb34ab": { modif_date: 1504166607, time_t: 1504166607 },
+                                                                                                                                                                "59a4371e9a794745194b7436": { modif_date: 1504166579, time_t: 1504166579 },
+                                                                                                                                                                "59a7bdd19a7947c4b2567eee": { modif_date: 1504166320, time_t: 1504166320 },
+                                                                                                                                                                "59a6aecd9a79470d747eca71": { modif_date: 1504166292, time_t: 1504166292 },
+                                                                                                                                                                "59a7c1329a7947c5f927c07b": { modif_date: 1504166246, time_t: 1504166246 },
+                                                                                                                                                                "59a7bd869a7947c4a53d9980": { modif_date: 1504166186, time_t: 1504166186 },
+                                                                                                                                                                "59a6b61b9a79471042a5627a": { modif_date: 1504165677, time_t: 1504165677 },
+                                                                                                                                                                "59a7bc889a7947c4388d137d": { modif_date: 1504165667, time_t: 1504165667 },
+                                                                                                                                                                "59a7be099a7947c525f7f7c5": { modif_date: 1504165617, time_t: 1504165617 },
+                                                                                                                                                                "59a7b69c9a7947c2e715ce4d": { modif_date: 1504163996, time_t: 1504163996 },
+                                                                                                                                                                "59a7b2a59a7947c12ca6a91d": { modif_date: 1504163574, time_t: 1504163574 },
+                                                                                                                                                                "59a7b50f9a7947c1f2b93adb": { modif_date: 1504163508, time_t: 1504163508 },
+                                                                                                                                                                "59a7a7a49a7947bc193ddd26": { modif_date: 1504162346, time_t: 1504162346 },
+                                                                                                                                                                "59a7ac0c9a7947bf80c4ea74": { modif_date: 1504161789, time_t: 1504161789 },
+                                                                                                                                                                "59a7ac9b9a7947bf3cd3a971": { modif_date: 1504160934, time_t: 1504160934 },
+                                                                                                                                                                "59a7ab2e9a7947bd0bff2e37": { modif_date: 1504160819, time_t: 1504160819 },
+                                                                                                                                                                "59a6e0ad9a79476033eea7db": { modif_date: 1504160193, time_t: 1504160193 },
+                                                                                                                                                                "59a6c26f9a79471b12958c15": { modif_date: 1504160188, time_t: 1504160188 },
+                                                                                                                                                                "5981f1a49a79478185f41fdd": { modif_date: 1504160120, time_t: 1504160120 },
+                                                                                                                                                                "59a7a3719a7947b98f4d0c30": { modif_date: 1504159869, time_t: 1504159869 },
+                                                                                                                                                                "59a7a2b59a7947bab5f71668": { modif_date: 1504159416, time_t: 1504159416 },
+                                                                                                                                                                "59a7a69b9a7947bb91d73bff": { modif_date: 1504159391, time_t: 1504159391 },
+                                                                                                                                                                "59a7a2e99a7947b934a06645": { modif_date: 1504158820, time_t: 1504158820 },
+                                                                                                                                                                "598b375a9a79470fea3a6932": { modif_date: 1504158642, time_t: 1504158642 },
+                                                                                                            });
+                            </script>
+                            <div class="news-feed__list">
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7c34f9a7947c6a7b4fefd?from=newsfeed" style="display:none;" id="id_newsfeed_59a7c34f9a7947c6a7b4fefd" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7c34f9a7947c6a7b4fefd"}'>
+        <span class="news-feed__item__title">
+                            СМИ сообщили о 20 пострадавших при столкновении поездов в Польше
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->11:30<!--
+        --><!--
+            -->, Общество<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7c8829a7947c8eb03a012?from=newsfeed" style="display:none;" id="id_newsfeed_59a7c8829a7947c8eb03a012" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7c8829a7947c8eb03a012"}'>
+        <span class="news-feed__item__title">
+                            «Транснефть» выплатит за январь-июнь 2017 года дивиденды в 27,6 млрд руб.
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->11:28<!--
+        --><!--
+            -->, Бизнес<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                            <div class="banner g-banner__newsfeed" data-banner-id="firstpage_left2"><!-- RBCMain_240x400_LEFT 1101 firstpage_left2 -->
+<a target="_top" href="http://banner.rbc.ru/banredir.cgi?lid=firstpage_left2&_b=Media2/firstpage_left2_DFP" empty="true" style="display:none"></a>
+<div id='div-gpt-ad-1431616921735-0' style='text-align:center;'>
+<script type='text/javascript'>
+if (!/^https?:\/\/(rbc|www|test|staging|feature[^.]+)\./i.test(location.href)) {
+googletag.cmd.push(function() { rbc_dfp.display('div-gpt-ad-1431616921735-0'); });
+}
+</script>
+</div>
+<!-- RBCNews_240x400_LEFT 1101 firstpage_left2 -->
+<div id='div-gpt-ad-1436366263460-0' style='text-align:center;'>
+<script type='text/javascript'>
+if (!/^https?:\/\/(rbc|www|test|staging|feature[^.]+)\./i.test(location.href) || (window.bannersVersion == 'v8' && /^\/search\/?/.test(location.pathname))) {
+googletag.cmd.push(function() {  rbc_dfp.display('div-gpt-ad-1436366263460-0'); });
+}
+</script>
+</div>
+
+<div id = "__div_for_check_left" style = "display : none;"></div>
+<script type = "text/javascript">
+function __removeClass(element, classname){
+	var re = new RegExp("(^|\\s)" + classname + "(\\s|$)", "g")
+	element.className = element.className.replace(re, "$1").replace(/\s+/g, " ").replace(/(^ | $)/g, "");
+}
+
+if (!window.rbc_dfp) {
+
+    try {
+        googletag.pubads().clear('div-gpt-ad-1431616921735-0');
+        googletag.pubads().clear('div-gpt-ad-1436366263460-0');
+        window.PREVENT_REPAINT = true;
+    } catch (e) {}
+
+	document.MAX_ct0 ='INSERT_CLICK_URL';
+	var m3_u = (location.protocol=='https:'?'https://cas.criteo.com/delivery/ajs.php?':'http://cas.criteo.com/delivery/ajs.php?');
+	var m3_r = Math.floor(Math.random()*99999999999);
+	document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+	document.write ("zoneid=323014");
+	document.write ('&amp;cb=' + m3_r);
+	if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+	document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+	document.write ("&amp;loc=" + escape(window.location).substring(0,1600));
+	if (document.context) document.write ("&context=" + escape(document.context));
+	if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+		document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+	}
+	if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+	document.write ("'></scr"+"ipt>");
+
+  var __div_for_check = document.getElementById('__div_for_check_left');
+  var __parent_div = __div_for_check.parentNode;
+
+  if (__parent_div && /\bbanner\b/i.test(__parent_div.className)) {
+    __removeClass(__parent_div, "banner");
+    __parent_div.removeAttribute("data-banner-id");
+    __parent_div.style.cssText += "display : block !important;";
+  }
+}
+</script></div>
+                                                                                                    <a href="http://www.rbc.ru/economics/31/08/2017/59a7c7459a7947c928bb46d2?from=newsfeed"  id="id_newsfeed_59a7c7459a7947c928bb46d2" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/economics/31/08/2017/59a7c7459a7947c928bb46d2"}'>
+        <span class="news-feed__item__title">
+                            Рост инвестиций в 2017 году вдвое превысит прошлые ожидания
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->11:27<!--
+        --><!--
+            -->, Экономика<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7c6989a7947c8e6b885c3?from=newsfeed"  id="id_newsfeed_59a7c6989a7947c8e6b885c3" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7c6989a7947c8e6b885c3"}'>
+        <span class="news-feed__item__title">
+                            Минобрнауки передаст Генпрокуратуре материалы по «Пока все дома»
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->11:27<!--
+        --><!--
+            -->, Общество<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7c5ae9a7947c7bdbb6fd3?from=newsfeed"  id="id_newsfeed_59a7c5ae9a7947c7bdbb6fd3" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7c5ae9a7947c7bdbb6fd3"}'>
+        <span class="news-feed__item__title">
+                            В Узбекистане открыли памятник Исламу Каримову
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->11:16<!--
+        --><!--
+            -->, Политика<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/economics/31/08/2017/59a7c43e9a7947c70a71dd5a?from=newsfeed"  id="id_newsfeed_59a7c43e9a7947c70a71dd5a" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/economics/31/08/2017/59a7c43e9a7947c70a71dd5a"}'>
+        <span class="news-feed__item__title">
+                            Минэкономразвития улучшило прогноз по рублю и нефти
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->11:09<!--
+        --><!--
+            -->, Экономика<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7c1519a7947c60edb34ab?from=newsfeed"  id="id_newsfeed_59a7c1519a7947c60edb34ab" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7c1519a7947c60edb34ab"}'>
+        <span class="news-feed__item__title">
+                            Стала известна дата прощания с артисткой Рюминой
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->11:03<!--
+        --><!--
+            -->, Общество<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                <a href="http://mitsubishielectric.rbc.ru/?utm_source=rbc&amp;utm_medium=main&amp;utm_campaign=miper17-root-navyk-m"  id="id_newsfeed_59a4371e9a794745194b7436" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://mitsubishielectric.rbc.ru/?utm_source=rbc&amp;utm_medium=main&amp;utm_campaign=miper17-root-navyk-m"}'>
+        <span class="news-feed__item__title">
+                            Как овладеть навыками ведения переговоров
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text news-feed__item__date_spec"><!--
+        -->11:02<!--
+        --><!--
+            -->, РБК и Mitsubishi Electric<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7bdd19a7947c4b2567eee?from=newsfeed"  id="id_newsfeed_59a7bdd19a7947c4b2567eee" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7bdd19a7947c4b2567eee"}'>
+        <span class="news-feed__item__title">
+                            «Аэропорты регионов» построят терминал в аэропорту Камчатского края
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->10:58<!--
+        --><!--
+            -->, Бизнес<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                <a href="https://www.autonews.ru/news/59a6aecd9a79470d747eca71"  id="id_newsfeed_59a6aecd9a79470d747eca71" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "https://www.autonews.ru/news/59a6aecd9a79470d747eca71"}'>
+        <span class="news-feed__item__title">
+                            На чем ездить в 2020-м: Toyota Supra и другие купе из будущего
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->10:58<!--
+        --><!--
+            -->, Авто<!--
+        --><!--
+    --></span><!--
+    --><!--
+    -->&nbsp;<span class="icons__photo"></span><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7c1329a7947c5f927c07b?from=newsfeed"  id="id_newsfeed_59a7c1329a7947c5f927c07b" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7c1329a7947c5f927c07b"}'>
+        <span class="news-feed__item__title">
+                            Акции банка «ФК Открытие» подешевели почти на 4%
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->10:57<!--
+        --><!--
+            -->, Финансы<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7bd869a7947c4a53d9980?from=newsfeed"  id="id_newsfeed_59a7bd869a7947c4a53d9980" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7bd869a7947c4a53d9980"}'>
+        <span class="news-feed__item__title">
+                            Суд отказал «Аэрофлоту» в иске к производителю SSJ-100 на 576 млн руб.
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->10:56<!--
+        --><!--
+            -->, Бизнес<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                <a href="https://realty.rbc.ru/news/59a6b61b9a79471042a5627a"  id="id_newsfeed_59a6b61b9a79471042a5627a" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "https://realty.rbc.ru/news/59a6b61b9a79471042a5627a"}'>
+        <span class="news-feed__item__title">
+                            Кому нужен «умный дом»: перспективы развития технологии в России
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->10:47<!--
+        --><!--
+            -->, Недвижимость<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7bc889a7947c4388d137d?from=newsfeed"  id="id_newsfeed_59a7bc889a7947c4388d137d" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7bc889a7947c4388d137d"}'>
+        <span class="news-feed__item__title">
+                            Из шахты «Казахстанская» после выброса угля и газа вывели 130 горняков
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->10:47<!--
+        --><!--
+            -->, Общество<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/finances/31/08/2017/59a7be099a7947c525f7f7c5?from=newsfeed"  id="id_newsfeed_59a7be099a7947c525f7f7c5" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/finances/31/08/2017/59a7be099a7947c525f7f7c5"}'>
+        <span class="news-feed__item__title">
+                            ЦБ начал обучать население России финкультуре
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->10:46<!--
+        --><!--
+            -->, Финансы<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/society/31/08/2017/59a7b69c9a7947c2e715ce4d?from=newsfeed"  id="id_newsfeed_59a7b69c9a7947c2e715ce4d" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/society/31/08/2017/59a7b69c9a7947c2e715ce4d"}'>
+        <span class="news-feed__item__title">
+                            Экс-глава «Гоголь-центра» рассказал об «опричном людоедстве» в России
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->10:19<!--
+        --><!--
+            -->, Общество<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7b2a59a7947c12ca6a91d?from=newsfeed"  id="id_newsfeed_59a7b2a59a7947c12ca6a91d" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7b2a59a7947c12ca6a91d"}'>
+        <span class="news-feed__item__title">
+                            В Instagram рассказали о попытке хакеров взломать аккаунты знаменитостей
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->10:12<!--
+        --><!--
+            -->, Технологии и медиа<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                <a href="http://sport.rbc.ru/news/59a7b50f9a7947c1f2b93adb"  id="id_newsfeed_59a7b50f9a7947c1f2b93adb" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://sport.rbc.ru/news/59a7b50f9a7947c1f2b93adb"}'>
+        <span class="news-feed__item__title">
+                            «Спартак» приобрел третьего новичка летней трансферной кампании
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->10:11<!--
+        --><!--
+            -->, Спорт<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7a7a49a7947bc193ddd26?from=newsfeed"  id="id_newsfeed_59a7a7a49a7947bc193ddd26" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7a7a49a7947bc193ddd26"}'>
+        <span class="news-feed__item__title">
+                            Замглавы города Мирный в Якутии задержали с марихуаной
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->09:52<!--
+        --><!--
+            -->, Общество<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7ac0c9a7947bf80c4ea74?from=newsfeed"  id="id_newsfeed_59a7ac0c9a7947bf80c4ea74" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7ac0c9a7947bf80c4ea74"}'>
+        <span class="news-feed__item__title">
+                            Под завалами обрушившегося в Мумбаи дома оказались более 30 человек
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->09:43<!--
+        --><!--
+            -->, Общество<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/society/31/08/2017/59a7ac9b9a7947bf3cd3a971?from=newsfeed"  id="id_newsfeed_59a7ac9b9a7947bf3cd3a971" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/society/31/08/2017/59a7ac9b9a7947bf3cd3a971"}'>
+        <span class="news-feed__item__title">
+                            Умерла народная артистка Людмила Рюмина
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->09:28<!--
+        --><!--
+            -->, Общество<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/society/31/08/2017/59a7ab2e9a7947bd0bff2e37?from=newsfeed"  id="id_newsfeed_59a7ab2e9a7947bd0bff2e37" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/society/31/08/2017/59a7ab2e9a7947bd0bff2e37"}'>
+        <span class="news-feed__item__title">
+                            Полиция возбудила дело о поджоге после крупного пожара в Ростове-на-Дону
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->09:26<!--
+        --><!--
+            -->, Общество<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/photoreport/31/08/2017/59a6e0ad9a79476033eea7db?from=newsfeed"  id="id_newsfeed_59a6e0ad9a79476033eea7db" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/photoreport/31/08/2017/59a6e0ad9a79476033eea7db"}'>
+        <span class="news-feed__item__title">
+                            Старые новые звезды: трансферы ведущих на российском телевидении
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->09:16<!--
+        --><!--
+            -->, Фотогалерея<!--
+        --><!--
+    --></span><!--
+    --><!--
+    -->&nbsp;<span class="icons__photo"></span><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/opinions/politics/31/08/2017/59a6c26f9a79471b12958c15?from=newsfeed"  id="id_newsfeed_59a6c26f9a79471b12958c15" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/opinions/politics/31/08/2017/59a6c26f9a79471b12958c15"}'>
+        <span class="news-feed__item__title">
+                            Афганский камбэк: почему новая стратегия США не нравится Москве и Пекину
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->09:16<!--
+        --><!--
+            -->, Мнение<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                <a href="http://baltika0.rbc.ru/?utm_source=rbc&amp;utm_medium=main&amp;utm_campaign=bltk017-root-notonly-m"  id="id_newsfeed_5981f1a49a79478185f41fdd" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://baltika0.rbc.ru/?utm_source=rbc&amp;utm_medium=main&amp;utm_campaign=bltk017-root-notonly-m"}'>
+        <span class="news-feed__item__title">
+                            О трудовых правах должны знать все: работа – это не только обязанности
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text news-feed__item__date_spec"><!--
+        -->09:15<!--
+        --><!--
+            -->, Партнерский материал<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7a3719a7947b98f4d0c30?from=newsfeed"  id="id_newsfeed_59a7a3719a7947b98f4d0c30" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7a3719a7947b98f4d0c30"}'>
+        <span class="news-feed__item__title">
+                            СМИ сообщили о взрыве пассажирского автобуса в турецком городе Измир
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->09:11<!--
+        --><!--
+            -->, Общество<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7a2b59a7947bab5f71668?from=newsfeed"  id="id_newsfeed_59a7a2b59a7947bab5f71668" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7a2b59a7947bab5f71668"}'>
+        <span class="news-feed__item__title">
+                            Пострадавшую при наезде грузовика певицу Линду выписали из больницы
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->09:03<!--
+        --><!--
+            -->, Общество<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/rbcfreenews/59a7a69b9a7947bb91d73bff?from=newsfeed"  id="id_newsfeed_59a7a69b9a7947bb91d73bff" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/rbcfreenews/59a7a69b9a7947bb91d73bff"}'>
+        <span class="news-feed__item__title">
+                            На Невском проспекте в Петербурге автомобиль въехал в группу пешеходов
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->09:03<!--
+        --><!--
+            -->, Общество<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                                    <a href="http://www.rbc.ru/politics/31/08/2017/59a7a2e99a7947b934a06645?from=newsfeed"  id="id_newsfeed_59a7a2e99a7947b934a06645" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://www.rbc.ru/politics/31/08/2017/59a7a2e99a7947b934a06645"}'>
+        <span class="news-feed__item__title">
+                            Макрон рассказал о «серьезных разногласиях» с Путиным
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text"><!--
+        -->08:53<!--
+        --><!--
+            -->, Политика<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                                                                                <a href="http://beeline.rbc.ru/?utm_source=rbc&amp;utm_medium=main&amp;utm_campaign=blnbiz17-tests-m#tests"  id="id_newsfeed_598b375a9a79470fea3a6932" class="news-feed__item chrome js-yandex-counter" data-yandex-name="from_news_feed" data-yandex-params='{url: "http://beeline.rbc.ru/?utm_source=rbc&amp;utm_medium=main&amp;utm_campaign=blnbiz17-tests-m#tests"}'>
+        <span class="news-feed__item__title">
+                            Проверьте ваше везение, предпринимательское чутьё и деловую хватку
+                    </span>
+
+        <span class="news-feed__item__date">
+    <span class="news-feed__item__date-text news-feed__item__date_spec"><!--
+        -->08:50<!--
+        --><!--
+            -->, РБК и Билайн<!--
+        --><!--
+    --></span><!--
+    --><!--
+    --><!--
+    --><!--
+--></span>    </a>
+                                                            </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+        <span class="custom-scroll"><span class="custom-scroll__trackbar"></span></span>
+    </div>
+</div>
+
+
+
+                    <div class="l-col-main">
+                        <div class="l-col-main__inner g-print-full-width">
+                                                                                            <div class="banner g-overflow g-zindex-top" data-banner-id="new_news_shapka"><a target="_top" href="http://banner.rbc.ru/banredir.cgi?lid=new_news_shapka&_b=Media2/new_news_shapka_DFP" empty="true" style="display:none"></a>
+
+<!-- /52237517/blillboard_all_test -->
+<div id='div-gpt-ad-1449648123736-0'></div>
+
+<!-- RBCNews_Billboard (1934 new_news_shapka) -->
+<div id='div-gpt-ad-1436366404862-0'>
+<script type='text/javascript'>
+try {
+	var de = document.documentElement;
+	var width = 0, showBilboard = true;
+	if (typeof window.innerWidth != 'undefined') {
+		width = window.innerWidth;
+	} else if (typeof de != 'undefined' && typeof de.clientWidth != 'undefined' && de.clientWidth != 0) {
+		width = de.clientWidth;
+	} else { 
+		width = document.getElementsByTagName('body')[0].clientWidth;
+	}
+	var showBillboard = !(width <= 1024 && /^https?:\/\/news-clck\.yandex\.ru\/.*/i.test(document.referrer));
+} catch (e) { showBillboard = true; }
+
+if (showBillboard) {
+  /* disabled by synchron
+    googletag.cmd.push(function() {
+      rbc_dfp.display(['div-gpt-ad-1436366404862-0','div-gpt-ad-1449648123736-0']);
+    });
+  */
+  var __synchronBannsersIdNews = [
+	'div-gpt-ad-1436366531196-0' // 240 right1
+	,'div-gpt-ad-1436366404862-0' // billboard
+	,'div-gpt-ad-1449648123736-0' // billboard traffic
+	,'div-gpt-ad-1436366263460-0' // 240 left
+  ];
+} else {
+  var __synchronBannsersIdNews = [
+	,'div-gpt-ad-1436366531196-0' // 240 right1
+	,'div-gpt-ad-1436366263460-0' // 240 left
+  ];
+}
+
+if (!/\?r=preview/.test(location.href)) {
+  __synchronBannsersIdNews.push('div-gpt-ad-1457944039646-0'); //full
+}
+
+try {
+	var story_exclusive_flag = false;
+	try {
+		var story_ = window.rosbusinessconsulting.config.get('story');
+	} catch(e) {}
+	if (story_) {
+		for (var si = 0, sil = story_.length; si < sil; si++) {
+			if (story_[si] == '592831219a7947f832257d29') {
+				story_exclusive_flag = true;
+			}
+		}
+	}
+        if (!story_exclusive_flag) story_exclusive_flag = /592831219a7947f832257d29/i.test(document.location.href);
+} catch(e) {}
+
+if (width >= 1590 || story_exclusive_flag) {
+	__synchronBannsersIdNews.push('div-gpt-ad-1436367492182-0');
+        /* branding refresh on change slide */
+	try { $(window).on('changeSlide', function() {if (window['repaint_53237797']) window['repaint_53237797']();}); } catch(e) {}
+}
+if (/58e238789a7947f42e875f91/.test(location.href)) {
+  $('#div-gpt-ad-1436366404862-0').closest('.banner').hide();
+} else {
+googletag.cmd.push(function() { rbc_dfp.display(__synchronBannsersIdNews);});
+}
+
+
+/* banner in newsline refresh on change slide */
+try{
+$(window).on('changeSlide', function() {
+  if (window['destroy_1691']) window['destroy_1691']();
+  if (window['repaint_53238037']) window['repaint_53238037']();
+});
+} catch(e) {}
+</script>
+</div>
+
+<div class="banner" style="display:none;">
+<script type="text/javascript">
+<!--
+function ml_ph(p){document.write('<div id="mlph'+p+'" style="display:none"><\/div>');}
+function ml_c(p){document.write('<div style="visibility:hidden;position:absolute"><iframe id="ml_c'+p+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');}
+function ml_getCode(n,p,s){
+var d;
+if(n<10){try{if(document.all && !window.opera){d = window.frames['ml_c'+p].document;}
+else if(document.getElementById){d=document.getElementById('ml_c'+p).contentDocument;}}catch(e){}
+if(d){d.write('<scr'+'ipt src="'+s+'"><\/scr'+'ipt>');}
+else {setTimeout('ml_getCode('+(++n)+','+p+',"'+s+'")', 100);}
+}}
+var place_id = '1510';
+var dreferrer = document.referrer; try { dreferrer = window.parent.document.referrer } catch(e) {}
+try { dreferrer = dreferrer.substr(0, 256) } catch(e) { dreferrer = "" }
+ml_ph(place_id); ml_c(place_id);
+ml_getCode(1,place_id,'http://engine.rbc.medialand.ru/code?pid='+place_id+'&gid=2&oin=0&rid=' + Math.round(Math.random()*100000)+'&dreferer='+escape(dreferrer));
+//-->
+</script>
+</div>
+
+<div class="banner" style="display:none;">
+<script type="text/javascript">
+<!--
+function ml_ph(p){document.write('<div id="mlph'+p+'" style="display:none"><\/div>');}
+function ml_c(p){document.write('<div style="visibility:hidden;position:absolute"><iframe id="ml_c'+p+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');}
+function ml_getCode(n,p,s){
+var d;
+if(n<10){try{if(document.all && !window.opera){d = window.frames['ml_c'+p].document;}
+else if(document.getElementById){d=document.getElementById('ml_c'+p).contentDocument;}}catch(e){}
+if(d){d.write('<scr'+'ipt src="'+s+'"><\/scr'+'ipt>');}
+else {setTimeout('ml_getCode('+(++n)+','+p+',"'+s+'")', 100);}
+}}
+var place_id = '2195';
+var dreferrer = document.referrer; try { dreferrer = window.parent.document.referrer } catch(e) {}
+try { dreferrer = dreferrer.substr(0, 256) } catch(e) { dreferrer = "" }
+ml_ph(place_id); ml_c(place_id);
+ml_getCode(1,place_id,'http://engine.rbc.medialand.ru/code?pid='+place_id+'&gid=2&oin=0&rid=' + Math.round(Math.random()*100000)+'&dreferer='+escape(dreferrer));
+//-->
+</script>
+</div>
+
+<div id="ml_weborama_pixel"></div>
+<script>
+var wamid = '2641';
+var typ = '3';
+var Wvar=[];
+Wvar.push("domain",location.host);
+(function(){
+    return;
+    var w = document.createElement("script");
+    w.type = "text/javascript";
+    w.src = document.location.protocol + "//cstatic.weborama.fr/js/wam/customers/wamfactory_dpm.wildcard.min.js?rnd="+new Date().getTime();
+    w.async = true;
+    try {
+        document.getElementById('ml_weborama_pixel').appendChild(w);
+    } catch(e) {}
+})();
+</script>
+
+<div id="r_cnt" style="display: none"></div>
+<script>
+var rnd = Math.round(Math.random() * 1000000);
+var d = document.getElementById('r_cnt');
+if (d) {
+ d.innerHTML = '<img src="http://r.rbc.ru/count/31GcYIFLc4a/?_rnd='+rnd+'" style="width: 1px; height: 1px;" />';
+ if (!window.rbc_dfp) d.innerHTML += '<img src="http://r.rbc.ru/count/67JW5u4Tiu7/?_rnd='+rnd+'" style="width: 1px; height: 1px;" />';
+}
+</script>
+</div>
+
+    <div class="l-row">
+        <div class="l-col-center l-row-border">
+            <div class="l-col-center__inner">
+                    
+<div class="newspaper-issues js-newspaper-issues" data-total="1108">
+    <div class="newspaper-issues__main-list js-newspaper-issues-list">
+            <div class="newspaper-issues__wrap">
+        <div class="g-top-block-info newspaper-issues__title">
+            <a href="http://www.rbc.ru/newspaper/2017/08/31" class="g-top-block-info__right-link">Перейти к номеру</a>
+            <div class="g-top-block-info__title">
+                № 143 (2640) (3108)
+                <span class="newspaper-issues__title__date">31 августа 2017</span>
+            </div>
+        </div>
+
+        <div class="newspaper-issues__main-list__item js-newspaper-issue">
+
+            <div class="newspaper-issues__page-list">
+                                                    <div class="newspaper-issues__page newspaper-issues__page_n1 js-newspaper-issue-page active" style="z-index:90">
+                        <div class="newspaper-issues__page__wrapper">
+                                                            <div class="newspaper-page newspaper-page_first">
+    <!--item col-->
+    
+                
+    <div class="newspaper-page__col left">
+                                    <a href="http://www.rbc.ru/newspaper/2017/08/31/59a6b1bf9a79470ebe9f705d" class="newspaper-page__news first">
+                    <span class="newspaper-page__news__wrap">
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                                                    <img src="http://s0.rbk.ru/v6_top_pics/resized/325x200_crop/media/img/4/75/755041101922754.jpg" alt="" class="newspaper-page__news__img">
+                                                            </span>
+                                                <span class="newspaper-page__news__title">Пиковый интерес</span>
+                        <span class="newspaper-page__news__lid">В Новой Москве проданы 164 га земли</span>
+                    </span>
+                    <span class="newspaper-page__news__section">Недвижимость</span>
+                </a>
+                                                <a href="http://www.rbc.ru/newspaper/2017/08/31/59a403779a794727ef622074" class="newspaper-page__news last">
+                    <span class="newspaper-page__news__wrap">
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                                                    <img src="http://s0.rbk.ru/v6_top_pics/resized/120x75_crop/media/img/5/55/755041214616555.jpg" alt="" class="newspaper-page__news__img">
+                                                            </span>
+                                                <span class="newspaper-page__news__title">Амбары полные вина</span>
+                        <span class="newspaper-page__news__lid">У агрофирмы «Мысхако» сменился владелец</span>
+                    </span>
+                    <span class="newspaper-page__news__section">Сделка</span>
+                </a>
+                        </div>
+    <!--//item col-->
+    <!--item col-->
+    <div class="newspaper-page__col">
+                                    <a href="http://www.rbc.ru/newspaper/2017/08/31/59a3f26f9a79471dc1499b5b" class="newspaper-page__news">
+                    <span class="newspaper-page__news__wrap">
+
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                <img src="http://s0.rbk.ru/v6_top_pics/resized/120x75_crop/media/img/0/80/755040311607800.jpg" alt="" class="newspaper-page__news__img">
+                            </span>
+                                                <span class="newspaper-page__news__title">Вынужденное сокращение Штатов</span>
+                        <span class="newspaper-page__news__lid">Как увольняют сотрудников американского посольства</span>
+                    </span>
+                    <span class="newspaper-page__news__section">Санкции</span>
+                </a>
+                                                <a href="http://www.rbc.ru/newspaper/2017/08/31/59a54e7d9a7947b6a4fb2f27" class="newspaper-page__news">
+                    <span class="newspaper-page__news__wrap">
+
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                <img src="http://s0.rbk.ru/v6_top_pics/resized/120x75_crop/media/img/8/17/755040859468178.jpg" alt="" class="newspaper-page__news__img">
+                            </span>
+                                                <span class="newspaper-page__news__title">На голографическом энтузиазме</span>
+                        <span class="newspaper-page__news__lid">Как два друга совершили прорыв в технологии 3D-изображений</span>
+                    </span>
+                    <span class="newspaper-page__news__section">Свое дело / Практика</span>
+                </a>
+                                                <a href="http://www.rbc.ru/newspaper/2017/08/31/59a68bb19a79477a71d114fc" class="newspaper-page__news last">
+                    <span class="newspaper-page__news__wrap">
+
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                <img src="http://s0.rbk.ru/v6_top_pics/resized/120x75_crop/media/img/9/34/755041192663349.png" alt="" class="newspaper-page__news__img">
+                            </span>
+                                                <span class="newspaper-page__news__title">Зарплата на языке вертится</span>
+                        <span class="newspaper-page__news__lid">На какие доходы могут рассчитывать полиглоты</span>
+                    </span>
+                    <span class="newspaper-page__news__section">Образование</span>
+                </a>
+                        </div>
+    <!--//item col-->
+</div>                                                    </div>
+                    </div>
+                                                        <div class="newspaper-issues__page newspaper-issues__page_n2 js-newspaper-issue-page " style="z-index:89">
+                        <div class="newspaper-issues__page__wrapper">
+                                                            <div class="newspaper-page">
+            <div class="newspaper-page__col left">
+            <a href="http://www.rbc.ru/newspaper/2017/08/31/59a6db299a79475a0e5942ce" class="newspaper-page__news">
+                <span class="newspaper-page__news__title">
+                    Номерной фронт
+                </span>
+                                    <span class="newspaper-page__news__lid">
+                        Умара Джабраилова задержали в отеле Four Seasons
+                    </span>
+                                <span class="newspaper-page__news__section">
+                    Инцидент
+                </span>
+            </a>
+        </div>
+            <div class="newspaper-page__col">
+            <a href="http://www.rbc.ru/newspaper/2017/08/31/59a6ad049a79470cad9f6592" class="newspaper-page__news">
+                <span class="newspaper-page__news__title">
+                    Может ли Россия стать посредником в ближневосточном кризисе
+                </span>
+                                    <span class="newspaper-page__news__lid">
+                        Завершился визит Сергея Лаврова в Катар
+                    </span>
+                                <span class="newspaper-page__news__section">
+                    Дипломатия
+                </span>
+            </a>
+        </div>
+            <div class="newspaper-page__col left">
+            <a href="http://www.rbc.ru/newspaper/2017/08/31/59a6a79b9a794709007d772e" class="newspaper-page__news last">
+                <span class="newspaper-page__news__title">
+                    Чем опасно решение ЦБ о санации «Открытия»
+                </span>
+                                                                                                    <span class="newspaper-page__opinion__author">Олег Буклемишев,</span>
+                        <span class="newspaper-page__opinion__author-subtitle">директор Центра исследования экономической политики экономического факультета МГУ</span>
+                                                    <span class="newspaper-page__news__section">
+                    Мнение
+                </span>
+            </a>
+        </div>
+    </div>                                                    </div>
+                    </div>
+                                                </div>
+
+                            <div class="newspaper-issues__arrows-box">
+                    <span href="#" class="newspaper-issues__arrow newspaper-issues__arrow_next js-newspaper-issue-arrow-next"></span>
+                    <span href="#" class="newspaper-issues__arrow newspaper-issues__arrow_prev js-newspaper-issue-arrow-prev disable"></span>
+                </div>
+                    </div>
+        <div class="newspaper-issues__main-list__bottom"></div>
+    </div>
+    <div class="newspaper-issues__wrap">
+        <div class="g-top-block-info newspaper-issues__title">
+            <a href="http://www.rbc.ru/newspaper/2017/08/30" class="g-top-block-info__right-link">Перейти к номеру</a>
+            <div class="g-top-block-info__title">
+                № 142 (2639) (3008)
+                <span class="newspaper-issues__title__date">30 августа 2017</span>
+            </div>
+        </div>
+
+        <div class="newspaper-issues__main-list__item js-newspaper-issue">
+
+            <div class="newspaper-issues__page-list">
+                                                    <div class="newspaper-issues__page newspaper-issues__page_n1 js-newspaper-issue-page active" style="z-index:90">
+                        <div class="newspaper-issues__page__wrapper">
+                                                            <div class="newspaper-page newspaper-page_first">
+    <!--item col-->
+    
+                
+    <div class="newspaper-page__col left">
+                                    <a href="http://www.rbc.ru/newspaper/2017/08/30/59a57a229a7947e0229a99b8" class="newspaper-page__news first">
+                    <span class="newspaper-page__news__wrap">
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                                                    <img src="http://s0.rbk.ru/v6_top_pics/resized/325x200_crop/media/img/7/46/755040203852467.jpg" alt="" class="newspaper-page__news__img">
+                                                            </span>
+                                                <span class="newspaper-page__news__title">Условно-добровольное оздоровление</span>
+                        <span class="newspaper-page__news__lid">Как ЦБ будет санировать «Открытие»</span>
+                    </span>
+                    <span class="newspaper-page__news__section">Регулирование</span>
+                </a>
+                                                <a href="http://www.rbc.ru/newspaper/2017/08/30/59a514f29a794799f0fe4218" class="newspaper-page__news last">
+                    <span class="newspaper-page__news__wrap">
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                                                    <img src="http://s0.rbk.ru/v6_top_pics/resized/120x75_crop/media/img/5/16/755040224925165.jpg" alt="" class="newspaper-page__news__img">
+                                                            </span>
+                                                <span class="newspaper-page__news__title">Подрядчик ФСО арестован за хищения</span>
+                        <span class="newspaper-page__news__lid">Скандал вокруг реконструкции «Ново-Огарево»</span>
+                    </span>
+                    <span class="newspaper-page__news__section">коррупция</span>
+                </a>
+                        </div>
+    <!--//item col-->
+    <!--item col-->
+    <div class="newspaper-page__col">
+                                    <a href="http://www.rbc.ru/newspaper/2017/08/30/59a5a8189a79470f92154521" class="newspaper-page__news">
+                    <span class="newspaper-page__news__wrap">
+
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                <img src="http://s0.rbk.ru/v6_top_pics/resized/120x75_crop/media/img/6/71/755040375118716.jpg" alt="" class="newspaper-page__news__img">
+                            </span>
+                                                <span class="newspaper-page__news__title">Москва отчиталась о падении военных расходов</span>
+                        <span class="newspaper-page__news__lid">Россия представила в ООН данные об оборонном бюджете</span>
+                    </span>
+                    <span class="newspaper-page__news__section">Безопасность</span>
+                </a>
+                                                <a href="http://www.rbc.ru/newspaper/2017/08/30/59a566329a7947ce6197c3ad" class="newspaper-page__news">
+                    <span class="newspaper-page__news__wrap">
+
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                <img src="http://s0.rbk.ru/v6_top_pics/resized/120x75_crop/media/img/0/28/755040131876280.jpg" alt="" class="newspaper-page__news__img">
+                            </span>
+                                                <span class="newspaper-page__news__title">Два ретейлера в одни руки</span>
+                        <span class="newspaper-page__news__lid">«МегаФон» подтвердил намерение купить «Связной»</span>
+                    </span>
+                    <span class="newspaper-page__news__section">Телекоммуникации</span>
+                </a>
+                                                <a href="http://www.rbc.ru/newspaper/2017/08/30/59a59e169a79470a4463823f" class="newspaper-page__news last">
+                    <span class="newspaper-page__news__wrap">
+
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                <img src="http://s0.rbk.ru/v6_top_pics/resized/120x75_crop/media/img/6/57/755040328464576.png" alt="" class="newspaper-page__news__img">
+                            </span>
+                                                <span class="newspaper-page__news__title">Мусор в портфеле</span>
+                        <span class="newspaper-page__news__lid">Объем выпуска спекулятивных облигаций в США достиг трехлетнего максимума</span>
+                    </span>
+                    <span class="newspaper-page__news__section">Инвестиции</span>
+                </a>
+                        </div>
+    <!--//item col-->
+</div>                                                    </div>
+                    </div>
+                                                        <div class="newspaper-issues__page newspaper-issues__page_n2 js-newspaper-issue-page " style="z-index:89">
+                        <div class="newspaper-issues__page__wrapper">
+                                                            <div class="newspaper-page">
+            <div class="newspaper-page__col left">
+            <a href="http://www.rbc.ru/newspaper/2017/08/30/59a574f19a7947dde9e6a0af" class="newspaper-page__news">
+                <span class="newspaper-page__news__title">
+                    Переходный капитал
+                </span>
+                                    <span class="newspaper-page__news__lid">
+                        Подуличные киоски гарантировали московскому метро доход в 3,2 млрд руб.
+                    </span>
+                                <span class="newspaper-page__news__section">
+                    Торговля
+                </span>
+            </a>
+        </div>
+            <div class="newspaper-page__col">
+            <a href="http://www.rbc.ru/newspaper/2017/08/30/59a539109a7947a1e417cbe0" class="newspaper-page__news">
+                <span class="newspaper-page__news__title">
+                    Расчет средней дальности
+                </span>
+                                    <span class="newspaper-page__news__lid">
+                        К чему приведут последние ракетные испытания в КНДР
+                    </span>
+                                <span class="newspaper-page__news__section">
+                    Конфликт
+                </span>
+            </a>
+        </div>
+            <div class="newspaper-page__col left">
+            <a href="http://www.rbc.ru/newspaper/2017/08/30/59a525c39a7947a119803363" class="newspaper-page__news">
+                <span class="newspaper-page__news__title">
+                    Почему США не могут выиграть торговую войну с Китаем
+                </span>
+                                                                                                    <span class="newspaper-page__opinion__author">Владимир Южаков,</span>
+                        <span class="newspaper-page__opinion__author-subtitle">управляющий партнер Long Jing Capital</span>
+                                                    <span class="newspaper-page__news__section">
+                    Мнение
+                </span>
+            </a>
+        </div>
+            <div class="newspaper-page__col">
+            <a href="http://www.rbc.ru/newspaper/2017/08/30/59a558319a7947c50d24d36c" class="newspaper-page__news">
+                <span class="newspaper-page__news__title">
+                    Что не так с российской космической программой
+                </span>
+                                                                                                    <span class="newspaper-page__opinion__author">Павел Лузин,</span>
+                        <span class="newspaper-page__opinion__author-subtitle">эксперт по внешней и оборонной политике и ВПК, директор Under Mad Trends</span>
+                                                    <span class="newspaper-page__news__section">
+                    Мнение
+                </span>
+            </a>
+        </div>
+            <div class="newspaper-page__col left">
+            <a href="http://www.rbc.ru/newspaper/2017/08/30/59a031969a7947690b020035" class="newspaper-page__news last">
+                <span class="newspaper-page__news__title">
+                    Сосиска в цвете
+                </span>
+                                    <span class="newspaper-page__news__lid">
+                        Семья предпринимателей ищет рецепт успешного фастфуда
+                    </span>
+                                <span class="newspaper-page__news__section">
+                    Свое дело / Практика
+                </span>
+            </a>
+        </div>
+    </div>                                                    </div>
+                    </div>
+                                                </div>
+
+                            <div class="newspaper-issues__arrows-box">
+                    <span href="#" class="newspaper-issues__arrow newspaper-issues__arrow_next js-newspaper-issue-arrow-next"></span>
+                    <span href="#" class="newspaper-issues__arrow newspaper-issues__arrow_prev js-newspaper-issue-arrow-prev disable"></span>
+                </div>
+                    </div>
+        <div class="newspaper-issues__main-list__bottom"></div>
+    </div>
+    <div class="newspaper-issues__wrap">
+        <div class="g-top-block-info newspaper-issues__title">
+            <a href="http://www.rbc.ru/newspaper/2017/08/29" class="g-top-block-info__right-link">Перейти к номеру</a>
+            <div class="g-top-block-info__title">
+                № 141 (2638) (2908)
+                <span class="newspaper-issues__title__date">29 августа 2017</span>
+            </div>
+        </div>
+
+        <div class="newspaper-issues__main-list__item js-newspaper-issue">
+
+            <div class="newspaper-issues__page-list">
+                                                    <div class="newspaper-issues__page newspaper-issues__page_n1 js-newspaper-issue-page active" style="z-index:90">
+                        <div class="newspaper-issues__page__wrapper">
+                                                            <div class="newspaper-page newspaper-page_first">
+    <!--item col-->
+    
+                
+    <div class="newspaper-page__col left">
+                                    <a href="http://www.rbc.ru/newspaper/2017/08/29/596dc0779a7947392c2681f1" class="newspaper-page__news first">
+                    <span class="newspaper-page__news__wrap">
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                                                    <img src="http://s0.rbk.ru/v6_top_pics/resized/325x200_crop/media/img/3/22/755039342901223.jpg" alt="" class="newspaper-page__news__img">
+                                                            </span>
+                                                <span class="newspaper-page__news__title">Белорусская кухня несет потери</span>
+                        <span class="newspaper-page__news__lid">Раскрыта крупнейшая сеть поставщиков санкционных продуктов в РФ</span>
+                    </span>
+                    <span class="newspaper-page__news__section">Партнеры</span>
+                </a>
+                                                <a href="http://www.rbc.ru/newspaper/2017/08/29/59a2cc2b9a794733b2ad0a4c" class="newspaper-page__news last">
+                    <span class="newspaper-page__news__wrap">
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                                                    <img src="http://s0.rbk.ru/v6_top_pics/resized/120x75_crop/media/img/5/79/755038614430795.jpg" alt="" class="newspaper-page__news__img">
+                                                            </span>
+                                                <span class="newspaper-page__news__title">Муниципальному фильтру предписана реновация</span>
+                        <span class="newspaper-page__news__lid">Кремлевские эксперты проанализировали выборы в регионах</span>
+                    </span>
+                    <span class="newspaper-page__news__section">Доклад</span>
+                </a>
+                        </div>
+    <!--//item col-->
+    <!--item col-->
+    <div class="newspaper-page__col">
+                                    <a href="http://www.rbc.ru/newspaper/2017/08/29/59a3cd869a7947835e1300d1" class="newspaper-page__news">
+                    <span class="newspaper-page__news__wrap">
+
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                <img src="http://s0.rbk.ru/v6_top_pics/resized/120x75_crop/media/img/4/00/755039095363004.jpg" alt="" class="newspaper-page__news__img">
+                            </span>
+                                                <span class="newspaper-page__news__title">Криптовалюту приберегут для биржи</span>
+                        <span class="newspaper-page__news__lid">Минфин предложил новые правила использования биткоинов</span>
+                    </span>
+                    <span class="newspaper-page__news__section">Регулирование</span>
+                </a>
+                                                <a href="http://www.rbc.ru/newspaper/2017/08/29/59a012e89a794754d03d439a" class="newspaper-page__news">
+                    <span class="newspaper-page__news__wrap">
+
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                <img src="http://s0.rbk.ru/v6_top_pics/resized/120x75_crop/media/img/5/96/755039177971965.jpg" alt="" class="newspaper-page__news__img">
+                            </span>
+                                                <span class="newspaper-page__news__title">«Управленцы ненавидят слово «люди»</span>
+                        <span class="newspaper-page__news__lid">Марк Гоулстон — о том, почему прошло время агрессивных переговоров и зачем подозревать окружающих в безумии</span>
+                    </span>
+                    <span class="newspaper-page__news__section">Бизнес / Интервью</span>
+                </a>
+                                                <a href="http://www.rbc.ru/newspaper/2017/08/29/59a41aab9a7947352e161aaa" class="newspaper-page__news last">
+                    <span class="newspaper-page__news__wrap">
+
+                        
+                        
+                                                                            
+                        
+                                                    <span class="newspaper-page__news__img-wrap">
+                                <img src="http://s0.rbk.ru/v6_top_pics/resized/120x75_crop/media/img/5/98/755039477378985.jpg" alt="" class="newspaper-page__news__img">
+                            </span>
+                                                <span class="newspaper-page__news__title">Спекулянты вкладываются в развивающихся</span>
+                        <span class="newspaper-page__news__lid">На каких валютах можно заработать в этом году</span>
+                    </span>
+                    <span class="newspaper-page__news__section">Деньги / Стратегия</span>
+                </a>
+                        </div>
+    <!--//item col-->
+</div>                                                    </div>
+                    </div>
+                                                        <div class="newspaper-issues__page newspaper-issues__page_n2 js-newspaper-issue-page " style="z-index:89">
+                        <div class="newspaper-issues__page__wrapper">
+                                                            <div class="newspaper-page">
+            <div class="newspaper-page__col left">
+            <a href="http://www.rbc.ru/newspaper/2017/08/29/59a007d19a79474df340ab5a" class="newspaper-page__news">
+                <span class="newspaper-page__news__title">
+                    Дума открытых дверей
+                </span>
+                                    <span class="newspaper-page__news__lid">
+                        Членам ОП упростили доступ в нижнюю палату парламента
+                    </span>
+                                <span class="newspaper-page__news__section">
+                    Инициатива
+                </span>
+            </a>
+        </div>
+            <div class="newspaper-page__col">
+            <a href="http://www.rbc.ru/newspaper/2017/08/29/59a3dfa49a79470b96351a6d" class="newspaper-page__news">
+                <span class="newspaper-page__news__title">
+                    Миграция на четыре стороны
+                </span>
+                                    <span class="newspaper-page__news__lid">
+                        Лидеры ЕС обсудили проблемы беженцев из Африки
+                    </span>
+                                <span class="newspaper-page__news__section">
+                    Саммит
+                </span>
+            </a>
+        </div>
+            <div class="newspaper-page__col left">
+            <a href="http://www.rbc.ru/newspaper/2017/08/29/59a3d3a99a79478626538f50" class="newspaper-page__news last">
+                <span class="newspaper-page__news__title">
+                    Как могут развиваться отношения между Россией и НАТО
+                </span>
+                                                                                                    <span class="newspaper-page__opinion__author">Иван Тимофеев,</span>
+                        <span class="newspaper-page__opinion__author-subtitle">доцент МГИМО, программный директор Фонда клуба «Валдай»</span>
+                                                    <span class="newspaper-page__news__section">
+                    Мнение про ядерное сдерживание
+                </span>
+            </a>
+        </div>
+            <div class="newspaper-page__col">
+            <a href="http://www.rbc.ru/newspaper/2017/08/29/59a3cbf99a794783c5328140" class="newspaper-page__news last">
+                <span class="newspaper-page__news__title">
+                    Сбербанк выходит на Поклонную
+                </span>
+                                    <span class="newspaper-page__news__lid">
+                        Сделка по аренде офиса может стать крупнейшей с 2015 года
+                    </span>
+                                <span class="newspaper-page__news__section">
+                    Недвижимость
+                </span>
+            </a>
+        </div>
+    </div>                                                    </div>
+                    </div>
+                                                </div>
+
+                            <div class="newspaper-issues__arrows-box">
+                    <span href="#" class="newspaper-issues__arrow newspaper-issues__arrow_next js-newspaper-issue-arrow-next"></span>
+                    <span href="#" class="newspaper-issues__arrow newspaper-issues__arrow_prev js-newspaper-issue-arrow-prev disable"></span>
+                </div>
+                    </div>
+        <div class="newspaper-issues__main-list__bottom"></div>
+    </div>
+    </div>
+    <div class="l-row newspaper-issues__actions js-newspaper-action">
+                                                <span class="l-col-50p newspaper-issues__actions__link js-newspaper-calc">Календарь выпусков</span>
+    <span class="l-col-50p newspaper-issues__actions__link js-newspaper-add" data-number="5">Еще 5 выпусков</span>
+    </div>
+    <div class="newspaper-calendar js-newspaper-calendar">
+    <div class="newspaper-calendar__title">
+        Календарь выпусков
+        <span class="newspaper-calendar__close js-newspaper-calendar-close">&#215;</span>
+    </div>
+    <div class="newspaper-calendar__container js-newspaper-calendar-container"></div>
+    <div class="newspaper-calendar__top">
+        <a href="#" class="newspaper-calendar__next-month js-newspaper-calendar-next-month"></a>
+        <a href="#" class="newspaper-calendar__prev-month js-newspaper-calendar-prev-month"></a>
+    </div>
+</div></div>
+
+            </div>
+        </div>
+        <div class="l-col-right l-sticky-parent">
+            <div class="l-sticky js-sticky-block js-sticky-safe">
+                <div class="l-col-w-240">
+                    <div class="banner g-width__240" data-banner-id="new_top_left"><!-- RBCNews_240*400_1st_right  1146 new_top_left -->
+<!-- Media2/new_top_left_DFP -->
+
+<div id='div-gpt-ad-1436366531196-0' style="text-align: center;">
+<script type='text/javascript'>
+if (window.bannersVersion == 'v8' && /^\/search\/?/.test(location.pathname)) {
+  googletag.cmd.push(function() { if (rbc_dfp) rbc_dfp.display('div-gpt-ad-1436366531196-0'); else if (window.rbc_adunits.length) googletag.display('div-gpt-ad-1436366531196-0');});
+} else {
+  if (/58e238789a7947f42e875f91/.test(location.href)) {
+    $('#div-gpt-ad-1436366531196-0').closest('.banner').hide();
+  }
+  /* disabled by synchron
+  googletag.cmd.push(function() { rbc_dfp.display('div-gpt-ad-1436366531196-0');});
+  */
+}
+</script>
+</div>
+
+<div id = "__div_for_check" style = "display : none;"></div>
+<script type = "text/javascript">
+/*
+
+setTimeout(function() {
+  function __removeClass(element, classname){
+    var re = new RegExp("(^|\\s)" + classname + "(\\s|$)", "g")
+    element.className = element.className.replace(re, "$1").replace(/\s+/g, " ").replace(/(^ | $)/g, "");
+  }
+
+  if (!window.rbc_dfp || 'none' == $('#__div_for_check').closest('.banner').parent().find('[class^="js-checkad"]').css('display')) {
+    try {
+      googletag.pubads().clear('div-gpt-ad-1436366531196-0');
+      window.PREVENT_REPAINT = true;
+    } catch (e) {}
+
+    var adBlockRnd = parseInt(Math.random() * 10000000);
+
+    var d = document.getElementById('div-gpt-ad-1436366531196-0');
+    if (d) {
+      function addPixel(url) {
+        if (/^https?:\/\/.+/.test(url)) {
+            var i = document.createElement('img');
+            i.src = url;
+            i.style.cssText = 'width: 1px; height: 1px; position: absolute; left: -2000px;';
+            d.parentNode.insertBefore(i, d);
+        }
+      }
+      var div = document.createElement('div');
+      var a = document.createElement('a');
+      a.href = "http://arvr.rbc.ru/cr/?sid=1&bt=21&ad=615510&pid=2509180&bid=4895858&bn=4895858&rnd" + adBlockRnd;
+      a.style.cssText = 'display: inline !important; visibility: visible !important;';
+      if (!/Firefox\/\d+/.test(navigator.userAgent)) a.target = '_blank';
+      if (a.addEventListener) {
+        a.addEventListener('click', function() { addPixel("http://r.rbc.ru/8W3G4fV8W36/?_rnd="+adBlockRnd);}, false);
+      } else if (a.attachEvent) {
+        a.attachEvent('onclick', function() { addPixel("http://r.rbc.ru/8W3G4fV8W36/?_rnd="+adBlockRnd);});
+      }
+      var i = document.createElement('img');
+      i.src = "http://s.rbk.ru/files_static/rbc.ru/image/15949/240x600-2.jpg";
+      i.width = 240;
+      i.height = 600;
+      i.style.cssText = 'width : 240px !important; height : 600px !important; display : block !important;';
+      a.appendChild(i);
+      div.appendChild(a);
+      div.style.cssText = 'display : block !important;';
+      d.parentNode.insertBefore(div, d);
+      addPixel("http://arvr.rbc.ru/s/?sid=1&bt=21&ad=615510&pid=2509180&bid=4895858&bn=4895858&rnd=" + adBlockRnd);
+      addPixel("http://r.rbc.ru/count/8W3G4fV8W36/?_rnd="+adBlockRnd);
+    }
+
+    var __div_for_check = document.getElementById('__div_for_check');
+    var __parent_div = __div_for_check.parentNode;
+
+    try {
+      var __container_div = __parent_div.parentNode;	
+      if (__container_div.className == "banner__container") {
+        var __link = __container_div.getElementsByClassName('banner__container__link')[0];
+        if (__link) {
+          __link.style.display = "none";
+        }
+      }
+    } catch (e) {}
+
+    if (__parent_div && /\bbanner\b/i.test(__parent_div.className)) {
+      __removeClass(__parent_div, "banner");
+      __parent_div.removeAttribute("data-banner-id");
+      __parent_div.style.cssText += "display : block !important;";
+      while (__parent_div = __parent_div.parentNode) {
+        if (/l\-col\-w\-240/.test(__parent_div.className)) {
+          __parent_div.style.cssText += "display : block !important;";
+        }
+        if (/(^|\s+)article__right\-banners(\s+|$)/.test(__parent_div.className)) {
+          __parent_div.className = __parent_div.className.replace("article__right-banners", "");
+        }
+        if (/(^|\s+)js\-rbcslider\-banner(\s+|$)/.test(__parent_div.className)) {
+          __parent_div.style.cssText += "display : block !important;";
+          //__parent_div.className = __parent_div.className.replace("js-rbcslider-banner", "");
+          break;
+        }
+      }
+    }
+  }
+}, 1000);
+
+*/
+</script></div>
+
+                                                                                        
+                    <div class="banner g-width__240" data-banner-id="fp_new_auto_teaser1"><!--BEGIN Medialand автомобильный тизер 1 (fp_new_auto_teaser1) (inline)-->
+
+<div id="new_rbc_inf_1"  class="banners__special-offers_v2"></div>
+<div id="medialand_adland_inline_div_1725"></div>
+<script language="JavaScript"> 
+<!--
+
+window.PREVENT_DOCWRITE = true;
+
+(function () {
+    var rbc_split = window.RA.config.get('abtest');
+    var pids = {
+      "7A" : "2155",
+      "8B" : "2153",
+      "8C" : "2154"
+    };
+    var pid = pids[rbc_split] || 1725;
+
+
+    var random = Math.floor(Math.random() * 1000000000);
+    function addClickPixel(id) {
+        var img = document.createElement('img');
+        img.src = "//rbc.solution.weborama.fr/fcgi-bin/dispatch.fcgi?a.A=co&a.si=751&a.cp=25&a.ct=c";
+        var clickPixelDiv = document.getElementById(id + "_click_pixel");
+        if (clickPixelDiv) {
+            clickPixelDiv.appendChild(img);
+        }
+    }
+
+    function addClickEvent(elem) {
+        var a = elem.getElementsByTagName('a');
+        for (var i = 0, il = a.length; i < il; i++) {
+            a[i].onclick = function () {
+                addClickPixel(elem.id);
+            }
+        }
+    }
+
+    window["ml_informer_config"+pid+"_"+random] =  {
+        bannerWidth : 150, 
+        bannerHeight : 100,                    
+        container_classname : "",                    
+        placeholders : [
+            {
+                id : "new_rbc_inf_1", 
+                total_banners : 2, 
+                align : "vertical", 
+                container_classname : "news1", 
+                bannerWidth : 150, 
+                bannerHeight : 100
+            }
+        ]
+    };
+
+    try {
+        for (var i=0, l=window["ml_informer_config"+pid+"_"+random].placeholders.length; i<l; ++i) {
+            var d = document.getElementById(window["ml_informer_config"+pid+"_"+random].placeholders[i].id);
+            if (d) {
+                d.id += '_' + random;
+                window["ml_informer_config"+pid+"_"+random].placeholders[i].id += '_' + random;
+            } else {
+                throw Error("Unknown placeholder");
+            }
+        }
+        var d = document.getElementById('medialand_adland_inline_div_1725');
+        if (d) {
+            d.id = 'medialand_adland_inline_div_' + pid + '_' + random;
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.src = '//engine.rbc.medialand.ru/code?pid='+pid+'&gid=18&oin=1&rid=' + random;
+            d.parentNode.insertBefore(s, d);
+        }
+    } catch(e) {}
+
+    try {
+        for (var i = 0, l = window["ml_informer_config"+pid+"_"+random].placeholders.length; i<l; ++i) {
+            var id = window["ml_informer_config"+pid+"_"+random].placeholders[i].id;
+            var placeholderDiv = document.getElementById(id);
+            if (placeholderDiv) {
+                (function (x) {
+                    setTimeout(function () { 
+                        var clickDiv = document.createElement('div');
+                        clickDiv.style.cssText = "display : none;";
+                        clickDiv.id = x.id + "_click_pixel";
+                        x.appendChild(clickDiv);
+                        addClickEvent(x); 
+                    }, 2500);
+                })(placeholderDiv);
+            } else {
+                throw Error("Unknown placeholder");
+            }
+        }
+    } catch(e) {}
+})();
+// -->
+</script></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="l-row js-sticky-block-stop"></div>
+                                <div class="banner g-white" data-banner-id="new_news_bot_2"><a target="_top" href="http://banner.rbc.ru/banredir.cgi?lid=new_news_bot_2&_b=Media2/new_news_bot_2_DFP" empty="true" style="display:none"></a><!-- RBCNews_Filmstrip 1937 (new_news_bot_2) -->
+<div id='div-gpt-ad-1436366028349-0' style="overflow : hidden;">
+<script type='text/javascript'>
+googletag.cmd.push(function() {
+  rbc_dfp.display('div-gpt-ad-1436366028349-0');
+});
+</script>
+</div></div>
+                                
+<div class="footer g-noprint ">
+    <div class="footer__table">
+        <div class="footer__tr">
+            <div class="footer__td footer__td_50">
+                <div class="footer__list-item">
+                    <a href="http://www.rbcholding.ru/about.shtml" class="footer__link">О компании</a>
+                </div>
+                <div class="footer__list-item">
+                    <a href="http://www.rbc.ru/contacts/" class="footer__link">Контактная информация</a>
+                </div>
+                <div class="footer__list-item">
+                    <a href="http://www.rbc.ru/editors/" class="footer__link">Редакция</a>
+                </div>
+                <div class="footer__list-item last">
+                    <a href="http://rbc.ru/advert/" class="footer__link">Размещение рекламы</a>                </div>
+                            </div>
+
+            
+            <div class="footer__td footer__td_50">
+                <div class="footer__list-item footer__header">РБК в соцсетях</div>
+
+                <div class="footer__inner-table">
+                    <div class="footer__td footer__td_30">
+                        <div class="footer__list-item">
+                            <a href="http://facebook.com/rbcru" class="footer__link footer__fs">Facebook</a>
+                        </div>
+                        <div class="footer__list-item">
+                            <a href="https://vk.com/rbc" class="footer__link footer__vk">ВКонтакте</a>
+                        </div>
+                        <div class="footer__list-item last">
+                            <a href="http://twitter.com/ru_rbc" class="footer__link footer__tw">Twitter</a>
+                        </div>
+                    </div>
+
+                    <div class="footer__td footer__td_30">
+                        <div class="footer__list-item">
+                            <a href="http://www.odnoklassniki.ru/group/51670727852273" class="footer__link footer__odn">Одноклассники</a>
+                        </div>
+                        <div class="footer__list-item last">
+                            <a href="http://www.youtube.com/user/tvrbcnews" class="footer__link footer__yout">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__td footer__td_75 footer__td_last">
+                                    <div class="footer__list-item"><a href="/mobile/" class="footer__link footer__green js-footer-site-version">Мобильная версия сайта</a></div>
+                                            <div class="footer__list-item">
+            <a href="http://static.feed.rbc.ru/rbc/logical/footer/rbcdaily_last_issue.rss" class="footer__link">RSS</a>
+        </div>
+                                </div>
+
+        </div>
+    </div>
+
+            <div class="footer__table">
+            <div class="footer__tr">
+                <div class="footer__td">
+                    <div class="footer__inline-item footer__header">Другие продукты РБК</div>
+                    <div class="footer__inline-item">
+                        <a href="http://www.nic.ru/" class="footer__link">Домены и хостинг</a>
+                    </div>
+                    <div class="footer__inline-item">
+                        <a href="http://www.public.ru/" class="footer__link">Медиапоиск и анализ</a>
+                    </div>
+                    <div class="footer__inline-item">
+                        <a href="http://loveplanet.ru/" class="footer__link">Знакомства</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="footer__table">
+        <div class="footer__tr">
+            <div class="footer__td footer__td_50">
+                &copy;&nbsp;ЗАО&nbsp;&laquo;РОСБИЗНЕСКОНСАЛТИНГ&raquo;,
+                <nobr>1995–2017</nobr><br/>
+
+                <a href="mailto:letters@rbc.ru" class="footer__green">letters@rbc.ru</a>            </div>
+
+            <div class="footer__td footer__td_50">
+                Информация об&nbsp;ограничениях<br/>                &copy;&nbsp;<a href="http://www.rbc.ru/restrictions#reuters" class="footer__green" target="_blank">Reuters</a>, &copy;&nbsp;<a href="http://www.rbc.ru/restrictions#press" class="footer__green" target="_blank">AP</a>,<br/> &copy;&nbsp;<a href="http://www.rbc.ru/restrictions#interfax" class="footer__green" target="_blank">Интерфакс</a>            </div>
+
+                            <div class="footer__td footer__td_50 footer__td_min-16">
+                    <a href="http://www.rbc.ru/privacy/" class="footer__green">О&nbsp;соблюдении авторских&nbsp;прав</a>
+                </div>
+            
+                            <div class="footer__td footer__td_50 footer__td_min-25">
+                    Материалы с <span class="footer__star">отметкой</span><br/> публикуются на&nbsp;правах рекламы
+                </div>
+            
+            <div class="footer__td footer__td_50 footer__td_last">
+                <span class="footer__copy18"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer__table">
+        <div class="footer__tr">
+            <div class="footer__td footer__td_50 footer__gray">
+                Сообщения и&nbsp;материалы информационного агентства &laquo;РБК&raquo; (зарегистрировано Федеральной службой по надзору в&nbsp;сфере связи, информационных технологий и&nbsp;массовых коммуникаций (Роскомнадзор) 09.12.2015 за номером ИА №ФС77-63848) сопровождаются пометкой &laquo;РБК&raquo;. Иная&nbsp;<a href="#" class="footer__green js-popup-law-link">правовая&nbsp;информация</a>.
+            </div>
+            <div class="footer__td footer__td_50 footer__gray">
+                Чтобы отправить редакции сообщение, выделите часть текста в статье и нажмите Ctrl+Enter            </div>
+            <div class="footer__td footer__td_50 footer__td_last">
+                <div class="footer__counter">
+    <a href="http://www.liveinternet.ru/click" target=_blank><img src="//pics.rbc.ru/img/ver99/counter_liveinternet.gif" border=0 width=31 height=31 title="liveinternet.ru"></a>
+</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="js-popup-law g-zeropixel">
+    <div class="popup__law g-noprint js-law-select-inner">
+        <div class="popup__law__title">ЗАО &laquo;РОСБИЗНЕСКОНСАЛТИНГ&raquo;</div>
+        <div class="popup__law__text">
+            <div class="popup__law__block">
+                <div class="popup__law__header">Генеральный директор</div>
+                Николай Петрович Молибог
+            </div>
+            <div class="popup__law__block">
+                <div class="popup__law__header">Адрес юридического лица и почтовый адрес</div>
+                Город Москва, улица Профсоюзная, дом 78, строение 1, почтовый индекс 117393
+            </div>
+            <div class="popup__law__block">
+                <div class="popup__law__header">Политика конфиденциальности</div>
+                <div class="popup__law__wrapper js-law-select-wrapper">
+                    <div class="popup__law__select js-law-select-select">
+                        <span class="popup__law__select__text js-law-select-select-text">Выберите регион, чтобы получить ссылку на скачивание документа в формате PDF</span>
+                        <span class="popup__law__select__icon">▼</span>
+                    </div>
+                    <div class="popup__law__list js-law-select-list">
+                        <div class="popup__law__list__inner">
+                            <div class="popup__law__item js-law-select-item">
+                                <span class="popup__law__item__text js-law-select-item-text" data-url="http://rbc.ru/static/pages/laws/rbc.pdf" data-cookie="world">Весь мир</span>
+                            </div>
+                            <div class="popup__law__item js-law-select-item">
+                                <span class="popup__law__item__text js-law-select-item-text" data-url="http://rbc.ru/static/pages/laws/spb.pdf" data-cookie="russia/sankt-peterburg_i_oblast">Санкт-Петербург и область</span>
+                            </div>
+                            <div class="popup__law__item js-law-select-item">
+                                <span class="popup__law__item__text js-law-select-item-text" data-url="http://rbc.ru/static/pages/laws/novosibirsk.pdf" data-cookie="russia_sfo">Новосибирск</span>
+                            </div>
+                            <div class="popup__law__item js-law-select-item">
+                                <span class="popup__law__item__text js-law-select-item-text" data-url="http://rbc.ru/static/pages/laws/ekaterinburg.pdf" data-cookie="russia/sverdlovskaya_obl">Екатеринбург</span>
+                            </div>
+                            <div class="popup__law__item js-law-select-item">
+                                <span class="popup__law__item__text js-law-select-item-text" data-url="http://rbc.ru/static/pages/laws/bashkortostan.pdf" data-cookie="russia/bashkortostan">Башкортостан</span>
+                            </div>
+                            <div class="popup__law__item js-law-select-item">
+                                <span class="popup__law__item__text js-law-select-item-text" data-url="http://rbc.ru/static/pages/laws/vologda.pdf" data-cookie="russia/vologodskaya_obl">Вологодская область</span>
+                            </div>
+                            <div class="popup__law__item js-law-select-item">
+                                <span class="popup__law__item__text js-law-select-item-text" data-url="http://rbc.ru/static/pages/laws/kaliningrad.pdf" data-cookie="russia/kaliningradskaya_obl">Калининград</span>
+                            </div>
+                            <div class="popup__law__item js-law-select-item">
+                                <span class="popup__law__item__text js-law-select-item-text" data-url="http://rbc.ru/static/pages/laws/krasnodar-rostov.pdf" data-cookie="russia/krasnodarskiy_kray">Краснодарский край</span>
+                            </div>
+                            <div class="popup__law__item js-law-select-item">
+                                <span class="popup__law__item__text js-law-select-item-text" data-url="http://rbc.ru/static/pages/laws/nijniy_novgorod.pdf" data-cookie="russia/nijegorodskaya_obl">Нижний Новгород</span>
+                            </div>
+                            <div class="popup__law__item js-law-select-item">
+                                <span class="popup__law__item__text js-law-select-item-text" data-url="http://rbc.ru/static/pages/laws/perm.pdf" data-cookie="russia/permskij_kraj">Пермский край</span>
+                            </div>
+                            <div class="popup__law__item js-law-select-item">
+                                <span class="popup__law__item__text js-law-select-item-text" data-url="http://rbc.ru/static/pages/laws/krasnodar-rostov.pdf" data-cookie="russia/rostovskaya_obl">Ростов-на-Дону</span>
+                            </div>
+                            <div class="popup__law__item js-law-select-item">
+                                <span class="popup__law__item__text js-law-select-item-text" data-url="http://rbc.ru/static/pages/laws/tatarstan.pdf" data-cookie="russia/tatarstan">Татарстан</span>
+                            </div>
+                            <div class="popup__law__item js-law-select-item">
+                                <span class="popup__law__item__text js-law-select-item-text" data-url="http://rbc.ru/static/pages/laws/tumen.pdf" data-cookie="russia/tyumenskaya_obl">Тюмень</span>
+                            </div>
+                            <div class="popup__law__item js-law-select-item">
+                                <span class="popup__law__item__text js-law-select-item-text" data-url="http://rbc.ru/static/pages/laws/chernozem.pdf" data-cookie="russia_chernozemje">Черноземье</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup__law__block">
+                <a class="popup__law__button disable js-law-select-button" target="_blank">Скачать</a>
+            </div>
+        </div>
+        <div class="popup__law__bottom">
+            Электронная почта <a href="mailto:law-it@rbc.ru" class="popup__law__link">law-it@rbc.ru</a>, для направления юридически значимых сообщений и (или) заявлений о нарушении авторских и смежных прав
+                    </div>
+    </div>
+</div>
+                                                    </div>
+                    </div>
+                </div><!-- .l-window-body -->
+            </div>
+        </div><!-- .l-window -->
+    
+                <div id="id_ra_overlay" class="page-overlay"></div>    
+    <div class="g-zeropixel">
+            <div class="g-counter">
+    <script>RA.config.set('counters.tns.tmsec', 'rbc_newspaper');</script>
+
+    <!-- tns-counter.ru -->
+    <script type="text/javascript">
+        (function(win, doc, cb){
+            (win[cb] = win[cb] || []).push(function() {
+                try {
+                    tnsCounterRbc_ru = new TNS.TnsCounter({
+                        'account':'rbc_ru',
+                        'tmsec': 'rbc_newspaper'
+                    });
+                } catch(e){}
+            });
+
+            var tnsscript = doc.createElement('script');
+            tnsscript.type = 'text/javascript';
+            tnsscript.async = true;
+            tnsscript.src = ('https:' == doc.location.protocol ? 'https:' : 'http:') +
+            '//www.tns-counter.ru/tcounter.js';
+            var s = doc.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(tnsscript, s);
+        })(window, this.document,'tnscounter_callback');
+    </script>
+    <noscript>
+        <img src="//www.tns-counter.ru/V13a****rbc_ru/ru/UTF-8/tmsec=rbc_newspaper/" width="0" height="0" alt="" />
+    </noscript>
+    <!--/ tns-counter.ru -->
+</div>
+
+            <div class="g-counter">
+    <script>RA.config.set('counters.ya.idCounter', '16443139');</script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        var yaParams = {region: 'World'};
+        function getCookie(name) {
+            var matches = document.cookie.match(new RegExp(
+                "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+
+        if(document.cookie.indexOf( "toprbc_device" ) >= 0){
+
+            yaParams.mobile_cookies = getCookie( "toprbc_device" );
+        }
+
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter16443139 = new Ya.Metrika({id:16443139, triggerEvent: true, enableAll: true, webvisor:true, params: window.yaParams||{}});
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/16443139" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</div>
+
+                            </div>
+
+    
+    <script src="http://s.rbk.ru/v5_magazine_static/common/common-8.3.71/scripts/build/_common.js"></script>
+            <script src="http://s.rbk.ru/v5_magazine_static/common/common-8.3.71/scripts/build/_main.js"></script>
+                <script src="http://s.rbk.ru/v5_magazine_static/magazine-2.1.3/scripts/build/_newspaper.js"></script>
+    
+    <!--AB:  -->
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"8bff0dff29","applicationID":"18908242","transactionName":"YgcDNUIEDxYHUEVbXFtNNBNZSk4MCFdUSh1FChE=","queueTime":0,"applicationTime":59,"atts":"TkAAQwoeHBg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

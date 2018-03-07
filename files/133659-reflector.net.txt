@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!-- Set the viewport dimensions to that of the device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="/assets/images/favicon.ico?v=1" />
+
+    <!-- Meta -->
+    <meta name="author" content="Red Gate Software Ltd">
+    <meta name="copyright" content="All material (c) Red Gate Software Ltd or its original authors unless otherwise stated">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/INTERIM/assets/styles/isw.css?v=1504004734">
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Redgate Software Feed" href="/blog/feed" />
+
+    <!-- Pingdom -->
+    <script>var _prum = [['id', '55f69ea7abe53d57116bd2dc'], ['mark', 'firstbyte', (new Date()).getTime()]];</script>
+
+    <!-- JavaScript support? -->
+    <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
+
+    <!--[if lt IE 9]>
+        <script src="/assets/INTERIM/assets/scripts/modernizr.min.js?v=1"></script>
+    <![endif]-->
+
+	<title>.NET Decompiler: Decompile Any .NET Code | .NET Reflector</title>
+	<meta name="description" content="See how APIs, libraries, frameworks, and 3rd party .NET code really work with the leading .NET decompiler - .NET Reflector. Runs as a Visual Studio add-in.">
+</head>
+
+
+<body id="top-of-page">
+
+	<!-- UNCOMMENT THE SECTION BELOW TO UNLEASH THE MIGHTY EMERGENCY MESSAGE -->
+<!--
+<div id="emergency-message">
+	<p>We're having some problems with our phones at the moment. You can contact sales on <a href="mailto:sales@red-gate.com">sales@red-gate.com</a>, or visit our <a href="https://redgatesupport.zendesk.com/hc/en-us">support center</a>.</p>
+</div>
+
+<style>
+	div#emergency-message { background: #7d7e7d; background: -moz-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); background: -webkit-linear-gradient(top, #7d7e7d 0%,#0e0e0e 100%);
+	background: -o-linear-gradient(top, #7d7e7d 0%,#0e0e0e 100%); background: -ms-linear-gradient(top, #7d7e7d 0%,#0e0e0e 100%); background: linear-gradient(top, #7d7e7d 0%,#0e0e0e 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 );
+	color:#fff; height: auto; overflow:hidden; text-align:center; margin-bottom:0; }
+	div#emergency-message p { font-weight:bold; line-height:18px; margin-top: 10px;}
+	div#emergency-message p a { color:#fff; text-decoration:underline; }
+	div#emergency-message p a:hover { text-decoration:none; }
+</style>
+-->
+
+<header class="band header--primary js-header-primary-collapse">
+    <nav>
+		<a href="/" class="header--primary__app-logo-container"><img src="/assets/INTERIM/assets/images/global/redgate-logo--white.png?v=1" alt="Redgate logo" width="94" height="23" class="js-svg" /></a>
+
+        <span class="hide-on-medium">
+            <ul class="header__nav">
+    			<li><a href="/products/">Products</a>
+    <ul>
+        <li>
+            <a href="/products/#sql-server" class="js-scroll-to" data-scroll-to-offset="-70">SQL Server</a>
+            <ul>
+                <li><a href="/products/sql-development/sql-toolbelt">SQL Toolbelt</a></li>
+                <li><a href="/products/sql-development/sql-compare">SQL Compare</a></li>
+                <li><a href="/products/sql-development/sql-data-compare">SQL Data Compare</a></li>
+                <li><a href="/products/sql-development/sql-source-control/">SQL Source Control</a></li>
+                <li><a href="/products/sql-development/sql-prompt">SQL Prompt</a></li>
+                <li><a href="/products/dba/sql-monitor">SQL Monitor</a></li>
+                <li><a href="/products/dlm/dlm-automation/">DLM Automation</a></li>
+                <li><a href="/products/dba/sql-clone">SQL Clone</a></li>
+                <li><a href="/products/dba/sql-backup">SQL Backup Pro</a></li>
+                <li><a href="/products/dlm/dlm-dashboard/">DLM Dashboard</a></li>
+                <li><a href="/products/sql-development/readyroll/">ReadyRoll Pro</a></li>
+                <li><a href="/products/sql-development/sql-search/">SQL Search</a></li>
+                <li><a href="/products/sql-development/sql-doc">SQL Doc</a></li>
+                <li><a href="/products/sql-development/sql-data-generator">SQL Data Generator</a></li>
+                <li><a href="/products/sql-development/sql-test">SQL Test</a></li>
+                <li><a href="/products/sql-development/sql-dependency-tracker">SQL Dependency Tracker</a></li>
+                <li><a href="/products/dba/sql-multi-script">SQL Multi Script</a></li>
+                <li><a href="/products/dba/sql-scripts-manager">SQL Scripts Manager</a></li>
+                <li><a href="/products/dba/sql-index-manager">SQL Index Manager</a></li>
+                <li><a href="/products/sql-development/sql-comparison-sdk">SQL Comparison SDK</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/products/#azure" class="js-scroll-to" data-scroll-to-offset="-79">Azure</a>
+            <ul>
+                <li><a href="/products/azure-development/data-platform-studio/">Data Platform Studio</a></li>
+                <li><a href="/products/azure-development/azure-explorer/">Azure Explorer (free)</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/products/#net" class="js-scroll-to" data-scroll-to-offset="-70">.NET</a>
+            <ul>
+                <li><a href="/products/dotnet-development/dotnet-developer-bundle">.NET Developer Bundle</a></li>
+                <li><a href="/products/dotnet-development/ants-performance-profiler">ANTS Performance Profiler</a></li>
+                <li><a href="/products/dotnet-development/ants-memory-profiler">ANTS Memory Profiler</a></li>
+                <li><a href="/products/dotnet-development/reflector">.NET Reflector</a></li>
+                <li><a href="/products/dotnet-development/smartassembly">SmartAssembly</a></li>
+                <li><a href="/products/dotnet-development/pinvoke">PInvoke .NET</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/products/#oracle" class="js-scroll-to" data-scroll-to-offset="-70">Oracle</a>
+            <ul>
+                <li><a href="/products/oracle-development/deployment-suite-for-oracle">Deployment Suite for Oracle</a></li>
+                <li><a href="/products/oracle-development/schema-compare-for-oracle">Schema Compare for Oracle</a></li>
+                <li><a href="/products/oracle-development/data-compare-for-oracle">Data Compare for Oracle</a></li>
+                <li><a href="/products/oracle-development/source-control-for-oracle">Source Control for Oracle</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/products/#mysql" class="js-scroll-to" data-scroll-to-offset="-70">MySQL</a>
+            <ul>
+                <li><a href="/products/mysql/mysql-comparison-bundle">MySQL Comparison Bundle</a></li>
+                <li><a href="/products/mysql/mysql-compare">MySQL Compare</a></li>
+                <li><a href="/products/mysql/mysql-data-compare">MySQL Data Compare</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<li>
+    <a href="/solutions/database-devops/">Solutions</a>
+</li>
+<li><a href="//redgatesupport.zendesk.com/hc">Support</a></li>
+<li>
+    <a href="/our-company/">Our Company</a>
+    <ul>
+        <li><a href="/our-company/careers/current-opportunities/">Careers</a></li>
+        <li><a href="/our-company/contact-us">Contact us</a></li>
+        <li><a href="/blog/">Redgate blog</a></li>
+    </ul>
+</li>
+<li>
+    <a href="/hub/">Community Hub</a>
+    <ul>
+        <li><a href="/hub/product-learning">Product learning</a></li>
+        <li><a href="http://forum.red-gate.com">Forums</a></li>
+        <li><a href="/hub/events/">Events &amp; groups</a></li>
+        <li><a href="/simple-talk/">Simple Talk</a></li>
+    </ul>
+</li>
+
+            </ul>
+        </span>
+
+        <span class="float-right header--primary__site-tools">
+            <span class="hide-on-medium header__account-container">
+                <!-- Change /dynamic/accountnav to the following -->
+        		<ul class="header__account dropdown js-dropdown">
+                    <div class="show-on-small hide-on-max">
+                        <li><a href="/search">Search</a></li>
+                        <li><a href="/account/">My account</a></li>
+                        <li><a href="/dynamic/purchase/cart/summary?ref=account-nav">Shopping cart</a></li>
+                    </div>
+
+                    <li><a href="/dynamic/quotes/openquote?ref=account-nav" title="Quotes">Quotes</a></li>
+                </ul>
+        		<!-- /Change -->
+            </span>
+
+            <ul class="hide-on-mini padded-left--tight">
+                <li><a href="/search" class="header--primary__icon icon--search"></a></li>
+                <li><a href="/account/" class="header--primary__icon icon--user"></a></li>
+                <li class="hide-on-medium"><a href="/dynamic/purchase/cart/summary?ref=account-nav" class="header--primary__icon icon--shopping-cart" title="View your shopping cart"> <span class="cart__num" data-href="/Dynamic/Cart/NumberOfItemsInCart"></span></a></li>
+            </ul>
+
+            <span class="hide-on-max show-on-medium">
+                <ul>
+                    <li><a href="#menu" class="header--primary__icon header--primary__menu-button"></a></li>
+                </ul>
+            </span>
+        </span>
+
+        <span class="header--primary__menu--mobile">
+            <ul class="dropdown js-dropdown header__account--mobile">
+                <!-- Copied from above, using JS
+                    Copy the contents of .header__account and place here.
+                -->
+            </ul>
+            <ul class="js-dropdown">
+    			<li><a href="/products/">Products</a>
+    <ul>
+        <li>
+            <a href="/products/#sql-server" class="js-scroll-to" data-scroll-to-offset="-70">SQL Server</a>
+            <ul>
+                <li><a href="/products/sql-development/sql-toolbelt">SQL Toolbelt</a></li>
+                <li><a href="/products/sql-development/sql-compare">SQL Compare</a></li>
+                <li><a href="/products/sql-development/sql-data-compare">SQL Data Compare</a></li>
+                <li><a href="/products/sql-development/sql-source-control/">SQL Source Control</a></li>
+                <li><a href="/products/sql-development/sql-prompt">SQL Prompt</a></li>
+                <li><a href="/products/dba/sql-monitor">SQL Monitor</a></li>
+                <li><a href="/products/dlm/dlm-automation/">DLM Automation</a></li>
+                <li><a href="/products/dba/sql-clone">SQL Clone</a></li>
+                <li><a href="/products/dba/sql-backup">SQL Backup Pro</a></li>
+                <li><a href="/products/dlm/dlm-dashboard/">DLM Dashboard</a></li>
+                <li><a href="/products/sql-development/readyroll/">ReadyRoll Pro</a></li>
+                <li><a href="/products/sql-development/sql-search/">SQL Search</a></li>
+                <li><a href="/products/sql-development/sql-doc">SQL Doc</a></li>
+                <li><a href="/products/sql-development/sql-data-generator">SQL Data Generator</a></li>
+                <li><a href="/products/sql-development/sql-test">SQL Test</a></li>
+                <li><a href="/products/sql-development/sql-dependency-tracker">SQL Dependency Tracker</a></li>
+                <li><a href="/products/dba/sql-multi-script">SQL Multi Script</a></li>
+                <li><a href="/products/dba/sql-scripts-manager">SQL Scripts Manager</a></li>
+                <li><a href="/products/dba/sql-index-manager">SQL Index Manager</a></li>
+                <li><a href="/products/sql-development/sql-comparison-sdk">SQL Comparison SDK</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/products/#azure" class="js-scroll-to" data-scroll-to-offset="-79">Azure</a>
+            <ul>
+                <li><a href="/products/azure-development/data-platform-studio/">Data Platform Studio</a></li>
+                <li><a href="/products/azure-development/azure-explorer/">Azure Explorer (free)</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/products/#net" class="js-scroll-to" data-scroll-to-offset="-70">.NET</a>
+            <ul>
+                <li><a href="/products/dotnet-development/dotnet-developer-bundle">.NET Developer Bundle</a></li>
+                <li><a href="/products/dotnet-development/ants-performance-profiler">ANTS Performance Profiler</a></li>
+                <li><a href="/products/dotnet-development/ants-memory-profiler">ANTS Memory Profiler</a></li>
+                <li><a href="/products/dotnet-development/reflector">.NET Reflector</a></li>
+                <li><a href="/products/dotnet-development/smartassembly">SmartAssembly</a></li>
+                <li><a href="/products/dotnet-development/pinvoke">PInvoke .NET</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/products/#oracle" class="js-scroll-to" data-scroll-to-offset="-70">Oracle</a>
+            <ul>
+                <li><a href="/products/oracle-development/deployment-suite-for-oracle">Deployment Suite for Oracle</a></li>
+                <li><a href="/products/oracle-development/schema-compare-for-oracle">Schema Compare for Oracle</a></li>
+                <li><a href="/products/oracle-development/data-compare-for-oracle">Data Compare for Oracle</a></li>
+                <li><a href="/products/oracle-development/source-control-for-oracle">Source Control for Oracle</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/products/#mysql" class="js-scroll-to" data-scroll-to-offset="-70">MySQL</a>
+            <ul>
+                <li><a href="/products/mysql/mysql-comparison-bundle">MySQL Comparison Bundle</a></li>
+                <li><a href="/products/mysql/mysql-compare">MySQL Compare</a></li>
+                <li><a href="/products/mysql/mysql-data-compare">MySQL Data Compare</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<li>
+    <a href="/solutions/database-devops/">Solutions</a>
+</li>
+<li><a href="//redgatesupport.zendesk.com/hc">Support</a></li>
+<li>
+    <a href="/our-company/">Our Company</a>
+    <ul>
+        <li><a href="/our-company/careers/current-opportunities/">Careers</a></li>
+        <li><a href="/our-company/contact-us">Contact us</a></li>
+        <li><a href="/blog/">Redgate blog</a></li>
+    </ul>
+</li>
+<li>
+    <a href="/hub/">Community Hub</a>
+    <ul>
+        <li><a href="/hub/product-learning">Product learning</a></li>
+        <li><a href="http://forum.red-gate.com">Forums</a></li>
+        <li><a href="/hub/events/">Events &amp; groups</a></li>
+        <li><a href="/simple-talk/">Simple Talk</a></li>
+    </ul>
+</li>
+
+            </ul>
+        </span>
+    </nav>
+</header>
+
+
+	<div class="page-wrapper">
+
+		
+
+
+<!-- /handlebars/partials/nav -->
+<div class="secondary-nav  sticky js-sticky">
+
+	<div class="band__inner-container">
+
+		<h1 class="media">
+			<a href="/products/dotnet-development/reflector/">
+
+					<img class="js-svg media__image" src="/assets/INTERIM/assets/products/dotnet-reflector/images/dotnet-reflector.png" alt=""/>
+				
+				<div class="media__body">
+					.NET Reflector
+
+				</div>
+			</a>
+		</h1>
+		
+			<nav>
+				<ul>
+							<li><a 
+									href="/dynamic/products/dotnet-development/reflector/download" 
+									class="button js-update-content
+									 button--download 
+									"
+									data-content-small="Try"
+									
+									>Download 
+								</a>
+							</li>
+
+
+							<li><a href="/dynamic/purchase/product/.netreflector" class="button button--buy js-update-content" data-content-small="Buy">Buy now</a></li>
+				</ul>
+			</nav>
+
+		<nav>
+			<ul>
+			    <li><a href="/products/dotnet-development/reflector/">Overview</a></li>
+			    <li><a href="http://reflectorblog.red-gate.com/">Blog</a></li>
+			    <li><a href="http://documentation.red-gate.com/display/REF8/.NET+Reflector+8+documentation">Support</a></li>
+			</ul>
+		</nav>
+	</div>
+</div>
+
+
+		<!-- HERO -->
+		<div class="band band--hero">
+			<div class="band__inner-container">
+				<div class="band--hero__content">
+					<p class="main-heading">Find and fix bugs fast</p>
+					<p class="sub-heading">Decompile, understand, and fix any .NET code, even if you don't have the source</p>
+					<a class="button button--download" href="/dynamic/products/dotnet-development/reflector/download"></span>Download free trial</a>
+				</div>
+				<div class="band--hero__video">
+					<div class="js-video-container video-container" data-video-id="gp5q5K4NlRk" data-video-controls="1"></div>
+				</div>
+			</div>
+		</div>
+
+<!-- /handlebars/partials/product-intro -->
+<div class="band band-product-intro grid">
+	<div class="band__inner-container">
+			<!-- /handlebars/partials/product-intro__content -->
+			<section class="band-product-intro__content grid__col grid__col--span-6-of-12">
+				<div class="padded-v">
+										<h1 class="visually-hidden">Introduction to .NET Reflector</h1>
+										<h2>Look inside any .NET code</h2>
+						
+										<ul class="list--tick--large">
+											<li><h3>Debug your application</h3><p>Follow bugs through your application to see where the problem is – your own code, third-party libraries, or components used by your application.</p></li>
+											<li><h3>Understand how applications work</h3><p>Inherited an application with no documentation and no comments? Use .NET Reflector to understand how the code runs and avoid bugs.</p></li>
+											<li><h3>Look inside APIs, SharePoint, and other third-party platforms</h3><p>Third-party platforms aren't always well-documented. Use .NET Reflector to look inside their assemblies, and see how they work and which APIs you can call.</p></li>
+										</ul>
+										<p>Try it now, choose your version later.</p>
+										
+										<!-- /handlebars/partials/download-button -->
+										<a href="/dynamic/products/dotnet-development/reflector/download" class="button button--download">Download free trial</a>
+				</div>
+			</section>
+						
+						<!-- /handlebars/partials/pricebox -->
+						
+							<div class="grid__col grid__col--span-6-of-12 prices js-equal-heights">
+								<div class="padded-v">
+						
+									<div class="grid__col grid__col--span-6-of-12">
+										<div class="price-box price-box--secondary js-equal-heights__item">
+											<h2 class="price-box__heading">Standard</h2>
+											<p class="price-box__price">
+												<span class="dynaPrice netreflector" data-price-id="105"  data-price-support-months="0">
+													$95
+												</span>
+												<small>per user</small>
+											</p>
+											<p><p class="price-box__heading">Basic decompilation</p>
+													  <p>A standalone application to explore and navigate decompiled code</p></p>
+										</div>
+									</div>
+									
+									<div class="grid__col grid__col--span-6-of-12">
+						
+						
+									<section data-ui-component="price-box" class="price-box  js-equal-heights__item ">
+						
+						
+											<h2 class="price-box__heading">VSPro</h2> 
+						
+										<p class="price-box__price">
+												<span class="dynaPrice netreflectorvspro" data-price-id="107" data-price-support-months="0">
+													$199
+												</span>
+													<small>per user</small>
+										</p>
+						
+											<p><p class="price-box__heading">Debug 3rd party code</p>
+												 <p>Dynamic decompilation inside Visual Studio</p>
+												 <p>Includes the standalone application, and the Reflector Object Browser</p></p>
+						
+						
+						
+									</section>
+								</div>
+							</div>
+						
+							</div> 
+	</div>
+</div>
+
+		<!-- SECTION - Features -->
+		<section class="band scheme--white background-color--blue--1">
+			<div class="band__inner-container">
+				<h1 class="text--center">.NET Reflector features</h1>
+				<div class="grid js-equal-heights padded-top">
+					<div class="grid__col grid__col--span-4-of-12">
+						<div class="padded-h">
+							<h3 class="border-bottom padded-bottom--tight padded-top">Standard edition features</h3>
+							<h4 class="padded-top--tight">Decompilation</h4>
+							<img src="/assets/INTERIM/assets/products/dotnet-reflector/images/screenshots/decompilation.png" alt="" class="spaced-bottom--tight">
+							<p>Decompile, browse, and analyze any .NET assembly to C#, VB.NET, or IL.</p>
+
+							<h4 class="padded-top--tight">Desktop application</h4>
+							<img src="/assets/INTERIM/assets/products/dotnet-reflector/images/screenshots/desktop-application.png" alt="" class="spaced-bottom--tight">
+							<p>Use the standalone application to explore and navigate decompiled code.</p>
+
+							<h4 class="padded-top--tight">Search filtering</h4>
+							<img src="/assets/INTERIM/assets/products/dotnet-reflector/images/screenshots/filtering.png" alt="" class="spaced-bottom--tight">
+							<p>Get results as you type and find what you're looking for easily.</p>
+						</div>
+					</div>
+
+					<div class="grid__col grid__col--span-8-of-12 scheme--white island island--rounded island--padded island--border">
+						<div class="padded-h--tight">
+							<h3 class="text--center border-bottom padded-bottom--tight">Debug and decompile inside Visual Studio <small>(VSPro edition)</small></h3>
+							<div class="columns-figures columns-figures--2-col">
+								<div>
+									<div class="columns-figures__col" >
+										<h4>Use the Visual Studio debugger</h4>
+										<img src="/assets/INTERIM/assets/products/dotnet-reflector/images/screenshots/vs-debugger.png" alt="" class="spaced-bottom--tight">
+										<p>Use your regular debugging techniques on any decompiled assemblies as if they were your own, using the Visual Studio debugger.</p>
+									</div>
+									<div class="columns-figures__col">
+										<h4>Debug third-party assemblies</h4>
+										<img src="/assets/INTERIM/assets/products/dotnet-reflector/images/screenshots/third-party-assemblies.png" alt="" class="spaced-bottom--tight">
+										<p>Generate .pdb files for decompiled assemblies and save them so you only need to enable debugging once for each assembly.</p>
+									</div>
+								</div>
+								<div>
+									<div  class="columns-figures__col">
+										<h4>Dynamic decompilation</h4>
+										<img src="/assets/INTERIM/assets/products/dotnet-reflector/images/screenshots/dynamic-decompilation.png" alt="" class="spaced-bottom--tight">
+										<p>Assemblies decompile seamlessly in Visual Studio so source code is always available for your libraries.</p>
+									</div>
+									<div class="columns-figures__col">
+										<h4>Use VS shortcuts</h4>
+										<img src="/assets/INTERIM/assets/products/dotnet-reflector/images/screenshots/shortcuts.png" alt="" class="spaced-bottom--tight">
+										<p>Use F12 to “Go To Definition”, F9 to “Set Breakpoints”, and F11 to “Step Into” any decompiled code.</p>
+									</div>
+								</div>
+								<div>
+									<div  class="columns-figures__col">
+										<h4>C#6 decompilation</h4>
+										<img src="/assets/INTERIM/assets/products/dotnet-reflector/images/screenshots/c5-decompilation.png" alt="" class="spaced-bottom--tight">
+										<p>.NET Reflector supports C#6 and .NET 4.6.</p>
+									</div>
+									<div  class="columns-figures__col">
+										<h4>Browse assemblies</h4>
+										<img src="/assets/INTERIM/assets/products/dotnet-reflector/images/screenshots/assemblies.png" alt="" class="spaced-bottom--tight">
+										<p>.NET Reflector VSPro adds the Reflector Object Browser into Visual Studio. Use the tree view to navigate through code.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION - Testimonial -->
+		<section class="band-blockquote">
+			<div class="band__inner-container">
+				<h2 class="visually-hidden">What our customers are saying</h2>
+				<blockquote>
+					<p>“<em>Every developer needs this tool.</em></p>
+					<p>The ability to step into third–party code, including Microsoft SharePoint Server assemblies, opens up new possibilities and lets you understand what Microsoft's APIs are doing.</p>
+					<p>You can step right into their code and see what is happening, all from Visual Studio. This knowledge lets you build better applications and provides insight into undocumented APIs.”</p>
+					<footer>
+						<cite>Daniel Larson, Software Architect, <a href="http://www.newsgator.com/" target="_blank">NewsGator Technologies</a></cite>
+					</footer>
+				</blockquote>
+			</div>
+		</section>
+
+		<!-- SECTION - 3 ways .NET Reflector will make your life easier -->
+		<section class="js-tabbed tabbed" data-tabs-scroll-to-offset="-79">
+			<div class="band__inner-container">
+
+	        	<h1 class="main-heading">3 ways .NET Reflector will make your life easier</h1>
+
+				<nav class="tabbed__nav">
+					<ul class="tabs">
+						<li><a href="#debug">Debug 3rd-party code</a></li>
+						<li><a href="#work-with-code">Work easily with any code</a></li>
+						<li><a href="#simplify-sharepoint">Simplify SharePoint development</a></li>
+					</ul>
+				</nav>
+
+				<!-- SECTION - Debug third-party code -->
+				<article class="js-tab tabbed__content" id="debug">
+					<div class="grid">
+						<div class="grid__col grid__col--span-8-of-12 grid__col--push-2-of-12">
+							<div class="padded-h--tight">
+
+								<div class="grid__row padded-v">
+									<div class="grid__col grid__col--span-4-of-12">
+										<div class="padded-h--tight">
+											<a class="js-lightbox lightbox lightbox--zoom" href="/assets/INTERIM/assets/products/dotnet-reflector/images/see-how.png"><img src="/assets/INTERIM/assets/products/dotnet-reflector/images/see-how-thumb.png" alt="" /></a>
+											<h3 class="delta">Follow data</h3>
+											<p>See how data flows through a library or component, and watch locals change as you debug.</p>
+										</div>
+									</div>
+									<div class="grid__col grid__col--span-4-of-12">
+										<div class="padded-h--tight">
+											<a class="js-lightbox lightbox lightbox--zoom" href="/assets/INTERIM/assets/products/dotnet-reflector/images/enable-debug.png"><img src="/assets/INTERIM/assets/products/dotnet-reflector/images/enable-debug-thumb.png" alt="" /></a>
+											<h3 class="delta">Find bugs</h3>
+											<p>Track down the exact location of bugs in your own code or third-party libraries.</p>
+										</div>
+									</div>
+									<div class="grid__col grid__col--span-4-of-12">
+										<div class="padded-h--tight">
+											<a class="js-lightbox lightbox lightbox--zoom" href="/assets/INTERIM/assets/products/dotnet-reflector/images/dependencies.png"><img src="/assets/INTERIM/assets/products/dotnet-reflector/images/dependencies-thumb.png" alt="" /></a>
+											<h3 class="delta">Get insight</h3>
+											<p>Find dependencies, diff assemblies, and understand how code works.</p>
+										</div>
+									</div>
+								</div>
+
+								<h2>Debug third-party code fast</h2>
+								<p>Using third-party technologies is a great way to get stuff done fast without re-inventing the wheel. But it's hard to debug libraries, components, and frameworks you didn't write.</p>
+								<p>.NET Reflector saves time and simplifies development by letting you see and debug into the source of all the .NET code you work with.</p>
+								<p>Follow bugs through your own code, third-party components, and any compiled .NET code you work with. You can see third-party code in Visual Studio, and debug into it just like your own.</p>
+								<aside>
+									<h3>See how people are using .NET Reflector to debug third-party code</h3>
+									<ul class="list--bare">
+										<li><a href="/products/dotnet-development/reflector/guest-post" target="_blank" class="icon--external">Carlos Quintero: How to Debug Visual Studio assemblies with .NET Reflector</a></li>
+										<li><a href="http://www.cplotts.com/2011/01/14/net-reflector-pro-debugging-the-net-framework-source-code/" target="_blank" class="icon--external">Cory Plotts: Debugging the .NET Framework Source Code</a></li>
+										<li><a href="http://csharpening.net/?p=1264" target="_blank" class="icon--external">Adam Driscoll: Inside PowerShell 3.0 – Deep into the interpreter with .NET Reflector and Visual Studio 2012</a></li>
+										<li><a href="/products/dotnet-development/reflector/debugging-experience" target="_blank" class="icon--external">Clive Tong: Debugging the debugging experience</a></li>
+									</ul>
+								</aside>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- SECTION - Easily work with anyone's code -->
+				<article class="js-tab tabbed__content" id="work-with-code">
+					<div class="grid">
+						<div class="grid__col grid__col--span-8-of-12 grid__col--push-2-of-12">
+							<div class="padded-h--tight">
+
+								<div class="grid__row padded-v">
+									<div class="grid__col grid__col--span-4-of-12">
+										<div class="padded-h--tight">
+											<a class="js-lightbox lightbox lightbox--zoom"  href="/assets/INTERIM/assets/products/dotnet-reflector/images/see-how.png"><img src="/assets/INTERIM/assets/products/dotnet-reflector/images/see-how-thumb.png" alt="" width="220" height="95" /></a>
+											<h3 class="delta">Better docs</h3>
+											<p>Replace poor or missing documentation by seeing how the code works in context.</p>
+										</div>
+									</div>
+									<div class="grid__col grid__col--span-4-of-12">
+										<div class="padded-h--tight">
+											<a class="js-lightbox lightbox lightbox--zoom" href="/assets/INTERIM/assets/products/dotnet-reflector/images/web-part-adder-vs.png"><img src="/assets/INTERIM/assets/products/dotnet-reflector/images/web-part-adder-vs-thumb.png" alt="" width="220" height="95" /></a>
+											<h3 class="delta">Discover methods</h3>
+											<p>Find unexposed and undocumented functionality and get more out of the APIs and technologies you're using.</p>
+										</div>
+									</div>
+									<div class="grid__col grid__col--span-4-of-12">
+										<div class="padded-h--tight">
+											<a class="js-lightbox lightbox lightbox--zoom" href="/assets/INTERIM/assets/products/dotnet-reflector/images/async-understand.png"><img src="/assets/INTERIM/assets/products/dotnet-reflector/images/async-understand-thumbnail.png" alt="" width="214" height="96" /></a>
+											<h3 class="delta">Learn tech</h3>
+											<p>Drill into how .NET languages and frameworks are implemented, and learn how to use them.</p>
+										</div>
+									</div>
+								</div>
+							
+								<h2>Work easily with any code</h2>
+								<p>Languages and libraries aren't always well-documented. Legacy code isn't always well-commented. Understand how APIs, components, frameworks, and all the critical code you use really works by decompiling and seeing inside.</p>
+								<p>Having the source code available means you're no longer blocked by poor or missing documentation. You can see how code runs, avoid bugs, and develop easily with third-party technologies.</p>
+								<aside>
+									<h3>See how developers are solving their problems with .NET Reflector</h3>
+									<ul class="list--bare">
+										<li><a href="/simple-talk/dotnet/.net-tools/understanding-asynchronous-programming-with-.net-reflector/" target="_blank" class="icon--external">Nick Harrison: Understanding Asynchronous Programming with .NET Reflector</a></li>
+										<li><a href="http://csharpening.net/?p=1264" target="_blank" class="icon--external">Adam Driscoll: Inside PowerShell 3.0 – Deep into the interpreter with .NET Reflector and Visual Studio 2012</a></li>
+										<li><a href="http://documentation.red-gate.com/display/REF8/Debugging+a+SharePoint+customization" target="_blank" class="icon--external">Example: Debugging SharePoint customizations with .NET Reflector</a></li>
+									</ul>
+								</aside>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- SECTION - Simplify SharePoint development -->
+				<article class="js-tab tabbed__content" id="simplify-sharepoint">
+					<div class="grid">
+						<div class="grid__col grid__col--span-8-of-12 grid__col--push-2-of-12">
+							<div class="padded-h--tight">
+								
+								<div class="grid__row padded-v">
+									<div class="grid__col grid__col--span-4-of-12">
+										<div class="padded-h--tight">
+											<a class="js-lightbox lightbox lightbox--zoom" href="/assets/INTERIM/assets/products/dotnet-reflector/images/see-how.png"><img src="/assets/INTERIM/assets/products/dotnet-reflector/images/see-how-thumb.png" alt="" width="220" height="95" /></a>
+											<h3 class="delta">Look inside</h3>
+											<p>Create better controls, WebParts, and features by seeing how they work, and how the code runs.</p>
+										</div>
+									</div>
+									<div class="grid__col grid__col--span-4-of-12">
+										<div class="padded-h--tight">
+											<a class="js-lightbox lightbox lightbox--zoom" href="/assets/INTERIM/assets/products/dotnet-reflector/images/enable-debug.png"><img src="/assets/INTERIM/assets/products/dotnet-reflector/images/enable-debug-thumb.png" alt="" width="220" height="95" /></a>
+											<h3 class="delta">Fix bugs</h3>
+											<p>Track down the source of errors in your own code or the SharePoint libraries.</p>
+										</div>
+									</div>
+									<div class="grid__col grid__col--span-4-of-12">
+										<div class="padded-h--tight">
+											<a class="js-lightbox lightbox lightbox--zoom" href="/assets/INTERIM/assets/products/dotnet-reflector/images/web-part-adder-vs.png"><img src="/assets/INTERIM/assets/products/dotnet-reflector/images/web-part-adder-vs-thumb.png" alt="" width="220" height="95" /></a>
+											<h3 class="delta">Get insight</h3>
+											<p>Find out what methods to call and how they work, without relying on documentation.</p>
+										</div>
+									</div>
+								</div>
+								
+								<h2>Simplify SharePoint development</h2>
+								<p>SharePoint APIs and libraries aren't always well-documented, or exposed in the way you need. But that doesn't have to be a problem.</p>
+								<p>With .NET Reflector you can look inside the SharePoint assemblies and understand exactly how they work.</p>
+								<aside>
+									<h3>How developers are solving their problems with .NET Reflector</h3>
+									<ul class="list--bare">
+										<li><a href="/simple-talk/blogs/author/2140-damon-armstrong/" target="_blank" class="icon--external">Damon Armstrong: SharePoint development articles on SimpleTalk.com</a></li>
+										<li><a href="http://blogs.msdn.com/b/markarend/archive/2008/02/28/using-reflector-to-see-sharepoint-s-source-code.aspx" target="_blank" class="icon--external">Mark Arend: Using Reflector to see SharePoint's source code</a></li>
+										<li><a href="http://blog.blumenthalit.com/blog/Lists/Posts/Post.aspx?ID=95" target="_blank" class="icon--external">Michael Blumenthal: Which views can be used when Creating an Alert?</a></li>
+									</ul>
+								</aside>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<!-- SECTION - .NET Reflector Add-ins -->
+		<section class="band scheme--lightest-grey" id="in-product-add-ins">
+			<div class="band__inner-container">
+				<h1>.NET Reflector add-ins</h1>
+				<p>NET Reflector has a comprehensive add-in model, with an API that lets you extend the tool to suit your exact needs.</p>
+				<p>The API also lets other tools take advantage of .NET Reflector's unparalleled decompilation and disassembly abilities to complement their own functionality. The best thing is, building your own add-in is painless.</p>
+				<p>Below are some great add-ins and tools which we recommend you try out, and there are more you can download.</p>
+				<p>We've done our best to find some of the best add-ins around, but you can still <a href="https://www.surveymonkey.com/s/V6KVJHW" target="_blank">recommend other add-ins which you think we should feature</a>. Or better still, why not write your own?</p>
+
+				<h2 class="gamma">We have links to some great tutorials to get you started</h2>
+				<ul class="list--bare">
+					<li><a href="http://documentation.red-gate.com/display/REF8/Introduction+to+building+.NET+Reflector+add-ins" target="_blank" class="icon--external">Introduction to the .NET Reflector Add-in Model</a></li>
+					<li><a href="http://reflectoraddins.codeplex.com/" target="_blank" class="icon--external">.NET Reflector Add-Ins on Codeplex</a></li>
+				</ul>
+
+				<div class="grid scheme--white rounded padded spaced-top">
+					<h2 class="text--center padded-bottom">Our favorite add-ins</h2>
+					<div class="grid__row js-equal-heights island">
+						<div class="grid__col grid__col--span-6-of-10 scheme--lightest-blue island island--padded island--rounded island--border js-equal-heights__item">
+							<div class="padded-h--tight">
+								<h3>.NET Obfuscation Checker</h3>
+								<p>In addition to the add-ins below, Redgate has come up with the .NET Obfuscation Checker, a tool designed to work with .NET Reflector.</p>
+								<p>Obfuscation Checker scans a directory and inspects the assemblies and .exe files inside. It shows you which DLLs and executables are there, the references for each, and information about their obfuscation state and security level.</p>
+								<p>Obfuscation Checker uses .NET Reflector to decompile the assemblies, so you can quickly see the code in a .dll or .exe file. This lets you see what's obfuscated, and what isn't. For example, you can see how readable type names are and how easy it is to understand control flow.</p>
+								<a href="http://download.red-gate.com/EAP/ObfuscationChecker/ObfuscationChecker_1.0.0.404.exe" class="button button--download">Download .NET Obfuscation Checker</a>
+							</div>
+						</div>
+						<div class="grid__col grid__col--span-4-of-10 js-equal-heights__item">
+							<div class="padded-h--tight">
+								<div class=" island island--padded island--rounded island--border">
+									<h3 class="margin--bottom-none"><a href="http://smoketest.wesleysteiner.com/" target="_blank">SmokeTest</a></h3>
+									<p class="epsilon">Created by <a href="http://www.wesleysteiner.com/" target="_blank">Wesley Steiner</a></p>
+									<p>SmokeTest lets you invoke any member of a class interactively. An indispensable tool for anyone involved in developing, testing, and managing Windows .NET projects.</p>
+									<p><a href="http://smoketest.wesleysteiner.com/" target="_blank" class="icon--external">SmokeTest</a><br>
+									</p>
+								</div>
+								<div class="island island--padded island--rounded island--border">
+									<h3 class="margin--bottom-none"><a href="http://reflexil.net/" target="_blank">Reflexil</a></h3>
+									<p class="epsilon">Created by Sebastien Lebreton</p>
+									<p>Reflexil is an advanced assembly editor, able to manipulate IL code and save the modified assemblies to disk. Reflexil also supports 'on the fly' C# and VB.NET code injection.</p>
+									<p><a href="http://reflexil.net/" target="_blank" class="icon--external">Reflexil</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid__row js-equal-heights">
+						<div class="grid__col grid__col--span-6-of-12 padded-right">
+							<div class="padded-h--tight">
+								<div class="island island--padded island--rounded island--border js-equal-heights__item">
+									<h3><a href="http://denismarkelov.github.io/AssemblyVisualizer/" target="_blank">Assembly Visualizer</a></h3>
+									<p class="epsilon">Created by <a href="http://denismarkelov.github.io/AssemblyVisualizer/" target="_blank">Denis Markelov</a></p>
+									<p>Assembly Visualizer is an open-source data visualization add-in, created for more convenient assembly investigation.</p>
+									<p><a href="http://denismarkelov.github.io/AssemblyVisualizer/" target="_blank" class="icon--external">Assembly Visualizer</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="grid__col grid__col--span-6-of-12 ">
+							<div class="padded-h--tight">
+								<div class="island island--padded island--rounded island--border js-equal-heights__item">
+									<h3><a href="http://jasonhaley.com/blog/post/2008/11/23/ReflectorSnippy-Addin.aspx" target="_blank">Snippy</a></h3>
+									<p class="epsilon">Created by <a href="http://www.jasonhaley.com/" target="_blank">Jason Haley</a></p>
+									<p>Snippy is a lightweight snippet compiler originally created by Jon Skeet for his book <i>C# in Depth: What you need to master C# 2 and 3</i>, and later turned it into a Reflector add-in by Jason Haley.</p>
+									<p><a href="http://jasonhaley.com/blog/post/2008/11/23/ReflectorSnippy-Addin.aspx" target="_blank" class="icon--external">Snippy</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		
+		<!-- /handlebars/partials/product-footer--dotnet-developer-bundle -->
+		<aside class="band scheme--darkest-grey">
+			<div class="band__inner-container grid">
+				<h2 class="visually-hidden">Further information and support</h2>
+				<article class="grid__col grid__col--span-4-of-12 border-right">
+					<div class="padded-h--tight">
+						<h3 class="beta">Discounts apply for multi-user purchases</h3>
+						<p>If you'd like any help, or have any questions about our tools and purchasing options, please get in touch.</p>
+						<ul class="list--bare list--tight">
+							<li class="icon--phone"><span class="dynaPhone phone">+44 (0)1223 437 922</span></li>
+							<li class="icon--email"><a href="mailto:info@reflector.net" class=" email">info@reflector.net</a></li>
+							<li class="icon--help-circle"><a href="/products/faq">Purchasing FAQ</a></li>
+						</ul>
+					</div>
+				</article>
+		
+				<article class="grid__col grid__col--span-4-of-12">
+					<div class="padded-h--tight">
+						<h3 class="beta">Get started with .NET Reflector</h3>
+						<p>Download a 14-day trial of the world&#x27;s most downloaded .NET developer tool.</p>
+						 
+						 <!-- /handlebars/partials/download-button -->
+						 <a href="/dynamic/products/dotnet-development/reflector/download" class="button button--download">Download free trial</a>
+					</div>
+				</article>
+		
+				<article class="grid__col grid__col--span-4-of-12 border-left">
+					<div class="padded-h--tight">
+						<h3 class="beta">Save with our .NET Developer Bundle</h3>
+						<p>Get all our essential .NET developer tools at a 35% discount with the .NET Developer Bundle.</p>
+						<a href="/products/dotnet-development/dotnet-developer-bundle/">See what's included</a>
+					</div>
+				</article>
+			</div>
+		</aside>
+
+	</div><!-- END .page-wrapper -->
+
+	<footer class="background-color--grey--2">
+    <div class="band__inner-container grid">    
+        <div class="grid__row">
+            <div class="grid__col grid__col--span-2-of-12">
+                <h4><a href="/products/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Products" data-ga-track-label="Products">Products</a></h4>
+                <ul class="list--bare">
+                    <li><a class="color--grey--5" href="/products/#sql-server" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Products" data-ga-track-label="SQL Server">SQL Server</a></li>
+                    <li><a class="color--grey--5" href="/products/#azure" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Products" data-ga-track-label="Azure">Azure</a></li>
+                    <li><a class="color--grey--5" href="/products/#net" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Products" data-ga-track-label=".NET">.NET</a></li>
+                    <li><a class="color--grey--5" href="/products/#oracle" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Products" data-ga-track-label="Oracle">Oracle</a></li>
+                    <li><a class="color--grey--5" href="/products/#mysql" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Products" data-ga-track-label="MySQL">MySQL</a></li>
+                </ul>
+            </div>
+
+            <div class="grid__col grid__col--span-2-of-12">
+                <h4><a href="//redgatesupport.zendesk.com/hc" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Support" data-ga-track-label="Support">Support</a></h4>
+                <ul class="list--bare">
+                    <li><a class="color--grey--5" href="//forums.red-gate.com" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Support" data-ga-track-label="Forums">Forums</a></li>
+                    <li><a class="color--grey--5" href="https://redgatesupport.zendesk.com/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Support" data-ga-track-label="Contact product support">Contact product support</a></li>
+                    <li><a class="color--grey--5" href="/dynamic/account" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Support" data-ga-track-label="Find my serial numbers">Find my serial numbers</a></li>
+                    <li><a class="color--grey--5" href="/products/old-versions" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Support" data-ga-track-label="Download older versions">Download older versions</a></li>
+                    <li><a class="color--grey--5" href="/support/security" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Support" data-ga-track-label="Report security issue">Report security issue</a></li>
+                </ul>
+            </div>
+
+            <div class="grid__col grid__col--span-2-of-12">
+                <h4><a href="/solutions/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Solutions" data-ga-track-label="Solutions">Solutions</a></h4>
+                <ul class="list--bare">
+                    <li><a class="color--grey--5" href="/solutions/database-devops/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Solutions" data-ga-track-label="Database DevOps">Database DevOps</a></li>
+                    <li><a class="color--grey--5" href="/training/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Solutions" data-ga-track-label="Training">Training</a></li>
+                </ul>
+            </div>
+
+            <div class="grid__col grid__col--span-2-of-12">
+                <h4><a href="/our-company/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Our Company" data-ga-track-label="Our Company">Our Company</a></h4>
+                <ul class="list--bare">
+                    <li><a class="color--grey--5" href="/our-company/careers/current-opportunities" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Our Company" data-ga-track-label="Careers">Careers</a></li>
+                    <li><a class="color--grey--5" href="/our-company/contact-us" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Our Company" data-ga-track-label="Contact us">Contact us</a></li>
+                    <li><a class="color--grey--5" href="/blog/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Our Company" data-ga-track-label="Blog">Redgate Blog</a></li>
+                    <li><a class="color--grey--5" href="/our-company/careers/culture" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Our Company" data-ga-track-label="Culture">Our Culture</a></li>
+                </ul>
+            </div>
+
+            <div class="grid__col grid__col--span-2-of-12">
+                <h4><a href="/hub/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Community & Learning" data-ga-track-label="Community & Learning">Community &amp; Learning</a></h4>
+                <ul class="list--bare">
+                    <li><a class="color--grey--5" href="/hub/product-learning" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Community & Learning" data-ga-track-label="Product Learning">Product Learning</a></li>
+                    <li><a class="color--grey--5" href="/hub/events/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Community & Learning" data-ga-track-label="Events & Friends">Events &amp; Friends</a></li>
+                    <li><a class="color--grey--5" href="/simple-talk" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Community & Learning" data-ga-track-label="Simple Talk">Simple Talk</a></li>
+                    <li><a class="color--grey--5" href="/hub/books/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Community & Learning" data-ga-track-label="Books">Books</a></li>
+                    <li><a class="color--grey--5" href="//forums.red-gate.com" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Community & Learning" data-ga-track-label="Forums">Forums</a></li>
+                </ul>
+            </div>
+
+            <div class="grid__col grid__col--span-2-of-12">
+                <h4>Partners</h4>
+                <ul class="list--bare">
+                    <li><a class="color--grey--5" href="http://www.sqlservercentral.com/" target="_blank" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Partners" data-ga-track-label="SQL Server Central">SQL Server Central</a></li>
+                    <li><a class="color--grey--5" href="/products/#partner-products" target="_blank" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Partners" data-ga-track-label="Partner products">Partner products</a></li>
+                    <li><a class="color--grey--5" href="/products/resellers" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Partners" data-ga-track-label="Resellers">Resellers</a></li>
+                    <li><a class="color--grey--5" href="/training/find-a-consultant" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Partners" data-ga-track-label="Consulting partners">Consulting partners</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid__row padded-top">
+            <div class="grid__col grid__col--span-6-of-12">
+                <ul class="list--bare list--horizontal">
+                    <li>Copyright 1999 - 2017 Red Gate Software Ltd</li>
+                    <li class="padded-left--tight"><a href="/website/legal">Privacy and cookies</a></li>
+                    <li class="padded-left--tight"><a href="/website/accessibility">Accessibility</a></li>
+                </ul>
+            </div>
+
+            <div class="grid__col grid__col--span-6-of-12">
+                <a href="http://www.dbta.com/Editorial/Trends-and-Applications/DBTA-100-2017---The-Companies-That-Matter-Most-in-Data-118003.aspx" class="link-image">
+                    <img src="/assets/INTERIM/assets/company/images/awards/dbta-100.png" title="Database Trends and Applications Top 100">
+                </a>
+
+                <a href="http://sdtimes.com/sd-times-100/sd-times-100-2017-youve-arrived/" class="link-image padded-left--tight">
+                    <img src="/assets/INTERIM/assets/company/images/awards/sd-times-2017.png?v=2" title="SD Times Top 100 2017">
+                </a>
+
+                <img src="/assets/INTERIM/assets/company/images/awards/oracle-gold-partner.png?v=2" title="Oracle Gold Partner" class="padded-left--tight">
+
+                <img src="/assets/INTERIM/assets/company/images/awards/microsoft-gold-partner.png?v=2" title="Microsoft Gold Partner" class="padded-left--tight">
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+<!-- JavaScripts -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="/assets/INTERIM/assets/scripts/vendor/jquery.scrolldepth.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+<script src="/dynamic/PriceJS.ashx?v=1"></script>
+<script src="/assets/INTERIM/assets/scripts/isw.min.js?v=1504004731"></script>
+<script src="/assets/INTERIM/assets/hub/includes/nav.js?v=1502267550"></script>
+
+
+	</body>
+</html>
+

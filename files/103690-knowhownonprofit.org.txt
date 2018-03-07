@@ -1,0 +1,47 @@
+# Define access-restrictions for robots/spiders
+# http://www.robotstxt.org/wc/norobots.html
+
+
+
+# By default we allow robots to access all areas of our site 
+# already accessible to anonymous users
+
+User-agent: *
+Disallow: /rate
+Disallow: /search
+Disallow: /events/eventSearch
+Disallow: /events/search
+Disallow: /recently_modified
+Disallow: /how-to/ugc_search
+Disallow: /join_form
+Disallow: /login
+Disallow: /*/version_diff
+Disallow: /*/wiki_diff
+Disallow: /*/@@wiki_diff
+Disallow: /*/portal_factory*
+Disallow: /*/@@search
+Disallow: /chat
+Disallow: /chat/*
+
+# Add Googlebot-specific syntax extension to exclude forms 
+# that are repeated for each piece of content in the site 
+# the wildcard is only supported by Googlebot
+# http://www.google.com/support/webmasters/bin/answer.py?answer=40367&ctx=sibling
+
+User-Agent: Googlebot
+Disallow: /rate
+Disallow: /search
+Disallow: /events/eventSearch
+Disallow: /events/search
+Disallow: /recently_modified
+Disallow: /how-to/ugc_search
+Disallow: /join_form
+Disallow: /login
+Disallow: /*/version_diff
+Disallow: /*sendto_form$
+Disallow: /*folder_factories$
+Disallow: /*edit$
+Disallow: /*wiki_edit$
+Disallow: /*/wiki_diff
+Disallow: /*/@@wiki_diff
+Disallow: /@@search

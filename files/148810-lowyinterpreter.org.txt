@@ -1,0 +1,1559 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<link rel="shortcut icon" href="/sites/all/themes/lowy/images/interpreter_favicon.ico" type="image/png" />
+<title>Interpreter | The Interpreter</title>
+<meta content="True" name="HandheldFriendly">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="viewport" content="width=device-width">
+<link type="text/css" rel="stylesheet" href="https://www.lowyinstitute.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.lowyinstitute.org/sites/default/files/css/css_P2tuCdD_ZbcbogeE3NLNpw6Cj9plmUoD14WCOzzN6b8.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.lowyinstitute.org/sites/default/files/css/css_w3qHA7SzlVamMH3fc6AvoFFHzZhhhEanO39jJnE56wc.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800" media="all" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:700italic,700" media="all" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,700,900,700italic,900italic,400italic,300italic,300" media="all" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic,900,900italic,300italic,300,200italic,200" media="all" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,700" media="all" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,500" media="all" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" media="all" />
+<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.lowyinstitute.org/sites/default/files/css/css_wHVxb3wD_8vVq2w7PO2ZtBoSuzIqC1tLNPxJ4CIvpQY.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.lowyinstitute.org/sites/default/files/css/css_zc_cpq1Y4v-mIDA2XqdycUFhnea7VrvA0H0A432VBK4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.lowyinstitute.org/sites/default/files/css/css_oTJ7UGoK5BI6PL4oW8mgiXGQp6tSjnYmg07ZE8b2Mb8.css" media="print" />
+<link type="text/css" rel="stylesheet" href="https://www.lowyinstitute.org/sites/default/files/css/css_iHB08lBuhYQj4oGWeFaiUDEI2dP6Bg_tg9NxKBXrndc.css" media="all" />
+
+<!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" href="https://www.lowyinstitute.org/sites/all/themes/lowy/css/ie.css?ovdehn" media="all" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="https://www.lowyinstitute.org/sites/all/themes/lowy/css/ie6.css?ovdehn" media="all" />
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="https://www.lowyinstitute.org/sites/default/files/css/css_SfJzZU98AWHmuK-CvgQR-SeSq87pIQiiawtFkuqoTdQ.css" media="all" />
+<script type="text/javascript" src="https://www.lowyinstitute.org/sites/default/files/js/js_uv1QQmtfx3HrlPSBVNwWpx2vtIv_1ifj94v_kL9h9iU.js"></script>
+<script type="text/javascript" src="https://www.lowyinstitute.org/sites/default/files/js/js_WkOMkSyjg9rxsesVK2mUAVX_dhZTWbIE6jpIzuL-ygM.js"></script>
+<script type="text/javascript" src="https://www.lowyinstitute.org/sites/default/files/js/js_8L1nuxaiED9IR3oB8IeEWDwPEKTd6jnNrKq3OjFItdI.js"></script>
+<script type="text/javascript" src="https://www.lowyinstitute.org/sites/default/files/js/js_yrH5JSpkigOhk--4ef9ff__DyD0V4qVF-AqBaZvM0t8.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"lowy","theme_token":"cNlcitk1ApP27QhCAPZ96AOor0KWZXPwQZvn9aY3iSg","js":{"sites\/all\/themes\/lowy\/js\/chosen\/chosen.jquery.min.js":1,"sites\/all\/themes\/lowy\/js\/validations.js":1,"public:\/\/google_tag\/global\/google_tag.default.script.js":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/themes\/lowy\/js\/StackBlur.js":1,"sites\/all\/themes\/lowy\/js\/jquery.dotdotdot.js":1,"sites\/all\/themes\/lowy\/js\/jquery-ui.min.js":1,"sites\/all\/themes\/lowy\/js\/jquery.pin.js":1,"sites\/all\/themes\/lowy\/js\/slick\/slick.min.js":1,"sites\/all\/themes\/lowy\/js\/jquery-scrolltofixed-min.js":1,"sites\/all\/themes\/lowy\/js\/jquery.mCustomScrollbar.js":1,"sites\/all\/themes\/lowy\/js\/jquery.validate.js":1,"sites\/all\/themes\/lowy\/js\/bootstrap.min.js":1,"sites\/all\/modules\/ctools\/js\/auto-submit.js":1,"sites\/all\/themes\/lowy\/js\/modernizr.custom.86080.js":1,"sites\/all\/themes\/lowy\/js\/touchPunch.min.js":1,"sites\/all\/themes\/lowy\/js\/blackAndWhite.js":1,"sites\/all\/themes\/lowy\/js\/okayNav.js":1,"sites\/all\/themes\/lowy\/js\/interpreter.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/quiz\/quiz.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/media\/modules\/media_wysiwyg\/css\/media_wysiwyg.base.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"https:\/\/fonts.googleapis.com\/css?family=Dosis:400,200,300,500,600,700,800":1,"https:\/\/fonts.googleapis.com\/css?family=Raleway:700italic,700":1,"https:\/\/fonts.googleapis.com\/css?family=Merriweather:400,700,900,700italic,900italic,400italic,300italic,300":1,"https:\/\/fonts.googleapis.com\/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic,900,900italic,300italic,300,200italic,200":1,"https:\/\/fonts.googleapis.com\/css?family=Quicksand:300,400,700":1,"https:\/\/fonts.googleapis.com\/css?family=Montserrat:200,500":1,"https:\/\/fonts.googleapis.com\/css?family=Source+Sans+Pro:400,700":1,"https:\/\/maxcdn.bootstrapcdn.com\/font-awesome\/4.5.0\/css\/font-awesome.min.css":1,"sites\/all\/themes\/lowy\/css\/bootstrap.css":1,"sites\/all\/themes\/lowy\/css\/normalize.css":1,"sites\/all\/themes\/lowy\/css\/layout.css":1,"sites\/all\/themes\/lowy\/css\/style.css":1,"sites\/all\/themes\/lowy\/css\/print.css":1,"sites\/all\/themes\/lowy\/js\/chosen\/chosen.css":1,"sites\/all\/themes\/lowy\/js\/slick\/slick.css":1,"sites\/all\/themes\/lowy\/js\/slick\/slick-theme.css":1,"sites\/all\/themes\/lowy\/css\/jquery.mCustomScrollbar.css":1,"sites\/all\/themes\/lowy\/css\/ie.css":1,"sites\/all\/themes\/lowy\/css\/ie6.css":1,"sites\/all\/themes\/lowy\/css\/interpreter.css":1,"sites\/all\/themes\/lowy\/css\/interpreter_responsive.css":1}},"urlIsAjaxTrusted":{"\/the-interpreter":true},"baseUrl":"https:\/\/www.lowyinstitute.org"});
+//--><!]]>
+</script>
+  <!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://apis.google.com/js/platform.js" >
+  {parsetags: 'explicit'}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-the-interpreter i18n-en" >
+	  <div class="region region-page-top">
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K2ZZS7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  </div>
+	
+<div id="wrapper">
+<div class="nav_overlay"></div>
+  <div class="interpreter-top">
+    <div class="container-fluid header-top clearfix">
+  <div class="row">
+  <div class="on-institute">
+    <div class="institute_view_cntr">
+      <span>What's happening at the <img src="/sites/all/themes/lowy//images/institute-logo-vector.svg"> <i class="fa fa-caret-down top-down-caret"></i> </span>
+      <div class="view view-institute-latest-posts view-id-institute_latest_posts view-display-id-interpreter_top view-dom-id-b9bf3014bf8f673a9dee115fdb6c02e1">
+        
+  
+  
+      <div class="view-content">
+      <div class="go-to-institute">
+        <div class="container">
+          <a href="https://www.lowyinstitute.org/">Go to Lowy Institute<span class="goto"></span></a>
+        </div> 
+      </div>
+    <ul>          <li class="col-sm-4"><div id="node-340281" class="node node-publications node-teaser node--teaser node--publications--teaser clearfix">
+  <div class="institude-top-drop-img" style="background-image: url('https://www.lowyinstitute.org/sites/default/files/styles/large/public/GettyImages-683171262.jpg?itok=q6iUs0qQ');">
+    <div class="post-date">
+      <span class="day">05</span> <span class="month">Sep</span>
+    </div>
+    <div class="hover_content"><a href="/publications/aung-san-suu-kyi-makes-things-worse-rohingya">View More</a></div>
+  </div>
+  
+  <div class="latest-bottom-content">
+    <span class="category-name"><div class="field field-name-field-category field-type-taxonomy-term-reference field-label-hidden clearfix"><ul class="links rm-tag field_category publications"><li class="taxonomy-term-reference-0">Commentary</li></ul></div></span>
+              <h2>
+        <a href="/publications/aung-san-suu-kyi-makes-things-worse-rohingya">&#039;Aung San Suu Kyi makes things worse for Rohingya&#039;</a>
+      </h2>
+              <div class="meta submitted">
+        by  Aaron L Connelly      </div>
+    </div>
+  
+</div></li>
+          <li class="col-sm-4"><div id="node-340156" class="node node-publications node-teaser node--teaser node--publications--teaser clearfix">
+  <div class="institude-top-drop-img" style="background-image: url('https://www.lowyinstitute.org/sites/default/files/styles/large/public/download%20%281%29_0.jpg?itok=93VY3f4B');">
+    <div class="post-date">
+      <span class="day">02</span> <span class="month">Sep</span>
+    </div>
+    <div class="hover_content"><a href="/publications/danger-ahead-australia-asia-s-long-peace-ends">View More</a></div>
+  </div>
+  
+  <div class="latest-bottom-content">
+    <span class="category-name"><div class="field field-name-field-category field-type-taxonomy-term-reference field-label-hidden clearfix"><ul class="links rm-tag field_category publications"><li class="taxonomy-term-reference-0">Commentary</li></ul></div></span>
+              <h2>
+        <a href="/publications/danger-ahead-australia-asia-s-long-peace-ends">Danger ahead for Australia as Asia’s long peace ends</a>
+      </h2>
+              <div class="meta submitted">
+        by  Alan Dupont      </div>
+    </div>
+  
+</div></li>
+          <li class="col-sm-4"><div id="node-339966" class="node node-publications node-teaser node--teaser node--publications--teaser clearfix">
+  <div class="institude-top-drop-img" style="background-image: url('https://www.lowyinstitute.org/sites/default/files/styles/large/public/GettyImages-839283712.jpg?itok=3kDyNZF8');">
+    <div class="post-date">
+      <span class="day">29</span> <span class="month">Aug</span>
+    </div>
+    <div class="hover_content"><a href="/publications/kim-jong-un-theory-nuclear-victory">View More</a></div>
+  </div>
+  
+  <div class="latest-bottom-content">
+    <span class="category-name"><div class="field field-name-field-category field-type-taxonomy-term-reference field-label-hidden clearfix"><ul class="links rm-tag field_category publications"><li class="taxonomy-term-reference-0">Commentary</li></ul></div></span>
+              <h2>
+        <a href="/publications/kim-jong-un-theory-nuclear-victory">Kim Jong-un&#039;s theory of nuclear victory</a>
+      </h2>
+              <div class="meta submitted">
+        by  Thomas Wright      </div>
+    </div>
+  
+</div></li>
+      </ul>    </div>
+  
+  
+  
+  
+  
+  
+</div>    </div>
+  </div>
+  </div>
+</div>  </div>
+
+<header class="interpreter_header"> 
+  <!-- Sidebar -->
+  
+  <div class="interpreter-responsive-nav">
+    <button class="navbar-toggle hamburger-icon-interpreter">
+      <span class="line line-1"></span>
+      <span class="line line-2"></span>
+      <span class="line line-3"></span>
+    </button>
+    <a class="navbar-brand" href="/the-interpreter"><img src="/sites/all/themes/lowy/images/m-logo.png"/></a> 
+    <div class="rm-m-search-wrap">
+      <span class="m-search"><i class="fa fa-search"></i></span>
+       <div class="rm-top-bar">
+	<div class="rm-date col-sm-6">
+		<span>Friday 08 Sep 2017 | 05:46 | SYDNEY</span>
+	</div>
+	<div class="rm-search-bar col-sm-6">
+	  <form class="  interpreter-search-box" action="/the-interpreter" method="post" id="lowy-interpreter-search-box" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-s">
+ <input class="required" id="interpreter-input-s" placeholder="Search..." type="text" name="s" value="" size="15" maxlength="128" />
+</div>
+<input type="hidden" name="form_build_id" value="form-wqHuswJYGWUYxCIfM3EEc19vtOpHzxPUKxJiyYhFUig" />
+<input type="hidden" name="form_id" value="lowy_interpreter_search_box" />
+<input class="ctools-auto-submit-click js-hide form-submit" id="lowy-int-btn-searchbox" type="submit" name="op" value="Search" /></div></form>	</div>
+</div>
+     </div>
+  </div>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">    
+    <div class="nav sidebar-nav">    
+    <div class="collapse navbar-collapse" id="sidebar_left">
+      <div class="top-nav">
+         <div class="sidebar-brand"> 
+          <a href="/the-interpreter"><img src="/sites/all/themes/lowy/images/logo.png"/></a> 
+         </div>
+                   <ul id="menu-interpreter-side-menu-top" class="links clearfix top-nav" ><li><a href="/the-interpreter/debate">Debates</a></li><li><a href="/the-interpreter/contributors">Contributors</a></li><li><a href="/the-interpreter/archive">Articles</a></li><li><a href="/the-interpreter/about-interpreter">About</a></li><li><a href="/the-interpreter/comments-policy">Comments Policy</a></li>  </ul>
+ 
+      </div>
+   
+       <div class="social-institute">
+          <p class="published-by">The Interpreter is published by:</p>  
+          <a href="https://www.lowyinstitute.org/" class="institute-logo">
+            <img src="/sites/all/themes/lowy/images/lowyinstitute-logo_0_0.png"/>   	 
+         </a>
+
+          <div class="social">       
+            <ul>
+              <li><a href="http://www.facebook.com/LowyInstitute" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="http://www.twitter.com/LowyInstitute" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://plus.google.com/109143016425291405286" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="http://www.linkedin.com/company/457230" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="/the-interpreter/rss.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+              <li class="clear"></li>
+            </ul>
+          </div>
+        </div>
+      
+      <div class="rm-suscribe">
+      <h2>Register FOR<i><img src="/sites/all/themes/lowy/images/info.png"/></i> UPDATES</h2>
+
+                      <div class="mailchimp-signup-subscribe-form">
+          <a href="https://myaccount.lowyinstitute.org/Account/Login/Register?returnUrl=%2Fevents%2F " target="_blank">
+            <input type="button" class="form-submit" value="Register"/>
+          </a>
+        </div>
+        
+        
+              </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+      </nav>
+  <div class="clear"></div>
+  
+</header>
+<script>
+/** Not need now 
+jQuery(document).ready(function($){
+  $('#edit-mergevars-email--2').on('keyup',function(){
+    var email = $(this).val();
+    $('form#mailchimp-signup-subscribe-block-interpreter-subscribe-form--2').attr('action','&email='+email);
+  });
+})
+**/
+</script>
+<div class="main-wrapper home-interpreter">
+
+ <div class="rm-top-section top-absolute">
+        <div class="rm-top-bar">
+	<div class="rm-date col-sm-6">
+		<span>Friday 08 Sep 2017 | 05:46 | SYDNEY</span>
+	</div>
+	<div class="rm-search-bar col-sm-6">
+	  <form class="  interpreter-search-box" action="/the-interpreter" method="post" id="lowy-interpreter-search-box--2" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-s">
+ <input class="required" id="interpreter-input-s" placeholder="Search..." type="text" name="s" value="" size="15" maxlength="128" />
+</div>
+<input type="hidden" name="form_build_id" value="form--ROibttSVz7CF9bDHfJcrGXmgQWNg9Nx12NqvkH515Q" />
+<input type="hidden" name="form_id" value="lowy_interpreter_search_box" />
+<input class="ctools-auto-submit-click js-hide form-submit" id="lowy-int-btn-searchbox" type="submit" name="op" value="Search" /></div></form>	</div>
+</div>
+      <div class="rm-home-slider">
+         
+       <div class="view view-interpreter-featured view-id-interpreter_featured view-display-id-interpreter_featured_master view-dom-id-66b9c0943b3840aea202085448612286">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+    <div id="node-340251" class="node node-interpreter-debate node-teaser node--teaser node--interpreter_debate--teaser clearfix">
+  <!-- <div class="latest-overlay"></div> -->
+  <div class="image-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/Cambodia_flag.jpg')">
+    <div class="slider-main-inner">
+      <div class="slider-inner">    
+                        <h2>
+          <a href="/the-interpreter/cambodia-dying-democracy">Cambodia’s dying democracy</a>
+        </h2>
+                                                  <span class="by-person">By
+           
+                        <a class="about-link" href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/elliot-brennan">Elliot Brennan</a>
+                    </span>
+              </div> <!-- slider-inner -->
+    </div> <!-- slider-main-inner -->
+  </div> <!-- image-thumb -->
+</div><!-- node -->
+  </div>
+  <div class="views-row views-row-2 views-row-even">
+    <div id="node-340141" class="node node-interpreter-debate node-teaser node--teaser node--interpreter_debate--teaser clearfix">
+  <!-- <div class="latest-overlay"></div> -->
+  <div class="image-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/GettyImages-78012628.jpg')">
+    <div class="slider-main-inner">
+      <div class="slider-inner">    
+                        <h2>
+          <a href="/the-interpreter/ten-years-after-gfc-are-we-safe">Ten years after the GFC, are we safe?</a>
+        </h2>
+                                                  <span class="by-person">By
+           
+                        <a class="about-link" href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/stephen-grenville">Stephen Grenville</a>
+                    </span>
+              </div> <!-- slider-inner -->
+    </div> <!-- slider-main-inner -->
+  </div> <!-- image-thumb -->
+</div><!-- node -->
+  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last">
+    <div id="node-340151" class="node node-interpreter-debate node-teaser node--teaser node--interpreter_debate--teaser clearfix">
+  <!-- <div class="latest-overlay"></div> -->
+  <div class="image-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/trump-trumpet.jpg')">
+    <div class="slider-main-inner">
+      <div class="slider-inner">    
+                        <h2>
+          <a href="/the-interpreter/north-korea-trump-s-terrible-binary-choice">North Korea: Trump’s terrible binary choice</a>
+        </h2>
+                                                  <span class="by-person">By
+           
+                        <a class="about-link" href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/crispin-rovere">Crispin Rovere</a>
+                    </span>
+              </div> <!-- slider-inner -->
+    </div> <!-- slider-main-inner -->
+  </div> <!-- image-thumb -->
+</div><!-- node -->
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>       <div class="slider_navs"></div>
+            </div>
+    </div>
+
+    <!--rm-top-section ends here-->
+    <section class="rm-home-tab">
+      <!-- Nav tabs -->
+      <div class="nav-center draggable-container">
+  		  <ul class="nav nav-tabs draggable-nav draggable-center" role="tablist">
+    			<li role="presentation" class="active tab">
+            <a href="#rem_last_added" data-target="#Latest, #rem_last_added" role="tab" data-toggle="tab">
+              <span>Latest</span>
+            </a>
+          </li>
+    			<li role="presentation">
+            <a href="#rem_most_popular" data-target="#most-popular, #rem_most_popular" role="tab" data-toggle="tab" >
+            <span> Most Popular</span>
+            </a>
+          </li>
+    			<li role="presentation">
+            <a href="#rem_long_read" data-target="#long-read, #rem_long_read" role="tab" data-toggle="tab" >
+            <span>Long Reads</span>
+            </a>
+          </li>
+    			<li role="presentation">
+            <a href="https://www.lowyinstitute.org/the-interpreter/archive">
+            <span>See All Articles</span>
+            </a>
+          </li>
+		    </ul>
+	  </div>
+           <!-- Tab panes -->
+      <div class="tab-content">
+
+        <div class="tab-pane active" id="Latest">
+            <div class="view view-interpreter-latest-posts view-id-interpreter_latest_posts view-display-id-tab_latest view-dom-id-f4af710e51d62894b463ac3d9f91ab55">
+        
+  
+  
+      <div class="view-content">
+          <ul>          <li class="views-row views-row-1 views-row-odd views-row-first col-sm-4"><div >
+
+<span class="rm-tab-date"> 7 Sep 2017 16:08</span>
+<a href="/the-interpreter/migration-and-border-policy-links-myanmar-global-compact-migration-daca-and-more">
+<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/rohingya_2000x817.jpg')"></div>
+</a>
+        <div class="field-name">
+    <h3>
+      <a href="/the-interpreter/migration-and-border-policy-links-myanmar-global-compact-migration-daca-and-more">Migration and border policy links: Myanmar, global compact on migration, DACA and more</a>
+    </h3>
+
+    </div>
+      <div class="meta submitted">
+                                        <span class="by-person">By
+              
+              <a class="about-link" href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/rachael-buckland">Rachael Buckland</a>
+                      </span>
+         </div> 
+
+  <div class="content clearfix">
+    <p>This weeks links include the crisis in Myanmar, ongoing preparations for the global compact on migration and the end of the DACA program in the US.
+</p>
+  </div>
+
+</div>
+</li>
+          <li class="views-row views-row-2 views-row-even col-sm-4"><div >
+
+<span class="rm-tab-date"> 7 Sep 2017 13:53</span>
+<a href="/the-interpreter/economic-diplomacy-brief-racing-asia-innovation-one-korea-modelling-india-trade">
+<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/india_crop.jpg')"></div>
+</a>
+        <div class="field-name">
+    <h3>
+      <a href="/the-interpreter/economic-diplomacy-brief-racing-asia-innovation-one-korea-modelling-india-trade">Economic diplomacy brief: Racing Asian innovation, one-Korea modelling and Indian trade deals</a>
+    </h3>
+
+    </div>
+      <div class="meta submitted">
+                                        <span class="by-person">By
+              
+              <a class="about-link" href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/greg-earl">Greg Earl</a>
+                      </span>
+         </div> 
+
+  <div class="content clearfix">
+    <p>An Australia-India trade deal has gone from being almost a done deal to just one of many options.
+</p>
+  </div>
+
+</div>
+</li>
+          <li class="views-row views-row-3 views-row-odd views-row-last col-sm-4"><div >
+
+<span class="rm-tab-date"> 7 Sep 2017 12:59</span>
+<a href="/the-interpreter/syria-momentum-now-with-Assad">
+<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/Aleppo_crop.jpg')"></div>
+</a>
+        <div class="field-name">
+    <h3>
+      <a href="/the-interpreter/syria-momentum-now-with-Assad">Syria: Momentum now firmly on Assad’s side</a>
+    </h3>
+
+    </div>
+      <div class="meta submitted">
+                                        <span class="by-person">By
+              
+              <a class="about-link" href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/rodger-shanahan">Rodger Shanahan</a>
+                      </span>
+         </div> 
+
+  <div class="content clearfix">
+    <p>If Assad's forces are re-imposing central control while defeating Islamic State, there's not much Washington can do about it.
+</p>
+  </div>
+
+</div>
+</li>
+      </ul>    </div>
+  
+  
+  
+  
+  
+  
+</div>
+        </div>
+        <div class="tab-pane" id="most-popular">
+          <div class="view view-interpreter-latest-posts view-id-interpreter_latest_posts view-display-id-tab_popular view-dom-id-70cb920b9939b4dd407d42c2845622ab">
+        
+  
+  
+      <div class="view-content">
+          <ul>          <li class="views-row views-row-1 views-row-odd views-row-first col-sm-4"><div >
+
+<span class="rm-tab-date"> 5 Sep 2017 17:20</span>
+<a href="/the-interpreter/north-korea-why-west-so-much-more-alarmed-south-korea">
+<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/Senior_koreans_crop.jpg')"></div>
+</a>
+        <div class="field-name">
+    <h3>
+      <a href="/the-interpreter/north-korea-why-west-so-much-more-alarmed-south-korea">North Korea: Why the West freaks out but South Korea doesn’t</a>
+    </h3>
+
+    </div>
+      <div class="meta submitted">
+                                        <span class="by-person">By
+              
+              <a class="about-link" href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/robert-e-kelly">Robert E Kelly</a>
+                      </span>
+         </div> 
+
+  <div class="content clearfix">
+    <p>I am constantly asked if war is about to break out. I often have the impression the TV hosts or producers are disappointed I am not more alarmist.
+</p>
+  </div>
+
+</div>
+</li>
+          <li class="views-row views-row-2 views-row-even col-sm-4"><div >
+
+<span class="rm-tab-date"> 29 Aug 2017 17:41</span>
+<a href="/the-interpreter/has-marawi-killed-philippines-peace-process">
+<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/GettyImages-838789932_0.jpg')"></div>
+</a>
+        <div class="field-name">
+    <h3>
+      <a href="/the-interpreter/has-marawi-killed-philippines-peace-process">Has Marawi killed the Philippines peace process?</a>
+    </h3>
+
+    </div>
+      <div class="meta submitted">
+                                        <span class="by-person">By
+              
+              <a class="about-link" href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/sidney-jones">Sidney Jones</a>
+                      </span>
+         </div> 
+
+  <div class="content clearfix">
+    <p>If President Rodrigo Duterte is not careful, his legacy to the Philippines will be two newly revitalised insurgencies, not just one.
+</p>
+  </div>
+
+</div>
+</li>
+          <li class="views-row views-row-3 views-row-odd views-row-last col-sm-4"><div >
+
+<span class="rm-tab-date"> 18 Aug 2017 12:01</span>
+<a href="/the-interpreter/china-raises-temperature-again-south-china-sea">
+<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/PLA_navy_cropjpg_0.jpg')"></div>
+</a>
+        <div class="field-name">
+    <h3>
+      <a href="/the-interpreter/china-raises-temperature-again-south-china-sea">South China Sea: Beijing raises the temperature again</a>
+    </h3>
+
+    </div>
+      <div class="meta submitted">
+                                        <span class="by-person">By
+              
+              <a class="about-link" href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/euan-graham">Euan Graham</a>
+                      </span>
+         </div> 
+
+  <div class="content clearfix">
+    <p>Asia has acquired yet another flashpoint, one that China has deliberately picked at a time and location of its choosing.
+</p>
+  </div>
+
+</div>
+</li>
+      </ul>    </div>
+  
+  
+  
+  
+  
+  
+</div>        </div>
+        <div class="tab-pane" id="long-read">
+           <div class="view view-interpreter-latest-posts view-id-interpreter_latest_posts view-display-id-tab_longreads view-dom-id-77c3dc9129701308d3b6a02418b20d32">
+        
+  
+  
+      <div class="view-content">
+          <ul>          <li class="views-row views-row-1 views-row-odd views-row-first col-sm-4"><div >
+
+<span class="rm-tab-date"> 4 Sep 2017 13:52</span>
+<a href="/the-interpreter/australian-economy-not-so-exceptional-after-all">
+<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/Hazelwood_crop.jpg')"></div>
+</a>
+        <div class="field-name">
+    <h3>
+      <a href="/the-interpreter/australian-economy-not-so-exceptional-after-all">The Australian economy - not so exceptional after all</a>
+    </h3>
+
+    </div>
+      <div class="meta submitted">
+                                        <span class="by-person">By
+              
+              <a class="about-link" href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/john-edwards">John Edwards</a>
+                      </span>
+         </div> 
+
+  <div class="content clearfix">
+    <p>Given the recent weaker growth in wages and output, along with a lacklustre jobs market, it's time for another look.
+</p>
+  </div>
+
+</div>
+</li>
+          <li class="views-row views-row-2 views-row-even col-sm-4"><div >
+
+<span class="rm-tab-date"> 29 Aug 2017 14:44</span>
+<a href="/the-interpreter/how-trump-s-new-approach-pakistan-might-pan-out">
+<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/36727846065_9875ba6a92_k.jpg')"></div>
+</a>
+        <div class="field-name">
+    <h3>
+      <a href="/the-interpreter/how-trump-s-new-approach-pakistan-might-pan-out">How Trump’s new approach to Pakistan might pan out</a>
+    </h3>
+
+    </div>
+      <div class="meta submitted">
+                                        <span class="by-person">By
+              
+              <a class="about-link" href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/shashank-joshi">Shashank Joshi</a>
+                      </span>
+         </div> 
+
+  <div class="content clearfix">
+    <p>On Pakistan, Trump has said out loud what has until now been largely debated and threatened in private.
+</p>
+  </div>
+
+</div>
+</li>
+          <li class="views-row views-row-3 views-row-odd views-row-last col-sm-4"><div >
+
+<span class="rm-tab-date"> 21 Aug 2017 14:33</span>
+<a href="/the-interpreter/india-feeling-heat-belt-road">
+<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/GettyImages-831726468-min_3.jpg')"></div>
+</a>
+        <div class="field-name">
+    <h3>
+      <a href="/the-interpreter/india-feeling-heat-belt-road">India feeling the heat on Belt and Road</a>
+    </h3>
+
+    </div>
+      <div class="meta submitted">
+                                        <span class="by-person">By
+              
+              <a class="about-link" href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/dhruva-jaishankar">Dhruva Jaishankar</a>
+                      </span>
+         </div> 
+
+  <div class="content clearfix">
+    <p>A growing political-military nexus between China and Pakistan, as currently seems likely, will further aggravate security competition with India. 
+</p>
+  </div>
+
+</div>
+</li>
+      </ul>    </div>
+  
+  
+  
+  
+  
+  
+</div>        </div>
+             </div>
+      <div class="clear"></div>
+    </section>
+    <!--Tab section ends-->
+    <section class="rm-home-quote-wrap">
+      <div class="long-reads"><span>Long reads</span></div>
+      <div class="quote-content">
+        <div class="overlay"></div>    
+          <div class="view view-interpreter-longreads-single view-id-interpreter_longreads_single view-display-id-default view-dom-id-a3cd65d524820decf22a2c258adb25a1">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      <!-- <div class="latest-overlay"></div> -->
+  <div class="image-thumb long-read-bg" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/Hazelwood_crop.jpg')">
+    <div class="slider-main-inner col-sm-8 col-sm-push-2">
+      <div class="slider-inner"> 
+        <span class="rm-tab-date">4 Sep 2017 13:52</span>   
+                        <h2>
+          <a href="/the-interpreter/australian-economy-not-so-exceptional-after-all">The Australian economy - not so exceptional after all</a>
+        </h2>
+                <div class="rm-quote-cnt">
+          <p>Given the recent weaker growth in wages and output, along with a lacklustre jobs market, it's time for another look.
+</p>
+        </div>
+               <div class="slider-btn-wrap"><a href="/the-interpreter/australian-economy-not-so-exceptional-after-all">Read More</a></div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> 
+      </div>
+      
+      <div class="clear"></div>
+    </section>
+    <!--rm-home-quote-wrap end here-->
+    <section class="rm-home-debate-wrap">
+      <div class="rm-home-debate-top container-fluid tab-content">
+         
+      
+        <div class="tab-pane active" id="rem_last_added">
+          <div class="view view-interpreter-debate-last-added view-id-interpreter_debate_last_added view-display-id-dateimgtitlebody view-dom-id-145742fc43269f6998c1da73f68ecaee">
+        
+  
+  
+      <div class="view-content">
+      <div class="row">
+  	 	 	 
+ 	<div class="odd views-row-first col-sm-4 views-view-row-0">
+ 	<article id="node-340276">
+ 	 	<span class="rm-tab-date">
+ 	
+	<p class="rm-tab-date">7 Sep 2017 8:57</p>	</span>
+	<a href="https://www.lowyinstitute.org/the-interpreter/asian-pacific-free-market-feasible">	
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/China.jpg')"></div>
+	</a>
+			<h3><a href="/the-interpreter/asian-pacific-free-market-feasible">Is an Asian Pacific free market feasible?</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 		 		 	
+ 		 	 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/alan-oxley">
+ 		 		Alan Oxley</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+		
+				<div class="content clearfix">
+					Trade agreements are no longer just about reducing tariffs.
+				</div>
+		
+		</article>
+ 	</div>
+ 	  	 	 	 
+ 	<div class="even col-sm-4 views-view-row-1">
+ 	<article id="node-340286">
+ 	 	<span class="rm-tab-date">
+ 	
+	<p class="rm-tab-date">6 Sep 2017 17:48</p>	</span>
+	<a href="https://www.lowyinstitute.org/the-interpreter/quick-comment-milton-osborne-cambodia-s-crackdown">	
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/37027831165_80df951c42_k.jpg')"></div>
+	</a>
+			<h3><a href="/the-interpreter/quick-comment-milton-osborne-cambodia-s-crackdown">Quick comment: Milton Osborne on Cambodia’s crackdown</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 		 		 	
+ 		 	 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/aaron-l-connelly">
+ 		 		Aaron L Connelly</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+		
+				<div class="content clearfix">
+					Aaron Connelly speaks with Milton Osborne, one of the world's leading historians of Cambodian politics, about recent developments in the country.
+				</div>
+		
+		</article>
+ 	</div>
+ 	  	 	 	 
+ 	<div class="odd col-sm-4 views-view-row-2">
+ 	<article id="node-340291">
+ 	 	<span class="rm-tab-date">
+ 	
+	<p class="rm-tab-date">6 Sep 2017 17:34</p>	</span>
+	<a href="https://www.lowyinstitute.org/the-interpreter/pacific-links-pacific-islands-forum-Tonga-defection-png-and-more">	
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/pacific_links_PIF.jpg')"></div>
+	</a>
+			<h3><a href="/the-interpreter/pacific-links-pacific-islands-forum-Tonga-defection-png-and-more">Pacific Links: Pacific Islands Forum, Tonga update, PNG defection and more </a></h3>			<div class="meta submitted">
+					
+			</div>
+		
+				<div class="content clearfix">
+					This week's links include the 48th Pacific Islands Forum underway in Samoa, Tonga without a caretaker government, and a parliamentary defection in PNG.
+				</div>
+		
+		</article>
+ 	</div>
+ 	 		</div><div class="row row-last">
+ 	  	 	 	 
+ 	<div class="even col-sm-4 views-view-row-3">
+ 	<article id="node-340216">
+ 	 	<span class="rm-tab-date">
+ 	
+	<p class="rm-tab-date">6 Sep 2017 15:46</p>	</span>
+	<a href="https://www.lowyinstitute.org/the-interpreter/bleak-view-southeast-asia">	
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/southeast_asia_hochiminhcity.jpg')"></div>
+	</a>
+			<h3><a href="/the-interpreter/bleak-view-southeast-asia">A bleak view of Southeast Asia</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 		 		 	
+ 		 	 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/milton-osborne-0">
+ 		 		Milton Osborne</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+		
+				<div class="content clearfix">
+					The author asks whether Cambodia's position as the region's most corrupt state presages the fate of the region as a whole.
+				</div>
+		
+		</article>
+ 	</div>
+ 	  	 	 	 
+ 	<div class="odd col-sm-4 views-view-row-4">
+ 	<article id="node-340271">
+ 	 	<span class="rm-tab-date">
+ 	
+	<p class="rm-tab-date">6 Sep 2017 10:14</p>	</span>
+	<a href="https://www.lowyinstitute.org/the-interpreter/dont-discount-chances-new-korean-war">	
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/korea-soldier.jpg')"></div>
+	</a>
+			<h3><a href="/the-interpreter/dont-discount-chances-new-korean-war">Don’t discount the chances of a new Korean war</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 		 		 	
+ 		 	 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/crispin-rovere">
+ 		 		Crispin Rovere</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+		
+				<div class="content clearfix">
+					Robert Kelly says he doesn't know 'anyone serious who advocates air strikes'. But what is his definition of 'serious' if it excludes the US president?
+				</div>
+		
+		</article>
+ 	</div>
+ 	  	 	 	 
+ 	<div class="even col-sm-4 views-view-row-5">
+ 	<article id="node-340221">
+ 	 	<span class="rm-tab-date">
+ 	
+	<p class="rm-tab-date">6 Sep 2017 8:21</p>	</span>
+	<a href="https://www.lowyinstitute.org/the-interpreter/toward-more-stable-capital-flows">	
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/capital_flows.jpg')"></div>
+	</a>
+			<h3><a href="/the-interpreter/toward-more-stable-capital-flows">Toward more stable capital flows</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 		 		 	
+ 		 	 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/mike-callaghan">
+ 		 		Mike Callaghan</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+		
+				<div class="content clearfix">
+					Strengthened international cooperation may require one international institution taking overall responsibility for capital flow management.
+				</div>
+		
+		</article>
+ 	</div>
+ 	 		</div><div class="row row-last">
+ 	  	 	 	 
+ 	<div class="odd col-sm-4 views-view-row-6">
+ 	<article id="node-340251">
+ 	 	<span class="rm-tab-date">
+ 	
+	<p class="rm-tab-date">5 Sep 2017 17:41</p>	</span>
+	<a href="https://www.lowyinstitute.org/the-interpreter/cambodia-dying-democracy">	
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/Cambodia_flag.jpg')"></div>
+	</a>
+			<h3><a href="/the-interpreter/cambodia-dying-democracy">Cambodia’s dying democracy</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 		 		 	
+ 		 	 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/elliot-brennan">
+ 		 		Elliot Brennan</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+		
+				<div class="content clearfix">
+					If the West allows Cambodia's democracy to fall without a whimper, the contagion of despotism will be hard to contain in Southeast Asia. 
+				</div>
+		
+		</article>
+ 	</div>
+ 	  	 	 	 
+ 	<div class="even col-sm-4 views-view-row-7">
+ 	<article id="node-340211">
+ 	 	<span class="rm-tab-date">
+ 	
+	<p class="rm-tab-date">5 Sep 2017 17:20</p>	</span>
+	<a href="https://www.lowyinstitute.org/the-interpreter/north-korea-why-west-so-much-more-alarmed-south-korea">	
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/Senior_koreans_crop.jpg')"></div>
+	</a>
+			<h3><a href="/the-interpreter/north-korea-why-west-so-much-more-alarmed-south-korea">North Korea: Why the West freaks out but South Korea doesn’t</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 		 		 	
+ 		 	 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/robert-e-kelly">
+ 		 		Robert E Kelly</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+		
+				<div class="content clearfix">
+					I am constantly asked if war is about to break out. I often have the impression the TV hosts or producers are disappointed I am not more alarmist.
+				</div>
+		
+		</article>
+ 	</div>
+ 	  	 	 	 
+ 	<div class="odd views-row-last col-sm-4 views-view-row-8">
+ 	<article id="node-340201">
+ 	 	<span class="rm-tab-date">
+ 	
+	<p class="rm-tab-date">5 Sep 2017 12:32</p>	</span>
+	<a href="https://www.lowyinstitute.org/the-interpreter/timor-sea-breakthrough">	
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/36745280756_b545729a73_k.jpg')"></div>
+	</a>
+			<h3><a href="/the-interpreter/timor-sea-breakthrough">The Timor Sea breakthrough</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 		 		 	
+ 		 	 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/bec-strating">
+ 		 		Bec Strating</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+		
+				<div class="content clearfix">
+					An expedient negotiated settlement with Australia was in the interests of oil-dependent Timor-Leste.
+				</div>
+		
+		</article>
+ 	</div>
+ 	 	
+</div>    </div>
+  
+  
+  
+  
+  
+  
+</div>        </div>
+        <div class="tab-pane" id="rem_most_popular">
+          <div class="view view-interpreter-debate-last-added view-id-interpreter_debate_last_added view-display-id-block_1 view-dom-id-6b1fed87f09871d8f4c493527f1b4b52">
+        
+  
+  
+      <div class="view-content">
+      <div class="row">
+ 	
+ 	<div class="odd views-row-first col-sm-4 views-view-row-0">
+ 	<article id="node-339831">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">24 Aug 2017 8:20</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/collision-sea">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/USS_John%20McCain_crop.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/collision-sea">Collision at sea</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/james-goldrick">
+ 		 		James Goldrick</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					The US Navy’s mastery of engineering has long been a strength for the navy, but the requirement for all its line officers to spend time as platform engineers at sea may be at the expense of seamanship and navigation.
+				</div>
+
+		</article>
+ 	</div>
+ 	 	
+ 	<div class="even col-sm-4 views-view-row-1">
+ 	<article id="node-339416">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">14 Aug 2017 7:22</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/kra-canal-double-bypass">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/Singapore_port_crop.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/kra-canal-double-bypass">The Kra Canal: Double bypass</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/david-brewster">
+ 		 		David Brewster</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					Reports that Thailand, with Chinese money, is planning to build a new canal between the Pacific and Indian Oceans have set off a new wave of alarm bells over China’s plans to dominate the region.
+				</div>
+
+		</article>
+ 	</div>
+ 	 	
+ 	<div class="odd col-sm-4 views-view-row-2">
+ 	<article id="node-340066">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">31 Aug 2017 9:00</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/doklam-who-won">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/india-himalaya.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/doklam-who-won">Doklam: Who won?</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/rory-medcalf">
+ 		 		Rory Medcalf</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					The superficial reading is that China essentially forced India into a humiliating backdown.
+				</div>
+
+		</article>
+ 	</div>
+ 	 		</div><div class="row row-last">
+ 	 	
+ 	<div class="even col-sm-4 views-view-row-3">
+ 	<article id="node-339676">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">21 Aug 2017 14:33</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/india-feeling-heat-belt-road">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/GettyImages-831726468-min_3.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/india-feeling-heat-belt-road">India feeling the heat on Belt and Road</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/dhruva-jaishankar">
+ 		 		Dhruva Jaishankar</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					A growing political-military nexus between China and Pakistan, as currently seems likely, will further aggravate security competition with India. 
+				</div>
+
+		</article>
+ 	</div>
+ 	 	
+ 	<div class="odd col-sm-4 views-view-row-4">
+ 	<article id="node-339356">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">11 Aug 2017 8:28</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/marriage-equality-fiasco-damages-brand-australia">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/Sydney_protest_crop.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/marriage-equality-fiasco-damages-brand-australia">Marriage equality fiasco damages Brand Australia</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/nick-bryant">
+ 		 		Nick Bryant</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					There are two broad narratives in the international coverage of Australia. First, the country is no longer a beacon for human rights. Second, its politics are parochial and often paralysing, 
+				</div>
+
+		</article>
+ 	</div>
+ 	 	
+ 	<div class="even col-sm-4 views-view-row-5">
+ 	<article id="node-339336">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">10 Aug 2017 14:32</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/vietnam-kidnapping-undermines-efforts-seek-friends-and-influence">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/VN_Germany_crop.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/vietnam-kidnapping-undermines-efforts-seek-friends-and-influence">Vietnam: Kidnapping undermines efforts to seek friends and influence</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/helen-clark">
+ 		 		Helen Clark</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					The kidnapping will be seized upon by Vietnam's human rights critics in Europe who will have their say when debating the important FTA.
+				</div>
+
+		</article>
+ 	</div>
+ 	 		</div><div class="row row-last">
+ 	 	
+ 	<div class="odd col-sm-4 views-view-row-6">
+ 	<article id="node-339606">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">17 Aug 2017 16:38</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/timor-leste-critical-window-asean">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/GettyImages-544088804-min.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/timor-leste-critical-window-asean">Timor-Leste’s critical window on ASEAN</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/bec-strating">
+ 		 		Bec Strating</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					Should Timor-Leste not become the 11th ASEAN member by the end of 2017, momentum may be lost and ascension indefinitely delayed.
+				</div>
+
+		</article>
+ 	</div>
+ 	 	
+ 	<div class="even col-sm-4 views-view-row-7">
+ 	<article id="node-339566">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">18 Aug 2017 9:35</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/how-india-and-us-can-lead-indo-pacific">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/india-globe.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/how-india-and-us-can-lead-indo-pacific">How India and the US can lead in the Indo-Pacific</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/samir-saran">
+ 		 		Samir Saran</a>
+ 		 		
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		 
+ 		 		, <a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/s-paul-kapur">
+ 		 		S. Paul Kapur</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					The stakes – who gets to construct the legal, economic, and military architecture of an integrated Indo-Pacific region – are enormous. Without bold policy from the US and India, the answer will be China.
+				</div>
+
+		</article>
+ 	</div>
+ 	 	
+ 	<div class="odd views-row-last col-sm-4 views-view-row-8">
+ 	<article id="node-339371">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">11 Aug 2017 13:35</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/papua-new-guinea-election-surprises">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/35797332776_3aa50e52ce_k.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/papua-new-guinea-election-surprises">Papua New Guinea&#039;s election surprises</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/sean-dorney">
+ 		 		Sean Dorney</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					The most surprising thing about the 2017 Papua New Guinea Election was the number of sitting MPs who were defeated.
+				</div>
+
+		</article>
+ 	</div>
+ 	 	
+</div>    </div>
+  
+  
+  
+  
+  
+  
+</div>        </div>
+        <div  class="tab-pane" id="rem_long_read">
+          <div class="view view-interpreter-debate-last-added view-id-interpreter_debate_last_added view-display-id-block_2 view-dom-id-bd10f86781465181158af3bdb8f4dee5">
+        
+  
+  
+      <div class="view-content">
+      <div class="row">
+ 	
+ 	<div class="odd views-row-first col-sm-4 views-view-row-0">
+ 	<article id="node-339366">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">11 Aug 2017 11:58</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/rhetorical-arthritis-wont-sell-australian-republic">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/Shorten_crop.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/rhetorical-arthritis-wont-sell-australian-republic">Rhetorical arthritis won’t sell an Australian republic</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/james-curran">
+ 		 		James Curran</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					It is one thing to recognise the realities of current sensibilities; quite another to let them mask the more substantial arguments required to win a greater measure of popular support than in 1999.
+					0 9				</div>
+
+		</article>
+
+ 	</div>
+ 	 	
+ 	<div class="even col-sm-4 views-view-row-1">
+ 	<article id="node-339346">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">10 Aug 2017 15:54</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/growing-extremism-source-strategic-instability-asia">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/GettyImages-817785178-min.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/growing-extremism-source-strategic-instability-asia">Growing extremism as source of strategic instability in Asia</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/chietigj-bajpaee">
+ 		 		Chietigj Bajpaee</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					The proclivity for extremism in Asia has spread beyond the ‘usual suspects’.
+					1 9				</div>
+
+		</article>
+
+ 	</div>
+ 	 	
+ 	<div class="odd col-sm-4 views-view-row-2">
+ 	<article id="node-339106">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">3 Aug 2017 6:59</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/making-sense-known-unknowns-south-china-sea">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/27894777434_3ed79886dd_k_0.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/making-sense-known-unknowns-south-china-sea">Making sense of the known unknowns in the South China Sea</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/ely-ratner">
+ 		 		Ely Ratner</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					The US doesn’t have to be willing to blockade Scarborough Reef to stop China from building a military base there.
+					2 9				</div>
+
+		</article>
+
+ 	</div>
+ 	 		</div><div class="row row-last">
+ 	 	
+ 	<div class="even col-sm-4 views-view-row-3">
+ 	<article id="node-339031">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">1 Aug 2017 9:11</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/relationship-between-growth-and-inflation-shifting">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/ASX_growth_crop.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/relationship-between-growth-and-inflation-shifting">Is the relationship between growth and inflation shifting?</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/john-edwards-0">
+ 		 		John Edwards</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					The RBA leadership is clearly thinking about the possibility that the relationship between inflation and output growth may have altered in an enduring way.
+					3 9				</div>
+
+		</article>
+
+ 	</div>
+ 	 	
+ 	<div class="odd col-sm-4 views-view-row-4">
+ 	<article id="node-338571">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">17 Jul 2017 7:58</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/g20-hamburg-riots-and-german-election">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/GettyImages-810387634.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/g20-hamburg-riots-and-german-election">The G20 Hamburg riots and the German election</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/marcus-colla">
+ 		 		Marcus Colla</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					The G20 riots in Hamburg have raised a number of pertinent political questions about domestic security and political extremism in Germany.
+					4 9				</div>
+
+		</article>
+
+ 	</div>
+ 	 	
+ 	<div class="even col-sm-4 views-view-row-5">
+ 	<article id="node-337611">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">6 Jul 2017 17:29</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/winding-back-the-china-solution">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/32390214885_fc1cf38170_k_0.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/winding-back-the-china-solution">Winding back the China Solution</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/david-kelly">
+ 		 		David Kelly</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					Early tensions over the China Solution cropped in a debate on the ‘Kindle­berger Trap’, a theme initiated by political scientist Joseph Nye.
+					5 9				</div>
+
+		</article>
+
+ 	</div>
+ 	 		</div><div class="row row-last">
+ 	 	
+ 	<div class="odd col-sm-4 views-view-row-6">
+ 	<article id="node-337796">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">26 Jun 2017 13:11</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/rising-interest-rates-and-rba">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/RBA3.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/rising-interest-rates-and-rba">Rising interest rates and the RBA</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/john-edwards-0">
+ 		 		John Edwards</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					My guess is the RBA is already thinking about a program of rate increases that will continue for several years.
+					6 9				</div>
+
+		</article>
+
+ 	</div>
+ 	 	
+ 	<div class="even col-sm-4 views-view-row-7">
+ 	<article id="node-337766">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">22 Jun 2017 17:46</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/who-will-abandon-taiwan-next">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/honduras.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/who-will-abandon-taiwan-next">Who will abandon Taiwan next?</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/fabrizio-bozzato">
+ 		 		Fabrizio Bozzato</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					A ‘cascade’ of countries flowing from Taipei to Beijing isn't likely any time soon. Nonetheless, the question remains – who’s next after Panama?
+					7 9				</div>
+
+		</article>
+
+ 	</div>
+ 	 	
+ 	<div class="odd views-row-last col-sm-4 views-view-row-8">
+ 	<article id="node-336911">
+ 	 	<span class="rm-tab-date">
+	<p class="rm-tab-date">26 May 2017 14:17</p>	</span>	
+
+			<a href="https://www.lowyinstitute.org/the-interpreter/dizzy-success-what-putin-thinks-trump-ascendancy">
+			<div class="rm-tab-home-thumb" style="background-image:url('https://www.lowyinstitute.org/sites/default/files/KW%20Putin%20banner%20%282%29.jpg')"></div>
+			</a>
+
+			<h3><a href="/the-interpreter/dizzy-success-what-putin-thinks-trump-ascendancy">&#039;Dizzy with Success&#039;: What Putin thinks of the Trump ascendancy</a></h3>			<div class="meta submitted">
+				 		 	 		 	<div class="author">
+ 		 			
+ 		 	
+ 		 	 		 	 		 		
+ 		 		By 
+ 		 		<a href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/kyle-wilson">
+ 		 		Kyle Wilson</a>
+ 		 		
+ 		 	 		 	</div>
+ 		 	
+			</div>
+
+				<div class="content clearfix">
+					Putin must now be tempted to suspect that God is a Russian; or at least on the side of his righteous and much maligned compatriots.
+					8 9				</div>
+
+		</article>
+
+ 	</div>
+ 	 	
+</div>    </div>
+  
+  
+  
+  
+  
+  
+</div>        </div>
+     
+        <div class="clear"></div>
+      </div>
+      <div class="rm-home-debate-bottom">
+    
+        <p class="btn-wrap"><a href="https://www.lowyinstitute.org/the-interpreter/archive" title="" class="btn">SEE ALL ARTICLES</a></p>
+      </div>
+      <div class="clear"></div>
+    </section>
+    <!--rm-home-debate-wrap end here-->
+                <div class="view view-debate-responses view-id-debate_responses view-display-id-currently_debating view-dom-id-6b0f6ec59f66c91c50bb064c0c36193d">
+        
+  
+  
+      <div class="view-content">
+      		<section class="rm-home-footer"  style="background-image:url('https://www.lowyinstitute.org/sites/default/files/debate/6347741532_a730fb9549_o.jpg');">
+      <div class="overlay"></div>
+
+      <div class="col-sm-6 col-sm-push-3">
+        <p><strong>CURRENTLY DEBATING</strong></p>
+        <h2>US leadership in Asia</h2>
+        <a href="https://www.lowyinstitute.org/the-interpreter/debate/us-leadership-asia" title="" class="btn">View Debate</a> </div>
+
+      <div class="clear"></div>
+    </section>
+      </div>
+  
+  
+  
+  
+  
+  
+</div>          <div class="footer-bg">
+    <footer class ="footer clearfix">
+	<ul class="footer-links">
+					<li>
+			<a  href="/the-interpreter/terms-use">Terms of Use</a>	
+			</li>
+					<li>
+			<a  href="/sitemap">Site map</a>	
+			</li>
+					<li>
+			<a  href="/user/login">My Admin</a>	
+			</li>
+					<li>
+			<a target="_blank" href="http://myaccount.lowyinstitute.org">Log In</a>	
+			</li>
+				
+		
+	</ul>		
+</footer>
+
+    </div>
+  </div>
+  <!-- main-wrapper end here-->
+</div>
+	<script type="text/javascript" src="https://www.lowyinstitute.org/sites/default/files/js/js_sPl2p7BmWacpaFpm-lIiWPVMyB6Pe0tpNHYoFsI_8aQ.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b87a5defff","applicationID":"24899992","transactionName":"M1EBYkJUWUcAAhcPXAobIlVEXFhaTj4KCEcBRhNEVUFSRj4FAhVbBlsCRFQ=","queueTime":0,"applicationTime":905,"atts":"HxYCFApOSkk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

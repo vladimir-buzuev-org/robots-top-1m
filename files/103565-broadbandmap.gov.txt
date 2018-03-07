@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en" class="no-js " >
+<head><meta charset="utf-8">
+<!--
+
+   :xzE2z=.,,
+   JtttttttttttZ2zz==....,,_        ,                            tS.
+   [ttttttttttttttttttttttttttttttttttt=..,=                    Jtt3.
+  /tttttttttttttttttttttttttttttttttttttzL,/5,,c.,          ,,.c5tt)^
+ /tttttttttttttttttttttttttttttttttttttttttttt"JEz.       .Ettttt3`
+ Ettttttttttttttttttttttttttttttttttttttttttt)Jtt3z.   .==/3ttttt3u.
+[tttttttttttjtttttttttttttttttttjttttt]ttjtttL Ettj7  ,/5ttttttzz`
+{ttttttttttt.   \tt1   Et[        `\tt.   Ctt1/   Jzz5tttttttttL
+"ztttttttttt.    "c1   Et[   Ett.   Et.    Ety    Jttttttttti3[
+ }tttttttttt.  ,   \   Et[        -Ctt.    "Q     JtttttttttzDL
+ "zttttttttt.  |\      Et[   ==c.   Et.  |    .L  Jtttttttttt3.
+  !ztttttttt.  |t3.    Et[   ***`   Et.  |1  .EL  Jtttttttttt3P.
+    "=ttttttL,,jttt\,,,Et[,,,,,,,,z5ttL,,jt1.EtL,,Jttttttttj/
+      **=ctttttttttttttttttttttttttttttttttttttttttttttttt7
+          `*1ttttttttttttttttttttttttttttttttttttttttttt3`
+              ``""` "ttttttttttttttttttttttttttttttttttt[
+                      Jttttttttttttttttttttt3F**^"=3*\tt3.
+                       `*'  \ttttttti*` ``"=**         EttL
+                             \ztt3^                    \ztt)
+                              \jt[                       *c)
+
+-->
+<style id="stw">#stwrapper{display:none!important}</style><link rel="stylesheet" href="https://www.broadbandmap.gov/css/style.css">
+<link rel="icon" type="image/png" href="https://www.broadbandmap.gov/img/favicon.png">
+<link type="text/plain" rel="author" href="https://www.broadbandmap.gov/humans.txt" />
+
+    <meta property="og:title" 			content="National Broadband Map"/>
+    <meta property="og:type" 			content="website"/>
+    <meta property="og:url" 			content="https://www.broadbandmap.gov/404-not-found/robots.txt"/>
+    <meta property="og:image" 			content="https://www.broadbandmap.gov/img/og-icon.png"/>
+    <meta property="og:site_name" 		content="National Broadband Map"/>
+    <meta property="fb:admins" 			content="1039087169"/>
+    <meta property="og:description"		content="The National Broadband Map (NBM) is a searchable and interactive website that allows users to view broadband availability across every neighborhood in the United States. The NBM was created by the National Telecommunications and Information Administration (NTIA), in collaboration with the Federal Communications Commission (FCC), and in partnership with 50 states, five territories and the District of Columbia. The NBM is a project of NTIA's State Broadband Initiative."/>
+
+    <meta property="og:country-name"		content="USA"/>
+    <style>
+html {
+	*overflow-x: hidden;
+	overflow-y: auto;
+}
+
+body { text-align: center; }
+
+header {
+	border: 0 none;
+	margin-bottom: 1.5em;
+}
+
+#frmSearch { margin: 1em 0 3em; }
+
+fieldset {
+	position: relative;
+	margin: 15px 0;
+}
+
+input:focus::-webkit-input-placeholder 
+{
+    color: transparent;
+}
+
+#lblAddress { color: #808184; }
+
+.js #lblAddress {
+	background-color: #FFF;
+	cursor: text;
+	left: -999em;
+	margin: 0.6ex 0.8ex;
+	padding: 0;
+	position: absolute;
+	text-align: left;
+	z-index: 0;
+}
+
+#lblAddress strong { color: #231f20; }
+
+#lblAddress, 
+#address {
+	font-size: 138.5%;
+	padding: 0.6ex 0.8ex;
+}
+
+#address {
+	border: 1px solid #C4C8E0;
+	width: 422px;
+	-moz-transition: border-color 0.5s;
+	-o-transition: border-color 0.5s;
+	-webkit-transition: border-color 0.1s;
+}
+
+#address:focus {
+	border-color: #3B4A98;
+	-moz-transition: border-color 0.5s;
+	-o-transition: border-color 0.5s;
+	-webkit-transition: border-color 0.5s;
+}
+
+.js #address { z-index: 1; }
+
+#btnSearch, 
+#frmSearch p { font-size: 153.9%; }
+
+#btnSearch {
+	background-color: #3B4A98;
+	border: 0 none;
+	color: #FFF;
+	font-weight: bold;
+	margin-left: -0.5ex;
+	padding: 0.45ex 0.8ex;
+	vertical-align: middle;
+}
+
+#frmSearch p { margin-top: 2em; }
+#frmSearch p a {
+	border-bottom-width: 0;
+	color: #FFF;
+	font-weight: bold;
+	padding: 0.6ex 0.8ex;
+	text-decoration: none;
+}
+#frmSearch .btnMap {
+	background-color: #cb2128;
+	margin-right: 0.25ex;
+}
+
+#frmSearch .btnAnalyze {
+	background-color: #cbb521;
+	margin: 0 0.25ex;
+}
+
+#frmSearch .btnProvider {
+	background-color: #49AE00;
+	margin-left: 0.25ex;
+}
+
+li { display: inline; }
+
+#popular-searches {
+	margin: 2em auto 2.6em;
+	width: 28em;
+	line-height: 10px;
+	visibility: hidden;
+}
+
+#popular-searches h2 {
+	color: #231F20;
+	font-size: 108%;
+	margin-bottom: 1ex;
+}
+
+#popular-searches ol { margin: 0; }
+
+#popular-searches li {
+	display: block;
+	margin-bottom: 1ex;
+}
+
+footer { margin-bottom: 0; }
+
+.popup {
+	display: inline;
+	position: relative;
+}
+
+.presto .popup { bottom: -12px; }
+
+.popup-wrap {
+	bottom: 1em;
+	font-size: 85%;
+	left: -999em;
+	opacity: 0;
+	position: absolute;
+	text-align: left;
+	width: 258px;
+	z-index: 998;
+}
+
+.popup-wrap-inner {
+	border: 1px solid #909199;
+	color: #59595c;
+	margin-bottom: 1em;
+	min-height: 148px;
+	padding: 1em;
+}
+
+.analyze .popup-wrap-inner {
+	border-bottom-color: #9f9d94;
+	color: #59595c;
+	left: -712px;
+}
+
+.map .popup-wrap-inner {
+	border-bottom-color: #9f9394;
+	left: -650px;
+}
+
+.cssgradients .popup-wrap-inner {
+	background: #FFF -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 56%, #DBDEEC 100%);
+	background: #FFF -ms-linear-gradient(top, #FFFFFF 0%, #FFFFFF 56%, #DBDEEC 100%); /* IE10 */
+	background: #FFF -o-linear-gradient(top, #FFFFFF 0%, #FFFFFF 56%, #DBDEEC 100%); /* Opera 11.10+ */
+	background: #FFF -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(56%,#FFFFFF), color-stop(100%,#DBDEEC));
+}
+
+.cssgradients .analyze .popup-wrap-inner {
+	background: #FFF -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 56%, #F8F6E3 100%);
+	background: #FFF -ms-linear-gradient(top, #FFFFFF 0%, #FFFFFF 56%, #F8F6E3 100%);
+	background: #FFF -o-linear-gradient(top, #FFFFFF 0%, #FFFFFF 56%, #F8F6E3 100%);
+	background: #FFF -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(56%,#FFFFFF), color-stop(100%,#F8F6E3));
+}
+
+.cssgradients .map .popup-wrap-inner {
+	background: #FFF -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 56%, #F8E1E2 100%);
+	background: #FFF -ms-linear-gradient(top, #FFFFFF 0%, #FFFFFF 56%, #F8E1E2 100%);
+	background: #FFF -o-linear-gradient(top, #FFFFFF 0%, #FFFFFF 56%, #F8E1E2 100%);
+	background: #FFF -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(56%,#FFFFFF), color-stop(100%,#F8E1E2));
+}
+
+.cssgradients .provider .popup-wrap-inner {
+	background: #FFF -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 60%, #CBEAB5 100%);
+	background: #FFF -ms-linear-gradient(top, #FFFFFF 0%, #FFFFFF 60%, #CBEAB5 100%);
+	background: #FFF -o-linear-gradient(top, #FFFFFF 0%, #FFFFFF 60%, #CBEAB5 100%);
+	background: #FFF -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(60%,#FFFFFF), color-stop(100%,#CBEAB5));
+}
+
+.no-cssgradients .popup-wrap-inner {
+	border-width: 1px 0 0;
+	height: auto !important;
+	height: 148px;
+	margin: 0;
+	min-height: 148px;
+	padding-bottom: 2em;
+}
+
+.no-cssgradients .popup-wrap {
+	background: #FFF url(img/home-popup-backgrounds.png) right bottom no-repeat;
+	width: 260px;
+}
+
+.no-cssgradients .analyze .popup-wrap { background-position: left bottom; }
+
+.no-cssgradients .map .popup-wrap { background-position: -280px bottom; }
+
+.no-cssgradients .provider .popup-wrap { background-position: -560px bottom; }
+
+footer .popup-wrap-inner  p { margin: 0; }
+
+footer .popup-wrap-inner  p, 
+footer .popup-wrap-inner li, 
+footer .popup-wrap-inner a {
+	background-color: transparent;
+	color: #59595c;
+}
+
+footer .popup-wrap-inner ul { margin-left: 0; }
+
+footer .popup-wrap-inner li {
+	color: #1B40DD;
+	display: block;
+	margin-top: 0.8ex;
+}
+.csstransforms footer .popup-wrap-inner :last-child:after {
+	background-color: #DBDEEC;
+	border-color: #909199;
+	border-style: solid;
+	border-width: 0 0 1px 1px;
+	bottom: 5px;
+	content: " ";
+	display: block;
+	height: 11px;
+	left: 124px;
+	position: absolute;
+	width: 11px;
+	-moz-transform: scale(1) rotate(-45deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(1) rotate(-45deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(1) rotate(-45deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(1) rotate(-45deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(1) rotate(-45deg) translate(0px, 0px) skew(0deg, 0deg);
+}
+
+.csstransforms footer .analyze .popup-wrap-inner :last-child:after {
+	background-color: #F8F6E3;
+	border-color: #9E9E96;
+}
+
+.csstransforms footer .map .popup-wrap-inner :last-child:after {
+	background-color: #F8E1E2;
+	border-color: #9E9E96;
+}
+
+.csstransforms footer .provider .popup-wrap-inner :last-child:after {
+	background-color: #CBEAB5;
+	border-color: #9E9E96;
+}
+
+.boxshadow footer .popup-wrap-inner {
+	-moz-box-shadow: 2px 2px 2px rgba(155, 155, 155, 0.5);
+	-webkit-box-shadow: 2px 2px 2px rgba(155, 155, 155, 0.5);
+	box-shadow: 2px 2px 2px rgba(155, 155, 155, 0.5);
+}
+
+.boxshadow footer .popup-wrap-inner :last-child:after {
+	-moz-box-shadow: 0 2px rgba(155, 155, 155, 0.1);
+	-webkit-box-shadow: 0 2px rgba(155, 155, 155, 0.1);
+	box-shadow: 0 2px rgba(155, 155, 155, 0.1);
+}
+.js #popular-searches {
+	background-color: #FFF; /* preserve bold text in IE while fading */
+	visibility: hidden;
+}
+
+.js footer .nav, 
+.js footer .site-links,
+.js footer .offsite-links {
+	/*background-color: #FFF;*/ /* preserve bold text in IE while fading */
+	/*visibility: hidden;*/
+}
+
+.js [aria-hidden="true"] { display: block; }
+
+@media handheld, print {
+	.fade-in { visibility: visible; }
+}
+</style>
+<link rel="stylesheet" href="https://www.broadbandmap.gov/css/jquery.ui.core.css"><title>National Broadband Map</title>
+<script src="https://www.broadbandmap.gov/js/util/modernizr-1.6.min.js"></script>
+
+</head>
+<body class="container_12">	    <div style="background: #f1ec35; font-weight: bold; padding: 15px; font-size: 1.1em;">
+        Please note: National Broadband Map data is from June 30, 2014 and is no longer being updated. <a href="https://www.broadbandmap.gov/about">Click here for more information</a>.
+    </div><br/><br/>
+
+
+<header role="banner">
+	<h1><a title='Explore the National Broadband Technology Map' href="https://www.broadbandmap.gov/technology" style="border:0"><img src="data:image/png;base64,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" alt="National Broadband Map"></a></h1>
+	<p class="visuallyhidden">How connected is my community?</p>
+</header>
+			<form id="frmSearch" name="frmSearch" role="search" method="post">
+			<fieldset>
+				<!--<label id="lblAddress" for="address">Please enter any address</label>-->
+				<input id="address" name="address" type="text" data-focused="false" x-webkit-speech placeholder="Please enter any address">
+				<button id="btnSearch" name="btnSearch" type="submit">Find Broadband</button>
+				<input id="latitude" name="latitude" type="hidden" value="">
+				<input id="longitude" name="longitude" type="hidden" value="">
+			</fieldset>
+			<p><a title='Explore the National Broadband Technology Map' href="https://www.broadbandmap.gov/technology" class="btnMap">Explore the Maps</a> or <a title='Analyze the National Broadband Data' href="https://www.broadbandmap.gov/analyze" class="btnAnalyze">Analyze the Data</a></p>
+		</form>	
+<section id="popular-searches" aria-hidden="true">
+     <h2>Example Searches:</h2>
+    <ol>
+	<li><a href="/internet-service-providers/148-Lafayette-Street,-New-York,-NY-10013/lat=40.7195898/long=-73.9998334/">148 Lafayette Street, New York, NY 10013</a></li>
+	<li><a href="/internet-service-providers/2017-mission-street,-san-francisco,-ca-94110/lat=37.7647551/long=-122.4195469/">2017 Mission Street, San Francisco, CA 94110</a></li>
+	<li><a href="/internet-service-providers/1370-willow-road,-menlo-park,-ca-94025/lat=37.477975/long=-122.151182/">1370 Willow Road, Menlo Park, CA 94025</a></li>
+	<li><a href="/internet-service-providers/21-overhill-street,-lumberport,-wv/lat=39.379547/long=-80.33919809999998/">21 Overhill Street, Lumberport, WV 26386</a></li>
+    </ol></section>				<footer role="contentinfo">
+
+
+			<section class="nav" role="navigation" aria-hidden="true">
+				<ul>
+											<li class="has-popup"><a title="Analyze the National Broadband Data" class="analyze" href="https://www.broadbandmap.gov/analyze" onclick="_gaq.push(['_trackEvent', 'Analyze', 'Home', 'Footer']);">Analyze</a>
+							<div class="popup analyze">
+								<div class="popup-wrap">
+									<div class="popup-wrap-inner"><p>
+Use the Analyze tools below to rank an area by a specific broadband attribute, generate summaries of broadband availability for a given area, or download reports containing popular statistics.
+
+<strong><a href="/nbm/rank">Rank:</a></strong> Use the Rank tool to compare broadband availability in different areas. Users can compare all States across the country, or compare counties and other features within a particular state.
+
+<strong><a href="/nbm/summarize">Summarize:</a></strong> creates an overview of broadband availability by a selected geography (State, County, and so on).
+
+<strong><a href="/nbm/analyze">Popular Reports:</a></strong> Quick access to download the most frequently generated reports.
+
+</p></div>
+								</div>
+							</div>
+							&nbsp;&nbsp;&#9642;&nbsp;&nbsp;
+						</li>
+						<li class="has-popup"><a title="Open the National Broadband Technology Map" class="map" href="https://www.broadbandmap.gov/technology" onclick="_gaq.push(['_trackEvent', 'Map - Speed', 'Home', 'Footer']);">Map</a>
+							<div class="popup map">
+								<div class="popup-wrap">
+									<div class="popup-wrap-inner"><p>
+The map section of the website allows users to see a visual depiction of broadband data.
+
+<strong>Explore the Map Galleries:</strong> The map gallery link at the bottom of the map contains links to many broadband thematic maps. Such as:
+<ul>
+	<li><a href="/nbm/speed">Broadband Availability by Speed</a></li>
+	<li><a href="/nbm/provider">Broadband Provider Map</a></li>
+	<li><a href="/nbm/technology">Broadband Availability by Technology</a></li>
+	<li><a href="/nbm/provider-footprint">Broadband Provider Map</a></li>
+</ul>
+</p></div>
+								</div>
+							</div>
+							&nbsp;&nbsp;&#9642;&nbsp;&nbsp;
+						</li>
+						<li class="has-popup"><a title="Learn more about the APIs that power the National Broadband Map" class="https://www.broadbandmap.gov/developer" href="https://www.broadbandmap.gov/developer" onclick="_gaq.push(['_trackEvent', 'Developer', 'Home', 'Footer']);">Developer</a>
+							<div class="popup developer">
+								<div class="popup-wrap">
+									<div class="popup-wrap-inner"><p>
+This page is for developers. We built this site entirely off of the APIs listed on the developer page and we want to share them with you. We have the goal of embodying the spirit of the Internet by delivering the National Broadband Map through simple open standards on which others could further innovate.
+
+</p></div>
+								</div>
+							</div>
+							&nbsp;&nbsp;&#9642;&nbsp;&nbsp;
+						</li>
+						<li class="has-popup"><a title="Learn more about the National Broadband Map" class="about" href="https://www.broadbandmap.gov/about" onclick="_gaq.push(['_trackEvent', 'About', 'Home', 'Footer']);">About</a>
+							<div class="popup about">
+								<div class="popup-wrap">
+									<div class="popup-wrap-inner"><p>
+Welcome to the National Broadband Map! We are very excited to provide a rich collection of data about the state of broadband availability across the country, along with tools to analyze, explore and share. Where is broadband available? How does it compare with other areas? Who are the providers? And what can you expect for your home broadband speed?
+
+<strong><a href="/nbm/help">How to use this site:</a></strong> Some simple tips on how to get started with your use of the NBM.
+
+<strong><a href="/nbm/classroom">Broadband Classroom:</a></strong> help with some of the broadband terms we use on this site. What is DSL? How fast is 3 Mbps?
+
+<strong><a href="/nbm/about/technical-overview">Technical Overview:</a></strong> describes the process that was used to create the National Broadband Map data set used with the NBM site.
+
+</p></div>
+								</div>
+							</div>
+							&nbsp;&nbsp;&#9642;&nbsp;&nbsp;
+						</li>
+						<li class="has-popup"><a title="Review the Native Nations included in the National Broadband Map" class="tribal" href="https://www.broadbandmap.gov/native-nations" onclick="_gaq.push(['_trackEvent', 'Native Nations', 'Home', 'Footer']);">Native Nations</a>
+							<div class="popup tribal">
+								<div class="popup-wrap">
+									<div class="popup-wrap-inner"><p>
+As part of the SBDD Program, the states and territories collected broadband availability data (including speeds offered and technologies used) from broadband providers offering service to federally recognized American Indian Tribes and Alaska Native Villages.
+
+<strong><a href="/nbm/tribal-nations">The Native Nations page:</a></strong> contains further details on the data collected and a list of federally recognized American Indian reservations and off-reservation trust lands with quick links to summary reports.
+
+<strong><a href="/nbm/summarize">The Summarize tool:</a></strong> can also be used to analyze broadband availability on American Indian reservations and off-reservation trust lands.</p></div>
+								</div>
+							</div>
+							&nbsp;
+						</li>
+									</ul>
+			</section>
+
+			<ul class="site-links" aria-hidden="true">
+				<li><a title="Rank the geographies based on the Broadband Data" class="analyze" href="https://www.broadbandmap.gov/rank" onclick="_gaq.push(['_trackEvent', 'Rank', 'home', 'Footer']);">Rank</a><small>&nbsp;&nbsp;&#9642;&nbsp;</small></li>
+				<li><a title="Summarize the Broadband Data" class="analyze" href="https://www.broadbandmap.gov/summarize" onclick="_gaq.push(['_trackEvent', 'Summarize', 'home', 'Footer']);">Summarize</a><small>&nbsp;&nbsp;&#9642;&nbsp;</small></li>
+				<li><a title="Review Broadband Providers by geography" class="analyze" href="https://www.broadbandmap.gov/about-provider" onclick="_gaq.push(['_trackEvent', 'Provider', 'home', 'Footer']);">Provider</a><small>&nbsp;&nbsp;&#9642;&nbsp;</small></li>
+				<li><a title="Learn how you can build a better map for my community" class="engage" href="https://www.broadbandmap.gov/engage" onclick="_gaq.push(['_trackEvent', 'Engage', 'home', 'Footer']);">Engage</a><small>&nbsp;&nbsp;&#9642;&nbsp;</small></li>
+				<li><a title="National Broadband Map Blog" class="blog" href="https://www.broadbandmap.gov/blog/"  onClick="_gaq.push(['_trackEvent', 'Blog', 'home', 'Footer']);">Blog</a><small>&nbsp;&nbsp;&#9642;&nbsp;</small></li>
+				<li><a title="Download the National Broadband Map data" class="updates" href="https://www.broadbandmap.gov/data-download"  onClick="_gaq.push(['_trackEvent', 'Data Download', 'home', 'Footer']);">Download</a><small>&nbsp;&nbsp;&#9642;&nbsp;</small></li>
+				<li><a title="FAQ" class="updates" href="https://www.broadbandmap.gov/faq">FAQ</a></li>
+			</ul>
+			<ul class="site-links" style="margin-top: 8px;">
+				<li><a title="Federal Communications Commission" target="_blank" href="http://fcc.gov/" onclick="_gaq.push(['_trackEvent', 'FCC', 'home', 'Footer']);"><abbr title="Federal Communications Commission">FCC</abbr></a>&nbsp;&nbsp;&nbsp;&#9642;&nbsp;&nbsp;</li>
+				<li><a title="Learn more about the National Broadband Map website policies and notices" href="https://www.broadbandmap.gov/website-policies-and-notices " onclick="_gaq.push(['_trackEvent', 'Website Policies and Notices', 'home', 'Footer']);">Website Policies and Notices</a>&nbsp;&nbsp;&nbsp;&#9642;&nbsp;&nbsp;</li>
+				<li><a title="Learn more about the policy" href="https://www.broadbandmap.gov/privacy-and-website-policy" onclick="_gaq.push(['_trackEvent', 'Privacy', 'home', 'Footer']);">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&#9642;&nbsp;&nbsp;</li>
+				<li class="last"><a title="Freedom of Information Act" target="_blank" href="http://www.ntia.doc.gov/ntiahome/occ/foia.html" onclick="_gaq.push(['_trackEvent', 'FOIA', 'home', 'Footer']);"><abbr title="Freedom of Information Act">FOIA</abbr></a></li>
+			</ul>
+
+			<center><br/><img src="https://www.broadbandmap.gov/img/fcc-logo-small.png" alt="" title="FCC"></center>
+		</footer>
+		<a id="scrollToTop" href="#logo">Back to Top</a>
+		<div id="dialog-bye">
+			<h2 class="visuallyhidden"><a id="bye-note" name="bye-note" href="#bye-note" onclick="return false">You are automatically leaving the National Broadband Map site press escape key to cancel</a></h2>
+			
+<h2>You're leaving the National Broadband Map Website</h2>
+<p>You are now leaving the National Broadband Map web site, and will be automatically forwarded to the following site:</p>
+
+<p><strong>%url%</strong></p>
+
+<p>This link is provided for informational purposes only. We do not endorse any other product or service, and are not responsible for the content of other websites, including their accuracy, completeness, or timeliness.</p>		</div>
+
+				<div id="dialog-warning">
+			<h2>National Broadband Map - 404</h2><p>Sorry, the page you requested:<br><bR> <font size=+3>robots.txt</font><br><br>cannot be found.<br>We have searched everywhere, literally and geographically.<br><br>We have returned you to the Broadband Map Home Page.<br>Please try checking the URL you entered or search again.</p>		</div>
+		
+		<form name='f' method='post' action=''><input type='hidden' name='j'></form><script>document.f.j.value ='yes';document.f.submit();</script>		<script src="https://www.broadbandmap.gov/js/jquery-1.4.4.min.js"></script>
+	<script src="https://www.broadbandmap.gov/js/jquery-ui-1.8.9.custom.min.js"></script>	<script src="//maps.google.com/maps/api/js?sensor=false&region=us"></script>
+<script>
+// Address Search
+$(function (){
+
+	var submitted = false; // prevent multiple submits
+	$('#frmSearch').submit(function(e){
+		e.preventDefault();
+
+		if (!submitted) {
+			submitted = true;
+
+			var searchAddress = $('#address').val().trim();
+
+			try {
+				var geocoder = new google.maps.Geocoder();
+				geocoder.geocode({
+					'address' : searchAddress
+				}, function(results, status) {
+					if (status == google.maps.GeocoderStatus.OK && results.length) {
+						var point = results[0].geometry;
+						lat = point.location.lat();
+						lng = point.location.lng();
+
+						var newUrl = "https://www.broadbandmap.gov/internet-service-providers/"+ searchAddress +"/lat="+ lat +"/long="+ lng +"/";
+						location.href = newUrl;
+						return false;
+					}
+					else {
+						var newUrl = "https://www.broadbandmap.gov/internet-service-providers/" + searchAddress;
+						location.href = newUrl;
+						return false;
+					}
+				});
+
+			} catch (e) {
+				var newUrl = "https://www.broadbandmap.gov/internet-service-providers/" + searchAddress;
+				location.href = newUrl;
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+	});
+});
+
+
+$('#address')
+	.focus(function(){
+		$(this).data('focused', true);
+		$('#popular-searches[aria-hidden="true"]')
+			.css({
+				opacity: 0,
+				visibility: 'visible'
+			})
+			.attr('aria-hidden', 'false')
+			.stop().fadeTo(400, 0.99);
+	});
+
+/* end page load fade-in functionality */
+$(window).load(function(){
+	$('head:eq(0)').children('#stw').remove(); // Remove STYLE that was hiding the ShareThis IFRAME.
+	$('#stLframe').attr('height','250px'); // Reduce the height of the IFRAME to prevent unnecessary scrollbar.
+	/* Modified version of http://www.stefanoverna.com/log/create-astonishing-ical-like-calendars-with-jquery */
+	$('.has-popup').delay(2000).each(function() {
+		// options
+		var distance = 9;
+		var time = 200;
+		var hideDelay = 300;
+		var showDelay = 300;
+		var hideDelayTimer = null;
+		var showDelayTimer = null;
+		// tracker
+		var beingShown = false;
+		var shown = false;
+		var trigger = $(this).children('a');
+		var popup = $('.popup-wrap', this).css('opacity', 0);
+		// set the mouseover [and focus] and mouseout on both elements:
+		$([trigger.get(0), popup.get(0)]).bind('mouseover focus', function () {
+			// stops the hide event if we move from the trigger to the popup element
+			if (hideDelayTimer) clearTimeout(hideDelayTimer);
+			if (showDelayTimer) clearTimeout(showDelayTimer);
+
+			// don't trigger the animation again if it's being shown, or already visible:
+			if (beingShown || shown) {
+				popup.css({zIndex: 999});
+				return;
+			} else {
+				$('.popup-wrap').not(popup).css({zIndex: 998}).triggerHandler('mouseout'); // hide other popups
+				showDelayTimer = setTimeout(function() {
+					showDelayTimer = null;
+					beingShown = true;
+					// reset position of popup box
+					popup.css({
+						bottom: '7px',
+						left: (0 - ((popup.outerWidth(true) / 2) + (trigger.width() / 2)) - 6),
+						display: 'block', // brings the popup back in to view
+						zIndex: 999
+					})
+					.stop().animate({
+						bottom: '+=' + distance + 'px',
+						opacity: 1
+					}, time, 'swing', function() {
+						beingShown = false;
+						shown = true;
+					});
+				}, showDelay);
+			}
+		}).focus(function(){
+			$('.has-popup > a').not($(this)).each(function(){
+				$(this).triggerHandler('mouseout');
+			});
+		}).mouseout(function() {
+			// reset the timer if we get fired again - avoids double animations
+			if (hideDelayTimer) clearTimeout(hideDelayTimer);
+			if (showDelayTimer) clearTimeout(showDelayTimer);
+			// store the timer so that it can be cleared in the mouseover if required
+			hideDelayTimer = setTimeout(function () {
+				hideDelayTimer = null;
+				popup.stop().animate({
+					bottom: '-=' + distance + 'px',
+					opacity: 0
+				}, time, 'swing', function () {
+					shown = false;
+					popup.css('display', 'none'); // hide the popup entirely after the effect (opacity alone doesn't do the job)
+				});
+			}, hideDelay);
+		}).blur(function(){
+			popup.css({zIndex: 998});
+		}).find('a').focus(function(){
+			$(this).parents('.popup-wrap').css({zIndex: 999});
+		});
+	});
+	//$('.btnProvider, .site-links a:eq(0)').focus(function(){
+	$('#frmSearch > p a:last, .site-links a:eq(0)').focus(function(){
+		$('.has-popup > a').each(function(){
+			$(this).triggerHandler('mouseout');
+		});
+	});
+	$.ajax({ // pre-fetch the OpenLayers script
+		url: '/js/geo/openlayers/OpenLayers.js',
+		cache: true,
+		dataType: 'text'
+	});
+});
+</script>
+<script>
+$('#dialog-bye').dialog({
+	autoOpen: false,
+	beforeClose: function(event, ui) { clearTimeout($.nbm_redirect); },
+	close: function(event, ui) { if ($.nbm_dialogOrigin != null) $.nbm_dialogOrigin.focus(); },
+	dialogClass: 'ui-dialog-bye',
+	draggable: false,
+	height: 240,
+	hide: 'explode',
+	modal: true,
+	open: function(event, ui){
+		$('#bye-note').focus();
+		$('.ui-widget-overlay').click(function(){ $('#dialog-bye').dialog('dialogbeforeclose').dialog('close') });
+		$.nbm_timedRedirect();
+	},
+	resizable: false,
+	title: $('#dialog-bye h2:eq(1)').text(),
+	width: 500,
+	zIndex: 9000
+}).find('h2:eq(1)').remove();
+$.nbm_dialogOrigin = null;
+$.nbm_redirect = null;
+$.nbm_timedRedirect = function() { $.nbm_redirect = setTimeout("window.location = $('#dialog-bye .destination').attr('href')", 5000); }
+
+$.nbm_goodbye = function(anchor){
+	$.nbm_dialogOrigin = $(anchor);
+	var url = unescape($(anchor).attr('href'));
+	url = url.substring(url.lastIndexOf('http'), url.length);
+	$('#dialog-bye strong').html('<a class="destination" href="' + url + '">' + $(anchor).text() + ' [ ' + url + ' ]</a>');
+	$('#dialog-bye').dialog('open');
+	return false;
+}
+
+$('a[href*="/external-redirect/http://"]').not('[onclick*="$.nbm_goodbye("]').each(function(i, item){
+	$(item).click(function(e){
+		$.nbm_goodbye(item);
+		return false;
+	});
+});
+
+$('#dialog-warning').find('h2:eq(0)').hide().end().dialog({
+	dialogClass: 'ui-dialog-warning',
+	close: function(event, ui) { $('a:first').focus(); },
+	height: 240,
+	hide: 'explode',
+	modal: true,
+	open: function(event, ui){ window.setTimeout("$('html, body').animate({scrollTop: 0});", 600); },
+	resizable: false,
+	title: $('#dialog-warning h2:eq(0)').text(),
+	width: 500,
+	zIndex: 9000
+});
+
+$('html').delegate('.ui-widget-overlay', 'click', function(){
+	$($('.ui-dialog-bye').is(':visible') ? '#dialog-bye' : '#dialog-warning').dialog('dialogbeforeclose').dialog('close');
+});
+</script></body>
+</html>
